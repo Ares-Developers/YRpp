@@ -1,0 +1,23 @@
+/*
+	INI file loading examples
+	
+	by pd
+*/
+
+
+//The following code snippet loads an INI file from either the Mix files or from the game directory:
+
+	CCFileClass file("test.ini");		//Construct a CCFileClass instance and set the filename.
+	if(file.Exists(NULL))				//Test whether the file exists.
+	{
+		CCINIClass ini;					//If so, construct a CCINI.
+		ini.ReadCCFile(&file);			//Initialize the CCINIClass instance using file.
+		
+		//ini is now ready to be used (see below).
+		
+	}
+	
+//To read data from an INI file, use the Read functions, which are commented.
+
+//It's not known whether using the Write functions will directly write to the file, or whether
+//other, not yet supported functions are required for that.

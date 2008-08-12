@@ -1,0 +1,51 @@
+/*
+	How to register a new CommandClass
+	
+	by pd
+*/
+
+//CommandClasses are available functions that can be bint to keys by the user.
+//It's very useful to create a "Debug" key when developing for YR.
+
+//First, create a new CommandClass, here's an example:
+class MyCommandClass : public CommandClass
+{
+public:
+	//Destructor
+	virtual ~MyCommandClass(){}
+
+	//CommandClass
+	virtual const char*			GetName()
+	{
+		return "MyCommand";		//Possibly the name for uimd.ini?
+	}
+	
+	virtual const wchar_t*		GetUIName()
+	{
+		return L"My Command";	//Display name
+	}
+	
+	virtual const wchar_t*		GetUICategory()
+	{
+		return L"My DLL";		//The command Categroy
+								//If it doesn't exit yet, it will be created
+	}
+	
+	virtual const wchar_t*		GetUIDescription()
+	{
+		return L"Does cool stuff.";	//The Description
+	}
+	
+	virtual void			Execute(DWORD dwUnk)
+	{
+		//This will be called when the command gets executed.
+	}
+
+	//Constructor
+	CommandClass(){}
+};
+
+//To register your new command class, simply contruct it *ONCE* and place it in the global array:
+	CommandClass::Array->AddItem(new MyCommandClass());
+	
+//The best place to construct it at is in the CommandClassCallback::Register callback.
