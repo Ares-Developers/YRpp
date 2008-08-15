@@ -284,6 +284,7 @@ typedef int eCellFlags;
 
 #define	cf_IsWaypoint		0x04
 #define	cf_FlagPresent		0x10
+#define cf_Bridge			0x100
 #define	cf_VeinsPresent		0x20000
 #define	cf_EMPPresent		0x80000
 
