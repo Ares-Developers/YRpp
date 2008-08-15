@@ -1,7 +1,0 @@
-For YR 1.001
-------------
-
-EIP					(possible) Problem
-==============================================
-0x007120F7			(Wrong)Trying to create a voxel building
-0x007120F7			[Building]->Strength < [General]->RepairStep
