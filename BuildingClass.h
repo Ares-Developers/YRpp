@@ -62,7 +62,7 @@ public:
 		{ PUSH_VAR8(bUnk1); PUSH_VAR32(pObj); THISCALL(0x447210); }
 	virtual bool CanBeUndeployed()
 		{ THISCALL(0x457620); }
-	virtual BuildingTypeClass* GetType()
+	virtual ObjectTypeClass* GetType()
 		{ return Type; }
 	virtual wchar_t* GetUIName()
 		{ THISCALL(0x459ED0); }

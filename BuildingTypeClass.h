@@ -72,7 +72,7 @@ public:
 		{ PUSH_VAR32(pMapCoords); PUSH_VAR32(pOwner); THISCALL(0x45E800); }
 	virtual int GetActualCost(HouseTypeClass* pCountry)
 		{ PUSH_VAR32(pCountry); THISCALL(0x45EDD0); }
-	virtual BuildingClass* CreateObject(HouseClass* pOwner)
+	virtual ObjectClass* CreateObject(HouseClass* pOwner)
 		{ PUSH_VAR32(pOwner); THISCALL(0x45E880); }
 	virtual SHPStruct* GetImage()
 		{ THISCALL(0x45F040); }

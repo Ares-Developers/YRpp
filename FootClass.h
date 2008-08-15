@@ -288,6 +288,13 @@ NOOOOOOOOOOOOOOOOOOOOOOOOOOoooooooooooooooooooooooooo*/
 	FootClass(HouseClass* owner):TechnoClass(false)
 		{ PUSH_VAR32(owner); THISCALL(0x4D31E0); }
 
+	// non-virtual
+
+	// only used by squid damage routines, normal wakes are created differently it seems
+	// creates 3 wake animations behind the unit
+	void CreateWakes(int X, int Y, int Z)
+		{ PUSH_VAR32(Z); PUSH_VAR32(Y); PUSH_VAR32(X); THISCALL(0x629E90); }
+
 protected:
 	FootClass():TechnoClass()
 		{}

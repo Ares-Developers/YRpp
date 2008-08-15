@@ -43,7 +43,7 @@ public:
 	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner)
 		{ return false; }
 
-	virtual AircraftClass* CreateObject(HouseClass* pOwner)
+	virtual ObjectClass* CreateObject(HouseClass* pOwner)
 		{ PUSH_VAR32(pOwner); THISCALL(0x41CB20); }
 
 	virtual void vt_entry_90(DWORD dwUnk)

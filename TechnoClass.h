@@ -90,9 +90,9 @@ public:
 		{ PUSH_VAR8(bUnk2); PUSH_VAR8(bUnk1); PUSH_VAR32(uCell); THISCALL(0x700600); }
 	virtual eAction MouseOverObject(ObjectClass* pObj, bool bUnk1)
 		{ PUSH_VAR8(bUnk1); PUSH_VAR32(pObj); THISCALL(0x6FFEC0); }
-	virtual TechnoTypeClass* GetType_()
+	virtual ObjectTypeClass* GetType_()
 		{ return this->GetType(); } //???
-	virtual TechnoTypeClass* GetType()
+	virtual ObjectTypeClass* GetType()
 		{ return NULL; }
 	virtual DWORD GetTypeOwners()
 /*

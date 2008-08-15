@@ -47,7 +47,7 @@ public:
 		{ PUSH_VAR8(bUnk2); PUSH_VAR8(bUnk1); PUSH_VAR32(uCell); THISCALL(0x51F800); }
 	virtual eAction MouseOverObject(ObjectClass* pObj, bool bUnk1)
 		{ PUSH_VAR8(bUnk1); PUSH_VAR32(pObj); THISCALL(0x51E3B0); }
-	virtual InfantryTypeClass* GetType()
+	virtual ObjectTypeClass* GetType()
 		{ return Type; }
 	virtual wchar_t* GetUIName()
 		{ THISCALL(0x51F2C0); }

@@ -52,7 +52,7 @@ public:
 		{ PUSH_VAR8(bUnk1); PUSH_VAR32(pObj); THISCALL(0x73FD50); }
 	virtual bool CanBeUndeployed()
 		{ return Type->get_NonVehicle(); }
-	virtual UnitTypeClass* GetType()
+	virtual ObjectTypeClass* GetType()
 		{ return Type; }
 	virtual wchar_t* GetUIName()
 		{ THISCALL(0x746B20); }

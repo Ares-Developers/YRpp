@@ -83,7 +83,7 @@ public:
 		{ PUSH_VAR8(bUnk1); PUSH_VAR32(pObj); THISCALL(0x417CC0); }
 	virtual bool CanBeUndeployed()
 		{ return IsOnFloor(); }
-	virtual AircraftTypeClass* GetType()
+	virtual ObjectTypeClass* GetType()
 		{ return Type; }
 	virtual wchar_t* GetUIName()
 		{ THISCALL(0x41C1D0); }

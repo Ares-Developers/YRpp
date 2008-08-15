@@ -52,7 +52,7 @@ public:
 		{ PUSH_VAR32(dwUnk); THISCALL(0x524760); }
 	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner)
 		{ PUSH_VAR32(pMapCoords); PUSH_VAR32(pOwner); THISCALL(0x523B40); }
-	virtual InfantryClass* CreateObject(HouseClass* pOwner)
+	virtual ObjectClass* CreateObject(HouseClass* pOwner)
 		{ PUSH_VAR32(pOwner); THISCALL(0x523B10); }
 	virtual void vt_entry_90(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x523C20); }
