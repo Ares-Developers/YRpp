@@ -1,5 +1,7 @@
 //This file initilializes static constant values.
 
+#include <YRPP.h>
+
 #include <AbstractTypeClass.h>
 DynamicVectorClass<AbstractTypeClass*>* AbstractTypeClass::Array =
 								(DynamicVectorClass<AbstractTypeClass*>*)0xA8E968;

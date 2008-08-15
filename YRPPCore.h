@@ -8,13 +8,13 @@
 #ifndef YRPPCore_H
 #define YRPPCore_H
 
-#include <wchar.h>
-
 //Syringe interaction header - also includes <windows.h>
 #include <Syringe.h>
 
 //Assembly macros
 #include <ASMMacros.h>
+
+#include <wchar.h>
 
 //Macro for class members with getters and setters! Thanks DCoder!
 #define PROPERTY(type,name)\
