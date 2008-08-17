@@ -31,11 +31,10 @@ class RadarEventClass
 {
 public:
 	static bool Create(int nType,CellStruct nMapCoords)
-	{
+		{
 		PUSH_VAR32(nMapCoords);
 		SET_REG32(ecx,nType);
-		CALL(0x65FA70);
-	}
+		CALL_RET(0x65FA70, bool); }
 
 private:
 	//Constructor, Destructor

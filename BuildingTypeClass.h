@@ -32,13 +32,13 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x465380); }
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL_RET(0x465380, HRESULT); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x465010); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x465010, HRESULT); }
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x465300); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x465300, HRESULT); }
 
 	//Destructor
 	virtual ~BuildingTypeClass()
@@ -56,26 +56,25 @@ public:
 
 	//AbstractTypeClass
 	virtual bool LoadFromINI(CCINIClass* pINI)
-		{ PUSH_VAR32(pINI); THISCALL(0x45FE50); }
+		{ PUSH_VAR32(pINI); THISCALL_RET(0x45FE50, bool); }
 
 	//ObjectTypeClass
 	virtual CoordStruct* vt_entry_6C(CoordStruct* pDest, CoordStruct* pSrc)
-		{ PUSH_VAR32(pSrc); PUSH_VAR32(pDest); THISCALL(0x464A70); };
-
+		{ PUSH_VAR32(pSrc); PUSH_VAR32(pDest); THISCALL_RET(0x464A70, CoordStruct*); };
 	virtual int GetPipMax()
-		{ THISCALL(0x45ECE0); }
+		{ THISCALL_RET(0x45ECE0, int); }
 	virtual void vt_entry_78(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x45EBD0); }
 	virtual void vt_entry_7C(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x464AF0); }
 	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner)
-		{ PUSH_VAR32(pMapCoords); PUSH_VAR32(pOwner); THISCALL(0x45E800); }
+		{ PUSH_VAR32(pMapCoords); PUSH_VAR32(pOwner); THISCALL_RET(0x45E800, bool); }
 	virtual int GetActualCost(HouseTypeClass* pCountry)
-		{ PUSH_VAR32(pCountry); THISCALL(0x45EDD0); }
+		{ PUSH_VAR32(pCountry); THISCALL_RET(0x45EDD0, int); }
 	virtual ObjectClass* CreateObject(HouseClass* pOwner)
-		{ PUSH_VAR32(pOwner); THISCALL(0x45E880); }
+		{ PUSH_VAR32(pOwner); THISCALL_RET(0x45E880, ObjectClass*); }
 	virtual SHPStruct* GetImage()
-		{ THISCALL(0x45F040); }
+		{ THISCALL_RET(0x45F040, SHPStruct*); }
 
 	//TechnoTypeClass
 	virtual bool vt_entry_A0()
@@ -83,13 +82,13 @@ public:
 	virtual bool CanAttackMove()
 		{ return false; }
 	virtual bool vt_entry_A8(CellStruct* pMapCoords, DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pMapCoords); THISCALL(0x464AC0); }
+		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pMapCoords); THISCALL_RET(0x464AC0, bool); }
 	virtual int GetCost()
-		{ THISCALL(0x45ED50); }
+		{ THISCALL_RET(0x45ED50, int); }
 
 	//BuildingTypeClass
 	virtual SHPStruct* LoadBuildup()
-		{ THISCALL(0x465960); }
+		{ THISCALL_RET(0x465960, SHPStruct*); }
 
 	//Constructor
 	BuildingTypeClass(const char* id):TechnoTypeClass(false)
@@ -97,9 +96,9 @@ public:
 
 	//non-virtual
 	short GetFoundationWidth()
-		{ THISCALL(0x45EC90); }
+		{ THISCALL_RET(0x45EC90, short); }
 	short GetFoundationHeight(bool bIncludeBib)
-		{ PUSH_VAR8(bIncludeBib); THISCALL(0x45ECA0); }
+		{ PUSH_VAR8(bIncludeBib); THISCALL_RET(0x45ECA0, short); }
 
 protected:
 	//default contructor, only used by polymorphism

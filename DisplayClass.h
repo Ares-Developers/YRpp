@@ -8,7 +8,7 @@ class ObjectClass;
 class LayerClass : public DynamicVectorClass<ObjectClass*>
 {
 	virtual bool AddObject(ObjectClass* pObject, bool bUnknown)
-		{ PUSH_VAR8(bUnknown); PUSH_VAR32(pObject); THISCALL(0x5519B0); }
+		{ PUSH_VAR8(bUnknown); PUSH_VAR32(pObject); THISCALL_RET(0x5519B0, bool); }
 
 	virtual void Clear_()
 		{ Clear(); }
@@ -69,30 +69,25 @@ public:
 		{ PUSH_VAR32(pINI); THISCALL(0x4ACE70); }
 
 	virtual const wchar_t* GetToolTip(UINT nDlgID)
-		{ PUSH_VAR32(nDlgID); THISCALL(0x4AE4F0); }
+		{ PUSH_VAR32(nDlgID); THISCALL_RET(0x4AE4F0, const wchar_t*); }
 
 	virtual void CloseWindow()	//???
 		{ THISCALL(0x4AE6B0); }
 
 	virtual void vt_entry_8C()
 		{ THISCALL(0x4AEAD0); }
-
 	virtual bool vt_entry_90(CellStruct MapCoords, void* pUnk)
-		{ PUSH_VAR32(pUnk); PUSH_VAR32(MapCoords); THISCALL(0x4A9890); }
-
+		{ PUSH_VAR32(pUnk); PUSH_VAR32(MapCoords); THISCALL_RET(0x4A9890, bool); }
 	virtual bool vt_entry_94(CellStruct MapCoords, void* pUnk, bool bUnk)
-		{ PUSH_VAR8(bUnk); PUSH_VAR32(pUnk); PUSH_VAR32(MapCoords); THISCALL(0x4A9CA0); }
-
+		{ PUSH_VAR8(bUnk); PUSH_VAR32(pUnk); PUSH_VAR32(MapCoords); THISCALL_RET(0x4A9CA0, bool); }
 	virtual bool vt_entry_98(CellStruct MapCoords, void* pUnk)
-		{ PUSH_VAR32(pUnk); PUSH_VAR32(MapCoords); THISCALL(0x4A9DD0); }
-
+		{ PUSH_VAR32(pUnk); PUSH_VAR32(MapCoords); THISCALL_RET(0x4A9DD0, bool); }
 	virtual bool vt_entry_9C(CellStruct MapCoords, void* pUnk)
-		{ PUSH_VAR32(pUnk); PUSH_VAR32(MapCoords); THISCALL(0x4AA050); }
+		{ PUSH_VAR32(pUnk); PUSH_VAR32(MapCoords); THISCALL_RET(0x4AA050, bool); }
 
 	virtual void vt_entry_100() = 0;
-
 	virtual bool vt_entry_104(DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk1); THISCALL(0x4A9840); }
+		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk1); THISCALL_RET(0x4A9840, bool); }
 
 	virtual void Set_View_Dimensions(RectangleStruct* pRect)
 		{ PUSH_VAR32(pRect); THISCALL(0x4A8960); }

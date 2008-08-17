@@ -10,29 +10,23 @@ class TeleportLocomotionClass : public LocomotionClass, public IPiggyback
 public:
 	//IUnknown
 	virtual HRESULT _stdcall QueryInterface(REFIID iid, void** ppvObject)
-		{ PUSH_VAR32(ppvObject); PUSH_VAR32(iid); PUSH_VAR32(this); CALL(0x719E30); }
-
+		{ PUSH_VAR32(ppvObject); PUSH_VAR32(iid); PUSH_VAR32(this); CALL_RET(0x719E30, HRESULT); }
 	virtual ULONG _stdcall AddRef()
-		{ PUSH_VAR32(this); CALL(0x55A950); }
-	
+		{ PUSH_VAR32(this); CALL_RET(0x55A950, ULONG); }
 	virtual ULONG _stdcall Release()
-		{ PUSH_VAR32(this); CALL(0x55A970); }
+		{ PUSH_VAR32(this); CALL_RET(0x55A970, ULONG); }
 
 	//IPiggyback
 	virtual HRESULT _stdcall Begin_Piggyback(ILocomotion* pointer)
-		{ PUSH_VAR32(pointer); PUSH_VAR32(this); CALL(0x719E90); }
-
+		{ PUSH_VAR32(pointer); PUSH_VAR32(this); CALL_RET(0x719E90, HRESULT); }
 	virtual HRESULT _stdcall End_Piggyback(ILocomotion** pointer)
-		{ PUSH_VAR32(pointer); PUSH_VAR32(this); CALL(0x719EE0); }
-
+		{ PUSH_VAR32(pointer); PUSH_VAR32(this); CALL_RET(0x719EE0, HRESULT); }
 	virtual bool _stdcall Is_Ok_To_End()
-		{ PUSH_VAR32(this); CALL(0x719F30); }
-
+		{ PUSH_VAR32(this); CALL_RET(0x719F30, bool); }
 	virtual HRESULT _stdcall Piggyback_CLSID(GUID* classid)
-		{ PUSH_VAR32(classid); PUSH_VAR32(this); CALL(0x719F80); }
-
+		{ PUSH_VAR32(classid); PUSH_VAR32(this); CALL_RET(0x719F80, HRESULT); }
 	virtual bool _stdcall Is_Piggybacking()
-		{ PUSH_VAR32(this); CALL(0x71A100); }
+		{ PUSH_VAR32(this); CALL_RET(0x71A100, bool); }
 
 	//ILocomotion
 	virtual bool _stdcall Is_Moving()
@@ -54,9 +48,8 @@ public:
 			}
 			return pcoord;
 		}
-
 	virtual bool _stdcall Process()
-		{ PUSH_VAR32(this); CALL(0x7192F0); }
+		{ PUSH_VAR32(this); CALL_RET(0x7192F0, bool); }
 
 	virtual void _stdcall Move_To(CoordStruct to)
 		{
@@ -84,14 +77,13 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x719C60);}
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL_RET(0x719C60, HRESULT); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x719CA0);}
-
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x719CA0, HRESULT); }
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x719D40); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x719D40, HRESULT); }
 
 	//Destructor
 	virtual ~TeleportLocomotionClass()

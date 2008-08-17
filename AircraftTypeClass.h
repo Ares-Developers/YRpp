@@ -11,13 +11,13 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x41CEB0); }
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL_RET(0x41CEB0, HRESULT); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x41CE20); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x41CE20, HRESULT); }
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x41CE90); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x41CE90, HRESULT); }
 
 	//Destructor
 	virtual ~AircraftTypeClass()
@@ -35,16 +35,15 @@ public:
 
 	//AbstractTypeClass
 	virtual bool LoadFromINI(CCINIClass* pINI)
-		{ PUSH_VAR32(pINI); THISCALL(0x41CC20); }
+		{ PUSH_VAR32(pINI); THISCALL_RET(0x41CC20, bool); }
 
 	//ObjectTypeClass
 	virtual void vt_entry_7C(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x41CBF0); }
 	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner)
 		{ return false; }
-
 	virtual ObjectClass* CreateObject(HouseClass* pOwner)
-		{ PUSH_VAR32(pOwner); THISCALL(0x41CB20); }
+		{ PUSH_VAR32(pOwner); THISCALL_RET(0x41CB20, ObjectClass*); }
 
 	virtual void vt_entry_90(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x41CB70); }

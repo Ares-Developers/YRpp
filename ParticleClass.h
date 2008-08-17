@@ -19,13 +19,13 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x62D930); }
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL_RET(0x62D930, HRESULT); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x62D7A0); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x62D7A0, HRESULT); }
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x62D810); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x62D810, HRESULT); }
 
 	//Destructor
 	virtual ~ParticleClass()
@@ -43,15 +43,15 @@ public:
 	virtual ObjectTypeClass* GetType()
 		{ return Type; }
 	virtual DWORD vt_entry_108(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x62D710); }
+		{ PUSH_VAR32(dwUnk); THISCALL_RET(0x62D710, DWORD); }
 	virtual void Draw(Point2D* pCoords, DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pCoords); THISCALL(0x62CEC0); }
 	virtual bool SetLayer(eLayer nValue)
-		{ PUSH_VAR32(nValue); THISCALL(0x62D6F0); }
+		{ PUSH_VAR32(nValue); THISCALL_RET(0x62D6F0, bool); }
 
 	//ParticleClass
 	virtual int vt_entry_1E8()
-		{ THISCALL(0x62D830); }
+		{ THISCALL_RET(0x62D830, int); }
 
 	//Constructor
 	ParticleClass(ParticleTypeClass* pParticleType, CoordStruct Crd1, CoordStruct Crd2,

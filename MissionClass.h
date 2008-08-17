@@ -22,14 +22,17 @@ public:
 												QueuedMission : CurrentMission;}
 
 	//MissionClass
-	virtual bool			QueueMission(eMission mission, bool start_mission)
-	{PUSH_VAR8(start_mission);PUSH_VAR32(mission);THISCALL(0x5B35E0);}
-	virtual bool			NextMission(){THISCALL(0x5B3570);}
+	virtual bool QueueMission(eMission mission, bool start_mission)
+		{PUSH_VAR8(start_mission);PUSH_VAR32(mission);THISCALL_RET(0x5B35E0, bool); }
+	virtual bool NextMission()
+		{THISCALL_RET(0x5B3570, bool); }
 	virtual void			ForceMission(eMission mission){PUSH_VAR32(mission);THISCALL(0x5B2FD0);}
 
 	virtual void			vt_entry_1F4(eMission mission){PUSH_VAR32(mission);THISCALL(0x5B3650);}
-	virtual bool			vt_entry_1F8(){THISCALL(0x5B36B0);}
-	virtual bool			vt_entry_1FC(){THISCALL(0x5B3A10);}
+	virtual bool vt_entry_1F8()
+		{THISCALL_RET(0x5B36B0, bool); }
+	virtual bool vt_entry_1FC()
+		{THISCALL_RET(0x5B3A10, bool); }
 	virtual bool			vt_entry_200(){return true;}
 
 	virtual int				Mission_Sleep(){return 450;}

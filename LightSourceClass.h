@@ -12,13 +12,13 @@ class LightSourceClass : public AbstractClass
 public:
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x555080);}
+		{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL_RET(0x555080, HRESULT); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall	Load(IStream* pStm)
-								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x5550C0);}
+		{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x5550C0, HRESULT); }
 	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x555110);}
+		{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x555110, HRESULT); }
 
 	//Destructor
 	virtual ~LightSourceClass()				{PUSH_IMM(SDDTOR_NODELETE);THISCALL(0x555150);}

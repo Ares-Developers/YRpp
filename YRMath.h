@@ -8,7 +8,7 @@
 	{\
 		double* p = &value;\
 		PUSH_VAR64(p);\
-		CALL(address);\
+		CALL_RET(address, double);\
 	}
 
 class Math

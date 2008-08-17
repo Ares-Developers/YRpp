@@ -26,29 +26,25 @@ public:
 
 	//IUnknown
 	virtual HRESULT _stdcall QueryInterface(REFIID iid, void** ppvObject)
-		{ PUSH_VAR32(ppvObject); PUSH_VAR32(iid); PUSH_VAR32(this); CALL(0x6CF430); }
+		{ PUSH_VAR32(ppvObject); PUSH_VAR32(iid); PUSH_VAR32(this); CALL_RET(0x6CF430, HRESULT); }
 
 	virtual ULONG _stdcall AddRef(){ return 1; }
 	virtual ULONG _stdcall Release(){ return 1; }
 
 	//ISwizzle
 	virtual HRESULT _stdcall Reset()
-		{ PUSH_VAR32(this); THISCALL(0x6CF230); }
-
+		{ PUSH_VAR32(this); THISCALL_RET(0x6CF230, HRESULT); }
 	virtual HRESULT _stdcall Swizzle(void** pointer)
-		{ PUSH_VAR32(pointer); PUSH_VAR32(this); THISCALL(0x6CF240); }
-
+		{ PUSH_VAR32(pointer); PUSH_VAR32(this); THISCALL_RET(0x6CF240, HRESULT); }
 	virtual HRESULT _stdcall Fetch_Swizzle_ID(void* pointer, long* id)
-		{ PUSH_VAR32(id); PUSH_VAR32(pointer); PUSH_VAR32(this); CALL(0x6CF490); }
-
+		{ PUSH_VAR32(id); PUSH_VAR32(pointer); PUSH_VAR32(this); CALL_RET(0x6CF490, HRESULT); }
 	virtual HRESULT _stdcall Here_I_Am(long id, void* pointer)
-		{ PUSH_VAR32(pointer); PUSH_VAR32(id); PUSH_VAR32(this); CALL(0x6CF2C0); }
+		{ PUSH_VAR32(pointer); PUSH_VAR32(id); PUSH_VAR32(this); CALL_RET(0x6CF2C0, HRESULT); }
 
 	virtual HRESULT _stdcall Save_Interface(IStream* stream, IUnknown* pointer){ return E_NOTIMPL; }
 		virtual HRESULT _stdcall Load_Interface(IStream* stream, GUID* riid, void** pointer){ return E_NOTIMPL; }
-
 	virtual HRESULT _stdcall Get_Save_Size(int* psize)
-		{ PUSH_VAR32(psize); PUSH_VAR32(this); THISCALL(0x6CF410); }
+		{ PUSH_VAR32(psize); PUSH_VAR32(this); THISCALL_RET(0x6CF410, HRESULT); }
 
 	//CTOR / DTOR
 	SwizzleManagerClass(){ THISCALL(0x6CF180); }

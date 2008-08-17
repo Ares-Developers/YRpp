@@ -16,13 +16,13 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x71FA60); }
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL_RET(0x71FA60, HRESULT); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall	Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x71F8C0); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x71F8C0, HRESULT); }
 	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x71F930); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x71F930, HRESULT); }
 
 	//Destructor
 	virtual ~EventClass()
@@ -48,12 +48,14 @@ public:
 
 	// fuck if I know what's the purpose of this, returns a bitfield of flags for trigger logic
 	static int GetFlags(int eventKind)
-		{ SET_REG32(ecx, eventKind); CALL(0x71F680); }
+		{ SET_REG32(ecx, eventKind); CALL_RET(0x71F680, int); }
 
 	// used in TriggerClass::HaveEventsOccured , when trigger is repeating
 	// both need to be true to check this event as done
-	bool GetStateA() { THISCALL(0x71F950); }
-	bool GetStateB() { THISCALL(0x71F9C0); }
+	bool GetStateA()
+		{ THISCALL_RET(0x71F950, bool); }
+	bool GetStateB()
+		{ THISCALL_RET(0x71F9C0, bool); }
 
 	// main brain
 	bool HasOccured(int eventKind, HouseClass *pHouse, ObjectClass *Object,
@@ -63,7 +65,7 @@ public:
 		  PUSH_VAR32(Object); 
 		  PUSH_VAR32(pHouse); 
 		  PUSH_VAR32(eventKind);
-		  THISCALL(0x71E940); }
+		  THISCALL_RET(0x71E940, bool); }
 
 	//Constructor
 	EventClass()

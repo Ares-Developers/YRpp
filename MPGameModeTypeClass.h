@@ -48,9 +48,8 @@ public:
 
 	virtual bool vt_entry_0C(DWORD dwUnk)
 		{ return 1; }
-
 	virtual bool vt_entry_10()
-		{ THISCALL(0x5D62C0); }
+		{ THISCALL_RET(0x5D62C0, bool); }
 
 	virtual bool vt_entry_14(DWORD dwUnk)
 		{ return 1; }
@@ -75,9 +74,8 @@ public:
 
 	virtual signed int vt_entry_30()
 		{ return this->AlliesAllowed ? 3 : -2 ; } // (-(this->AlliesAllowed != 0) & 5) - 2
-
 	virtual bool vt_entry_34(int idx)
-		{ PUSH_VAR32(idx); THISCALL(0x5D5DE0); }
+		{ PUSH_VAR32(idx); THISCALL_RET(0x5D5DE0, bool); }
 
 	virtual void vt_entry_38(DWORD dwUnk)
 		{ }
@@ -119,9 +117,8 @@ public:
 
 	virtual bool vt_entry_68()
 		{ return 1; }
-
 	virtual int vt_entry_6C()
-		{ THISCALL(0x5D6430); }
+		{ THISCALL_RET(0x5D6430, int); }
 
 	virtual int vt_entry_70()
 		{ return this->vt_entry_6C(); }
@@ -131,18 +128,14 @@ public:
 
 	virtual void vt_entry_78(DWORD dwUnk1)
 		{ }
-
 	virtual bool vt_entry_7C()
-		{ THISCALL(0x5D6790); }
-
+		{ THISCALL_RET(0x5D6790, bool); }
 	virtual bool StartingPositionsToHouseBaseCells(char unused)
-		{ PUSH_VAR8(unused); THISCALL(0x5D6BE0); }
-
+		{ PUSH_VAR8(unused); THISCALL_RET(0x5D6BE0, bool); }
 	virtual bool StartingPositionsToHouseBaseCells2(bool arg)
-		{ PUSH_VAR8(arg); THISCALL(0x5D6C70); }
-
+		{ PUSH_VAR8(arg); THISCALL_RET(0x5D6C70, bool); }
 	virtual bool AllyTeams()
-		{ THISCALL(0x5D74A0); }
+		{ THISCALL_RET(0x5D74A0, bool); }
 
 	virtual bool vt_entry_8C()
 		{ return 1; }
@@ -190,12 +183,10 @@ public:
 		DynamicVectorClass<CellStruct> *vecCoords, byte *housesSatisfied)
 		{ PUSH_VAR32(result); PUSH_VAR32(idxHouse); PUSH_VAR32(vecCoords); PUSH_VAR32(housesSatisfied); 
 			THISCALL(0x5D6890); }
-
 	virtual bool SpawnBaseUnits(HouseClass *House, DWORD dwUnused)
-		{ PUSH_VAR32(dwUnused); PUSH_VAR32(House); THISCALL(0x5D7030); }
-
+		{ PUSH_VAR32(dwUnused); PUSH_VAR32(House); THISCALL_RET(0x5D7030, bool); }
 	virtual bool GenerateStartingUnits(HouseClass *House, int &AmountToSpend)
-		{ PUSH_VAR32(AmountToSpend); PUSH_VAR32(House); THISCALL(0x5D70F0); }
+		{ PUSH_VAR32(AmountToSpend); PUSH_VAR32(House); THISCALL_RET(0x5D70F0, bool); }
 
 protected:
 #define MPMODE_CTOR(clsname, addr) \
@@ -266,15 +257,12 @@ class MPFreeForAllClass : public MPGameModeTypeClass
 	//Destructor
 	virtual ~MPFreeForAllClass()
 		{ THISCALL(0x5C5E40); }
-
 	virtual bool vt_entry_10()
-		{ THISCALL(0x5C5D30); }
-
+		{ THISCALL_RET(0x5C5D30, bool); }
 	virtual bool vt_entry_14(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x5C5D40); }
-
+		{ PUSH_VAR32(dwUnk); THISCALL_RET(0x5C5D40, bool); }
 	virtual bool vt_entry_18()
-		{ THISCALL(0x5C5D90); }
+		{ THISCALL_RET(0x5C5D90, bool); }
 
 	virtual bool vt_entry_40()
 		{ return 1; }
@@ -296,9 +284,8 @@ class MPMegawealthClass : public MPGameModeTypeClass
 	//Destructor
 	virtual ~MPMegawealthClass()
 		{ THISCALL(0x5C9440); }
-
 	virtual bool vt_entry_8C()
-		{ THISCALL(0x5C9430); }
+		{ THISCALL_RET(0x5C9430, bool); }
 
 	//Constructor
 	MPMODE_CTOR(MPMegawealthClass, 0x5C93E0);
@@ -310,18 +297,14 @@ class MPUnholyAllianceClass : public MPGameModeTypeClass
 	//Destructor
 	virtual ~MPUnholyAllianceClass()
 		{ THISCALL(0x5CB540); }
-
 	virtual bool vt_entry_10()
-		{ THISCALL(0x5CB3F0); }
-
+		{ THISCALL_RET(0x5CB3F0, bool); }
 	virtual bool vt_entry_14(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x5CB400); }
-
+		{ PUSH_VAR32(dwUnk); THISCALL_RET(0x5CB400, bool); }
 	virtual bool vt_entry_18()
-		{ THISCALL(0x5CB430); }
-
+		{ THISCALL_RET(0x5CB430, bool); }
 	virtual bool SpawnBaseUnits(HouseClass *House, DWORD dwUnused)
-		{ PUSH_VAR32(dwUnused); PUSH_VAR32(House); THISCALL(0x5CB440); }
+		{ PUSH_VAR32(dwUnused); PUSH_VAR32(House); THISCALL_RET(0x5CB440, bool); }
 
 	static UNINIT_FUNC(0x5D8050);
 	static INIT_FUNC(0x5D8230);
@@ -337,30 +320,25 @@ class MPSiegeClass : public MPGameModeTypeClass
 	//Destructor
 	virtual ~MPSiegeClass()
 		{ THISCALL(0x5CABD0); }
-
 	virtual bool vt_entry_10()
-		{ THISCALL(0x5CA680); }
-
+		{ THISCALL_RET(0x5CA680, bool); }
 	virtual bool vt_entry_14(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x5CA6D0); }
-
+		{ PUSH_VAR32(dwUnk); THISCALL_RET(0x5CA6D0, bool); }
 	virtual bool vt_entry_18()
-		{ THISCALL(0x5CA7D0); }
+		{ THISCALL_RET(0x5CA7D0, bool); }
 
 	virtual bool AIAllowed()
 		{ return 0; }
 
 	virtual bool vt_entry_7C()
 		{ return MPGameModeTypeClass::vt_entry_7C(); } // yes they did code this explicitly -_-
-
 	virtual bool StartingPositionsToHouseBaseCells2(bool arg)
-		{ PUSH_VAR8(arg); THISCALL(0x5CA800); }
+		{ PUSH_VAR8(arg); THISCALL_RET(0x5CA800, bool); }
 
 	virtual void CreateMPTeams(DynamicVectorClass<MPTeam> *vecTeams)
 		{ PUSH_VAR32(vecTeams); THISCALL(0x5CA9B0); }
-
 	virtual bool SpawnBaseUnits(HouseClass *House, DWORD dwUnused)
-		{ PUSH_VAR32(dwUnused); PUSH_VAR32(House); THISCALL(0x5CAA50); }
+		{ PUSH_VAR32(dwUnused); PUSH_VAR32(House); THISCALL_RET(0x5CAA50, bool); }
 
 	static UNINIT_FUNC(0x5D8030);
 	static INIT_FUNC(0x5D81F0);

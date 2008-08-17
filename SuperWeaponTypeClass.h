@@ -21,13 +21,13 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x6CE7C0); }
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL_RET(0x6CE7C0, HRESULT); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x6CE800); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x6CE800, HRESULT); }
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x6CE8D0); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x6CE8D0, HRESULT); }
 
 	//Destructor
 	virtual ~SuperWeaponTypeClass()
@@ -45,11 +45,11 @@ public:
 
 	//AbstractTypeClass
 	virtual bool LoadFromINI(CCINIClass* ini)
-		{ PUSH_VAR32(ini); THISCALL(0x6CEA20); }
+		{ PUSH_VAR32(ini); THISCALL_RET(0x6CEA20, bool); }
 
 	//SuperWeaponTypeClass
 	virtual eAction MouseOverObject(DWORD dwUnk, ObjectClass* pObjBelowMouse)
-		{ PUSH_VAR32(pObjBelowMouse); PUSH_VAR32(dwUnk); THISCALL(0x6CEF80); }
+		{ PUSH_VAR32(pObjBelowMouse); PUSH_VAR32(dwUnk); THISCALL_RET(0x6CEF80, eAction); }
 
 	//Constructor
 	SuperWeaponTypeClass(const char* id):AbstractTypeClass(false)

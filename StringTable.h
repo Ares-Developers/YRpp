@@ -17,7 +17,7 @@ public:
 			PUSH_IMM(0);
 			ZERO_REG(edx);
 			SET_REG32(ecx, pLabel);
-			CALL(0x734E60);
+			CALL_RET(0x734E60, const wchar_t*);
 		}
 };
 

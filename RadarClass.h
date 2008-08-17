@@ -53,23 +53,20 @@ public:
 		{ PUSH_VAR32(pStm); THISCALL(0x656AC0);}
 
 	virtual const wchar_t* GetToolTip(UINT nDlgID)
-		{ PUSH_VAR32(nDlgID); THISCALL(0x658770); }
+		{ PUSH_VAR32(nDlgID); THISCALL_RET(0x658770, const wchar_t*); }
 
 	virtual void CloseWindow()	//???
 		{ THISCALL(0x654320); }
-
 	virtual bool vt_entry_90(CellStruct MapCoords, void* pUnk)
-		{ PUSH_VAR32(pUnk); PUSH_VAR32(MapCoords); THISCALL(0x653810); }
-
+		{ PUSH_VAR32(pUnk); PUSH_VAR32(MapCoords); THISCALL_RET(0x653810, bool); }
 	virtual bool vt_entry_94(CellStruct MapCoords, void* pUnk, bool bUnk)
-		{ PUSH_VAR8(bUnk); PUSH_VAR32(pUnk); PUSH_VAR32(MapCoords); THISCALL(0x653830); }
+		{ PUSH_VAR8(bUnk); PUSH_VAR32(pUnk); PUSH_VAR32(MapCoords); THISCALL_RET(0x653830, bool); }
 
 	//RadarClass
 	virtual void DisposeOfArt()
 		{ THISCALL(0x652D90); }
-
 	virtual void* vt_entry_12C(void* out_pUnk, Point2D* pPoint)
-		{ PUSH_VAR32(pPoint); PUSH_VAR32(out_pUnk); THISCALL(0x653760); }
+		{ PUSH_VAR32(pPoint); PUSH_VAR32(out_pUnk); THISCALL_RET(0x653760, void*); }
 
 	virtual void vt_entry_130(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x653F70); }

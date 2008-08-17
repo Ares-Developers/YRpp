@@ -82,7 +82,7 @@ public:
 		{ PUSH_VAR32(pStm); THISCALL(0x6AC5E0);}
 
 	virtual const wchar_t* GetToolTip(UINT nDlgID)
-		{ PUSH_VAR32(nDlgID); THISCALL(0x6AC210); }
+		{ PUSH_VAR32(nDlgID); THISCALL_RET(0x6AC210, const wchar_t*); }
 
 	virtual void CloseWindow()	//???
 		{ THISCALL(0x6ABD30); }
@@ -96,7 +96,7 @@ public:
 
 	//SidebarClass
 	virtual bool vt_entry_138(int nUnknown)
-		{ PUSH_VAR32(nUnknown); THISCALL(0x6A7D70); }
+		{ PUSH_VAR32(nUnknown); THISCALL_RET(0x6A7D70, bool); }
 
 	//Non-virtual
 

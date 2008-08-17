@@ -16,13 +16,13 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x6301A0); }
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL_RET(0x6301A0, HRESULT); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x62FF20); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x62FF20, HRESULT); }
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x630090); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x630090, HRESULT); }
 
 	//Destructor
 	virtual ~ParticleSystemClass()
@@ -38,7 +38,7 @@ public:
 	virtual void CalculateChecksum(void* pChkSum)
 		{ PUSH_VAR32(pChkSum); THISCALL(0x630100); }
 	virtual bool IsDead()
-		{ THISCALL(0x62FE60); }
+		{ THISCALL_RET(0x62FE60, bool); }
 	virtual void Update()
 		{ THISCALL(0x62FD60); }
 

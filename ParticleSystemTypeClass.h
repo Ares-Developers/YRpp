@@ -17,13 +17,13 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x6447A0); }
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL_RET(0x6447A0, HRESULT); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x6447E0); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x6447E0, HRESULT); }
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x644830); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x644830, HRESULT); }
 
 	//Destructor
 	virtual ~ParticleSystemTypeClass()
@@ -39,7 +39,7 @@ public:
 
 	//AbstractTypeClass
 	virtual bool LoadFromINI(CCINIClass* ini)
-		{ PUSH_VAR32(ini); THISCALL(0x6442D0); }
+		{ PUSH_VAR32(ini); THISCALL_RET(0x6442D0, bool); }
 
 	//ObjectTypeClass
 	virtual bool SpawnAtMapCoords(CellStruct* mcoords, HouseClass* owner)

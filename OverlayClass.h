@@ -16,13 +16,13 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x5FDF10);}
+		{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL_RET(0x5FDF10, HRESULT); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall	Load(IStream* pStm)
-								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x5FD8F0);}
+		{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x5FD8F0, HRESULT); }
 	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x5FD950);}
+		{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x5FD950, HRESULT); }
 
 	//Destructor
 	virtual ~OverlayClass()		{PUSH_IMM(SDDTOR_NODELETE);THISCALL(0x5FDF70);}
@@ -33,13 +33,14 @@ public:
 
 	//ObjectClass
 	virtual ObjectTypeClass*	GetType(){return Type;}
-
-	virtual bool				Put(CoordStruct* pCrd,eDirection dFaceDir){PUSH_VAR32(dFaceDir);PUSH_VAR32(pCrd);
-								THISCALL(0x5FD270);}
+	virtual bool Put(CoordStruct* pCrd,eDirection dFaceDir)
+		{PUSH_VAR32(dFaceDir);PUSH_VAR32(pCrd);
+								THISCALL_RET(0x5FD270, bool); }
 	virtual void				Draw(Point2D* pCoords,DWORD dwUnk){}
 	virtual void				vt_entry_118(DWORD dwUnk,DWORD dwUnk2)
 								{PUSH_VAR32(dwUnk2);PUSH_VAR32(dwUnk);THISCALL(0x5FD970);}
-	virtual bool				SetLayer(eLayer value){PUSH_VAR32(value);THISCALL(0x5FC570);}
+	virtual bool SetLayer(eLayer value)
+		{PUSH_VAR32(value);THISCALL_RET(0x5FC570, bool); }
 
 	//Constructor
 	//Constructor

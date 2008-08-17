@@ -14,7 +14,7 @@ public:
 		PUSH_IMM(0);
 		PUSH_IMM(2);
 		PUSH_VAR32(pFileName);
-		THISCALL_EX(0xAC4848, 0x6B9D00);
+		THISCALL_EX_RET(0xAC4848, 0x6B9D00, bool);
 	}
 	
 	//Get a BSurface for a PCX file. File needs to be loaded some time first!
@@ -22,7 +22,7 @@ public:
 	{
 		PUSH_IMM(0);
 		PUSH_VAR32(pFileName);
-		THISCALL_EX(0xAC4848, 0x6BA140);
+		THISCALL_EX_RET(0xAC4848, 0x6BA140, BSurface*);
 	}
 };
 

@@ -16,13 +16,13 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x523300); }
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL_RET(0x523300, HRESULT); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x521960); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x521960, HRESULT); }
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x521B00); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x521B00, HRESULT); }
 
 	//Destructor
 	virtual ~InfantryClass()
@@ -44,28 +44,28 @@ public:
 
 	//ObjectClass
 	virtual eAction MouseOverCell(CellStruct uCell, bool bUnk1, bool bUnk2)
-		{ PUSH_VAR8(bUnk2); PUSH_VAR8(bUnk1); PUSH_VAR32(uCell); THISCALL(0x51F800); }
+		{ PUSH_VAR8(bUnk2); PUSH_VAR8(bUnk1); PUSH_VAR32(uCell); THISCALL_RET(0x51F800, eAction); }
 	virtual eAction MouseOverObject(ObjectClass* pObj, bool bUnk1)
-		{ PUSH_VAR8(bUnk1); PUSH_VAR32(pObj); THISCALL(0x51E3B0); }
+		{ PUSH_VAR8(bUnk1); PUSH_VAR32(pObj); THISCALL_RET(0x51E3B0, eAction); }
 	virtual ObjectTypeClass* GetType()
 		{ return Type; }
 	virtual wchar_t* GetUIName()
-		{ THISCALL(0x51F2C0); }
+		{ THISCALL_RET(0x51F2C0, wchar_t*); }
 	virtual CoordStruct* GetFLH(CoordStruct *pDest, int idxWeapon, int nFLH_X, int nFLH_Y, int nFLH_Z)
 		{ PUSH_VAR32(nFLH_Z); PUSH_VAR32(nFLH_Y); PUSH_VAR32(nFLH_X);
-		  PUSH_VAR32(idxWeapon); PUSH_VAR32(pDest); THISCALL(0x523250); }
+		  PUSH_VAR32(idxWeapon); PUSH_VAR32(pDest); THISCALL_RET(0x523250, CoordStruct*); }
 	virtual bool IsDisguisedAs(HouseClass *Target)
-		{ PUSH_VAR32(Target); THISCALL(0x5227F0); }
+		{ PUSH_VAR32(Target); THISCALL_RET(0x5227F0, bool); }
 	virtual ObjectTypeClass* GetDisguise(bool DisguisedAgainstAllies)
-		{ PUSH_VAR8(DisguisedAgainstAllies); THISCALL(0x522640); }
+		{ PUSH_VAR8(DisguisedAgainstAllies); THISCALL_RET(0x522640, ObjectTypeClass*); }
 	virtual HouseClass* GetDisguiseHouse(bool DisguisedAgainstAllies)
-		{ PUSH_VAR8(DisguisedAgainstAllies); THISCALL(0x5226C0); }
+		{ PUSH_VAR8(DisguisedAgainstAllies); THISCALL_RET(0x5226C0, HouseClass*); }
 	virtual bool vt_entry_D4()
-		{ THISCALL(0x51DF10); }
+		{ THISCALL_RET(0x51DF10, bool); }
 	virtual bool Put(CoordStruct* pCrd, eDirection dFaceDir)
-		{ PUSH_VAR32(dFaceDir); PUSH_VAR32(pCrd); THISCALL(0x51DFF0); }
+		{ PUSH_VAR32(dFaceDir); PUSH_VAR32(pCrd); THISCALL_RET(0x51DFF0, bool); }
 	virtual bool vt_entry_E8(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x521760); }
+		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL_RET(0x521760, bool); }
 	virtual void vt_entry_F0(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x5217C0); }
 	virtual void vt_entry_F4(DWORD dwUnk)
@@ -73,71 +73,70 @@ public:
 	virtual void Draw(Point2D* pCoords, DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pCoords); THISCALL(0x518F90); }
 	virtual bool vt_entry_140(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4)
-		{ PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x51F250); }
+		{ PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL_RET(0x51F250, bool); }
 	virtual bool vt_entry_144(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x51F190); }
+		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL_RET(0x51F190, bool); }
 	virtual void IronCurtain(int nDuration, DWORD dwUnused, bool bUnk)
 		{ PUSH_VAR8(bUnk); PUSH_VAR32(nDuration); THISCALL(0x522600); }
-
 	virtual eDamageState ReceiveDamage(int* pDamage, DWORD dwUnk1, WarheadTypeClass* pWH,
 	  ObjectClass* pAttacker, DWORD dwUnk2, DWORD dwUnk3, HouseClass* pAttackingHouse)
 		{ PUSH_VAR32(pAttackingHouse); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(pAttacker);
-		  PUSH_VAR32(pWH); PUSH_VAR32(dwUnk1); PUSH_VAR32(pDamage); THISCALL(0x517FA0); }
+		  PUSH_VAR32(pWH); PUSH_VAR32(dwUnk1); PUSH_VAR32(pDamage); THISCALL_RET(0x517FA0, eDamageState); }
 	virtual void Scatter(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
 		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x51D0D0); }
 	virtual void UpdatePosition(int dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x519630); }
 	virtual DWORD vt_entry_1AC(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5)
 		{ PUSH_VAR32(dwUnk5); PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk);
-		  THISCALL(0x51BF90); }
+		  THISCALL_RET(0x51BF90, DWORD); }
 
 	//MissionClass
 	virtual bool vt_entry_200()
-		{ THISCALL(0x521B60); }
+		{ THISCALL_RET(0x521B60, bool); }
 	virtual int Mission_Attack()
-		{ THISCALL(0x51F3E0); }
+		{ THISCALL_RET(0x51F3E0, int); }
 	virtual int Mission_Guard()
-		{ THISCALL(0x51F620); }
+		{ THISCALL_RET(0x51F620, int); }
 	virtual int Mission_AreaGuard()
-		{ THISCALL(0x51F640); }
+		{ THISCALL_RET(0x51F640, int); }
 	virtual int Mission_Harvest()
-		{ THISCALL(0x522E70); }
+		{ THISCALL_RET(0x522E70, int); }
 	virtual int Mission_Hunt()
-		{ THISCALL(0x51F540); }
+		{ THISCALL_RET(0x51F540, int); }
 	virtual int Mission_Move()
-		{ THISCALL(0x51F660); }
+		{ THISCALL_RET(0x51F660, int); }
 	virtual int Mission_Unload()
-		{ THISCALL(0x51F6E0); }
+		{ THISCALL_RET(0x51F6E0, int); }
 
 	//TechnoClass
 	virtual DWORD SelectWeapon(ObjectClass *Target)
-		{ PUSH_VAR32(Target); THISCALL(0x5218E0); }
+		{ PUSH_VAR32(Target); THISCALL_RET(0x5218E0, DWORD); }
 	virtual DWORD vt_entry_300(DWORD dwUnk, DWORD dwUnk2)
-		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x521D30); }
+		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL_RET(0x521D30, DWORD); }
 	virtual bool IsEngineer()
 		{ return Type->get_Engineer(); }
 	virtual bool vt_entry_384()
-		{ THISCALL(0x522BC0); }
+		{ THISCALL_RET(0x522BC0, bool); }
 	virtual void vt_entry_388(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x522C00); }
 	virtual int vt_entry_3C0(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4)
-		{ PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x51C8B0); }
+		{ PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL_RET(0x51C8B0, int); }
 	virtual CellClass* vt_entry_3C4(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x51E140); }
+		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL_RET(0x51E140, CellClass*); }
 	virtual void SetTarget(AbstractClass *Target)
 		{ PUSH_VAR32(Target); THISCALL(0x51B1F0); }
 	virtual DWORD Fire(ObjectClass* pTarget, int nWeapon)
-		{ PUSH_VAR32(nWeapon); PUSH_VAR32(pTarget); THISCALL(0x51DF60); }
+		{ PUSH_VAR32(nWeapon); PUSH_VAR32(pTarget); THISCALL_RET(0x51DF60, DWORD); }
 	virtual void vt_entry_428()
 		{ THISCALL(0x51F330); }
 	virtual DWORD DisguiseAs(ObjectClass *Target)
-		{ PUSH_VAR32(Target); THISCALL(0x522700); }
+		{ PUSH_VAR32(Target); THISCALL_RET(0x522700, DWORD); }
 	virtual void ClearDisguise()
 		{ THISCALL(0x522780); }
 	virtual bool vt_entry_474()
-		{ THISCALL(0x5216D0); }
+		{ THISCALL_RET(0x5216D0, bool); }
 	virtual bool vt_entry_478()
-		{ THISCALL(0x51CDB0); }
+		{ THISCALL_RET(0x51CDB0, bool); }
 	virtual void SetDestination(CellClass* pCell, bool bUnk)
 		{ PUSH_VAR8(bUnk); PUSH_VAR32(pCell); THISCALL(0x51CBA0); }
 
@@ -145,14 +144,14 @@ public:
 	virtual void vt_entry_4F4()
 		{ THISCALL(0x521DD0); }
 	virtual bool vt_entry_4F8()
-		{ THISCALL(0x521EB0); }
+		{ THISCALL_RET(0x521EB0, bool); }
 	virtual bool MoveTo(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL(0x51DBD0); }
+		{ PUSH_VAR32(pCrd); THISCALL_RET(0x51DBD0, bool); }
 	virtual bool StopMoving()
-		{ THISCALL(0x51DAF0); }
+		{ THISCALL_RET(0x51DAF0, bool); }
 	virtual bool vt_entry_508(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
 		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk);
-								THISCALL(0x522FE0); }
+								THISCALL_RET(0x522FE0, bool); }
 	virtual void vt_entry_514()
 		{ THISCALL(0x5220F0); }
 	virtual void Panic()
@@ -162,9 +161,9 @@ public:
 	virtual void PlayIdleAnim(int nIdleAnimNumber)
 		{ PUSH_VAR32(nIdleAnimNumber); THISCALL(0x5220F0); }
 	virtual int GetCurrentSpeed()
-		{ THISCALL(0x521D80); }
+		{ THISCALL_RET(0x521D80, int); }
 	virtual DWORD vt_entry_53C(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x522340); }
+		{ PUSH_VAR32(dwUnk); THISCALL_RET(0x522340, DWORD); }
 	virtual void vt_entry_548()
 		{ THISCALL(0x521B20); }
 	virtual void vt_entry_54C()
@@ -172,9 +171,9 @@ public:
 
 	//InfantryClass
 	virtual bool IsDeployed()
-		{ THISCALL(0x5228D0); }
+		{ THISCALL_RET(0x5228D0, bool); }
 	virtual bool PlayAnim(int nAnimNumber, bool bUnk, DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); PUSH_VAR8(bUnk); PUSH_VAR32(nAnimNumber); THISCALL(0x51D6F0); }
+		{ PUSH_VAR32(dwUnk); PUSH_VAR8(bUnk); PUSH_VAR32(nAnimNumber); THISCALL_RET(0x51D6F0, bool); }
 	
 	//Constructor
 	InfantryClass(InfantryTypeClass* pType, HouseClass* pOwner):FootClass(false)

@@ -17,9 +17,9 @@ public:
 
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x4DB3C0); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x4DB3C0, HRESULT); }
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x4DB690); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x4DB690, HRESULT); }
 
 	//Destructor
 	virtual ~FootClass()
@@ -29,29 +29,29 @@ public:
 	virtual void PointerExpired(void* p,bool bUnknown)
 		{ PUSH_VAR8(bUnknown); PUSH_VAR32(p); THISCALL(0x4D9960); }
 	virtual CoordStruct* GetCoords_(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL(0x4DBDF0); }
+		{ PUSH_VAR32(pCrd); THISCALL_RET(0x4DBDF0, CoordStruct*); }
 
 	//ObjectClass
 	virtual eVisualType VisualCharacter(VARIANT_BOOL flag, DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); PUSH_VAR8(flag); THISCALL(0x4DA4E0); }
+		{ PUSH_VAR32(dwUnk); PUSH_VAR8(flag); THISCALL_RET(0x4DA4E0, eVisualType); }
 	virtual SHPStruct* GetImage()
-		{ THISCALL(0x4DED70); }
+		{ THISCALL_RET(0x4DED70, SHPStruct*); }
 	virtual eAction MouseOverCell(CellStruct uCell, bool bUnk1, bool bUnk2)
-		{ PUSH_VAR8(bUnk2); PUSH_VAR8(bUnk1); PUSH_VAR32(uCell); THISCALL(0x4DDDE0); }
+		{ PUSH_VAR8(bUnk2); PUSH_VAR8(bUnk1); PUSH_VAR32(uCell); THISCALL_RET(0x4DDDE0, eAction); }
 	virtual eAction MouseOverObject(ObjectClass* pObj, bool bUnk1)
-		{ PUSH_VAR8(bUnk1); PUSH_VAR32(pObj); THISCALL(0x4DDED0); }
+		{ PUSH_VAR8(bUnk1); PUSH_VAR32(pObj); THISCALL_RET(0x4DDED0, eAction); }
 	virtual eLayer InWhichLayer()
-		{ THISCALL(0x4DB7E0); }
+		{ THISCALL_RET(0x4DB7E0, eLayer); }
 	virtual bool CanBeSold()
-		{ THISCALL(0x4D9E70); }
+		{ THISCALL_RET(0x4D9E70, bool); }
 	virtual bool vt_entry_BC(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x4DDC40); }
+		{ PUSH_VAR32(dwUnk); THISCALL_RET(0x4DDC40, bool); }
 	virtual bool vt_entry_C0()
 		{ return unknown_bool_6B6; }
 	virtual bool vt_entry_D4()
-		{ THISCALL(0x4DB260); }
+		{ THISCALL_RET(0x4DB260, bool); }
 	virtual bool Put(CoordStruct* pCrd, eDirection dFaceDir)
-		{ PUSH_VAR32(dFaceDir); PUSH_VAR32(pCrd); THISCALL(0x4D7170); }
+		{ PUSH_VAR32(dFaceDir); PUSH_VAR32(pCrd); THISCALL_RET(0x4D7170, bool); }
 	virtual void vt_entry_DC(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x4D9720); }
 	virtual void UnInit()
@@ -59,19 +59,19 @@ public:
 	virtual void Draw(Point2D* pCoords, DWORD dwUnk)
 		{ }
 	virtual bool SetLayer(eLayer value)
-		{ PUSH_VAR32(value); THISCALL(0x4D3780); }
+		{ PUSH_VAR32(value); THISCALL_RET(0x4D3780, bool); }
 	virtual bool vt_entry_138()
-		{ THISCALL(0x4DFA50); }
+		{ THISCALL_RET(0x4DFA50, bool); }
 	virtual bool vt_entry_140(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4)
-		{ PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x4D7D50); }
+		{ PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL_RET(0x4D7D50, bool); }
 	virtual bool vt_entry_144(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x4D74E0); }
+		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL_RET(0x4D74E0, bool); }
 	virtual void IronCurtain(int nDuration, DWORD dwUnused, bool bUnk)
 		{ PUSH_VAR8(bUnk); PUSH_VAR32(dwUnused); PUSH_VAR32(nDuration); THISCALL(0x4DEAE0); }
 	virtual eDamageState ReceiveDamage(int* pDamage, DWORD dwUnk1, WarheadTypeClass* pWH, ObjectClass* pAttacker, 
 	                          DWORD dwUnk2, DWORD dwUnk3, HouseClass* pAttackingHouse)
 		{ PUSH_VAR32(pAttackingHouse); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(pAttacker); 
-		  PUSH_VAR32(pWH); PUSH_VAR32(dwUnk1); PUSH_VAR32(pDamage); THISCALL(0x4D7330); }
+		  PUSH_VAR32(pWH); PUSH_VAR32(dwUnk1); PUSH_VAR32(pDamage); THISCALL_RET(0x4D7330, eDamageState); }
 	virtual void UpdatePosition(int dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x4D85D0); }
 	virtual void vt_entry_194(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
@@ -82,10 +82,10 @@ public:
 		{ PUSH_VAR8(idxWP); PUSH_VAR32(idxPath); THISCALL(0x4DC810); }
 	virtual DWORD vt_entry_1AC(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5)
 		{ PUSH_VAR32(dwUnk5); PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk);
-		  THISCALL(0x4D9C10); }
+		  THISCALL_RET(0x4D9C10, DWORD); }
 	virtual DWORD vt_entry_1B0(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5)
 		{ PUSH_VAR32(dwUnk5); PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk);
-		  THISCALL(0x4D9C60); }
+		  THISCALL_RET(0x4D9C60, DWORD); }
 	virtual void SetLocation(CoordStruct* pCrd)
 		{ PUSH_VAR32(pCrd); THISCALL(0x4DB810); }
 
@@ -93,79 +93,79 @@ public:
 	virtual void vt_entry_1F4(eMission mission)
 		{ PUSH_VAR32(mission); THISCALL(0x4D8F40); }
 	virtual bool vt_entry_1F8()
-		{ THISCALL(0x4D8F80); }
+		{ THISCALL_RET(0x4D8F80, bool); }
 	virtual int Mission_Attack()
-		{ THISCALL(0x4D4DC0); }
+		{ THISCALL_RET(0x4D4DC0, int); }
 	virtual int Mission_Capture()
-		{ THISCALL(0x4D4B20); }
+		{ THISCALL_RET(0x4D4B20, int); }
 	virtual int Mission_Eaten()
-		{ THISCALL(0x4D4CB0); }
+		{ THISCALL_RET(0x4D4CB0, int); }
 	virtual int Mission_Guard()
-		{ THISCALL(0x4D5070); }
+		{ THISCALL_RET(0x4D5070, int); }
 	virtual int Mission_AreaGuard()
-		{ THISCALL(0x4D6AA0); }
+		{ THISCALL_RET(0x4D6AA0, int); }
 	virtual int Mission_Hunt()
-		{ THISCALL(0x4D5350); }
+		{ THISCALL_RET(0x4D5350, int); }
 	virtual int Mission_Move()
-		{ THISCALL(0x4D4200); }
+		{ THISCALL_RET(0x4D4200, int); }
 	virtual int Mission_Retreat()
-		{ THISCALL(0x4DA2C0); }
+		{ THISCALL_RET(0x4DA2C0, int); }
 	virtual int Mission_Enter()
-		{ THISCALL(0x4D9290); }
+		{ THISCALL_RET(0x4D9290, int); }
 	virtual int Mission_Rescue()
-		{ THISCALL(0x4DDF90); }
+		{ THISCALL_RET(0x4DDF90, int); }
 	virtual int Mission_Patrol()
-		{ THISCALL(0x4D4280); }
+		{ THISCALL_RET(0x4D4280, int); }
 
 	//TechnoClass
 	virtual bool IsCloakable()
-		{THISCALL(0x4DBDA0);}
+		{THISCALL_RET(0x4DBDA0, bool); }
 	virtual bool vt_entry_290()
-		{THISCALL(0x41C050);}
+		{THISCALL_RET(0x41C050, bool); }
 	virtual bool vt_entry_2C4(DWORD dwUnk)
-		{PUSH_VAR32(dwUnk);THISCALL(0x4DBA50);}
+		{PUSH_VAR32(dwUnk);THISCALL_RET(0x4DBA50, bool); }
 	virtual bool vt_entry_2CC(DWORD dwUnk)
-		{PUSH_VAR32(dwUnk);THISCALL(0x4D3810);}
+		{PUSH_VAR32(dwUnk);THISCALL_RET(0x4D3810, bool); }
 	virtual DWORD vt_entry_2EC(DWORD dwUnk)
-		{PUSH_VAR32(dwUnk);THISCALL(0x704350);}
+		{PUSH_VAR32(dwUnk);THISCALL_RET(0x704350, DWORD); }
 	virtual int vt_entry_2F0()
 		{return 2;}
 	virtual CellStruct* vt_entry_2F4()
-		{THISCALL(0x459DB0);}
+		{THISCALL_RET(0x459DB0, CellStruct*); }
 	virtual void vt_entry_2F8(DWORD dwUnk)
 		{}
 	virtual bool vt_entry_320()
-		{THISCALL(0x4DA1D0);}
+		{THISCALL_RET(0x4DA1D0, bool); }
 	virtual void vt_entry_334()
 		{THISCALL(0x4DE580);}
 	virtual DWORD vt_entry_338(DWORD dwUnk,DWORD dwUnk2,DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x4DD0A0); }
+		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL_RET(0x4DD0A0, DWORD); }
 	virtual bool OnEnterGrinder()
-		{ THISCALL(0x4DFA70); }
+		{ THISCALL_RET(0x4DFA70, bool); }
 	virtual bool OnEnterBioReactor()
-		{ THISCALL(0x4DFB70); }
+		{ THISCALL_RET(0x4DFB70, bool); }
 	virtual bool OnEnterTankBunker()
-		{ THISCALL(0x4DFF40); }
+		{ THISCALL_RET(0x4DFF40, bool); }
 	virtual bool OnEnterBattleBunker()
-		{ THISCALL(0x4DFCB0); }
+		{ THISCALL_RET(0x4DFCB0, bool); }
 	virtual bool OnGarrisonStructure()
-		{ THISCALL(0x4DFE00); }
+		{ THISCALL_RET(0x4DFE00, bool); }
 	virtual bool vt_entry_380()
-		{ THISCALL(0x4DE770); }
+		{ THISCALL_RET(0x4DE770, bool); }
 	virtual void AddPassenger(FootClass* pPassenger)
 		{ PUSH_VAR32(pPassenger); THISCALL(0x4DE630); }
 	virtual DWORD vt_entry_3A0()
-		{ THISCALL(0x4D5660); }
+		{ THISCALL_RET(0x4D5660, DWORD); }
 	virtual void vt_entry_3B8()
 		{ THISCALL(0x4D98C0); }
 	virtual CellClass* vt_entry_3C4(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x4D9920); }
+		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL_RET(0x4D9920, CellClass*); }
 	virtual void SetOwningCountry(HouseTypeClass* pCountry)
 		{ PUSH_VAR32(pCountry); THISCALL(0x4DBED0); }
 	virtual bool vt_entry_3DC(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x4DEBB0); }
+		{ PUSH_VAR32(dwUnk); THISCALL_RET(0x4DEBB0, bool); }
 	virtual CoordStruct* GetTargetCoords(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL(0x4D8560); }
+		{ PUSH_VAR32(pCrd); THISCALL_RET(0x4D8560, CoordStruct*); }
 	virtual void vt_entry_438(DWORD dwUnk, DWORD dwUnk2)
 		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x4DC060); }
 	virtual void vt_entry_47C(DWORD dwUnk)
@@ -173,7 +173,7 @@ public:
 	virtual void SetDestination(CellClass* pCell, bool bUnk)
 		{ PUSH_VAR8(bUnk); PUSH_VAR32(pCell); THISCALL(0x4D94B0); }
 	virtual bool vt_entry_484(DWORD dwUnk, DWORD dwUnk2)
-		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x4D82B0); }
+		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL_RET(0x4D82B0, bool); }
 	virtual void vt_entry_490(DWORD dwUnk, DWORD dwUnk2)
 		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x4DF510); }
 	virtual void vt_entry_4A4(DWORD dwUnk)
@@ -181,21 +181,21 @@ public:
 	virtual void vt_entry_4A8()
 		{ THISCALL(0x4DF1A0); }
 	virtual bool vt_entry_4AC()
-		{ THISCALL(0x4DF1C0); }
+		{ THISCALL_RET(0x4DF1C0, bool); }
 	virtual bool vt_entry_4B0()
-		{ THISCALL(0x4DF1D0); }
+		{ THISCALL_RET(0x4DF1D0, bool); }
 	virtual int vt_entry_4B4()
-		{ THISCALL(0x4DF1E0); }
+		{ THISCALL_RET(0x4DF1E0, int); }
 	virtual CoordStruct* vt_entry_4B8(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL(0x4DF1F0); }
+		{ PUSH_VAR32(pCrd); THISCALL_RET(0x4DF1F0, CoordStruct*); }
 	virtual bool vt_entry_4C4()
-		{ THISCALL(0x4DF310); }
+		{ THISCALL_RET(0x4DF310, bool); }
 	virtual bool vt_entry_4C8()
-		{ THISCALL(0x4DF320); }
+		{ THISCALL_RET(0x4DF320, bool); }
 	virtual void vt_entry_4CC()
 		{ THISCALL(0x4DF3A0); }
 	virtual bool vt_entry_4D0()
-		{ THISCALL(0x4DF4B0); }
+		{ THISCALL_RET(0x4DF4B0, bool); }
 
 	//FootClass
 	virtual void vt_entry_4D4(DWORD dwUnk)
@@ -203,9 +203,9 @@ public:
 	virtual void vt_entry_4D8(DWORD dwUnk)
 		{}
 	virtual bool vt_entry_4DC()
-		{ THISCALL(0x4DC790); }
+		{ THISCALL_RET(0x4DC790, bool); }
 	virtual bool vt_entry_4E0()
-		{ THISCALL(0x4DBFD0); }
+		{ THISCALL_RET(0x4DBFD0, bool); }
 	virtual bool vt_entry_4E4()
 		{ return false; }
 	virtual void vt_entry_4E8(CellStruct* pCell)
@@ -213,19 +213,19 @@ public:
 	virtual void vt_entry_4EC(CellStruct* pCell)
 		{ PUSH_VAR32(pCell); THISCALL(0x4DE940); }
 	virtual CoordStruct* vt_entry_4F0(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL(0x4D9FF0); }
+		{ PUSH_VAR32(pCrd); THISCALL_RET(0x4D9FF0, CoordStruct*); }
 	virtual void vt_entry_4F4()
 		{ THISCALL(0x4DC030); }
 	virtual bool vt_entry_4F8()
 		{ return false; }
 	virtual bool MoveTo(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL(0x4D55F0); }
+		{ PUSH_VAR32(pCrd); THISCALL_RET(0x4D55F0, bool); }
 	virtual bool StopMoving()
-		{ THISCALL(0x4D55C0); }
+		{ THISCALL_RET(0x4D55C0, bool); }
 	virtual bool vt_entry_504()
-		{ THISCALL(0x4DB9B0); }
+		{ THISCALL_RET(0x4DB9B0, bool); }
 	virtual bool vt_entry_508(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x4DF7F0); }
+		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL_RET(0x4DF7F0, bool); }
 
 /*pd sagt:
 41C090 D=
@@ -261,18 +261,18 @@ NOOOOOOOOOOOOOOOOOOOOOOOOOOoooooooooooooooooooooooooo*/
 		{ }
 	virtual DWORD vt_entry_524()
 		{ return 0; }
-	virtual DWORD vt_entry_528 ( DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3 )
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x4DF040); }
+	virtual DWORD vt_entry_528( DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3 )
+		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL_RET(0x4DF040, DWORD); }
 	virtual DWORD vt_entry_52C(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4)
-		{ PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x4DEE80); }
+		{ PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL_RET(0x4DEE80, DWORD); }
 	virtual DWORD vt_entry_530(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x4DEE50); }
+		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL_RET(0x4DEE50, DWORD); }
 	virtual void vt_entry_534(DWORD dwUnk, DWORD dwUnk2)
 		{ }
 	virtual int GetCurrentSpeed()
-		{ THISCALL(0x4DB1A0); }
+		{ THISCALL_RET(0x4DB1A0, int); }
 	virtual DWORD vt_entry_53C(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x4D5690); }
+		{ PUSH_VAR32(dwUnk); THISCALL_RET(0x4D5690, DWORD); }
 	virtual void vt_entry_540(DWORD dwUnk)
 		{ }
 	virtual void vt_entry_544(DWORD dwUnk, DWORD dwUnk2)
@@ -281,8 +281,8 @@ NOOOOOOOOOOOOOOOOOOOOOOOOOOoooooooooooooooooooooooooo*/
 		{ }
 	virtual void				vt_entry_54C()
 		{ }
-	virtual bool				vt_entry_550(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x4DDC60); }
+	virtual bool vt_entry_550(DWORD dwUnk)
+		{ PUSH_VAR32(dwUnk); THISCALL_RET(0x4DDC60, bool); }
 
 	//Constructor
 	FootClass(HouseClass* owner):TechnoClass(false)

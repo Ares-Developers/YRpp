@@ -14,13 +14,13 @@ class AirstrikeClass : public AbstractClass
 public:
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x41D7A0);}
+		{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL_RET(0x41D7A0, HRESULT); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall	Load(IStream* pStm)
-								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x41D6F0);}
+		{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x41D6F0, HRESULT); }
 	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x41D780);}
+		{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x41D780, HRESULT); }
 
 	//Destructor
 	

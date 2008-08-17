@@ -128,7 +128,7 @@ define PUSH_GP_REGISTERS	asm("push eax\n");\
       " push eax \n"        \
       :                     \
       :                     \
-      : )
+      : );
 
 /*
 define POP_GP_REGISTERS	asm("pop edx\n");\
@@ -141,7 +141,7 @@ define POP_GP_REGISTERS	asm("pop edx\n");\
       " pop eax \n"        \
       :                    \
       :                    \
-      : )
+      : );
 
 //Get/set register to a variable
 //define GET_REG32(dst,reg)	asm("mov dst, reg\n");
@@ -149,36 +149,36 @@ define POP_GP_REGISTERS	asm("pop edx\n");\
   asm(" mov %0, "#reg "\n"  \
       : "=r"(dst)           \
       :                     \
-      : )
+      : );
 
 //define SET_REG32(reg,src)	asm("mov reg, src\n");
 #define SET_REG32(reg, src) \
   asm(" mov "#reg", %0 \n"  \
       :                     \
       : "r"(src)            \
-      : #reg)
+      : #reg);
 
 //define ZERO_REG(reg)		_asm{xor reg, reg}
 #define ZERO_REG(reg)           \
   asm(" xor "#reg", "#reg" \n"  \
       :                         \
       :                         \
-      : #reg)
+      : #reg);
 
 
 //define GET_REG8(dst,reg)	asm("mov dst, reg\n");
 #define GET_REG8(dst, reg) \
   asm(" mov %0, "#reg" \n" \
-      : "=q"(dst)          \
+      : "=m"(dst)          \
       :                    \
-      : )
+      : );
 
 //define SET_REG8(reg,src)	asm("mov reg, src\n");
 #define SET_REG8(reg, src) \
   asm(" mov "#reg", %0 \n" \
       :                    \
-      : "q"((byte)src)     \
-      : )
+      : "r"((byte)src)     \
+      : );
 
 //Stack pointer operations
 //define ADD_ESP(i)		asm("add esp, i\n");
@@ -186,14 +186,14 @@ define POP_GP_REGISTERS	asm("pop edx\n");\
   asm(" add esp, %0\n"   \
       :                  \
       : "i"(i)           \
-      : )
+      : );
 
 //define SUB_ESP(i)		asm("sub esp, i\n");
 #define SUB_ESP(i)       \
   asm(" sub esp, %0\n"   \
       :                  \
       : "i"(i)           \
-      : )
+      : );
 
 //Push immediate value
 //define PUSH_IMM(i)		asm("push i\n");
@@ -201,7 +201,7 @@ define POP_GP_REGISTERS	asm("pop edx\n");\
   asm(" push %0\n"       \
       :                  \
       : "r"(i)           \
-      : "0")
+      : "0");
 
 //Push / Pop register
 //define PUSH_REG(r)		asm("push r\n");
@@ -209,14 +209,14 @@ define POP_GP_REGISTERS	asm("pop edx\n");\
   asm(" push "#r"\n"     \
       :                  \
       :                  \
-      : )
+      : );
 
 //define POP_REG(r)		asm("pop r\n");
 #define POP_REG(r)       \
   asm(" pop "#r"\n"      \
       :                  \
       :                  \
-      : )
+      : );
 
 //Push a pointer to a variable
 /*
@@ -227,7 +227,7 @@ define PUSH_PTR(v)		asm("lea eax, v\n");\
   asm(" push eax\n"      \
       :                  \
       : "a"(&v)          \
-      : )
+      : );
 
 //Push a variable
 /*
@@ -238,7 +238,7 @@ define PUSH_VAR32(v)		asm("mov eax, v\n");\
   asm(" push %0\n"         \
       :                    \
       : "q"(v)             \
-      : )
+      : );
 
 //Push 16bit variable
 /*
@@ -250,7 +250,7 @@ define PUSH_VAR16(v)		asm("movzx eax, v\n");\
       " push eax\n"        \
       :                    \
       : "q"((short)v)      \
-      : "eax")
+      : "eax");
 
 //Push 8bit variable
 /*define PUSH_VAR8(v)		asm("movzx eax, v\n");\
@@ -261,7 +261,7 @@ define PUSH_VAR16(v)		asm("movzx eax, v\n");\
       " push eax\n"        \
       :                    \
       : "q"((byte)v)       \
-      : "eax")
+      : "eax");
 
 //Push 64bit variable
 /*
@@ -279,7 +279,7 @@ define PUSH_VAR64(pv)		asm("mov eax, pv\n");\
       " push eax\n"          \
       :                      \
       : "r"(pv)              \
-      : "ecx", "eax")
+      : "ecx", "eax");
 
 //call
 /*
@@ -290,7 +290,15 @@ define CALL(pFunction)		asm("mov eax, pFunction\n");\
   asm(" call %0\n"        \
       :                   \
       : "r"(pFunction)    \
-      : )
+      : );
+
+#define CALL_RET(pFunction, T)   \
+  T _func_result;                \
+  asm(" call %1\n"               \
+      : "=a"(_func_result)       \
+      : "r"(pFunction)           \
+      : );                       \
+  return _func_result;
 
 //redirect a call to an address, keeping the arguments intact
 /*
@@ -298,13 +306,22 @@ define REDIRECT_CALL(pFunction)	asm("add esp, 4\n");\
 	asm("mov eax, pFunction\n");\
 	asm("call eax\n");
 */
+
 #define REDIRECT_CALL(pFunction)  \
   asm(" add esp , 4 \n"           \
-      " mov eax , %0 \n"          \
-      " call eax\n"               \
+      " call %0\n"                \
       :                           \
-      : "i"(pFunction)            \
-      : "ecx", "eax")
+      : "r"(pFunction)            \
+      :);
+
+#define REDIRECT_CALL_RET(pFunction, T)  \
+  T _func_result;                 \
+  asm(" add esp , 4 \n"           \
+      " call %1\n"                \
+      : "=a"(_func_result)        \
+      : "r"(pFunction)            \
+      :);                         \
+  return _func_result;
 
 //THISCALL macros
 /*
@@ -313,12 +330,38 @@ define THISCALL(pFunction)	asm("mov ecx, this\n");\
 	asm("call eax\n");
 */
 #define THISCALL(pFunction)          \
-  asm(" mov ecx , %0 \n"             \
-      " mov eax , %1 \n"             \
-      " call eax\n"                  \
+  asm(" call %1\n"                   \
       :                              \
-      : "r"(this), "i"(pFunction)    \
-      : "ecx", "eax", "edx")
+      : "c"(this), "r"(pFunction)    \
+      : );
+
+/*
+ * GCC doesn't understand that THISCALL() actually returns a value
+ * so, for example,
+ 
+ return ho->IsAlliedWith(hv) ? 0x71A97D : 0;
+
+becomes
+ 
+mov     ecx, ebx
+mov     eax, 4F9A50h
+call    eax
+mov     al, 0  <-- shish kabob! :E
+cmp     al, 1
+sbb     eax, eax
+not     eax
+and     eax, 71A97Dh
+
+ so for non-voids this macro needs to be created
+ */
+
+#define THISCALL_RET(pFunction, T)   \
+  T _func_result;                    \
+  asm(" call %2\n"                   \
+      : "=a"(_func_result)           \
+      : "c"(this), "r"(pFunction)    \
+      : );                           \
+  return _func_result;
 
 /*
 define THISCALL_EX(pThis,pFunction)\
@@ -327,12 +370,18 @@ define THISCALL_EX(pThis,pFunction)\
 	asm("call eax\n");
 */
 #define THISCALL_EX(pThis, pFunction)   \
-  asm(" mov ecx , %0 \n"                \
-      " mov eax , %1 \n"                \
-      " call eax\n"                     \
+  asm(" call %0\n"                      \
       :                                 \
-      : "r"(pThis), "i"(pFunction)      \
-      : "ecx", "eax")
+      : "c"(pThis), "r"(pFunction)      \
+      : );
+
+#define THISCALL_EX_RET(pThis, pFunction, T) \
+  T _func_result;                            \
+  asm(" call %2\n"                           \
+      : "=a"(_func_result)                   \
+      : "c"(pThis), "r"(pFunction)           \
+      : );                                   \
+  return _func_result;
 
 /*
 define THISCALL_VT(vt_offs)asm("mov ecx, this\n");\
@@ -340,12 +389,20 @@ define THISCALL_VT(vt_offs)asm("mov ecx, this\n");\
 	asm("call dword ptr [eax+vt_offs]\n");
 */
 #define THISCALL_VT(vt_offs)         \
-  asm(" mov ecx , %0 \n"             \
-      " mov eax, [ecx]\n"            \
-      " call dword ptr [eax+%1]\n"   \
+  asm(" mov ebx, [%0]\n"             \
+      " call dword ptr [ebx+%1]\n"   \
       :                              \
-      : "r"(this), "i"(vt_offs)      \
-      : "edx", "ecx", "eax")
+      : "c"(this), "i"(vt_offs)      \
+      : "ebx");
+
+#define THISCALL_VT_RET(vt_offs, T)  \
+  T _func_result;                    \
+  asm(" mov ebx, [%1]\n"             \
+      " call dword ptr [ebx+%2]\n"   \
+      : "=a"(_func_result)           \
+      : "c"(this), "i"(vt_offs)      \
+      : "ebx");                      \
+  return _func_result;
 
 /*
 define THISCALL_EX_VT(pThis,vt_offs)	\
@@ -353,13 +410,21 @@ define THISCALL_EX_VT(pThis,vt_offs)	\
 	asm("mov edx, [ecx]\n");\
 	asm("call dword ptr [edx+vt_offs]\n");
 */
-#define THISCALL_EX_VT(pThis, vt_offs)  \
-  asm(" mov ecx , %0 \n"                \
-      " mov edx, [ecx]\n"               \
-      " call dword ptr [edx+%1]\n"      \
-      :                                 \
-      : "r"(pThis), "i"(vt_offs)        \
-      : "edx", "ecx", "eax")
+#define THISCALL_EX_VT(pThis, vt_offs) \
+  asm(" mov edx, [%0]\n"               \
+      " call dword ptr [edx+%1]\n"     \
+      :                                \
+      : "c"(pThis), "i"(vt_offs)       \
+      : "edx");
+
+#define THISCALL_EX_VT_RET(pThis, vt_offs, T)\
+  T _func_result;                            \
+  asm(" mov edx, [%1]\n"                     \
+      " call dword ptr [edx+%2]\n"           \
+      : "=a"(_func_result)                   \
+      : "c"(pThis), "i"(vt_offs)             \
+      : "edx");                              \
+  return _func_result;
 
 //read or write memory
 /*
@@ -371,7 +436,7 @@ define MEM_READ8(dst,mem)		asm("mov dl, byte ptr ds:mem\n");\
       " mov %0 , dl\n"               \
       : "=m"(dst)                    \
       : "m"(mem)                     \
-      : "edx")
+      : "edx");
 
 /*
 define MEM_WRITE8(mem,src)		asm("mov dl, dst\n");\
@@ -382,7 +447,7 @@ define MEM_WRITE8(mem,src)		asm("mov dl, dst\n");\
       " mov byte ptr ds: %0, edx\n"  \
       : "=m"(mem)                    \
       : "q"(src)                     \
-      : "edx")
+      : "edx");
 
 /*
 define MEM_READ16(dst,mem)		asm("mov dx, word ptr ds:mem\n");\
@@ -393,8 +458,7 @@ define MEM_READ16(dst,mem)		asm("mov dx, word ptr ds:mem\n");\
       " mov %0 , dx\n"               \
       : "=m"(dst)                    \
       : "m"(mem)                     \
-      : "edx")
-
+      : "edx");
 
 /*
 define MEM_WRITE16(mem,src)	asm("mov dx, src\n");\
@@ -405,7 +469,7 @@ define MEM_WRITE16(mem,src)	asm("mov dx, src\n");\
       " mov word ptr ds: %0, edx\n"  \
       : "=m"(mem)                    \
       : "r"(src)                     \
-      : "edx")
+      : "edx");
 
 /*
 define MEM_READ32(dst,mem)		asm("mov edx, dword ptr ds: #mem \n");\
@@ -416,7 +480,7 @@ define MEM_READ32(dst,mem)		asm("mov edx, dword ptr ds: #mem \n");\
       " mov %0 , edx\n"              \
       : "=a"(dst)                    \
       : "a"(mem)                     \
-      : "edx")
+      : "edx");
 
 /*
 define MEM_WRITE32(mem,src)	asm("mov edx, src\n");\
@@ -427,28 +491,28 @@ define MEM_WRITE32(mem,src)	asm("mov edx, src\n");\
       " mov dword ptr ds: %0, edx\n" \
       : "=m"(mem)                    \
       : "r"(src)                     \
-      : "edx")
+      : "edx");
 
 //define MEM_WRITEIMM8(mem,imm)	asm("mov byte ptr ds:mem, imm\n");
 #define MEM_WRITEIMM8(mem, imm)      \
   asm(" mov byte ptr ds:%0, %1\n"    \
       : "=m"(mem)                    \
-      : "q"(byte(imm))               \
-      : )
+      : "q"((byte)imm)               \
+      : );
 
 //define MEM_WRITEIMM16(mem,imm)	asm("mov word ptr ds:mem, imm\n");
 #define MEM_WRITEIMM16(mem, imm)     \
   asm(" mov word ptr ds:%0, %1\n"    \
       : "=m"(mem)                    \
-      : "r"(short(imm))              \
-      : )
+      : "r"((short)imm)              \
+      : );
 
 //define MEM_WRITEIMM32(mem,imm)	asm("mov dword ptr ds:mem, imm\n");
 #define MEM_WRITEIMM32(mem, imm)     \
   asm(" mov dword ptr ds:%0, %1\n"   \
       : "=m"(mem)                    \
       : "r"(imm)                     \
-      : )
+      : );
 
 //define VAR32_REG(type,name,reg) type name;asm("mov name, reg\n");
 #define VAR32_REG(type, name, reg)   \
@@ -456,7 +520,7 @@ define MEM_WRITE32(mem,src)	asm("mov edx, src\n");\
   asm(" mov %0, "#reg" \n"           \
       : "=&r"(name)                  \
       :                              \
-      : )
+      : );
 
 //define VAR8_REG(type,name,reg) type name;asm("mov name, reg\n");
 #define VAR8_REG(type, name, reg)    \
@@ -464,7 +528,7 @@ define MEM_WRITE32(mem,src)	asm("mov edx, src\n");\
   asm(" mov %0, "#reg" \n"           \
       : "=&q"(name)                  \
       :                              \
-      : )
+      : );
 
 #else
 #error Unsupported compiler! Supported: Visual Studio, GCC (3.x series so far).

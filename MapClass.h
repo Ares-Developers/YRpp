@@ -56,7 +56,7 @@ public:
 
 	//IGameMap
 	virtual long _stdcall Is_Visible(CellStruct cell)
-		{ PUSH_VAR32(cell); PUSH_VAR32(this); CALL(0x5656D0); }
+		{ PUSH_VAR32(cell); PUSH_VAR32(this); CALL_RET(0x5656D0, long); }
 
 	//Destructor
 	virtual ~MapClass()
@@ -102,7 +102,7 @@ public:
 
 	//Non-virtual
 	CellClass* GetCellAt(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL(0x565730); }
+		{ PUSH_VAR32(pCrd); THISCALL_RET(0x565730, CellClass*); }
 
 	CellClass* GetCellAt(CellStruct* pMapCoords)
 		{
@@ -122,9 +122,8 @@ public:
 
 	void CellIteratorReset()
 		{ THISCALL(0x578350); }
-
 	CellClass* CellIteratorNext()
-		{ THISCALL(0x578290); }
+		{ THISCALL_RET(0x578290, CellClass*); }
 
 protected:
 	//Constructor

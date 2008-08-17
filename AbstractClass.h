@@ -30,7 +30,7 @@ class AbstractClass : public IPersistStream, public IRTTITypeInfo, public INotic
 public:
 	//IUnknown
 	virtual HRESULT _stdcall QueryInterface(REFIID iid, void** ppvObject)
-		{ PUSH_VAR32(ppvObject); PUSH_VAR32(iid); PUSH_VAR32(this); CALL(0x410260); }
+		{ PUSH_VAR32(ppvObject); PUSH_VAR32(iid); PUSH_VAR32(this); CALL_RET(0x410260, HRESULT); }
 
 	virtual ULONG _stdcall AddRef()
 		{ return 1; }
@@ -49,14 +49,14 @@ public:
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) = 0;
 
 	virtual HRESULT _stdcall GetSizeMax(ULARGE_INTEGER* pcbSize)
-		{ PUSH_VAR32(pcbSize); PUSH_VAR32(this); CALL(0x4103E0);}
+		{ PUSH_VAR32(pcbSize); PUSH_VAR32(this); CALL_RET(0x4103E0, HRESULT);}
 
 	//IRTTITypeInfo
-	virtual eAbstractType _stdcall 
-		What_Am_I(){ PUSH_VAR32(this); CALL(0x410210); }
+	virtual eAbstractType _stdcall What_Am_I()
+		{ PUSH_VAR32(this); CALL_RET(0x410210, eAbstractType); }
 
 	virtual int _stdcall Fetch_ID()
-		{ PUSH_VAR32(this); CALL(0x410220); }
+		{ PUSH_VAR32(this); CALL_RET(0x410220, int); }
 
 	virtual void _stdcall Create_ID()
 		{ PUSH_VAR32(this); CALL(0x410230); }
@@ -81,23 +81,23 @@ public:
 	virtual void CalculateChecksum(void* pChkSum)
 		{ PUSH_VAR32(pChkSum); THISCALL(0x410410); }
 
-	virtual int	GetOwningHouseIndex()
+	virtual int GetOwningHouseIndex()
 		{ return -1; }
 
 	virtual HouseClass* GetOwningHouse()
 		{ return NULL; }
 
-	virtual int	GetArrayIndex()
+	virtual int GetArrayIndex()
 		{ return 0; }
 
 	virtual bool IsDead()
 		{ return true; }
 
 	virtual CoordStruct* GetCoords(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL(0x4104C0); }
+		{ PUSH_VAR32(pCrd); THISCALL_RET(0x4104C0, CoordStruct*); }
 
 	virtual CoordStruct* GetCoords_(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL(0x4104F0); }
+		{ PUSH_VAR32(pCrd); THISCALL_RET(0x4104F0, CoordStruct*); }
 
 	virtual bool IsOnFloor()
 		{ return false; }
@@ -106,12 +106,12 @@ public:
 		{ return false; }
 
 	virtual CoordStruct* GetCoords__(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL(0x410540);} 
+		{ PUSH_VAR32(pCrd); THISCALL_RET(0x410540, CoordStruct*); } 
 
 	virtual void Update() { }
 
 	//Constructor
-	AbstractClass()	
+	AbstractClass()
 		{ THISCALL(0x410170); }
 
 	//non-virtual
@@ -128,7 +128,7 @@ protected:
 	PROPERTY(DWORD, unknown_10);
 	PROPERTY(DWORD, AbstractFlags);	//Flags, see ABSFLAGS definitions in GeneralDefinitions.
 	PROPERTY(DWORD, unknown_18);
-	PROPERTY(DWORD, unknown_1C);
+	PROPERTY(LONG, InterlockedCounter);
 	PROPERTY(bool,  bIsDirty);		//For IUnknown.
 };
 

@@ -18,13 +18,13 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x6E3D70); }
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL_RET(0x6E3D70, HRESULT); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x6E3D80); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x6E3D80, HRESULT); }
 	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x6E3E30); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x6E3E30, HRESULT); }
 
 	//Destructor
 	virtual ~ActionClass()
@@ -50,20 +50,17 @@ public:
 
 	// fuck if I know what's the purpose of this, returns a bitfield of flags for trigger logic
 	static int GetFlags(int actionKind)
-		{ SET_REG32(ecx, actionKind); CALL(0x6E3EE0); }
+		{ SET_REG32(ecx, actionKind); CALL_RET(0x6E3EE0, int); }
 
 	// transforms actionKind to a number saying what to parse arguments as (team/tag/trigger id, waypoint, integer, etc)
 	static int GetMode(int actionKind)
-		{ SET_REG32(ecx, actionKind); CALL(0x6E3B60); }
+		{ SET_REG32(ecx, actionKind); CALL_RET(0x6E3B60, int); }
 
 	// main brain, returns whether succeeded (mostly, no consistency in results what so ever)
 	// trigger fires all actions regardless of result of this
 	bool Execute(HouseClass *House, ObjectClass *Object, TriggerClass *trigger, wXY *pos)
-		{ PUSH_VAR32(pos);
-		  PUSH_VAR32(trigger);
-		  PUSH_VAR32(Object); 
-		  PUSH_VAR32(House);
-		  THISCALL(0x6DD8B0); }
+		{ PUSH_VAR32(pos); PUSH_VAR32(trigger); PUSH_VAR32(Object);  PUSH_VAR32(House);
+		  THISCALL_RET(0x6DD8B0, bool); }
 
 	// BIG LIST OF EXECUTE'S SLAVE FUNCTIONS - feel free to use
 
@@ -78,7 +75,7 @@ public:
 		  PUSH_VAR32(TriggerType);\
 		  PUSH_VAR32(SourceObject);\
 		  PUSH_VAR32(TargetHouse);\
-		  THISCALL(addr); }
+		  THISCALL_RET(addr, bool); }
 #endif
 	ACTION_FUNC(LightningStrikeAt, 0x6E0050);
 	ACTION_FUNC(RemoveParticleSystemsAt, 0x6E0080);
@@ -277,7 +274,7 @@ public:
 	// WHEEEEEW. End of slave functions.
 
 	HouseClass * FindHouseByIndex(TriggerClass *Trigger, int idx)
-		{ PUSH_VAR32(Trigger); PUSH_VAR32(idx); THISCALL(0x6E45E0); }
+		{ PUSH_VAR32(Trigger); PUSH_VAR32(idx); THISCALL_RET(0x6E45E0, HouseClass *); }
 
 	// no duplication, please.. it's a waste of good coding
 	int GetIndexInArray() { return this->get_IndexInArray(); }

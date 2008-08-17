@@ -24,13 +24,13 @@ class WaypointPathClass : public AbstractClass
 public:
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x763C30); }
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL_RET(0x763C30, HRESULT); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x763C70); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x763C70, HRESULT); }
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x763D90); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x763D90, HRESULT); }
 	
 	//Destructor
 	virtual ~WaypointPathClass()
@@ -43,13 +43,12 @@ public:
 		{ return sizeof(WaypointPathClass); }
 	virtual void CalculateChecksum(void* pChkSum)
 		{ PUSH_VAR32(pChkSum); THISCALL(0x763C00); }
-
 	WaypointClass * GetWaypoint(int idx)
-		{ PUSH_VAR32(idx); THISCALL(0x763980); }
+		{ PUSH_VAR32(idx); THISCALL_RET(0x763980, WaypointClass *); }
 	WaypointClass * GetWaypointAfter(int idx)
-		{ PUSH_VAR32(idx); THISCALL(0x763BA0); }
+		{ PUSH_VAR32(idx); THISCALL_RET(0x763BA0, WaypointClass *); }
 	bool WaypointExistsAt(WaypointClass *wpt)
-		{ PUSH_VAR32(wpt); THISCALL(0x763A50); }
+		{ PUSH_VAR32(wpt); THISCALL_RET(0x763A50, bool); }
 
 	// Constructor
 	WaypointPathClass(int idx)

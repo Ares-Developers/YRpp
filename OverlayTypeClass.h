@@ -18,13 +18,13 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x5FEC30);}
+		{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL_RET(0x5FEC30, HRESULT); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall	Load(IStream* pStm)
-								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x5FEAF0);}
+		{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x5FEAF0, HRESULT); }
 	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x5FEC10);}
+		{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x5FEC10, HRESULT); }
 
 	//Destructor
 	virtual ~OverlayTypeClass()	{PUSH_IMM(SDDTOR_NODELETE);THISCALL(0x5FEF30);};
@@ -36,17 +36,19 @@ public:
 	virtual int					GetArrayIndex(){return ArrayIndex;}
 
 	//AbstractTypeClass
-	virtual bool				LoadFromINI(CCINIClass* pINI){PUSH_VAR32(pINI);THISCALL(0x5FE770);}
+	virtual bool LoadFromINI(CCINIClass* pINI)
+		{PUSH_VAR32(pINI);THISCALL_RET(0x5FE770, bool); }
 
 	//ObjectTypeClass
 	virtual CoordStruct* vt_entry_6C(CoordStruct* pDest,CoordStruct* pSrc)
-		{ PUSH_VAR32(pSrc); PUSH_VAR32(pDest); THISCALL(0x5FEA30);}
-
-	virtual bool				SpawnAtMapCoords(CellStruct* pMapCoords,HouseClass* pOwner)
-								{PUSH_VAR32(pOwner);PUSH_VAR32(pMapCoords);THISCALL(0x5FE530);}
-	virtual ObjectClass*		CreateObject(HouseClass* pOwner){PUSH_VAR32(pOwner);THISCALL(0x5FE570);}
+		{ PUSH_VAR32(pSrc); PUSH_VAR32(pDest); THISCALL_RET(0x5FEA30, CoordStruct*); }
+	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords,HouseClass* pOwner)
+		{PUSH_VAR32(pOwner);PUSH_VAR32(pMapCoords);THISCALL_RET(0x5FE530, bool); }
+	virtual ObjectClass* CreateObject(HouseClass* pOwner)
+		{PUSH_VAR32(pOwner);THISCALL_RET(0x5FE570, ObjectClass*); }
 	virtual void				vt_entry_90(DWORD dwUnk){PUSH_VAR32(dwUnk);THISCALL(0x5FE4C0);}
-	virtual SHPStruct*			GetImage(){THISCALL(0x5FEDE0);}
+	virtual SHPStruct* GetImage()
+		{THISCALL_RET(0x5FEDE0, SHPStruct*); }
 
 	//OverlayTypeClass
 	virtual void				Draw(Point2D* pClientCoords,RectangleStruct* pClipRect,int nFrame)
