@@ -177,7 +177,7 @@ define POP_GP_REGISTERS	asm("pop edx\n");\
 #define SET_REG8(reg, src) \
   asm(" mov "#reg", %0 \n" \
       :                    \
-      : "r"((byte)src)     \
+      : "q"((byte)src)     \
       : );
 
 //Stack pointer operations
