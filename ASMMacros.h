@@ -289,14 +289,14 @@ define CALL(pFunction)		asm("mov eax, pFunction\n");\
 #define CALL(pFunction)   \
   asm(" call %0\n"        \
       :                   \
-      : "r"(pFunction)    \
+      : "i"(pFunction)    \
       : );
 
 #define CALL_RET(pFunction, T)   \
   T _func_result;                \
   asm(" call %1\n"               \
       : "=a"(_func_result)       \
-      : "r"(pFunction)           \
+      : "i"(pFunction)           \
       : );                       \
   return _func_result;
 
@@ -311,7 +311,7 @@ define REDIRECT_CALL(pFunction)	asm("add esp, 4\n");\
   asm(" add esp , 4 \n"           \
       " call %0\n"                \
       :                           \
-      : "r"(pFunction)            \
+      : "i"(pFunction)            \
       :);
 
 #define REDIRECT_CALL_RET(pFunction, T)  \
@@ -319,7 +319,7 @@ define REDIRECT_CALL(pFunction)	asm("add esp, 4\n");\
   asm(" add esp , 4 \n"           \
       " call %1\n"                \
       : "=a"(_func_result)        \
-      : "r"(pFunction)            \
+      : "i"(pFunction)            \
       :);                         \
   return _func_result;
 
@@ -332,7 +332,7 @@ define THISCALL(pFunction)	asm("mov ecx, this\n");\
 #define THISCALL(pFunction)          \
   asm(" call %1\n"                   \
       :                              \
-      : "c"(this), "r"(pFunction)    \
+      : "c"(this), "i"(pFunction)    \
       : );
 
 /*
@@ -359,7 +359,15 @@ and     eax, 71A97Dh
   T _func_result;                    \
   asm(" call %2\n"                   \
       : "=a"(_func_result)           \
-      : "c"(this), "r"(pFunction)    \
+      : "c"(this), "i"(pFunction)    \
+      : );                           \
+  return _func_result;
+
+#define THISCALL_RET64(pFunction, T)   \
+  T _func_result;                    \
+  asm(" call %2\n"                   \
+      : "=A"(_func_result)           \
+      : "c"(this), "i"(pFunction)    \
       : );                           \
   return _func_result;
 
@@ -370,16 +378,16 @@ define THISCALL_EX(pThis,pFunction)\
 	asm("call eax\n");
 */
 #define THISCALL_EX(pThis, pFunction)   \
-  asm(" call %0\n"                      \
+  asm(" call %1\n"                      \
       :                                 \
-      : "c"(pThis), "r"(pFunction)      \
+      : "c"(pThis), "i"(pFunction)      \
       : );
 
 #define THISCALL_EX_RET(pThis, pFunction, T) \
   T _func_result;                            \
   asm(" call %2\n"                           \
       : "=a"(_func_result)                   \
-      : "c"(pThis), "r"(pFunction)           \
+      : "c"(pThis), "i"(pFunction)           \
       : );                                   \
   return _func_result;
 

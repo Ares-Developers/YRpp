@@ -21,7 +21,7 @@ public:
 		{ THISCALL(0x438BF0); }
 	
 	// the main one, ivan planting a bomb (creates a BombClass inside)
-	void Plant(TechnoClass *SourceObject, TechnoClass *TargetObject)	
+	void Plant(TechnoClass *SourceObject, TechnoClass *TargetObject)
 		{ PUSH_VAR32(TargetObject); PUSH_VAR32(SourceObject); THISCALL(0x438E70); }
 
 	// duh

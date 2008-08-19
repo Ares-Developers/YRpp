@@ -210,7 +210,7 @@ public:
 		{ PUSH_VAR32(dwUnk5); PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk);
 		  THISCALL(0x70C620); }
 	virtual double GetStoragePercentage()
-		{ THISCALL_RET(0x708BC0, double); }
+		{ THISCALL_RET64(0x708BC0, double); }
 	virtual int GetPipFillLevel()
 		{ THISCALL_RET(0x708C30, int); }
 	virtual int GetRefund()

@@ -24,6 +24,7 @@
 #include <BombListClass.h>
 #include <BuildingClass.h>
 #include <BuildingTypeClass.h>
+#include <BulletClass.h>
 #include <BulletTypeClass.h>
 #include <CaptureManagerClass.h>
 #include <CellClass.h>

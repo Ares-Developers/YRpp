@@ -1,9 +1,17 @@
 #ifndef UNSORTED_H
 #define UNSORTED_H
 
+class ObjectClass;
+
 namespace Unsorted
 {
 	static int &CurrentFrame     = *(int *)0xA8ED84;
+
+	static DynamicVectorClass<ObjectClass *>** vec_ObjectsInLayers = (DynamicVectorClass<ObjectClass *>**)0x8A0360;
+
+	static int *CellSpreads = (int *)0x7ED3D0;
+
+	static CellStruct *CellSpreadTable = (CellStruct *)0xABD490;
 
 /*
  * This thing is ridiculous

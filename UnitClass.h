@@ -125,7 +125,7 @@ public:
 	virtual FacingStruct* vt_entry_2A8(FacingStruct* pFacing)
 		{ PUSH_VAR32(pFacing); THISCALL_RET(0x746E30, FacingStruct*); }
 	virtual double GetStoragePercentage()
-		{ THISCALL_RET(0x7414A0, double); }
+		{ THISCALL_RET64(0x7414A0, double); }
 	virtual DWORD SelectWeapon(ObjectClass *Target)
 		{ PUSH_VAR32(Target); THISCALL_RET(0x746CD0, DWORD); }
 	virtual DWORD vt_entry_304(DWORD dwUnk, DWORD dwUnk2)

@@ -31,8 +31,7 @@ struct BulletVelocity
 class BulletClass : public ObjectClass
 {
 public:
-	//Array
-	ABSTRACTTYPE_ARRAY(BulletClass);
+	static DynamicVectorClass<BulletClass*>* Array;
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
@@ -69,7 +68,7 @@ public:
 
 	// ObjectClass
 	virtual eLayer InWhichLayer()
-		{ return this->Type->Flat ? 1 : 3; }
+		{ return this->Type->get_Flat() ? 1 : 3; }
 
 	virtual ObjectTypeClass * GetType()
 		{ return this->Type; }
@@ -89,7 +88,7 @@ public:
 		{ THISCALL_RET(0x468000, byte); }
 
 	virtual void SetTarget(ObjectClass *Target)
-		{ this->Target = Target; }
+		{ this->set_Target(Target); }
 	virtual byte MoveTo(CoordStruct *where, BulletVelocity *Velocity)
 		{ PUSH_VAR32(Velocity); PUSH_VAR32(where); THISCALL_RET(0x468670, byte); }
 
@@ -113,7 +112,7 @@ public:
 		{ PUSH_VAR32(amount); PUSH_VAR32(radius); PUSH_VAR32(coords); CALL(0x46DAE0); }
 
 	bool IsHoming()
-		{ return this->Type->ROT > 0; }
+		{ return this->Type->get_ROT() > 0; }
 
 	void SetWeaponType(WeaponTypeClass *weapon)
 		{ this->WeaponType = weapon; }
