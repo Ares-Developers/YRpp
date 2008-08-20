@@ -1,5 +1,3 @@
-#pragma warning(disable: 4035)	//"no return value" - there is one, just not in our code ;)
-
 #ifndef GAMECLASSES_H
 #define GAMECLASSES_H
 

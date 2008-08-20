@@ -1,4 +1,3 @@
-#pragma warning(disable: 4035)	//"no return value" - there is one, just not in our code ;)
 //strcpy is "unsafe"? wtf?
 // DC: yeah, no length limit so char foo[3]; strcpy(foo, "roflcakes") works and smashes stack
 #ifndef _CRT_SECURE_NO_WARNINGS
@@ -44,7 +43,8 @@
 		void set_ ## name(type value)\
 			{ name = value; }
 
-//readonly //huh? -pd
+//readonly //huh? -pd // not really necessary, just nitpicking since I don't like exposing raw data to the world 
+// (I was using it on shield types, but I can discard it if it's unnecessary)
 #define PROPERTY_READO_STRUCT(type,name)\
 	protected:\
 		type name;\

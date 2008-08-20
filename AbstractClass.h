@@ -2,7 +2,6 @@
 #ifndef _CRT_SECURE_NO_WARNINGS
 #define _CRT_SECURE_NO_WARNINGS
 #endif
-#pragma warning(disable: 4035)	//"no return value" - there is one, just not in our code ;)
 
 #ifndef ABSTRACT_H
 #define ABSTRACT_H

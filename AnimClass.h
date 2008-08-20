@@ -137,6 +137,7 @@ protected:
 	PROPERTY(DWORD,				unknown_170);
 	PROPERTY(DWORD,				unknown_174);
 	PROPERTY(byte,				TranslucencyLevel); // on a scale of 1 - 100
+	PROPERTY(bool,				TimeToDie); // or something to that effect, set just before UnInit
 	PROPERTY(BulletClass*,			AttachedBullet);
 	PROPERTY(HouseClass*,			Owner);				//Used for remap (AltPalette).
 //	PROTECTED_PROPERTY(BYTE,		unknown_184[0x44]); // DC - removing since not true

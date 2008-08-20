@@ -234,9 +234,9 @@ public:
 		{ PUSH_VAR32(pUCell); THISCALL(0x5F69C0); }
 	virtual CellClass* vt_entry_1C4()
 		{ THISCALL(0x5F6A10); }
-	virtual int vt_entry_1C8()
+	virtual int GetHeight()
 		{ THISCALL(0x5F5F40); }
-	virtual void vt_entry_1CC(DWORD dwUnk)
+	virtual void SetHeight(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x5F5FA0); }
 	virtual int GetZ()
 		{ return Location.Z; }
@@ -269,7 +269,8 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROTECTED_PROPERTY(BYTE,     unknown_24[0xC]);
+	PROTECTED_PROPERTY(BYTE,     unknown_24[0x8]);
+	PROPERTY(int,                FallRate); //how fast is it falling down? only works if FallingDown is set below, and actually positive numbers will move the thing UPWARDS
 	PROPERTY(ObjectClass*,       NextObject);	//Next Object in the same cell or transport. This is a linked list of Objects.
 	PROTECTED_PROPERTY(DWORD,    AttachedTag); //Should be TagClass , TODO: change when implemented
 	PROPERTY(BombClass*,         AttachedBomb); //Ivan's little friends.
@@ -288,7 +289,10 @@ protected:
 	PROPERTY(bool,               IsSelected);	//Has the player selected this Object?
 	PROPERTY(bool,               HasParachute);	//Is this Object parachuting?
 	PROPERTY(AnimClass*,         Parachute);		//Current parachute Anim.
-	PROTECTED_PROPERTY(DWORD,    unknown_8C);
+	PROPERTY(bool,               unknown_8C);
+	PROPERTY(bool,               FallingDown);
+	PROPERTY(bool,               unknown_8E);
+	PROPERTY(bool,               IsABomb); // if set, will explode after FallingDown brings it to contant with the ground
 	PROPERTY(bool,               IsAlive);		//Self-explanatory.
 	PROTECTED_PROPERTY(BYTE,     unknown_91[0xB]);
 	PROPERTY_STRUCT(CoordStruct,        Location);		//Absolute current 3D location (in leptons?)
