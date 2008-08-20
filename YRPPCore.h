@@ -44,7 +44,7 @@
 		void set_ ## name(type value)\
 			{ name = value; }
 
-//readonly
+//readonly //huh? -pd
 #define PROPERTY_READO_STRUCT(type,name)\
 	protected:\
 		type name;\

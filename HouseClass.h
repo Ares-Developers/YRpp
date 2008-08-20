@@ -302,6 +302,10 @@ public:
 	void EnsurePlanningPathExists(int idx)
 		{ PUSH_VAR32(idx); THISCALL(0x504740); }
 
+	// finds a buildingtype from the given array that this house can currently build
+	BuildingTypeClass* FirstBuildableFromArray(DynamicVectorClass<BuildingTypeClass*>* pArray)
+		{ PUSH_VAR32(pArray); THISCALL(0x5051E0); }
+
 	// reminder: verify the resulting binary layout
 
 	//===========================================================================
@@ -361,11 +365,16 @@ public:
 	PROPERTY_ARRAY(WaypointPathClass*, PlanningPaths, 0x0C); // 12 paths for "planning mode"
 	PROPERTY(char,                  Visionary);			//??? exe says so
 	PROPERTY(bool,                  MapIsClear);
-	PROTECTED_PROPERTY(BYTE,        unknown_242[0x3]);
+	PROPERTY(bool,                  unknown_bool_242);
+	PROPERTY(bool,                  unknown_bool_243);
+	PROPERTY(bool,                  unknown_bool_244);
 	PROPERTY(bool,                  Repairing); // BuildingClass::Repair, handholder for hurr durf AI
-	PROTECTED_PROPERTY(BYTE,        unknown_246[0x3]);
+	PROPERTY(bool,                  unknown_bool_246);
+	PROPERTY(bool,                  unknown_bool_247);
+	PROPERTY(bool,                  unknown_bool_248);
 	PROPERTY(bool,                  AllToHunt);
-	PROTECTED_PROPERTY(BYTE,        unknown_24A[0x2]);
+	PROPERTY(bool,                  unknown_bool_24A);
+	PROPERTY(bool,                  unknown_bool_24B);
 	PROPERTY(int,                   IQLevel2);			//no idea why we got this twice
 	PROPERTY(eAIModes,              AIMode);
 	PROPERTY_STRUCT(DynamicVectorClass<SuperClass*>,   Supers);

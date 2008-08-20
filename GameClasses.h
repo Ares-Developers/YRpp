@@ -45,6 +45,7 @@
 #include <WarheadTypeClass.h>
 #include <WeaponTypeClass.h>
 #include <TacticalClass.h>
+#include <TaskForceClass.h>
 #include <TechnoClass.h>
 #include <TemporalClass.h>
 #include <UnitClass.h>

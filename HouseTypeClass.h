@@ -71,7 +71,7 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY_STRING(parent_country, 0x18);
+	PROPERTY_STRING(ParentCountry, 0x18);
 	PROTECTED_PROPERTY(BYTE, zero_B0);
 
 	PROPERTY(int,            ArrayIndex);

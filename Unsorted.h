@@ -9,6 +9,7 @@ namespace Unsorted
 
 	static DynamicVectorClass<ObjectClass *>** vec_ObjectsInLayers = (DynamicVectorClass<ObjectClass *>**)0x8A0360;
 
+	//pd: CellSpread stuff is available in MapClass.h, look at the bottom, static class called "CellSpread"
 	static int *CellSpreads = (int *)0x7ED3D0;
 
 	static CellStruct *CellSpreadTable = (CellStruct *)0xABD490;

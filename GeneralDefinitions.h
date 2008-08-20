@@ -47,7 +47,7 @@ typedef int eAbstractType;
 #define	abs_SmudgeType		0x1E
 #define	abs_Special		0x1F
 #define	abs_SuperWeaponType		0x20
-#define	abs_Taskforce		0x21
+#define	abs_TaskForce		0x21
 #define	abs_Team		0x22
 #define	abs_TeamType		0x23
 #define	abs_Terrain		0x24

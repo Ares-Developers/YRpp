@@ -14,10 +14,10 @@ struct Theater	//US English spelling to keep it consistent with the game
 	char	MMExtension[0x4];		//e.g. "MMT" -> Marble Madness tile file extension
 	char	Letter[0x2];			//e.g. "T" -> Theater specific IDs (GTCNST, NTWEAP, YTBARRACKS)
 
-	//what follows is most likely lighting stuff
-	float	unknown_float_58;
+	//unused, was probably lighting stuff once
+	float	RadarTerrainBrightness;		//0.0 to 1.0
 	float	unknown_float_5C;
-	float	unknown_float_60;		//always 0, could also be an int?
+	float	unknown_float_60;
 	float	unknown_float_64;
 	int		unknown_int_68;
 	int		unknown_int_6C;
