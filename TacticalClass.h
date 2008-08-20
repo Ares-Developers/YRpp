@@ -14,13 +14,13 @@
 class TacticalClass
 {
 public:
-	static Point2D* CoordsToClient(CoordStruct* pCrd,Point2D* pPoint)
+	static Point2D*	CoordsToClient(CoordStruct* pCrd,Point2D* pPoint)
 		{
 			void* pTactical;
 			MEM_READ32(pTactical, TACTICAL_MAP_PTR);
 			PUSH_VAR32(pPoint);
 			PUSH_VAR32(pCrd);
-			THISCALL_EX_RET(pTactical, 0x6D2140, Point2D*);
+			THISCALL_EX(pTactical, 0x6D2140);
 		}
 
 	static Point2D CoordsToClient(CoordStruct* pCrd)
@@ -33,7 +33,7 @@ public:
 			MEM_READ32(pTactical, TACTICAL_MAP_PTR);
 			PUSH_VAR32(pPoint);
 			PUSH_VAR32(pCrd);
-			THISCALL_EX_RET(pTactical, 0x6D2280, CoordStruct*);
+			THISCALL_EX(pTactical, 0x6D2280);
 		}
 
 	static CoordStruct ClientToCoords(Point2D* pPoint)

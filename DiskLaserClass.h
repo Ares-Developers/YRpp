@@ -16,13 +16,13 @@ class DiskLaserClass : public AbstractClass
 public:
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL_RET(0x4A7C30, HRESULT); }
+	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x4A7C30);}
 
 	//IPersistStream
 	virtual HRESULT _stdcall	Load(IStream* pStm)
-		{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x4A7B90, HRESULT); }
+								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x4A7B90);}
 	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-		{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x4A7C10, HRESULT); }
+								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x4A7C10);}
 
 	//Destructor
 	virtual ~DiskLaserClass()				{PUSH_IMM(SDDTOR_NODELETE);THISCALL(0x4A7C90);}

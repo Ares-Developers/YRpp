@@ -16,13 +16,13 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL_RET(0x6B4F50, HRESULT); }
+	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x6B4F50);}
 
 	//IPersistStream
 	virtual HRESULT _stdcall	Load(IStream* pStm)
-		{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x6B4EA0, HRESULT); }
+								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x6B4EA0);}
 	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-		{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x6B4F00, HRESULT); }
+								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x6B4F00);}
 
 	//Destructor
 	virtual ~SmudgeClass()		{THISCALL(0x6B4B40);}
@@ -34,8 +34,7 @@ public:
 	//ObjectClass
 	virtual ObjectTypeClass*	GetType(){return Type;}
 	virtual void				Draw(Point2D* pCoords,DWORD dwUnk){}
-	virtual bool SetLayer(eLayer value)
-		{PUSH_VAR32(value);THISCALL_RET(0x6B4BE0, bool); }
+	virtual bool				SetLayer(eLayer value){PUSH_VAR32(value);THISCALL(0x6B4BE0);}
 
 	//Constructor
 	SmudgeClass(SmudgeTypeClass* stype):ObjectClass(false)

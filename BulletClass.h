@@ -31,23 +31,24 @@ struct BulletVelocity
 class BulletClass : public ObjectClass
 {
 public:
+	//Array
 	static DynamicVectorClass<BulletClass*>* Array;
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL_RET(0x46B560, HRESULT); }
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x46B560); }
 
 	//ARGH why
 	virtual ULONG _stdcall AddRef()
-		{ PUSH_VAR32(this); CALL_RET(0x46AFD0, ULONG); }
+		{ PUSH_VAR32(this); CALL(0x46AFD0); }
 	virtual ULONG _stdcall Release()
-		{ PUSH_VAR32(this); CALL_RET(0x46AFF0, ULONG); }
+		{ PUSH_VAR32(this); CALL(0x46AFF0); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this);CALL_RET(0x46AE70, HRESULT); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this);CALL(0x46AE70); }
 	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x46AFB0, HRESULT); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x46AFB0); }
 
 	//Destructor
 	virtual ~BulletClass()
@@ -73,24 +74,24 @@ public:
 	virtual ObjectTypeClass * GetType()
 		{ return this->Type; }
 	virtual DWORD vt_entry_108(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL_RET(0x466660, DWORD); }
+		{ PUSH_VAR32(dwUnk); THISCALL(0x466660); }
 
 	virtual void Draw(Point2D* pCoords, DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pCoords); THISCALL(0x468090); }
 	virtual bool SetLayer(eLayer value)
-		{ PUSH_VAR32(value); THISCALL_RET(0x4666C0, bool); }
+		{ PUSH_VAR32(value); THISCALL(0x4666C0); }
 
 /*
 	virtual void CalculateChecksum(void* pChkSum)
 		{ PUSH_VAR32(pChkSum); THISCALL(0x46C560); }
 */
 	virtual byte GetAnimRate()
-		{ THISCALL_RET(0x468000, byte); }
+		{ THISCALL(0x468000); }
 
 	virtual void SetTarget(ObjectClass *Target)
-		{ this->set_Target(Target); }
+		{ this->Target = Target; }
 	virtual byte MoveTo(CoordStruct *where, BulletVelocity *Velocity)
-		{ PUSH_VAR32(Velocity); PUSH_VAR32(where); THISCALL_RET(0x468670, byte); }
+		{ PUSH_VAR32(Velocity); PUSH_VAR32(where); THISCALL(0x468670); }
 
 	// non-virtual
 	

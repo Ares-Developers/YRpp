@@ -25,13 +25,13 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL_RET(0x485200, HRESULT); }
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x485200); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x4839F0, HRESULT); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x4839F0); }
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x483C10, HRESULT); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x483C10); }
 
 	//AbstractClass
 	virtual eAbstractType WhatAmI()
@@ -39,36 +39,42 @@ public:
 	virtual int Size()
 		{ return sizeof(CellClass); }
 	virtual CoordStruct* GetCoords(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL_RET(0x486840, CoordStruct*); }
+		{ PUSH_VAR32(pCrd); THISCALL(0x486840); }
 	virtual bool IsOnFloor()
-		{ THISCALL_RET(0x4867E0, bool); }
+		{ THISCALL(0x4867E0); }
 	virtual CoordStruct* GetCoords__(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL_RET(0x486890, CoordStruct*); }
+		{ PUSH_VAR32(pCrd); THISCALL(0x486890); }
 
 	// non-virtual
 
 	// get content objects
-	ObjectClass * FindObjectNearestTo(CoordStruct *where, bool alt, ObjectClass *ExcludeThis)
-		{ PUSH_VAR32(ExcludeThis); PUSH_VAR8(alt); PUSH_VAR32(where); THISCALL_RET(0x47C3D0, ObjectClass *); }
-	ObjectClass * FindObjectOfType(int AbstractID, bool alt)
-		{ PUSH_VAR8(alt); PUSH_VAR32(AbstractID); THISCALL_RET(0x47C4D0, ObjectClass *); }
-	BuildingClass * GetBuilding()
-		{ THISCALL_RET(0x47C520, BuildingClass *); }
-	UnitClass * GetUnit(bool alt)
-		{ PUSH_VAR8(alt); THISCALL_RET(0x47EBA0, UnitClass *); }
-	InfantryClass * GetInfantry(bool alt)
-		{ PUSH_VAR8(alt); THISCALL_RET(0x47EC40, InfantryClass *); }
-	AircraftClass * GetAircraft(bool alt)
-		{ PUSH_VAR8(alt); THISCALL_RET(0x47EBF0, AircraftClass *); }
-	TerrainClass * GetTerrain(bool alt)
-		{ PUSH_VAR8(alt); THISCALL_RET(0x47C550, TerrainClass *); }
+	ObjectClass *FindObjectNearestTo(CoordStruct *where, bool alt, ObjectClass *ExcludeThis)
+		{ PUSH_VAR32(ExcludeThis); PUSH_VAR8(alt); PUSH_VAR32(where); THISCALL(0x47C3D0); }
+
+	ObjectClass *FindObjectOfType(int AbstractID, bool alt)
+		{ PUSH_VAR8(alt); PUSH_VAR32(AbstractID); THISCALL(0x47C4D0); }
+
+	BuildingClass *GetBuilding()
+		{ THISCALL(0x47C520); }
+
+	UnitClass *GetUnit(bool alt)
+		{ PUSH_VAR8(alt); THISCALL(0x47EBA0); }
+
+	InfantryClass *GetInfantry(bool alt)
+		{ PUSH_VAR8(alt); THISCALL(0x47EC40); }
+
+	AircraftClass *GetAircraft(bool alt)
+		{ PUSH_VAR8(alt); THISCALL(0x47EBF0); }
+
+	TerrainClass *GetTerrain(bool alt)
+		{ PUSH_VAR8(alt); THISCALL(0x47C550); }
 
 	/* craziest thing... first iterates Content looking to Aircraft,
 	 * failing that, calls FindObjectNearestTo,
 	 * if that fails too, reiterates Content looking for Terrain
 	 */
-	ObjectClass * GetSomeObject(CoordStruct *where, bool alt)
-		{ PUSH_VAR32(where); PUSH_VAR8(alt); THISCALL_RET(0x47C5A0, ObjectClass *); }
+	ObjectClass *GetSomeObject(CoordStruct *where, bool alt)
+		{ PUSH_VAR32(where); PUSH_VAR8(alt); THISCALL(0x47C5A0); }
 
 
 	// misc
@@ -115,24 +121,26 @@ public:
 		{ THISCALL(0x484F20); }
 
 	// don't laugh, it returns the uiname of contained tiberium... which nobody ever sets
-	wchar_t * GetUIName()
-		{ THISCALL_RET(0x484FF0, wchar_t *); }
+	wchar_t *GetUIName()
+		{ THISCALL(0x484FF0); }
 
 	// returns the tiberium's index in OverlayTypes
 	int GetContainedTiberiumIndex()
-		{ THISCALL_RET(0x485010, int); }
+		{ THISCALL(0x485010); }
+
 	int GetContainedTiberiumValue()
-		{ THISCALL_RET(0x485020, int); }
+		{ THISCALL(0x485020); }
+
 	int SetMapCoords(CoordStruct *coords)
-		{ PUSH_VAR32(coords); THISCALL_RET(0x485240, int); }
+		{ PUSH_VAR32(coords); THISCALL(0x485240); }
 
 	// in leptons
-	CoordStruct * Get3DCoords(CoordStruct *result)
-		{ PUSH_VAR32(result); THISCALL_RET(0x486840, CoordStruct *); }
+	CoordStruct *Get3DCoords(CoordStruct *result)
+		{ PUSH_VAR32(result); THISCALL(0x486840); }
 
 	// depends on one of the cell flags being set
-	CoordStruct * Get3DCoords2(CoordStruct *result)
-		{ PUSH_VAR32(result); THISCALL_RET(0x486890, CoordStruct *); }
+	CoordStruct *Get3DCoords2(CoordStruct *result)
+		{ PUSH_VAR32(result); THISCALL(0x486890); }
 
 	void ActivateVeins()
 		{ THISCALL(0x486920); }
@@ -150,7 +158,7 @@ public:
 
 	// unused, returns 0 if that house doesn't have cloakgens covering this cell or Player has sensors over this cell
 	bool DrawObjectsCloaked(int OwnerHouseIdx)
-		{ PUSH_VAR32(OwnerHouseIdx); THISCALL_RET(0x486800, bool); }
+		{ PUSH_VAR32(OwnerHouseIdx); THISCALL(0x486800); }
 
 
 	// sensors
@@ -181,10 +189,12 @@ public:
 
 	RadSiteClass* GetRadSite()
 		{ return this->RadSite; }
+
 	bool IsRadiated()
-		{ THISCALL_RET(0x487C90, bool); }
+		{ THISCALL(0x487C90); }
+
 	int GetRadLevel()
-		{ THISCALL_RET(0x487CB0, int); }
+		{ THISCALL(0x487CB0); }
 
 	void RadLevel_Increase(double amount)
 		{ double *arg = &amount;
@@ -200,7 +210,7 @@ public:
 	// tilesets
 #define ISTILE(tileset, addr) \
 	bool Tile_Is_ ## tileset() \
-		{ THISCALL_RET(addr, bool); }
+		{ THISCALL(addr); }
 
 ISTILE(Tunnel, 0x484AB0);
 ISTILE(Water, 0x485060);

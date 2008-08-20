@@ -19,11 +19,13 @@ class ObjectTypeClass : public AbstractTypeClass
 public:
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x5F9720, HRESULT); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x5F9720); }
+
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x5F9950, HRESULT); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x5F9950); }
+
 	virtual HRESULT _stdcall GetSizeMax(ULARGE_INTEGER* pcbSize)
-		{ PUSH_VAR32(pcbSize); PUSH_VAR32(this); CALL_RET(0x5F9970, HRESULT); }
+		{ PUSH_VAR32(pcbSize); PUSH_VAR32(this); CALL(0x5F9970); }
 
 	//Destructor
 	virtual ~ObjectTypeClass()
@@ -31,11 +33,11 @@ public:
 
 	//AbstractTypeClass
 	virtual bool LoadFromINI(CCINIClass* pINI)
-		{ PUSH_VAR32(pINI); THISCALL_RET(0x5F92D0, bool); }
+		{ PUSH_VAR32(pINI); THISCALL(0x5F92D0); }
 
 	//ObjectTypeClass
 	virtual CoordStruct* vt_entry_6C(CoordStruct* pDest, CoordStruct* pSrc)
-		{ PUSH_VAR32(pSrc); PUSH_VAR32(pDest); THISCALL_RET(0x41CF80, CoordStruct*); }
+		{ PUSH_VAR32(pSrc); PUSH_VAR32(pDest); THISCALL(0x41CF80); }
 
 	virtual DWORD GetOwners()
 		{ return 0xFFFFFFFF; }
@@ -65,7 +67,7 @@ public:
 	virtual BuildingTypeClass* GetFactoryType(bool OverridePrereqs, bool OverridePower, bool OverrideBuildLimit, 
 		HouseClass *House)
 		{ PUSH_VAR32(House); PUSH_VAR8(OverrideBuildLimit); PUSH_VAR8(OverridePower); PUSH_VAR8(OverridePrereqs);
-		  THISCALL_RET(0x5F7900, BuildingTypeClass*); }
+		  THISCALL(0x5F7900); }
 
 	virtual SHPStruct* GetCameo()
 		{ return NULL; }

@@ -15,13 +15,13 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL_RET(0x4C59F0, HRESULT); }
+	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x4C59F0);}
 
 	//IPersistStream
 	virtual HRESULT _stdcall	Load(IStream* pStm)
-		{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x4C5A30, HRESULT); }
+								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x4C5A30);}
 	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-		{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x4C5A80, HRESULT); }
+								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x4C5A80);}
 
 	//Destructor
 	virtual ~EMPulseClass()				{THISCALL(0x4C53E0);}

@@ -54,11 +54,11 @@ class TechnoTypeClass : public ObjectTypeClass
 public:
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x7162F0, HRESULT); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x7162F0); }
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x716DC0, HRESULT); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x716DC0); }
 	virtual HRESULT _stdcall GetSizeMax(ULARGE_INTEGER* pcbSize)
-		{ PUSH_VAR32(pcbSize); PUSH_VAR32(this); CALL_RET(0x7170A0, HRESULT); }
+		{ PUSH_VAR32(pcbSize); PUSH_VAR32(this); CALL(0x7170A0); }
 
 	//Destructor
 	virtual ~TechnoTypeClass()
@@ -70,35 +70,35 @@ public:
 
 	//AbstractTypeClass
 	virtual bool LoadFromINI(CCINIClass* pINI)
-		{ PUSH_VAR32(pINI); THISCALL_RET(0x712170, bool); }
+		{ PUSH_VAR32(pINI); THISCALL(0x712170); }
 
 	//ObjectTypeClass
 	virtual DWORD GetOwners()
-		{ THISCALL_RET(0x711EC0, DWORD); }
+		{ THISCALL(0x711EC0); }
 	virtual int GetPipMax()
-		{ THISCALL_RET(0x716290, int); }
+		{ THISCALL(0x716290); }
 	virtual int GetActualCost(HouseTypeClass* pCountry)
-		{ PUSH_VAR32(pCountry); THISCALL_RET(0x711F00, int); }
+		{ PUSH_VAR32(pCountry); THISCALL(0x711F00); }
 	virtual int GetBuildSpeed()
-		{ THISCALL_RET(0x711EE0, int); }
+		{ THISCALL(0x711EE0); }
 	virtual SHPStruct* GetCameo()
-		{ THISCALL_RET(0x712040, SHPStruct*); }
+		{ THISCALL(0x712040); }
 
 	//TechnoTypeClass
 	virtual bool vt_entry_A0()
 		{ return true; }
 	virtual bool CanAttackMove()
-		{ THISCALL_RET(0x711E90, bool); }
+		{ THISCALL(0x711E90); }
 	virtual bool vt_entry_A8(CellStruct* pMapCoords, DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pMapCoords); THISCALL_RET(0x716150, bool); }
+		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pMapCoords); THISCALL(0x716150); }
 	virtual int GetCost()
 		{ return Cost; }
 	virtual int vt_entry_B4()
-		{ THISCALL_RET(0x7120D0, int); }
+		{ THISCALL(0x7120D0); }
 	virtual int GetRepairStep()
 		{ return RulesClass::Global()->get_RepairStep(); }
 	virtual int GetRefund(HouseClass* pHouse, bool bUnk)
-		{ PUSH_VAR8(bUnk); PUSH_VAR32(pHouse); THISCALL_RET(0x711F60, int); }
+		{ PUSH_VAR8(bUnk); PUSH_VAR32(pHouse); THISCALL(0x711F60); }
 	virtual int GetFlightLevel()
 		{ return FlightLevel != -1
 		  ? FlightLevel

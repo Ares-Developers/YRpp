@@ -15,13 +15,13 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL_RET(0x6B58D0, HRESULT); }
+	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x6B58D0);}
 
 	//IPersistStream
 	virtual HRESULT _stdcall	Load(IStream* pStm)
-		{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x6B5850, HRESULT); }
+								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x6B5850);}
 	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-		{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x6B58B0, HRESULT); }
+								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x6B58B0);}
 
 	//Destructor
 	virtual ~SmudgeTypeClass()	{THISCALL(0x6B53A0);};
@@ -33,14 +33,12 @@ public:
 	virtual int					GetArrayIndex(){return ArrayIndex;}
 
 	//AbstractTypeClass
-	virtual bool LoadFromINI(CCINIClass* pINI)
-		{PUSH_VAR32(pINI);THISCALL_RET(0x6B56D0, bool); }
+	virtual bool				LoadFromINI(CCINIClass* pINI){PUSH_VAR32(pINI);THISCALL(0x6B56D0);}
 
 	//ObjectTypeClass
-	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords,HouseClass* pOwner)
-		{PUSH_VAR32(pOwner);PUSH_VAR32(pMapCoords);THISCALL_RET(0x6B5550, bool); }
-	virtual ObjectClass* CreateObject(HouseClass* pOwner)
-		{PUSH_VAR32(pOwner);THISCALL_RET(0x6B55C0, ObjectClass*); }
+	virtual bool				SpawnAtMapCoords(CellStruct* pMapCoords,HouseClass* pOwner)
+								{PUSH_VAR32(pOwner);PUSH_VAR32(pMapCoords);THISCALL(0x6B5550);}
+	virtual ObjectClass*		CreateObject(HouseClass* pOwner){PUSH_VAR32(pOwner);THISCALL(0x6B55C0);}
 
 	//SmudgeTypeClass
 	virtual void				vt_entry_A0(DWORD dwUnk,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4,DWORD dwUnk5)

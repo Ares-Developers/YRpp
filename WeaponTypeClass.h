@@ -21,13 +21,13 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL_RET(0x772C90, HRESULT); }
+	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x772C90);}
 
 	//IPersistStream
 	virtual HRESULT _stdcall	Load(IStream* pStm)
-		{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x772CD0, HRESULT); }
+								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x772CD0);}
 	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-		{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x772EB0, HRESULT); }
+								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x772EB0);}
 
 	//Destructor
 	virtual ~WeaponTypeClass()		{THISCALL(0x771F50);}
@@ -38,8 +38,7 @@ public:
 	virtual void				CalculateChecksum(void* pChkSum){PUSH_VAR32(pChkSum);THISCALL(0x772AE0);}
 
 	//AbstractTypeClass
-	virtual bool LoadFromINI(CCINIClass* ini)
-		{PUSH_VAR32(ini);THISCALL_RET(0x772080, bool); }
+	virtual bool				LoadFromINI(CCINIClass* ini){PUSH_VAR32(ini);THISCALL(0x772080);}
 
 	//Constructor
 	WeaponTypeClass(const char* id):AbstractTypeClass(false)

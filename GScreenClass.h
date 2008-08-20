@@ -12,7 +12,7 @@ public:
 
 	//IUnknown
 	virtual HRESULT _stdcall QueryInterface(REFIID iid,void** ppvObject)
-		{ PUSH_VAR32(ppvObject); PUSH_VAR32(iid); PUSH_VAR32(this); CALL_RET(0x4F4240, HRESULT); }
+		{ PUSH_VAR32(ppvObject); PUSH_VAR32(iid); PUSH_VAR32(this); CALL(0x4F4240); }
 
 	virtual ULONG _stdcall AddRef()
 		{ return 1; }
@@ -50,13 +50,13 @@ public:
 		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk1); THISCALL(0x4F4BB0); }
 
 	virtual bool vt_entry_2C(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL_RET(0x4F43F0, bool); }
+		{ PUSH_VAR32(dwUnk); THISCALL(0x4F43F0); }
 
 	virtual bool vt_entry_30(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL_RET(0x4F4410, bool); }
+		{ PUSH_VAR32(dwUnk); THISCALL(0x4F4410); }
 
 	virtual bool vt_entry_34(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL_RET(0x4F4450, bool); }
+		{ PUSH_VAR32(dwUnk); THISCALL(0x4F4450); }
 
 	virtual void vt_entry_38(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x4F42F0); }

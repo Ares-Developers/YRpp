@@ -54,14 +54,17 @@ public:
 	virtual void LoadTheaterSpecificArt(eTheater th_type) { }
 
 	virtual bool LoadFromINI(CCINIClass* pINI)
-		{ PUSH_VAR32(pINI); THISCALL_RET(0x410A60, bool); }
+		{ PUSH_VAR32(pINI); THISCALL(0x410A60); }
 
 	virtual bool SaveToINI(CCINIClass* pINI)
-		{ PUSH_VAR32(pINI); THISCALL_RET(0x410B90, bool); }
+		{ PUSH_VAR32(pINI); THISCALL(0x410B90); }
 
 	//Constructor
 	AbstractTypeClass(const char* id):AbstractClass(false)
-		{ PUSH_VAR32(id); THISCALL(0x410800); }
+									{
+									PUSH_VAR32(id);
+									THISCALL(0x410800);
+									}
 
 protected:
 	AbstractTypeClass():AbstractClass(false){};

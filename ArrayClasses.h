@@ -266,8 +266,9 @@ public:
 
 			Count = 0;
 		}
+
 	int GetItemCount(int nIndex)
-		{ PUSH_VAR32(nIndex); THISCALL_RET(0x49FAE0, int); }
+		{ PUSH_VAR32(nIndex); THISCALL(0x49FAE0); }
 
 	CounterClass() : VectorClass<int>()
 		{ Count = 0; }

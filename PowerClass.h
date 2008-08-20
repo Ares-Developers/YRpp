@@ -29,7 +29,7 @@ public:
 
 	//DisplayClass
 	virtual const wchar_t* GetToolTip(UINT nDlgID)
-		{ PUSH_VAR32(nDlgID); THISCALL_RET(0x640450, const wchar_t*); }
+		{ PUSH_VAR32(nDlgID); THISCALL(0x640450); }
 
 	virtual void CloseWindow()	//???
 		{ THISCALL(0x6403A0); }

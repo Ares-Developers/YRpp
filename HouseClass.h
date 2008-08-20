@@ -93,9 +93,9 @@ public:
 
 	//VTable
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x42EE30, HRESULT); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x42EE30); }
 	virtual HRESULT _stdcall Save(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x42F070, HRESULT); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x42F070); }
 	virtual void CalculateChecksum(void* pChkSum)
 		{ PUSH_VAR32(pChkSum); THISCALL(0x42F180); }
 
@@ -127,62 +127,58 @@ public:
 
 	//IConnectionPointContainer
 	virtual HRESULT _stdcall EnumConnectionPoints(IEnumConnectionPoints** ppEnum)
-		{ PUSH_VAR32(ppEnum); THISCALL_RET(0x5024F0, HRESULT); }
-	virtual HRESULT _stdcall FindConnectionPoint(GUID* riid, IConnectionPoint** ppCP)
-		{ PUSH_VAR32(ppCP); PUSH_VAR32(riid); THISCALL_RET(0x502550, HRESULT); }
+		{ PUSH_VAR32(ppEnum); THISCALL(0x5024F0); }
+  virtual HRESULT _stdcall FindConnectionPoint(GUID* riid, IConnectionPoint** ppCP)
+		{ PUSH_VAR32(ppCP); PUSH_VAR32(riid); THISCALL(0x502550); }
 
 	//IPublicHouse
 	/* blargh
 	virtual long _stdcall				ID_Number(){return IHouse::ID_Number();}
 	virtual BSTR _stdcall				Name(){return IHouse::Name();}*/
-	virtual long _stdcall Apparent_Category_Quantity(eCategory category)
-		{ PUSH_VAR32(category); PUSH_VAR32(this); CALL_RET(0x4F6A80, long); }
-	virtual long _stdcall Apparent_Category_Power(eCategory category)
-		{ PUSH_VAR32(category); PUSH_VAR32(this); CALL_RET(0x4F6B50, long); }
-	virtual CellStruct _stdcall Apparent_Base_Center()
-		{ PUSH_VAR32(this); CALL_RET(0x4F6D10, CellStruct); }
+  virtual long _stdcall Apparent_Category_Quantity(eCategory category)
+		{ PUSH_VAR32(category); PUSH_VAR32(this); CALL(0x4F6A80); }
+  virtual long _stdcall Apparent_Category_Power(eCategory category)
+		{ PUSH_VAR32(category); PUSH_VAR32(this); CALL(0x4F6B50); }
+  virtual CellStruct _stdcall Apparent_Base_Center()
+  	{ PUSH_VAR32(this); CALL(0x4F6D10); }
 	virtual bool _stdcall Is_Powered()
-		{ PUSH_VAR32(this); CALL_RET(0x4F6910, bool); }
+		{ PUSH_VAR32(this); CALL(0x4F6910); }
 
 	//IHouse
 	virtual long _stdcall ID_Number()           { return ArrayIndex;}
-	virtual BSTR _stdcall Name()
-		{ PUSH_VAR32(this); CALL_RET(0x4F6950, BSTR); }
-	virtual IApplication* _stdcall	Get_Application()
-		{ PUSH_VAR32(this); CALL_RET(0x4F6930, IApplication*); }
-	virtual long _stdcall Available_Money()
-		{ PUSH_VAR32(this); CALL_RET(0x4F6990, long); }
-	virtual long _stdcall Available_Storage()
-		{ PUSH_VAR32(this); CALL_RET(0x4F69D0, long); }
+	virtual BSTR _stdcall Name()                { PUSH_VAR32(this); CALL(0x4F6950); }
+	virtual IApplication* _stdcall	Get_Application() { PUSH_VAR32(this); CALL(0x4F6930); }
+	virtual long _stdcall Available_Money()     { PUSH_VAR32(this); CALL(0x4F6990); }
+	virtual long _stdcall Available_Storage()   { PUSH_VAR32(this); CALL(0x4F69D0); }
 	virtual long _stdcall Power_Output()        { return PowerOutput;}
 	virtual long _stdcall Power_Drain()         { return PowerDrain;}
-	virtual long _stdcall Category_Quantity(eCategory category)
-		{ PUSH_VAR32(category); PUSH_VAR32(this); CALL_RET(0x4F6A20, long); }
-	virtual long _stdcall Category_Power(eCategory category)
-		{ PUSH_VAR32(category); PUSH_VAR32(this); CALL_RET(0x4F6AE0, long); }
+  virtual long _stdcall Category_Quantity(eCategory category)
+		{ PUSH_VAR32(category); PUSH_VAR32(this); CALL(0x4F6A20); }
+  virtual long _stdcall Category_Power(eCategory category)
+		{ PUSH_VAR32(category); PUSH_VAR32(this); CALL(0x4F6AE0); }
 	virtual CellStruct _stdcall Base_Center()
-		{ PUSH_VAR32(this); CALL_RET(0x4F6BC0, CellStruct); }
+		{ PUSH_VAR32(this); CALL(0x4F6BC0); }
 	virtual HRESULT _stdcall Fire_Sale()
-		{ PUSH_VAR32(this); CALL_RET(0x5013A0, HRESULT); }
+		{ PUSH_VAR32(this); CALL(0x5013A0); }
 	virtual HRESULT _stdcall All_To_Hunt()
-		{ PUSH_VAR32(this); CALL_RET(0x501400, HRESULT); }
+		{ PUSH_VAR32(this); CALL(0x501400); }
 
 	//IUnknown
 	virtual HRESULT _stdcall QueryInterface(REFIID iid, void** ppvObject)
-		{ PUSH_VAR32(ppvObject); PUSH_VAR32(iid); PUSH_VAR32(this); CALL_RET(0x4F6830, HRESULT); }
+		{ PUSH_VAR32(ppvObject); PUSH_VAR32(iid); PUSH_VAR32(this); CALL(0x4F6830); }
 
 	virtual ULONG _stdcall AddRef()   { return 1; }
 	virtual ULONG _stdcall Release()  { return 1; }
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL_RET(0x5046F0, HRESULT); }
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x5046F0); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x503040, HRESULT); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x503040); }
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x504080, HRESULT); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x504080); }
 
 	//Destructor
 	virtual ~HouseClass() { THISCALL(0x4F7140); }
@@ -211,11 +207,11 @@ protected:
 
 public:
 	bool IsAlliedWith(int iHouse)
-		{ PUSH_VAR32(iHouse); THISCALL_RET(0x4F9A10, bool); }
+		{ PUSH_VAR32(iHouse); THISCALL(0x4F9A10); }
 	bool IsAlliedWith(HouseClass* pOther)
-		{ PUSH_VAR32(pOther); THISCALL_RET(0x4F9A50, bool); }
+		{ PUSH_VAR32(pOther); THISCALL(0x4F9A50); }
 	bool IsAlliedWith(TechnoClass* pOther)
-		{ PUSH_VAR32(pOther); THISCALL_RET(0x4F9A90, bool); }
+		{ PUSH_VAR32(pOther); THISCALL(0x4F9A90); }
 
 	void MakeAlly(int iHouse, bool bAnnounce)
 		{ PUSH_VAR8(bAnnounce); PUSH_VAR32(iHouse); THISCALL(0x4F9B50); }
@@ -245,12 +241,14 @@ public:
 		{ THISCALL(0x50D320); }
 	void RespawnStartingForces()
 		{ THISCALL(0x50D440); }
+
 	byte Win(bool bSavourSomething)
-		{ PUSH_VAR8(bSavourSomething); THISCALL_RET(0x4FC9E0, byte); }
+		{ PUSH_VAR8(bSavourSomething); THISCALL(0x4FC9E0); }
 	byte Lose(bool bSavourSomething)
-		{ PUSH_VAR8(bSavourSomething); THISCALL_RET(0x4FCBD0, byte); }
+		{ PUSH_VAR8(bSavourSomething); THISCALL(0x4FCBD0); }
+
 	bool CanAlly(HouseClass* pOther)
-		{ PUSH_VAR32(pOther); THISCALL_RET(0x501540, bool); }
+		{ PUSH_VAR32(pOther); THISCALL(0x501540); }
 
 	// warning: logic pretty much broken
 	// pd: renamed to pTechnoType since Type is the HouseTypeClass*
@@ -260,12 +258,10 @@ public:
 		{ PUSH_VAR32(pTechnoType); THISCALL(0x50E1B0); }
 
 	bool DoInfantrySelfHeal() { return this->InfantrySelfHeal > 0; }
-	int GetInfSelfHealStep()
-		{ THISCALL_RET(0x50D9E0, int); }
+	int  GetInfSelfHealStep() { THISCALL(0x50D9E0); }
 
 	bool DoUnitsSelfHeal()     { return this->UnitsSelfHeal > 0; }
-	int GetUnitSelfHealStep()
-		{ THISCALL_RET(0x50D9F0, int); }
+	int  GetUnitSelfHealStep() { THISCALL(0x50D9F0); }
 
 	void CreatePowerOutage(int duration) { PUSH_VAR32(duration); THISCALL(0x50BC90); }
 	void CreateRadarOutage(int duration) { PUSH_VAR32(duration); THISCALL(0x50BCD0); }
@@ -286,17 +282,19 @@ public:
 
 	// these are for mostly for map actions - HouseClass* foo = IsMP() ? Find_YesMP() : Find_NoMP();
 	static bool Index_IsMP(int idx)
-		{ SET_REG32(ecx, idx); CALL_RET(0x510F60, bool); }
+		{ SET_REG32(ecx, idx); CALL(0x510F60); }
 	static HouseClass * FindByIndex_NoMP(int idxHouse)
-		{ SET_REG32(ecx, idxHouse); CALL_RET(0x50D230, HouseClass *); }
+		{ SET_REG32(ecx, idxHouse); CALL(0x50D230); }
 	static HouseClass * FindByIndex_YesMP(int idxHouse)
-		{ SET_REG32(ecx, idxHouse); CALL_RET(0x510ED0, HouseClass *); }
+		{ SET_REG32(ecx, idxHouse); CALL(0x510ED0); }
+
 	CellStruct * PickIonCannonTarget(CellStruct &dest)
-		{ PUSH_VAR32(dest); THISCALL_RET(0x50CBF0, CellStruct *); }
+		{ PUSH_VAR32(dest); THISCALL(0x50CBF0); }
+
 	WaypointClass * GetPlanningWaypointAt(CellStruct *coords)
-		{ PUSH_VAR32(coords); THISCALL_RET(0x5023B0, WaypointClass *); }
+		{ PUSH_VAR32(coords); THISCALL(0x5023B0); }
 	bool GetPlanningWaypointProperties(WaypointClass *wpt, int &idxPath, byte &idxWP)
-		{ PUSH_VAR8(idxWP); PUSH_VAR32(idxPath); PUSH_VAR32(wpt); THISCALL_RET(0x502460, bool); }
+		{ PUSH_VAR8(idxWP); PUSH_VAR32(idxPath); PUSH_VAR32(wpt); THISCALL(0x502460); }
 
 	// calls WaypointPathClass::WaypointPathClass() if needed
 	void EnsurePlanningPathExists(int idx)

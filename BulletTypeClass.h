@@ -20,13 +20,14 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL_RET(0x46C750, HRESULT); }
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x46C750); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this);CALL_RET(0x46C6A0, HRESULT); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this);CALL(0x46C6A0); }
+
 	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x46C730, HRESULT); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x46C730);}
 
 	//Destructor
 	virtual ~BulletTypeClass()
@@ -47,21 +48,17 @@ public:
 
 	//AbstractTypeClass
 	virtual bool LoadFromINI(CCINIClass* pINI)
-		{ PUSH_VAR32(pINI); THISCALL_RET(0x427D00, bool); }
+		{ PUSH_VAR32(pINI); THISCALL(0x427D00); }
 
 	//ObjectTypeClass
 	virtual CoordStruct* vt_entry_6C(CoordStruct* pDest,CoordStruct* pSrc)
-		{ PUSH_VAR32(pSrc); PUSH_VAR32(pDest); THISCALL_RET(0x46C4F0, CoordStruct*); }
+		{ PUSH_VAR32(pSrc); PUSH_VAR32(pDest); THISCALL(0x46C4F0);}
 
 	virtual bool SpawnAtMapCoords(CellStruct* mcoords,HouseClass* owner)
 		{ return false; }
 	
 	virtual ObjectClass* CreateObject(HouseClass* owner)
 		{ return NULL; }
-	BulletClass * CreateBullet(ObjectClass *Target, TechnoClass *Owner, int Damage, 
-		WarheadTypeClass *WH, int Speed, bool Bright)
-		{ PUSH_VAR8(Bright); PUSH_VAR32(Speed); PUSH_VAR32(WH); PUSH_VAR32(Damage);
-			PUSH_VAR32(Owner); PUSH_VAR32(Target); SET_REG32(edx, Target); THISCALL_RET(0x46B050, BulletClass *); }
 
 	//Constructor
 	BulletTypeClass(const char* pID) : ObjectTypeClass(false)

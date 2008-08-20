@@ -20,13 +20,13 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL_RET(0x428990, HRESULT); }
+	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x428990);}
 
 	//IPersistStream
 	virtual HRESULT _stdcall	Load(IStream* pStm)
-		{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x428800, HRESULT); }
+								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x428800);}
 	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-		{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL_RET(0x428970, HRESULT); }
+								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x428970);}
 
 	//AbstractClass
 	virtual void				PointerExpired(void* p,bool bUnknown)
@@ -39,16 +39,14 @@ public:
 	//AbstractTypeClass
 	virtual void				LoadTheaterSpecificArt(eTheater th_type)
 								{PUSH_VAR32(th_type);THISCALL(0x427A80);}
-	virtual bool LoadFromINI(CCINIClass* ini)
-		{PUSH_VAR32(ini);THISCALL_RET(0x427D00, bool); }
+	virtual bool				LoadFromINI(CCINIClass* ini){PUSH_VAR32(ini);THISCALL(0x427D00);}
 
 	//ObjectTypeClass
 	virtual bool				SpawnAtMapCoords(CellStruct* mcoords,HouseClass* owner){return false;}
 	virtual ObjectClass*		CreateObject(HouseClass* owner){return NULL;}
 
 	//AnimTypeClass
-	virtual SHPStruct* LoadImage()
-		{THISCALL_RET(0x428C30, SHPStruct*); }
+	virtual SHPStruct*			LoadImage(){THISCALL(0x428C30);}
 	virtual void				Load2DArt(){THISCALL(0x427B50);}
 
 	//Destructor

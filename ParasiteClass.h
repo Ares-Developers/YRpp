@@ -27,15 +27,18 @@ class TechnoClass;
 class ParasiteClass : public AbstractClass
 {
 public:
+
+	static DynamicVectorClass<ParasiteClass*>* Array;
+
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL_RET(0x6296D0, HRESULT); }
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x6296D0); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x6295B0, HRESULT); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x6295B0); }
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x6296B0, HRESULT); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x6296B0); }
 
 	//Destructor
 	virtual ~ParasiteClass()
@@ -65,9 +68,10 @@ public:
 
 	void ExitUnit()
 		{ THISCALL(0x62A4A0); }
+
 	bool CanInfect(FootClass *pTarget)
-		{ PUSH_VAR32(pTarget); THISCALL_RET(0x62A8E0, bool); }
-		
+		{ PUSH_VAR32(pTarget); THISCALL(0x62A8E0); }
+
 	void TryInfect(FootClass *pTarget)
 		{ PUSH_VAR32(pTarget); THISCALL(0x62A980); }
 

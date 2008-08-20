@@ -22,13 +22,13 @@ class CaptureManagerClass : public AbstractClass
 public:
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL_RET(0x472960, HRESULT); }
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x472960); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x472720, HRESULT); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x472720); }
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x4728E0, HRESULT); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x4728E0); }
 
 	//Destructor
 	virtual ~CaptureManagerClass()
@@ -53,28 +53,29 @@ public:
 
 	//non-virtual
 	bool CaptureUnit(TechnoClass* pUnit)
-		{ PUSH_VAR32(pUnit); THISCALL_RET(0x471D40, bool); }
+		{ PUSH_VAR32(pUnit); THISCALL(0x471D40); }
 	bool FreeUnit(TechnoClass* pUnit)
-		{ PUSH_VAR32(pUnit); THISCALL_RET(0x471FF0, bool); }
+		{ PUSH_VAR32(pUnit); THISCALL(0x471FF0); }
 	void FreeAll()
 		{ THISCALL(0x472140); }
 
 	int NumControlNodes()
 		{ return ControlNodes.get_Count(); }
+
 	bool CanCapture(TechnoClass *Target)
-		{ PUSH_VAR32(Target); THISCALL_RET(0x471C90, bool); }
+		{ PUSH_VAR32(Target); THISCALL(0x471C90); }
 	bool CannotControlAnyMore()
-		{ THISCALL_RET(0x4722A0, bool); }
+		{ THISCALL(0x4722A0); }
 	bool IsControllingSomething()
-		{ THISCALL_RET(0x4722C0, bool); }
+		{ THISCALL(0x4722C0); }
 	bool IsOverloading(bool *result)
-		{ PUSH_VAR32(result); THISCALL_RET(0x4726C0, bool); } 
+		{ PUSH_VAR32(result); THISCALL(0x4726C0); } 
 	void HandleOverload()
 		{ THISCALL(0x471A50); }
 	bool NeedsToDrawLinks()
-		{ THISCALL_RET(0x472640, bool); }
+		{ THISCALL(0x472640); }
 	bool DrawLinks()
-		{ THISCALL_RET(0x472160, bool); }
+		{ THISCALL(0x472160); }
 	void DecideUnitFate(TechnoClass *Unit)
 		{ PUSH_VAR32(Unit); THISCALL(0x4723B0); }
 

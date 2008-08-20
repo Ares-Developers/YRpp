@@ -9,10 +9,12 @@ public:
 	//Destructor
 	virtual ~MPTeam()
 		{ THISCALL(0x5D8C80); }
+
 	virtual bool IsTeamIncluded(int idx)
-		{ PUSH_VAR32(idx); THISCALL_RET(0x5D8C90, bool); }
+		{ PUSH_VAR32(idx); THISCALL(0x5D8C90); }
+
 	virtual bool SetPlayerTeam(int idxPlayer)
-		{ PUSH_VAR32(idxPlayer); THISCALL_RET(0x5D8CB0, bool); }
+		{ PUSH_VAR32(idxPlayer); THISCALL(0x5D8CB0); }
 
 	void AddToList(HWND hWnd)
 		{ PUSH_VAR32(hWnd); THISCALL(0x5D8D10); }
@@ -56,8 +58,9 @@ public:
 	//Destructor
 	virtual ~MPSiegeDefenderTeam()
 		{ }
+
 	virtual bool IsTeamIncluded(int idx)
-		{ PUSH_VAR32(idx); THISCALL_RET(0x5CAE70, bool); }
+		{ PUSH_VAR32(idx); THISCALL(0x5CAE70); }
 
 	//Constructor
 	MPSiegeDefenderTeam()

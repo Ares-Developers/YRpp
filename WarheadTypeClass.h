@@ -20,13 +20,13 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL_RET(0x75E080, HRESULT); }
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x75E080); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x75E0C0, HRESULT); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x75E0C0); }
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x75E2C0, HRESULT); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x75E2C0); }
 
 	//Destructor
 	virtual ~WarheadTypeClass()
@@ -44,7 +44,7 @@ public:
 
 	//AbstractTypeClass
 	virtual bool LoadFromINI(CCINIClass* ini)
-		{ PUSH_VAR32(ini); THISCALL_RET(0x75D3A0, bool); }
+		{ PUSH_VAR32(ini); THISCALL(0x75D3A0); }
 
 	//Constructor
 	WarheadTypeClass(const char* id):AbstractTypeClass(false)

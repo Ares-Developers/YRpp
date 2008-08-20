@@ -27,8 +27,8 @@ public:
 	static DynamicVectorClass<ObjectClass*>* CurrentObjects;
 
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x5F5E80, HRESULT); }
+	virtual HRESULT _stdcall	Load(IStream* pStm)
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x5F5E80); }
 
 	//Destructor
 	virtual ~ObjectClass()
@@ -42,11 +42,11 @@ public:
 	virtual bool IsDead()
 		{ return !IsAlive; }
 	virtual CoordStruct* GetCoords(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL_RET(0x5F65A0, CoordStruct*); }
+		{ PUSH_VAR32(pCrd); THISCALL(0x5F65A0); }
 	virtual bool IsOnFloor()
-		{ THISCALL_RET(0x5F6B60, bool); }
+		{ THISCALL(0x5F6B60); }
 	virtual bool IsInAir()
-		{ THISCALL_RET(0x5F6B90, bool); }
+		{ THISCALL(0x5F6B90); }
 	virtual void Update()
 		{ THISCALL(0x5F3E70); }
 
@@ -58,15 +58,15 @@ public:
 	virtual eVisualType VisualCharacter(VARIANT_BOOL flag, DWORD dwUnk)
 		{ return vt_Normal; }
 	virtual SHPStruct* GetImage()
-		{ THISCALL_RET(0x5F3E30, SHPStruct*); }
+		{ THISCALL(0x5F3E30); }
 	virtual eAction MouseOverCell(CellStruct uCell, bool bUnk1, bool bUnk2)
-		{ return act_None; }
+								{ return act_None; }
 	virtual eAction MouseOverObject(ObjectClass* pObj, bool bUnk1)
-		{ return act_None; }
+								{ return act_None; }
 	virtual eLayer InWhichLayer()
-		{ THISCALL_RET(0x5F4260, eLayer); }
+		{ THISCALL(0x5F4260); }
 	virtual bool vt_entry_7C()
-		{ THISCALL_RET(0x5F6C10, bool); }
+		{ THISCALL(0x5F6C10); }
 	virtual bool CanBeUndeployed()
 		{ return false; }
 	virtual ObjectTypeClass* GetType_()
@@ -86,20 +86,20 @@ public:
 	virtual bool vt_entry_A0()
 		{ return false; }
 	virtual CoordStruct* vt_entry_A4(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL_RET(0x41BDD0, CoordStruct*); }
+		{ PUSH_VAR32(pCrd); THISCALL(0x41BDD0); }
 	virtual CoordStruct* vt_entry_A8(CoordStruct* pCrd, DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pCrd); THISCALL_RET(0x5F6C80, CoordStruct*); }
+		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pCrd); THISCALL(0x5F6C80); }
 	virtual CoordStruct* vt_entry_AC(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL_RET(0x41BE00, CoordStruct*); }
+		{ PUSH_VAR32(pCrd); THISCALL(0x41BE00); }
 	virtual CoordStruct* GetFLH(CoordStruct *pDest, int idxWeapon, int nFLH_X, int nFLH_Y, int nFLH_Z)
 		{ PUSH_VAR32(nFLH_Z); PUSH_VAR32(nFLH_Y); PUSH_VAR32(nFLH_X);
-		  PUSH_VAR32(idxWeapon); PUSH_VAR32(pDest); THISCALL_RET(0x4263D0, CoordStruct*); }
+		  PUSH_VAR32(idxWeapon); PUSH_VAR32(pDest); THISCALL(0x4263D0); }
 	virtual CoordStruct* GetExitCoords(CoordStruct* pCrd, DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk);PUSH_VAR32(pCrd);THISCALL_RET(0x41BE30, CoordStruct*); }
+		{ PUSH_VAR32(dwUnk);PUSH_VAR32(pCrd);THISCALL(0x41BE30); }
 	virtual int vt_entry_B8()
-		{ THISCALL_RET(0x5F6BD0, int); }
+		{ THISCALL(0x5F6BD0); }
 	virtual bool vt_entry_BC(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL_RET(0x5F6A70, bool); }
+		{ PUSH_VAR32(dwUnk); THISCALL(0x5F6A70); }
 	virtual bool vt_entry_C0()
 		{ return true; }
 	virtual bool IsDisguised()
@@ -111,9 +111,9 @@ public:
 	virtual HouseClass* GetDisguiseHouse(bool DisguisedAgainstAllies)
 		{ return 0; }
 	virtual bool vt_entry_D4()
-		{ THISCALL_RET(0x5F4D30, bool); }
+		{ THISCALL(0x5F4D30); }
 	virtual bool Put(CoordStruct* pCrd, eDirection dFaceDir)
-		{ PUSH_VAR32(dFaceDir); PUSH_VAR32(pCrd); THISCALL_RET(0x5F4EC0, bool); }
+		{ PUSH_VAR32(dFaceDir); PUSH_VAR32(pCrd); THISCALL(0x5F4EC0); }
 	virtual void vt_entry_DC(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk);THISCALL(0x5F5280); }
 	virtual void RegisterDestruction(TechnoClass *Destroyer)
@@ -121,7 +121,7 @@ public:
 	virtual void RegisterDestruction(HouseClass *Destroyer)
 		{ } // ++destroyer's kill counters , etc
 	virtual bool vt_entry_E8(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL_RET(0x5F5940, bool); }
+		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x5F5940); }
 	virtual void vt_entry_EC(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4)
 		{ PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x5F4160); }
 	virtual void vt_entry_F0(DWORD dwUnk)
@@ -135,9 +135,9 @@ public:
 	virtual int	 KickOutUnit(TechnoClass* pTechno, CellStruct uCell)
 		{ return 0; }
 	virtual bool vt_entry_104(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL_RET(0x5F4B10, bool); }
+		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x5F4B10); }
 	virtual DWORD vt_entry_108(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL_RET(0x5F5B90, DWORD); }
+		{ PUSH_VAR32(dwUnk); THISCALL(0x5F5B90); }
 	virtual void vt_entry_10C(DWORD dwUnk, DWORD dwUnk2)
 		{ }
 	virtual void DrawExtras(DWORD dwUnk, DWORD dwUnk2)
@@ -151,19 +151,19 @@ public:
 	virtual void See(DWORD dwUnk, DWORD dwUnk2)
 		{ }
 	virtual bool SetLayer(eLayer value)
-		{ PUSH_VAR32(value); THISCALL_RET(0x5F5850, bool); }
+		{ PUSH_VAR32(value); THISCALL(0x5F5850); }
 	virtual RectangleStruct* vt_entry_128(RectangleStruct* pRect)
-		{ PUSH_VAR32(pRect); THISCALL_RET(0x5F4730, RectangleStruct*); }
+		{ PUSH_VAR32(pRect); THISCALL(0x5F4730); }
 	virtual RectangleStruct* vt_entry_12C(RectangleStruct* pRect)
-		{ PUSH_VAR32(pRect); THISCALL_RET(0x5F4870, RectangleStruct*); }
+		{ PUSH_VAR32(pRect); THISCALL(0x5F4870); }
 	virtual void DrawRadialIndicator(DWORD dwUnk)
 		{ } // nop in all except BuildingClass
 	virtual void vt_entry_134()
 		{ THISCALL(0x5F4D10); }
 	virtual bool vt_entry_138()
-		{ THISCALL_RET(0x5F6C30, bool); }
+		{ THISCALL(0x5F6C30); }
 	virtual bool vt_entry_13C()
-		{ THISCALL_RET(0x5F6C30, bool); }
+		{ THISCALL(0x5F6C30); }
 	virtual bool vt_entry_140(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4)
 		{ return false; }
 	virtual bool vt_entry_144(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
@@ -171,7 +171,7 @@ public:
 	virtual void Flash(int Duration)
 		{ }
 	virtual bool Select()
-		{ THISCALL_RET(0x5F4520, bool); }
+		{ THISCALL(0x5F4520); }
 	virtual void Deselect()
 		{ THISCALL(0x5F44A0); }
 	virtual void IronCurtain(int nDuration, DWORD dwUnused, bool bUnk)
@@ -189,7 +189,7 @@ public:
 	virtual eDamageState ReceiveDamage(int* pDamage, DWORD dwUnk1, WarheadTypeClass* pWH,
 	  ObjectClass* pAttacker, DWORD dwUnk2, DWORD dwUnk3, HouseClass* pAttackingHouse)
 		{ PUSH_VAR32(pAttackingHouse); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(pAttacker);
-		  PUSH_VAR32(pWH); PUSH_VAR32(dwUnk1); PUSH_VAR32(pDamage); THISCALL_RET(0x5F5390, eDamageState); }
+		  PUSH_VAR32(pWH); PUSH_VAR32(dwUnk1); PUSH_VAR32(pDamage); THISCALL(0x5F5390); }
 	virtual void FreeCaptured()
 		{ }
 	virtual void Scatter(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
@@ -207,11 +207,11 @@ public:
 	virtual void UpdatePosition(int dwUnk)
 		{ }
 	virtual BuildingTypeClass* GetFactoryType(bool bOverridePrereqs, bool bOverridePower)
-		{ PUSH_VAR8(bOverridePower); PUSH_VAR8(bOverridePrereqs); THISCALL_RET(0x5F5C20, BuildingTypeClass*); }
+		{ PUSH_VAR8(bOverridePower); PUSH_VAR8(bOverridePrereqs); THISCALL(0x5F5C20); }
 	virtual void vt_entry_194(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
 		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x5F5320); }
 	virtual bool vt_entry_198(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL_RET(0x5F5930, bool); }
+		{ PUSH_VAR32(dwUnk); THISCALL(0x5F5930); }
 	virtual void vt_entry_19C(DWORD dwUnk)
 		{ }
 	virtual void Sell(DWORD dwUnk)
@@ -227,15 +227,15 @@ public:
 	virtual void SetLocation(CoordStruct* pCrd)
 		{ PUSH_VAR32(pCrd); THISCALL(0x5F6940); }
 	virtual CellStruct* GetMapCoords(CellStruct* pUCell)
-		{ PUSH_VAR32(pUCell); THISCALL_RET(0x41BEA0, CellStruct*); }
+		{ PUSH_VAR32(pUCell); THISCALL(0x41BEA0); }
 	virtual CellClass* GetCell()
-		{ THISCALL_RET(0x5F6960, CellClass*); }
+		{ THISCALL(0x5F6960); }
 	virtual CellStruct* vt_entry_1C0(CellStruct* pUCell)
-		{ PUSH_VAR32(pUCell); THISCALL_RET(0x5F69C0, CellStruct*); }
+		{ PUSH_VAR32(pUCell); THISCALL(0x5F69C0); }
 	virtual CellClass* vt_entry_1C4()
-		{ THISCALL_RET(0x5F6A10, CellClass*); }
+		{ THISCALL(0x5F6A10); }
 	virtual int vt_entry_1C8()
-		{ THISCALL_RET(0x5F5F40, int); }
+		{ THISCALL(0x5F5F40); }
 	virtual void vt_entry_1CC(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x5F5FA0); }
 	virtual int GetZ()

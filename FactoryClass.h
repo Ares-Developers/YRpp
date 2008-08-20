@@ -16,13 +16,13 @@ class FactoryClass : public AbstractClass
 public:
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL_RET(0x4CA230, HRESULT); }
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x4CA230); }
 
 	//IPersistStream
 	virtual HRESULT _stdcall	Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x4CA270, HRESULT); }
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x4CA270); }
 	virtual HRESULT _stdcall	Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL_RET(0x4CA3C0, HRESULT); }
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x4CA3C0); }
 
 	//Destructor
 	virtual ~FactoryClass()
@@ -46,11 +46,11 @@ public:
 
 	//non-virtual
 	bool DemandProduction(TechnoTypeClass* pType, HouseClass* pOwner, bool bShouldQueue)
-		{ PUSH_VAR8(bShouldQueue); PUSH_VAR32(pOwner); PUSH_VAR32(pType); THISCALL_RET(0x4C9C70, bool); }
+		{ PUSH_VAR8(bShouldQueue); PUSH_VAR32(pOwner); PUSH_VAR32(pType); THISCALL(0x4C9C70); }
 	bool AbandonProduction()
-		{ THISCALL_RET(0x4C9FF0, bool); }
+		{ THISCALL(0x4C9FF0); }
 	unsigned int CountQueued(TechnoTypeClass * pType)
-		{ PUSH_VAR32(pType); THISCALL_RET(0x4CA670, unsigned int ); }
+		{ PUSH_VAR32(pType); THISCALL(0x4CA670); }
 
 protected:
 	FactoryClass(bool X):AbstractClass(X){}

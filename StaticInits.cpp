@@ -107,8 +107,7 @@ DECL(SmudgeTypeClass, 0xA8EC18);
 DECL(SuperWeaponTypeClass, 0xA8E330);
 
 #include <TaskForceClass.h>
-DynamicVectorClass<TaskForceClass*>* TaskForceClass::Array =
-								(DynamicVectorClass<TaskForceClass*>*)0xA8E8D0;
+DECL(TaskForceClass, 0xA8E8D0);
 
 #include <TemporalClass.h>
 DECL(TemporalClass, 0xB0EC60);
