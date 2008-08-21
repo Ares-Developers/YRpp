@@ -304,6 +304,9 @@ public:
 	BuildingTypeClass* FirstBuildableFromArray(DynamicVectorClass<BuildingTypeClass*>* pArray)
 		{ PUSH_VAR32(pArray); THISCALL(0x5051E0); }
 
+	bool ControlledByHuman()
+		{ THISCALL(0x50B730); }
+
 	// reminder: verify the resulting binary layout
 
 	//===========================================================================

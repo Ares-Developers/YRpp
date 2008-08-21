@@ -163,6 +163,8 @@ public:
 			VectorClass<T>::Clear();
 		}
 
+	// this doesn't work right for some reason, see Bugfixes.cpp TechnoTypeClass_GetCameo
+	// passing a pointer that's in the array still returns -1
 	virtual int FindItemIndex(T tItem)
 		{
 			if(!this->IsInitialized) return 0;

@@ -120,8 +120,8 @@ public:
 		{ } // maybe Object instead of Techno? Raises Map Events, grants veterancy, increments house kill counters
 	virtual void RegisterDestruction(HouseClass *Destroyer)
 		{ } // ++destroyer's kill counters , etc
-	virtual bool vt_entry_E8(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x5F5940); }
+	virtual bool SpawnParachuted(CoordStruct *coords)
+		{ PUSH_VAR32(coords); THISCALL(0x5F5940); }
 	virtual void vt_entry_EC(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4)
 		{ PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x5F4160); }
 	virtual void vt_entry_F0(DWORD dwUnk)

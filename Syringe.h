@@ -85,6 +85,6 @@ public:
 #define EXPORT_FUNC(name) extern "C" __declspec(dllexport) DWORD _cdecl name (REGISTERS *R)
 
 // for exportfuncs, repeating stuff is annoying :P
-#define GET(clsname, var) clsname var = (clsname )
+#define GET(clsname, var, reg) clsname var = (clsname )R->get_ ## reg ();
 
 #endif

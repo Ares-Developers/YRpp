@@ -64,8 +64,8 @@ public:
 		{ THISCALL(0x51DF10); }
 	virtual bool Put(CoordStruct* pCrd, eDirection dFaceDir)
 		{ PUSH_VAR32(dFaceDir); PUSH_VAR32(pCrd); THISCALL(0x51DFF0); }
-	virtual bool vt_entry_E8(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x521760); }
+	virtual bool SpawnParachuted(CoordStruct *coords)
+		{ PUSH_VAR32(coords); THISCALL(0x521760); }
 	virtual void vt_entry_F0(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x5217C0); }
 	virtual void vt_entry_F4(DWORD dwUnk)
@@ -178,7 +178,7 @@ public:
 	
 	//Constructor
 	InfantryClass(InfantryTypeClass* pType, HouseClass* pOwner):FootClass(false)
-		{ PUSH_VAR32(pOwner); PUSH_VAR32(pType); THISCALL(0x7353C0); }
+		{ PUSH_VAR32(pOwner); PUSH_VAR32(pType); THISCALL(0x517A50); }
 
 protected:
 	InfantryClass():FootClass()
