@@ -360,7 +360,7 @@ public:
 	virtual void vt_entry_3D8(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
 		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk);
 		  THISCALL(0x70B280); }
-	virtual bool vt_entry_3DC(DWORD dwUnk)
+	virtual bool Crash(DWORD dwUnk)
 		{ return false; }
 	virtual bool IsAreaFire()
 		{ THISCALL(0x70DD50); }

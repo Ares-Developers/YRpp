@@ -162,7 +162,7 @@ public:
 		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x4D9920); }
 	virtual void SetOwningCountry(HouseTypeClass* pCountry)
 		{ PUSH_VAR32(pCountry); THISCALL(0x4DBED0); }
-	virtual bool vt_entry_3DC(DWORD dwUnk)
+	virtual bool Crash(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x4DEBB0); }
 	virtual CoordStruct* GetTargetCoords(CoordStruct* pCrd)
 		{ PUSH_VAR32(pCrd); THISCALL(0x4D8560); }
