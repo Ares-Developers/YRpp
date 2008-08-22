@@ -89,4 +89,7 @@ public:
 
 #define RET_UNLESS(expr) if(!(expr)) { return 0; }
 
+#define EXT_P(clsname) struct cslname##Ext; stdexp::hash_map<clsname*, clsname##Ext*> clsname ## _Extensions_p;
+#define EXT_V(clsname) struct cslname##Ext; stdexp::hash_map<clsname*, clsname##Ext> clsname ## _Extensions_v;
+
 #endif

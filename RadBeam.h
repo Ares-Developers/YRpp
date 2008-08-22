@@ -12,6 +12,7 @@ public:
 
 	//Constructor, Destructor
 	RadBeam(int mode) // anything else = rad, 1 = chrono, 2 = magnetron??
+	                  //(2 is invoked by RadEruption, but it uses MagnaBeamColor from rules... )
 		{ PUSH_VAR32(mode); THISCALL(0x6593F0); }
 
 	~RadBeam()
