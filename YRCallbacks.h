@@ -42,7 +42,7 @@ class UnitTypeClassCallback
 class WarheadTypeClassCallback
 	{ public: CALLBACK_HEAD_ABSTRACTTYPE(WarheadTypeClass); };
 class WeaponTypeClassCallback
-	{ public: CALLBACK_HEAD_ABSTRACTTYPE(WeaponTypeClassCallback); };
+	{ public: CALLBACK_HEAD_ABSTRACTTYPE(WeaponTypeClass); };
 
 //-----------------------------------------------------------------------
 //CommandClass

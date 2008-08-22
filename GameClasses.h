@@ -71,6 +71,8 @@
 #include <VocClass.h>
 #include <VoxClass.h>
 
+#include <TransitionTimer.h>
+
 //Static classes
 #include <Ion.h>
 

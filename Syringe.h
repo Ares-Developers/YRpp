@@ -90,11 +90,11 @@ public:
 #define RET_UNLESS(expr) if(!(expr)) { return 0; }
 
 // hashmap of pointers
-#define EXT_P_DEFINE(clsname) static stdexp::hash_map<clsname*, clsname##Ext*> clsname ## _Extensions_p;
-#define EXT_P_DECLARE(clsname) stdexp::hash_map<clsname*, clsname##Ext*> clsname ## Ext :: clsname  ## _Extensions_p;
+#define EXT_P_DEFINE(clsname) static stdext::hash_map<clsname*, clsname##Ext*> clsname ## _Extensions_p;
+#define EXT_P_DECLARE(clsname) stdext::hash_map<clsname*, clsname##Ext*> clsname ## Ext :: clsname  ## _Extensions_p;
 
 // hashmap of structures
-#define EXT_V_DEFINE(clsname) static stdexp::hash_map<clsname*, clsname##Ext> clsname ## _Extensions_v;
-#define EXT_V_DECLARE(clsname) stdexp::hash_map<clsname*, clsname##Ext> clsname ## Ext :: clsname  ## _Extensions_v;
+#define EXT_V_DEFINE(clsname) static stdext::hash_map<clsname*, clsname##Ext> clsname ## _Extensions_v;
+#define EXT_V_DECLARE(clsname) stdext::hash_map<clsname*, clsname##Ext> clsname ## Ext :: clsname  ## _Extensions_v;
 
 #endif

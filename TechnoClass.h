@@ -24,6 +24,8 @@ class SpawnManagerClass;
 class TemporalClass;
 class WaveClass;
 
+#include <TransitionTimer.h>
+
 //also see FACING definitions
 struct FacingStruct
 {
@@ -633,17 +635,9 @@ public:
 	PROPERTY_STRUCT(OwnedTiberiumStruct, Tiberium);
 	PROPERTY(DWORD,					unknown_34C);
 
+	PROPERTY_STRUCT(TransitionTimer, UnloadTimer); // times the deploy, unload, etc. cycles
+
 protected:
-	struct
-	{
-		DWORD			unknown_00;
-		DWORD			unknown_04;
-		TimerStruct		unknown_timer_08;
-		DWORD			unknown_14;
-		bool			unknown_bool_18;
-		bool			unknown_bool_19;
-		DWORD			unknown_1C;
-	} unknown_structure_350;
 
 	struct
 	{
