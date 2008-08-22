@@ -54,6 +54,10 @@ CALLBACK_INIT_ABSTRACTTYPE(UnitTypeClass);
 CALLBACK_INIT_ABSTRACTTYPE(WarheadTypeClass);
 	CALLBACK_IMPL_ABSTRACTTYPE(WarheadTypeClass, ESI, 0x14C, 0x0, 0x0);
 
+CALLBACK_INIT_ABSTRACTTYPE(WeaponTypeClass);
+	CALLBACK_IMPL_ABSTRACTTYPE(WeaponTypeClass, ESI, 0xE0, 0x0, 0x0);
+
+
 //-----------------------------------------------------------------------
 //CommandClass
 //-----------------------------------------------------------------------
