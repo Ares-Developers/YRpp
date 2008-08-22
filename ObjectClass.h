@@ -18,6 +18,8 @@ class ObjectTypeClass;
 class TechnoClass;
 class TechnoTypeClass;
 class WarheadTypeClass;
+
+class LineTrail;
 struct WeaponStruct;
 
 class ObjectClass : public AbstractClass
@@ -295,8 +297,8 @@ protected:
 	PROPERTY(bool,               IsABomb); // if set, will explode after FallingDown brings it to contant with the ground
 	PROPERTY(bool,               IsAlive);		//Self-explanatory.
 	PROTECTED_PROPERTY(BYTE,     unknown_91[0xB]);
-	PROPERTY_STRUCT(CoordStruct,        Location);		//Absolute current 3D location (in leptons?)
-	PROTECTED_PROPERTY(DWORD,    unknown_A8);
+	PROPERTY_STRUCT(CoordStruct, Location);		//Absolute current 3D location (in leptons?)
+	PROPERTY(LineTrail*,         LineTrailer);
  };
 
 #endif

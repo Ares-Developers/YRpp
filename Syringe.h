@@ -87,4 +87,6 @@ public:
 // for exportfuncs, repeating stuff is annoying :P
 #define GET(clsname, var, reg) clsname var = (clsname )R->get_ ## reg ();
 
+#define RET_UNLESS(expr) if(!(expr)) { return 0; }
+
 #endif

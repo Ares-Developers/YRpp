@@ -3,6 +3,9 @@
 
 #include <YRPPCore.h>
 #include <GenericList.h>
+#include <ArrayClasses.h>
+
+class TechnoTypeClass;
 
 //Basic INI class
 class INIClass
@@ -71,13 +74,129 @@ public:
 		{ PUSH_VAR32(pDefault); PUSH_VAR32(pKey); PUSH_VAR32(pSection); PUSH_VAR32(pBuffer); THISCALL(0x529CA0); }
 
 	//Reads three byte values.
-	int* Read3Bytes(byte* pBuffer, const char* pSection, const char* pKey, byte* pDefault)
+	byte* Read3Bytes(byte* pBuffer, const char* pSection, const char* pKey, byte* pDefault)
 		{ PUSH_VAR32(pDefault); PUSH_VAR32(pKey); PUSH_VAR32(pSection); PUSH_VAR32(pBuffer); THISCALL(0x474B50); }
 
 	//Writes three byte values.
 	bool Write3Bytes(const char* pSection, const char* pKey, byte* pValues)
 		{ PUSH_VAR32(pValues); PUSH_VAR32(pKey); PUSH_VAR32(pSection); THISCALL(0x474C20); }
 
+
+	// C&C helpers
+
+#define INI_READ(item, addr) \
+	int Read ## item(const char* pSection, const char* pKey, int pDefault) \
+		{ PUSH_VAR32(pDefault); PUSH_VAR32(pKey); PUSH_VAR32(pSection); THISCALL(addr); }
+
+	// Pip= to idx ( pip strings with index < pDefault are not even scanned! )
+	INI_READ(Pip, 0x4748A0);
+
+	// PipScale= to idx
+	INI_READ(PipScale, 0x474940);
+
+	// Category= to idx
+	INI_READ(Category, 0x4749E0);
+
+	// Color=%s to idx
+	INI_READ(ColorString, 0x474A90);
+
+	// Foundation= to idx
+	INI_READ(Foundation, 0x474DA0);
+
+	// MovementZone= to idx
+	INI_READ(MovementZone, 0x474E40);
+
+	// SpeedType= to idx
+	INI_READ(SpeedType, 0x476FC0);
+
+	// [SW]Action= to idx
+	INI_READ(SWAction, 0x474EE0);
+
+	// [SW]Type= to idx
+	INI_READ(SWType, 0x474F50);
+
+	// EVA Event name to idx
+	INI_READ(VoxName, 0x474FA0);
+
+	// Factory= to idx
+	INI_READ(Factory, 0x474FF0);
+
+	INI_READ(BuildCat, 0x475060);
+
+	// Parses a list of Countries and returns a bitfield, i.e. Owner= or RequiredHouses=
+	INI_READ(HouseTypesList, 0x4750D0);
+
+	// Parses a list of Houses and returns a bitfield, i.e. Allies= in map
+	INI_READ(HousesList, 0x475260);
+
+	INI_READ(ArmorType, 0x4753F0);
+
+	INI_READ(LandType, 0x4754B0);
+
+	// supports MP names (<Player @ X>) too, wtf
+	// ALLOCATES if country name is not found
+	// returns idx of country it reads
+	INI_READ(HouseType, 0x475540);
+
+	// ALLOCATES if name is not found
+	INI_READ(Side, 0x4756F0);
+
+	// returns index of movie with this filename
+	INI_READ(Movie, 0x4757D0);
+
+	// map theater
+	INI_READ(Theater, 0x475870);
+
+	INI_READ(Theme, 0x4758F0);
+
+	INI_READ(Edge, 0x475980);
+
+	INI_READ(Powerup, 0x4759F0);
+
+	// [Anim]Layer= to idx
+	INI_READ(Layer, 0x477050);
+
+	INI_READ(VHPScan, 0x477590);
+
+	// Color=%d,%d,%d to idx , used to parse [Colors]
+	byte* ReadColorDDD(byte* pBuffer, const char* pSection, const char* pKey, byte* pDefault)
+		{ PUSH_VAR32(pDefault); PUSH_VAR32(pKey); PUSH_VAR32(pSection); PUSH_VAR32(pBuffer); THISCALL(0x474C70); }
+
+	// 18 bytes
+	byte* ReadAbilities(byte* pBuffer, const char* pSection, const char* pKey, byte* pDefault)
+		{ PUSH_VAR32(pDefault); PUSH_VAR32(pKey); PUSH_VAR32(pSection); PUSH_VAR32(pBuffer); THISCALL(0x477640); }
+
+
+	TechnoTypeClass* GetTechnoType(const char* pSection, const char* pKey)
+		{ PUSH_VAR32(pKey); PUSH_VAR32(pSection); THISCALL(0x476EB0); }
+
+
+	// fsldargh who the fuck decided to pass structures by value here
+	static TypeList<int>* GetPrerequisites(TypeList<int>* pBuffer, INIClass* pINI, 
+		const char* pSection, const char* pKey, TypeList<int> Defaults)
+
+		{ 
+			/*
+			int eflags; __asm{ pushf } __asm{ pop eflags }
+			SUB_ESP(0x1C); __asm{ mov edi, esp } __asm{ lea esi, Defaults }
+			__asm{ cld } __asm{ mov ecx, 7 } __asm{ rep movsd }
+			__asm{ push eflags } __asm{ popf }
+			*/
+
+	#define GETDW() \
+		val =* (DWORD* )(&Defaults + offset); \
+		PUSH_VAR32(val);
+
+			for(int offset = 6, val = 0; offset; --offset)
+			{
+				GETDW();
+			}
+
+			PUSH_VAR32(pKey);
+			PUSH_VAR32(pSection);
+			SET_REG32(ecx, pBuffer); SET_REG32(edx, pINI);
+			CALL(0x4770E0);
+		}
 
 	//Properties
 	PROPERTY(DWORD, unknown_4);

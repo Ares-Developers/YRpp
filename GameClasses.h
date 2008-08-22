@@ -64,7 +64,9 @@
 #include <EBolt.h>
 #include <IonBlastClass.h>
 #include <LaserDrawClass.h>
+#include <LineTrail.h>
 #include <RadarEventClass.h>
+#include <RadBeam.h>
 #include <Theater.h>
 #include <VocClass.h>
 #include <VoxClass.h>

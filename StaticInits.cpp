@@ -91,6 +91,9 @@ DECL(ParticleSystemTypeClass, 0xA83D68);
 #include <ParticleTypeClass.h>
 DECL(ParticleTypeClass, 0xA83D98);
 
+#include <RadBeam.h>
+DECL(RadBeam, 0xB04A60);
+
 #include <RadSiteClass.h>
 DECL(RadSiteClass, 0xB04BD0);
 
@@ -127,6 +130,12 @@ DECL(UnitTypeClass, 0xA83CE0);
 
 #include <VocClass.h>
 DECL(VocClass, 0xB1D378);
+
+#include <EBolt.h>
+DECL(EBolt, 0x8A0E88);
+
+#include <LineTrail.h>
+DECL(LineTrail, 0xABCB78);
 
 #include <VoxClass.h>
 DECL(VoxClass, 0xB1D4A0);

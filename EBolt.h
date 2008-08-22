@@ -10,6 +10,8 @@
 class EBolt
 {
 public:
+	static DynamicVectorClass<EBolt*>* Array;
+
 	//Constructor, Destructor
 	EBolt(CoordStruct P1,CoordStruct P2,bool bAlternateColor)
 	{
@@ -28,6 +30,14 @@ public:
 	}
 
 	~EBolt()		{/*???*/}
+
+
+	static void DrawAll()
+		{ CALL(0x4C2830); }
+
+	static void DeleteAll()
+		{ CALL(0x4C2930); }
+
 
 	//===========================================================================
 	//===== Properties ==========================================================
