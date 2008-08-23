@@ -47,8 +47,8 @@ public:
 	PROPERTY_STRUCT(ColorStruct, Color);
 	PROPERTY_STRUCT(CoordStruct, SourceLocation); //FLH
 	PROPERTY_STRUCT(CoordStruct, TargetLocation);
-	PROPERTY(DWORD, unknown_3C);
-	PROPERTY(double, unknown_40);
+	PROPERTY(DWORD, Period);
+	PROPERTY(double, Amplitude);
 	PROPERTY(double, unknown_48);
 	PROPERTY(DWORD, unknown_50);
 	PROPERTY(DWORD, unknown_54);
