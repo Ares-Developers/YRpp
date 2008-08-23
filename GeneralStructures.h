@@ -23,6 +23,16 @@ struct ColorStruct
 		G = Color.G;
 		B = Color.B;
 	}
+
+	ColorStruct()
+	{ }
+
+	ColorStruct(BYTE _R, BYTE _G, BYTE _B)
+	{
+		R = _R;
+		G = _G;
+		B = _B;
+	}
 };
 
 //used for light colors

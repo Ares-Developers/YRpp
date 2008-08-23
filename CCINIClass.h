@@ -84,6 +84,9 @@ public:
 
 	// C&C helpers
 
+	bool IsKeySet(const char* pSection, const char* pKey)
+		{ char buf[4]; return this->ReadString(pSection, pKey, "", buf, 4) > 0; }
+
 #define INI_READ(item, addr) \
 	int Read ## item(const char* pSection, const char* pKey, int pDefault) \
 		{ PUSH_VAR32(pDefault); PUSH_VAR32(pKey); PUSH_VAR32(pSection); THISCALL(addr); }
@@ -159,7 +162,7 @@ public:
 	INI_READ(VHPScan, 0x477590);
 
 	// Color=%d,%d,%d to idx , used to parse [Colors]
-	byte* ReadColorDDD(byte* pBuffer, const char* pSection, const char* pKey, byte* pDefault)
+	ColorStruct* ReadColor(ColorStruct* pBuffer, const char* pSection, const char* pKey, ColorStruct* pDefault)
 		{ PUSH_VAR32(pDefault); PUSH_VAR32(pKey); PUSH_VAR32(pSection); PUSH_VAR32(pBuffer); THISCALL(0x474C70); }
 
 	// 18 bytes
