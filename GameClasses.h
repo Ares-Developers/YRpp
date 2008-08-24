@@ -70,6 +70,7 @@
 #include <Theater.h>
 #include <VocClass.h>
 #include <VoxClass.h>
+#include <WaveClass.h>
 
 #include <TransitionTimer.h>
 

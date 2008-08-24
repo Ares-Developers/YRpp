@@ -7,6 +7,8 @@ namespace Unsorted
 {
 	static int &CurrentFrame     = *(int *)0xA8ED84;
 
+	static byte &ArmageddonMode  = *(byte *)0xA8ED6B;
+
 	static DynamicVectorClass<ObjectClass *>** vec_ObjectsInLayers = (DynamicVectorClass<ObjectClass *>**)0x8A0360;
 
 	static CellStruct *CellSpreadTable = (CellStruct *)0xABD490;

@@ -13,11 +13,11 @@
 
 // hashmap of pointers
 #define EXT_P_DEFINE(clsname) \
-	static stdext::hash_map<clsname*, clsname ## Data*> Ext_p;\
-	static void __stdcall Create(clsname*);                   \
-	static void __stdcall Delete(clsname*);                   \
-	static void __stdcall Load(clsname*, IStream*);           \
-	static void __stdcall Save(clsname*, IStream*);           \
+	static stdext::hash_map<clsname*, clsname ## Data*> Ext_p; \
+	static void __stdcall Create(clsname*);                    \
+	static void __stdcall Delete(clsname*);                    \
+	static void __stdcall Load(clsname*, IStream*);            \
+	static void __stdcall Save(clsname*, IStream*);            \
 	static void __stdcall LoadFromINI(clsname*, CCINIClass*);
 
 #define EXT_P_DECLARE(clsname) \
@@ -49,5 +49,12 @@
 #define DEALLOC(var, ptr) \
 	delete var[ptr]; \
 	var.erase(var.find(ptr));
+
+#define ARRAY_ITERATE(clsname, pINI) \
+	if(clsname ## Callback::LoadFromINI) {                                   \
+		for(int i = 0; i < clsname::Array->get_Count(); ++i) {                 \
+			clsname ## Callback::LoadFromINI(clsname::Array->GetItem(i), pINI);  \
+		} \
+	}
 
 #endif
