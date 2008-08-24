@@ -307,6 +307,9 @@ public:
 	bool ControlledByHuman()
 		{ THISCALL(0x50B730); }
 
+	bool ControlledByPlayer()
+		{ THISCALL(0x50B6F0); }
+
 	// reminder: verify the resulting binary layout
 
 	//===========================================================================

@@ -57,7 +57,6 @@ protected:
 	PROPERTY(DWORD,				DeathBomb); // unused - if so, [General]CanDetonateDeathBomb applies instead of CanDetonateTimeBomb
 	PROPERTY(int,				PlantingFrame);
 	PROPERTY(int,				DetonationFrame);
-	PROPERTY(int,				Timer);
 	PROPERTY_STRUCT(BombInfoStruct,	BombAudio);
 	PROPERTY(DWORD,					unknown_4C);
 	PROPERTY(int,					TickSound);

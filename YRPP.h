@@ -1,5 +1,5 @@
 /*******************************************************************
-		    	C&C Yuri's Revenge 1.001 C++ Wrapper
+				C&C Yuri's Revenge 1.001 C++ Wrapper
 				====================================
 				   (c) 2007-2008 by pd and DCoder
 
@@ -19,5 +19,6 @@
 #include <CommandClass.h>
 #include <GameClasses.h>
 #include <SwizzleManagerClass.h>
+#include <MacroHelpers.h>
 
 #endif
