@@ -6,7 +6,6 @@
 	DynamicVectorClass<cls*>* cls::Array = \
 		(DynamicVectorClass<cls*>*)adr;
 
-
 #include <AbstractTypeClass.h>
 DECL(AbstractTypeClass, 0xA8E968);
 
@@ -136,6 +135,9 @@ DECL(EBolt, 0x8A0E88);
 
 #include <LineTrail.h>
 DECL(LineTrail, 0xABCB78);
+
+#include <LoadProgressManager.h>
+LoadProgressManager* LoadProgressManager::Global = (LoadProgressManager*)0xABC9BC;
 
 #include <VoxClass.h>
 DECL(VoxClass, 0xB1D4A0);

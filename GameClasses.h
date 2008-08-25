@@ -71,6 +71,7 @@
 #include <VocClass.h>
 #include <VoxClass.h>
 #include <WaveClass.h>
+#include <LoadProgressManager.h>
 
 #include <TransitionTimer.h>
 

@@ -24,6 +24,9 @@ public:
 	DECL_GET_SURFACE(Primary,   0x887308);		//should never need this
 	DECL_GET_SURFACE(Hidden,    0x88730C);		//stuff like loading screens
 	DECL_GET_SURFACE(Alternate, 0x887310);	//no idea
+
+	DECL_GET_SURFACE(Hidden_2,  0x887314);		//stuff like loading screens
+
 	DECL_GET_SURFACE(Composite, 0x88731C);	//the Battlefield, I think
 
 	//TextBox dimensions for tooltip-style boxes
