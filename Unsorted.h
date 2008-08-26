@@ -11,6 +11,18 @@ namespace Unsorted
 
 	static DynamicVectorClass<ObjectClass *>** vec_ObjectsInLayers = (DynamicVectorClass<ObjectClass *>**)0x8A0360;
 
+struct ColorPacker
+{
+	int _R_SHL;
+	int _R_SHR;
+	int _B_SHL;
+	int _B_SHR;
+	int _G_SHL;
+	int _G_SHR;
+};
+
+	static ColorPacker *ColorPackData = (ColorPacker *)0x8A0DD0;
+
 	static CellStruct *CellSpreadTable = (CellStruct *)0xABD490;
 
 /*

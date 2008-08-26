@@ -71,14 +71,25 @@ public:
 		}
 
 	//Stuff
+
+	// RGB
 	static WORD Color16bit(ColorStruct* pColor)	//Converts an RGB color to a 16bit color value.
 		{ return (pColor->B >> 3) | ((pColor->G >> 2) << 5) | ((pColor->R >> 3) << 11); }
+
+	static ColorStruct WordColor(WORD bits)
+		{ ColorStruct color;
+			color.R = ((bits & 0xF800) >> 11) << 3;
+			color.G = ((bits & 0x07E0) >> 5) << 2;
+			color.B = (bits & 0x001F) << 3;
+		return color; }
 };
 
 //A few preset 16bit colors.
 #define		COLOR_BLACK		0x0000
 #define		COLOR_WHITE		0xFFFF
 
+#define		COLOR_RED		0xF800
 #define		COLOR_GREEN		0x07E0
+#define		COLOR_BLUE		0x001F
 
 #endif

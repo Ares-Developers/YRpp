@@ -710,6 +710,12 @@ typedef int eSoundPriority;
 #define	sp_HIGH		0x4
 #define	sp_CRITICAL		0x5
 
+typedef int eWaveType;
+
+#define wave_Sonic 0x0
+#define wave_Laser 0x1
+#define wave_BigLaser 0x2
+#define wave_Magnetron 0x3
 
 typedef int eSoundType;
 
