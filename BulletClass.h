@@ -161,6 +161,7 @@ protected:
 	PROPERTY_STRUCT(CoordStruct, posSrc);
 	PROPERTY_STRUCT(CoordStruct, posTgt);
 	PROPERTY_STRUCT(CellStruct, unknown_14C);
+	PROPERTY(int, DamageMultiplier);
 	PROPERTY(AnimClass*, NextAnim);
 	PROPERTY(bool, SpawnNextAnim);
 	PROPERTY(DWORD, unknown_15C);
