@@ -138,12 +138,12 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(DWORD, unknown_A8);
 	PROPERTY(BulletTypeClass*, Type);
 	PROPERTY(TechnoClass*, Owner);
 	PROPERTY(bool, unknown_B4);
 	PROPERTY_STRUCT(BulletData, Data);
 	PROPERTY(bool, Bright);
+	PROPERTY(DWORD, unknown_E4);
 	PROPERTY_STRUCT(BulletVelocity, Velocity);
 	PROPERTY(DWORD, unknown_100);
 	PROPERTY(bool, unknown_104);
