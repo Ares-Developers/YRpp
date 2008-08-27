@@ -39,6 +39,13 @@
 	typedef clsname ## Ext::clsname ## Data ExtData;    \
 	hashext_v clsname ## Ext :: Ext_v;
 
+#define BIND_CALLBACKS(clsname) \
+		clsname ## Callback::Create		=	clsname ## Ext::Create;          \
+		clsname ## Callback::Delete		=	clsname ## Ext::Delete;          \
+		clsname ## Callback::Load			=	clsname ## Ext::Load;            \
+		clsname ## Callback::Save			=	clsname ## Ext::Save;            \
+		clsname ## Callback::LoadFromINI	=	clsname ## Ext::LoadFromINI;
+
 // I'm lazy, so sue me
 #define CONTAINS(var, ptr) \
 	(var.find(ptr) != var.end())

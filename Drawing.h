@@ -79,7 +79,7 @@ public:
 	static ColorStruct WordColor(WORD bits)
 		{ ColorStruct color;
 			color.R = ((bits & 0xF800) >> 11) << 3;
-			color.G = ((bits & 0x07E0) >> 5) << 2;
+			color.G = (BYTE)((bits & 0x07E0) >> 5) << 2; // msvc stupid warning
 			color.B = (bits & 0x001F) << 3;
 		return color; }
 };

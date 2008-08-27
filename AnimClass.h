@@ -64,6 +64,9 @@ public:
 	virtual void			AnimExtras(){};
 	virtual int				GetEnd(){return Type->get_End();}	//End tag from the AnimType
 
+	void SetOwnerObject(ObjectClass *Owner)
+		{ this->OwnerObject = Owner;	}
+
 	//Constructor
 	AnimClass(AnimTypeClass* pAnimType,CoordStruct Location):ObjectClass(false)
 	{

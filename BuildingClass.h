@@ -210,8 +210,8 @@ public:
 		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x445F00); }
 	virtual void SetTarget(AbstractClass *Target)
 		{ PUSH_VAR32(Target); THISCALL(0x443B90); }
-	virtual void SetOwningCountry(HouseTypeClass* pCountry)
-		{ PUSH_VAR32(pCountry); THISCALL(0x448260); }
+	virtual void SetOwningHouse(HouseClass* pHouse, DWORD dwUnk)
+		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pOwner); THISCALL(0x448260); }
 	virtual WeaponStruct* GetWeapon(int nWeaponNumber)
 		{ PUSH_VAR32(nWeaponNumber); THISCALL(0x4526F0); }
 	virtual bool HasTurret()

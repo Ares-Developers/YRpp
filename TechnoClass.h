@@ -357,8 +357,8 @@ public:
 		{ PUSH_VAR32(nWeapon); PUSH_VAR32(pTarget); THISCALL(0x6FDD50); }
 	virtual DWORD vt_entry_3D0()
 		{ THISCALL(0x70F850); }
-	virtual void SetOwningCountry(HouseTypeClass* pCountry)
-		{ PUSH_VAR32(pCountry); THISCALL(0x7014A0); }
+	virtual void SetOwningHouse(HouseClass* pHouse, DWORD dwUnk)
+		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pHouse); THISCALL(0x7014A0); }
 	virtual void vt_entry_3D8(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
 		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk);
 		  THISCALL(0x70B280); }
@@ -599,7 +599,7 @@ public:
 	PROPERTY(ObjectClass*,       LastTarget);
 	PROPERTY(CaptureManagerClass*, CaptureManager); //for Yuris
 	PROPERTY(TechnoClass*,       MindControlledBy);
-	PROPERTY(bool,               NotMindControlledByAUnit);
+	PROPERTY(bool,               MindControlledByAUnit);
 	PROPERTY(AnimClass*,         MindControlRingAnim);
 	PROPERTY(HouseClass*,        MindControlledByHouse); //used for a TAction
 	PROPERTY(SpawnManagerClass*, SpawnManager);
