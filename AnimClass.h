@@ -65,7 +65,7 @@ public:
 	virtual int				GetEnd(){return Type->get_End();}	//End tag from the AnimType
 
 	void SetOwnerObject(ObjectClass *Owner)
-		{ this->OwnerObject = Owner;	}
+		{ PUSH_VAR32(Owner); THISCALL(0x424B50); }
 
 	//Constructor
 	AnimClass(AnimTypeClass* pAnimType,CoordStruct Location):ObjectClass(false)

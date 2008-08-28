@@ -144,7 +144,7 @@ public:
 	virtual DWORD Fire(ObjectClass* pTarget, int nWeapon)
 		{ PUSH_VAR32(nWeapon); PUSH_VAR32(pTarget); THISCALL(0x741340); }
 	virtual void SetOwningHouse(HouseClass* pHouse, DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pOwner); THISCALL(0x7463A0); }
+		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pHouse); THISCALL(0x7463A0); }
 	virtual void Reload()
 		{ THISCALL(0x736CA0); }
 	virtual DWORD DisguiseAs(ObjectClass *Target)

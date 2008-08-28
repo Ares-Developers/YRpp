@@ -520,7 +520,7 @@ public:
 	PROPERTY(DWORD,              unknown_10C);
 	PROPERTY(int,                unknown_int_110);
 	PROPERTY_STRUCT(PassengersClass,		Passengers);
-	PROPERTY(DWORD,              unknown_11C);
+	PROPERTY(TechnoClass *,      Transporter); // unit carrying me
 	PROPERTY(int,                unknown_int_120);
 	PROPERTY(int,                unknown_int_124);
 	PROPERTY(int,                unknown_int_128);
@@ -563,7 +563,7 @@ public:
 	PROPERTY(DWORD,              unknown_218);
 	PROPERTY(HouseClass*,        Owner);
 	PROPERTY(int,                CloakingIncrementCount);
-	PROPERTY(int,                CloakingStage);
+	PROPERTY(eCloakStates,       CloakingStage);
 	PROPERTY(bool,               Cloaking);
 	PROPERTY(TimerStruct,        CloakTimer);
 	PROPERTY(int,                CloakingSpeed);

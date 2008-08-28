@@ -161,7 +161,7 @@ public:
 	virtual CellClass* vt_entry_3C4(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
 		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x4D9920); }
 	virtual void SetOwningHouse(HouseClass* pHouse, DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pOwner); THISCALL(0x4DBED0); }
+		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pHouse); THISCALL(0x4DBED0); }
 	virtual bool Crash(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x4DEBB0); }
 	virtual CoordStruct* GetTargetCoords(CoordStruct* pCrd)
