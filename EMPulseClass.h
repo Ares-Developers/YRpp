@@ -18,28 +18,26 @@ public:
 	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x4C59F0);}
 
 	//IPersistStream
-	virtual HRESULT _stdcall	Load(IStream* pStm)
-								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x4C5A30);}
-	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x4C5A80);}
+	virtual HRESULT _stdcall Load(IStream* pStm)
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x4C5A30); }
+	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x4C5A80); }
 
 	//Destructor
-	virtual ~EMPulseClass()				{THISCALL(0x4C53E0);}
+	virtual ~EMPulseClass()
+		{ THISCALL(0x4C53E0); }
 
 	//AbstractClass
-	virtual eAbstractType		WhatAmI(){return abs_EMPulse;}
-	virtual int					Size(){return sizeof(EMPulseClass);}
-	virtual void				CalculateChecksum(void* pChkSum){PUSH_VAR32(pChkSum);THISCALL(0x4C59A0);}
+	virtual eAbstractType WhatAmI()
+		{ return abs_EMPulse; }
+	virtual int Size()
+		{ return sizeof(EMPulseClass); }
+	virtual void CalculateChecksum(void* pChkSum)
+		{ PUSH_VAR32(pChkSum); THISCALL(0x4C59A0); }
 
 	//Constructor
 	EMPulseClass(CellStruct dwCrd,int nSpread,int nDuration):AbstractClass(false)
-										{
-										PUSH_IMM(0);
-										PUSH_VAR32(nDuration);
-										PUSH_VAR32(nSpread);
-										PUSH_VAR32(dwCrd);
-										THISCALL(0x4C52B0);
-										}
+		{ PUSH_IMM(0); PUSH_VAR32(nDuration); PUSH_VAR32(nSpread); PUSH_VAR32(dwCrd); THISCALL(0x4C52B0); }
 
 protected:
 	EMPulseClass():AbstractClass(false){}
