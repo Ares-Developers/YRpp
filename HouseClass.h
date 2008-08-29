@@ -310,6 +310,11 @@ public:
 	bool ControlledByPlayer()
 		{ THISCALL(0x50B6F0); }
 
+	// Target ought to be Object, I imagine, but cell doesn't work then
+	void SendSpyPlanes(int AircraftTypeIdx, int AircraftAmount, eMission SetMission, AbstractClass *Target, ObjectClass *Destination)
+		{ PUSH_VAR32(Destination); PUSH_VAR32(Target); PUSH_VAR32(SetMission); PUSH_VAR32(AircraftAmount); 
+			SET_REG32(EDX, AircraftTypeIdx); THISCALL(0x65EAB0); }
+
 	// reminder: verify the resulting binary layout
 
 	//===========================================================================

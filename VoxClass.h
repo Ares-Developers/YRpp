@@ -26,12 +26,10 @@ public:
 	}
 
 	static void Play(const char* pName)
-	{
-		PUSH_IMM(0xFFFFFFFF);
-		SET_REG32(edx,0xFFFFFFFF);
-		SET_REG32(ecx,pName);
-		CALL(0x752700);
-	}
+		{ PUSH_IMM(0xFFFFFFFF); SET_REG32(edx, 0xFFFFFFFF); SET_REG32(ecx, pName); CALL(0x752700); }
+
+	static void PlayIndex(int index)
+		{ PUSH_IMM(0xFFFFFFFF); SET_REG32(edx, 0xFFFFFFFF); SET_REG32(ecx, index); CALL(0x752480); }
 
 	//Properties
 	PROPERTY_STRING(Name, 0x28);

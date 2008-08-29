@@ -13,6 +13,12 @@ public:
 	//Destructor
 	virtual ~MissionClass()		{/* ~ObjectClass() */}
 
+	static eMission FindIndex(const char *name)
+		{ SET_REG32(ECX, name); CALL(0x5B3910); }
+
+	static const char * FindName(int const *index)
+		{ SET_REG32(ECX, index); CALL(0x5B3740); }
+
 	//AbstractClass
 	virtual void			CalculateChecksum(void* pChkSum){PUSH_VAR32(pChkSum);THISCALL(0x5B3970);}
 	virtual void			Update(){THISCALL(0x5B3060);}
