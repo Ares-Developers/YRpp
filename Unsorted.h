@@ -25,6 +25,8 @@ struct ColorPacker
 
 	static CellStruct *CellSpreadTable = (CellStruct *)0xABD490;
 
+	static int &CurrentSWType = *(int *)0x8809A0;
+
 /*
  * This thing is ridiculous
  * all xxTypeClass::Create functions use it:

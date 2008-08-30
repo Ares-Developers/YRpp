@@ -555,23 +555,23 @@ public:
 	PROPERTY_STRUCT(TimerStruct, InfantryBlinkTimer); // Rules->InfantryBlinkDisguiseTime , detects mirage firing per description
 	PROPERTY_STRUCT(TimerStruct, DisguiseBlinkTimer); // disguise disruption timer
 	PROPERTY(bool,               unknown_bool_1F8);
-	PROPERTY_STRUCT(TimerStruct,        ReloadTimer);
+	PROPERTY_STRUCT(TimerStruct, ReloadTimer);
 	PROPERTY(DWORD,              unknown_208);
 	PROPERTY(DWORD,              unknown_20C);
 	PROPERTY(DWORD,              unknown_210);
 	PROPERTY(int,                Group); //0-9, assigned by CTRL+Number, these kinds // also set by aimd TeamType->Group !
 	PROPERTY(DWORD,              unknown_218);
 	PROPERTY(HouseClass*,        Owner);
-	PROPERTY(int,                CloakingIncrementCount);
-	PROPERTY(eCloakStates,       CloakingStage);
+	PROPERTY(eCloakStates,       CloakState);
+	PROPERTY(int,                CloakingStage); // phase from [opaque] -> [fading] -> [transparent] , [General]CloakingStages= long
 	PROPERTY(bool,               Cloaking);
-	PROPERTY(TimerStruct,        CloakTimer);
+	PROPERTY_STRUCT(TimerStruct, CloakTimer);
 	PROPERTY(int,                CloakingSpeed);
 	PROPERTY(int,                CloakingIncrementAmount); //defaults to 1
-	PROPERTY_STRUCT(TimerStruct,        unknown_timer_240);
+	PROPERTY_STRUCT(TimerStruct, CloakDelayTimer); // delay before cloaking again
 	PROPERTY(DWORD,              unknown_24C);
 	PROPERTY(bool,               unknown_bool_250);
-	PROPERTY_STRUCT(CoordStruct,        unknown_point3d_254);
+	PROPERTY_STRUCT(CoordStruct, unknown_point3d_254);
 	PROPERTY(DWORD,              unknown_260);
 	PROPERTY(DWORD,              unknown_264);
 	PROPERTY(bool,               GapSuperCharged); // GapGenerator, when SuperGapRadiusInCells != GapRadiusInCells, you can deploy the gap to boost radius

@@ -82,6 +82,10 @@ MSVC++
 		_asm{mov eax, [ecx]}\
 		_asm{call dword ptr [eax+vt_offs]}
 
+#define CALL_VT(vt_offs) \
+		_asm{mov eax, [ecx]}\
+		_asm{call dword ptr [eax+vt_offs]}
+
 #define THISCALL_EX_VT(pThis,vt_offs)	_asm{mov ecx, pThis}\
 		_asm{mov edx, [ecx]}\
 		_asm{call dword ptr [edx+vt_offs]}

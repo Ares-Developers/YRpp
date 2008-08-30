@@ -1,7 +1,7 @@
 #ifndef MOUSE_H
 #define MOUSE_H
 
-struct MousePointer
+struct MouseCursor
 {
 	int Frame;
 	int Count;
@@ -10,6 +10,11 @@ struct MousePointer
 	int MiniCount;
 	eMouseHotSpotX HotX;
 	eMouseHotSpotY HotY;
+};
+
+class MouseClass : public GScreenClass
+{
+
 };
 
 #endif

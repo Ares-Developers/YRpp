@@ -51,6 +51,10 @@ public:
 	virtual eAction MouseOverObject(DWORD dwUnk, ObjectClass* pObjBelowMouse)
 		{ PUSH_VAR32(pObjBelowMouse); PUSH_VAR32(dwUnk); THISCALL(0x6CEF80); }
 
+	// non-virtual
+	static SuperWeaponTypeClass *FindFirstOfAction(eAction Action)
+		{ SET_REG32(ECX, Action); CALL(0x6CEEB0); }
+
 	//Constructor
 	SuperWeaponTypeClass(const char* id):AbstractTypeClass(false)
 		{ PUSH_VAR32(id); THISCALL(0x6CE5B0); }
