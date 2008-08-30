@@ -407,6 +407,16 @@ typedef int eLayer;
 #define	lyr_Air		0x3
 #define	lyr_Top		0x4
 
+typedef int eMouseHotSpotX;
+typedef int eMouseHotSpotY;
+
+#define hotspx_left		0
+#define hotspx_center		0x3039
+#define hotspx_right	0xD431
+
+#define hotspy_top		0
+#define hotspy_middle		0x3039
+#define hotspy_bottom	0xD431
 
 typedef int eMission;
 

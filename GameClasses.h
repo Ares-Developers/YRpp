@@ -55,6 +55,7 @@
 
 //GScreenClass Tree
 #include <SidebarClass.h>
+#include <MouseClass.h>
 
 //LinkClass Tree
 #include <LinkClass.h>
