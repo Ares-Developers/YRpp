@@ -92,7 +92,7 @@
 
 // find items
 #define PARSE_VAR_OBJ(key, var, cls) \
-		if(pINI->ReadString(section, key, "", buffer, 256) > 0) \
+	if(pINI->ReadString(section, key, "", buffer, 256) > 0) \
 		var = cls::Find(buffer);
 
 #define PARSE_WH(key, var) \
@@ -125,7 +125,7 @@
 
 // find indices
 #define PARSE_VAR_IDX(key, var, cls) \
-		if(pINI->ReadString(section, key, "", buffer, 256) > 0) \
+	if(pINI->ReadString(section, key, "", buffer, 256) > 0) \
 		var = cls::FindIndex(buffer);
 
 #define PARSE_SND(key, var) \
