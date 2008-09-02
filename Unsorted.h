@@ -27,6 +27,9 @@ struct ColorPacker
 
 	static int &CurrentSWType = *(int *)0x8809A0;
 
+	static const int except_txt_length = 0xFFFF;
+	static char *except_txt_content = (char *)0x8A3A08;
+
 /*
  * This thing is ridiculous
  * all xxTypeClass::Create functions use it:
