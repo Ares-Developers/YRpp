@@ -314,7 +314,7 @@ private: DWORD align_584;
 	PROPERTY (double			, IceCrackingWeight);
 	PROPERTY (double			, IceBreakingWeight);
 	PROPERTY_STRUCT (TypeList<int >		, IceCrackSounds);
-	PROPERTY (BYTE				, CliffBackImpassability);
+	PROPERTY (byte				, CliffBackImpassability);
 	PROPERTY (double			, VeteranRatio);
 	PROPERTY (double			, VeteranCombat);
 	PROPERTY (double			, VeteranSpeed);

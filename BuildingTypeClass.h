@@ -186,7 +186,7 @@ public:
 	PROPERTY(SHPStruct*, SpecialZOverlay);
 	PROPERTY(int, SpecialZOverlayZAdjust);
 	PROPERTY(SHPStruct*, BibShape);
-	PROPERTY(AnimTypeClass*, BibShapeLoaded);
+	PROPERTY(bool, BibShapeLoaded);
 	PROPERTY(int, NormalZAdjust);
 	PROPERTY(int, AntiAirValue);
 	PROPERTY(int, AntiArmorValue);

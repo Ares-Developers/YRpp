@@ -49,6 +49,10 @@ struct WeaponStruct
 	bool              TurretLocked;
 };
 
+#pragma pack(push, technotype)
+
+#pragma pack(4)
+
 class TechnoTypeClass : public ObjectTypeClass
 {
 public:
@@ -496,5 +500,7 @@ public:
 	PROPERTY(DWORD,           unknown_DF4);
 	PROPERTY(int,             ArrayIndex); //in the respective class type's array!!
 };
+
+#pragma pack(pop, technotype)
 
 #endif
