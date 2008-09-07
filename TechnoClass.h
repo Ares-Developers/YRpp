@@ -48,10 +48,22 @@ class PassengersClass
 {
 public:
 	int NumPassengers;
-	TechnoClass* FirstPassenger;
+	FootClass* FirstPassenger;
 
-	void AddPassenger(TechnoClass* pPassenger)
+	void AddPassenger(FootClass* pPassenger)
 		{ PUSH_VAR32(pPassenger); THISCALL(0x4733A0);}
+
+	FootClass* GetFirstPassenger()
+		{ return this->FirstPassenger; }
+
+	FootClass* RemoveFirstPassenger()
+		{ THISCALL(0x473430); }
+
+	int GetTotalSize()
+		{ THISCALL(0x473460); }
+
+	signed int IndexOf(FootClass* candidate)
+		{ PUSH_VAR32(candidate); THISCALL(0x473500); }
 };
 
 class TechnoClass : public RadioClass

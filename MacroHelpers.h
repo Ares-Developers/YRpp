@@ -14,11 +14,6 @@
 // hashmap of pointers
 #define EXT_P_DEFINE(clsname) \
 	static stdext::hash_map<clsname*, clsname ## Data*> Ext_p; \
-	static void __stdcall Create(clsname*);                    \
-	static void __stdcall Delete(clsname*);                    \
-	static void __stdcall Load(clsname*, IStream*);            \
-	static void __stdcall Save(clsname*, IStream*);            \
-	static void __stdcall LoadFromINI(clsname*, CCINIClass*);
 
 #define EXT_P_DECLARE(clsname) \
 	typedef stdext::hash_map<clsname*, clsname ## Ext::clsname ## Data*> hashext_p; \
@@ -43,22 +38,28 @@
 // hashmap of structures
 #define EXT_V_DEFINE(clsname) \
 	static stdext::hash_map<clsname*, clsname ## Data > Ext_v;\
-	static void __stdcall Create(clsname*);                   \
-	static void __stdcall Delete(clsname*);                   \
-	static void __stdcall Load(clsname*, IStream*);           \
-	static void __stdcall Save(clsname*, IStream*);           \
-	static void __stdcall LoadFromINI(clsname*, CCINIClass*);
 
 #define EXT_V_DECLARE(clsname) \
 	typedef stdext::hash_map<clsname*, clsname ## Ext::clsname ## Data > hashext_v; \
 	typedef clsname ## Ext::clsname ## Data ExtData;    \
 	hashext_v clsname ## Ext :: Ext_v;
 
+#define EXT_FUNCS(clsname) \
+	static void __stdcall Create(clsname*);                    \
+	static void __stdcall Delete(clsname*);                    \
+	static void __stdcall Load(clsname*, IStream*);            \
+	static void __stdcall Save(clsname*, IStream*);
+
+#define EXT_INI_FUNCS(clsname) \
+	static void __stdcall LoadFromINI(clsname*, CCINIClass*);
+
 #define BIND_CALLBACKS(clsname) \
 		clsname ## Callback::Create		=	clsname ## Ext::Create;          \
 		clsname ## Callback::Delete		=	clsname ## Ext::Delete;          \
 		clsname ## Callback::Load			=	clsname ## Ext::Load;            \
-		clsname ## Callback::Save			=	clsname ## Ext::Save;            \
+		clsname ## Callback::Save			=	clsname ## Ext::Save;
+
+#define BIND_INI_CALLBACKS(clsname) \
 		clsname ## Callback::LoadFromINI	=	clsname ## Ext::LoadFromINI;
 
 // I'm lazy, so sue me
@@ -166,5 +167,9 @@
 		buf = var; \
 		pINI->ReadColor(&buf, section, key, &var); \
 		var = buf;
+
+// swizzle shorthand
+#define SWIZZLE(var) \
+	SwizzleManagerClass::SwizzleManager()->Swizzle((void **)&var);
 
 #endif

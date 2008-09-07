@@ -114,6 +114,8 @@ DECL(TaskForceClass, 0xA8E8D0);
 #include <TemporalClass.h>
 DECL(TemporalClass, 0xB0EC60);
 
+DynamicVectorClass<DWORD>* TechnoTypeClass::Array = (DynamicVectorClass<DWORD>*)0xA8EB00;
+
 //Tree classes don't have their VTables done yet
 /*#include <TerrainClass.h>
 DECL(TerrainClass, 0xA8E988);

@@ -57,6 +57,8 @@ CALLBACK_INIT_ABSTRACTTYPE(WarheadTypeClass);
 CALLBACK_INIT_ABSTRACTTYPE(WeaponTypeClass);
 	CALLBACK_IMPL_ABSTRACTTYPE(WeaponTypeClass, ESI, 0xE0, 0x0, 0x0);
 
+CALLBACK_INIT_OBJECT(TechnoClass);
+	CALLBACK_IMPL_OBJECT(TechnoClass, 0x0, 0x0);
 
 
 //-----------------------------------------------------------------------

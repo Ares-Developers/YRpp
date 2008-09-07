@@ -45,6 +45,12 @@ class WeaponTypeClassCallback
 	{ public: CALLBACK_HEAD_ABSTRACTTYPE(WeaponTypeClass); };
 
 //-----------------------------------------------------------------------
+//Object classes
+//-----------------------------------------------------------------------
+class TechnoClassCallback
+	{ public: CALLBACK_HEAD_OBJECT(TechnoClass); };
+
+//-----------------------------------------------------------------------
 //CommandClass
 //-----------------------------------------------------------------------
 class CommandClassCallback

@@ -88,4 +88,24 @@
 	CALLBACK_IMPL_LOADSAVE(clsname,Save,save_stack);\
 	CALLBACK_IMPL_LOADFROMINI(clsname,LoadFromINI,ini_reg,ini_stack);
 
+// for Object
+#define CALLBACK_HEAD_OBJECT(clsname) \
+	static void (_stdcall* Create)(clsname*);\
+	static void (_stdcall* Delete)(clsname*);\
+	static void (_stdcall* Load)(clsname*,IStream*);\
+	static void (_stdcall* Save)(clsname*,IStream*);
+
+#define CALLBACK_INIT_OBJECT(clsname)\
+	void (_stdcall* clsname ## Callback::Create)(clsname*)=NULL;\
+	void (_stdcall* clsname ## Callback::Delete)(clsname*)=NULL;\
+	void (_stdcall* clsname ## Callback::Load)(clsname*,IStream*)=NULL;\
+	void (_stdcall* clsname ## Callback::Save)(clsname*,IStream*)=NULL;
+
+#define CALLBACK_IMPL_OBJECT(clsname,load_stack,save_stack)\
+	CALLBACK_IMPL_XTHIS(clsname,Create,EAX);\
+	CALLBACK_IMPL_XTHIS(clsname,Delete,ECX);\
+	CALLBACK_IMPL_LOADSAVE(clsname,Load,load_stack);\
+	CALLBACK_IMPL_LOADSAVE(clsname,Save,save_stack);
+
+
 #endif

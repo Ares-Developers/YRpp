@@ -26,11 +26,11 @@
 			{ name = value; }
 
 //readonly version
-#define PROPERTY_READO(type,name)\
+#define PROPERTY_READONLY(type,name)\
 	protected:\
 		type name;\
 	public:\
-		const type _ ## name() \
+		const type get_ ## name() \
 			{ return name; }
 
 //struct or class instances

@@ -56,6 +56,9 @@ struct WeaponStruct
 class TechnoTypeClass : public ObjectTypeClass
 {
 public:
+
+	static DynamicVectorClass<DWORD>* Array; // HAX to instantiate
+
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm)
 		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x7162F0); }

@@ -132,7 +132,7 @@ public:
 	}
 
 	PROPERTY(T*,		Items);
-	PROPERTY(int,		Capacity);
+	PROPERTY_READONLY(int,		Capacity);
 	PROPERTY(bool,		IsInitialized);
 	PROPERTY(bool,		IsAllocated);
 };
