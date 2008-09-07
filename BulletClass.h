@@ -21,12 +21,14 @@ struct BulletData
 };
 
 // the velocities along the axes, or something like that
+typedef Vector3D<double> BulletVelocity; // :3 -pd
+/*
 struct BulletVelocity
 {
  double X;
  double Y;
  double Z;
-};
+};*/
 
 class BulletClass : public ObjectClass
 {

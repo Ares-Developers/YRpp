@@ -10,6 +10,7 @@
 //forward declarations
 class LocomotionClass;
 class ParasiteClass;
+class TeamClass;
 
 class FootClass : public TechnoClass
 {
@@ -341,7 +342,7 @@ protected:
 	PROPERTY(DWORD,           unknown_5CC);
 	PROPERTY(BYTE,            unknown_5D0);	//unused?
 	PROPERTY(bool,            unknown_bool_5D1);
-	PROPERTY(DWORD,           MemberOfTeam);  //AITeamClass *
+	PROPERTY(TeamClass*,      Team);
 	PROPERTY(FootClass*,      NextTeamMember);        //next unit in team
 	PROPERTY(DWORD,           unknown_5DC);
 	PROPERTY(int,             unknown_int_5E0);

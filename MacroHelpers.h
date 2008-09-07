@@ -1,6 +1,7 @@
 #ifndef DCODER_H
 #define DCODER_H
 
+#include <hash_map>
 // macros DCoder uses and pd dislikes :)
 
 // for exportfuncs, repeating stuff is annoying :P

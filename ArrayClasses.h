@@ -167,7 +167,7 @@ public:
 	// passing a pointer that's in the array still returns -1
 	virtual int FindItemIndex(T tItem)
 		{
-			if(!this->IsInitialized) return 0;
+			if(!this->IsInitialized) return -1;
 			if(Count > 0)
 			{
 				for(int i = 0; i < Count; i++)

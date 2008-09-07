@@ -5,7 +5,6 @@
 #ifndef TASKFORCE_H
 #define TASKFORCE_H
 
-#include <FileSystem.h>
 #include <AbstractTypeClass.h>
 
 //forward declarations
