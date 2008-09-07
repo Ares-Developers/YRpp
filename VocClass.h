@@ -30,12 +30,16 @@ public:
 			if(!_strcmpi((*Array)[i]->get_Name(),pName))return (*Array)[i];
 		return NULL;
 	}
-	static int FindIndex(const char* pName)
+/* dunno what gives, but this doesn't work, the one below does
+	static int FindIndexOf(const char* pName)
 	{
 		for(int i = 0; i < Array->get_Count(); i++)
 			if(!_strcmpi((*Array)[i]->get_Name(),pName))return i;
 		return -1;
 	}
+*/
+	static int FindIndex(const char *pName)
+		{ SET_REG32(ECX, pName); CALL(0x7514D0); }
 
 	/* Play a sound independant of the position.
 	   n = Index of VocClass in Array to be played
