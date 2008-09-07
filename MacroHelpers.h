@@ -12,14 +12,41 @@
 
 // please don't mix the two hashmaps in one class
 
+/*
+ * hashmap macros 101:
+ * _DECLARE just declares the hashmap, use in .h
+ * _DEFINE define that same hashmap and typedefs for its components, use at the top of .cpp
+
+ * Create, Delete, Save, Load are four common functions, 
+ * applicable to both AbstractType derivates and Object derivates, 
+ * LoadFromINI is also common but used only for the former
+
+ * _CTOR, _DTOR, _LOAD, _SAVE , _LOAD_INI are function headers for those, use (or don't use) in .cpp
+
+ * _FUNCS declares those first four functions, use in .h
+ * _INI_FUNCS declares the fifth one, use in .h (someday it might declare SaveToINI as well...)
+
+ * BIND_CALLBACKS binds the four funcs to the callbacks, use in CallCenter::Init
+ * BIND_INI_CALLBACKS binds the fifth func to the callbacks, use in CallCenter::Init
+ */
+
 // hashmap of pointers
-#define EXT_P_DEFINE(clsname) \
+#define EXT_P_DECLARE(clsname) \
 	static stdext::hash_map<clsname*, clsname ## Data*> Ext_p; \
 
-#define EXT_P_DECLARE(clsname) \
+#define EXT_P_DEFINE(clsname) \
 	typedef stdext::hash_map<clsname*, clsname ## Ext::clsname ## Data*> hashext_p; \
 	typedef clsname ## Ext::clsname ## Data ExtData;    \
 	hashext_p clsname ## Ext :: Ext_p;
+
+// hashmap of structures
+#define EXT_V_DECLARE(clsname) \
+	static stdext::hash_map<clsname*, clsname ## Data > Ext_v;\
+
+#define EXT_V_DEFINE(clsname) \
+	typedef stdext::hash_map<clsname*, clsname ## Ext::clsname ## Data > hashext_v; \
+	typedef clsname ## Ext::clsname ## Data ExtData;    \
+	hashext_v clsname ## Ext :: Ext_v;
 
 #define EXT_CTOR(clsname) \
 	void __stdcall clsname ## Ext::Create(clsname* pThis)
@@ -35,15 +62,6 @@
 
 #define EXT_LOAD_INI(clsname) \
 	void __stdcall clsname ## Ext::LoadFromINI(clsname* pThis, CCINIClass* pINI)
-
-// hashmap of structures
-#define EXT_V_DEFINE(clsname) \
-	static stdext::hash_map<clsname*, clsname ## Data > Ext_v;\
-
-#define EXT_V_DECLARE(clsname) \
-	typedef stdext::hash_map<clsname*, clsname ## Ext::clsname ## Data > hashext_v; \
-	typedef clsname ## Ext::clsname ## Data ExtData;    \
-	hashext_v clsname ## Ext :: Ext_v;
 
 #define EXT_FUNCS(clsname) \
 	static void __stdcall Create(clsname*);                    \
