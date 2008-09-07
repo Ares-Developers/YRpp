@@ -77,6 +77,19 @@ public:
 		{ *((WORD*)regs[3] + (offset >> 1)) = value; }
 	void set_StackVar8(int offset, BYTE value)
 		{ *((BYTE*)regs[3] + offset) = value; }
+
+	DWORD get_BaseVar32(int offset)
+		{ return *((DWORD*)regs[2] + (offset >> 2)); }
+	WORD get_BaseVar16(int offset)
+		{ return *((WORD*)regs[2] + (offset >> 1)); }
+	BYTE get_BaseVar8(int offset)
+		{ return *((BYTE*)regs[2] + offset); }
+	void set_BaseVar32(int offset, DWORD value)
+		{ *((DWORD*)regs[2] + (offset >> 2)) = value; }
+	void set_BaseVar16(int offset, WORD value)
+		{ *((WORD*)regs[2] + (offset >> 1)) = value; }
+	void set_BaseVar8(int offset, BYTE value)
+		{ *((BYTE*)regs[2] + offset) = value; }
 };
 
 //Use this for DLL export functions
