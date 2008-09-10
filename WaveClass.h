@@ -42,6 +42,12 @@ public:
 	virtual void Draw(Point2D* pCoords, DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pCoords); THISCALL(0x75F9F0); }
 
+	void Draw_Magnetic(CoordStruct* xyzFrom, CoordStruct* xyzTo)
+		{ PUSH_VAR32(xyzTo); PUSH_VAR32(xyzFrom); THISCALL(0x762070); }
+
+	void Draw_NonMagnetic(CoordStruct* xyzFrom, CoordStruct* xyzTo)
+		{ PUSH_VAR32(xyzTo); PUSH_VAR32(xyzFrom); THISCALL(0x761640); }
+
 	void Update_Beam()
 		{ THISCALL(0x762AF0); }
 
