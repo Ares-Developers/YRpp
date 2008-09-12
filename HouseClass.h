@@ -566,7 +566,10 @@ public:
 	PROPERTY(DWORD,					unknown_56EC);
 	PROPERTY(DWORD,					unknown_56F0);
 	PROPERTY(DWORD,					unknown_56F4);
+	PROPERTY(byte,          HasCloakingRanges); // don't ask
 	PROPERTY_STRUCT(ColorStruct,           Color);
+	PROPERTY_STRUCT(ColorStruct,           Color2); // my idb says so
+	PROPERTY(byte,          padding);
 	PROPERTY_STRUCT(BaseClass,             Base);
 	PROPERTY(bool,                  PowerBlackout);
 	PROPERTY(bool,                  RadarBlackout);
