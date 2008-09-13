@@ -5,7 +5,7 @@
 
 class TechnoClass;
 
-class WaveClass : ObjectClass
+class WaveClass : public ObjectClass
 {
 public:
 	static DynamicVectorClass<WaveClass*>* Array;
@@ -48,8 +48,12 @@ public:
 	void Draw_NonMagnetic(CoordStruct* xyzFrom, CoordStruct* xyzTo)
 		{ PUSH_VAR32(xyzTo); PUSH_VAR32(xyzFrom); THISCALL(0x761640); }
 
-	void Update_Beam()
+	void Update_Wave()
 		{ THISCALL(0x762AF0); }
+
+	// ambient
+	void DamageArea(CoordStruct *location)
+		{ PUSH_VAR32(location); THISCALL(0x75F330); }
 
 	WaveClass(CoordStruct *From, CoordStruct *To, TechnoClass *Owner, int mode, AbstractClass *Target)
 		{ PUSH_VAR32(Target); PUSH_VAR32(mode); PUSH_VAR32(Owner); PUSH_VAR32(To); PUSH_VAR32(From);

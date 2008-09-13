@@ -142,6 +142,10 @@ public:
 	CoordStruct *Get3DCoords2(CoordStruct *result)
 		{ PUSH_VAR32(result); THISCALL(0x486890); }
 
+	// used by ambient waves and stuff
+	CoordStruct *Get3DCoords3(CoordStruct *result)
+		{ PUSH_VAR32(result); THISCALL(0x480A30); }
+
 	void ActivateVeins()
 		{ THISCALL(0x486920); }
 
