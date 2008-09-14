@@ -70,7 +70,22 @@ struct TimerStruct
 {
 	int StartTime;
 	int unknown;
-	int	TimeLeft;
+	int TimeLeft;
+
+	void Stop()
+		{ this->StartTime = -1; this->TimeLeft = 0; }
+
+	bool IsDone()
+		{ return this->StartTime != -1 && this->GetTimeLeft() <= 0; }
+
+	int GetTimeLeft()
+		{ THISCALL(0x426630); }
+
+	void Start(int duration)
+		{ PUSH_VAR32(duration); THISCALL(0x46B640); }
+
+	void StartIfEmpty() // just sets start frame
+		{ THISCALL(0x6CE2C0); }
 };
 
 #endif
