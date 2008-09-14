@@ -27,6 +27,30 @@ struct OwnedTiberiumStruct
 class AbstractClass : public IPersistStream, public IRTTITypeInfo, public INoticeSink, public INoticeSource
 {
 public:
+	//static
+	const char* GetClassName()
+	{
+		return AbstractClass::GetClassName(WhatAmI());
+	}
+
+	static const char* GetClassName(eAbstractType abs)
+	{
+		struct AbsTypeNameAssignment
+		{
+			char* Name;
+			eAbstractType AbsType;
+		};
+
+		AbsTypeNameAssignment* ass;
+		for(ass = (AbsTypeNameAssignment*)0x816EE0; ass < (AbsTypeNameAssignment*)0x817130; ass++)
+		{
+			if(ass->AbsType == abs)
+				return ass->Name;
+		}
+
+		return NULL;
+	}
+
 	//IUnknown
 	virtual HRESULT _stdcall QueryInterface(REFIID iid, void** ppvObject)
 		{ PUSH_VAR32(ppvObject); PUSH_VAR32(iid); PUSH_VAR32(this); CALL(0x410260); }
