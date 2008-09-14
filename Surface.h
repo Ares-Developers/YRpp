@@ -180,6 +180,13 @@ public:
 		PUSH_PTR(rect);
 		THISCALL(0x411510);
 
+	/*
+	 (void *DSurface<ecx>, ConvertClass *Palette, SHPStruct *SHP, int frameIdx, 
+			Point2D *pos, _DWORD arg5, _DWORD arg6, _DWORD arg7,
+			_DWORD arg8, _DWORD arg9, _DWORD argA, int TintColor, 
+			SHPStruct *BUILDINGZ_SHA, _DWORD argD, int ZS_X, int ZS_Y) 
+	*/
+
 		PUSH_IMM(0);PUSH_IMM(0);PUSH_IMM(0);PUSH_IMM(0);
 		PUSH_IMM(0);PUSH_IMM(0x3E8);PUSH_IMM(0);PUSH_IMM(0);
 		PUSH_IMM(0);PUSH_IMM(0);

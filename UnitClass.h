@@ -53,7 +53,9 @@ public:
 	virtual bool CanBeUndeployed()
 		{ return Type->get_NonVehicle(); }
 	virtual ObjectTypeClass* GetType()
-		{ return Type; }
+		{ return this->Type; }
+	virtual TechnoTypeClass* GetTechnoType()
+		{ return this->Type; }
 	virtual wchar_t* GetUIName()
 		{ THISCALL(0x746B20); }
 	virtual bool IsDisguisedAs(HouseClass *Target)

@@ -93,7 +93,7 @@ public:
 	//MissionClass
 	virtual void vt_entry_1F4(eMission mission)
 		{ PUSH_VAR32(mission); THISCALL(0x4D8F40); }
-	virtual bool vt_entry_1F8()
+	virtual bool Mission_Revert()
 		{ THISCALL(0x4D8F80); }
 	virtual int Mission_Attack()
 		{ THISCALL(0x4D4DC0); }

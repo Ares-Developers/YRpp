@@ -104,9 +104,9 @@ public:
 		{ PUSH_VAR8(bUnk2); PUSH_VAR8(bUnk1); PUSH_VAR32(uCell); THISCALL(0x700600); }
 	virtual eAction MouseOverObject(ObjectClass* pObj, bool bUnk1)
 		{ PUSH_VAR8(bUnk1); PUSH_VAR32(pObj); THISCALL(0x6FFEC0); }
-	virtual ObjectTypeClass* GetType_()
-		{ return this->GetType(); } //???
 	virtual ObjectTypeClass* GetType()
+		{ return NULL; }
+	virtual TechnoTypeClass* GetTechnoType()
 		{ return NULL; }
 	virtual DWORD GetTypeOwners()
 /*
@@ -190,13 +190,13 @@ public:
 		{ THISCALL(0x70C5D0); }
 	virtual bool IsNotWarping()
 		{ THISCALL(0x70C5F0); }
-	virtual DWORD vt_entry_1E4()
+	virtual LightConvertClass *GetRemapColour()
 		{ THISCALL(0x705D70); }
 	
 	//MissionClass
 	virtual void vt_entry_1F4(eMission mission)
 		{ PUSH_VAR32(mission); THISCALL(0x7013A0); }
-	virtual bool vt_entry_1F8()
+	virtual bool Mission_Revert()
 		{ THISCALL(0x7013E0); }
 
 	//TechnoClass

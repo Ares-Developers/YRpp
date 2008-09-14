@@ -48,7 +48,9 @@ public:
 	virtual eAction MouseOverObject(ObjectClass* pObj, bool bUnk1)
 		{ PUSH_VAR8(bUnk1); PUSH_VAR32(pObj); THISCALL(0x51E3B0); }
 	virtual ObjectTypeClass* GetType()
-		{ return Type; }
+		{ return this->Type; }
+	virtual TechnoTypeClass* GetTechnoType()
+		{ return this->Type; }
 	virtual wchar_t* GetUIName()
 		{ THISCALL(0x51F2C0); }
 	virtual CoordStruct* GetFLH(CoordStruct *pDest, int idxWeapon, int nFLH_X, int nFLH_Y, int nFLH_Z)

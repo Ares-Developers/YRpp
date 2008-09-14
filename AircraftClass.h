@@ -84,7 +84,9 @@ public:
 	virtual bool CanBeUndeployed()
 		{ return IsOnFloor(); }
 	virtual ObjectTypeClass* GetType()
-		{ return Type; }
+		{ return this->Type; }
+	virtual TechnoTypeClass* GetTechnoType()
+		{ return this->Type; }
 	virtual wchar_t* GetUIName()
 		{ THISCALL(0x41C1D0); }
 	virtual bool Put(CoordStruct* pCrd, eDirection dFaceDir)

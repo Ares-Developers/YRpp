@@ -62,18 +62,18 @@ public:
 	virtual SHPStruct* GetImage()
 		{ THISCALL(0x5F3E30); }
 	virtual eAction MouseOverCell(CellStruct uCell, bool bUnk1, bool bUnk2)
-								{ return act_None; }
+		{ return act_None; }
 	virtual eAction MouseOverObject(ObjectClass* pObj, bool bUnk1)
-								{ return act_None; }
+		{ return act_None; }
 	virtual eLayer InWhichLayer()
 		{ THISCALL(0x5F4260); }
 	virtual bool vt_entry_7C()
 		{ THISCALL(0x5F6C10); }
 	virtual bool CanBeUndeployed()
 		{ return false; }
-	virtual ObjectTypeClass* GetType_()
-		{ return NULL; }	//???
 	virtual ObjectTypeClass* GetType()
+		{ return NULL; }
+	virtual TechnoTypeClass* GetTechnoType()
 		{ return NULL; }
 	virtual DWORD GetTypeOwners()
 		{ return 0x7FFFFFFF; }
@@ -228,14 +228,19 @@ public:
 		{ return 0; }
 	virtual void SetLocation(CoordStruct* pCrd)
 		{ PUSH_VAR32(pCrd); THISCALL(0x5F6940); }
+
+// these two work through the object's Location
 	virtual CellStruct* GetMapCoords(CellStruct* pUCell)
 		{ PUSH_VAR32(pUCell); THISCALL(0x41BEA0); }
 	virtual CellClass* GetCell()
 		{ THISCALL(0x5F6960); }
-	virtual CellStruct* vt_entry_1C0(CellStruct* pUCell)
+
+// these two call ::GetCoords_() instead
+	virtual CellStruct* GetMapCoordsAgain(CellStruct* pUCell)
 		{ PUSH_VAR32(pUCell); THISCALL(0x5F69C0); }
-	virtual CellClass* vt_entry_1C4()
+	virtual CellClass* GetCellAgain()
 		{ THISCALL(0x5F6A10); }
+
 	virtual int GetHeight()
 		{ THISCALL(0x5F5F40); }
 	virtual void SetHeight(DWORD dwUnk)
@@ -250,8 +255,8 @@ public:
 		{ return false; }
 	virtual bool IsNotWarping()
 		{ return true; }
-	virtual DWORD vt_entry_1E4()
-		{ return 0; }
+	virtual LightConvertClass *GetRemapColour()
+		{ return NULL; }
 
 	// technically it takes an ecx<this> , but it's not used and ecx is immediately overwritten on entry
 	// draws the mind control line when unit is selected

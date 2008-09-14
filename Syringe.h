@@ -65,6 +65,8 @@ public:
 	void set_EFLAGS(DWORD value)
 		{ flags = value; }
 
+	DWORD lea_StackVar(int offset)
+		{ return regs[3] + offset; }
 	DWORD get_StackVar32(int offset)
 		{ return *((DWORD*)regs[3] + (offset >> 2)); }
 	WORD get_StackVar16(int offset)
@@ -78,6 +80,8 @@ public:
 	void set_StackVar8(int offset, BYTE value)
 		{ *((BYTE*)regs[3] + offset) = value; }
 
+	DWORD lea_BaseVar(int offset)
+		{ return regs[2] + offset; }
 	DWORD get_BaseVar32(int offset)
 		{ return *((DWORD*)regs[2] + (offset >> 2)); }
 	WORD get_BaseVar16(int offset)

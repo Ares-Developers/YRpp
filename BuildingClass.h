@@ -63,7 +63,9 @@ public:
 	virtual bool CanBeUndeployed()
 		{ THISCALL(0x457620); }
 	virtual ObjectTypeClass* GetType()
-		{ return Type; }
+		{ return this->Type; }
+	virtual TechnoTypeClass* GetTechnoType()
+		{ return this->Type; }
 	virtual wchar_t* GetUIName()
 		{ THISCALL(0x459ED0); }
 	virtual bool CanBeRepaired()

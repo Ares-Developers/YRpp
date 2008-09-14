@@ -34,7 +34,7 @@ public:
 	virtual void			ForceMission(eMission mission){PUSH_VAR32(mission);THISCALL(0x5B2FD0);}
 
 	virtual void			vt_entry_1F4(eMission mission){PUSH_VAR32(mission);THISCALL(0x5B3650);}
-	virtual bool			vt_entry_1F8(){THISCALL(0x5B36B0);}
+	virtual bool			Mission_Revert(){THISCALL(0x5B36B0);}
 	virtual bool			vt_entry_1FC(){THISCALL(0x5B3A10);}
 	virtual bool			vt_entry_200(){return true;}
 
