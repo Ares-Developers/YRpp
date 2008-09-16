@@ -1,8 +1,11 @@
 #ifndef MOUSE_H
 #define MOUSE_H
 
-struct MouseCursor
+class MouseCursor
 {
+public:
+	static MouseCursor* First;
+
 	int Frame;
 	int Count;
 	int Interval;

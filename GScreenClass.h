@@ -69,8 +69,8 @@ public:
 	virtual void vt_entry_44()
 		{ THISCALL(0x4F45B0); }
 
-	virtual void vt_entry_48() = 0;
-	virtual void vt_entry_4C() = 0;
+	virtual void QueryCursor(int CursorIndex, DWORD dwUnk) = 0;
+	virtual void SetCursor(int CursorIndex, DWORD dwUnk) = 0;
 	virtual void vt_entry_50() = 0;
 	virtual void vt_entry_54() = 0;
 

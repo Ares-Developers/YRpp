@@ -68,6 +68,9 @@ DECL(InfantryTypeClass, 0xA8E348);
 #include <ConvertClass.h>
 DECL(LightConvertClass, 0x87F698);
 
+#include <MouseClass.h>
+MouseCursor* MouseCursor::First = (MouseCursor*)0x82D028;
+
 #include <ObjectClass.h>
 DynamicVectorClass<ObjectClass*>* ObjectClass::CurrentObjects =
 								(DynamicVectorClass<ObjectClass*>*)0xA8ECB8;
@@ -149,3 +152,5 @@ DECL(WarheadTypeClass, 0x8874C0);
 
 #include <WeaponTypeClass.h>
 DECL(WeaponTypeClass, 0x887568);
+
+#undef DECL

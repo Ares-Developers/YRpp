@@ -283,6 +283,7 @@ typedef int eCategory;
 typedef int eCellFlags;
 
 #define	cf_IsWaypoint		0x04
+#define	cf_Explored			0x08 //this means no shroud
 #define	cf_FlagPresent		0x10
 #define cf_Bridge			0x100
 #define	cf_VeinsPresent		0x20000

@@ -117,6 +117,9 @@ public:
 			return pCell;
 		}
 
+	bool IsLocationShrouded(CoordStruct* pCrd)
+		{ PUSH_VAR32(pCrd); THISCALL(0x586360); }
+
 	bool CellExists(CellStruct* pMapCoords)
 		{ return (Cells[(pMapCoords->Y << 9) + pMapCoords->X] != NULL);}
 
