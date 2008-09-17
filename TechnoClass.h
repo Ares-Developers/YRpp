@@ -156,8 +156,8 @@ public:
 		{ PUSH_VAR32(nDuration); THISCALL(0x6F9DD0); }
 	virtual bool Select()
 		{ THISCALL(0x6FBFA0); }
-	virtual void IronCurtain(int nDuration, DWORD dwUnused, bool bUnk)
-		{ PUSH_VAR8(bUnk); PUSH_VAR32(dwUnused); PUSH_VAR32(nDuration); THISCALL(0x70E2B0); }
+	virtual void IronCurtain(int nDuration, HouseClass *pSource, bool ForceShield)
+		{ PUSH_VAR8(ForceShield); PUSH_VAR32(pSource); PUSH_VAR32(nDuration); THISCALL(0x70E2B0); }
 	virtual void vt_entry_158()
 		{ THISCALL(0x70E340); }
 	virtual void vt_entry_15C(DWORD dwUnk)

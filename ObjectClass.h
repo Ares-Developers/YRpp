@@ -176,7 +176,7 @@ public:
 		{ THISCALL(0x5F4520); }
 	virtual void Deselect()
 		{ THISCALL(0x5F44A0); }
-	virtual void IronCurtain(int nDuration, DWORD dwUnused, bool bUnk)
+	virtual void IronCurtain(int nDuration, HouseClass *pSource, bool ForceShield)
 		{ }
 	virtual void vt_entry_158()
 		{ }

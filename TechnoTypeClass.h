@@ -376,7 +376,7 @@ private: DWORD align_3C4;
 	PROPERTY(bool,            IsDropship);
 	PROPERTY(bool,            ToProtect);
 	PROPERTY(bool,            Disableable);
-	PROPERTY(bool,            unknown_bool_C98); //always false
+	PROPERTY(bool,            Unbuildable); //always false, if true it cannot be built from sidebar
 	PROPERTY(bool,            DoubleOwned);
 	PROPERTY(bool,            Invisible);
 	PROPERTY(bool,            RadarVisible);

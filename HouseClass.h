@@ -315,6 +315,13 @@ public:
 		{ PUSH_VAR32(Destination); PUSH_VAR32(Target); PUSH_VAR32(SetMission); PUSH_VAR32(AircraftAmount); 
 			SET_REG32(EDX, AircraftTypeIdx); THISCALL(0x65EAB0); }
 
+	// registering in prereq counters (all technoes get logged, but only buildings get checked on validation... wtf)
+	void RegisterGain(TechnoClass *pTechno, DWORD dwUnk)
+		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pTechno); THISCALL(0x502A80); }
+
+	void RegisterLoss(TechnoClass *pTechno, DWORD dwUnk)
+		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pTechno); THISCALL(0x5025F0); }
+
 	// reminder: verify the resulting binary layout
 
 	//===========================================================================
@@ -402,10 +409,23 @@ public:
 	PROPERTY(bool,                  Side0TechInfiltrated); // and has the appropriate AIBasePlanningSide
 	PROPERTY(bool,                  BarracksInfiltrated);
 	PROPERTY(bool,                  WarFactoryInfiltrated);
-	PROPERTY(DWORD,					unknown_2C4);
-	PROPERTY(DWORD,					unknown_2C8);
-	PROPERTY(DWORD,					unknown_2CC);
-	PROPERTY(DWORD,					unknown_2D0);
+
+		// these four are unused horrors
+		// checking prerequisites:
+		/*
+		if(1 << this->Country->IndexInArray & item->RequiredHouses
+			|| (item->WhatAmI == abs_InfantryType && (item->RequiredHouses & this->InfantryAltOwner))
+			|| (item->WhatAmI == abs_UnitType && (item->RequiredHouses & this->UnitAltOwner))
+			|| (item->WhatAmI == abs_AircraftType && (item->RequiredHouses & this->AircraftAltOwner))
+			|| (item->WhatAmI == abs_BuildingType && (item->RequiredHouses & this->BuildingAltOwner))
+		)
+			{ can build }
+		 */
+	PROPERTY(DWORD,					InfantryAltOwner);
+	PROPERTY(DWORD,					UnitAltOwner);
+	PROPERTY(DWORD,					AircraftAltOwner);
+	PROPERTY(DWORD,					BuildingAltOwner);
+
 	PROPERTY(int,                   AirportDocks);
 	PROPERTY(int,                   PoweredUnitCenters);
 	PROPERTY(DWORD,					unknown_2DC);
@@ -502,14 +522,26 @@ public:
 	PROPERTY_STRUCT(CellStruct,            unknown_54F8);
 	PROPERTY(int,                   PreferredDefensiveCellStartTime); // don't look at me...
 	                                // map actions let you set an ai's ForceShield firing cell, this is related
+
+		// Used for: Counting objects ever owned
+		// altered on object gain only
+		// BuildLimit < 0 validation uses this
 	PROPERTY_STRUCT(CounterClass,          OwnedBuildingTypes);
 	PROPERTY_STRUCT(CounterClass,          OwnedUnitTypes);
 	PROPERTY_STRUCT(CounterClass,          OwnedInfantryTypes);
 	PROPERTY_STRUCT(CounterClass,          OwnedAircraftTypes);
+
+		// Used for: Counting objects currently owned
+		// altered on each object's loss or gain
+		// AITriggerType condition uses this
 	PROPERTY_STRUCT(CounterClass,          OwnedBuildingTypes1);
 	PROPERTY_STRUCT(CounterClass,          OwnedUnitTypes1);
 	PROPERTY_STRUCT(CounterClass,          OwnedInfantryTypes1);
 	PROPERTY_STRUCT(CounterClass,          OwnedAircraftTypes1);
+
+		// Used for: Counting objects produced from Factory
+		// not altered when things get taken over or removed
+		// BuildLimit > 0 uses this
 	PROPERTY_STRUCT(CounterClass,          OwnedBuildingTypes2);
 	PROPERTY_STRUCT(CounterClass,          OwnedUnitTypes2);
 	PROPERTY_STRUCT(CounterClass,          OwnedInfantryTypes2);

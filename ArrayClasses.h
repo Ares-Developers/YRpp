@@ -275,6 +275,12 @@ public:
 	CounterClass() : VectorClass<int>()
 		{ Count = 0; }
 
+	int Increment(int nIndex)
+		{ PUSH_VAR32(nIndex); THISCALL(0x49FA00); }
+
+	int Decrement(int nIndex)
+		{ PUSH_VAR32(nIndex); THISCALL(0x49FA70); }
+
 	PROPERTY(int,	Count);	//not sure what this is, but it's different from DVC's count
 };
 

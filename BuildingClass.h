@@ -119,8 +119,8 @@ public:
 		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x443410); }
 	virtual void Flash(int Duration)
 		{ PUSH_VAR32(Duration); THISCALL(0x456E00); }
-	virtual void IronCurtain(int nDuration, DWORD dwUnused, bool bUnk)
-		{ PUSH_VAR8(bUnk); PUSH_VAR32(dwUnused); PUSH_VAR32(nDuration); THISCALL(0x457C90); }
+	virtual void IronCurtain(int nDuration, HouseClass *pSource, bool ForceShield)
+		{ PUSH_VAR8(ForceShield); PUSH_VAR32(pSource); PUSH_VAR32(nDuration); THISCALL(0x457C90); }
 
 	virtual eDamageState ReceiveDamage(int* pDamage, DWORD dwUnk1, WarheadTypeClass* pWH, ObjectClass* pAttacker, DWORD dwUnk2, DWORD dwUnk3, HouseClass* pAttackingHouse)
 		{ PUSH_VAR32(pAttackingHouse); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2);

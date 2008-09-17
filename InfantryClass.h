@@ -78,8 +78,8 @@ public:
 		{ PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x51F250); }
 	virtual bool vt_entry_144(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
 		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x51F190); }
-	virtual void IronCurtain(int nDuration, DWORD dwUnused, bool bUnk)
-		{ PUSH_VAR8(bUnk); PUSH_VAR32(nDuration); THISCALL(0x522600); }
+	virtual void IronCurtain(int nDuration, HouseClass *pSource, bool ForceShield)
+		{ PUSH_VAR8(ForceShield); PUSH_VAR32(pSource); PUSH_VAR32(nDuration); THISCALL(0x522600); }
 
 	virtual eDamageState ReceiveDamage(int* pDamage, DWORD dwUnk1, WarheadTypeClass* pWH,
 	  ObjectClass* pAttacker, DWORD dwUnk2, DWORD dwUnk3, HouseClass* pAttackingHouse)
