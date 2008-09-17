@@ -47,6 +47,7 @@ typedef unsigned short WORD;
 class REGISTERS
 {
 private:
+	DWORD	origin;
 	DWORD	flags;
 	DWORD	regs[8];
 
@@ -59,6 +60,9 @@ public:
 	REG_FUNCS2(EBP, BP, 2);
 	REG_FUNCS2(ESI, SI, 1);
 	REG_FUNCS2(EDI, DI, 0);
+
+	DWORD get_Origin()
+		{ return origin; }
 
 	DWORD get_EFLAGS()
 		{ return flags; }
