@@ -210,6 +210,9 @@ public:
 		  PUSH_VAR64(arg);
 		  THISCALL(0x487D00); }
 
+	// helper mimicking game's behaviour
+	ObjectClass* GetContent()
+		{ return this->Flags & cf_Bridge ? this->AltObject : this->FirstObject; }
 
 	// tilesets
 #define ISTILE(tileset, addr) \
@@ -242,10 +245,13 @@ ISTILE(DestroyableCliff, 0x486900);
 	virtual ~CellClass()
 		{ THISCALL(0x47BB60); }
 
+	// HACK EVIL HACK
+	static int BridgeHeight;
+
 protected:
 	//Constructor
 	CellClass():AbstractClass(false)
-		{ THISCALL(0x47BBF0); }
+		{ THISCALL(0x47BBF0); BridgeHeight = *(int *)0xB0C07C; }
 
 	//===========================================================================
 	//===== Properties ==========================================================

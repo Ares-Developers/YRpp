@@ -595,7 +595,7 @@ public:
 	PROPERTY(BYTE,               unused_273);
 	PROPERTY(TemporalClass*,     TemporalImUsing); // CLEG attacking Power Plant : CLEG's this 
 	PROPERTY(TemporalClass*,     TemporalTargetingMe); 	// CLEG attacking Power Plant : PowerPlant's this 
-	PROPERTY(bool,               unknown_bool_27C);
+	PROPERTY(bool,               IsImmobilized); // by chrono aftereffects
 	PROPERTY(DWORD,              unknown_280);
 	PROPERTY(int,                ChronoLockRemaining); // countdown after chronosphere warps things around
 	PROPERTY_STRUCT(CoordStruct,        unknown_point3d_288);
@@ -619,7 +619,10 @@ public:
 	PROPERTY(SlaveManagerClass*, SlaveManager);
 	PROPERTY(TechnoClass*,       SlaveOwner); // on SLAV, points to YAREFN
 	PROPERTY(HouseClass*,        OriginallyOwnedByHouse); //used for mind control
-	PROPERTY(BuildingClass*,     InBunker); //not certain
+
+		//units point to the Building bunkering them, building points to Foot contained within
+	PROPERTY(TechnoClass*,       BunkerLinkedItem);
+
 	PROPERTY(DWORD,              unknown_2E8);
 	PROPERTY_STRUCT(TimerStruct,        DiskLaserTimer);
 	PROPERTY(DWORD,              unknown_2F8);

@@ -7,6 +7,9 @@ namespace Unsorted
 {
 	static int &CurrentFrame     = *(int *)0xA8ED84;
 
+	// if != 0, EVA_SWxxxActivated is skipped
+	static int &MuteSWLaunches   = *(int *)0xA8B538;
+
 	static byte &ArmageddonMode  = *(byte *)0xA8ED6B;
 
 	static DynamicVectorClass<ObjectClass *>** vec_ObjectsInLayers = (DynamicVectorClass<ObjectClass *>**)0x8A0360;

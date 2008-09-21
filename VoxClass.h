@@ -31,6 +31,10 @@ public:
 	static void PlayIndex(int index)
 		{ PUSH_IMM(0xFFFFFFFF); SET_REG32(edx, 0xFFFFFFFF); SET_REG32(ecx, index); CALL(0x752480); }
 
+	// no idea what this does, but Super::Launch uses it on "SW Ready" events right after firing said SW
+	static void SilenceIndex(int index)
+		{ SET_REG32(ecx, index); CALL(0x752A40); }
+
 	//Properties
 	PROPERTY_STRING(Name, 0x28);
 
