@@ -337,7 +337,7 @@ public:
 		{ return Upgrades[i]; }
 */
 
-	PROPERTY(DWORD, unknown_5F8);
+	PROPERTY(DWORD, FiringSWType); // type # of sw being launched
 	PROPERTY(DWORD, unknown_5FC);
 	PROPERTY(BuildingLightClass*, Spotlight);
 	PROPERTY_STRUCT(TimerStruct, unknown_timer_604);

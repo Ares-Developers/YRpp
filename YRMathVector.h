@@ -119,7 +119,7 @@ public:
 	//assignment
 	void operator=(Vector3D a)
 	{
-		X=a.X;Y=a.Y;Z=a.Z;
+		X = a.X; Y = a.Y; Z = a.Z;
 	}
 	//addition
 	Vector3D operator+(Vector3D a)

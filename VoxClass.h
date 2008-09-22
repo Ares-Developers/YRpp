@@ -28,8 +28,11 @@ public:
 	static void Play(const char* pName)
 		{ PUSH_IMM(0xFFFFFFFF); SET_REG32(edx, 0xFFFFFFFF); SET_REG32(ecx, pName); CALL(0x752700); }
 
-	static void PlayIndex(int index)
+	static void PlayIndex(const int index)
 		{ PUSH_IMM(0xFFFFFFFF); SET_REG32(edx, 0xFFFFFFFF); SET_REG32(ecx, index); CALL(0x752480); }
+
+	static void PlayAtPos(const int index, CoordStruct *pCoords)
+		{ PUSH_IMM(0); SET_REG32(edx, pCoords); SET_REG32(ecx, index); CALL(0x750E20); }
 
 	// no idea what this does, but Super::Launch uses it on "SW Ready" events right after firing said SW
 	static void SilenceIndex(int index)

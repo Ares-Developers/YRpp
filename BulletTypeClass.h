@@ -64,6 +64,11 @@ public:
 	BulletTypeClass(const char* pID) : ObjectTypeClass(false)
 		{ PUSH_VAR32(pID); THISCALL(0x46BBC0); }
 
+	BulletClass* CreateBullet(CellClass* Target, TechnoClass* Owner, int Damage, 
+		WarheadTypeClass *WH, int Speed, bool Bright)
+			{ PUSH_VAR8(Bright); PUSH_VAR32(Speed); PUSH_VAR32(WH); PUSH_VAR32(Owner); SET_REG32(EDX, Target); 
+				THISCALL(0x46B050); }
+
 protected:
 	BulletTypeClass() {};
 	BulletTypeClass(bool X) : ObjectTypeClass(false) {};

@@ -9,6 +9,7 @@
 
 //forward declarations
 class SuperClass;
+class BulletClass;
 class BuildingClass;
 class FactoryClass;
 class TagClass;
@@ -321,6 +322,12 @@ public:
 
 	void RegisterLoss(TechnoClass *pTechno, DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pTechno); THISCALL(0x5025F0); }
+
+	BuildingClass* FindBuildingOfType(int idx, signed int distance)
+		{ PUSH_VAR32(distance); PUSH_VAR32(idx); THISCALL(0x4FD060); }
+
+	AnimClass *PsiWarn(CellClass *pTarget, BulletClass *Bullet, char *AnimName)
+		{ PUSH_VAR32(AnimName); PUSH_VAR32(Bullet); SET_REG32(EDX, pTarget); THISCALL(0x43B5E0); }
 
 	// reminder: verify the resulting binary layout
 

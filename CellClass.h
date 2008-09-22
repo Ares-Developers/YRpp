@@ -345,7 +345,11 @@ public:
 	PROPERTY(char,               Powerup);	//The crate type on this cell.
 
 	PROTECTED_PROPERTY(BYTE,     unknown_11F);
-	PROTECTED_PROPERTY(BYTE,     unknown_120[0x20]);
+	PROPERTY(BYTE,               Shroudedness); // trust me, you don't wanna know... if you do, see 0x7F4194 and cry
+	PROTECTED_PROPERTY(BYTE,     unknown_121[0xB]);
+
+	PROPERTY(eCellFlags_12C,     CopyFlags);	// related to Flags below
+	PROTECTED_PROPERTY(BYTE,     unknown_130[0x10]);
 
 	PROPERTY(eCellFlags,         Flags);	//Various settings.
 	PROTECTED_PROPERTY(BYTE,     unknown_144[4]);

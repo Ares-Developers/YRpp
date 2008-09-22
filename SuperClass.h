@@ -18,31 +18,31 @@ public:
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x6CDEB0);}
+		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x6CDEB0); }
 
 	//IPersistStream
-	virtual HRESULT _stdcall	Load(IStream* pStm)
-								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x6CDEF0);}
-	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x6CDFD0);}
+	virtual HRESULT _stdcall Load(IStream* pStm)
+		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x6CDEF0); }
+	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
+		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x6CDFD0); }
 
 	//AbstractClass
-	virtual void				PointerExpired(void* p,bool bUnknown)
-								{PUSH_VAR8(bUnknown);PUSH_VAR32(p);THISCALL(0x6CDFF0);}
-	virtual eAbstractType		WhatAmI(){return abs_Super;}
-	virtual int					Size(){return sizeof(SuperClass);}
-	virtual void				CalculateChecksum(void* pChkSum){PUSH_VAR32(pChkSum);THISCALL(0x6CE020);}
+	virtual void PointerExpired(void* p, bool bUnknown)
+		{ PUSH_VAR8(bUnknown); PUSH_VAR32(p); THISCALL(0x6CDFF0); }
+	virtual eAbstractType WhatAmI()
+		{ return abs_Super; }
+	virtual int Size()
+		{ return sizeof(SuperClass); }
+	virtual void CalculateChecksum(void* pChkSum)
+		{ PUSH_VAR32(pChkSum); THISCALL(0x6CE020); }
 
 	//Destructor
-	virtual ~SuperClass()							{THISCALL(0x6CB120);}
+	virtual ~SuperClass()
+		{ THISCALL(0x6CB120); }
 
 	//Constructor
 	SuperClass(SuperWeaponTypeClass* pSWType,HouseClass* pOwner):AbstractClass(false)
-													{
-													PUSH_VAR32(pOwner);
-													PUSH_VAR32(pSWType);
-													THISCALL(0x6CAF90);
-													}
+		{ PUSH_VAR32(pOwner); PUSH_VAR32(pSWType); THISCALL(0x6CAF90); }
 
 protected:
 	SuperClass():AbstractClass(false){}
@@ -77,18 +77,19 @@ protected:
 
 class LightningStorm
 {
+public:
 	static CellStruct Coords()
-		{ CellStruct ret; MEM_READ32(ret, 0xA9F9CC); return ret; }
+		{ CellStruct retval; MEM_READ32(retval, 0xA9F9CC); return retval; }
 	static HouseClass *Owner()
-		{ HouseClass *ret; MEM_READ32(ret, 0xA9FACC); return ret; }
+		{ HouseClass *retval; MEM_READ32(retval, 0xA9FACC); return retval; }
 	static int Deferment()
-		{ int ret; MEM_READ32(ret, 0xA9FAB8); return ret; }
+		{ int retval; MEM_READ32(retval, 0xA9FAB8); return retval; }
 	static int Status()
-		{ int ret; MEM_READ32(ret, 0xA9FABC); return ret; }
+		{ int retval; MEM_READ32(retval, 0xA9FABC); return retval; }
 	static byte Active()
-		{ byte ret; MEM_READ8(ret, 0xA9FAB4); return ret; }
+		{ byte retval; MEM_READ8(retval, 0xA9FAB4); return retval; }
 	static byte TimeToEnd()
-		{ byte ret; MEM_READ8(ret, 0xA9FAD0); return ret; }
+		{ byte retval; MEM_READ8(retval, 0xA9FAD0); return retval; }
 	static void Start(int Duration, int Deferment, CellStruct Coords, HouseClass *pOwner)
 		{ PUSH_VAR32(pOwner); PUSH_VAR32(Coords); SET_REG32(EDX, Deferment); SET_REG32(ECX, Duration);
 			CALL(0x539EB0); }
@@ -108,14 +109,15 @@ class LightningStorm
 
 class PsyDom
 {
+public:
 	static CellStruct Coords()
-		{ CellStruct ret; MEM_READ32(ret, 0xA9FA48); return ret; }
+		{ CellStruct retval; MEM_READ32(retval, 0xA9FA48); return retval; }
 	static HouseClass *Owner()
-		{ HouseClass *ret; MEM_READ32(ret, 0xA9FAC8); return ret; }
+		{ HouseClass *retval; MEM_READ32(retval, 0xA9FAC8); return retval; }
 	static AnimClass *Anim()
-		{ AnimClass *ret; MEM_READ32(ret, 0xA9FAC4); return ret; }
+		{ AnimClass *retval; MEM_READ32(retval, 0xA9FAC4); return retval; }
 	static int Status()
-		{ int ret; MEM_READ32(ret, 0xA9FAC0); return ret; }
+		{ int retval; MEM_READ32(retval, 0xA9FAC0); return retval; }
 	static void Start(HouseClass *pOwner, CellStruct Coords)
 		{ PUSH_VAR32(Coords); SET_REG32(ECX, pOwner);
 			CALL(0x53AE50); }

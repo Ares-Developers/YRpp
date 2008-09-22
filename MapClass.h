@@ -129,6 +129,63 @@ public:
 	CellClass* CellIteratorNext()
 		{ THISCALL(0x578290); }
 
+// the key damage delivery
+	static int DamageArea(CoordStruct* Coords, signed int Damage, TechnoClass* SourceObject,
+		WarheadTypeClass *WH, BYTE bUnk, HouseClass* SourceHouse)
+			{ PUSH_VAR32(SourceHouse); PUSH_VAR8(bUnk); PUSH_VAR32(WH); PUSH_VAR32(SourceObject); 
+				SET_REG32(EDX, Damage); SET_REG32(ECX, Coords); CALL(0x489280); }
+
+// ====================================
+//        MAP REVEAL BRAINDAMAGE
+// ====================================
+
+/*
+ * TechnoClass::Fire uses this for RevealOnFire on player's own units (radius = 3)
+ * TechnoClass::See uses this on all (singleCampaign || !MultiplayPassive) units
+ * TalkBubble uses this to display the unit to the player
+ */
+	static void RevealArea1(CoordStruct* Coords, signed int Radius, HouseClass* OwnerHouse,
+		CellStruct arg4, BYTE RevealByHeight, BYTE arg6, BYTE arg7, BYTE arg8)
+			{ PUSH_VAR8(arg8); PUSH_VAR8(arg7); PUSH_VAR8(arg6); PUSH_VAR8(RevealByHeight); PUSH_VAR32(arg4); 
+				PUSH_VAR32(OwnerHouse); PUSH_VAR32(Radius); PUSH_VAR32(Coords); CALL(0x5673A0); }
+
+/*
+ * these come in pairs - first the last argument is 0 and then 1
+
+ * AircraftClass::Fire - reveal the target area to the owner (0,0,0,1,x)
+ * AircraftClass::See - reveal shroud when on the ground (arg,arg,0,1,x), and fog always (0,0,1,(height < flightlevel/2),x)
+ * AnimClass::AnimClass - reveal area to player if anim->Type = [General]DropZoneAnim= (radius = Rules->DropZoneRadius /256) (0,0,0,1,x)
+ * BuildingClass::Place - reveal (r = 1) to player if this is ToTile and owned by player (0,0,0,1,x)
+ * BuildingClass::Put - reveal (radius = this->Type->Sight ) to owner (0,0,0,1,x)
+ * PsychicReveal launch - reveal to user (0,0,0,0,x)
+ * ActionClass::RevealWaypoint - reveal RevealTriggerRadius= to player (0,0,0,1,x)
+ * ActionClass::RevealZoneOfWaypoint - reveal (r = 2) to player (0,0,0,1,x)
+ */
+	static void RevealArea2(CoordStruct* Coords, signed int Radius, HouseClass* OwnerHouse,
+		DWORD /*CellStruct*/ arg4, BYTE RevealByHeight, BYTE arg6, BYTE arg7, BYTE arg8)
+			{ PUSH_VAR8(arg8); PUSH_VAR8(arg7); PUSH_VAR8(arg6); PUSH_VAR8(RevealByHeight); PUSH_VAR32(arg4); 
+				PUSH_VAR32(OwnerHouse); PUSH_VAR32(Radius); PUSH_VAR32(Coords); CALL(0x5678E0); }
+
+/*
+ * AircraftClass::SpyPlaneApproach
+ * AircraftClass::SpyPlaneOverfly
+ * AircraftClass::Carryall_Unload
+ * BuildingClass::Place - RevealToAll
+ * Foot/Infantry Class::Update/UpdatePosition
+ * MapClass::RevealArea0 calls this to do the work
+ * ParasiteClass::Infect/PointerGotInvalid
+ * TechnoClass::Put
+ * TechnoClass::Fire uses this (r = 4) right after using RevealArea0, wtfcock
+ */
+	static void RevealArea3(CoordStruct *Coords, int Height, int Radius, bool SkipReveal)
+		{ PUSH_VAR8(SkipReveal); PUSH_VAR32(Radius); PUSH_VAR32(Height); PUSH_VAR32(Coords); CALL(0x567DA0); }
+
+
+// the unknown functions that are srs bsns
+	int sub_578080(CoordStruct *Coords)
+		{ PUSH_VAR32(Coords); THISCALL(0x578080); }
+
+
 protected:
 	//Constructor
 	MapClass() {}	//don't need this

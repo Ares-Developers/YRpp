@@ -288,6 +288,12 @@ typedef int eCellFlags;
 #define cf_Bridge			0x100
 #define	cf_VeinsPresent		0x20000
 #define	cf_EMPPresent		0x80000
+#define	cf_Fogged		0x400000
+
+
+typedef int eCellFlags_12C;
+
+#define	cf2_NoShadow			0x08 //else tooltip is TXT_SHADOW
 
 
 typedef int eCloakStates;
