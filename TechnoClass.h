@@ -66,6 +66,33 @@ public:
 		{ PUSH_VAR32(candidate); THISCALL(0x473500); }
 };
 
+struct FlashData
+{
+	int DurationRemaining;
+	bool FlashingNow;
+
+	bool Update()
+		{ THISCALL(0x4CC770); }
+};
+
+struct RecoilData
+{
+	int Travel;
+	int CompressFrames;
+	int HoldFrames;
+	int RecoverFrames;
+	int f_10;
+	int f_14;
+	int f_18;
+	int f_1C;
+
+	void Update()
+		{ THISCALL(0x70ED10); }
+
+	void Fire()
+		{ THISCALL(0x70ECE0); }
+};
+
 class TechnoClass : public RadioClass
 {
 public:
@@ -524,8 +551,7 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 public:
-	PROPERTY(int,                FlashTime); //in frames, set in order to make this unit flash
-	PROPERTY(bool,               unknown_bool_F4);
+	PROPERTY_STRUCT(FlashData,   Flashing);
 	PROPERTY(DWORD,              unknown_F8);
 	PROPERTY(bool,               unknown_bool_FC);
 	PROPERTY_STRUCT(TimerStruct,        unknown_timer_100);
@@ -679,22 +705,8 @@ public:
 	PROPERTY(bool,               IsPrimaryFactory); // doubleclicking a warfac/barracks sets it as primary
 	PROPERTY(bool,               Spawned);
 	PROPERTY(bool,               Produced);
-	PROPERTY(int,                unknown_int_3D8);
-	PROPERTY(int,                unknown_int_3DC);
-	PROPERTY(int,                unknown_int_3E0);
-	PROPERTY(int,                unknown_int_3E4);
-	PROPERTY(DWORD,              unknown_3E8); //unused?
-	PROPERTY(DWORD,              unknown_3EC);
-	PROPERTY(DWORD,              unknown_3F0);
-	PROPERTY(DWORD,              unknown_3F4); //unused?
-	PROPERTY(int,                unknown_int_3F8);
-	PROPERTY(int,                unknown_int_3FC);
-	PROPERTY(int,                unknown_int_400);
-	PROPERTY(int,                unknown_int_404);
-	PROPERTY(DWORD,              unknown_408); //unused?
-	PROPERTY(DWORD,              unknown_40C);
-	PROPERTY(DWORD,              unknown_410);
-	PROPERTY(DWORD,              unknown_414); //unused?
+	PROPERTY_STRUCT(RecoilData,  TurretRecoil);
+	PROPERTY_STRUCT(RecoilData,  BarrelRecoil);
 	PROPERTY(bool,               unknown_bool_418);
 	PROPERTY(bool,               unknown_bool_419);
 	PROPERTY(bool,               IsHumanControlled);
