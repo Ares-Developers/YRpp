@@ -724,18 +724,26 @@ public:
 	PROPERTY_STRUCT(DynamicVectorClass<int>, unknown_int_array_440);
 	PROPERTY_STRUCT(DynamicVectorClass<AbstractClass*>, unknown_abstract_array_458);
 	PROPERTY_STRUCT(DynamicVectorClass<AbstractClass*>, unknown_abstract_array_470);
-	PROTECTED_PROPERTY(BYTE,     unknown_structure3_488[0x14]);
+
+	PROPERTY_STRUCT(Unsorted::AudioController, Audio3);
+
 	PROPERTY(DWORD,              unknown_49C);
 	PROPERTY(DWORD,              unknown_4A0);
-	PROTECTED_PROPERTY(BYTE,     unknown_structure3_4A4[0x14]);
+
+	PROPERTY_STRUCT(Unsorted::AudioController, Audio4);
+
 	PROPERTY(bool,               unknown_bool_4B8);
 	PROPERTY(DWORD,              unknown_4BC);
-	PROTECTED_PROPERTY(BYTE,     unknown_structure3_4C0[0x14]);
+
+	PROPERTY_STRUCT(Unsorted::AudioController, Audio5);
+
 	PROPERTY(bool,               unknown_bool_4D4);
 	PROPERTY(DWORD,              unknown_4D8);
-	PROTECTED_PROPERTY(BYTE,     unknown_structure3_4DC[0x14]);
-	PROPERTY(DWORD,              unknown_4F0);
+
+	PROPERTY_STRUCT(Unsorted::AudioController, Audio6);
+
 	PROPERTY(DWORD,              QueuedVoiceIndex);
+	PROPERTY(DWORD,              unknown_4F4);
 	PROPERTY(bool,               unknown_bool_4F8);
 	PROPERTY(DWORD,				unknown_4FC);	//gets initialized with the current Frame, but this is NOT a TimerStruct!
 	PROPERTY(DWORD,				unknown_500);

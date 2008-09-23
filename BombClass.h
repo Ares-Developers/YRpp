@@ -7,12 +7,6 @@
 class TechnoClass;
 class HouseClass;
 
-struct BombInfoStruct // this or some compatible struct is marked elsewhere as BYTE unknown_structure3[0x14]; needs more info
-{
-	int unk[3];
-	void *Audio_IDX_Container; // no idea what this struct does, IDX_Container is the struct that contains the voc sounds, TODO: define
-};
-
 class BombClass : public AbstractClass
 {
 public:
@@ -57,8 +51,7 @@ protected:
 	PROPERTY(DWORD,				DeathBomb); // unused - if so, [General]CanDetonateDeathBomb applies instead of CanDetonateTimeBomb
 	PROPERTY(int,				PlantingFrame);
 	PROPERTY(int,				DetonationFrame);
-	PROPERTY_STRUCT(BombInfoStruct,	BombAudio);
-	PROPERTY(DWORD,					unknown_4C);
+	PROPERTY_STRUCT(Unsorted::AudioController, Audio);
 	PROPERTY(int,					TickSound);
 	PROPERTY(DWORD,					ShouldPlayTickingSound); // seems so
 	PROPERTY(byte,					Harmless); // (mostly) set to 0 on plant, 1 on detonation/removal ?

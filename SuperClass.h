@@ -40,6 +40,10 @@ public:
 	virtual ~SuperClass()
 		{ THISCALL(0x6CB120); }
 
+	// non virtual
+	void CreateChronoAnim(CoordStruct Coords)
+		{ PUSH_VAR32(Coords.Z); PUSH_VAR32(Coords.Y); PUSH_VAR32(Coords.X); THISCALL(0x6CB3A0); }
+
 	//Constructor
 	SuperClass(SuperWeaponTypeClass* pSWType,HouseClass* pOwner):AbstractClass(false)
 		{ PUSH_VAR32(pOwner); PUSH_VAR32(pSWType); THISCALL(0x6CAF90); }
@@ -63,11 +67,12 @@ protected:
 	PROPERTY(DWORD,					unknown_4C);
 	PROPERTY(int,					SpecialSoundDuration); // see 0x6CD14F
 	PROPERTY_STRUCT(CoordStruct,	SpecialSoundLocation);		//unused?
-	PROPERTY(bool,					unknown_bool_60);
-	PROPERTY_STRUCT(CellStruct,			ChronoMapCoords);
+	PROPERTY(bool,					unknown_bool_60);          // 0x60 
+	PROPERTY_STRUCT(CellStruct,			ChronoMapCoords);  // 0x62
+	PROPERTY(AnimClass *,		Animation);                // 0x68
 	PROPERTY(bool,					unknown_bool_6C);
 	PROPERTY(bool,					unknown_bool_6D);
-	PROPERTY(bool,					Quantity);
+	PROPERTY(bool,					Quantity); // Stupidity - 0 means unlimited, 1 means one-shot
 	PROPERTY(bool,					IsCharged);
 	PROPERTY(bool,					HasPower);
 	PROPERTY(int,					ReadinessFrame); // when did it become ready?

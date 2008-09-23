@@ -246,12 +246,21 @@ ISTILE(DestroyableCliff, 0x486900);
 		{ THISCALL(0x47BB60); }
 
 	// HACK EVIL HACK
-	static int BridgeHeight;
+	static int BridgeHeight()
+		{ return *(int *)0xB0C07C; }
+
+	static CoordStruct * Cell2Coord(CellStruct* cell, CoordStruct *crd)
+		{
+			crd->X = cell->X * 256 + 128;
+			crd->Y = cell->Y * 256 + 128;
+			crd->Z = 0;
+			return crd;
+		}
 
 protected:
 	//Constructor
 	CellClass():AbstractClass(false)
-		{ THISCALL(0x47BBF0); BridgeHeight = *(int *)0xB0C07C; }
+		{ THISCALL(0x47BBF0); }
 
 	//===========================================================================
 	//===== Properties ==========================================================

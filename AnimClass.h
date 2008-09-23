@@ -180,16 +180,8 @@ protected:
 	PROPERTY(bool,				Invisible); // don't draw, but Update state anyway 
 	PROPERTY(byte,				unknown_19E);
 	PROPERTY(byte,				unknown_19F);
-	PROPERTY(DWORD,				unknown_1A0); // some struct { int x, y, z; void *ptr; } 
-	PROPERTY(DWORD,				unknown_1A4); // also present in other classes, init'd at 0x405BE0
-	PROPERTY(DWORD,				unknown_1A8); //
-	PROPERTY(DWORD,				unknown_1AC); //
-	PROPERTY(DWORD,				unknown_1B0);
-	PROPERTY(DWORD,				unknown_1B4); // same struct
-	PROPERTY(DWORD,				unknown_1B8); //
-	PROPERTY(DWORD,				unknown_1BC); //
-	PROPERTY(DWORD,				unknown_1C0); //
-	PROPERTY(DWORD,				unknown_1C4);
+	PROPERTY_STRUCT(Unsorted::AudioController, Audio3);
+	PROPERTY_STRUCT(Unsorted::AudioController, Audio4);
 };
 
 #endif

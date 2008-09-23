@@ -317,7 +317,9 @@ protected:
 	PROPERTY(DWORD,           unknown_538);
 	PROPERTY(bool,            unknown_bool_53C);
 	PROPERTY(DWORD,           unknown_540);
-	PROTECTED_PROPERTY(BYTE,  unknown_structure3_544[0x14]);
+
+	PROPERTY_STRUCT(Unsorted::AudioController, Audio7);
+
 	PROPERTY(short,           unknown_short_558);
 	PROPERTY(short,           unknown_short_55A);
 	PROPERTY_STRUCT(CellStruct,      CurrentMapCoords);

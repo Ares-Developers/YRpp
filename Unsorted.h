@@ -33,6 +33,54 @@ struct ColorPacker
 	static const int except_txt_length = 0xFFFF;
 	static char *except_txt_content = (char *)0x8A3A08;
 
+	static DWORD *Audio_IDX_Container = (DWORD*)0x87E294;
+
+struct AudioController
+{
+	DWORD f_0;
+	DWORD f_4;
+	DWORD f_8;
+	DWORD *f_C;
+	DWORD f_10;
+
+	AudioController()
+	{
+		this->f_0 = this->f_4 = this->f_8 = 0;
+		this->f_C = Audio_IDX_Container;
+	}
+
+	void DTOR_0()
+		{ THISCALL(0x405C00); }
+
+	void DTOR_1()
+		{ THISCALL(0x405D40); }
+
+	void DTOR_2()
+		{ THISCALL(0x405FD0); }
+
+	void DTOR_3()
+		{ THISCALL(0x406060); }
+
+	void sub_4060F0(int a1, int a2)
+		{ PUSH_VAR32(a2); SET_REG32(EDX, a1); THISCALL(0x4060F0); }
+
+	void sub_406130()
+		{ THISCALL(0x406130); }
+
+	void sub_406170()
+		{ THISCALL(0x406170); }
+
+	void sub_4061D0(unsigned int arg)
+		{ SET_REG32(EDX, arg); THISCALL(0x4061D0); }
+
+	void sub_406270(unsigned int arg)
+		{ SET_REG32(EDX, arg); THISCALL(0x406270); }
+
+	void sub_406310()
+		{ THISCALL(0x406310); }
+
+};
+
 /*
  * This thing is ridiculous
  * all xxTypeClass::Create functions use it:

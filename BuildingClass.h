@@ -367,11 +367,8 @@ public:
 	PROPERTY_STRUCT(DynamicVectorClass<InfantryClass*>, Occupants);
 	PROPERTY(DWORD, unknown_69C);
 
-	//6A0 - 6C8
-protected:
-	DWORD align_6A0, align_6A4, align_6A8, align_6AC;
-	DWORD align_6B0, align_6B4, align_6B8, align_6BC;
-	DWORD align_6C0, align_6C4;
+	PROPERTY_STRUCT(Unsorted::AudioController, Audio7);
+	PROPERTY_STRUCT(Unsorted::AudioController, Audio8);
 
 	PROPERTY(bool, unknown_bool_6C8);
 	PROPERTY(bool, ShowRealName);

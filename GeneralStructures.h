@@ -8,23 +8,8 @@
 #ifndef VECTORSTRUCTS
 #define VECTORSTRUCTS
 typedef Vector2D<short> CellStruct;
-typedef Vector2D<int>	Point2D;
-
-struct CoordStruct : public Vector3D<int>
-{
-public:
-	int X, Y, Z;
-	CoordStruct()
-	{
-		this->X = this->Y = this->Z = 0;
-	}
-	CoordStruct(CellStruct* cell)
-	{
-		this->X = cell->X * 256 + 128;
-		this->Y = cell->Y * 256 + 128;
-		this->Z = 0;
-	}
-};
+typedef Vector2D<int> Point2D;
+typedef Vector3D<int> CoordStruct;
 #endif
 
 //used for most colors

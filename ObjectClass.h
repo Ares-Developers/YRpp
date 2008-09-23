@@ -281,9 +281,11 @@ protected:
 	PROPERTY(ObjectClass*,       NextObject);	//Next Object in the same cell or transport. This is a linked list of Objects.
 	PROTECTED_PROPERTY(DWORD,    AttachedTag); //Should be TagClass , TODO: change when implemented
 	PROPERTY(BombClass*,         AttachedBomb); //Ivan's little friends.
-	PROTECTED_PROPERTY(BYTE,     unknown_3C[0x8]);
-	PROPERTY(int,                DisguisedAsOverlay);		//idx of OverlayType this is posing as (Mirage Tank)
-	PROTECTED_PROPERTY(BYTE,     unknown_48[0x20]);
+
+	PROPERTY_STRUCT(Unsorted::AudioController, Audio1); // the "mofo" struct, evil evil stuff
+	PROPERTY_STRUCT(Unsorted::AudioController, Audio2); // the "mofo" struct, evil evil stuff
+
+	PROPERTY(int,                unknown_64);		//idx of OverlayType this is posing as (Mirage Tank)
 	PROPERTY(bool,               BombVisible); // In range of player's bomb seeing units, so should draw it
 	PROPERTY(int,                Health);		//The current Health.
 	PROPERTY(DWORD,              unknown_70);
