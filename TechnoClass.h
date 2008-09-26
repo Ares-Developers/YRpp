@@ -155,7 +155,7 @@ public:
 		{ return Disguised; }
 	virtual bool IsDisguisedAs(HouseClass *Target)
 		{ return Disguised; }
-	virtual bool vt_entry_D4()
+	virtual bool Exit()
 		{ THISCALL(0x6F6AC0); }
 	virtual bool Put(CoordStruct* pCrd, eDirection dFaceDir)
 		{ PUSH_VAR32(dFaceDir); PUSH_VAR32(pCrd); THISCALL(0x6F6CA0); }
@@ -185,10 +185,10 @@ public:
 		{ THISCALL(0x6FBFA0); }
 	virtual void IronCurtain(int nDuration, HouseClass *pSource, bool ForceShield)
 		{ PUSH_VAR8(ForceShield); PUSH_VAR32(pSource); PUSH_VAR32(nDuration); THISCALL(0x70E2B0); }
-	virtual void vt_entry_158()
+	virtual void StopAirstrikeTimer()
 		{ THISCALL(0x70E340); }
-	virtual void vt_entry_15C(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x70E300); }
+	virtual void StopAirstrikeTimer(int Duration)
+		{ PUSH_VAR32(Duration); THISCALL(0x70E300); }
 	virtual bool IsIronCurtained()
 		{ THISCALL(0x41BF40); }
 	virtual bool vt_entry_164(DWORD dwUnk, DWORD dwUnk2)
@@ -204,8 +204,8 @@ public:
 		{ THISCALL(0x710460); }
 	virtual void UpdatePosition(int dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x6F5090); }
-	virtual void vt_entry_194(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x6F4AB0); }
+	virtual void ReceiveCommand(TechnoClass *From, eRadioCommands rcDoThis, DWORD dwUnk3)
+		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(From); PUSH_VAR32(rcDoThis); THISCALL(0x6F4AB0); }
 	virtual bool vt_entry_198(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x6F4960); }
 
@@ -552,25 +552,25 @@ protected:
 	//===========================================================================
 public:
 	PROPERTY_STRUCT(FlashData,   Flashing);
-	PROPERTY(DWORD,              unknown_F8);
+	PROPERTY(int,                DeployingAnimStartFrame);
 	PROPERTY(bool,               unknown_bool_FC);
-	PROPERTY_STRUCT(TimerStruct,        unknown_timer_100);
+	PROPERTY_STRUCT(TimerStruct,        DeployingAnimTimer);
 	PROPERTY(DWORD,              unknown_10C);
 	PROPERTY(int,                unknown_int_110);
 	PROPERTY_STRUCT(PassengersClass,		Passengers);
-	PROPERTY(TechnoClass *,      Transporter); // unit carrying me
+	PROPERTY(TechnoClass*,       Transporter); // unit carrying me
 	PROPERTY(int,                unknown_int_120);
-	PROPERTY(int,                unknown_int_124);
+	PROPERTY(int,                CurrentWeaponNumber); // for gattling
 	PROPERTY(int,                unknown_int_128);
 	PROPERTY(AnimClass*,         BehindAnim);
 	PROPERTY(AnimClass*,         DeployAnim);
-	PROPERTY(bool,               unknown_bool_134);
+	PROPERTY(bool,               InAir);
 	PROPERTY(int,                CurrentTurret);
 	PROPERTY(int,                CurrentRanking); //see RANK definitons, only used for promotion detection
-	PROPERTY(DWORD,              unknown_140);
+	PROPERTY(DWORD,              CurrentGattlingStage);
 	PROPERTY(DWORD,              unknown_144);
 	PROPERTY(DWORD,              unknown_148);
-	PROPERTY(DWORD,              unknown_14C);
+	PROPERTY(HouseClass*,        OwningPlayer2); // only set in ctor
 	PROPERTY_STRUCT(VeterancyStruct,    Veterancy);
 	PROPERTY(double,             ArmorMultiplier);
 	PROPERTY(double,             FirepowerMultiplier);
@@ -578,11 +578,11 @@ public:
 	PROPERTY_STRUCT(TimerStruct, RadarFlashTimer);
 	PROPERTY_STRUCT(TimerStruct, TargetingTimer); //Duration = 45 on init!
 	PROPERTY_STRUCT(TimerStruct, IronCurtainTimer);
-	PROPERTY_STRUCT(TimerStruct, unknown_timer_198);
-	PROPERTY(int,                unknown_int_1A4);
-	PROPERTY_STRUCT(TimerStruct,        unknown_timer_1A8);
-	PROPERTY_STRUCT(TimerStruct,        unknown_timer_1B4);
-	PROPERTY(DWORD,              unknown_1C0); //unused?
+	PROPERTY_STRUCT(TimerStruct, IronTintTimer); // how often to alternate the effect color
+	PROPERTY(int,                IronTintStage); // ^
+	PROPERTY_STRUCT(TimerStruct, AirstrikeTimer);
+	PROPERTY_STRUCT(TimerStruct, AirstrikeTintTimer); // tracks alternation of the effect color
+	PROPERTY(DWORD,              AirstrikeTintStage); //  ^
 	PROPERTY(int,                IronCurtainActive);	//0 or 1, NOT a bool
 	PROPERTY(bool,               Deactivated); //Robot Tanks without power for instance
 	PROPERTY(TechnoClass*,       DrainTarget); // eg Disk -> PowerPlant, this points to PowerPlant
@@ -598,7 +598,7 @@ public:
 	PROPERTY(DWORD,              unknown_20C);
 	PROPERTY(DWORD,              unknown_210);
 	PROPERTY(int,                Group); //0-9, assigned by CTRL+Number, these kinds // also set by aimd TeamType->Group !
-	PROPERTY(DWORD,              unknown_218);
+	PROPERTY(TechnoClass*,       FocusOnUnit); // when told to guard a unit or such
 	PROPERTY(HouseClass*,        Owner);
 	PROPERTY(eCloakStates,       CloakState);
 	PROPERTY(int,                CloakingStage); // phase from [opaque] -> [fading] -> [transparent] , [General]CloakingStages= long
@@ -631,8 +631,8 @@ public:
 	PROPERTY(DWORD,              unknown_2A0);
 	PROPERTY(DWORD,              unknown_2A4);
 	PROPERTY(DWORD,              unknown_2A8);
-	PROPERTY(DWORD,              unknown_2AC);
-	PROPERTY(DWORD,              unknown_2B0);
+	PROPERTY(FootClass*,         LocomotorTarget); // mag->LocoTarget = victim
+	PROPERTY(FootClass*,         LocomotorSource); // victim->LocoSource = mag
 	PROPERTY(ObjectClass*,       Target); //if attacking
 	PROPERTY(ObjectClass*,       LastTarget);
 	PROPERTY(CaptureManagerClass*, CaptureManager); //for Yuris
@@ -656,15 +656,14 @@ public:
 	PROPERTY(int,                Value); //money? I forgot
 
 	
-	PROTECTED_PROPERTY(DWORD,              ParticleSystems[8]); //ParticleSystem array?
-	//[0] = ParticleSystemClass* FireParticleSystem
-	//[1] = ParticleSystemClass* SparkParticleSystem
-	//[2] = ParticleSystemClass* NaturalParticleSystem
-	//[3] = ParticleSystemClass* DamageParticleSystem
-	//[4] = ParticleSystemClass* RailgunParticleSystem
-	//[5] = ParticleSystemClass* unk1ParticleSystem
-	//[6] = ParticleSystemClass* unk2ParticleSystem
-	//[7] = ParticleSystemClass* FiringParticleSystem
+	PROPERTY(ParticleSystemClass*, FireParticleSystem);
+	PROPERTY(ParticleSystemClass*, SparkParticleSystem);
+	PROPERTY(ParticleSystemClass*, NaturalParticleSystem);
+	PROPERTY(ParticleSystemClass*, DamageParticleSystem);
+	PROPERTY(ParticleSystemClass*, RailgunParticleSystem);
+	PROPERTY(ParticleSystemClass*, unk1ParticleSystem);
+	PROPERTY(ParticleSystemClass*, unk2ParticleSystem);
+	PROPERTY(ParticleSystemClass*, FiringParticleSystem);
 
 	PROPERTY(WaveClass*,         Wave); //Beams
 	PROPERTY(DWORD,              unknown_328);
@@ -678,21 +677,13 @@ public:
 
 	PROPERTY_STRUCT(TransitionTimer, UnloadTimer); // times the deploy, unload, etc. cycles
 
-protected:
-
-	struct
-	{
-		DWORD			unknown_00;
-		DWORD			unknown_04;
-		TimerStruct		unknown_timer_08;
-		DWORD			unknown_14;
-	} unknown_structure_370;
-
 public:
+	PROPERTY(DWORD,              unknown_370);
+	PROPERTY_STRUCT(FacingStruct,       BarrelFacing);
 	PROPERTY_STRUCT(FacingStruct,       Facing);
 	PROPERTY_STRUCT(FacingStruct,       TurretFacing);
 	PROPERTY(DWORD,              unknown_3B8);
-	PROPERTY_STRUCT(TimerStruct,        unknown_timer_3BC);
+	PROPERTY_STRUCT(TimerStruct,        TargetLaserTimer);
 	PROPERTY(short,              unknown_short_3C8);
 	PROPERTY(WORD,               unknown_3CA);
 	PROPERTY(bool,               unknown_bool_3CC);
@@ -723,7 +714,7 @@ public:
 	PROPERTY(bool,               unknown_bool_425);
 	PROPERTY(bool,               unknown_bool_426);
 	PROPERTY(bool,               unknown_bool_427);
-	PROPERTY(DWORD,              unknown_428);
+	PROPERTY(HouseClass*,        ChronoWarpedByHouse);
 	PROPERTY(DWORD,              unknown_42C);
 	PROPERTY(bool,               unknown_bool_430);
 	PROPERTY(bool,               unknown_bool_431);
@@ -761,7 +752,7 @@ public:
 	PROPERTY(DWORD,				unknown_500);
 	PROPERTY(DWORD,              EMPLockRemaining);
 	PROPERTY(DWORD,              ThreatPosed); // calculated to include cargo etc
-	PROPERTY(DWORD,              unknown_50C);
+	PROPERTY(DWORD,              ShouldLoseTargetNow);
 	PROPERTY(DWORD,              FiringRadBeam); // RadBeamClass *, TODO: fix when declared
 	PROPERTY(DWORD,              PlanningToken); // PlanningTokenClass *, user waypoint voodoo, TODO: fix when declared
 	PROPERTY(ObjectTypeClass*,   Disguise);

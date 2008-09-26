@@ -43,8 +43,7 @@
 		void set_ ## name(type value)\
 			{ name = value; }
 
-//readonly //huh? -pd // not really necessary, just nitpicking since I don't like exposing raw data to the world 
-// (I was using it on shield types, but I can discard it if it's unnecessary)
+//readonly
 #define PROPERTY_READO_STRUCT(type,name)\
 	protected:\
 		type name;\

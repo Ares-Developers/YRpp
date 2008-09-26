@@ -1,28 +1,10 @@
-/*
- ParasiteClass - terror drone/squiddy
-{
-  _FootClass *Controller;
-  _FootClass *Recipient;
-  TimerStruct TimerSuppression;
-  TimerStruct InfectDamageTimer;
-  int field_44;
-  int field_48;
-  int field_4C;
-  int field_50;
-  char field_54;
-  char field_55;
-  char field_56;
-  char field_57;
-}
-*/
-
 #ifndef PARASITE_H
 #define PARASITE_H
 
 #include <AbstractClass.h>
 
-class HouseClass;
-class TechnoClass;
+class AnimClass;
+class FootClass;
 
 class ParasiteClass : public AbstractClass
 {

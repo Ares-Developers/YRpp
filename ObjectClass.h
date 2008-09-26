@@ -128,8 +128,8 @@ public:
 		{ PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x5F4160); }
 	virtual void vt_entry_F0(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x5F60A0); }
-	virtual void vt_entry_F4(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x5F6120); }
+	virtual void vt_entry_F4(CoordStruct *coords)
+		{ PUSH_VAR32(coords); THISCALL(0x5F6120); }
 	virtual void UnInit()
 		{ THISCALL(0x5F65F0); }
 	virtual void Uncloak2()
@@ -178,9 +178,9 @@ public:
 		{ THISCALL(0x5F44A0); }
 	virtual void IronCurtain(int nDuration, HouseClass *pSource, bool ForceShield)
 		{ }
-	virtual void vt_entry_158()
+	virtual void StopAirstrikeTimer()
 		{ }
-	virtual void vt_entry_15C(DWORD dwUnk)
+	virtual void StopAirstrikeTimer(int Duration)
 		{ }
 	virtual bool IsIronCurtained()
 		{ return false; }

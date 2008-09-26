@@ -64,7 +64,7 @@ public:
 		{ PUSH_VAR8(DisguisedAgainstAllies); THISCALL(0x7465B0); }
 	virtual HouseClass* GetDisguiseHouse(bool DisguisedAgainstAllies)
 		{ PUSH_VAR8(DisguisedAgainstAllies); THISCALL(0x7465F0); }
-	virtual bool vt_entry_D4()
+	virtual bool Exit()
 		{ THISCALL(0x7440B0); }
 	virtual bool Put(CoordStruct* pCrd, eDirection dFaceDir)
 		{ PUSH_VAR32(dFaceDir); PUSH_VAR32(pCrd);
@@ -93,8 +93,8 @@ public:
 		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x743A50); }
 	virtual void UpdatePosition(int dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x739EC0); }
-	virtual void vt_entry_194(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x737430); }
+	virtual void ReceiveCommand(TechnoClass *From, eRadioCommands rcDoThis, DWORD dwUnk3)
+		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(From); PUSH_VAR32(rcDoThis); THISCALL(0x737430); }
 	virtual DWORD vt_entry_1AC(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5)
 		{ PUSH_VAR32(dwUnk5); PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk);
 		  THISCALL(0x73F0A0); }

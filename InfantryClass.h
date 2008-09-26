@@ -62,7 +62,7 @@ public:
 		{ PUSH_VAR8(DisguisedAgainstAllies); THISCALL(0x522640); }
 	virtual HouseClass* GetDisguiseHouse(bool DisguisedAgainstAllies)
 		{ PUSH_VAR8(DisguisedAgainstAllies); THISCALL(0x5226C0); }
-	virtual bool vt_entry_D4()
+	virtual bool Exit()
 		{ THISCALL(0x51DF10); }
 	virtual bool Put(CoordStruct* pCrd, eDirection dFaceDir)
 		{ PUSH_VAR32(dFaceDir); PUSH_VAR32(pCrd); THISCALL(0x51DFF0); }

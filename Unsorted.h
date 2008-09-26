@@ -81,6 +81,9 @@ struct AudioController
 
 };
 
+void RaiseError(HRESULT err)
+	{ PUSH_VAR32(err); CALL(0x7DC720); }
+
 /*
  * This thing is ridiculous
  * all xxTypeClass::Create functions use it:

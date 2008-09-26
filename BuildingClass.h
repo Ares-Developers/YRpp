@@ -87,7 +87,7 @@ public:
 		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pCrd); THISCALL(0x44F640); }
 	virtual int vt_entry_B8()
 		{ THISCALL(0x449410); }
-	virtual bool vt_entry_D4()
+	virtual bool Exit()
 		{ THISCALL(0x445880); }
 	virtual bool Put(CoordStruct* pCrd, eDirection dFaceDir)
 		{ PUSH_VAR32(dFaceDir); PUSH_VAR32(pCrd); THISCALL(0x440580); }
@@ -126,8 +126,8 @@ public:
 		{ PUSH_VAR32(pAttackingHouse); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2);
 		  PUSH_VAR32(pAttacker); PUSH_VAR32(pWH); PUSH_VAR32(dwUnk1);
 		  PUSH_VAR32(pDamage); THISCALL(0x442230); }
-	virtual void vt_entry_194(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x43C2D0); }
+	virtual void ReceiveCommand(TechnoClass *From, eRadioCommands rcDoThis, DWORD dwUnk3)
+		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(From); PUSH_VAR32(rcDoThis); THISCALL(0x43C2D0); }
 	virtual bool vt_entry_198(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x44D5D0); }
 	virtual void vt_entry_19C(DWORD dwUnk)
@@ -272,6 +272,20 @@ public:
 		{ PUSH_VAR32(dwUnk); THISCALL(0x455980); }
 	virtual DWORD vt_entry_504()
 		{ return 0; }
+
+	// non-vt
+
+	// kick out content
+	void UnloadBunker()
+		{ THISCALL(0x4593A0); }
+
+	// content is dead - chronosphered away or died inside
+	void ClearBunker()
+		{ THISCALL(0x459470); }
+
+	// kick out content, remove anims, etc... don't ask me what's different from kick out
+	void EmptyBunker()
+		{ THISCALL(0x4595C0); }
 
 	//Constructor
 	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner)

@@ -81,6 +81,9 @@ DECL(OverlayClass, 0xA8EC50);
 #include <OverlayTypeClass.h>
 DECL(OverlayTypeClass, 0xA83D80);
 
+#include <ParasiteClass.h>
+DECL(ParasiteClass, 0xAC4910);
+
 #include <ParticleClass.h>
 DECL(ParticleClass, 0xA83DC8);
 

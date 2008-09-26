@@ -257,6 +257,12 @@ ISTILE(DestroyableCliff, 0x486900);
 			return crd;
 		}
 
+	CoordStruct * FixHeight(CoordStruct *crd)
+		{
+			crd->Z += (this->Flags & cf_Bridge) * BridgeHeight();
+			return crd;
+		}
+
 protected:
 	//Constructor
 	CellClass():AbstractClass(false)

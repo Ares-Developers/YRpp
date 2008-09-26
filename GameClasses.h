@@ -34,6 +34,7 @@
 #include <LightSourceClass.h>
 #include <NeuronClass.h>
 #include <OverlayClass.h>
+#include <ParasiteClass.h>
 #include <ParticleClass.h>
 #include <ParticleSystemClass.h>
 #include <RadSiteClass.h>

@@ -9,8 +9,8 @@
 
 //forward declarations
 class LocomotionClass;
-class ParasiteClass;
 class TeamClass;
+class ParasiteClass;
 
 class FootClass : public TechnoClass
 {
@@ -49,7 +49,7 @@ public:
 		{ PUSH_VAR32(dwUnk); THISCALL(0x4DDC40); }
 	virtual bool vt_entry_C0()
 		{ return unknown_bool_6B6; }
-	virtual bool vt_entry_D4()
+	virtual bool Exit()
 		{ THISCALL(0x4DB260); }
 	virtual bool Put(CoordStruct* pCrd, eDirection dFaceDir)
 		{ PUSH_VAR32(dFaceDir); PUSH_VAR32(pCrd); THISCALL(0x4D7170); }
@@ -75,8 +75,8 @@ public:
 		  PUSH_VAR32(pWH); PUSH_VAR32(dwUnk1); PUSH_VAR32(pDamage); THISCALL(0x4D7330); }
 	virtual void UpdatePosition(int dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x4D85D0); }
-	virtual void vt_entry_194(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x4D8FB0); }
+	virtual void ReceiveCommand(TechnoClass *From, eRadioCommands rcDoThis, DWORD dwUnk3)
+		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(From); PUSH_VAR32(rcDoThis); THISCALL(0x4D8FB0); }
 	virtual void Sell(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x4D9F70); }
 	virtual void AssignPlanningPath(signed int idxPath, signed char idxWP)
@@ -278,11 +278,11 @@ NOOOOOOOOOOOOOOOOOOOOOOOOOOoooooooooooooooooooooooooo*/
 		{ }
 	virtual void vt_entry_544(DWORD dwUnk, DWORD dwUnk2)
 		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x4D3710); }
-	virtual void				vt_entry_548()
+	virtual void vt_entry_548()
 		{ }
-	virtual void				vt_entry_54C()
+	virtual void vt_entry_54C()
 		{ }
-	virtual bool				vt_entry_550(DWORD dwUnk)
+	virtual bool vt_entry_550(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x4DDC60); }
 
 	//Constructor
@@ -359,7 +359,7 @@ protected:
 
 	PROPERTY(DWORD,             unknown_664);
 	PROPERTY_STRUCT(TimerStruct,       unknown_timer_668);
-	PROPERTY(LocomotionClass*,  Locomotor);
+	PROPERTY_STRUCT(LocomotionClass*,  Locomotor);
 	PROPERTY_STRUCT(CoordStruct,       unknown_point3d_678);
 	PROPERTY(signed char,       TubeIndex);	//I'm in this tunnel
 	PROPERTY(bool,              unknown_bool_685);
@@ -375,7 +375,7 @@ protected:
 	PROPERTY(bool,              unknown_bool_68F);
 	PROPERTY(bool,              unknown_bool_690);
 	PROPERTY(bool,              unknown_bool_691);
-	PROPERTY(ParasiteClass*,    ParasiteEatingMe);
+	PROPERTY(FootClass*,        ParasiteEatingMe); // the tdrone/squid that's eating me
 	PROPERTY(DWORD,             unknown_698);
 	PROPERTY(ParasiteClass*,    ParasiteImUsing);	// my parasitic half, nonzero for, eg, terror drone or squiddy
 	PROPERTY_STRUCT(TimerStruct,       ParalysisTimer); // for squid victims

@@ -170,6 +170,23 @@ public:
 	//LocomotionClass
 	virtual	int Size() = 0;
 
+	// blargh fsssds
+	// LocomotionClass *Dummy = NULL;
+	// Xchg(&foot->Locomotion, &Dummy);
+	// foot's loco is now NULL, Dummy contains a pointer to its old content
+	static HRESULT Xchg(LocomotionClass **Old, LocomotionClass **New)
+		{ PUSH_VAR32(New); SET_REG32(ECX, Old); CALL(0x45AF20); }
+
+	static HRESULT CreateInstance(LocomotionClass **ppv, CLSID *rclsid, LPUNKNOWN pUnkOuter, int arg)
+		{ PUSH_VAR32(arg); PUSH_VAR32(pUnkOuter); PUSH_VAR32(rclsid); SET_REG32(ECX, ppv); CALL(0x41C250); }
+
+	// these two are identical, why do they both exist...
+	static void AddRef1(LocomotionClass **Loco)
+		{ SET_REG32(ECX, Loco); CALL(0x45A170); }
+
+	static void AddRef2(LocomotionClass **Loco)
+		{ SET_REG32(ECX, Loco); CALL(0x6CE270); }
+
 	//Constructor
 	LocomotionClass()
 		{ THISCALL(0x55A6C0); }
