@@ -117,6 +117,12 @@ DECL(SuperWeaponTypeClass, 0xA8E330);
 #include <TaskForceClass.h>
 DECL(TaskForceClass, 0xA8E8D0);
 
+#include <ScriptTypeClass.h>
+DECL(ScriptTypeClass, 0x8B41C8);
+
+#include <TeamTypeClass.h>
+DECL(TeamTypeClass, 0xA8ECA0);
+
 #include <TemporalClass.h>
 DECL(TemporalClass, 0xB0EC60);
 

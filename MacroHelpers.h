@@ -142,6 +142,14 @@
 #define PARSE_SW(key, var) \
 	PARSE_VAR_OBJ(key, var, SuperWeaponTypeClass);
 
+#define PARSE_TASKFORCE(key, var) \
+	PARSE_VAR_OBJ(key, var, TaskForceClass);
+
+#define PARSE_SCRIPT(key, var) \
+	PARSE_VAR_OBJ(key, var, ScriptTypeClass);
+
+#define PARSE_TEAM(key, var) \
+	PARSE_VAR_OBJ(key, var, TeamTypeClass);
 
 // find indices
 #define PARSE_VAR_IDX(key, var, cls) \
@@ -180,6 +188,16 @@
 
 #define PARSE_SW_IDX(key, var) \
 	PARSE_VAR_IDX(key, var, SuperWeaponTypeClass);
+
+#define PARSE_TASKFORCE_IDX(key, var) \
+	PARSE_VAR_IDX(key, var, TaskForceClass);
+
+#define PARSE_SCRIPT_IDX(key, var) \
+	PARSE_VAR_IDX(key, var, ScriptTypeClass);
+
+#define PARSE_TEAM_IDX(key, var) \
+	PARSE_VAR_IDX(key, var, TeamTypeClass);
+
 
 // read colors
 #define PARSE_COLOR(key, var, buf) \

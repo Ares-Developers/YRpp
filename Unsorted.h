@@ -3,6 +3,13 @@
 
 class ObjectClass;
 
+class Stuff
+{
+public:
+	static void RaiseError(HRESULT err)
+		{ PUSH_VAR32(err); CALL(0x7DC720); }
+};
+
 namespace Unsorted
 {
 	static int &CurrentFrame     = *(int *)0xA8ED84;
@@ -80,9 +87,6 @@ struct AudioController
 		{ THISCALL(0x406310); }
 
 };
-
-void RaiseError(HRESULT err)
-	{ PUSH_VAR32(err); CALL(0x7DC720); }
 
 /*
  * This thing is ridiculous

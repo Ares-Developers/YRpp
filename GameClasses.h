@@ -45,6 +45,9 @@
 #include <WeaponTypeClass.h>
 #include <TacticalClass.h>
 #include <TaskForceClass.h>
+#include <ScriptClass.h>
+#include <ScriptTypeClass.h>
+#include <TeamTypeClass.h>
 #include <TechnoClass.h>
 #include <TemporalClass.h>
 #include <UnitClass.h>
