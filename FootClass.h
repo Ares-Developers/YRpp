@@ -359,7 +359,7 @@ protected:
 
 	PROPERTY(DWORD,             unknown_664);
 	PROPERTY_STRUCT(TimerStruct,       unknown_timer_668);
-	PROPERTY_STRUCT(LocomotionClass*,  Locomotor);
+	PROPERTY_PTR(LocomotionClass*,  Locomotor);
 	PROPERTY_STRUCT(CoordStruct,       unknown_point3d_678);
 	PROPERTY(signed char,       TubeIndex);	//I'm in this tunnel
 	PROPERTY(bool,              unknown_bool_685);

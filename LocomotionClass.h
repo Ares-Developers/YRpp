@@ -175,7 +175,7 @@ public:
 	// Xchg(&foot->Locomotion, &Dummy);
 	// foot's loco is now NULL, Dummy contains a pointer to its old content
 	static HRESULT Xchg(LocomotionClass **Old, LocomotionClass **New)
-		{ PUSH_VAR32(New); SET_REG32(ECX, Old); CALL(0x45AF20); }
+		{ PUSH_VAR32(Old); SET_REG32(ECX, New); CALL(0x45AF20); }
 
 	static HRESULT CreateInstance(LocomotionClass **ppv, CLSID *rclsid, LPUNKNOWN pUnkOuter, int arg)
 		{ PUSH_VAR32(arg); PUSH_VAR32(pUnkOuter); PUSH_VAR32(rclsid); SET_REG32(ECX, ppv); CALL(0x41C250); }

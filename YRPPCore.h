@@ -25,6 +25,17 @@
 		void set_ ## name(type value)\
 			{ name = value; }
 
+#define PROPERTY_PTR(type,name)\
+	protected:\
+		type name;\
+	public:\
+		type get_ ## name() \
+			{ return name; }\
+		void set_ ## name(type value)\
+			{ name = value; } \
+		type* lea_ ## name() \
+			{ return &name; }
+
 //readonly version
 #define PROPERTY_READONLY(type,name)\
 	protected:\

@@ -624,7 +624,7 @@ public:
 	PROPERTY(bool,               IsImmobilized); // by chrono aftereffects
 	PROPERTY(DWORD,              unknown_280);
 	PROPERTY(int,                ChronoLockRemaining); // countdown after chronosphere warps things around
-	PROPERTY_STRUCT(CoordStruct,        unknown_point3d_288);
+	PROPERTY_STRUCT(CoordStruct, unknown_point3d_288);
 	PROPERTY(AirstrikeClass*,    Airstrike); //Boris
 	PROPERTY(bool,               Berzerk);
 	PROPERTY(DWORD,              BerzerkDurationLeft);
@@ -650,7 +650,7 @@ public:
 	PROPERTY(TechnoClass*,       BunkerLinkedItem);
 
 	PROPERTY(DWORD,              unknown_2E8);
-	PROPERTY_STRUCT(TimerStruct,        DiskLaserTimer);
+	PROPERTY_STRUCT(TimerStruct, DiskLaserTimer);
 	PROPERTY(DWORD,              unknown_2F8);
 	PROPERTY(int,                Ammo);
 	PROPERTY(int,                Value); //money? I forgot
@@ -678,7 +678,6 @@ public:
 	PROPERTY_STRUCT(TransitionTimer, UnloadTimer); // times the deploy, unload, etc. cycles
 
 public:
-	PROPERTY(DWORD,              unknown_370);
 	PROPERTY_STRUCT(FacingStruct,       BarrelFacing);
 	PROPERTY_STRUCT(FacingStruct,       Facing);
 	PROPERTY_STRUCT(FacingStruct,       TurretFacing);
@@ -714,8 +713,8 @@ public:
 	PROPERTY(bool,               unknown_bool_425);
 	PROPERTY(bool,               unknown_bool_426);
 	PROPERTY(bool,               unknown_bool_427);
+	PROPERTY(DWORD,              unknown_428);
 	PROPERTY(HouseClass*,        ChronoWarpedByHouse);
-	PROPERTY(DWORD,              unknown_42C);
 	PROPERTY(bool,               unknown_bool_430);
 	PROPERTY(bool,               unknown_bool_431);
 	PROPERTY(bool,               unknown_bool_432);
