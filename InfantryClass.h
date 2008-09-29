@@ -124,8 +124,8 @@ public:
 		{ PUSH_VAR32(dwUnk); THISCALL(0x522C00); }
 	virtual int vt_entry_3C0(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4)
 		{ PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x51C8B0); }
-	virtual CellClass* vt_entry_3C4(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x51E140); }
+	virtual CellClass* SelectAutoTarget(eTargetFlags TargetFlags, int CurrentThreat, bool OnlyTargetHouseEnemy)
+		{ PUSH_VAR8(OnlyTargetHouseEnemy); PUSH_VAR32(CurrentThreat); PUSH_VAR32(TargetFlags); THISCALL(0x51E140); }
 	virtual void SetTarget(AbstractClass *Target)
 		{ PUSH_VAR32(Target); THISCALL(0x51B1F0); }
 	virtual DWORD Fire(ObjectClass* pTarget, int nWeapon)

@@ -388,8 +388,8 @@ public:
 		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x6FC090); }
 	virtual int vt_entry_3C0(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4)
 		{ PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x6FC0B0); }
-	virtual CellClass* vt_entry_3C4(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x6F8DF0); }
+	virtual CellClass* SelectAutoTarget(eTargetFlags TargetFlags, int CurrentThreat, bool OnlyTargetHouseEnemy)
+		{ PUSH_VAR8(OnlyTargetHouseEnemy); PUSH_VAR32(CurrentThreat); PUSH_VAR32(TargetFlags); THISCALL(0x6F8DF0); }
 	virtual void SetTarget(AbstractClass *Target)
 		{ PUSH_VAR32(Target); THISCALL(0x6FCDB0); }
 	virtual DWORD Fire(ObjectClass* pTarget, int nWeapon)
@@ -540,6 +540,27 @@ public:
 	//non-virtual
 	void ReloadNow()
 		{ THISCALL(0x6FB080); }
+
+	bool ShouldSuppress(CellStruct *coords)
+		{ PUSH_VAR32(coords); THISCALL(0x6F79A0); }
+
+// CanTargetWhatAmI is a bitfield, if(!(CanTargetWhatAmI & (1 << tgt->WhatAmI())) { fail; }
+
+// slave of the next one
+	bool CanAutoTargetObject(eTargetFlags TargetFlags, int CanTargetWhatAmI, int WantedDistance,
+	 TechnoClass *Target, signed int *ThreatPosed, DWORD dwUnk, CoordStruct *SourceCoords)
+	{ PUSH_VAR32(SourceCoords); PUSH_VAR32(dwUnk); PUSH_VAR32(ThreatPosed); PUSH_VAR32(Target);
+		PUSH_VAR32(WantedDistance); PUSH_VAR32(CanTargetWhatAmI); PUSH_VAR32(TargetFlags);
+		THISCALL(0x6F7CA0);
+	}
+
+// called by AITeam Attack Target Type and autoscan
+	bool TryAutoTargetObject(eTargetFlags TargetFlags, int CanTargetWhatAmI, CellStruct *Coords,
+	 DWORD dwUnk1, DWORD *dwUnk2, signed int *ThreatPosed, DWORD dwUnk3)
+	{ PUSH_VAR32(dwUnk3); PUSH_VAR32(ThreatPosed); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk1);
+		PUSH_VAR32(Coords); PUSH_VAR32(CanTargetWhatAmI); PUSH_VAR32(TargetFlags);
+		THISCALL(0x6F8960);
+	}
 
 protected:
 	TechnoClass():RadioClass(false)
@@ -723,9 +744,11 @@ public:
 	PROPERTY(bool,               Absorbed); // in UnitAbsorb/InfantryAbsorb or smth, lousy memory
 	PROPERTY(bool,               unknown_bool_43A);
 	PROPERTY(DWORD,              unknown_43C);
-	PROPERTY_STRUCT(DynamicVectorClass<int>, unknown_int_array_440);
-	PROPERTY_STRUCT(DynamicVectorClass<AbstractClass*>, unknown_abstract_array_458);
-	PROPERTY_STRUCT(DynamicVectorClass<AbstractClass*>, unknown_abstract_array_470);
+	PROPERTY_STRUCT(DynamicVectorClass<int>, CurrentTargetThreatValues);
+	PROPERTY_STRUCT(DynamicVectorClass<AbstractClass*>, CurrentTargets);
+
+ // if DistributedFire=yes, this is used to determine which possible targets should be ignored in the latest threat scan
+	PROPERTY_STRUCT(DynamicVectorClass<AbstractClass*>, AttackedTargets);
 
 	PROPERTY_STRUCT(Unsorted::AudioController, Audio3);
 

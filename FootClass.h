@@ -159,8 +159,8 @@ public:
 		{ THISCALL(0x4D5660); }
 	virtual void vt_entry_3B8()
 		{ THISCALL(0x4D98C0); }
-	virtual CellClass* vt_entry_3C4(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x4D9920); }
+	virtual CellClass* SelectAutoTarget(eTargetFlags TargetFlags, int CurrentThreat, bool OnlyTargetHouseEnemy)
+		{ PUSH_VAR8(OnlyTargetHouseEnemy); PUSH_VAR32(CurrentThreat); PUSH_VAR32(TargetFlags); THISCALL(0x4D9920); }
 	virtual void SetOwningHouse(HouseClass* pHouse, DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pHouse); THISCALL(0x4DBED0); }
 	virtual bool Crash(DWORD dwUnk)
@@ -367,7 +367,7 @@ protected:
 	PROPERTY(bool,              unknown_bool_687);
 	PROPERTY(bool,              unknown_bool_688);
 	PROPERTY(bool,              IsTeamLeader);
-	PROPERTY(bool,              unknown_bool_68A);
+	PROPERTY(bool,              ShouldScanForTarget);
 	PROPERTY(bool,              unknown_bool_68B);
 	PROPERTY(bool,              unknown_bool_68C);
 	PROPERTY(bool,              unknown_bool_68D);
