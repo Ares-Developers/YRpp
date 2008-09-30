@@ -194,7 +194,7 @@ protected:
 	PROPERTY(InfantryTypeClass*, Type);
 	PROPERTY(int,            SequenceAnim); //which is currently playing
 	PROPERTY_STRUCT(TimerStruct,    unknown_Timer_6C8);
-	PROPERTY(DWORD,          unknown_6D4);
+	PROPERTY(DWORD,          PanicDurationLeft); // set in ReceiveDamage on panicky units
 	PROPERTY(bool,           unknown_bool_6D8);
 	PROPERTY(bool,           Technician);
 	PROPERTY(bool,           unknown_bool_6DA);

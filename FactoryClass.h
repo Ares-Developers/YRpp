@@ -68,11 +68,12 @@ protected:
 	PROPERTY(TechnoClass*,       InProduction);
 	PROPERTY(bool,               OnHold); // paused when out of money, restored when funds available
 	PROPERTY(bool,               IsDifferent);	//Not sure what this means.
-	PROPERTY(int,                Balance);
+	PROPERTY(int,                Balance); // credits house still owes us for building this
 	PROPERTY(int,                OriginalBalance);
-	PROPERTY(int,                SpecialItem);
+	PROPERTY(int,                SpecialItem); // only case of it being used is 0x6AB2D9:
+	                                           // if(SpecialItem != -1) { Map->CurrentSWType = 1; }
 	PROPERTY(HouseClass*,        Owner);
-	PROPERTY(bool,               IsSuspended);	//Paused?
+	PROPERTY(bool,               IsCompleteAndSuspended);	//completed production, before next (or waiting to place)
 };
 
 #endif

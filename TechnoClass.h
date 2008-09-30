@@ -674,7 +674,7 @@ public:
 	PROPERTY_STRUCT(TimerStruct, DiskLaserTimer);
 	PROPERTY(DWORD,              unknown_2F8);
 	PROPERTY(int,                Ammo);
-	PROPERTY(int,                Value); //money? I forgot
+	PROPERTY(int,                Value); // set to actual cost when this gets queued in factory, updated only in building's 42C
 
 	
 	PROPERTY(ParticleSystemClass*, FireParticleSystem);
