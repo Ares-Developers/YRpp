@@ -19,38 +19,24 @@ public:
 	ABSTRACTTYPE_ARRAY(AnimTypeClass);
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x428990);}
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall	Load(IStream* pStm)
-								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x428800);}
-	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x428970);}
-
 	//AbstractClass
-	virtual void				PointerExpired(void* p,bool bUnknown)
-								{PUSH_VAR8(bUnknown);PUSH_VAR32(p);THISCALL(0x428C10);}
-	virtual eAbstractType		WhatAmI(){return abs_AnimType;}
-	virtual int					Size(){return sizeof(AnimTypeClass);}
-	virtual void				CalculateChecksum(void* pChkSum){PUSH_VAR32(pChkSum);THISCALL(0x4289D0);}
-	virtual int					GetArrayIndex(){return ArrayIndex;}
+	virtual eAbstractType WhatAmI() R0;
+	virtual int	Size() R0;
 
 	//AbstractTypeClass
-	virtual void				LoadTheaterSpecificArt(eTheater th_type)
-								{PUSH_VAR32(th_type);THISCALL(0x427A80);}
-	virtual bool				LoadFromINI(CCINIClass* ini){PUSH_VAR32(ini);THISCALL(0x427D00);}
-
 	//ObjectTypeClass
-	virtual bool				SpawnAtMapCoords(CellStruct* mcoords,HouseClass* owner){return false;}
-	virtual ObjectClass*		CreateObject(HouseClass* owner){return NULL;}
+	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords,HouseClass* pOwner) R0;
+	virtual ObjectClass* CreateObject(HouseClass* owner) R0;
 
 	//AnimTypeClass
-	virtual SHPStruct*			LoadImage(){THISCALL(0x428C30);}
-	virtual void				Load2DArt(){THISCALL(0x427B50);}
+	virtual SHPStruct* LoadImage() R0;
+	virtual void Load2DArt() RX;
 
 	//Destructor
-	virtual ~AnimTypeClass()			{THISCALL(0x427880);};
+	virtual ~AnimTypeClass() RX;
 
 	//Constructor
 	AnimTypeClass(const char* id):ObjectTypeClass(false)

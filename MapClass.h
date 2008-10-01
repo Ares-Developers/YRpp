@@ -55,50 +55,20 @@ public:
 		{ return (CellClass*)0xABDC50; }
 
 	//IGameMap
-	virtual long _stdcall Is_Visible(CellStruct cell)
-		{ PUSH_VAR32(cell); PUSH_VAR32(this); CALL(0x5656D0); }
+	virtual long _stdcall Is_Visible(CellStruct cell) R0;
 
 	//Destructor
-	virtual ~MapClass()
-		{ THISCALL(0x5652C0); }
-
-	//GScreenClass
-	virtual void One_Time()
-		{ THISCALL(0x565800); }
-
-	virtual void Init_Clear()
-		{ THISCALL(0x5659F0); }
+	virtual ~MapClass() RX;
 
 	//MapClass
-	virtual void AllocateCells()
-		{ THISCALL(0x565AA0); }
-
-	virtual void DestructCells()
-		{ THISCALL(0x565B00); }
-
-	virtual void ConstructCells()
-		{ THISCALL(0x565BC0); }
-
-	virtual void vt_entry_64(DWORD dwUnk1, DWORD dwUnk2)
-		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk1); THISCALL(0x4F4BB0); }
-
-	virtual bool vt_entry_68()
-		{ return false; }
-
-	virtual void UpdateCrates()
-		{ THISCALL(0x56BBE0); }
-
-	virtual void CreateEmptyMap(RectangleStruct* pMapRect, bool bUnk1, char nLevel, bool bUnk2)
-		{ 
-			PUSH_VAR8(bUnk2);
-			PUSH_VAR8(nLevel);
-			PUSH_VAR8(bUnk1);
-			PUSH_VAR32(pMapRect);
-			THISCALL(0x565C10);
-		}
-
-	virtual void vt_entry_74(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x567230); }
+	virtual void AllocateCells() RX;
+	virtual void DestructCells() RX;
+	virtual void ConstructCells() RX;
+	virtual void vt_entry_64(DWORD dwUnk1, DWORD dwUnk2) RX;
+	virtual bool vt_entry_68() R0;
+	virtual void UpdateCrates() RX;
+	virtual void CreateEmptyMap(RectangleStruct* pMapRect, bool bUnk1, char nLevel, bool bUnk2) RX;
+	virtual void vt_entry_74(DWORD dwUnk) RX;
 
 	//Non-virtual
 	CellClass* GetCellAt(CoordStruct* pCrd)

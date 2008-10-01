@@ -31,65 +31,25 @@ public:
 	ABSTRACTTYPE_ARRAY(BuildingTypeClass);
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x465380); }
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x465010); }
-	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x465300); }
-
 	//Destructor
 	virtual ~BuildingTypeClass()
 		{ THISCALL(0x45E580); }
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI()
-		{ return abs_BuildingType; }
-	virtual int Size()
-		{ return sizeof(BuildingTypeClass); }
-	virtual void CalculateChecksum(void* pChkSum)
-		{ PUSH_VAR32(pChkSum); THISCALL(0x464B30); }
-	virtual int GetArrayIndex()
-		{ return ArrayIndex; }
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 	//AbstractTypeClass
-	virtual bool LoadFromINI(CCINIClass* pINI)
-		{ PUSH_VAR32(pINI); THISCALL(0x45FE50); }
-
 	//ObjectTypeClass
-	virtual CoordStruct* vt_entry_6C(CoordStruct* pDest, CoordStruct* pSrc)
-		{ PUSH_VAR32(pSrc); PUSH_VAR32(pDest); THISCALL(0x464A70); };
-
-	virtual int GetPipMax()
-		{ THISCALL(0x45ECE0); }
-	virtual void vt_entry_78(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x45EBD0); }
-	virtual void vt_entry_7C(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x464AF0); }
-	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner)
-		{ PUSH_VAR32(pMapCoords); PUSH_VAR32(pOwner); THISCALL(0x45E800); }
-	virtual int GetActualCost(HouseTypeClass* pCountry)
-		{ PUSH_VAR32(pCountry); THISCALL(0x45EDD0); }
-	virtual ObjectClass* CreateObject(HouseClass* pOwner)
-		{ PUSH_VAR32(pOwner); THISCALL(0x45E880); }
-	virtual SHPStruct* GetImage()
-		{ THISCALL(0x45F040); }
+	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) R0;
+	virtual ObjectClass* CreateObject(HouseClass* pOwner) R0;
 
 	//TechnoTypeClass
-	virtual bool vt_entry_A0()
-		{ return false; }
-	virtual bool CanAttackMove()
-		{ return false; }
-	virtual bool vt_entry_A8(CellStruct* pMapCoords, DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pMapCoords); THISCALL(0x464AC0); }
-	virtual int GetCost()
-		{ THISCALL(0x45ED50); }
-
 	//BuildingTypeClass
-	virtual SHPStruct* LoadBuildup()
-		{ THISCALL(0x465960); }
+	virtual SHPStruct* LoadBuildup() R0;
 
 	//Constructor
 	BuildingTypeClass(const char* id):TechnoTypeClass(false)

@@ -11,22 +11,18 @@ class LightSourceClass : public AbstractClass
 {
 public:
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x555080);}
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall	Load(IStream* pStm)
-								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x5550C0);}
-	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x555110);}
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
 
 	//Destructor
-	virtual ~LightSourceClass()				{PUSH_IMM(SDDTOR_NODELETE);THISCALL(0x555150);}
+	virtual ~LightSourceClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType		WhatAmI(){return abs_LightSource;}
-	virtual int					Size(){return sizeof(LightSourceClass);}
-	virtual void				CalculateChecksum(void* pChkSum){PUSH_VAR32(pChkSum);THISCALL(0x555070);}
+	virtual eAbstractType		WhatAmI() R0;
+	virtual int					Size() R0;
 
 	//Constructor
 	LightSourceClass(CoordStruct Crd,int nVisibility,int nIntensity,TintStruct Tint):AbstractClass(false)

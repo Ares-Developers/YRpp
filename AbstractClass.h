@@ -83,8 +83,8 @@ public:
 	//AbstractClass
 	virtual void Init() RX;
 	virtual void PointerExpired(void* p,bool bUnknown) RX;
-	virtual eAbstractType WhatAmI() RX;
-	virtual int	Size() RX;
+	virtual eAbstractType WhatAmI() = 0;
+	virtual int	Size() = 0;
 	virtual void CalculateChecksum(void* pChkSum) RX;
 	virtual int GetOwningHouseIndex() R0;
 	virtual HouseClass* GetOwningHouse() R0;

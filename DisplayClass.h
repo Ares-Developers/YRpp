@@ -40,68 +40,27 @@ public:
 		}
 
 	//Destructor
-	virtual ~DisplayClass()
-		{ THISCALL(0x5652C0); }
+	virtual ~DisplayClass() RX;
 
 	//GScreenClass
-	virtual void One_Time()
-		{ THISCALL(0x4A8850); }
-
-	virtual void Init_Clear()
-		{ THISCALL(0x4A88C0); }
-
-	virtual void vt_entry_20()
-		{ THISCALL(0x4A8930); }
-
-	virtual void Update(DWORD dwUnk1, DWORD dwUnk2)
-		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk1); THISCALL(0x4A9700); }
-
 	//MapClass
-
 	//DisplayClass
-	virtual void Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); THISCALL(0x4AE6F0);}
-
-	virtual void Save(IStream* pStm)
-		{ PUSH_VAR32(pStm); THISCALL(0x4AE720);}
-
-	virtual void LoadFromINI(CCINIClass* pINI)	//Loads the map from a map file.
-		{ PUSH_VAR32(pINI); THISCALL(0x4ACE70); }
-
-	virtual const wchar_t* GetToolTip(UINT nDlgID)
-		{ PUSH_VAR32(nDlgID); THISCALL(0x4AE4F0); }
-
-	virtual void CloseWindow()	//???
-		{ THISCALL(0x4AE6B0); }
-
-	virtual void vt_entry_8C()
-		{ THISCALL(0x4AEAD0); }
-
-	virtual bool vt_entry_90(CellStruct MapCoords, void* pUnk)
-		{ PUSH_VAR32(pUnk); PUSH_VAR32(MapCoords); THISCALL(0x4A9890); }
-
-	virtual bool vt_entry_94(CellStruct MapCoords, void* pUnk, bool bUnk)
-		{ PUSH_VAR8(bUnk); PUSH_VAR32(pUnk); PUSH_VAR32(MapCoords); THISCALL(0x4A9CA0); }
-
-	virtual bool vt_entry_98(CellStruct MapCoords, void* pUnk)
-		{ PUSH_VAR32(pUnk); PUSH_VAR32(MapCoords); THISCALL(0x4A9DD0); }
-
-	virtual bool vt_entry_9C(CellStruct MapCoords, void* pUnk)
-		{ PUSH_VAR32(pUnk); PUSH_VAR32(MapCoords); THISCALL(0x4AA050); }
-
+	virtual void Load(IStream* pStm) RX;
+	virtual void Save(IStream* pStm) RX;
+	virtual void LoadFromINI(CCINIClass* pINI) RX; //Loads the map from a map file.
+	virtual const wchar_t* GetToolTip(UINT nDlgID) R0;
+	virtual void CloseWindow() RX; //prolly wrong naming
+	virtual void vt_entry_8C() RX;
+	virtual bool vt_entry_90(CellStruct MapCoords, void* pUnk) R0;
+	virtual bool vt_entry_94(CellStruct MapCoords, void* pUnk, bool bUnk) R0;
+	virtual bool vt_entry_98(CellStruct MapCoords, void* pUnk) R0;
+	virtual bool vt_entry_9C(CellStruct MapCoords, void* pUnk) R0;
 	virtual void vt_entry_100() = 0;
-
-	virtual bool vt_entry_104(DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk1); THISCALL(0x4A9840); }
-
-	virtual void Set_View_Dimensions(RectangleStruct* pRect)
-		{ PUSH_VAR32(pRect); THISCALL(0x4A8960); }
-
-	virtual void vt_entry_10C(DWORD dwUnk) { }
-	virtual void vt_entry_110(DWORD dwUnk) { }
-
-	virtual void vt_entry_114(Point2D* pPoint)
-		{ PUSH_VAR32(pPoint); THISCALL(0x4AC310); }
+	virtual bool vt_entry_104(DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3) R0;
+	virtual void Set_View_Dimensions(RectangleStruct* pRect) RX;
+	virtual void vt_entry_10C(DWORD dwUnk) RX;
+	virtual void vt_entry_110(DWORD dwUnk) RX;
+	virtual void vt_entry_114(Point2D* pPoint) RX;
 
 	//Decides which mouse pointer to set and then does it.
 	//Mouse is over cell pMapCoords which is bShrouded and holds pObject,
@@ -111,36 +70,15 @@ public:
 		bool bShrouded,
 		ObjectClass* pObject,
 		eAction nAction,
-		DWORD dwUnk)
-		{
-			PUSH_VAR32(dwUnk);
-			PUSH_VAR32(nAction);
-			PUSH_VAR32(pObject);
-			PUSH_VAR8(bShrouded);
-			PUSH_VAR32(pMapCoords);
-			THISCALL(0x4AAE90);
-		}
-	
-	virtual void LeftMouseButtonDown(Point2D* pPoint)
-		{ PUSH_VAR32(pPoint); THISCALL(0x4AC380); }
-
+		DWORD dwUnk) RX;
+	virtual void LeftMouseButtonDown(Point2D* pPoint) RX;
 	virtual void LeftMouseButtonUp(
 		DWORD dwUnk1,
 		CellStruct* pMapCoords,
 		ObjectClass* pObject,
 		eAction nAction,
-		DWORD dwUnk2)
-		{
-			PUSH_VAR32(dwUnk2);
-			PUSH_VAR32(nAction);
-			PUSH_VAR32(pObject);
-			PUSH_VAR32(pMapCoords);
-			PUSH_VAR32(dwUnk1);
-			THISCALL(0x4AB9B0);
-		}
-
-	virtual void RightMouseButtonUp(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x4AAD30); }
+		DWORD dwUnk2) RX;
+	virtual void RightMouseButtonUp(DWORD dwUnk) RX;
 
 	//Non-virtual
 

@@ -17,24 +17,18 @@ public:
 	static DynamicVectorClass<AlphaShapeClass*>* Array;
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x420D40);}
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall	Load(IStream* pStm)
-								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x420DE0);}
-	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x420E40);}
+	virtual HRESULT _stdcall	Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty) R0;
 
 	//Destructor
-	virtual ~AlphaShapeClass()	{THISCALL(0x420C80);}
+	virtual ~AlphaShapeClass() RX;
 
 	//AbstractClass
-	virtual void				PointerExpired(void* p,bool bUnknown)
-								{PUSH_VAR8(bUnknown);PUSH_VAR32(p);THISCALL(0x420E70);}
-	virtual eAbstractType		WhatAmI(){return abs_AlphaShape;}
-	virtual int					Size(){return sizeof(AlphaShapeClass);}
-	virtual void				CalculateChecksum(void* pChkSum){PUSH_VAR32(pChkSum);THISCALL(0x420DA0);}
+	virtual eAbstractType WhatAmI() R0;
+	virtual int	Size() R0;
 
 	//Constructor
 	AlphaShapeClass(ObjectClass* pObj,int nX,int nY):AbstractClass(false)

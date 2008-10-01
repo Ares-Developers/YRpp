@@ -9,7 +9,8 @@ template <typename T> class GenericNode
 {
 public:
 	//Destructor
-	virtual ~GenericNode(){PUSH_IMM(0);THISCALL(0x40E390);}
+	virtual ~GenericNode()
+		{ PUSH_IMM(0); THISCALL(0x40E390); }
 
 	//Constructor
 	GenericNode(){Next=NULL;Previous=NULL;}
@@ -26,7 +27,8 @@ public:
 	virtual ~GenericList(){PUSH_IMM(0);THISCALL(0x40E3E0);}
 
 	//Constructor
-	GenericList(){THISCALL(0x52ACE0);}
+	GenericList()
+		{ THISCALL(0x52ACE0); }
 
 	//Properties
 	GenericNode<T>	First;

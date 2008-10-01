@@ -15,26 +15,22 @@ class DiskLaserClass : public AbstractClass
 {
 public:
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x4A7C30);}
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall	Load(IStream* pStm)
-								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x4A7B90);}
-	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x4A7C10);}
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
 
 	//Destructor
-	virtual ~DiskLaserClass()				{PUSH_IMM(SDDTOR_NODELETE);THISCALL(0x4A7C90);}
+	virtual ~DiskLaserClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType		WhatAmI(){return abs_DiskLaser;}
-	virtual int					Size(){return sizeof(DiskLaserClass);}
-	virtual void				CalculateChecksum(void* pChkSum){PUSH_VAR32(pChkSum);THISCALL(0x4A7B80);}
-	virtual void				Update(){THISCALL(0x4A7340);}
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 	//Constructor
-	DiskLaserClass():AbstractClass(false){THISCALL(0x4A7A30);}
+	DiskLaserClass():AbstractClass(false)
+		{ THISCALL(0x4A7A30); }
 
 	//non-virtual
 	void Fire(TechnoClass* pOwner,TechnoClass* pTarget,WeaponTypeClass* pWeapon,int nDamage)

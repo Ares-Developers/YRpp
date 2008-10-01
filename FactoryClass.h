@@ -15,33 +15,21 @@ class FactoryClass : public AbstractClass
 {
 public:
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x4CA230); }
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall	Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x4CA270); }
-	virtual HRESULT _stdcall	Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x4CA3C0); }
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
 
 	//Destructor
-	virtual ~FactoryClass()
-		{ PUSH_IMM(SDDTOR_NODELETE); THISCALL(0x4CA770); }
+	virtual ~FactoryClass() RX;
 
 	//AbstractClass
-	virtual void PointerExpired(void* p,bool bUnknown)
-		{ PUSH_VAR8(bUnknown); PUSH_VAR32(p); THISCALL(0x4CA580); }
-	virtual eAbstractType WhatAmI()
-		{ return abs_Factory; }
-	virtual int Size()
-		{ return sizeof(FactoryClass); }
-	virtual void CalculateChecksum(void* pChkSum)
-		{ PUSH_VAR32(pChkSum); THISCALL(0x4CA430); }
-	virtual void Update()
-		{ THISCALL(0x4C9B20); }
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 	//Constructor
-	FactoryClass():AbstractClass(false)
+	FactoryClass() : AbstractClass(false)
 		{ THISCALL(0x4C98B0); }
 
 	//non-virtual

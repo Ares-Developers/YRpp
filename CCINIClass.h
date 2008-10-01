@@ -11,13 +11,16 @@ class TechnoTypeClass;
 class INIClass
 {
 public:
-	struct INIEntry{ }; //nothing known about this
-	struct INISection{ }; //nothing known about this
+	struct INIEntry { }; //nothing known about this
+	struct INISection { }; //nothing known about this
 
-	INIClass(){ THISCALL(0x535AA0); }
-	virtual ~INIClass(){ THISCALL(0x5256F0); }
+	INIClass()
+		{ THISCALL(0x535AA0); }
 
-	void Reset(){ THISCALL(0x526B00); }
+	virtual ~INIClass() RX;
+
+	void Reset()
+		{ THISCALL(0x526B00); }
 
 	INISection* GetSection(const char* pSection)
 		{ PUSH_VAR32(pSection); THISCALL(0x526810); }

@@ -24,26 +24,18 @@ class CellClass : public AbstractClass
 public:
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x485200); }
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x4839F0); }
-	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x483C10); }
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
+
+	//Destructor
+	virtual ~CellClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI()
-		{ return abs_Cell; }
-	virtual int Size()
-		{ return sizeof(CellClass); }
-	virtual CoordStruct* GetCoords(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL(0x486840); }
-	virtual bool IsOnFloor()
-		{ THISCALL(0x4867E0); }
-	virtual CoordStruct* GetCoords__(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL(0x486890); }
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 	// non-virtual
 
@@ -239,11 +231,6 @@ ISTILE(ClearToSandLAT, 0x486790);
 ISTILE(Green, 0x4867B0);
 ISTILE(NotWater, 0x4867E0);
 ISTILE(DestroyableCliff, 0x486900);
-
-
-	//Destructor
-	virtual ~CellClass()
-		{ THISCALL(0x47BB60); }
 
 	// HACK EVIL HACK
 	static int BridgeHeight()

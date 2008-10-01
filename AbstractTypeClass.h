@@ -43,21 +43,12 @@ public:
 	static DynamicVectorClass<AbstractTypeClass*>* Array;
 
 	//Destructor
-	virtual ~AbstractTypeClass()
-		{ THISCALL(0x4109C0); }
-
-	//AbstractClass
-	virtual void CalculateChecksum(void* pChkSum)
-		{ PUSH_VAR32(pChkSum); THISCALL(0x410BE0); }
+	virtual ~AbstractTypeClass() RX;
 
 	//AbstractTypeClass
-	virtual void LoadTheaterSpecificArt(eTheater th_type) { }
-
-	virtual bool LoadFromINI(CCINIClass* pINI)
-		{ PUSH_VAR32(pINI); THISCALL(0x410A60); }
-
-	virtual bool SaveToINI(CCINIClass* pINI)
-		{ PUSH_VAR32(pINI); THISCALL(0x410B90); }
+	virtual void LoadTheaterSpecificArt(eTheater th_type) RX;
+	virtual bool LoadFromINI(CCINIClass* pINI) R0;
+	virtual bool SaveToINI(CCINIClass* pINI) R0;
 
 	//Constructor
 	AbstractTypeClass(const char* id):AbstractClass(false)

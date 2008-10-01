@@ -1,5 +1,13 @@
 //Here we go!
 
+/*
+NOTE:
+	The locos should NOT become victims of Operation: The Cleansing,
+	since we will possibly want to derive classes from them!
+
+	-pd
+*/
+
 #ifndef LOCO_H
 #define LOCO_H
 

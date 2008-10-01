@@ -13,29 +13,25 @@ class AirstrikeClass : public AbstractClass
 {
 public:
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x41D7A0);}
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall	Load(IStream* pStm)
-								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x41D6F0);}
-	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x41D780);}
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
 
 	//Destructor
-	
-	virtual ~AirstrikeClass()	{PUSH_IMM(SDDTOR_NODELETE);THISCALL(0x41DD50);}
+	virtual ~AirstrikeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType		WhatAmI(){return abs_Airstrike;}
-	virtual int					Size(){return sizeof(AirstrikeClass);}
+	virtual eAbstractType WhatAmI() R0;
+	virtual int	Size() R0;
 
 	//Constructor
 	AirstrikeClass(ObjectClass* pOwner):AbstractClass(false)
 								{PUSH_VAR32(pOwner);THISCALL(0x41D380);}
 
 	//non-virtual
-	void	StartMission(ObjectClass* pTarget){PUSH_VAR32(pTarget);THISCALL(0x41D830);}
+	void StartMission(ObjectClass* pTarget){PUSH_VAR32(pTarget);THISCALL(0x41D830);}
 
 protected:
 	AirstrikeClass():AbstractClass(false){}

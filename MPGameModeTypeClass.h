@@ -2,6 +2,14 @@
 	Base class for all MP gamemodes
 */
 
+/*
+NOTE:
+	The game modes should NOT become victims of Operation: The Cleansing,
+	since we will possibly want to derive classes from them!
+
+	-pd
+*/
+
 #ifndef GAMEMODE_H
 #define GAMEMODE_H
 

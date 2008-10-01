@@ -15,26 +15,19 @@ public:
 	static DynamicVectorClass<EventClass*>* Array;
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x71FA60); }
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall	Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x71F8C0); }
-	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x71F930); }
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
 
 	//Destructor
-	virtual ~EventClass()
-		{ PUSH_IMM(SDDTOR_NODELETE); THISCALL(0x71FA80); }
+	virtual ~EventClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI()
-		{ return ABS_EVENT; }
-	virtual int Size()
-		{ return sizeof(EventClass); }
-	virtual void CalculateChecksum(void* pChkSum)
-		{ PUSH_VAR32(pChkSum); THISCALL(0x71F820); }
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
+
 
 	// you are responsible for doing INI::ReadString and strtok'ing it before calling
 	// this func only calls strtok again, doesn't know anything about buffers

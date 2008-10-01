@@ -19,46 +19,20 @@ public:
 	ABSTRACTTYPE_ARRAY(BulletTypeClass);
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x46C750); }
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this);CALL(0x46C6A0); }
-
-	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x46C730);}
-
 	//Destructor
-	virtual ~BulletTypeClass()
-		{ PUSH_IMM(SDDTOR_NODELETE); THISCALL(0x46C890); }
+	virtual ~BulletTypeClass() RX;
 
 	//AbstractClass
-	virtual void PointerExpired(void* p,bool bUnknown)
-		{ PUSH_VAR8(bUnknown); PUSH_VAR32(p); THISCALL(0x46C820); }
-
-	virtual eAbstractType WhatAmI()
-		{ return abs_BulletType; }
-
-	virtual int Size()
-		{ return sizeof(BulletTypeClass); }
-
-	virtual void CalculateChecksum(void* pChkSum)
-		{ PUSH_VAR32(pChkSum); THISCALL(0x46C560); }
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 	//AbstractTypeClass
-	virtual bool LoadFromINI(CCINIClass* pINI)
-		{ PUSH_VAR32(pINI); THISCALL(0x427D00); }
-
 	//ObjectTypeClass
-	virtual CoordStruct* vt_entry_6C(CoordStruct* pDest,CoordStruct* pSrc)
-		{ PUSH_VAR32(pSrc); PUSH_VAR32(pDest); THISCALL(0x46C4F0);}
-
-	virtual bool SpawnAtMapCoords(CellStruct* mcoords,HouseClass* owner)
-		{ return false; }
-	
-	virtual ObjectClass* CreateObject(HouseClass* owner)
-		{ return NULL; }
+	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords,HouseClass* pOwner) R0;
+	virtual ObjectClass* CreateObject(HouseClass* owner) R0;
 
 	//Constructor
 	BulletTypeClass(const char* pID) : ObjectTypeClass(false)

@@ -17,46 +17,19 @@ public:
 	//Array
 	ABSTRACTTYPE_ARRAY(HouseTypeClass);
 
-	//IUnknown
-	virtual HRESULT _stdcall QueryInterface(REFIID iid, void** ppvObject)
-		{ PUSH_VAR32(ppvObject); PUSH_VAR32(iid); PUSH_VAR32(this); CALL(0x5125A0); }
-
-	virtual ULONG _stdcall AddRef()
-		{ return 1; }
-	virtual ULONG _stdcall Release()
-		{ return 1; }
-
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x512640); }
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall IsDirty()
-		{ return S_FALSE; }
-	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x512290); }
-	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x512480); }
-	virtual HRESULT _stdcall GetSizeMax(ULARGE_INTEGER* pcbSize)
-		{ PUSH_VAR32(pcbSize); PUSH_VAR32(this); CALL(0x512570); }
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
 
 	//Destructor
-	virtual ~HouseTypeClass()
-		{ THISCALL(0x5116A0); }
+	virtual ~HouseTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI()
-		{ return abs_HouseType; }
-	virtual int Size()
-		{ return sizeof(HouseTypeClass); }
-	virtual void CalculateChecksum(void* pChkSum)
-		{ PUSH_VAR32(pChkSum); THISCALL(0x512170); }
-	virtual int GetArrayIndex()
-		{ return ArrayIndex; }
-
-	//AbstractTypeClass
-	virtual bool LoadFromINI(CCINIClass* pINI)
-		{ PUSH_VAR32(pINI); THISCALL(0x511850); }
+	virtual eAbstractType WhatAmI() R0;
+	virtual int	Size() R0;
 
 	//Constructor
 	HouseTypeClass(const char* pID):AbstractTypeClass(false)

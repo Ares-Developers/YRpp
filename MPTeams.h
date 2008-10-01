@@ -7,14 +7,9 @@ class MPTeam
 {
 public:
 	//Destructor
-	virtual ~MPTeam()
-		{ THISCALL(0x5D8C80); }
-
-	virtual bool IsTeamIncluded(int idx)
-		{ PUSH_VAR32(idx); THISCALL(0x5D8C90); }
-
-	virtual bool SetPlayerTeam(int idxPlayer)
-		{ PUSH_VAR32(idxPlayer); THISCALL(0x5D8CB0); }
+	virtual ~MPTeam() RX;
+	virtual bool IsTeamIncluded(int idx) R0;
+	virtual bool SetPlayerTeam(int idxPlayer) R0;
 
 	void AddToList(HWND hWnd)
 		{ PUSH_VAR32(hWnd); THISCALL(0x5D8D10); }

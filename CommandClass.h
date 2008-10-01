@@ -2,6 +2,14 @@
 	UI Commands
 */
 
+/*
+NOTE:
+	This should NOT become a victim of Operation: The Cleansing, since we actually
+	derive classes from it!
+
+	-pd
+*/
+
 #ifndef COMMAND_H
 #define COMMAND_H
 
@@ -18,10 +26,10 @@ public:
 	virtual ~CommandClass(){}
 
 	//CommandClass
-	virtual const char*	GetName() = 0;
-	virtual const wchar_t*	GetUIName() = 0;
-	virtual const wchar_t*	GetUICategory() = 0;
-	virtual const wchar_t*	GetUIDescription() = 0;
+	virtual const char* GetName() = 0;
+	virtual const wchar_t* GetUIName() = 0;
+	virtual const wchar_t* GetUICategory() = 0;
+	virtual const wchar_t* GetUIDescription() = 0;
 
 	virtual bool vt_entry_14(DWORD dwUnk)
 		{ return false; }

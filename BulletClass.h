@@ -37,66 +37,25 @@ public:
 	static DynamicVectorClass<BulletClass*>* Array;
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x46B560); }
-
-	//ARGH why
-	virtual ULONG _stdcall AddRef()
-		{ PUSH_VAR32(this); CALL(0x46AFD0); }
-	virtual ULONG _stdcall Release()
-		{ PUSH_VAR32(this); CALL(0x46AFF0); }
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this);CALL(0x46AE70); }
-	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x46AFB0); }
+	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
 
 	//Destructor
-	virtual ~BulletClass()
-		{ PUSH_IMM(SDDTOR_NODELETE); THISCALL(0x46B5C0); }
+	virtual ~BulletClass() RX;
 
 	//AbstractClass
-	virtual void PointerExpired(void* p,bool bUnknown)
-		{ PUSH_VAR8(bUnknown); PUSH_VAR32(p); THISCALL(0x4684E0); }
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
-	virtual eAbstractType WhatAmI()
-		{ return abs_Bullet; }
+	//BulletClass
+	virtual BYTE GetAnimRate() R0;
+	virtual void SetTarget(ObjectClass *Target) RX;
+	virtual BYTE MoveTo(CoordStruct *where, BulletVelocity *Velocity) R0;
 
-	virtual int Size()
-		{ return sizeof(BulletClass); }
-
-	virtual void Update()
-		{ THISCALL(0x4666E0); }
-
-	// ObjectClass
-	virtual eLayer InWhichLayer()
-		{ return this->Type->get_Flat() ? 1 : 3; }
-
-	virtual ObjectTypeClass * GetType()
-		{ return this->Type; }
-	virtual DWORD vt_entry_108(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x466660); }
-
-	virtual void Draw(Point2D* pCoords, DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pCoords); THISCALL(0x468090); }
-	virtual bool SetLayer(eLayer value)
-		{ PUSH_VAR32(value); THISCALL(0x4666C0); }
-
-/*
-	virtual void CalculateChecksum(void* pChkSum)
-		{ PUSH_VAR32(pChkSum); THISCALL(0x46C560); }
-*/
-	virtual byte GetAnimRate()
-		{ THISCALL(0x468000); }
-
-	virtual void SetTarget(ObjectClass *Target)
-		{ this->Target = Target; }
-	virtual byte MoveTo(CoordStruct *where, BulletVelocity *Velocity)
-		{ PUSH_VAR32(Velocity); PUSH_VAR32(where); THISCALL(0x468670); }
 
 	// non-virtual
-	
 	// after CoCreateInstance creates a bullet, this configures it
 	void Construct(BulletTypeClass *pType, ObjectClass *Target, TechnoClass *Owner, int Damage, 
 		WarheadTypeClass *WH, int Speed, bool Bright)

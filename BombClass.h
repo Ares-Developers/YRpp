@@ -11,36 +11,40 @@ class BombClass : public AbstractClass
 {
 public:
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x438B00);}
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall	Load(IStream* pStm)
-								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x438B40);}
-	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x438BD0);}
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
 	
 	//Destructor
-	virtual ~BombClass()		{PUSH_IMM(SDDTOR_NODELETE);THISCALL(0x4393F0);}
+	virtual ~BombClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType		WhatAmI(){return abs_Bomb;}
-	virtual int					Size(){return sizeof(BombClass);}
-	virtual void				CalculateChecksum(void* pChkSum){PUSH_VAR32(pChkSum);THISCALL(0x438A90);}
+	virtual eAbstractType WhatAmI() R0;
+	virtual int	Size() R0;
 
-	void				Detonate()	{THISCALL(0x438720);}
-	void				Disarm()	{THISCALL(0x4389B0);}
+	void Detonate()
+		{ THISCALL(0x438720); }
 
-	void				IsDeathBomb()	{THISCALL(0x4389F0);}
-	void				GetCurrentFlickerFrame()	{THISCALL(0x438A00);} // which frame of the ticking bomb to draw
-	void				TimeToExplode()	{THISCALL(0x438A70);} 
+	void Disarm()
+		{ THISCALL(0x4389B0); }
+
+	void IsDeathBomb()
+		{ THISCALL(0x4389F0); }
+
+	void GetCurrentFlickerFrame() // which frame of the ticking bomb to draw
+		{ THISCALL(0x438A00); }
+
+	void TimeToExplode()
+		{ THISCALL(0x438A70); }
 
 
 protected:
 	//Constructor
 	//Bombs have a special constructor that just should not be called like this...
-	BombClass():AbstractClass(false){}
-	BombClass(bool X):AbstractClass(X){}
+	BombClass() : AbstractClass(false) { }
+	BombClass(bool X) : AbstractClass(X) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================
