@@ -52,86 +52,50 @@ public:
 	}
 
 	//IUnknown
-	virtual HRESULT _stdcall QueryInterface(REFIID iid, void** ppvObject)
-		{ PUSH_VAR32(ppvObject); PUSH_VAR32(iid); PUSH_VAR32(this); CALL(0x410260); }
-
-	virtual ULONG _stdcall AddRef()
-		{ return 1; }
-
-	virtual ULONG _stdcall Release()
-		{ return 1; }
+	virtual HRESULT _stdcall QueryInterface(REFIID iid, void** ppvObject) R0;
+	virtual ULONG _stdcall AddRef() R0;
+	virtual ULONG _stdcall Release() R0;
 
 	//IPersist
     virtual HRESULT _stdcall GetClassID(CLSID* pClassID) = 0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall IsDirty()
-		{ return bIsDirty ? S_OK: S_FALSE; }
-
+	virtual HRESULT _stdcall IsDirty() R0;
 	virtual HRESULT _stdcall Load(IStream* pStm) = 0;
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) = 0;
 
-	virtual HRESULT _stdcall GetSizeMax(ULARGE_INTEGER* pcbSize)
-		{ PUSH_VAR32(pcbSize); PUSH_VAR32(this); CALL(0x4103E0);}
+	virtual HRESULT _stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) R0;
 
 	//IRTTITypeInfo
-	virtual eAbstractType _stdcall 
-		What_Am_I(){ PUSH_VAR32(this); CALL(0x410210); }
-
-	virtual int _stdcall Fetch_ID()
-		{ PUSH_VAR32(this); CALL(0x410220); }
-
-	virtual void _stdcall Create_ID()
-		{ PUSH_VAR32(this); CALL(0x410230); }
+	virtual eAbstractType _stdcall What_Am_I() R0;
+	virtual int _stdcall Fetch_ID() R0;
+	virtual void _stdcall Create_ID() RX;
 
 	//INoticeSink
-	virtual bool _stdcall INoticeSink_Unknown(DWORD dwUnknown)
-		{ return VARIANT_FALSE; }
+	virtual bool _stdcall INoticeSink_Unknown(DWORD dwUnknown) R0;
 	
 	//INoticeSource
-	virtual void _stdcall INoticeSource_Unknown() { }
+	virtual void _stdcall INoticeSource_Unknown() RX;
 
 	//Destructor
-	virtual ~AbstractClass()
-		{ THISCALL(0x4101F0); }
+	virtual ~AbstractClass() RX;
 
 	//AbstractClass
-	virtual void Init() { }
-	virtual void PointerExpired(void* p,bool bUnknown) { }
-	virtual eAbstractType WhatAmI() = 0;
-	virtual int	Size() = 0;
-
-	virtual void CalculateChecksum(void* pChkSum)
-		{ PUSH_VAR32(pChkSum); THISCALL(0x410410); }
-
-	virtual int	GetOwningHouseIndex()
-		{ return -1; }
-
-	virtual HouseClass* GetOwningHouse()
-		{ return NULL; }
-
-	virtual int	GetArrayIndex()
-		{ return 0; }
-
-	virtual bool IsDead()
-		{ return true; }
-
-	virtual CoordStruct* GetCoords(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL(0x4104C0); }
-
-	virtual CoordStruct* GetCoords_(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL(0x4104F0); }
-
-	virtual bool IsOnFloor()
-		{ return false; }
-
-	virtual bool IsInAir()
-		{ return false; }
-
-	virtual CoordStruct* GetCoords__(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL(0x410540);} 
-
-	virtual void Update() { }
+	virtual void Init() RX;
+	virtual void PointerExpired(void* p,bool bUnknown) RX;
+	virtual eAbstractType WhatAmI() RX;
+	virtual int	Size() RX;
+	virtual void CalculateChecksum(void* pChkSum) RX;
+	virtual int GetOwningHouseIndex() R0;
+	virtual HouseClass* GetOwningHouse() R0;
+	virtual int	GetArrayIndex() R0;
+	virtual bool IsDead() R0;
+	virtual CoordStruct* GetCoords(CoordStruct* pCrd) R0;
+	virtual CoordStruct* GetCoords_(CoordStruct* pCrd) R0;
+	virtual bool IsOnFloor() R0;
+	virtual bool IsInAir() R0;
+	virtual CoordStruct* GetCoords__(CoordStruct* pCrd) R0;
+	virtual void Update() RX;
 
 	//Constructor
 	AbstractClass()	

@@ -108,6 +108,10 @@
 	protected:\
 		type name;
 
+//Operation: The Cleansing
+#define R0 {return 0;}
+#define RX {}
+
 // following westwood's style
 #define VALIDTAG(str) \
 	(strcmpi("<none>", str) && strcmpi("none", str))
