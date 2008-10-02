@@ -12,6 +12,7 @@
 #include <MessageListClass.h>
 
 #include <Unsorted.h>
+#include <CCFileClass.h>
 
 //AbstractClass Tree
 #include <AircraftClass.h>

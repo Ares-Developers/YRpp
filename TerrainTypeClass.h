@@ -19,13 +19,21 @@ public:
 	//Array
 	ABSTRACTTYPE_ARRAY(TerrainTypeClass);
 
+	//IPersist
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
+
+	//IPersistStream
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
+
 	//Constructor, Destructor
 	TerrainTypeClass(const char* id):ObjectTypeClass(false)
-												{PUSH_VAR32(id);THISCALL(0x71DA80);}
-	virtual ~TerrainTypeClass()					{THISCALL(0x71DC00);}
+		{ PUSH_VAR32(id); THISCALL(0x71DA80); }
+	virtual ~TerrainTypeClass() RX;
 
 	//identification
-	virtual eAbstractType WhatAmI(){return abs_TerrainType;}
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 protected:
 	//default contructor, only used by polymorphism

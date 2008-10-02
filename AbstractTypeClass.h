@@ -51,11 +51,8 @@ public:
 	virtual bool SaveToINI(CCINIClass* pINI) R0;
 
 	//Constructor
-	AbstractTypeClass(const char* id):AbstractClass(false)
-									{
-									PUSH_VAR32(id);
-									THISCALL(0x410800);
-									}
+	AbstractTypeClass(const char* id): AbstractClass(false)
+		{ PUSH_VAR32(id); THISCALL(0x410800); }
 
 protected:
 	AbstractTypeClass():AbstractClass(false){};
@@ -64,11 +61,11 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY_STRING(ID,0x18);
-	PROTECTED_PROPERTY(BYTE,zero_3C);
-	PROPERTY_STRING(UINameLabel,0x20);
-	PROPERTY(wchar_t*,UIName);
-	PROPERTY_STRING(Name,0x31);
+	PROPERTY_STRING(ID,          0x18);
+	PROTECTED_PROPERTY(BYTE,     zero_3C);
+	PROPERTY_STRING(UINameLabel, 0x20);
+	PROPERTY(wchar_t*,           UIName);
+	PROPERTY_STRING(Name,        0x31);
 };
 
 #endif

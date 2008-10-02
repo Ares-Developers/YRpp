@@ -40,8 +40,8 @@ public:
 
 	//CTOR / DTOR
 protected:
-	RulesClass(){THISCALL(0x665650);}
-	~RulesClass(){THISCALL(0x667A30);}
+	RulesClass() { THISCALL(0x665650); }
+	~RulesClass() { THISCALL(0x667A30); }
 
 	//Properties
 	PROPERTY (int				, DetailMinFrameRateNormal);

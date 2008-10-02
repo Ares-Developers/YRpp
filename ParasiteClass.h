@@ -13,36 +13,22 @@ public:
 	static DynamicVectorClass<ParasiteClass*>* Array;
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x6296D0); }
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x6295B0); }
-	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x6296B0); }
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
 	//Destructor
-	virtual ~ParasiteClass()
-		{ PUSH_IMM(SDDTOR_NODELETE); THISCALL(0x62AF70); }
+	virtual ~ParasiteClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI()
-		{ return abs_Parasite; }
-	virtual int Size()
-		{ return sizeof(ParasiteClass); }
-	virtual void CalculateChecksum(void* pChkSum)
-		{ PUSH_VAR32(pChkSum); THISCALL(0x6294D0); }
-
-	virtual void Update()
-		{ THISCALL(0x629FD0); }
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 	//Constructor
 	ParasiteClass(FootClass* pOwner):AbstractClass(false)
-	{
-		PUSH_VAR32(pOwner);
-		THISCALL(0x6292B0);
-	}
+	{ PUSH_VAR32(pOwner); THISCALL(0x6292B0); }
 
 	//non-virtual
 	void UpdateSquid()

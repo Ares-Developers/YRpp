@@ -15,37 +15,39 @@ public:
 	static DynamicVectorClass<TemporalClass*>* Array;
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x71A720); }
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall	Load(IStream* pStm)
-								{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x71A660); }
-	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-								{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x71A700); }
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
 
 	//Destructor
-	virtual ~TemporalClass()	{ PUSH_IMM(SDDTOR_NODELETE); THISCALL(0x71B1B0); }
+	virtual ~TemporalClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType		WhatAmI()        { return abs_Temporal; }
-	virtual int					Size()               { return sizeof(TemporalClass); }
-	virtual void				CalculateChecksum(void* pChkSum) { PUSH_VAR32(pChkSum); THISCALL(0x71A650); }
-	virtual void				Update()             { THISCALL(0x71A760); }
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 	//Constructor
-	TemporalClass(TechnoClass* pOwnerUnit)   { PUSH_VAR32(pOwnerUnit); THISCALL(0x71A4E0); }
+	TemporalClass(TechnoClass* pOwnerUnit)
+		{ PUSH_VAR32(pOwnerUnit); THISCALL(0x71A4E0); }
 
 	//non-virtual
-	void Fire(TechnoClass* pTarget)          { PUSH_VAR32(pTarget); THISCALL(0x71AF20); }
-	bool CanWarpTarget(TechnoClass* pTarget) { PUSH_VAR32(pTarget); THISCALL(0x71AE50); }
+	void Fire(TechnoClass* pTarget)
+		{ PUSH_VAR32(pTarget); THISCALL(0x71AF20); }
+	bool CanWarpTarget(TechnoClass* pTarget)
+		{ PUSH_VAR32(pTarget); THISCALL(0x71AE50); }
 
 	// hardcoded to accumulate only up to 50 helpers
-	int GetWarpPerStep( int nHelperCount ) { PUSH_VAR32(nHelperCount); THISCALL(0x71AB10); }
+	int GetWarpPerStep( int nHelperCount )
+		{ PUSH_VAR32(nHelperCount); THISCALL(0x71AB10); }
 
-	void LetGo()     { THISCALL(0x71ABC0); }
-	void JustLetGo() { THISCALL(0x71AD40); }
-	void Detach()    { THISCALL(0x71ADE0); }
+	void LetGo()
+		{ THISCALL(0x71ABC0); }
+	void JustLetGo()
+		{ THISCALL(0x71AD40); }
+	void Detach()
+		{ THISCALL(0x71ADE0); }
 
 protected:
 	TemporalClass():AbstractClass(false){}
@@ -54,17 +56,17 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(TechnoClass*,		OwningUnit);
-	PROPERTY(TechnoClass*,		TargetUnit);
-	PROPERTY_STRUCT(TimerStruct,		LifeTimer);
-	PROPERTY(void*,				unknown_pointer_38);
-	PROPERTY(SuperClass*,		SourceSW);
+	PROPERTY(TechnoClass*,       OwningUnit);
+	PROPERTY(TechnoClass*,       TargetUnit);
+	PROPERTY_STRUCT(TimerStruct, LifeTimer);
+	PROPERTY(void*,              unknown_pointer_38);
+	PROPERTY(SuperClass*,        SourceSW);
 
-	PROPERTY(TemporalClass*,	NextTemporal);
-	PROPERTY(TemporalClass*,	PrevTemporal);
+	PROPERTY(TemporalClass*,     NextTemporal);
+	PROPERTY(TemporalClass*,     PrevTemporal);
 
-	PROPERTY(int,				WarpRemaining);
-	PROPERTY(int,				WarpPerStep);
+	PROPERTY(int,                WarpRemaining);
+	PROPERTY(int,                WarpPerStep);
 };
 
 #endif

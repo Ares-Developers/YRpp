@@ -97,441 +97,165 @@ class TechnoClass : public RadioClass
 {
 public:
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x70BF50); }
-	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x70C250); }
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
 	//Destructor
-	virtual ~TechnoClass()
-		{ THISCALL(0x6F4500); }
-
-	//AbstractClass
-	virtual void Init()
-		{ THISCALL(0x6F3F40); }
-	virtual void PointerExpired(void* p, bool bUnknown)
-		{ PUSH_VAR8(bUnknown); PUSH_VAR32(p); THISCALL(0x7077C0); }
-	virtual void CalculateChecksum(void* pChkSum)
-		{ PUSH_VAR32(pChkSum); THISCALL(0x70C270); }
-	virtual int GetOwningHouseIndex()
-		{ return Owner->get_ArrayIndex(); }
-	virtual HouseClass* GetOwningHouse()
-		{ return Owner; }
-	virtual void Update()
-		{ THISCALL(0x6F9E50); }
-
-	//ObjectClass
-	virtual void AnimPointerExpired(AnimClass* pAnim)
-		{ PUSH_VAR32(pAnim); THISCALL(0x710410); }
-	virtual bool IsSelectable()
-		{ THISCALL(0x6F32D0); }
-	virtual eVisualType VisualCharacter(VARIANT_BOOL flag, DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); PUSH_VAR8(flag); THISCALL(0x703860); }
-	virtual eAction MouseOverCell(CellStruct uCell, bool bUnk1, bool bUnk2)
-		{ PUSH_VAR8(bUnk2); PUSH_VAR8(bUnk1); PUSH_VAR32(uCell); THISCALL(0x700600); }
-	virtual eAction MouseOverObject(ObjectClass* pObj, bool bUnk1)
-		{ PUSH_VAR8(bUnk1); PUSH_VAR32(pObj); THISCALL(0x6FFEC0); }
-	virtual ObjectTypeClass* GetType()
-		{ return NULL; }
-	virtual TechnoTypeClass* GetTechnoType()
-		{ return NULL; }
-	virtual DWORD GetTypeOwners()
-/*
-		{ ObjectTypeClass* ot=GetType();
-								return ot->GetOwners(); }
-*/
-		{ return ((ObjectTypeClass *)GetType())->GetOwners(); }
-	virtual bool CanBeRepaired()
-		{ THISCALL(0x701140); }
-
-	virtual bool IsActive()
-		{ THISCALL(0x7010D0); } // !Deactivated , !UnderEMP, etc
-	virtual bool vt_entry_A0()
-		{ THISCALL(0x700C40); }
-	virtual CoordStruct* GetFLH(CoordStruct *pDest, int idxWeapon, int nFLH_X, int nFLH_Y, int nFLH_Z)
-		{ PUSH_VAR32(nFLH_Z); PUSH_VAR32(nFLH_Y); PUSH_VAR32(nFLH_X);
-		  PUSH_VAR32(idxWeapon); PUSH_VAR32(pDest); THISCALL(0x6F3AD0); }
-	virtual bool IsDisguised()
-		{ return Disguised; }
-	virtual bool IsDisguisedAs(HouseClass *Target)
-		{ return Disguised; }
-	virtual bool Exit()
-		{ THISCALL(0x6F6AC0); }
-	virtual bool Put(CoordStruct* pCrd, eDirection dFaceDir)
-		{ PUSH_VAR32(dFaceDir); PUSH_VAR32(pCrd); THISCALL(0x6F6CA0); }
-	virtual void RegisterDestruction(TechnoClass *pDestroyer) // Raises Map Events, grants veterancy, increments house kill counters
-		{ PUSH_VAR32(pDestroyer); THISCALL(0x702D40); }
-	virtual void RegisterDestruction(HouseClass *pDestroyerHouse) // ++destroyer's kill counters , etc
-		{ PUSH_VAR32(pDestroyerHouse); THISCALL(0x703230); }
-	virtual void Uncloak2()
-		{ THISCALL(0x703850); } // just calls this->Uncloak(0)
-	virtual int KickOutUnit(TechnoClass* pTechno, CellStruct uCell)
-		{ return 0; }
-	virtual void vt_entry_10C(DWORD dwUnk, DWORD dwUnk2)
-		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x6F60D0); }
-	virtual void DrawExtras(DWORD dwUnk, DWORD dwUnk2) // draws ivan bomb, health bar, talk bubble, etc
-		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x6F5190); }
-	virtual void vt_entry_11C()
-		{ THISCALL(0x6F4A40); }
-	virtual void See(DWORD dwUnk, DWORD dwUnk2)
-		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x70ADC0); }
-	virtual bool SetLayer(eLayer value)
-		{ PUSH_VAR32(value); THISCALL(0x6F4A70); }
-	virtual bool vt_entry_13C()
-		{ THISCALL(0x6FC030); }
-	virtual void Flash(int nDuration)
-		{ PUSH_VAR32(nDuration); THISCALL(0x6F9DD0); }
-	virtual bool Select()
-		{ THISCALL(0x6FBFA0); }
-	virtual void IronCurtain(int nDuration, HouseClass *pSource, bool ForceShield)
-		{ PUSH_VAR8(ForceShield); PUSH_VAR32(pSource); PUSH_VAR32(nDuration); THISCALL(0x70E2B0); }
-	virtual void StopAirstrikeTimer()
-		{ THISCALL(0x70E340); }
-	virtual void StopAirstrikeTimer(int Duration)
-		{ PUSH_VAR32(Duration); THISCALL(0x70E300); }
-	virtual bool IsIronCurtained()
-		{ THISCALL(0x41BF40); }
-	virtual bool vt_entry_164(DWORD dwUnk, DWORD dwUnk2)
-		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x6F7970); }
-	virtual int GetWeaponRange(int idxWeapon)
-		{ PUSH_VAR32(idxWeapon); THISCALL(0x7012C0); }
-
-	virtual eDamageState ReceiveDamage(int* pDamage, DWORD dwUnk1, WarheadTypeClass* pWH,
-	  ObjectClass* pAttacker, DWORD dwUnk2, DWORD dwUnk3, HouseClass* pAttackingHouse)
-		{ PUSH_VAR32(pAttackingHouse); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(pAttacker);
-		  PUSH_VAR32(pWH); PUSH_VAR32(dwUnk1); PUSH_VAR32(pDamage); THISCALL(0x701900); }
-	virtual void FreeCaptured()
-		{ THISCALL(0x710460); }
-	virtual void UpdatePosition(int dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x6F5090); }
-	virtual void ReceiveCommand(TechnoClass *From, eRadioCommands rcDoThis, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(From); PUSH_VAR32(rcDoThis); THISCALL(0x6F4AB0); }
-	virtual bool vt_entry_198(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x6F4960); }
-
-	virtual bool IsBeingWarpedOut()
-		{ return BeingWarpedOut; }
-	virtual bool IsWarpingIn()
-		{ return WarpingOut; }
-	virtual bool IsWarpingSomethingOut()
-		{ THISCALL(0x70C5D0); }
-	virtual bool IsNotWarping()
-		{ THISCALL(0x70C5F0); }
-	virtual LightConvertClass *GetRemapColour()
-		{ THISCALL(0x705D70); }
-	
-	//MissionClass
-	virtual void vt_entry_1F4(eMission mission)
-		{ PUSH_VAR32(mission); THISCALL(0x7013A0); }
-	virtual bool Mission_Revert()
-		{ THISCALL(0x7013E0); }
+	virtual ~TechnoClass() RX;
 
 	//TechnoClass
-	virtual bool IsUnitFactory()
-		{ return false; }
-	virtual bool IsCloakable()
-		{ return Cloakable; }
-	virtual bool vt_entry_28C()
-		{ THISCALL(0x6F3280); }
-	virtual bool vt_entry_290()
-		{ return false; }
-	virtual bool SelfHealNow()
-		{ THISCALL(0x70BE80); }
-	virtual bool IsVoxel()
-		{ THISCALL(0x6F9E10); }
-	virtual bool vt_entry_29C()
-		{ return true; }
-	virtual bool ShouldBeCloaked()
-		{ THISCALL(0x6FBDC0); }
-	virtual bool ShouldNotBeCloaked()
-		{ THISCALL(0x6FBC90); }
-	virtual FacingStruct* vt_entry_2A8(FacingStruct* pFacing)
-		{ PUSH_VAR32(pFacing); THISCALL(0x4E0150); }
-	virtual bool IsArmed()
-		{ THISCALL(0x701120); } // GetWeapon(primary) && GetWeapon(primary)->WeaponType
-	virtual void vt_entry_2B0(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5)
-		{ PUSH_VAR32(dwUnk5); PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk);
-		  THISCALL(0x70C620); }
-	virtual double GetStoragePercentage()
-		{ THISCALL(0x708BC0); }
-	virtual int GetPipFillLevel()
-		{ THISCALL(0x708C30); }
-	virtual int GetRefund()
-		{ THISCALL(0x70ADA0); }
-	virtual int GetThreatValue()
-		{ THISCALL(0x708BB0); }
-	virtual bool vt_entry_2C4(DWORD dwUnk)
-		{ return true; }
-	virtual DWORD vt_entry_2C8(DWORD dwUnk, DWORD dwUnk2)
-		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x6FDA00); }
-	virtual bool vt_entry_2CC(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x707F60); }
-	virtual int GetCrewCount()
-		{ THISCALL(0x6F3950); }
-	virtual int GetAntiAirValue()
-		{ return 0; }
-	virtual int GetAntiArmorValue()
-		{ return 0; }
-	virtual int GetAntiInfantryValue()
-		{ return 0; }
-	virtual void vt_entry_2E0()
-		{ }
-	virtual DWORD SelectWeapon(ObjectClass *Target)
-		{ PUSH_VAR32(Target); THISCALL(0x6F3330); }
-	virtual int SelectNavalTargeting(ObjectClass *Target)
-		{ PUSH_VAR32(Target); THISCALL(0x6F3820); }
-	virtual DWORD vt_entry_2EC(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x704350); }
-	virtual int vt_entry_2F0()
-		{ return 2; }
-	virtual CellStruct* vt_entry_2F4()
-		{ THISCALL(0x459DB0); }
-	virtual void vt_entry_2F8(DWORD dwUnk)
-		{ }
-	virtual DWORD vt_entry_2FC(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk);
-								THISCALL(0x70AD50); }
-	virtual DWORD vt_entry_300(DWORD dwUnk, DWORD dwUnk2)
-		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x6F3D60); }
-	virtual DWORD vt_entry_304(DWORD dwUnk, DWORD dwUnk2)
-		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x708C10); }
-	virtual DWORD vt_entry_308(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x708D70); }
-	virtual InfantryTypeClass* GetCrew()
-		{ THISCALL(0x707D20); }
-	virtual bool vt_entry_310()
-		{ THISCALL(0x700D10); }
-	virtual bool CanDeploySlashUnload()
-		{ THISCALL(0x700D50); }
-	virtual int GetROF(int nWeapon)
-		{ PUSH_VAR32(nWeapon); THISCALL(0x6FCFA0); }
-	virtual int vt_entry_31C(int dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x707E60); }
-	virtual bool vt_entry_320()
-		{ return false; }
-	virtual bool vt_entry_324(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x70D1D0); }
-	virtual bool vt_entry_328()
-		{ THISCALL(0x70D420); }
-	virtual bool vt_entry_32C(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x70D460); }
-	virtual bool IsEngineer()
-		{ return false; }
-	virtual void vt_entry_334()
-		{ }
-	virtual DWORD vt_entry_338(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x70F8F0); }
-	virtual bool OnEnterGrinder()
-		{ return false; }
-	virtual bool OnEnterBioReactor()
-		{ return false; }
-	virtual bool OnEnterTankBunker()
-		{ return false; }
-	virtual bool OnEnterBattleBunker()
-		{ return false; }
-	virtual bool OnGarrisonStructure()
-		{ return false; }
-	virtual bool IsPowerOnline()
-		{ return false; } // only overwritten on BuildingClass
-	virtual void QueueVoice(int idxVoc)
-		{ PUSH_VAR32(idxVoc); THISCALL(0x708D90); }
-	virtual int VoiceEnter()
-		{ THISCALL(0x709020); }
-	virtual int VoiceHarvest()
-		{ THISCALL(0x709060); }
-	virtual int VoiceSelect()
-		{ THISCALL(0x708EB0); }
-	virtual int VoiceCapture()
-		{ THISCALL(0x708DC0); }
-	virtual int VoiceMove()
-		{ THISCALL(0x708FC0); }
-	virtual int VoiceDeploy()
-		{ THISCALL(0x708E00); }
-	virtual int VoiceAttack(ObjectClass *Target)
-		{ PUSH_VAR32(Target); THISCALL(0x7090A0); }
-	virtual bool vt_entry_374(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x6FFE00); }
-	virtual bool vt_entry_378(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4)
-		{ PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x6FFBE0); }
-	virtual bool IsUnderEMP()
-		{ return (EMPLockRemaining > 0); }
-	virtual bool vt_entry_380()
-		{ return false; }
-	virtual bool vt_entry_384()
-		{ return false; }
-	virtual void vt_entry_388(DWORD dwUnk)
-		{ }
-	virtual int GetDefaultSpeed()
-		{ THISCALL(0x70EFE0); }
-	virtual void DecreaseAmmo()
-		{ if(Ammo > 0) --Ammo; }
-	virtual void AddPassenger(FootClass* pPassenger)
-		{ PUSH_VAR32(pPassenger); THISCALL(0x710670); }
-	virtual bool CanDisguiseAs(ObjectClass *Target)
-		{ PUSH_VAR32(Target); THISCALL(0x70EF00); }
-	virtual bool TargetAndEstimateDamage(DWORD dwUnk, DWORD dwUnk2)
-		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x709820); }
-	virtual DWORD vt_entry_3A0()
-		{ THISCALL(0x6FCD40); }
-	virtual bool TriggersCellInset(ObjectClass *Target)
-		{ PUSH_VAR32(Target); THISCALL(0x6F7660); }
-	virtual bool vt_entry_3A8(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x6F77B0); }
-	virtual DWORD vt_entry_3AC(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x6F7780); }
-	virtual DWORD vt_entry_3B0(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x6F7930); }
-	virtual DWORD vt_entry_3B4(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x6F78D0); }
-	virtual void vt_entry_3B8() = 0; //pure virtual
-	virtual DWORD vt_entry_3BC(DWORD dwUnk, DWORD dwUnk2)
-		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x6FC090); }
-	virtual int vt_entry_3C0(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4)
-		{ PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x6FC0B0); }
-	virtual CellClass* SelectAutoTarget(eTargetFlags TargetFlags, int CurrentThreat, bool OnlyTargetHouseEnemy)
-		{ PUSH_VAR8(OnlyTargetHouseEnemy); PUSH_VAR32(CurrentThreat); PUSH_VAR32(TargetFlags); THISCALL(0x6F8DF0); }
-	virtual void SetTarget(AbstractClass *Target)
-		{ PUSH_VAR32(Target); THISCALL(0x6FCDB0); }
-	virtual DWORD Fire(ObjectClass* pTarget, int nWeapon)
-		{ PUSH_VAR32(nWeapon); PUSH_VAR32(pTarget); THISCALL(0x6FDD50); }
-	virtual DWORD vt_entry_3D0()
-		{ THISCALL(0x70F850); }
-	virtual void SetOwningHouse(HouseClass* pHouse, DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pHouse); THISCALL(0x7014A0); }
-	virtual void vt_entry_3D8(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk);
-		  THISCALL(0x70B280); }
-	virtual bool Crash(DWORD dwUnk)
-		{ return false; }
-	virtual bool IsAreaFire()
-		{ THISCALL(0x70DD50); }
-	virtual int IsNotSprayAttack()
-		{ THISCALL(0x70DD70); } // ![this]SprayAttack
-	virtual int vt_entry_3E8()
-		{ return 1; }
-	virtual int IsNotSprayAttack2()
-		{ THISCALL(0x70DDA0); } // ![this]SprayAttack
-	virtual WeaponStruct* GetDeployWeapon()
-		{ THISCALL(0x70E120); }
-	virtual WeaponStruct* GetTurretWeapon()
-		{ THISCALL(0x70E1A0); }
-	virtual WeaponStruct* GetWeapon(int nWeaponNumber)
-		{ PUSH_VAR32(nWeaponNumber); THISCALL(0x70E140); }
-	virtual bool HasTurret()
-		{ return ((TechnoTypeClass*)GetType())->get_Turret(); }
-	virtual bool CanOccupyFire()
-		{ return false; }
-	virtual DWORD vt_entry_404()
-		{ return 0; }
-	virtual int GetOccupantCount()
-		{ return 0; }
-	virtual void OnFinishRepair()
-		{ THISCALL(0x701410); }
-	virtual void UpdateTimers()
-		{ THISCALL(0x6FB740); }
-	virtual void CreateGap()
-		{ THISCALL(0x6FB170); } 
-	virtual void DestroyGap()
-		{ THISCALL(0x6FB470); }
-	virtual void vt_entry_41C()
-		{ THISCALL(0x70B570); }
-	virtual void Sensed()
-		{ THISCALL(0x6F4EB0); } // removes cloak from stealth units
-	virtual void Reload()
-		{ THISCALL(0x6FB010); }
-	virtual void vt_entry_428()
-		{ }
-	virtual CoordStruct* GetTargetCoords(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL(0x705CA0); }
-	virtual bool IsNotWarpingIn()
-		{ THISCALL(0x705D50); } // not chronoshifting in
-	virtual bool vt_entry_434(DWORD dwUnk)
-		{ return false; }
-	virtual void vt_entry_438(DWORD dwUnk, DWORD dwUnk2)
-		{ }
-	virtual DWORD vt_entry_43C(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x70ED80); }
-	virtual bool vt_entry_440(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x70EE30); }
+	virtual bool IsUnitFactory() R0;
+	virtual bool IsCloakable() R0;
+	virtual bool vt_entry_28C() R0;
+	virtual bool vt_entry_290() R0;
+	virtual bool SelfHealNow() R0;
+	virtual bool IsVoxel() R0;
+	virtual bool vt_entry_29C() R0;
+	virtual bool ShouldBeCloaked() R0;
+	virtual bool ShouldNotBeCloaked() R0;
+	virtual FacingStruct* vt_entry_2A8(FacingStruct* pFacing) R0;
+	virtual bool IsArmed() R0; // GetWeapon(primary) && GetWeapon(primary)->WeaponType
+	virtual void vt_entry_2B0(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5) RX;
+	virtual double GetStoragePercentage() R0;
+	virtual int GetPipFillLevel() R0;
+	virtual int GetRefund() R0;
+	virtual int GetThreatValue() R0;
+	virtual bool vt_entry_2C4(DWORD dwUnk) R0;
+	virtual DWORD vt_entry_2C8(DWORD dwUnk, DWORD dwUnk2) R0;
+	virtual bool vt_entry_2CC(DWORD dwUnk) R0;
+	virtual int GetCrewCount() R0;
+	virtual int GetAntiAirValue() R0;
+	virtual int GetAntiArmorValue() R0;
+	virtual int GetAntiInfantryValue() R0;
+	virtual void vt_entry_2E0() RX;
+	virtual DWORD SelectWeapon(ObjectClass *Target) R0;
+	virtual int SelectNavalTargeting(ObjectClass *Target) R0;
+	virtual DWORD vt_entry_2EC(DWORD dwUnk) R0;
+	virtual int vt_entry_2F0() R0;
+	virtual CellStruct* vt_entry_2F4() R0;
+	virtual void vt_entry_2F8(DWORD dwUnk) RX;
+	virtual DWORD vt_entry_2FC(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) R0;
+	virtual DWORD vt_entry_300(DWORD dwUnk, DWORD dwUnk2) R0;
+	virtual DWORD vt_entry_304(DWORD dwUnk, DWORD dwUnk2) R0;
+	virtual DWORD vt_entry_308(DWORD dwUnk) R0;
+	virtual InfantryTypeClass* GetCrew() R0;
+	virtual bool vt_entry_310() R0;
+	virtual bool CanDeploySlashUnload() R0;
+	virtual int GetROF(int nWeapon) R0;
+	virtual int vt_entry_31C(int dwUnk) R0;
+	virtual bool vt_entry_320() R0;
+	virtual bool vt_entry_324(DWORD dwUnk) R0;
+	virtual bool vt_entry_328() R0;
+	virtual bool vt_entry_32C(DWORD dwUnk) R0;
+	virtual bool IsEngineer() R0;
+	virtual void vt_entry_334() RX;
+	virtual DWORD vt_entry_338(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) R0;
+	virtual bool OnEnterGrinder() R0;
+	virtual bool OnEnterBioReactor() R0;
+	virtual bool OnEnterTankBunker() R0;
+	virtual bool OnEnterBattleBunker() R0;
+	virtual bool OnGarrisonStructure() R0;
+	virtual bool IsPowerOnline() R0;
+	virtual void QueueVoice(int idxVoc) RX;
+	virtual int VoiceEnter() R0;
+	virtual int VoiceHarvest() R0;
+	virtual int VoiceSelect() R0;
+	virtual int VoiceCapture() R0;
+	virtual int VoiceMove() R0;
+	virtual int VoiceDeploy() R0;
+	virtual int VoiceAttack(ObjectClass *Target) R0;
+	virtual bool vt_entry_374(DWORD dwUnk) R0;
+	virtual bool vt_entry_378(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) R0;
+	virtual bool IsUnderEMP() R0;
+	virtual bool vt_entry_380() R0;
+	virtual bool vt_entry_384() R0;
+	virtual void vt_entry_388(DWORD dwUnk) RX;
+	virtual int GetDefaultSpeed() R0;
+	virtual void DecreaseAmmo() RX;
+	virtual void AddPassenger(FootClass* pPassenger) RX;
+	virtual bool CanDisguiseAs(ObjectClass *Target) R0;
+	virtual bool TargetAndEstimateDamage(DWORD dwUnk, DWORD dwUnk2) R0;
+	virtual DWORD vt_entry_3A0() R0;
+	virtual bool TriggersCellInset(ObjectClass *Target) R0;
+	virtual bool vt_entry_3A8(DWORD dwUnk) R0;
+	virtual DWORD vt_entry_3AC(DWORD dwUnk) R0;
+	virtual DWORD vt_entry_3B0(DWORD dwUnk) R0;
+	virtual DWORD vt_entry_3B4(DWORD dwUnk) R0;
+	virtual void Destroyed(ObjectClass *Killer) = 0;
+	virtual DWORD vt_entry_3BC(DWORD dwUnk, DWORD dwUnk2) R0;
+	virtual int vt_entry_3C0(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) R0;
+	virtual CellClass* SelectAutoTarget(eTargetFlags TargetFlags, int CurrentThreat, bool OnlyTargetHouseEnemy) R0;
+	virtual void SetTarget(AbstractClass *Target) RX;
+	virtual DWORD Fire(ObjectClass* pTarget, int nWeapon) R0;
+	virtual DWORD vt_entry_3D0() R0;
+	virtual void SetOwningHouse(HouseClass* pHouse, DWORD dwUnk) RX;
+	virtual void vt_entry_3D8(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
+	virtual bool Crash(DWORD dwUnk) R0;
+	virtual bool IsAreaFire() R0;
+	virtual int IsNotSprayAttack() R0;
+	virtual int vt_entry_3E8() R0;
+	virtual int IsNotSprayAttack2() R0;
+	virtual WeaponStruct* GetDeployWeapon() R0;
+	virtual WeaponStruct* GetTurretWeapon() R0;
+	virtual WeaponStruct* GetWeapon(int nWeaponNumber) R0;
+	virtual bool HasTurret() R0;
+	virtual bool CanOccupyFire() R0;
+	virtual DWORD vt_entry_404() R0;
+	virtual int GetOccupantCount() R0;
+	virtual void OnFinishRepair() RX;
+	virtual void UpdateTimers() RX;
+	virtual void CreateGap() RX;
+	virtual void DestroyGap() RX;
+	virtual void vt_entry_41C() RX;
+	virtual void Sensed() RX;
+	virtual void Reload() RX;
+	virtual void vt_entry_428() RX;
+	virtual CoordStruct* GetTargetCoords(CoordStruct* pCrd) R0;
+	virtual bool IsNotWarpingIn() R0;
+	virtual bool vt_entry_434(DWORD dwUnk) R0;
+	virtual void vt_entry_438(DWORD dwUnk, DWORD dwUnk2) RX;
+	virtual DWORD vt_entry_43C(DWORD dwUnk) R0;
+	virtual bool vt_entry_440(DWORD dwUnk) R0;
 
 	//nooooooooooooooooooooooooooooooo (vader-style)
 	//thought 666 is the number of the beast? in hex it's 444 D=
 	virtual void vt_entry_444(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5,
-												DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8, DWORD dwUnk9, DWORD dwUnk10)
-		{ PUSH_VAR32(dwUnk10); PUSH_VAR32(dwUnk9); PUSH_VAR32(dwUnk8); PUSH_VAR32(dwUnk7); PUSH_VAR32(dwUnk6);
-		  PUSH_VAR32(dwUnk5); PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk);
-		  THISCALL(0x706640); }
-	virtual void vt_entry_448(DWORD dwUnk, DWORD dwUnk2)
-		{ }
-	virtual void DrawHealthBar(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x6F64A0); }
-	virtual void DrawPipScalePips(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x709A90); }
-	virtual void DrawVeterancyPips(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x70A990); }
-	virtual void DrawExtraInfo(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3)
-		{ PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x70AA60); }
-	virtual void Uncloak(bool bPlaySound)
-		{ PUSH_VAR8(bPlaySound); THISCALL(0x7036C0); }
-	virtual void Cloak(bool bPlaySound)
-		{ PUSH_VAR8(bPlaySound); THISCALL(0x703770); }
-	virtual DWORD vt_entry_464(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x70D190); }
-	virtual void UpdateRefinerySmokeSystems()
-		{ } // BuildingClass only
-	virtual DWORD DisguiseAs(ObjectClass *Target)
-		{ PUSH_VAR32(Target); THISCALL(0x70E280); }
-	virtual void ClearDisguise()
-		{ Disguised = false; }
-	virtual bool vt_entry_474()
-		{ THISCALL(0x7099E0); }
-	virtual bool vt_entry_478()
-		{ return false; }
-	virtual void vt_entry_47C(DWORD dwUnk)
-		{ }
-	virtual void SetDestination(CellClass* pCell, bool bUnk)
-		{ }
-	virtual bool vt_entry_484(DWORD dwUnk, DWORD dwUnk2)
-		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk); THISCALL(0x709A40); }
-	virtual void UpdateSight(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5)
-		{ PUSH_VAR32(dwUnk5); PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk);
-		  THISCALL(0x70AF50); }
-	virtual void vt_entry_48C(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4)
-		{ PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk);
-		  THISCALL(0x70B1D0); }
+		DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8, DWORD dwUnk9, DWORD dwUnk10) RX;
+	virtual void vt_entry_448(DWORD dwUnk, DWORD dwUnk2) RX;
+	virtual void DrawHealthBar(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
+	virtual void DrawPipScalePips(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
+	virtual void DrawVeterancyPips(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
+	virtual void DrawExtraInfo(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
+	virtual void Uncloak(bool bPlaySound) RX;
+	virtual void Cloak(bool bPlaySound) RX;
+	virtual DWORD vt_entry_464(DWORD dwUnk) R0;
+	virtual void UpdateRefinerySmokeSystems() RX;
+	virtual DWORD DisguiseAs(ObjectClass *Target) R0;
+	virtual void ClearDisguise() RX;
+	virtual bool vt_entry_474() R0;
+	virtual bool vt_entry_478() R0;
+	virtual void vt_entry_47C(DWORD dwUnk) RX;
+	virtual void SetDestination(CellClass* pCell, bool bUnk) RX;
+	virtual bool vt_entry_484(DWORD dwUnk, DWORD dwUnk2) R0;
+	virtual void UpdateSight(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5) RX;
+	virtual void vt_entry_48C(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) RX;
 	virtual void vt_entry_490(DWORD dwUnk, DWORD dwUnk2) = 0; //pure virtual
-	virtual void vt_entry_494()
-		{ THISCALL(0x70CC90); }
-	virtual void vt_entry_498()
-		{ THISCALL(0x70CCC0); }
-	virtual void vt_entry_49C()
-		{ THISCALL(0x70CCF0); }
-	virtual void vt_entry_4A0(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x70D990); }
-	virtual void vt_entry_4A4(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x70F000); }
-	virtual void vt_entry_4A8()
-		{ }
-	virtual bool vt_entry_4AC()
-		{ return false; }
-	virtual bool vt_entry_4B0()
-		{ return false; }
-	virtual int vt_entry_4B4()
-		{ return -1; }
-	virtual CoordStruct* vt_entry_4B8(CoordStruct* pCrd)
-		{ pCrd->X=-1; pCrd->Y=-1; pCrd->Z=-1; return pCrd; }
-	virtual DWORD vt_entry_4BC()
-		{ THISCALL(0x70F070); }
-	virtual bool CanAttack()
-		{ THISCALL(0x70F090); }
-	virtual bool vt_entry_4C4()
-		{ return false; }
-	virtual bool vt_entry_4C8()
-		{ return false; }
-	virtual void vt_entry_4CC()
-		{ }
-	virtual bool vt_entry_4D0()
-		{ return false; }
+	virtual void vt_entry_494() RX;
+	virtual void vt_entry_498() RX;
+	virtual void vt_entry_49C() RX;
+	virtual void vt_entry_4A0(DWORD dwUnk) RX;
+	virtual void vt_entry_4A4(DWORD dwUnk) RX;
+	virtual void vt_entry_4A8() RX;
+	virtual bool vt_entry_4AC() R0;
+	virtual bool vt_entry_4B0() R0;
+	virtual int vt_entry_4B4() R0;
+	virtual CoordStruct* vt_entry_4B8(CoordStruct* pCrd) R0;
+	virtual DWORD vt_entry_4BC() R0;
+	virtual bool CanAttack() R0;
+	virtual bool vt_entry_4C4() R0;
+	virtual bool vt_entry_4C8() R0;
+	virtual void vt_entry_4CC() RX;
+	virtual bool vt_entry_4D0() R0;
 
 	//Constructor
 	TechnoClass(HouseClass* owner):RadioClass(false)

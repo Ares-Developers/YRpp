@@ -11,7 +11,7 @@ class MissionClass : public ObjectClass
 {
 public:
 	//Destructor
-	virtual ~MissionClass()		{/* ~ObjectClass() */}
+	virtual ~MissionClass() { /* ~ObjectClass() */ }
 
 	static eMission FindIndex(const char *name)
 		{ SET_REG32(ECX, name); CALL(0x5B3910); }
@@ -22,7 +22,7 @@ public:
 	//MissionClass
 	virtual bool QueueMission(eMission mission, bool start_mission) R0;
 	virtual bool NextMission() R0;
-	virtual void ForceMission(eMission mission) R0;
+	virtual void ForceMission(eMission mission) RX;
 
 	virtual void vt_entry_1F4(eMission mission) RX;
 	virtual bool Mission_Revert() R0;
@@ -59,22 +59,22 @@ public:
 	virtual int Mission_SpyPlaneAOverfly() R0;
 
 	//Constructor
-	MissionClass():ObjectClass(false){THISCALL(0x5B2DA0);}
+	MissionClass():ObjectClass(false) { THISCALL(0x5B2DA0); }
 
 protected:
-	MissionClass(bool X):ObjectClass(X){}
+	MissionClass(bool X):ObjectClass(X) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(eMission,				CurrentMission);	//see MISSION definitions
-	PROPERTY(eMission,				unknown_mission_B0);	//see MISSION definitions
-	PROPERTY(eMission,				QueuedMission);	//see MISSION definitions
-	PROPERTY(bool,					unknown_bool_B8);
-	PROPERTY(int,					MissionStatus);
-	PROPERTY(int,					CurrentMissionStartTime);	//in frames
-	PROPERTY(DWORD,					unknown_C4);
-	PROPERTY(TimerStruct,			UpdateTimer);
+	PROPERTY(eMission, CurrentMission);	//see MISSION definitions
+	PROPERTY(eMission, unknown_mission_B0);	//see MISSION definitions
+	PROPERTY(eMission, QueuedMission);	//see MISSION definitions
+	PROPERTY(bool,     unknown_bool_B8);
+	PROPERTY(int,      MissionStatus);
+	PROPERTY(int,      CurrentMissionStartTime);	//in frames
+	PROPERTY(DWORD,    unknown_C4);
+	PROPERTY(TimerStruct, UpdateTimer);
 };
 
 #endif

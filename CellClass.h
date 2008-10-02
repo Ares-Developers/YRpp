@@ -309,13 +309,11 @@ public:
 		{ DisguiseSensorsOfHouses[i] = val; }
 */
 
-	PROPERTY(DWORD,              unknown_DC);
+	PROPERTY(DWORD,              BaseSpacerOfHouses); // & (1 << HouseX->ArrayIndex) == base spacing dummy for HouseX
 	PROPERTY(DWORD,              unknown_E0);
 
 	PROPERTY(ObjectClass*,       FirstObject);	//The first Object on this Cell. NextObject functions as a linked list.
 
-	//Some other Object on this cell, for functions above that use "bool alt":
-	// ObjectClass *iterationItem = alt ? this->AltContent) : this->Content;
 	PROPERTY(ObjectClass*,       AltObject);
 
 //	PROTECTED_PROPERTY(BYTE,	unknown_E8[4]);

@@ -23,26 +23,18 @@ class WaypointPathClass : public AbstractClass
 {
 public:
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x763C30); }
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x763C70); }
-	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x763D90); }
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 	
 	//Destructor
-	virtual ~WaypointPathClass()
-		{ PUSH_IMM(SDDTOR_NODELETE); THISCALL(0x763E20); }
+	virtual ~WaypointPathClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI()
-		{ return abs_Waypoint; } // not waypointpath -_-
-	virtual int Size()
-		{ return sizeof(WaypointPathClass); }
-	virtual void CalculateChecksum(void* pChkSum)
-		{ PUSH_VAR32(pChkSum); THISCALL(0x763C00); }
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 	WaypointClass * GetWaypoint(int idx)
 		{ PUSH_VAR32(idx); THISCALL(0x763980); }

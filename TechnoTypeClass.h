@@ -60,56 +60,24 @@ public:
 	static DynamicVectorClass<DWORD>* Array; // HAX to instantiate
 
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x7162F0); }
-	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x716DC0); }
-	virtual HRESULT _stdcall GetSizeMax(ULARGE_INTEGER* pcbSize)
-		{ PUSH_VAR32(pcbSize); PUSH_VAR32(this); CALL(0x7170A0); }
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
+	virtual HRESULT _stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) R0;
 
 	//Destructor
-	virtual ~TechnoTypeClass()
-		{ THISCALL(0x711AE0); }
-
-	//AbstractClass
-	virtual void CalculateChecksum(void* pChkSum)
-		{ PUSH_VAR32(pChkSum); THISCALL(0x7171A0); }
-
-	//AbstractTypeClass
-	virtual bool LoadFromINI(CCINIClass* pINI)
-		{ PUSH_VAR32(pINI); THISCALL(0x712170); }
+	virtual ~TechnoTypeClass() RX;
 
 	//ObjectTypeClass
-	virtual DWORD GetOwners()
-		{ THISCALL(0x711EC0); }
-	virtual int GetPipMax()
-		{ THISCALL(0x716290); }
-	virtual int GetActualCost(HouseTypeClass* pCountry)
-		{ PUSH_VAR32(pCountry); THISCALL(0x711F00); }
-	virtual int GetBuildSpeed()
-		{ THISCALL(0x711EE0); }
-	virtual SHPStruct* GetCameo()
-		{ THISCALL(0x712040); }
 
 	//TechnoTypeClass
-	virtual bool vt_entry_A0()
-		{ return true; }
-	virtual bool CanAttackMove()
-		{ THISCALL(0x711E90); }
-	virtual bool vt_entry_A8(CellStruct* pMapCoords, DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pMapCoords); THISCALL(0x716150); }
-	virtual int GetCost()
-		{ return Cost; }
-	virtual int vt_entry_B4()
-		{ THISCALL(0x7120D0); }
-	virtual int GetRepairStep()
-		{ return RulesClass::Global()->get_RepairStep(); }
-	virtual int GetRefund(HouseClass* pHouse, bool bUnk)
-		{ PUSH_VAR8(bUnk); PUSH_VAR32(pHouse); THISCALL(0x711F60); }
-	virtual int GetFlightLevel()
-		{ return FlightLevel != -1
-		  ? FlightLevel
-		  : RulesClass::Global()->get_FlightLevel(); }
+	virtual bool vt_entry_A0() R0;
+	virtual bool CanAttackMove() R0;
+	virtual bool vt_entry_A8(CellStruct* pMapCoords, DWORD dwUnk) R0;
+	virtual int GetCost() R0;
+	virtual int vt_entry_B4() R0;
+	virtual int GetRepairStep() R0;
+	virtual int GetRefund(HouseClass* pHouse, bool bUnk) R0;
+	virtual int GetFlightLevel() R0;
 
 	//Constructor
 	TechnoTypeClass(const char* id, eSpeedType speedtype):ObjectTypeClass(false)

@@ -17,28 +17,18 @@ public:
 	//static DynamicVectorClass<SuperClass*>* Array; //- per player
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x6CDEB0); }
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x6CDEF0); }
-	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x6CDFD0); }
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
 	//AbstractClass
-	virtual void PointerExpired(void* p, bool bUnknown)
-		{ PUSH_VAR8(bUnknown); PUSH_VAR32(p); THISCALL(0x6CDFF0); }
-	virtual eAbstractType WhatAmI()
-		{ return abs_Super; }
-	virtual int Size()
-		{ return sizeof(SuperClass); }
-	virtual void CalculateChecksum(void* pChkSum)
-		{ PUSH_VAR32(pChkSum); THISCALL(0x6CE020); }
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 	//Destructor
-	virtual ~SuperClass()
-		{ THISCALL(0x6CB120); }
+	virtual ~SuperClass() RX;
 
 	// non virtual
 	void CreateChronoAnim(CoordStruct Coords)

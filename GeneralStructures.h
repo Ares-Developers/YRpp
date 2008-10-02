@@ -10,6 +10,9 @@
 typedef Vector2D<short> CellStruct;
 typedef Vector2D<int> Point2D;
 typedef Vector3D<int> CoordStruct;
+
+// used for particle ColorList
+typedef Vector3D<BYTE> RGBClass; // <pd> wuhaha
 #endif
 
 //used for most colors

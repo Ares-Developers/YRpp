@@ -20,36 +20,21 @@ public:
 	ABSTRACTTYPE_ARRAY(SuperWeaponTypeClass);
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x6CE7C0); }
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x6CE800); }
-	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x6CE8D0); }
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
 	//Destructor
-	virtual ~SuperWeaponTypeClass()
-		{ THISCALL(0x6CE740); }
+	virtual ~SuperWeaponTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI()
-		{ return abs_SuperWeaponType; }
-	virtual int Size()
-		{ return sizeof(SuperWeaponTypeClass); }
-	virtual void CalculateChecksum(void* pChkSum)
-		{ PUSH_VAR32(pChkSum); THISCALL(0x6CE910); }
-	virtual int GetArrayIndex()
-		{ return ArrayIndex; }
-
-	//AbstractTypeClass
-	virtual bool LoadFromINI(CCINIClass* ini)
-		{ PUSH_VAR32(ini); THISCALL(0x6CEA20); }
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 	//SuperWeaponTypeClass
-	virtual eAction MouseOverObject(DWORD dwUnk, ObjectClass* pObjBelowMouse)
-		{ PUSH_VAR32(pObjBelowMouse); PUSH_VAR32(dwUnk); THISCALL(0x6CEF80); }
+	virtual eAction MouseOverObject(DWORD dwUnk, ObjectClass* pObjBelowMouse) R0;
 
 	// non-virtual
 	static SuperWeaponTypeClass *FindFirstOfAction(eAction Action)

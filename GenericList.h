@@ -13,7 +13,8 @@ public:
 		{ PUSH_IMM(0); THISCALL(0x40E390); }
 
 	//Constructor
-	GenericNode(){Next=NULL;Previous=NULL;}
+	GenericNode()
+		{ Next=NULL; Previous=NULL; }
 
 	//Properties
 	T*	Next;
@@ -24,7 +25,8 @@ template <typename T> class GenericList
 {
 public:
 	//Destructor
-	virtual ~GenericList(){PUSH_IMM(0);THISCALL(0x40E3E0);}
+	virtual ~GenericList()
+		{ PUSH_IMM(0); THISCALL(0x40E3E0); }
 
 	//Constructor
 	GenericList()

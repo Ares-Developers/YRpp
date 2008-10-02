@@ -24,6 +24,9 @@ public:
 	//ObjectClass
 	//MissionClass
 	//TechnoClass
+	virtual void Destroyed(ObjectClass *Killer) RX;
+	virtual void vt_entry_490(DWORD dwUnk, DWORD dwUnk2) RX;
+
 	//FootClass
 	virtual void vt_entry_4D4(DWORD dwUnk) RX;
 	virtual void vt_entry_4D8(DWORD dwUnk) RX;

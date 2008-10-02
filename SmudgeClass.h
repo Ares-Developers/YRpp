@@ -15,33 +15,22 @@ public:
 	static DynamicVectorClass<SmudgeClass*>* Array;
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x6B4F50);}
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall	Load(IStream* pStm)
-								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x6B4EA0);}
-	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x6B4F00);}
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
 
 	//Destructor
-	virtual ~SmudgeClass()		{THISCALL(0x6B4B40);}
+	virtual ~SmudgeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType		WhatAmI(){return abs_Smudge;}
-	virtual int					Size(){return sizeof(SmudgeClass);}
-
-	//ObjectClass
-	virtual ObjectTypeClass*	GetType(){return Type;}
-	virtual void				Draw(Point2D* pCoords,DWORD dwUnk){}
-	virtual bool				SetLayer(eLayer value){PUSH_VAR32(value);THISCALL(0x6B4BE0);}
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 	//Constructor
 	SmudgeClass(SmudgeTypeClass* stype):ObjectClass(false)
-													{
-													PUSH_VAR32(stype);
-													THISCALL(0x6B4A50);
-													}
+		{ PUSH_VAR32(stype); THISCALL(0x6B4A50); }
 
 protected:
 	//===========================================================================

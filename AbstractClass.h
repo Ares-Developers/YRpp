@@ -57,7 +57,7 @@ public:
 	virtual ULONG _stdcall Release() R0;
 
 	//IPersist
-    virtual HRESULT _stdcall GetClassID(CLSID* pClassID) = 0;
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) = 0;
 
 	//IPersistStream
 	virtual HRESULT _stdcall IsDirty() R0;
@@ -84,11 +84,11 @@ public:
 	virtual void Init() RX;
 	virtual void PointerExpired(void* p,bool bUnknown) RX;
 	virtual eAbstractType WhatAmI() = 0;
-	virtual int	Size() = 0;
+	virtual int Size() = 0;
 	virtual void CalculateChecksum(void* pChkSum) RX;
 	virtual int GetOwningHouseIndex() R0;
 	virtual HouseClass* GetOwningHouse() R0;
-	virtual int	GetArrayIndex() R0;
+	virtual int GetArrayIndex() R0;
 	virtual bool IsDead() R0;
 	virtual CoordStruct* GetCoords(CoordStruct* pCrd) R0;
 	virtual CoordStruct* GetCoords_(CoordStruct* pCrd) R0;
@@ -98,7 +98,7 @@ public:
 	virtual void Update() RX;
 
 	//Constructor
-	AbstractClass()	
+	AbstractClass()
 		{ THISCALL(0x410170); }
 
 	//non-virtual

@@ -18,62 +18,28 @@ class ObjectTypeClass : public AbstractTypeClass
 {
 public:
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x5F9720); }
-
-	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x5F9950); }
-
-	virtual HRESULT _stdcall GetSizeMax(ULARGE_INTEGER* pcbSize)
-		{ PUSH_VAR32(pcbSize); PUSH_VAR32(this); CALL(0x5F9970); }
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
+	virtual HRESULT _stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) R0;
 
 	//Destructor
-	virtual ~ObjectTypeClass()
-		{ THISCALL(0x5F7400); }
-
-	//AbstractTypeClass
-	virtual bool LoadFromINI(CCINIClass* pINI)
-		{ PUSH_VAR32(pINI); THISCALL(0x5F92D0); }
+	virtual ~ObjectTypeClass() RX;
 
 	//ObjectTypeClass
-	virtual CoordStruct* vt_entry_6C(CoordStruct* pDest, CoordStruct* pSrc)
-		{ PUSH_VAR32(pSrc); PUSH_VAR32(pDest); THISCALL(0x41CF80); }
-
-	virtual DWORD GetOwners()
-		{ return 0xFFFFFFFF; }
-
-	virtual int GetPipMax()
-		{ return 0; }
-
-	virtual void vt_entry_78(DWORD dwUnk)
-		{ }
-
-	virtual void vt_entry_7C(DWORD dwUnk)
-		{ }
-
+	virtual CoordStruct* vt_entry_6C(CoordStruct* pDest, CoordStruct* pSrc) R0;
+	virtual DWORD GetOwners() R0;
+	virtual int GetPipMax() R0;
+	virtual void vt_entry_78(DWORD dwUnk) RX;
+	virtual void vt_entry_7C(DWORD dwUnk) RX;
 	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) = 0;
-
-	virtual int GetActualCost(HouseTypeClass* pCountry)
-		{ return 0; }
-
-	virtual int GetBuildSpeed()
-		{ return 0; }
-
+	virtual int GetActualCost(HouseTypeClass* pCountry) R0;
+	virtual int GetBuildSpeed() R0;
 	virtual ObjectClass* CreateObject(HouseClass* pOwner) = 0;
-
-	virtual void vt_entry_90(DWORD dwUnk)
-		{ }
-
+	virtual void vt_entry_90(DWORD dwUnk) RX;
 	virtual BuildingTypeClass* GetFactoryType(bool OverridePrereqs, bool OverridePower, bool OverrideBuildLimit, 
-		HouseClass *House)
-		{ PUSH_VAR32(House); PUSH_VAR8(OverrideBuildLimit); PUSH_VAR8(OverridePower); PUSH_VAR8(OverridePrereqs);
-		  THISCALL(0x5F7900); }
-
-	virtual SHPStruct* GetCameo()
-		{ return NULL; }
-
-	virtual SHPStruct* GetImage()
-		{ return Image; }
+		HouseClass *House) R0;
+	virtual SHPStruct* GetCameo() R0;
+	virtual SHPStruct* GetImage() R0;
 
 	//Constructor
 	ObjectTypeClass(const char* pID):AbstractTypeClass(false)

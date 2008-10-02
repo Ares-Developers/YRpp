@@ -14,26 +14,22 @@ public:
 	ABSTRACTTYPE_ARRAY(SideClass);
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-	{PUSH_VAR32(pClassID);PUSH_VAR32(this);CALL(0x6A4740);}
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall	Load(IStream* pStm)
-								{PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x6A4780);}
-	virtual HRESULT _stdcall	Save(IStream* pStm,BOOL fClearDirty)
-								{PUSH_VAR32(fClearDirty);PUSH_VAR32(pStm);PUSH_VAR32(this);CALL(0x6A48A0);}
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
 
 	//Destructor
-	virtual ~SideClass()		{THISCALL(0x6A4610);}
+	virtual ~SideClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType		WhatAmI(){return abs_Side;}
-	virtual int					Size(){return sizeof(SideClass);}
-	virtual void				CalculateChecksum(void* pChkSum){PUSH_VAR32(pChkSum);THISCALL(0x6A4710);}
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 	//Constructor
 	SideClass(const char* id):AbstractTypeClass(false)
-								{PUSH_VAR32(id);THISCALL(0x6A4550);}
+		{ PUSH_VAR32(id); THISCALL(0x6A4550); }
 
 protected:
 	SideClass():AbstractTypeClass(false){};

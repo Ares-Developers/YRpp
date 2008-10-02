@@ -20,18 +20,21 @@ public:
 	//global array
 	static DynamicVectorClass<TerrainClass*>* Array;
 
+	//IPersist
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
+
+	//IPersistStream
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
+
 	//Constructor, Destructor
 	TerrainClass(TerrainTypeClass* tt,CellStruct coords):ObjectClass(false)
-													{
-													CellStruct* c=&coords;
-													PUSH_VAR32(c);
-													PUSH_VAR32(tt);
-													THISCALL(0x71BB90);
-													}
-	virtual ~TerrainClass()							{THISCALL(0x71B7B0);}
+		{ PUSH_PTR(coords); PUSH_VAR32(tt); THISCALL(0x71BB90); }
+	virtual ~TerrainClass() R0;
 
 	//identification
-	virtual eAbstractType WhatAmI(){return abs_Terrain;}
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 protected:
 	//===========================================================================

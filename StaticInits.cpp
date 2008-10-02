@@ -36,6 +36,9 @@ DECL(BuildingClass, 0xA8EB40);
 #include <BuildingTypeClass.h>
 DECL(BuildingTypeClass, 0xA83C68);
 
+#include <CCFileClass.h>
+GenericList<MixFileClass>* MixFileClass::MIXes = (GenericList<MixFileClass>* )0xABEFD8;
+
 #include <CCINIClass.h>
 CCINIClass* CCINIClass::INI_AI			= (CCINIClass*)0x887128;
 CCINIClass* CCINIClass::INI_Art			= (CCINIClass*)0x887180;

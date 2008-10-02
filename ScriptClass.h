@@ -14,26 +14,18 @@ class ScriptClass : public AbstractClass
 {
 public:
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x6915F0); }
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x691630); }
-	virtual HRESULT _stdcall Save(IStream* pStm,     BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x691690); }
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
 	//Destructor
-	virtual ~ScriptClass()
-		{ PUSH_IMM(SDDTOR_NODELETE); THISCALL(0x691EE0); }
+	virtual ~ScriptClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI()
-		{ return abs_ScriptType; }
-	virtual int Size()
-		{ return sizeof(ScriptTypeClass); }
-	virtual void CalculateChecksum(void* pChkSum)
-		{ PUSH_VAR32(pChkSum); THISCALL(0x6914E0); }
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 	ScriptActionNode* GetCurrentAction(ScriptActionNode *buffer)
 		{ PUSH_VAR32(buffer); THISCALL(0x691500); }

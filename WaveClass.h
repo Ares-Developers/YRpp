@@ -11,36 +11,17 @@ public:
 	static DynamicVectorClass<WaveClass*>* Array;
 
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this);CALL(0x75F650); }
-	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x75F7D0); }
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
 
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x75F840); }
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//Destructor
-	virtual ~WaveClass()
-		{ PUSH_IMM(SDDTOR_NODELETE); THISCALL(0x763200); }
+	virtual ~WaveClass() RX;
 
 	//AbstractClass
-	virtual void PointerExpired(void* p,bool bUnknown)
-		{ PUSH_VAR8(bUnknown); PUSH_VAR32(p); THISCALL(0x75F610); }
-
-	virtual eAbstractType WhatAmI()
-		{ return abs_Wave; }
-
-	virtual int Size()
-		{ return sizeof(WaveClass); }
-
-	virtual void Update()
-		{ THISCALL(0x760F50); }
-
-	virtual ObjectTypeClass * GetType()
-		{ return NULL; }
-
-	virtual void Draw(Point2D* pCoords, DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); PUSH_VAR32(pCoords); THISCALL(0x75F9F0); }
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 	void Draw_Magnetic(CoordStruct* xyzFrom, CoordStruct* xyzTo)
 		{ PUSH_VAR32(xyzTo); PUSH_VAR32(xyzFrom); THISCALL(0x762070); }

@@ -8,7 +8,6 @@
 #include <ObjectTypeClass.h>
 
 //forward declarations
-class RGBClass; //???
 class WarheadTypeClass;
 
 class ParticleTypeClass : public ObjectTypeClass
@@ -18,38 +17,22 @@ public:
 	ABSTRACTTYPE_ARRAY(ParticleTypeClass);
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x645620); }
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x645660); }
-	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x6457A0); }
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
 	//AbstractClass
-	virtual void PointerExpired(void* p, bool bUnknown)
-		{ PUSH_VAR8(bUnknown); PUSH_VAR32(p); THISCALL(0x6458B0); }
-	virtual eAbstractType WhatAmI()
-		{ return abs_ParticleType; }
-	virtual int Size()
-		{ return sizeof(ParticleTypeClass); }
-	virtual void CalculateChecksum(void* pChkSum)
-		{ PUSH_VAR32(pChkSum); THISCALL(0x6454E0); }
-
-	//AbstractTypeClass
-	virtual bool LoadFromINI(CCINIClass* ini)
-		{ PUSH_VAR32(ini); THISCALL(0x644F50); }
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 	//ObjectTypeClass
-	virtual bool SpawnAtMapCoords(CellStruct* mcoords, HouseClass* owner)
-		{ return false; }
-	virtual ObjectClass* CreateObject(HouseClass* owner)
-		{ return NULL; }
+	virtual bool SpawnAtMapCoords(CellStruct* mcoords, HouseClass* owner) R0;
+	virtual ObjectClass* CreateObject(HouseClass* owner) R0;
 
 	//Destructor
-	virtual ~ParticleTypeClass()
-		{ PUSH_VAR32(SDDTOR_NODELETE); THISCALL(0x645950); };
+	virtual ~ParticleTypeClass() RX;
 
 	//Constructor
 	ParticleTypeClass(const char* id):ObjectTypeClass(false)

@@ -13,56 +13,16 @@ public:
 		{ return (RadarClass*)0x87F7E8; }
 
 	//Destructor
-	virtual ~RadarClass()
-		{ THISCALL(0x652C00); }
-
-	//GScreenClass
-	virtual void One_Time()
-		{ THISCALL(0x652CF0); }
-
-	virtual void Init_Clear()
-		{ THISCALL(0x652DE0); }
-
-	virtual void vt_entry_20()
-		{ THISCALL(0x653010); }
-
-	virtual void Update(DWORD dwUnk1, DWORD dwUnk2)
-		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk1); THISCALL(0x653850); }
-
-	virtual void Draw(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x653100); }
+	virtual ~RadarClass() RX;
 
 	//MapClass
 	virtual void CreateEmptyMap(RectangleStruct* pMapRect, bool bUnk1, char nLevel, bool bUnk2)
-		{ 
-			PUSH_VAR8(bUnk2);
-			PUSH_VAR8(nLevel);
-			PUSH_VAR8(bUnk1);
-			PUSH_VAR32(pMapRect);
-			THISCALL(0x653F50);
-		}
+		{ PUSH_VAR8(bUnk2); PUSH_VAR8(nLevel); PUSH_VAR8(bUnk1); PUSH_VAR32(pMapRect); THISCALL(0x653F50); }
 
 	virtual void vt_entry_74(DWORD dwUnk)
 		{ PUSH_VAR32(dwUnk); THISCALL(0x654490); }
 
 	//DisplayClass
-	virtual void Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); THISCALL(0x6568A0);}
-
-	virtual void Save(IStream* pStm)
-		{ PUSH_VAR32(pStm); THISCALL(0x656AC0);}
-
-	virtual const wchar_t* GetToolTip(UINT nDlgID)
-		{ PUSH_VAR32(nDlgID); THISCALL(0x658770); }
-
-	virtual void CloseWindow()	//???
-		{ THISCALL(0x654320); }
-
-	virtual bool vt_entry_90(CellStruct MapCoords, void* pUnk)
-		{ PUSH_VAR32(pUnk); PUSH_VAR32(MapCoords); THISCALL(0x653810); }
-
-	virtual bool vt_entry_94(CellStruct MapCoords, void* pUnk, bool bUnk)
-		{ PUSH_VAR8(bUnk); PUSH_VAR32(pUnk); PUSH_VAR32(MapCoords); THISCALL(0x653830); }
 
 	//RadarClass
 	virtual void DisposeOfArt()

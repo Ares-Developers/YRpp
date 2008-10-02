@@ -4,6 +4,7 @@
 #include <GeneralDefinitions.h>
 #include <YRAllocator.h>
 #include <YRPPCore.h>
+#include <GenericList.h>
 
 //--------------------------------------------------------------------
 //Abstract File class
@@ -21,19 +22,19 @@ public:
 	virtual bool Exists(const char* pFileName) = 0; //If pFileName is NULL, use own.
 	virtual bool HasHandle() = 0;
 	virtual bool Open(int nFileAccess) = 0;
-	virtual bool OpenEx(const char* pFileName,int nFileAccess) = 0;
-	virtual int ReadBytes(void* pBuffer,int nNumBytes) = 0; //Returns number of bytes read.
-	virtual int MoveFilePointer(int nDistance,DWORD dwMoveMethod) = 0;	
+	virtual bool OpenEx(const char* pFileName, int nFileAccess) = 0;
+	virtual int ReadBytes(void* pBuffer, int nNumBytes) = 0; //Returns number of bytes read.
+	virtual int MoveFilePointer(int nDistance, DWORD dwMoveMethod) = 0;	
 	//dwMoveMethod:
 	//0 = SEEK_SET
 	//1 = SEEK_CUR
 	//2 = SEEK_END
 	virtual int GetFileSize() = 0;
-	virtual int WriteBytes(void* pBuffer,int nNumBytes) = 0; //Returns number of bytes written.
+	virtual int WriteBytes(void* pBuffer, int nNumBytes) = 0; //Returns number of bytes written.
 	virtual void Close() = 0;
 	virtual DWORD GetFileTime() R0; //LoWORD = FatTime, HiWORD = FatDate
 	virtual bool SetFileTime(DWORD FileTime) R0;
-	virtual void CDCheck(DWORD dwUnk,DWORD dwUnk2,DWORD dwUnk3) = 0;
+	virtual void CDCheck(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) = 0;
 
 	FileClass(){};
 
@@ -64,13 +65,13 @@ public:
 	virtual bool Exists(const char* pFileName) R0;
 	virtual bool HasHandle() R0;
 	virtual bool Open(int nFileAccess) R0;
-	virtual bool OpenEx(const char* pFileName,int nFileAccess) R0;
-	virtual int ReadBytes(void* pBuffer,int nNumBytes) R0;
-	virtual int MoveFilePointer(int nDistance,DWORD dwMoveMethod) R0;
+	virtual bool OpenEx(const char* pFileName, int nFileAccess) R0;
+	virtual int ReadBytes(void* pBuffer, int nNumBytes) R0;
+	virtual int MoveFilePointer(int nDistance, DWORD dwMoveMethod) R0;
 	virtual int GetFileSize() R0;
-	virtual int WriteBytes(void* pBuffer,int nNumBytes) R0;
+	virtual int WriteBytes(void* pBuffer, int nNumBytes) R0;
 	virtual void Close() RX;
-	virtual void CDCheck(DWORD dwUnk,DWORD dwUnk2,DWORD dwUnk3) RX;
+	virtual void CDCheck(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
 
 	//Constructor
 	RawFileClass(const char* pFileName):FileClass(false){PUSH_VAR32(pFileName);THISCALL(0x65CA80);}
@@ -169,5 +170,37 @@ protected:
 
 //TO BE CREATED WHEN NEEDED
 //class RAMFileClass : public FileClass{/*...*/};
+
+struct MixHeaderData
+{
+	DWORD ID;
+	DWORD Offset;
+	DWORD Size;
+};
+
+class MixFileClass
+{
+public:
+	static GenericList<MixFileClass>* MIXes;
+
+	virtual ~MixFileClass() RX;
+
+	MixFileClass(const char* pFileName)
+		{ PUSH_VAR32(pFileName); THISCALL(0x5B3C20); }
+
+protected:
+
+  PROPERTY(MixFileClass*, Next);
+  PROPERTY(MixFileClass*, Prev);
+  PROPERTY(const char*, FileName);
+  PROPERTY(bool, Blowfish);
+  PROPERTY(bool, Encryption);
+  PROPERTY(int, CountFiles);
+  PROPERTY(int, FileSize);
+  PROPERTY(int, FileStartOffset);
+  PROPERTY(MixHeaderData*, Headers);
+  PROPERTY(int, field_24);
+
+};
 
 #endif

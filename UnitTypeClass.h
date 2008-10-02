@@ -10,51 +10,28 @@ public:
 	ABSTRACTTYPE_ARRAY(UnitTypeClass);
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x747F30); }
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x748010); }
-	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x7480B0); }
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
 	//Destructor
-	virtual ~UnitTypeClass()
-		{ PUSH_IMM(SDDTOR_NODELETE); THISCALL(0x748190); }
+	virtual ~UnitTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI()
-		{ return abs_UnitType; }
-	virtual int Size()
-		{ return sizeof(UnitTypeClass); }
-	virtual void CalculateChecksum(void* pChkSum)
-		{ PUSH_VAR32(pChkSum); THISCALL(0x747F70); }
-	virtual int GetArrayIndex()
-		{ return ArrayIndex; }
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 	//AbstractTypeClass
-	virtual bool LoadFromINI(CCINIClass* pINI)
-		{ PUSH_VAR32(pINI); THISCALL(0x747620); }
 
 	//ObjectTypeClass
-	virtual CoordStruct* vt_entry_6C(CoordStruct* pDest, CoordStruct* pSrc)
-		{ PUSH_VAR32(pSrc); PUSH_VAR32(pDest); THISCALL(0x747EB0); }
-
-	virtual void vt_entry_78(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x747590); }
-	virtual void vt_entry_7C(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x7475D0); }
 	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner)
 		{ PUSH_VAR32(pMapCoords); PUSH_VAR32(pOwner); THISCALL(0x7474B0); }
 	virtual TechnoClass* CreateObject(HouseClass* pOwner)
 		{ PUSH_VAR32(pOwner); THISCALL(0x747560); }
-	virtual void vt_entry_90(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x41CB70); }
 
 	//TechnoTypeClass
-	virtual int GetRepairStep()
-		{ return RulesClass::Global()->get_RepairStep(); }
 
 	//Constructor
 	UnitTypeClass(const char* id):TechnoTypeClass(false)

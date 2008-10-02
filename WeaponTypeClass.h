@@ -20,30 +20,20 @@ public:
 	ABSTRACTTYPE_ARRAY(WeaponTypeClass);
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x772C90); }
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x772CD0); }
-	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x772EB0); }
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
 
 	//Destructor
-	virtual ~WeaponTypeClass()
-		{ THISCALL(0x771F50); }
+	virtual ~WeaponTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI()
-		{ return abs_WeaponType; }
-	virtual int Size()
-		{ return sizeof(WeaponTypeClass); }
-	virtual void CalculateChecksum(void* pChkSum)
-		{ PUSH_VAR32(pChkSum); THISCALL(0x772AE0); }
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 	//AbstractTypeClass
-	virtual bool LoadFromINI(CCINIClass* pINI)
-		{ PUSH_VAR32(pINI); THISCALL(0x772080); }
 
 	void CalculateSpeed()
 		{ THISCALL(0x7729F0); }
