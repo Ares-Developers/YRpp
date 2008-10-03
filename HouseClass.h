@@ -90,8 +90,6 @@ public:
 	 BaseClass() { THISCALL(0x42E6F0); };
 	virtual ~BaseClass() { /*???*/ }; // gcc demands a virtual since virtual funcs exist
 
-	PROTECTED_PROPERTY(void*, VirtualTable);
-
 	//VTable
 	virtual HRESULT _stdcall Load(IStream* pStm) R0;
 	virtual HRESULT _stdcall Save(IStream* pStm) R0;
