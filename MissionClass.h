@@ -7,6 +7,39 @@
 
 #include <ObjectClass.h>
 
+class MissionControlClass
+{
+	public:
+		static MissionControlClass* Array()
+			{ return (MissionControlClass*)0xA8E3A8; }
+
+		static const char** Names()
+			{ return (const char**)0x816CAC; }
+
+		static MissionControlClass* __fastcall Find(const char* pName)
+			{ CALL(0x5B3910); }
+
+		MissionControlClass()
+			{ THISCALL(0x5B3700); }
+
+		const char* GetName()
+			{ THISCALL(0x5B3740); }
+
+		void LoadFromINI(CCINIClass* pINI)
+			{ PUSH_VAR32(pINI); THISCALL(0x5B3760); }
+
+		//Properties
+		PROPERTY(int, ArrayIndex);
+		PROPERTY(bool, NoThreat);
+		PROPERTY(bool, Zombie);
+		PROPERTY(bool, Recruitable);
+		PROPERTY(bool, Paralyzed);
+		PROPERTY(bool, Retaliate);
+		PROPERTY(bool, Scatter);
+		PROPERTY(double, Rate); //default 0.016
+		PROPERTY(double, AARate); //default 0.016
+};
+
 class MissionClass : public ObjectClass
 {
 public:

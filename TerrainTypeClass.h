@@ -26,14 +26,21 @@ public:
 	virtual HRESULT _stdcall Load(IStream* pStm) R0;
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
-	//Constructor, Destructor
-	TerrainTypeClass(const char* id):ObjectTypeClass(false)
-		{ PUSH_VAR32(id); THISCALL(0x71DA80); }
+
+	//Destructor
 	virtual ~TerrainTypeClass() RX;
 
-	//identification
+	//AbstractClass
 	virtual eAbstractType WhatAmI() R0;
 	virtual int Size() R0;
+
+	//ObjectTypeClass
+	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords,HouseClass* pOwner) R0;
+	virtual ObjectClass* CreateObject(HouseClass* owner) R0;
+
+	//Constructor
+	TerrainTypeClass(const char* id):ObjectTypeClass(false)
+		{ PUSH_VAR32(id); THISCALL(0x71DA80); }
 
 protected:
 	//default contructor, only used by polymorphism

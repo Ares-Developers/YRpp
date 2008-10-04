@@ -36,7 +36,7 @@ class RulesClass
 public:
 	//Static
 	static RulesClass* Global()
-		{ RulesClass* pRules; MEM_READ32(pRules,0x8871E0); return pRules; }
+		{ return *((RulesClass**)0x8871E0); }
 
 	//CTOR / DTOR
 protected:

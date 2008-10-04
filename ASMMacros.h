@@ -7,78 +7,83 @@
 MSVC++
 */
 
-//Set return location - only do it if you know why you do it!
-
-//Push/Pop General Purpose Registers
-#define PUSH_GP_REGISTERS	_asm{push eax}\
+//Push/Pop General Purpose Registers	
+#define PUSH_GP_REGISTERS \
+	_asm{push eax}\
 	_asm{push ecx}\
 	_asm{push edx}
 
-#define POP_GP_REGISTERS	_asm{pop edx}\
+#define POP_GP_REGISTERS \
+	_asm{pop edx}\
 	_asm{pop ecx}\
 	_asm{pop eax}
 
 //Get/set register to a variable
-#define GET_REG32(dst,reg)	_asm{mov dst, reg}
-#define SET_REG32(reg,src)	_asm{mov reg, src}
+#define GET_REG32(dst,reg) _asm{mov dst, reg}
+#define SET_REG32(reg,src) _asm{mov reg, src}
 
-#define ZERO_REG(reg)		_asm{xor reg, reg}
+#define ZERO_REG(reg) _asm{xor reg, reg}
 
-#define GET_REG8(dst,reg)	_asm{mov dst, reg}
-#define SET_REG8(reg,src)	_asm{mov reg, src}
+#define GET_REG8(dst,reg) _asm{mov dst, reg}
+#define SET_REG8(reg,src) _asm{mov reg, src}
 
 //Stack pointer operations
-#define ADD_ESP(i)		_asm{add esp, i}
-#define SUB_ESP(i)		_asm{sub esp, i}
+#define ADD_ESP(i) _asm{add esp, i}
+#define SUB_ESP(i) _asm{sub esp, i}
 
 //Push immediate value
-#define PUSH_IMM(i)		_asm{push i}
+#define PUSH_IMM(i) _asm{push i}
 
 //Push / Pop register
-#define PUSH_REG(r)		_asm{push r}
-#define POP_REG(r)		_asm{pop r}
+#define PUSH_REG(r) _asm{push r}
+#define POP_REG(r) _asm{pop r}
 
 //Push a pointer to a variable
-#define PUSH_PTR(v)		_asm{lea eax, v}\
+#define PUSH_PTR(v) \
+		_asm{lea eax, v}\
 		_asm{push eax}
 
 //Push a variable
-#define PUSH_VAR32(v)		_asm{mov eax, v}\
+#define PUSH_VAR32(v) \
+		_asm{mov eax, v}\
 		_asm{push eax}
+
 //Push 16bit variable
-#define PUSH_VAR16(v)		_asm{movzx eax, v}\
+#define PUSH_VAR16(v) \
+		_asm{movzx eax, v}\
 		_asm{push eax}
+
 //Push 8bit variable
-#define PUSH_VAR8(v)		_asm{movzx eax, v}\
+#define PUSH_VAR8(v) \
+		_asm{movzx eax, v}\
 		_asm{push eax}
 
 //Push 64bit variable
-#define PUSH_VAR64(pv)		_asm{mov eax, pv}\
+#define PUSH_VAR64(pv) \
+		_asm{mov eax, pv}\
 		_asm{mov ecx, [eax+4]}\
 		_asm{mov eax, [eax]}\
 		_asm{push ecx}\
 		_asm{push eax}
 
 //call
-#define CALL(pFunction)		_asm{mov eax, pFunction}\
-		_asm{call eax}
-
-//redirect a call to an address, keeping the arguments intact
-#define REDIRECT_CALL(pFunction)	_asm{add esp, 4}\
+#define CALL(pFunction) \
 		_asm{mov eax, pFunction}\
 		_asm{call eax}
 
 //THISCALL macros
-#define THISCALL(pFunction)	_asm{mov ecx, this}\
+#define THISCALL(pFunction) \
+		_asm{mov ecx, this}\
 		_asm{mov eax, pFunction}\
 		_asm{call eax}
 
-#define THISCALL_EX(pThis,pFunction)\
+#define THISCALL_EX(pThis,pFunction) \
 		_asm{mov ecx, pThis}\
 		_asm{mov eax, pFunction}\
 		_asm{call eax}
 
-#define THISCALL_VT(vt_offs)_asm{mov ecx, this}\
+#define THISCALL_VT(vt_offs) \
+		_asm{mov ecx, this}\
 		_asm{mov eax, [ecx]}\
 		_asm{call dword ptr [eax+vt_offs]}
 
@@ -86,25 +91,33 @@ MSVC++
 		_asm{mov eax, [ecx]}\
 		_asm{call dword ptr [eax+vt_offs]}
 
-#define THISCALL_EX_VT(pThis,vt_offs)	_asm{mov ecx, pThis}\
+#define THISCALL_EX_VT(pThis,vt_offs) \
+		_asm{mov ecx, pThis}\
 		_asm{mov edx, [ecx]}\
 		_asm{call dword ptr [edx+vt_offs]}
 
 //read or write memory
-#define MEM_READ8(dst,mem)		_asm{mov dl, byte ptr ds:mem}\
+#define MEM_READ8(dst,mem) \
+		_asm{mov dl, byte ptr ds:mem}\
 		_asm{mov dst, dl}
-#define MEM_WRITE8(mem,src)		_asm{mov dl, dst}\
+#define MEM_WRITE8(mem,src) \
+		_asm{mov dl, dst}\
 		_asm{mov byte ptr ds:mem, dl}
 
-#define MEM_READ16(dst,mem)		_asm{mov dx, word ptr ds:mem}\
+#define MEM_READ16(dst,mem) \
+		_asm{mov dx, word ptr ds:mem}\
 		_asm{mov dst, dx}
-#define MEM_WRITE16(mem,src)	_asm{mov dx, src}\
+#define MEM_WRITE16(mem,src) \
+		_asm{mov dx, src}\
 		_asm{mov word ptr ds:mem, dx}
 
-#define MEM_READ32(dst,mem)		_asm{mov edx, dword ptr ds:mem}\
+#define MEM_READ32(dst,mem) \
+		_asm{mov edx, dword ptr ds:mem}\
 		_asm{mov dst, edx}
-#define MEM_WRITE32(mem,src)	_asm{mov edx, src}\
+#define MEM_WRITE32(mem,src) \
+		_asm{mov edx, src}\
 		_asm{mov dword ptr ds:mem, edx}
+
 #define MEM_WRITEIMM8(mem,imm)	_asm{mov byte ptr ds:mem, imm}
 #define MEM_WRITEIMM16(mem,imm)	_asm{mov word ptr ds:mem, imm}
 #define MEM_WRITEIMM32(mem,imm)	_asm{mov dword ptr ds:mem, imm}

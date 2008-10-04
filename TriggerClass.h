@@ -14,6 +14,8 @@ class TriggerClass : public AbstractClass
 public:
 	//Static
 	static DynamicVectorClass<TriggerClass*>* Array;
+	static TriggerTypeClass * Find(TriggerTypeClass *pType)
+		{ SET_REG32(ecx, pType); CALL(0x726630); }
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
@@ -23,7 +25,7 @@ public:
 	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
 
 	//Destructor
-	virtual ~TriggerClass() R0;
+	virtual ~TriggerClass() RX;
 
 	//AbstractClass
 	virtual eAbstractType WhatAmI() R0;
@@ -49,8 +51,6 @@ public:
 
 	void ResetTimers() { THISCALL(0x726400); }
 
-	static TriggerTypeClass * FindInstance(TriggerTypeClass *Type) { PUSH_VAR32(Type); THISCALL(0x726630); }
-
 	void MarkEventAsOccured(int idx) { this->EventsAlreadyFired |= (1 << idx); }
 	void MarkEventAsNotOccured(int idx) { this->EventsAlreadyFired &= ~(1 << idx); }
 	bool HasEventOccured(int idx) { return (this->EventsAlreadyFired & (1 << idx)) != 0; }
@@ -66,10 +66,11 @@ public:
 			THISCALL(0x7246C0); }
 
 	bool FireActions(ObjectClass *Obj, CellStruct Pos)
-		{ PUSH_VAR32(Pos
+		{ PUSH_VAR32(Pos); PUSH_VAR32(Obj); THISCALL(0x7265C0); }
 
 	//Constructor
-	TriggerClass(TriggerTypeClass *Type)     { PUSH_VAR32(Type); THISCALL(0x725FA0); }
+	TriggerClass(TriggerTypeClass *pType)
+		{ PUSH_VAR32(pType); THISCALL(0x725FA0); }
 
 protected:
 	TriggerClass():AbstractClass(false){}

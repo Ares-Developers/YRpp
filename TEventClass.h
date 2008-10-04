@@ -1,5 +1,5 @@
-#ifndef EVENT_H
-#define EVENT_H
+#ifndef TEVENT_H
+#define TEVENT_H
 
 #include <AbstractClass.h>
 
@@ -8,11 +8,11 @@ class SuperClass;
 class TechnoClass;
 class AITeamTypeClass; // TODO: define
 
-class EventClass : public AbstractClass
+class TEventClass : public AbstractClass
 {
 public:
 	//Static
-	static DynamicVectorClass<EventClass*>* Array;
+	static DynamicVectorClass<TEventClass*>* Array;
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
@@ -22,7 +22,7 @@ public:
 	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
 
 	//Destructor
-	virtual ~EventClass() RX;
+	virtual ~TEventClass() RX;
 
 	//AbstractClass
 	virtual eAbstractType WhatAmI() R0;
@@ -59,18 +59,17 @@ public:
 		  THISCALL(0x71E940); }
 
 	//Constructor
-	EventClass()
+	TEventClass()
 		{ THISCALL(0x71E6A0); }
 
 protected:
-	EventClass():AbstractClass(false){}
-	EventClass(bool X):AbstractClass(X){}
+	TEventClass(bool X):AbstractClass(X){}
 
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
 	PROPERTY(int,               indexInArray);
-	PROPERTY(EventClass*,       NextEvent);
+	PROPERTY(TEventClass*,       NextEvent);
 	PROPERTY(int,               EventKind);
 	PROPERTY(void*,             TeamType); // AITeamTypeClass*, really
 	PROPERTY(int,               arg);

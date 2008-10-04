@@ -1,5 +1,5 @@
-#ifndef ACTION_H
-#define ACTION_H
+#ifndef TACTION_H
+#define TACTION_H
 
 #include <AbstractClass.h>
 
@@ -7,14 +7,15 @@
 class SuperClass;
 class TechnoClass;
 class AITeamTypeClass; // TODO: define
+class TagTypeClass; // TODO: define
 class TriggerTypeClass; // TODO: define
 class TriggerClass;
 
-class ActionClass : public AbstractClass
+class TActionClass : public AbstractClass
 {
 public:
 	//Static
-	static DynamicVectorClass<ActionClass*>* Array;
+	static DynamicVectorClass<TActionClass*>* Array;
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
@@ -27,16 +28,12 @@ public:
 		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x6E3E30); }
 
 	//Destructor
-	virtual ~ActionClass()
+	virtual ~TActionClass()
 		{ PUSH_IMM(SDDTOR_NODELETE); THISCALL(0x6E4660); }
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI()
-		{ return ABS_ACTION; }
-	virtual int Size()
-		{ return sizeof(ActionClass); }
-	virtual void CalculateChecksum(void* pChkSum)
-		{ PUSH_VAR32(pChkSum); THISCALL(0x6E3E50); }
+	virtual eAbstractType WhatAmI() R0;
+	virtual int Size() R0;
 
 	// you are responsible for doing INI::ReadString and strtok'ing it before calling
 	// this func only calls strtok again, doesn't know anything about buffers
@@ -58,7 +55,7 @@ public:
 
 	// main brain, returns whether succeeded (mostly, no consistency in results what so ever)
 	// trigger fires all actions regardless of result of this
-	bool Execute(HouseClass *House, ObjectClass *Object, TriggerClass *trigger, wXY *pos)
+	bool Execute(HouseClass *House, ObjectClass *Object, TriggerClass *trigger, CellStruct *pos)
 		{ PUSH_VAR32(pos);
 		  PUSH_VAR32(trigger);
 		  PUSH_VAR32(Object); 
@@ -80,6 +77,7 @@ public:
 		  PUSH_VAR32(TargetHouse);\
 		  THISCALL(addr); }
 #endif
+
 	ACTION_FUNC(LightningStrikeAt, 0x6E0050);
 	ACTION_FUNC(RemoveParticleSystemsAt, 0x6E0080);
 	ACTION_FUNC(WakeupAttachedObjects, 0x6E01C0);
@@ -263,7 +261,7 @@ public:
 	ACTION_FUNC(ResetSWRechargeTime, 0x6E4360);
 	ACTION_FUNC(ResetSW, 0x6E43A0);
 
-	ACTION_FUNC(SetTargetCell, 0x6E43E0);
+	ACTION_FUNC(SetPreferredTargetCell, 0x6E43E0);
 	ACTION_FUNC(ResetTargetCell, 0x6E4440);
 
 	ACTION_FUNC(SetDefenseCell, 0x6E4460);
@@ -283,18 +281,17 @@ public:
 	int GetIndexInArray() { return this->get_IndexInArray(); }
 
 	//Constructor
-	ActionClass()
+	TActionClass()
 		{ THISCALL(0x71E6A0); }
 
 protected:
-	ActionClass():AbstractClass(false){}
-	ActionClass(bool X):AbstractClass(X){}
+	TActionClass(bool X) : AbstractClass(X){}
 
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
 	PROPERTY(int,                IndexInArray);
-	PROPERTY(ActionClass*,       NextAction);
+	PROPERTY(TActionClass*,      NextTAction);
 	PROPERTY(int,                ActionKind);
 	PROPERTY(void*,              TeamType); // AITeamTypeClass*, really
 	PROPERTY(int,                arg3);

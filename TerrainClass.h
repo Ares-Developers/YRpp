@@ -30,7 +30,8 @@ public:
 	//Constructor, Destructor
 	TerrainClass(TerrainTypeClass* tt,CellStruct coords):ObjectClass(false)
 		{ PUSH_PTR(coords); PUSH_VAR32(tt); THISCALL(0x71BB90); }
-	virtual ~TerrainClass() R0;
+
+	virtual ~TerrainClass() RX;
 
 	//identification
 	virtual eAbstractType WhatAmI() R0;
