@@ -3,7 +3,8 @@
 
 class ObjectClass;
 
-class Stuff
+// things that I can't put into nice meaningful classes
+class Game
 {
 public:
 	static void RaiseError(HRESULT err)

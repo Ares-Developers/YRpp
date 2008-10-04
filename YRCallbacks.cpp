@@ -60,6 +60,8 @@ CALLBACK_INIT_ABSTRACTTYPE(WeaponTypeClass);
 CALLBACK_INIT_OBJECT(TechnoClass);
 	CALLBACK_IMPL_OBJECT(TechnoClass, 0x0, 0x0);
 
+CALLBACK_INIT_OBJECT(HouseClass);
+	CALLBACK_IMPL_OBJECT(HouseClass, 0x0, 0x0);
 
 //-----------------------------------------------------------------------
 //CommandClass

@@ -21,9 +21,9 @@ public:
 		ColorStruct* pUnknownColorData, //???
 		DSurface* pSurface,
 		int nUnknown,
-		bool bUnknown)
+		bool AllocBlitters)
 		{
-			PUSH_VAR8(bUnknown);
+			PUSH_VAR8(AllocBlitters);
 			PUSH_VAR32(nUnknown);
 			PUSH_VAR32(pSurface);
 			PUSH_VAR32(pUnknownColorData);

@@ -45,7 +45,31 @@ public:
 	virtual eAction MouseOverObject(ObjectClass* pObj, bool bUnk1) R0;
 	virtual eLayer InWhichLayer() R0;
 	virtual bool vt_entry_7C() R0;
-	virtual bool CanBeUndeployed() R0;
+
+ /*
+  	Building returns if it is 1x1 and has UndeploysInto
+  	inf returns 0
+  	unit returns !NonVehicle
+  	Aircraft returns IsOnFloor()
+ 
+  users include:
+  452656 - is this building click-repairable
+  440C26 - should this building get considered in BaseSpacing
+  445A8E - -""-
+  51E7D1 - can a VehicleThief be clicked to steal this unit
+  51E4D9 - can an engi be clicked to enter this to fix/takeover
+  51F0D3 - -""-
+  51EA06 - can this building be C4'd?
+  51E243 - can a VehicleThief steal this on his own decision
+  4F93F3 - should this building's damage raise a BaseUnderAttack?
+  442286 - -""-
+  44296A - -""-
+  741117 - can this be healed by a vehicle?
+  6F8242 - can this aircraft be auto-target
+  6F85BE - can this aircraft be auto-attacked
+  */
+	virtual bool IsStrange() R0;
+
 	virtual TechnoTypeClass* GetTechnoType() R0;
 	virtual ObjectTypeClass* GetType() R0;
 	virtual DWORD GetTypeOwners() R0;

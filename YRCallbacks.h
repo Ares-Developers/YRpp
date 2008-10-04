@@ -50,6 +50,9 @@ class WeaponTypeClassCallback
 class TechnoClassCallback
 	{ public: CALLBACK_HEAD_OBJECT(TechnoClass); };
 
+class HouseClassCallback
+	{ public: CALLBACK_HEAD_OBJECT(HouseClass); };
+
 //-----------------------------------------------------------------------
 //CommandClass
 //-----------------------------------------------------------------------
