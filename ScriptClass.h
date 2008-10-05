@@ -28,10 +28,10 @@ public:
 	virtual int Size() R0;
 
 	ScriptActionNode* GetCurrentAction(ScriptActionNode *buffer)
-		{ PUSH_VAR32(buffer); THISCALL(0x691500); }
+		JMP_THIS(0x691500);
 
 	ScriptActionNode* GetNextAction(ScriptActionNode *buffer)
-		{ PUSH_VAR32(buffer); THISCALL(0x691540); }
+		JMP_THIS(0x691540);
 
 	bool Reset()
 		{ this->idxCurrentLine = -1; return true; } 
@@ -46,22 +46,16 @@ public:
 		{ return this->idxCurrentLine < this->Type->get_ActionsCount(); } 
 
 	//Constructor
-	ScriptClass(ScriptTypeClass *pType):AbstractClass(false)
-		{ PUSH_VAR32(pType); THISCALL(0x6913C0); }
-
-protected:
-	ScriptClass():AbstractClass(false)
-		{ }
-	ScriptClass(bool X):AbstractClass(X)
-		{ }
+	ScriptClass(ScriptTypeClass *pType = NULL) : AbstractClass(false)
+		JMP_THIS(0x6913C0);
 
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
 
 	PROPERTY(ScriptTypeClass *, Type);
-	PROPERTY(int,      field_28);
-	PROPERTY(int,      idxCurrentLine);
+	PROPERTY(int, field_28);
+	PROPERTY(int, idxCurrentLine);
 
 };
 

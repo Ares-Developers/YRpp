@@ -12,15 +12,15 @@ public:
 	~Allocator() { Free(); };
 
 	Allocator* Allocate(void* p, int nSize)
-		{ PUSH_VAR32(nSize); PUSH_VAR32(p); THISCALL(0x43AD00); }	//returns this
+		JMP_THIS(0x43AD00);
 
 	void Free()
-		{ THISCALL(0x43AE50); }
+		JMP_THIS(0x43AE50);
 
 	//Properties
 	PROPERTY(void*, Pointer);
-	PROPERTY(int,   Size);
-	PROPERTY(bool,  Allocated);
+	PROPERTY(int, Size);
+	PROPERTY(bool, Allocated);
 };
 
 #endif

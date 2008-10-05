@@ -38,17 +38,11 @@ public:
 
 	//AbstractTypeClass
 	static bool LoadFromINIList(CCINIClass *pINI, bool IsGlobal)
-		{ PUSH_VAR8(IsGlobal); SET_REG32(ECX, pINI); CALL(0x691970); }
+		JMP_STD(0x691970);
 
 	//Constructor
-	ScriptTypeClass(const char* pID):AbstractTypeClass(false)
-		{ PUSH_VAR32(pID); THISCALL(0x6916B0); }
-
-protected:
-	ScriptTypeClass():AbstractTypeClass(false)
-		{ }
-	ScriptTypeClass(bool X):AbstractTypeClass(X)
-		{ }
+	ScriptTypeClass(const char* pID = NULL) : AbstractTypeClass(false)
+		JMP_THIS(0x6916B0);
 
 	//===========================================================================
 	//===== Properties ==========================================================

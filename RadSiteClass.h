@@ -31,24 +31,27 @@ public:
 	virtual int Size() R0;
 
 	//CUSTOM Constructor (to make things easier)
-	RadSiteClass(CellStruct nBaseCoords,int nSpread,int nRadLevel):AbstractClass(false){
+	RadSiteClass(CellStruct nBaseCoords, int nSpread, int nRadLevel):AbstractClass(false)
+	{
 		THISCALL(0x65B1E0);
-		BaseCell=nBaseCoords;
-		Spread=nSpread;
+		BaseCell = nBaseCoords;
+		Spread = nSpread;
 		Spread_Leptons = (nSpread << 8) + 0x80;
-		PUSH_VAR32(nRadLevel); THISCALL(0x65B4F0);
+
+		PUSH_VAR32(nRadLevel);
+		THISCALL(0x65B4F0);
 	}
 
 	//non-virtual
 public:
 	void Activate()
-		{ THISCALL(0x65B580); } //Start irradiating an area. Be sure to set the BaseCell, Spread and RadLevel first!
+		JMP_THIS(0x65B580); //Start irradiating an area. Be sure to set the BaseCell, Spread and RadLevel first!
 	void Add(int nRadLevel)
-		{ PUSH_VAR32(nRadLevel); THISCALL(0x65B530); } //Add this RadLevel to the current radiation.
+		JMP_THIS(0x65B530); //Add this RadLevel to the current radiation.
 
 protected:
-	RadSiteClass():AbstractClass(false) { THISCALL(0x65B1E0); }
-	RadSiteClass(bool X):AbstractClass(X){}
+	RadSiteClass() : AbstractClass(false) JMP_THIS(0x65B1E0);
+	RadSiteClass(bool X) : AbstractClass(X){}
 
 	//===========================================================================
 	//===== Properties ==========================================================

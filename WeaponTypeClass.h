@@ -36,15 +36,11 @@ public:
 	//AbstractTypeClass
 
 	void CalculateSpeed()
-		{ THISCALL(0x7729F0); }
+		JMP_THIS(0x7729F0);
 
 	//Constructor
-	WeaponTypeClass(const char* id):AbstractTypeClass(false)
-		{ PUSH_VAR32(id); THISCALL(0x771C70); }
-
-protected:
-	WeaponTypeClass():AbstractTypeClass(false){}
-	WeaponTypeClass(bool X):AbstractTypeClass(X){}
+	WeaponTypeClass(const char* pID = NULL) : AbstractTypeClass(false)
+		JMP_THIS(0x771C70);
 
 	//===========================================================================
 	//===== Properties ==========================================================

@@ -51,19 +51,19 @@ public:
 	FootClass* FirstPassenger;
 
 	void AddPassenger(FootClass* pPassenger)
-		{ PUSH_VAR32(pPassenger); THISCALL(0x4733A0);}
+		JMP_THIS(0x4733A0);
 
 	FootClass* GetFirstPassenger()
 		{ return this->FirstPassenger; }
 
 	FootClass* RemoveFirstPassenger()
-		{ THISCALL(0x473430); }
+		JMP_THIS(0x473430);
 
 	int GetTotalSize()
-		{ THISCALL(0x473460); }
+		JMP_THIS(0x473460);
 
-	signed int IndexOf(FootClass* candidate)
-		{ PUSH_VAR32(candidate); THISCALL(0x473500); }
+	int IndexOf(FootClass* candidate)
+		JMP_THIS(0x473500);
 };
 
 struct FlashData
@@ -72,7 +72,7 @@ struct FlashData
 	bool FlashingNow;
 
 	bool Update()
-		{ THISCALL(0x4CC770); }
+		JMP_THIS(0x4CC770);
 };
 
 struct RecoilData
@@ -87,10 +87,10 @@ struct RecoilData
 	int f_1C;
 
 	void Update()
-		{ THISCALL(0x70ED10); }
+		JMP_THIS(0x70ED10);
 
 	void Fire()
-		{ THISCALL(0x70ECE0); }
+		JMP_THIS(0x70ECE0);
 };
 
 class TechnoClass : public RadioClass
@@ -257,40 +257,40 @@ public:
 	virtual void vt_entry_4CC() RX;
 	virtual bool vt_entry_4D0() R0;
 
-	//Constructor
-	TechnoClass(HouseClass* owner) : RadioClass(false)
-		{ PUSH_VAR32(owner); THISCALL(0x6F2B40); }
-
 	//non-virtual
 	void ReloadNow()
-		{ THISCALL(0x6FB080); }
+		JMP_THIS(0x6FB080);
 
 	bool ShouldSuppress(CellStruct *coords)
-		{ PUSH_VAR32(coords); THISCALL(0x6F79A0); }
+		JMP_THIS(0x6F79A0);
 
 // CanTargetWhatAmI is a bitfield, if(!(CanTargetWhatAmI & (1 << tgt->WhatAmI())) { fail; }
 
 // slave of the next one
-	bool CanAutoTargetObject(eTargetFlags TargetFlags, int CanTargetWhatAmI, int WantedDistance,
-	 TechnoClass *Target, signed int *ThreatPosed, DWORD dwUnk, CoordStruct *SourceCoords)
-	{ PUSH_VAR32(SourceCoords); PUSH_VAR32(dwUnk); PUSH_VAR32(ThreatPosed); PUSH_VAR32(Target);
-		PUSH_VAR32(WantedDistance); PUSH_VAR32(CanTargetWhatAmI); PUSH_VAR32(TargetFlags);
-		THISCALL(0x6F7CA0);
-	}
+	bool CanAutoTargetObject(
+		eTargetFlags TargetFlags,
+		int CanTargetWhatAmI,
+		int WantedDistance,
+		TechnoClass *Target,
+		int *ThreatPosed,
+		DWORD dwUnk,
+		CoordStruct *SourceCoords)
+			JMP_THIS(0x6F7CA0);
 
 // called by AITeam Attack Target Type and autoscan
-	bool TryAutoTargetObject(eTargetFlags TargetFlags, int CanTargetWhatAmI, CellStruct *Coords,
-	 DWORD dwUnk1, DWORD *dwUnk2, signed int *ThreatPosed, DWORD dwUnk3)
-	{ PUSH_VAR32(dwUnk3); PUSH_VAR32(ThreatPosed); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk1);
-		PUSH_VAR32(Coords); PUSH_VAR32(CanTargetWhatAmI); PUSH_VAR32(TargetFlags);
-		THISCALL(0x6F8960);
-	}
+	bool TryAutoTargetObject(
+		eTargetFlags TargetFlags,
+		int CanTargetWhatAmI,
+		CellStruct *Coords,
+		DWORD dwUnk1,
+		DWORD *dwUnk2,
+		int *ThreatPosed,
+		DWORD dwUnk3)
+			JMP_THIS(0x6F8960);
 
-protected:
-	TechnoClass() : RadioClass(false)
-		{ }
-	TechnoClass(bool X) : RadioClass(X)
-		{ }
+	//Constructor
+	TechnoClass(HouseClass* pOwner = NULL) : RadioClass(false)
+		JMP_THIS(0x6F2B40);
 
 	//===========================================================================
 	//===== Properties ==========================================================

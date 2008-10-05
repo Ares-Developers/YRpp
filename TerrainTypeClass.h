@@ -26,7 +26,6 @@ public:
 	virtual HRESULT _stdcall Load(IStream* pStm) R0;
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
-
 	//Destructor
 	virtual ~TerrainTypeClass() RX;
 
@@ -39,12 +38,8 @@ public:
 	virtual ObjectClass* CreateObject(HouseClass* owner) R0;
 
 	//Constructor
-	TerrainTypeClass(const char* id):ObjectTypeClass(false)
-		{ PUSH_VAR32(id); THISCALL(0x71DA80); }
-
-protected:
-	//default contructor, only used by polymorphism
-	TerrainTypeClass(){};
+	TerrainTypeClass(const char* pID = NULL) : ObjectTypeClass(false)
+		JMP_THIS(0x71DA80);
 
 	//===========================================================================
 	//===== Properties ==========================================================

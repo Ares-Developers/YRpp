@@ -25,17 +25,10 @@ public:
 	//DisplayClass
 
 	//RadarClass
-	virtual void DisposeOfArt()
-		{ THISCALL(0x652D90); }
-
-	virtual void* vt_entry_12C(void* out_pUnk, Point2D* pPoint)
-		{ PUSH_VAR32(pPoint); PUSH_VAR32(out_pUnk); THISCALL(0x653760); }
-
-	virtual void vt_entry_130(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x653F70); }
-
-	virtual void Init_For_House()
-		{ THISCALL(0x652E90); }
+	virtual void DisposeOfArt() RX;
+	virtual void* vt_entry_12C(void* out_pUnk, Point2D* pPoint) R0;
+	virtual void vt_entry_130(DWORD dwUnk) RX;
+	virtual void Init_For_House() RX;
 
 	//Non-virtual
 

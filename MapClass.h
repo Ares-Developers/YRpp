@@ -10,8 +10,8 @@ class Crate
 {
 public:
 	//Properties
-	PROPERTY(TimerStruct,	CrateTimer);
-	PROPERTY(CellStruct,	Location);
+	PROPERTY_STRUCT(TimerStruct,	CrateTimer);
+	PROPERTY_STRUCT(CellStruct,	Location);
 };
 
 //ZoneConnectionClass - Holding zone connection info from tubes or bridges (probably used for pathfinding)
@@ -88,22 +88,26 @@ public:
 		}
 
 	bool IsLocationShrouded(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL(0x586360); }
+		JMP_THIS(0x586360);
 
 	bool CellExists(CellStruct* pMapCoords)
 		{ return (Cells[(pMapCoords->Y << 9) + pMapCoords->X] != NULL);}
 
 	void CellIteratorReset()
-		{ THISCALL(0x578350); }
+		JMP_THIS(0x578350);
 
 	CellClass* CellIteratorNext()
-		{ THISCALL(0x578290); }
+		JMP_THIS(0x578290);
 
 // the key damage delivery
-	static int DamageArea(CoordStruct* Coords, signed int Damage, TechnoClass* SourceObject,
-		WarheadTypeClass *WH, BYTE bUnk, HouseClass* SourceHouse)
-			{ PUSH_VAR32(SourceHouse); PUSH_VAR8(bUnk); PUSH_VAR32(WH); PUSH_VAR32(SourceObject); 
-				SET_REG32(EDX, Damage); SET_REG32(ECX, Coords); CALL(0x489280); }
+	static int __fastcall DamageArea(
+		CoordStruct* Coords,
+		int Damage,
+		TechnoClass* SourceObject,
+		WarheadTypeClass *WH,
+		BYTE bUnk,
+		HouseClass* SourceHouse)
+			JMP_STD(0x489280);
 
 // ====================================
 //        MAP REVEAL BRAINDAMAGE
@@ -114,10 +118,16 @@ public:
  * TechnoClass::See uses this on all (singleCampaign || !MultiplayPassive) units
  * TalkBubble uses this to display the unit to the player
  */
-	static void RevealArea1(CoordStruct* Coords, signed int Radius, HouseClass* OwnerHouse,
-		CellStruct arg4, BYTE RevealByHeight, BYTE arg6, BYTE arg7, BYTE arg8)
-			{ PUSH_VAR8(arg8); PUSH_VAR8(arg7); PUSH_VAR8(arg6); PUSH_VAR8(RevealByHeight); PUSH_VAR32(arg4); 
-				PUSH_VAR32(OwnerHouse); PUSH_VAR32(Radius); PUSH_VAR32(Coords); CALL(0x5673A0); }
+	static void RevealArea1(
+		CoordStruct* Coords,
+		int Radius,
+		HouseClass* OwnerHouse,
+		CellStruct arg4,
+		BYTE RevealByHeight,
+		BYTE arg6,
+		BYTE arg7,
+		BYTE arg8)
+			JMP_STD(0x5673A0);
 
 /*
  * these come in pairs - first the last argument is 0 and then 1
@@ -131,10 +141,16 @@ public:
  * ActionClass::RevealWaypoint - reveal RevealTriggerRadius= to player (0,0,0,1,x)
  * ActionClass::RevealZoneOfWaypoint - reveal (r = 2) to player (0,0,0,1,x)
  */
-	static void RevealArea2(CoordStruct* Coords, signed int Radius, HouseClass* OwnerHouse,
-		DWORD /*CellStruct*/ arg4, BYTE RevealByHeight, BYTE arg6, BYTE arg7, BYTE arg8)
-			{ PUSH_VAR8(arg8); PUSH_VAR8(arg7); PUSH_VAR8(arg6); PUSH_VAR8(RevealByHeight); PUSH_VAR32(arg4); 
-				PUSH_VAR32(OwnerHouse); PUSH_VAR32(Radius); PUSH_VAR32(Coords); CALL(0x5678E0); }
+	static void RevealArea2(
+		CoordStruct* Coords,
+		int Radius,
+		HouseClass* OwnerHouse,
+		DWORD /*CellStruct*/ arg4,
+		BYTE RevealByHeight,
+		BYTE arg6,
+		BYTE arg7,
+		BYTE arg8)
+			JMP_STD(0x5678E0);
 
 /*
  * AircraftClass::SpyPlaneApproach
@@ -148,12 +164,12 @@ public:
  * TechnoClass::Fire uses this (r = 4) right after using RevealArea0, wtfcock
  */
 	static void RevealArea3(CoordStruct *Coords, int Height, int Radius, bool SkipReveal)
-		{ PUSH_VAR8(SkipReveal); PUSH_VAR32(Radius); PUSH_VAR32(Height); PUSH_VAR32(Coords); CALL(0x567DA0); }
+		JMP_STD(0x567DA0);
 
 
 // the unknown functions that are srs bsns
 	int sub_578080(CoordStruct *Coords)
-		{ PUSH_VAR32(Coords); THISCALL(0x578080); }
+		JMP_STD(0x578080);
 
 
 protected:
@@ -208,16 +224,14 @@ class CellSpread
 {
 public:
 	static int NumCells(int nSpread)
-		{
-			int* CSNTable=(int*)0x7ED3D0;
-			return CSNTable[nSpread];
-		}
+	{
+		return ((int*)0x7ED3D0)[nSpread];
+	}
 
 	static CellStruct GetCell(int n)
-		{
-			CellStruct* CSTable=(CellStruct*)0xABD490;
-			return CSTable[n];
-		}
+	{
+		return ((CellStruct*)0xABD490)[n];
+	}
 };
 
 

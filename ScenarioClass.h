@@ -1175,10 +1175,10 @@ public:
 	PROPERTY(DWORD, unknown_2484);
 	PROPERTY(WORD, unknown_2488);
 	PROPERTY_ARRAY(Variable, VariableNames, 100);
-	PROPERTY(CellStruct, View1);
-	PROPERTY(CellStruct, View2);
-	PROPERTY(CellStruct, View3);
-	PROPERTY(CellStruct, View4);
+	PROPERTY_STRUCT(CellStruct, View1);
+	PROPERTY_STRUCT(CellStruct, View2);
+	PROPERTY_STRUCT(CellStruct, View3);
+	PROPERTY_STRUCT(CellStruct, View4);
 	PROPERTY(DWORD, unknown_34A0);
 	PROPERTY(bool, FreeRadar); //34A4
 	PROPERTY(bool, TrainCrate);

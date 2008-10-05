@@ -40,12 +40,8 @@ public:
 	virtual void Draw(Point2D* pClientCoords, RectangleStruct* pClipRect, int nFrame) RX;
 
 	//Constructor
-	OverlayTypeClass(const char* pID): ObjectTypeClass(false)
-		{ PUSH_VAR32(pID); THISCALL(0x5FE250); }
-
-protected:
-	OverlayTypeClass(bool X):ObjectTypeClass(X){};
-	OverlayTypeClass():ObjectTypeClass(false){};
+	OverlayTypeClass(const char* pID = NULL) : ObjectTypeClass(false)
+		JMP_THIS(0x5FE250);
 
 	//===========================================================================
 	//===== Properties ==========================================================

@@ -27,15 +27,8 @@ public:
 	virtual int Size() R0;
 
 	//Constructor
-	TeamClass(TeamTypeClass* pType)
-	{
-		PUSH_VAR32(pType);
-		THISCALL(0x6E8A90);
-	}
-
-protected:
-	TeamClass() : AbstractClass(false) {}
-	TeamClass(bool X) : AbstractClass(X){}
+	TeamClass(TeamTypeClass* pType = NULL) : AbstractClass(false)
+		JMP_THIS(0x6E8A90);
 
 	//===========================================================================
 	//===== Properties ==========================================================

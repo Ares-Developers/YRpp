@@ -9,111 +9,51 @@ class TeleportLocomotionClass : public LocomotionClass, public IPiggyback
 {
 public:
 	//IUnknown
-	virtual HRESULT _stdcall QueryInterface(REFIID iid, void** ppvObject)
-		{ PUSH_VAR32(ppvObject); PUSH_VAR32(iid); PUSH_VAR32(this); CALL(0x719E30); }
-
-	virtual ULONG _stdcall AddRef()
-		{ PUSH_VAR32(this); CALL(0x55A950); }
-	
-	virtual ULONG _stdcall Release()
-		{ PUSH_VAR32(this); CALL(0x55A970); }
+	virtual HRESULT _stdcall QueryInterface(REFIID iid, void** ppvObject) R0;
+	virtual ULONG _stdcall AddRef() R0;
+	virtual ULONG _stdcall Release() R0;
 
 	//IPiggyback
-	virtual HRESULT _stdcall Begin_Piggyback(ILocomotion* pointer)
-		{ PUSH_VAR32(pointer); PUSH_VAR32(this); CALL(0x719E90); }
-
-	virtual HRESULT _stdcall End_Piggyback(ILocomotion** pointer)
-		{ PUSH_VAR32(pointer); PUSH_VAR32(this); CALL(0x719EE0); }
-
-	virtual bool _stdcall Is_Ok_To_End()
-		{ PUSH_VAR32(this); CALL(0x719F30); }
-
-	virtual HRESULT _stdcall Piggyback_CLSID(GUID* classid)
-		{ PUSH_VAR32(classid); PUSH_VAR32(this); CALL(0x719F80); }
-
-	virtual bool _stdcall Is_Piggybacking()
-		{ PUSH_VAR32(this); CALL(0x71A100); }
+	virtual HRESULT _stdcall Begin_Piggyback(ILocomotion* pointer) R0;
+	virtual HRESULT _stdcall End_Piggyback(ILocomotion** pointer) R0;
+	virtual bool _stdcall Is_Ok_To_End() R0;
+	virtual HRESULT _stdcall Piggyback_CLSID(GUID* classid) R0;
+	virtual bool _stdcall Is_Piggybacking() R0;
 
 	//ILocomotion
-	virtual bool _stdcall Is_Moving()
-		{ return Moving; }
-
-	virtual CoordStruct* _stdcall Destination(CoordStruct* pcoord)
-		{
-			if(Is_Moving())
-			{
-				pcoord->X = MovingDestination.X;
-				pcoord->Y = MovingDestination.Y;
-				pcoord->Z = MovingDestination.Z;
-			}
-			else
-			{
-				pcoord->X = LinkedTo->get_Location()->X;
-				pcoord->Y = LinkedTo->get_Location()->Y;
-				pcoord->Z = LinkedTo->get_Location()->Z;
-			}
-			return pcoord;
-		}
-
-	virtual bool _stdcall Process()
-		{ PUSH_VAR32(this); CALL(0x7192F0); }
-
-	virtual void _stdcall Move_To(CoordStruct to)
-		{
-			PUSH_VAR32(to.Z);
-			PUSH_VAR32(to.Y);
-			PUSH_VAR32(to.X);
-			PUSH_VAR32(this);
-			CALL(0x718100);
-		}
-
-	virtual void _stdcall Stop_Moving()
-		{ PUSH_VAR32(this); CALL(0x718230); }
-
-	// .Facing because otherwise gcc gets confused when trying to fit this in 16 bits
-	virtual void _stdcall Do_Turn(DirStruct coord)
-		{ PUSH_VAR16(coord.Facing); CALL(0x7192C0); }
-
-	virtual eLayer _stdcall In_Which_Layer()
-		{ return lyr_Ground; }
-
-	virtual void _stdcall Mark_All_Occupation_Bits(int mark)
-		{ PUSH_VAR32(mark); PUSH_VAR32(this); CALL(0x71A090); }
-
-	virtual void _stdcall ILocomotion_B8() { }
+	virtual bool _stdcall Is_Moving() R0;
+	virtual CoordStruct* _stdcall Destination(CoordStruct* pcoord) R0;
+	virtual bool _stdcall Process() R0;
+	virtual void _stdcall Move_To(CoordStruct to) RX;
+	virtual void _stdcall Stop_Moving() RX;
+	virtual void _stdcall Do_Turn(DirStruct coord) RX;
+	virtual eLayer _stdcall In_Which_Layer() R0;
+	virtual void _stdcall Mark_All_Occupation_Bits(int mark) RX;
+	virtual void _stdcall ILocomotion_B8() RX;
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID)
-		{ PUSH_VAR32(pClassID); PUSH_VAR32(this); CALL(0x719C60);}
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x719CA0);}
-
-	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x719D40); }
+	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
 	//Destructor
-	virtual ~TeleportLocomotionClass()
-		{ PUSH_IMM(SDDTOR_NODELETE); THISCALL(0x71A130); }
+	virtual ~TeleportLocomotionClass() RX;
 
 	//LocomotionClass
-	virtual	int Size()
-		{ return sizeof(TeleportLocomotionClass); }
+	virtual	int Size() R0;
 
 	//TeleportLocomotionClass
-	virtual void vt_entry_28(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x719BF0); }
-
-	virtual bool IsStill()
-		{ return !Is_Moving(); }
+	virtual void vt_entry_28(DWORD dwUnk) RX;
+	virtual bool IsStill() R0;
 
 	//Constructor
 	TeleportLocomotionClass() : LocomotionClass(false)
-		{ THISCALL(0x718000); }
+		JMP_THIS(0x718000);
 
 protected:
-	TeleportLocomotionClass(bool X) : LocomotionClass(X) { }
+	TeleportLocomotionClass(bool) : LocomotionClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

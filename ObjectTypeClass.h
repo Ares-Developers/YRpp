@@ -42,12 +42,11 @@ public:
 	virtual SHPStruct* GetImage() R0;
 
 	//Constructor
-	ObjectTypeClass(const char* pID):AbstractTypeClass(false)
-		{ PUSH_VAR32(pID); THISCALL(0x5F7090); }
+	ObjectTypeClass(const char* pID = NULL) : AbstractTypeClass(false)
+		JMP_THIS(0x5F7090);
 
 protected:
-	ObjectTypeClass() { }
-	ObjectTypeClass(bool X):AbstractTypeClass(X) { }; //trick to disable base class construction!
+	ObjectTypeClass(bool) : AbstractTypeClass(false) { };
 
 	//===========================================================================
 	//===== Properties ==========================================================

@@ -153,9 +153,6 @@ DECL(EBolt, 0x8A0E88);
 #include <LineTrail.h>
 DECL(LineTrail, 0xABCB78);
 
-#include <LoadProgressManager.h>
-LoadProgressManager* LoadProgressManager::Global = (LoadProgressManager*)0xABC9BC;
-
 #include <VoxClass.h>
 DECL(VoxClass, 0xB1D4A0);
 

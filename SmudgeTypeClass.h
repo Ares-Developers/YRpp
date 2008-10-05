@@ -35,19 +35,15 @@ public:
 	virtual void vt_entry_A0(DWORD dwUnk,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4,DWORD dwUnk5) RX;
 
 	//Constructor
-	SmudgeTypeClass(const char* pID):ObjectTypeClass(false)
-		{ PUSH_VAR32(pID); THISCALL(0x6B5260); }
-
-protected:
-	SmudgeTypeClass(bool X):ObjectTypeClass(X){};
-	SmudgeTypeClass():ObjectTypeClass(false){};
+	SmudgeTypeClass(const char* pID = NULL) : ObjectTypeClass(false)
+		JMP_THIS(0x6B5260);
 
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(int,  ArrayIndex);
-	PROPERTY(int,  Width);
-	PROPERTY(int,  Height);
+	PROPERTY(int, ArrayIndex);
+	PROPERTY(int, Width);
+	PROPERTY(int, Height);
 	PROPERTY(bool, Crater);
 	PROPERTY(bool, Burn);
 };

@@ -26,23 +26,14 @@ public:
 	//AbstractTypeClass
 
 	//ObjectTypeClass
-	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner)
-		{ PUSH_VAR32(pMapCoords); PUSH_VAR32(pOwner); THISCALL(0x7474B0); }
-	virtual TechnoClass* CreateObject(HouseClass* pOwner)
-		{ PUSH_VAR32(pOwner); THISCALL(0x747560); }
+	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) R0;
+	virtual TechnoClass* CreateObject(HouseClass* pOwner) R0;
 
 	//TechnoTypeClass
 
 	//Constructor
-	UnitTypeClass(const char* id):TechnoTypeClass(false)
-		{ PUSH_VAR32(id); THISCALL(0x7470D0); }
-
-protected:
-	//default contructor, only used by polymorphism
-	UnitTypeClass():TechnoTypeClass(false)
-		{ }
-	UnitTypeClass(bool X):TechnoTypeClass(false)
-		{ }
+	UnitTypeClass(const char* pID = NULL) : TechnoTypeClass(false)
+		JMP_THIS(0x7470D0);
 
 	//===========================================================================
 	//===== Properties ==========================================================

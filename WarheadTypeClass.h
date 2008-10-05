@@ -35,14 +35,8 @@ public:
 	//AbstractTypeClass
 
 	//Constructor
-	WarheadTypeClass(const char* id):AbstractTypeClass(false)
-		{ PUSH_VAR32(id); THISCALL(0x75CEC0); }
-
-protected:
-	WarheadTypeClass():AbstractTypeClass(false)
-		{ }
-	WarheadTypeClass(bool X):AbstractTypeClass(X)
-		{ }
+	WarheadTypeClass(const char* pID = NULL) : AbstractTypeClass(false)
+		JMP_THIS(0x75CEC0);
 
 	//===========================================================================
 	//===== Properties ==========================================================

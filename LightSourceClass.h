@@ -25,42 +25,30 @@ public:
 	virtual int					Size() R0;
 
 	//Constructor
-	LightSourceClass(CoordStruct Crd,int nVisibility,int nIntensity,TintStruct Tint):AbstractClass(false)
-										{
-										int X=Crd.X;
-										int Y=Crd.Y;
-										int Z=Crd.Z;
-										int RedTint=Tint.Red;
-										int GreenTint=Tint.Green;
-										int BlueTint=Tint.Blue;
-										PUSH_VAR32(BlueTint);
-										PUSH_VAR32(GreenTint);
-										PUSH_VAR32(RedTint);
-										PUSH_VAR32(nIntensity);
-										PUSH_VAR32(nVisibility);
-										PUSH_VAR32(Z);
-										PUSH_VAR32(Y);
-										PUSH_VAR32(X);
-										THISCALL(0x554760);
-										}
+	LightSourceClass(
+		CoordStruct Crd,
+		int nVisibility,
+		int nIntensity,
+		TintStruct Tint) : AbstractClass(false)
+			JMP_THIS(0x554760);
 
 	//non-virtual
-	void Activate(){PUSH_IMM(0);THISCALL(0x554A60);}	//Start lighting
+	void Activate(DWORD dwZero = 0)	//Start lighting
+		JMP_THIS(0x554A60);
 
 protected:
-	LightSourceClass():AbstractClass(false){}
-	LightSourceClass(bool X):AbstractClass(X){}
+	LightSourceClass() : AbstractClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
 	
-	PROPERTY(int,				LightIntensity);
-	PROPERTY_STRUCT(TintStruct,		LightTint);
-	PROPERTY(int,				unknown_int_30);
-	PROPERTY_STRUCT(CoordStruct,		Location);
-	PROPERTY(int,				LightVisibility);
-	PROPERTY(bool,				Activated);
+	PROPERTY(int, LightIntensity);
+	PROPERTY_STRUCT(TintStruct, LightTint);
+	PROPERTY(int, unknown_int_30);
+	PROPERTY_STRUCT(CoordStruct, Location);
+	PROPERTY(int, LightVisibility);
+	PROPERTY(bool, Activated);
 };
 
 #endif

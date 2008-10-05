@@ -24,21 +24,23 @@ public:
 	virtual int Size() R0;
 
 	void Draw_Magnetic(CoordStruct* xyzFrom, CoordStruct* xyzTo)
-		{ PUSH_VAR32(xyzTo); PUSH_VAR32(xyzFrom); THISCALL(0x762070); }
+		JMP_THIS(0x762070);
 
 	void Draw_NonMagnetic(CoordStruct* xyzFrom, CoordStruct* xyzTo)
-		{ PUSH_VAR32(xyzTo); PUSH_VAR32(xyzFrom); THISCALL(0x761640); }
+		JMP_THIS(0x761640);
 
 	void Update_Wave()
-		{ THISCALL(0x762AF0); }
+		JMP_THIS(0x762AF0);
 
 	// ambient
 	void DamageArea(CoordStruct *location)
-		{ PUSH_VAR32(location); THISCALL(0x75F330); }
+		JMP_THIS(0x75F330);
 
-	WaveClass(CoordStruct *From, CoordStruct *To, TechnoClass *Owner, int mode, AbstractClass *Target)
-		{ PUSH_VAR32(Target); PUSH_VAR32(mode); PUSH_VAR32(Owner); PUSH_VAR32(To); PUSH_VAR32(From);
-		  THISCALL(0x75E950); }
+	WaveClass(CoordStruct *From, CoordStruct *To, TechnoClass *Owner, int mode, AbstractClass *Target) : ObjectClass(false)
+		JMP_THIS(0x75E950);
+
+protected:
+	WaveClass() : ObjectClass(false) {}
 
 	//===========================================================================
 	//===== Properties ==========================================================

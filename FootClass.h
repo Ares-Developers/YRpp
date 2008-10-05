@@ -82,7 +82,7 @@ public:
 protected:
 	FootClass() : TechnoClass(false)
 		{ }
-	FootClass(bool X) : TechnoClass(X)
+	FootClass(bool) : TechnoClass(false)
 		{ }
 
 	//===========================================================================

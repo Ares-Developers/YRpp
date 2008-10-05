@@ -13,13 +13,6 @@ public:
 	//Destructor
 	virtual ~PowerClass() RX;
 
-	//RadarClass
-	virtual void DisposeOfArt()
-		{ THISCALL(0x63F7E0); }
-
-	virtual void Init_For_House()
-		{ THISCALL(0x63F7C0); }
-
 	//Non-virtual
 
 protected:

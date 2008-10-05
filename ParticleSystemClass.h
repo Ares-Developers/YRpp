@@ -29,16 +29,17 @@ public:
 	virtual int Size() R0;
 
 	//Constructor
-	ParticleSystemClass(ParticleSystemTypeClass* pParticleSystemType, CoordStruct Crd1, 
-	  AbstractClass* pTarget, TechnoClass* pOwner, CoordStruct Crd2, DWORD dwUnk):ObjectClass(false)
-		{ PUSH_VAR32(dwUnk); PUSH_PTR(Crd2); PUSH_VAR32(pOwner); PUSH_VAR32(pTarget); PUSH_PTR(Crd1);
-			PUSH_VAR32(pParticleSystemType); THISCALL(0x62DC50); }
+	ParticleSystemClass(
+		ParticleSystemTypeClass* pParticleSystemType,
+		CoordStruct Crd1, 
+		AbstractClass* pTarget,
+		TechnoClass* pOwner,
+		CoordStruct Crd2,
+		DWORD dwUnk) : ObjectClass(false)
+			JMP_THIS(0x62DC50);
 
 protected:
-	ParticleSystemClass():ObjectClass(false)
-		{ }
-	ParticleSystemClass(bool X):ObjectClass(X)
-		{ }
+	ParticleSystemClass() : ObjectClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

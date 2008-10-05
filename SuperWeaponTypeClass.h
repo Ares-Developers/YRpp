@@ -37,18 +37,12 @@ public:
 	virtual eAction MouseOverObject(DWORD dwUnk, ObjectClass* pObjBelowMouse) R0;
 
 	// non-virtual
-	static SuperWeaponTypeClass *FindFirstOfAction(eAction Action)
-		{ SET_REG32(ECX, Action); CALL(0x6CEEB0); }
+	static SuperWeaponTypeClass * __fastcall FindFirstOfAction(eAction Action)
+		JMP_STD(0x6CEEB0);
 
 	//Constructor
-	SuperWeaponTypeClass(const char* id):AbstractTypeClass(false)
-		{ PUSH_VAR32(id); THISCALL(0x6CE5B0); }
-
-protected:
-	SuperWeaponTypeClass():AbstractTypeClass(false)
-		{ }
-	SuperWeaponTypeClass(bool X):AbstractTypeClass(X)
-		{ }
+	SuperWeaponTypeClass(const char* pID = NULL) : AbstractTypeClass(false)
+		JMP_THIS(0x6CE5B0);
 
 	//===========================================================================
 	//===== Properties ==========================================================

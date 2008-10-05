@@ -13,13 +13,13 @@ public:
 	//Constructor, Destructor
 	RadBeam(int mode) // anything else = rad, 1 = chrono, 2 = magnetron??
 	                  //(2 is invoked by RadEruption, but it uses MagnaBeamColor from rules... )
-		{ PUSH_VAR32(mode); THISCALL(0x6593F0); }
+		JMP_THIS(0x6593F0); 
 
 	~RadBeam()
 		{ }
 
 	static RadBeam* Allocate(int mode)
-		{ PUSH_VAR32(mode); CALL(0x659110); }
+		JMP_STD(0x659110);
 
 	void SetColor(ColorStruct *color)
 		{ this->Color = *color; }
@@ -29,9 +29,6 @@ public:
 
 	void SetCoordsTarget(CoordStruct *loc)
 		{ this->TargetLocation = *loc; }
-
-	static void DrawAll()
-		{ CALL(0x6591B0); }
 
 	//===========================================================================
 	//===== Properties ==========================================================
@@ -57,12 +54,12 @@ public:
 	PROPERTY(DWORD, unknown_60);
 	PROPERTY(DWORD, unknown_64);
 	PROPERTY(double, unknown_68);
-	PROPERTY(CoordStruct, AnotherLocation);
+	PROPERTY_STRUCT(CoordStruct, AnotherLocation);
 	PROPERTY(DWORD, unknown_7C);
 	PROPERTY(double, unknown_80);
 	PROPERTY(DWORD, unknown_88);
 	PROPERTY(DWORD, unknown_8C);
-	PROPERTY(CoordStruct, AndAnotherLocation);
+	PROPERTY_STRUCT(CoordStruct, AndAnotherLocation);
 	PROPERTY(DWORD, unknown_9C);
 	PROPERTY(DWORD, unknown_A0);
 	PROPERTY(DWORD, unknown_A4);

@@ -57,6 +57,10 @@
 #include <WaveClass.h>
 #include <WaypointPathClass.h>
 
+//MP Stuff
+#include <MPGameModeTypeClass.h>
+#include <MPTeams.h>
+
 //LocomotionClass Tree
 #include <LocomotionClass.h>
 #include <TeleportLocomotionClass.h>

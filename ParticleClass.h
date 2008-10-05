@@ -32,20 +32,18 @@ public:
 	virtual int Size() R0;
 
 	//ParticleClass
-	virtual int vt_entry_1E8()
-		{ THISCALL(0x62D830); }
+	virtual int vt_entry_1E8() R0;
 
 	//Constructor
-	ParticleClass(ParticleTypeClass* pParticleType, CoordStruct Crd1, CoordStruct Crd2,
-	  ParticleSystemClass* pParticleSystem):ObjectClass(false)
-		{ PUSH_VAR32(pParticleSystem); PUSH_PTR(Crd2); PUSH_PTR(Crd1); PUSH_VAR32(pParticleType);
-		  THISCALL(0x62B5E0); }
+	ParticleClass(
+		ParticleTypeClass* pParticleType,
+		CoordStruct* pCrd1,
+		CoordStruct* pCrd2,
+		ParticleSystemClass* pParticleSystem) : ObjectClass(false)
+			JMP_THIS(0x62B5E0);
 
 protected:
-	ParticleClass():ObjectClass(false)
-		{ }
-	ParticleClass(bool X):ObjectClass(X)
-		{ }
+	ParticleClass() : ObjectClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

@@ -8,8 +8,9 @@ class Surface;
 
 class LoadProgressManager
 {
-	public:
-		static LoadProgressManager * Global;
+public:
+	static LoadProgressManager* Global()
+		{ return (LoadProgressManager*)0xABC9BC; }
 
 	PROPERTY(DWORD, field_4);
 	PROPERTY(DWORD, field_8);

@@ -34,14 +34,8 @@ public:
 	virtual ObjectClass* CreateObject(HouseClass* owner) R0;
 
 	//Constructor
-	ParticleSystemTypeClass(const char* id):ObjectTypeClass(false)
-		{ PUSH_VAR32(id); THISCALL(0x6440A0); }
-
-protected:
-	ParticleSystemTypeClass()
-		{ };
-	ParticleSystemTypeClass(bool X):ObjectTypeClass(false)
-		{ };
+	ParticleSystemTypeClass(const char* pID = NULL) : ObjectTypeClass(false)
+		JMP_THIS(0x6440A0);
 
 	//===========================================================================
 	//===== Properties ==========================================================

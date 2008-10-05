@@ -32,14 +32,11 @@ public:
 	virtual int	Size() R0;
 
 	//Constructor
-	HouseTypeClass(const char* pID):AbstractTypeClass(false)
-		{ PUSH_VAR32(pID); THISCALL(0x5113F0); }
+	HouseTypeClass(const char* pID) : AbstractTypeClass(false)
+		JMP_THIS(0x5113F0);
 
 protected:
-	HouseTypeClass():AbstractTypeClass(false)
-		{ }
-	HouseTypeClass(bool X):AbstractTypeClass(X)
-		{ }
+	HouseTypeClass() : AbstractTypeClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

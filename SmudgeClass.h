@@ -19,7 +19,7 @@ public:
 
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm) R0;
-	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
+	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
 	//Destructor
 	virtual ~SmudgeClass() RX;
@@ -29,8 +29,8 @@ public:
 	virtual int Size() R0;
 
 	//Constructor
-	SmudgeClass(SmudgeTypeClass* stype):ObjectClass(false)
-		{ PUSH_VAR32(stype); THISCALL(0x6B4A50); }
+	SmudgeClass(SmudgeTypeClass* pType = NULL) : ObjectClass(false)
+		JMP_THIS(0x6B4A50);
 
 protected:
 	//===========================================================================

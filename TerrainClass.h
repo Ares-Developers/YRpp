@@ -28,8 +28,8 @@ public:
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
 	//Constructor, Destructor
-	TerrainClass(TerrainTypeClass* tt,CellStruct coords):ObjectClass(false)
-		{ PUSH_PTR(coords); PUSH_VAR32(tt); THISCALL(0x71BB90); }
+	TerrainClass(TerrainTypeClass* tt, CellStruct coords) : ObjectClass(false)
+		JMP_THIS(0x71BB90);
 
 	virtual ~TerrainClass() RX;
 
@@ -38,6 +38,8 @@ public:
 	virtual int Size() R0;
 
 protected:
+	TerrainClass() : ObjectClass(false) { }
+
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================

@@ -28,18 +28,14 @@ public:
 	virtual int Size() R0;
 
 	//Constructor
-	SideClass(const char* id):AbstractTypeClass(false)
-		{ PUSH_VAR32(id); THISCALL(0x6A4550); }
-
-protected:
-	SideClass():AbstractTypeClass(false){};
-	SideClass(bool X):AbstractTypeClass(X){};
+	SideClass(const char* pID = NULL) : AbstractTypeClass(false)
+		JMP_THIS(0x6A4550);
 
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY_STRUCT(TypeList<int>,		HouseTypes);	//indices!
+	PROPERTY_STRUCT(TypeList<int>, HouseTypes);	//indices!
 
 };
 

@@ -55,51 +55,12 @@ public:
 		{ return (SidebarClass*)0x87F7E8; }
 
 	//Destructor
-	virtual ~SidebarClass()
-		{ PUSH_IMM(SDDTOR_NODELETE); THISCALL(0x6AC7F0); }
-
-	//GScreenClass
-	virtual void One_Time()
-		{ THISCALL(0x6A5000); }
-
-	virtual void Init_Clear()
-		{ THISCALL(0x6A5030); }
-
-	virtual void vt_entry_20()
-		{ THISCALL(0x6A5310); }
-
-	virtual void Update(DWORD dwUnk1, DWORD dwUnk2)
-		{ PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk1); THISCALL(0x6A7780); }
-
-	virtual void Draw(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x6A6C30); }
-
-	//DisplayClass
-	virtual void Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); THISCALL(0x6AC5D0);}
-
-	virtual void Save(IStream* pStm)
-		{ PUSH_VAR32(pStm); THISCALL(0x6AC5E0);}
-
-	virtual const wchar_t* GetToolTip(UINT nDlgID)
-		{ PUSH_VAR32(nDlgID); THISCALL(0x6AC210); }
-
-	virtual void CloseWindow()	//???
-		{ THISCALL(0x6ABD30); }
-
-	//RadarClass
-	virtual void DisposeOfArt()
-		{ THISCALL(0x6A5BF0); }
-
-	virtual void Init_For_House()
-		{ THISCALL(0x6A5840); }
+	virtual ~SidebarClass() RX;
 
 	//SidebarClass
-	virtual bool vt_entry_138(int nUnknown)
-		{ PUSH_VAR32(nUnknown); THISCALL(0x6A7D70); }
+	virtual bool vt_entry_138(int nUnknown) R0;
 
 	//Non-virtual
-
 protected:
 	//Constructor
 	SidebarClass() {}	//don't need this

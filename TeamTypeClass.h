@@ -35,47 +35,41 @@ public:
 		{ PUSH_VAR8(IsGlobal); SET_REG32(ECX, pINI); CALL(0x6F19B0); }
 
 	//Constructor
-	TeamTypeClass(const char* pID):AbstractTypeClass(false)
-		{ PUSH_VAR32(pID); THISCALL(0x6F06E0); }
+	TeamTypeClass(const char* pID = NULL) : AbstractTypeClass(false)
+		JMP_THIS(0x6F06E0);
 
 	TeamClass * CreateTeam(HouseClass *pHouse)
-		{ PUSH_VAR32(pHouse); THISCALL(0x6F09C0); }
+		JMP_THIS(0x6F09C0);
 
 	void DestroyAllInstances()
-		{ THISCALL(0x6F0A70); }
+		JMP_THIS(0x6F0A70); 
 
 	int GetGroup()
-		{ THISCALL(0x6F1870); }
+		JMP_THIS(0x6F1870);
 
 	CellStruct* GetWaypoint(CellStruct *buffer)
-		{ PUSH_VAR32(buffer); THISCALL(0x6F18A0); }
+		JMP_THIS(0x6F18A0);
 
 	CellStruct* GetTransportWaypoint(CellStruct *buffer)
-		{ PUSH_VAR32(buffer); THISCALL(0x6F18E0); }
+		JMP_THIS(0x6F18E0);
 
 	bool CanRecruitUnit(FootClass *Unit, HouseClass *Owner)
-		{ PUSH_VAR32(Owner); PUSH_VAR32(Unit); THISCALL(0x6F1320); }
+		JMP_THIS(0x6F1320);
 
 	void FlashAllInstances(int Duration)
-		{ PUSH_VAR32(Duration); THISCALL(0x6F1F30); }
+		JMP_THIS(0x6F1F30);
 
 	TeamClass * FindFirstInstance()
-		{ THISCALL(0x6F1F70); }
+		JMP_THIS(0x6F1F70);
 
-	void ProcessTaskforce()
-		{ THISCALL(0x6F1FA0); }
+	void ProcessTaskForce()
+		JMP_THIS(0x6F1FA0);
 
 	static void ProcessAllTaskforces()
-		{ CALL(0x6F2040); }
+		JMP_STD(0x6F2040);
 
 	HouseClass* GetHouse()
-		{ THISCALL(0x6F2070); }
-
-protected:
-	TeamTypeClass():AbstractTypeClass(false)
-		{ }
-	TeamTypeClass(bool X):AbstractTypeClass(X)
-		{ }
+		JMP_THIS(0x6F2070);
 
 	//===========================================================================
 	//===== Properties ==========================================================

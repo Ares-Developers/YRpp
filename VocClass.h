@@ -38,32 +38,21 @@ public:
 		return -1;
 	}
 */
-	static int FindIndex(const char *pName)
-		{ SET_REG32(ECX, pName); CALL(0x7514D0); }
+	static int __fastcall FindIndex(const char *pName)
+		JMP_STD(0x7514D0);
 
 	/* Play a sound independant of the position.
 	   n = Index of VocClass in Array to be played
 	   Volume = 0.0f to 1.0f
 	   Panning = 0x0000 (left) to 0x4000 (right) (0x2000 is center)
 	   */
-	static void PlayGlobal(int n, float Volume, int Panning)
-	{
-		PUSH_IMM(0);
-		PUSH_VAR32(Volume);
-		SET_REG32(edx,Panning);
-		SET_REG32(ecx,n);
-		CALL(0x750920);
-	}
+	static void __fastcall PlayGlobal(int n, float Volume, int Panning, DWORD dwUnk = 0)
+		JMP_STD(0x750920);
 
 	/* Play a sound at a certain Position.
        n = Index of VocClass in Array to be played */
-	static void PlayAt(int n, CoordStruct* pCoords)
-	{
-		PUSH_IMM(0);
-		SET_REG32(edx,pCoords);
-		SET_REG32(ecx,n);
-		CALL(0x7509E0);
-	}
+	static void __fastcall PlayAt(int n, CoordStruct* pCoords)
+		JMP_STD(0x7509E0);
 
 	//Properties
 	PROPERTY(VocClass*,			Next);	//Linked list of VocClass instances

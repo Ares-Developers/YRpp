@@ -27,25 +27,21 @@ public:
 	virtual int Size() R0;
 
 	//Constructor
-	ParasiteClass(FootClass* pOwner):AbstractClass(false)
-	{ PUSH_VAR32(pOwner); THISCALL(0x6292B0); }
+	ParasiteClass(FootClass* pOwner = NULL) : AbstractClass(false)
+		JMP_THIS(0x6292B0);
 
 	//non-virtual
 	void UpdateSquid()
-		{ THISCALL(0x6297F0); }
+		JMP_THIS(0x6297F0);
 
 	void ExitUnit()
-		{ THISCALL(0x62A4A0); }
+		JMP_THIS(0x62A4A0);
 
 	bool CanInfect(FootClass *pTarget)
-		{ PUSH_VAR32(pTarget); THISCALL(0x62A8E0); }
+		JMP_THIS(0x62A8E0);
 
 	void TryInfect(FootClass *pTarget)
-		{ PUSH_VAR32(pTarget); THISCALL(0x62A980); }
-
-protected:
-	ParasiteClass():AbstractClass(false){}
-	ParasiteClass(bool X):AbstractClass(X){}
+		JMP_THIS(0x62A980);
 
 	//===========================================================================
 	//===== Properties ==========================================================

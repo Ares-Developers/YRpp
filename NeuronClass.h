@@ -27,10 +27,10 @@ public:
 
 	//Constructor
 	NeuronClass() : AbstractClass(false)
-		{ THISCALL(0x43A350); }
+		JMP_THIS(0x43A350);
 
 protected:
-	NeuronClass(bool X):AbstractClass(X){}
+	NeuronClass(bool X) : AbstractClass(X) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================
@@ -38,7 +38,7 @@ protected:
 	PROPERTY(void*,			unknown_ptr_24);
 	PROPERTY(void*,			unknown_ptr_28);
 	PROPERTY(void*,			unknown_ptr_2C);
-	PROPERTY(TimerStruct,	unknown_timer_30);
+	PROPERTY_STRUCT(TimerStruct,	unknown_timer_30);
 };
 
 //Even more questions marks on the use of this... >.<

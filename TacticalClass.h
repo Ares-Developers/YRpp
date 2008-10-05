@@ -15,7 +15,7 @@ class TacticalClass
 {
 public:
 	static TacticalClass* Global()
-	{ return *((TacticalClass**)0x887324); }
+		{ return *((TacticalClass**)0x887324); }
 
 	Point2D* CoordsToClient(CoordStruct* pCoords, Point2D* pDest)
 		JMP_THIS(0x6D2140);

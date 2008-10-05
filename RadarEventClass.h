@@ -10,13 +10,13 @@
 class RadarEventClass
 {
 public:
-	static bool Create(int nType,CellStruct nMapCoords)
-	{ PUSH_VAR32(nMapCoords); SET_REG32(ecx,nType); CALL(0x65FA70); }
+	static bool Create(int nType, CellStruct nMapCoords)
+		{ PUSH_VAR32(nMapCoords); SET_REG32(ecx, nType); CALL(0x65FA70); }
 
 private:
 	//Constructor, Destructor
-	RadarEventClass(int nType,CellStruct nMapCoords)
-		{ PUSH_VAR32(nMapCoords); PUSH_VAR32(nType); THISCALL(0x65FB80); }
+	RadarEventClass(int nType, CellStruct nMapCoords)
+		JMP_THIS(0x65FB80);
 
 	~RadarEventClass()		{/*???*/}
 

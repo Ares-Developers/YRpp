@@ -8,7 +8,7 @@ struct TransitionTimer
 public:
 	//Constructor, Destructor
 	TransitionTimer()
-		{ THISCALL(0x4A50F0); }
+		JMP_THIS(0x4A50F0);
 
 	~TransitionTimer()
 		{ }
@@ -26,22 +26,22 @@ public:
 		{ return !this->State1 && !this->State2; }
 
 	bool IsTimerFinished()
-		{ THISCALL(0x4A5150); }
+		JMP_THIS(0x4A5150);
 
 	void StartTimer11(double time)
-		{ THISCALL(0x4A51F0); }
+		JMP_THIS(0x4A51F0);
 
 	void StartTimer10(double time)
-		{ THISCALL(0x4A5240); }
+		JMP_THIS(0x4A5240);
 
 	void Update()
-		{ THISCALL(0x4A5290); }
+		JMP_THIS(0x4A5290);
 
 	double PercentageDone()
-		{ THISCALL(0x4A52F0); }
+		JMP_THIS(0x4A52F0);
 
 	void SetToDone()
-		{ THISCALL(0x4A5360); }
+		JMP_THIS(0x4A5360);
 
 	//===========================================================================
 	//===== Properties ==========================================================

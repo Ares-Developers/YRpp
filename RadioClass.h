@@ -20,12 +20,9 @@ public:
 	//Destructor
 	virtual ~RadioClass() RX;
 
-	//ObjectClass
-
 	//RadioClass
 
 	// these are oogly, westwood themselves admitted it, so it's probably even more of a wtf than the rest
-
 	virtual eRadioCommands SendToFirstLink(eRadioCommands rcDoThis) R0;
 	virtual eRadioCommands SendCommand(eRadioCommands rcDoThis, TechnoClass *Link) R0;
 	virtual int LinkWith(eRadioCommands rcDoThis, TechnoClass *Target, TechnoClass *Link) R0;
@@ -34,11 +31,11 @@ public:
 	TechnoClass* GetNthLink(int idx) R0;
 
 	//Constructor
-	RadioClass():MissionClass(false)
-		{ THISCALL(0x65A750); }
+	RadioClass() : MissionClass(false)
+		JMP_THIS(0x65A750);
 
 protected:
-	RadioClass(bool X):MissionClass(X){}
+	RadioClass(bool) : MissionClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

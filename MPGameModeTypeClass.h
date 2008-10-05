@@ -20,20 +20,36 @@ class CCINIClass;
 
 // these things are fugly, feel free to rewrite if possible
 
+/*
 #define INIT_ARGLIST wchar_t **CSFTitle, wchar_t **CSFTooltip, char **INIFileName, char **mapfilter, bool AIAllowed, int MPModeIndex
 #define INIT_ARGS CSFTitle, CSFTooltip, INIFileName, mapfilter, AIAllowed, MPModeIndex
 
-#define INIT_FUNC(addr) (void __stdcall * Allocate)(INIT_ARGLIST) = (void __stdcall *)(INIT_ARGLIST)addr;
+#define INIT_FUNC(addr) void (__stdcall * Allocate)(INIT_ARGLIST) = void (__stdcall *)(INIT_ARGLIST)addr;
 
-#define UNINIT_FUNC(addr) (void __thiscall * Deallocate)(void *x, int flags) = (void __thiscall *)(void *, int)addr;
+#define UNINIT_FUNC(addr) void (__thiscall * Deallocate)(void *x, int flags) = void(__thiscall *)(void *, int)addr;
+
 
 struct Initializer
 {
-	(void __thiscall * Deallocate)(void *x, int flags);
-	(void __stdcall * Allocate)(INIT_ARGLIST);
+	void (__thiscall * Deallocate)(void *x, int flags);
+	void (__stdcall * Allocate)(INIT_ARGLIST);
 };
 
 #define FACTORY(addr) static Initializer *Init = (Initializer *)addr;
+
+#define MPMODE_CTOR(clsname, addr) \
+	clsname( \
+		wchar_t **CSFTitle, \
+		wchar_t **CSFTooltip, \
+		char **INIFileName, \
+		char **mapfilter, \
+		bool AIAllowed, \
+		int MPModeIndex) \
+			JMP_THIS(addr);
+*/
+
+//BAAAAH THIS FILE IS HELL - rewrite requested :P -pd
+#define MPMODE_CTOR(clsname, addr) clsname() {}
 
 class MPGameModeTypeClass
 {
@@ -41,12 +57,14 @@ public:
 	//global arrays
 	static DynamicVectorClass<MPGameModeTypeClass*>* GameModes;
 
+	/*
 	static UNINIT_FUNC(0x5D7FD0);
 	static INIT_FUNC(0);
+	*/
 
 	//Destructor
 	virtual ~MPGameModeTypeClass()
-		{ THISCALL(0x0x5D7F20); }
+		{ THISCALL(0x5D7F20); }
 
 	virtual bool vt_entry_04()
 		{ return 0; }
@@ -90,8 +108,8 @@ public:
 	virtual void vt_entry_38(DWORD dwUnk)
 		{ }
 
-	virtual bool AIAllowed()
-		{ return this->AIAllowed; }
+	virtual bool IsAIAllowed()
+		{ return AIAllowed; }
 
 	virtual bool vt_entry_40()
 		{ return 0; }
@@ -206,15 +224,9 @@ public:
 		{ PUSH_VAR32(AmountToSpend); PUSH_VAR32(House); THISCALL(0x5D70F0); }
 
 protected:
-#define MPMODE_CTOR(clsname, addr) \
-	MPBattleClass(wchar_t **CSFTitle, wchar_t **CSFTooltip, char **INIFileName, char **mapfilter, \
-		bool AIAllowed, int MPModeIndex) \
-		{ PUSH_VAR32(MPModeIndex); PUSH_VAR8(AIAllowed); PUSH_VAR32(mapfilter); PUSH_VAR32(INIFileName); \
-			PUSH_VAR32(CSFTooltip); PUSH_VAR32(CSFTitle); THISCALL(addr); }
-
 	//Constructor
 	MPMODE_CTOR(MPGameModeTypeClass, 0x5D5B60);
-	FACTORY(0x7EEE74);
+	//FACTORY(0x7EEE74);
 
 	//===========================================================================
 	//===== Properties ==========================================================
@@ -225,10 +237,10 @@ protected:
 	PROPERTY(wchar_t *, CSFTitle);
 	PROPERTY(wchar_t *, CSFTooltip);
 	PROPERTY(int, MPModeIndex);
-	PROPERTY(char, *INIFilename);
-	PROPERTY(char, *mapfilter);
+	PROPERTY(char*, INIFilename);
+	PROPERTY(char*, MapFilter);
 	PROPERTY(bool, AIAllowed);
-	PROPERTY(CCINIClass, *INI);
+	PROPERTY(CCINIClass*, INI);
 	PROPERTY(bool, AlliesAllowed);
 	PROPERTY(bool, wolTourney);
 	PROPERTY(bool, wolClanTourney);
@@ -245,12 +257,14 @@ class MPBattleClass : public MPGameModeTypeClass
 	virtual bool vt_entry_40()
 		{ return 1; }
 
+	/*
 	static (void __stdcall * Deallocate)() = (void __stdcall *)()0x5D7FF0;
 	static (void __stdcall * Allocate)(INIT_ARGLIST) = (void __stdcall * Allocate)(INIT_ARGLIST)0x5D8170;
+	*/
 
 	//Constructor
 	MPMODE_CTOR(MPBattleClass, 0x5C0DD0);
-	FACTORY(0x7EEEBC);
+	//FACTORY(0x7EEEBC);
 };
 
 
@@ -260,12 +274,14 @@ class MPManBattleClass : public MPGameModeTypeClass
 	virtual ~MPManBattleClass()
 		{ THISCALL(0x5C61A0); }
 
+	/*
 	static UNINIT_FUNC(0x5D8010);
 	static INIT_FUNC(0x5D81B0);
+	*/
 
 	//Constructor
 	MPMODE_CTOR(MPManBattleClass, 0x5C6150);
-	FACTORY(0x7EEEB0);
+	//FACTORY(0x7EEEB0);
 };
 
 
@@ -290,12 +306,14 @@ class MPFreeForAllClass : public MPGameModeTypeClass
 	virtual void PopulateTeamDropdownForPlayer(HWND hWnd, int idx)
 		{ PUSH_VAR32(idx); PUSH_VAR32(hWnd); THISCALL(0x5C5DD0); }
 
+	/*
 	static UNINIT_FUNC(0x5D8070);
 	static INIT_FUNC(0x5D8270);
+	*/
 
 	//Constructor
 	MPMODE_CTOR(MPFreeForAllClass, 0x5C5CE0);
-	FACTORY(0x7EEE8C);
+	//FACTORY(0x7EEE8C);
 };
 
 
@@ -331,12 +349,14 @@ class MPUnholyAllianceClass : public MPGameModeTypeClass
 	virtual bool SpawnBaseUnits(HouseClass *House, DWORD dwUnused)
 		{ PUSH_VAR32(dwUnused); PUSH_VAR32(House); THISCALL(0x5CB440); }
 
+	/*
 	static UNINIT_FUNC(0x5D8050);
 	static INIT_FUNC(0x5D8230);
+	*/
 
 	//Constructor
 	MPMODE_CTOR(MPUnholyAllianceClass, 0x5CB3A0);
-	FACTORY(0x7EEE98);
+	//FACTORY(0x7EEE98);
 };
 
 
@@ -370,12 +390,14 @@ class MPSiegeClass : public MPGameModeTypeClass
 	virtual bool SpawnBaseUnits(HouseClass *House, DWORD dwUnused)
 		{ PUSH_VAR32(dwUnused); PUSH_VAR32(House); THISCALL(0x5CAA50); }
 
+	/*
 	static UNINIT_FUNC(0x5D8030);
 	static INIT_FUNC(0x5D81F0);
+	*/
 
 	//Constructor
 	MPMODE_CTOR(MPSiegeClass, 0x5CA630);
-	FACTORY(0x7EEEA4);
+	//FACTORY(0x7EEEA4);
 };
 
 #endif

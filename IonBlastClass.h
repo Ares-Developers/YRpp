@@ -14,16 +14,7 @@ class IonBlastClass
 public:
 	//Constructor, Destructor
 	IonBlastClass(CoordStruct Crd)
-	{
-		int X = Crd.X;
-		int Y = Crd.Y;
-		int Z = Crd.Z;
-
-		PUSH_VAR32(Z);
-		PUSH_VAR32(Y);
-		PUSH_VAR32(X);
-		THISCALL(0x53CB10);
-	}
+		JMP_THIS(0x53CB10);
 
 	~IonBlastClass()		{/*???*/}
 
@@ -31,9 +22,9 @@ public:
 	//===== Properties ==========================================================
 	//===========================================================================
 	
-	PROPERTY_STRUCT(CoordStruct,		Location);
-	PROPERTY(int,				Lifetime);
-	PROPERTY(int,				DisableIonBeam);	//0 = no, 1 = yes
+	PROPERTY_STRUCT(CoordStruct, Location);
+	PROPERTY(int, Lifetime);
+	PROPERTY(int, DisableIonBeam);	//0 = no, 1 = yes
 
 };
 

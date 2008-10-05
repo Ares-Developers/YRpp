@@ -32,15 +32,14 @@ public:
 
 	// non virtual
 	void CreateChronoAnim(CoordStruct Coords)
-		{ PUSH_VAR32(Coords.Z); PUSH_VAR32(Coords.Y); PUSH_VAR32(Coords.X); THISCALL(0x6CB3A0); }
+		JMP_THIS(0x6CB3A0);
 
 	//Constructor
-	SuperClass(SuperWeaponTypeClass* pSWType,HouseClass* pOwner):AbstractClass(false)
-		{ PUSH_VAR32(pOwner); PUSH_VAR32(pSWType); THISCALL(0x6CAF90); }
+	SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner) : AbstractClass(false)
+		JMP_THIS(0x6CAF90);
 
 protected:
-	SuperClass():AbstractClass(false){}
-	SuperClass(bool X):AbstractClass(X){}
+	SuperClass() : AbstractClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

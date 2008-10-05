@@ -9,7 +9,7 @@ class LinkClass
 public:
 	//Destructor
 	virtual ~LinkClass()
-		{ THISCALL(0x5565A0); }
+		JMP_THIS(0x5565A0);
 
 	//LinkClass
 	virtual LinkClass* GetNext()

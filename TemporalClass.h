@@ -29,29 +29,25 @@ public:
 	virtual int Size() R0;
 
 	//Constructor
-	TemporalClass(TechnoClass* pOwnerUnit)
-		{ PUSH_VAR32(pOwnerUnit); THISCALL(0x71A4E0); }
+	TemporalClass(TechnoClass* pOwnerUnit = NULL) : AbstractClass(false)
+		JMP_THIS(0x71A4E0);
 
 	//non-virtual
 	void Fire(TechnoClass* pTarget)
-		{ PUSH_VAR32(pTarget); THISCALL(0x71AF20); }
+		JMP_THIS(0x71AF20);
 	bool CanWarpTarget(TechnoClass* pTarget)
-		{ PUSH_VAR32(pTarget); THISCALL(0x71AE50); }
+		JMP_THIS(0x71AE50);
 
 	// hardcoded to accumulate only up to 50 helpers
 	int GetWarpPerStep( int nHelperCount )
-		{ PUSH_VAR32(nHelperCount); THISCALL(0x71AB10); }
+		JMP_THIS(0x71AB10);
 
 	void LetGo()
-		{ THISCALL(0x71ABC0); }
+		JMP_THIS(0x71ABC0);
 	void JustLetGo()
-		{ THISCALL(0x71AD40); }
+		JMP_THIS(0x71AD40);
 	void Detach()
-		{ THISCALL(0x71ADE0); }
-
-protected:
-	TemporalClass():AbstractClass(false){}
-	TemporalClass(bool X):AbstractClass(X){}
+		JMP_THIS(0x71ADE0);
 
 	//===========================================================================
 	//===== Properties ==========================================================

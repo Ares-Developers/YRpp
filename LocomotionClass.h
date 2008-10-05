@@ -19,18 +19,18 @@ class LocomotionClass : public IPersistStream, public ILocomotion
 public:
 	//IUnknown
 	virtual HRESULT _stdcall QueryInterface(REFIID iid, void** ppvObject)
-		{ PUSH_VAR32(ppvObject); PUSH_VAR32(iid); PUSH_VAR32(this); CALL(0x55A9B0); }
+		JMP_STD(0x55A9B0);
 
 	virtual ULONG _stdcall AddRef()
-		{ PUSH_VAR32(this); CALL(0x55A950); }
+		JMP_STD(0x55A950);
 
 	virtual ULONG _stdcall Release()
-		{ PUSH_VAR32(this); CALL(0x55A970); }
+		JMP_STD(0x55A970);
 
 	//ILocomotion
 
 	virtual HRESULT _stdcall Link_To_Object(void* pointer)
-		{ PUSH_VAR32(pointer); PUSH_VAR32(this); CALL(0x55A710); }
+		JMP_STD(0x55A710);
 
 	virtual bool _stdcall Is_Moving()
 		{ return false; }
@@ -58,10 +58,10 @@ public:
 		{ return true; }
 
 	virtual Matrix3DStruct* _stdcall Draw_Matrix(Matrix3DStruct* pMatrix, int* key)
-		{ PUSH_VAR32(key); PUSH_VAR32(pMatrix); PUSH_VAR32(this); CALL(0x55A730); }
+		JMP_STD(0x55A730);
 
 	virtual Matrix3DStruct* _stdcall Shadow_Matrix(Matrix3DStruct* pMatrix, int* key)
-		{ PUSH_VAR32(key); PUSH_VAR32(pMatrix); PUSH_VAR32(this); CALL(0x55A7D0); }
+		JMP_STD(0x55A7D0);
 
 	virtual Point2D* _stdcall Draw_Point(Point2D* pPoint)
 		{ 
@@ -71,7 +71,7 @@ public:
 		}
 
 	virtual Point2D* _stdcall Shadow_Point(Point2D* pPoint)
-		{ PUSH_VAR32(pPoint); PUSH_VAR32(this); CALL(0x55A8C0); }
+		JMP_STD(0x55A8C0);
 
 	virtual eVisualType _stdcall Visual_Character(VARIANT_BOOL flag)
 		{ return vt_Normal; }
@@ -166,14 +166,14 @@ public:
 		{ return Dirty ? S_OK: S_FALSE; }
 
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
-		{ PUSH_VAR32(fClearDirty); PUSH_VAR32(pStm); PUSH_VAR32(this); CALL(0x55AA60); }
+		JMP_STD(0x55AA60);
 	
 	virtual HRESULT _stdcall GetSizeMax(ULARGE_INTEGER* pcbSize)
-		{ PUSH_VAR32(pcbSize); PUSH_VAR32(this); CALL(0x55AB40); }
+		JMP_STD(0x55AB40);
 
 	//Destructor
 	virtual ~LocomotionClass()
-		{ THISCALL(0x55A6F0); }
+		JMP_THIS(0x55A6F0);
 
 	//LocomotionClass
 	virtual	int Size() = 0;
@@ -197,7 +197,7 @@ public:
 
 	//Constructor
 	LocomotionClass()
-		{ THISCALL(0x55A6C0); }
+		JMP_THIS(0x55A6C0);
 
 protected:
 	LocomotionClass(bool) { }	//Hack to make child functions not call the base class constructor

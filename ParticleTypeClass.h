@@ -35,14 +35,8 @@ public:
 	virtual ~ParticleTypeClass() RX;
 
 	//Constructor
-	ParticleTypeClass(const char* id):ObjectTypeClass(false)
-		{ PUSH_VAR32(id); THISCALL(0x644BE0); }
-
-protected:
-	ParticleTypeClass()
-		{ };
-	ParticleTypeClass(bool X):ObjectTypeClass(false)
-		{ };
+	ParticleTypeClass(const char* pID = NULL) : ObjectTypeClass(false)
+		JMP_THIS(0x644BE0);
 
 	//===========================================================================
 	//===== Properties ==========================================================

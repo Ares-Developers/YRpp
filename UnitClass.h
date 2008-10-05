@@ -31,40 +31,23 @@ public:
 	virtual eAbstractType WhatAmI() R0;
 	virtual int Size() R0;
 
-	//ObjectClass
-	//MissionClass
-
-	//TechnoClass
-
-	//FootClass
-
 	//UnitClass
 	virtual void DrawVXL(
-	  DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
-	  DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8)
-		{
-			PUSH_VAR32(dwUnk8); PUSH_VAR32(dwUnk7); PUSH_VAR32(dwUnk6); PUSH_VAR32(dwUnk5);
-			PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk);
-			THISCALL(0x73B470);
-		}
+		DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8)
+			JMP_THIS(0x73B470);
 
 	virtual void DrawSHP(
-	  DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
-	  DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8)
-	{
-		PUSH_VAR32(dwUnk8); PUSH_VAR32(dwUnk7); PUSH_VAR32(dwUnk6); PUSH_VAR32(dwUnk5);
-		PUSH_VAR32(dwUnk4); PUSH_VAR32(dwUnk3); PUSH_VAR32(dwUnk2); PUSH_VAR32(dwUnk);
-		THISCALL(0x73C5F0);
-	}
+		DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8)
+			JMP_THIS(0x73C5F0);
 	
 	//Constructor
-	UnitClass(UnitTypeClass* pType, HouseClass* pOwner):FootClass(false)
-		{ PUSH_VAR32(pOwner); PUSH_VAR32(pType); THISCALL(0x7353C0); }
+	UnitClass(UnitTypeClass* pType, HouseClass* pOwner) : FootClass(false)
+		JMP_THIS(0x7353C0);
 
 protected:
-	UnitClass():FootClass()
-		{ }
-	UnitClass(bool X):FootClass(X)
+	UnitClass() : FootClass()
 		{ }
 
 	//===========================================================================

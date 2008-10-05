@@ -36,13 +36,11 @@ public:
 
 	//Constructor
 	InfantryTypeClass(const char* pID) : TechnoTypeClass(false)
-		{ PUSH_VAR32(pID); THISCALL(0x5236A0); }
+		JMP_THIS(0x5236A0);
 
 protected:
 	//default contructor, only used by polymorphism
-	InfantryTypeClass():TechnoTypeClass(false)
-		{ }
-	InfantryTypeClass(bool X):TechnoTypeClass(false)
+	InfantryTypeClass() : TechnoTypeClass(false)
 		{ }
 
 	//===========================================================================

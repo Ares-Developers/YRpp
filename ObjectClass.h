@@ -174,12 +174,11 @@ public:
 		  PUSH_VAR32(src_Z); PUSH_VAR32(src_Y); PUSH_VAR32(src_X); CALL(0x704E40); }
 
 	//Constructor
-	ObjectClass():AbstractClass(false)
-		{ THISCALL(0x5F3900); }
+	ObjectClass() : AbstractClass(false)
+		JMP_THIS(0x5F3900);
 
 protected:
-	ObjectClass(bool X):AbstractClass(X)
-		{ }
+	ObjectClass(bool) : AbstractClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

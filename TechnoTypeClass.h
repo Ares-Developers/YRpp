@@ -80,14 +80,14 @@ public:
 	virtual int GetFlightLevel() R0;
 
 	//Constructor
-	TechnoTypeClass(const char* id, eSpeedType speedtype):ObjectTypeClass(false)
-		{ PUSH_VAR32(speedtype); PUSH_VAR32(id); THISCALL(0x710AF0); }
+	TechnoTypeClass(const char* id, eSpeedType speedtype) : ObjectTypeClass(false)
+		JMP_THIS(0x710AF0);
 
 protected:
 	//default contructor, only used by polymorphism
-	TechnoTypeClass():ObjectTypeClass(false)
+	TechnoTypeClass() : ObjectTypeClass(false)
 		{ }
-	TechnoTypeClass(bool X):ObjectTypeClass(false)
+	TechnoTypeClass(bool) : ObjectTypeClass(false)
 		{ }
 
 	//===========================================================================

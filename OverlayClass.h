@@ -29,13 +29,8 @@ public:
 	virtual int Size() R0;
 
 	//Constructor
-	//Constructor
-	OverlayClass(OverlayTypeClass* pType): ObjectClass(false)
-		{ PUSH_VAR32(pType); THISCALL(0x5FC380); }
-
-protected:
-	OverlayClass():ObjectClass(false){}
-	OverlayClass(bool X):ObjectClass(X){}
+	OverlayClass(OverlayTypeClass* pType = NULL) : ObjectClass(false)
+		JMP_THIS(0x5FC380);
 
 	//===========================================================================
 	//===== Properties ==========================================================

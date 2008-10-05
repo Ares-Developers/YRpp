@@ -107,7 +107,7 @@ protected:
 	PROPERTY(int,      MissionStatus);
 	PROPERTY(int,      CurrentMissionStartTime);	//in frames
 	PROPERTY(DWORD,    unknown_C4);
-	PROPERTY(TimerStruct, UpdateTimer);
+	PROPERTY_STRUCT(TimerStruct, UpdateTimer);
 };
 
 #endif

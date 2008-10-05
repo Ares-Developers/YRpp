@@ -45,8 +45,7 @@ public:
 	virtual HRESULT _stdcall Get_Save_Size(int* psize) R0;
 
 	//CTOR / DTOR
-	SwizzleManagerClass()
-		{ THISCALL(0x6CF180); }
+	SwizzleManagerClass() JMP_THIS(0x6CF180);
 	virtual ~SwizzleManagerClass() RX;
 
 	//Properties
