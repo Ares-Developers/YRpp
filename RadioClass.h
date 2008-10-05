@@ -21,8 +21,6 @@ public:
 	virtual ~RadioClass() RX;
 
 	//ObjectClass
-	virtual bool Exit() R0;
-	virtual void ReceiveCommand(TechnoClass *From, eRadioCommands rcDoThis, DWORD dwUnk3) RX;
 
 	//RadioClass
 

@@ -89,7 +89,7 @@ public:
 	virtual int Mission_ParaDropOverfly() R0;
 	virtual int Mission_Wait() R0;
 	virtual int Mission_SpyPlaneApproach() R0;
-	virtual int Mission_SpyPlaneAOverfly() R0;
+	virtual int Mission_SpyPlaneOverfly() R0;
 
 	//Constructor
 	MissionClass():ObjectClass(false) { THISCALL(0x5B2DA0); }

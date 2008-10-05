@@ -232,8 +232,8 @@ public:
 	virtual void UpdateRefinerySmokeSystems() RX;
 	virtual DWORD DisguiseAs(ObjectClass *Target) R0;
 	virtual void ClearDisguise() RX;
-	virtual bool vt_entry_474() R0;
-	virtual bool vt_entry_478() R0;
+	virtual bool IsItTimeForIdleActionYet() R0;
+	virtual bool UpdateIdleAction() R0;
 	virtual void vt_entry_47C(DWORD dwUnk) RX;
 	virtual void SetDestination(CellClass* pCell, bool bUnk) RX;
 	virtual bool vt_entry_484(DWORD dwUnk, DWORD dwUnk2) R0;
@@ -319,7 +319,7 @@ public:
 	PROPERTY_STRUCT(VeterancyStruct,    Veterancy);
 	PROPERTY(double,             ArmorMultiplier);
 	PROPERTY(double,             FirepowerMultiplier);
-	PROPERTY_STRUCT(TimerStruct, unknown_timer_168);
+	PROPERTY_STRUCT(TimerStruct, IdleActionTimer); // MOO
 	PROPERTY_STRUCT(TimerStruct, RadarFlashTimer);
 	PROPERTY_STRUCT(TimerStruct, TargetingTimer); //Duration = 45 on init!
 	PROPERTY_STRUCT(TimerStruct, IronCurtainTimer);

@@ -90,7 +90,7 @@ public:
 	virtual bool IsDisguisedAs(HouseClass *target) R0;
 	virtual ObjectTypeClass* GetDisguise(bool DisguisedAgainstAllies) R0;
 	virtual HouseClass* GetDisguiseHouse(bool DisguisedAgainstAllies) R0;
-	virtual bool vt_entry_D4() R0;
+	virtual bool Remove() R0;
 	virtual bool Put(CoordStruct* pCrd, eDirection dFaceDir) R0;
 	virtual void vt_entry_DC(DWORD dwUnk) RX;
 	virtual void RegisterDestruction(TechnoClass *Destroyer) RX;
@@ -140,7 +140,7 @@ public:
 	virtual void vt_entry_188(DWORD dwUnk) RX;
 	virtual void UpdatePosition(int dwUnk) RX;
 	virtual BuildingTypeClass* GetFactoryType(bool bOverridePrereqs, bool bOverridePower) R0;
-	virtual void vt_entry_194(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
+	virtual void ReceiveCommand(TechnoClass *From, eRadioCommands rcDoThis, DWORD dwUnk3) RX;
 	virtual bool vt_entry_198(DWORD dwUnk) R0;
 	virtual void vt_entry_19C(DWORD dwUnk) RX;
 	virtual void Sell(DWORD dwUnk) RX;
