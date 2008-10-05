@@ -7,16 +7,28 @@
 MSVC++
 */
 
-//Push/Pop General Purpose Registers	
-#define PUSH_GP_REGISTERS \
-	_asm{push eax}\
-	_asm{push ecx}\
-	_asm{push edx}
+//Jump
+#define JMP(address) \
+	_asm{mov eax, address} \
+	_asm{jmp eax}
 
-#define POP_GP_REGISTERS \
-	_asm{pop edx}\
-	_asm{pop ecx}\
-	_asm{pop eax}
+//MSVC++ stackframes
+#define EPILOG_THISCALL \
+	_asm{pop ecx} \
+	_asm{mov esp, ebp} \
+	_asm{pop ebp}
+
+#define JMP_THIS(address) \
+	{ EPILOG_THISCALL; \
+	JMP(address); }
+
+#define EPILOG_STDCALL \
+	_asm{mov esp, ebp} \
+	_asm{pop ebp}
+
+#define JMP_STD(address) \
+	{ EPILOG_STDCALL; \
+	JMP(address); }
 
 //Get/set register to a variable
 #define GET_REG32(dst,reg) _asm{mov dst, reg}

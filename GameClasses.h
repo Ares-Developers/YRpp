@@ -46,7 +46,7 @@
 #include <TacticalClass.h>
 #include <TActionClass.h>
 #include <TaskForceClass.h>
-#include <TeamTypeClass.h>
+#include <TeamClass.h>
 #include <TechnoClass.h>
 #include <TEventClass.h>
 #include <TemporalClass.h>
@@ -88,5 +88,6 @@
 
 //The law!
 #include <RulesClass.h>
+#include <ScenarioClass.h>
 
 #endif

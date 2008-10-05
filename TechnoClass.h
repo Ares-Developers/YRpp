@@ -258,7 +258,7 @@ public:
 	virtual bool vt_entry_4D0() R0;
 
 	//Constructor
-	TechnoClass(HouseClass* owner):RadioClass(false)
+	TechnoClass(HouseClass* owner) : RadioClass(false)
 		{ PUSH_VAR32(owner); THISCALL(0x6F2B40); }
 
 	//non-virtual
@@ -287,9 +287,9 @@ public:
 	}
 
 protected:
-	TechnoClass():RadioClass(false)
+	TechnoClass() : RadioClass(false)
 		{ }
-	TechnoClass(bool X):RadioClass(X)
+	TechnoClass(bool X) : RadioClass(X)
 		{ }
 
 	//===========================================================================

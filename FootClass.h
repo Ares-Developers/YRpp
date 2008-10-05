@@ -80,10 +80,10 @@ public:
 		{ PUSH_VAR32(Z); PUSH_VAR32(Y); PUSH_VAR32(X); THISCALL(0x629E90); }
 
 protected:
-	FootClass():TechnoClass()
-		{}
-	FootClass(bool X):TechnoClass(X)
-		{}
+	FootClass() : TechnoClass(false)
+		{ }
+	FootClass(bool X) : TechnoClass(X)
+		{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

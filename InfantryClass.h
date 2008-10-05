@@ -29,13 +29,11 @@ public:
 	virtual bool PlayAnim(int nAnimNumber, bool bUnk, DWORD dwUnk) R0;
 	
 	//Constructor
-	InfantryClass(InfantryTypeClass* pType, HouseClass* pOwner):FootClass(false)
-		{ PUSH_VAR32(pOwner); PUSH_VAR32(pType); THISCALL(0x517A50); }
+	InfantryClass(InfantryTypeClass* pType, HouseClass* pOwner) : FootClass(false)
+		JMP_THIS(0x517A50);
 
 protected:
-	InfantryClass():FootClass()
-		{ }
-	InfantryClass(bool X):FootClass(X)
+	InfantryClass() : FootClass(false)
 		{ }
 
 	//===========================================================================

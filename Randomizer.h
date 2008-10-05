@@ -8,20 +8,13 @@ public:
 		{ return (Randomizer*)0x886B88; }
 
 	DWORD Random()
-		{ THISCALL(0x65C780); }
+		JMP_THIS(0x65C780);
 
 	int RandomRanged(int nMin, int nMax)
-		{
-			PUSH_VAR32(nMax);
-			PUSH_VAR32(nMin);
-			THISCALL(0x65C7E0);
-		}
+		JMP_THIS(0x65C7E0);
 
-	Randomizer(DWORD dwSeed)
-	{
-		PUSH_VAR32(dwSeed);
-		THISCALL(0x65C6D0);
-	}
+	Randomizer(DWORD dwSeed = GetTickCount())
+		JMP_THIS(0x65C6D0);
 
 	//Properties
 	PROPERTY(bool, unknown_00);

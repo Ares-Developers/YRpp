@@ -14,30 +14,32 @@
 class TacticalClass
 {
 public:
-	static Point2D*	CoordsToClient(CoordStruct* pCrd,Point2D* pPoint)
-		{
-			void* pTactical;
-			MEM_READ32(pTactical, TACTICAL_MAP_PTR);
-			PUSH_VAR32(pPoint);
-			PUSH_VAR32(pCrd);
-			THISCALL_EX(pTactical, 0x6D2140);
-		}
+	static TacticalClass* Global()
+	{ return *((TacticalClass**)0x887324); }
 
-	static Point2D CoordsToClient(CoordStruct* pCrd)
-		{ Point2D P; CoordsToClient(pCrd, &P); return P; }
-
+	Point2D* CoordsToClient(CoordStruct* pCoords, Point2D* pDest)
+		JMP_THIS(0x6D2140);
+	/*
+	static Point2D* CoordsToClient(CoordStruct* pCrd, Point2D* pPoint)
+	{
+		void* pTactical;
+		MEM_READ32(pTactical, TACTICAL_MAP_PTR);
+		PUSH_VAR32(pPoint);
+		PUSH_VAR32(pCrd);
+		THISCALL_EX(pTactical, 0x6D2140);
+	}*/
 	
-	static CoordStruct* ClientToCoords(Point2D* pPoint,CoordStruct* pCrd)
-		{
-			void* pTactical;
-			MEM_READ32(pTactical, TACTICAL_MAP_PTR);
-			PUSH_VAR32(pPoint);
-			PUSH_VAR32(pCrd);
-			THISCALL_EX(pTactical, 0x6D2280);
-		}
-
-	static CoordStruct ClientToCoords(Point2D* pPoint)
-		{ CoordStruct Crd; ClientToCoords(pPoint, &Crd); return Crd; }
+	CoordStruct* ClientToCoords(Point2D* pClient, CoordStruct* pDest)
+			JMP_THIS(0x6D2280);
+	/*
+	static CoordStruct* ClientToCoords(Point2D* pPoint, CoordStruct* pCrd)
+	{
+		void* pTactical;
+		MEM_READ32(pTactical, TACTICAL_MAP_PTR);
+		PUSH_VAR32(pPoint);
+		PUSH_VAR32(pCrd);
+		THISCALL_EX(pTactical, 0x6D2280);
+	}*/
 };
 
 #endif

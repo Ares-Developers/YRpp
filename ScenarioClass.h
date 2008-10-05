@@ -1207,7 +1207,7 @@ public:
 	PROPERTY(DWORD, unknown_34C4);
 	PROPERTY(DWORD, unknown_34C8);
 	PROPERTY(DWORD, unknown_34CC);
-	PROPERTY(int, StartingDropships);
+	PROPERTY(int, StartingDropshipsCount);
 	PROPERTY(TypeList<TechnoTypeClass*>, StartingDropships);
 	PROPERTY(TypeList<int>, AllowableUnits);
 	PROPERTY(TypeList<int>, AllowableUnitMaximums);
@@ -1259,7 +1259,7 @@ public:
 	PROPERTY_STRING(OverParTitle, 0x1F); //35EE
 	PROPERTY_STRING(OverParMessage, 0x1F); //360D
 	PROPERTY_STRING(LSLoadMessage, 0x1F); //362C
-	PROPERTY_STRING(LSLoadMessage, 0x1F); //364B
+	PROPERTY_STRING(LSBrief, 0x1F); //364B
 	PROPERTY(int, LS640BriefLocX);
 	PROPERTY(int, LS640BriefLocY);
 	PROPERTY(int, LS800BriefLocX);
