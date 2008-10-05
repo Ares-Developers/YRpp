@@ -28,20 +28,19 @@ public:
 	virtual int Size() R0;
 
 	//Constructor
-	EMPulseClass(CellStruct dwCrd,int nSpread,int nDuration) : AbstractClass(false)
-		{ PUSH_IMM(0); PUSH_VAR32(nDuration); PUSH_VAR32(nSpread); PUSH_VAR32(dwCrd); THISCALL(0x4C52B0); }
+	EMPulseClass(CellStruct dwCrd, int nSpread, int nDuration, DWORD dwUnk) : AbstractClass(false)
+		JMP_THIS(0x4C52B0);
 
 protected:
-	EMPulseClass():AbstractClass(false){}
-	EMPulseClass(bool X):AbstractClass(X){}
+	EMPulseClass() : AbstractClass(false){}
 
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY_STRUCT(CellStruct,		BaseCoords);
-	PROPERTY(int,				Spread);
-	PROPERTY(int,				CreationTime);	//frame in which this EMP got created
-	PROPERTY(int,				Duration);
+	PROPERTY_STRUCT(CellStruct, BaseCoords);
+	PROPERTY(int, Spread);
+	PROPERTY(int, CreationTime);	//frame in which this EMP got created
+	PROPERTY(int, Duration);
 };
 
 #endif

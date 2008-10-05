@@ -25,26 +25,25 @@ public:
 	virtual int	Size() R0;
 
 	void Detonate()
-		{ THISCALL(0x438720); }
+		JMP_THIS(0x438720);
 
 	void Disarm()
-		{ THISCALL(0x4389B0); }
+		JMP_THIS(0x4389B0);
 
 	void IsDeathBomb()
-		{ THISCALL(0x4389F0); }
+		JMP_THIS(0x4389F0);
 
 	void GetCurrentFlickerFrame() // which frame of the ticking bomb to draw
-		{ THISCALL(0x438A00); }
+		JMP_THIS(0x438A00);
 
 	void TimeToExplode()
-		{ THISCALL(0x438A70); }
+		JMP_THIS(0x438A70);
 
 
 protected:
 	//Constructor
 	//Bombs have a special constructor that just should not be called like this...
 	BombClass() : AbstractClass(false) { }
-	BombClass(bool X) : AbstractClass(X) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

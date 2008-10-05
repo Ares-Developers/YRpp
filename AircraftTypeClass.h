@@ -26,15 +26,12 @@ public:
 	//TechnoTypeClass
 
 	//Constructor
-	AircraftTypeClass(const char* id):TechnoTypeClass(false)
-		{ PUSH_VAR32(id); THISCALL(0x41C8B0); }
+	AircraftTypeClass(const char* pID) : TechnoTypeClass(false)
+		JMP_THIS(0x41C8B0);
 
 protected:
 	//default contructor, only used by polymorphism
-	AircraftTypeClass():TechnoTypeClass(false)
-		{ }
-	AircraftTypeClass(bool X):TechnoTypeClass(false)
-		{ }
+	AircraftTypeClass() : TechnoTypeClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

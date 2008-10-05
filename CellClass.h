@@ -40,17 +40,17 @@ public:
 	// non-virtual
 
 	// get content objects
-	ObjectClass *FindObjectNearestTo(CoordStruct *where, bool alt, ObjectClass *ExcludeThis)
-		{ PUSH_VAR32(ExcludeThis); PUSH_VAR8(alt); PUSH_VAR32(where); THISCALL(0x47C3D0); }
+	ObjectClass *FindObjectNearestTo(CoordStruct *coords, bool alt, ObjectClass *ExcludeThis)
+		JMP_THIS(0x47C3D0);
 
 	ObjectClass *FindObjectOfType(int AbstractID, bool alt)
-		{ PUSH_VAR8(alt); PUSH_VAR32(AbstractID); THISCALL(0x47C4D0); }
+		JMP_THIS(0x47C4D0);
 
 	BuildingClass *GetBuilding()
-		{ THISCALL(0x47C520); }
+		JMP_THIS(0x47C520);
 
 	UnitClass *GetUnit(bool alt)
-		{ PUSH_VAR8(alt); THISCALL(0x47EBA0); }
+		JMP_THIS(0x47EBA0);
 
 	InfantryClass *GetInfantry(bool alt)
 		{ PUSH_VAR8(alt); THISCALL(0x47EC40); }
@@ -65,82 +65,72 @@ public:
 	 * failing that, calls FindObjectNearestTo,
 	 * if that fails too, reiterates Content looking for Terrain
 	 */
-	ObjectClass *GetSomeObject(CoordStruct *where, bool alt)
-		{ PUSH_VAR32(where); PUSH_VAR8(alt); THISCALL(0x47C5A0); }
-
+	ObjectClass *GetSomeObject(CoordStruct *coords, bool alt)
+		JMP_THIS(0x47C5A0);
 
 	// misc
 	void SetWallOwner()
-		{ THISCALL(0x47D210); }
+		JMP_THIS(0x47D210);
 
 	// adjusts LAT
 	void SetupLAT()
-		{ THISCALL(0x47CA80); }
+		JMP_THIS(0x47CA80);
 
 	// checks for nearby cliff impassability, calls SetupLAT(), sets up TubeClass if tunnel, cell anim if attached, etc
 	void Setup()
-		{ THISCALL(0x47D2B0); }
+		JMP_THIS(0x47D2B0);
 
 	void BlowUpBridge()
-		{ THISCALL(0x47DD70); }
+		JMP_THIS(0x47DD70);
 
 	// those unks are passed to TechnoClass::Scatter in that same order
 	void ScatterContent(DWORD unk2, DWORD unk3, DWORD unk4, bool alt)
-		{ PUSH_VAR8(alt); PUSH_VAR32(unk4); PUSH_VAR32(unk3); PUSH_VAR32(unk2); THISCALL(0x481670); }
+		JMP_THIS(0x481670);
 
 	void GetNeighbourCell(unsigned int direction)
-		{ PUSH_VAR32(direction); THISCALL(0x481810); }
+		JMP_THIS(0x481810);
 
 	// called whenever anything moves, first to remove threat from source cell, second time to add threat to dest cell
-	void UpdateThreat(unsigned int SourceHouse, signed int ThreatLevel)
-		{ PUSH_VAR32(ThreatLevel); PUSH_VAR32(SourceHouse); THISCALL(0x481870); }
+	void UpdateThreat(unsigned int SourceHouse, int ThreatLevel)
+		JMP_THIS(0x481870);
 
 	void CollectCrate(FootClass *Collector)
-		{ THISCALL(0x481A00); }
+		JMP_THIS(0x481A00);
 
-	void ProcessColourComponents(int *arg0, int *Intensity, signed int *Ambient, int *a5, int *a6, int *tintR, int *tintG, int *tintB)
-		{ PUSH_VAR32(tintB);
-		  PUSH_VAR32(tintG);
-		  PUSH_VAR32(tintR);
-		  PUSH_VAR32(a6);
-		  PUSH_VAR32(a5);
-		  PUSH_VAR32(Ambient);
-		  PUSH_VAR32(Intensity);
-		  PUSH_VAR32(arg0);
-			THISCALL(0x484180); }
+	void ProcessColourComponents(int *arg0, int *Intensity, int *Ambient, int *a5, int *a6, int *tintR, int *tintG, int *tintB)
+		JMP_THIS(0x484180);
 
 	/*TubeClass*/void GetTunnel()
-		{ THISCALL(0x484F20); }
+		JMP_THIS(0x484F20);
 
 	// don't laugh, it returns the uiname of contained tiberium... which nobody ever sets
 	wchar_t *GetUIName()
-		{ THISCALL(0x484FF0); }
+		JMP_THIS(0x484FF0);
 
 	// returns the tiberium's index in OverlayTypes
 	int GetContainedTiberiumIndex()
-		{ THISCALL(0x485010); }
+		JMP_THIS(0x485010);
 
 	int GetContainedTiberiumValue()
-		{ THISCALL(0x485020); }
+		JMP_THIS(0x485020);
 
 	int SetMapCoords(CoordStruct *coords)
-		{ PUSH_VAR32(coords); THISCALL(0x485240); }
+		JMP_THIS(0x485240);
 
 	// in leptons
 	CoordStruct *Get3DCoords(CoordStruct *result)
-		{ PUSH_VAR32(result); THISCALL(0x486840); }
+		JMP_THIS(0x486840);
 
 	// depends on one of the cell flags being set
 	CoordStruct *Get3DCoords2(CoordStruct *result)
-		{ PUSH_VAR32(result); THISCALL(0x486890); }
+		JMP_THIS(0x486890);
 
 	// used by ambient waves and stuff
 	CoordStruct *Get3DCoords3(CoordStruct *result)
-		{ PUSH_VAR32(result); THISCALL(0x480A30); }
+		JMP_THIS(0x480A30);
 
 	void ActivateVeins()
-		{ THISCALL(0x486920); }
-
+		JMP_THIS(0x486920);
 
 	// cloak generators
 	bool CloakGen_InclHouse(unsigned int idx)
@@ -154,8 +144,7 @@ public:
 
 	// unused, returns 0 if that house doesn't have cloakgens covering this cell or Player has sensors over this cell
 	bool DrawObjectsCloaked(int OwnerHouseIdx)
-		{ PUSH_VAR32(OwnerHouseIdx); THISCALL(0x486800); }
-
+		JMP_THIS(0x486800);
 
 	// sensors
 	bool Sensors_InclHouse(unsigned int idx)
@@ -167,7 +156,6 @@ public:
 	void Sensors_RemOfHouse(unsigned int idx)
 		{ --this->SensorsOfHouses[idx]; }
 
-
 	// disguise sensors
 	bool DisguiseSensors_InclHouse(unsigned int idx)
 		{ return this->DisguiseSensorsOfHouses[idx] > 0; }
@@ -178,7 +166,6 @@ public:
 	void DisguiseSensors_RemOfHouse(unsigned int idx)
 		{ --this->DisguiseSensorsOfHouses[idx]; }
 
-
 	// Rad Sites
 	void SetRadSite(RadSiteClass *Rad)
 		{ this->RadSite = Rad; }
@@ -187,20 +174,16 @@ public:
 		{ return this->RadSite; }
 
 	bool IsRadiated()
-		{ THISCALL(0x487C90); }
+		JMP_THIS(0x487C90);
 
 	int GetRadLevel()
-		{ THISCALL(0x487CB0); }
+		JMP_THIS(0x487CB0);
 
 	void RadLevel_Increase(double amount)
-		{ double *arg = &amount;
-		  PUSH_VAR64(arg);
-		  THISCALL(0x487CE0); }
+		JMP_THIS(0x487CE0);
 
 	void RadLevel_Decrease(double amount)
-		{ double *arg = &amount;
-		  PUSH_VAR64(arg);
-		  THISCALL(0x487D00); }
+		JMP_THIS(0x487D00);
 
 	// helper mimicking game's behaviour
 	ObjectClass* GetContent()
@@ -209,51 +192,51 @@ public:
 	// tilesets
 #define ISTILE(tileset, addr) \
 	bool Tile_Is_ ## tileset() \
-		{ THISCALL(addr); }
+		JMP_THIS(addr);
 
-ISTILE(Tunnel, 0x484AB0);
-ISTILE(Water, 0x485060);
-ISTILE(Blank, 0x486380);
-ISTILE(Ramp, 0x4863A0);
-ISTILE(Cliff, 0x4863D0);
-ISTILE(Shore, 0x4865B0);
-ISTILE(Wet, 0x4865D0);
-ISTILE(MiscPave, 0x486650);
-ISTILE(Pave, 0x486670);
-ISTILE(DirtRoad, 0x486690);
-ISTILE(PavedRoad, 0x4866D0);
-ISTILE(PavedRoadEnd, 0x4866F0);
-ISTILE(PavedRoadSlope, 0x486710);
-ISTILE(Median, 0x486730);
-ISTILE(Bridge, 0x486750);
-ISTILE(WoodBridge, 0x486770);
-ISTILE(ClearToSandLAT, 0x486790);
-ISTILE(Green, 0x4867B0);
-ISTILE(NotWater, 0x4867E0);
-ISTILE(DestroyableCliff, 0x486900);
+	ISTILE(Tunnel, 0x484AB0);
+	ISTILE(Water, 0x485060);
+	ISTILE(Blank, 0x486380);
+	ISTILE(Ramp, 0x4863A0);
+	ISTILE(Cliff, 0x4863D0);
+	ISTILE(Shore, 0x4865B0);
+	ISTILE(Wet, 0x4865D0);
+	ISTILE(MiscPave, 0x486650);
+	ISTILE(Pave, 0x486670);
+	ISTILE(DirtRoad, 0x486690);
+	ISTILE(PavedRoad, 0x4866D0);
+	ISTILE(PavedRoadEnd, 0x4866F0);
+	ISTILE(PavedRoadSlope, 0x486710);
+	ISTILE(Median, 0x486730);
+	ISTILE(Bridge, 0x486750);
+	ISTILE(WoodBridge, 0x486770);
+	ISTILE(ClearToSandLAT, 0x486790);
+	ISTILE(Green, 0x4867B0);
+	ISTILE(NotWater, 0x4867E0);
+	ISTILE(DestroyableCliff, 0x486900);
 
 	// HACK EVIL HACK
 	static int BridgeHeight()
-		{ return *(int *)0xB0C07C; }
+	{ return *(int *)0xB0C07C; }
 
 	static CoordStruct * Cell2Coord(CellStruct* cell, CoordStruct *crd)
-		{
-			crd->X = cell->X * 256 + 128;
-			crd->Y = cell->Y * 256 + 128;
-			crd->Z = 0;
-			return crd;
-		}
+	{
+		crd->X = cell->X * 256 + 128;
+		crd->Y = cell->Y * 256 + 128;
+		crd->Z = 0;
+		return crd;
+	}
 
 	CoordStruct * FixHeight(CoordStruct *crd)
-		{
-			crd->Z += (this->Flags & cf_Bridge) * BridgeHeight();
-			return crd;
-		}
+	{
+		crd->Z += (this->Flags & cf_Bridge) * BridgeHeight();
+		return crd;
+	}
 
 protected:
 	//Constructor
-	CellClass():AbstractClass(false)
-		{ THISCALL(0x47BBF0); }
+	CellClass() : AbstractClass(false)
+		{ JMP_THIS(0x47BBF0); }
 
 	//===========================================================================
 	//===== Properties ==========================================================

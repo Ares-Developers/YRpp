@@ -28,7 +28,8 @@ struct ColorStruct
 	}
 
 	ColorStruct()
-	{ }
+	{
+	}
 
 	ColorStruct(BYTE _R, BYTE _G, BYTE _B)
 	{
@@ -41,7 +42,7 @@ struct ColorStruct
 //used for light colors
 struct TintStruct
 {
-	int Red,Green,Blue;
+	int Red, Green, Blue;
 };
 
 //uses the clock values
@@ -53,7 +54,7 @@ struct DirStruct
 //Random numbe range
 struct RandomStruct
 {
-	int Min,Max;
+	int Min, Max;
 };
 
 //3D Matrix
@@ -65,12 +66,13 @@ struct Matrix3DStruct
 //obvious
 struct RectangleStruct
 {
-	int X,Y,Width,Height;
+	int X, Y, Width, Height;
 };
 
 //used for timed events, time measured in frames!
-struct TimerStruct
+class TimerStruct
 {
+public:
 	int StartTime;
 	int unknown;
 	int TimeLeft;
@@ -82,13 +84,13 @@ struct TimerStruct
 		{ return this->StartTime != -1 && this->GetTimeLeft() <= 0; }
 
 	int GetTimeLeft()
-		{ THISCALL(0x426630); }
+		JMP_STD(0x426630);
 
 	void Start(int duration)
-		{ PUSH_VAR32(duration); THISCALL(0x46B640); }
+		JMP_STD(0x46B640);
 
 	void StartIfEmpty() // just sets start frame
-		{ THISCALL(0x6CE2C0); }
+		JMP_STD(0x6CE2C0);
 };
 
 #endif

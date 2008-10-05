@@ -13,6 +13,7 @@
 
 #include <Unsorted.h>
 #include <CCFileClass.h>
+#include <MixFileClass.h>
 
 //AbstractClass Tree
 #include <AircraftClass.h>

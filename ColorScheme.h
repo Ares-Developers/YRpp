@@ -31,10 +31,11 @@ public:
 		}
 
 	//Constructor, Destructor
-	ColorScheme()
-		{ }; //YET TO ADD!
+	ColorScheme(const char* pID, ColorStruct* BaseColor, DWORD arg8, DWORD argC, DWORD arg10, DWORD arg14)
+		JMP_THIS(0x68C710);
+
 	~ColorScheme()
-		{ THISCALL(0x68C8D0); }
+		JMP_THIS(0x68C8D0);
 
 	//===========================================================================
 	//===== Properties ==========================================================

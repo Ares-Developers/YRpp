@@ -8,16 +8,16 @@ class ObjectClass;
 class LayerClass : public DynamicVectorClass<ObjectClass*>
 {
 	virtual bool AddObject(ObjectClass* pObject, bool bUnknown)
-		{ PUSH_VAR8(bUnknown); PUSH_VAR32(pObject); THISCALL(0x5519B0); }
+		JMP_THIS(0x5519B0);
 
 	virtual void Clear_()
 		{ Clear(); }
 
 	void Load(IStream* pStm)
-		{ PUSH_VAR32(pStm); THISCALL(0x551B90);}
+		JMP_THIS(0x551B90);
 
 	void Save(IStream* pStm)
-		{ PUSH_VAR32(pStm); THISCALL(0x551B20);}
+		JMP_THIS(0x551B20);
 };
 
 #define		NUM_LAYERS		5
@@ -32,12 +32,12 @@ public:
 		{ return (DisplayClass*)0x87F7E8; }
 
 	static LayerClass* GetLayer(eLayer lyr)
-		{
-			if(lyr >= lyr_Underground && lyr <= lyr_Top)
-				return ((LayerClass**)0x8A0360)[lyr];
-			else
-				return NULL;
-		}
+	{
+		if(lyr >= lyr_Underground && lyr <= lyr_Top)
+			return ((LayerClass**)0x8A0360)[lyr];
+		else
+			return NULL;
+	}
 
 	//Destructor
 	virtual ~DisplayClass() RX;

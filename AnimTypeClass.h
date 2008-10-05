@@ -21,12 +21,10 @@ public:
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
-	//IPersistStream
 	//AbstractClass
 	virtual eAbstractType WhatAmI() R0;
 	virtual int	Size() R0;
 
-	//AbstractTypeClass
 	//ObjectTypeClass
 	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords,HouseClass* pOwner) R0;
 	virtual ObjectClass* CreateObject(HouseClass* owner) R0;
@@ -39,12 +37,11 @@ public:
 	virtual ~AnimTypeClass() RX;
 
 	//Constructor
-	AnimTypeClass(const char* id):ObjectTypeClass(false)
-										{PUSH_VAR32(id);THISCALL(0x427530);}
+	AnimTypeClass(const char* pID) : ObjectTypeClass(false)
+		JMP_THIS(0x427530);
 
 protected:
-	AnimTypeClass(){};
-	AnimTypeClass(bool X):ObjectTypeClass(false){};
+	AnimTypeClass() : ObjectTypeClass(false) { };
 
 	//===========================================================================
 	//===== Properties ==========================================================
@@ -62,8 +59,7 @@ protected:
 	PROPERTY(int,				End);
 	PROPERTY(int,				LoopCount);
 	PROPERTY(AnimTypeClass*,	Next);
-//	PROPERTY(ParticleTypeClass*,SpawnsParticle);
-	PROPERTY(int ,SpawnsParticle); // index of that ParticleTypeClass
+	PROPERTY(int, SpawnsParticle); // index of that ParticleTypeClass
 	PROPERTY(int,				NumParticles);
 	PROPERTY(int,				DetailLevel);
 	PROPERTY(int,				TranslucencyDetailLevel);

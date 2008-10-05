@@ -207,7 +207,7 @@ public:
 	//Properties
 	PROPERTY(DWORD, unknown_4);
 	PROPERTY(DWORD, unknown_8);
-	PROPERTY_STRUCT(GenericList<INISection>, Sections);
+	PROPERTY_STRUCT(List<INISection>, Sections);
 	PROPERTY(DWORD, unknown_28);
 	PROPERTY(DWORD, unknown_2C);
 	PROPERTY(DWORD, unknown_30);

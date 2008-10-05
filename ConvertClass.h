@@ -15,33 +15,25 @@ public:
 	//global array
 	static DynamicVectorClass<ConvertClass*>* Array;
 
-	//Constructor, Destructor
 	ConvertClass(
 		ColorStruct* pColorData,
 		ColorStruct* pUnknownColorData, //???
 		DSurface* pSurface,
 		int nUnknown,
 		bool AllocBlitters)
-		{
-			PUSH_VAR8(AllocBlitters);
-			PUSH_VAR32(nUnknown);
-			PUSH_VAR32(pSurface);
-			PUSH_VAR32(pUnknownColorData);
-			PUSH_VAR32(pColorData);
-			THISCALL(0x48E740);
-		}
+			JMP_THIS(0x48E740);
 
-	~ConvertClass()
-		{ PUSH_IMM(SDDTOR_NODELETE); THISCALL(0x491210); }
+	virtual ~ConvertClass() RX;
 
 protected:
-	ConvertClass(){ }
+	ConvertClass() { }
+	ConvertClass(bool) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
 	//That's right, I don't know anything about this class, except what it's used for...
-	PROTECTED_PROPERTY(BYTE,    unknown_0[0x188]);
+	PROTECTED_PROPERTY(BYTE, unknown_0[0x188]);
 };
 
 class LightConvertClass : public ConvertClass
@@ -50,19 +42,29 @@ public:
 	//global array
 	static DynamicVectorClass<LightConvertClass*>* Array;
 
-protected:
 	//Constructor, Destructor
-	LightConvertClass()
-		{ }
+	LightConvertClass(
+		DWORD arg0,
+		DWORD arg4,
+		DWORD arg8,
+		DWORD argC,
+		DWORD arg10,
+		DWORD arg14,
+		DWORD arg18,
+		DWORD arg1C,
+		DWORD arg20) : ConvertClass(false)
+			JMP_THIS(0x555DA0);
 
-	~LightConvertClass()
-		{ }
+	virtual ~LightConvertClass() RX;
+
+protected:
+	LightConvertClass() : ConvertClass(false) {}
 
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
 	//I have no idea...
-	PROTECTED_PROPERTY(BYTE,    unknown_0[0x2C]);
+	PROTECTED_PROPERTY(BYTE, unknown_0[0x2C]);
 };
 
 #endif

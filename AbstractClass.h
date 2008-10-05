@@ -99,14 +99,14 @@ public:
 
 	//Constructor
 	AbstractClass()
-		{ THISCALL(0x410170); }
+		JMP_THIS(0x410170);
 
 	//non-virtual
 	void AnnounceExpiredPointer()
-		{ THISCALL(0x7258D0); }
+		JMP_THIS(0x7258D0);
 
 protected:
-	AbstractClass(bool){}	//trick to disable base class construction!
+	AbstractClass(bool) { }	//trick to disable further base class construction!
 
 	//===========================================================================
 	//===== Properties ==========================================================
@@ -116,7 +116,7 @@ protected:
 	PROPERTY(DWORD, AbstractFlags);	//Flags, see ABSFLAGS definitions in GeneralDefinitions.
 	PROPERTY(DWORD, unknown_18);
 	PROPERTY(DWORD, unknown_1C);
-	PROPERTY(bool,  bIsDirty);		//For IUnknown.
+	PROPERTY(bool, bIsDirty);		//For IUnknown.
 };
 
 #endif

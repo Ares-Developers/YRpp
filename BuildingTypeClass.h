@@ -35,8 +35,7 @@ public:
 
 	//IPersistStream
 	//Destructor
-	virtual ~BuildingTypeClass()
-		{ THISCALL(0x45E580); }
+	virtual ~BuildingTypeClass() RX;
 
 	//AbstractClass
 	virtual eAbstractType WhatAmI() R0;
@@ -52,21 +51,17 @@ public:
 	virtual SHPStruct* LoadBuildup() R0;
 
 	//Constructor
-	BuildingTypeClass(const char* id):TechnoTypeClass(false)
-		{ PUSH_VAR32(id); THISCALL(0x45DD90); }
+	BuildingTypeClass(const char* pID) : TechnoTypeClass(false)
+		JMP_THIS(0x45DD90);
 
 	//non-virtual
 	short GetFoundationWidth()
-		{ THISCALL(0x45EC90); }
+		JMP_THIS(0x45EC90);
 	short GetFoundationHeight(bool bIncludeBib)
-		{ PUSH_VAR8(bIncludeBib); THISCALL(0x45ECA0); }
+		JMP_THIS(0x45ECA0);
 
 protected:
-	//default contructor, only used by polymorphism
-	BuildingTypeClass():TechnoTypeClass(false)
-		{ }
-	BuildingTypeClass(bool X):TechnoTypeClass(false)
-		{ }
+	BuildingTypeClass() : TechnoTypeClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

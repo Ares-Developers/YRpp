@@ -36,10 +36,10 @@ public:
 	virtual bool SetFileTime(DWORD FileTime) R0;
 	virtual void CDCheck(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) = 0;
 
-	FileClass(){};
+	FileClass() { };
 
 protected:
-	FileClass(bool){}
+	FileClass(bool) { }
 
 	//Properties
 	PROPERTY(bool,			SkipCDCheck);
@@ -74,11 +74,12 @@ public:
 	virtual void CDCheck(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
 
 	//Constructor
-	RawFileClass(const char* pFileName):FileClass(false){PUSH_VAR32(pFileName);THISCALL(0x65CA80);}
+	RawFileClass(const char* pFileName) : FileClass(false)
+		JMP_THIS(0x65CA80);
 
 protected:
-	RawFileClass(bool X):FileClass(X){}
-	RawFileClass():FileClass(false){}
+	RawFileClass(bool X) : FileClass(X) { }
+	RawFileClass() : FileClass(false) { }
 
 	//Properties
 	PROPERTY(int,			FilePointer);
@@ -101,10 +102,11 @@ public:
 	//FileClass
 
 	//Constructor
-	BufferIOFileClass():RawFileClass(false){THISCALL(0x431B20);}
+	BufferIOFileClass() : RawFileClass(false)
+		JMP_THIS(0x431B20);
 
 protected:
-	BufferIOFileClass(bool X):RawFileClass(X){}
+	BufferIOFileClass(bool X) : RawFileClass(X) { }
 
 	//Properties
 	PROPERTY(bool,			unknown_bool_24);
@@ -136,10 +138,11 @@ public:
 	//FileClass
 
 	//Constructor
-	CDFileClass():BufferIOFileClass(false){THISCALL(0x47AA30);}
+	CDFileClass() : BufferIOFileClass(false)
+		JMP_THIS(0x47AA30);
 
 protected:
-	CDFileClass(bool X):BufferIOFileClass(X){}
+	CDFileClass(bool X) : BufferIOFileClass(X) { }
 
 	//Property
 	PROPERTY(DWORD,			unknown_54);
@@ -156,11 +159,9 @@ public:
 	//FileClass
 
 	//Constructor
-	CCFileClass():CDFileClass(false){}
-	CCFileClass(const char* pFileName):CDFileClass(false){PUSH_VAR32(pFileName);THISCALL(0x4739F0);}
-
-protected:
-	CCFileClass(bool X):CDFileClass(X){}
+	CCFileClass() : CDFileClass(false) { }
+	CCFileClass(const char* pFileName) : CDFileClass(false)
+		JMP_THIS(0x4739F0);
 
 	//Properties
 	PROPERTY_STRUCT(Allocator,		FileAllocator);
@@ -170,37 +171,5 @@ protected:
 
 //TO BE CREATED WHEN NEEDED
 //class RAMFileClass : public FileClass{/*...*/};
-
-struct MixHeaderData
-{
-	DWORD ID;
-	DWORD Offset;
-	DWORD Size;
-};
-
-class MixFileClass
-{
-public:
-	static GenericList<MixFileClass>* MIXes;
-
-	virtual ~MixFileClass() RX;
-
-	MixFileClass(const char* pFileName)
-		{ PUSH_VAR32(pFileName); THISCALL(0x5B3C20); }
-
-protected:
-
-  PROPERTY(MixFileClass*, Next);
-  PROPERTY(MixFileClass*, Prev);
-  PROPERTY(const char*, FileName);
-  PROPERTY(bool, Blowfish);
-  PROPERTY(bool, Encryption);
-  PROPERTY(int, CountFiles);
-  PROPERTY(int, FileSize);
-  PROPERTY(int, FileStartOffset);
-  PROPERTY(MixHeaderData*, Headers);
-  PROPERTY(int, field_24);
-
-};
 
 #endif

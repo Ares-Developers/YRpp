@@ -18,27 +18,27 @@ public:
 
 	// draws all the visible bombs, expires the outdated ones
  	void Update()
-		{ THISCALL(0x438BF0); }
+		JMP_THIS(0x438BF0);
 	
 	// the main one, ivan planting a bomb (creates a BombClass inside)
 	void Plant(TechnoClass *SourceObject, TechnoClass *TargetObject)
-		{ PUSH_VAR32(TargetObject); PUSH_VAR32(SourceObject); THISCALL(0x438E70); }
+		JMP_THIS(0x438E70);
 
 	// duh
 	void AddDetector(TechnoClass *Detector)
-		{ PUSH_VAR32(Detector); THISCALL(0x439080); }
+		JMP_THIS(0x439080);
 
 	// duh
 	void RemoveDetector(TechnoClass *Detector)
-		{ PUSH_VAR32(Detector); THISCALL(0x4390D0); }
+		JMP_THIS(0x4390D0);
 
 protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY_STRUCT(DynamicVectorClass<BombClass *>,	Bombs);				//all the BombClass instances on the map
-	PROPERTY_STRUCT(DynamicVectorClass<TechnoClass *>,	Detectors);		//all the BombSight'ed objects currently on the map
-	PROPERTY(int,		SomeArgument); // defaults to 100, some iterators set it to 1
+	PROPERTY_STRUCT(DynamicVectorClass<BombClass *>, Bombs);				//all the BombClass instances on the map
+	PROPERTY_STRUCT(DynamicVectorClass<TechnoClass *>, Detectors);		//all the BombSight'ed objects currently on the map
+	PROPERTY(int, SomeArgument); // defaults to 100, some iterators set it to 1
 };
 
 #endif

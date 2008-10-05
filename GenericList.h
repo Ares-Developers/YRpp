@@ -5,36 +5,56 @@
 
 #include <YRPPCore.h>
 
-template <typename T> class GenericNode
+class GenericNode
 {
 public:
 	//Destructor
-	virtual ~GenericNode()
-		{ PUSH_IMM(0); THISCALL(0x40E390); }
+	virtual ~GenericNode() RX;
 
 	//Constructor
 	GenericNode()
-		{ Next=NULL; Previous=NULL; }
+		JMP_THIS(0x40E320);
 
 	//Properties
-	T*	Next;
-	T*	Previous;
+	PROPERTY(GenericNode*, Next);
+	PROPERTY(GenericNode*, Previous);
 };
 
-template <typename T> class GenericList
+template <typename T> class Node : public GenericNode
 {
 public:
 	//Destructor
-	virtual ~GenericList()
-		{ PUSH_IMM(0); THISCALL(0x40E3E0); }
+	virtual ~Node() RX;
+
+	//Constructor
+	Node()
+		JMP_THIS(0x40E320);
+};
+
+class GenericList
+{
+public:
+	//Destructor
+	virtual ~GenericList() RX;
 
 	//Constructor
 	GenericList()
-		{ THISCALL(0x52ACE0); }
+		JMP_THIS(0x52ACE0);
 
 	//Properties
-	GenericNode<T>	First;
-	GenericNode<T>	Last;
+	PROPERTY_STRUCT(GenericNode, First);
+	PROPERTY_STRUCT(GenericNode, Last);
+};
+
+template <typename T> class List : public GenericList
+{
+public:
+	//Destructor
+	virtual ~List() RX;
+
+	//Constructor
+	List()
+		JMP_THIS(0x52ACE0);
 };
 
 #endif

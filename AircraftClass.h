@@ -41,22 +41,19 @@ public:
 	virtual HRESULT _stdcall Load(IStream* pStm) R0;
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
+	//AbstractClass
+	virtual eAbstractType WhatAmI() R0;
+	virtual int	Size() R0;
+
 	//Destructor
 	virtual ~AircraftClass() RX;
 
-	//AbstractClass
-	//ObjectClass
-	//MissionClass
-	//TechnoClass
-	//FootClass
-
 	//Constructor
-	AircraftClass(AircraftTypeClass* pType, HouseClass* pOwner):FootClass(false)
-		{ PUSH_VAR32(pOwner); PUSH_VAR32(pType); THISCALL(0x413D20); }
+	AircraftClass(AircraftTypeClass* pType, HouseClass* pOwner) : FootClass(false)
+		JMP_THIS(0x413D20);
 
 protected:
-	AircraftClass():FootClass() {}
-	AircraftClass(bool X):FootClass(X) {}
+	AircraftClass() : FootClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

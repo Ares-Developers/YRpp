@@ -69,15 +69,15 @@ public:
 	virtual bool vt_entry_550(DWORD dwUnk) R0;
 
 	//Constructor
-	FootClass(HouseClass* owner):TechnoClass(false)
-		{ PUSH_VAR32(owner); THISCALL(0x4D31E0); }
+	FootClass(HouseClass* owner) : TechnoClass(false)
+		JMP_THIS(0x4D31E0);
 
 	// non-virtual
 
 	// only used by squid damage routines, normal wakes are created differently it seems
 	// creates 3 wake animations behind the unit
-	void CreateWakes(int X, int Y, int Z)
-		{ PUSH_VAR32(Z); PUSH_VAR32(Y); PUSH_VAR32(X); THISCALL(0x629E90); }
+	void CreateWakes(CoordStruct coords)
+		JMP_THIS(0x629E90);
 
 protected:
 	FootClass() : TechnoClass(false)

@@ -30,19 +30,17 @@ public:
 
 	//Constructor
 	FactoryClass() : AbstractClass(false)
-		{ THISCALL(0x4C98B0); }
+		JMP_THIS(0x4C98B0);
 
 	//non-virtual
 	bool DemandProduction(TechnoTypeClass* pType, HouseClass* pOwner, bool bShouldQueue)
-		{ PUSH_VAR8(bShouldQueue); PUSH_VAR32(pOwner); PUSH_VAR32(pType); THISCALL(0x4C9C70); }
+		JMP_THIS(0x4C9C70);
 	bool AbandonProduction()
-		{ THISCALL(0x4C9FF0); }
+		JMP_THIS(0x4C9FF0);
 	unsigned int CountQueued(TechnoTypeClass * pType)
-		{ PUSH_VAR32(pType); THISCALL(0x4CA670); }
+		JMP_THIS(0x4CA670);
 
 protected:
-	FactoryClass(bool X):AbstractClass(X){}
-
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================

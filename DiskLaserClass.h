@@ -29,15 +29,12 @@ public:
 	virtual int Size() R0;
 
 	//Constructor
-	DiskLaserClass():AbstractClass(false)
-		{ THISCALL(0x4A7A30); }
+	DiskLaserClass() : AbstractClass(false)
+		JMP_THIS(0x4A7A30);
 
 	//non-virtual
-	void Fire(TechnoClass* pOwner,TechnoClass* pTarget,WeaponTypeClass* pWeapon,int nDamage)
-	{PUSH_VAR32(nDamage);PUSH_VAR32(pWeapon);PUSH_VAR32(pTarget);PUSH_VAR32(pOwner);THISCALL(0x4A71A0);}
-
-protected:
-	DiskLaserClass(bool X):AbstractClass(X){}
+	void Fire(TechnoClass* pOwner, TechnoClass* pTarget, WeaponTypeClass* pWeapon, int nDamage)
+		JMP_THIS(0x4A71A0);
 
 	//===========================================================================
 	//===== Properties ==========================================================

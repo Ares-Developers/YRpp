@@ -55,25 +55,22 @@ public:
 
 	// kick out content
 	void UnloadBunker()
-		{ THISCALL(0x4593A0); }
+		JMP_THIS(0x4593A0);
 
 	// content is dead - chronosphered away or died inside
 	void ClearBunker()
-		{ THISCALL(0x459470); }
+		JMP_THIS(0x459470);
 
 	// kick out content, remove anims, etc... don't ask me what's different from kick out
 	void EmptyBunker()
-		{ THISCALL(0x4595C0); }
+		JMP_THIS(0x4595C0);
 
 	//Constructor
-	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner)
-		{ PUSH_VAR32(pOwner); PUSH_VAR32(pType); THISCALL(0x43B740); }
+	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner) : TechnoClass(false)
+		JMP_THIS(0x43B740);
 
 protected:
-	BuildingClass():TechnoClass(false)
-		{ }
-	BuildingClass(bool X):TechnoClass(X)
-		{ }
+	BuildingClass() : TechnoClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

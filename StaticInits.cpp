@@ -36,9 +36,6 @@ DECL(BuildingClass, 0xA8EB40);
 #include <BuildingTypeClass.h>
 DECL(BuildingTypeClass, 0xA83C68);
 
-#include <CCFileClass.h>
-GenericList<MixFileClass>* MixFileClass::MIXes = (GenericList<MixFileClass>* )0xABEFD8;
-
 #include <CCINIClass.h>
 CCINIClass* CCINIClass::INI_AI			= (CCINIClass*)0x887128;
 CCINIClass* CCINIClass::INI_Art			= (CCINIClass*)0x887180;
@@ -70,6 +67,9 @@ DECL(InfantryTypeClass, 0xA8E348);
 
 #include <ConvertClass.h>
 DECL(LightConvertClass, 0x87F698);
+
+#include <MixFileClass.h>
+List<MixFileClass*>* MixFileClass::MIXes = (List<MixFileClass*>* )0xABEFD8;
 
 #include <MouseClass.h>
 MouseCursor* MouseCursor::First = (MouseCursor*)0x82D028;

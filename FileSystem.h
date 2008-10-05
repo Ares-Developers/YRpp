@@ -44,17 +44,8 @@ struct SHPStruct
 class FileSystem
 {
 public:
-	static void* LoadFile(const char* pFileName, bool bLoadAsSHP)
-		{
-			void* pReturn;
-
-			SET_REG8(dl, bLoadAsSHP);
-			SET_REG32(ecx,pFileName);
-			CALL(0x5B40B0);
-			GET_REG32(pReturn,eax);
-
-			return pReturn;
-		}
+	static void* __fastcall LoadFile(const char* pFileName, bool bLoadAsSHP)
+		JMP_STD(0x5B40B0);
 
 	static void* LoadFile(const char* pFileName)
 		{ return LoadFile(pFileName, false); }
