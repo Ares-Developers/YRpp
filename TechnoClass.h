@@ -7,7 +7,6 @@
 
 #include <RadioClass.h>
 #include <TechnoTypeClass.h>
-#include <HouseClass.h>
 
 //forward declarations
 class AirstrikeClass;
@@ -15,6 +14,7 @@ class AnimClass;
 class BuildingClass;
 class CaptureManagerClass;
 class CellClass;
+class HouseClass;
 class FootClass;
 class InfantryTypeClass;
 class ObjectTypeClass;

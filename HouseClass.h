@@ -6,6 +6,7 @@
 #define HOUSE_H
 
 #include <HouseTypeClass.h>
+#include <BuildingClass.h>
 
 //forward declarations
 class SuperClass;
@@ -300,6 +301,84 @@ public:
 
 	AnimClass * __fastcall PsiWarn(CellClass *pTarget, BulletClass *Bullet, char *AnimName)
 		JMP_THIS(0x43B5E0);
+
+	int CountOwnedNow(TechnoTypeClass *Item)
+	{
+		int Index = Item->GetArrayIndex();
+		switch(Item->WhatAmI())
+		{
+			case abs_BuildingType:
+				return this->OwnedBuildingTypes.GetItemCount(Index);
+
+			case abs_UnitType:
+				return this->OwnedUnitTypes.GetItemCount(Index);
+
+			case abs_InfantryType:
+				return this->OwnedInfantryTypes.GetItemCount(Index);
+
+			case abs_AircraftType:
+				return this->OwnedAircraftTypes.GetItemCount(Index);
+
+			default:
+				return 0;
+		}
+	}
+
+	int CountOwnedEver(TechnoTypeClass *Item)
+	{
+		int Index = Item->GetArrayIndex();
+		switch(Item->WhatAmI())
+		{
+			case abs_BuildingType:
+				return this->OwnedBuildingTypes2.GetItemCount(Index);
+
+			case abs_UnitType:
+				return this->OwnedUnitTypes2.GetItemCount(Index);
+
+			case abs_InfantryType:
+				return this->OwnedInfantryTypes2.GetItemCount(Index);
+
+			case abs_AircraftType:
+				return this->OwnedAircraftTypes2.GetItemCount(Index);
+
+			default:
+				return 0;
+		}
+	}
+
+	bool HasFromSecretLab(TechnoTypeClass *Item)
+	{
+		for(int i = 0; i < this->SecretLabs.get_Count(); ++i)
+		{
+			if(this->SecretLabs[i]->get_SecretProduction() == Item)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	bool HasAllStolenTech(TechnoTypeClass *Item)
+	{
+		if(Item->get_RequiresStolenAlliedTech() && !this->Side0TechInfiltrated) { return false; }
+		if(Item->get_RequiresStolenSovietTech() && !this->Side1TechInfiltrated) { return false; }
+		if(Item->get_RequiresStolenThirdTech() && !this->Side2TechInfiltrated) { return false; }
+		return true;
+	}
+
+	bool InRequiredHouses(TechnoTypeClass *Item)
+	{
+		int Test = Item->get_RequiredHouses();
+		if(Test == -1) { return 1; }
+		return 0 != (Test & ( 1 << this->Type->get_ArrayIndex()));
+	}
+
+	bool InForbiddenHouses(TechnoTypeClass *Item)
+	{
+		int Test = Item->get_ForbiddenHouses();
+		if(Test == -1) { return 0; }
+		return 0 != (Test & ( 1 << this->Type->get_ArrayIndex()));
+	}
 
 	// reminder: verify the resulting binary layout
 

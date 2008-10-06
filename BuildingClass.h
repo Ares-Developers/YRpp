@@ -186,7 +186,7 @@ public:
 	PROPERTY(DWORD, StorageFilledSlots); // the old "silo needed" logic
 
 		// randomly assigned secret lab bonus, one of those three gets returned instead if NULL
-	PROPERTY(DWORD, SecretProduction); /*pointer, something to do with SecretInfantry, SecretUnit, SecretBuilding */
+	PROPERTY(TechnoTypeClass *, SecretProduction); /*pointer, something to do with SecretInfantry, SecretUnit, SecretBuilding */
 
 	PROPERTY_STRUCT(ColorStruct, ColorAdd);
 	PROPERTY(int, unknown_int_6FC);

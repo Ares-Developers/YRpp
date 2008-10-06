@@ -14,6 +14,9 @@ class TechnoTypeClass;
 class FactoryClass : public AbstractClass
 {
 public:
+
+	static DynamicVectorClass<FactoryClass *> *Array;
+
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 
@@ -39,6 +42,22 @@ public:
 		JMP_THIS(0x4C9FF0);
 	unsigned int CountQueued(TechnoTypeClass * pType)
 		JMP_THIS(0x4CA670);
+
+	static bool FindThisOwnerAndProduct(HouseClass *pHouse, TechnoTypeClass *pItem)
+	{
+		for(int i = 0; i < Array->get_Count(); ++i)
+		{
+			FactoryClass *Fact = Array->GetItem(i);
+			if(Fact->get_Owner() == pHouse)
+			{
+				if(Fact->CountQueued(pItem) > 0)
+				{
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 
 protected:
 	//===========================================================================

@@ -105,8 +105,9 @@ EXPORT _SuperClassCallback_Launch(REGISTERS* R)
 //-----------------------------------------------------------------------
 //Static Inits
 void (_stdcall* RulesClassCallback::Addition)(CCINIClass*) = NULL;
-void (_stdcall* RulesClassCallback::Load)(CCINIClass*, IStream*) = NULL;
-void (_stdcall* RulesClassCallback::Save)(CCINIClass*, IStream*) = NULL;
+void (_stdcall* RulesClassCallback::TypeData)(CCINIClass*) = NULL;
+void (_stdcall* RulesClassCallback::Load)(IStream*) = NULL;
+void (_stdcall* RulesClassCallback::Save)(IStream*) = NULL;
 
 //Implementations
 EXPORT _RulesClassCallback_Addition(REGISTERS* R)	//0x668F6A
@@ -119,13 +120,23 @@ EXPORT _RulesClassCallback_Addition(REGISTERS* R)	//0x668F6A
 	return 0;
 }
 
+EXPORT _RulesClassCallback_TypeData(REGISTERS* R)	//0x668F6A
+{
+	if(RulesClassCallback::TypeData)
+	{
+		CCINIClass* pINI = (CCINIClass*)R->get_ESI();
+		RulesClassCallback::TypeData(pINI);
+	}
+	return 0;
+}
+
 EXPORT _RulesClassCallback_Load(REGISTERS* R)	//0x678841
 {
 	if(RulesClassCallback::Load)
 	{
-		CCINIClass* pINI = (CCINIClass*)R->get_ESI();
+//		CCINIClass* pINI = (CCINIClass*)R->get_ESI();
 		IStream* pStm = (IStream*)R->get_StackVar32(0x4);
-		RulesClassCallback::Load(pINI, pStm);
+		RulesClassCallback::Load(pStm);
 	}
 	return 0;
 }
@@ -134,9 +145,9 @@ EXPORT _RulesClassCallback_Save(REGISTERS* R)	//0x675205
 {
 	if(RulesClassCallback::Save)
 	{
-		CCINIClass* pINI = (CCINIClass*)R->get_ESI();
+//		CCINIClass* pINI = (CCINIClass*)R->get_ESI();
 		IStream* pStm = (IStream*)R->get_StackVar32(0x4);
-		RulesClassCallback::Save(pINI, pStm);
+		RulesClassCallback::Save(pStm);
 	}
 	return 0;
 }

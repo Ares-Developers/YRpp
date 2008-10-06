@@ -53,6 +53,9 @@ DECL(ConvertClass, 0x89ECF8);
 #include <EMPulseClass.h>
 DECL(EMPulseClass, 0x8A3870);
 
+#include <FactoryClass.h>
+DECL(FactoryClass, 0xA83E30);
+
 #include <HouseClass.h>
 DECL(HouseClass, 0xA80228);
 

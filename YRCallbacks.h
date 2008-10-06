@@ -70,8 +70,10 @@ class RulesClassCallback
 public:
 	//Called after a rules INI file was loaded.
 	static void (_stdcall* Addition)(CCINIClass*);
-	static void (_stdcall* Load)(CCINIClass *, IStream *);
-	static void (_stdcall* Save)(CCINIClass *, IStream *);
+	//Called before the type data is parsed.
+	static void (_stdcall* TypeData)(CCINIClass*);
+	static void (_stdcall* Load)(IStream *);
+	static void (_stdcall* Save)(IStream *);
 };
 
 //-----------------------------------------------------------------------

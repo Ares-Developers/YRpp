@@ -22,6 +22,20 @@ namespace Unsorted
 
 	static DynamicVectorClass<ObjectClass *>** vec_ObjectsInLayers = (DynamicVectorClass<ObjectClass *>**)0x8A0360;
 
+// checkbox states, afaik
+	static byte &Bases = *(byte *)0xA8B258;
+	static byte &BridgeDestruction = *(byte *)0xA8B260;
+	static byte &Crates = *(byte *)0xA8B261;
+	static byte &ShortGame = *(byte *)0xA8B262;
+	static byte &SWAllowed = *(byte *)0xA8B263;
+	static byte &MultiEngineer = *(byte *)0xA8B26C;
+	static byte &AlliesAllowed = *(byte *)0xA8B31C;
+	static byte &HarvesterTruce = *(byte *)0xA8B31D;
+	static byte &CTF = *(byte *)0xA8B31E;
+	static byte &FOW = *(byte *)0xA8B31F;
+	static byte &MCVRedeploy = *(byte *)0xA8B320;
+
+
 struct ColorPacker
 {
 	int _R_SHL;
