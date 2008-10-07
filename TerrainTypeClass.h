@@ -38,8 +38,11 @@ public:
 	virtual ObjectClass* CreateObject(HouseClass* owner) R0;
 
 	//Constructor
-	TerrainTypeClass(const char* pID = NULL) : ObjectTypeClass(false)
+	TerrainTypeClass(const char* pID) : ObjectTypeClass(false)
 		JMP_THIS(0x71DA80);
+
+protected:
+	TerrainTypeClass() : ObjectTypeClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

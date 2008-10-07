@@ -16,6 +16,7 @@ class CaptureManagerClass;
 class CellClass;
 class HouseClass;
 class FootClass;
+class HouseClass;
 class InfantryTypeClass;
 class ObjectTypeClass;
 class ParticleSystemClass;
@@ -289,8 +290,12 @@ public:
 			JMP_THIS(0x6F8960);
 
 	//Constructor
-	TechnoClass(HouseClass* pOwner = NULL) : RadioClass(false)
+	TechnoClass(HouseClass* pOwner) : RadioClass(false)
 		JMP_THIS(0x6F2B40);
+
+protected:
+	TechnoClass(bool) : RadioClass(false) { }
+	TechnoClass() : RadioClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

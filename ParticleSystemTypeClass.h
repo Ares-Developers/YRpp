@@ -34,8 +34,11 @@ public:
 	virtual ObjectClass* CreateObject(HouseClass* owner) R0;
 
 	//Constructor
-	ParticleSystemTypeClass(const char* pID = NULL) : ObjectTypeClass(false)
+	ParticleSystemTypeClass(const char* pID) : ObjectTypeClass(false)
 		JMP_THIS(0x6440A0);
+
+protected:
+	ParticleSystemTypeClass() : ObjectTypeClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

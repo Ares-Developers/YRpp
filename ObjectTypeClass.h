@@ -42,10 +42,11 @@ public:
 	virtual SHPStruct* GetImage() R0;
 
 	//Constructor
-	ObjectTypeClass(const char* pID = NULL) : AbstractTypeClass(false)
+	ObjectTypeClass(const char* pID) : AbstractTypeClass(false)
 		JMP_THIS(0x5F7090);
 
 protected:
+	ObjectTypeClass() : AbstractTypeClass(false) { }
 	ObjectTypeClass(bool) : AbstractTypeClass(false) { };
 
 	//===========================================================================

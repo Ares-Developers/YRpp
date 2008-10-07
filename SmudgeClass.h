@@ -29,10 +29,12 @@ public:
 	virtual int Size() R0;
 
 	//Constructor
-	SmudgeClass(SmudgeTypeClass* pType = NULL) : ObjectClass(false)
+	SmudgeClass(SmudgeTypeClass* pType) : ObjectClass(false)
 		JMP_THIS(0x6B4A50);
 
 protected:
+	SmudgeClass() : ObjectClass(false) { }
+
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================

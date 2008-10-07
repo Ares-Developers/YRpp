@@ -27,8 +27,11 @@ public:
 	virtual int Size() R0;
 
 	//Constructor
-	TeamClass(TeamTypeClass* pType = NULL) : AbstractClass(false)
+	TeamClass(TeamTypeClass* pType) : AbstractClass(false)
 		JMP_THIS(0x6E8A90);
+
+protected:
+	TeamClass() : AbstractClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

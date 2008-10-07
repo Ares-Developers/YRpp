@@ -35,8 +35,11 @@ public:
 	virtual void vt_entry_A0(DWORD dwUnk,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4,DWORD dwUnk5) RX;
 
 	//Constructor
-	SmudgeTypeClass(const char* pID = NULL) : ObjectTypeClass(false)
+	SmudgeTypeClass(const char* pID) : ObjectTypeClass(false)
 		JMP_THIS(0x6B5260);
+
+protected:
+	SmudgeTypeClass() : ObjectTypeClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

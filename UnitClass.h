@@ -47,7 +47,7 @@ public:
 		JMP_THIS(0x7353C0);
 
 protected:
-	UnitClass() : FootClass()
+	UnitClass() : FootClass(false)
 		{ }
 
 	//===========================================================================

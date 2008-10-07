@@ -29,8 +29,11 @@ public:
 	virtual int Size() R0;
 
 	//Constructor
-	OverlayClass(OverlayTypeClass* pType = NULL) : ObjectClass(false)
+	OverlayClass(OverlayTypeClass* pType) : ObjectClass(false)
 		JMP_THIS(0x5FC380);
+
+protected:
+	OverlayClass() : ObjectClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

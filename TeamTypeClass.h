@@ -34,10 +34,6 @@ public:
 	static bool LoadFromINIList(CCINIClass *pINI, bool IsGlobal)
 		{ PUSH_VAR8(IsGlobal); SET_REG32(ECX, pINI); CALL(0x6F19B0); }
 
-	//Constructor
-	TeamTypeClass(const char* pID = NULL) : AbstractTypeClass(false)
-		JMP_THIS(0x6F06E0);
-
 	TeamClass * CreateTeam(HouseClass *pHouse)
 		JMP_THIS(0x6F09C0);
 
@@ -70,6 +66,13 @@ public:
 
 	HouseClass* GetHouse()
 		JMP_THIS(0x6F2070);
+
+	//Constructor
+	TeamTypeClass(const char* pID) : AbstractTypeClass(false)
+		JMP_THIS(0x6F06E0);
+
+protected:
+	TeamTypeClass() : AbstractTypeClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

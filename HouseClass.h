@@ -11,7 +11,6 @@
 //forward declarations
 class SuperClass;
 class BulletClass;
-class BuildingClass;
 class FactoryClass;
 class TagClass;
 class WaypointPathClass;

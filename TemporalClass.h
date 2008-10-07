@@ -29,8 +29,11 @@ public:
 	virtual int Size() R0;
 
 	//Constructor
-	TemporalClass(TechnoClass* pOwnerUnit = NULL) : AbstractClass(false)
+	TemporalClass(TechnoClass* pOwnerUnit) : AbstractClass(false)
 		JMP_THIS(0x71A4E0);
+
+protected:
+	TemporalClass() : AbstractClass(false) { }
 
 	//non-virtual
 	void Fire(TechnoClass* pTarget)

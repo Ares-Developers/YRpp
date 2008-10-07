@@ -32,8 +32,11 @@ public:
 	//TechnoTypeClass
 
 	//Constructor
-	UnitTypeClass(const char* pID = NULL) : TechnoTypeClass(false)
+	UnitTypeClass(const char* pID) : TechnoTypeClass(false)
 		JMP_THIS(0x7470D0);
+
+protected:
+	UnitTypeClass() : TechnoTypeClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

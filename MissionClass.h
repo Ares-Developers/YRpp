@@ -95,7 +95,7 @@ public:
 	MissionClass():ObjectClass(false) { THISCALL(0x5B2DA0); }
 
 protected:
-	MissionClass(bool X):ObjectClass(X) { }
+	MissionClass(bool):ObjectClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

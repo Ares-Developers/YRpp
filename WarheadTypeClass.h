@@ -35,8 +35,11 @@ public:
 	//AbstractTypeClass
 
 	//Constructor
-	WarheadTypeClass(const char* pID = NULL) : AbstractTypeClass(false)
+	WarheadTypeClass(const char* pID) : AbstractTypeClass(false)
 		JMP_THIS(0x75CEC0);
+
+protected:
+	WarheadTypeClass() : AbstractTypeClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

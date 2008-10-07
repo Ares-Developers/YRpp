@@ -51,7 +51,7 @@ public:
 
 protected:
 	RadSiteClass() : AbstractClass(false) JMP_THIS(0x65B1E0);
-	RadSiteClass(bool X) : AbstractClass(X){}
+	RadSiteClass(bool) : AbstractClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

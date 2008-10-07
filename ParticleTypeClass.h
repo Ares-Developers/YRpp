@@ -35,8 +35,11 @@ public:
 	virtual ~ParticleTypeClass() RX;
 
 	//Constructor
-	ParticleTypeClass(const char* pID = NULL) : ObjectTypeClass(false)
+	ParticleTypeClass(const char* pID) : ObjectTypeClass(false)
 		JMP_THIS(0x644BE0);
+
+protected:
+	ParticleTypeClass() : ObjectTypeClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

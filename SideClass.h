@@ -28,8 +28,11 @@ public:
 	virtual int Size() R0;
 
 	//Constructor
-	SideClass(const char* pID = NULL) : AbstractTypeClass(false)
+	SideClass(const char* pID) : AbstractTypeClass(false)
 		JMP_THIS(0x6A4550);
+
+protected:
+	SideClass() : AbstractTypeClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

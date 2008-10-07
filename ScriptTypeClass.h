@@ -41,8 +41,11 @@ public:
 		JMP_STD(0x691970);
 
 	//Constructor
-	ScriptTypeClass(const char* pID = NULL) : AbstractTypeClass(false)
+	ScriptTypeClass(const char* pID) : AbstractTypeClass(false)
 		JMP_THIS(0x6916B0);
+
+protected:
+	ScriptTypeClass() : AbstractTypeClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================
