@@ -25,10 +25,10 @@ public:
 		return -1;
 	}
 
-	static void Play(const char* pName, int nUnk = -1, int nUnk2 = -1)
+	static void __fastcall Play(const char* pName, int nUnk = -1, int nUnk2 = -1)
 		JMP_STD(0x752700);
 
-	static void PlayIndex(int index, int nUnk = -1, int nUnk2 = -1)
+	static void __fastcall PlayIndex(int index, int nUnk = -1, int nUnk2 = -1)
 		JMP_STD(0x752480);
 
 	static void __fastcall PlayAtPos(int index, CoordStruct *pCoords, DWORD dwUnk = 0)
