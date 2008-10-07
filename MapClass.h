@@ -111,6 +111,9 @@ public:
 
 //int a2, int a3, wXY *where, int a5, int a6, int a7, int MovementZone
 
+	int GetCellFloorHeight(CoordStruct* XYZ)
+		JMP_THIS(0x578080);
+
 	CellStruct * PickCellOnEdge(CellStruct* buffer, eEdge Edge, CellStruct *CurrentLocation, CellStruct *Fallback,
 		eSpeedType SpeedType, bool ValidateReachability, eMovementZone MovZone)
 			JMP_THIS(0x4AA440);

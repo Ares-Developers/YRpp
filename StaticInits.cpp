@@ -134,6 +134,14 @@ DECL(TemporalClass, 0xB0EC60);
 
 DynamicVectorClass<DWORD>* TechnoTypeClass::Array = (DynamicVectorClass<DWORD>*)0xA8EB00;
 
+#include <Theater.h>
+Theater* Theater::TH_Temperate = (Theater *)0x7E1B78;
+Theater* Theater::TH_Snow      = (Theater *)0x7E1BE8;
+Theater* Theater::TH_Urban     = (Theater *)0x7E1C58;
+Theater* Theater::TH_Desert    = (Theater *)0x7E1CC8;
+Theater* Theater::TH_NewUrban  = (Theater *)0x7E1D38;
+Theater* Theater::TH_Lunar     = (Theater *)0x7E1DA8;
+
 //Tree classes don't have their VTables done yet
 /*#include <TerrainClass.h>
 DECL(TerrainClass, 0xA8E988);
