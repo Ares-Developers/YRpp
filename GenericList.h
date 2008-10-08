@@ -18,6 +18,9 @@ public:
 	//Properties
 	PROPERTY(GenericNode*, Next);
 	PROPERTY(GenericNode*, Previous);
+
+protected:
+	GenericNode(bool) { }
 };
 
 template <typename T> class Node : public GenericNode
@@ -27,8 +30,11 @@ public:
 	virtual ~Node() RX;
 
 	//Constructor
-	Node()
+	Node() : GenericNode(false)
 		JMP_THIS(0x40E320);
+
+protected:
+	Node(bool) : GenericNode(false) { }
 };
 
 class GenericList
@@ -44,6 +50,9 @@ public:
 	//Properties
 	PROPERTY_STRUCT(GenericNode, First);
 	PROPERTY_STRUCT(GenericNode, Last);
+
+protected:
+	GenericList(bool) { }
 };
 
 template <typename T> class List : public GenericList
@@ -53,8 +62,11 @@ public:
 	virtual ~List() RX;
 
 	//Constructor
-	List()
+	List() : GenericList(false)
 		JMP_THIS(0x52ACE0);
+
+protected:
+	List(bool) : GenericList(false) { }
 };
 
 #endif

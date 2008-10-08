@@ -15,12 +15,16 @@ public:
 	struct INISection { }; //nothing known about this
 
 	INIClass()
-		{ THISCALL(0x535AA0); }
+		JMP_THIS(0x535AA0);
 
+protected:
+	INIClass(bool) { }
+
+public:
 	virtual ~INIClass() RX;
 
 	void Reset()
-		{ THISCALL(0x526B00); }
+		JMP_THIS(0x526B00);
 
 	INISection* GetSection(const char* pSection)
 		{ PUSH_VAR32(pSection); THISCALL(0x526810); }
@@ -214,6 +218,12 @@ public:
 	PROPERTY(bool, unknown_bool_34);
 	PROPERTY(DWORD, unknown_38);
 	PROPERTY(DWORD, unknown_3C);
+	PROPERTY(bool, unknown_bool_40);
+	PROPERTY(DWORD, unknown_44);
+	PROPERTY(DWORD, unknown_48);
+	PROPERTY(DWORD, unknown_4C);
+	PROPERTY(DWORD, unknown_50);
+	PROPERTY(DWORD, unknown_54);
 };
 
 //Extended INI class specified for C&C use
@@ -226,8 +236,14 @@ public:
 	static CCINIClass* INI_Rules; //0x887048
 	
 	//non-static
-	CCINIClass() { unknown_bool_40 = false; }
-	virtual ~CCINIClass() { THISCALL(0x5256F0); }
+	CCINIClass() : INIClass(false) 
+	{
+		THISCALL(0x535AA0);
+		unknown_bool_40 = false;
+		*(DWORD*)this = 0x7E1AF4;
+	}
+
+	virtual ~CCINIClass() RX;
 
 	//Parses an INI file from a CCFile
 	CCINIClass* ReadCCFile(CCFileClass* pCCFile)
@@ -242,12 +258,6 @@ public:
 		  PUSH_VAR32(pSection);
 		  THISCALL(0x0529160);
 		}
-
-	//Properties
-	PROPERTY(bool, unknown_bool_40);
-	
-protected:
-	DWORD align_44, align_48, align_4C, align_50, align_54;
 };
 
 #endif
