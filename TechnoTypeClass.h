@@ -59,6 +59,22 @@ public:
 
 	static DynamicVectorClass<DWORD>* Array; // HAX to instantiate
 
+	static TechnoTypeClass* Find(const char* pID)
+	{
+		for(int i=0;i<Array->get_Count();i++)
+			if(!_strcmpi(((TechnoTypeClass*)(*Array)[i])->get_ID(), pID))
+				return ((TechnoTypeClass*)(*Array)[i]);
+		return NULL;
+	}
+
+	static int FindIndex(const char* pID)
+	{
+		for(int i=0;i<Array->get_Count();i++)
+			if(!_strcmpi(((TechnoTypeClass*)(*Array)[i])->get_ID(), pID))
+				return i;
+		return -1;
+	}
+
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm) R0;
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;

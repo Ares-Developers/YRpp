@@ -365,6 +365,20 @@ public:
 		return true;
 	}
 
+	bool HasFactoryForObject(TechnoTypeClass *Item)
+	{
+		for(int i = 0; i < this->Buildings.get_Count(); ++i)
+		{
+			BuildingTypeClass *pType = this->Buildings[i]->get_Type();
+			if(pType->get_Factory() == Item->WhatAmI()
+				&& pType->get_Naval() == Item->get_Naval() )
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
 	bool InRequiredHouses(TechnoTypeClass *Item)
 	{
 		int Test = Item->get_RequiredHouses();
