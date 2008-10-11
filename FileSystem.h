@@ -13,8 +13,39 @@
 class DSurface;
 
 //Voxel file stuff
-class VoxLib;	//VXL
-class MotLib;	//HVA
+//class VoxLib;	//VXL
+//class MotLib;	//HVA
+
+class MotLib {
+public:
+	DWORD f_0;
+	DWORD f_4;
+	DWORD f_8;
+	void* f_C;
+
+	MotLib(CCFileClass *Source)
+		JMP_THIS(0x5BD570);
+
+	~MotLib()
+		JMP_THIS(0x5BD5A0);
+};
+
+class VoxLib {
+public:
+	DWORD f_0;
+	DWORD f_4;
+	DWORD f_8;
+	DWORD f_C;
+	DWORD f_10;
+	DWORD f_14;
+	DWORD f_18;
+
+	VoxLib(CCFileClass *Source, DWORD dwUnk)
+		JMP_THIS(0x755CD0);
+
+	~VoxLib()
+		JMP_THIS(0x755D10);
+};
 
 struct VoxelStruct
 {
