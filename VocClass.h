@@ -51,7 +51,7 @@ public:
 
 	/* Play a sound at a certain Position.
        n = Index of VocClass in Array to be played */
-	static void __fastcall PlayAt(int n, CoordStruct* pCoords)
+	static void __fastcall PlayAt(int n, CoordStruct* pCoords, Unsorted::AudioController *ctrl)
 		JMP_STD(0x7509E0);
 
 	//Properties
