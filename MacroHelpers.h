@@ -209,4 +209,13 @@
 #define SWIZZLE(var) \
 	SwizzleManagerClass::SwizzleManager()->Swizzle((void **)&var);
 
+// debug logging
+#ifdef DEBUGBUILD
+#define DEBUGLOG \
+	Ares::Log
+#else
+#define DEBUGLOG \
+	(void)
+#endif
+
 #endif
