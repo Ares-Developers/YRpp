@@ -5,8 +5,11 @@
 #ifndef OBJECT_H
 #define OBJECT_H
 
-#include <Drawing.h>
 #include <AbstractClass.h>
+#include <Unsorted.h>
+
+struct SHPStruct;
+class LightConvertClass;
 
 //forward declarations
 class AnimClass;

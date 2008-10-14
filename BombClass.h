@@ -2,6 +2,7 @@
 #define BOMB_H
 
 #include <AbstractClass.h>
+#include <Unsorted.h>
 
 //forward declarations
 class TechnoClass;

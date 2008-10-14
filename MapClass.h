@@ -5,6 +5,8 @@
 #include <ArrayClasses.h>
 #include <CellClass.h>
 
+class WarheadTypeClass;
+
 //Powerup crates
 class Crate
 {
@@ -228,20 +230,5 @@ protected:
 	PROPERTY_STRUCT(DynamicVectorClass<CellStruct>,				CellStructs2);
 
 };
-
-class CellSpread
-{
-public:
-	static int NumCells(int nSpread)
-	{
-		return ((int*)0x7ED3D0)[nSpread];
-	}
-
-	static CellStruct GetCell(int n)
-	{
-		return ((CellStruct*)0xABD490)[n];
-	}
-};
-
 
 #endif

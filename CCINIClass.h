@@ -5,6 +5,8 @@
 #include <GenericList.h>
 #include <ArrayClasses.h>
 
+class CCFileClass;
+struct ColorStruct;
 class TechnoTypeClass;
 
 //Basic INI class

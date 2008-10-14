@@ -1,6 +1,8 @@
 #ifndef MOUSE_H
 #define MOUSE_H
 
+#include <SidebarClass.h>
+
 class MouseCursor
 {
 public:
@@ -15,7 +17,7 @@ public:
 	eMouseHotSpotY HotY;
 };
 
-class MouseClass : public GScreenClass
+class MouseClass : public SidebarClass
 {
 
 };

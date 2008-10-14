@@ -5,13 +5,16 @@
 #ifndef HOUSE_H
 #define HOUSE_H
 
-#include <HouseTypeClass.h>
 #include <BuildingClass.h>
+#include <HouseTypeClass.h>
 
 //forward declarations
-class SuperClass;
+class AnimClass;
 class BulletClass;
+class CellClass;
 class FactoryClass;
+class ObjectClass;
+class SuperClass;
 class TagClass;
 class WaypointPathClass;
 class WaypointClass;

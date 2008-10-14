@@ -93,4 +93,16 @@ public:
 		JMP_STD(0x6CE2C0);
 };
 
+//also see FACING definitions
+struct FacingStruct
+{
+	WORD Facing1; //current facing?
+	WORD unused_2;
+	WORD Facing2; //??
+	WORD unused_6;
+	TimerStruct Timer; //rotation?
+	WORD ROT; //Rate of Turn. INI Value * 256
+	WORD unused_16;
+};
+
 #endif

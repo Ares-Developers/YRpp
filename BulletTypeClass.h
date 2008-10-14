@@ -9,6 +9,7 @@
 
 //forward declarations
 class AnimTypeClass;
+class BulletClass;
 class ColorScheme;
 class WeaponTypeClass;
 

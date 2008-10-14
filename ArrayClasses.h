@@ -46,11 +46,8 @@ public:
 					if(Items)
 					{
 						int n = (nNewCapacity < Capacity) ? nNewCapacity : Capacity;
-						if(n > 0)
-						{
-							for(int i = 0; i < n; i++)
-								pMem[i] = Items[i];
-						}
+						for(int i = 0; i < n; i++)
+							pMem[i] = Items[i];
 
 						if(this->IsAllocated)
 						{
@@ -84,11 +81,10 @@ public:
 	virtual int FindItemIndex(T tItem)
 		{
 			if(!IsInitialized) return 0;
-			if(Capacity > 0)
-			{
-				for(int i = 0; i < Capacity; i++)
-					if(Items[i] == tItem) return i;
-			}
+
+			for(int i = 0; i < Capacity; i++)
+				if(Items[i] == tItem) return i;
+
 			return -1;
 		}
 
@@ -168,11 +164,10 @@ public:
 	virtual int FindItemIndex(T tItem)
 		{
 			if(!this->IsInitialized) return -1;
-			if(Count > 0)
-			{
-				for(int i = 0; i < Count; i++)
-					if(this->Items[i] == tItem) return i;
-			}
+
+			for(int i = 0; i < Count; i++)
+				if(this->Items[i] == tItem) return i;
+
 			return -1;
 		}
 

@@ -3,7 +3,9 @@
 
 #include <MapClass.h>
 
+class CCINIClass;
 class ObjectClass;
+class ObjectTypeClass;
 
 class LayerClass : public DynamicVectorClass<ObjectClass*>
 {

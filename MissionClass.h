@@ -7,6 +7,8 @@
 
 #include <ObjectClass.h>
 
+class CCINIClass;
+
 class MissionControlClass
 {
 	public:

@@ -3,6 +3,8 @@
 
 #include <TechnoTypeClass.h>
 
+class TechnoClass;
+
 class UnitTypeClass : public TechnoTypeClass
 {
 public:
@@ -27,7 +29,7 @@ public:
 
 	//ObjectTypeClass
 	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) R0;
-	virtual TechnoClass* CreateObject(HouseClass* pOwner) R0;
+	virtual ObjectClass* CreateObject(HouseClass* pOwner) R0;
 
 	//TechnoTypeClass
 

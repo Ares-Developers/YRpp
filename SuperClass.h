@@ -8,6 +8,7 @@
 #include <SuperWeaponTypeClass.h>
 
 //Forward declarations
+class AnimClass;
 class HouseClass;
 
 class SuperClass : public AbstractClass

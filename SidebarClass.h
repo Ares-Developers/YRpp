@@ -3,6 +3,9 @@
 
 #include <PowerClass.h>
 
+class ColorScheme;
+class FactoryClass;
+
 // sizeof() == 0x34
 struct CameoDataStruct
 {

@@ -5,11 +5,10 @@
 #ifndef FILESYSTEM_H
 #define FILESYSTEM_H
 
-#include <GeneralStructures.h>
-#include <CCFileClass.h>
-#include <CCINIClass.h>
 #include <ConvertClass.h>
+#include <GeneralStructures.h>
 
+class CCFileClass;
 class DSurface;
 
 //Voxel file stuff

@@ -2,6 +2,7 @@
 #define GSCREEN_H
 
 #include <YRPPCore.h>
+#include <Interfaces.h>
 
 class GScreenClass : public IGameMap
 {

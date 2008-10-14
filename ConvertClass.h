@@ -7,6 +7,7 @@
 
 #include <ArrayClasses.h>
 
+struct ColorStruct;
 class DSurface;
 
 class ConvertClass

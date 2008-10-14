@@ -15,6 +15,7 @@
 #include <YRAllocator.h>
 
 class ConvertClass;
+struct SHPStruct;
 
 class Surface	//abstract
 {

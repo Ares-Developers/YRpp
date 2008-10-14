@@ -8,7 +8,6 @@
 #define DRAWING_H
 
 #include <GeneralDefinitions.h>
-#include <FileSystem.h>
 #include <Surface.h>
 
 class Drawing
