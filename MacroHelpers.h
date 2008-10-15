@@ -213,11 +213,11 @@
 
 // debug logging
 #ifdef DEBUGBUILD
-#define DEBUGLOG \
-	Debug::Log
+#define DEBUGLOG(...) \
+	Debug::Log(__VA_ARGS__)
 #else
-#define DEBUGLOG \
-	(void)
+#define DEBUGLOG(...) \
+	
 #endif
 
 #endif
