@@ -1,6 +1,8 @@
 #ifndef DCODER_H
 #define DCODER_H
 
+// In this file: Alternatives to CTRL + H...
+
 #include <hash_map>
 // macros DCoder uses and pd dislikes :)
 
@@ -212,7 +214,7 @@
 // debug logging
 #ifdef DEBUGBUILD
 #define DEBUGLOG \
-	Ares::Log
+	Debug::Log
 #else
 #define DEBUGLOG \
 	(void)
