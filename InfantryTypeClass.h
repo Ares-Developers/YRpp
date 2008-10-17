@@ -7,8 +7,23 @@
 
 #include <TechnoTypeClass.h>
 
-//forward declarations
-struct SequenceStruct;
+struct SubSequenceStruct
+{
+	int StartFrame;
+	int CountFrames;
+	int FacingMultiplier;
+	eSequenceFacing Facing;
+	int SoundCount;
+	int Sound1StartFrame;
+	int Sound1Index; // VocClass
+	int Sound2StartFrame;
+	int Sound2Index; // VocClass
+};
+
+struct SequenceStruct
+{
+	SubSequenceStruct Sequences[42];
+};
 
 class InfantryTypeClass : public TechnoTypeClass
 {

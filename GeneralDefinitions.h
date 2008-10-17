@@ -574,44 +574,60 @@ typedef int eRank;
 
 typedef int eSequence;
 
-#define	seq_Ready		0x0
-#define	seq_Prone		0x2
-#define	seq_Walk		0x3
-#define	seq_FireUp		0x4
-#define	seq_Down		0x5
-#define	seq_Crawl		0x6
-#define	seq_Up		0x7
-#define	seq_FireProne		0x8
-#define	seq_Idle1		0x9
-#define	seq_Idle2		0xA
-#define	seq_Die1		0xB
-#define	seq_Die2		0xC
-#define	seq_Die3		0xD
-#define	seq_Die4		0xE
-#define	seq_Die5		0xF
-#define	seq_Tread		0x10
-#define	seq_Swim		0x11
-#define	seq_WetIdle1		0x12
-#define	seq_WetIdle2		0x13
-#define	seq_WetAttack		0x14
-#define	seq_Hover		0x15
-#define	seq_Tumble		0x17
-#define	seq_FireFly		0x18
-#define	seq_Deploy		0x19
-#define	seq_Deployed		0x1A
-#define	seq_DeployedFire		0x1B
-#define	seq_DeployedIdle		0x1C
-#define	seq_Undeploy		0x1D
-#define	seq_Cheer		0x1E
-#define	seq_Paradrop		0x1F
-#define	seq_AirDeathStart		0x20
-#define	seq_AirDeathFalling		0x21
-#define	seq_AirDeathFinish		0x22
-#define	seq_Panic		0x23
-#define	seq_Shovel		0x24
-#define	seq_Carry		0x25
-#define	seq_SecondaryFire		0x26
-#define	seq_SecondaryProne		0x27
+#define	0x00		seq_Ready
+#define	0x01		seq_Guard
+#define	0x02		seq_Prone
+#define	0x03		seq_Walk
+#define	0x04		seq_FireUp
+#define	0x05		seq_Down
+#define	0x06		seq_Crawl
+#define	0x07		seq_Up
+#define	0x08		seq_FireProne
+#define	0x09		seq_Idle1
+#define	0x0A		seq_Idle2
+#define	0x0B		seq_Die1
+#define	0x0C		seq_Die2
+#define	0x0D		seq_Die3
+#define	0x0E		seq_Die4
+#define	0x0F		seq_Die5
+#define	0x10		seq_Tread
+#define	0x11		seq_Swim
+#define	0x12		seq_WetIdle1
+#define	0x13		seq_WetIdle2
+#define	0x14		seq_WetDie1
+#define	0x15		seq_WetDie2
+#define	0x16		seq_WetAttack
+#define	0x17		seq_Hover
+#define	0x18		seq_Fly
+#define	0x19		seq_Tumble
+#define	0x1A		seq_FireFly
+#define	0x1B		seq_Deploy
+#define	0x1C		seq_Deployed
+#define	0x1D		seq_DeployedFire
+#define	0x1E		seq_DeployedIdle
+#define	0x1F		seq_Undeploy
+#define	0x20		seq_Cheer
+#define	0x21		seq_Paradrop
+#define	0x22		seq_AirDeathStart
+#define	0x23		seq_AirDeathFalling
+#define	0x24		seq_AirDeathFinish
+#define	0x25		seq_Panic
+#define	0x26		seq_Shovel
+#define	0x27		seq_Carry
+#define	0x28		seq_SecondaryFire
+#define	0x29		seq_SecondaryProne
+
+
+typedef int eSequenceFacing;
+
+#define	st_N		0x0
+#define	st_NE		0x1
+#define	st_E		0x2
+#define	st_SE		0x3
+#define	st_S		0x4
+#define	st_SW		0x5
+#define	st_W		0x6
+#define	st_NW		0x7
 
 
 typedef int eSpeedType;
@@ -854,6 +870,7 @@ typedef int eFireError;
 #define	fire_Cloaked		9
 #define	fire_Busy		10
 #define	fire_Must_Deploy		11
+
 
 //Westwood custom messages (e.g. for SendMessage)
 #define	WW_SLIDER_GETVALUE			0x400
