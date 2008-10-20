@@ -362,13 +362,18 @@ public:
 	PROPERTY(bool,               IsImmobilized); // by chrono aftereffects
 	PROPERTY(DWORD,              unknown_280);
 	PROPERTY(int,                ChronoLockRemaining); // countdown after chronosphere warps things around
-	PROPERTY_STRUCT(CoordStruct, unknown_point3d_288);
+	PROPERTY_STRUCT(CoordStruct, ChronoDestCoords); // teleport loco and chsphere set this
 	PROPERTY(AirstrikeClass*,    Airstrike); //Boris
 	PROPERTY(bool,               Berzerk);
 	PROPERTY(DWORD,              BerzerkDurationLeft);
-	PROPERTY(DWORD,              unknown_2A0);
-	PROPERTY(DWORD,              unknown_2A4);
-	PROPERTY(DWORD,              unknown_2A8);
+	PROPERTY(DWORD,              SprayOffsetIndex); // hardcoded array of xyz offsets for sprayattack, 0 - 7, see 6FE0AD
+	PROPERTY(bool,               Uncrushable); // DeployedCrushable fiddles this, otherwise all 0
+
+ // unless source is Pushy= 
+ // abs_Infantry source links with abs_Unit target and vice versa - can't attack others until current target flips
+ // no checking whether source is Infantry, but no update for other types either
+ // old Brute hack
+	PROPERTY(FootClass*,         DirectRockerLinkedUnit);
 	PROPERTY(FootClass*,         LocomotorTarget); // mag->LocoTarget = victim
 	PROPERTY(FootClass*,         LocomotorSource); // victim->LocoSource = mag
 	PROPERTY(ObjectClass*,       Target); //if attacking
