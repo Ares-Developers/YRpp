@@ -47,6 +47,16 @@ struct WeaponStruct
 	int               BarrelLength;
 	int               BarrelThickness;
 	bool              TurretLocked;
+
+	WeaponStruct()
+	{
+		this->WeaponType = NULL;
+		this->FLH.X = this->FLH.Y = this->FLH.Z = this->BarrelLength = this->BarrelThickness = 0;
+		this->TurretLocked = false;
+	}
+
+	bool operator == (WeaponStruct pWeap)
+		{ return true; }
 };
 
 #pragma pack(push, technotype)

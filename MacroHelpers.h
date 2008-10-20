@@ -112,6 +112,8 @@
  * being declared. Since you are not supposed to read from a gajillion sections at once, deal with it.
  */
 
+// WARNING MK II: These funcs are ::Find, not ::FindOrAllocate, make variants if you wish
+
 // find items
 #define PARSE_VAR_OBJ(key, var, cls) \
 	if(pINI->ReadString(section, key, "", buffer, 256) > 0) \
@@ -219,5 +221,6 @@
 #define DEBUGLOG(...) \
 	
 #endif
+
 
 #endif

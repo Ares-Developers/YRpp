@@ -154,7 +154,7 @@ public:
 	PROPERTY(bool, ConsumesExtraPower);
 	PROPERTY_STRUCT(DynamicVectorClass<InfantryClass*>, Overpowerers);
 	PROPERTY_STRUCT(DynamicVectorClass<InfantryClass*>, Occupants);
-	PROPERTY(DWORD, unknown_69C);
+	PROPERTY(int, FiringOccupantIndex); // which occupant should get XP, which weapon should be fired (see 6FF074)
 
 	PROPERTY_STRUCT(Unsorted::AudioController, Audio7);
 	PROPERTY_STRUCT(Unsorted::AudioController, Audio8);
@@ -197,7 +197,7 @@ public:
 	PROPERTY(DWORD, PrismReloadDelay);
 
 	PROPERTY(DWORD, unknown_714);
-	PROPERTY(DWORD, unknown_718);
+	PROPERTY(DWORD, unknown_718); // "healing unit" sound, old hospital mode
 
 protected:
 	DWORD align_71C;

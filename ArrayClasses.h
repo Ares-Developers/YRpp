@@ -2,6 +2,7 @@
 #define DVC_H
 
 #include <YRPPCore.h>
+#include <objidl.h>
 
 //========================================================================
 //=== VectorClass ========================================================
@@ -136,6 +137,26 @@ public:
 		}
 	}
 
+	void Save(IStream *pStm)
+	{
+		int ii = Capacity;
+		pStm->Write(&ii, 4u, 0);
+		for ( ii = 0; ii < Capacity; ++ii )
+			pStm->Write(&(this->Items[ii]), 4, 0);
+	}
+
+	void Load(IStream *pStm)
+	{
+		int ii = 0;
+		this->Clear();
+		pStm->Read(&ii, 4u, 0);
+		this->SetCapacity(ii, NULL);
+		for ( ii = 0; ii < Capacity; ++ii )
+			pStm->Read(&(Items[ii]), 4, 0);
+		for ( ii = 0; ii < Capacity; ++ii )
+			SWIZZLE(Items[ii]);
+	}
+
 	PROPERTY(T*, Items);
 	PROPERTY_READONLY(int, Capacity);
 	PROPERTY(bool, IsInitialized);
@@ -153,6 +174,27 @@ public:
 	{
 		Clear();
 	}
+
+	void Save(IStream *pStm)
+	{
+		int ii = Count;
+		pStm->Write(&ii, 4u, 0);
+		for ( ii = 0; ii < Count; ++ii )
+			pStm->Write(&(Items[ii]), 4, 0);
+	}
+
+	void Load(IStream *pStm)
+	{
+		int ii = 0;
+		this->Clear();
+		pStm->Read(&ii, 4u, 0);
+		this->SetCapacity(ii, NULL);
+		for ( ii = 0; ii < Count; ++ii )
+			pStm->Read(&(Items[ii]), 4, 0);
+		for ( ii = 0; ii < Count; ++ii )
+			SWIZZLE(Items[ii]);
+	}
+
 
 	virtual bool SetCapacity(int nNewCapacity, T* pMem)
 	{
