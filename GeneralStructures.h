@@ -39,6 +39,11 @@ struct ColorStruct
 	}
 };
 
+#ifndef PALETTE_STRUCT
+#define PALETTE_STRUCT
+typedef ColorStruct BytePalette[256];
+#endif
+
 //used for light colors
 struct TintStruct
 {

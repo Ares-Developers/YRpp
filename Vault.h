@@ -88,5 +88,34 @@ typedef int eIngameGUIElements;
 #define egui_BUTTON_REPAIR 0x8065;
 #define egui_BUTTON_SELL   0x8066;
 
+// BLITTERS
+
+class AlphaLightingRemapClass
+{
+	public:
+		static AlphaLightingRemapClass *FindOrAllocate(int Level)
+			JMP_STD(0x420140);
+
+	protected:
+		AlphaLightingRemapClass() {};
+
+  WORD data[0x10000];
+  DWORD TranslucencyLevel;
+  DWORD RefCount;
+};
+
+class Blitter
+{
+	public:
+		Blitter() {};
+		virtual ~Blitter() {};
+
+	virtual void Blit(byte *buf1, byte *buf2, byte Length, int EncodedLen, int a6, int a7, int a8, int a9, int a10, int a11);
+	virtual void CallBlit(byte *buf1, byte *buf2, byte Length, int EncodedLen, int a6, int a7, int a8, int a9, int a10, int a11, DWORD useless);
+
+	byte *Data; // LightConvertClass's byte buffer
+};
+
+
 
 #endif

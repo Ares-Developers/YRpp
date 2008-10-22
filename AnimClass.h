@@ -46,7 +46,7 @@ public:
 	{
 		PUSH_IMM(0); //???
 		PUSH_IMM(0); //ZAdjust
-		PUSH_IMM(0x600); // certain calls use 0x1600 or 0x2600 instead, iow bitfield
+		PUSH_IMM(0x600); // eBlitterFlags , certain calls use 0x1600 or 0x2600 instead, iow bitfield
 		PUSH_IMM(1); //deleteAfterIterations
 		PUSH_IMM(0); //???
 		PUSH_VAR32(pLocation);
@@ -64,14 +64,14 @@ protected:
 	PROPERTY(int, CurrentFrame); //Current animation frame.
 	PROPERTY(DWORD, unknown_B0);
 	PROPERTY_STRUCT(TimerStruct, IterationTimer); // Duration == Type->Rate, each expiration decrements remainingIterations
-	PROPERTY(DWORD, unknown_C0);
+	PROPERTY(int, Rate);
 	PROPERTY(DWORD, unknown_C4);
 	PROPERTY(AnimTypeClass*, Type); //The AnimType.
 	PROPERTY(ObjectClass *,	OwnerObject); // set by AnimClass::SetOwnerObject (0x424B50)
 	PROPERTY(DWORD, unknown_D0);
 	PROPERTY(LightConvertClass*, LightConvert);	 //Palette?
 	PROPERTY(DWORD, unknown_D8);
-	PROPERTY(DWORD, unknown_DC);
+	PROPERTY(BYTE, unknown_DC);
 	PROPERTY(DWORD, unknown_E0);
 	PROPERTY(DWORD, unknown_E4);
 	PROPERTY(DWORD, unknown_E8);
@@ -79,14 +79,15 @@ protected:
 	PROPERTY(DWORD, unknown_F0);
 	PROPERTY(DWORD, unknown_F4);
 	PROPERTY(DWORD, unknown_F8);
-	PROPERTY(DWORD, unknown_FC);
+	PROPERTY(int, TintColor);
 	PROPERTY(int, ZAdjust);
 	PROPERTY(int, YSortAdjust); // same as YSortAdjust from Type
 	PROPERTY(DWORD, unknown_108);
 	PROPERTY(DWORD, unknown_10C);
 	PROPERTY(DWORD, unknown_110);
 	PROPERTY(DWORD, unknown_114);
-	PROPERTY(DWORD, unknown_118);
+	PROPERTY(BYTE, unknown_118);
+	PROPERTY(bool, UnderTemporal); // temporal'd building's active anims
 	PROPERTY(DWORD, unknown_11C);
 	PROPERTY(DWORD, unknown_120);
 	PROPERTY(DWORD, unknown_124);
@@ -96,9 +97,7 @@ protected:
 	PROPERTY(DWORD, unknown_134);
 	PROPERTY(DWORD, unknown_138);
 	PROPERTY(DWORD, unknown_13C);
-	PROPERTY(DWORD, unknown_140);
-	PROPERTY(DWORD, unknown_144);
-	PROPERTY(DWORD, unknown_148);
+	PROPERTY(CoordStruct, ExpireAnimCoords);
 	PROPERTY(DWORD, unknown_14C);
 	PROPERTY(DWORD, unknown_150);
 	PROPERTY(DWORD, unknown_154);
@@ -117,15 +116,15 @@ protected:
 	PROPERTY(DWORD, unknown_184);
 	PROPERTY(double, Damage); // defaults to 1.0 , added to Type->Damage in some cases 
 //	PROPERTY(DWORD, unknown_18C);
-	PROPERTY(DWORD, AnimFlags); // argument that's 0x600 most of the time
+	PROPERTY(eBlitterFlags, AnimFlags); // argument that's 0x600 most of the time
 	PROPERTY(byte, unknown_194);
 	PROPERTY(byte, RemainingIterations); // defaulted to deleteAfterIterations, when reaches zero, UnInit() is called
 	PROPERTY(byte, unknown_196);
 	PROPERTY(byte, unknown_197);
 	PROPERTY(bool, IsPlaying);
-	PROPERTY(byte, unknown_199);
+	PROPERTY(bool, IsFogged);
 	PROPERTY(byte, unknown_19A);
-	PROPERTY(byte, unknown_19B);
+	PROPERTY(byte, CellOccupied); // dunno, that's the name my IDB gives
 	PROPERTY(byte, unknown_19C);
 	PROPERTY(bool, Invisible); // don't draw, but Update state anyway 
 	PROPERTY(byte, unknown_19E);

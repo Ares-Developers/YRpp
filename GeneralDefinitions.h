@@ -812,6 +812,24 @@ typedef int eTargetFlags;
 #define	ttf_TechCapture		0x10000
 
 
+typedef int eBlitterFlags;
+
+#define	bf_001		0x1
+#define	bf_Alpha25		0x2
+#define	bf_Alpha50		0x4
+#define	bf_Warp		0x8
+#define	bf_010		0x10
+#define	bf_020		0x20
+#define	bf_040		0x40
+#define	bf_080		0x80
+#define	bf_MultiPass		0x100
+#define	bf_200		0x200
+#define	bf_400		0x400
+#define	bf_Alpha		0x800
+#define	bf_1000		0x1000
+#define	bf_2000		0x2000
+#define	bf_4000		0x4000
+
 // UI
 typedef BYTE eMouseEventFlags;
 

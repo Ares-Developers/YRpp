@@ -87,7 +87,7 @@ public:
 	static ConvertClass* LoadPALFile(const char* pFileName, DSurface* pSurface)
 	{
 		ColorStruct* pRawData = (ColorStruct*)LoadFile(pFileName, false);
-		ColorStruct ColorData[0x100];
+		BytePalette ColorData;
 
 		for(int i = 0; i < 0x100; i++)
 		{
@@ -97,8 +97,8 @@ public:
 		}
 
 		return new ConvertClass(
-			ColorData,
-			(ColorStruct*)0x885780,
+			&ColorData,
+			(BytePalette*)0x885780,
 			pSurface,
 			0x35,
 			0);
