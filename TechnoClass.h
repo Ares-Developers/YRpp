@@ -7,12 +7,13 @@
 
 #include <RadioClass.h>
 #include <TechnoTypeClass.h>
+#include <CaptureManagerClass.h>
+#include <TemporalClass.h>
 
 //forward declarations
 class AirstrikeClass;
 class AnimClass;
 class BuildingClass;
-class CaptureManagerClass;
 class CellClass;
 class HouseClass;
 class FootClass;
@@ -22,7 +23,6 @@ class ObjectTypeClass;
 class ParticleSystemClass;
 class SlaveManagerClass;
 class SpawnManagerClass;
-class TemporalClass;
 class WaveClass;
 
 #include <TransitionTimer.h>

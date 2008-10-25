@@ -6,11 +6,11 @@
 #define FOOT_H
 
 #include <TechnoClass.h>
+#include <ParasiteClass.h>
 
 //forward declarations
 class LocomotionClass;
 class TeamClass;
-class ParasiteClass;
 
 class FootClass : public TechnoClass
 {

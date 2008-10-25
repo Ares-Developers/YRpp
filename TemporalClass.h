@@ -55,8 +55,8 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(TechnoClass*,       OwningUnit);
-	PROPERTY(TechnoClass*,       TargetUnit);
+	PROPERTY(TechnoClass*,       Owner);
+	PROPERTY(TechnoClass*,       Target);
 	PROPERTY_STRUCT(TimerStruct, LifeTimer);
 	PROPERTY(void*,              unknown_pointer_38);
 	PROPERTY(SuperClass*,        SourceSW);
