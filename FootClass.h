@@ -41,7 +41,7 @@ public:
 	virtual bool MoveTo(CoordStruct* pCrd) R0;
 	virtual bool StopMoving() R0;
 	virtual bool vt_entry_504() R0;
-	virtual bool vt_entry_508(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) R0;
+	virtual bool ChronoWarpTo(CoordStruct pDest) R0; // fsds... only implemented for one new YR map trigger, other chrono events repeat the code...
 /* ,-> */ virtual void vt_entry_50C(
 /* | */ DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
 /* | */ DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8,
