@@ -14,8 +14,6 @@
 typedef unsigned char BYTE;
 typedef unsigned short WORD;
 
-#define DEFINE_HOOK(hook,funcname,size)
-
 //Macros to make the following a lot easier
 #define REG_FUNCS1(n32, n16, n8hi, n8lo, idx) \
 	DWORD get_ ## n32 ()\
@@ -106,5 +104,11 @@ public:
 //e.g. EXPORT FunctionName(REGISTERS* R)
 #define EXPORT extern "C" __declspec(dllexport) DWORD _cdecl
 #define EXPORT_FUNC(name) extern "C" __declspec(dllexport) DWORD _cdecl name (REGISTERS *R)
+
+// injgen
+// in addition to the injgen-declaration, also includes the function opening
+#define DEFINE_HOOK(hook, funcname, size) EXPORT_FUNC(funcname)
+// no function opening, use for injgen-decl when repeating the same hook at multiple addrs
+#define DEFINE_HOOK_AGAIN(hook, funcname, size)
 
 #endif
