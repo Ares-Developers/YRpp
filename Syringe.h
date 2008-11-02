@@ -14,6 +14,8 @@
 typedef unsigned char BYTE;
 typedef unsigned short WORD;
 
+#define DEFINE_HOOK(hook,funcname,size)
+
 //Macros to make the following a lot easier
 #define REG_FUNCS1(n32, n16, n8hi, n8lo, idx) \
 	DWORD get_ ## n32 ()\
