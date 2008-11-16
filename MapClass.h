@@ -85,7 +85,7 @@ public:
 
 			CellClass* pCell = InvalidCell();
 
-			pCell->set_MapCoords(*pMapCoords);
+			pCell->set_MapCoords(pMapCoords);
 			return pCell;
 		}
 

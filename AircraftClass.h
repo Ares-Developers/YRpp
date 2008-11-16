@@ -61,7 +61,7 @@ protected:
 	PROPERTY(AircraftTypeClass*, Type);
 	PROPERTY(bool, unknown_bool_6C8);
 	PROPERTY(bool, HasPassengers);	//parachutes
-	PROPERTY(bool, unknown_bool_6CA);
+	PROPERTY(bool, IsCrashing); // when crashing down, duh
 	PROPERTY(DWORD, unknown_6CC);
 	PROPERTY(bool, unknown_bool_6D0);
 	PROPERTY(bool, unknown_bool_6D1);

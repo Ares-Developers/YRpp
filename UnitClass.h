@@ -56,18 +56,19 @@ protected:
 
 	PROPERTY(int, unknown_int_6C0);
 	PROPERTY(UnitTypeClass*, Type);
-	PROPERTY(DWORD, unknown_6C8);
+	PROPERTY(UnitClass*, FollowerCar); // groovy - link defined in the map's [Units] section, looked up on startup
 	PROPERTY(int, FlagHouseIndex); //Carrying the flag of this House
-	PROPERTY(bool, Deployed);
+	PROPERTY(bool, HasFollowerCar); // yes, this vehicle has a another vehicle (a train's locomotive towing the cars)
 	PROPERTY(bool, Unloading);
 	PROPERTY(bool, unknown_bool_6D2);
-	PROPERTY(bool, unknown_bool_6D3);
+	PROPERTY(bool, TerrainPalette);
 	PROPERTY(int, unknown_int_6D4);
-	PROPERTY(int, unknown_int_6D8);
+	PROPERTY(int, DeathFrameCounter);
 	PROPERTY(EBolt*, ElectricBolt); //Unit is the owner of this
-	PROPERTY(bool, unknown_bool_6E0);
-	PROPERTY(bool, unknown_bool_6E1);
-	PROPERTY(bool, unknown_bool_6E2);
+	PROPERTY(bool, Deployed);
+	PROPERTY(bool, Deploying);
+	PROPERTY(bool, Undeploying);
+	PROPERTY(int, unknown_int_6E4);
 	
 // isn't this what PROPERTY_UNICODE was for?
 protected:

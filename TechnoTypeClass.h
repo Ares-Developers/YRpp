@@ -105,6 +105,12 @@ public:
 	virtual int GetRefund(HouseClass* pHouse, bool bUnk) R0;
 	virtual int GetFlightLevel() R0;
 
+	// non-virtual
+	bool HasMultipleTurrets()
+	{
+		return this->TurretCount > 0;
+	}
+
 	//Constructor
 	TechnoTypeClass(const char* id, eSpeedType speedtype) : ObjectTypeClass(false)
 		JMP_THIS(0x710AF0);

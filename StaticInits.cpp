@@ -73,6 +73,18 @@ DECL(LightConvertClass, 0x87F698);
 
 #include <MixFileClass.h>
 List<MixFileClass*>* MixFileClass::MIXes = (List<MixFileClass*>* )0xABEFD8;
+DECL(MixFileClass, 0x884D90);
+DynamicVectorClass<MixFileClass*>* MixFileClass::Array_Alt =
+								(DynamicVectorClass<MixFileClass*>*)0x884DC0;
+DynamicVectorClass<MixFileClass*>* MixFileClass::Maps =
+								(DynamicVectorClass<MixFileClass*>*)0x884DA8;
+DynamicVectorClass<MixFileClass*>* MixFileClass::Movies =
+								(DynamicVectorClass<MixFileClass*>*)0x884DE0;
+
+MixFileClass* MixFileClass::MULTIMD = (MixFileClass*)0x884DD8;
+MixFileClass* MixFileClass::MULTI   = (MixFileClass*)0x884DDC;
+
+MixFileClass::GenericMixFiles* MixFileClass::Generics = (MixFileClass::GenericMixFiles*)0x884DF8;
 
 #include <MouseClass.h>
 MouseCursor* MouseCursor::First = (MouseCursor*)0x82D028;

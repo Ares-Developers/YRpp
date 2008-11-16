@@ -65,28 +65,28 @@ typedef int eIngameGUIElements;
 // mousemove functions use this signature:
 // void(?) RadarClass_MouseMove(signed int *elementID, dwXY *mouseCoords);
 // these are values for elementID
-#define egui_ACB_Collapser 0x80F0; // the edge of the Advanced Command Bar, click to collapse ACB
-#define egui_ACB_Covered  0x80F1; // the block overlaying the ACB when it's "collapsed", click to expand
+#define egui_ACB_Collapser 0x80F0 // the edge of the Advanced Command Bar, click to collapse ACB
+#define egui_ACB_Covered  0x80F1 // the block overlaying the ACB when it's "collapsed", click to expand
 
-#define egui_ACB_BUTTON00 0xD6; // up to 11 buttons on the ACB, ltr
-#define egui_ACB_BUTTON01 0xD7; // which of them corresponds to which function is modifiable via uimd.ini
-#define egui_ACB_BUTTON02 0xD8;
-#define egui_ACB_BUTTON03 0xD9;
-#define egui_ACB_BUTTON04 0xDA;
-#define egui_ACB_BUTTON05 0xDB;
-#define egui_ACB_BUTTON06 0xDC;
-#define egui_ACB_BUTTON07 0xDD;
-#define egui_ACB_BUTTON08 0xDE;
-#define egui_ACB_BUTTON09 0xDF;
-#define egui_ACB_BUTTON0A 0xE0;
+#define egui_ACB_BUTTON00 0xD6 // up to 11 buttons on the ACB, ltr
+#define egui_ACB_BUTTON01 0xD7 // which of them corresponds to which function is modifiable via uimd.ini
+#define egui_ACB_BUTTON02 0xD8
+#define egui_ACB_BUTTON03 0xD9
+#define egui_ACB_BUTTON04 0xDA
+#define egui_ACB_BUTTON05 0xDB
+#define egui_ACB_BUTTON06 0xDC
+#define egui_ACB_BUTTON07 0xDD
+#define egui_ACB_BUTTON08 0xDE
+#define egui_ACB_BUTTON09 0xDF
+#define egui_ACB_BUTTON0A 0xE0
 
-#define egui_TAB_HEADING00 0x80CB;
-#define egui_TAB_HEADING01 0x80CC;
-#define egui_TAB_HEADING02 0x80CD;
-#define egui_TAB_HEADING03 0x80CE;
+#define egui_TAB_HEADING00 0x80CB
+#define egui_TAB_HEADING01 0x80CC
+#define egui_TAB_HEADING02 0x80CD
+#define egui_TAB_HEADING03 0x80CE
 
-#define egui_BUTTON_REPAIR 0x8065;
-#define egui_BUTTON_SELL   0x8066;
+#define egui_BUTTON_REPAIR 0x8065
+#define egui_BUTTON_SELL   0x8066
 
 // BLITTERS
 

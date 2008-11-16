@@ -51,8 +51,8 @@
 	public:\
 		type* get_ ## name() \
 			{ return &name; }\
-		void set_ ## name(type value)\
-			{ name = value; }
+		void set_ ## name(type* value)\
+			{ name = *value; }
 
 //readonly
 #define PROPERTY_READO_STRUCT(type,name)\
@@ -60,9 +60,7 @@
 		type name;\
 	public:\
 		type* _ ## name() \
-			{ return &name; } \
-		type q_ ## name()\
-			{ return name; }
+			{ return &name; }
 
 //Arrays
 #define PROPERTY_ARRAY(type,name,length)\

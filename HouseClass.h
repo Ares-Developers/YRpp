@@ -217,6 +217,9 @@ public:
 	bool CanAlly(HouseClass* pOther)
 		JMP_THIS(0x501540);
 
+	bool CanOverpower(TechnoClass *pTarget)
+		JMP_THIS(0x4F9AF0);
+
 	// warning: logic pretty much broken
 	void LostPoweredCenter(TechnoTypeClass *pTechnoType)
 		JMP_THIS(0x50E0E0); 
@@ -396,7 +399,8 @@ public:
 		return 0 != (Test & ( 1 << this->Type->get_ArrayIndex()));
 	}
 
-	// reminder: verify the resulting binary layout
+	signed int CanBuild(TechnoTypeClass *item, bool bypassExtras, bool includeQueued)
+		JMP_THIS(0x4F7870);
 
 	//===========================================================================
 	//===== Properties ==========================================================
@@ -688,23 +692,12 @@ public:
 	                                        	//-> 32 players possible here
 	PROPERTY_STRUCT(TimerStruct,           unknown_timer_5788);
 	PROPERTY_STRUCT(TimerStruct,           TeamDelayTimer); // for AI attacks
-	PROPERTY(DWORD,					unknown_57A0);
-	PROPERTY(DWORD,					unknown_57A4);
-	PROPERTY(DWORD,					unknown_57A8);
-	PROPERTY(DWORD,					unknown_57AC);
-	PROPERTY(DWORD,					unknown_57B0);
-	PROPERTY(DWORD,					unknown_57B4);
-	PROPERTY(DWORD,					unknown_57B8);
-	PROPERTY(DWORD,					unknown_57BC);
-	PROPERTY(DWORD,					unknown_57C0);
-	PROPERTY(DWORD,					unknown_57C4);
-	PROPERTY(DWORD,					unknown_57C8);
-	PROPERTY(DWORD,					unknown_57CC);
-	PROPERTY(DWORD,					unknown_57D0);
-	PROPERTY(DWORD,					unknown_57D4);
-	PROPERTY(DWORD,					unknown_57D8);
+	PROPERTY_STRUCT(TimerStruct,           unknown_timer_A);
+	PROPERTY_STRUCT(TimerStruct,           unknown_timer_B);
+	PROPERTY_STRUCT(TimerStruct,           unknown_timer_C);
+	PROPERTY_STRUCT(TimerStruct,           unknown_timer_D);
+	PROPERTY_STRUCT(TimerStruct,           unknown_timer_E);
 	PROPERTY(DWORD,					unknown_57DC);
-	PROPERTY(DWORD,					unknown_57E0);
 	
 protected:
 	unsigned int                    ThreatPosedEstimates[130][130]; // BLARGH
