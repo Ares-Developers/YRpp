@@ -170,6 +170,9 @@ DECL(UnitClass, 0x8B4108);
 #include <UnitTypeClass.h>
 DECL(UnitTypeClass, 0xA83CE0);
 
+#include <Unsorted.h>
+DynamicVectorClass<MovieInfo> *MovieInfo::Array = (DynamicVectorClass<MovieInfo>*)0xABF390;
+
 #include <VocClass.h>
 DECL(VocClass, 0xB1D378);
 

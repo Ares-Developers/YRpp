@@ -11,6 +11,20 @@ public:
 		{ PUSH_VAR32(err); CALL(0x7DC720); }
 };
 
+class MovieInfo
+{
+	public:
+		char *Name; // yes, only that
+		static DynamicVectorClass<MovieInfo> *Array;
+
+	MovieInfo(const char *fname)
+		{ this->Name = _strdup(fname); }
+		
+	protected:
+		MovieInfo()
+			{}
+};
+
 namespace Unsorted
 {
 	static int &CurrentFrame     = *(int *)0xA8ED84;
