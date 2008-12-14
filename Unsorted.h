@@ -17,12 +17,17 @@ class MovieInfo
 		char *Name; // yes, only that
 		static DynamicVectorClass<MovieInfo> *Array;
 
+	bool operator== (MovieInfo &rhs)
+		{ return !strcmp(rhs.Name, this->Name); }
+
 	MovieInfo(const char *fname)
 		{ this->Name = _strdup(fname); }
-		
-	protected:
-		MovieInfo()
-			{}
+
+	MovieInfo()
+		{}
+
+	~MovieInfo()
+		{ delete this->Name; }
 };
 
 namespace Unsorted
