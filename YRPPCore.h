@@ -14,6 +14,7 @@
 #include <ASMMacros.h>
 
 #include <wchar.h>
+#include <cstdio>
 
 //Macro for class members with getters and setters! Thanks DCoder!
 #define PROPERTY(type,name)\

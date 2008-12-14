@@ -20,6 +20,8 @@ public:
 	//global array
 	static DynamicVectorClass<ConvertClass*>* Array;
 
+	static ConvertClass* FindOrAllocate(const char * FileName);
+
 	ConvertClass(
 		BytePalette* pColorData,
 		BytePalette* pUnknownColorData, //???

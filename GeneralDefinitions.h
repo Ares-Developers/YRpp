@@ -195,6 +195,27 @@ typedef int eAIModes;
 #define		aim_BuildBase		0x03
 #define		aim_SellAll		0x04
 
+
+typedef int eAITrigCondition;
+
+#define		tc_AIOwns		0x0
+#define		tc_EnemyOwns		0x1
+#define		tc_EnemyYellowPower		0x2
+#define		tc_EnemyRedPower		0x3
+#define		tc_EnemyCashExceeds		0x4
+#define		tc_IronCharged		0x5
+#define		tc_ChronoCharged		0x6
+#define		tc_NeutralOwns		0x7
+#define		tc_Pool		0xFFFFFFFF
+
+
+typedef int eAITrigHouseType;
+
+#define		th_None		0x0
+#define		th_Single		0x1
+#define		th_Any		0x2
+
+
 typedef int eArmor;
 
 #define	armor_None		0x0

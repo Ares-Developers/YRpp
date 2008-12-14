@@ -19,6 +19,7 @@ namespace Unsorted
 	static int &MuteSWLaunches   = *(int *)0xA8B538;
 
 	static byte &ArmageddonMode  = *(byte *)0xA8ED6B;
+	static byte &WTFMode  = *(byte *)0xA8E9A0;
 
 	static DynamicVectorClass<ObjectClass *>** vec_ObjectsInLayers = (DynamicVectorClass<ObjectClass *>**)0x8A0360;
 

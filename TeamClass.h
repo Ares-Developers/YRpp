@@ -4,6 +4,8 @@
 #include <TeamTypeClass.h>
 
 class HouseClass;
+class FootClass;
+class CellClass;
 class ScriptClass;
 
 class TeamClass : public AbstractClass
@@ -37,19 +39,47 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 	PROPERTY(TeamTypeClass*, Type);
-	PROPERTY(ScriptClass*, CurrentScript);
-	PROPERTY(HouseClass*, Owner);
-	PROPERTY(DWORD, unknown_30);
-	PROPERTY(DWORD, unknown_34);
-	PROPERTY(DWORD, unknown_38);
-	PROPERTY(DWORD, unknown_3C);
-	PROPERTY(DWORD, unknown_40);
-	PROPERTY(int, unknown_44);
-	PROPERTY(DWORD, unknown_48);
-	PROPERTY(DWORD, unknown_4C);
-	PROPERTY(int, unknown_frame_50);
-	PROPERTY(DWORD, unknown_54);
-	PROPERTY_STRUCT(TimerStruct, unknown_timer_60);
+	PROPERTY(ScriptClass*,   CurrentScript);
+	PROPERTY(HouseClass*,    Owner);
+	PROPERTY(HouseClass*,    Target);
+	PROPERTY(CellClass*,     SpawnCell);
+	PROPERTY(DWORD,          unknown_38);
+	PROPERTY(DWORD,          unknown_3C);
+	PROPERTY(DWORD,          unknown_40);
+	PROPERTY(int,            unknown_44);
+	PROPERTY(int,            TotalObjects);
+	PROPERTY(int,            TotalThreatValue);
+	PROPERTY(int,            CreationFrame);
+	PROPERTY(FootClass *,    FirstUnit);
+	PROPERTY_STRUCT(TimerStruct, GuardAreaTimer);
+	PROPERTY_STRUCT(TimerStruct, SuspendTimer);
+	PROPERTY(DWORD,          Tag); // TagClass *
+	PROPERTY(bool,           unknown_74);
+	PROPERTY(bool,           unknown_75);
+	PROPERTY(bool,           unknown_76);
+	PROPERTY(bool,           unknown_77);
+
+	PROPERTY(bool,           unknown_78);
+	PROPERTY(bool,           unknown_79);
+	PROPERTY(bool,           unknown_7A);
+	PROPERTY(bool,           unknown_7B);
+
+	PROPERTY(bool,           unknown_7C);
+	PROPERTY(bool,           NeedsToDisappear);
+	PROPERTY(bool,           unknown_7E);
+	PROPERTY(bool,           unknown_7F);
+
+	PROPERTY(bool,           StepCompleted); // can proceed to the next step of the script
+	PROPERTY(bool,           unknown_81);
+	PROPERTY(bool,           unknown_82);
+	PROPERTY(bool,           IsSuspended);
+
+	PROPERTY(bool,           AchievedGreatSuccess); // executed script action 49, 0
+	PROPERTY(bool,           unknown_85);
+	PROPERTY(bool,           unknown_86);
+	PROPERTY(bool,           unknown_87);
+
+	PROPERTY_ARRAY(int,      CountObjects, 6); // counts of each object specified in the Type
 };
 
 #endif

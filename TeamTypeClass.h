@@ -6,6 +6,8 @@
 #define TEAMTYPE_H
 
 #include <AbstractTypeClass.h>
+#include <ScriptTypeClass.h>
+#include <TaskForceClass.h>
 
 //forward declarations
 class TechnoTypeClass;

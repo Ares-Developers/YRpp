@@ -70,7 +70,7 @@ protected:
 	PROPERTY(ObjectClass *,	OwnerObject); // set by AnimClass::SetOwnerObject (0x424B50)
 	PROPERTY(DWORD, unknown_D0);
 	PROPERTY(LightConvertClass*, LightConvert);	 //Palette?
-	PROPERTY(DWORD, unknown_D8);
+	PROPERTY(int, LightConvertIndex); // assert( (*ColorScheme::Array)[this->LightConvertIndex] == this->LightConvert );
 	PROPERTY(BYTE, unknown_DC);
 	PROPERTY(DWORD, unknown_E0);
 	PROPERTY(DWORD, unknown_E4);

@@ -9,6 +9,9 @@
 #include <AbstractTypeClass.h>
 DECL(AbstractTypeClass, 0xA8E968);
 
+#include <AITriggerTypeClass.h>
+DECL(AITriggerTypeClass, 0xA8B200);
+
 #include <AircraftClass.h>
 DECL(AircraftClass, 0xA8E390);
 
