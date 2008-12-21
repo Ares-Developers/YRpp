@@ -413,7 +413,7 @@ public:
 	PROPERTY(DWORD,              unknown_32C);
 	PROPERTY(DWORD,              unknown_330);
 	PROPERTY(DWORD,              unknown_334);
-	PROPERTY(InfantryTypeClass *, HijackedByInfantry); // mutant hijacker
+	PROPERTY(int,                HijackerInfantryType); // mutant hijacker
 
 	PROPERTY_STRUCT(OwnedTiberiumStruct, Tiberium);
 	PROPERTY(DWORD,					unknown_34C);

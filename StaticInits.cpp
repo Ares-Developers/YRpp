@@ -160,9 +160,10 @@ Theater* Theater::TH_Lunar     = (Theater *)0x7E1DA8;
 //Tree classes don't have their VTables done yet
 /*#include <TerrainClass.h>
 DECL(TerrainClass, 0xA8E988);
+*/
 
 #include <TerrainTypeClass.h>
-DECL(TerrainTypeClass, 0xA8E318);*/
+DECL(TerrainTypeClass, 0xA8E318);
 
 #include <UnitClass.h>
 DECL(UnitClass, 0x8B4108);

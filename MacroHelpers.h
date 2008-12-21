@@ -101,6 +101,43 @@
 		} \
 	}
 
+// buffer length for tags containing a list such as AnimToInfantry=
+#define BUFLEN 2048
+
+// this is an Ares macro, durr, don't use it in YR++, will be moved someday
+#define PARSE_VECTOR(ini_section, ini_key, var, objtype) \
+if(INI->ReadString(ini_section, ini_key, Ares::readBuffer, "", Ares::readLength)) { \
+	DynamicVectorClass<objtype *>* vec = var; vec->Clear(); \
+	for(char *cur = strtok(Ares::readBuffer, ","); cur; cur = strtok(NULL, ",")) { \
+		objtype *idx = objtype::Find(cur); if(idx) { vec->AddItem(idx); } \
+	} \
+}
+
+#define PARSE_VECTOR_N(ini_section, obj, ini_key, objtype) \
+if(INI->ReadString(ini_section, #ini_key, Ares::readBuffer, "", Ares::readLength)) { \
+	DynamicVectorClass<objtype *>* vec = obj->get_ ## ini_key(); vec->Clear(); \
+	for(char *cur = strtok(Ares::readBuffer, ","); cur; cur = strtok(NULL, ",")) { \
+		objtype *idx = objtype::Find(cur); if(idx) { vec->AddItem(idx); } \
+	} \
+}
+
+#define PARSE_VECTOR_BIT(ini_section, obj, ini_key, objtype, obj_key) \
+if(INI->ReadString(ini_section, #ini_key, Ares::readBuffer, "", Ares::readLength)) { \
+	DWORD buf = 0; \
+	for(char *cur = strtok(Ares::readBuffer, ","); cur; cur = strtok(NULL, ",")) { \
+		DWORD idx = objtype::FindIndex(cur); if(idx > -1) { buf |= idx; } \
+	} \
+	obj->set_ ## obj_key (buf); \
+}
+
+#define PARSE_VECTOR_INT(ini_section, ini_key, obj) \
+if(INI->ReadString(ini_section, #ini_key, Ares::readBuffer, "", Ares::readLength)) { \
+	DynamicVectorClass<int>* vec = obj->get_ ## ini_key(); vec->Clear(); \
+	for(char *cur = strtok(Ares::readBuffer, ","); cur; cur = strtok(NULL, ",")) { \
+		int idx = atoi(cur); vec->AddItem(idx); \
+	} \
+}
+
 // parse ini faster! harder! stronger!
 
 #define PARSE_BUF() \

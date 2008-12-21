@@ -7,6 +7,9 @@
 
 #include <BuildingClass.h>
 #include <HouseTypeClass.h>
+#include <UnitTypeClass.h>
+#include <UnitClass.h>
+#include <InfantryTypeClass.h>
 
 //forward declarations
 class AnimClass;
@@ -310,23 +313,53 @@ public:
 	int CountOwnedNow(TechnoTypeClass *Item)
 	{
 		int Index = Item->GetArrayIndex();
+		int Sum = 0;
+		BuildingTypeClass *BT = NULL;
+		UnitTypeClass *UT = NULL;
+		UnitClass *U = NULL;
+		InfantryTypeClass *IT = NULL;
+
 		switch(Item->WhatAmI())
 		{
 			case abs_BuildingType:
-				return this->OwnedBuildingTypes.GetItemCount(Index);
+				Sum = this->OwnedBuildingTypes.GetItemCount(Index);
+				BT = (BuildingTypeClass *)Item;
+				UT = BT->get_UndeploysInto();
+				if(UT) {
+					Sum += this->OwnedUnitTypes.GetItemCount(UT->GetArrayIndex());
+				}
+			break;
 
 			case abs_UnitType:
-				return this->OwnedUnitTypes.GetItemCount(Index);
+				Sum = this->OwnedUnitTypes.GetItemCount(Index);
+				UT = (UnitTypeClass *)Item;
+				BT = UT->get_DeploysInto();
+				if(BT) {
+					Sum += this->OwnedBuildingTypes.GetItemCount(BT->GetArrayIndex());
+				}
+			break;
 
 			case abs_InfantryType:
-				return this->OwnedInfantryTypes.GetItemCount(Index);
+				Sum = this->OwnedInfantryTypes.GetItemCount(Index);
+				IT = (InfantryTypeClass *)Item;
+				if(IT->get_VehicleThief()) {
+					for(int i = 0; i < UnitClass::Array->get_Count(); ++i) {
+						U = UnitClass::Array->GetItem(i);
+						if(U->get_Owner() == this && U->get_HijackerInfantryType() == Index) {
+							++Sum;
+						}
+					}
+				}
+			break;
 
 			case abs_AircraftType:
-				return this->OwnedAircraftTypes.GetItemCount(Index);
+				Sum = this->OwnedAircraftTypes.GetItemCount(Index);
+			break;
 
 			default:
-				return 0;
+				;
 		}
+		return Sum;
 	}
 
 	int CountOwnedEver(TechnoTypeClass *Item)
