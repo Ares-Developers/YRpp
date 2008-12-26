@@ -104,6 +104,17 @@
 // buffer length for tags containing a list such as AnimToInfantry=
 #define BUFLEN 2048
 
+
+// absflags shorthand
+#define ABS_IS_OBJECT(var) \
+	(var->get_AbstractFlags() & ABSFLAGS_ISOBJECT)
+
+#define ABS_IS_TECHNO(var) \
+	(var->get_AbstractFlags() & ABSFLAGS_ISTECHNO)
+
+#define ABS_IS_FOOT(var) \
+	(var->get_AbstractFlags() & ABSFLAGS_ISFOOT)
+
 // this is an Ares macro, durr, don't use it in YR++, will be moved someday
 #define PARSE_VECTOR(ini_section, ini_key, var, objtype) \
 if(INI->ReadString(ini_section, ini_key, Ares::readBuffer, "", Ares::readLength)) { \

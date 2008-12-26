@@ -3,6 +3,7 @@
 
 #include <YRPPCore.h>
 #include <ArrayClasses.h>
+#include <Interfaces.h>
 
 class SwizzlePointerClass
 {
