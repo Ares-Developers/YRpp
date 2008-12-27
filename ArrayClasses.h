@@ -195,6 +195,21 @@ public:
 			SWIZZLE(Items[ii]);
 	}
 
+	T* start()
+	{
+		if(!this->IsInitialized) {
+			return NULL;
+		}
+		return &this->Items[0];
+	}
+
+	T* end()
+	{
+		if(!this->IsInitialized) {
+			return NULL;
+		}
+		return &this->Items[this->Count];
+	}
 
 	virtual bool SetCapacity(int nNewCapacity, T* pMem)
 	{
