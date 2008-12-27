@@ -116,35 +116,41 @@
 	(var->get_AbstractFlags() & ABSFLAGS_ISFOOT)
 
 // this is an Ares macro, durr, don't use it in YR++, will be moved someday
+#define IF_STR(section, key) \
+	if(INI->ReadString(section, key, Ares::readDefval, Ares::readBuffer, Ares::readLength))
+#define FOR_STRTOK \
+	for(char *cur = strtok(Ares::readBuffer, Ares::readDelims); \
+		cur; cur = strtok(NULL, Ares::readDelims))
+
 #define PARSE_VECTOR(ini_section, ini_key, var, objtype) \
-if(INI->ReadString(ini_section, ini_key, Ares::readBuffer, "", Ares::readLength)) { \
+IF_STR(ini_section, ini_key) { \
 	DynamicVectorClass<objtype *>* vec = var; vec->Clear(); \
-	for(char *cur = strtok(Ares::readBuffer, ","); cur; cur = strtok(NULL, ",")) { \
+	FOR_STRTOK{ \
 		objtype *idx = objtype::Find(cur); if(idx) { vec->AddItem(idx); } \
 	} \
 }
 
 #define PARSE_VECTOR_N(ini_section, obj, ini_key, objtype) \
-if(INI->ReadString(ini_section, #ini_key, Ares::readBuffer, "", Ares::readLength)) { \
+IF_STR(ini_section, #ini_key) { \
 	DynamicVectorClass<objtype *>* vec = obj->get_ ## ini_key(); vec->Clear(); \
-	for(char *cur = strtok(Ares::readBuffer, ","); cur; cur = strtok(NULL, ",")) { \
+	FOR_STRTOK{ \
 		objtype *idx = objtype::Find(cur); if(idx) { vec->AddItem(idx); } \
 	} \
 }
 
 #define PARSE_VECTOR_BIT(ini_section, obj, ini_key, objtype, obj_key) \
-if(INI->ReadString(ini_section, #ini_key, Ares::readBuffer, "", Ares::readLength)) { \
+IF_STR(ini_section, #ini_key) { \
 	DWORD buf = 0; \
-	for(char *cur = strtok(Ares::readBuffer, ","); cur; cur = strtok(NULL, ",")) { \
-		DWORD idx = objtype::FindIndex(cur); if(idx > -1) { buf |= idx; } \
+	FOR_STRTOK{ \
+		int idx = objtype::FindIndex(cur); if(idx > -1) { buf |= idx; } \
 	} \
 	obj->set_ ## obj_key (buf); \
 }
 
 #define PARSE_VECTOR_INT(ini_section, ini_key, obj) \
-if(INI->ReadString(ini_section, #ini_key, Ares::readBuffer, "", Ares::readLength)) { \
+IF_STR(ini_section, #ini_key) { \
 	DynamicVectorClass<int>* vec = obj->get_ ## ini_key(); vec->Clear(); \
-	for(char *cur = strtok(Ares::readBuffer, ","); cur; cur = strtok(NULL, ",")) { \
+	FOR_STRTOK{ \
 		int idx = atoi(cur); vec->AddItem(idx); \
 	} \
 }
