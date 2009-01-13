@@ -231,6 +231,15 @@ typedef int eArmor;
 #define	armor_Special_2		0xA
 
 
+//spotlight behaviour
+typedef int eSpotlightBehaviour;
+
+#define	sb_None		0x0
+#define	sb_Sweep		0x1
+#define	sb_Circle		0x2
+#define	sb_Follow		0x3
+
+
 //ParticleTypeClass->BehavesLike
 typedef int eBehavesLike;
 

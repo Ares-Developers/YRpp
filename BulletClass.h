@@ -62,6 +62,9 @@ public:
 	void Fire(CoordStruct *Target)
 		JMP_THIS(0x4690B0);
 
+	void Detonate(bool bUnknown)
+		JMP_STD(0x468D80);
+
 	// spawns off the proper amount of shrapnel projectiles
 	void Shrapnel()
 		JMP_THIS(0x46A310);

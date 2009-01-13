@@ -39,6 +39,9 @@ DECL(BuildingClass, 0xA8EB40);
 #include <BuildingTypeClass.h>
 DECL(BuildingTypeClass, 0xA83C68);
 
+#include <BuildingLightClass.h>
+DECL(BuildingLightClass, 0x8B4190);
+
 #include <CCINIClass.h>
 CCINIClass* CCINIClass::INI_AI			= (CCINIClass*)0x887128;
 CCINIClass* CCINIClass::INI_Art			= (CCINIClass*)0x887180;
@@ -131,6 +134,9 @@ DECL(SmudgeClass, 0xA8B1E0);
 
 #include <SmudgeTypeClass.h>
 DECL(SmudgeTypeClass, 0xA8EC18);
+
+#include <SpotlightClass.h>
+DECL(SpotlightClass, 0xAC1678);
 
 #include <SuperWeaponTypeClass.h>
 DECL(SuperWeaponTypeClass, 0xA8E330);
