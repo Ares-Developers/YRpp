@@ -74,7 +74,7 @@ public:
 
 	//Non-virtual
 	CellClass* GetCellAt(CoordStruct* pCrd)
-		{ PUSH_VAR32(pCrd); THISCALL(0x565730); }
+		JMP_THIS(0x565730);
 
 	CellClass* GetCellAt(CellStruct* pMapCoords)
 		{

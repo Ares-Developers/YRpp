@@ -11,7 +11,7 @@ public:
 	bool operator == (WaypointClass tWaypoint)
 	{
 		return (Coords == *tWaypoint.get_Coords() &&
-				unknown == tWaypoint.get_unknown());
+				unknown == tWaypoint.unknown);
 	}
 
 	//Properties
@@ -37,15 +37,15 @@ public:
 	virtual int Size() R0;
 
 	WaypointClass * GetWaypoint(int idx)
-		{ PUSH_VAR32(idx); THISCALL(0x763980); }
+		JMP_THIS(0x763980);
 	WaypointClass * GetWaypointAfter(int idx)
-		{ PUSH_VAR32(idx); THISCALL(0x763BA0); }
+		JMP_THIS(0x763BA0);
 	bool WaypointExistsAt(WaypointClass *wpt)
-		{ PUSH_VAR32(wpt); THISCALL(0x763A50); }
+		JMP_THIS(0x763A50);
 
 	// Constructor
 	WaypointPathClass(int idx)
-		{ PUSH_VAR32(idx); THISCALL(0x763810); }
+		JMP_THIS(0x763810);
 
 protected:
 	//Constructor

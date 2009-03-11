@@ -64,6 +64,9 @@ struct SHPStruct
 	//linked list of all SHPStructs
 	SHPStruct*	Next;
 	SHPStruct*	Prev;
+	
+	RectangleStruct *GetFrameHeader(RectangleStruct *buf, int FrameIndex)
+		JMP_THIS(0x69E7E0);
 };
 
 //=== GLOBAL LINKED LIST OF ALL LOADED SHP FILES
@@ -76,6 +79,16 @@ class FileSystem
 public:
 	static void* __fastcall LoadFile(const char* pFileName, bool bLoadAsSHP)
 		JMP_STD(0x5B40B0);
+
+	static SHPStruct *&PIPS_SHP;
+
+	static ConvertClass *&CAMEO_PAL;
+	static ConvertClass *&UNITx_PAL;
+	static ConvertClass *&x_PAL;
+	static ConvertClass *&GRFTXT_TIBERIUM_PAL;
+	static ConvertClass *&ANIM_PAL;
+	static ConvertClass *&THEATER_PAL;
+	static ConvertClass *&MOUSE_PAL;
 
 	static void* LoadFile(const char* pFileName)
 		{ return LoadFile(pFileName, false); }

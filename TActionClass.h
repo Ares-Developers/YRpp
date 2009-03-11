@@ -267,7 +267,7 @@ public:
 		JMP_THIS(0x6E45E0);
 
 	// no duplication, please.. it's a waste of good coding
-	int GetIndexInArray() { return this->get_IndexInArray(); }
+	int GetIndexInArray() { return this->IndexInArray; }
 
 	//Constructor
 	TActionClass() : AbstractClass(false)

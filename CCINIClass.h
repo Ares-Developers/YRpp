@@ -29,34 +29,33 @@ public:
 		JMP_THIS(0x526B00);
 
 	INISection* GetSection(const char* pSection)
-		{ PUSH_VAR32(pSection); THISCALL(0x526810); }
+		{ JMP_THIS(0x526810); }
 
 	int GetKeyCount(const char* pSection) //Get the amount of keys in a section.
-		{ PUSH_VAR32(pSection); THISCALL(0x526960); }
+		{ JMP_THIS(0x526960); }
 	const char* GetKeyName(const char* pSection, int nKeyIndex) //Get the name of a key number in a section.
-		{ PUSH_VAR32(nKeyIndex); PUSH_VAR32(pSection); THISCALL(0x526CC0); }
+		{ JMP_THIS(0x526CC0); }
 
 	//Reads an ANSI string. Returns the string's length.
 	int ReadString(const char* pSection, const char* pKey, const char* pDefault, char* pBuffer, size_t szBufferSize)
-		{ PUSH_VAR32(szBufferSize); PUSH_VAR32(pBuffer); PUSH_VAR32(pDefault); PUSH_VAR32(pKey);
-			PUSH_VAR32(pSection); THISCALL(0x528A10); }
+		{ JMP_THIS(0x528A10); }
 	//Writes an ANSI string.
 	bool WriteString(const char* pSection, const char* pKey, const char* pString)
-		{ PUSH_VAR32(pString); PUSH_VAR32(pKey); PUSH_VAR32(pSection); THISCALL(0x528660); }
+		{ JMP_THIS(0x528660); }
 
 	//Reads an boolean value.
 	bool ReadBool(const char* pSection, const char* pKey, bool bDefault)
-		{ PUSH_VAR8(bDefault); PUSH_VAR32(pKey); PUSH_VAR32(pSection); THISCALL(0x5295F0); }
+		{ JMP_THIS(0x5295F0); }
 	//Writes an boolean value.
 	bool WriteBool(const char* pSection, const char* pKey, bool bValue)
-		{ PUSH_VAR8(bValue); PUSH_VAR32(pKey); PUSH_VAR32(pSection); THISCALL(0x529560); }
+		{ JMP_THIS(0x529560); }
 
 	//Reads an integer value.
 	int ReadInteger(const char* pSection, const char* pKey, int nDefault)
-		{ PUSH_VAR32(nDefault); PUSH_VAR32(pKey); PUSH_VAR32(pSection); THISCALL(0x5276D0); }
+		{ JMP_THIS(0x5276D0); }
 	//Writes an integer value.
 	bool WriteInteger(const char* pSection, const char* pKey, int nValue, bool bHex)
-		{ PUSH_VAR8(bHex); PUSH_VAR32(nValue); PUSH_VAR32(pKey); PUSH_VAR32(pSection); THISCALL(0x5276D0); }
+		{ JMP_THIS(0x5276D0); }
 
 	//Reads a decimal value.
 	double ReadDouble(const char* pSection, const char* pKey, double dDefault)
@@ -73,32 +72,29 @@ public:
 
 	//Reads two integer values.
 	int* Read2Integers(int* pBuffer, const char* pSection, const char* pKey, int* pDefault)
-		{ PUSH_VAR32(pDefault); PUSH_VAR32(pKey); PUSH_VAR32(pSection); PUSH_VAR32(pBuffer); THISCALL(0x529880); }
+		{ JMP_THIS(0x529880); }
 	//Writes two integer values.
 	bool Write2Integers(const char* pSection, const char* pKey, int* pValues)
-		{ PUSH_VAR32(pValues); PUSH_VAR32(pKey); PUSH_VAR32(pSection); THISCALL(0x5297E0); }
+		{ JMP_THIS(0x5297E0); }
 
 	//Reads three integer values.
 	int* Read3Integers(int* pBuffer, const char* pSection, const char* pKey, int* pDefault)
-		{ PUSH_VAR32(pDefault); PUSH_VAR32(pKey); PUSH_VAR32(pSection); PUSH_VAR32(pBuffer); THISCALL(0x529CA0); }
+		{ JMP_THIS(0x529CA0); }
 
 	//Reads three byte values.
 	byte* Read3Bytes(byte* pBuffer, const char* pSection, const char* pKey, byte* pDefault)
-		{ PUSH_VAR32(pDefault); PUSH_VAR32(pKey); PUSH_VAR32(pSection); PUSH_VAR32(pBuffer); THISCALL(0x474B50); }
+		{ JMP_THIS(0x474B50); }
 
 	//Writes three byte values.
 	bool Write3Bytes(const char* pSection, const char* pKey, byte* pValues)
-		{ PUSH_VAR32(pValues); PUSH_VAR32(pKey); PUSH_VAR32(pSection); THISCALL(0x474C20); }
+		{ JMP_THIS(0x474C20); }
 
 
 	// C&C helpers
 
-	bool IsKeySet(const char* pSection, const char* pKey)
-		{ char buf[4]; return this->ReadString(pSection, pKey, "", buf, 4) > 0; }
-
 #define INI_READ(item, addr) \
 	int Read ## item(const char* pSection, const char* pKey, int pDefault) \
-		{ PUSH_VAR32(pDefault); PUSH_VAR32(pKey); PUSH_VAR32(pSection); THISCALL(addr); }
+		{ JMP_THIS(addr); }
 
 	// Pip= to idx ( pip strings with index < pDefault are not even scanned! )
 	INI_READ(Pip, 0x4748A0);
@@ -172,15 +168,15 @@ public:
 
 	// Color=%d,%d,%d to idx , used to parse [Colors]
 	ColorStruct* ReadColor(ColorStruct* pBuffer, const char* pSection, const char* pKey, ColorStruct* pDefault)
-		{ PUSH_VAR32(pDefault); PUSH_VAR32(pKey); PUSH_VAR32(pSection); PUSH_VAR32(pBuffer); THISCALL(0x474C70); }
+		{ JMP_THIS(0x474C70); }
 
 	// 18 bytes
 	byte* ReadAbilities(byte* pBuffer, const char* pSection, const char* pKey, byte* pDefault)
-		{ PUSH_VAR32(pDefault); PUSH_VAR32(pKey); PUSH_VAR32(pSection); PUSH_VAR32(pBuffer); THISCALL(0x477640); }
+		{ JMP_THIS(0x477640); }
 
 
 	TechnoTypeClass* GetTechnoType(const char* pSection, const char* pKey)
-		{ PUSH_VAR32(pKey); PUSH_VAR32(pSection); THISCALL(0x476EB0); }
+		{ JMP_THIS(0x476EB0); }
 
 
 	// fsldargh who the fuck decided to pass structures by value here

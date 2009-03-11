@@ -68,6 +68,9 @@ public:
 	virtual void vt_entry_54C() RX;
 	virtual bool vt_entry_550(DWORD dwUnk) R0;
 
+	bool CanBeRecruited(HouseClass *ByWhom)
+		JMP_THIS(0x4DA230);
+
 	//Constructor
 	FootClass(HouseClass* owner) : TechnoClass(false)
 		JMP_THIS(0x4D31E0);

@@ -26,8 +26,11 @@ public:
 	static DynamicVectorClass<VocClass*>* Array;
 	static VocClass* Find(const char* pName)
 	{
-		for(int i = 0; i < Array->get_Count(); i++)
-			if(!_strcmpi((*Array)[i]->get_Name(),pName))return (*Array)[i];
+		for(int i = 0; i < Array->Count; ++i) {
+			if(!_strcmpi(Array->Items[i]->Name, pName)) {
+				return Array->Items[i];
+			}
+		}
 		return NULL;
 	}
 /* dunno what gives, but this doesn't work, the one below does

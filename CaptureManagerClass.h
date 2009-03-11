@@ -47,7 +47,7 @@ public:
 		JMP_THIS(0x472140);
 
 	int NumControlNodes()
-		{ return ControlNodes.get_Count(); }
+		{ return ControlNodes.Count; }
 
 	bool CanCapture(TechnoClass *Target)
 		JMP_THIS(0x471C90);

@@ -1,17 +1,59 @@
 #ifndef DCODER_H
 #define DCODER_H
 
+#include <Syringe.h>
+
 // In this file: Alternatives to CTRL + H...
+
+// here be dragons(plenty)
+template<typename T>
+class retfunc {
+protected:
+	REGISTERS *R;
+	DWORD retAddr;
+public:
+	retfunc(REGISTERS *r, DWORD addr) : R(r), retAddr(addr) {};
+	int operator()( T Result ) {
+		R->set_EAX((DWORD)Result);
+		return retAddr;
+	}
+};
+
+template<typename T>
+class retfunc_fixed : public retfunc<T> {
+protected:
+	T Result;
+public:
+	retfunc_fixed(REGISTERS *r, DWORD addr, T res) : retfunc(r, addr), Result(res) {};
+	int operator()() {
+		R->set_EAX((DWORD)Result);
+		return retAddr;
+	}
+};
 
 #include <hash_map>
 // macros DCoder uses and pd dislikes :)
 
 // for exportfuncs, repeating stuff is annoying :P
-#define GET(clsname, var, reg) clsname var = (clsname )R->get_ ## reg ();
 
-#define RET_UNLESS(expr) if(!(expr)) { return 0; }
-#define RETZ_UNLESS(expr) if(!(expr)) { return ; }
+#define GET(clsname, var, reg) \
+	clsname var = (clsname )R->get_ ## reg ();
 
+// it's really not a good idea to GET_STACK(not_a_pointer)
+// no, really
+#define GET_STACK(clsname, var, offset) \
+	clsname var = *((clsname *)(R->lea_ ## StackVar(offset)));
+
+#define GET_BASE(clsname, var, offset) \
+	clsname var = *((clsname *)(R->lea_ ## BaseVar(offset)));
+
+#define RET_UNLESS(expr) \
+	if(!(expr)) { return 0; }
+#define RETZ_UNLESS(expr) \
+	if(!(expr)) { return ; }
+
+
+// DEPRECATED DO NOT USE
 // please don't mix the two hashmaps in one class
 
 /*
@@ -83,6 +125,8 @@
 #define BIND_INI_CALLBACKS(clsname) \
 		clsname ## Callback::LoadFromINI	=	clsname ## Ext::LoadFromINI;
 
+// </DEPRECATED DO NOT USE>
+
 // I'm lazy, so sue me
 #define CONTAINS(var, ptr) \
 	(var.find(ptr) != var.end())
@@ -95,9 +139,9 @@
 	var.erase(var.find(ptr));
 
 #define ARRAY_ITERATE(clsname, pINI) \
-	if(clsname ## Callback::LoadFromINI) {                                   \
-		for(int i = 0; i < clsname::Array->get_Count(); ++i) {                 \
-			clsname ## Callback::LoadFromINI(clsname::Array->GetItem(i), pINI);  \
+	if(clsname ## Callback::LoadFromINI) {                                \
+		for(int i = 0; i < clsname::Array->Count; ++i) {                    \
+			clsname ## Callback::LoadFromINI(clsname::Array->Items[i], pINI); \
 		} \
 	}
 
@@ -107,13 +151,13 @@
 
 // absflags shorthand
 #define ABS_IS_OBJECT(var) \
-	(var->get_AbstractFlags() & ABSFLAGS_ISOBJECT)
+	(var->AbstractFlags & ABSFLAGS_ISOBJECT)
 
 #define ABS_IS_TECHNO(var) \
-	(var->get_AbstractFlags() & ABSFLAGS_ISTECHNO)
+	(var->AbstractFlags & ABSFLAGS_ISTECHNO)
 
 #define ABS_IS_FOOT(var) \
-	(var->get_AbstractFlags() & ABSFLAGS_ISFOOT)
+	(var->AbstractFlags & ABSFLAGS_ISFOOT)
 
 // this is an Ares macro, durr, don't use it in YR++, will be moved someday
 #define IF_STR(section, key) \
@@ -123,7 +167,7 @@
 		cur; cur = strtok(NULL, Ares::readDelims))
 
 #define PARSE_VECTOR(ini_section, ini_key, var, objtype) \
-IF_STR(ini_section, ini_key) { \
+IF_STR(ini_section, #ini_key) { \
 	DynamicVectorClass<objtype *>* vec = var; vec->Clear(); \
 	FOR_STRTOK{ \
 		objtype *idx = objtype::Find(cur); if(idx) { vec->AddItem(idx); } \
@@ -134,7 +178,8 @@ IF_STR(ini_section, ini_key) { \
 IF_STR(ini_section, #ini_key) { \
 	DynamicVectorClass<objtype *>* vec = obj->get_ ## ini_key(); vec->Clear(); \
 	FOR_STRTOK{ \
-		objtype *idx = objtype::Find(cur); if(idx) { vec->AddItem(idx); } \
+		objtype *idx = objtype::Find(cur); \
+		if(idx) { vec->AddItem(idx); } \
 	} \
 }
 
@@ -142,7 +187,7 @@ IF_STR(ini_section, #ini_key) { \
 IF_STR(ini_section, #ini_key) { \
 	DWORD buf = 0; \
 	FOR_STRTOK{ \
-		int idx = objtype::FindIndex(cur); if(idx > -1) { buf |= idx; } \
+		int idx = objtype::FindIndex(cur); if(idx > -1) { buf |= (1 << idx); } \
 	} \
 	obj->set_ ## obj_key (buf); \
 }

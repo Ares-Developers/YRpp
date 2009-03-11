@@ -43,7 +43,7 @@ public:
 		{ ++this->idxCurrentLine; return this->HasNextAction(); } 
 
 	bool HasNextAction()
-		{ return this->idxCurrentLine < this->Type->get_ActionsCount(); } 
+		{ return this->idxCurrentLine < this->Type->ActionsCount; } 
 
 	//Constructor
 	ScriptClass(ScriptTypeClass *pType) : AbstractClass(false)

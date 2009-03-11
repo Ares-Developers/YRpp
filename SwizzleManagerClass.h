@@ -14,8 +14,8 @@ public:
 	bool operator==(SwizzlePointerClass tOther)
 		{
 		return
-			(unknown_0 == tOther.get_unknown_0()) &&
-			(pAnything == tOther.get_pAnything());
+			(unknown_0 == tOther.unknown_0) &&
+			(pAnything == tOther.pAnything);
 	}
 };
 

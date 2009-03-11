@@ -71,17 +71,21 @@ public:
 
 	static TechnoTypeClass* Find(const char* pID)
 	{
-		for(int i=0;i<Array->get_Count();i++)
-			if(!_strcmpi(((TechnoTypeClass*)(*Array)[i])->get_ID(), pID))
-				return ((TechnoTypeClass*)(*Array)[i]);
+		for(int i = 0; i < Array->Count; ++i) {
+			if(!_strcmpi(((TechnoTypeClass*)Array->Items[i])->get_ID(), pID)) {
+				return ((TechnoTypeClass*)Array->Items[i]);
+			}
+		}
 		return NULL;
 	}
 
 	static int FindIndex(const char* pID)
 	{
-		for(int i=0;i<Array->get_Count();i++)
-			if(!_strcmpi(((TechnoTypeClass*)(*Array)[i])->get_ID(), pID))
+		for(int i = 0; i < Array->Count; ++i) {
+			if(!_strcmpi(((TechnoTypeClass*)Array->Items[i])->get_ID(), pID)) {
 				return i;
+			}
+		}
 		return -1;
 	}
 

@@ -31,6 +31,30 @@ struct VeterancyStruct
 {
 	float Veterancy;
 	DWORD unknown_4;
+
+	bool IsElite()
+		JMP_THIS(0x750010);
+
+	bool IsVeteran()
+		JMP_THIS(0x74FF90);
+
+	bool IsNegative()
+		JMP_THIS(0x74FFF0);
+
+	eRank GetRemainingLevel()
+		JMP_THIS(0x750030);
+
+	void Reset()
+		JMP_THIS(0x750080);
+
+	void SetRookie(bool NotReally)
+		JMP_THIS(0x750060);
+
+	void SetVeteran(bool YesReally)
+		JMP_THIS(0x750090);
+
+	void SetElite(bool YesReally)
+		JMP_THIS(0x7500B0);
 };
 
 class PassengersClass
@@ -253,6 +277,13 @@ public:
 	bool ShouldSuppress(CellStruct *coords)
 		JMP_THIS(0x6F79A0);
 
+	// smooth operator
+	const char *get_ID() {
+		ObjectTypeClass *TT = this->GetType();
+		return TT ? TT->get_ID() : NULL;
+	}
+
+
 // CanTargetWhatAmI is a bitfield, if(!(CanTargetWhatAmI & (1 << tgt->WhatAmI())) { fail; }
 
 // slave of the next one
@@ -276,6 +307,12 @@ public:
 		int *ThreatPosed,
 		DWORD dwUnk3)
 			JMP_THIS(0x6F8960);
+
+	void Reactivate()
+		JMP_THIS(0x70FBE0);
+
+	void Deactivate()
+		JMP_THIS(0x70FC90);
 
 	//Constructor
 	TechnoClass(HouseClass* pOwner) : RadioClass(false)
@@ -321,7 +358,7 @@ public:
 	PROPERTY_STRUCT(TimerStruct, AirstrikeTimer);
 	PROPERTY_STRUCT(TimerStruct, AirstrikeTintTimer); // tracks alternation of the effect color
 	PROPERTY(DWORD,              AirstrikeTintStage); //  ^
-	PROPERTY(int,                IronCurtainActive);	//0 or 1, NOT a bool
+	PROPERTY(int,                ForceShielded);	//0 or 1, NOT a bool - is this under ForceShield as opposed to IC? 
 	PROPERTY(bool,               Deactivated); //Robot Tanks without power for instance
 	PROPERTY(TechnoClass*,       DrainTarget); // eg Disk -> PowerPlant, this points to PowerPlant
 	PROPERTY(TechnoClass*,       DrainingMe);  // eg Disk -> PowerPlant, this points to Disk

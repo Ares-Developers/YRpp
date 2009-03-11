@@ -3,6 +3,8 @@
 
 #include <GeneralDefinitions.h>
 #include <Randomizer.h>
+#include <ArrayClasses.h>
+#include <TechnoTypeClass.h>
 
 struct Variable
 {

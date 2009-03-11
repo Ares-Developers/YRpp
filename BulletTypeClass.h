@@ -11,7 +11,10 @@
 class AnimTypeClass;
 class BulletClass;
 class ColorScheme;
+class CellClass;
+class TechnoClass;
 class WeaponTypeClass;
+class WarheadTypeClass;
 
 class BulletTypeClass : public ObjectTypeClass
 {
@@ -44,7 +47,8 @@ public:
 		int Damage, 
 		WarheadTypeClass *WH,
 		int Speed,
-		bool Bright) JMP_STD(0x46B050);
+		bool Bright)
+		JMP_STD(0x46B050);
 
 protected:
 	BulletTypeClass() : ObjectTypeClass(false) {};

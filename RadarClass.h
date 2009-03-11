@@ -17,10 +17,10 @@ public:
 
 	//MapClass
 	virtual void CreateEmptyMap(RectangleStruct* pMapRect, bool bUnk1, char nLevel, bool bUnk2)
-		{ PUSH_VAR8(bUnk2); PUSH_VAR8(nLevel); PUSH_VAR8(bUnk1); PUSH_VAR32(pMapRect); THISCALL(0x653F50); }
+		{ JMP_THIS(0x653F50); }
 
 	virtual void vt_entry_74(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x654490); }
+		{ JMP_THIS(0x654490); }
 
 	//DisplayClass
 

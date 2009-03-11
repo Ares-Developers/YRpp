@@ -45,13 +45,10 @@ public:
 
 	static bool FindThisOwnerAndProduct(HouseClass *pHouse, TechnoTypeClass *pItem)
 	{
-		for(int i = 0; i < Array->get_Count(); ++i)
-		{
+		for(int i = 0; i < Array->Count; ++i) {
 			FactoryClass *Fact = Array->GetItem(i);
-			if(Fact->get_Owner() == pHouse)
-			{
-				if(Fact->CountQueued(pItem) > 0)
-				{
+			if(Fact->Owner == pHouse) {
+				if(Fact->CountQueued(pItem) > 0) {
 					return true;
 				}
 			}

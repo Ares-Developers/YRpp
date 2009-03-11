@@ -23,7 +23,7 @@ public:
 		{
 			IsolateFromList();
 			
-			Next = pLink->get_Next();
+			Next = pLink->Next;
 			Previous = pLink;
 			
 			pLink->set_Next(this);
@@ -55,7 +55,7 @@ public:
 			
 			LinkClass* pFirst = pLink->GetFirst();
 
-			pFirst->set_Previous(this);
+			pFirst->Previous = this;
 			Next = pFirst;
 			Previous = NULL;
 
@@ -66,12 +66,12 @@ public:
 		{
 			LinkClass* p = this;
 
-			while(p->get_Previous())
-			{
-				p = p->get_Previous();
+			while(p->Previous) {
+				p = p->Previous;
 
-				if(p == this)
+				if(p == this) {
 					return this;
+				}
 			}
 			return p;
 		}
@@ -80,12 +80,12 @@ public:
 		{
 			LinkClass* p = this;
 
-			while(p->get_Next())
-			{
-				p = p->get_Next();
+			while(p->Next) {
+				p = p->Next;
 
-				if(p == this)
+				if(p == this) {
 					return this;
+				}
 			}
 			return p;
 		}
@@ -103,20 +103,21 @@ public:
 			LinkClass* pLast = GetLast();
 
 			if(Next)
-				Next->set_Previous(Previous);
+				Next->Previous = Previous;
 				
 			if(Previous)
-				Previous->set_Next(Next);
+				Previous->Next = Next;
 				
 			Previous = NULL;
 			Next = NULL;
 
-			if(pFirst != this)
+			if(pFirst != this) {
 				return pFirst;
-			else if(pLast != this)
+			} else if(pLast != this) {
 				return pLast->GetFirst();
-			else
+			} else {
 				return NULL;
+			}
 		}
 
 	//Properties

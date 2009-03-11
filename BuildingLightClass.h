@@ -10,12 +10,22 @@ public:
 	//Static
 	static DynamicVectorClass<BuildingLightClass*>* Array;
 
+	//IPersist
+	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
+
+	//IPersistStream
+	virtual HRESULT _stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
+
+	//AbstractClass
+	virtual eAbstractType WhatAmI() R0;
+	virtual int	Size() R0;
+
 	//Destructor
 	virtual ~BuildingLightClass() RX;
 
 	//Constructor
-	BuildingLightClass(BuildingClass *Owner) : ObjectClass(false)
-		{ JMP_THIS(0x435820); }
+	BuildingLightClass(ObjectClass *Owner) : ObjectClass(false)
+		JMP_THIS(0x435820);
 
 protected:
 	BuildingLightClass() : ObjectClass(false) { }
@@ -24,7 +34,6 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(DWORD, field_A8);
 	PROPERTY(DWORD, field_AC);
 	PROPERTY(DWORD, field_B0);
 	PROPERTY(DWORD, field_B4);
@@ -35,7 +44,7 @@ protected:
 	PROPERTY(bool, field_D8);
 	PROPERTY(eSpotlightBehaviour, BehaviourMode);
 	PROPERTY(ObjectClass *, FollowingObject);
-	PROPERTY(BuildingClass *, OwnerBuilding);
+	PROPERTY(TechnoClass *, OwnerObject);
 };
 
 #endif

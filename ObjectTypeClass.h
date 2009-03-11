@@ -32,7 +32,7 @@ public:
 	virtual void vt_entry_78(DWORD dwUnk) RX;
 	virtual void vt_entry_7C(DWORD dwUnk) RX;
 	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) = 0;
-	virtual int GetActualCost(HouseTypeClass* pCountry) R0;
+	virtual int GetActualCost(HouseClass* pHouse) R0;
 	virtual int GetBuildSpeed() R0;
 	virtual ObjectClass* CreateObject(HouseClass* pOwner) = 0;
 	virtual void vt_entry_90(DWORD dwUnk) RX;

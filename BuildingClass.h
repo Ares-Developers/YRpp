@@ -7,8 +7,7 @@
 
 #include <TechnoClass.h>
 #include <BuildingTypeClass.h>
-
-class BuildingLightClass;
+#include <BuildingLightClass.h>
 class FactoryClass;
 class InfantryClass;
 class LightSourceClass;
@@ -53,6 +52,23 @@ public:
 
 	// non-vt
 
+	// power up
+	void GoOnline()
+		JMP_THIS(0x452260);
+	void GoOffline()
+		JMP_THIS(0x452360);
+
+	// Firewall aka FirestormWall
+	// depending on what facings of this building
+	// are connected to another FWall,
+	// returns the index of the image file
+	// to draw. 
+	DWORD GetFWFlags()
+		JMP_THIS(0x455B90);
+
+	void CreateEndPost(bool arg)
+		JMP_THIS(0x4533A0);
+
 	// kick out content
 	void UnloadBunker()
 		JMP_THIS(0x4593A0);
@@ -84,8 +100,8 @@ protected:
 	PROPERTY(DWORD, OwnerCountryIndex);
 	PROPERTY(DWORD, unknown_540); //pointer
 	PROPERTY(DWORD, unknown_544);
-	PROPERTY(DWORD, unknown_548); //pointer
-	PROPERTY(DWORD, unknown_54C); //pointer
+	PROPERTY(AnimClass*, FirestormAnim); //pointer
+	PROPERTY(DWORD, PsiWarnAnim); //pointer
 	PROPERTY_STRUCT(TimerStruct, unknown_timer_550);
 
 
@@ -132,8 +148,8 @@ public:
 	PROPERTY_STRUCT(TimerStruct, unknown_timer_604);
 	PROPERTY(DWORD, unknown_610);
 	PROPERTY(LightSourceClass *, LightSource); // tiled light , LightIntensity > 0
-	PROPERTY(DWORD, unknown_618);
-	PROPERTY(DWORD, unknown_61C);
+	PROPERTY(DWORD, LaserFenceFrame); // 0-7 for active directionals, 8/12 for offline ones, check ntfnce.shp or whatever
+	PROPERTY(DWORD, FirestormWallFrame); // anim data for firestorm active animations
 	PROPERTY(DWORD, unknown_620);
 	PROPERTY(bool, unknown_bool_624);
 	PROPERTY_STRUCT(TimerStruct, LastInfantryEntry); // for hospital, armory, etc
@@ -176,7 +192,7 @@ public:
 	PROPERTY(bool, ActuallyPlacedOnMap);
 	PROPERTY(bool, unknown_bool_6E5);
 	PROPERTY(bool, IsDamaged); // AI handholder for repair logic, 
-	PROPERTY(bool, unknown_bool_6E7);
+	PROPERTY(bool, IsFogged);
 	PROPERTY(bool, IsBeingRepaired); // show animooted repair wrench
 	PROPERTY(bool, unknown_bool_6E9);
 	PROPERTY(bool, unknown_bool_6EA);

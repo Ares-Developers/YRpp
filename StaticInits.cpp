@@ -1,4 +1,4 @@
-//This file initilializes static constant values.
+//This file initializes static constant values.
 
 #include <YRPP.h>
 
@@ -56,11 +56,30 @@ DECL(CommandClass, 0x87F658);
 #include <ConvertClass.h>
 DECL(ConvertClass, 0x89ECF8);
 
+#include <Drawing.h>
+DSurface *&Drawing::DSurface_Tile = *(DSurface **)0x8872FC;
+DSurface *&Drawing::DSurface_Sidebar = *(DSurface **)0x887300;
+DSurface *&Drawing::DSurface_Primary = *(DSurface **)0x887308;
+DSurface *&Drawing::DSurface_Hidden = *(DSurface **)0x88730C;
+DSurface *&Drawing::DSurface_Alternate = *(DSurface **)0x887310;
+DSurface *&Drawing::DSurface_Hidden_2 = *(DSurface **)0x887314;
+DSurface *&Drawing::DSurface_Composite = *(DSurface **)0x88731C;
+
 #include <EMPulseClass.h>
 DECL(EMPulseClass, 0x8A3870);
 
 #include <FactoryClass.h>
 DECL(FactoryClass, 0xA83E30);
+
+#include <FileSystem.h>
+SHPStruct *&FileSystem::PIPS_SHP = *(SHPStruct **)0xAC147C;
+ConvertClass *&FileSystem::CAMEO_PAL = *(ConvertClass **)0x87F6B0;
+ConvertClass *&FileSystem::UNITx_PAL = *(ConvertClass **)0x87F6B4;
+ConvertClass *&FileSystem::x_PAL = *(ConvertClass **)0x87F6B8;
+ConvertClass *&FileSystem::GRFTXT_TIBERIUM_PAL = *(ConvertClass **)0x87F6BC;
+ConvertClass *&FileSystem::ANIM_PAL = *(ConvertClass **)0x87F6C0;
+ConvertClass *&FileSystem::THEATER_PAL = *(ConvertClass **)0x87F6C4;
+ConvertClass *&FileSystem::MOUSE_PAL = *(ConvertClass **)0x87F6C8;
 
 #include <HouseClass.h>
 DECL(HouseClass, 0xA80228);
@@ -126,6 +145,9 @@ DECL(RadBeam, 0xB04A60);
 #include <RadSiteClass.h>
 DECL(RadSiteClass, 0xB04BD0);
 
+#include <RulesClass.h>
+bool RulesClass::Initialized = false;
+
 #include <SideClass.h>
 DECL(SideClass, 0x8B4120);
 
@@ -146,6 +168,9 @@ DECL(TaskForceClass, 0xA8E8D0);
 
 #include <ScriptTypeClass.h>
 DECL(ScriptTypeClass, 0x8B41C8);
+
+#include <TeamClass.h>
+DECL(TeamClass, 0x8B40E8);
 
 #include <TeamTypeClass.h>
 DECL(TeamTypeClass, 0xA8ECA0);
@@ -179,6 +204,8 @@ DECL(UnitTypeClass, 0xA83CE0);
 
 #include <Unsorted.h>
 DynamicVectorClass<MovieInfo> *MovieInfo::Array = (DynamicVectorClass<MovieInfo>*)0xABF390;
+DWORD &Game::Savegame_Magic = *(DWORD *)0x83D560;
+int &Game::CurrentFrameRate   = *(int *)0xABCD44;
 
 #include <VocClass.h>
 DECL(VocClass, 0xB1D378);

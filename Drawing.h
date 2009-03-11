@@ -18,6 +18,15 @@ public:
 	static DSurface* GetSurface_ ## name ()\
 		{ DSurface* pSurf; MEM_READ32(pSurf,address); return pSurf; }
 	
+	static DSurface *&DSurface_Tile;
+	static DSurface *&DSurface_Sidebar;
+	static DSurface *&DSurface_Primary;
+	static DSurface *&DSurface_Hidden;
+	static DSurface *&DSurface_Alternate;
+	static DSurface *&DSurface_Hidden_2;
+	static DSurface *&DSurface_Composite;
+
+/*
 	DECL_GET_SURFACE(Tile,      0x8872FC);		//no idea
 	DECL_GET_SURFACE(Sidebar,   0x887300);		//self-explanatory
 	DECL_GET_SURFACE(Primary,   0x887308);		//should never need this
@@ -27,6 +36,7 @@ public:
 	DECL_GET_SURFACE(Hidden_2,  0x887314);		//stuff like loading screens
 
 	DECL_GET_SURFACE(Composite, 0x88731C);	//the Battlefield, I think
+*/
 
 	//TextBox dimensions for tooltip-style boxes
 	static RectangleStruct GetTextBox(const wchar_t* pText, int nX, int nY, int nMargin)

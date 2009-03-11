@@ -11,22 +11,21 @@
 template <typename T> class VectorClass
 {
 public:
-	virtual ~VectorClass()
-	{
+	virtual ~VectorClass() {
 		Clear();
 	}
 
-	virtual bool IsEqual(VectorClass* pVec)
-	{
-		if(Capacity == pVec->get_Capacity())
-		{
-			if(Capacity == 0)
+	virtual bool IsEqual(VectorClass* pVec) {
+		if(Capacity == pVec->Capacity) {
+			if(Capacity == 0) {
 				return true;
+			}
 
-			for(int i = 0; i < Capacity; i++)
-			{
-				if(!(Items[i] == pVec->get_Items()[i]))
-					return false;
+			for(int i = 0; i < Capacity; ++i) {
+				if(Items[i] == pVec->Items[i]) {
+					continue; // kapow! don't rewrite this to != unless you know why you're doing it
+				}
+				return false;
 			}
 			return true;
 		}
@@ -34,28 +33,27 @@ public:
 	}
 
 
-	virtual bool SetCapacity(int nNewCapacity, T* pMem)
-	{
-		if(nNewCapacity != 0)
-		{
+	virtual bool SetCapacity(int nNewCapacity, T* pMem) {
+		if(nNewCapacity != 0) {
 			IsInitialized = false;
 
 			bool bMustAllocate = (pMem == NULL);
-			if(!pMem)
+			if(!pMem) {
 				pMem = new T[nNewCapacity];
+			}
 
 			IsInitialized = true;
-			if(!pMem)
+			if(!pMem) {
 				return false;
+			}
 
-			if(Items)
-			{
+			if(Items) {
 				int n = (nNewCapacity < Capacity) ? nNewCapacity : Capacity;
-				for(int i = 0; i < n; i++)
+				for(int i = 0; i < n; ++i) {
 					pMem[i] = Items[i];
+				}
 
-				if(IsAllocated)
-				{
+				if(IsAllocated) {
 					delete Items;
 					Items = NULL;
 				}
@@ -64,19 +62,14 @@ public:
 			IsAllocated = bMustAllocate;
 			Items = pMem;
 			Capacity = nNewCapacity;
-			return true;
-		}
-		else
-		{
+		} else {
 			Clear();
-			return true;
 		}
+		return true;
 	}
 
-	virtual void Clear()
-	{
-		if(Items && IsAllocated)
-		{
+	virtual void Clear() {
+		if(Items && IsAllocated) {
 			delete Items;
 			Items = NULL;
 		}
@@ -84,77 +77,75 @@ public:
 		Capacity = 0;
 	}
 
-	virtual int FindItemIndex(T tItem)
-	{
-		if(!IsInitialized) return 0;
+	virtual int FindItemIndex(T tItem) {
+		if(!IsInitialized) {
+			return 0;
+		}
 
-		for(int i = 0; i < Capacity; i++)
-			if(Items[i] == tItem) return i;
+		for(int i = 0; i < Capacity; ++i) {
+			if(Items[i] == tItem) {
+				return i;
+			}
+		}
 
 		return -1;
 	}
 
-	virtual int GetItemIndex(T* pItem)
-	{
+	virtual int GetItemIndex(T* pItem) {
 		if(!IsInitialized) return 0;
 		return (pItem - Items) / sizeof(T);
 	}
 
-	virtual T GetItem(int i) 
-	{
+	virtual T GetItem(int i) {
 		return Items[i];
 	}
 
-	T& operator [](int i)
-	{
+	T& operator [](int i) {
 		return Items[i];
 	}
 
-	VectorClass()
-	{
+	VectorClass() {
 		Items = NULL;
 		Capacity = 0;
 		IsInitialized = true;
 		IsAllocated = false;
 	}
 
-	VectorClass(int nCapacity, T* pMem)
-	{
+	VectorClass(int nCapacity, T* pMem) {
 		Items = NULL;
 		Capacity = nCapacity;
 		IsInitialized = true;
 		IsAllocated = false;
 
-		if(nCapacity != 0)
-		{
-			if(pMem)
+		if(nCapacity != 0) {
+			if(pMem) {
 				Items = pMem;
-			else
-			{
+			} else {
 				Items = new T[nCapacity];
 				IsAllocated = true;
 			}
 		}
 	}
 
-	void Save(IStream *pStm)
-	{
+	void Save(IStream *pStm) {
 		int ii = Capacity;
 		pStm->Write(&ii, 4u, 0);
-		for ( ii = 0; ii < Capacity; ++ii )
+		for ( ii = 0; ii < Capacity; ++ii ) {
 			pStm->Write(&(this->Items[ii]), 4, 0);
+		}
 	}
 
-	void Load(IStream *pStm)
-	{
+	void Load(IStream *pStm) {
 		int ii = 0;
 		this->Clear();
 		pStm->Read(&ii, 4u, 0);
 		this->SetCapacity(ii, NULL);
-		for ( ii = 0; ii < Capacity; ++ii )
+		for ( ii = 0; ii < Capacity; ++ii ) {
 			pStm->Read(&(Items[ii]), 4, 0);
-		for ( ii = 0; ii < Capacity; ++ii )
+		}
+		for ( ii = 0; ii < Capacity; ++ii ) {
 			SWIZZLE(Items[ii]);
+		}
 	}
 
 	PROPERTY(T*, Items);
@@ -170,123 +161,113 @@ public:
 template <typename T> class DynamicVectorClass : public VectorClass<T>
 {
 public:
-	virtual ~DynamicVectorClass()
-	{
+	virtual ~DynamicVectorClass() {
 		Clear();
 	}
 
-	void Save(IStream *pStm)
-	{
+	void Save(IStream *pStm) {
 		int ii = Count;
 		pStm->Write(&ii, 4u, 0);
-		for ( ii = 0; ii < Count; ++ii )
+		for ( ii = 0; ii < Count; ++ii ) {
 			pStm->Write(&(Items[ii]), 4, 0);
+		}
 	}
 
-	void Load(IStream *pStm)
-	{
+	void Load(IStream *pStm) {
 		int ii = 0;
 		this->Clear();
 		pStm->Read(&ii, 4u, 0);
 		this->SetCapacity(ii, NULL);
-		for ( ii = 0; ii < Count; ++ii )
+		for ( ii = 0; ii < Count; ++ii ) {
 			pStm->Read(&(Items[ii]), 4, 0);
-		for ( ii = 0; ii < Count; ++ii )
+		}
+		for ( ii = 0; ii < Count; ++ii ) {
 			SWIZZLE(Items[ii]);
+		}
 	}
 
-	T* start()
-	{
+	T* start() {
 		if(!this->IsInitialized) {
 			return NULL;
 		}
 		return &this->Items[0];
 	}
 
-	T* end()
-	{
+	T* end() {
 		if(!this->IsInitialized) {
 			return NULL;
 		}
 		return &this->Items[this->Count];
 	}
 
-	virtual bool SetCapacity(int nNewCapacity, T* pMem)
-	{
+	virtual bool SetCapacity(int nNewCapacity, T* pMem) {
 		bool bRet = VectorClass::SetCapacity(nNewCapacity, pMem);
 
-		if(Capacity < Count)
+		if(Capacity < Count) {
 			Count = Capacity;
+		}
 
 		return bRet;
 	}
 
-	virtual void Clear()
-	{
+	virtual void Clear() {
 		Count = 0;
 		VectorClass::Clear();
 	}
 
 	// this doesn't work right for some reason, see Bugfixes.cpp TechnoTypeClass_GetCameo
 	// passing a pointer that's in the array still returns -1
-	virtual int FindItemIndex(T tItem)
-	{
-		if(!IsInitialized)
+	virtual int FindItemIndex(T tItem) {
+		if(!IsInitialized) {
 			return -1;
+		}
 
-		for(int i = 0; i < Count; i++)
-		{
-			if(Items[i] == tItem)
+		for(int i = 0; i < Count; i++) {
+			if(Items[i] == tItem) {
 				return i;
+			}
 		}
 
 		return -1;
 	}
 
-	DynamicVectorClass() : VectorClass()
-	{
+	DynamicVectorClass() : VectorClass() {
 		Count = 0;
 		CapacityIncrement = 10;
 	}
 
-	DynamicVectorClass(int nCapacity, T* pMem) : VectorClass<T>(nCapacity, pMem)
-	{
+	DynamicVectorClass(int nCapacity, T* pMem) : VectorClass<T>(nCapacity, pMem) {
 		Count = 0;
 		CapacityIncrement = 10;
 	}
 
 public:
-	bool AddItem(T tItem)
-	{
-		if(Count >= Capacity)
-		{
-			if(IsAllocated || Capacity == 0)
-			{
-				if(CapacityIncrement > 0)
-				{
-					if(!SetCapacity(Capacity + CapacityIncrement, NULL))
+	bool AddItem(T tItem) {
+		if(Count >= Capacity) {
+			if(IsAllocated || Capacity == 0) {
+				if(CapacityIncrement > 0) {
+					if(!SetCapacity(Capacity + CapacityIncrement, NULL)) {
 						return false;
-				}
-				else
+					}
+				} else {
 					return false;
-			}
-			else
+				}
+			} else {
 				return false;
+			}
 		}
 
 		Items[Count++] = tItem;
 		return true;
 	}
 
-	bool RemoveItem(int nIndex)
-	{
-		if(nIndex >= 0 && nIndex < Count)
-		{
+	bool RemoveItem(int nIndex) {
+		if(nIndex >= 0 && nIndex < Count) {
 			--Count;
-			if(nIndex < Count)
-			{
-				for(int i = nIndex; i < Count; i++)
+			if(nIndex < Count) {
+				for(int i = nIndex; i < Count; i++) {
 					Items[i] = Items[i+1];
+				}
 			}
 			return true;
 		}
@@ -304,19 +285,16 @@ public:
 template <typename T> class TypeList : public DynamicVectorClass<T>
 {
 public:
-	virtual ~TypeList()
-	{
+	virtual ~TypeList() {
 		Clear();
 	}
 
-	TypeList() : DynamicVectorClass()
-	{
-	
+	TypeList() : DynamicVectorClass() {
+
 	}
-	
-	TypeList(int nCapacity, T* pMem) : DynamicVectorClass(nCapacity, pMem)
-	{
-	
+
+	TypeList(int nCapacity, T* pMem) : DynamicVectorClass(nCapacity, pMem) {
+
 	}
 
 	PROPERTY(DWORD, unknown_18);
@@ -329,10 +307,8 @@ public:
 class CounterClass : public VectorClass<int>
 {
 public:
-	virtual ~CounterClass()
-	{
-		if(Items && IsAllocated)
-		{
+	virtual ~CounterClass() {
+		if(Items && IsAllocated) {
 			delete Items;
 			Items = NULL;
 		}
@@ -342,10 +318,10 @@ public:
 		Count = 0;
 	}
 
-	virtual void Clear()
-	{
-		for(int i = 0; i < Capacity; i++)
+	virtual void Clear() {
+		for(int i = 0; i < Capacity; ++i){
 			Items[i] = 0;
+		}
 
 		Count = 0;
 	}

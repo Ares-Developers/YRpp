@@ -17,9 +17,15 @@
 #include <cstdio>
 
 //Macro for class members with getters and setters! Thanks DCoder!
-#define PROPERTY(type,name)\
+// Sod it, primitive data types are too annoying to get() all the time
+/*
 	protected:\
 		type name;\
+*/
+
+#define PROPERTY(type,name) \
+	public: \
+		type name; \
 	public:\
 		type get_ ## name() \
 			{ return name; }\

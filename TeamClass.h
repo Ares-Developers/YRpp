@@ -24,6 +24,9 @@ public:
 	//Destructor
 	virtual ~TeamClass() RX;
 
+	void GetTaskForceMembers(DynamicVectorClass<TechnoTypeClass *>*dest)
+		JMP_THIS(0x6EF4D0);
+
 	//AbstractClass
 	virtual eAbstractType WhatAmI() R0;
 	virtual int Size() R0;

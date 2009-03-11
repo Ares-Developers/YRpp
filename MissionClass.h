@@ -18,17 +18,17 @@ class MissionControlClass
 		static const char** Names()
 			{ return (const char**)0x816CAC; }
 
-		static MissionControlClass* __fastcall Find(const char* pName)
-			{ CALL(0x5B3910); }
+		static MissionControlClass* Find(const char* pName)
+			JMP_STD(0x5B3910);
 
 		MissionControlClass()
-			{ THISCALL(0x5B3700); }
+			JMP_THIS(0x5B3700);
 
 		const char* GetName()
-			{ THISCALL(0x5B3740); }
+			JMP_THIS(0x5B3740);
 
 		void LoadFromINI(CCINIClass* pINI)
-			{ PUSH_VAR32(pINI); THISCALL(0x5B3760); }
+			JMP_THIS(0x5B3760);
 
 		//Properties
 		PROPERTY(int, ArrayIndex);
@@ -49,10 +49,10 @@ public:
 	virtual ~MissionClass() { /* ~ObjectClass() */ }
 
 	static eMission FindIndex(const char *name)
-		{ SET_REG32(ECX, name); CALL(0x5B3910); }
+		JMP_STD(0x5B3910);
 
 	static const char * FindName(int const *index)
-		{ SET_REG32(ECX, index); CALL(0x5B3740); }
+		JMP_STD(0x5B3740);
 
 	//MissionClass
 	virtual bool QueueMission(eMission mission, bool start_mission) R0;

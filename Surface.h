@@ -199,6 +199,14 @@ public:
 		THISCALL(0x4AED70);
 	}
 
+	void __fastcall DrawSHP(ConvertClass *Palette, SHPStruct *SHP, int frameIdx, 
+		Point2D *pos, RectangleStruct *boundingRect, eBlitterFlags Flags, DWORD arg7,
+		signed int arg8, DWORD arg9, DWORD argA, int TintColor, 
+		SHPStruct *BUILDINGZ_SHA, DWORD argD, int ZS_X, int ZS_Y)
+
+			JMP_STD(0x4AED70);
+
+
 	void DrawText(const wchar_t* pText,Point2D* pPoint,DWORD dwColor)
 	{
 		Point2D tmp = {0, 0};

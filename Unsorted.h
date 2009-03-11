@@ -8,7 +8,14 @@ class Game
 {
 public:
 	static void RaiseError(HRESULT err)
-		{ PUSH_VAR32(err); CALL(0x7DC720); }
+		JMP_STD(0x7DC720);
+
+	// the magic checksum for version validation - linked in StaticInits
+	static DWORD &Savegame_Magic;
+
+	static int &CurrentFrameRate;
+	static int GetMinFrameRate()
+		JMP_STD(0x55AF60);
 };
 
 class MovieInfo
@@ -32,6 +39,8 @@ class MovieInfo
 
 namespace Unsorted
 {
+	static DWORD &Savegame_Magic     = *(DWORD *)0x83D560;
+
 	static int &CurrentFrame     = *(int *)0xA8ED84;
 
 	// if != 0, EVA_SWxxxActivated is skipped
@@ -92,34 +101,34 @@ struct AudioController
 	}
 
 	void DTOR_0()
-		{ THISCALL(0x405C00); }
+		JMP_THIS(0x405C00);
 
 	void DTOR_1()
-		{ THISCALL(0x405D40); }
+		JMP_THIS(0x405D40);
 
 	void DTOR_2()
-		{ THISCALL(0x405FD0); }
+		JMP_THIS(0x405FD0);
 
 	void DTOR_3()
-		{ THISCALL(0x406060); }
+		JMP_THIS(0x406060);
 
-	void sub_4060F0(int a1, int a2)
-		{ PUSH_VAR32(a2); SET_REG32(EDX, a1); THISCALL(0x4060F0); }
+	void __fastcall sub_4060F0(int a1, int a2)
+		JMP_STD(0x4060F0);
 
 	void sub_406130()
-		{ THISCALL(0x406130); }
+		JMP_THIS(0x406130);
 
 	void sub_406170()
-		{ THISCALL(0x406170); }
+		JMP_THIS(0x406170);
 
-	void sub_4061D0(unsigned int arg)
-		{ SET_REG32(EDX, arg); THISCALL(0x4061D0); }
+	void __fastcall sub_4061D0(unsigned int arg)
+		JMP_STD(0x4061D0);
 
-	void sub_406270(unsigned int arg)
-		{ SET_REG32(EDX, arg); THISCALL(0x406270); }
+	void __fastcall sub_406270(unsigned int arg)
+		JMP_THIS(0x406270);
 
 	void sub_406310()
-		{ THISCALL(0x406310); }
+		JMP_THIS(0x406310);
 
 };
 

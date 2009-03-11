@@ -14,9 +14,9 @@ class CCINIClass;
 	static DynamicVectorClass<class_name*>* Array;\
 	static class_name* Find(const char* pID)\
 	{\
-		for(int i=0;i<Array->get_Count();i++)\
-			if(!_strcmpi((*Array)[i]->get_ID(), pID))\
-				return (*Array)[i];\
+		for(int i = 0; i < Array->Count; ++i)\
+			if(!_strcmpi(Array->GetItem(i)->ID, pID))\
+				return Array->GetItem(i);\
 		return NULL;\
 	}\
 	static class_name* FindOrAllocate(const char* pID)\
@@ -29,8 +29,8 @@ class CCINIClass;
 	}\
 	static int FindIndex(const char* pID)\
 	{\
-		for(int i=0;i<Array->get_Count();i++)\
-			if(!_strcmpi((*Array)[i]->get_ID(), pID))\
+		for(int i = 0; i < Array->Count; ++i)\
+			if(!_strcmpi(Array->GetItem(i)->ID, pID))\
 				return i;\
 		return -1;\
 	}

@@ -27,7 +27,7 @@ public:
 	PROPERTY_STRUCT(TintStruct, Color);
 	PROPERTY(int, MovementRadius);
 	PROPERTY(int, Size);
-	PROPERTY(int, DisableFlags);
+	PROPERTY(eSpotlightFlags, DisableFlags);
 };
 
 #endif

@@ -75,10 +75,10 @@ public:
 	bool operator ==(BaseNodeClass tBaseNode)
 	{
 		return
-			(BuildingTypeIndex == tBaseNode.get_BuildingTypeIndex()) &&
+			(BuildingTypeIndex == tBaseNode.BuildingTypeIndex) &&
 			(MapCoords == *tBaseNode.get_MapCoords()) &&
-			(unknown_8 == tBaseNode.get_unknown_8()) &&
-			(unknown_C == tBaseNode.get_unknown_C());
+			(unknown_8 == tBaseNode.unknown_8) &&
+			(unknown_C == tBaseNode.unknown_C);
 	}
 
 	PROPERTY(int,         BuildingTypeIndex);
@@ -264,11 +264,11 @@ public:
 		JMP_THIS(0x509130);
 
 	// these are for mostly for map actions - HouseClass* foo = IsMP() ? Find_YesMP() : Find_NoMP();
-	static bool __fastcall Index_IsMP(int idx)
+	static bool Index_IsMP(int idx)
 		JMP_STD(0x510F60);
-	static HouseClass * __fastcall FindByIndex_NoMP(int idxHouse)
+	static HouseClass * FindByIndex_NoMP(int idxHouse)
 		JMP_STD(0x502D30);
-	static HouseClass * __fastcall FindByIndex_YesMP(int idxHouse)
+	static HouseClass * FindByIndex_YesMP(int idxHouse)
 		JMP_STD(0x510ED0);
 
 	CellStruct * PickIonCannonTarget(CellStruct &dest)
@@ -295,7 +295,7 @@ public:
 
 	// Target ought to be Object, I imagine, but cell doesn't work then
 	void __fastcall SendSpyPlanes(int AircraftTypeIdx, int AircraftAmount, eMission SetMission, AbstractClass *Target, ObjectClass *Destination)
-		JMP_THIS(0x65EAB0);
+		JMP_STD(0x65EAB0);
 
 	// registering in prereq counters (all technoes get logged, but only buildings get checked on validation... wtf)
 	void RegisterGain(TechnoClass *pTechno, DWORD dwUnk)
@@ -310,8 +310,11 @@ public:
 	AnimClass * __fastcall PsiWarn(CellClass *pTarget, BulletClass *Bullet, char *AnimName)
 		JMP_THIS(0x43B5E0);
 
-	int CountOwnedNow(TechnoTypeClass *Item)
-	{
+	const char *get_ID() {
+		return this->Type->get_ID();
+	}
+
+	int CountOwnedNow(TechnoTypeClass *Item) {
 		int Index = Item->GetArrayIndex();
 		int Sum = 0;
 		BuildingTypeClass *BT = NULL;
@@ -319,12 +322,11 @@ public:
 		UnitClass *U = NULL;
 		InfantryTypeClass *IT = NULL;
 
-		switch(Item->WhatAmI())
-		{
+		switch(Item->WhatAmI()) {
 			case abs_BuildingType:
 				Sum = this->OwnedBuildingTypes.GetItemCount(Index);
 				BT = (BuildingTypeClass *)Item;
-				UT = BT->get_UndeploysInto();
+				UT = BT->UndeploysInto;
 				if(UT) {
 					Sum += this->OwnedUnitTypes.GetItemCount(UT->GetArrayIndex());
 				}
@@ -333,7 +335,7 @@ public:
 			case abs_UnitType:
 				Sum = this->OwnedUnitTypes.GetItemCount(Index);
 				UT = (UnitTypeClass *)Item;
-				BT = UT->get_DeploysInto();
+				BT = UT->DeploysInto;
 				if(BT) {
 					Sum += this->OwnedBuildingTypes.GetItemCount(BT->GetArrayIndex());
 				}
@@ -342,10 +344,10 @@ public:
 			case abs_InfantryType:
 				Sum = this->OwnedInfantryTypes.GetItemCount(Index);
 				IT = (InfantryTypeClass *)Item;
-				if(IT->get_VehicleThief()) {
-					for(int i = 0; i < UnitClass::Array->get_Count(); ++i) {
+				if(IT->VehicleThief) {
+					for(int i = 0; i < UnitClass::Array->Count; ++i) {
 						U = UnitClass::Array->GetItem(i);
-						if(U->get_Owner() == this && U->get_HijackerInfantryType() == Index) {
+						if(U->Owner == this && U->HijackerInfantryType == Index) {
 							++Sum;
 						}
 					}
@@ -362,11 +364,9 @@ public:
 		return Sum;
 	}
 
-	int CountOwnedEver(TechnoTypeClass *Item)
-	{
+	int CountOwnedEver(TechnoTypeClass *Item) {
 		int Index = Item->GetArrayIndex();
-		switch(Item->WhatAmI())
-		{
+		switch(Item->WhatAmI()) {
 			case abs_BuildingType:
 				return this->OwnedBuildingTypes2.GetItemCount(Index);
 
@@ -384,52 +384,43 @@ public:
 		}
 	}
 
-	bool HasFromSecretLab(TechnoTypeClass *Item)
-	{
-		for(int i = 0; i < this->SecretLabs.get_Count(); ++i)
-		{
-			if(this->SecretLabs[i]->get_SecretProduction() == Item)
-			{
+	bool HasFromSecretLab(TechnoTypeClass *Item) {
+		for(int i = 0; i < this->SecretLabs.Count; ++i) {
+			if(this->SecretLabs[i]->SecretProduction == Item) {
 				return true;
 			}
 		}
 		return false;
 	}
 
-	bool HasAllStolenTech(TechnoTypeClass *Item)
-	{
-		if(Item->get_RequiresStolenAlliedTech() && !this->Side0TechInfiltrated) { return false; }
-		if(Item->get_RequiresStolenSovietTech() && !this->Side1TechInfiltrated) { return false; }
-		if(Item->get_RequiresStolenThirdTech() && !this->Side2TechInfiltrated) { return false; }
+	bool HasAllStolenTech(TechnoTypeClass *Item) {
+		if(Item->RequiresStolenAlliedTech && !this->Side0TechInfiltrated) { return false; }
+		if(Item->RequiresStolenSovietTech && !this->Side1TechInfiltrated) { return false; }
+		if(Item->RequiresStolenThirdTech && !this->Side2TechInfiltrated) { return false; }
 		return true;
 	}
 
-	bool HasFactoryForObject(TechnoTypeClass *Item)
-	{
-		for(int i = 0; i < this->Buildings.get_Count(); ++i)
-		{
-			BuildingTypeClass *pType = this->Buildings[i]->get_Type();
-			if(pType->get_Factory() == Item->WhatAmI()
-				&& pType->get_Naval() == Item->get_Naval() )
-			{
+	bool HasFactoryForObject(TechnoTypeClass *Item) {
+		for(int i = 0; i < this->Buildings.Count; ++i) {
+			BuildingTypeClass *pType = this->Buildings[i]->Type;
+			if(pType->Factory == Item->WhatAmI()
+				&& pType->Naval == Item->Naval ) {
 				return true;
 			}
 		}
 		return false;
 	}
 
-	bool InRequiredHouses(TechnoTypeClass *Item)
-	{
-		int Test = Item->get_RequiredHouses();
+	bool InRequiredHouses(TechnoTypeClass *Item) {
+		int Test = Item->RequiredHouses;
 		if(Test == -1) { return 1; }
-		return 0 != (Test & ( 1 << this->Type->get_ArrayIndex()));
+		return 0 != (Test & ( 1 << this->Type->ArrayIndex));
 	}
 
-	bool InForbiddenHouses(TechnoTypeClass *Item)
-	{
-		int Test = Item->get_ForbiddenHouses();
+	bool InForbiddenHouses(TechnoTypeClass *Item) {
+		int Test = Item->ForbiddenHouses;
 		if(Test == -1) { return 0; }
-		return 0 != (Test & ( 1 << this->Type->get_ArrayIndex()));
+		return 0 != (Test & ( 1 << this->Type->ArrayIndex));
 	}
 
 	signed int CanBuild(TechnoTypeClass *item, bool bypassExtras, bool includeQueued)
@@ -484,7 +475,8 @@ public:
 	PROPERTY(bool,                  AutoBaseBuilding);
 	PROTECTED_PROPERTY(BYTE,        unknown_1EF[1]);
 	PROPERTY(bool,                  Defeated);
-	PROTECTED_PROPERTY(BYTE,        unknown_1D2[0x5]);
+	PROTECTED_PROPERTY(BYTE,        unknown_1D2[0x4]);
+	PROPERTY(bool,                  FirestormActive);
 	PROPERTY(bool,                  HasThreatNode);
 	PROPERTY(bool,                  ShouldRecheckTechTree);
 	PROTECTED_PROPERTY(BYTE,        unknown_1F6[0x0F]);

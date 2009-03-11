@@ -73,7 +73,7 @@ public:
 		JMP_STD(0x46ADE0);
 
 	bool IsHoming()
-		{ return this->Type->get_ROT() > 0; }
+		{ return this->Type->ROT > 0; }
 
 	void SetWeaponType(WeaponTypeClass *weapon)
 		{ this->WeaponType = weapon; }

@@ -53,13 +53,13 @@ public:
 		JMP_THIS(0x47EBA0);
 
 	InfantryClass *GetInfantry(bool alt)
-		{ PUSH_VAR8(alt); THISCALL(0x47EC40); }
+		JMP_THIS(0x47EC40);
 
 	AircraftClass *GetAircraft(bool alt)
-		{ PUSH_VAR8(alt); THISCALL(0x47EBF0); }
+		JMP_THIS(0x47EBF0);
 
 	TerrainClass *GetTerrain(bool alt)
-		{ PUSH_VAR8(alt); THISCALL(0x47C550); }
+		JMP_THIS(0x47C550);
 
 	/* craziest thing... first iterates Content looking to Aircraft,
 	 * failing that, calls FindObjectNearestTo,
@@ -77,7 +77,7 @@ public:
 		JMP_THIS(0x47CA80);
 
 	// checks for nearby cliff impassability, calls SetupLAT(), sets up TubeClass if tunnel, cell anim if attached, etc
-	void Setup()
+	void Setup(DWORD dwUnk)
 		JMP_THIS(0x47D2B0);
 
 	void BlowUpBridge()
@@ -87,7 +87,7 @@ public:
 	void ScatterContent(DWORD unk2, DWORD unk3, DWORD unk4, bool alt)
 		JMP_THIS(0x481670);
 
-	void GetNeighbourCell(unsigned int direction)
+	CellClass *GetNeighbourCell(unsigned int direction)
 		JMP_THIS(0x481810);
 
 	// called whenever anything moves, first to remove threat from source cell, second time to add threat to dest cell
@@ -102,6 +102,9 @@ public:
 
 	/*TubeClass*/void GetTunnel()
 		JMP_THIS(0x484F20);
+
+	RectangleStruct *GetContainingRect(RectangleStruct *dest)
+		JMP_THIS(0x47FB90);
 
 	// don't laugh, it returns the uiname of contained tiberium... which nobody ever sets
 	wchar_t *GetUIName()

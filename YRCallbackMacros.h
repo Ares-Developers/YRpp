@@ -1,3 +1,5 @@
+#error DEPRECATED
+
 #ifndef CALLBACKMACROS_H
 #define CALLBACKMACROS_H
 

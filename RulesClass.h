@@ -38,6 +38,8 @@ public:
 	static RulesClass* Global()
 		{ return *((RulesClass**)0x8871E0); }
 
+	static bool Initialized;
+
 	//CTOR / DTOR
 protected:
 	RulesClass() JMP_THIS(0x665650);

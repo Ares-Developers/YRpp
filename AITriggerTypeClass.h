@@ -41,44 +41,44 @@ public:
 	virtual int Size() R0;
 
 	static bool LoadFromINIList(CCINIClass *pINI)
-		{ SET_REG32(ECX, pINI); CALL(0x41F2E0); }
+		JMP_STD(0x41F2E0);
 
 	// Global == saving into AI.ini as opposed to map?
 	// if !Global, [AITriggerTypesEnable] gets saved as well
 	static bool SaveToINIList(CCINIClass *pINI, bool Global)
-		{ SET_REG32(ECX, pINI); SET_REG8(DL, Global); CALL(0x41F490); }
+		JMP_STD(0x41F490);
 
 	// non-virtual
 
 	// teams finished script, and 
 	void RegisterSuccess()
-		{ THISCALL(0x41FD60); }
+		JMP_THIS(0x41FD60);
 
 	void RegisterFailure()
-		{ THISCALL(0x41FE20); }
+		JMP_THIS(0x41FE20);
 
 	// the main condition
 	bool ConditionMet(HouseClass *CallingHouse, HouseClass *TargetHouse, bool EnoughBaseDefense)
-		{ PUSH_VAR8(EnoughBaseDefense); PUSH_VAR32(TargetHouse); PUSH_VAR32(CallingHouse); THISCALL(0x41E720); }
+		JMP_THIS(0x41E720);
 
 	// slaves
 	bool OwnerHouseOwns(HouseClass *CallingHouse, HouseClass *TargetHouse)
-		{ PUSH_VAR32(TargetHouse); PUSH_VAR32(CallingHouse); THISCALL(0x41EAF0); }
+		JMP_THIS(0x41EAF0);
 
 	bool CivilianHouseOwns(HouseClass *CallingHouse, HouseClass *TargetHouse)
-		{ PUSH_VAR32(TargetHouse); PUSH_VAR32(CallingHouse); THISCALL(0x41EC90); }
+		JMP_THIS(0x41EC90);
 
 	bool EnemyHouseOwns(HouseClass *CallingHouse, HouseClass *TargetHouse)
-		{ PUSH_VAR32(TargetHouse); PUSH_VAR32(CallingHouse); THISCALL(0x41EE90); }
+		JMP_THIS(0x41EE90);
 
 	bool IronCurtainCharged(HouseClass *CallingHouse, HouseClass *TargetHouse)
-		{ PUSH_VAR32(TargetHouse); PUSH_VAR32(CallingHouse); THISCALL(0x41F0D0); }
+		JMP_THIS(0x41F0D0);
 
 	bool ChronoSphereCharged(HouseClass *CallingHouse, HouseClass *TargetHouse)
-		{ PUSH_VAR32(TargetHouse); PUSH_VAR32(CallingHouse); THISCALL(0x41F180); }
+		JMP_THIS(0x41F180);
 
 	bool HouseCredits(HouseClass *CallingHouse, HouseClass *TargetHouse)
-		{ PUSH_VAR32(TargetHouse); PUSH_VAR32(CallingHouse); THISCALL(0x41F230); }
+		JMP_THIS(0x41F230);
 
 	void FormatForSaving(char * buffer) {
 		const char *Team1Name = "<none>";

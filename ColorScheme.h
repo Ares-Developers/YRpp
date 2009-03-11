@@ -18,15 +18,21 @@ public:
 	static ColorScheme* Find(const char* find_id)
 		{
 //			ColorScheme* current=NULL;
-			for(int i=0;i<Array->get_Count();i++)
-				if(!_strcmpi((*Array)[i]->get_ID(),find_id))return (*Array)[i];
+			for(int i = 0; i < Array->Count; ++i) {
+				if(!_strcmpi(Array->GetItem(i)->ID, find_id)) {
+					return Array->GetItem(i);
+				}
+			}
 			return NULL;
 		}
 	static int FindIndex(const char* find_id)
 		{
 //			ColorScheme* current=NULL;
-			for(int i=0;i<Array->get_Count();i++)
-				if(!_strcmpi((*Array)[i]->get_ID(),find_id))return i;
+			for(int i = 0; i < Array->Count; ++i) {
+				if(!_strcmpi(Array->GetItem(i)->ID,find_id)) {
+					return i;
+				}
+			}
 			return -1;
 		}
 

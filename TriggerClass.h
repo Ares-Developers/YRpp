@@ -32,24 +32,32 @@ public:
 	virtual int Size() R0;
 
 	// events include 25 (Cross_Horizontal_Line) ?
-	bool InvolvesCrossingHorizontal() JMP_THIS(0x726250);
+	bool InvolvesCrossingHorizontal()
+		JMP_THIS(0x726250);
 
 	// events include 26 (Cross_Vertical_Line) ?
-	bool InvolvesCrossingVertical() JMP_THIS(0x726290);
+	bool InvolvesCrossingVertical()
+		JMP_THIS(0x726290);
 
 	// events include 24 (Entered_Zone) ? // fuck knows what "Zone" is
-	bool InvolvesZoneEntry() JMP_THIS(0x7262D0);
+	bool InvolvesZoneEntry()
+		JMP_THIS(0x7262D0);
 
 	// events include 14 (Allow_Win) ? // god awful logic, creator should curl up and die
-	bool InvolvesAllowWin() JMP_THIS(0x726310);
+	bool InvolvesAllowWin()
+		JMP_THIS(0x726310);
 
 	// events include 27/28 (Global_Set/Cleared) ? 
-	bool InvolvesGlobalChecking(int idx) JMP_THIS(0x726350);
+	bool InvolvesGlobalChecking(int idx)
+		JMP_THIS(0x726350);
 
-	void GlobalUpdated(int idx) JMP_THIS(0x7263A0);
-	void LocalUpdated(int idx) JMP_THIS(0x7263D0);
+	void GlobalUpdated(int idx)
+		JMP_THIS(0x7263A0);
+	void LocalUpdated(int idx)
+		JMP_THIS(0x7263D0);
 
-	void ResetTimers() JMP_THIS(0x726400);
+	void ResetTimers()
+		JMP_THIS(0x726400);
 
 	void MarkEventAsOccured(int idx) { this->EventsAlreadyFired |= (1 << idx); }
 	void MarkEventAsNotOccured(int idx) { this->EventsAlreadyFired &= ~(1 << idx); }

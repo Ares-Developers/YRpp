@@ -240,6 +240,13 @@ typedef int eSpotlightBehaviour;
 #define	sb_Follow		0x3
 
 
+typedef int eSpotlightFlags;
+
+#define sf_NoColor 0x1
+#define sf_NoRed 0x2
+#define sf_NoGreen 0x4
+#define sf_NoBlue 0x8
+
 //ParticleTypeClass->BehavesLike
 typedef int eBehavesLike;
 

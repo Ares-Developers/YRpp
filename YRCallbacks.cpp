@@ -1,3 +1,5 @@
+#error DEPRECATED
+
 #include <YRCallbacks.h>
 
 #ifndef YRCALLBACKS_CPP

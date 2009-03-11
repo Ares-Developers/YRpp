@@ -108,6 +108,9 @@ struct FacingStruct
 	TimerStruct Timer; //rotation?
 	WORD ROT; //Rate of Turn. INI Value * 256
 	WORD unused_16;
+
+	DWORD GetFacing(DWORD *arg)
+		JMP_THIS(0x4C93D0);
 };
 
 #endif
