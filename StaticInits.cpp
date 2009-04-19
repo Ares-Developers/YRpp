@@ -6,6 +6,9 @@
 	DynamicVectorClass<cls*>* cls::Array = \
 		(DynamicVectorClass<cls*>*)adr;
 
+#define ALIAS(Type, Obj, Addr) \
+	Type &Obj = *(Type *)(Addr);
+
 #include <AbstractTypeClass.h>
 DECL(AbstractTypeClass, 0xA8E968);
 
@@ -57,16 +60,16 @@ DECL(CommandClass, 0x87F658);
 DECL(ConvertClass, 0x89ECF8);
 
 #include <Drawing.h>
-DSurface *&Drawing::DSurface_Tile = *(DSurface **)0x8872FC;
-DSurface *&Drawing::DSurface_Sidebar = *(DSurface **)0x887300;
-DSurface *&Drawing::DSurface_Primary = *(DSurface **)0x887308;
-DSurface *&Drawing::DSurface_Hidden = *(DSurface **)0x88730C;
-DSurface *&Drawing::DSurface_Alternate = *(DSurface **)0x887310;
-DSurface *&Drawing::DSurface_Hidden_2 = *(DSurface **)0x887314;
-DSurface *&Drawing::DSurface_Composite = *(DSurface **)0x88731C;
+ALIAS(DSurface *, Drawing::DSurface_Tile, 0x8872FC);
+ALIAS(DSurface *, Drawing::DSurface_Sidebar, 0x887300);
+ALIAS(DSurface *, Drawing::DSurface_Primary, 0x887308);
+ALIAS(DSurface *, Drawing::DSurface_Hidden, 0x88730C);
+ALIAS(DSurface *, Drawing::DSurface_Alternate, 0x887310);
+ALIAS(DSurface *, Drawing::DSurface_Hidden_2, 0x887314);
+ALIAS(DSurface *, Drawing::DSurface_Composite, 0x88731C);
 
-ABufferClass *&ABufferClass::ABuffer = *(ABufferClass **)0x0087E8A4;
-ZBufferClass *&ZBufferClass::ZBuffer = *(ZBufferClass **)0x00887644;
+ALIAS(ABufferClass *, ABufferClass::ABuffer, 0x87E8A4);
+ALIAS(ZBufferClass *, ZBufferClass::ZBuffer, 0x887644);
 
 #include <EMPulseClass.h>
 DECL(EMPulseClass, 0x8A3870);
@@ -75,14 +78,14 @@ DECL(EMPulseClass, 0x8A3870);
 DECL(FactoryClass, 0xA83E30);
 
 #include <FileSystem.h>
-SHPStruct *&FileSystem::PIPS_SHP = *(SHPStruct **)0xAC147C;
-ConvertClass *&FileSystem::CAMEO_PAL = *(ConvertClass **)0x87F6B0;
-ConvertClass *&FileSystem::UNITx_PAL = *(ConvertClass **)0x87F6B4;
-ConvertClass *&FileSystem::x_PAL = *(ConvertClass **)0x87F6B8;
-ConvertClass *&FileSystem::GRFTXT_TIBERIUM_PAL = *(ConvertClass **)0x87F6BC;
-ConvertClass *&FileSystem::ANIM_PAL = *(ConvertClass **)0x87F6C0;
-ConvertClass *&FileSystem::THEATER_PAL = *(ConvertClass **)0x87F6C4;
-ConvertClass *&FileSystem::MOUSE_PAL = *(ConvertClass **)0x87F6C8;
+ALIAS(SHPStruct *, FileSystem::PIPS_SHP, 0xAC147C);
+ALIAS(ConvertClass *, FileSystem::CAMEO_PAL, 0x87F6B0);
+ALIAS(ConvertClass *, FileSystem::UNITx_PAL, 0x87F6B4);
+ALIAS(ConvertClass *, FileSystem::x_PAL, 0x87F6B8);
+ALIAS(ConvertClass *, FileSystem::GRFTXT_TIBERIUM_PAL, 0x87F6BC);
+ALIAS(ConvertClass *, FileSystem::ANIM_PAL, 0x87F6C0);
+ALIAS(ConvertClass *, FileSystem::THEATER_PAL, 0x87F6C4);
+ALIAS(ConvertClass *, FileSystem::MOUSE_PAL, 0x87F6C8);
 
 #include <HouseClass.h>
 DECL(HouseClass, 0xA80228);
@@ -206,9 +209,13 @@ DECL(UnitClass, 0x8B4108);
 DECL(UnitTypeClass, 0xA83CE0);
 
 #include <Unsorted.h>
+ALIAS(DWORD, Game::Savegame_Magic, 0x83D560);
+ALIAS(int, Game::CurrentFrameRate, 0xABCD44);
+
 DynamicVectorClass<MovieInfo> *MovieInfo::Array = (DynamicVectorClass<MovieInfo>*)0xABF390;
-DWORD &Game::Savegame_Magic = *(DWORD *)0x83D560;
-int &Game::CurrentFrameRate   = *(int *)0xABCD44;
+
+MovieUnlockableInfo* MovieUnlockableInfo::AlliedUnlockables = (MovieUnlockableInfo *)0x00832C30;
+MovieUnlockableInfo* MovieUnlockableInfo::SovietUnlockables = (MovieUnlockableInfo *)0x00832CA0;
 
 #include <VocClass.h>
 DECL(VocClass, 0xB1D378);
@@ -228,4 +235,5 @@ DECL(WarheadTypeClass, 0x8874C0);
 #include <WeaponTypeClass.h>
 DECL(WeaponTypeClass, 0x887568);
 
+#undef ALIAS
 #undef DECL

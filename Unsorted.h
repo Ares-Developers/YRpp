@@ -37,6 +37,20 @@ class MovieInfo
 		{ delete this->Name; }
 };
 
+class MovieUnlockableInfo {
+	const char * Filename;
+	const wchar_t * CSFName;
+	int CDRequired;
+
+	// both are 8 movies long, allocated statically, but limit is not enforced. Careful.
+	static MovieUnlockableInfo* SovietUnlockables;
+	static MovieUnlockableInfo* AlliedUnlockables;
+	
+	MovieUnlockableInfo(const char *_F, const wchar_t *_CSF, const int CD) :
+		Filename(_F), CSFName(_CSF), CDRequired(CD)
+	{ }
+};
+
 namespace Unsorted
 {
 	static DWORD &Savegame_Magic     = *(DWORD *)0x83D560;
@@ -187,5 +201,15 @@ struct AudioController
  */
 	static int &SomeMutex = *(int *)0xA8E7AC;
 }
+
+struct CheatData {
+	bool * Destination;
+	const char * TriggerString;
+	DWORD unknown1;
+	DWORD unknown2;
+};
+
+// this holds four original cheats, keep that limit in mind
+static CheatData *OriginalCheats = (CheatData *)0x00825C28;
 
 #endif
