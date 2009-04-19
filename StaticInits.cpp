@@ -65,6 +65,9 @@ DSurface *&Drawing::DSurface_Alternate = *(DSurface **)0x887310;
 DSurface *&Drawing::DSurface_Hidden_2 = *(DSurface **)0x887314;
 DSurface *&Drawing::DSurface_Composite = *(DSurface **)0x88731C;
 
+ABufferClass *&ABufferClass::ABuffer = *(ABufferClass **)0x0087E8A4;
+ZBufferClass *&ZBufferClass::ZBuffer = *(ZBufferClass **)0x00887644;
+
 #include <EMPulseClass.h>
 DECL(EMPulseClass, 0x8A3870);
 

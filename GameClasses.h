@@ -92,6 +92,9 @@
 //Static classes
 #include <Ion.h>
 
+//Blitters
+#include <Blitters/Includer.h>
+
 //The law!
 #include <RulesClass.h>
 #include <ScenarioClass.h>

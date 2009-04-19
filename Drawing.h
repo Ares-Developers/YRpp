@@ -26,18 +26,6 @@ public:
 	static DSurface *&DSurface_Hidden_2;
 	static DSurface *&DSurface_Composite;
 
-/*
-	DECL_GET_SURFACE(Tile,      0x8872FC);		//no idea
-	DECL_GET_SURFACE(Sidebar,   0x887300);		//self-explanatory
-	DECL_GET_SURFACE(Primary,   0x887308);		//should never need this
-	DECL_GET_SURFACE(Hidden,    0x88730C);		//stuff like loading screens
-	DECL_GET_SURFACE(Alternate, 0x887310);	//no idea
-
-	DECL_GET_SURFACE(Hidden_2,  0x887314);		//stuff like loading screens
-
-	DECL_GET_SURFACE(Composite, 0x88731C);	//the Battlefield, I think
-*/
-
 	//TextBox dimensions for tooltip-style boxes
 	static RectangleStruct GetTextBox(const wchar_t* pText, int nX, int nY, int nMargin)
 		{
@@ -100,5 +88,41 @@ public:
 #define		COLOR_RED		0xF800
 #define		COLOR_GREEN		0x07E0
 #define		COLOR_BLUE		0x001F
+
+class ABufferClass {
+
+	static ABufferClass* &ABuffer;
+
+	ABufferClass(RectangleStruct rect)
+		JMP_THIS(0x410CE0);
+
+	RectangleStruct rect;
+	int field_10;
+	BSurface *Surface;
+	byte* BufferStart;
+	byte* BufferEndpoint;
+	int BufferSize;
+	int field_24;
+	int W;
+	int H;
+};
+
+class ZBufferClass {
+
+	static ZBufferClass* &ZBuffer;
+
+	ZBufferClass(RectangleStruct rect)
+		JMP_THIS(0x7BC970);
+
+	RectangleStruct rect;
+	int field_10;
+	BSurface *Surface;
+	byte* BufferStart;
+	byte* BufferEndpoint;
+	int BufferSize;
+	int field_24;
+	int W;
+	int H;
+};
 
 #endif

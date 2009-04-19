@@ -9,10 +9,12 @@
 #include <ArrayClasses.h>
 #include <Surface.h>
 
+#include <Blitters.h>
+
 struct ColorStruct;
 class DSurface;
 
-struct Blitter;
+// struct Blitter;
 
 class ConvertClass
 {
@@ -30,10 +32,10 @@ public:
 		bool SkipBlitters)
 			JMP_THIS(0x48E740);
 
-	Blitter * SelectBlitterA(eBlitterFlags flags)
+	BlitterCore * SelectPlainBlitter(eBlitterFlags flags)
 			JMP_THIS(0x490B90);
 
-	Blitter * SelectBlitterB(eBlitterFlags flags)
+	RLEBlitterCore * SelectRLEBlitter(eBlitterFlags flags)
 			JMP_THIS(0x490E50);
 
 	virtual ~ConvertClass() RX;
@@ -51,7 +53,7 @@ protected:
 	// actually this is just the result of Surface->GetBytesPerPixel()
 	// but this name sounds better
 	PROPERTY(DWORD, LeanAndMean);
-	PROPERTY_ARRAY(Blitter *, Blitters , 89);
+	PROPERTY_ARRAY(BlitterCore *, Blitters , 89);
 	PROPERTY(size_t, Count);
 	PROPERTY(byte *, BufferA); // new(Count * 8 * LeanAndMean) - gets filled with pColorData values on CTOR
 	PROPERTY(byte *, Midpoint); // points to the middle of BufferA above, ??

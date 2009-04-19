@@ -4,6 +4,7 @@
 #include <GeneralDefinitions.h>
 #include <GeneralStructures.h>
 #include <AbstractClass.h>
+#include <ColorScheme.h>
 
 class TacticalClass : public AbstractClass
 {
@@ -50,6 +51,9 @@ public:
 	// - alpha lights, terrain changes like cliff destruction, etc
 	void RegisterDirtyArea(RectangleStruct Area, bool bUnk)
 		JMP_THIS(0x6D2790);
+
+	static int DrawTimer(int index, ColorScheme *Scheme, int Time, wchar_t *Text, Point2D *someXY1, Point2D *someXY2)
+		JMP_STD(0x64DB50);
 
 	PROPERTY(DWORD, field_24);
 	PROPERTY(DWORD, field_28);
