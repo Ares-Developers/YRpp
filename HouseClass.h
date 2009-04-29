@@ -423,6 +423,14 @@ public:
 		return 0 != (Test & ( 1 << this->Type->ArrayIndex));
 	}
 
+	bool IsHumanoid() {
+		bool result = this->CurrentPlayer;
+		if(Unsorted::GameMode == gm_Campaign) {
+			result = result || this->PlayerControl;
+		}
+		return result;
+	}
+
 	signed int CanBuild(TechnoTypeClass *item, bool bypassExtras, bool includeQueued)
 		JMP_THIS(0x4F7870);
 
