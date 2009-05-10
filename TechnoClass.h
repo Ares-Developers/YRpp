@@ -109,6 +109,9 @@ struct RecoilData
 class TechnoClass : public RadioClass
 {
 public:
+
+	static DynamicVectorClass<DWORD>* Array; // HAX to instantiate
+
 	//IPersistStream
 	virtual HRESULT _stdcall Load(IStream* pStm) R0;
 	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;

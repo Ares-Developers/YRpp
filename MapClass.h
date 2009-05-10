@@ -80,8 +80,10 @@ public:
 		{
 			int n = (pMapCoords->Y << 9) + pMapCoords->X;
 
-			if((n >= 0 || n < MAX_CELLS) && Cells[n])
+			if((n >= 0 && n < MAX_CELLS) && Cells[n]) {
+				// && && && && !!
 				return Cells[n];
+			}
 
 			CellClass* pCell = InvalidCell();
 

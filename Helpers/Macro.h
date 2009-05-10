@@ -5,32 +5,6 @@
 
 // In this file: Alternatives to CTRL + H...
 
-// here be dragons(plenty)
-template<typename T>
-class retfunc {
-protected:
-	REGISTERS *R;
-	DWORD retAddr;
-public:
-	retfunc(REGISTERS *r, DWORD addr) : R(r), retAddr(addr) {};
-	int operator()( T Result ) {
-		R->set_EAX((DWORD)Result);
-		return retAddr;
-	}
-};
-
-template<typename T>
-class retfunc_fixed : public retfunc<T> {
-protected:
-	T Result;
-public:
-	retfunc_fixed(REGISTERS *r, DWORD addr, T res) : retfunc(r, addr), Result(res) {};
-	int operator()() {
-		R->set_EAX((DWORD)Result);
-		return retAddr;
-	}
-};
-
 #include <hash_map>
 // macros DCoder uses and pd dislikes :)
 
@@ -151,13 +125,13 @@ public:
 
 // absflags shorthand
 #define ABS_IS_OBJECT(var) \
-	(var->AbstractFlags & ABSFLAGS_ISOBJECT)
+	((var->AbstractFlags & ABSFLAGS_ISOBJECT) != 0)
 
 #define ABS_IS_TECHNO(var) \
-	(var->AbstractFlags & ABSFLAGS_ISTECHNO)
+	((var->AbstractFlags & ABSFLAGS_ISTECHNO) != 0)
 
 #define ABS_IS_FOOT(var) \
-	(var->AbstractFlags & ABSFLAGS_ISFOOT)
+	((var->AbstractFlags & ABSFLAGS_ISFOOT) != 0)
 
 // this is an Ares macro, durr, don't use it in YR++, will be moved someday
 #define IF_STR(section, key) \

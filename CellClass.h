@@ -190,7 +190,7 @@ public:
 
 	// helper mimicking game's behaviour
 	ObjectClass* GetContent()
-		{ return this->Flags & cf_Bridge ? this->AltObject : this->FirstObject; }
+		{ return ((this->Flags & cf_Bridge) != 0) ? this->AltObject : this->FirstObject; }
 
 	// tilesets
 #define ISTILE(tileset, addr) \
@@ -232,9 +232,12 @@ public:
 
 	CoordStruct * FixHeight(CoordStruct *crd)
 	{
-		crd->Z += (this->Flags & cf_Bridge) * BridgeHeight();
+		crd->Z += ((this->Flags & cf_Bridge) != 0) * BridgeHeight();
 		return crd;
 	}
+
+	CoordStruct * FindInfantrySubposition(CoordStruct *dst, CoordStruct *src, char bUnk1, char bUnk2, char bUnk3)
+		JMP_THIS(0x481180);
 
 protected:
 	//Constructor
