@@ -1,16 +1,53 @@
 #ifndef CONVERSIONS_H
 #define CONVERSIONS_H
 
+#include <Helpers\Macro.h>
+
 // converters
 class Conversions
 {
 public:
-	static double Str2Armor(char *buf) {
+	static double Str2Armor(char *buf, DWORD *specialFX) {
 		if(!buf) { return 0.0; }
 		if(strchr(buf, '%')) {
+			bool specialed = false;
+			if(strlen(buf) == 2) {
+				switch(*buf) {
+					case '0':
+						*specialFX &= ~verses_ForceFire;
+					case '1':
+						*specialFX &= ~verses_Retaliate;
+					case '2':
+						*specialFX &= ~verses_PassiveAcquire;
+						specialed = true;
+						break;
+				}
+			}
+			if(!specialed) {
+				*specialFX |= verses_ForceFire;
+				*specialFX |= verses_Retaliate;
+				*specialFX |= verses_PassiveAcquire;
+			}
 			return atoi(buf) * 0.01;
 		} else {
-			return atof(buf);
+			double vs = atof(buf);
+			bool specialed = false;
+			if(CLOSE_ENOUGH(vs, 0.02)) {
+				*specialFX &= ~verses_PassiveAcquire;
+				specialed = true;
+			}
+			if(CLOSE_ENOUGH(vs, 0.01)) {
+				*specialFX &= ~verses_Retaliate;
+			}
+			if(CLOSE_ENOUGH(vs, 0.00)) {
+				*specialFX &= ~verses_ForceFire;
+			}
+			if(!specialed) {
+				*specialFX |= verses_ForceFire;
+				*specialFX |= verses_Retaliate;
+				*specialFX |= verses_PassiveAcquire;
+			}
+			return vs;
 		}
 	}
 

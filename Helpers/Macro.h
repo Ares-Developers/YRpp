@@ -296,4 +296,8 @@ IF_STR(ini_section, #ini_key) { \
 #endif
 
 
+// float cmp
+#define CLOSE_ENOUGH(x, y) \
+	(abs(x - y) < 0.001)
+
 #endif

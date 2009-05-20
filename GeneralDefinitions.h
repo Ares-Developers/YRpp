@@ -849,6 +849,13 @@ typedef int eTargetFlags;
 #define	ttf_TechCapture		0x10000
 
 
+typedef int eWarheadFlags;
+
+#define	verses_ForceFire	0x1
+#define	verses_Retaliate	0x2
+#define	verses_PassiveAcquire	0x4
+
+
 typedef int eBlitterFlags;
 
 #define	bf_001		0x1
