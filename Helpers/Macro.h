@@ -8,8 +8,6 @@
 #include <hash_map>
 // macros DCoder uses and pd dislikes :)
 
-// for exportfuncs, repeating stuff is annoying :P
-
 #define GET(clsname, var, reg) \
 	clsname var = (clsname )R->get_ ## reg ();
 
@@ -26,98 +24,6 @@
 #define RETZ_UNLESS(expr) \
 	if(!(expr)) { return ; }
 
-
-// DEPRECATED DO NOT USE
-// please don't mix the two hashmaps in one class
-
-/*
- * hashmap macros 101:
- * _DECLARE just declares the hashmap, use in .h
- * _DEFINE define that same hashmap and typedefs for its components, use at the top of .cpp
-
- * Create, Delete, Save, Load are four common functions, 
- * applicable to both AbstractType derivates and Object derivates, 
- * LoadFromINI is also common but used only for the former
-
- * _CTOR, _DTOR, _LOAD, _SAVE , _LOAD_INI are function headers for those, use (or don't use) in .cpp
-
- * _FUNCS declares those first four functions, use in .h
- * _INI_FUNCS declares the fifth one, use in .h (someday it might declare SaveToINI as well...)
-
- * BIND_CALLBACKS binds the four funcs to the callbacks, use in CallCenter::Init
- * BIND_INI_CALLBACKS binds the fifth func to the callbacks, use in CallCenter::Init
- */
-
-// hashmap of pointers
-#define EXT_P_DECLARE(clsname) \
-	static stdext::hash_map<clsname*, clsname ## Data*> Ext_p; \
-
-#define EXT_P_DEFINE(clsname) \
-	typedef stdext::hash_map<clsname*, clsname ## Ext::clsname ## Data*> hashext_p; \
-	typedef clsname ## Ext::clsname ## Data ExtData;    \
-	hashext_p clsname ## Ext :: Ext_p;
-
-// hashmap of structures
-#define EXT_V_DECLARE(clsname) \
-	static stdext::hash_map<clsname*, clsname ## Data > Ext_v;\
-
-#define EXT_V_DEFINE(clsname) \
-	typedef stdext::hash_map<clsname*, clsname ## Ext::clsname ## Data > hashext_v; \
-	typedef clsname ## Ext::clsname ## Data ExtData;    \
-	hashext_v clsname ## Ext :: Ext_v;
-
-#define EXT_CTOR(clsname) \
-	void __stdcall clsname ## Ext::Create(clsname* pThis)
-
-#define EXT_DTOR(clsname) \
-	void __stdcall clsname ## Ext::Delete(clsname* pThis)
-
-#define EXT_LOAD(clsname) \
-	void __stdcall clsname ## Ext::Load(clsname* pThis, IStream* pStm)
-
-#define EXT_SAVE(clsname) \
-	void __stdcall clsname ## Ext::Save(clsname* pThis, IStream* pStm)
-
-#define EXT_LOAD_INI(clsname) \
-	void __stdcall clsname ## Ext::LoadFromINI(clsname* pThis, CCINIClass* pINI)
-
-#define EXT_FUNCS(clsname) \
-	static void __stdcall Create(clsname*);                    \
-	static void __stdcall Delete(clsname*);                    \
-	static void __stdcall Load(clsname*, IStream*);            \
-	static void __stdcall Save(clsname*, IStream*);
-
-#define EXT_INI_FUNCS(clsname) \
-	static void __stdcall LoadFromINI(clsname*, CCINIClass*);
-
-#define BIND_CALLBACKS(clsname) \
-		clsname ## Callback::Create		=	clsname ## Ext::Create;          \
-		clsname ## Callback::Delete		=	clsname ## Ext::Delete;          \
-		clsname ## Callback::Load			=	clsname ## Ext::Load;            \
-		clsname ## Callback::Save			=	clsname ## Ext::Save;
-
-#define BIND_INI_CALLBACKS(clsname) \
-		clsname ## Callback::LoadFromINI	=	clsname ## Ext::LoadFromINI;
-
-// </DEPRECATED DO NOT USE>
-
-// I'm lazy, so sue me
-#define CONTAINS(var, ptr) \
-	(var.find(ptr) != var.end())
-
-#define ALLOC(clsname, ptr) \
-	clsname *ptr = new clsname();
-
-#define DEALLOC(var, ptr) \
-	delete var[ptr]; \
-	var.erase(var.find(ptr));
-
-#define ARRAY_ITERATE(clsname, pINI) \
-	if(clsname ## Callback::LoadFromINI) {                                \
-		for(int i = 0; i < clsname::Array->Count; ++i) {                    \
-			clsname ## Callback::LoadFromINI(clsname::Array->Items[i], pINI); \
-		} \
-	}
 
 // buffer length for tags containing a list such as AnimToInfantry=
 #define BUFLEN 2048

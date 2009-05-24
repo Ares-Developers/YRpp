@@ -3,8 +3,6 @@
 
 #include <GeneralStructures.h>
 
-#include <iterator>
-
 class CellSpread
 {
 public:
@@ -17,7 +15,11 @@ public:
 	{
 		return ((CellStruct*)0xABD490)[n];
 	}
-};
 
+	static CellStruct GetNeighbourOffset(unsigned int direction) {
+		if(direction > 7) { CellStruct dummy = {0, 0}; return dummy; }
+		return ((CellStruct*)0x89F688)[direction];
+	}
+};
 
 #endif

@@ -74,11 +74,13 @@ public:
 		{ return (pColor->B >> 3) | ((pColor->G >> 2) << 5) | ((pColor->R >> 3) << 11); }
 
 	static ColorStruct WordColor(WORD bits)
-		{ ColorStruct color;
+		{
+			ColorStruct color;
 			color.R = ((bits & 0xF800) >> 11) << 3;
 			color.G = (BYTE)((bits & 0x07E0) >> 5) << 2; // msvc stupid warning
 			color.B = (bits & 0x001F) << 3;
-		return color; }
+			return color;
+		}
 };
 
 //A few preset 16bit colors.

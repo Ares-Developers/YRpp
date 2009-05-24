@@ -11,6 +11,7 @@
 class ObjectClass;
 class TechnoClass;
 class BuildingClass;
+class BuildingTypeClass;
 class UnitClass;
 class InfantryClass;
 class AircraftClass;
@@ -82,6 +83,9 @@ public:
 
 	void BlowUpBridge()
 		JMP_THIS(0x47DD70);
+
+	bool CanThisExistHere(eSpeedType SpeedType, BuildingTypeClass *Object, HouseClass* Owner)
+		JMP_THIS(0x47C620);
 
 	// those unks are passed to TechnoClass::Scatter in that same order
 	void ScatterContent(DWORD unk2, DWORD unk3, DWORD unk4, bool alt)
