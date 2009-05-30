@@ -8,6 +8,7 @@
 #include <CellSpread.h>
 #include <MapClass.h>
 #include <functional>
+#include <hash_map>
 
 // here be dragons(plenty)
 
@@ -63,10 +64,13 @@ void AnnounceInvalidPointer(T1 elem, void *ptr) {
 	}
 }
 
+
+// cell spread functors
+
 class CellSpreadApplicator
 	: public std::binary_function<const ObjectClass *, const CellStruct *, void> {
 	public:
-		void operator() (ObjectClass *obj, CellStruct *origin) {
+		virtual void operator() (ObjectClass *obj, CellStruct *origin) {
 		
 		}
 };
@@ -98,6 +102,42 @@ protected:
 			}
 		}
 
+};
+
+
+// trajectory functors
+
+#include <Helpers\Other.h>
+class CellSequenceApplicator
+	: public std::unary_function<const CellClass *, void> {
+	public:
+		virtual void operator() (CellClass *cell) {
+		
+		}
+};
+
+class CellSequence {
+	XY sta;
+	XY end;
+
+public:
+	CellSequence(CoordStruct *From, CoordStruct *To)
+	 : sta(From), end(To)
+	{
+	}
+
+	void Apply(CellSequenceApplicator& Callback) {
+		Trajectory T(sta.X, sta.Y, end.X, end.Y);
+
+		Trajectory::vec allCells;
+
+		T.path(allCells);
+
+		for(Trajectory::vec::iterator i = allCells.begin(); i != allCells.end(); ++i) {
+			CellClass *Cell = MapClass::Global()->GetCellAt(&*i);
+			Callback(Cell);
+		}
+	}
 };
 
 #endif

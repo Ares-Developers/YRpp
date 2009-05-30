@@ -234,6 +234,13 @@ public:
 		return crd;
 	}
 
+	static CellStruct * Coord2Cell(CoordStruct *crd, CellStruct* cell)
+	{
+		cell->X = short(crd->X / 256);
+		cell->Y = short(crd->Y / 256);
+		return cell;
+	}
+
 	CoordStruct * FixHeight(CoordStruct *crd)
 	{
 		crd->Z += ((this->Flags & cf_Bridge) != 0) * BridgeHeight();
