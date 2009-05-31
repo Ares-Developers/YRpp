@@ -3,6 +3,7 @@
 
 #include <YRPPCore.h>
 #include <objidl.h>
+#include <Helpers\Macro.h>
 
 //========================================================================
 //=== VectorClass ========================================================
@@ -135,7 +136,7 @@ public:
 		}
 	}
 
-	void Load(IStream *pStm) {
+	void Load(IStream *pStm, bool bSwizzle = 1) {
 		int ii = 0;
 		this->Clear();
 		pStm->Read(&ii, 4u, 0);
@@ -143,8 +144,10 @@ public:
 		for ( ii = 0; ii < Capacity; ++ii ) {
 			pStm->Read(&(Items[ii]), 4, 0);
 		}
-		for ( ii = 0; ii < Capacity; ++ii ) {
-			SWIZZLE(Items[ii]);
+		if(bSwizzle) {
+			for ( ii = 0; ii < Capacity; ++ii ) {
+				SWIZZLE(Items[ii]);
+			}
 		}
 	}
 
@@ -173,16 +176,19 @@ public:
 		}
 	}
 
-	void Load(IStream *pStm) {
+	void Load(IStream *pStm, bool bSwizzle) {
 		int ii = 0;
 		this->Clear();
 		pStm->Read(&ii, 4u, 0);
 		this->SetCapacity(ii, NULL);
-		for ( ii = 0; ii < Count; ++ii ) {
-			pStm->Read(&(Items[ii]), 4, 0);
+		for ( int jj = 0; jj < ii; ++jj ) {
+			pStm->Read(&(Items[jj]), 4, 0);
 		}
-		for ( ii = 0; ii < Count; ++ii ) {
-			SWIZZLE(Items[ii]);
+		this->Count = ii;
+		if(bSwizzle) {
+			for ( ii = 0; ii < Count; ++ii ) {
+				SWIZZLE(Items[ii]);
+			}
 		}
 	}
 

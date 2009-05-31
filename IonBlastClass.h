@@ -12,6 +12,8 @@
 class IonBlastClass
 {
 public:
+	static DynamicVectorClass<IonBlastClass *>* Array;
+
 	//Constructor, Destructor
 	IonBlastClass(CoordStruct Crd)
 		JMP_THIS(0x53CB10);

@@ -96,6 +96,9 @@ DECL(HouseTypeClass, 0xA83C98);
 #include <InfantryClass.h>
 DECL(InfantryClass, 0xA83DE8);
 
+#include <IonBlastClass.h>
+DECL(IonBlastClass, 0xAA0118);
+
 #include <InfantryTypeClass.h>
 DECL(InfantryTypeClass, 0xA8E348);
 
@@ -175,6 +178,9 @@ DECL(TaskForceClass, 0xA8E8D0);
 #include <ScriptTypeClass.h>
 DECL(ScriptTypeClass, 0x8B41C8);
 
+#include <SwizzleManagerClass.h>
+SwizzleManagerClass& SwizzleManagerClass::Instance = *(SwizzleManagerClass*)0xB0C110;
+
 #include <TeamClass.h>
 DECL(TeamClass, 0x8B40E8);
 
@@ -234,6 +240,9 @@ DECL(VoxClass, 0xB1D4A0);
 
 #include <WarheadTypeClass.h>
 DECL(WarheadTypeClass, 0x8874C0);
+
+#include <WaveClass.h>
+DECL(WaveClass, 0xA8EC38);
 
 #include <WeaponTypeClass.h>
 DECL(WeaponTypeClass, 0x887568);

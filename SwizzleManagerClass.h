@@ -22,8 +22,7 @@ public:
 class SwizzleManagerClass : public ISwizzle
 {
 public:
-	static SwizzleManagerClass* SwizzleManager()
-		{ SwizzleManagerClass* pSwizzleMgr; MEM_READ32(pSwizzleMgr, 0xB0C110); return pSwizzleMgr; }
+	static SwizzleManagerClass& Instance;
 
 	//IUnknown
 	virtual HRESULT _stdcall QueryInterface(REFIID iid, void** ppvObject) R0;
@@ -50,8 +49,8 @@ public:
 	virtual ~SwizzleManagerClass() RX;
 
 	//Properties
-	PROPERTY_STRUCT(DynamicVectorClass<SwizzlePointerClass>, SwizzlePointers1);
-	PROPERTY_STRUCT(DynamicVectorClass<SwizzlePointerClass>, SwizzlePointers2);
+	PROPERTY_STRUCT(DynamicVectorClass<SwizzlePointerClass>, Swizzles_Old);
+	PROPERTY_STRUCT(DynamicVectorClass<SwizzlePointerClass>, Swizzles_New);
 
 };
 
