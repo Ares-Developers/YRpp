@@ -122,6 +122,15 @@ public:
 		eSpeedType SpeedType, bool ValidateReachability, eMovementZone MovZone)
 			JMP_THIS(0x4AA440);
 
+// Pathfinding voodoo
+// do not touch them, mmkay, they trigger ZoneConnection recalc which is a MUST for firestorm to work
+
+	void Update_Pathfinding_1()
+		JMP_THIS(0x56C510);
+
+	void Update_Pathfinding_2(DynamicVectorClass<CellStruct> *where)
+		JMP_THIS(0x586990);
+
 // ====================================
 //        MAP REVEAL BRAINDAMAGE
 // ====================================

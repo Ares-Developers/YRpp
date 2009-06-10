@@ -13,6 +13,8 @@
 //Assembly macros
 #include <ASMMacros.h>
 
+#include <Memory.h>
+
 #include <wchar.h>
 #include <cstdio>
 

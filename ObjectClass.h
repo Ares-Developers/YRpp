@@ -98,7 +98,7 @@ public:
 	virtual void vt_entry_DC(DWORD dwUnk) RX;
 	virtual void RegisterDestruction(TechnoClass *Destroyer) RX;
 	 // maybe Object instead of Techno? Raises Map Events, grants veterancy, increments house kill counters
-	virtual void RegisterDestruction(HouseClass *Destroyer) RX; // ++destroyer's kill counters , etc
+	virtual void RegisterKill(HouseClass *Destroyer) RX; // ++destroyer's kill counters , etc
 	virtual bool SpawnParachuted(CoordStruct *coords) R0;
 	virtual void vt_entry_EC(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) RX;
 	virtual void vt_entry_F0(DWORD dwUnk) RX;
