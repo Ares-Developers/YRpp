@@ -32,7 +32,7 @@ public:
 	//ObjectClass
 	//MissionClass
 	//TechnoClass
-	virtual void vt_entry_3B8() RX;
+	virtual void Destroyed(ObjectClass* Killer) RX;
 	virtual void vt_entry_490(DWORD dwUnk, DWORD dwUnk2) RX;
 
 	//BuildingClass
