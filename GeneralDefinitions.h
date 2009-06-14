@@ -885,6 +885,13 @@ typedef BYTE eMouseEventFlags;
 #define	mevf_RBUTTONHELD		0x20
 #define	mevf_RBUTTONUP		0x40
 
+//control key flags
+typedef DWORD eControlKeyFlags;
+
+#define ckf_SHIFT 0x01
+#define ckf_CTRL 0x02
+#define ckf_ALT 0x04
+
 
 typedef int eEdge;
 
