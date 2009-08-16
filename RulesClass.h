@@ -40,6 +40,129 @@ public:
 
 	static bool Initialized;
 
+	// call this for the first INI file only
+	void Init(CCINIClass *pINI)
+		{ JMP_THIS(0x6686C0); }
+
+	// call this instead of Init for the later files (gamemode, map)
+	// reads the generic/list sections like [VehicleTypes] from pINI
+	// doesn't actually load [MTNK] or other list contents' sections
+	void Read_File(CCINIClass *pINI)
+		{ JMP_THIS(0x668BF0); }
+
+	void Read_SpecialWeapons(CCINIClass *pINI)
+		{ JMP_THIS(0x668FB0); }
+
+	void Read_AudioVisual(CCINIClass *pINI)
+		{ JMP_THIS(0x6691E0); }
+
+	void Read_CrateRules(CCINIClass *pINI)
+		{ JMP_THIS(0x66B900); }
+
+	void Read_CombatDamage(CCINIClass *pINI)
+		{ JMP_THIS(0x66BBB0); }
+
+	void Read_Radiation(CCINIClass *pINI)
+		{ JMP_THIS(0x66CF70); }
+
+	void Read_ElevationModel(CCINIClass *pINI)
+		{ JMP_THIS(0x66D150); }
+
+	void Read_WallModel(CCINIClass *pINI)
+		{ JMP_THIS(0x66D1F0); }
+
+	void Read_Difficulty(CCINIClass *pINI)
+		{ JMP_THIS(0x66D270); }
+
+	void Read_Colors(CCINIClass *pINI)
+		{ JMP_THIS(0x66D3A0); }
+
+	void Read_ColorAdd(CCINIClass *pINI)
+		{ JMP_THIS(0x66D480); }
+
+	void Read_General(CCINIClass *pINI)
+		{ JMP_THIS(0x66D530); }
+
+	void Read_MultiplayerDialogSettings(CCINIClass *pINI)
+		{ JMP_THIS(0x671EA0); }
+
+	void Read_Maximums(CCINIClass *pINI)
+		{ JMP_THIS(0x672230); }
+
+	void Read_InfantryTypes(CCINIClass *pINI)
+		{ JMP_THIS(0x672280); }
+
+	void Read_Countries(CCINIClass *pINI)
+		{ JMP_THIS(0x6722F0); }
+
+	void Read_VehicleTypes(CCINIClass *pINI)
+		{ JMP_THIS(0x672360); }
+
+	void Read_AircraftTypes(CCINIClass *pINI)
+		{ JMP_THIS(0x6723D0); }
+
+	void Read_Sides(CCINIClass *pINI)
+		{ JMP_THIS(0x672440); }
+
+	void Read_SuperWeaponTypes(CCINIClass *pINI)
+		{ JMP_THIS(0x6725F0); }
+
+	void Read_BuildingTypes(CCINIClass *pINI)
+		{ JMP_THIS(0x672660); }
+
+	void Read_TerrainTypes(CCINIClass *pINI)
+		{ JMP_THIS(0x6726D0); }
+
+	void Read_Teams_obsolete(CCINIClass *pINI)
+		{ JMP_THIS(0x672740); }
+
+	void Read_SmudgeTypes(CCINIClass *pINI)
+		{ JMP_THIS(0x6727D0); }
+
+	void Read_OverlayTypes(CCINIClass *pINI)
+		{ JMP_THIS(0x672840); }
+
+	void Read_Animations(CCINIClass *pINI)
+		{ JMP_THIS(0x6728B0); }
+
+	void Read_VoxelAnims(CCINIClass *pINI)
+		{ JMP_THIS(0x672920); }
+
+	void Read_Warheads(CCINIClass *pINI)
+		{ JMP_THIS(0x672990); }
+
+	void Read_Particles(CCINIClass *pINI)
+		{ JMP_THIS(0x672A00); }
+
+	void Read_ParticleSystems(CCINIClass *pINI)
+		{ JMP_THIS(0x672A70); }
+
+	void Read_AI(CCINIClass *pINI)
+		{ JMP_THIS(0x672AE0); }
+
+	void Read_Powerups(CCINIClass *pINI)
+		{ JMP_THIS(0x673E80); }
+
+	void Read_LandCharacteristics(CCINIClass *pINI)
+		{ JMP_THIS(0x674000); }
+
+	void Read_IQ(CCINIClass *pINI)
+		{ JMP_THIS(0x674240); }
+
+	void Read_JumpjetControls(CCINIClass *pINI)
+		{ JMP_THIS(0x6743D0); }
+
+	void Read_Difficulties(CCINIClass *pINI)
+		{ JMP_THIS(0x674500); }
+
+	void Read_Movies(CCINIClass *pINI)
+		{ JMP_THIS(0x674550); }
+
+	void Read_AdvancedCommandBar(CCINIClass *pINI)
+		{ JMP_THIS(0x674650); }
+
+
+
 	//CTOR / DTOR
 protected:
 	RulesClass() JMP_THIS(0x665650);

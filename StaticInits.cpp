@@ -9,6 +9,9 @@
 #define ALIAS(Type, Obj, Addr) \
 	Type &Obj = *(Type *)(Addr);
 
+#define ALIAS_O(Type, Obj, Addr) \
+	Type Obj = (Type )(Addr);
+
 #include <AbstractTypeClass.h>
 DECL(AbstractTypeClass, 0xA8E968);
 
@@ -46,9 +49,11 @@ DECL(BuildingTypeClass, 0xA83C68);
 DECL(BuildingLightClass, 0x8B4190);
 
 #include <CCINIClass.h>
-CCINIClass* CCINIClass::INI_AI			= (CCINIClass*)0x887128;
-CCINIClass* CCINIClass::INI_Art			= (CCINIClass*)0x887180;
-CCINIClass* CCINIClass::INI_Rules		= (CCINIClass*)0x887048;
+ALIAS(CCINIClass*, CCINIClass::INI_Rules, 0x887048);
+
+ALIAS_O(CCINIClass*, CCINIClass::INI_AI, 0x887128);
+ALIAS_O(CCINIClass*, CCINIClass::INI_Art, 0x887180);
+ALIAS_O(CCINIClass*, CCINIClass::INI_RA2MD, 0x8870C0);
 
 #include <ColorScheme.h>
 DECL(ColorScheme, 0xB054D0);
@@ -70,6 +75,9 @@ ALIAS(DSurface *, Drawing::DSurface_Composite, 0x88731C);
 
 ALIAS(ABufferClass *, ABufferClass::ABuffer, 0x87E8A4);
 ALIAS(ZBufferClass *, ZBufferClass::ZBuffer, 0x887644);
+
+#include <LoadProgressManager.h>
+ALIAS(LoadProgressManager *, LoadProgressManager::LPMgr, 0xABC9BC);
 
 #include <EMPulseClass.h>
 DECL(EMPulseClass, 0x8A3870);
@@ -168,6 +176,9 @@ DECL(SmudgeTypeClass, 0xA8EC18);
 
 #include <SpotlightClass.h>
 DECL(SpotlightClass, 0xAC1678);
+
+#include <StringTable.h>
+ALIAS(CSFString *, StringTable::LastLoadedString, 0xB1CF88);
 
 #include <SuperWeaponTypeClass.h>
 DECL(SuperWeaponTypeClass, 0xA8E330);

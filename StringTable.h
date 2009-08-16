@@ -41,9 +41,17 @@ struct CSFLabel
 	int FirstValueIndex; //in the global StringTable::Values() array
 };
 
+struct CSFString
+{
+	CSFString *PreviousEntry;
+	wchar_t Text[102];
+};
+
 class StringTable
 {
 public:
+	static CSFString * &LastLoadedString;
+
 	static int get_MaxLabelLen()
 		{ return *((int*)0xB1CF58); }
 	static int set_MaxLabelLen(int new_MaxLabelLen)

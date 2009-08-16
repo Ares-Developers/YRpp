@@ -9,11 +9,39 @@ class Surface;
 class LoadProgressManager
 {
 public:
-	static LoadProgressManager* Global()
-		{ return (LoadProgressManager*)0xABC9BC; }
+	static LoadProgressManager* &LPMgr;
+
+	static void DrawText(const wchar_t* pText,int X,int Y,DWORD dwColor) {
+		if(LoadProgressManager::LPMgr) {
+			if(Surface * S = LoadProgressManager::LPMgr->ProgressSurface) {
+				S->DrawText(pText, X, Y, dwColor);
+			}
+		}
+	}
+
+	LoadProgressManager()
+		{ JMP_THIS(0x552A40); }
+
+	virtual ~LoadProgressManager()
+		{ JMP_THIS(0x552AA0); }
+
+	void Draw()
+		{ JMP_THIS(0x552D60); }
 
 	PROPERTY(DWORD, field_4);
 	PROPERTY(DWORD, field_8);
+	PROPERTY(DWORD, field_C);
+	PROPERTY(DWORD, field_10);
+	PROPERTY(DWORD, field_14);
+	PROPERTY(DWORD, field_18);
+	PROPERTY(DWORD, field_1C);
+	PROPERTY(DWORD, field_20);
+	PROPERTY(DWORD, field_24);
+	PROPERTY(DWORD, field_28);
+	PROPERTY(DWORD, field_2C);
+	PROPERTY(DWORD, field_30);
+	PROPERTY(DWORD, field_34);
+	PROPERTY(DWORD, field_38);
 	PROPERTY(wchar_t*, LoadMessage);
 	PROPERTY(wchar_t*, LoadBriefing);
 	PROPERTY(SHPStruct *, TitleBarSHP);

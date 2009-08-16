@@ -16,6 +16,12 @@ public:
 	static int &CurrentFrameRate;
 	static int GetMinFrameRate()
 		JMP_STD(0x55AF60);
+
+	static void SetProgress(int progress)
+		{ SET_REG32(ECX, 0xA8B238); JMP_STD(0x69AE90); }
+		
+	static void UnknownCall()
+		{ JMP_STD(0x48D080); }
 };
 
 class MovieInfo

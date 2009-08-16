@@ -25,6 +25,7 @@ public:
 			}
 			return NULL;
 		}
+
 	static int FindIndex(const char* find_id)
 		{
 //			ColorScheme* current=NULL;
