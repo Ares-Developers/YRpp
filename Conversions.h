@@ -65,6 +65,7 @@ public:
 
 		return r;
 	}
+
 };
 
 #endif

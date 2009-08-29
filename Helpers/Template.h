@@ -15,6 +15,7 @@
 
 // return functors
 
+// set EAX to smth, return to smth
 template<typename T>
 class retfunc {
 protected:
@@ -28,6 +29,7 @@ public:
 	}
 };
 
+// set EAX to smth, return to fixed
 template<typename T>
 class retfunc_fixed : public retfunc<T> {
 protected:
@@ -40,6 +42,16 @@ public:
 	}
 };
 
+// return to one of two fixed
+class retfunc_bool : public retfunc<int> {
+protected:
+	DWORD negAddr;
+public:
+	retfunc_bool(REGISTERS *r, DWORD yAddr, DWORD nAddr) : retfunc(r, yAddr), negAddr(nAddr) {};
+	int operator()(bool choose) {
+		return choose ? retAddr : negAddr;
+	}
+};
 
 // invalid pointers
 
