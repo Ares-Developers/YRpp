@@ -52,6 +52,7 @@
 
 // WARNING MK II: These funcs are ::Find, not ::FindOrAllocate, make variants if you wish
 
+
 // find items
 #define PARSE_VAR_OBJ(key, var, cls) \
 	if(pINI->ReadString(section, key, "", buffer, 256) > 0) \
@@ -92,6 +93,7 @@
 
 #define PARSE_TEAM(key, var) \
 	PARSE_VAR_OBJ(key, var, TeamTypeClass);
+
 
 // find indices
 #define PARSE_VAR_IDX(key, var, cls) \
@@ -139,6 +141,58 @@
 
 #define PARSE_TEAM_IDX(key, var) \
 	PARSE_VAR_IDX(key, var, TeamTypeClass);
+
+
+// find Customizable<>s
+// by value
+#define PARSE_VAR_EX(key, var, cls) \
+	if(pINI->ReadString(section, key, "", buffer, 256) > 0) \
+		var.Set(cls::Find(buffer));
+
+#define PARSE_WH_EX(key, var) \
+	PARSE_VAR_EX(key, var, WarheadTypeClass);
+
+#define PARSE_WEAP_EX(key, var) \
+	PARSE_VAR_EX(key, var, WeaponTypeClass);
+
+#define PARSE_TECHNO_EX(key, var) \
+	PARSE_VAR_EX(key, var, TechnoTypeClass);
+
+#define PARSE_AIRCRAFT_EX(key, var) \
+	PARSE_VAR_EX(key, var, AircraftTypeClass);
+
+#define PARSE_VEHICLE_EX(key, var) \
+	PARSE_VAR_EX(key, var, UnitTypeClass);
+
+#define PARSE_INFANTRY_EX(key, var) \
+	PARSE_VAR_EX(key, var, InfantryTypeClass);
+
+#define PARSE_BUILDING_EX(key, var) \
+	PARSE_VAR_EX(key, var, BuildingTypeClass);
+
+#define PARSE_ANIM_EX(key, var) \
+	PARSE_VAR_EX(key, var, AnimTypeClass);
+
+#define PARSE_SW_EX(key, var) \
+	PARSE_VAR_EX(key, var, SuperWeaponTypeClass);
+
+#define PARSE_TASKFORCE_EX(key, var) \
+	PARSE_VAR_EX(key, var, TaskForceClass);
+
+#define PARSE_SCRIPT_EX(key, var) \
+	PARSE_VAR_EX(key, var, ScriptTypeClass);
+
+#define PARSE_TEAM_EX(key, var) \
+	PARSE_VAR_EX(key, var, TeamTypeClass);
+
+
+// by index
+#define PARSE_VAR_IDX_EX(key, var, cls) \
+	if(pINI->ReadString(section, key, "", buffer, 256) > 0) \
+		var.Set(cls::FindIndex(buffer));
+
+#define PARSE_SND_EX(key, var) \
+	PARSE_VAR_IDX_EX(key, var, VocClass);
 
 
 // read colors
