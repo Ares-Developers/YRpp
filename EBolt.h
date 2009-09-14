@@ -34,7 +34,7 @@ public:
 	PROPERTY(int, Random);	//Random number between 0 and 256
 	PROPERTY(TechnoClass*, Owner);
 	PROPERTY(DWORD, unknown_24);
-	PROPERTY(int, unknown_int_28);
+	PROPERTY(int, Lifetime); // this is >>= 1 each time DrawAll() is called, 0 => dtor (inline). Hi, welcome to dumb ideas.
 	PROPERTY(bool, AlternateColor);
 
 };

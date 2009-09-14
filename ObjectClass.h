@@ -203,7 +203,7 @@ protected:
 	PROPERTY(DWORD,              unknown_74);
 	PROPERTY(DWORD,              unknown_78);
 	PROPERTY(DWORD,              unknown_7C);
-	PROPERTY(bool,               Sensed); // Sensed by sensors
+	PROPERTY(bool,               IsSensed); // Sensed by sensors
 	PROPERTY(bool,               InLimbo); // act as if it doesn't exist - e.g., post mortem state before being deleted
 	PROPERTY(bool,               InOpenToppedTransport);
 	PROPERTY(bool,               IsSelected);	//Has the player selected this Object?
