@@ -16,6 +16,9 @@
 #define GET_STACK(clsname, var, offset) \
 	clsname var = *((clsname *)(R->lea_ ## StackVar(offset)));
 
+#define LEA_STACK(clsname, var, offset) \
+	clsname var = ((clsname )(R->lea_ ## StackVar(offset)));
+
 #define GET_BASE(clsname, var, offset) \
 	clsname var = *((clsname *)(R->lea_ ## BaseVar(offset)));
 

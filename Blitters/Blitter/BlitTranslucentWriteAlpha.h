@@ -13,7 +13,7 @@ class BlitTranslucentWriteAlpha : public Blitter<T> {
 		byte srcv = *src++;
 		byte aphv = *aBuf++;
 		if (srcv) {
-			word deltav = 255 – aphv;
+			word deltav = 255 - aphv;
 			if (aphv == 255) {
 				aphv = 256;
 			}

@@ -373,7 +373,7 @@ public:
 	PROPERTY(bool,               unknown_bool_1F8);
 	PROPERTY_STRUCT(TimerStruct, ReloadTimer);
 	PROPERTY(DWORD,              unknown_208);
-	PROPERTY(DWORD,              unknown_20C);
+	PROPERTY(DWORD,              DisplayProductionToHouses); // if(house->IndexInArray & thisfield) { pretend that this building has been infiltrated by that house's spy in RA1 }
 	PROPERTY(DWORD,              unknown_210);
 	PROPERTY(int,                Group); //0-9, assigned by CTRL+Number, these kinds // also set by aimd TeamType->Group !
 	PROPERTY(TechnoClass*,       FocusOnUnit); // when told to guard a unit or such

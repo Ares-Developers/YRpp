@@ -19,7 +19,10 @@ public:
 
 class MouseClass : public SidebarClass
 {
-
+public:
+	void SetPointer(int Index, bool Minimap) {
+		JMP_THIS(0x5BDC80);
+	}
 };
 
 #endif

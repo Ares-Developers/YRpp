@@ -231,6 +231,8 @@ DECL(UnitTypeClass, 0xA83CE0);
 #include <Unsorted.h>
 ALIAS(DWORD, Game::Savegame_Magic, 0x83D560);
 ALIAS(int, Game::CurrentFrameRate, 0xABCD44);
+ALIAS(HWND, Game::hWnd, 0xB73550);
+ALIAS(HINSTANCE, Game::hInstance, 0xB732F0);
 
 DynamicVectorClass<MovieInfo> *MovieInfo::Array = (DynamicVectorClass<MovieInfo>*)0xABF390;
 
@@ -257,6 +259,9 @@ DECL(WaveClass, 0xA8EC38);
 
 #include <WeaponTypeClass.h>
 DECL(WeaponTypeClass, 0x887568);
+
+#include <WWMouseClass.h>
+ALIAS(WWMouseClass *, WWMouseClass::Instance, 0x887640);
 
 #undef ALIAS
 #undef DECL

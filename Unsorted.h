@@ -13,6 +13,9 @@ public:
 	// the magic checksum for version validation - linked in StaticInits
 	static DWORD &Savegame_Magic;
 
+	static HWND &hWnd;
+	static HINSTANCE &hInstance;
+
 	static int &CurrentFrameRate;
 	static int GetMinFrameRate()
 		JMP_STD(0x55AF60);
@@ -22,6 +25,26 @@ public:
 		
 	static void UnknownCall()
 		{ JMP_STD(0x48D080); }
+
+	static int __fastcall GetResource(int ID, int Type) {
+		JMP_STD(0x4A3B40);
+	}
+
+	static void __fastcall CenterWindowIn(HWND Child, HWND Parent) {
+		JMP_STD(0x777080);
+	}
+
+	static void __fastcall sub_53E420(HWND hWnd) {
+		JMP_STD(0x53E420);
+	}
+
+	static void __fastcall sub_53E3C0(HWND hWnd) {
+		JMP_STD(0x53E3C0);
+	}
+
+	static void __fastcall sub_776D80(tagRECT *Rect) {
+		JMP_STD(0x776D80);
+	}
 };
 
 class MovieInfo
