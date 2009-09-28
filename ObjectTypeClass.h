@@ -79,7 +79,7 @@ protected:
 
 	PROPERTY_STRING(ImageFile, 0x19);
 
-	PROPERTY(bool,           AlternateActicArt);
+	PROPERTY(bool,           AlternateArcticArt);
 	PROPERTY(bool,           ArcticArtInUse); //not read from ini
 
 	PROPERTY_STRING(AlphaImageFile, 0x19);

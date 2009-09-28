@@ -162,7 +162,7 @@ public:
 	PROPERTY(bool, HasPower);
 	PROPERTY(bool, IsOverpowered);
 
-			// each powered unit controller building gets this set on power activation and unset on power outage
+	// each powered unit controller building gets this set on power activation and unset on power outage
 	PROPERTY(bool, RegisteredAsPoweredUnitSource);
 
 	PROPERTY(DWORD, SupportingPrisms);
