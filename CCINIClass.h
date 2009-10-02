@@ -28,6 +28,9 @@ public:
 	void Reset()
 		JMP_THIS(0x526B00);
 
+	void Clear(const char *s1, char *s2)
+		JMP_THIS(0x5257C0);
+
 	INISection* GetSection(const char* pSection)
 		JMP_THIS(0x526810);
 

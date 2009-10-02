@@ -44,6 +44,7 @@ DECL(BuildingClass, 0xA8EB40);
 
 #include <BuildingTypeClass.h>
 DECL(BuildingTypeClass, 0xA83C68);
+ALIAS(int, BuildingTypeClass::HeightInLeptons, 0x89DDB8);
 
 #include <BuildingLightClass.h>
 DECL(BuildingLightClass, 0x8B4190);

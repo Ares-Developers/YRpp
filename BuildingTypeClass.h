@@ -30,6 +30,8 @@ public:
 	//Array
 	ABSTRACTTYPE_ARRAY(BuildingTypeClass);
 
+	static int &HeightInLeptons;
+
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 

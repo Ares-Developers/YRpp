@@ -62,6 +62,7 @@ protected:
 	PROPERTY(DWORD,					unknown_1254);
 	PROPERTY(DWORD,					unknown_1258);
 	PROPERTY_STRUCT(DynamicVectorClass<Point2D>,		unknown_points_125C);
+	PROPERTY(DWORD,					unknown_1274);
 	PROPERTY_STRUCT_ARRAY(DynamicVectorClass<Point2D>, unknown_points_array_1278, 0x16);
 	PROPERTY(DWORD,					unknown_1488);
 	PROPERTY(int,					unknown_int_148C);

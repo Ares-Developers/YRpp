@@ -236,8 +236,10 @@ protected:
 	PROPERTY(int,					MaxWidth);
 	PROPERTY(int,					MaxHeight);
 	PROPERTY(int,					MaxNumCells);
+	PROPERTY(DWORD, _padding_01);
+	PROPERTY(DWORD, _padding_02);
 	PROPERTY_STRUCT_ARRAY(Crate, Crates, 0x100);
-	PROPERTY(bool,					unknown_bool_1158);
+//	PROPERTY(bool,					unknown_bool_1158);
 	PROPERTY_STRUCT(DynamicVectorClass<CellStruct>,				CellStructs2);
 
 };
