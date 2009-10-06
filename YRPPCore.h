@@ -35,7 +35,7 @@
 			{ name = value; }
 
 #define PROPERTY_PTR(type,name)\
-	protected:\
+	public: \
 		type name;\
 	public:\
 		type get_ ## name() \
@@ -55,7 +55,7 @@
 
 //struct or class instances
 #define PROPERTY_STRUCT(type,name)\
-	protected:\
+	public: \
 		type name;\
 	public:\
 		type* get_ ## name() \
@@ -73,7 +73,7 @@
 
 //Arrays
 #define PROPERTY_ARRAY(type,name,length)\
-	protected:\
+	public: \
 		type name[length];\
 	public:\
 		type get_ ## name(int n)\
@@ -83,7 +83,7 @@
 
 //Arrays of struct or class instances
 #define PROPERTY_STRUCT_ARRAY(type,name,length)\
-	protected:\
+	public: \
 		type name[length];\
 	public:\
 		type* get_ ## name(int n)\
@@ -93,7 +93,7 @@
 
 //Strings
 #define PROPERTY_STRING(name,length)\
-	protected:\
+	public: \
 		char name[length];\
 	public:\
 		char* get_ ## name()\
@@ -102,7 +102,7 @@
 			{ strncpy(name, value, length); }
 
 #define PROPERTY_UNICODE(name,length)\
-	protected:\
+	public: \
 		wchar_t name[length];\
 	public:\
 		wchar_t* get_ ## name()\

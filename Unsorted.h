@@ -1,6 +1,9 @@
 #ifndef UNSORTED_H
 #define UNSORTED_H
 
+#include <ArrayClasses.h>
+#include <GeneralDefinitions.h>
+
 class ObjectClass;
 
 // things that I can't put into nice meaningful classes
@@ -45,6 +48,7 @@ public:
 	static void __fastcall sub_776D80(tagRECT *Rect) {
 		JMP_STD(0x776D80);
 	}
+
 };
 
 class MovieInfo
@@ -232,7 +236,7 @@ struct AudioController
   and so on...
  */
 	static int &SomeMutex = *(int *)0xA8E7AC;
-}
+};
 
 struct CheatData {
 	bool * Destination;

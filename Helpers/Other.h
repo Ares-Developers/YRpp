@@ -5,8 +5,6 @@
 #include <vector>
 #include <algorithm>
 
-#include <Dbghelp.h>
-
 #define MID(x) \
 	((((x) / 256) * 256) + 128 )
 
@@ -119,94 +117,5 @@ private:
 		return (abs(st.X - X) * _tg());
 	}
 };
-
-
-/**
- * minidump
- */
-
-/*
-bool g_ExtendedMinidumps = false;
-LONG WINAPI ExceptionHandler(int code, LPEXCEPTION_POINTERS pExs)
-{
-//	if (IsDebuggerAttached()) return EXCEPTION_CONTINUE_SEARCH;
-	if (pExs->ExceptionRecord->ExceptionCode == ERROR_MOD_NOT_FOUND ||
-		pExs->ExceptionRecord->ExceptionCode == ERROR_PROC_NOT_FOUND)
-	{
-		//tell user
-		ExitProcess(pExs->ExceptionRecord->ExceptionCode);
-	}
-
-	switch(pExs->ExceptionRecord->ExceptionCode)
-	{
-		case EXCEPTION_ACCESS_VIOLATION:
-		case EXCEPTION_ARRAY_BOUNDS_EXCEEDED:
-		case EXCEPTION_BREAKPOINT:
-		case EXCEPTION_DATATYPE_MISALIGNMENT:
-		case EXCEPTION_FLT_DENORMAL_OPERAND:
-		case EXCEPTION_FLT_DIVIDE_BY_ZERO:
-		case EXCEPTION_FLT_INEXACT_RESULT:
-		case EXCEPTION_FLT_INVALID_OPERATION:
-		case EXCEPTION_FLT_OVERFLOW:
-		case EXCEPTION_FLT_STACK_CHECK:
-		case EXCEPTION_FLT_UNDERFLOW:
-		case EXCEPTION_ILLEGAL_INSTRUCTION:
-		case EXCEPTION_IN_PAGE_ERROR:
-		case EXCEPTION_INT_DIVIDE_BY_ZERO:
-		case EXCEPTION_INT_OVERFLOW:
-		case EXCEPTION_INVALID_DISPOSITION:
-		case EXCEPTION_NONCONTINUABLE_EXCEPTION:
-		case EXCEPTION_PRIV_INSTRUCTION:
-		case EXCEPTION_SINGLE_STEP:
-		case EXCEPTION_STACK_OVERFLOW:
-		{
-			wchar_t filename[MAX_PATH];
-			wchar_t path[MAX_PATH];
-		
-			HANDLE dumpFile;
-			SYSTEMTIME time;
-			MINIDUMP_EXCEPTION_INFORMATION expParam;
-			
-			GetLocalTime(&time);
-			GetCurrentDirectoryW(MAX_PATH, path);
-
-			swprintf(filename, MAX_PATH, L"%s\\debug", path);
-			CreateDirectoryW(filename, NULL);
-
-			swprintf(filename, MAX_PATH, g_ExtendedMinidumps ? L"%s\\debug\\extcrashdump.%04u%02u%02u-%02u%02u%02u.dmp" : L"%s\\debug\\crashdump.%04u%02u%02u-%02u%02u%02u.dmp", 
-							path, 
-							time.wYear, time.wMonth, time.wDay, 
-							time.wHour, time.wMinute, time.wSecond);
-
-			dumpFile = CreateFileW(filename, GENERIC_READ | GENERIC_WRITE, 
-							FILE_SHARE_WRITE | FILE_SHARE_READ, NULL, CREATE_ALWAYS, FILE_FLAG_WRITE_THROUGH, NULL);
-
-			expParam.ThreadId = GetCurrentThreadId();
-			expParam.ExceptionPointers = pExs;
-			expParam.ClientPointers = FALSE;
-
-			MINIDUMP_TYPE type = (MINIDUMP_TYPE) ((g_ExtendedMinidumps ? MiniDumpWithFullMemory : (MiniDumpWithDataSegs | MiniDumpWithIndirectlyReferencedMemory)));
-				
-			MiniDumpWriteDump(GetCurrentProcess(), GetCurrentProcessId(), dumpFile, type, &expParam, NULL, NULL);
-			CloseHandle(dumpFile);
-
-			// FIXME FIXME FIXME
-			// Shiny dialog explaining that something went horribly wrong and 
-			// that we need the crashdumps to fix it
-			// Following message is placeholder
-			MessageBoxW(NULL, 
-			L"Yuri's Revenge has encountered an internal error and is unable to continue normally.\n"
-			L"A crash dump should have been created in your game's \\debug subfolder. If you wish to report this bug to the developers, be sure to include that file.",
-				L"Command and Conquer: Yuri's Revenge - Internal Error", MB_ICONERROR | MB_OK | MB_SETFOREGROUND);
-
-			ExitProcess(pExs->ExceptionRecord->ExceptionCode); // Exit Renegade.
-			break;
-		}
-		default:
-			return EXCEPTION_CONTINUE_SEARCH;
-			break;
-	}
-}
-*/
 
 #endif

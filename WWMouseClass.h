@@ -3,6 +3,7 @@
 
 #include <GeneralDefinitions.h>
 #include <GeneralStructures.h>
+#include <Drawing.h>
 
 struct SHPStruct;
 

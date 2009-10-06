@@ -50,6 +50,8 @@ class MapClass : public GScreenClass
 {
 public:
 	//Static
+	static MapClass *Instance;
+
 	static MapClass* Global()
 		{ return (MapClass*)0x87F7E8; }
 
