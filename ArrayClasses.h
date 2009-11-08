@@ -4,6 +4,7 @@
 #include <YRPPCore.h>
 #include <objidl.h>
 #include <Helpers\Macro.h>
+#include <Memory.h>
 
 //========================================================================
 //=== VectorClass ========================================================
@@ -17,13 +18,13 @@ public:
 	}
 
 	virtual bool IsEqual(VectorClass* pVec) {
-		if(Capacity == pVec->Capacity) {
-			if(Capacity == 0) {
+		if(this->Capacity == pVec->Capacity) {
+			if(this->Capacity == 0) {
 				return true;
 			}
 
-			for(int i = 0; i < Capacity; ++i) {
-				if(Items[i] == pVec->Items[i]) {
+			for(int i = 0; i < this->Capacity; ++i) {
+				if(this->Items[i] == pVec->Items[i]) {
 					continue; // kapow! don't rewrite this to != unless you know why you're doing it
 				}
 				return false;
@@ -36,11 +37,13 @@ public:
 
 	virtual bool SetCapacity(int nNewCapacity, T* pMem) {
 		if(nNewCapacity != 0) {
-			IsInitialized = false;
+			this->IsInitialized = false;
 
 			bool bMustAllocate = (pMem == NULL);
 			if(!pMem) {
 				pMem = new T[nNewCapacity];
+// in theory, as long as new/delete pairs are matched to the same allocator, shit should work just fine
+//				GAME_ALLOC_ARR(T, nNewCapacity, pMem);
 			}
 
 			IsInitialized = true;
@@ -48,43 +51,45 @@ public:
 				return false;
 			}
 
-			if(Items) {
-				int n = (nNewCapacity < Capacity) ? nNewCapacity : Capacity;
+			if(this->Items) {
+				int n = (nNewCapacity < this->Capacity) ? nNewCapacity : this->Capacity;
 				for(int i = 0; i < n; ++i) {
-					pMem[i] = Items[i];
+					pMem[i] = this->Items[i];
 				}
 
 				if(IsAllocated) {
-					delete Items;
-					Items = NULL;
+					delete [] this->Items;
+//					GAME_DEALLOC_ARR(this->Items);
+					this->Items = NULL;
 				}
 			}
 
-			IsAllocated = bMustAllocate;
-			Items = pMem;
-			Capacity = nNewCapacity;
+			this->IsAllocated = bMustAllocate;
+			this->Items = pMem;
+			this->Capacity = nNewCapacity;
 		} else {
-			Clear();
+			this->Clear();
 		}
 		return true;
 	}
 
 	virtual void Clear() {
-		if(Items && IsAllocated) {
-			delete Items;
-			Items = NULL;
+		if(this->Items && this->IsAllocated) {
+			delete[] this->Items;
+//			GAME_DEALLOC_ARR(this->Items);
+			this->Items = NULL;
 		}
-		IsAllocated = false;
-		Capacity = 0;
+		this->IsAllocated = false;
+		this->Capacity = 0;
 	}
 
 	virtual int FindItemIndex(T tItem) {
-		if(!IsInitialized) {
+		if(!this->IsInitialized) {
 			return 0;
 		}
 
-		for(int i = 0; i < Capacity; ++i) {
-			if(Items[i] == tItem) {
+		for(int i = 0; i < this->Capacity; ++i) {
+			if(this->Items[i] == tItem) {
 				return i;
 			}
 		}
@@ -93,43 +98,44 @@ public:
 	}
 
 	virtual int GetItemIndex(T* pItem) {
-		if(!IsInitialized) return 0;
-		return (pItem - Items) / sizeof(T);
+		if(!this->IsInitialized) return 0;
+		return (pItem - this->Items) / sizeof(T);
 	}
 
 	virtual T GetItem(int i) {
-		return Items[i];
+		return this->Items[i];
 	}
 
 	T& operator [](int i) {
-		return Items[i];
+		return this->Items[i];
 	}
 
 	VectorClass() {
-		Items = NULL;
-		Capacity = 0;
-		IsInitialized = true;
-		IsAllocated = false;
+		this->Items = NULL;
+		this->Capacity = 0;
+		this->IsInitialized = true;
+		this->IsAllocated = false;
 	}
 
 	VectorClass(int nCapacity, T* pMem) {
-		Items = NULL;
-		Capacity = nCapacity;
-		IsInitialized = true;
-		IsAllocated = false;
+		this->Items = NULL;
+		this->Capacity = nCapacity;
+		this->IsInitialized = true;
+		this->IsAllocated = false;
 
 		if(nCapacity != 0) {
 			if(pMem) {
-				Items = pMem;
+				this->Items = pMem;
 			} else {
-				Items = new T[nCapacity];
-				IsAllocated = true;
+				this->Items = new T[nCapacity];
+//				GAME_ALLOC_ARR(T, nCapacity, this->Items);
+				this->IsAllocated = true;
 			}
 		}
 	}
 
 	void Save(IStream *pStm) {
-		int ii = Capacity;
+		int ii = this->Capacity;
 		pStm->Write(&ii, 4u, 0);
 		for ( ii = 0; ii < Capacity; ++ii ) {
 			pStm->Write(&(this->Items[ii]), 4, 0);
@@ -138,17 +144,23 @@ public:
 
 	void Load(IStream *pStm, bool bSwizzle = 1) {
 		int ii = 0;
-		this->Clear();
+		this->Purge();
 		pStm->Read(&ii, 4u, 0);
 		this->SetCapacity(ii, NULL);
-		for ( ii = 0; ii < Capacity; ++ii ) {
-			pStm->Read(&(Items[ii]), 4, 0);
+		for ( ii = 0; ii < this->Capacity; ++ii ) {
+			pStm->Read(&(this->Items[ii]), 4, 0);
 		}
 		if(bSwizzle) {
-			for ( ii = 0; ii < Capacity; ++ii ) {
-				SWIZZLE(Items[ii]);
+			for ( ii = 0; ii < this->Capacity; ++ii ) {
+				SWIZZLE(this->Items[ii]);
 			}
 		}
+	}
+
+	void Purge() {
+		this->Items = NULL;
+		this->IsAllocated = false;
+		this->Capacity = 0;
 	}
 
 	PROPERTY(T*, Items);
@@ -165,29 +177,29 @@ template <typename T> class DynamicVectorClass : public VectorClass<T>
 {
 public:
 	virtual ~DynamicVectorClass() {
-		Clear();
+		this->Clear();
 	}
 
 	void Save(IStream *pStm) {
-		int ii = Count;
+		int ii = this->Count;
 		pStm->Write(&ii, 4u, 0);
-		for ( ii = 0; ii < Count; ++ii ) {
-			pStm->Write(&(Items[ii]), 4, 0);
+		for ( ii = 0; ii < this->Count; ++ii ) {
+			pStm->Write(&(this->Items[ii]), 4, 0);
 		}
 	}
 
 	void Load(IStream *pStm, bool bSwizzle) {
 		int ii = 0;
-		this->Clear();
+		this->Purge();
 		pStm->Read(&ii, 4u, 0);
 		this->SetCapacity(ii, NULL);
 		for ( int jj = 0; jj < ii; ++jj ) {
-			pStm->Read(&(Items[jj]), 4, 0);
+			pStm->Read(&(this->Items[jj]), 4, 0);
 		}
 		this->Count = ii;
 		if(bSwizzle) {
-			for ( ii = 0; ii < Count; ++ii ) {
-				SWIZZLE(Items[ii]);
+			for ( ii = 0; ii < this->Count; ++ii ) {
+				SWIZZLE(this->Items[ii]);
 			}
 		}
 	}
@@ -209,27 +221,32 @@ public:
 	virtual bool SetCapacity(int nNewCapacity, T* pMem) {
 		bool bRet = VectorClass::SetCapacity(nNewCapacity, pMem);
 
-		if(Capacity < Count) {
-			Count = Capacity;
+		if(this->Capacity < this->Count) {
+			this->Count = this->Capacity;
 		}
 
 		return bRet;
 	}
 
 	virtual void Clear() {
-		Count = 0;
+		this->Count = 0;
 		VectorClass::Clear();
+	}
+
+	void Purge() {
+		this->Count = 0;
+		VectorClass::Purge();
 	}
 
 	// this doesn't work right for some reason, see Bugfixes.cpp TechnoTypeClass_GetCameo
 	// passing a pointer that's in the array still returns -1
 	virtual int FindItemIndex(T tItem) {
-		if(!IsInitialized) {
+		if(!this->IsInitialized) {
 			return -1;
 		}
 
 		for(int i = 0; i < Count; i++) {
-			if(Items[i] == tItem) {
+			if(this->Items[i] == tItem) {
 				return i;
 			}
 		}
@@ -238,21 +255,27 @@ public:
 	}
 
 	DynamicVectorClass() : VectorClass() {
-		Count = 0;
-		CapacityIncrement = 10;
+		this->Count = 0;
+		this->CapacityIncrement = 10;
+/*
+	lolhax
+		if(VT<T>::Set()) {
+			*(DWORD *)this = VT<T>::Get();
+		}
+*/
 	}
 
 	DynamicVectorClass(int nCapacity, T* pMem) : VectorClass<T>(nCapacity, pMem) {
-		Count = 0;
-		CapacityIncrement = 10;
+		this->Count = 0;
+		this->CapacityIncrement = 10;
 	}
 
 public:
 	bool AddItem(T tItem) {
-		if(Count >= Capacity) {
-			if(IsAllocated || Capacity == 0) {
-				if(CapacityIncrement > 0) {
-					if(!SetCapacity(Capacity + CapacityIncrement, NULL)) {
+		if(this->Count >= this->Capacity) {
+			if(this->IsAllocated || this->Capacity == 0) {
+				if(this->CapacityIncrement > 0) {
+					if(!this->SetCapacity(this->Capacity + this->CapacityIncrement, NULL)) {
 						return false;
 					}
 				} else {
@@ -263,16 +286,16 @@ public:
 			}
 		}
 
-		Items[Count++] = tItem;
+		this->Items[Count++] = tItem;
 		return true;
 	}
 
 	bool RemoveItem(int nIndex) {
-		if(nIndex >= 0 && nIndex < Count) {
-			--Count;
-			if(nIndex < Count) {
-				for(int i = nIndex; i < Count; i++) {
-					Items[i] = Items[i+1];
+		if(nIndex >= 0 && nIndex < this->Count) {
+			--this->Count;
+			if(nIndex < this->Count) {
+				for(int i = nIndex; i < this->Count; i++) {
+					this->Items[i] = this->Items[i+1];
 				}
 			}
 			return true;
@@ -292,7 +315,7 @@ template <typename T> class TypeList : public DynamicVectorClass<T>
 {
 public:
 	virtual ~TypeList() {
-		Clear();
+		this->Clear();
 	}
 
 	TypeList() : DynamicVectorClass() {
@@ -314,29 +337,30 @@ class CounterClass : public VectorClass<int>
 {
 public:
 	virtual ~CounterClass() {
-		if(Items && IsAllocated) {
-			delete Items;
-			Items = NULL;
+		if(this->Items && this->IsAllocated) {
+			delete [] this->Items;
+//			GAME_DEALLOC_ARR(this->Items);
+			this->Items = NULL;
 		}
 
-		IsAllocated = false;
-		Capacity = 0;
-		Count = 0;
+		this->IsAllocated = false;
+		this->Capacity = 0;
+		this->Count = 0;
 	}
 
 	virtual void Clear() {
-		for(int i = 0; i < Capacity; ++i){
-			Items[i] = 0;
+		for(int i = 0; i < this->Capacity; ++i){
+			this->Items[i] = 0;
 		}
 
-		Count = 0;
+		this->Count = 0;
 	}
 
 	int GetItemCount(int nIndex)
 		JMP_THIS(0x49FAE0);
 
 	CounterClass() : VectorClass<int>()
-		{ Count = 0; }
+		{ this->Count = 0; }
 
 	int Increment(int nIndex)
 		JMP_THIS(0x49FA00);

@@ -55,6 +55,8 @@ class ScenarioClass
 {
 public:
 	//Static
+	static ScenarioClass *&Instance;
+
 	static ScenarioClass* Global()
 		{ return *((ScenarioClass**)0xA8B230); }
 

@@ -122,8 +122,7 @@ public:
 	//Static
 	static DynamicVectorClass<HouseClass*>* Array;
 
-	static HouseClass* Player()
-		{ return *((HouseClass**)0xA83D4C); }
+	static HouseClass *&Player;
 
 	//IConnectionPointContainer
 	virtual HRESULT _stdcall EnumConnectionPoints(IEnumConnectionPoints** ppEnum) R0;
@@ -625,7 +624,7 @@ public:
 	PROPERTY(DWORD,					unknown_54D8);
 	PROPERTY(DWORD,					unknown_54DC);
 	PROPERTY(DWORD,					unknown_54E0);
-	PROPERTY(DWORD,					unknown_54E4);
+	PROPERTY(IndexBitfield<HouseTypeClass *>, RadarVisibleTo); // these house types(!?!, fuck you WW) can see my radar
 	PROPERTY(int,                   SiloMoney);
 	PROPERTY(int,                   PreferredTargetWaypoint); // set via map actions
 	PROPERTY_STRUCT(CellStruct,            unknown_54F0);

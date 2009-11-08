@@ -190,10 +190,16 @@ public:
 	static void RevealArea3(CoordStruct *Coords, int Height, int Radius, bool SkipReveal)
 		JMP_STD(0x567DA0);
 
-
 // the unknown functions that are srs bsns
 	int sub_578080(CoordStruct *Coords)
-		JMP_STD(0x578080);
+		JMP_THIS(0x578080);
+
+	// these two slowly reprocess the map after gapgen state changes
+	void sub_657CE0()
+		JMP_THIS(0x657CE0);
+
+	void sub_4F42F0(int mode)
+		JMP_THIS(0x4F42F0);
 
 
 protected:

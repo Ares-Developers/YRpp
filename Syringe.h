@@ -31,7 +31,9 @@ typedef unsigned short WORD;
 	void set_## n8hi (BYTE value)\
 		{ ((BYTE*)&regs[idx])[1] = value; }\
 	void set_## n8lo (BYTE value)\
-		{ ((BYTE*)&regs[idx])[0] = value; }
+		{ ((BYTE*)&regs[idx])[0] = value; }\
+	template <typename T> inline void SetEx_## n32(T value)\
+		{ regs[idx] = reinterpret_cast<DWORD>(value); }
 
 #define REG_FUNCS2(n32, n16, idx)\
 	DWORD get_ ## n32 ()\

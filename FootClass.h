@@ -106,9 +106,8 @@ protected:
 
 	PROPERTY_STRUCT(Unsorted::AudioController, Audio7);
 
-	PROPERTY(short,           unknown_short_558);
-	PROPERTY(short,           unknown_short_55A);
 	PROPERTY_STRUCT(CellStruct,      CurrentMapCoords);
+	PROPERTY_STRUCT(CellStruct,      LastMapCoords); // ::UpdatePosition uses this to remove threat from last occupied cell, etc
 	PROPERTY(short,           unknown_short_560);
 	PROPERTY(short,           unknown_short_562);
 	PROPERTY(short,           unknown_short_564);

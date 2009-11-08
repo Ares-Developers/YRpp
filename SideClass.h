@@ -10,6 +10,7 @@
 class SideClass : public AbstractTypeClass
 {
 public:
+
 	//Array
 	ABSTRACTTYPE_ARRAY(SideClass);
 

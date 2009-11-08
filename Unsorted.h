@@ -4,6 +4,7 @@
 #include <ArrayClasses.h>
 #include <GeneralDefinitions.h>
 
+class SideClass;
 class ObjectClass;
 
 // things that I can't put into nice meaningful classes
@@ -49,6 +50,28 @@ public:
 		JMP_STD(0x776D80);
 	}
 
+	static HRESULT __fastcall Save_Sides(LPSTREAM pStm, DynamicVectorClass<SideClass *>* pVector) {
+		JMP_STD(0x6805F0);
+	}
+};
+
+// this fake class contains the IIDs used by the game
+// no comments because the IIDs suck
+class IIDs {
+public:
+	static IID &AbstractClass_0;
+	static IID &AbstractClass_1;
+	static IID &AbstractClass_2;
+	static IID &AbstractClass_3;
+};
+
+// this class links to functions gamemd imports
+// to avoid having to link to their DLLs ourselves
+class Imports {
+public:
+	// OleLoadFromStream
+	typedef HRESULT (__stdcall * FP_OleLoadFromStream)(LPSTREAM pStm, const IID *const iidInterface, LPVOID *ppvObj);
+	static FP_OleLoadFromStream &OleLoadFromStream;
 };
 
 class MovieInfo

@@ -146,10 +146,28 @@ public:
 		T.path(allCells);
 
 		for(Trajectory::vec::iterator i = allCells.begin(); i != allCells.end(); ++i) {
-			CellClass *Cell = MapClass::Global()->GetCellAt(&*i);
+			CellClass *Cell = MapClass::Instance->GetCellAt(&*i);
 			Callback(Cell);
 		}
 	}
 };
 
+// vroom vroom
+// Westwood uses if(((1 << HouseClass::ArrayIndex) & TechnoClass::DisplayProductionToHouses) != 0) and other bitfields like this (esp. in CellClass, omg optimized). helper wrapper just because
+template <typename T>
+class IndexBitfield {
+	DWORD data;
+	public:
+	IndexBitfield(const DWORD defVal = 0) : data(defVal) {};
+
+	bool Contains(const T obj) {
+		return (this->data & (1 << obj->ArrayIndex)) != 0;
+	}
+	void Add(const T obj) {
+		this->data |= (1 << obj->ArrayIndex);
+	}
+	void Remove(const T obj) {
+		this->data &= ~(1 << obj->ArrayIndex);
+	}
+};
 #endif

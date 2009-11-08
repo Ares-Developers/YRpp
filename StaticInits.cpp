@@ -2,6 +2,8 @@
 
 #include <YRPP.h>
 
+//include <VTables.h>
+
 #define DECL(cls, adr) \
 	DynamicVectorClass<cls*>* cls::Array = \
 		(DynamicVectorClass<cls*>*)adr;
@@ -98,6 +100,7 @@ ALIAS(ConvertClass *, FileSystem::MOUSE_PAL, 0x87F6C8);
 
 #include <HouseClass.h>
 DECL(HouseClass, 0xA80228);
+ALIAS(HouseClass *, HouseClass::Player, 0xA83D4C);
 
 #include <HouseTypeClass.h>
 DECL(HouseTypeClass, 0xA83C98);
@@ -117,12 +120,9 @@ DECL(LightConvertClass, 0x87F698);
 #include <MixFileClass.h>
 List<MixFileClass*>* MixFileClass::MIXes = (List<MixFileClass*>* )0xABEFD8;
 DECL(MixFileClass, 0x884D90);
-DynamicVectorClass<MixFileClass*>* MixFileClass::Array_Alt =
-								(DynamicVectorClass<MixFileClass*>*)0x884DC0;
-DynamicVectorClass<MixFileClass*>* MixFileClass::Maps =
-								(DynamicVectorClass<MixFileClass*>*)0x884DA8;
-DynamicVectorClass<MixFileClass*>* MixFileClass::Movies =
-								(DynamicVectorClass<MixFileClass*>*)0x884DE0;
+DynamicVectorClass<MixFileClass*>* MixFileClass::Array_Alt = (DynamicVectorClass<MixFileClass*>*)0x884DC0;
+DynamicVectorClass<MixFileClass*>* MixFileClass::Maps = (DynamicVectorClass<MixFileClass*>*)0x884DA8;
+DynamicVectorClass<MixFileClass*>* MixFileClass::Movies = (DynamicVectorClass<MixFileClass*>*)0x884DE0;
 
 MixFileClass* MixFileClass::MULTIMD = (MixFileClass*)0x884DD8;
 MixFileClass* MixFileClass::MULTI   = (MixFileClass*)0x884DDC;
@@ -168,7 +168,11 @@ DECL(RadBeam, 0xB04A60);
 DECL(RadSiteClass, 0xB04BD0);
 
 #include <RulesClass.h>
-bool RulesClass::Initialized = false;
+ALIAS(RulesClass*, RulesClass::Instance, 0x8871E0);
+//bool RulesClass::Initialized = false;
+
+#include <ScenarioClass.h>
+ALIAS(ScenarioClass*, ScenarioClass::Instance, 0xA8B230);
 
 #include <SideClass.h>
 DECL(SideClass, 0x8B4120);
@@ -238,6 +242,12 @@ ALIAS(DWORD, Game::Savegame_Magic, 0x83D560);
 ALIAS(int, Game::CurrentFrameRate, 0xABCD44);
 ALIAS(HWND, Game::hWnd, 0xB73550);
 ALIAS(HINSTANCE, Game::hInstance, 0xB732F0);
+ALIAS(IID, IIDs::AbstractClass_0, 0x7F7C90);
+ALIAS(IID, IIDs::AbstractClass_1, 0x7F7C80);
+ALIAS(IID, IIDs::AbstractClass_2, 0x7F7C70);
+ALIAS(IID, IIDs::AbstractClass_3, 0x7E9AE0);
+
+ALIAS(Imports::FP_OleLoadFromStream, Imports::OleLoadFromStream, 0x7E15F8);
 
 DynamicVectorClass<MovieInfo> *MovieInfo::Array = (DynamicVectorClass<MovieInfo>*)0xABF390;
 

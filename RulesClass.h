@@ -1,10 +1,6 @@
 #ifndef RULES_H
 #define RULES_H
 
-/*
-		HUGE thanks to DCoder
-		for converting the property list!	*/
-
 #include <ArrayClasses.h>
 #include <GeneralDefinitions.h>
 
@@ -35,10 +31,12 @@ class RulesClass
 {
 public:
 	//Static
+	static RulesClass *&Instance;
+
 	static RulesClass* Global()
 		{ return *((RulesClass**)0x8871E0); }
 
-	static bool Initialized;
+//	static bool Initialized;
 
 	// call this for the first INI file only
 	void Init(CCINIClass *pINI)

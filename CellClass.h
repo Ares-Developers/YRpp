@@ -349,7 +349,10 @@ public:
 	PROTECTED_PROPERTY(BYTE,     unknown_121[0xB]);
 
 	PROPERTY(eCellFlags_12C,     CopyFlags);	// related to Flags below
-	PROTECTED_PROPERTY(BYTE,     unknown_130[0x10]);
+	PROPERTY(DWORD,              IsUnderShroud); // only 0 or 1, but modified as an integer
+	PROPERTY(DWORD,              GapsCoveringThisCell); // actual count of gapgens in this cell, no idea why they need a second layer
+	PROTECTED_PROPERTY(BYTE,     unknown_138[0x4]);
+	PROPERTY(DWORD,              unknown_13C);
 
 	PROPERTY(eCellFlags,         Flags);	//Various settings.
 	PROTECTED_PROPERTY(BYTE,     unknown_144[4]);
