@@ -361,7 +361,7 @@ public:
 	PROPERTY_STRUCT(TimerStruct, AirstrikeTimer);
 	PROPERTY_STRUCT(TimerStruct, AirstrikeTintTimer); // tracks alternation of the effect color
 	PROPERTY(DWORD,              AirstrikeTintStage); //  ^
-	PROPERTY(int,                ForceShielded);	//0 or 1, NOT a bool - is this under ForceShield as opposed to IC? 
+	PROPERTY(int,                ForceShielded);	//0 or 1, NOT a bool - is this under ForceShield as opposed to IC?
 	PROPERTY(bool,               Deactivated); //Robot Tanks without power for instance
 	PROPERTY(TechnoClass*,       DrainTarget); // eg Disk -> PowerPlant, this points to PowerPlant
 	PROPERTY(TechnoClass*,       DrainingMe);  // eg Disk -> PowerPlant, this points to Disk
@@ -373,7 +373,7 @@ public:
 	PROPERTY(bool,               unknown_bool_1F8);
 	PROPERTY_STRUCT(TimerStruct, ReloadTimer);
 	PROPERTY(DWORD,              unknown_208);
-	PROPERTY(DWORD,              DisplayProductionToHouses); // if(house->IndexInArray & thisfield) { pretend that this building has been infiltrated by that house's spy in RA1 }
+	PROPERTY(DWORD,              DisplayProductionToHouses); // each bit corresponds to one player on the map, telling us whether that player has (1) or hasn't (0) spied this building, and the game should display what's being produced inside it to that player. The bits are arranged by player ID, i.e. bit 0 refers to house #0 in HouseClass::Array, 1 to 1, etc.; query like ((1 << somePlayer->ArrayIndex) & someFactory->DisplayProductionToHouses) != 0
 	PROPERTY(DWORD,              unknown_210);
 	PROPERTY(int,                Group); //0-9, assigned by CTRL+Number, these kinds // also set by aimd TeamType->Group !
 	PROPERTY(TechnoClass*,       FocusOnUnit); // when told to guard a unit or such
@@ -397,8 +397,8 @@ public:
 	PROPERTY(bool,               WarpingOut); // phasing in after chrono-jump
 	PROPERTY(bool,               unknown_bool_272);
 	PROPERTY(BYTE,               unused_273);
-	PROPERTY(TemporalClass*,     TemporalImUsing); // CLEG attacking Power Plant : CLEG's this 
-	PROPERTY(TemporalClass*,     TemporalTargetingMe); 	// CLEG attacking Power Plant : PowerPlant's this 
+	PROPERTY(TemporalClass*,     TemporalImUsing); // CLEG attacking Power Plant : CLEG's this
+	PROPERTY(TemporalClass*,     TemporalTargetingMe); 	// CLEG attacking Power Plant : PowerPlant's this
 	PROPERTY(bool,               IsImmobilized); // by chrono aftereffects
 	PROPERTY(DWORD,              unknown_280);
 	PROPERTY(int,                ChronoLockRemaining); // countdown after chronosphere warps things around
@@ -409,7 +409,7 @@ public:
 	PROPERTY(DWORD,              SprayOffsetIndex); // hardcoded array of xyz offsets for sprayattack, 0 - 7, see 6FE0AD
 	PROPERTY(bool,               Uncrushable); // DeployedCrushable fiddles this, otherwise all 0
 
- // unless source is Pushy= 
+ // unless source is Pushy=
  // abs_Infantry source links with abs_Unit target and vice versa - can't attack others until current target flips
  // no checking whether source is Infantry, but no update for other types either
  // old Brute hack
@@ -438,7 +438,7 @@ public:
 	PROPERTY(int,                Ammo);
 	PROPERTY(int,                Value); // set to actual cost when this gets queued in factory, updated only in building's 42C
 
-	
+
 	PROPERTY(ParticleSystemClass*, FireParticleSystem);
 	PROPERTY(ParticleSystemClass*, SparkParticleSystem);
 	PROPERTY(ParticleSystemClass*, NaturalParticleSystem);
