@@ -68,16 +68,21 @@ DECL(CommandClass, 0x87F658);
 DECL(ConvertClass, 0x89ECF8);
 
 #include <Drawing.h>
-ALIAS(DSurface *, Drawing::DSurface_Tile, 0x8872FC);
-ALIAS(DSurface *, Drawing::DSurface_Sidebar, 0x887300);
-ALIAS(DSurface *, Drawing::DSurface_Primary, 0x887308);
-ALIAS(DSurface *, Drawing::DSurface_Hidden, 0x88730C);
-ALIAS(DSurface *, Drawing::DSurface_Alternate, 0x887310);
-ALIAS(DSurface *, Drawing::DSurface_Hidden_2, 0x887314);
-ALIAS(DSurface *, Drawing::DSurface_Composite, 0x88731C);
-
 ALIAS(ABufferClass *, ABufferClass::ABuffer, 0x87E8A4);
 ALIAS(ZBufferClass *, ZBufferClass::ZBuffer, 0x887644);
+
+#include <YRDDraw.h>
+ALIAS(void *, DirectDrawWrap::lpDD, 0x8A0094);
+ALIAS(byte, DirectDrawWrap::DoSmth, 0x8A0DEF);
+
+#include <Surface.h>
+ALIAS(DSurface *, DSurface::Tile, 0x8872FC);
+ALIAS(DSurface *, DSurface::Sidebar, 0x887300);
+ALIAS(DSurface *, DSurface::Primary, 0x887308);
+ALIAS(DSurface *, DSurface::Hidden, 0x88730C);
+ALIAS(DSurface *, DSurface::Alternate, 0x887310);
+ALIAS(DSurface *, DSurface::Hidden_2, 0x887314);
+ALIAS(DSurface *, DSurface::Composite, 0x88731C);
 
 #include <LoadProgressManager.h>
 ALIAS(LoadProgressManager *, LoadProgressManager::LPMgr, 0xABC9BC);
@@ -242,6 +247,10 @@ ALIAS(DWORD, Game::Savegame_Magic, 0x83D560);
 ALIAS(int, Game::CurrentFrameRate, 0xABCD44);
 ALIAS(HWND, Game::hWnd, 0xB73550);
 ALIAS(HINSTANCE, Game::hInstance, 0xB732F0);
+
+ALIAS(bool, Game::bVideoBackBuffer, 0x840A6C);
+ALIAS(bool, Game::bAllowVRAMSidebar, 0xA8EB96);
+
 ALIAS(IID, IIDs::AbstractClass_0, 0x7F7C90);
 ALIAS(IID, IIDs::AbstractClass_1, 0x7F7C80);
 ALIAS(IID, IIDs::AbstractClass_2, 0x7F7C70);

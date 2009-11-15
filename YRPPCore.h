@@ -7,6 +7,10 @@
 #ifndef YRPPCore_H
 #define YRPPCore_H
 
+typedef unsigned char BYTE;
+typedef unsigned short WORD;
+typedef unsigned long DWORD;
+
 //Syringe interaction header - also includes <windows.h>
 #include <Syringe.h>
 

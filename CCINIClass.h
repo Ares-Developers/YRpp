@@ -4,8 +4,8 @@
 #include <YRPPCore.h>
 #include <GenericList.h>
 #include <ArrayClasses.h>
+#include <CCFileClass.h>
 
-class CCFileClass;
 struct ColorStruct;
 class TechnoTypeClass;
 
@@ -230,7 +230,6 @@ public:
 	PROPERTY(DWORD, unknown_48);
 	PROPERTY(DWORD, unknown_4C);
 	PROPERTY(DWORD, unknown_50);
-	PROPERTY(DWORD, unknown_54);
 };
 
 //Extended INI class specified for C&C use
@@ -259,11 +258,11 @@ public:
 	virtual ~CCINIClass() RX;
 
 	//Parses an INI file from a CCFile
-	CCINIClass* ReadCCFile(CCFileClass* pCCFile)
-		{ PUSH_IMM(0); PUSH_IMM(0); PUSH_VAR32(pCCFile); THISCALL(0x4741F0); }
+	CCINIClass* ReadCCFile(FileClass* pCCFile, byte bUnk = 0, int iUnk = 0)
+		JMP_THIS(0x4741F0);
 
-	void WriteCCFile(CCFileClass *pCCFile, bool bUnk)
-			JMP_THIS(0x474430);
+	void WriteCCFile(FileClass *pCCFile, bool bUnk)
+		JMP_THIS(0x474430);
 
 	//Copies the string table entry pointed to by the INI value into pBuffer.
 	int ReadStringtableEntry(const char* pSection, const char* pKey, wchar_t* pBuffer, size_t szBufferSize)

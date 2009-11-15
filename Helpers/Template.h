@@ -119,7 +119,7 @@ protected:
 
 // trajectory functors
 
-#include <Helpers\Other.h>
+#include <Helpers/Other.h>
 class CellSequenceApplicator
 	: public std::unary_function<const CellClass *, void> {
 	public:
@@ -156,11 +156,11 @@ public:
 // Westwood uses if(((1 << HouseClass::ArrayIndex) & TechnoClass::DisplayProductionToHouses) != 0) and other bitfields like this (esp. in CellClass, omg optimized). helper wrapper just because
 template <typename T>
 class IndexBitfield {
-	DWORD data;
 	public:
+	DWORD data;
 	IndexBitfield(const DWORD defVal = 0) : data(defVal) {};
 
-	bool Contains(const T obj) {
+	bool Contains(const T obj) const {
 		return (this->data & (1 << obj->ArrayIndex)) != 0;
 	}
 	void Add(const T obj) {
@@ -168,6 +168,9 @@ class IndexBitfield {
 	}
 	void Remove(const T obj) {
 		this->data &= ~(1 << obj->ArrayIndex);
+	}
+	void Clear() {
+		this->data = 0;
 	}
 };
 #endif

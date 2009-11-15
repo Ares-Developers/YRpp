@@ -3,7 +3,7 @@
 
 #include <YRPPCore.h>
 #include <objidl.h>
-#include <Helpers\Macro.h>
+#include <Helpers/Macro.h>
 #include <Memory.h>
 
 //========================================================================

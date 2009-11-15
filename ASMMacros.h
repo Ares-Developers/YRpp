@@ -140,11 +140,48 @@ MSVC++
 #else
 
 #ifdef __GNUC__
-
-#error GCC is not supported! See <yrpp>/gcc_fixes.h for the reason why.
-#endif // if gcc
-
+//error GCC is not supported! See <yrpp>/gcc_fixes.h for the reason why.
+#define JMP(address)
+#define EPILOG_THISCALL
+#define JMP_THIS(address)
+#define EPILOG_STDCALL
+#define JMP_STD(address)
+#define GET_REG32(dst,reg)
+#define SET_REG32(reg,src)
+#define ZERO_REG(reg)
+#define GET_REG8(dst,reg)
+#define SET_REG8(reg,src)
+#define ADD_ESP(i)
+#define SUB_ESP(i)
+#define PUSH_IMM(i)
+#define PUSH_REG(r)
+#define POP_REG(r)
+#define PUSH_PTR(v)
+#define PUSH_VAR32(v)
+#define PUSH_VAR16(v)
+#define PUSH_VAR8(v)
+#define PUSH_VAR64(pv)
+#define CALL(pFunction)
+#define THISCALL(pFunction)
+#define THISCALL_EX(pThis,pFunction)
+#define THISCALL_VT(vt_offs)
+#define CALL_VT(vt_offs)
+#define THISCALL_EX_VT(pThis,vt_offs)
+#define MEM_READ8(dst,mem)
+#define MEM_WRITE8(mem,src)
+#define MEM_READ16(dst,mem)
+#define MEM_WRITE16(mem,src)
+#define MEM_READ32(dst,mem)
+#define MEM_WRITE32(mem,src)
+#define MEM_WRITEIMM8(mem,imm)
+#define MEM_WRITEIMM16(mem,imm)
+#define MEM_WRITEIMM32(mem,imm)
+#define VAR32_REG(type,name,reg)
+#define VAR8_REG(type,name,reg)
+#else
 #error Unsupported compiler! Supported: Microsoft Visual Studio.
 #endif // if !msvc
+
+#endif
 
 #endif

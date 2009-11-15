@@ -8,11 +8,13 @@
 #ifndef SYRINGE_H
 #define SYRINGE_H
 
-#include <windows.h>
+#include <GeneralDefinitions.h>
 
-//General typedefs
-typedef unsigned char BYTE;
-typedef unsigned short WORD;
+#ifdef _MSC_VER
+#include <windows.h>
+#else 
+#include <fakewindows.h>
+#endif
 
 //Macros to make the following a lot easier
 #define REG_FUNCS1(n32, n16, n8hi, n8lo, idx) \

@@ -1,6 +1,7 @@
 #ifndef GENERALSTRUCTURES_H
 #define GENERALSTRUCTURES_H
 
+#include <ASMMacros.h>
 #include <YRPPCore.h>
 #include <YRMathVector.h>
 

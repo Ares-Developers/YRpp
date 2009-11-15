@@ -17,7 +17,7 @@
 
 //AbstractClass Tree
 #include <AircraftClass.h>
-#include <AiTriggerTypeClass.h>
+#include <AITriggerTypeClass.h>
 #include <AirstrikeClass.h>
 #include <AlphaShapeClass.h>
 #include <AnimClass.h>

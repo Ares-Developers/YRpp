@@ -13,19 +13,6 @@
 class Drawing
 {
 public:
-	//Retrieve Surfaces
-	#define DECL_GET_SURFACE(name,address)\
-	static DSurface* GetSurface_ ## name ()\
-		{ DSurface* pSurf; MEM_READ32(pSurf,address); return pSurf; }
-	
-	static DSurface *&DSurface_Tile;
-	static DSurface *&DSurface_Sidebar;
-	static DSurface *&DSurface_Primary;
-	static DSurface *&DSurface_Hidden;
-	static DSurface *&DSurface_Alternate;
-	static DSurface *&DSurface_Hidden_2;
-	static DSurface *&DSurface_Composite;
-
 	//TextBox dimensions for tooltip-style boxes
 	static RectangleStruct GetTextBox(const wchar_t* pText, int nX, int nY, int nMargin)
 		{

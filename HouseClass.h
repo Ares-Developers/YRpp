@@ -624,7 +624,8 @@ public:
 	PROPERTY(DWORD,					unknown_54D8);
 	PROPERTY(DWORD,					unknown_54DC);
 	PROPERTY(DWORD,					unknown_54E0);
-	PROPERTY(IndexBitfield<HouseTypeClass *>, RadarVisibleTo); // these house types(!?!, fuck you WW) can see my radar
+//	PROPERTY(IndexBitfield<HouseTypeClass *>, RadarVisibleTo); // these house types(!?!, fuck you WW) can see my radar
+	PROPERTY(IndexBitfield<HouseClass *>, RadarVisibleTo); // this crap is being rewritten to use house indices instead of house types
 	PROPERTY(int,                   SiloMoney);
 	PROPERTY(int,                   PreferredTargetWaypoint); // set via map actions
 	PROPERTY_STRUCT(CellStruct,            unknown_54F0);

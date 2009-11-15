@@ -53,6 +53,9 @@ public:
 	static HRESULT __fastcall Save_Sides(LPSTREAM pStm, DynamicVectorClass<SideClass *>* pVector) {
 		JMP_STD(0x6805F0);
 	}
+
+	static bool &bVideoBackBuffer;
+	static bool &bAllowVRAMSidebar;
 };
 
 // this fake class contains the IIDs used by the game

@@ -104,4 +104,14 @@ typedef struct _DDSURFACEDESC2 {
 //IDirectDrawSurface
 interface IDirectDrawSurface;
 
+class DirectDrawWrap {
+public:
+	static HRESULT WINAPI DDCreate(GUID *lpGUID, void **lplpDD, IUnknown *pUnkOuter)
+		{ JMP_STD(0x7C89D4); }
+
+	static void* &lpDD;
+
+	static byte &DoSmth;
+};
+
 #endif
