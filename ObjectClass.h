@@ -8,6 +8,8 @@
 #include <AbstractClass.h>
 #include <Unsorted.h>
 
+#include <Helpers/Template.h>
+
 struct SHPStruct;
 class LightConvertClass;
 
@@ -21,6 +23,8 @@ class ObjectTypeClass;
 class TechnoClass;
 class TechnoTypeClass;
 class WarheadTypeClass;
+
+class HouseTypeClass;
 
 class LineTrail;
 struct WeaponStruct;
@@ -75,16 +79,22 @@ public:
 
 	virtual TechnoTypeClass* GetTechnoType() R0;
 	virtual ObjectTypeClass* GetType() R0;
-	virtual DWORD GetTypeOwners() R0;
+	virtual IndexBitfield<HouseTypeClass *> GetTypeOwners() R0;
 	virtual wchar_t* GetUIName() R0;
 	virtual bool CanBeRepaired() R0;
 	virtual bool CanBeSold() R0;
 	virtual bool IsActive() R0;
-	virtual bool vt_entry_A0() R0;
-	virtual CoordStruct* vt_entry_A4(CoordStruct* pCrd) R0;
-	virtual CoordStruct* vt_entry_A8(CoordStruct* pCrd, DWORD dwUnk) R0;
-	virtual CoordStruct* vt_entry_AC(CoordStruct* pCrd) R0;
-	virtual CoordStruct* GetFLH(CoordStruct *pDest, int idxWeapon, int nFLH_X, int nFLH_Y, int nFLH_Z) R0;
+	virtual bool IsControllable() R0;
+	
+	// stupid! return this->GetCoords(pCrd);
+	virtual CoordStruct* GetPosition_0(CoordStruct* pCrd) R0;
+
+	// stupid! return this->GetCoords(pCrd); again
+	virtual CoordStruct* GetPosition_1(CoordStruct* pCrd, DWORD dwUnk) R0;
+
+	// stupid! guess what happens again?
+	virtual CoordStruct* GetPosition_2(CoordStruct* pCrd) R0;
+	virtual CoordStruct* GetFLH(CoordStruct *pDest, int idxWeapon, CoordStruct BaseCoords) R0;
 	virtual CoordStruct* GetExitCoords(CoordStruct* pCrd, DWORD dwUnk) R0;
 	virtual int vt_entry_B8() R0;
 	virtual bool vt_entry_BC(DWORD dwUnk) R0;
@@ -93,25 +103,33 @@ public:
 	virtual bool IsDisguisedAs(HouseClass *target) R0;
 	virtual ObjectTypeClass* GetDisguise(bool DisguisedAgainstAllies) R0;
 	virtual HouseClass* GetDisguiseHouse(bool DisguisedAgainstAllies) R0;
+
+	// remove object from the map
 	virtual bool Remove() R0;
+
+	// place the object on the map
 	virtual bool Put(CoordStruct* pCrd, eDirection dFaceDir) R0;
-	virtual void vt_entry_DC(DWORD dwUnk) RX;
+
+	virtual void ReachedEndOfLife(bool Silently) RX;
+
 	virtual void RegisterDestruction(TechnoClass *Destroyer) RX;
+
 	 // maybe Object instead of Techno? Raises Map Events, grants veterancy, increments house kill counters
 	virtual void RegisterKill(HouseClass *Destroyer) RX; // ++destroyer's kill counters , etc
+
 	virtual bool SpawnParachuted(CoordStruct *coords) R0;
 	virtual void vt_entry_EC(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) RX;
-	virtual void vt_entry_F0(DWORD dwUnk) RX;
-	virtual void vt_entry_F4(CoordStruct *coords) RX;
+	virtual void UnmarkAllOccupationBits(CoordStruct *coords) RX;
+	virtual void MarkAllOccupationBits(CoordStruct *coords) RX;
 	virtual void UnInit() RX;
 	virtual void Uncloak2() RX;// just calls this->Uncloak(0) on TechnoClass and higher
 	virtual int KickOutUnit(TechnoClass* pTechno, CellStruct uCell) R0;
-	virtual bool vt_entry_104(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) R0;
-	virtual DWORD vt_entry_108(DWORD dwUnk) R0;
+	virtual bool DrawIfVisible(RectangleStruct *VisibleArea, bool EvenIfCloaked, DWORD dwUnk3) R0;
+	virtual DWORD GetFoundationData(bool IncludeBib) R0;
 	virtual void vt_entry_10C(DWORD dwUnk, DWORD dwUnk2) RX;
 	virtual void DrawExtras(DWORD dwUnk, DWORD dwUnk2) RX; // draws ivan bomb, health bar, talk bubble, etc
 	virtual void Draw(Point2D* pCoords, DWORD dwUnk) RX;
-	virtual void vt_entry_118(DWORD dwUnk, DWORD dwUnk2) RX;
+	virtual void DrawAgain(Point2D* pCoords, DWORD dwUnk) RX; // just forwards the call to Draw
 	virtual void vt_entry_11C() RX;
 	virtual void See(DWORD dwUnk, DWORD dwUnk2) RX;
 	virtual bool SetLayer(eLayer value) R0;
@@ -132,8 +150,8 @@ public:
 	virtual bool IsIronCurtained() R0;
 	virtual bool vt_entry_164(DWORD dwUnk, DWORD dwUnk2) R0;
 	virtual int GetWeaponRange(int idxWeapon) R0;
-	virtual eDamageState ReceiveDamage(int* pDamage, DWORD dwUnk1, WarheadTypeClass* pWH,
-	  ObjectClass* pAttacker, DWORD dwUnk2, DWORD dwUnk3, HouseClass* pAttackingHouse) R0;
+	virtual eDamageState ReceiveDamage(int* pDamage, int DistanceFromEpicenter, WarheadTypeClass* pWH,
+	  ObjectClass* Attacker, bool IgnoreDefenses, bool PreventPassengerEscape, HouseClass* pAttackingHouse) R0;
 	virtual void FreeCaptured() RX;
 	virtual void Scatter(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
 	virtual bool Ignite() R0;
@@ -175,6 +193,9 @@ public:
 	static void DrawALinkTo(int src_X, int src_Y, int src_Z, int dst_X, int dst_Y, int dst_Z, ColorStruct color)
 		{ PUSH_VAR32(color); PUSH_VAR32(dst_Z); PUSH_VAR32(dst_Y); PUSH_VAR32(dst_X); 
 		  PUSH_VAR32(src_Z); PUSH_VAR32(src_Y); PUSH_VAR32(src_X); CALL(0x704E40); }
+
+	int DistanceFrom(ObjectClass *that)
+		JMP_THIS(0x5F6440);
 
 	//Constructor
 	ObjectClass() : AbstractClass(false)

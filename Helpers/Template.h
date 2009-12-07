@@ -3,10 +3,6 @@
 
 #include <Syringe.h>
 
-#include <ObjectClass.h>
-#include <GeneralDefinitions.h>
-#include <CellSpread.h>
-#include <MapClass.h>
 #include <functional>
 #include <hash_map>
 
@@ -76,81 +72,6 @@ void AnnounceInvalidPointer(T1 elem, void *ptr) {
 	}
 }
 
-
-// cell spread functors
-
-class CellSpreadApplicator
-	: public std::binary_function<const ObjectClass *, const CellStruct *, void> {
-	public:
-		virtual void operator() (ObjectClass *obj, CellStruct *origin) {
-		
-		}
-};
-
-class CellSpreadIterator {
-protected:
-	CellStruct *origin;
-	DWORD radius;
-	DWORD position;
-	CellSpreadApplicator callback;
-	
-	public:
-		CellSpreadIterator(CellSpreadApplicator &_callback, CellStruct *_origin, DWORD _radius) 
-			: callback(_callback), origin(_origin), radius(_radius), position(0)
-			{ }
-
-		void Apply() {
-			DWORD countCells = CellSpread::NumCells(radius);
-
-			for(; position < countCells; ++position) {
-				CellStruct tmpCell = CellSpread::GetCell(position);
-				tmpCell += *origin;
-				if(MapClass::Global()->CellExists(&tmpCell)) {
-					CellClass *c = MapClass::Global()->GetCellAt(&tmpCell);
-					for(ObjectClass *curObj = c->GetContent(); curObj; curObj = curObj->NextObject) {
-						callback(curObj, origin);
-					}
-				}
-			}
-		}
-
-};
-
-
-// trajectory functors
-
-#include <Helpers/Other.h>
-class CellSequenceApplicator
-	: public std::unary_function<const CellClass *, void> {
-	public:
-		virtual void operator() (CellClass *cell) {
-		
-		}
-};
-
-class CellSequence {
-	XY sta;
-	XY end;
-
-public:
-	CellSequence(CoordStruct *From, CoordStruct *To)
-	 : sta(From), end(To)
-	{
-	}
-
-	void Apply(CellSequenceApplicator& Callback) {
-		Trajectory T(sta.X, sta.Y, end.X, end.Y);
-
-		Trajectory::vec allCells;
-
-		T.path(allCells);
-
-		for(Trajectory::vec::iterator i = allCells.begin(); i != allCells.end(); ++i) {
-			CellClass *Cell = MapClass::Instance->GetCellAt(&*i);
-			Callback(Cell);
-		}
-	}
-};
 
 // vroom vroom
 // Westwood uses if(((1 << HouseClass::ArrayIndex) & TechnoClass::DisplayProductionToHouses) != 0) and other bitfields like this (esp. in CellClass, omg optimized). helper wrapper just because

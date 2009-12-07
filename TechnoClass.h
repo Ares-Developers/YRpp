@@ -14,6 +14,7 @@
 //forward declarations
 class AirstrikeClass;
 class AnimClass;
+class BulletClass;
 class BuildingClass;
 class CellClass;
 class HouseClass;
@@ -199,22 +200,22 @@ public:
 	virtual DWORD vt_entry_3B0(DWORD dwUnk) R0;
 	virtual DWORD vt_entry_3B4(DWORD dwUnk) R0;
 	virtual void Destroyed(ObjectClass *Killer) = 0;
-	virtual DWORD vt_entry_3BC(DWORD dwUnk, DWORD dwUnk2) R0;
-	virtual int vt_entry_3C0(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) R0;
+	virtual FireError GetFireErrorWithoutRange(ObjectClass *Target, int nWeaponIndex) R0;
+	virtual FireError GetFireError(ObjectClass *Target, int nWeaponIndex, bool ignoreRange) R0;
 	virtual CellClass* SelectAutoTarget(eTargetFlags TargetFlags, int CurrentThreat, bool OnlyTargetHouseEnemy) R0;
 	virtual void SetTarget(AbstractClass *Target) RX;
-	virtual DWORD Fire(ObjectClass* pTarget, int nWeapon) R0;
+	virtual BulletClass* Fire(ObjectClass* pTarget, int nWeaponIndex) R0;
 	virtual DWORD vt_entry_3D0() R0;
 	virtual void SetOwningHouse(HouseClass* pHouse, DWORD dwUnk) RX;
 	virtual void vt_entry_3D8(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
-	virtual bool Crash(DWORD dwUnk) R0;
+	virtual bool Crash(ObjectClass *Killer) R0;
 	virtual bool IsAreaFire() R0;
 	virtual int IsNotSprayAttack() R0;
 	virtual int vt_entry_3E8() R0;
 	virtual int IsNotSprayAttack2() R0;
 	virtual WeaponStruct* GetDeployWeapon() R0;
 	virtual WeaponStruct* GetTurretWeapon() R0;
-	virtual WeaponStruct* GetWeapon(int nWeaponNumber) R0;
+	virtual WeaponStruct* GetWeapon(int nWeaponIndex) R0;
 	virtual bool HasTurret() R0;
 	virtual bool CanOccupyFire() R0;
 	virtual DWORD vt_entry_404() R0;
@@ -230,16 +231,16 @@ public:
 	virtual CoordStruct* GetTargetCoords(CoordStruct* pCrd) R0;
 	virtual bool IsNotWarpingIn() R0;
 	virtual bool vt_entry_434(DWORD dwUnk) R0;
-	virtual void vt_entry_438(DWORD dwUnk, DWORD dwUnk2) RX;
-	virtual DWORD vt_entry_43C(DWORD dwUnk) R0;
-	virtual bool vt_entry_440(DWORD dwUnk) R0;
+	virtual void DrawActionLines(bool Force, DWORD dwUnk2) RX;
+	virtual DWORD GetDisguiseFlags(DWORD existingFlags) R0;
+	virtual bool IsNotDisguisedAgain(HouseClass *House) R0;
 
 	//nooooooooooooooooooooooooooooooo (vader-style)
 	//thought 666 is the number of the beast? in hex it's 444 D=
 	virtual void vt_entry_444(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5,
 		DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8, DWORD dwUnk9, DWORD dwUnk10) RX;
 	virtual void vt_entry_448(DWORD dwUnk, DWORD dwUnk2) RX;
-	virtual void DrawHealthBar(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
+	virtual void DrawHealthBar(CoordStruct *Coords, RectangleStruct *Bounds, DWORD dwUnk3) RX;
 	virtual void DrawPipScalePips(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
 	virtual void DrawVeterancyPips(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
 	virtual void DrawExtraInfo(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;

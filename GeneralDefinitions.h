@@ -363,20 +363,30 @@ typedef int eDirection;
 #define	dir_NW		0x7
 
 
-typedef int eFiringState;
+//typedef int eFireError;
 
-#define	fs_ReadyToFire		0x0
-#define	fs_NoAmmo		0x1
-#define	fs_2		0x2
-#define	fs_WaitForIt		0x3
-#define	fs_4		0x4
-#define	fs_CantAffect		0x5
-#define	fs_CantCommand		0x6
-#define	fs_CantInterrupt		0x7
-#define	fs_OutOfRange		0x8
-#define	fs_DecloakFirst		0x9
-#define	fs_SpawnsReady		0xA
+// the first of its kind, this is how I plan to represent game's internal enums from now on
+class FireError {
+public:
+	enum E {
+		OK = 0, // no problem, can fire
+		AMMO = 1, // no ammo
+		FACING = 2, // bad facing
+		REARM = 3, // still reloading
+		ROTATING = 4, // busy rotating
+		ILLEGAL = 5, // can't fire
+		CANT = 6, // I'm sorry Dave, I can't do that
+		MOVING = 7, // moving, can't fire
+		RANGE = 8, // out of range
+		CLOAKED = 9, // need to decloak
+		BUSY = 10, // busy, please hold
+		MUST_DEPLOY = 11 // deploy first!
+	} _;
 
+	public:
+		FireError(int val) { this->_ = static_cast<E>(val); };
+		operator int() { return this->_; };
+};
 
 typedef int eFoundation;
 
@@ -923,23 +933,6 @@ typedef int eZGradient;
 #define	zgrad_90Deg		2
 #define	zgrad_135Deg		3
 #define	zgrad_Count		4
-
-
-typedef int eFireError;
-
-#define	fire_OK		0
-#define	fire_Ammo		1
-#define	fire_Facing		2
-#define	fire_Rearm		3
-#define	fire_Rotating		4
-#define	fire_Illegal		5
-#define	fire_Cant		6
-#define	fire_Moving		7
-#define	fire_Range		8
-#define	fire_Cloaked		9
-#define	fire_Busy		10
-#define	fire_Must_Deploy		11
-
 
 //Westwood custom messages (e.g. for SendMessage)
 #define	WW_SLIDER_GETVALUE			0x400

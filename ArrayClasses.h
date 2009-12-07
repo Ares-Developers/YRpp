@@ -2,7 +2,6 @@
 #define DVC_H
 
 #include <YRPPCore.h>
-#include <objidl.h>
 #include <Helpers/Macro.h>
 #include <Memory.h>
 

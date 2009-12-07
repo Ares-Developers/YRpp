@@ -5,6 +5,11 @@
 #include <vector>
 #include <algorithm>
 
+#include <ObjectClass.h>
+#include <GeneralDefinitions.h>
+#include <CellSpread.h>
+#include <MapClass.h>
+
 #define MID(x) \
 	((((x) / 256) * 256) + 128 )
 
@@ -115,6 +120,78 @@ private:
 
 	double stepY(int X) {
 		return (abs(st.X - X) * _tg());
+	}
+};
+
+// trajectory functors
+#include <Helpers/Other.h>
+class CellSequenceApplicator
+	: public std::unary_function<const CellClass *, void> {
+	public:
+		virtual void operator() (CellClass *cell) {
+		
+		}
+};
+
+// cell spread functors
+
+class CellSpreadApplicator
+	: public std::binary_function<const ObjectClass *, const CellStruct *, void> {
+	public:
+		virtual void operator() (ObjectClass *obj, CellStruct *origin) {
+		
+		}
+};
+
+class CellSpreadIterator {
+protected:
+	CellStruct *origin;
+	DWORD radius;
+	DWORD position;
+	CellSpreadApplicator callback;
+	
+	public:
+		CellSpreadIterator(CellSpreadApplicator &_callback, CellStruct *_origin, DWORD _radius) 
+			: callback(_callback), origin(_origin), radius(_radius), position(0)
+			{ }
+
+		void Apply() {
+			DWORD countCells = CellSpread::NumCells(radius);
+
+			for(; position < countCells; ++position) {
+				CellStruct tmpCell = CellSpread::GetCell(position);
+				tmpCell += *origin;
+				if(MapClass::Global()->CellExists(&tmpCell)) {
+					CellClass *c = MapClass::Global()->GetCellAt(&tmpCell);
+					for(ObjectClass *curObj = c->GetContent(); curObj; curObj = curObj->NextObject) {
+						callback(curObj, origin);
+					}
+				}
+			}
+		}
+};
+
+class CellSequence {
+	XY sta;
+	XY end;
+
+public:
+	CellSequence(CoordStruct *From, CoordStruct *To)
+	 : sta(From), end(To)
+	{
+	}
+
+	void Apply(CellSequenceApplicator& Callback) {
+		Trajectory T(sta.X, sta.Y, end.X, end.Y);
+
+		Trajectory::vec allCells;
+
+		T.path(allCells);
+
+		for(Trajectory::vec::iterator i = allCells.begin(); i != allCells.end(); ++i) {
+			CellClass *Cell = MapClass::Instance->GetCellAt(&*i);
+			Callback(Cell);
+		}
 	}
 };
 

@@ -125,8 +125,8 @@ public:
 	virtual int _stdcall Drawing_Code()
 		{ return 0; }
 
-	virtual eFireError _stdcall Can_Fire() 
-		{ return fire_OK; }
+	virtual FireError _stdcall Can_Fire() 
+		{ return FireError::OK; }
 
 	virtual int _stdcall Get_Status()
 		{ return 0; }

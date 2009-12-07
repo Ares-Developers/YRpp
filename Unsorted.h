@@ -11,6 +11,14 @@ class ObjectClass;
 class Game
 {
 public:
+	// the game's own rounding function
+	// infamous for true'ing (F2I(-5.00) == -4.00)
+	static __int64 F2I(double val) {
+		double something = val;
+		_asm { fld something };
+		CALL(0x7C5F00);
+	}
+
 	static void RaiseError(HRESULT err)
 		JMP_STD(0x7DC720);
 
