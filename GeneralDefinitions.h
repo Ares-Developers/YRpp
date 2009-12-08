@@ -388,6 +388,21 @@ public:
 		operator int() { return this->_; };
 };
 
+
+class HealthState {
+public:
+	enum E {
+		Red = 0,
+		Yellow = 1,
+		Green = 2
+	} _;
+
+	public:
+		HealthState(int val) { this->_ = static_cast<E>(val); };
+		operator int() { return this->_; };
+};
+
+
 typedef int eFoundation;
 
 #define	fnd_1x1		0x0

@@ -81,6 +81,10 @@ public:
 	void EmptyBunker()
 		JMP_THIS(0x4595C0);
 
+	// called after destruction - CrateBeneath, resetting foundation'ed cells
+	void AfterDestruction()
+		JMP_THIS(0x441F60);
+
 	//Constructor
 	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner) : TechnoClass(false)
 		JMP_THIS(0x43B740);
