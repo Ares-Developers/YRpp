@@ -39,6 +39,8 @@ class CCINIClass;
 class AbstractTypeClass : public AbstractClass
 {
 public:
+	enum {AbsID = abs_Abstract};
+
 	//Static
 	static DynamicVectorClass<AbstractTypeClass*>* Array;
 
