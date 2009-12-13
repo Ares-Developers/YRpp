@@ -16,6 +16,8 @@
 class TerrainTypeClass : public ObjectTypeClass
 {
 public:
+	enum {AbsID = abs_TerrainType};
+
 	//Array
 	ABSTRACTTYPE_ARRAY(TerrainTypeClass);
 

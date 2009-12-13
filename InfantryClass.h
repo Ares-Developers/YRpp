@@ -11,6 +11,8 @@
 class InfantryClass : public FootClass
 {
 public:
+	enum {AbsID = abs_Infantry};
+
 	//Static
 	static DynamicVectorClass<InfantryClass*>* Array;
 

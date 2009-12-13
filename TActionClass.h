@@ -14,6 +14,8 @@ class TriggerClass;
 class TActionClass : public AbstractClass
 {
 public:
+	enum {AbsID = abs_Action};
+
 	//Static
 	static DynamicVectorClass<TActionClass*>* Array;
 

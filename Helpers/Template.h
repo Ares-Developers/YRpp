@@ -5,6 +5,7 @@
 
 #include <functional>
 #include <hash_map>
+#include <Helpers/Type.h>
 
 // here be dragons(plenty)
 
@@ -93,5 +94,14 @@ class IndexBitfield {
 	void Clear() {
 		this->data = 0;
 	}
+};
+
+#include <AbstractClass.h>
+template <typename T>
+inline T game_cast(AbstractClass * Object) {
+	if(Object->WhatAmI() == CompoundT<T>::BaseT::AbsID) {
+		return reinterpret_cast<T>(Object);
+	}
+	return NULL;
 };
 #endif

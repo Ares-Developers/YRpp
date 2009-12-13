@@ -20,6 +20,8 @@ struct ControlNode
 class CaptureManagerClass : public AbstractClass
 {
 public:
+	enum {AbsID = abs_CaptureManager};
+
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 

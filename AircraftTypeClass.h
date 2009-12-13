@@ -6,6 +6,8 @@
 class AircraftTypeClass : public TechnoTypeClass
 {
 public:
+	enum {AbsID = abs_AircraftType};
+
 	//Array
 	ABSTRACTTYPE_ARRAY(AircraftTypeClass);
 

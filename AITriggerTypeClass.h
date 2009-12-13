@@ -23,6 +23,8 @@ struct AITriggerConditionComparator
 class AITriggerTypeClass : public AbstractTypeClass
 {
 public:
+	enum {AbsID = abs_AITriggerType};
+
 	//Array
 	ABSTRACTTYPE_ARRAY(AITriggerTypeClass);
 

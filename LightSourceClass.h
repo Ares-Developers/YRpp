@@ -10,6 +10,8 @@
 class LightSourceClass : public AbstractClass
 {
 public:
+	enum {AbsID = abs_LightSource};
+
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 

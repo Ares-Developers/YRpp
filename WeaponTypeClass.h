@@ -16,6 +16,8 @@ class WarheadTypeClass;
 class WeaponTypeClass : public AbstractTypeClass
 {
 public:
+	enum {AbsID = abs_WeaponType};
+
 	//Array
 	ABSTRACTTYPE_ARRAY(WeaponTypeClass);
 

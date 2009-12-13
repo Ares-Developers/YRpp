@@ -10,6 +10,7 @@
 class SideClass : public AbstractTypeClass
 {
 public:
+	enum {AbsID = abs_Side};
 
 	//Array
 	ABSTRACTTYPE_ARRAY(SideClass);

@@ -19,6 +19,8 @@ class TechnoTypeClass;
 class ScriptTypeClass : public AbstractTypeClass
 {
 public:
+	enum {AbsID = abs_ScriptType};
+
 	//Array
 	ABSTRACTTYPE_ARRAY(ScriptTypeClass);
 

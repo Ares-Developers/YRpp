@@ -10,6 +10,8 @@
 class EMPulseClass : public AbstractClass
 {
 public:
+	enum {AbsID = abs_EMPulse};
+
 	//Static
 	static DynamicVectorClass<EMPulseClass*>* Array;
 

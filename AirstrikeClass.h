@@ -12,6 +12,8 @@ class TechnoClass;
 class AirstrikeClass : public AbstractClass
 {
 public:
+	enum {AbsID = abs_Airstrike};
+
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 

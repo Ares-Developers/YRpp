@@ -14,6 +14,7 @@ class TechnoTypeClass;
 class FactoryClass : public AbstractClass
 {
 public:
+	enum {AbsID = abs_Factory};
 
 	static DynamicVectorClass<FactoryClass *> *Array;
 

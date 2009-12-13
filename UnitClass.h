@@ -14,6 +14,8 @@ class EBolt;
 class UnitClass : public FootClass
 {
 public:
+	enum {AbsID = abs_Unit};
+
 	//Static
 	static DynamicVectorClass<UnitClass*>* Array;
 

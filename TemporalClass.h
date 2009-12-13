@@ -11,6 +11,8 @@ class TechnoClass;
 class TemporalClass : public AbstractClass
 {
 public:
+	enum {AbsID = abs_Temporal};
+
 	//Static
 	static DynamicVectorClass<TemporalClass*>* Array;
 

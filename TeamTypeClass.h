@@ -16,6 +16,8 @@ class TeamClass;
 class TeamTypeClass : public AbstractTypeClass
 {
 public:
+	enum {AbsID = abs_TeamType};
+
 	//Array
 	ABSTRACTTYPE_ARRAY(TeamTypeClass);
 

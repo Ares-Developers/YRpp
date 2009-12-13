@@ -14,6 +14,8 @@ class HouseClass;
 class SuperClass : public AbstractClass
 {
 public:
+	enum {AbsID = abs_Super};
+
 	//Static
 	//static DynamicVectorClass<SuperClass*>* Array; //- per player
 

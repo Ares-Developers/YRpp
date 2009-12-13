@@ -16,6 +16,8 @@ class WeaponTypeClass;
 class SuperWeaponTypeClass : public AbstractTypeClass
 {
 public:
+	enum {AbsID = abs_SuperWeaponType};
+
 	//Array
 	ABSTRACTTYPE_ARRAY(SuperWeaponTypeClass);
 

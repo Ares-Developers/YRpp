@@ -10,6 +10,8 @@
 class SmudgeTypeClass : public ObjectTypeClass
 {
 public:
+	enum {AbsID = abs_SmudgeType};
+
 	//Array
 	ABSTRACTTYPE_ARRAY(SmudgeTypeClass);
 

@@ -13,6 +13,8 @@ class WarheadTypeClass;
 class ParticleTypeClass : public ObjectTypeClass
 {
 public:
+	enum {AbsID = abs_ParticleType};
+
 	//Array
 	ABSTRACTTYPE_ARRAY(ParticleTypeClass);
 

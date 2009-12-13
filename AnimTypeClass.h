@@ -15,6 +15,8 @@ class WarheadTypeClass;
 class AnimTypeClass : public ObjectTypeClass
 {
 public:
+	enum {AbsID = abs_AnimType};
+
 	//Array
 	ABSTRACTTYPE_ARRAY(AnimTypeClass);
 

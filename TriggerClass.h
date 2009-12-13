@@ -12,6 +12,8 @@ class AITeamTypeClass; // TODO: define
 class TriggerClass : public AbstractClass
 {
 public:
+	enum {AbsID = abs_Trigger};
+
 	//Static
 	static DynamicVectorClass<TriggerClass*>* Array;
 	static TriggerTypeClass * __fastcall Find(TriggerTypeClass *pType)

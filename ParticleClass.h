@@ -14,6 +14,8 @@ class ParticleSystemClass;
 class ParticleClass : public ObjectClass
 {
 public:
+	enum {AbsID = abs_Particle};
+
 	//Static
 	static DynamicVectorClass<ParticleClass*>* Array;
 

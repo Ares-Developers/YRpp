@@ -9,6 +9,7 @@ class FootClass;
 class ParasiteClass : public AbstractClass
 {
 public:
+	enum {AbsID = abs_Parasite};
 
 	static DynamicVectorClass<ParasiteClass*>* Array;
 

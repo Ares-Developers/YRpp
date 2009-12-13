@@ -36,6 +36,8 @@
 class OverlayClass : public ObjectClass
 {
 public:
+	enum {AbsID = abs_Overlay};
+
 	//Static
 	static DynamicVectorClass<OverlayClass*>* Array;
 

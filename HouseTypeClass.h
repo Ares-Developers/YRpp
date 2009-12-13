@@ -14,6 +14,8 @@ class UnitTypeClass;
 class HouseTypeClass : public AbstractTypeClass
 {
 public:
+	enum {AbsID = abs_HouseType};
+
 	//Array
 	ABSTRACTTYPE_ARRAY(HouseTypeClass);
 

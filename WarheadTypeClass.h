@@ -15,6 +15,8 @@ class VoxelAnimTypeClass;
 class WarheadTypeClass : public AbstractTypeClass
 {
 public:
+	enum {AbsID = abs_WarheadType};
+
 	//Array
 	ABSTRACTTYPE_ARRAY(WarheadTypeClass);
 

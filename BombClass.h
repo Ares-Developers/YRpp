@@ -11,6 +11,8 @@ class HouseClass;
 class BombClass : public AbstractClass
 {
 public:
+	enum {AbsID = abs_Bomb};
+
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 

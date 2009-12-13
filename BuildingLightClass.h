@@ -7,6 +7,8 @@
 class BuildingLightClass : public ObjectClass
 {
 public:
+	enum {AbsID = abs_BuildingLight};
+
 	//Static
 	static DynamicVectorClass<BuildingLightClass*>* Array;
 

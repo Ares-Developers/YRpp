@@ -26,6 +26,8 @@ typedef Vector3D<double> BulletVelocity; // :3 -pd
 class BulletClass : public ObjectClass
 {
 public:
+	enum {AbsID = abs_Bullet};
+
 	//Array
 	static DynamicVectorClass<BulletClass*>* Array;
 

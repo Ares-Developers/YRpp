@@ -12,6 +12,7 @@ typedef int eAbstractFlags;
 #define ABSFLAGS_ISOBJECT			0x02
 #define ABSFLAGS_ISFOOT				0x04
 
+
 typedef int eAbstractType;
 
 #define	abs_None		0x0
@@ -33,7 +34,7 @@ typedef int eAbstractType;
 #define	abs_InfantryType		0x10
 #define	abs_Isotile		0x11
 #define	abs_IsotileType		0x12
-#define	abs_LightSource		0x13
+#define	abs_BuildingLight		0x13
 #define	abs_Overlay		0x14
 #define	abs_OverlayType		0x15
 #define	abs_Particle		0x16
@@ -68,6 +69,7 @@ typedef int eAbstractType;
 #define	abs_Waypoint		0x33
 #define	abs_Abstract		0x34
 #define	abs_Tube		0x35
+#define	abs_LightSource		0x36
 #define	abs_EMPulse		0x37
 #define	abs_TacticalMap		0x38
 #define	abs_Super		0x39

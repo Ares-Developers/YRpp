@@ -19,6 +19,8 @@ class WarheadTypeClass;
 class BulletTypeClass : public ObjectTypeClass
 {
 public:
+	enum {AbsID = abs_BulletType};
+
 	//Array
 	ABSTRACTTYPE_ARRAY(BulletTypeClass);
 

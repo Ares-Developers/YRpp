@@ -23,6 +23,7 @@ class FootClass;
 class CellClass : public AbstractClass
 {
 public:
+	enum {AbsID = abs_Cell};
 
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;

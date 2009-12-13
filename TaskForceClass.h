@@ -19,6 +19,8 @@ struct TaskForceEntryStruct
 class TaskForceClass : public AbstractTypeClass
 {
 public:
+	enum {AbsID = abs_TaskForce};
+
 	//Array
 	ABSTRACTTYPE_ARRAY(TaskForceClass);
 

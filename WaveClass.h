@@ -8,6 +8,8 @@ class TechnoClass;
 class WaveClass : public ObjectClass
 {
 public:
+	enum {AbsID = abs_Wave};
+
 	static DynamicVectorClass<WaveClass*>* Array;
 
 	//IPersistStream

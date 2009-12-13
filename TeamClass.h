@@ -11,6 +11,8 @@ class ScriptClass;
 class TeamClass : public AbstractClass
 {
 public:
+	enum {AbsID = abs_Team};
+
 	//Static
 	static DynamicVectorClass<TeamClass*>* Array;
 

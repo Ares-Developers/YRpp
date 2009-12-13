@@ -15,6 +15,8 @@ class LightSourceClass;
 class BuildingClass : public TechnoClass
 {
 public:
+	enum {AbsID = abs_Building};
+
 	//Static
 	static DynamicVectorClass<BuildingClass*>* Array;
 

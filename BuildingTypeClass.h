@@ -27,6 +27,8 @@ struct BuildingAnimFrameStruct
 class BuildingTypeClass : public TechnoTypeClass
 {
 public:
+	enum {AbsID = abs_BuildingType};
+
 	//Array
 	ABSTRACTTYPE_ARRAY(BuildingTypeClass);
 

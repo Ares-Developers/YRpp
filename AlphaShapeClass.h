@@ -13,6 +13,8 @@ class ObjectClass;
 class AlphaShapeClass : public AbstractClass
 {
 public:
+	enum {AbsID = abs_AlphaShape};
+
 	//Static
 	static DynamicVectorClass<AlphaShapeClass*>* Array;
 

@@ -8,6 +8,8 @@ class TechnoClass;
 class UnitTypeClass : public TechnoTypeClass
 {
 public:
+	enum {AbsID = abs_UnitType};
+
 	//Array
 	ABSTRACTTYPE_ARRAY(UnitTypeClass);
 

@@ -119,6 +119,8 @@ public:
 class HouseClass : public AbstractClass, public IHouse, public IPublicHouse, public IConnectionPointContainer
 {
 public:
+	enum {AbsID = abs_House};
+
 	//Static
 	static DynamicVectorClass<HouseClass*>* Array;
 

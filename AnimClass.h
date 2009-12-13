@@ -17,6 +17,8 @@ class LightConvertClass;
 class AnimClass : public ObjectClass
 {
 public:
+	enum {AbsID = abs_Anim};
+
 	//Static
 	static DynamicVectorClass<AnimClass*>* Array;
 

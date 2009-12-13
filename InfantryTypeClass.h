@@ -28,6 +28,8 @@ struct SequenceStruct
 class InfantryTypeClass : public TechnoTypeClass
 {
 public:
+	enum {AbsID = abs_InfantryType};
+
 	//Array
 	ABSTRACTTYPE_ARRAY(InfantryTypeClass);
 

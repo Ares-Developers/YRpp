@@ -13,6 +13,8 @@ class AnimTypeClass;
 class OverlayTypeClass : public ObjectTypeClass
 {
 public:
+	enum {AbsID = abs_OverlayType};
+
 	//Array
 	ABSTRACTTYPE_ARRAY(OverlayTypeClass);
 

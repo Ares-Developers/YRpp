@@ -17,6 +17,8 @@
 class TerrainClass : public ObjectClass
 {
 public:
+	enum {AbsID = abs_Terrain};
+
 	//global array
 	static DynamicVectorClass<TerrainClass*>* Array;
 

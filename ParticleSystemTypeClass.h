@@ -12,6 +12,8 @@
 class ParticleSystemTypeClass : public ObjectTypeClass
 {
 public:
+	enum {AbsID = abs_ParticleSystemType};
+
 	//Array
 	ABSTRACTTYPE_ARRAY(ParticleSystemTypeClass);
 

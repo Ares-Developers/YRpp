@@ -11,6 +11,8 @@
 class SmudgeClass : public ObjectClass
 {
 public:
+	enum {AbsID = abs_Smudge};
+
 	//Static
 	static DynamicVectorClass<SmudgeClass*>* Array;
 

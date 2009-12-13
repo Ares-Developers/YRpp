@@ -18,6 +18,8 @@ class FlasherClass : public StageClass{ };
 class AircraftClass : public FootClass, public FlasherClass
 {
 public:
+	enum {AbsID = abs_Aircraft};
+
 	//Static
 	static DynamicVectorClass<AircraftClass*>* Array;
 

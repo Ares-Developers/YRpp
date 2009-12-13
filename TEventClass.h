@@ -11,6 +11,8 @@ class AITeamTypeClass; // TODO: define
 class TEventClass : public AbstractClass
 {
 public:
+	enum {AbsID = abs_Event};
+
 	//Static
 	static DynamicVectorClass<TEventClass*>* Array;
 

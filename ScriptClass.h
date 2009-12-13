@@ -13,6 +13,8 @@
 class ScriptClass : public AbstractClass
 {
 public:
+	enum {AbsID = abs_Script};
+
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 

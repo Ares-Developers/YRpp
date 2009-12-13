@@ -14,6 +14,8 @@ class WeaponTypeClass;
 class DiskLaserClass : public AbstractClass
 {
 public:
+	enum {AbsID = abs_DiskLaser};
+
 	//IPersist
 	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
 

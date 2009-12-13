@@ -27,6 +27,8 @@ struct OwnedTiberiumStruct
 class AbstractClass : public IPersistStream, public IRTTITypeInfo, public INoticeSink, public INoticeSource
 {
 public:
+	enum {AbsID = abs_Abstract};
+
 	//static
 	const char* GetClassName()
 	{
