@@ -53,6 +53,10 @@ Inheritance diagram for InfantryTypeClass:</div>
 <p>
 <a href="class_infantry_type_class-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public Types</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="class_infantry_type_class.html#6f316998ea775562b17670c52812cfd34a5ed474740087cbc5a3a06772e35c35">AbsID</a> =  0x10
+ }</td></tr>
+
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">virtual HRESULT _stdcall&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_infantry_type_class.html#9bc123d47a99084efcc8ad94a62019be">GetClassID</a> (CLSID *pClassID)</td></tr>
 
@@ -308,12 +312,39 @@ Inheritance diagram for InfantryTypeClass:</div>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_infantry_type_class.html#671571c66da86d360a4c56bb90e3948d">InfantryTypeClass</a> ()</td></tr>
 
 <tr><td colspan="2"><br><h2>Private Attributes</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">DWORD&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a></td></tr>
 
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 
 <p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00028">28</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<hr><h2>Member Enumeration Documentation</h2>
+<a class="anchor" name="6f316998ea775562b17670c52812cfd3"></a><!-- doxytag: member="InfantryTypeClass::@53" ref="6f316998ea775562b17670c52812cfd3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+<dl compact><dt><b>Enumerator: </b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" name="6f316998ea775562b17670c52812cfd34a5ed474740087cbc5a3a06772e35c35"></a><!-- doxytag: member="AbsID" ref="6f316998ea775562b17670c52812cfd34a5ed474740087cbc5a3a06772e35c35" args="" -->AbsID</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>
+
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00031">31</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00031"></a>00031 {<a class="code" href="class_infantry_type_class.html#6f316998ea775562b17670c52812cfd34a5ed474740087cbc5a3a06772e35c35">AbsID</a> = <a class="code" href="_general_definitions_8h.html#a1a035ddc1385d60fcad29443ba07edb">abs_InfantryType</a>};
+</pre></div>
+<p>
+
+</div>
+</div><p>
 <hr><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" name="8e9dff1e31e198f530c5d95d6362f17d"></a><!-- doxytag: member="InfantryTypeClass::~InfantryTypeClass" ref="8e9dff1e31e198f530c5d95d6362f17d" args="()" -->
 <div class="memitem">
@@ -332,8 +363,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00042">42</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00053"></a>00053 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00044">44</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00055"></a>00055 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
 </pre></div>
 <p>
 
@@ -356,9 +387,9 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00058">58</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00058"></a>00058                             : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
-<a name="l00059"></a>00059                 { }
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00060">60</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00060"></a>00060                             : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
+<a name="l00061"></a>00061                 { }
 </pre></div>
 <p>
 
@@ -385,8 +416,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>Implements <a class="el" href="class_object_type_class.html#3293bdbb026f40a9b8d16844ec30c3c8">ObjectTypeClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00050">50</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00053"></a>00053 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00052">52</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00055"></a>00055 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
 </pre></div>
 <p>
 
@@ -412,8 +443,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>Reimplemented from <a class="el" href="class_techno_type_class.html#38c7f2349d377b15f26caf339dc29e40">TechnoTypeClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00032">32</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00053"></a>00053 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00034">34</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00055"></a>00055 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
 </pre></div>
 <p>
 
@@ -439,8 +470,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>Reimplemented from <a class="el" href="class_techno_type_class.html#660df1220dffd9d3a18196ff0e696632">TechnoTypeClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00032">32</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00053"></a>00053 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00034">34</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00055"></a>00055 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
 </pre></div>
 <p>
 
@@ -464,8 +495,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00032">32</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00053"></a>00053 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00034">34</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00055"></a>00055 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
 </pre></div>
 <p>
 
@@ -488,8 +519,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00093">93</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00095">95</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -512,8 +543,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00083">83</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00085">85</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -536,8 +567,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00091">91</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00093">93</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -560,8 +591,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00090">90</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00092">92</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -584,8 +615,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00086">86</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00088">88</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -608,8 +639,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00078">78</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00080">80</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -632,8 +663,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00073">73</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00075">75</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -656,8 +687,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00074">74</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00076">76</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -680,8 +711,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00098">98</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00100">100</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -704,8 +735,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00097">97</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00099">99</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -728,8 +759,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00081">81</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00083">83</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -752,8 +783,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00096">96</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00098">98</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -776,8 +807,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00067">67</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00069">69</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -800,8 +831,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00092">92</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00094">94</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -824,8 +855,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00076">76</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00078">78</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -848,8 +879,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00085">85</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00087">87</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -872,8 +903,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00070">70</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00072">72</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -896,8 +927,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00069">69</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00071">71</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -920,8 +951,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00088">88</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00090">90</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -944,8 +975,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00084">84</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00086">86</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -968,8 +999,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00087">87</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00089">89</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -992,8 +1023,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00080">80</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00082">82</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1016,8 +1047,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00100">100</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00102">102</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1040,8 +1071,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00077">77</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00079">79</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1064,8 +1095,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00079">79</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00081">81</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1088,8 +1119,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00082">82</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00084">84</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1112,8 +1143,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00065">65</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00067">67</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1136,8 +1167,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00066">66</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00068">68</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1160,8 +1191,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00064">64</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00066">66</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1184,8 +1215,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00071">71</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00073">73</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1208,8 +1239,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00072">72</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00074">74</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1232,8 +1263,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00068">68</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00070">70</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1256,8 +1287,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00094">94</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00096">96</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1280,8 +1311,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00089">89</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00091">91</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1304,8 +1335,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00099">99</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00101">101</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1328,8 +1359,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00095">95</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00097">97</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1352,8 +1383,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00075">75</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00077">77</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1379,8 +1410,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>Implements <a class="el" href="class_abstract_class.html#2199057db5f883039f402c36691cab95">AbstractClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00035">35</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00053"></a>00053 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00037">37</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00055"></a>00055 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
 </pre></div>
 <p>
 
@@ -1406,8 +1437,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>Reimplemented from <a class="el" href="class_techno_type_class.html#fbdc96dce45b8bbd81090c72bd815796">TechnoTypeClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00038">38</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00053"></a>00053 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00040">40</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00055"></a>00055 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
 </pre></div>
 <p>
 
@@ -1442,8 +1473,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>Reimplemented from <a class="el" href="class_techno_type_class.html#37b255ed2cba7a75abdd0fd04e6ed185">TechnoTypeClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00039">39</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00053"></a>00053 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00041">41</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00055"></a>00055 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
 </pre></div>
 <p>
 
@@ -1467,8 +1498,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00093">93</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00095">95</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1492,8 +1523,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00083">83</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00085">85</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1517,8 +1548,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00091">91</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00093">93</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1542,8 +1573,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00090">90</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00092">92</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1567,8 +1598,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00086">86</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00088">88</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1592,8 +1623,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00078">78</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00080">80</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1617,8 +1648,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00073">73</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00075">75</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1642,8 +1673,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00074">74</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00076">76</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1667,8 +1698,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00098">98</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00100">100</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1692,8 +1723,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00097">97</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00099">99</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1717,8 +1748,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00081">81</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00083">83</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1742,8 +1773,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00096">96</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00098">98</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1767,8 +1798,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00067">67</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00069">69</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1792,8 +1823,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00092">92</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00094">94</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1817,8 +1848,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00076">76</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00078">78</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1842,8 +1873,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00085">85</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00087">87</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1867,8 +1898,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00070">70</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00072">72</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1892,8 +1923,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00069">69</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00071">71</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1917,8 +1948,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00088">88</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00090">90</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1942,8 +1973,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00084">84</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00086">86</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1967,8 +1998,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00087">87</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00089">89</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -1992,8 +2023,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00080">80</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00082">82</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -2017,8 +2048,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00100">100</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00102">102</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -2042,8 +2073,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00077">77</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00079">79</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -2067,8 +2098,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00079">79</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00081">81</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -2092,8 +2123,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00082">82</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00084">84</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -2117,8 +2148,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00065">65</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00067">67</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -2142,8 +2173,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00066">66</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00068">68</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -2167,8 +2198,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00064">64</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00066">66</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -2192,8 +2223,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00071">71</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00073">73</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -2217,8 +2248,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00072">72</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00074">74</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -2242,8 +2273,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00068">68</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00070">70</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -2267,8 +2298,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00094">94</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00096">96</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -2292,8 +2323,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00089">89</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00091">91</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -2317,8 +2348,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00099">99</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00101">101</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -2342,8 +2373,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00095">95</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00097">97</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -2367,8 +2398,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00075">75</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 : DWORD <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00077">77</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 : <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">align_ECC</a>;
 </pre></div>
 <p>
 
@@ -2393,8 +2424,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>Implements <a class="el" href="class_abstract_class.html#0cb25b4c3696197eb93b61d04de3a1e7">AbstractClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00046">46</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00053"></a>00053 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00048">48</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00055"></a>00055 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
 </pre></div>
 <p>
 
@@ -2429,8 +2460,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>Implements <a class="el" href="class_object_type_class.html#a5d6982429a8ae03a4c00b2d75665425">ObjectTypeClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00049">49</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00053"></a>00053 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00051">51</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00055"></a>00055 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
 </pre></div>
 <p>
 
@@ -2455,8 +2486,8 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>Implements <a class="el" href="class_abstract_class.html#df5b5602d0b167206ee822dba1f48a15">AbstractClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00045">45</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00053"></a>00053 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00047">47</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00055"></a>00055 : <a class="code" href="class_techno_type_class.html#5f6a81009f5f1def4622f7a06ec4136b">TechnoTypeClass</a>(<span class="keyword">false</span>)
 </pre></div>
 <p>
 
@@ -2476,7 +2507,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00092">92</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00094">94</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2485,7 +2516,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">DWORD <a class="el" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">InfantryTypeClass::align_ECC</a><code> [private]</code>          </td>
+          <td class="memname"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="el" href="class_infantry_type_class.html#a32589dac5dbcb89cb20d12e92358be9">InfantryTypeClass::align_ECC</a><code> [private]</code>          </td>
         </tr>
       </table>
 </div>
@@ -2493,7 +2524,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00100">100</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00102">102</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2512,7 +2543,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>Reimplemented from <a class="el" href="class_techno_type_class.html#68ffff87cf66d6e5d3ad0b39ded4a650">TechnoTypeClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00032">32</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00034">34</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2529,7 +2560,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00082">82</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00084">84</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2546,7 +2577,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00090">90</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00092">92</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2563,7 +2594,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00089">89</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00091">91</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2580,7 +2611,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00085">85</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00087">87</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2597,7 +2628,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00077">77</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00079">79</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2614,7 +2645,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00072">72</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00074">74</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2631,7 +2662,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00073">73</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00075">75</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2648,7 +2679,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00097">97</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00099">99</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2665,7 +2696,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00096">96</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00098">98</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2682,7 +2713,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00080">80</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00082">82</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2699,7 +2730,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00095">95</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00097">97</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2716,7 +2747,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00066">66</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00068">68</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2733,7 +2764,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00091">91</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00093">93</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2750,7 +2781,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00075">75</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00077">77</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2767,7 +2798,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00084">84</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00086">86</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2784,7 +2815,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00069">69</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00071">71</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2801,7 +2832,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00068">68</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00070">70</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2818,7 +2849,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00087">87</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00089">89</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2835,7 +2866,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00083">83</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00085">85</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2852,7 +2883,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00086">86</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00088">88</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2869,7 +2900,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00079">79</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00081">81</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2886,7 +2917,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00099">99</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00101">101</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2903,7 +2934,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00076">76</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00078">78</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2920,7 +2951,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00078">78</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00080">80</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2937,7 +2968,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00081">81</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00083">83</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2954,7 +2985,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00064">64</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00066">66</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2971,7 +3002,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00065">65</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00067">67</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -2988,7 +3019,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00064">64</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00066">66</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -3005,7 +3036,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00070">70</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00072">72</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -3022,7 +3053,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00071">71</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00073">73</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -3039,7 +3070,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00067">67</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00069">69</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -3056,7 +3087,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00093">93</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00095">95</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -3073,7 +3104,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00088">88</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00090">90</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -3090,7 +3121,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00098">98</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00100">100</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -3107,7 +3138,7 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00094">94</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00096">96</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -3124,14 +3155,14 @@ Inheritance diagram for InfantryTypeClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00074">74</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_infantry_type_class_8h-source.html#l00076">76</a> of file <a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a>.</p>
 
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_infantry_type_class_8h-source.html">InfantryTypeClass.h</a><li><a class="el" href="_static_inits_8cpp-source.html">StaticInits.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:52 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:41:00 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

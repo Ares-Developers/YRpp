@@ -55,9 +55,9 @@ Inheritance diagram for CCINIClass:</div>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_c_i_n_i_class.html#d98c913319f2e920d52232fae1c7daf6">~CCINIClass</a> ()</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="class_c_c_i_n_i_class.html">CCINIClass</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_c_i_n_i_class.html#4f0a41dc22dd278c95dd6529c49e8efc">ReadCCFile</a> (<a class="el" href="class_c_c_file_class.html">CCFileClass</a> *pCCFile)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="class_c_c_i_n_i_class.html">CCINIClass</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_c_i_n_i_class.html#2c5356065ca5feb2f377548a059fc57b">ReadCCFile</a> (<a class="el" href="class_file_class.html">FileClass</a> *pCCFile, byte bUnk=0, int iUnk=0) JMP_THIS(0x4741F0)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_c_i_n_i_class.html#c50854825e890d55e69cfc7eece24ed0">WriteCCFile</a> (<a class="el" href="class_c_c_file_class.html">CCFileClass</a> *pCCFile, bool bUnk) JMP_THIS(0x474430)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_c_i_n_i_class.html#815c4a9c114391be8044bcd10df84bf0">WriteCCFile</a> (<a class="el" href="class_file_class.html">FileClass</a> *pCCFile, bool bUnk) JMP_THIS(0x474430)</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_c_i_n_i_class.html#437505bcc083b5fc503621a12d33ffc1">ReadStringtableEntry</a> (const char *pSection, const char *pKey, wchar_t *pBuffer, size_t szBufferSize) JMP_THIS(0x0529160)</td></tr>
 
@@ -73,7 +73,7 @@ Inheritance diagram for CCINIClass:</div>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 
-<p>Definition at line <a class="el" href="_c_c_i_n_i_class_8h-source.html#l00237">237</a> of file <a class="el" href="_c_c_i_n_i_class_8h-source.html">CCINIClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_c_c_i_n_i_class_8h-source.html#l00236">236</a> of file <a class="el" href="_c_c_i_n_i_class_8h-source.html">CCINIClass.h</a>.</p>
 <hr><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" name="804037825afd719f00e7fe2b21ff6c86"></a><!-- doxytag: member="CCINIClass::CCINIClass" ref="804037825afd719f00e7fe2b21ff6c86" args="()" -->
 <div class="memitem">
@@ -92,13 +92,13 @@ Inheritance diagram for CCINIClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_c_c_i_n_i_class_8h-source.html#l00252">252</a> of file <a class="el" href="_c_c_i_n_i_class_8h-source.html">CCINIClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00252"></a>00252                      : <a class="code" href="class_i_n_i_class.html#89330c14edbf6b09c03fb7f545bd3cbd">INIClass</a>(<span class="keyword">false</span>) 
-<a name="l00253"></a>00253         {
-<a name="l00254"></a>00254                 THISCALL(0x535AA0);
-<a name="l00255"></a>00255                 <a class="code" href="class_i_n_i_class.html#cc5626b5fbed8b6855d99d668a7a17d0">unknown_bool_40</a> = <span class="keyword">false</span>;
-<a name="l00256"></a>00256                 *(DWORD*)<span class="keyword">this</span> = 0x7E1AF4;
-<a name="l00257"></a>00257         }
+<p>Definition at line <a class="el" href="_c_c_i_n_i_class_8h-source.html#l00251">251</a> of file <a class="el" href="_c_c_i_n_i_class_8h-source.html">CCINIClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00251"></a>00251                      : <a class="code" href="class_i_n_i_class.html#89330c14edbf6b09c03fb7f545bd3cbd">INIClass</a>(<span class="keyword">false</span>) 
+<a name="l00252"></a>00252         {
+<a name="l00253"></a>00253                 THISCALL(0x535AA0);
+<a name="l00254"></a>00254                 <a class="code" href="class_i_n_i_class.html#cc5626b5fbed8b6855d99d668a7a17d0">unknown_bool_40</a> = <span class="keyword">false</span>;
+<a name="l00255"></a>00255                 *(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>*)<span class="keyword">this</span> = 0x7E1AF4;
+<a name="l00256"></a>00256         }
 </pre></div>
 <p>
 
@@ -121,35 +121,42 @@ Inheritance diagram for CCINIClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_c_c_i_n_i_class_8h-source.html#l00259">259</a> of file <a class="el" href="_c_c_i_n_i_class_8h-source.html">CCINIClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00263"></a>00263 { PUSH_IMM(0); PUSH_IMM(0); PUSH_VAR32(pCCFile); THISCALL(0x4741F0); }
-</pre></div>
-<p>
+<p>Definition at line <a class="el" href="_c_c_i_n_i_class_8h-source.html#l00258">258</a> of file <a class="el" href="_c_c_i_n_i_class_8h-source.html">CCINIClass.h</a>.</p>
 
 </div>
 </div><p>
 <hr><h2>Member Function Documentation</h2>
-<a class="anchor" name="4f0a41dc22dd278c95dd6529c49e8efc"></a><!-- doxytag: member="CCINIClass::ReadCCFile" ref="4f0a41dc22dd278c95dd6529c49e8efc" args="(CCFileClass *pCCFile)" -->
+<a class="anchor" name="2c5356065ca5feb2f377548a059fc57b"></a><!-- doxytag: member="CCINIClass::ReadCCFile" ref="2c5356065ca5feb2f377548a059fc57b" args="(FileClass *pCCFile, byte bUnk=0, int iUnk=0) JMP_THIS(0x4741F0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_c_c_i_n_i_class.html">CCINIClass</a>* CCINIClass::ReadCCFile           </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_c_c_file_class.html">CCFileClass</a> *&nbsp;</td>
-          <td class="paramname"> <em>pCCFile</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
+          <td class="paramtype"><a class="el" href="class_file_class.html">FileClass</a> *&nbsp;</td>
+          <td class="paramname"> <em>pCCFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte&nbsp;</td>
+          <td class="paramname"> <em>bUnk</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>iUnk</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>
-
-<p>Definition at line <a class="el" href="_c_c_i_n_i_class_8h-source.html#l00262">262</a> of file <a class="el" href="_c_c_i_n_i_class_8h-source.html">CCINIClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00263"></a>00263                 { PUSH_IMM(0); PUSH_IMM(0); PUSH_VAR32(pCCFile); THISCALL(0x4741F0); }
-</pre></div>
 <p>
 
 </div>
@@ -195,14 +202,14 @@ Inheritance diagram for CCINIClass:</div>
 
 </div>
 </div><p>
-<a class="anchor" name="c50854825e890d55e69cfc7eece24ed0"></a><!-- doxytag: member="CCINIClass::WriteCCFile" ref="c50854825e890d55e69cfc7eece24ed0" args="(CCFileClass *pCCFile, bool bUnk) JMP_THIS(0x474430)" -->
+<a class="anchor" name="815c4a9c114391be8044bcd10df84bf0"></a><!-- doxytag: member="CCINIClass::WriteCCFile" ref="815c4a9c114391be8044bcd10df84bf0" args="(FileClass *pCCFile, bool bUnk) JMP_THIS(0x474430)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void CCINIClass::WriteCCFile           </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_c_c_file_class.html">CCFileClass</a> *&nbsp;</td>
+          <td class="paramtype"><a class="el" href="class_file_class.html">FileClass</a> *&nbsp;</td>
           <td class="paramname"> <em>pCCFile</em>, </td>
         </tr>
         <tr>
@@ -238,7 +245,7 @@ Inheritance diagram for CCINIClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_c_c_i_n_i_class_8h-source.html#l00247">247</a> of file <a class="el" href="_c_c_i_n_i_class_8h-source.html">CCINIClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_c_c_i_n_i_class_8h-source.html#l00246">246</a> of file <a class="el" href="_c_c_i_n_i_class_8h-source.html">CCINIClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -255,7 +262,7 @@ Inheritance diagram for CCINIClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_c_c_i_n_i_class_8h-source.html#l00248">248</a> of file <a class="el" href="_c_c_i_n_i_class_8h-source.html">CCINIClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_c_c_i_n_i_class_8h-source.html#l00247">247</a> of file <a class="el" href="_c_c_i_n_i_class_8h-source.html">CCINIClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -272,7 +279,7 @@ Inheritance diagram for CCINIClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_c_c_i_n_i_class_8h-source.html#l00249">249</a> of file <a class="el" href="_c_c_i_n_i_class_8h-source.html">CCINIClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_c_c_i_n_i_class_8h-source.html#l00248">248</a> of file <a class="el" href="_c_c_i_n_i_class_8h-source.html">CCINIClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -289,14 +296,14 @@ Inheritance diagram for CCINIClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_c_c_i_n_i_class_8h-source.html#l00244">244</a> of file <a class="el" href="_c_c_i_n_i_class_8h-source.html">CCINIClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_c_c_i_n_i_class_8h-source.html#l00243">243</a> of file <a class="el" href="_c_c_i_n_i_class_8h-source.html">CCINIClass.h</a>.</p>
 
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_c_c_i_n_i_class_8h-source.html">CCINIClass.h</a><li><a class="el" href="_static_inits_8cpp-source.html">StaticInits.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:50 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:40:57 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

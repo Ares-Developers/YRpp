@@ -40,25 +40,25 @@
 <a name="l00007"></a><a class="code" href="class_randomizer.html#ad40fd55333d26dce9e0215df8c02ca1">00007</a>         <span class="keyword">static</span> <a class="code" href="class_randomizer.html">Randomizer</a>* <a class="code" href="class_randomizer.html#ad40fd55333d26dce9e0215df8c02ca1">Global</a>()
 <a name="l00008"></a>00008                 { <span class="keywordflow">return</span> (<a class="code" href="class_randomizer.html">Randomizer</a>*)0x886B88; }
 <a name="l00009"></a>00009 
-<a name="l00010"></a>00010         DWORD <a class="code" href="class_randomizer.html#6beb5cd28a97ce46666555b39a2cba8a">Random</a>()
+<a name="l00010"></a>00010         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_randomizer.html#6beb5cd28a97ce46666555b39a2cba8a">Random</a>()
 <a name="l00011"></a>00011                 JMP_THIS(0x65C780);
 <a name="l00012"></a>00012 
 <a name="l00013"></a>00013         <span class="keywordtype">int</span> <a class="code" href="class_randomizer.html#dc165882a7ca94343af3681da2200ad8">RandomRanged</a>(<span class="keywordtype">int</span> nMin, <span class="keywordtype">int</span> nMax)
 <a name="l00014"></a>00014                 JMP_THIS(0x65C7E0);
 <a name="l00015"></a>00015 
-<a name="l00016"></a>00016         <a class="code" href="class_randomizer.html">Randomizer</a>(DWORD dwSeed = GetTickCount())
+<a name="l00016"></a>00016         <a class="code" href="class_randomizer.html">Randomizer</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwSeed = GetTickCount())
 <a name="l00017"></a>00017                 JMP_THIS(0x65C6D0);
 <a name="l00018"></a>00018 
 <a name="l00019"></a>00019         <span class="comment">//Properties</span>
 <a name="l00020"></a>00020         <a class="code" href="class_randomizer.html#aa006ac1c547acc5e42a7ed8e72df0cd">PROPERTY</a>(<span class="keywordtype">bool</span>, unknown_00);
 <a name="l00021"></a>00021         <a class="code" href="class_randomizer.html#aa006ac1c547acc5e42a7ed8e72df0cd">PROPERTY</a>(<span class="keywordtype">int</span>, Next1); <span class="comment">//from Table</span>
 <a name="l00022"></a>00022         <a class="code" href="class_randomizer.html#aa006ac1c547acc5e42a7ed8e72df0cd">PROPERTY</a>(<span class="keywordtype">int</span>, Next2); <span class="comment">//from Table</span>
-<a name="l00023"></a>00023         <a class="code" href="class_randomizer.html#a8b10b5c5cf5394a17265bd56a4c79d3">PROPERTY_ARRAY</a>(DWORD, Table, 0xFA);
+<a name="l00023"></a>00023         <a class="code" href="class_randomizer.html#a8b10b5c5cf5394a17265bd56a4c79d3">PROPERTY_ARRAY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, Table, 0xFA);
 <a name="l00024"></a>00024 };
 <a name="l00025"></a>00025 
 <a name="l00026"></a>00026 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:45 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:40:51 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -50,6 +50,10 @@ Inheritance diagram for ScriptClass:</div>
 <p>
 <a href="class_script_class-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public Types</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="class_script_class.html#a64e6e0777fbfe3cd05d1af8d8343887355a73e4cc5b599a692047c931c5b78d">AbsID</a> =  0x1A
+ }</td></tr>
+
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">virtual HRESULT _stdcall&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_script_class.html#ab7496950952c1ae498ccd62b9c1f2cb">GetClassID</a> (CLSID *pClassID)</td></tr>
 
@@ -101,6 +105,33 @@ Inheritance diagram for ScriptClass:</div>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 
 <p>Definition at line <a class="el" href="_script_class_8h-source.html#l00013">13</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<hr><h2>Member Enumeration Documentation</h2>
+<a class="anchor" name="a64e6e0777fbfe3cd05d1af8d8343887"></a><!-- doxytag: member="ScriptClass::@62" ref="a64e6e0777fbfe3cd05d1af8d8343887" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+<dl compact><dt><b>Enumerator: </b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" name="a64e6e0777fbfe3cd05d1af8d8343887355a73e4cc5b599a692047c931c5b78d"></a><!-- doxytag: member="AbsID" ref="a64e6e0777fbfe3cd05d1af8d8343887355a73e4cc5b599a692047c931c5b78d" args="" -->AbsID</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>
+
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00016">16</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00016"></a>00016 {<a class="code" href="class_script_class.html#a64e6e0777fbfe3cd05d1af8d8343887355a73e4cc5b599a692047c931c5b78d">AbsID</a> = <a class="code" href="_general_definitions_8h.html#7bb35da1cb057fdabba7d87f40ba505f">abs_Script</a>};
+</pre></div>
+<p>
+
+</div>
+</div><p>
 <hr><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" name="f3a73c115acccd6c0c91f771f1b12aa2"></a><!-- doxytag: member="ScriptClass::~ScriptClass" ref="f3a73c115acccd6c0c91f771f1b12aa2" args="()" -->
 <div class="memitem">
@@ -119,8 +150,8 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00024">24</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00037"></a>00037 { this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a> = -1; <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00026">26</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00039"></a>00039 { this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a> = -1; <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
 </pre></div>
 <p>
 
@@ -143,8 +174,8 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00053">53</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00053"></a>00053 : <a class="code" href="class_abstract_class.html#b00143da6ace1d661a4ce6148052b4c6">AbstractClass</a>(<span class="keyword">false</span>) { }
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00055">55</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00055"></a>00055 : <a class="code" href="class_abstract_class.html#b00143da6ace1d661a4ce6148052b4c6">AbstractClass</a>(<span class="keyword">false</span>) { }
 </pre></div>
 <p>
 
@@ -168,7 +199,7 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00060">60</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00062">62</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -189,7 +220,7 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00061">61</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00063">63</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -210,7 +241,7 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00059">59</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00061">61</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -234,8 +265,8 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>Implements <a class="el" href="class_abstract_class.html#2199057db5f883039f402c36691cab95">AbstractClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00017">17</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00037"></a>00037 { this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a> = -1; <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00019">19</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00039"></a>00039 { this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a> = -1; <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
 </pre></div>
 <p>
 
@@ -298,8 +329,8 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00045">45</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00046"></a>00046                 { <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a> &lt; this-&gt;<a class="code" href="class_script_class.html#6fafdbd7c3f81921ab6630cfd2d4b35b">Type</a>-&gt;<a class="code" href="class_script_type_class.html#3dae3388c3f608905d1c1d805d60cba5">ActionsCount</a>; } 
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00047">47</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00048"></a>00048                 { <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a> &lt; this-&gt;<a class="code" href="class_script_class.html#6fafdbd7c3f81921ab6630cfd2d4b35b">Type</a>-&gt;<a class="code" href="class_script_type_class.html#3dae3388c3f608905d1c1d805d60cba5">ActionsCount</a>; } 
 </pre></div>
 <p>
 
@@ -325,8 +356,8 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>Implements <a class="el" href="class_abstract_class.html#4b9e0e08e3b4a0ebd128c56f6f62649c">AbstractClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00020">20</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00037"></a>00037 { this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a> = -1; <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00022">22</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00039"></a>00039 { this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a> = -1; <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
 </pre></div>
 <p>
 
@@ -349,8 +380,8 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00042">42</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00043"></a>00043                 { ++this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a>; <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_script_class.html#e865faae7a2696520ea1d0b4c1f565f8">HasNextAction</a>(); } 
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00044">44</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00045"></a>00045                 { ++this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a>; <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_script_class.html#e865faae7a2696520ea1d0b4c1f565f8">HasNextAction</a>(); } 
 </pre></div>
 <p>
 
@@ -373,8 +404,8 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00036">36</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00037"></a>00037                 { this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a> = -1; <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00038">38</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00039"></a>00039                 { this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a> = -1; <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
 </pre></div>
 <p>
 
@@ -409,8 +440,8 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>Implements <a class="el" href="class_abstract_class.html#ed6e24306b16d1b0e91b99ffa665ecdf">AbstractClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00021">21</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00037"></a>00037 { this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a> = -1; <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00023">23</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00039"></a>00039 { this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a> = -1; <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
 </pre></div>
 <p>
 
@@ -434,7 +465,7 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00060">60</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00062">62</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -456,7 +487,7 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00061">61</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00063">63</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -478,7 +509,7 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00059">59</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00061">61</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -500,8 +531,8 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00039">39</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00040"></a>00040                 { this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a> = idx; <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00041">41</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00042"></a>00042                 { this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a> = idx; <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
 </pre></div>
 <p>
 
@@ -526,8 +557,8 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>Implements <a class="el" href="class_abstract_class.html#0cb25b4c3696197eb93b61d04de3a1e7">AbstractClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00028">28</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00037"></a>00037 { this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a> = -1; <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00030">30</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00039"></a>00039 { this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a> = -1; <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
 </pre></div>
 <p>
 
@@ -552,8 +583,8 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>Implements <a class="el" href="class_abstract_class.html#df5b5602d0b167206ee822dba1f48a15">AbstractClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00027">27</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00037"></a>00037 { this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a> = -1; <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00029">29</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00039"></a>00039 { this-&gt;<a class="code" href="class_script_class.html#a1e7e9c123f87adef3dc6906040cf710">idxCurrentLine</a> = -1; <span class="keywordflow">return</span> <span class="keyword">true</span>; } 
 </pre></div>
 <p>
 
@@ -573,7 +604,7 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00059">59</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00061">61</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -590,7 +621,7 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00060">60</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00062">62</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -607,14 +638,14 @@ Inheritance diagram for ScriptClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00059">59</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_script_class_8h-source.html#l00061">61</a> of file <a class="el" href="_script_class_8h-source.html">ScriptClass.h</a>.</p>
 
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="_script_class_8h-source.html">ScriptClass.h</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:46:00 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:41:09 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

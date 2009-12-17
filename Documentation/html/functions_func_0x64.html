@@ -39,6 +39,8 @@
       <li class="current"><a href="functions_func.html"><span>Functions</span></a></li>
       <li><a href="functions_vars.html"><span>Variables</span></a></li>
       <li><a href="functions_type.html"><span>Typedefs</span></a></li>
+      <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
+      <li><a href="functions_eval.html"><span>Enumerator</span></a></li>
     </ul>
   </div>
   <div class="tabs">
@@ -80,6 +82,8 @@
 <li>DamageArea()
 : <a class="el" href="class_map_class.html#46ed63abb86c8997068bdcdb6293150d">MapClass</a>
 , <a class="el" href="class_wave_class.html#c920f2059563e109063c1ebfa9b4194c">WaveClass</a>
+<li>DDCreate()
+: <a class="el" href="class_direct_draw_wrap.html#f540d18949b25e073ba30505041f48f5">DirectDrawWrap</a>
 <li>Deactivate()
 : <a class="el" href="class_techno_class.html#c7537e3285bb8498e91e480792203c34">TechnoClass</a>
 <li>DecideUnitFate()
@@ -104,8 +108,8 @@
 <li>Deselect()
 : <a class="el" href="class_object_class.html#e93284c0ced1868789ccc17e48614470">ObjectClass</a>
 <li>Destination()
-: <a class="el" href="class_teleport_locomotion_class.html#eb71a0b7426308da85ad77ce417a2611">TeleportLocomotionClass</a>
-, <a class="el" href="class_locomotion_class.html#524932d1b51afe9851ad0424c5246a03">LocomotionClass</a>
+: <a class="el" href="class_locomotion_class.html#524932d1b51afe9851ad0424c5246a03">LocomotionClass</a>
+, <a class="el" href="class_teleport_locomotion_class.html#eb71a0b7426308da85ad77ce417a2611">TeleportLocomotionClass</a>
 <li>DestroyAll()
 : <a class="el" href="class_house_class.html#735137a493efd2840a01621bd3166ca4">HouseClass</a>
 <li>DestroyAllBuildings()
@@ -160,7 +164,8 @@
 <li>DisposeOfArt()
 : <a class="el" href="class_radar_class.html#440df7d015acde15c6267593be3769d0">RadarClass</a>
 <li>DistanceFrom()
-: <a class="el" href="class_vector2_d.html#96745b7f42a59870c37d922370094e1d">Vector2D&lt; T &gt;</a>
+: <a class="el" href="class_object_class.html#ed7e096bbeb8fb2b74a32dc17fdd0469">ObjectClass</a>
+, <a class="el" href="class_vector2_d.html#96745b7f42a59870c37d922370094e1d">Vector2D&lt; T &gt;</a>
 , <a class="el" href="class_vector3_d.html#dab8f1b914f161bb5a8b1cb17988267d">Vector3D&lt; T &gt;</a>
 <li>Do_Turn()
 : <a class="el" href="class_locomotion_class.html#280289ea3fb14831bc18b4ba08c1dc2b">LocomotionClass</a>
@@ -170,11 +175,11 @@
 <li>DoUnitsSelfHeal()
 : <a class="el" href="class_house_class.html#72d5282984662562b60d2984727dcbf5">HouseClass</a>
 <li>Draw()
-: <a class="el" href="class_spotlight_class.html#6f3b27cd7a57f1f9d36764ab1430d655">SpotlightClass</a>
+: <a class="el" href="class_object_class.html#d9ac2606faacb674999f2a47aebbc582">ObjectClass</a>
 , <a class="el" href="class_g_screen_class.html#340465ee55ee8751b4151a09093ce1e4">GScreenClass</a>
 , <a class="el" href="class_load_progress_manager.html#2dda0b6151b44784c921510217a0930c">LoadProgressManager</a>
-, <a class="el" href="class_object_class.html#d9ac2606faacb674999f2a47aebbc582">ObjectClass</a>
 , <a class="el" href="class_overlay_type_class.html#15a3ead05162620efdbdc7e9a30e1e22">OverlayTypeClass</a>
+, <a class="el" href="class_spotlight_class.html#6f3b27cd7a57f1f9d36764ab1430d655">SpotlightClass</a>
 , <a class="el" href="class_w_w_mouse_class.html#cf8b75fae3a93eb08baa0842f951962f">WWMouseClass</a>
 <li>Draw_Magnetic()
 : <a class="el" href="class_wave_class.html#9ea054d5a489c54260a1cf0b7dd35222">WaveClass</a>
@@ -184,6 +189,10 @@
 : <a class="el" href="class_wave_class.html#92bf10b424c4f591df09106e382eb514">WaveClass</a>
 <li>Draw_Point()
 : <a class="el" href="class_locomotion_class.html#71b8dcbd291aacad6c7de1803bb30ffb">LocomotionClass</a>
+<li>DrawActionLines()
+: <a class="el" href="class_techno_class.html#a8171ee1d34d72743d4c8aea33d9354a">TechnoClass</a>
+<li>DrawAgain()
+: <a class="el" href="class_object_class.html#1cdb76c33ebef047f0c7f80559441d1b">ObjectClass</a>
 <li>DrawALinkTo()
 : <a class="el" href="class_object_class.html#ecea57e3a52a6ba3f60e602177f4905a">ObjectClass</a>
 <li>DrawExtraInfo()
@@ -191,13 +200,17 @@
 <li>DrawExtras()
 : <a class="el" href="class_object_class.html#af486c877948a3a67c52c5d75d32b0a8">ObjectClass</a>
 <li>DrawHealthBar()
-: <a class="el" href="class_techno_class.html#ed77a448969d5a0619aa53d01d386b23">TechnoClass</a>
+: <a class="el" href="class_techno_class.html#555d38b170d5cc1d2622eb182577a92c">TechnoClass</a>
+<li>DrawIfVisible()
+: <a class="el" href="class_object_class.html#f2c5bba44eb95ef6aa1f6822f9599342">ObjectClass</a>
 <li>Drawing_Code()
 : <a class="el" href="class_locomotion_class.html#46bcc20f3676d4fd467f64b743abc49c">LocomotionClass</a>
 <li>DrawLine()
 : <a class="el" href="class_surface.html#b65c79c75dd52e88605d3fd1fc63c9f3">Surface</a>
+, <a class="el" href="class_d_surface.html#7eda1782a993db3ec0b46949a61425dc">DSurface</a>
 <li>DrawLineEx()
-: <a class="el" href="class_surface.html#55b0b251053aa466ad3d7c1fe69d3676">Surface</a>
+: <a class="el" href="class_d_surface.html#9d02d95378bb676e3822fe5631c64d0c">DSurface</a>
+, <a class="el" href="class_surface.html#55b0b251053aa466ad3d7c1fe69d3676">Surface</a>
 <li>DrawLinks()
 : <a class="el" href="class_capture_manager_class.html#da1a50436c080a56b12a2a05be849d80">CaptureManagerClass</a>
 <li>DrawObjectsCloaked()
@@ -209,17 +222,18 @@
 <li>DrawRadialIndicator()
 : <a class="el" href="class_object_class.html#4c1341444749bcdde1a475ea8391f361">ObjectClass</a>
 <li>DrawRect()
-: <a class="el" href="class_surface.html#e646051a970186360562dd9923b45d38">Surface</a>
+: <a class="el" href="class_d_surface.html#dddde1d1d0d6a20a3a0a04c6d698eaeb">DSurface</a>
+, <a class="el" href="class_surface.html#e646051a970186360562dd9923b45d38">Surface</a>
 <li>DrawRectEx()
-: <a class="el" href="class_surface.html#b9fab2b792e36da4516139163fb1debf">Surface</a>
+: <a class="el" href="class_d_surface.html#0d5920355f1acbfeeaca1fb15ee4e76b">DSurface</a>
+, <a class="el" href="class_surface.html#b9fab2b792e36da4516139163fb1debf">Surface</a>
 <li>DrawSHP()
-: <a class="el" href="class_unit_class.html#9b86e78796959ce09d7768c770f31e77">UnitClass</a>
-, <a class="el" href="class_surface.html#5f40f45f25baf6fd25845f032358b3d7">Surface</a>
+: <a class="el" href="class_surface.html#5f40f45f25baf6fd25845f032358b3d7">Surface</a>
+, <a class="el" href="class_unit_class.html#9b86e78796959ce09d7768c770f31e77">UnitClass</a>
 <li>DrawTeamDropdown()
 : <a class="el" href="class_m_p_game_mode_type_class.html#29db6d8c910f9f69402502998f7cfae4">MPGameModeTypeClass</a>
 <li>DrawText()
-: <a class="el" href="class_surface.html#9b866d72cf1d91bcadd2e3b5eee47717">Surface</a>
-, <a class="el" href="class_load_progress_manager.html#45a203c050d2a2038ea02fd6c2c8a084">LoadProgressManager</a>
+: <a class="el" href="class_load_progress_manager.html#45a203c050d2a2038ea02fd6c2c8a084">LoadProgressManager</a>
 , <a class="el" href="class_surface.html#99f5ee9d9d59596448ceaa0f06e08336">Surface</a>
 <li>DrawTimer()
 : <a class="el" href="class_tactical_class.html#8245931c92108048bb6ac7a1929d49f6">TacticalClass</a>
@@ -227,6 +241,8 @@
 : <a class="el" href="class_techno_class.html#b4bb9ea5657c793bc6478a120296b6e5">TechnoClass</a>
 <li>DrawVXL()
 : <a class="el" href="class_unit_class.html#246fcf5415cf71629741aff7416610ed">UnitClass</a>
+<li>DSurface()
+: <a class="el" href="class_d_surface.html#f00f7f7c155289e27141ba9cfee10c4b">DSurface</a>
 <li>DTOR_0()
 : <a class="el" href="struct_unsorted_1_1_audio_controller.html#cc16711ddbe4aeabfc1c6b6408444a37">Unsorted::AudioController</a>
 <li>DTOR_1()
@@ -239,7 +255,7 @@
 : <a class="el" href="class_dynamic_vector_class.html#ab19ab24b184b8d0aac3c2767fa23d22">DynamicVectorClass&lt; T &gt;</a>
 </ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:47 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:40:53 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -34,13 +34,13 @@
 <h1>Conversions.h</h1><a href="_conversions_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef CONVERSIONS_H</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define CONVERSIONS_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
-<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;Helpers\Macro.h&gt;</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;<a class="code" href="_macro_8h.html">Helpers/Macro.h</a>&gt;</span>
 <a name="l00005"></a>00005 
 <a name="l00006"></a>00006 <span class="comment">// converters</span>
 <a name="l00007"></a><a class="code" href="class_conversions.html">00007</a> <span class="keyword">class </span><a class="code" href="class_conversions.html">Conversions</a>
 <a name="l00008"></a>00008 {
 <a name="l00009"></a>00009 <span class="keyword">public</span>:
-<a name="l00010"></a><a class="code" href="class_conversions.html#caf41ae6b164335fa2a9466eb4c04c62">00010</a>         <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="class_conversions.html#caf41ae6b164335fa2a9466eb4c04c62">Str2Armor</a>(<span class="keywordtype">char</span> *buf, DWORD *specialFX) {
+<a name="l00010"></a><a class="code" href="class_conversions.html#caf41ae6b164335fa2a9466eb4c04c62">00010</a>         <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="class_conversions.html#caf41ae6b164335fa2a9466eb4c04c62">Str2Armor</a>(<span class="keywordtype">char</span> *buf, <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> *specialFX) {
 <a name="l00011"></a>00011                 <span class="keywordflow">if</span>(!buf) { <span class="keywordflow">return</span> 0.0; }
 <a name="l00012"></a>00012                 <span class="keywordflow">if</span>(strchr(buf, <span class="charliteral">'%'</span>)) {
 <a name="l00013"></a>00013                         <span class="keywordtype">bool</span> specialed = <span class="keyword">false</span>;
@@ -86,7 +86,7 @@
 <a name="l00053"></a>00053 
 <a name="l00054"></a>00054         <span class="comment">// OMG OPTIMIZED:</span>
 <a name="l00055"></a>00055         <span class="comment">// http://graphics.stanford.edu/~seander/bithacks.html#IntegerLog</span>
-<a name="l00056"></a><a class="code" href="class_conversions.html#e8d4f32fa751343f1f4af6cd7c07e68c">00056</a>         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_conversions.html#e8d4f32fa751343f1f4af6cd7c07e68c">Int2Highest</a>(DWORD v) {
+<a name="l00056"></a><a class="code" href="class_conversions.html#e8d4f32fa751343f1f4af6cd7c07e68c">00056</a>         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_conversions.html#e8d4f32fa751343f1f4af6cd7c07e68c">Int2Highest</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> v) {
 <a name="l00057"></a>00057                 <span class="keyword">register</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> r; <span class="comment">// result of log2(v) will go here</span>
 <a name="l00058"></a>00058                 <span class="keyword">register</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> shift;
 <a name="l00059"></a>00059 
@@ -103,7 +103,7 @@
 <a name="l00070"></a>00070 
 <a name="l00071"></a>00071 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:44 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:40:50 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

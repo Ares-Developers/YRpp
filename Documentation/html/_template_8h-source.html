@@ -40,176 +40,110 @@
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &lt;<a class="code" href="_syringe_8h.html">Syringe.h</a>&gt;</span>
 <a name="l00005"></a>00005 
-<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;<a class="code" href="_object_class_8h.html">ObjectClass.h</a>&gt;</span>
-<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;<a class="code" href="_general_definitions_8h.html">GeneralDefinitions.h</a>&gt;</span>
-<a name="l00008"></a>00008 <span class="preprocessor">#include &lt;<a class="code" href="_cell_spread_8h.html">CellSpread.h</a>&gt;</span>
-<a name="l00009"></a>00009 <span class="preprocessor">#include &lt;<a class="code" href="_map_class_8h.html">MapClass.h</a>&gt;</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include &lt;functional&gt;</span>
-<a name="l00011"></a>00011 <span class="preprocessor">#include &lt;hash_map&gt;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;functional&gt;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;hash_map&gt;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &lt;<a class="code" href="_type_8h.html">Helpers/Type.h</a>&gt;</span>
+<a name="l00009"></a>00009 
+<a name="l00010"></a>00010 <span class="comment">// here be dragons(plenty)</span>
+<a name="l00011"></a>00011 
 <a name="l00012"></a>00012 
-<a name="l00013"></a>00013 <span class="comment">// here be dragons(plenty)</span>
+<a name="l00013"></a>00013 <span class="comment">// return functors</span>
 <a name="l00014"></a>00014 
-<a name="l00015"></a>00015 
-<a name="l00016"></a>00016 <span class="comment">// return functors</span>
-<a name="l00017"></a>00017 
-<a name="l00018"></a>00018 <span class="comment">// set EAX to smth, return to smth</span>
-<a name="l00019"></a>00019 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
-<a name="l00020"></a><a class="code" href="classretfunc.html">00020</a> <span class="keyword">class </span><a class="code" href="classretfunc.html">retfunc</a> {
-<a name="l00021"></a>00021 <span class="keyword">protected</span>:
-<a name="l00022"></a><a class="code" href="classretfunc.html#43ea92f84e1ac2ee90fbbd828613e0cd">00022</a>         <a class="code" href="class_r_e_g_i_s_t_e_r_s.html">REGISTERS</a> *<a class="code" href="classretfunc.html#43ea92f84e1ac2ee90fbbd828613e0cd">R</a>;
-<a name="l00023"></a><a class="code" href="classretfunc.html#4411a3a86514fb2c07d37fc54d26062d">00023</a>         DWORD <a class="code" href="classretfunc.html#4411a3a86514fb2c07d37fc54d26062d">retAddr</a>;
-<a name="l00024"></a>00024 <span class="keyword">public</span>:
-<a name="l00025"></a><a class="code" href="classretfunc.html#0f58dfd3d40222e2b2f83407997e2d37">00025</a>         <a class="code" href="classretfunc.html#0f58dfd3d40222e2b2f83407997e2d37">retfunc</a>(<a class="code" href="class_r_e_g_i_s_t_e_r_s.html">REGISTERS</a> *r, DWORD addr) : <a class="code" href="classretfunc.html#43ea92f84e1ac2ee90fbbd828613e0cd">R</a>(r), <a class="code" href="classretfunc.html#4411a3a86514fb2c07d37fc54d26062d">retAddr</a>(addr) {};
-<a name="l00026"></a><a class="code" href="classretfunc.html#8cc4f9f1decab20ef60a917ffd41288d">00026</a>         <span class="keywordtype">int</span> <a class="code" href="classretfunc.html#8cc4f9f1decab20ef60a917ffd41288d">operator()</a>( T Result ) {
-<a name="l00027"></a>00027                 <a class="code" href="classretfunc.html#43ea92f84e1ac2ee90fbbd828613e0cd">R</a>-&gt;<a class="code" href="class_r_e_g_i_s_t_e_r_s.html#fae6bab8364c2365614b5ec1df3a4f60">set_EAX</a>((DWORD)Result);
-<a name="l00028"></a>00028                 <span class="keywordflow">return</span> <a class="code" href="classretfunc.html#4411a3a86514fb2c07d37fc54d26062d">retAddr</a>;
-<a name="l00029"></a>00029         }
-<a name="l00030"></a>00030 };
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032 <span class="comment">// set EAX to smth, return to fixed</span>
-<a name="l00033"></a>00033 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
-<a name="l00034"></a><a class="code" href="classretfunc__fixed.html">00034</a> <span class="keyword">class </span><a class="code" href="classretfunc__fixed.html">retfunc_fixed</a> : <span class="keyword">public</span> <a class="code" href="classretfunc.html">retfunc</a>&lt;T&gt; {
-<a name="l00035"></a>00035 <span class="keyword">protected</span>:
-<a name="l00036"></a><a class="code" href="classretfunc__fixed.html#8db5b4eb384f6b2ed96414d1c346c916">00036</a>         T <a class="code" href="classretfunc__fixed.html#8db5b4eb384f6b2ed96414d1c346c916">Result</a>;
-<a name="l00037"></a>00037 <span class="keyword">public</span>:
-<a name="l00038"></a><a class="code" href="classretfunc__fixed.html#8de41c0810afb3a19d6174729024003b">00038</a>         <a class="code" href="classretfunc__fixed.html#8de41c0810afb3a19d6174729024003b">retfunc_fixed</a>(<a class="code" href="class_r_e_g_i_s_t_e_r_s.html">REGISTERS</a> *r, DWORD addr, T res) : <a class="code" href="classretfunc.html">retfunc</a>(r, addr), <a class="code" href="classretfunc__fixed.html#8db5b4eb384f6b2ed96414d1c346c916">Result</a>(res) {};
-<a name="l00039"></a><a class="code" href="classretfunc__fixed.html#88ea1233ac40848231a69bc2738734bd">00039</a>         <span class="keywordtype">int</span> <a class="code" href="classretfunc__fixed.html#88ea1233ac40848231a69bc2738734bd">operator()</a>() {
-<a name="l00040"></a>00040                 <a class="code" href="classretfunc.html#43ea92f84e1ac2ee90fbbd828613e0cd">R</a>-&gt;<a class="code" href="class_r_e_g_i_s_t_e_r_s.html#fae6bab8364c2365614b5ec1df3a4f60">set_EAX</a>((DWORD)<a class="code" href="classretfunc__fixed.html#8db5b4eb384f6b2ed96414d1c346c916">Result</a>);
-<a name="l00041"></a>00041                 <span class="keywordflow">return</span> <a class="code" href="classretfunc.html#4411a3a86514fb2c07d37fc54d26062d">retAddr</a>;
-<a name="l00042"></a>00042         }
-<a name="l00043"></a>00043 };
-<a name="l00044"></a>00044 
-<a name="l00045"></a>00045 <span class="comment">// return to one of two fixed</span>
-<a name="l00046"></a><a class="code" href="classretfunc__bool.html">00046</a> <span class="keyword">class </span><a class="code" href="classretfunc__bool.html">retfunc_bool</a> : <span class="keyword">public</span> <a class="code" href="classretfunc.html">retfunc</a>&lt;int&gt; {
-<a name="l00047"></a>00047 <span class="keyword">protected</span>:
-<a name="l00048"></a><a class="code" href="classretfunc__bool.html#30de7c6d1925211ab174abd27098ba8c">00048</a>         DWORD <a class="code" href="classretfunc__bool.html#30de7c6d1925211ab174abd27098ba8c">negAddr</a>;
-<a name="l00049"></a>00049 <span class="keyword">public</span>:
-<a name="l00050"></a><a class="code" href="classretfunc__bool.html#800c274ec0ec744aeebdbd9d9d3c3515">00050</a>         <a class="code" href="classretfunc__bool.html#800c274ec0ec744aeebdbd9d9d3c3515">retfunc_bool</a>(<a class="code" href="class_r_e_g_i_s_t_e_r_s.html">REGISTERS</a> *r, DWORD yAddr, DWORD nAddr) : <a class="code" href="classretfunc.html">retfunc</a>(r, yAddr), <a class="code" href="classretfunc__bool.html#30de7c6d1925211ab174abd27098ba8c">negAddr</a>(nAddr) {};
-<a name="l00051"></a><a class="code" href="classretfunc__bool.html#40706d0528a54ff269775bb76865eca6">00051</a>         <span class="keywordtype">int</span> <a class="code" href="classretfunc__bool.html#40706d0528a54ff269775bb76865eca6">operator()</a>(<span class="keywordtype">bool</span> choose) {
-<a name="l00052"></a>00052                 <span class="keywordflow">return</span> choose ? <a class="code" href="classretfunc.html#4411a3a86514fb2c07d37fc54d26062d">retAddr</a> : <a class="code" href="classretfunc__bool.html#30de7c6d1925211ab174abd27098ba8c">negAddr</a>;
-<a name="l00053"></a>00053         }
-<a name="l00054"></a>00054 };
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056 <span class="comment">// invalid pointers</span>
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T1, <span class="keyword">typename</span> T2&gt;
-<a name="l00059"></a><a class="code" href="_template_8h.html#d5a2392928485c9c890a608601374569">00059</a> <span class="keywordtype">void</span> <a class="code" href="_template_8h.html#d5a2392928485c9c890a608601374569">AnnounceInvalidPointerMap</a>(stdext::hash_map&lt;T1, T2&gt; &amp;map, <span class="keywordtype">void</span> *ptr) {
-<a name="l00060"></a>00060         stdext::hash_map&lt;T1, T2&gt;::iterator i = map.find(reinterpret_cast&lt;T1&gt;(ptr));
-<a name="l00061"></a>00061         <span class="keywordflow">if</span>(i != map.end()) {
-<a name="l00062"></a>00062                 map.erase(i);
-<a name="l00063"></a>00063         }
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065         <span class="keywordflow">for</span>(i = map.begin(); i != map.end(); ++i) {
-<a name="l00066"></a>00066                 <span class="keywordflow">if</span>(ptr == ((<span class="keywordtype">void</span> *)(i-&gt;second))) {
-<a name="l00067"></a>00067                         map.erase(i-&gt;first);
-<a name="l00068"></a>00068                 }
-<a name="l00069"></a>00069         }
-<a name="l00070"></a>00070 }
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T1&gt;
-<a name="l00073"></a><a class="code" href="_template_8h.html#99fb4882ac33ad0415bcba966532bd01">00073</a> <span class="keywordtype">void</span> <a class="code" href="_template_8h.html#99fb4882ac33ad0415bcba966532bd01">AnnounceInvalidPointer</a>(T1 elem, <span class="keywordtype">void</span> *ptr) {
-<a name="l00074"></a>00074         <span class="keywordflow">if</span>(ptr == (<span class="keywordtype">void</span> *)elem) {
-<a name="l00075"></a>00075                 elem = NULL;
-<a name="l00076"></a>00076         }
-<a name="l00077"></a>00077 }
-<a name="l00078"></a>00078 
-<a name="l00079"></a>00079 
-<a name="l00080"></a>00080 <span class="comment">// cell spread functors</span>
-<a name="l00081"></a>00081 
-<a name="l00082"></a><a class="code" href="class_cell_spread_applicator.html">00082</a> <span class="keyword">class </span><a class="code" href="class_cell_spread_applicator.html">CellSpreadApplicator</a>
-<a name="l00083"></a>00083         : <span class="keyword">public</span> std::binary_function&lt;const ObjectClass *, const CellStruct *, void&gt; {
-<a name="l00084"></a>00084         <span class="keyword">public</span>:
-<a name="l00085"></a><a class="code" href="class_cell_spread_applicator.html#bb940337d72ad0040e1905f31774195d">00085</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_cell_spread_applicator.html#bb940337d72ad0040e1905f31774195d">operator() </a>(<a class="code" href="class_object_class.html">ObjectClass</a> *obj, <a class="code" href="class_vector2_d.html">CellStruct</a> *origin) {
-<a name="l00086"></a>00086                 
-<a name="l00087"></a>00087                 }
-<a name="l00088"></a>00088 };
-<a name="l00089"></a>00089 
-<a name="l00090"></a><a class="code" href="class_cell_spread_iterator.html">00090</a> <span class="keyword">class </span><a class="code" href="class_cell_spread_iterator.html">CellSpreadIterator</a> {
-<a name="l00091"></a>00091 <span class="keyword">protected</span>:
-<a name="l00092"></a><a class="code" href="class_cell_spread_iterator.html#18186662ce02f8f605376ff85c481f40">00092</a>         <a class="code" href="class_vector2_d.html">CellStruct</a> *<a class="code" href="class_cell_spread_iterator.html#18186662ce02f8f605376ff85c481f40">origin</a>;
-<a name="l00093"></a><a class="code" href="class_cell_spread_iterator.html#31094eba3ac034e5b11040fd4ab20bd0">00093</a>         DWORD <a class="code" href="class_cell_spread_iterator.html#31094eba3ac034e5b11040fd4ab20bd0">radius</a>;
-<a name="l00094"></a><a class="code" href="class_cell_spread_iterator.html#102f71c35226b1c5e5a74b75ddb5c41e">00094</a>         DWORD <a class="code" href="class_cell_spread_iterator.html#102f71c35226b1c5e5a74b75ddb5c41e">position</a>;
-<a name="l00095"></a><a class="code" href="class_cell_spread_iterator.html#1161bdb66863b16d07dd13b6402be284">00095</a>         <a class="code" href="class_cell_spread_applicator.html">CellSpreadApplicator</a> <a class="code" href="class_cell_spread_iterator.html#1161bdb66863b16d07dd13b6402be284">callback</a>;
-<a name="l00096"></a>00096         
-<a name="l00097"></a>00097         <span class="keyword">public</span>:
-<a name="l00098"></a><a class="code" href="class_cell_spread_iterator.html#6a318df09a63a892f7ba2e666bfc3b9f">00098</a>                 <a class="code" href="class_cell_spread_iterator.html#6a318df09a63a892f7ba2e666bfc3b9f">CellSpreadIterator</a>(<a class="code" href="class_cell_spread_applicator.html">CellSpreadApplicator</a> &amp;_callback, <a class="code" href="class_vector2_d.html">CellStruct</a> *_origin, DWORD _radius) 
-<a name="l00099"></a>00099                         : <a class="code" href="class_cell_spread_iterator.html#1161bdb66863b16d07dd13b6402be284">callback</a>(_callback), <a class="code" href="class_cell_spread_iterator.html#18186662ce02f8f605376ff85c481f40">origin</a>(_origin), <a class="code" href="class_cell_spread_iterator.html#31094eba3ac034e5b11040fd4ab20bd0">radius</a>(_radius), <a class="code" href="class_cell_spread_iterator.html#102f71c35226b1c5e5a74b75ddb5c41e">position</a>(0)
-<a name="l00100"></a>00100                         { }
-<a name="l00101"></a>00101 
-<a name="l00102"></a><a class="code" href="class_cell_spread_iterator.html#9680f90cf79e2b49dbe7912dd60e5406">00102</a>                 <span class="keywordtype">void</span> <a class="code" href="class_cell_spread_iterator.html#9680f90cf79e2b49dbe7912dd60e5406">Apply</a>() {
-<a name="l00103"></a>00103                         DWORD countCells = <a class="code" href="class_cell_spread.html#62f51a45da9dc3fec4399a20861fa39c">CellSpread::NumCells</a>(<a class="code" href="class_cell_spread_iterator.html#31094eba3ac034e5b11040fd4ab20bd0">radius</a>);
-<a name="l00104"></a>00104 
-<a name="l00105"></a>00105                         <span class="keywordflow">for</span>(; <a class="code" href="class_cell_spread_iterator.html#102f71c35226b1c5e5a74b75ddb5c41e">position</a> &lt; countCells; ++<a class="code" href="class_cell_spread_iterator.html#102f71c35226b1c5e5a74b75ddb5c41e">position</a>) {
-<a name="l00106"></a>00106                                 <a class="code" href="class_vector2_d.html">CellStruct</a> tmpCell = <a class="code" href="class_cell_spread.html#bd22aaa40df2c8b02fb3a85b6f87e19b">CellSpread::GetCell</a>(<a class="code" href="class_cell_spread_iterator.html#102f71c35226b1c5e5a74b75ddb5c41e">position</a>);
-<a name="l00107"></a>00107                                 tmpCell += *<a class="code" href="class_cell_spread_iterator.html#18186662ce02f8f605376ff85c481f40">origin</a>;
-<a name="l00108"></a>00108                                 <span class="keywordflow">if</span>(<a class="code" href="class_map_class.html#b896e3a272243c631327c71643832da3">MapClass::Global</a>()-&gt;CellExists(&amp;tmpCell)) {
-<a name="l00109"></a>00109                                         <a class="code" href="class_cell_class.html">CellClass</a> *c = <a class="code" href="class_map_class.html#b896e3a272243c631327c71643832da3">MapClass::Global</a>()-&gt;<a class="code" href="class_map_class.html#d0b443988a90d48bb53fcd6a884c96e4">GetCellAt</a>(&amp;tmpCell);
-<a name="l00110"></a>00110                                         <span class="keywordflow">for</span>(<a class="code" href="class_object_class.html">ObjectClass</a> *curObj = c-&gt;<a class="code" href="class_cell_class.html#9a0a80cec2516b95166d95a311fa0063">GetContent</a>(); curObj; curObj = curObj-&gt;<a class="code" href="class_object_class.html#e3d40481ee8e7a74b3d20e0b0f8ac518">NextObject</a>) {
-<a name="l00111"></a>00111                                                 <a class="code" href="class_cell_spread_iterator.html#1161bdb66863b16d07dd13b6402be284">callback</a>(curObj, <a class="code" href="class_cell_spread_iterator.html#18186662ce02f8f605376ff85c481f40">origin</a>);
-<a name="l00112"></a>00112                                         }
-<a name="l00113"></a>00113                                 }
-<a name="l00114"></a>00114                         }
-<a name="l00115"></a>00115                 }
-<a name="l00116"></a>00116 
-<a name="l00117"></a>00117 };
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119 
-<a name="l00120"></a>00120 <span class="comment">// trajectory functors</span>
-<a name="l00121"></a>00121 
-<a name="l00122"></a>00122 <span class="preprocessor">#include &lt;Helpers\Other.h&gt;</span>
-<a name="l00123"></a><a class="code" href="class_cell_sequence_applicator.html">00123</a> <span class="keyword">class </span><a class="code" href="class_cell_sequence_applicator.html">CellSequenceApplicator</a>
-<a name="l00124"></a>00124         : <span class="keyword">public</span> std::unary_function&lt;const CellClass *, void&gt; {
-<a name="l00125"></a>00125         <span class="keyword">public</span>:
-<a name="l00126"></a><a class="code" href="class_cell_sequence_applicator.html#9c44b87c20e865c5d17d9676372934c4">00126</a>                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_cell_sequence_applicator.html#9c44b87c20e865c5d17d9676372934c4">operator() </a>(<a class="code" href="class_cell_class.html">CellClass</a> *cell) {
-<a name="l00127"></a>00127                 
-<a name="l00128"></a>00128                 }
-<a name="l00129"></a>00129 };
-<a name="l00130"></a>00130 
-<a name="l00131"></a><a class="code" href="class_cell_sequence.html">00131</a> <span class="keyword">class </span><a class="code" href="class_cell_sequence.html">CellSequence</a> {
-<a name="l00132"></a><a class="code" href="class_cell_sequence.html#0dea667d2dfb5d53a1d2df1f33b853ae">00132</a>         <a class="code" href="class_x_y.html">XY</a> <a class="code" href="class_cell_sequence.html#0dea667d2dfb5d53a1d2df1f33b853ae">sta</a>;
-<a name="l00133"></a><a class="code" href="class_cell_sequence.html#c7cd4b7faeae33dad055e4ddad3ace28">00133</a>         <a class="code" href="class_x_y.html">XY</a> <a class="code" href="class_cell_sequence.html#c7cd4b7faeae33dad055e4ddad3ace28">end</a>;
-<a name="l00134"></a>00134 
-<a name="l00135"></a>00135 <span class="keyword">public</span>:
-<a name="l00136"></a><a class="code" href="class_cell_sequence.html#3af1199d25079a6f8d7fb545aa719bdf">00136</a>         <a class="code" href="class_cell_sequence.html#3af1199d25079a6f8d7fb545aa719bdf">CellSequence</a>(<a class="code" href="class_vector3_d.html">CoordStruct</a> *From, <a class="code" href="class_vector3_d.html">CoordStruct</a> *To)
-<a name="l00137"></a>00137          : <a class="code" href="class_cell_sequence.html#0dea667d2dfb5d53a1d2df1f33b853ae">sta</a>(From), <a class="code" href="class_cell_sequence.html#c7cd4b7faeae33dad055e4ddad3ace28">end</a>(To)
-<a name="l00138"></a>00138         {
-<a name="l00139"></a>00139         }
-<a name="l00140"></a>00140 
-<a name="l00141"></a><a class="code" href="class_cell_sequence.html#4995e5365b78e171c92d053bed33829c">00141</a>         <span class="keywordtype">void</span> <a class="code" href="class_cell_sequence.html#4995e5365b78e171c92d053bed33829c">Apply</a>(<a class="code" href="class_cell_sequence_applicator.html">CellSequenceApplicator</a>&amp; Callback) {
-<a name="l00142"></a>00142                 <a class="code" href="class_trajectory.html">Trajectory</a> T(<a class="code" href="class_cell_sequence.html#0dea667d2dfb5d53a1d2df1f33b853ae">sta</a>.<a class="code" href="class_vector3_d.html#0e854a6bea339416f4b138972529dd06">X</a>, <a class="code" href="class_cell_sequence.html#0dea667d2dfb5d53a1d2df1f33b853ae">sta</a>.<a class="code" href="class_vector3_d.html#6f447a10666206e5a885a6112ff16bd3">Y</a>, <a class="code" href="class_cell_sequence.html#c7cd4b7faeae33dad055e4ddad3ace28">end</a>.<a class="code" href="class_vector3_d.html#0e854a6bea339416f4b138972529dd06">X</a>, <a class="code" href="class_cell_sequence.html#c7cd4b7faeae33dad055e4ddad3ace28">end</a>.<a class="code" href="class_vector3_d.html#6f447a10666206e5a885a6112ff16bd3">Y</a>);
-<a name="l00143"></a>00143 
-<a name="l00144"></a>00144                 <a class="code" href="class_trajectory.html#8219e5e79084ca674fa16dbb2f557315">Trajectory::vec</a> allCells;
-<a name="l00145"></a>00145 
-<a name="l00146"></a>00146                 T.<a class="code" href="class_trajectory.html#acde79a38e59351b2251766d8d1b3a00">path</a>(allCells);
-<a name="l00147"></a>00147 
-<a name="l00148"></a>00148                 <span class="keywordflow">for</span>(Trajectory::vec::iterator i = allCells.begin(); i != allCells.end(); ++i) {
-<a name="l00149"></a>00149                         <a class="code" href="class_cell_class.html">CellClass</a> *Cell = <a class="code" href="class_map_class.html#50def5505673490f156d03aedc9a4c50">MapClass::Instance</a>-&gt;<a class="code" href="class_map_class.html#d0b443988a90d48bb53fcd6a884c96e4">GetCellAt</a>(&amp;*i);
-<a name="l00150"></a>00150                         Callback(Cell);
-<a name="l00151"></a>00151                 }
-<a name="l00152"></a>00152         }
-<a name="l00153"></a>00153 };
-<a name="l00154"></a>00154 
-<a name="l00155"></a>00155 <span class="comment">// vroom vroom</span>
-<a name="l00156"></a>00156 <span class="comment">// Westwood uses if(((1 &lt;&lt; HouseClass::ArrayIndex) &amp; TechnoClass::DisplayProductionToHouses) != 0) and other bitfields like this (esp. in CellClass, omg optimized). helper wrapper just because</span>
-<a name="l00157"></a>00157 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;
-<a name="l00158"></a><a class="code" href="class_index_bitfield.html">00158</a> <span class="keyword">class </span><a class="code" href="class_index_bitfield.html">IndexBitfield</a> {
-<a name="l00159"></a><a class="code" href="class_index_bitfield.html#883d80fffe25194d221bdb0f2b14f955">00159</a>         DWORD <a class="code" href="class_index_bitfield.html#883d80fffe25194d221bdb0f2b14f955">data</a>;
-<a name="l00160"></a>00160         <span class="keyword">public</span>:
-<a name="l00161"></a><a class="code" href="class_index_bitfield.html#4e913ff0e1a707b9a177dae40c2d572d">00161</a>         <a class="code" href="class_index_bitfield.html#4e913ff0e1a707b9a177dae40c2d572d">IndexBitfield</a>(<span class="keyword">const</span> DWORD defVal = 0) : <a class="code" href="class_index_bitfield.html#883d80fffe25194d221bdb0f2b14f955">data</a>(defVal) {};
-<a name="l00162"></a>00162 
-<a name="l00163"></a><a class="code" href="class_index_bitfield.html#a94cd38f4c8e219f46196073c65ba4da">00163</a>         <span class="keywordtype">bool</span> <a class="code" href="class_index_bitfield.html#a94cd38f4c8e219f46196073c65ba4da">Contains</a>(<span class="keyword">const</span> T obj) {
-<a name="l00164"></a>00164                 <span class="keywordflow">return</span> (this-&gt;<a class="code" href="class_index_bitfield.html#883d80fffe25194d221bdb0f2b14f955">data</a> &amp; (1 &lt;&lt; obj-&gt;ArrayIndex)) != 0;
-<a name="l00165"></a>00165         }
-<a name="l00166"></a><a class="code" href="class_index_bitfield.html#1b5233ba3d13db5af2cda7ae6204e1e6">00166</a>         <span class="keywordtype">void</span> <a class="code" href="class_index_bitfield.html#1b5233ba3d13db5af2cda7ae6204e1e6">Add</a>(<span class="keyword">const</span> T obj) {
-<a name="l00167"></a>00167                 this-&gt;<a class="code" href="class_index_bitfield.html#883d80fffe25194d221bdb0f2b14f955">data</a> |= (1 &lt;&lt; obj-&gt;ArrayIndex);
-<a name="l00168"></a>00168         }
-<a name="l00169"></a><a class="code" href="class_index_bitfield.html#e49d847729023eafeaf3e0fa3a3b57a5">00169</a>         <span class="keywordtype">void</span> <a class="code" href="class_index_bitfield.html#e49d847729023eafeaf3e0fa3a3b57a5">Remove</a>(<span class="keyword">const</span> T obj) {
-<a name="l00170"></a>00170                 this-&gt;<a class="code" href="class_index_bitfield.html#883d80fffe25194d221bdb0f2b14f955">data</a> &amp;= ~(1 &lt;&lt; obj-&gt;ArrayIndex);
-<a name="l00171"></a>00171         }
-<a name="l00172"></a>00172 };
-<a name="l00173"></a>00173 <span class="preprocessor">#endif</span>
+<a name="l00015"></a>00015 <span class="comment">// set EAX to smth, return to smth</span>
+<a name="l00016"></a>00016 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00017"></a><a class="code" href="classretfunc.html">00017</a> <span class="keyword">class </span><a class="code" href="classretfunc.html">retfunc</a> {
+<a name="l00018"></a>00018 <span class="keyword">protected</span>:
+<a name="l00019"></a><a class="code" href="classretfunc.html#43ea92f84e1ac2ee90fbbd828613e0cd">00019</a>         <a class="code" href="class_r_e_g_i_s_t_e_r_s.html">REGISTERS</a> *<a class="code" href="classretfunc.html#43ea92f84e1ac2ee90fbbd828613e0cd">R</a>;
+<a name="l00020"></a><a class="code" href="classretfunc.html#4411a3a86514fb2c07d37fc54d26062d">00020</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="classretfunc.html#4411a3a86514fb2c07d37fc54d26062d">retAddr</a>;
+<a name="l00021"></a>00021 <span class="keyword">public</span>:
+<a name="l00022"></a><a class="code" href="classretfunc.html#0f58dfd3d40222e2b2f83407997e2d37">00022</a>         <a class="code" href="classretfunc.html#0f58dfd3d40222e2b2f83407997e2d37">retfunc</a>(<a class="code" href="class_r_e_g_i_s_t_e_r_s.html">REGISTERS</a> *r, <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> addr) : <a class="code" href="classretfunc.html#43ea92f84e1ac2ee90fbbd828613e0cd">R</a>(r), <a class="code" href="classretfunc.html#4411a3a86514fb2c07d37fc54d26062d">retAddr</a>(addr) {};
+<a name="l00023"></a><a class="code" href="classretfunc.html#8cc4f9f1decab20ef60a917ffd41288d">00023</a>         <span class="keywordtype">int</span> <a class="code" href="classretfunc.html#8cc4f9f1decab20ef60a917ffd41288d">operator()</a>( T Result ) {
+<a name="l00024"></a>00024                 <a class="code" href="classretfunc.html#43ea92f84e1ac2ee90fbbd828613e0cd">R</a>-&gt;<a class="code" href="class_r_e_g_i_s_t_e_r_s.html#fae6bab8364c2365614b5ec1df3a4f60">set_EAX</a>((<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>)Result);
+<a name="l00025"></a>00025                 <span class="keywordflow">return</span> <a class="code" href="classretfunc.html#4411a3a86514fb2c07d37fc54d26062d">retAddr</a>;
+<a name="l00026"></a>00026         }
+<a name="l00027"></a>00027 };
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="comment">// set EAX to smth, return to fixed</span>
+<a name="l00030"></a>00030 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00031"></a><a class="code" href="classretfunc__fixed.html">00031</a> <span class="keyword">class </span><a class="code" href="classretfunc__fixed.html">retfunc_fixed</a> : <span class="keyword">public</span> <a class="code" href="classretfunc.html">retfunc</a>&lt;T&gt; {
+<a name="l00032"></a>00032 <span class="keyword">protected</span>:
+<a name="l00033"></a><a class="code" href="classretfunc__fixed.html#8db5b4eb384f6b2ed96414d1c346c916">00033</a>         T <a class="code" href="classretfunc__fixed.html#8db5b4eb384f6b2ed96414d1c346c916">Result</a>;
+<a name="l00034"></a>00034 <span class="keyword">public</span>:
+<a name="l00035"></a><a class="code" href="classretfunc__fixed.html#8de41c0810afb3a19d6174729024003b">00035</a>         <a class="code" href="classretfunc__fixed.html#8de41c0810afb3a19d6174729024003b">retfunc_fixed</a>(<a class="code" href="class_r_e_g_i_s_t_e_r_s.html">REGISTERS</a> *r, <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> addr, T res) : <a class="code" href="classretfunc.html">retfunc</a>(r, addr), <a class="code" href="classretfunc__fixed.html#8db5b4eb384f6b2ed96414d1c346c916">Result</a>(res) {};
+<a name="l00036"></a><a class="code" href="classretfunc__fixed.html#88ea1233ac40848231a69bc2738734bd">00036</a>         <span class="keywordtype">int</span> <a class="code" href="classretfunc__fixed.html#88ea1233ac40848231a69bc2738734bd">operator()</a>() {
+<a name="l00037"></a>00037                 <a class="code" href="classretfunc.html#43ea92f84e1ac2ee90fbbd828613e0cd">R</a>-&gt;<a class="code" href="class_r_e_g_i_s_t_e_r_s.html#fae6bab8364c2365614b5ec1df3a4f60">set_EAX</a>((<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>)<a class="code" href="classretfunc__fixed.html#8db5b4eb384f6b2ed96414d1c346c916">Result</a>);
+<a name="l00038"></a>00038                 <span class="keywordflow">return</span> <a class="code" href="classretfunc.html#4411a3a86514fb2c07d37fc54d26062d">retAddr</a>;
+<a name="l00039"></a>00039         }
+<a name="l00040"></a>00040 };
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 <span class="comment">// return to one of two fixed</span>
+<a name="l00043"></a><a class="code" href="classretfunc__bool.html">00043</a> <span class="keyword">class </span><a class="code" href="classretfunc__bool.html">retfunc_bool</a> : <span class="keyword">public</span> <a class="code" href="classretfunc.html">retfunc</a>&lt;int&gt; {
+<a name="l00044"></a>00044 <span class="keyword">protected</span>:
+<a name="l00045"></a><a class="code" href="classretfunc__bool.html#30de7c6d1925211ab174abd27098ba8c">00045</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="classretfunc__bool.html#30de7c6d1925211ab174abd27098ba8c">negAddr</a>;
+<a name="l00046"></a>00046 <span class="keyword">public</span>:
+<a name="l00047"></a><a class="code" href="classretfunc__bool.html#800c274ec0ec744aeebdbd9d9d3c3515">00047</a>         <a class="code" href="classretfunc__bool.html#800c274ec0ec744aeebdbd9d9d3c3515">retfunc_bool</a>(<a class="code" href="class_r_e_g_i_s_t_e_r_s.html">REGISTERS</a> *r, <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> yAddr, <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> nAddr) : <a class="code" href="classretfunc.html">retfunc</a>(r, yAddr), <a class="code" href="classretfunc__bool.html#30de7c6d1925211ab174abd27098ba8c">negAddr</a>(nAddr) {};
+<a name="l00048"></a><a class="code" href="classretfunc__bool.html#40706d0528a54ff269775bb76865eca6">00048</a>         <span class="keywordtype">int</span> <a class="code" href="classretfunc__bool.html#40706d0528a54ff269775bb76865eca6">operator()</a>(<span class="keywordtype">bool</span> choose) {
+<a name="l00049"></a>00049                 <span class="keywordflow">return</span> choose ? <a class="code" href="classretfunc.html#4411a3a86514fb2c07d37fc54d26062d">retAddr</a> : <a class="code" href="classretfunc__bool.html#30de7c6d1925211ab174abd27098ba8c">negAddr</a>;
+<a name="l00050"></a>00050         }
+<a name="l00051"></a>00051 };
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053 <span class="comment">// invalid pointers</span>
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T1, <span class="keyword">typename</span> T2&gt;
+<a name="l00056"></a><a class="code" href="_template_8h.html#d5a2392928485c9c890a608601374569">00056</a> <span class="keywordtype">void</span> <a class="code" href="_template_8h.html#d5a2392928485c9c890a608601374569">AnnounceInvalidPointerMap</a>(stdext::hash_map&lt;T1, T2&gt; &amp;map, <span class="keywordtype">void</span> *ptr) {
+<a name="l00057"></a>00057         stdext::hash_map&lt;T1, T2&gt;::iterator i = map.find(reinterpret_cast&lt;T1&gt;(ptr));
+<a name="l00058"></a>00058         <span class="keywordflow">if</span>(i != map.end()) {
+<a name="l00059"></a>00059                 map.erase(i);
+<a name="l00060"></a>00060         }
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062         <span class="keywordflow">for</span>(i = map.begin(); i != map.end(); ++i) {
+<a name="l00063"></a>00063                 <span class="keywordflow">if</span>(ptr == ((<span class="keywordtype">void</span> *)(i-&gt;second))) {
+<a name="l00064"></a>00064                         map.erase(i-&gt;first);
+<a name="l00065"></a>00065                 }
+<a name="l00066"></a>00066         }
+<a name="l00067"></a>00067 }
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T1&gt;
+<a name="l00070"></a><a class="code" href="_template_8h.html#99fb4882ac33ad0415bcba966532bd01">00070</a> <span class="keywordtype">void</span> <a class="code" href="_template_8h.html#99fb4882ac33ad0415bcba966532bd01">AnnounceInvalidPointer</a>(T1 elem, <span class="keywordtype">void</span> *ptr) {
+<a name="l00071"></a>00071         <span class="keywordflow">if</span>(ptr == (<span class="keywordtype">void</span> *)elem) {
+<a name="l00072"></a>00072                 elem = NULL;
+<a name="l00073"></a>00073         }
+<a name="l00074"></a>00074 }
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077 <span class="comment">// vroom vroom</span>
+<a name="l00078"></a>00078 <span class="comment">// Westwood uses if(((1 &lt;&lt; HouseClass::ArrayIndex) &amp; TechnoClass::DisplayProductionToHouses) != 0) and other bitfields like this (esp. in CellClass, omg optimized). helper wrapper just because</span>
+<a name="l00079"></a>00079 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;
+<a name="l00080"></a><a class="code" href="class_index_bitfield.html">00080</a> <span class="keyword">class </span><a class="code" href="class_index_bitfield.html">IndexBitfield</a> {
+<a name="l00081"></a>00081         <span class="keyword">public</span>:
+<a name="l00082"></a><a class="code" href="class_index_bitfield.html#883d80fffe25194d221bdb0f2b14f955">00082</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_index_bitfield.html#883d80fffe25194d221bdb0f2b14f955">data</a>;
+<a name="l00083"></a><a class="code" href="class_index_bitfield.html#4e913ff0e1a707b9a177dae40c2d572d">00083</a>         <a class="code" href="class_index_bitfield.html#4e913ff0e1a707b9a177dae40c2d572d">IndexBitfield</a>(<span class="keyword">const</span> <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> defVal = 0) : <a class="code" href="class_index_bitfield.html#883d80fffe25194d221bdb0f2b14f955">data</a>(defVal) {};
+<a name="l00084"></a>00084 
+<a name="l00085"></a><a class="code" href="class_index_bitfield.html#bb17098e4426461c8ee501b7f8f6d877">00085</a>         <span class="keywordtype">bool</span> <a class="code" href="class_index_bitfield.html#bb17098e4426461c8ee501b7f8f6d877">Contains</a>(<span class="keyword">const</span> T obj)<span class="keyword"> const </span>{
+<a name="l00086"></a>00086                 <span class="keywordflow">return</span> (this-&gt;<a class="code" href="class_index_bitfield.html#883d80fffe25194d221bdb0f2b14f955">data</a> &amp; (1 &lt;&lt; obj-&gt;ArrayIndex)) != 0;
+<a name="l00087"></a>00087         }
+<a name="l00088"></a><a class="code" href="class_index_bitfield.html#1b5233ba3d13db5af2cda7ae6204e1e6">00088</a>         <span class="keywordtype">void</span> <a class="code" href="class_index_bitfield.html#1b5233ba3d13db5af2cda7ae6204e1e6">Add</a>(<span class="keyword">const</span> T obj) {
+<a name="l00089"></a>00089                 this-&gt;<a class="code" href="class_index_bitfield.html#883d80fffe25194d221bdb0f2b14f955">data</a> |= (1 &lt;&lt; obj-&gt;ArrayIndex);
+<a name="l00090"></a>00090         }
+<a name="l00091"></a><a class="code" href="class_index_bitfield.html#e49d847729023eafeaf3e0fa3a3b57a5">00091</a>         <span class="keywordtype">void</span> <a class="code" href="class_index_bitfield.html#e49d847729023eafeaf3e0fa3a3b57a5">Remove</a>(<span class="keyword">const</span> T obj) {
+<a name="l00092"></a>00092                 this-&gt;<a class="code" href="class_index_bitfield.html#883d80fffe25194d221bdb0f2b14f955">data</a> &amp;= ~(1 &lt;&lt; obj-&gt;ArrayIndex);
+<a name="l00093"></a>00093         }
+<a name="l00094"></a><a class="code" href="class_index_bitfield.html#2b23d3bb8222f6d95932b1754ab3fef4">00094</a>         <span class="keywordtype">void</span> <a class="code" href="class_index_bitfield.html#2b23d3bb8222f6d95932b1754ab3fef4">Clear</a>() {
+<a name="l00095"></a>00095                 this-&gt;<a class="code" href="class_index_bitfield.html#883d80fffe25194d221bdb0f2b14f955">data</a> = 0;
+<a name="l00096"></a>00096         }
+<a name="l00097"></a>00097 };
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099 <span class="preprocessor">#include &lt;<a class="code" href="_abstract_class_8h.html">AbstractClass.h</a>&gt;</span>
+<a name="l00100"></a>00100 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;
+<a name="l00101"></a><a class="code" href="_template_8h.html#7a97ba09135e0b78c2f158d74c9f28c6">00101</a> <span class="keyword">inline</span> T <a class="code" href="_template_8h.html#7a97ba09135e0b78c2f158d74c9f28c6">game_cast</a>(<a class="code" href="class_abstract_class.html">AbstractClass</a> * Object) {
+<a name="l00102"></a>00102         <span class="keywordflow">if</span>(Object-&gt;<a class="code" href="class_abstract_class.html#df5b5602d0b167206ee822dba1f48a15">WhatAmI</a>() == <a class="code" href="class_compound_t.html">CompoundT&lt;T&gt;::BaseT::AbsID</a>) {
+<a name="l00103"></a>00103                 <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>T<span class="keyword">&gt;</span>(Object);
+<a name="l00104"></a>00104         }
+<a name="l00105"></a>00105         <span class="keywordflow">return</span> NULL;
+<a name="l00106"></a>00106 };
+<a name="l00107"></a>00107 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:44 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:40:50 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

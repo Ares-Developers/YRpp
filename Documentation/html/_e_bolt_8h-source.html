@@ -51,7 +51,7 @@
 <a name="l00018"></a>00018 
 <a name="l00019"></a><a class="code" href="class_e_bolt.html#b1205ed76ce06988d6d1347f8ba0d671">00019</a>         ~<a class="code" href="class_e_bolt.html">EBolt</a>() {<span class="comment">/*???*/</span>}
 <a name="l00020"></a>00020 
-<a name="l00021"></a>00021         <span class="keywordtype">void</span> <a class="code" href="class_e_bolt.html#716d1f46cc43b87a6d1b88819853bc1a">Fire</a>(<a class="code" href="class_vector3_d.html">CoordStruct</a> P1, <a class="code" href="class_vector3_d.html">CoordStruct</a> P2, DWORD arg18)
+<a name="l00021"></a>00021         <span class="keywordtype">void</span> <a class="code" href="class_e_bolt.html#716d1f46cc43b87a6d1b88819853bc1a">Fire</a>(<a class="code" href="class_vector3_d.html">CoordStruct</a> P1, <a class="code" href="class_vector3_d.html">CoordStruct</a> P2, <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> arg18)
 <a name="l00022"></a>00022                 JMP_THIS(0x4C2A60);
 <a name="l00023"></a>00023 
 <a name="l00024"></a>00024 <span class="comment">//      static void DeleteAll()</span>
@@ -63,10 +63,10 @@
 <a name="l00030"></a>00030         
 <a name="l00031"></a><a class="code" href="class_e_bolt.html#3cf41d6025d2386359410bc96fcfdc40">00031</a>         <a class="code" href="_y_r_p_p_core_8h.html#aae3cb398fbfa33cc83eddc740386cd4">PROPERTY_STRUCT</a>(<a class="code" href="class_vector3_d.html">CoordStruct</a>, <a class="code" href="class_e_bolt.html#228d7e718947e755cc27910c1446965a">Point1</a>);
 <a name="l00032"></a><a class="code" href="class_e_bolt.html#d4a468c9d2acc7c91e67a6aaaa876627">00032</a>         <a class="code" href="_y_r_p_p_core_8h.html#aae3cb398fbfa33cc83eddc740386cd4">PROPERTY_STRUCT</a>(<a class="code" href="class_vector3_d.html">CoordStruct</a>, <a class="code" href="class_e_bolt.html#9fff866632d89cb8dac7aa3ac9f83b72">Point2</a>);
-<a name="l00033"></a><a class="code" href="class_e_bolt.html#c077370101bbf97a5ffb0e9ceb5d439b">00033</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(DWORD, <a class="code" href="class_e_bolt.html#d4a468c9d2acc7c91e67a6aaaa876627">unknown_18</a>);    <span class="comment">//Duration?</span>
+<a name="l00033"></a><a class="code" href="class_e_bolt.html#c077370101bbf97a5ffb0e9ceb5d439b">00033</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_e_bolt.html#d4a468c9d2acc7c91e67a6aaaa876627">unknown_18</a>);    <span class="comment">//Duration?</span>
 <a name="l00034"></a><a class="code" href="class_e_bolt.html#6d6fec9d2f98340797590c30b19826ff">00034</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_e_bolt.html#3d1240ee3fc57db80a1d52eb66616572">Random</a>);  <span class="comment">//Random number between 0 and 256</span>
 <a name="l00035"></a><a class="code" href="class_e_bolt.html#303a0032b27524181db5b2c56da4030e">00035</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="class_techno_class.html">TechnoClass</a>*, <a class="code" href="class_e_bolt.html#63b5cfbaa5b43d299df8270c3db53a4f">Owner</a>);
-<a name="l00036"></a><a class="code" href="class_e_bolt.html#a15f8d396fecd04d771a06ed4e3b7709">00036</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(DWORD, <a class="code" href="class_e_bolt.html#303a0032b27524181db5b2c56da4030e">unknown_24</a>);
+<a name="l00036"></a><a class="code" href="class_e_bolt.html#a15f8d396fecd04d771a06ed4e3b7709">00036</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_e_bolt.html#303a0032b27524181db5b2c56da4030e">unknown_24</a>);
 <a name="l00037"></a><a class="code" href="class_e_bolt.html#ea0b7c8f2d9605e453300b3829cbf5b9">00037</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_e_bolt.html#637c5463cffc66d0e5c56063b8b8f2c8">Lifetime</a>); <span class="comment">// this is &gt;&gt;= 1 each time DrawAll() is called, 0 =&gt; dtor (inline). Hi, welcome to dumb ideas.</span>
 <a name="l00038"></a><a class="code" href="class_e_bolt.html#2594ddb9ac08e93e5153c2186e6335ee">00038</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>, <a class="code" href="class_e_bolt.html#9d4ab0c784d3967e7b32cc788414984f">AlternateColor</a>);
 <a name="l00039"></a>00039 
@@ -74,7 +74,7 @@
 <a name="l00041"></a>00041 
 <a name="l00042"></a>00042 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:44 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:40:50 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

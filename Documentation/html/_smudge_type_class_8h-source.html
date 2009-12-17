@@ -43,50 +43,52 @@
 <a name="l00010"></a><a class="code" href="class_smudge_type_class.html">00010</a> <span class="keyword">class </span><a class="code" href="class_smudge_type_class.html">SmudgeTypeClass</a> : <span class="keyword">public</span> <a class="code" href="class_object_type_class.html">ObjectTypeClass</a>
 <a name="l00011"></a>00011 {
 <a name="l00012"></a>00012 <span class="keyword">public</span>:
-<a name="l00013"></a>00013         <span class="comment">//Array</span>
-<a name="l00014"></a><a class="code" href="class_smudge_type_class.html#7e920448ab632ce0e5ffcdd6660d6c3b">00014</a>         <a class="code" href="_abstract_type_class_8h.html#fe8bccea0bab253a8541b71c149a9d81">ABSTRACTTYPE_ARRAY</a>(<a class="code" href="class_smudge_type_class.html">SmudgeTypeClass</a>);
-<a name="l00015"></a>00015 
-<a name="l00016"></a>00016         <span class="comment">//IPersist</span>
-<a name="l00017"></a><a class="code" href="class_smudge_type_class.html#793ceac583a2ff2423964b4ba0b17da6">00017</a>         <span class="keyword">virtual</span> HRESULT _stdcall <a class="code" href="class_smudge_type_class.html#793ceac583a2ff2423964b4ba0b17da6">GetClassID</a>(CLSID* pClassID) <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019         <span class="comment">//IPersistStream</span>
-<a name="l00020"></a><a class="code" href="class_smudge_type_class.html#4e54bb2757c2a72ac00da3fd608d2f2b">00020</a>         <span class="keyword">virtual</span> HRESULT _stdcall        <a class="code" href="class_smudge_type_class.html#4e54bb2757c2a72ac00da3fd608d2f2b">Load</a>(IStream* pStm) <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
-<a name="l00021"></a><a class="code" href="class_smudge_type_class.html#1ffe5a5fc2896077727b63c15d08332e">00021</a>         <span class="keyword">virtual</span> HRESULT _stdcall        <a class="code" href="class_smudge_type_class.html#1ffe5a5fc2896077727b63c15d08332e">Save</a>(IStream* pStm,BOOL fClearDirty) <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
-<a name="l00022"></a>00022 
-<a name="l00023"></a>00023         <span class="comment">//Destructor</span>
-<a name="l00024"></a><a class="code" href="class_smudge_type_class.html#6488df2ff1969c260d3685a23f9bb184">00024</a>         <span class="keyword">virtual</span> <a class="code" href="class_smudge_type_class.html#6488df2ff1969c260d3685a23f9bb184">~SmudgeTypeClass</a>() <a class="code" href="_y_r_p_p_core_8h.html#5070712bba21161ad840408134ee229f">RX</a>;
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026         <span class="comment">//AbstractClass</span>
-<a name="l00027"></a><a class="code" href="class_smudge_type_class.html#bdc1fea08eb38c4c76546941371d986d">00027</a>         virtual <a class="code" href="_general_definitions_8h.html#a1d95645c44dc819c084adc2b96a3d6a">eAbstractType</a> <a class="code" href="class_smudge_type_class.html#bdc1fea08eb38c4c76546941371d986d">WhatAmI</a>() <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
-<a name="l00028"></a><a class="code" href="class_smudge_type_class.html#3e3b4b11c5616b8d38fcd7607e40d533">00028</a>         virtual <span class="keywordtype">int</span> <a class="code" href="class_smudge_type_class.html#3e3b4b11c5616b8d38fcd7607e40d533">Size</a>() R0;
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030         <span class="comment">//ObjectTypeClass</span>
-<a name="l00031"></a><a class="code" href="class_smudge_type_class.html#4286e7e57f3f11594c39b79460e73f21">00031</a>         virtual <span class="keywordtype">bool</span> <a class="code" href="class_smudge_type_class.html#4286e7e57f3f11594c39b79460e73f21">SpawnAtMapCoords</a>(<a class="code" href="class_vector2_d.html">CellStruct</a>* pMapCoords, <a class="code" href="class_house_class.html">HouseClass</a>* pOwner) R0;
-<a name="l00032"></a><a class="code" href="class_smudge_type_class.html#49df56c5b1ad4940647a68c7bbdda8f9">00032</a>         virtual <a class="code" href="class_object_class.html">ObjectClass</a>* <a class="code" href="class_smudge_type_class.html#49df56c5b1ad4940647a68c7bbdda8f9">CreateObject</a>(<a class="code" href="class_house_class.html">HouseClass</a>* pOwner) R0;
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034         <span class="comment">//SmudgeTypeClass</span>
-<a name="l00035"></a><a class="code" href="class_smudge_type_class.html#ead014bad5f7b9aa19d05fc308a55ab9">00035</a>         virtual <span class="keywordtype">void</span> <a class="code" href="class_smudge_type_class.html#ead014bad5f7b9aa19d05fc308a55ab9">vt_entry_A0</a>(DWORD dwUnk,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4,DWORD dwUnk5) <a class="code" href="_y_r_p_p_core_8h.html#5070712bba21161ad840408134ee229f">RX</a>;
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037         <span class="comment">//Constructor</span>
-<a name="l00038"></a>00038         <a class="code" href="class_smudge_type_class.html">SmudgeTypeClass</a>(const <span class="keywordtype">char</span>* pID) : <a class="code" href="class_object_type_class.html">ObjectTypeClass</a>(false)
-<a name="l00039"></a>00039                 JMP_THIS(0x6B5260);
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041 protected:
-<a name="l00042"></a><a class="code" href="class_smudge_type_class.html#94404cbd2c26784982f87bdc06c9054b">00042</a>         <a class="code" href="class_smudge_type_class.html">SmudgeTypeClass</a>() : <a class="code" href="class_object_type_class.html">ObjectTypeClass</a>(false) { }
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044         <span class="comment">//===========================================================================</span>
-<a name="l00045"></a>00045         <span class="comment">//===== Properties ==========================================================</span>
+<a name="l00013"></a><a class="code" href="class_smudge_type_class.html#4e50e023869090085d4e6bac5dbe10ec39a3164de6399d0470d209a2fc7098bf">00013</a>         <span class="keyword">enum</span> {<a class="code" href="class_smudge_type_class.html#4e50e023869090085d4e6bac5dbe10ec39a3164de6399d0470d209a2fc7098bf">AbsID</a> = <a class="code" href="_general_definitions_8h.html#030738005383524b3e9d63aae7fc4e6c">abs_SmudgeType</a>};
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015         <span class="comment">//Array</span>
+<a name="l00016"></a><a class="code" href="class_smudge_type_class.html#7e920448ab632ce0e5ffcdd6660d6c3b">00016</a>         <a class="code" href="_abstract_type_class_8h.html#fe8bccea0bab253a8541b71c149a9d81">ABSTRACTTYPE_ARRAY</a>(<a class="code" href="class_smudge_type_class.html">SmudgeTypeClass</a>);
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018         <span class="comment">//IPersist</span>
+<a name="l00019"></a><a class="code" href="class_smudge_type_class.html#793ceac583a2ff2423964b4ba0b17da6">00019</a>         <span class="keyword">virtual</span> HRESULT _stdcall <a class="code" href="class_smudge_type_class.html#793ceac583a2ff2423964b4ba0b17da6">GetClassID</a>(CLSID* pClassID) <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021         <span class="comment">//IPersistStream</span>
+<a name="l00022"></a><a class="code" href="class_smudge_type_class.html#4e54bb2757c2a72ac00da3fd608d2f2b">00022</a>         <span class="keyword">virtual</span> HRESULT _stdcall        <a class="code" href="class_smudge_type_class.html#4e54bb2757c2a72ac00da3fd608d2f2b">Load</a>(IStream* pStm) <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
+<a name="l00023"></a><a class="code" href="class_smudge_type_class.html#1ffe5a5fc2896077727b63c15d08332e">00023</a>         <span class="keyword">virtual</span> HRESULT _stdcall        <a class="code" href="class_smudge_type_class.html#1ffe5a5fc2896077727b63c15d08332e">Save</a>(IStream* pStm,BOOL fClearDirty) <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025         <span class="comment">//Destructor</span>
+<a name="l00026"></a><a class="code" href="class_smudge_type_class.html#6488df2ff1969c260d3685a23f9bb184">00026</a>         <span class="keyword">virtual</span> <a class="code" href="class_smudge_type_class.html#6488df2ff1969c260d3685a23f9bb184">~SmudgeTypeClass</a>() <a class="code" href="_y_r_p_p_core_8h.html#5070712bba21161ad840408134ee229f">RX</a>;
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028         <span class="comment">//AbstractClass</span>
+<a name="l00029"></a><a class="code" href="class_smudge_type_class.html#bdc1fea08eb38c4c76546941371d986d">00029</a>         virtual <a class="code" href="_general_definitions_8h.html#a1d95645c44dc819c084adc2b96a3d6a">eAbstractType</a> <a class="code" href="class_smudge_type_class.html#bdc1fea08eb38c4c76546941371d986d">WhatAmI</a>() <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
+<a name="l00030"></a><a class="code" href="class_smudge_type_class.html#3e3b4b11c5616b8d38fcd7607e40d533">00030</a>         virtual <span class="keywordtype">int</span> <a class="code" href="class_smudge_type_class.html#3e3b4b11c5616b8d38fcd7607e40d533">Size</a>() R0;
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032         <span class="comment">//ObjectTypeClass</span>
+<a name="l00033"></a><a class="code" href="class_smudge_type_class.html#4286e7e57f3f11594c39b79460e73f21">00033</a>         virtual <span class="keywordtype">bool</span> <a class="code" href="class_smudge_type_class.html#4286e7e57f3f11594c39b79460e73f21">SpawnAtMapCoords</a>(<a class="code" href="class_vector2_d.html">CellStruct</a>* pMapCoords, <a class="code" href="class_house_class.html">HouseClass</a>* pOwner) R0;
+<a name="l00034"></a><a class="code" href="class_smudge_type_class.html#49df56c5b1ad4940647a68c7bbdda8f9">00034</a>         virtual <a class="code" href="class_object_class.html">ObjectClass</a>* <a class="code" href="class_smudge_type_class.html#49df56c5b1ad4940647a68c7bbdda8f9">CreateObject</a>(<a class="code" href="class_house_class.html">HouseClass</a>* pOwner) R0;
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036         <span class="comment">//SmudgeTypeClass</span>
+<a name="l00037"></a><a class="code" href="class_smudge_type_class.html#ead014bad5f7b9aa19d05fc308a55ab9">00037</a>         virtual <span class="keywordtype">void</span> <a class="code" href="class_smudge_type_class.html#ead014bad5f7b9aa19d05fc308a55ab9">vt_entry_A0</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk,<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk2,<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk3,<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk4,<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk5) <a class="code" href="_y_r_p_p_core_8h.html#5070712bba21161ad840408134ee229f">RX</a>;
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039         <span class="comment">//Constructor</span>
+<a name="l00040"></a>00040         <a class="code" href="class_smudge_type_class.html">SmudgeTypeClass</a>(const <span class="keywordtype">char</span>* pID) : <a class="code" href="class_object_type_class.html">ObjectTypeClass</a>(false)
+<a name="l00041"></a>00041                 JMP_THIS(0x6B5260);
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 protected:
+<a name="l00044"></a><a class="code" href="class_smudge_type_class.html#94404cbd2c26784982f87bdc06c9054b">00044</a>         <a class="code" href="class_smudge_type_class.html">SmudgeTypeClass</a>() : <a class="code" href="class_object_type_class.html">ObjectTypeClass</a>(false) { }
+<a name="l00045"></a>00045 
 <a name="l00046"></a>00046         <span class="comment">//===========================================================================</span>
-<a name="l00047"></a><a class="code" href="class_smudge_type_class.html#c40a18d2e8b0faf2e7674781c94a4814">00047</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_smudge_type_class.html#96a46d3625936ba852a6bd1e8ca0fa1b">ArrayIndex</a>);
-<a name="l00048"></a><a class="code" href="class_smudge_type_class.html#2121755487fdd9ce881f67aadf821a0f">00048</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_smudge_type_class.html#c40a18d2e8b0faf2e7674781c94a4814">Width</a>);
-<a name="l00049"></a><a class="code" href="class_smudge_type_class.html#7a04b650431573e42c8a40fb5e8cdace">00049</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_smudge_type_class.html#4487c88ef57d5221656a0bdd1b29d7ee">Height</a>);
-<a name="l00050"></a><a class="code" href="class_smudge_type_class.html#43d095aa11737781f464803b7d86246c">00050</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>, <a class="code" href="class_smudge_type_class.html#380abdba604bb1c3ddee8f3105c79a0a">Crater</a>);
-<a name="l00051"></a><a class="code" href="class_smudge_type_class.html#25e100bd04d2a2394bb94b02b7cd2212">00051</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>, <a class="code" href="class_smudge_type_class.html#7cac706d6298491afe832021dfb71540">Burn</a>);
-<a name="l00052"></a>00052 };
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054 <span class="preprocessor">#endif</span>
+<a name="l00047"></a>00047         <span class="comment">//===== Properties ==========================================================</span>
+<a name="l00048"></a>00048         <span class="comment">//===========================================================================</span>
+<a name="l00049"></a><a class="code" href="class_smudge_type_class.html#c40a18d2e8b0faf2e7674781c94a4814">00049</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_smudge_type_class.html#96a46d3625936ba852a6bd1e8ca0fa1b">ArrayIndex</a>);
+<a name="l00050"></a><a class="code" href="class_smudge_type_class.html#2121755487fdd9ce881f67aadf821a0f">00050</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_smudge_type_class.html#c40a18d2e8b0faf2e7674781c94a4814">Width</a>);
+<a name="l00051"></a><a class="code" href="class_smudge_type_class.html#7a04b650431573e42c8a40fb5e8cdace">00051</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_smudge_type_class.html#4487c88ef57d5221656a0bdd1b29d7ee">Height</a>);
+<a name="l00052"></a><a class="code" href="class_smudge_type_class.html#43d095aa11737781f464803b7d86246c">00052</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>, <a class="code" href="class_smudge_type_class.html#380abdba604bb1c3ddee8f3105c79a0a">Crater</a>);
+<a name="l00053"></a><a class="code" href="class_smudge_type_class.html#25e100bd04d2a2394bb94b02b7cd2212">00053</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>, <a class="code" href="class_smudge_type_class.html#7cac706d6298491afe832021dfb71540">Burn</a>);
+<a name="l00054"></a>00054 };
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:45 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:40:51 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

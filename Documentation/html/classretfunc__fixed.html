@@ -51,7 +51,7 @@ Inheritance diagram for retfunc_fixed&lt; T &gt;:</div>
 <a href="classretfunc__fixed-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classretfunc__fixed.html#8de41c0810afb3a19d6174729024003b">retfunc_fixed</a> (<a class="el" href="class_r_e_g_i_s_t_e_r_s.html">REGISTERS</a> *r, DWORD addr, T res)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classretfunc__fixed.html#8de41c0810afb3a19d6174729024003b">retfunc_fixed</a> (<a class="el" href="class_r_e_g_i_s_t_e_r_s.html">REGISTERS</a> *r, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> addr, T res)</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classretfunc__fixed.html#88ea1233ac40848231a69bc2738734bd">operator()</a> ()</td></tr>
 
@@ -64,7 +64,7 @@ Inheritance diagram for retfunc_fixed&lt; T &gt;:</div>
  class retfunc_fixed&lt; T &gt;</h3>
 
 
-<p>Definition at line <a class="el" href="_template_8h-source.html#l00034">34</a> of file <a class="el" href="_template_8h-source.html">Template.h</a>.</p>
+<p>Definition at line <a class="el" href="_template_8h-source.html#l00031">31</a> of file <a class="el" href="_template_8h-source.html">Template.h</a>.</p>
 <hr><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" name="8de41c0810afb3a19d6174729024003b"></a><!-- doxytag: member="retfunc_fixed::retfunc_fixed" ref="8de41c0810afb3a19d6174729024003b" args="(REGISTERS *r, DWORD addr, T res)" -->
 <div class="memitem">
@@ -81,7 +81,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DWORD&nbsp;</td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
           <td class="paramname"> <em>addr</em>, </td>
         </tr>
         <tr>
@@ -101,8 +101,8 @@ template&lt;typename T &gt; </div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_template_8h-source.html#l00038">38</a> of file <a class="el" href="_template_8h-source.html">Template.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00038"></a>00038 : <a class="code" href="classretfunc.html#0f58dfd3d40222e2b2f83407997e2d37">retfunc</a>(r, addr), <a class="code" href="classretfunc__fixed.html#8db5b4eb384f6b2ed96414d1c346c916">Result</a>(res) {};
+<p>Definition at line <a class="el" href="_template_8h-source.html#l00035">35</a> of file <a class="el" href="_template_8h-source.html">Template.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00035"></a>00035 : <a class="code" href="classretfunc.html#0f58dfd3d40222e2b2f83407997e2d37">retfunc</a>(r, addr), <a class="code" href="classretfunc__fixed.html#8db5b4eb384f6b2ed96414d1c346c916">Result</a>(res) {};
 </pre></div>
 <p>
 
@@ -128,11 +128,11 @@ template&lt;typename T &gt; </div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_template_8h-source.html#l00039">39</a> of file <a class="el" href="_template_8h-source.html">Template.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00039"></a>00039                          {
-<a name="l00040"></a>00040                 <a class="code" href="classretfunc.html#43ea92f84e1ac2ee90fbbd828613e0cd">R</a>-&gt;<a class="code" href="class_r_e_g_i_s_t_e_r_s.html#fae6bab8364c2365614b5ec1df3a4f60">set_EAX</a>((DWORD)<a class="code" href="classretfunc__fixed.html#8db5b4eb384f6b2ed96414d1c346c916">Result</a>);
-<a name="l00041"></a>00041                 <span class="keywordflow">return</span> <a class="code" href="classretfunc.html#4411a3a86514fb2c07d37fc54d26062d">retAddr</a>;
-<a name="l00042"></a>00042         }
+<p>Definition at line <a class="el" href="_template_8h-source.html#l00036">36</a> of file <a class="el" href="_template_8h-source.html">Template.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00036"></a>00036                          {
+<a name="l00037"></a>00037                 <a class="code" href="classretfunc.html#43ea92f84e1ac2ee90fbbd828613e0cd">R</a>-&gt;<a class="code" href="class_r_e_g_i_s_t_e_r_s.html#fae6bab8364c2365614b5ec1df3a4f60">set_EAX</a>((<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>)<a class="code" href="classretfunc__fixed.html#8db5b4eb384f6b2ed96414d1c346c916">Result</a>);
+<a name="l00038"></a>00038                 <span class="keywordflow">return</span> <a class="code" href="classretfunc.html#4411a3a86514fb2c07d37fc54d26062d">retAddr</a>;
+<a name="l00039"></a>00039         }
 </pre></div>
 <p>
 
@@ -154,14 +154,14 @@ template&lt;typename T &gt; </div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_template_8h-source.html#l00036">36</a> of file <a class="el" href="_template_8h-source.html">Template.h</a>.</p>
+<p>Definition at line <a class="el" href="_template_8h-source.html#l00033">33</a> of file <a class="el" href="_template_8h-source.html">Template.h</a>.</p>
 
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following file:<ul>
 <li>Helpers/<a class="el" href="_template_8h-source.html">Template.h</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:54 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:41:02 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

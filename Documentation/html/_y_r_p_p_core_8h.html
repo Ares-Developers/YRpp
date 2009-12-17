@@ -69,6 +69,13 @@
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_y_r_p_p_core_8h.html#5070712bba21161ad840408134ee229f">RX</a>&nbsp;&nbsp;&nbsp;{}</td></tr>
 
+<tr><td colspan="2"><br><h2>Typedefs</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef unsigned char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef unsigned short&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef unsigned long&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a></td></tr>
+
 </table>
 <hr><h2>Define Documentation</h2>
 <a class="anchor" name="58f95a3dea8a46c174f20eab6751836d"></a><!-- doxytag: member="YRPPCore.h::PROPERTY" ref="58f95a3dea8a46c174f20eab6751836d" args="(type, name)" -->
@@ -99,7 +106,7 @@
                 <span class="keywordtype">void</span> set_ ## name(type value)\
                         { name = value; }
 </pre></div>
-<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00028">28</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
+<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00032">32</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
 
 </div>
 </div><p>
@@ -134,7 +141,7 @@
                 <span class="keywordtype">void</span> set_ ## name(<span class="keywordtype">int</span> n, type value)\
                         { name[n] = value; }
 </pre></div>
-<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00075">75</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
+<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00079">79</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
 
 </div>
 </div><p>
@@ -168,7 +175,7 @@
                 type* lea_ ## name() \
                         { <span class="keywordflow">return</span> &amp;name; }
 </pre></div>
-<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00037">37</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
+<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00041">41</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
 
 </div>
 </div><p>
@@ -198,7 +205,7 @@
                 type* _ ## name() \
                         { <span class="keywordflow">return</span> &amp;name; }
 </pre></div>
-<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00067">67</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
+<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00071">71</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
 
 </div>
 </div><p>
@@ -228,7 +235,7 @@
                 <span class="keyword">const</span> type get_ ## name() \
                         { <span class="keywordflow">return</span> name; }
 </pre></div>
-<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00049">49</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
+<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00053">53</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
 
 </div>
 </div><p>
@@ -260,7 +267,7 @@
                 <span class="keywordtype">void</span>  set_ ## name(<span class="keyword">const</span> <span class="keywordtype">char</span>* value)\
                         { strncpy(name, value, length); }
 </pre></div>
-<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00095">95</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
+<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00099">99</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
 
 </div>
 </div><p>
@@ -292,7 +299,7 @@
                 <span class="keywordtype">void</span> set_ ## name(type* value)\
                         { name = *value; }
 </pre></div>
-<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00057">57</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
+<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00061">61</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
 
 </div>
 </div><p>
@@ -327,7 +334,7 @@
                 <span class="keywordtype">void</span> set_ ## name(<span class="keywordtype">int</span> n, type value)\
                         { name[n] = value; }
 </pre></div>
-<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00085">85</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
+<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00089">89</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
 
 </div>
 </div><p>
@@ -359,7 +366,7 @@
                 <span class="keywordtype">void</span>  set_ ## name(<span class="keyword">const</span> <span class="keywordtype">wchar_t</span>* value)\
                         { wcsncpy(name, value, length); }
 </pre></div>
-<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00104">104</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
+<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00108">108</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
 
 </div>
 </div><p>
@@ -386,7 +393,7 @@
 <b>Value:</b><div class="fragment"><pre class="fragment"><span class="keyword">protected</span>:\
                 type name;
 </pre></div>
-<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00114">114</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
+<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00118">118</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
 
 </div>
 </div><p>
@@ -403,7 +410,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00138">138</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
+<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00142">142</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
 
 </div>
 </div><p>
@@ -420,7 +427,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00139">139</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
+<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00143">143</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
 
 </div>
 </div><p>
@@ -442,12 +449,64 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00119">119</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
+<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00123">123</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
+
+</div>
+</div><p>
+<hr><h2>Typedef Documentation</h2>
+<a class="anchor" name="4ae1dab0fb4b072a66584546209e7d58"></a><!-- doxytag: member="YRPPCore.h::BYTE" ref="4ae1dab0fb4b072a66584546209e7d58" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned char <a class="el" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00010">10</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="d342ac907eb044443153a22f964bf0af"></a><!-- doxytag: member="YRPPCore.h::DWORD" ref="d342ac907eb044443153a22f964bf0af" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned long <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00012">12</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="197942eefa7db30960ae396d68339b97"></a><!-- doxytag: member="YRPPCore.h::WORD" ref="197942eefa7db30960ae396d68339b97" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned short <a class="el" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_y_r_p_p_core_8h-source.html#l00011">11</a> of file <a class="el" href="_y_r_p_p_core_8h-source.html">YRPPCore.h</a>.</p>
 
 </div>
 </div><p>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:47 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:40:53 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

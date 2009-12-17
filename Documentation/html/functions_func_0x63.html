@@ -39,6 +39,8 @@
       <li class="current"><a href="functions_func.html"><span>Functions</span></a></li>
       <li><a href="functions_vars.html"><span>Variables</span></a></li>
       <li><a href="functions_type.html"><span>Typedefs</span></a></li>
+      <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
+      <li><a href="functions_eval.html"><span>Enumerator</span></a></li>
     </ul>
   </div>
   <div class="tabs">
@@ -203,12 +205,12 @@
 , <a class="el" href="class_blit_trans_lucent75_alpha_z_read_write.html#e94b1c151d49a4277816fbe709abbf01">BlitTransLucent75AlphaZReadWrite&lt; T &gt;</a>
 , <a class="el" href="class_blit_trans_lucent75_z_read.html#0a908870a20f868dfbccdd97d5565e09">BlitTransLucent75ZRead&lt; T &gt;</a>
 , <a class="el" href="class_blit_trans_lucent75_z_read_warp.html#88371cdfb1ca94b09926882a33ab1c62">BlitTransLucent75ZReadWarp&lt; T &gt;</a>
-, <a class="el" href="class_blitter_core.html#fde4ddf262f410716a27d2cc890b110f">BlitterCore</a>
 , <a class="el" href="class_blit_trans_lucent75_z_read_write.html#158a17f5f2309bef3a297f70a0be1c63">BlitTransLucent75ZReadWrite&lt; T &gt;</a>
+, <a class="el" href="class_blitter_core.html#fde4ddf262f410716a27d2cc890b110f">BlitterCore</a>
 , <a class="el" href="class_blit_translucent_write_alpha.html#64177f9d83e0be6c8b1fa114aa52b030">BlitTranslucentWriteAlpha&lt; T &gt;</a>
 , <a class="el" href="class_blit_trans_remap_dest.html#573ef8a631a4cd6adf0ec101e6a04a86">BlitTransRemapDest&lt; T &gt;</a>
-, <a class="el" href="class_blit_trans_z_remap_xlat_alpha_z_read.html#332db6530eeb58fa79c133e82acc1cf3">BlitTransZRemapXlatAlphaZRead&lt; T &gt;</a>
 , <a class="el" href="class_blit_trans_remap_xlat.html#b1a5b773d96cb98af8043f724461a9a1">BlitTransRemapXlat&lt; T &gt;</a>
+, <a class="el" href="class_blit_trans_z_remap_xlat_alpha_z_read.html#332db6530eeb58fa79c133e82acc1cf3">BlitTransZRemapXlatAlphaZRead&lt; T &gt;</a>
 , <a class="el" href="class_blit_trans_xlat.html#63f3ecb4850c885a1385c3ddae3862d6">BlitTransXlat&lt; T &gt;</a>
 , <a class="el" href="class_blit_trans_xlat_alpha.html#679add7e105a6099e8cafe04e20a175e">BlitTransXlatAlpha&lt; T &gt;</a>
 , <a class="el" href="class_blit_trans_xlat_alpha_z_read.html#ff345b607a3f546fec020f3386335a8a">BlitTransXlatAlphaZRead&lt; T &gt;</a>
@@ -235,8 +237,8 @@
 , <a class="el" href="class_blit_trans_lucent25_alpha_z_read.html#11c09ac821e7c60d92cd122f5f6558de">BlitTransLucent25AlphaZRead&lt; T &gt;</a>
 , <a class="el" href="class_blit_trans_lucent25_alpha_z_read_warp.html#b8f46e7f680eb489a0622aa3f9153e10">BlitTransLucent25AlphaZReadWarp&lt; T &gt;</a>
 , <a class="el" href="class_blit_trans_lucent25_alpha_z_read_write.html#45d36cd01c34397ffd400affbea0ed17">BlitTransLucent25AlphaZReadWrite&lt; T &gt;</a>
-, <a class="el" href="class_blit_trans_lucent50_alpha_z_read_warp.html#3a50fb6e0cd569f8441be32dd5480ab5">BlitTransLucent50AlphaZReadWarp&lt; T &gt;</a>
 , <a class="el" href="class_blit_trans_lucent25_z_read.html#49a7583ea70fe89328582a4a03fce10a">BlitTransLucent25ZRead&lt; T &gt;</a>
+, <a class="el" href="class_blit_trans_lucent50_alpha_z_read_warp.html#3a50fb6e0cd569f8441be32dd5480ab5">BlitTransLucent50AlphaZReadWarp&lt; T &gt;</a>
 , <a class="el" href="class_blit_trans_lucent25_z_read_warp.html#a791cdb6be137ae7bdec10e0da2c4aeb">BlitTransLucent25ZReadWarp&lt; T &gt;</a>
 , <a class="el" href="class_blit_trans_lucent25_z_read_write.html#4d6ea4cc051482902ed98c31078021ea">BlitTransLucent25ZReadWrite&lt; T &gt;</a>
 , <a class="el" href="class_blit_trans_lucent50.html#320f62342ee67462ef53b515e55e8ca7">BlitTransLucent50&lt; T &gt;</a>
@@ -247,7 +249,7 @@
 <li>Can_Enter_Cell()
 : <a class="el" href="class_locomotion_class.html#f63f9a09d622e1a8f90117f13b241e3d">LocomotionClass</a>
 <li>Can_Fire()
-: <a class="el" href="class_locomotion_class.html#82ee0985a223038fd8fd8fad7957c359">LocomotionClass</a>
+: <a class="el" href="class_locomotion_class.html#f1d224fdcbe4a65cf29a1b3f15115a46">LocomotionClass</a>
 <li>CanAlly()
 : <a class="el" href="class_house_class.html#3f66626d69cb1bfcafca1c9f793e9a0b">HouseClass</a>
 <li>CanAttack()
@@ -322,8 +324,8 @@
 <li>CenterWindowIn()
 : <a class="el" href="class_game.html#48d2fe61e2c9e31a9c57840df2d1517e">Game</a>
 <li>Cheer()
-: <a class="el" href="class_t_action_class.html#a26200e327ddda64b3fd64340e88b726">TActionClass</a>
-, <a class="el" href="class_house_class.html#da1671653b66cf1efe9616874ca1f49c">HouseClass</a>
+: <a class="el" href="class_house_class.html#da1671653b66cf1efe9616874ca1f49c">HouseClass</a>
+, <a class="el" href="class_t_action_class.html#a26200e327ddda64b3fd64340e88b726">TActionClass</a>
 <li>ChemLauncherAtWP()
 : <a class="el" href="class_t_action_class.html#0c401772f40b7ae9e1862601b04f8f91">TActionClass</a>
 <li>ChronoInTeam()
@@ -339,6 +341,7 @@
 , <a class="el" href="class_counter_class.html#705e73d105eba9aa6aa98d649f55ef75">CounterClass</a>
 , <a class="el" href="class_vector_class.html#3dc035aff8737130750b1c3c1a256393">VectorClass&lt; T &gt;</a>
 , <a class="el" href="class_dynamic_vector_class.html#2f629adca1a1ec481596caf1871a06e0">DynamicVectorClass&lt; T &gt;</a>
+, <a class="el" href="class_index_bitfield.html#2b23d3bb8222f6d95932b1754ab3fef4">IndexBitfield&lt; T &gt;</a>
 <li>Clear_()
 : <a class="el" href="class_layer_class.html#d6128ed71dfe2ceccd80e84e4e2640ef">LayerClass</a>
 <li>ClearBunker()
@@ -369,7 +372,7 @@
 <li>ColorScheme()
 : <a class="el" href="class_color_scheme.html#0c37a711aeb893243e11a74ebeaa4cc7">ColorScheme</a>
 <li>ColorStruct()
-: <a class="el" href="struct_color_struct.html#4f616bd1016972abb84b67ce9a2ee952">ColorStruct</a>
+: <a class="el" href="struct_color_struct.html#5ca2c7606751c3525278bd1ac167b5dd">ColorStruct</a>
 <li>CommandClass()
 : <a class="el" href="class_command_class.html#f2cda2eecc2e6728cc695765f3f55cb1">CommandClass</a>
 <li>ConditionMet()
@@ -379,7 +382,7 @@
 <li>ConstructCells()
 : <a class="el" href="class_map_class.html#80a0f66c31985873e799dcdb5b1a0de3">MapClass</a>
 <li>Contains()
-: <a class="el" href="class_index_bitfield.html#a94cd38f4c8e219f46196073c65ba4da">IndexBitfield&lt; T &gt;</a>
+: <a class="el" href="class_index_bitfield.html#bb17098e4426461c8ee501b7f8f6d877">IndexBitfield&lt; T &gt;</a>
 <li>ControlledByHuman()
 : <a class="el" href="class_house_class.html#0657eb3a12177b27f93cf07caf5514f3">HouseClass</a>
 <li>ControlledByPlayer()
@@ -387,7 +390,7 @@
 <li>ConvertAction()
 : <a class="el" href="class_display_class.html#938c19cc1920e4c0e29504f3f29d046d">DisplayClass</a>
 <li>ConvertClass()
-: <a class="el" href="class_convert_class.html#1757db7dcf39db060897614a65a58c8d">ConvertClass</a>
+: <a class="el" href="class_convert_class.html#4a603ee7104938fbf5b8b20392a38939">ConvertClass</a>
 <li>Coord2Cell()
 : <a class="el" href="class_cell_class.html#15ac6b4655fa231fa0420d1c891b0944">CellClass</a>
 <li>Coords()
@@ -406,7 +409,7 @@
 <li>CountQueued()
 : <a class="el" href="class_factory_class.html#c951049ae004467ea00904b680a84d9c">FactoryClass</a>
 <li>Crash()
-: <a class="el" href="class_techno_class.html#63e7eedda68e7d2e5040b688854c841a">TechnoClass</a>
+: <a class="el" href="class_techno_class.html#c86ed019970c2297e9f490a34770f24d">TechnoClass</a>
 <li>CrateAtWP()
 : <a class="el" href="class_t_action_class.html#4de2ccd8cea074587683d6b6761b7cea">TActionClass</a>
 <li>Create()
@@ -416,33 +419,33 @@
 <li>CreateChronoAnim()
 : <a class="el" href="class_super_class.html#1e368f5cfda54d59e184b6b7b2705d67">SuperClass</a>
 <li>CreateEmptyMap()
-: <a class="el" href="class_map_class.html#65649364fea914a65772f19602ea3523">MapClass</a>
-, <a class="el" href="class_radar_class.html#5c5fa43fa791d9a4d2e1a3f47ffa3ae5">RadarClass</a>
+: <a class="el" href="class_radar_class.html#5c5fa43fa791d9a4d2e1a3f47ffa3ae5">RadarClass</a>
+, <a class="el" href="class_map_class.html#65649364fea914a65772f19602ea3523">MapClass</a>
 <li>CreateEndPost()
 : <a class="el" href="class_building_class.html#aa3d6cfcb369283d15208c4ddc57260b">BuildingClass</a>
 <li>CreateFile()
-: <a class="el" href="class_file_class.html#d39d9d323ca9f4aeb7714ed6b0cebad0">FileClass</a>
-, <a class="el" href="class_raw_file_class.html#571e5c99277a6b8d01f8044d3b4c0b35">RawFileClass</a>
+: <a class="el" href="class_raw_file_class.html#571e5c99277a6b8d01f8044d3b4c0b35">RawFileClass</a>
+, <a class="el" href="class_file_class.html#d39d9d323ca9f4aeb7714ed6b0cebad0">FileClass</a>
 <li>CreateGap()
 : <a class="el" href="class_techno_class.html#d563879f01e996916682c7a4d64e1f8d">TechnoClass</a>
 <li>CreateInstance()
 : <a class="el" href="class_locomotion_class.html#9739aa0b980029e2df732fd658d9f0b6">LocomotionClass</a>
 <li>CreateMPTeams()
-: <a class="el" href="class_m_p_siege_class.html#f85fe03286a58b3bcf564c8ef8d6573a">MPSiegeClass</a>
-, <a class="el" href="class_m_p_game_mode_type_class.html#89df20518207b60997b27209c7a241b2">MPGameModeTypeClass</a>
+: <a class="el" href="class_m_p_game_mode_type_class.html#89df20518207b60997b27209c7a241b2">MPGameModeTypeClass</a>
+, <a class="el" href="class_m_p_siege_class.html#f85fe03286a58b3bcf564c8ef8d6573a">MPSiegeClass</a>
 <li>CreateObject()
-: <a class="el" href="class_infantry_type_class.html#69ee1846ae5eca0c09ef7ee0708db546">InfantryTypeClass</a>
-, <a class="el" href="class_particle_type_class.html#76c76d5d31948ccbb47030318b109dec">ParticleTypeClass</a>
-, <a class="el" href="class_aircraft_type_class.html#98001c5226b744109a50052f1d75b2c9">AircraftTypeClass</a>
-, <a class="el" href="class_overlay_type_class.html#e562ccdeb562b0e9986196207e336866">OverlayTypeClass</a>
+: <a class="el" href="class_building_type_class.html#e894a315fa9665869026df458913dde0">BuildingTypeClass</a>
+, <a class="el" href="class_bullet_type_class.html#eb03ffc1dfb609556abede4c53e8ee1f">BulletTypeClass</a>
 , <a class="el" href="class_smudge_type_class.html#49df56c5b1ad4940647a68c7bbdda8f9">SmudgeTypeClass</a>
-, <a class="el" href="class_particle_system_type_class.html#e06a6b10246fce693c5dfe543e94115c">ParticleSystemTypeClass</a>
+, <a class="el" href="class_anim_type_class.html#74904293ffde2922fc6639a737c40d8c">AnimTypeClass</a>
+, <a class="el" href="class_particle_type_class.html#76c76d5d31948ccbb47030318b109dec">ParticleTypeClass</a>
+, <a class="el" href="class_overlay_type_class.html#e562ccdeb562b0e9986196207e336866">OverlayTypeClass</a>
+, <a class="el" href="class_object_type_class.html#3293bdbb026f40a9b8d16844ec30c3c8">ObjectTypeClass</a>
+, <a class="el" href="class_infantry_type_class.html#69ee1846ae5eca0c09ef7ee0708db546">InfantryTypeClass</a>
 , <a class="el" href="class_unit_type_class.html#edfd1c20a442ff305cf18ee73028dea7">UnitTypeClass</a>
 , <a class="el" href="class_terrain_type_class.html#5000e8237b39d98fd577c94852d42b2a">TerrainTypeClass</a>
-, <a class="el" href="class_object_type_class.html#3293bdbb026f40a9b8d16844ec30c3c8">ObjectTypeClass</a>
-, <a class="el" href="class_bullet_type_class.html#eb03ffc1dfb609556abede4c53e8ee1f">BulletTypeClass</a>
-, <a class="el" href="class_building_type_class.html#e894a315fa9665869026df458913dde0">BuildingTypeClass</a>
-, <a class="el" href="class_anim_type_class.html#74904293ffde2922fc6639a737c40d8c">AnimTypeClass</a>
+, <a class="el" href="class_aircraft_type_class.html#98001c5226b744109a50052f1d75b2c9">AircraftTypeClass</a>
+, <a class="el" href="class_particle_system_type_class.html#e06a6b10246fce693c5dfe543e94115c">ParticleSystemTypeClass</a>
 <li>CreatePowerOutage()
 : <a class="el" href="class_house_class.html#c4ec5d0c3e8dd19c4be65efaefab9332">HouseClass</a>
 <li>CreateRadarOutage()
@@ -454,7 +457,7 @@
 : <a class="el" href="class_vector3_d.html#81b480cbc03cfdaefbb824abb493d99a">Vector3D&lt; T &gt;</a>
 </ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:47 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:40:53 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

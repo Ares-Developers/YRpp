@@ -42,6 +42,8 @@
 <a href="class_game-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static __int64&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#50d89b9564e136a95746169790d33b58">F2I</a> (double val)</td></tr>
+
 <tr><td class="memItemLeft" nowrap align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#1dde53626f7c288c023a3c84d769720e">RaiseError</a> (HRESULT err) JMP_STD(0x7DC720)</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">static int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#7c06ba3ff168a5a0a97e57d6f279c051">GetMinFrameRate</a> () JMP_STD(0x55AF60)</td></tr>
@@ -63,13 +65,17 @@
 <tr><td class="memItemLeft" nowrap align="right" valign="top">static HRESULT __fastcall&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#865322a14f1a6e2118be48fe591dc810">Save_Sides</a> (LPSTREAM pStm, <a class="el" href="class_dynamic_vector_class.html">DynamicVectorClass</a>&lt; <a class="el" href="class_side_class.html">SideClass</a> * &gt; *pVector)</td></tr>
 
 <tr><td colspan="2"><br><h2>Static Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">static DWORD &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#17236941288b9ddd3cdadf5445aac6fc">Savegame_Magic</a> = *( DWORD *)( 0x83D560 )</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#17236941288b9ddd3cdadf5445aac6fc">Savegame_Magic</a> = *( <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> *)( 0x83D560 )</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">static HWND &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a0766f19d551f2f378a7ef0b131d3059">hWnd</a> = *( HWND *)( 0xB73550 )</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">static HINSTANCE &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#4c64d530e716c9cf208c8008b000c8ad">hInstance</a> = *( HINSTANCE *)( 0xB732F0 )</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">static int &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#068ff4bbfa8a6a1d52df4897fb58b61b">CurrentFrameRate</a> = *( int *)( 0xABCD44 )</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static bool &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ce2d902bd497decb1090aa109dd05af8">bVideoBackBuffer</a> = *( bool *)( 0x840A6C )</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static bool &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#c53fb4963f29024dcd2d6618349e0c3c">bAllowVRAMSidebar</a> = *( bool *)( 0xA8EB96 )</td></tr>
 
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
@@ -103,10 +109,39 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00037">37</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00037"></a>00037                                                                        {
-<a name="l00038"></a>00038                 JMP_STD(0x777080);
-<a name="l00039"></a>00039         }
+<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00045">45</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00045"></a>00045                                                                        {
+<a name="l00046"></a>00046                 JMP_STD(0x777080);
+<a name="l00047"></a>00047         }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="50d89b9564e136a95746169790d33b58"></a><!-- doxytag: member="Game::F2I" ref="50d89b9564e136a95746169790d33b58" args="(double val)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static __int64 Game::F2I           </td>
+          <td>(</td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>val</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00016">16</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00016"></a>00016                                        {
+<a name="l00017"></a>00017                 <span class="keywordtype">double</span> something = val;
+<a name="l00018"></a>00018                 _asm { fld something };
+<a name="l00019"></a>00019                 CALL(0x7C5F00);
+<a name="l00020"></a>00020         }
 </pre></div>
 <p>
 
@@ -158,10 +193,10 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00033">33</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00033"></a>00033                                                             {
-<a name="l00034"></a>00034                 JMP_STD(0x4A3B40);
-<a name="l00035"></a>00035         }
+<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00041">41</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00041"></a>00041                                                             {
+<a name="l00042"></a>00042                 JMP_STD(0x4A3B40);
+<a name="l00043"></a>00043         }
 </pre></div>
 <p>
 
@@ -214,10 +249,10 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00053">53</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00053"></a>00053                                                                                                       {
-<a name="l00054"></a>00054                 JMP_STD(0x6805F0);
-<a name="l00055"></a>00055         }
+<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00061">61</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00061"></a>00061                                                                                                       {
+<a name="l00062"></a>00062                 JMP_STD(0x6805F0);
+<a name="l00063"></a>00063         }
 </pre></div>
 <p>
 
@@ -241,8 +276,8 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00027">27</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00028"></a>00028                 { SET_REG32(ECX, 0xA8B238); JMP_STD(0x69AE90); }
+<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00035">35</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00036"></a>00036                 { SET_REG32(ECX, 0xA8B238); JMP_STD(0x69AE90); }
 </pre></div>
 <p>
 
@@ -266,10 +301,10 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00045">45</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00045"></a>00045                                                      {
-<a name="l00046"></a>00046                 JMP_STD(0x53E3C0);
-<a name="l00047"></a>00047         }
+<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00053">53</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00053"></a>00053                                                      {
+<a name="l00054"></a>00054                 JMP_STD(0x53E3C0);
+<a name="l00055"></a>00055         }
 </pre></div>
 <p>
 
@@ -293,10 +328,10 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00041">41</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00041"></a>00041                                                      {
-<a name="l00042"></a>00042                 JMP_STD(0x53E420);
-<a name="l00043"></a>00043         }
+<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00049">49</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00049"></a>00049                                                      {
+<a name="l00050"></a>00050                 JMP_STD(0x53E420);
+<a name="l00051"></a>00051         }
 </pre></div>
 <p>
 
@@ -320,10 +355,10 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00049">49</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00049"></a>00049                                                          {
-<a name="l00050"></a>00050                 JMP_STD(0x776D80);
-<a name="l00051"></a>00051         }
+<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00057">57</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00057"></a>00057                                                          {
+<a name="l00058"></a>00058                 JMP_STD(0x776D80);
+<a name="l00059"></a>00059         }
 </pre></div>
 <p>
 
@@ -346,14 +381,48 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00030">30</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00031"></a>00031                 { JMP_STD(0x48D080); }
+<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00038">38</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00039"></a>00039                 { JMP_STD(0x48D080); }
 </pre></div>
 <p>
 
 </div>
 </div><p>
 <hr><h2>Member Data Documentation</h2>
+<a class="anchor" name="c53fb4963f29024dcd2d6618349e0c3c"></a><!-- doxytag: member="Game::bAllowVRAMSidebar" ref="c53fb4963f29024dcd2d6618349e0c3c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool &amp; <a class="el" href="class_game.html#c53fb4963f29024dcd2d6618349e0c3c">Game::bAllowVRAMSidebar</a> = *( bool *)( 0xA8EB96 )<code> [static]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00066">66</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="ce2d902bd497decb1090aa109dd05af8"></a><!-- doxytag: member="Game::bVideoBackBuffer" ref="ce2d902bd497decb1090aa109dd05af8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool &amp; <a class="el" href="class_game.html#ce2d902bd497decb1090aa109dd05af8">Game::bVideoBackBuffer</a> = *( bool *)( 0x840A6C )<code> [static]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00065">65</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
+
+</div>
+</div><p>
 <a class="anchor" name="068ff4bbfa8a6a1d52df4897fb58b61b"></a><!-- doxytag: member="Game::CurrentFrameRate" ref="068ff4bbfa8a6a1d52df4897fb58b61b" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -367,7 +436,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00023">23</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
+<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00031">31</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
 
 </div>
 </div><p>
@@ -384,7 +453,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00021">21</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
+<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00029">29</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
 
 </div>
 </div><p>
@@ -401,7 +470,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00020">20</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
+<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00028">28</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
 
 </div>
 </div><p>
@@ -410,7 +479,7 @@
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">DWORD &amp; <a class="el" href="class_game.html#17236941288b9ddd3cdadf5445aac6fc">Game::Savegame_Magic</a> = *( DWORD *)( 0x83D560 )<code> [static]</code>          </td>
+          <td class="memname"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> &amp; <a class="el" href="class_game.html#17236941288b9ddd3cdadf5445aac6fc">Game::Savegame_Magic</a> = *( <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> *)( 0x83D560 )<code> [static]</code>          </td>
         </tr>
       </table>
 </div>
@@ -418,14 +487,14 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00018">18</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
+<p>Definition at line <a class="el" href="_unsorted_8h-source.html#l00026">26</a> of file <a class="el" href="_unsorted_8h-source.html">Unsorted.h</a>.</p>
 
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_unsorted_8h-source.html">Unsorted.h</a><li><a class="el" href="_static_inits_8cpp-source.html">StaticInits.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:51 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:40:58 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

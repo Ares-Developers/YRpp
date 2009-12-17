@@ -4,6 +4,7 @@
 #include <ASMMacros.h>
 #include <YRPPCore.h>
 #include <YRMathVector.h>
+#include <GeneralDefinitions.h> // need eDirection for FacingStruct
 
 //used for cell coordinates/vectors
 #ifndef VECTORSTRUCTS
@@ -112,6 +113,13 @@ struct FacingStruct
 
 	DWORD GetFacing(DWORD *arg)
 		JMP_THIS(0x4C93D0);
+
+	operator eDirection() const {
+		// <DCoder> I don't know how or what it does, but that's what the game uses
+		DWORD nessie;
+		this->GetFacing(&nessie); // mysterious facing value from the depths of the game
+		return (((nessie >> 7) + 1) >> 1) & 0xFF;
+	}
 };
 
 #endif

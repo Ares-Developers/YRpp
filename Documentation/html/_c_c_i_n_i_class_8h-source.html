@@ -37,8 +37,8 @@
 <a name="l00004"></a>00004 <span class="preprocessor">#include &lt;<a class="code" href="_y_r_p_p_core_8h.html">YRPPCore.h</a>&gt;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &lt;<a class="code" href="_generic_list_8h.html">GenericList.h</a>&gt;</span>
 <a name="l00006"></a>00006 <span class="preprocessor">#include &lt;<a class="code" href="_array_classes_8h.html">ArrayClasses.h</a>&gt;</span>
-<a name="l00007"></a>00007 
-<a name="l00008"></a>00008 <span class="keyword">class </span><a class="code" href="class_c_c_file_class.html">CCFileClass</a>;
+<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;<a class="code" href="_c_c_file_class_8h.html">CCFileClass.h</a>&gt;</span>
+<a name="l00008"></a>00008 
 <a name="l00009"></a>00009 <span class="keyword">struct </span><a class="code" href="struct_color_struct.html">ColorStruct</a>;
 <a name="l00010"></a>00010 <span class="keyword">class </span><a class="code" href="class_techno_type_class.html">TechnoTypeClass</a>;
 <a name="l00011"></a>00011 
@@ -249,63 +249,62 @@
 <a name="l00216"></a>00216                 }
 <a name="l00217"></a>00217 
 <a name="l00218"></a>00218         <span class="comment">//Properties</span>
-<a name="l00219"></a><a class="code" href="class_i_n_i_class.html#dacc5970c26efbc1603d01ea7ce93c7a">00219</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(DWORD, <a class="code" href="class_i_n_i_class.html#d81beec38013036993b89932bc52639d">unknown_4</a>);
-<a name="l00220"></a><a class="code" href="class_i_n_i_class.html#24e0257931a8a30d2e6dff541ba6f13d">00220</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(DWORD, <a class="code" href="class_i_n_i_class.html#dacc5970c26efbc1603d01ea7ce93c7a">unknown_8</a>);
+<a name="l00219"></a><a class="code" href="class_i_n_i_class.html#dacc5970c26efbc1603d01ea7ce93c7a">00219</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_i_n_i_class.html#d81beec38013036993b89932bc52639d">unknown_4</a>);
+<a name="l00220"></a><a class="code" href="class_i_n_i_class.html#24e0257931a8a30d2e6dff541ba6f13d">00220</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_i_n_i_class.html#dacc5970c26efbc1603d01ea7ce93c7a">unknown_8</a>);
 <a name="l00221"></a><a class="code" href="class_i_n_i_class.html#28183d211814244857e801ac4dbfbd2d">00221</a>         <a class="code" href="_y_r_p_p_core_8h.html#aae3cb398fbfa33cc83eddc740386cd4">PROPERTY_STRUCT</a>(<a class="code" href="class_list.html">List&lt;INISection&gt;</a>, <a class="code" href="class_i_n_i_class.html#ef137e6b97f53c33ccbc29b4fb394ce0">Sections</a>);
-<a name="l00222"></a><a class="code" href="class_i_n_i_class.html#52001a3d1f33f11937d9f413b14fa634">00222</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(DWORD, <a class="code" href="class_i_n_i_class.html#28183d211814244857e801ac4dbfbd2d">unknown_28</a>);
-<a name="l00223"></a><a class="code" href="class_i_n_i_class.html#9642e00e9f59bfc2bd40ed93386363de">00223</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(DWORD, <a class="code" href="class_i_n_i_class.html#52001a3d1f33f11937d9f413b14fa634">unknown_2C</a>);
-<a name="l00224"></a><a class="code" href="class_i_n_i_class.html#338297c3a1bbca2656c97d18023f714c">00224</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(DWORD, <a class="code" href="class_i_n_i_class.html#9642e00e9f59bfc2bd40ed93386363de">unknown_30</a>);
+<a name="l00222"></a><a class="code" href="class_i_n_i_class.html#52001a3d1f33f11937d9f413b14fa634">00222</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_i_n_i_class.html#28183d211814244857e801ac4dbfbd2d">unknown_28</a>);
+<a name="l00223"></a><a class="code" href="class_i_n_i_class.html#9642e00e9f59bfc2bd40ed93386363de">00223</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_i_n_i_class.html#52001a3d1f33f11937d9f413b14fa634">unknown_2C</a>);
+<a name="l00224"></a><a class="code" href="class_i_n_i_class.html#338297c3a1bbca2656c97d18023f714c">00224</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_i_n_i_class.html#9642e00e9f59bfc2bd40ed93386363de">unknown_30</a>);
 <a name="l00225"></a><a class="code" href="class_i_n_i_class.html#c3f833cce0f2132b6dc31fdc8e42187a">00225</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>, <a class="code" href="class_i_n_i_class.html#338297c3a1bbca2656c97d18023f714c">unknown_bool_34</a>);
-<a name="l00226"></a><a class="code" href="class_i_n_i_class.html#232263ff465f1c32b48d85847b0bc88d">00226</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(DWORD, <a class="code" href="class_i_n_i_class.html#c3f833cce0f2132b6dc31fdc8e42187a">unknown_38</a>);
-<a name="l00227"></a><a class="code" href="class_i_n_i_class.html#cc5626b5fbed8b6855d99d668a7a17d0">00227</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(DWORD, <a class="code" href="class_i_n_i_class.html#232263ff465f1c32b48d85847b0bc88d">unknown_3C</a>);
+<a name="l00226"></a><a class="code" href="class_i_n_i_class.html#232263ff465f1c32b48d85847b0bc88d">00226</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_i_n_i_class.html#c3f833cce0f2132b6dc31fdc8e42187a">unknown_38</a>);
+<a name="l00227"></a><a class="code" href="class_i_n_i_class.html#cc5626b5fbed8b6855d99d668a7a17d0">00227</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_i_n_i_class.html#232263ff465f1c32b48d85847b0bc88d">unknown_3C</a>);
 <a name="l00228"></a><a class="code" href="class_i_n_i_class.html#297d1ed319b680062a16a07de2c3dc8b">00228</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>, <a class="code" href="class_i_n_i_class.html#cc5626b5fbed8b6855d99d668a7a17d0">unknown_bool_40</a>);
-<a name="l00229"></a><a class="code" href="class_i_n_i_class.html#b4d02185ed6e58dea16a4d001331bd2f">00229</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(DWORD, <a class="code" href="class_i_n_i_class.html#297d1ed319b680062a16a07de2c3dc8b">unknown_44</a>);
-<a name="l00230"></a><a class="code" href="class_i_n_i_class.html#838d975eeb7b2f5997350a7e8a3837ea">00230</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(DWORD, <a class="code" href="class_i_n_i_class.html#b4d02185ed6e58dea16a4d001331bd2f">unknown_48</a>);
-<a name="l00231"></a><a class="code" href="class_i_n_i_class.html#b73d72f7b1267c60ccf14c825a2a0a9b">00231</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(DWORD, <a class="code" href="class_i_n_i_class.html#838d975eeb7b2f5997350a7e8a3837ea">unknown_4C</a>);
-<a name="l00232"></a><a class="code" href="class_i_n_i_class.html#dbe041d18604bcfb507852038f5d354c">00232</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(DWORD, <a class="code" href="class_i_n_i_class.html#b73d72f7b1267c60ccf14c825a2a0a9b">unknown_50</a>);
-<a name="l00233"></a><a class="code" href="class_i_n_i_class.html#4f341eece890e0a5400e3474a3ce9438">00233</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(DWORD, <a class="code" href="class_i_n_i_class.html#dbe041d18604bcfb507852038f5d354c">unknown_54</a>);
-<a name="l00234"></a>00234 };
-<a name="l00235"></a>00235 
-<a name="l00236"></a>00236 <span class="comment">//Extended INI class specified for C&amp;C use</span>
-<a name="l00237"></a><a class="code" href="class_c_c_i_n_i_class.html">00237</a> <span class="keyword">class </span><a class="code" href="class_c_c_i_n_i_class.html">CCINIClass</a> : <span class="keyword">public</span> <a class="code" href="class_i_n_i_class.html">INIClass</a>
-<a name="l00238"></a>00238 {
-<a name="l00239"></a>00239 <span class="keyword">public</span>:
-<a name="l00240"></a>00240         <span class="comment">//STATIC</span>
-<a name="l00241"></a>00241         <span class="comment">// westwood genius shines again</span>
-<a name="l00242"></a>00242 
-<a name="l00243"></a>00243         <span class="comment">// this is a pointer in the class</span>
-<a name="l00244"></a><a class="code" href="class_c_c_i_n_i_class.html#a3eee720b3e88800d5af60bae9705006">00244</a>         <span class="keyword">static</span> <a class="code" href="class_c_c_i_n_i_class.html">CCINIClass</a> *&amp;<a class="code" href="class_c_c_i_n_i_class.html#a3eee720b3e88800d5af60bae9705006">INI_Rules</a>; <span class="comment">//0x887048</span>
-<a name="l00245"></a>00245 
-<a name="l00246"></a>00246         <span class="comment">// these are static class variables, why the fuck did you differentiate them, WW?</span>
-<a name="l00247"></a><a class="code" href="class_c_c_i_n_i_class.html#0b1e73ec45bbd299ba9d3683869856c8">00247</a>         <span class="keyword">static</span> <a class="code" href="class_c_c_i_n_i_class.html">CCINIClass</a> *<a class="code" href="class_c_c_i_n_i_class.html#0b1e73ec45bbd299ba9d3683869856c8">INI_AI</a>; <span class="comment">//0x887128</span>
-<a name="l00248"></a><a class="code" href="class_c_c_i_n_i_class.html#143bb1174d15121551e31f393a2dff9b">00248</a>         <span class="keyword">static</span> <a class="code" href="class_c_c_i_n_i_class.html">CCINIClass</a> *<a class="code" href="class_c_c_i_n_i_class.html#143bb1174d15121551e31f393a2dff9b">INI_Art</a>; <span class="comment">//0x887180</span>
-<a name="l00249"></a><a class="code" href="class_c_c_i_n_i_class.html#2a89c1c13fe795829b948f31295dba69">00249</a>         <span class="keyword">static</span> <a class="code" href="class_c_c_i_n_i_class.html">CCINIClass</a> *<a class="code" href="class_c_c_i_n_i_class.html#2a89c1c13fe795829b948f31295dba69">INI_RA2MD</a>; <span class="comment">//0x8870C0</span>
-<a name="l00250"></a>00250 
-<a name="l00251"></a>00251         <span class="comment">//non-static</span>
-<a name="l00252"></a><a class="code" href="class_c_c_i_n_i_class.html#804037825afd719f00e7fe2b21ff6c86">00252</a>         <a class="code" href="class_c_c_i_n_i_class.html#804037825afd719f00e7fe2b21ff6c86">CCINIClass</a>() : <a class="code" href="class_i_n_i_class.html">INIClass</a>(false) 
-<a name="l00253"></a>00253         {
-<a name="l00254"></a>00254                 THISCALL(0x535AA0);
-<a name="l00255"></a>00255                 <a class="code" href="class_i_n_i_class.html#cc5626b5fbed8b6855d99d668a7a17d0">unknown_bool_40</a> = <span class="keyword">false</span>;
-<a name="l00256"></a>00256                 *(DWORD*)<span class="keyword">this</span> = 0x7E1AF4;
-<a name="l00257"></a>00257         }
-<a name="l00258"></a>00258 
-<a name="l00259"></a><a class="code" href="class_c_c_i_n_i_class.html#d98c913319f2e920d52232fae1c7daf6">00259</a>         <span class="keyword">virtual</span> <a class="code" href="class_c_c_i_n_i_class.html#d98c913319f2e920d52232fae1c7daf6">~CCINIClass</a>() <a class="code" href="_y_r_p_p_core_8h.html#5070712bba21161ad840408134ee229f">RX</a>;
-<a name="l00260"></a>00260 
-<a name="l00261"></a>00261         <span class="comment">//Parses an INI file from a CCFile</span>
-<a name="l00262"></a><a class="code" href="class_c_c_i_n_i_class.html#4f0a41dc22dd278c95dd6529c49e8efc">00262</a>         <a class="code" href="class_c_c_i_n_i_class.html">CCINIClass</a>* <a class="code" href="class_c_c_i_n_i_class.html#4f0a41dc22dd278c95dd6529c49e8efc">ReadCCFile</a>(<a class="code" href="class_c_c_file_class.html">CCFileClass</a>* pCCFile)
-<a name="l00263"></a>00263                 { PUSH_IMM(0); PUSH_IMM(0); PUSH_VAR32(pCCFile); THISCALL(0x4741F0); }
-<a name="l00264"></a>00264 
-<a name="l00265"></a>00265         <span class="keywordtype">void</span> <a class="code" href="class_c_c_i_n_i_class.html#c50854825e890d55e69cfc7eece24ed0">WriteCCFile</a>(<a class="code" href="class_c_c_file_class.html">CCFileClass</a> *pCCFile, <span class="keywordtype">bool</span> bUnk)
-<a name="l00266"></a>00266                         JMP_THIS(0x474430);
-<a name="l00267"></a>00267 
-<a name="l00268"></a>00268         <span class="comment">//Copies the string table entry pointed to by the INI value into pBuffer.</span>
-<a name="l00269"></a>00269         <span class="keywordtype">int</span> <a class="code" href="class_c_c_i_n_i_class.html#437505bcc083b5fc503621a12d33ffc1">ReadStringtableEntry</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* pSection, <span class="keyword">const</span> <span class="keywordtype">char</span>* pKey, <span class="keywordtype">wchar_t</span>* pBuffer, <span class="keywordtype">size_t</span> szBufferSize)
-<a name="l00270"></a>00270                 JMP_THIS(0x0529160);
-<a name="l00271"></a>00271 };
-<a name="l00272"></a>00272 
-<a name="l00273"></a>00273 <span class="preprocessor">#endif</span>
+<a name="l00229"></a><a class="code" href="class_i_n_i_class.html#b4d02185ed6e58dea16a4d001331bd2f">00229</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_i_n_i_class.html#297d1ed319b680062a16a07de2c3dc8b">unknown_44</a>);
+<a name="l00230"></a><a class="code" href="class_i_n_i_class.html#838d975eeb7b2f5997350a7e8a3837ea">00230</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_i_n_i_class.html#b4d02185ed6e58dea16a4d001331bd2f">unknown_48</a>);
+<a name="l00231"></a><a class="code" href="class_i_n_i_class.html#b73d72f7b1267c60ccf14c825a2a0a9b">00231</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_i_n_i_class.html#838d975eeb7b2f5997350a7e8a3837ea">unknown_4C</a>);
+<a name="l00232"></a><a class="code" href="class_i_n_i_class.html#fe5d83c96543c1f07a4367903f1dcf6d">00232</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_i_n_i_class.html#b73d72f7b1267c60ccf14c825a2a0a9b">unknown_50</a>);
+<a name="l00233"></a>00233 };
+<a name="l00234"></a>00234 
+<a name="l00235"></a>00235 <span class="comment">//Extended INI class specified for C&amp;C use</span>
+<a name="l00236"></a><a class="code" href="class_c_c_i_n_i_class.html">00236</a> <span class="keyword">class </span><a class="code" href="class_c_c_i_n_i_class.html">CCINIClass</a> : <span class="keyword">public</span> <a class="code" href="class_i_n_i_class.html">INIClass</a>
+<a name="l00237"></a>00237 {
+<a name="l00238"></a>00238 <span class="keyword">public</span>:
+<a name="l00239"></a>00239         <span class="comment">//STATIC</span>
+<a name="l00240"></a>00240         <span class="comment">// westwood genius shines again</span>
+<a name="l00241"></a>00241 
+<a name="l00242"></a>00242         <span class="comment">// this is a pointer in the class</span>
+<a name="l00243"></a><a class="code" href="class_c_c_i_n_i_class.html#a3eee720b3e88800d5af60bae9705006">00243</a>         <span class="keyword">static</span> <a class="code" href="class_c_c_i_n_i_class.html">CCINIClass</a> *&amp;<a class="code" href="class_c_c_i_n_i_class.html#a3eee720b3e88800d5af60bae9705006">INI_Rules</a>; <span class="comment">//0x887048</span>
+<a name="l00244"></a>00244 
+<a name="l00245"></a>00245         <span class="comment">// these are static class variables, why the fuck did you differentiate them, WW?</span>
+<a name="l00246"></a><a class="code" href="class_c_c_i_n_i_class.html#0b1e73ec45bbd299ba9d3683869856c8">00246</a>         <span class="keyword">static</span> <a class="code" href="class_c_c_i_n_i_class.html">CCINIClass</a> *<a class="code" href="class_c_c_i_n_i_class.html#0b1e73ec45bbd299ba9d3683869856c8">INI_AI</a>; <span class="comment">//0x887128</span>
+<a name="l00247"></a><a class="code" href="class_c_c_i_n_i_class.html#143bb1174d15121551e31f393a2dff9b">00247</a>         <span class="keyword">static</span> <a class="code" href="class_c_c_i_n_i_class.html">CCINIClass</a> *<a class="code" href="class_c_c_i_n_i_class.html#143bb1174d15121551e31f393a2dff9b">INI_Art</a>; <span class="comment">//0x887180</span>
+<a name="l00248"></a><a class="code" href="class_c_c_i_n_i_class.html#2a89c1c13fe795829b948f31295dba69">00248</a>         <span class="keyword">static</span> <a class="code" href="class_c_c_i_n_i_class.html">CCINIClass</a> *<a class="code" href="class_c_c_i_n_i_class.html#2a89c1c13fe795829b948f31295dba69">INI_RA2MD</a>; <span class="comment">//0x8870C0</span>
+<a name="l00249"></a>00249 
+<a name="l00250"></a>00250         <span class="comment">//non-static</span>
+<a name="l00251"></a><a class="code" href="class_c_c_i_n_i_class.html#804037825afd719f00e7fe2b21ff6c86">00251</a>         <a class="code" href="class_c_c_i_n_i_class.html#804037825afd719f00e7fe2b21ff6c86">CCINIClass</a>() : <a class="code" href="class_i_n_i_class.html">INIClass</a>(false) 
+<a name="l00252"></a>00252         {
+<a name="l00253"></a>00253                 THISCALL(0x535AA0);
+<a name="l00254"></a>00254                 <a class="code" href="class_i_n_i_class.html#cc5626b5fbed8b6855d99d668a7a17d0">unknown_bool_40</a> = <span class="keyword">false</span>;
+<a name="l00255"></a>00255                 *(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>*)<span class="keyword">this</span> = 0x7E1AF4;
+<a name="l00256"></a>00256         }
+<a name="l00257"></a>00257 
+<a name="l00258"></a><a class="code" href="class_c_c_i_n_i_class.html#d98c913319f2e920d52232fae1c7daf6">00258</a>         <span class="keyword">virtual</span> <a class="code" href="class_c_c_i_n_i_class.html#d98c913319f2e920d52232fae1c7daf6">~CCINIClass</a>() <a class="code" href="_y_r_p_p_core_8h.html#5070712bba21161ad840408134ee229f">RX</a>;
+<a name="l00259"></a>00259 
+<a name="l00260"></a>00260         <span class="comment">//Parses an INI file from a CCFile</span>
+<a name="l00261"></a>00261         <a class="code" href="class_c_c_i_n_i_class.html">CCINIClass</a>* <a class="code" href="class_c_c_i_n_i_class.html#2c5356065ca5feb2f377548a059fc57b">ReadCCFile</a>(<a class="code" href="class_file_class.html">FileClass</a>* pCCFile, byte bUnk = 0, <span class="keywordtype">int</span> iUnk = 0)
+<a name="l00262"></a>00262                 JMP_THIS(0x4741F0);
+<a name="l00263"></a>00263 
+<a name="l00264"></a>00264         <span class="keywordtype">void</span> <a class="code" href="class_c_c_i_n_i_class.html#815c4a9c114391be8044bcd10df84bf0">WriteCCFile</a>(<a class="code" href="class_file_class.html">FileClass</a> *pCCFile, <span class="keywordtype">bool</span> bUnk)
+<a name="l00265"></a>00265                 JMP_THIS(0x474430);
+<a name="l00266"></a>00266 
+<a name="l00267"></a>00267         <span class="comment">//Copies the string table entry pointed to by the INI value into pBuffer.</span>
+<a name="l00268"></a>00268         <span class="keywordtype">int</span> <a class="code" href="class_c_c_i_n_i_class.html#437505bcc083b5fc503621a12d33ffc1">ReadStringtableEntry</a>(const <span class="keywordtype">char</span>* pSection, const <span class="keywordtype">char</span>* pKey, <span class="keywordtype">wchar_t</span>* pBuffer, <span class="keywordtype">size_t</span> szBufferSize)
+<a name="l00269"></a>00269                 JMP_THIS(0x0529160);
+<a name="l00270"></a>00270 };
+<a name="l00271"></a>00271 
+<a name="l00272"></a>00272 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:44 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:40:50 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

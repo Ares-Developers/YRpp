@@ -33,7 +33,8 @@
   </div>
 </div>
 <div class="contents">
-<h1>Syringe.h File Reference</h1><code>#include &lt;windows.h&gt;</code><br>
+<h1>Syringe.h File Reference</h1><code>#include &lt;<a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>&gt;</code><br>
+<code>#include &lt;windows.h&gt;</code><br>
 
 <p>
 <a href="_syringe_8h-source.html">Go to the source code of this file.</a><table border="0" cellpadding="0" cellspacing="0">
@@ -46,18 +47,13 @@
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_syringe_8h.html#74427c0bfa09635bd206617ff0f93eeb">REG_FUNCS2</a>(n32, n16, idx)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_syringe_8h.html#3472d8cdbb788d5f1815b3522595bc49">EXPORT</a>&nbsp;&nbsp;&nbsp;extern &quot;C&quot; __declspec(dllexport) DWORD _cdecl</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_syringe_8h.html#3472d8cdbb788d5f1815b3522595bc49">EXPORT</a>&nbsp;&nbsp;&nbsp;extern &quot;C&quot; __declspec(dllexport) <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> _cdecl</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_syringe_8h.html#75c5ab36fc7aab11ee6605c60aeef3a8">EXPORT_FUNC</a>(name)&nbsp;&nbsp;&nbsp;extern &quot;C&quot; __declspec(dllexport) DWORD _cdecl name (<a class="el" href="class_r_e_g_i_s_t_e_r_s.html">REGISTERS</a> *R)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_syringe_8h.html#75c5ab36fc7aab11ee6605c60aeef3a8">EXPORT_FUNC</a>(name)&nbsp;&nbsp;&nbsp;extern &quot;C&quot; __declspec(dllexport) <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> _cdecl name (<a class="el" href="class_r_e_g_i_s_t_e_r_s.html">REGISTERS</a> *R)</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_syringe_8h.html#11d8093466da90a07f1ac65dd6b945c5">DEFINE_HOOK</a>(hook, funcname, size)&nbsp;&nbsp;&nbsp;EXPORT_FUNC(funcname)</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_syringe_8h.html#63447cd7cdc2a95e05f3a1a7cba7dad6">DEFINE_HOOK_AGAIN</a>(hook, funcname, size)</td></tr>
-
-<tr><td colspan="2"><br><h2>Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef unsigned char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_syringe_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a></td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef unsigned short&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_syringe_8h.html#197942eefa7db30960ae396d68339b97">WORD</a></td></tr>
 
 </table>
 <hr><h2>Define Documentation</h2>
@@ -85,7 +81,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00112">112</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
+<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00114">114</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
 
 </div>
 </div><p>
@@ -113,7 +109,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00114">114</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
+<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00116">116</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
 
 </div>
 </div><p>
@@ -122,7 +118,7 @@
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define EXPORT&nbsp;&nbsp;&nbsp;extern &quot;C&quot; __declspec(dllexport) DWORD _cdecl          </td>
+          <td class="memname">#define EXPORT&nbsp;&nbsp;&nbsp;extern &quot;C&quot; __declspec(dllexport) <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> _cdecl          </td>
         </tr>
       </table>
 </div>
@@ -130,7 +126,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00107">107</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
+<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00109">109</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
 
 </div>
 </div><p>
@@ -144,7 +140,7 @@
           <td class="paramtype">name&nbsp;</td>
           <td class="paramname">          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td>&nbsp;&nbsp;&nbsp;extern &quot;C&quot; __declspec(dllexport) DWORD _cdecl name (<a class="el" href="class_r_e_g_i_s_t_e_r_s.html">REGISTERS</a> *R)</td>
+          <td>&nbsp;&nbsp;&nbsp;extern &quot;C&quot; __declspec(dllexport) <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> _cdecl name (<a class="el" href="class_r_e_g_i_s_t_e_r_s.html">REGISTERS</a> *R)</td>
         </tr>
       </table>
 </div>
@@ -152,7 +148,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00108">108</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
+<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00110">110</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
 
 </div>
 </div><p>
@@ -185,26 +181,26 @@
 <div class="memdoc">
 
 <p>
-<b>Value:</b><div class="fragment"><pre class="fragment">DWORD get_ ## n32 ()\
+<b>Value:</b><div class="fragment"><pre class="fragment"><a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> get_ ## n32 ()\
                 { <span class="keywordflow">return</span> regs[idx]; }\
-        <a class="code" href="_syringe_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> get_## n16 ()\
-                { <span class="keywordflow">return</span> (<a class="code" href="_syringe_8h.html#197942eefa7db30960ae396d68339b97">WORD</a>)(regs[idx] &amp; 0xFFFF); }\
-        <a class="code" href="_syringe_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a> get_## n8hi ()\
-                { <span class="keywordflow">return</span> (<a class="code" href="_syringe_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a>)((regs[idx] &amp; 0xFFFF) &gt;&gt; 8); }\
-        <a class="code" href="_syringe_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a> get_## n8lo ()\
-                { <span class="keywordflow">return</span> (<a class="code" href="_syringe_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a>)(regs[idx] &amp; 0xFF); }\
-        <span class="keywordtype">void</span> set_## n32 (DWORD value)\
+        <a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> get_## n16 ()\
+                { <span class="keywordflow">return</span> (<a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a>)(regs[idx] &amp; 0xFFFF); }\
+        <a class="code" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a> get_## n8hi ()\
+                { <span class="keywordflow">return</span> (<a class="code" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a>)((regs[idx] &amp; 0xFFFF) &gt;&gt; 8); }\
+        <a class="code" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a> get_## n8lo ()\
+                { <span class="keywordflow">return</span> (<a class="code" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a>)(regs[idx] &amp; 0xFF); }\
+        <span class="keywordtype">void</span> set_## n32 (<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> value)\
                 { regs[idx] = value; }\
-        <span class="keywordtype">void</span> set_## n16 (<a class="code" href="_syringe_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> value)\
-                { ((<a class="code" href="_syringe_8h.html#197942eefa7db30960ae396d68339b97">WORD</a>*)&amp;regs[idx])[0] = value; }\
-        <span class="keywordtype">void</span> set_## n8hi (<a class="code" href="_syringe_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a> value)\
-                { ((<a class="code" href="_syringe_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a>*)&amp;regs[idx])[1] = value; }\
-        <span class="keywordtype">void</span> set_## n8lo (<a class="code" href="_syringe_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a> value)\
-                { ((<a class="code" href="_syringe_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a>*)&amp;regs[idx])[0] = value; }\
+        <span class="keywordtype">void</span> set_## n16 (<a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> value)\
+                { ((<a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a>*)&amp;regs[idx])[0] = value; }\
+        <span class="keywordtype">void</span> set_## n8hi (<a class="code" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a> value)\
+                { ((<a class="code" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a>*)&amp;regs[idx])[1] = value; }\
+        <span class="keywordtype">void</span> set_## n8lo (<a class="code" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a> value)\
+                { ((<a class="code" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a>*)&amp;regs[idx])[0] = value; }\
         <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> SetEx_## n32(T value)\
-                { regs[idx] = <span class="keyword">reinterpret_cast&lt;</span>DWORD<span class="keyword">&gt;</span>(value); }
+                { regs[idx] = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a><span class="keyword">&gt;</span>(value); }
 </pre></div>
-<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00018">18</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
+<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00020">20</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
 
 </div>
 </div><p>
@@ -231,56 +227,21 @@
 <div class="memdoc">
 
 <p>
-<b>Value:</b><div class="fragment"><pre class="fragment">DWORD get_ ## n32 ()\
+<b>Value:</b><div class="fragment"><pre class="fragment"><a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> get_ ## n32 ()\
                 { <span class="keywordflow">return</span> regs[idx]; }\
-        <a class="code" href="_syringe_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> get_## n16 ()\
-                { <span class="keywordflow">return</span> (<a class="code" href="_syringe_8h.html#197942eefa7db30960ae396d68339b97">WORD</a>)(regs[idx] &amp; 0xFFFF); }\
-        <span class="keywordtype">void</span> set_## n32 (DWORD value)\
+        <a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> get_## n16 ()\
+                { <span class="keywordflow">return</span> (<a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a>)(regs[idx] &amp; 0xFFFF); }\
+        <span class="keywordtype">void</span> set_## n32 (<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> value)\
                 { regs[idx] = value; }\
-        <span class="keywordtype">void</span> set_## n16 (<a class="code" href="_syringe_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> value)\
-                { ((<a class="code" href="_syringe_8h.html#197942eefa7db30960ae396d68339b97">WORD</a>*)&amp;regs[idx])[0] = value; }
+        <span class="keywordtype">void</span> set_## n16 (<a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> value)\
+                { ((<a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a>*)&amp;regs[idx])[0] = value; }
 </pre></div>
-<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00038">38</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
-
-</div>
-</div><p>
-<hr><h2>Typedef Documentation</h2>
-<a class="anchor" name="4ae1dab0fb4b072a66584546209e7d58"></a><!-- doxytag: member="Syringe.h::BYTE" ref="4ae1dab0fb4b072a66584546209e7d58" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef unsigned char <a class="el" href="_syringe_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a>          </td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00014">14</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
-
-</div>
-</div><p>
-<a class="anchor" name="197942eefa7db30960ae396d68339b97"></a><!-- doxytag: member="Syringe.h::WORD" ref="197942eefa7db30960ae396d68339b97" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef unsigned short <a class="el" href="_syringe_8h.html#197942eefa7db30960ae396d68339b97">WORD</a>          </td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00015">15</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
+<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00040">40</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
 
 </div>
 </div><p>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:46 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:40:52 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

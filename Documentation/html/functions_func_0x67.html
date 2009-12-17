@@ -39,6 +39,8 @@
       <li class="current"><a href="functions_func.html"><span>Functions</span></a></li>
       <li><a href="functions_vars.html"><span>Variables</span></a></li>
       <li><a href="functions_type.html"><span>Typedefs</span></a></li>
+      <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
+      <li><a href="functions_eval.html"><span>Enumerator</span></a></li>
     </ul>
   </div>
   <div class="tabs">
@@ -321,7 +323,8 @@
 <li>get_AlliesAllowed()
 : <a class="el" href="class_rules_class.html#de8665bc56a9992980048df0d0c5ea17">RulesClass</a>
 <li>get_Allocated()
-: <a class="el" href="class_allocator.html#acc15b77700e256fba7509ec30a17466">Allocator</a>
+: <a class="el" href="class_surface.html#cef3a3f5de39bef0c5f5fa911be4fbfc">Surface</a>
+, <a class="el" href="class_allocator.html#acc15b77700e256fba7509ec30a17466">Allocator</a>
 <li>get_AllowableUnitMaximums()
 : <a class="el" href="class_scenario_class.html#5856f50d3b0946388851af633c8203fa">ScenarioClass</a>
 <li>get_AllowableUnits()
@@ -737,6 +740,8 @@
 : <a class="el" href="class_bullet_class.html#a495edde3e6cdf7752f491b9c1aed3c1">BulletClass</a>
 , <a class="el" href="class_warhead_type_class.html#6d42e2f7819a62248a7cd15d2ef3e897">WarheadTypeClass</a>
 , <a class="el" href="class_weapon_type_class.html#1df69ab9ea7d0548f241ff54cfe1f62e">WeaponTypeClass</a>
+<li>get_Buffer()
+: <a class="el" href="class_surface.html#e26faf619a2f32b5ad7977149e58fb20">Surface</a>
 <li>get_BufferA()
 : <a class="el" href="class_convert_class.html#272961fe675a744f0afc91fb747b8807">ConvertClass</a>
 <li>get_BufferB()
@@ -3938,8 +3943,6 @@
 : <a class="el" href="class_techno_type_class.html#356378bce564be6fb60b388a39259a37">TechnoTypeClass</a>
 <li>get_PitchSpeed()
 : <a class="el" href="class_techno_type_class.html#8ffd9f62eb79fc7b1e10b0fe0c87726f">TechnoTypeClass</a>
-<li>get_PixelData()
-: <a class="el" href="class_surface.html#1ad4df93b2c84fbab24b353ee016d6cd">Surface</a>
 <li>get_PixelSelectionBracketDelta()
 : <a class="el" href="class_techno_type_class.html#3fb438a7c68a8c99359ffa783cb864ce">TechnoTypeClass</a>
 <li>get_PlaceAnywhere()
@@ -4226,7 +4229,7 @@
 <li>get_RadarVisible()
 : <a class="el" href="class_techno_type_class.html#0d7b74827dce7fd5a70c8b0c402bb2ad">TechnoTypeClass</a>
 <li>get_RadarVisibleTo()
-: <a class="el" href="class_house_class.html#6376b9aa9a5b37350f707a85ba0d34ac">HouseClass</a>
+: <a class="el" href="class_house_class.html#3a1d6de6a3353a255b5e73724a0684f8">HouseClass</a>
 <li>get_RadarX()
 : <a class="el" href="class_radar_event_class.html#86a0439e24ff034731a86fa313e6ecc3">RadarEventClass</a>
 <li>get_RadarY()
@@ -5041,10 +5044,10 @@
 <li>get_TalkBubbleTime()
 : <a class="el" href="class_rules_class.html#8057f137a09220c831070ec67e302ab0">RulesClass</a>
 <li>get_Target()
-: <a class="el" href="class_team_class.html#2b78f3ce24b1756fbb9b8506e9f6c92f">TeamClass</a>
+: <a class="el" href="class_disk_laser_class.html#ccecd501cff2ab290170822a04918419">DiskLaserClass</a>
 , <a class="el" href="class_airstrike_class.html#f8d9680db6eee17f82c43784a8b660de">AirstrikeClass</a>
 , <a class="el" href="class_bullet_class.html#cafbc64c46df33f7775fb71d0763dc54">BulletClass</a>
-, <a class="el" href="class_disk_laser_class.html#ccecd501cff2ab290170822a04918419">DiskLaserClass</a>
+, <a class="el" href="class_team_class.html#2b78f3ce24b1756fbb9b8506e9f6c92f">TeamClass</a>
 , <a class="el" href="class_techno_class.html#651208f3071f39e3faa7640923f6b946">TechnoClass</a>
 , <a class="el" href="class_temporal_class.html#11a6f8ce62a1bf995a68917f63174fc4">TemporalClass</a>
 , <a class="el" href="class_wave_class.html#1b6c32d90cbac96751715aef8118b2f7">WaveClass</a>
@@ -5094,11 +5097,11 @@
 : <a class="el" href="class_t_action_class.html#3e5c7057f8aa4dd8709490a7d1b0a3ef">TActionClass</a>
 , <a class="el" href="class_t_event_class.html#21350dedd40274c9c031a52e0cef04aa">TEventClass</a>
 <li>get_TechLevel()
-: <a class="el" href="class_house_class.html#8aeb9b37074f2c359d3415c382d0faec">HouseClass</a>
+: <a class="el" href="class_techno_type_class.html#90bf82fa56802b40aa06ce5b1aa37935">TechnoTypeClass</a>
 , <a class="el" href="class_a_i_trigger_type_class.html#893eb75c887acba28e06e99ac4c99d5a">AITriggerTypeClass</a>
+, <a class="el" href="class_house_class.html#8aeb9b37074f2c359d3415c382d0faec">HouseClass</a>
 , <a class="el" href="class_rules_class.html#6e8d58b6e77e80ef9ad55cb956f9345c">RulesClass</a>
 , <a class="el" href="class_team_type_class.html#3a6e318d08bda82d91b36baf81558932">TeamTypeClass</a>
-, <a class="el" href="class_techno_type_class.html#90bf82fa56802b40aa06ce5b1aa37935">TechnoTypeClass</a>
 <li>get_Technician()
 : <a class="el" href="class_infantry_class.html#fceb17897a6e46fdcd90327781c45221">InfantryClass</a>
 , <a class="el" href="class_rules_class.html#11190437616ec1e85d7a0bdf4d7cf132">RulesClass</a>
@@ -5157,8 +5160,8 @@
 <li>get_ThreatPerOccupant()
 : <a class="el" href="class_rules_class.html#d19a9db618685db89ac3d94f61a2c9b0">RulesClass</a>
 <li>get_ThreatPosed()
-: <a class="el" href="class_techno_class.html#3ca8534bc79e31ba6d2cb12bf40bcab4">TechnoClass</a>
-, <a class="el" href="class_techno_type_class.html#5b47c1bfa9409238a13a6561e575854e">TechnoTypeClass</a>
+: <a class="el" href="class_techno_type_class.html#5b47c1bfa9409238a13a6561e575854e">TechnoTypeClass</a>
+, <a class="el" href="class_techno_class.html#3ca8534bc79e31ba6d2cb12bf40bcab4">TechnoClass</a>
 <li>get_Tiberium()
 : <a class="el" href="class_overlay_type_class.html#ac1f628dbe9a67517a758ebed2896b84">OverlayTypeClass</a>
 , <a class="el" href="class_techno_class.html#933877e33657b0abd111a4b798c54fbc">TechnoClass</a>
@@ -5270,9 +5273,9 @@
 <li>get_TrainCrate()
 : <a class="el" href="class_scenario_class.html#3a89cc8b49348e1be48873c13b356bfb">ScenarioClass</a>
 <li>get_Translucency()
-: <a class="el" href="class_anim_type_class.html#0ed705e0fe0acc5ca938fffe8b057341">AnimTypeClass</a>
+: <a class="el" href="class_particle_type_class.html#4d531f4984ef3b478aa393a0620f9ed4">ParticleTypeClass</a>
+, <a class="el" href="class_anim_type_class.html#0ed705e0fe0acc5ca938fffe8b057341">AnimTypeClass</a>
 , <a class="el" href="class_particle_class.html#2946d4bd4307ba1d8bbadc59482951a7">ParticleClass</a>
-, <a class="el" href="class_particle_type_class.html#4d531f4984ef3b478aa393a0620f9ed4">ParticleTypeClass</a>
 <li>get_TranslucencyDetailLevel()
 : <a class="el" href="class_anim_type_class.html#33d8f8d2bc1572d820548b2bdb6c80bf">AnimTypeClass</a>
 <li>get_TranslucencyLevel()
@@ -5302,8 +5305,8 @@
 <li>get_TruckCrate()
 : <a class="el" href="class_scenario_class.html#852ac4f5062ff45514c49f6230961400">ScenarioClass</a>
 <li>get_TubeIndex()
-: <a class="el" href="class_cell_class.html#4a07886644274697bb286d3d5537332f">CellClass</a>
-, <a class="el" href="class_foot_class.html#cfc2405a16eda9e5de89d3be88dadf96">FootClass</a>
+: <a class="el" href="class_foot_class.html#cfc2405a16eda9e5de89d3be88dadf96">FootClass</a>
+, <a class="el" href="class_cell_class.html#4a07886644274697bb286d3d5537332f">CellClass</a>
 <li>get_TunnelSpeed()
 : <a class="el" href="class_rules_class.html#f70ea85cc9e72afc3f172e274b0991d3">RulesClass</a>
 <li>get_TurboBoost()
@@ -5343,9 +5346,9 @@
 <li>get_TurretWeapon()
 : <a class="el" href="class_techno_type_class.html#eeeefbb3c05c08c47c46cf59aeaec66f">TechnoTypeClass</a>
 <li>get_Type()
-: <a class="el" href="class_super_class.html#5a82111321fc4d56eb509fea42cb9a35">SuperClass</a>
-, <a class="el" href="class_trigger_class.html#b01d8eac529e3e81573d651f9214b2a8">TriggerClass</a>
-, <a class="el" href="class_particle_system_class.html#7feb89fd6cdc53c0bdc0ef338664c761">ParticleSystemClass</a>
+: <a class="el" href="class_terrain_class.html#c295d6148e790f5a13d7151ae2cb9d48">TerrainClass</a>
+, <a class="el" href="class_particle_class.html#ea47b37a279549fe97f3f3f3f5238f89">ParticleClass</a>
+, <a class="el" href="class_smudge_class.html#f655f967dfa4ef4d3322de689ac323e9">SmudgeClass</a>
 , <a class="el" href="class_aircraft_class.html#78654db377c0310a37b281f2856420cf">AircraftClass</a>
 , <a class="el" href="class_anim_class.html#7773b34a6866243d5be0dfaba1d7b536">AnimClass</a>
 , <a class="el" href="class_building_class.html#2432cc90ae180f9832df8ed5c8096427">BuildingClass</a>
@@ -5353,13 +5356,13 @@
 , <a class="el" href="class_house_class.html#b70f3fc6ab4fdd060cf9eac31280fe6e">HouseClass</a>
 , <a class="el" href="class_infantry_class.html#25a81fbd00a582f767eeb73477acc961">InfantryClass</a>
 , <a class="el" href="class_overlay_class.html#26cac57770a621cf1ed6eeccb14284a9">OverlayClass</a>
-, <a class="el" href="class_particle_class.html#ea47b37a279549fe97f3f3f3f5238f89">ParticleClass</a>
+, <a class="el" href="class_particle_system_class.html#7feb89fd6cdc53c0bdc0ef338664c761">ParticleSystemClass</a>
 , <a class="el" href="class_radar_event_class.html#0cdf84597c7f5b32283ae4911727d2d8">RadarEventClass</a>
 , <a class="el" href="class_script_class.html#8556920197a8ce1541aeb78a6c066d8e">ScriptClass</a>
-, <a class="el" href="class_smudge_class.html#f655f967dfa4ef4d3322de689ac323e9">SmudgeClass</a>
+, <a class="el" href="class_super_class.html#5a82111321fc4d56eb509fea42cb9a35">SuperClass</a>
 , <a class="el" href="class_super_weapon_type_class.html#eb9e81c8f93914117452259ac85594c6">SuperWeaponTypeClass</a>
 , <a class="el" href="class_team_class.html#de21ac3c4df2e459f64041c87a46f4f0">TeamClass</a>
-, <a class="el" href="class_terrain_class.html#c295d6148e790f5a13d7151ae2cb9d48">TerrainClass</a>
+, <a class="el" href="class_trigger_class.html#b01d8eac529e3e81573d651f9214b2a8">TriggerClass</a>
 , <a class="el" href="class_unit_class.html#3e694ca057cca3455884befb4e76b260">UnitClass</a>
 , <a class="el" href="class_voc_class.html#f743e69e122264091cd5a70c50c12026">VocClass</a>
 , <a class="el" href="class_vox_class.html#dc744f511be439c4473966d509bf02b9">VoxClass</a>
@@ -5367,9 +5370,9 @@
 <li>get_TypeImmune()
 : <a class="el" href="class_techno_type_class.html#fb042c04cf368f86b467e92c8449141a">TechnoTypeClass</a>
 <li>get_UIName()
-: <a class="el" href="class_scenario_class.html#ec381dff03cbe49391497fe8a05d39d4">ScenarioClass</a>
+: <a class="el" href="class_house_class.html#b77ea287ad1cf2529b5d08f7bee29b74">HouseClass</a>
 , <a class="el" href="class_abstract_type_class.html#b3db9c7851bc4f4903bca962f381b461">AbstractTypeClass</a>
-, <a class="el" href="class_house_class.html#b77ea287ad1cf2529b5d08f7bee29b74">HouseClass</a>
+, <a class="el" href="class_scenario_class.html#ec381dff03cbe49391497fe8a05d39d4">ScenarioClass</a>
 <li>get_UINameLabel()
 : <a class="el" href="class_abstract_type_class.html#6dabc752cc9b184c1bef8f48ef1ac149">AbstractTypeClass</a>
 <li>get_UINameLoaded()
@@ -5436,13 +5439,13 @@
 : <a class="el" href="class_rad_beam.html#385852afa83333abf5e6e60719a86f8a">RadBeam</a>
 , <a class="el" href="class_swizzle_pointer_class.html#0e319c6107171a5dee0d6c6881f98a09">SwizzlePointerClass</a>
 <li>get_unknown_04()
-: <a class="el" href="class_voc_class.html#4c4c9aa9f32b4870a92bd2935ac86086">VocClass</a>
+: <a class="el" href="class_g_screen_class.html#fc7a5d0c5d38329dbee3e31f47c46b26">GScreenClass</a>
 , <a class="el" href="class_c_d.html#44045e6a22b76ba058b65bc7db6a4fd3">CD</a>
-, <a class="el" href="class_g_screen_class.html#fc7a5d0c5d38329dbee3e31f47c46b26">GScreenClass</a>
+, <a class="el" href="class_voc_class.html#4c4c9aa9f32b4870a92bd2935ac86086">VocClass</a>
 <li>get_unknown_08()
-: <a class="el" href="class_g_screen_class.html#8654ea68ac6904be27617c305fa565b3">GScreenClass</a>
+: <a class="el" href="class_voc_class.html#7257f522d0dbc25cb531b2fd9e7939bf">VocClass</a>
+, <a class="el" href="class_g_screen_class.html#8654ea68ac6904be27617c305fa565b3">GScreenClass</a>
 , <a class="el" href="class_locomotion_class.html#660c4f9875a1cb113f337e063cee5c5e">LocomotionClass</a>
-, <a class="el" href="class_voc_class.html#7257f522d0dbc25cb531b2fd9e7939bf">VocClass</a>
 <li>get_unknown_10()
 : <a class="el" href="class_abstract_class.html#f41dc85c7eb3ab3d157421e8aefba552">AbstractClass</a>
 , <a class="el" href="class_map_class.html#6cccb04e912adfae692b7d5e93af1e39">MapClass</a>
@@ -5453,19 +5456,19 @@
 : <a class="el" href="class_bullet_class.html#4ce3e2bbb5b45765b80d2df48d367b82">BulletClass</a>
 , <a class="el" href="class_cell_class.html#5c2966c15932cbbc3a196ac271be1d7f">CellClass</a>
 <li>get_unknown_104()
-: <a class="el" href="class_cell_class.html#55aadb09efa832eb3e616dc5d8dc8801">CellClass</a>
-, <a class="el" href="class_bullet_class.html#4494af7f2f90d45aea8dd2041ecc1fec">BulletClass</a>
+: <a class="el" href="class_bullet_class.html#4494af7f2f90d45aea8dd2041ecc1fec">BulletClass</a>
+, <a class="el" href="class_cell_class.html#55aadb09efa832eb3e616dc5d8dc8801">CellClass</a>
 <li>get_unknown_108()
-: <a class="el" href="class_anim_class.html#b40e83879b7451d2817a185bcade2072">AnimClass</a>
+: <a class="el" href="class_cell_class.html#a7a0eda2b7635eae65ee81054de00888">CellClass</a>
+, <a class="el" href="class_anim_class.html#b40e83879b7451d2817a185bcade2072">AnimClass</a>
 , <a class="el" href="class_bullet_class.html#c81513fcc08c954dced67c3e74216883">BulletClass</a>
-, <a class="el" href="class_cell_class.html#a7a0eda2b7635eae65ee81054de00888">CellClass</a>
 <li>get_unknown_10A()
 : <a class="el" href="class_cell_class.html#1d66f84200415c4fe17e1c7f4136482f">CellClass</a>
 <li>get_unknown_10C()
-: <a class="el" href="class_techno_class.html#8ff51021e47519d46b3849d998171694">TechnoClass</a>
+: <a class="el" href="class_cell_class.html#c57db292d8c7e7138703b7652ee6ab1f">CellClass</a>
 , <a class="el" href="class_a_i_trigger_type_class.html#df7046a2224bbdb0d2fcde9e06001c26">AITriggerTypeClass</a>
 , <a class="el" href="class_anim_class.html#28e2422f8125981218b938ad4c69b137">AnimClass</a>
-, <a class="el" href="class_cell_class.html#c57db292d8c7e7138703b7652ee6ab1f">CellClass</a>
+, <a class="el" href="class_techno_class.html#8ff51021e47519d46b3849d998171694">TechnoClass</a>
 <li>get_unknown_10E()
 : <a class="el" href="class_cell_class.html#bf38f670e1c0e9591d06b3e8cfc865b4">CellClass</a>
 <li>get_unknown_110()
@@ -5475,15 +5478,15 @@
 <li>get_unknown_112()
 : <a class="el" href="class_cell_class.html#8452c96c235141abd18c198cc157fbf7">CellClass</a>
 <li>get_unknown_114()
-: <a class="el" href="class_anim_class.html#3f4eded5a5d35dd98c5fca22a0467a05">AnimClass</a>
-, <a class="el" href="class_cell_class.html#145d2bd851e7fc8f51e289bb630eb6c8">CellClass</a>
+: <a class="el" href="class_cell_class.html#145d2bd851e7fc8f51e289bb630eb6c8">CellClass</a>
+, <a class="el" href="class_anim_class.html#3f4eded5a5d35dd98c5fca22a0467a05">AnimClass</a>
 <li>get_unknown_118()
 : <a class="el" href="class_anim_class.html#2c24cab8ea4fba2ad8acfab81655214e">AnimClass</a>
 , <a class="el" href="class_bullet_class.html#81e945085c3f61cd8e564fa40741584e">BulletClass</a>
 , <a class="el" href="class_cell_class.html#efec133d046e84baf2cd485132bd2018">CellClass</a>
 <li>get_unknown_1180()
-: <a class="el" href="class_scenario_class.html#09c79f2fb33d794cbd2185d024c58618">ScenarioClass</a>
-, <a class="el" href="class_display_class.html#a35468fc5965107d42637b78a2e26503">DisplayClass</a>
+: <a class="el" href="class_display_class.html#a35468fc5965107d42637b78a2e26503">DisplayClass</a>
+, <a class="el" href="class_scenario_class.html#09c79f2fb33d794cbd2185d024c58618">ScenarioClass</a>
 <li>get_unknown_1181()
 : <a class="el" href="class_display_class.html#684a703dacc980c9226d6e9194a8d55f">DisplayClass</a>
 <li>get_unknown_118C()
@@ -5501,9 +5504,9 @@
 <li>get_unknown_11BC()
 : <a class="el" href="class_display_class.html#1f2da1461eb153aff658ee6857e382f4">DisplayClass</a>
 <li>get_unknown_11C()
-: <a class="el" href="class_anim_class.html#2bcde7d2dacdd2a7d645e67db3d9de0d">AnimClass</a>
+: <a class="el" href="class_map_class.html#067f6875a1e57d3f633d53854f3337a2">MapClass</a>
+, <a class="el" href="class_anim_class.html#2bcde7d2dacdd2a7d645e67db3d9de0d">AnimClass</a>
 , <a class="el" href="class_bullet_class.html#9c4b70b7469fe56a84ac327906bb10d7">BulletClass</a>
-, <a class="el" href="class_map_class.html#067f6875a1e57d3f633d53854f3337a2">MapClass</a>
 <li>get_unknown_11C0()
 : <a class="el" href="class_display_class.html#ec64744e7bbc17f2f218c96e8b2af42d">DisplayClass</a>
 , <a class="el" href="class_scenario_class.html#7d5852fc081599bf78e8b0b6051decc5">ScenarioClass</a>
@@ -5518,8 +5521,8 @@
 <li>get_unknown_11DC()
 : <a class="el" href="class_display_class.html#8e97993eff15edf6867aa91cc2538c34">DisplayClass</a>
 <li>get_unknown_11E0()
-: <a class="el" href="class_scenario_class.html#3756ab107ba929880202edbb4413739d">ScenarioClass</a>
-, <a class="el" href="class_display_class.html#c68827bd6f5fe356a4151f7acfb8f0c3">DisplayClass</a>
+: <a class="el" href="class_display_class.html#c68827bd6f5fe356a4151f7acfb8f0c3">DisplayClass</a>
+, <a class="el" href="class_scenario_class.html#3756ab107ba929880202edbb4413739d">ScenarioClass</a>
 <li>get_unknown_11E4()
 : <a class="el" href="class_radar_class.html#20465013f7f12d6add6f4d4b8ac87f33">RadarClass</a>
 <li>get_unknown_11E8()
@@ -5529,21 +5532,21 @@
 : <a class="el" href="class_radar_class.html#a75a3e595a6b7079515bbe0bdcceecc8">RadarClass</a>
 , <a class="el" href="class_scenario_class.html#0e46d69e4ee26a33fa7664dfed78d39d">ScenarioClass</a>
 <li>get_unknown_11F0()
-: <a class="el" href="class_radar_class.html#d57e1ecbdeb9f2bd1d475ce5ea8cbf00">RadarClass</a>
-, <a class="el" href="class_scenario_class.html#20ecfe8cf30c2c56ef62120852e37efe">ScenarioClass</a>
+: <a class="el" href="class_scenario_class.html#20ecfe8cf30c2c56ef62120852e37efe">ScenarioClass</a>
+, <a class="el" href="class_radar_class.html#d57e1ecbdeb9f2bd1d475ce5ea8cbf00">RadarClass</a>
 <li>get_unknown_11F4()
 : <a class="el" href="class_radar_class.html#32b4cd2f609fb8a4d51c4a54fb8a920a">RadarClass</a>
 , <a class="el" href="class_scenario_class.html#8e557673a7a2335cdc627bed4498a532">ScenarioClass</a>
 <li>get_unknown_11F8()
-: <a class="el" href="class_radar_class.html#c8257e84d937de0f877006ef1f1ce841">RadarClass</a>
-, <a class="el" href="class_scenario_class.html#ccedaa0dd10ffdbfb8a807c7ca15eb59">ScenarioClass</a>
+: <a class="el" href="class_scenario_class.html#ccedaa0dd10ffdbfb8a807c7ca15eb59">ScenarioClass</a>
+, <a class="el" href="class_radar_class.html#c8257e84d937de0f877006ef1f1ce841">RadarClass</a>
 <li>get_unknown_11FC()
 : <a class="el" href="class_radar_class.html#f6f9670979c05cf37639f8a8eb184cdb">RadarClass</a>
 , <a class="el" href="class_scenario_class.html#1c8edb5a035d4d1189a5f3e6c9e30922">ScenarioClass</a>
 <li>get_unknown_120()
-: <a class="el" href="class_map_class.html#4b4cbe244596b8cea954e94591433a14">MapClass</a>
+: <a class="el" href="class_bullet_class.html#c388b1167e624a7e89b59e2da389d439">BulletClass</a>
 , <a class="el" href="class_anim_class.html#25418be7b5206261631df4d84fa548ff">AnimClass</a>
-, <a class="el" href="class_bullet_class.html#c388b1167e624a7e89b59e2da389d439">BulletClass</a>
+, <a class="el" href="class_map_class.html#4b4cbe244596b8cea954e94591433a14">MapClass</a>
 <li>get_unknown_1200()
 : <a class="el" href="class_radar_class.html#0cc2d375e7e28b48dde731b86f9acd9c">RadarClass</a>
 , <a class="el" href="class_scenario_class.html#5e1ed304d102c59dbd2b274138a1fb7f">ScenarioClass</a>
@@ -5562,8 +5565,8 @@
 <li>get_unknown_1218()
 : <a class="el" href="class_scenario_class.html#c439f645eb4043b3856b9a7bb1bf72cb">ScenarioClass</a>
 <li>get_unknown_121C()
-: <a class="el" href="class_scenario_class.html#e95fe29469f663fa6ce9c0c28a862493">ScenarioClass</a>
-, <a class="el" href="class_radar_class.html#7ad2791c81cbb8a897ad45c52f1477d8">RadarClass</a>
+: <a class="el" href="class_radar_class.html#7ad2791c81cbb8a897ad45c52f1477d8">RadarClass</a>
+, <a class="el" href="class_scenario_class.html#e95fe29469f663fa6ce9c0c28a862493">ScenarioClass</a>
 <li>get_unknown_1220()
 : <a class="el" href="class_radar_class.html#1d87b5367e9860da3d8ebd94200f6997">RadarClass</a>
 , <a class="el" href="class_scenario_class.html#b166fb0dbd4959af168a1905c34e319e">ScenarioClass</a>
@@ -5583,18 +5586,18 @@
 : <a class="el" href="class_radar_class.html#d3105f15a9373ba38b3bc3abef7eb4ad">RadarClass</a>
 , <a class="el" href="class_scenario_class.html#6e3f642f06ffb6a8c0b39c9b578e89e5">ScenarioClass</a>
 <li>get_unknown_124()
-: <a class="el" href="class_bullet_class.html#65ccad8ef45a950776cbff614f0a7d6f">BulletClass</a>
-, <a class="el" href="class_anim_class.html#21c1b610f5eefbf7d06e718b78ddeb0a">AnimClass</a>
+: <a class="el" href="class_anim_class.html#21c1b610f5eefbf7d06e718b78ddeb0a">AnimClass</a>
+, <a class="el" href="class_bullet_class.html#65ccad8ef45a950776cbff614f0a7d6f">BulletClass</a>
 , <a class="el" href="class_map_class.html#29b4e130b84e6208ebca666f658378f1">MapClass</a>
 <li>get_unknown_1240()
-: <a class="el" href="class_radar_class.html#929c923ec6fe5997dbf40623cfbb35ef">RadarClass</a>
-, <a class="el" href="class_scenario_class.html#b080c486c9b28538ab79a1c9eff5fe9e">ScenarioClass</a>
+: <a class="el" href="class_scenario_class.html#b080c486c9b28538ab79a1c9eff5fe9e">ScenarioClass</a>
+, <a class="el" href="class_radar_class.html#929c923ec6fe5997dbf40623cfbb35ef">RadarClass</a>
 <li>get_unknown_1244()
 : <a class="el" href="class_radar_class.html#c8ae83cbb1aa0e4f34e23e1bf612e3a1">RadarClass</a>
 , <a class="el" href="class_scenario_class.html#a9ee19af1b462fc98a3c85ac85c7d294">ScenarioClass</a>
 <li>get_unknown_1248()
-: <a class="el" href="class_radar_class.html#b73479d5d389ccddc746ee39ac46965c">RadarClass</a>
-, <a class="el" href="class_scenario_class.html#43aa4b465faf2897dabe975fdda2040a">ScenarioClass</a>
+: <a class="el" href="class_scenario_class.html#43aa4b465faf2897dabe975fdda2040a">ScenarioClass</a>
+, <a class="el" href="class_radar_class.html#b73479d5d389ccddc746ee39ac46965c">RadarClass</a>
 <li>get_unknown_124C()
 : <a class="el" href="class_radar_class.html#3ab6ebfdcc4a68cff568dc0997af1aaf">RadarClass</a>
 , <a class="el" href="class_scenario_class.html#97e365969adcf54f98dc37a122bd6e75">ScenarioClass</a>
@@ -5612,14 +5615,14 @@
 : <a class="el" href="class_anim_class.html#d92510f622516cadcd64ebd2bcbe027e">AnimClass</a>
 , <a class="el" href="class_map_class.html#801263193890eadbf5293000379edd48">MapClass</a>
 <li>get_unknown_12C()
-: <a class="el" href="class_anim_class.html#d27ad353605207b2610280884fe72e10">AnimClass</a>
-, <a class="el" href="class_map_class.html#7d58df1ec5f8bab022a2629e15791a62">MapClass</a>
+: <a class="el" href="class_map_class.html#7d58df1ec5f8bab022a2629e15791a62">MapClass</a>
+, <a class="el" href="class_anim_class.html#d27ad353605207b2610280884fe72e10">AnimClass</a>
 <li>get_unknown_12D()
 : <a class="el" href="class_particle_class.html#de2874b226b46ea497cf3cb30c87ae37">ParticleClass</a>
 <li>get_unknown_130()
-: <a class="el" href="class_anim_class.html#57c3dedbd1c2334bab5c8dd9161e246e">AnimClass</a>
+: <a class="el" href="class_particle_class.html#10741026d7617d28e6a04cf6278d2c3e">ParticleClass</a>
+, <a class="el" href="class_anim_class.html#57c3dedbd1c2334bab5c8dd9161e246e">AnimClass</a>
 , <a class="el" href="class_map_class.html#79839e0982c31171f8c30529340b0845">MapClass</a>
-, <a class="el" href="class_particle_class.html#10741026d7617d28e6a04cf6278d2c3e">ParticleClass</a>
 <li>get_unknown_131()
 : <a class="el" href="class_particle_class.html#2d7be29cbd05a98c70407723520559b0">ParticleClass</a>
 <li>get_unknown_134()
@@ -5631,8 +5634,8 @@
 : <a class="el" href="class_anim_class.html#d1a1cbf8cfd254376f4190204714ca25">AnimClass</a>
 , <a class="el" href="class_cell_class.html#3039657468ec75150bc1e8de5e43de59">CellClass</a>
 <li>get_unknown_14()
-: <a class="el" href="class_locomotion_class.html#1d805e2c9cb620f3d5637afe3b4888a7">LocomotionClass</a>
-, <a class="el" href="class_rad_beam.html#2f2b1a824e1921a55551a53a46d547a6">RadBeam</a>
+: <a class="el" href="class_rad_beam.html#2f2b1a824e1921a55551a53a46d547a6">RadBeam</a>
+, <a class="el" href="class_locomotion_class.html#1d805e2c9cb620f3d5637afe3b4888a7">LocomotionClass</a>
 <li>get_unknown_140()
 : <a class="el" href="class_voc_class.html#2783a5f460a5d5a5e9c1db9201a6dda2">VocClass</a>
 <li>get_unknown_144()
@@ -5669,16 +5672,16 @@
 <li>get_unknown_1484()
 : <a class="el" href="class_scenario_class.html#8d7b9697ec360130e393d4cce85226a4">ScenarioClass</a>
 <li>get_unknown_1488()
-: <a class="el" href="class_radar_class.html#f3efd679bbc859bffd3fc1a3e6e8227c">RadarClass</a>
-, <a class="el" href="class_scenario_class.html#19fc62b27d3ddd6885893ebe61a162c4">ScenarioClass</a>
+: <a class="el" href="class_scenario_class.html#19fc62b27d3ddd6885893ebe61a162c4">ScenarioClass</a>
+, <a class="el" href="class_radar_class.html#f3efd679bbc859bffd3fc1a3e6e8227c">RadarClass</a>
 <li>get_unknown_148C()
 : <a class="el" href="class_scenario_class.html#b81265fdf2612f4c226cb49c1c0bc47c">ScenarioClass</a>
 <li>get_unknown_1490()
 : <a class="el" href="class_radar_class.html#d1d6c46795b20f935ac0b2d94b3389c1">RadarClass</a>
 , <a class="el" href="class_scenario_class.html#eeec4e0e6736d4aa6d2e402f83d4c2cd">ScenarioClass</a>
 <li>get_unknown_1494()
-: <a class="el" href="class_scenario_class.html#a0e0dd4ed80d23dbf3f8149e37392829">ScenarioClass</a>
-, <a class="el" href="class_radar_class.html#48d4bf806ca8e25dc7f73840d54556ac">RadarClass</a>
+: <a class="el" href="class_radar_class.html#48d4bf806ca8e25dc7f73840d54556ac">RadarClass</a>
+, <a class="el" href="class_scenario_class.html#a0e0dd4ed80d23dbf3f8149e37392829">ScenarioClass</a>
 <li>get_unknown_1498()
 : <a class="el" href="class_radar_class.html#475aa59d4e534a50b45b24a0a09f718e">RadarClass</a>
 , <a class="el" href="class_scenario_class.html#cd2fbe8ef4a541aa139dca43a9ffa6d3">ScenarioClass</a>
@@ -5691,14 +5694,14 @@
 <li>get_unknown_14A8()
 : <a class="el" href="class_scenario_class.html#d0e49b4fe698e8834901e22cd9a1398f">ScenarioClass</a>
 <li>get_unknown_14AC()
-: <a class="el" href="class_scenario_class.html#8deea17e970962dd0a07847e2b26b89e">ScenarioClass</a>
-, <a class="el" href="class_radar_class.html#e20cce5bfd8d8ccc9a12fac6243086ab">RadarClass</a>
+: <a class="el" href="class_radar_class.html#e20cce5bfd8d8ccc9a12fac6243086ab">RadarClass</a>
+, <a class="el" href="class_scenario_class.html#8deea17e970962dd0a07847e2b26b89e">ScenarioClass</a>
 <li>get_unknown_14B0()
 : <a class="el" href="class_radar_class.html#84870b7e157c8f2b33dbcd3b77baf6c0">RadarClass</a>
 , <a class="el" href="class_scenario_class.html#d836c65228e6083df70b10e8e4022ccf">ScenarioClass</a>
 <li>get_unknown_14B4()
-: <a class="el" href="class_scenario_class.html#43db3fb45c58be5740b00c64f7b2a56f">ScenarioClass</a>
-, <a class="el" href="class_radar_class.html#3918590d99e1a2a0005c67ea71d1ab17">RadarClass</a>
+: <a class="el" href="class_radar_class.html#3918590d99e1a2a0005c67ea71d1ab17">RadarClass</a>
+, <a class="el" href="class_scenario_class.html#43db3fb45c58be5740b00c64f7b2a56f">ScenarioClass</a>
 <li>get_unknown_14B8()
 : <a class="el" href="class_radar_class.html#fd375118a69353be059fb7b1fe17a23f">RadarClass</a>
 , <a class="el" href="class_scenario_class.html#6115d68c83a163d691633ddfa5a9f8e5">ScenarioClass</a>
@@ -5714,14 +5717,14 @@
 : <a class="el" href="class_radar_class.html#e25bf73ccb09bc0c517582fb5cc0a28e">RadarClass</a>
 , <a class="el" href="class_scenario_class.html#d5df40a7c92fd3d07b7abb5d1ce90850">ScenarioClass</a>
 <li>get_unknown_14C8()
-: <a class="el" href="class_radar_class.html#2f22029506200d61902ad667dfe94499">RadarClass</a>
-, <a class="el" href="class_scenario_class.html#3fbf35488b4f5d196f5dbe5ebe7b3933">ScenarioClass</a>
+: <a class="el" href="class_scenario_class.html#3fbf35488b4f5d196f5dbe5ebe7b3933">ScenarioClass</a>
+, <a class="el" href="class_radar_class.html#2f22029506200d61902ad667dfe94499">RadarClass</a>
 <li>get_unknown_14CC()
 : <a class="el" href="class_radar_class.html#9faa4624afbb38c6aac8403b328edf52">RadarClass</a>
 , <a class="el" href="class_scenario_class.html#6331df09d7454d1a6b8a43e9052542c4">ScenarioClass</a>
 <li>get_unknown_14D0()
-: <a class="el" href="class_radar_class.html#4e0d03dd6833fc708bce7fdf301f7499">RadarClass</a>
-, <a class="el" href="class_scenario_class.html#091993ae31129c0de4fd4e1104997a95">ScenarioClass</a>
+: <a class="el" href="class_scenario_class.html#091993ae31129c0de4fd4e1104997a95">ScenarioClass</a>
+, <a class="el" href="class_radar_class.html#4e0d03dd6833fc708bce7fdf301f7499">RadarClass</a>
 <li>get_unknown_14D4()
 : <a class="el" href="class_scenario_class.html#59a8cac7ed8db65a05d65d9a20a4900a">ScenarioClass</a>
 <li>get_unknown_14D8()
@@ -5729,8 +5732,8 @@
 <li>get_unknown_14DC()
 : <a class="el" href="class_scenario_class.html#67f181493fb446ed6d5940a8c5d92ade">ScenarioClass</a>
 <li>get_unknown_14E0()
-: <a class="el" href="class_scenario_class.html#56a970258a69d2900ace8a9e12e50aea">ScenarioClass</a>
-, <a class="el" href="class_radar_class.html#8de7f650e52cc8686d01d81f23828f86">RadarClass</a>
+: <a class="el" href="class_radar_class.html#8de7f650e52cc8686d01d81f23828f86">RadarClass</a>
+, <a class="el" href="class_scenario_class.html#56a970258a69d2900ace8a9e12e50aea">ScenarioClass</a>
 <li>get_unknown_14E4()
 : <a class="el" href="class_radar_class.html#41d8d7f3bc3bdc2a53328d5bebbecc74">RadarClass</a>
 , <a class="el" href="class_scenario_class.html#0dbaf10e5e6e2d3fa74a855179726b37">ScenarioClass</a>
@@ -5741,14 +5744,14 @@
 : <a class="el" href="class_radar_class.html#cccbecec0ea6d91fd55ee801a04a15b0">RadarClass</a>
 , <a class="el" href="class_scenario_class.html#bb999c6bba40a96393d5d52de7d684c8">ScenarioClass</a>
 <li>get_unknown_14F0()
-: <a class="el" href="class_scenario_class.html#de00f5927914f17683bfd605b132e2c2">ScenarioClass</a>
-, <a class="el" href="class_radar_class.html#eec7b961526908aaa277b587901650f8">RadarClass</a>
+: <a class="el" href="class_radar_class.html#eec7b961526908aaa277b587901650f8">RadarClass</a>
+, <a class="el" href="class_scenario_class.html#de00f5927914f17683bfd605b132e2c2">ScenarioClass</a>
 <li>get_unknown_14F4()
 : <a class="el" href="class_radar_class.html#deb32f647de4986c04c72e87bdb44964">RadarClass</a>
 , <a class="el" href="class_scenario_class.html#af2e139725271c2219bba313062282be">ScenarioClass</a>
 <li>get_unknown_14F8()
-: <a class="el" href="class_scenario_class.html#71a53c0412be53a5abd8322b8b458741">ScenarioClass</a>
-, <a class="el" href="class_radar_class.html#ec748eab7f26304a7175e4919375cab8">RadarClass</a>
+: <a class="el" href="class_radar_class.html#ec748eab7f26304a7175e4919375cab8">RadarClass</a>
+, <a class="el" href="class_scenario_class.html#71a53c0412be53a5abd8322b8b458741">ScenarioClass</a>
 <li>get_unknown_14FC()
 : <a class="el" href="class_radar_class.html#aa0a283a4c924d00e92a614aa05a3339">RadarClass</a>
 , <a class="el" href="class_scenario_class.html#6b44cf33445cdee9e1c95c71c74913ca">ScenarioClass</a>
@@ -5769,8 +5772,8 @@
 <li>get_unknown_1518()
 : <a class="el" href="class_scenario_class.html#6a4812b7e20279133d563fc17d3159bf">ScenarioClass</a>
 <li>get_unknown_151C()
-: <a class="el" href="class_scenario_class.html#53e283821286c403c33d6b593509a9ef">ScenarioClass</a>
-, <a class="el" href="class_power_class.html#ae3f4b5e509d8d80aa69d98739c20043">PowerClass</a>
+: <a class="el" href="class_power_class.html#ae3f4b5e509d8d80aa69d98739c20043">PowerClass</a>
+, <a class="el" href="class_scenario_class.html#53e283821286c403c33d6b593509a9ef">ScenarioClass</a>
 <li>get_unknown_1520()
 : <a class="el" href="class_scenario_class.html#89119ef7cea33df132c240d7aa225109">ScenarioClass</a>
 <li>get_unknown_1524()
@@ -5781,8 +5784,8 @@
 : <a class="el" href="class_power_class.html#0a356b3c372346927425d22eba53133d">PowerClass</a>
 , <a class="el" href="class_scenario_class.html#67e1bac6f08b05370d1b1f38ba191e21">ScenarioClass</a>
 <li>get_unknown_1530()
-: <a class="el" href="class_power_class.html#9576c05481de28a99ffa27065391f4eb">PowerClass</a>
-, <a class="el" href="class_scenario_class.html#97768817d18dc6c99ba8c8ad60f1335d">ScenarioClass</a>
+: <a class="el" href="class_scenario_class.html#97768817d18dc6c99ba8c8ad60f1335d">ScenarioClass</a>
+, <a class="el" href="class_power_class.html#9576c05481de28a99ffa27065391f4eb">PowerClass</a>
 <li>get_unknown_1534()
 : <a class="el" href="class_power_class.html#253cbb184ce0f6ad5f797741eb548b19">PowerClass</a>
 , <a class="el" href="class_scenario_class.html#1491ab82447ada530c582e8da3f6aeda">ScenarioClass</a>
@@ -5795,8 +5798,8 @@
 <li>get_unknown_154()
 : <a class="el" href="class_anim_class.html#117c5d428f779f6dbf10f11f0de38b2f">AnimClass</a>
 <li>get_unknown_1540()
-: <a class="el" href="class_scenario_class.html#9c64a096049d5e4222247c6f9a9b8df6">ScenarioClass</a>
-, <a class="el" href="class_building_type_class.html#b3eb5a9277c357e659152f2e195dabd2">BuildingTypeClass</a>
+: <a class="el" href="class_building_type_class.html#b3eb5a9277c357e659152f2e195dabd2">BuildingTypeClass</a>
+, <a class="el" href="class_scenario_class.html#9c64a096049d5e4222247c6f9a9b8df6">ScenarioClass</a>
 <li>get_unknown_1544()
 : <a class="el" href="class_building_type_class.html#01939689c4920deb7648fcf740bc2ccc">BuildingTypeClass</a>
 , <a class="el" href="class_scenario_class.html#111d1c70db770cb9d51b373c3e581231">ScenarioClass</a>
@@ -6176,11 +6179,11 @@
 <li>get_unknown_17FC()
 : <a class="el" href="class_scenario_class.html#cd66a0acc8de0827cb70eebb6192aa17">ScenarioClass</a>
 <li>get_unknown_18()
-: <a class="el" href="class_abstract_class.html#039af991288d18e7ee419bbea48b6966">AbstractClass</a>
+: <a class="el" href="class_type_list.html#c3f6e33837f1bcbdc6eece4f8aa53286">TypeList&lt; T &gt;</a>
 , <a class="el" href="class_e_bolt.html#4c868b89cb88eb6f35e4c89a80c9f3ba">EBolt</a>
 , <a class="el" href="class_radar_event_class.html#1d1a09523d606ec9cab329df372a55d2">RadarEventClass</a>
 , <a class="el" href="class_rad_beam.html#ff2891b9361c02eb266c826498bb89af">RadBeam</a>
-, <a class="el" href="class_type_list.html#c3f6e33837f1bcbdc6eece4f8aa53286">TypeList&lt; T &gt;</a>
+, <a class="el" href="class_abstract_class.html#039af991288d18e7ee419bbea48b6966">AbstractClass</a>
 <li>get_unknown_1800()
 : <a class="el" href="class_scenario_class.html#44c739b052f29869f27645355aa0948a">ScenarioClass</a>
 <li>get_unknown_1804()
@@ -7284,8 +7287,8 @@
 <li>get_unknown_207C()
 : <a class="el" href="class_scenario_class.html#069827cb3cf4f04eb1a44f07d23ca842">ScenarioClass</a>
 <li>get_unknown_208()
-: <a class="el" href="class_wave_class.html#81e76f0da5c6f8ec1dc11c34bc497601">WaveClass</a>
-, <a class="el" href="class_techno_class.html#123f10b88839876da78371f0914ca06d">TechnoClass</a>
+: <a class="el" href="class_techno_class.html#123f10b88839876da78371f0914ca06d">TechnoClass</a>
+, <a class="el" href="class_wave_class.html#81e76f0da5c6f8ec1dc11c34bc497601">WaveClass</a>
 <li>get_unknown_2080()
 : <a class="el" href="class_scenario_class.html#3d2d37961307e369f8600444e2e31973">ScenarioClass</a>
 <li>get_unknown_2084()
@@ -7739,8 +7742,8 @@
 <li>get_unknown_23FC()
 : <a class="el" href="class_scenario_class.html#37783385bb9cec685d49849a6c475dfa">ScenarioClass</a>
 <li>get_unknown_24()
-: <a class="el" href="class_super_class.html#25dcb24adf762d3681d11623f81ac561">SuperClass</a>
-, <a class="el" href="class_e_bolt.html#66effadbcdf0020a36dcacc004a5585c">EBolt</a>
+: <a class="el" href="class_e_bolt.html#66effadbcdf0020a36dcacc004a5585c">EBolt</a>
+, <a class="el" href="class_super_class.html#25dcb24adf762d3681d11623f81ac561">SuperClass</a>
 <li>get_unknown_2400()
 : <a class="el" href="class_scenario_class.html#dd1c5f333ce6fb8940992fe009969ebb">ScenarioClass</a>
 <li>get_unknown_2404()
@@ -7830,8 +7833,8 @@
 <li>get_unknown_2A4()
 : <a class="el" href="class_anim_type_class.html#dffc0b0a65e60c90af2317951525edd3">AnimTypeClass</a>
 <li>get_unknown_2C()
-: <a class="el" href="class_i_n_i_class.html#4ec17308aaf7d7e16063feb8ae335c99">INIClass</a>
-, <a class="el" href="class_buffer_i_o_file_class.html#38893110ab9b761543716a08b4f0ce3b">BufferIOFileClass</a>
+: <a class="el" href="class_buffer_i_o_file_class.html#38893110ab9b761543716a08b4f0ce3b">BufferIOFileClass</a>
+, <a class="el" href="class_i_n_i_class.html#4ec17308aaf7d7e16063feb8ae335c99">INIClass</a>
 <li>get_unknown_2DC()
 : <a class="el" href="class_house_class.html#3cd2c7725ff18297d9f8e0cfcbe3927a">HouseClass</a>
 <li>get_unknown_2E0()
@@ -7843,9 +7846,9 @@
 <li>get_unknown_2F8()
 : <a class="el" href="class_techno_class.html#b530c661776bcf6dfd549d0f26b82edd">TechnoClass</a>
 <li>get_unknown_30()
-: <a class="el" href="class_buffer_i_o_file_class.html#f7adf942b3411305e51bfb1d0c58807b">BufferIOFileClass</a>
+: <a class="el" href="class_i_n_i_class.html#f6ce796ef567cac1f28514308457438a">INIClass</a>
 , <a class="el" href="class_disk_laser_class.html#ad8d121163abf25bbb7a43af4846804c">DiskLaserClass</a>
-, <a class="el" href="class_i_n_i_class.html#f6ce796ef567cac1f28514308457438a">INIClass</a>
+, <a class="el" href="class_buffer_i_o_file_class.html#f7adf942b3411305e51bfb1d0c58807b">BufferIOFileClass</a>
 <li>get_unknown_324()
 : <a class="el" href="class_house_class.html#2302c002a4e10f78472ab2578dc2f33c">HouseClass</a>
 <li>get_unknown_328()
@@ -7857,9 +7860,9 @@
 <li>get_unknown_334()
 : <a class="el" href="class_techno_class.html#83952da359e2dba0b3f5a1813033e1c5">TechnoClass</a>
 <li>get_unknown_34()
-: <a class="el" href="class_airstrike_class.html#487e6558711af0a2a823a5bc9ff5a11d">AirstrikeClass</a>
-, <a class="el" href="class_disk_laser_class.html#bcb00a4e5b71f29794307d014dbb5011">DiskLaserClass</a>
+: <a class="el" href="class_disk_laser_class.html#bcb00a4e5b71f29794307d014dbb5011">DiskLaserClass</a>
 , <a class="el" href="class_buffer_i_o_file_class.html#2de624f3dbed68d61e5b8afa1e10bb95">BufferIOFileClass</a>
+, <a class="el" href="class_airstrike_class.html#487e6558711af0a2a823a5bc9ff5a11d">AirstrikeClass</a>
 <li>get_unknown_34A0()
 : <a class="el" href="class_scenario_class.html#90e92bd5b37c9a7eac516c975919f2c6">ScenarioClass</a>
 <li>get_unknown_34C()
@@ -7883,19 +7886,19 @@
 <li>get_unknown_38()
 : <a class="el" href="class_airstrike_class.html#5fda921f7fb5b43a6ad5a7a92d2a9239">AirstrikeClass</a>
 , <a class="el" href="class_buffer_i_o_file_class.html#8c09d69d0eb0c992ff0a3a8773292217">BufferIOFileClass</a>
-, <a class="el" href="class_team_class.html#76b83cfdaf44f7c43d348f011d02eff7">TeamClass</a>
-, <a class="el" href="class_teleport_locomotion_class.html#ec43a6e03beb4f95b1aae0f59f4e19cd">TeleportLocomotionClass</a>
+, <a class="el" href="class_disk_laser_class.html#9df7ea040f98c99db56dc76353241dfe">DiskLaserClass</a>
 , <a class="el" href="class_voc_class.html#bfaa880acac9d787cb9d01e068569adf">VocClass</a>
 , <a class="el" href="class_i_n_i_class.html#8ba0353733726419fc3f40d2cb070bd8">INIClass</a>
-, <a class="el" href="class_disk_laser_class.html#9df7ea040f98c99db56dc76353241dfe">DiskLaserClass</a>
+, <a class="el" href="class_team_class.html#76b83cfdaf44f7c43d348f011d02eff7">TeamClass</a>
+, <a class="el" href="class_teleport_locomotion_class.html#ec43a6e03beb4f95b1aae0f59f4e19cd">TeleportLocomotionClass</a>
 <li>get_unknown_3B8()
 : <a class="el" href="class_techno_class.html#f79671a8763b084ef19f4baa5015dde0">TechnoClass</a>
 <li>get_unknown_3C()
-: <a class="el" href="class_buffer_i_o_file_class.html#f07721f5b8af152bd811c3647b331e10">BufferIOFileClass</a>
-, <a class="el" href="class_super_class.html#bc76b1f0860fa72934fc817bf0ab5db6">SuperClass</a>
-, <a class="el" href="class_voc_class.html#0f94e3accfaf88c0237117545d42976c">VocClass</a>
+: <a class="el" href="class_i_n_i_class.html#268c6d5a275305447e2644673603ae47">INIClass</a>
 , <a class="el" href="class_team_class.html#cd90d4b0aa472870d561e9ffb571b213">TeamClass</a>
-, <a class="el" href="class_i_n_i_class.html#268c6d5a275305447e2644673603ae47">INIClass</a>
+, <a class="el" href="class_buffer_i_o_file_class.html#f07721f5b8af152bd811c3647b331e10">BufferIOFileClass</a>
+, <a class="el" href="class_voc_class.html#0f94e3accfaf88c0237117545d42976c">VocClass</a>
+, <a class="el" href="class_super_class.html#bc76b1f0860fa72934fc817bf0ab5db6">SuperClass</a>
 <li>get_unknown_3C0()
 : <a class="el" href="class_techno_type_class.html#7b3540e045f5849784abe0b937c09cd6">TechnoTypeClass</a>
 <li>get_unknown_3CA()
@@ -7903,24 +7906,24 @@
 <li>get_unknown_4()
 : <a class="el" href="class_i_n_i_class.html#c272294b05f75341ebb923f9f80a267c">INIClass</a>
 <li>get_unknown_40()
-: <a class="el" href="class_buffer_i_o_file_class.html#37eb8a27c9f3a8eb56cd49e5a1c03f66">BufferIOFileClass</a>
-, <a class="el" href="class_team_class.html#e3df5022a8d83f3b0df37404e10b9ecb">TeamClass</a>
+: <a class="el" href="class_team_class.html#e3df5022a8d83f3b0df37404e10b9ecb">TeamClass</a>
+, <a class="el" href="class_buffer_i_o_file_class.html#37eb8a27c9f3a8eb56cd49e5a1c03f66">BufferIOFileClass</a>
 <li>get_unknown_428()
 : <a class="el" href="class_techno_class.html#72033608e4180f447d93d3ee58bc0fa3">TechnoClass</a>
 <li>get_unknown_43C()
 : <a class="el" href="class_techno_class.html#0c23219f515beb0f3f98239f337533c9">TechnoClass</a>
 <li>get_unknown_44()
-: <a class="el" href="class_voc_class.html#55b264e57f13baabb7e985d3d1c44547">VocClass</a>
-, <a class="el" href="class_capture_manager_class.html#b9804437bcf84bae98d011aaacb3c286">CaptureManagerClass</a>
-, <a class="el" href="class_i_n_i_class.html#f47a89b6e45b79fd45178f375fee0dd5">INIClass</a>
+: <a class="el" href="class_team_class.html#3988ae7b80763e9e6d1e3609c15ea292">TeamClass</a>
 , <a class="el" href="class_super_class.html#e56f6de1984b24b9030b7b1b424f34f1">SuperClass</a>
-, <a class="el" href="class_team_class.html#3988ae7b80763e9e6d1e3609c15ea292">TeamClass</a>
+, <a class="el" href="class_voc_class.html#55b264e57f13baabb7e985d3d1c44547">VocClass</a>
+, <a class="el" href="class_i_n_i_class.html#f47a89b6e45b79fd45178f375fee0dd5">INIClass</a>
+, <a class="el" href="class_capture_manager_class.html#b9804437bcf84bae98d011aaacb3c286">CaptureManagerClass</a>
 <li>get_unknown_48()
-: <a class="el" href="class_super_class.html#8e52911e30227221be574e8924726007">SuperClass</a>
+: <a class="el" href="class_i_n_i_class.html#b0b8933103bfa395093e1f5c9d8b1a15">INIClass</a>
 , <a class="el" href="class_rad_beam.html#41dd0f256ce2824c797ca33e07df5364">RadBeam</a>
-, <a class="el" href="class_teleport_locomotion_class.html#ec32a6c6f9a2ecba224ae0a8833d07cf">TeleportLocomotionClass</a>
-, <a class="el" href="class_i_n_i_class.html#b0b8933103bfa395093e1f5c9d8b1a15">INIClass</a>
 , <a class="el" href="class_parasite_class.html#1975243866e2f643732f01373ca9e516">ParasiteClass</a>
+, <a class="el" href="class_teleport_locomotion_class.html#ec32a6c6f9a2ecba224ae0a8833d07cf">TeleportLocomotionClass</a>
+, <a class="el" href="class_super_class.html#8e52911e30227221be574e8924726007">SuperClass</a>
 <li>get_unknown_49C()
 : <a class="el" href="class_techno_class.html#051f970f1616b89474915fe7a827a448">TechnoClass</a>
 <li>get_unknown_4A0()
@@ -7928,11 +7931,11 @@
 <li>get_unknown_4BC()
 : <a class="el" href="class_techno_class.html#5bfe44fdae32329f1f8461438104ab30">TechnoClass</a>
 <li>get_unknown_4C()
-: <a class="el" href="class_i_n_i_class.html#5d8f70d08e54ba661cd4265017a11e46">INIClass</a>
+: <a class="el" href="class_buffer_i_o_file_class.html#b409bb8ec342c31d4b904a1cfbbdc1de">BufferIOFileClass</a>
 , <a class="el" href="class_cell_class.html#01ae453953c90689633b21a441d3ab95">CellClass</a>
-, <a class="el" href="class_parasite_class.html#fa551b97aff35d2797c650d070f14aec">ParasiteClass</a>
+, <a class="el" href="class_i_n_i_class.html#5d8f70d08e54ba661cd4265017a11e46">INIClass</a>
 , <a class="el" href="class_super_class.html#3a5ea486ac0b9981beb015c779dce414">SuperClass</a>
-, <a class="el" href="class_buffer_i_o_file_class.html#b409bb8ec342c31d4b904a1cfbbdc1de">BufferIOFileClass</a>
+, <a class="el" href="class_parasite_class.html#fa551b97aff35d2797c650d070f14aec">ParasiteClass</a>
 , <a class="el" href="class_map_class.html#8378a3b7b93cfff86df55b2cd89abbec">MapClass</a>
 <li>get_unknown_4D8()
 : <a class="el" href="class_techno_class.html#fbb939fd62d6a75233d0dcb9875464fb">TechnoClass</a>
@@ -7941,11 +7944,11 @@
 <li>get_unknown_4FC()
 : <a class="el" href="class_techno_class.html#19e7d277117782c8eaa4b2489d56758e">TechnoClass</a>
 <li>get_unknown_50()
-: <a class="el" href="class_buffer_i_o_file_class.html#a2e606778a998b98d8e34e94a1c4bbc0">BufferIOFileClass</a>
-, <a class="el" href="class_i_n_i_class.html#54741660ebea3f1f5f8681d3c151bd6b">INIClass</a>
-, <a class="el" href="class_parasite_class.html#b3ec298279e399b317844d25d64a2947">ParasiteClass</a>
+: <a class="el" href="class_rad_site_class.html#ca8d0c30e532bc8d5eb38cdb59da57a3">RadSiteClass</a>
 , <a class="el" href="class_rad_beam.html#16324ec64aecbe60206674f49e7a1b7a">RadBeam</a>
-, <a class="el" href="class_rad_site_class.html#ca8d0c30e532bc8d5eb38cdb59da57a3">RadSiteClass</a>
+, <a class="el" href="class_parasite_class.html#b3ec298279e399b317844d25d64a2947">ParasiteClass</a>
+, <a class="el" href="class_i_n_i_class.html#54741660ebea3f1f5f8681d3c151bd6b">INIClass</a>
+, <a class="el" href="class_buffer_i_o_file_class.html#a2e606778a998b98d8e34e94a1c4bbc0">BufferIOFileClass</a>
 <li>get_unknown_500()
 : <a class="el" href="class_techno_class.html#c8b7c77ae14a749daf4bee7cb2500bb1">TechnoClass</a>
 <li>get_unknown_52C()
@@ -7990,14 +7993,13 @@
 : <a class="el" href="class_house_class.html#b3564b4a0b51b63f531d5f55786d842d">HouseClass</a>
 <li>get_unknown_54()
 : <a class="el" href="class_rad_beam.html#bbbe7dfd6a1133b378b7e0a67f2e4d4b">RadBeam</a>
-, <a class="el" href="class_rad_site_class.html#e260a6e6f0fc49628e11d6b2eef898f6">RadSiteClass</a>
 , <a class="el" href="class_parasite_class.html#2df4acdd68c0533008ac325316f41d24">ParasiteClass</a>
-, <a class="el" href="class_i_n_i_class.html#2195e61986fd08f36cfb0202970eef18">INIClass</a>
+, <a class="el" href="class_rad_site_class.html#e260a6e6f0fc49628e11d6b2eef898f6">RadSiteClass</a>
 , <a class="el" href="class_cell_class.html#237621971da839e362693da2acf503d9">CellClass</a>
 , <a class="el" href="class_c_d_file_class.html#426f143ef8170d2fc4741301752e87c3">CDFileClass</a>
 <li>get_unknown_540()
-: <a class="el" href="class_foot_class.html#6120febf224fe138b36b83c6c2f487da">FootClass</a>
-, <a class="el" href="class_building_class.html#3ae5d9c432456de6699b9a7bd8b4933b">BuildingClass</a>
+: <a class="el" href="class_building_class.html#3ae5d9c432456de6699b9a7bd8b4933b">BuildingClass</a>
+, <a class="el" href="class_foot_class.html#6120febf224fe138b36b83c6c2f487da">FootClass</a>
 <li>get_unknown_544()
 : <a class="el" href="class_building_class.html#abaf0be38f090c2cc3a5e6f2c200d2b2">BuildingClass</a>
 <li>get_unknown_544C()
@@ -8005,8 +8007,8 @@
 <li>get_unknown_546C()
 : <a class="el" href="class_sidebar_class.html#fc7697a94c42a6a474376096b310cd6e">SidebarClass</a>
 <li>get_unknown_548C()
-: <a class="el" href="class_house_class.html#c0f1c9c4bc960c056150901cb04fe238">HouseClass</a>
-, <a class="el" href="class_sidebar_class.html#9dab57c01cfbdb9532370d57dcda5a25">SidebarClass</a>
+: <a class="el" href="class_sidebar_class.html#9dab57c01cfbdb9532370d57dcda5a25">SidebarClass</a>
+, <a class="el" href="class_house_class.html#c0f1c9c4bc960c056150901cb04fe238">HouseClass</a>
 <li>get_unknown_5498()
 : <a class="el" href="class_house_class.html#e60c2db4c64490e62cbb10f9ecc8603f">HouseClass</a>
 <li>get_unknown_549C()
@@ -8018,8 +8020,8 @@
 <li>get_unknown_54A8()
 : <a class="el" href="class_house_class.html#ec3c676c7dce0b637854149cf156fc4b">HouseClass</a>
 <li>get_unknown_54AC()
-: <a class="el" href="class_sidebar_class.html#29c93d70785cc40758f85657c615fd20">SidebarClass</a>
-, <a class="el" href="class_house_class.html#595ada62f1a93ecb26ea9cc8bef76902">HouseClass</a>
+: <a class="el" href="class_house_class.html#595ada62f1a93ecb26ea9cc8bef76902">HouseClass</a>
+, <a class="el" href="class_sidebar_class.html#29c93d70785cc40758f85657c615fd20">SidebarClass</a>
 <li>get_unknown_54B0()
 : <a class="el" href="class_house_class.html#3f99ae1a989a31eaa289aeaaaf3ea8ff">HouseClass</a>
 <li>get_unknown_54B4()
@@ -8145,16 +8147,16 @@
 : <a class="el" href="class_house_class.html#031cc4162d7865c9251ed1bb16ae8c6f">HouseClass</a>
 <li>get_unknown_58()
 : <a class="el" href="class_rad_site_class.html#94b913920793643ebbdb4a75bed8c825">RadSiteClass</a>
-, <a class="el" href="class_cell_class.html#2a8267d627a9b1b7eca2cf4acc1dca57">CellClass</a>
 , <a class="el" href="class_rad_beam.html#012104ef80edc83d92b7f7206938f9fc">RadBeam</a>
+, <a class="el" href="class_cell_class.html#2a8267d627a9b1b7eca2cf4acc1dca57">CellClass</a>
 <li>get_unknown_5A0()
 : <a class="el" href="class_foot_class.html#68b766a29ca8e6b37a129f2846d543fb">FootClass</a>
 <li>get_unknown_5A8()
 : <a class="el" href="class_foot_class.html#dc7a4ca4cadd8b9f82bafd04242ac91d">FootClass</a>
 <li>get_unknown_5C()
-: <a class="el" href="class_rad_beam.html#03eeeba998e6a697e6e4215239927714">RadBeam</a>
+: <a class="el" href="class_cell_class.html#60e62d12583421fdebbe2bd9dc878265">CellClass</a>
 , <a class="el" href="class_rad_site_class.html#b023fd0af573c595ebbea161ef9893df">RadSiteClass</a>
-, <a class="el" href="class_cell_class.html#60e62d12583421fdebbe2bd9dc878265">CellClass</a>
+, <a class="el" href="class_rad_beam.html#03eeeba998e6a697e6e4215239927714">RadBeam</a>
 <li>get_unknown_5C8()
 : <a class="el" href="class_foot_class.html#c590c1ed936f045dc41be7e12e7bcb2e">FootClass</a>
 <li>get_unknown_5CC()
@@ -8181,8 +8183,8 @@
 <li>get_unknown_61C()
 : <a class="el" href="class_scenario_class.html#ca5e49b4170d4e253436e4ee29a7f4e3">ScenarioClass</a>
 <li>get_unknown_620()
-: <a class="el" href="class_building_class.html#3fc112c4247cd25df3e1d54afcfd4aaa">BuildingClass</a>
-, <a class="el" href="class_scenario_class.html#816b0e500775f4b151b772e28c1aa64b">ScenarioClass</a>
+: <a class="el" href="class_scenario_class.html#816b0e500775f4b151b772e28c1aa64b">ScenarioClass</a>
+, <a class="el" href="class_building_class.html#3fc112c4247cd25df3e1d54afcfd4aaa">BuildingClass</a>
 <li>get_unknown_624()
 : <a class="el" href="class_scenario_class.html#67ee7f4dd2d822e655e46fcd5bf3bf27">ScenarioClass</a>
 <li>get_unknown_628()
@@ -8193,18 +8195,18 @@
 : <a class="el" href="class_scenario_class.html#532994c70a7480c4180bea9c4002746a">ScenarioClass</a>
 <li>get_unknown_64()
 : <a class="el" href="class_object_class.html#50125e8671f740e296a3f90774de3f71">ObjectClass</a>
+, <a class="el" href="class_rad_beam.html#f780b523280191bffc7230c322ac9764">RadBeam</a>
+, <a class="el" href="class_cell_class.html#9e1c022beddef129226659370bb2c016">CellClass</a>
 , <a class="el" href="class_rad_site_class.html#997ad7a15f7125bc706e420abb29d384">RadSiteClass</a>
 , <a class="el" href="class_c_c_file_class.html#398dd4f85e6a8605b4e3e14321ab5edb">CCFileClass</a>
-, <a class="el" href="class_cell_class.html#9e1c022beddef129226659370bb2c016">CellClass</a>
-, <a class="el" href="class_rad_beam.html#f780b523280191bffc7230c322ac9764">RadBeam</a>
 <li>get_unknown_65C()
 : <a class="el" href="class_building_class.html#723c73077059676ce78c7933315eb85a">BuildingClass</a>
 <li>get_unknown_664()
 : <a class="el" href="class_foot_class.html#be46daca9d92cafaa0ac2c0bfc3d4dc3">FootClass</a>
 <li>get_unknown_68()
-: <a class="el" href="class_c_c_file_class.html#f03b0875d0b2743049011cdebc8dee12">CCFileClass</a>
+: <a class="el" href="class_rad_site_class.html#1ac79770f6f7c09edd0a622c2ea9e8a1">RadSiteClass</a>
+, <a class="el" href="class_c_c_file_class.html#f03b0875d0b2743049011cdebc8dee12">CCFileClass</a>
 , <a class="el" href="class_rad_beam.html#a537e9a15aedbaf02fdd0998ca273fd0">RadBeam</a>
-, <a class="el" href="class_rad_site_class.html#1ac79770f6f7c09edd0a622c2ea9e8a1">RadSiteClass</a>
 , <a class="el" href="class_cell_class.html#44d66dff5fa10bc2d074cff726af81fa">CellClass</a>
 <li>get_unknown_698()
 : <a class="el" href="class_foot_class.html#6b1c03ffb37cc9973f478ab97c6f9a66">FootClass</a>
@@ -8216,17 +8218,17 @@
 <li>get_unknown_6E0()
 : <a class="el" href="class_infantry_class.html#d211f0615bf3a22fa8a052f4ef04e963">InfantryClass</a>
 <li>get_unknown_70()
-: <a class="el" href="class_object_class.html#924ff03a38a16f847bb35293d43bb452">ObjectClass</a>
-, <a class="el" href="class_cell_class.html#3a9101e92ba9720f33ce7183efabaa0d">CellClass</a>
+: <a class="el" href="class_cell_class.html#3a9101e92ba9720f33ce7183efabaa0d">CellClass</a>
 , <a class="el" href="class_map_class.html#f5a5f87de2dcca6e80375aef2146c7c0">MapClass</a>
+, <a class="el" href="class_object_class.html#924ff03a38a16f847bb35293d43bb452">ObjectClass</a>
 <li>get_unknown_714()
 : <a class="el" href="class_building_class.html#a92480019ecb1cc12f5d0359f7eab3b6">BuildingClass</a>
 <li>get_unknown_718()
 : <a class="el" href="class_building_class.html#a259a24752b0260d550afc6417ba29cb">BuildingClass</a>
 <li>get_unknown_74()
 : <a class="el" href="class_map_class.html#1b7d00628532afbf5f10d253aaa6aa20">MapClass</a>
-, <a class="el" href="class_object_class.html#ffbf76afd5bb3f49826c7c3ed0958b0d">ObjectClass</a>
 , <a class="el" href="class_team_class.html#57216ddbdd619ae231503bef16f3317c">TeamClass</a>
+, <a class="el" href="class_object_class.html#ffbf76afd5bb3f49826c7c3ed0958b0d">ObjectClass</a>
 , <a class="el" href="class_cell_class.html#1b139a23c29f895b892471ad367f5a41">CellClass</a>
 <li>get_unknown_75()
 : <a class="el" href="class_team_class.html#132275f20dd2470ee0c9c76447323e6e">TeamClass</a>
@@ -8236,8 +8238,8 @@
 : <a class="el" href="class_team_class.html#507157edb96dcafcc29e630b10885405">TeamClass</a>
 <li>get_unknown_78()
 : <a class="el" href="class_super_class.html#17370a44885f3391cf3201b5a2921aa0">SuperClass</a>
-, <a class="el" href="class_team_class.html#cac895e405c63b64c539457e910a4a8b">TeamClass</a>
 , <a class="el" href="class_map_class.html#f081a0f6cd92eb2b223a51f8f9ed4ede">MapClass</a>
+, <a class="el" href="class_team_class.html#cac895e405c63b64c539457e910a4a8b">TeamClass</a>
 , <a class="el" href="class_object_class.html#92784c564a340575ade1e37e19e34dfd">ObjectClass</a>
 <li>get_unknown_79()
 : <a class="el" href="class_team_class.html#18a75318f9595b1279dfa97d9a95864e">TeamClass</a>
@@ -8247,9 +8249,9 @@
 : <a class="el" href="class_team_class.html#03c526a9d217a29bcd0aa5402bc7ce38">TeamClass</a>
 <li>get_unknown_7C()
 : <a class="el" href="class_team_class.html#6958a720445701209ace3e8a0425f4f3">TeamClass</a>
+, <a class="el" href="class_map_class.html#7573065baf57c58f933766ba8f3175b5">MapClass</a>
 , <a class="el" href="class_object_class.html#5a861cb6382e5c1239172e0de0c3834f">ObjectClass</a>
 , <a class="el" href="class_rad_beam.html#4994faf923cb9c1c8382a1799e179540">RadBeam</a>
-, <a class="el" href="class_map_class.html#7573065baf57c58f933766ba8f3175b5">MapClass</a>
 <li>get_unknown_7E()
 : <a class="el" href="class_team_class.html#06d4915b8dc2b4ec4b1a7d9d09b4639a">TeamClass</a>
 <li>get_unknown_7F()
@@ -8259,8 +8261,8 @@
 , <a class="el" href="class_rad_beam.html#dae55caf90a6b77f09abfab8db0092c4">RadBeam</a>
 , <a class="el" href="class_i_n_i_class.html#f1733d206111afe4618658a4a894ac19">INIClass</a>
 <li>get_unknown_80()
-: <a class="el" href="class_rad_beam.html#ae9468136aac4e5da82a69aa7b4984fa">RadBeam</a>
-, <a class="el" href="class_map_class.html#624d9c6093ac94efc857cd1c63c21508">MapClass</a>
+: <a class="el" href="class_map_class.html#624d9c6093ac94efc857cd1c63c21508">MapClass</a>
+, <a class="el" href="class_rad_beam.html#ae9468136aac4e5da82a69aa7b4984fa">RadBeam</a>
 <li>get_unknown_81()
 : <a class="el" href="class_team_class.html#e90f759d3859e87d4e77a27242ac62a9">TeamClass</a>
 <li>get_unknown_82()
@@ -8274,8 +8276,8 @@
 <li>get_unknown_87()
 : <a class="el" href="class_team_class.html#acbea01e0162751b4e9be629d4d1a806">TeamClass</a>
 <li>get_unknown_88()
-: <a class="el" href="class_rad_beam.html#b0eeabdf07f7e1fea436a5c97692e86a">RadBeam</a>
-, <a class="el" href="class_map_class.html#f3fdb08b126ad7340042fad88afbec2b">MapClass</a>
+: <a class="el" href="class_map_class.html#f3fdb08b126ad7340042fad88afbec2b">MapClass</a>
+, <a class="el" href="class_rad_beam.html#b0eeabdf07f7e1fea436a5c97692e86a">RadBeam</a>
 <li>get_unknown_8C()
 : <a class="el" href="class_rad_beam.html#ed37d89321b0493272d38fe078205904">RadBeam</a>
 , <a class="el" href="class_t_action_class.html#489f174ee4717b64671330de7e831df9">TActionClass</a>
@@ -8292,13 +8294,13 @@
 : <a class="el" href="class_voc_class.html#e902d18710cf08e216c3627fee14f602">VocClass</a>
 , <a class="el" href="class_rad_beam.html#8414c175663c6023846f5d509410dec7">RadBeam</a>
 <li>get_unknown_A0()
-: <a class="el" href="class_voc_class.html#a1ceddc50183aa5854acf959a3b3e611">VocClass</a>
+: <a class="el" href="class_rad_beam.html#446aa754490dcde1578d09da39e3e86f">RadBeam</a>
 , <a class="el" href="class_super_weapon_type_class.html#44a4cd10ab583cdc5dc1ac1be3136e6e">SuperWeaponTypeClass</a>
-, <a class="el" href="class_rad_beam.html#446aa754490dcde1578d09da39e3e86f">RadBeam</a>
+, <a class="el" href="class_voc_class.html#a1ceddc50183aa5854acf959a3b3e611">VocClass</a>
 <li>get_unknown_A4()
 : <a class="el" href="class_rad_beam.html#2458e58355a229c4fc6effc5fafe67cd">RadBeam</a>
-, <a class="el" href="class_voc_class.html#90bb0d35bd1b8fef9d4e6166c09647e4">VocClass</a>
 , <a class="el" href="class_super_weapon_type_class.html#cd079fc19e87c6511e95d36461283f3b">SuperWeaponTypeClass</a>
+, <a class="el" href="class_voc_class.html#90bb0d35bd1b8fef9d4e6166c09647e4">VocClass</a>
 <li>get_unknown_A8()
 : <a class="el" href="class_super_weapon_type_class.html#4d9d5fc8a28f09e921dbd928b5b87ecb">SuperWeaponTypeClass</a>
 , <a class="el" href="class_voc_class.html#a068fe22ec3e475c61e7823977133109">VocClass</a>
@@ -8309,32 +8311,32 @@
 : <a class="el" href="class_foot_class.html#96170753e0b89a731fc9ca622d1fd637">FootClass</a>
 <li>get_unknown_AC()
 : <a class="el" href="class_rad_beam.html#98851d453a6421ab09740af79694a69a">RadBeam</a>
-, <a class="el" href="class_terrain_class.html#28525246e5601b3f80c60568f40208ff">TerrainClass</a>
 , <a class="el" href="class_super_weapon_type_class.html#ba5ad89322292b175ced5ff07331efa9">SuperWeaponTypeClass</a>
+, <a class="el" href="class_terrain_class.html#28525246e5601b3f80c60568f40208ff">TerrainClass</a>
 , <a class="el" href="class_voc_class.html#6b4324052cfa897fdfebfb486864e483">VocClass</a>
 <li>get_unknown_array_68()
 : <a class="el" href="class_map_class.html#f80f94dfa2beea7e552e9ab174ebc520">MapClass</a>
 <li>get_unknown_B0()
-: <a class="el" href="class_anim_class.html#979de9fa64f099082873688317f9fb02">AnimClass</a>
+: <a class="el" href="class_rad_beam.html#15026a190e48408d174ae22fddbca405">RadBeam</a>
+, <a class="el" href="class_anim_class.html#979de9fa64f099082873688317f9fb02">AnimClass</a>
 , <a class="el" href="class_particle_class.html#7c4a58b8458d86f4c2c56825e18efed4">ParticleClass</a>
-, <a class="el" href="class_particle_system_class.html#381cd4a3093c74e389798a4af04cc049">ParticleSystemClass</a>
-, <a class="el" href="class_terrain_class.html#64dc8073d31add897b58b58fdb90add6">TerrainClass</a>
-, <a class="el" href="class_rad_beam.html#15026a190e48408d174ae22fddbca405">RadBeam</a>
 , <a class="el" href="class_voc_class.html#d0ac7c0e0237f0211ed81deac6177823">VocClass</a>
+, <a class="el" href="class_terrain_class.html#64dc8073d31add897b58b58fdb90add6">TerrainClass</a>
+, <a class="el" href="class_particle_system_class.html#381cd4a3093c74e389798a4af04cc049">ParticleSystemClass</a>
 <li>get_unknown_B1()
 : <a class="el" href="class_particle_class.html#90fbcf2b1125664c4ce04ea5adbf2e22">ParticleClass</a>
 <li>get_unknown_B2()
 : <a class="el" href="class_particle_class.html#195dc2938b5dbce973bff8ee39358eb9">ParticleClass</a>
 <li>get_unknown_B4()
-: <a class="el" href="class_bullet_class.html#1a5adba1535dae6fe96ba986d63a73ec">BulletClass</a>
-, <a class="el" href="class_a_i_trigger_type_class.html#2039e283041ac22cb448e02172e679ed">AITriggerTypeClass</a>
-, <a class="el" href="class_particle_class.html#1f10c3ef488b61bf62951a0cce46fd4a">ParticleClass</a>
+: <a class="el" href="class_particle_class.html#1f10c3ef488b61bf62951a0cce46fd4a">ParticleClass</a>
+, <a class="el" href="class_bullet_class.html#1a5adba1535dae6fe96ba986d63a73ec">BulletClass</a>
 , <a class="el" href="class_rad_beam.html#ee2a86240dfffe518cbdcf4b9f570386">RadBeam</a>
 , <a class="el" href="class_particle_system_class.html#fca36363d58663a39846292a5b42603c">ParticleSystemClass</a>
+, <a class="el" href="class_a_i_trigger_type_class.html#2039e283041ac22cb448e02172e679ed">AITriggerTypeClass</a>
 <li>get_unknown_B8()
 : <a class="el" href="class_rad_beam.html#9e8e249d720137e3be9cdfbc7bd3cd36">RadBeam</a>
-, <a class="el" href="class_particle_class.html#ff380815f24d0cee9b0b73bad965d66d">ParticleClass</a>
 , <a class="el" href="class_particle_system_class.html#1047a6e777b185bd94200406584839f5">ParticleSystemClass</a>
+, <a class="el" href="class_particle_class.html#ff380815f24d0cee9b0b73bad965d66d">ParticleClass</a>
 <li>get_unknown_BC()
 : <a class="el" href="class_particle_class.html#5e32ed56ce966b1a83269785bcb1d75c">ParticleClass</a>
 <li>get_unknown_bool_11CC()
@@ -8394,8 +8396,8 @@
 <li>get_unknown_bool_272()
 : <a class="el" href="class_techno_class.html#c4ce82fe1dc1e45f6a6186c50ae995c0">TechnoClass</a>
 <li>get_unknown_bool_28()
-: <a class="el" href="class_factory_class.html#6884b3328c782f74e9086d34def896cf">FactoryClass</a>
-, <a class="el" href="class_buffer_i_o_file_class.html#600519ddd4db3e219c8aeeca8df5f7d8">BufferIOFileClass</a>
+: <a class="el" href="class_buffer_i_o_file_class.html#600519ddd4db3e219c8aeeca8df5f7d8">BufferIOFileClass</a>
+, <a class="el" href="class_factory_class.html#6884b3328c782f74e9086d34def896cf">FactoryClass</a>
 <li>get_unknown_bool_29()
 : <a class="el" href="class_buffer_i_o_file_class.html#f6533ecfd4b8f03a3a58e444cd43bcba">BufferIOFileClass</a>
 <li>get_unknown_bool_34()
@@ -8549,8 +8551,8 @@
 <li>get_unknown_bool_6C()
 : <a class="el" href="class_super_class.html#2f4807256b6077001a46d9b62f896fd6">SuperClass</a>
 <li>get_unknown_bool_6C8()
-: <a class="el" href="class_aircraft_class.html#2612ae871a57c6792d5330ab914f0176">AircraftClass</a>
-, <a class="el" href="class_building_class.html#f401f460ee4d4ed956943d5b6b7e30e2">BuildingClass</a>
+: <a class="el" href="class_building_class.html#f401f460ee4d4ed956943d5b6b7e30e2">BuildingClass</a>
+, <a class="el" href="class_aircraft_class.html#2612ae871a57c6792d5330ab914f0176">AircraftClass</a>
 <li>get_unknown_bool_6CC()
 : <a class="el" href="class_building_class.html#bd3ef9c746c22e4759816a6521128a9c">BuildingClass</a>
 <li>get_unknown_bool_6D()
@@ -8571,11 +8573,11 @@
 <li>get_unknown_bool_6DA()
 : <a class="el" href="class_infantry_class.html#ffe4ac97b3ac63de5031ef321291409a">InfantryClass</a>
 <li>get_unknown_bool_6DC()
-: <a class="el" href="class_infantry_class.html#8d1a3c4d0e091671a3fa5d5155e96689">InfantryClass</a>
-, <a class="el" href="class_building_class.html#e8d35e58abebe80d650d91e4fb137211">BuildingClass</a>
+: <a class="el" href="class_building_class.html#e8d35e58abebe80d650d91e4fb137211">BuildingClass</a>
+, <a class="el" href="class_infantry_class.html#8d1a3c4d0e091671a3fa5d5155e96689">InfantryClass</a>
 <li>get_unknown_bool_6DD()
-: <a class="el" href="class_building_class.html#1b8f42d8f8e6ac18da91d7f42f81a19c">BuildingClass</a>
-, <a class="el" href="class_infantry_class.html#0231c3bcd3b442d047db74bd325bff2e">InfantryClass</a>
+: <a class="el" href="class_infantry_class.html#0231c3bcd3b442d047db74bd325bff2e">InfantryClass</a>
+, <a class="el" href="class_building_class.html#1b8f42d8f8e6ac18da91d7f42f81a19c">BuildingClass</a>
 <li>get_unknown_bool_6E0()
 : <a class="el" href="class_building_class.html#bf4da7870249f4b2ee0c322061a46625">BuildingClass</a>
 <li>get_unknown_bool_6E1()
@@ -8611,19 +8613,19 @@
 , <a class="el" href="class_rad_beam.html#61dc4d602b6ca2a9d80bcc977792ab32">RadBeam</a>
 <li>get_unknown_C0()
 : <a class="el" href="class_terrain_class.html#2463cb9096e1564aea18d3427158a251">TerrainClass</a>
-, <a class="el" href="class_rad_beam.html#8802f0aa0d3a19f1dcfd808b0df3cb36">RadBeam</a>
 , <a class="el" href="class_particle_class.html#b84eaba898439af6e58df5aea8746013">ParticleClass</a>
+, <a class="el" href="class_rad_beam.html#8802f0aa0d3a19f1dcfd808b0df3cb36">RadBeam</a>
 <li>get_unknown_C4()
-: <a class="el" href="class_terrain_class.html#bb008b8b2f16c052bc5a1b12dd32c83b">TerrainClass</a>
+: <a class="el" href="class_rad_beam.html#0b61f94969e4f1b1ec2973a0de8c2548">RadBeam</a>
 , <a class="el" href="class_particle_class.html#bdf0cf19785e87830c5773e6ab72bc62">ParticleClass</a>
-, <a class="el" href="class_anim_class.html#dbf0f0ec4061a578110d4266ba2884c2">AnimClass</a>
 , <a class="el" href="class_mission_class.html#6766b0a3661a0663cca1af11865d7791">MissionClass</a>
-, <a class="el" href="class_rad_beam.html#0b61f94969e4f1b1ec2973a0de8c2548">RadBeam</a>
+, <a class="el" href="class_terrain_class.html#bb008b8b2f16c052bc5a1b12dd32c83b">TerrainClass</a>
+, <a class="el" href="class_anim_class.html#dbf0f0ec4061a578110d4266ba2884c2">AnimClass</a>
 <li>get_unknown_C8()
 : <a class="el" href="class_particle_class.html#7d33cd721b7df58741e8bd42614faf91">ParticleClass</a>
 <li>get_unknown_CC()
-: <a class="el" href="class_particle_class.html#76a5b977487ac4162372744b1f8869db">ParticleClass</a>
-, <a class="el" href="class_terrain_class.html#7c734bc3401e21c6fc2957fdec7f99e3">TerrainClass</a>
+: <a class="el" href="class_terrain_class.html#7c734bc3401e21c6fc2957fdec7f99e3">TerrainClass</a>
+, <a class="el" href="class_particle_class.html#76a5b977487ac4162372744b1f8869db">ParticleClass</a>
 <li>get_unknown_CD()
 : <a class="el" href="class_terrain_class.html#6761830375b33ba4b12e809efcd5df82">TerrainClass</a>
 <li>get_unknown_cell_1178()
@@ -8691,28 +8693,28 @@
 <li>get_unknown_double_D0()
 : <a class="el" href="class_particle_class.html#3490f368af49260f45ef9ba531e65468">ParticleClass</a>
 <li>get_unknown_E0()
-: <a class="el" href="class_anim_class.html#321e9c0a597a497d63d72ef1c149acff">AnimClass</a>
+: <a class="el" href="class_particle_class.html#b9dc428e9a94688389aac8fed2d5a60d">ParticleClass</a>
+, <a class="el" href="class_anim_class.html#321e9c0a597a497d63d72ef1c149acff">AnimClass</a>
 , <a class="el" href="class_cell_class.html#6aa50b1d826b73d6a062319be1bf0de8">CellClass</a>
-, <a class="el" href="class_particle_class.html#b9dc428e9a94688389aac8fed2d5a60d">ParticleClass</a>
 <li>get_unknown_E10()
 : <a class="el" href="class_unit_type_class.html#4a644b12ffb3bca63d9fbf7f5bf280b7">UnitTypeClass</a>
 <li>get_unknown_E4()
-: <a class="el" href="class_bullet_class.html#d8539e923ed251370c27c5d074ae94bc">BulletClass</a>
-, <a class="el" href="class_anim_class.html#a5b9a13dccfe84a3cb14923409488eda">AnimClass</a>
+: <a class="el" href="class_anim_class.html#a5b9a13dccfe84a3cb14923409488eda">AnimClass</a>
+, <a class="el" href="class_bullet_class.html#d8539e923ed251370c27c5d074ae94bc">BulletClass</a>
 <li>get_unknown_E8()
 : <a class="el" href="class_anim_class.html#f12e347fe4abc12be61a7e003fe55e7a">AnimClass</a>
 <li>get_unknown_EC()
 : <a class="el" href="class_anim_class.html#227d5ba870f481a26c83e9803ddab8dc">AnimClass</a>
 <li>get_unknown_F0()
-: <a class="el" href="class_particle_class.html#ed062d340eed026945efb72ab69e7213">ParticleClass</a>
-, <a class="el" href="class_anim_class.html#5c59a960573e6d3784b717c54e2ffa84">AnimClass</a>
+: <a class="el" href="class_anim_class.html#5c59a960573e6d3784b717c54e2ffa84">AnimClass</a>
+, <a class="el" href="class_particle_class.html#ed062d340eed026945efb72ab69e7213">ParticleClass</a>
 <li>get_unknown_F4()
 : <a class="el" href="class_anim_class.html#e8711ed876cb48c7299c16cf295126e8">AnimClass</a>
 <li>get_unknown_F8()
 : <a class="el" href="class_anim_class.html#1f68236d6391f3cc4c052df431110026">AnimClass</a>
 <li>get_unknown_FC()
-: <a class="el" href="class_particle_system_class.html#afc7c163e16dda104da37e7f47c6b765">ParticleSystemClass</a>
-, <a class="el" href="class_cell_class.html#0c01cbd06ef740d6c0cc6996d3f68565">CellClass</a>
+: <a class="el" href="class_cell_class.html#0c01cbd06ef740d6c0cc6996d3f68565">CellClass</a>
+, <a class="el" href="class_particle_system_class.html#afc7c163e16dda104da37e7f47c6b765">ParticleSystemClass</a>
 <li>get_unknown_float_0C()
 : <a class="el" href="class_radar_event_class.html#a32f049a5eb2c72d7d003ddd159e3a67">RadarEventClass</a>
 <li>get_unknown_float_160A0()
@@ -8850,8 +8852,8 @@
 <li>get_unknown_timer_298()
 : <a class="el" href="class_house_class.html#4dbb99090dc1e97f4dd6c5bfa6128b3d">HouseClass</a>
 <li>get_unknown_timer_30()
-: <a class="el" href="class_radar_event_class.html#cf6f3d873396207168c549f9449bed11">RadarEventClass</a>
-, <a class="el" href="class_neuron_class.html#36388f6a60a8a440052c52664692c9ba">NeuronClass</a>
+: <a class="el" href="class_neuron_class.html#36388f6a60a8a440052c52664692c9ba">NeuronClass</a>
+, <a class="el" href="class_radar_event_class.html#cf6f3d873396207168c549f9449bed11">RadarEventClass</a>
 <li>get_unknown_timer_3C()
 : <a class="el" href="class_teleport_locomotion_class.html#440434e7dc4c94176f75256a17e0783d">TeleportLocomotionClass</a>
 <li>get_unknown_timer_550()
@@ -8927,8 +8929,8 @@
 <li>get_UpgradeLevel()
 : <a class="el" href="class_building_class.html#c176c28f56d945e811bb2841adbaf4d1">BuildingClass</a>
 <li>get_Upgrades()
-: <a class="el" href="class_building_class.html#11d31a3df11d3112d505da68950e1ece">BuildingClass</a>
-, <a class="el" href="class_building_type_class.html#42c944d528f7e9d337619d3d72d1327a">BuildingTypeClass</a>
+: <a class="el" href="class_building_type_class.html#42c944d528f7e9d337619d3d72d1327a">BuildingTypeClass</a>
+, <a class="el" href="class_building_class.html#11d31a3df11d3112d505da68950e1ece">BuildingClass</a>
 <li>get_UpgradeVeteranSound()
 : <a class="el" href="class_rules_class.html#edf97f61b16daf5df120bcabe9105e27">RulesClass</a>
 <li>get_URepairRate()
@@ -9132,6 +9134,8 @@
 : <a class="el" href="class_building_type_class.html#7f1c0795b7ca955181ed8b22367b4b0b">BuildingTypeClass</a>
 <li>get_VoxelBarrelOffsetToRotatePivotPoint()
 : <a class="el" href="class_building_type_class.html#c5a6230d8660a19812804d95c63ec6ee">BuildingTypeClass</a>
+<li>get_VRAMmed()
+: <a class="el" href="class_surface.html#1697365ed9de658f3865218575334e88">Surface</a>
 <li>get_VShift()
 : <a class="el" href="class_voc_class.html#ec903cf80d88a4188f642dc75531dc18">VocClass</a>
 <li>get_Wake()
@@ -9141,9 +9145,9 @@
 <li>get_WalkRate()
 : <a class="el" href="class_techno_type_class.html#25024d83afe81b1dd3d4baf577195e13">TechnoTypeClass</a>
 <li>get_Wall()
-: <a class="el" href="class_warhead_type_class.html#29a7f919edf5266b1063c34c2707a2e8">WarheadTypeClass</a>
+: <a class="el" href="class_building_type_class.html#22bfc933caafa174a76dc8a46c374312">BuildingTypeClass</a>
+, <a class="el" href="class_warhead_type_class.html#29a7f919edf5266b1063c34c2707a2e8">WarheadTypeClass</a>
 , <a class="el" href="class_overlay_type_class.html#ddefbcebfdd83d8d709d330c9284fc48">OverlayTypeClass</a>
-, <a class="el" href="class_building_type_class.html#22bfc933caafa174a76dc8a46c374312">BuildingTypeClass</a>
 <li>get_WallAbsoluteDestroyer()
 : <a class="el" href="class_warhead_type_class.html#8cc0119310165b9c69106ede7d781e95">WarheadTypeClass</a>
 <li>get_WallBuildSpeedCoefficient()
@@ -9161,9 +9165,9 @@
 <li>get_WarFactoryInfiltrated()
 : <a class="el" href="class_house_class.html#4a01f17c3067f56b55d5258bd9606ba1">HouseClass</a>
 <li>get_Warhead()
-: <a class="el" href="class_weapon_type_class.html#da5077de879481f4f2c9e40b71a1dbdb">WeaponTypeClass</a>
+: <a class="el" href="class_particle_type_class.html#6f552730c1b3c1ab1147831cd3306450">ParticleTypeClass</a>
 , <a class="el" href="class_anim_type_class.html#51d3ef45f7cd7be265bb3b8188e45f56">AnimTypeClass</a>
-, <a class="el" href="class_particle_type_class.html#6f552730c1b3c1ab1147831cd3306450">ParticleTypeClass</a>
+, <a class="el" href="class_weapon_type_class.html#da5077de879481f4f2c9e40b71a1dbdb">WeaponTypeClass</a>
 <li>get_WarLimit()
 : <a class="el" href="class_rules_class.html#2692e62faa652b8d30a253eeb5704fa9">RulesClass</a>
 <li>get_Warpable()
@@ -9204,8 +9208,8 @@
 : <a class="el" href="class_scenario_class.html#9684c40dc9d615f0b2ae5cd27efcb575">ScenarioClass</a>
 , <a class="el" href="class_waypoint_path_class.html#0438a291e81b6bfc46f390bbc5b52d03">WaypointPathClass</a>
 <li>get_Weapon()
-: <a class="el" href="class_disk_laser_class.html#c954c97228f72eee3a3815bcfe465413">DiskLaserClass</a>
-, <a class="el" href="class_techno_type_class.html#0ae190f92379ceef0903021d18cd608d">TechnoTypeClass</a>
+: <a class="el" href="class_techno_type_class.html#0ae190f92379ceef0903021d18cd608d">TechnoTypeClass</a>
+, <a class="el" href="class_disk_laser_class.html#c954c97228f72eee3a3815bcfe465413">DiskLaserClass</a>
 <li>get_WeaponCount()
 : <a class="el" href="class_techno_type_class.html#193897c4f043dcefb36f9041edbabacf">TechnoTypeClass</a>
 <li>get_WeaponNullifyAnim()
@@ -9247,9 +9251,9 @@
 <li>get_Whiner()
 : <a class="el" href="class_team_type_class.html#f15a86818e58e090a37b86fcd33d6725">TeamTypeClass</a>
 <li>get_Width()
-: <a class="el" href="class_smudge_type_class.html#c3cd1010c97c89c9a86c0ae9fc5cce77">SmudgeTypeClass</a>
-, <a class="el" href="class_surface.html#3d528a51478370889c6d36fad21be8d0">Surface</a>
+: <a class="el" href="class_surface.html#3d528a51478370889c6d36fad21be8d0">Surface</a>
 , <a class="el" href="class_scenario_class.html#1bf211abb89efcede85e38783115c6dc">ScenarioClass</a>
+, <a class="el" href="class_smudge_type_class.html#c3cd1010c97c89c9a86c0ae9fc5cce77">SmudgeTypeClass</a>
 <li>get_Win()
 : <a class="el" href="class_scenario_class.html#9bd52c4222a132ee34e31766310b35a7">ScenarioClass</a>
 <li>get_WindDirection()
@@ -9292,8 +9296,8 @@
 <li>get_YVelocity()
 : <a class="el" href="class_particle_type_class.html#add4cf536ebe07599ce451ac4cc0b0a0">ParticleTypeClass</a>
 <li>get_ZAdjust()
-: <a class="el" href="class_anim_type_class.html#dae480c7f9caea5b5f1b4c48bd0e02c5">AnimTypeClass</a>
-, <a class="el" href="class_anim_class.html#35db50ed23916695fea7012c13957ea9">AnimClass</a>
+: <a class="el" href="class_anim_class.html#35db50ed23916695fea7012c13957ea9">AnimClass</a>
+, <a class="el" href="class_anim_type_class.html#dae480c7f9caea5b5f1b4c48bd0e02c5">AnimTypeClass</a>
 <li>get_ZFudgeBridge()
 : <a class="el" href="class_techno_type_class.html#4843f5b8fdcf993b4395541433a896ff">TechnoTypeClass</a>
 <li>get_ZFudgeCliff()
@@ -9332,7 +9336,8 @@
 <li>GetBuildSpeed()
 : <a class="el" href="class_object_type_class.html#751c2752c576ca7e4240e6af86a282d0">ObjectTypeClass</a>
 <li>GetBytesPerPixel()
-: <a class="el" href="class_surface.html#3121826a38b9411f5dcdf9fdcea654ec">Surface</a>
+: <a class="el" href="class_d_surface.html#ab5e013e278f84b82260d067e1534679">DSurface</a>
+, <a class="el" href="class_surface.html#3121826a38b9411f5dcdf9fdcea654ec">Surface</a>
 <li>GetCameo()
 : <a class="el" href="class_object_type_class.html#daf64b63fba2fb9b2e22617d646b8867">ObjectTypeClass</a>
 <li>GetCDNumber()
@@ -9343,66 +9348,66 @@
 <li>GetCellAgain()
 : <a class="el" href="class_object_class.html#824525e0523873e9203ab753fe8fc336">ObjectClass</a>
 <li>GetCellAt()
-: <a class="el" href="class_map_class.html#1f4a038843b9860405cf8ef4f2685f41">MapClass</a>
+: <a class="el" href="class_map_class.html#d0b443988a90d48bb53fcd6a884c96e4">MapClass</a>
 <li>GetCellFloorHeight()
 : <a class="el" href="class_map_class.html#88bc9b6e48fd31d5d6dc5127c9a63c56">MapClass</a>
 <li>GetClassID()
-: <a class="el" href="class_particle_system_type_class.html#70ccde77d40d27e9a340d4842eeba873">ParticleSystemTypeClass</a>
-, <a class="el" href="class_smudge_type_class.html#793ceac583a2ff2423964b4ba0b17da6">SmudgeTypeClass</a>
-, <a class="el" href="class_disk_laser_class.html#d9d2ca6e3bf94abe5ad8be4e741e949b">DiskLaserClass</a>
-, <a class="el" href="class_overlay_class.html#5cc19908c9359b32851a8c07186eae05">OverlayClass</a>
-, <a class="el" href="class_factory_class.html#d1dd2b2dd0b1c299b21961c0b24bb18c">FactoryClass</a>
-, <a class="el" href="class_infantry_type_class.html#9bc123d47a99084efcc8ad94a62019be">InfantryTypeClass</a>
+: <a class="el" href="class_wave_class.html#3fcad1838206ba4af1584807d13633fe">WaveClass</a>
+, <a class="el" href="class_script_class.html#ab7496950952c1ae498ccd62b9c1f2cb">ScriptClass</a>
+, <a class="el" href="class_anim_class.html#2916ff1d29f8f259137b3c4c7e3fd87c">AnimClass</a>
+, <a class="el" href="class_capture_manager_class.html#453e80ebc061d027be3e17625c1ab497">CaptureManagerClass</a>
 , <a class="el" href="class_t_action_class.html#62eab0b7dadc774781bf360583f5ff0d">TActionClass</a>
-, <a class="el" href="class_unit_class.html#76526bda8d4794c60322a857b6e77f74">UnitClass</a>
-, <a class="el" href="class_super_class.html#e3ddfe051316528d342ae6530ec84e4d">SuperClass</a>
-, <a class="el" href="class_particle_system_class.html#2abc571ba5748c1b3c4daa74d58d760f">ParticleSystemClass</a>
+, <a class="el" href="class_smudge_type_class.html#793ceac583a2ff2423964b4ba0b17da6">SmudgeTypeClass</a>
+, <a class="el" href="class_light_source_class.html#7a6b14342b1072ce8165c25594ba3509">LightSourceClass</a>
+, <a class="el" href="class_factory_class.html#d1dd2b2dd0b1c299b21961c0b24bb18c">FactoryClass</a>
+, <a class="el" href="class_disk_laser_class.html#d9d2ca6e3bf94abe5ad8be4e741e949b">DiskLaserClass</a>
+, <a class="el" href="class_house_class.html#16ac3e73af9062169e50e0a2207667cc">HouseClass</a>
+, <a class="el" href="class_a_i_trigger_type_class.html#c9c78e61fda7ed2560aeea861546a935">AITriggerTypeClass</a>
+, <a class="el" href="class_team_type_class.html#23f274632c94665f81e7a34e94d4f331">TeamTypeClass</a>
 , <a class="el" href="class_trigger_class.html#fee8eb48133bed85b8b005808b421209">TriggerClass</a>
-, <a class="el" href="class_super_weapon_type_class.html#ee2f92429095019cb274b5f1caeccf57">SuperWeaponTypeClass</a>
+, <a class="el" href="class_unit_class.html#76526bda8d4794c60322a857b6e77f74">UnitClass</a>
+, <a class="el" href="class_particle_system_class.html#2abc571ba5748c1b3c4daa74d58d760f">ParticleSystemClass</a>
+, <a class="el" href="class_rad_site_class.html#56e7d02c1adaf298bc5f49207d78f1da">RadSiteClass</a>
+, <a class="el" href="class_warhead_type_class.html#9552043bc79358fed18704ff9d642fc9">WarheadTypeClass</a>
+, <a class="el" href="class_temporal_class.html#8f2afceebad7a1e3ee81ae41fdf5cc72">TemporalClass</a>
+, <a class="el" href="class_aircraft_type_class.html#a60d2c2c3ab245240f9c6bc5b5a99000">AircraftTypeClass</a>
+, <a class="el" href="class_smudge_class.html#94f913536a143ff79654b095b426d3b3">SmudgeClass</a>
+, <a class="el" href="class_bullet_type_class.html#31b3e904586c50f4c8f43a7248ba09ee">BulletTypeClass</a>
+, <a class="el" href="class_parasite_class.html#7f27882c60c1e6385afc1c24f2ac8316">ParasiteClass</a>
 , <a class="el" href="class_unit_type_class.html#8d000e7e80e32622d4540a8015b60351">UnitTypeClass</a>
-, <a class="el" href="class_t_event_class.html#fd3c295f33b2b1cde9b1fb1d1bceb89f">TEventClass</a>
-, <a class="el" href="class_team_class.html#f654e2e804322d25b8be9db9efe373a8">TeamClass</a>
-, <a class="el" href="class_particle_type_class.html#4e11fef9edc574eb71d49eddb667fbd8">ParticleTypeClass</a>
+, <a class="el" href="class_super_class.html#e3ddfe051316528d342ae6530ec84e4d">SuperClass</a>
 , <a class="el" href="class_airstrike_class.html#3f74feefbfb5e05aecb67c7f50beb7f2">AirstrikeClass</a>
 , <a class="el" href="class_weapon_type_class.html#5a0d6326ea66e93b3b453e63d2b7229d">WeaponTypeClass</a>
-, <a class="el" href="class_waypoint_path_class.html#305d02ef6da09f85caa17315f1ab06ad">WaypointPathClass</a>
-, <a class="el" href="class_terrain_type_class.html#e111f889b0414733cc58a3c19e747367">TerrainTypeClass</a>
-, <a class="el" href="class_terrain_class.html#9011876ca27d94614fb361c0c96936a8">TerrainClass</a>
-, <a class="el" href="class_parasite_class.html#7f27882c60c1e6385afc1c24f2ac8316">ParasiteClass</a>
-, <a class="el" href="class_bullet_class.html#9a023e92f09e9d1c8318a41e649360b9">BulletClass</a>
-, <a class="el" href="class_team_type_class.html#23f274632c94665f81e7a34e94d4f331">TeamTypeClass</a>
-, <a class="el" href="class_wave_class.html#3fcad1838206ba4af1584807d13633fe">WaveClass</a>
-, <a class="el" href="class_particle_class.html#57d1aed5a6dbbbe78abdc711fae1e31d">ParticleClass</a>
-, <a class="el" href="class_teleport_locomotion_class.html#1049a1057ddf340bfdd5b8a2fe797f27">TeleportLocomotionClass</a>
-, <a class="el" href="class_building_light_class.html#ad924982daa6ee910e9ed05ca29f80b3">BuildingLightClass</a>
-, <a class="el" href="class_abstract_class.html#2199057db5f883039f402c36691cab95">AbstractClass</a>
 , <a class="el" href="class_aircraft_class.html#0cbdf085867697862b50bf1764430f0d">AircraftClass</a>
-, <a class="el" href="class_side_class.html#930d299938c989a8331f2fd96aed2865">SideClass</a>
-, <a class="el" href="class_cell_class.html#d59a0495d21715504834a486c665410b">CellClass</a>
-, <a class="el" href="class_aircraft_type_class.html#a60d2c2c3ab245240f9c6bc5b5a99000">AircraftTypeClass</a>
-, <a class="el" href="class_neuron_class.html#4829ba551f716bc5e180e8b895a1fa37">NeuronClass</a>
-, <a class="el" href="class_anim_class.html#2916ff1d29f8f259137b3c4c7e3fd87c">AnimClass</a>
-, <a class="el" href="class_temporal_class.html#8f2afceebad7a1e3ee81ae41fdf5cc72">TemporalClass</a>
-, <a class="el" href="class_capture_manager_class.html#453e80ebc061d027be3e17625c1ab497">CaptureManagerClass</a>
-, <a class="el" href="class_e_m_pulse_class.html#76aa08110dae337614e981f1fb26a6f3">EMPulseClass</a>
-, <a class="el" href="class_a_i_trigger_type_class.html#c9c78e61fda7ed2560aeea861546a935">AITriggerTypeClass</a>
-, <a class="el" href="class_rad_site_class.html#56e7d02c1adaf298bc5f49207d78f1da">RadSiteClass</a>
-, <a class="el" href="class_bomb_class.html#b7d4440058e9c3596deea844ad47a898">BombClass</a>
-, <a class="el" href="class_infantry_class.html#5e815002d8437467d9f6b997753b4572">InfantryClass</a>
-, <a class="el" href="class_overlay_type_class.html#4fcc27cb4e0d1299b69d68386db43626">OverlayTypeClass</a>
+, <a class="el" href="class_t_event_class.html#fd3c295f33b2b1cde9b1fb1d1bceb89f">TEventClass</a>
+, <a class="el" href="class_super_weapon_type_class.html#ee2f92429095019cb274b5f1caeccf57">SuperWeaponTypeClass</a>
+, <a class="el" href="class_particle_class.html#57d1aed5a6dbbbe78abdc711fae1e31d">ParticleClass</a>
+, <a class="el" href="class_team_class.html#f654e2e804322d25b8be9db9efe373a8">TeamClass</a>
+, <a class="el" href="class_overlay_class.html#5cc19908c9359b32851a8c07186eae05">OverlayClass</a>
 , <a class="el" href="class_building_type_class.html#392ff4424229f6df2ea37af60e643eb4">BuildingTypeClass</a>
-, <a class="el" href="class_light_source_class.html#7a6b14342b1072ce8165c25594ba3509">LightSourceClass</a>
-, <a class="el" href="class_building_class.html#fb3d60356ee3caec65e38f7ebceb378f">BuildingClass</a>
-, <a class="el" href="class_anim_type_class.html#07ee8254685dccdf37dc28780e31eeae">AnimTypeClass</a>
-, <a class="el" href="class_bullet_type_class.html#31b3e904586c50f4c8f43a7248ba09ee">BulletTypeClass</a>
-, <a class="el" href="class_script_class.html#ab7496950952c1ae498ccd62b9c1f2cb">ScriptClass</a>
-, <a class="el" href="class_house_class.html#16ac3e73af9062169e50e0a2207667cc">HouseClass</a>
-, <a class="el" href="class_task_force_class.html#d00b7039cded97491b3b09a960295f21">TaskForceClass</a>
-, <a class="el" href="class_house_type_class.html#33d984fe9629f437d2fdfd885b1b6b68">HouseTypeClass</a>
-, <a class="el" href="class_warhead_type_class.html#9552043bc79358fed18704ff9d642fc9">WarheadTypeClass</a>
+, <a class="el" href="class_terrain_class.html#9011876ca27d94614fb361c0c96936a8">TerrainClass</a>
 , <a class="el" href="class_alpha_shape_class.html#c4ffa4c18cae33397f92fe577cc40ab9">AlphaShapeClass</a>
-, <a class="el" href="class_smudge_class.html#94f913536a143ff79654b095b426d3b3">SmudgeClass</a>
+, <a class="el" href="class_terrain_type_class.html#e111f889b0414733cc58a3c19e747367">TerrainTypeClass</a>
+, <a class="el" href="class_building_class.html#fb3d60356ee3caec65e38f7ebceb378f">BuildingClass</a>
+, <a class="el" href="class_task_force_class.html#d00b7039cded97491b3b09a960295f21">TaskForceClass</a>
+, <a class="el" href="class_particle_type_class.html#4e11fef9edc574eb71d49eddb667fbd8">ParticleTypeClass</a>
+, <a class="el" href="class_cell_class.html#d59a0495d21715504834a486c665410b">CellClass</a>
+, <a class="el" href="class_side_class.html#930d299938c989a8331f2fd96aed2865">SideClass</a>
+, <a class="el" href="class_anim_type_class.html#07ee8254685dccdf37dc28780e31eeae">AnimTypeClass</a>
+, <a class="el" href="class_house_type_class.html#33d984fe9629f437d2fdfd885b1b6b68">HouseTypeClass</a>
+, <a class="el" href="class_infantry_class.html#5e815002d8437467d9f6b997753b4572">InfantryClass</a>
+, <a class="el" href="class_e_m_pulse_class.html#76aa08110dae337614e981f1fb26a6f3">EMPulseClass</a>
+, <a class="el" href="class_particle_system_type_class.html#70ccde77d40d27e9a340d4842eeba873">ParticleSystemTypeClass</a>
+, <a class="el" href="class_bomb_class.html#b7d4440058e9c3596deea844ad47a898">BombClass</a>
+, <a class="el" href="class_abstract_class.html#2199057db5f883039f402c36691cab95">AbstractClass</a>
+, <a class="el" href="class_bullet_class.html#9a023e92f09e9d1c8318a41e649360b9">BulletClass</a>
+, <a class="el" href="class_infantry_type_class.html#9bc123d47a99084efcc8ad94a62019be">InfantryTypeClass</a>
+, <a class="el" href="class_neuron_class.html#4829ba551f716bc5e180e8b895a1fa37">NeuronClass</a>
+, <a class="el" href="class_overlay_type_class.html#4fcc27cb4e0d1299b69d68386db43626">OverlayTypeClass</a>
 , <a class="el" href="class_script_type_class.html#5a257b613cd5c8a3f073ac938350eca6">ScriptTypeClass</a>
+, <a class="el" href="class_teleport_locomotion_class.html#1049a1057ddf340bfdd5b8a2fe797f27">TeleportLocomotionClass</a>
+, <a class="el" href="class_waypoint_path_class.html#305d02ef6da09f85caa17315f1ab06ad">WaypointPathClass</a>
+, <a class="el" href="class_building_light_class.html#ad924982daa6ee910e9ed05ca29f80b3">BuildingLightClass</a>
 <li>GetClassName()
 : <a class="el" href="class_abstract_class.html#e1cafb89c50b153e3175aba4d6bd1d69">AbstractClass</a>
 <li>GetContainedTiberiumIndex()
@@ -9440,6 +9445,8 @@
 : <a class="el" href="class_techno_class.html#9a26e21a60f17ef0d3c97d17bcd5667a">TechnoClass</a>
 <li>GetDisguise()
 : <a class="el" href="class_object_class.html#596ef521ee61db3c18e5e588451f7dac">ObjectClass</a>
+<li>GetDisguiseFlags()
+: <a class="el" href="class_techno_class.html#710c3bc5e0c1ba70f11843f9988d9cec">TechnoClass</a>
 <li>GetDisguiseHouse()
 : <a class="el" href="class_object_class.html#0bb6edb22d826e094d740f31997287b3">ObjectClass</a>
 <li>GetEnd()
@@ -9449,20 +9456,24 @@
 <li>GetFacing()
 : <a class="el" href="struct_facing_struct.html#acce57cd6696bc37418cf15cc1b7f9b9">FacingStruct</a>
 <li>GetFactoryType()
-: <a class="el" href="class_object_class.html#a2e3e005a555dcfe50d70c8de1d0985b">ObjectClass</a>
-, <a class="el" href="class_object_type_class.html#e2a66544fdb86d5d492cf73061d07f49">ObjectTypeClass</a>
+: <a class="el" href="class_object_type_class.html#e2a66544fdb86d5d492cf73061d07f49">ObjectTypeClass</a>
+, <a class="el" href="class_object_class.html#a2e3e005a555dcfe50d70c8de1d0985b">ObjectClass</a>
 <li>GetField0C()
 : <a class="el" href="class_w_w_mouse_class.html#e77ca1988f2c7682a9cb288baf25fd21">WWMouseClass</a>
 <li>GetField10()
 : <a class="el" href="class_w_w_mouse_class.html#565464cf0006a02d1d680a093702965f">WWMouseClass</a>
 <li>GetFileName()
-: <a class="el" href="class_raw_file_class.html#0561f76cbd92bd24bd441838141dd17c">RawFileClass</a>
-, <a class="el" href="class_file_class.html#b60f4b21224060514fcf4d97aa3cf17f">FileClass</a>
+: <a class="el" href="class_file_class.html#b60f4b21224060514fcf4d97aa3cf17f">FileClass</a>
+, <a class="el" href="class_raw_file_class.html#0561f76cbd92bd24bd441838141dd17c">RawFileClass</a>
 <li>GetFileSize()
-: <a class="el" href="class_file_class.html#79aa0f862dc9021fccc164883c93d2da">FileClass</a>
-, <a class="el" href="class_raw_file_class.html#1ec54923d2f800878adf8fa9b70fb159">RawFileClass</a>
+: <a class="el" href="class_raw_file_class.html#1ec54923d2f800878adf8fa9b70fb159">RawFileClass</a>
+, <a class="el" href="class_file_class.html#79aa0f862dc9021fccc164883c93d2da">FileClass</a>
 <li>GetFileTime()
 : <a class="el" href="class_file_class.html#284ca54024d39b53a269955d82d34922">FileClass</a>
+<li>GetFireError()
+: <a class="el" href="class_techno_class.html#a35b92ec50661da2b6796dc70efe6fea">TechnoClass</a>
+<li>GetFireErrorWithoutRange()
+: <a class="el" href="class_techno_class.html#1364d37e2b99a798425abb8fd8c4fb15">TechnoClass</a>
 <li>GetFirst()
 : <a class="el" href="class_link_class.html#28bd5b6f99aacc84eb5648eeecfecf65">LinkClass</a>
 <li>GetFirstPassenger()
@@ -9471,9 +9482,11 @@
 : <a class="el" href="class_t_event_class.html#12a93496de1c51549dc59c8b23df3014">TEventClass</a>
 , <a class="el" href="class_t_action_class.html#82bc31a46c0819629a6542b9fc552aaa">TActionClass</a>
 <li>GetFLH()
-: <a class="el" href="class_object_class.html#51f9a378aa52ddb256e390b7b7d78257">ObjectClass</a>
+: <a class="el" href="class_object_class.html#b493e9be08dcb1b0c5f454bd25dd9983">ObjectClass</a>
 <li>GetFlightLevel()
 : <a class="el" href="class_techno_type_class.html#39a6dc83e467013826355605c661d29b">TechnoTypeClass</a>
+<li>GetFoundationData()
+: <a class="el" href="class_object_class.html#ba36ad23ae4b330d15d3fd9ae7c4b8e9">ObjectClass</a>
 <li>GetFoundationHeight()
 : <a class="el" href="class_building_type_class.html#fb684434a63dc8f42b7021a87cdc445d">BuildingTypeClass</a>
 <li>GetFrameHeader()
@@ -9482,6 +9495,8 @@
 : <a class="el" href="class_building_class.html#f5fbe22f76df2ecdc48bcd0ad3d19b69">BuildingClass</a>
 <li>GetGroup()
 : <a class="el" href="class_team_type_class.html#783bae108159dff84255cdaa6ccb4b4c">TeamTypeClass</a>
+<li>GetHealthStatus()
+: <a class="el" href="class_object_class.html#191b69ef90a639f001691ba0957b81af">ObjectClass</a>
 <li>GetHeight()
 : <a class="el" href="class_surface.html#00523aacd4648d8ec38e4e9a3459e15f">Surface</a>
 , <a class="el" href="class_object_class.html#5cb08d78d7dc6e11151f4c04061d97f1">ObjectClass</a>
@@ -9546,12 +9561,20 @@
 : <a class="el" href="class_object_type_class.html#bdf9d132cec46f35c182bcec4260768d">ObjectTypeClass</a>
 <li>GetPitch()
 : <a class="el" href="class_surface.html#a183648920c68c4494b0120d3c853bfc">Surface</a>
+, <a class="el" href="class_d_surface.html#d081bc616a7700a07881dc700f30d1c4">DSurface</a>
 <li>GetPixel()
 : <a class="el" href="class_surface.html#a0fd48c140869e06900318dbec680248">Surface</a>
+, <a class="el" href="class_d_surface.html#85a16afcfb82c68c275b41064bc6ac79">DSurface</a>
 <li>GetPlanningWaypointAt()
 : <a class="el" href="class_house_class.html#24ff72aeb60be3ff28360007aef279dc">HouseClass</a>
 <li>GetPlanningWaypointProperties()
 : <a class="el" href="class_house_class.html#6fc6d15f549f3ae1153c62cd3c0fcb90">HouseClass</a>
+<li>GetPosition_0()
+: <a class="el" href="class_object_class.html#862959bfd146ce1c7bda08b518673679">ObjectClass</a>
+<li>GetPosition_1()
+: <a class="el" href="class_object_class.html#68cd9f9d6c9b16b2c0808de43ad58b16">ObjectClass</a>
+<li>GetPosition_2()
+: <a class="el" href="class_object_class.html#961a92f8f235a3a4021fafea13c4a1db">ObjectClass</a>
 <li>GetPrerequisites()
 : <a class="el" href="class_i_n_i_class.html#2d157fa730f933f90cc167207ab45798">INIClass</a>
 <li>GetPrevious()
@@ -9578,10 +9601,10 @@
 <li>GetSection()
 : <a class="el" href="class_i_n_i_class.html#01c149420b15c4e5a56df59a12ee92a9">INIClass</a>
 <li>GetSizeMax()
-: <a class="el" href="class_techno_type_class.html#d07e409193a2d223a9eb7d4fd50b8d5d">TechnoTypeClass</a>
-, <a class="el" href="class_locomotion_class.html#200896b563342f07863f15add0dc6c36">LocomotionClass</a>
-, <a class="el" href="class_object_type_class.html#44556f8b190a72154a8c5de945386777">ObjectTypeClass</a>
+: <a class="el" href="class_locomotion_class.html#200896b563342f07863f15add0dc6c36">LocomotionClass</a>
 , <a class="el" href="class_abstract_class.html#7cc7057f3315733accc8d1949f4ca2ca">AbstractClass</a>
+, <a class="el" href="class_techno_type_class.html#d07e409193a2d223a9eb7d4fd50b8d5d">TechnoTypeClass</a>
+, <a class="el" href="class_object_type_class.html#44556f8b190a72154a8c5de945386777">ObjectTypeClass</a>
 <li>GetSomeObject()
 : <a class="el" href="class_cell_class.html#61f7a05272829e53e0371e9460af9de9">CellClass</a>
 <li>GetStateA()
@@ -9597,8 +9620,8 @@
 <li>GetTaskForceMembers()
 : <a class="el" href="class_team_class.html#f0b3e0b80da674eec884f3695935bb2b">TeamClass</a>
 <li>GetTechnoType()
-: <a class="el" href="class_i_n_i_class.html#eaa363e2ae8f01e5f69c2e86988aa087">INIClass</a>
-, <a class="el" href="class_object_class.html#52d8d225508be20e24e93cf3674232ef">ObjectClass</a>
+: <a class="el" href="class_object_class.html#52d8d225508be20e24e93cf3674232ef">ObjectClass</a>
+, <a class="el" href="class_i_n_i_class.html#eaa363e2ae8f01e5f69c2e86988aa087">INIClass</a>
 <li>GetTerrain()
 : <a class="el" href="class_cell_class.html#9d51cbe2ca614e166829d77cb6892c95">CellClass</a>
 <li>GetTextBox()
@@ -9622,15 +9645,15 @@
 <li>GetType()
 : <a class="el" href="class_object_class.html#c57d83cb7a4554b9382e22ebe9a7d724">ObjectClass</a>
 <li>GetTypeOwners()
-: <a class="el" href="class_object_class.html#beea7349e8d4a781c37d6c244f185b2c">ObjectClass</a>
+: <a class="el" href="class_object_class.html#19b47483acd86ea6f8708af98d15fa42">ObjectClass</a>
 <li>GetUICategory()
 : <a class="el" href="class_command_class.html#6a6a900b08a94ba240d95a05345b46bf">CommandClass</a>
 <li>GetUIDescription()
 : <a class="el" href="class_command_class.html#8055c9e33e9589aca16fc10a9b326067">CommandClass</a>
 <li>GetUIName()
-: <a class="el" href="class_command_class.html#52724dff23328792a122d0aedf32b64f">CommandClass</a>
-, <a class="el" href="class_object_class.html#aa1df1aa7ac79a9c688e5057df5737f3">ObjectClass</a>
+: <a class="el" href="class_object_class.html#aa1df1aa7ac79a9c688e5057df5737f3">ObjectClass</a>
 , <a class="el" href="class_cell_class.html#d3aba6bf3745abe221a0c355642edbce">CellClass</a>
+, <a class="el" href="class_command_class.html#52724dff23328792a122d0aedf32b64f">CommandClass</a>
 <li>GetUnit()
 : <a class="el" href="class_cell_class.html#7ac84b7846842d9a55b040a9e3f875d3">CellClass</a>
 <li>GetUnitSelfHealStep()
@@ -9643,7 +9666,7 @@
 <li>GetWaypointAfter()
 : <a class="el" href="class_waypoint_path_class.html#af9ca6c51e1834299fd027661453b18f">WaypointPathClass</a>
 <li>GetWeapon()
-: <a class="el" href="class_techno_class.html#f6ae06e19f4e42e20ed78fa6bc228a63">TechnoClass</a>
+: <a class="el" href="class_techno_class.html#e4cda6ada54c676092bbc855b2bb49ad">TechnoClass</a>
 <li>GetWeaponRange()
 : <a class="el" href="class_object_class.html#24e074a46eff96c16915aae2e8ed0680">ObjectClass</a>
 <li>GetWeaponType()
@@ -9659,16 +9682,16 @@
 <li>GiveMoney()
 : <a class="el" href="class_house_class.html#87fa89441f5d563a5fce395b3add4dd9">HouseClass</a>
 <li>Global()
-: <a class="el" href="class_randomizer.html#ad40fd55333d26dce9e0215df8c02ca1">Randomizer</a>
+: <a class="el" href="class_radar_class.html#258faa0b7b0041b54aba6218c14807ae">RadarClass</a>
 , <a class="el" href="class_tactical_class.html#d84bf5800090b34bf6aa676918cf2974">TacticalClass</a>
-, <a class="el" href="class_scenario_class.html#da3020f78d96525f1a1dd95a3188fbeb">ScenarioClass</a>
-, <a class="el" href="class_display_class.html#e6ccd190ecc4ce780d007937b1bc0a17">DisplayClass</a>
-, <a class="el" href="class_radar_class.html#258faa0b7b0041b54aba6218c14807ae">RadarClass</a>
-, <a class="el" href="class_c_d_drive_manager_class.html#00bc69c0888bdc4dc4c1c133c455fb32">CDDriveManagerClass</a>
-, <a class="el" href="class_power_class.html#dc59017206c1d1fd8e6b99ca091f78cf">PowerClass</a>
-, <a class="el" href="class_rules_class.html#43bdfdff96b3566db6e76dcf13c7e9ae">RulesClass</a>
 , <a class="el" href="class_sidebar_class.html#69749db930b7126a47ef5fa06e68d6c1">SidebarClass</a>
+, <a class="el" href="class_scenario_class.html#da3020f78d96525f1a1dd95a3188fbeb">ScenarioClass</a>
 , <a class="el" href="class_g_screen_class.html#d6566f322cab2232196e8d74c5822111">GScreenClass</a>
+, <a class="el" href="class_rules_class.html#43bdfdff96b3566db6e76dcf13c7e9ae">RulesClass</a>
+, <a class="el" href="class_display_class.html#e6ccd190ecc4ce780d007937b1bc0a17">DisplayClass</a>
+, <a class="el" href="class_power_class.html#dc59017206c1d1fd8e6b99ca091f78cf">PowerClass</a>
+, <a class="el" href="class_c_d_drive_manager_class.html#00bc69c0888bdc4dc4c1c133c455fb32">CDDriveManagerClass</a>
+, <a class="el" href="class_randomizer.html#ad40fd55333d26dce9e0215df8c02ca1">Randomizer</a>
 , <a class="el" href="class_bomb_list_class.html#87e808c39132357c0f21a14588d40996">BombListClass</a>
 , <a class="el" href="class_map_class.html#b896e3a272243c631327c71643832da3">MapClass</a>
 <li>GlobalClear()
@@ -9691,7 +9714,7 @@
 : <a class="el" href="class_g_screen_class.html#55239cb0e1f3809b11b86c7df58cafef">GScreenClass</a>
 </ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:47 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:40:53 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -35,7 +35,7 @@
   </div>
 </div>
 <div class="contents">
-<h1>CellSequence Class Reference</h1><!-- doxytag: class="CellSequence" --><code>#include &lt;<a class="el" href="_template_8h-source.html">Template.h</a>&gt;</code>
+<h1>CellSequence Class Reference</h1><!-- doxytag: class="CellSequence" --><code>#include &lt;<a class="el" href="_other_8h-source.html">Other.h</a>&gt;</code>
 <p>
 
 <p>
@@ -54,7 +54,7 @@
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 
-<p>Definition at line <a class="el" href="_template_8h-source.html#l00131">131</a> of file <a class="el" href="_template_8h-source.html">Template.h</a>.</p>
+<p>Definition at line <a class="el" href="_other_8h-source.html#l00174">174</a> of file <a class="el" href="_other_8h-source.html">Other.h</a>.</p>
 <hr><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" name="3af1199d25079a6f8d7fb545aa719bdf"></a><!-- doxytag: member="CellSequence::CellSequence" ref="3af1199d25079a6f8d7fb545aa719bdf" args="(CoordStruct *From, CoordStruct *To)" -->
 <div class="memitem">
@@ -83,10 +83,10 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_template_8h-source.html#l00136">136</a> of file <a class="el" href="_template_8h-source.html">Template.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00137"></a>00137          : <a class="code" href="class_cell_sequence.html#0dea667d2dfb5d53a1d2df1f33b853ae">sta</a>(From), <a class="code" href="class_cell_sequence.html#c7cd4b7faeae33dad055e4ddad3ace28">end</a>(To)
-<a name="l00138"></a>00138         {
-<a name="l00139"></a>00139         }
+<p>Definition at line <a class="el" href="_other_8h-source.html#l00179">179</a> of file <a class="el" href="_other_8h-source.html">Other.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00180"></a>00180          : <a class="code" href="class_cell_sequence.html#0dea667d2dfb5d53a1d2df1f33b853ae">sta</a>(From), <a class="code" href="class_cell_sequence.html#c7cd4b7faeae33dad055e4ddad3ace28">end</a>(To)
+<a name="l00181"></a>00181         {
+<a name="l00182"></a>00182         }
 </pre></div>
 <p>
 
@@ -111,19 +111,19 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_template_8h-source.html#l00141">141</a> of file <a class="el" href="_template_8h-source.html">Template.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00141"></a>00141                                                      {
-<a name="l00142"></a>00142                 <a class="code" href="class_trajectory.html">Trajectory</a> T(<a class="code" href="class_cell_sequence.html#0dea667d2dfb5d53a1d2df1f33b853ae">sta</a>.<a class="code" href="class_vector3_d.html#0e854a6bea339416f4b138972529dd06">X</a>, <a class="code" href="class_cell_sequence.html#0dea667d2dfb5d53a1d2df1f33b853ae">sta</a>.<a class="code" href="class_vector3_d.html#6f447a10666206e5a885a6112ff16bd3">Y</a>, <a class="code" href="class_cell_sequence.html#c7cd4b7faeae33dad055e4ddad3ace28">end</a>.<a class="code" href="class_vector3_d.html#0e854a6bea339416f4b138972529dd06">X</a>, <a class="code" href="class_cell_sequence.html#c7cd4b7faeae33dad055e4ddad3ace28">end</a>.<a class="code" href="class_vector3_d.html#6f447a10666206e5a885a6112ff16bd3">Y</a>);
-<a name="l00143"></a>00143 
-<a name="l00144"></a>00144                 <a class="code" href="class_trajectory.html#8219e5e79084ca674fa16dbb2f557315">Trajectory::vec</a> allCells;
-<a name="l00145"></a>00145 
-<a name="l00146"></a>00146                 T.path(allCells);
-<a name="l00147"></a>00147 
-<a name="l00148"></a>00148                 <span class="keywordflow">for</span>(Trajectory::vec::iterator i = allCells.begin(); i != allCells.end(); ++i) {
-<a name="l00149"></a>00149                         <a class="code" href="class_cell_class.html">CellClass</a> *Cell = <a class="code" href="class_map_class.html#50def5505673490f156d03aedc9a4c50">MapClass::Instance</a>-&gt;<a class="code" href="class_map_class.html#d0b443988a90d48bb53fcd6a884c96e4">GetCellAt</a>(&amp;*i);
-<a name="l00150"></a>00150                         Callback(Cell);
-<a name="l00151"></a>00151                 }
-<a name="l00152"></a>00152         }
+<p>Definition at line <a class="el" href="_other_8h-source.html#l00184">184</a> of file <a class="el" href="_other_8h-source.html">Other.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00184"></a>00184                                                      {
+<a name="l00185"></a>00185                 <a class="code" href="class_trajectory.html">Trajectory</a> T(<a class="code" href="class_cell_sequence.html#0dea667d2dfb5d53a1d2df1f33b853ae">sta</a>.<a class="code" href="class_vector3_d.html#0e854a6bea339416f4b138972529dd06">X</a>, <a class="code" href="class_cell_sequence.html#0dea667d2dfb5d53a1d2df1f33b853ae">sta</a>.<a class="code" href="class_vector3_d.html#6f447a10666206e5a885a6112ff16bd3">Y</a>, <a class="code" href="class_cell_sequence.html#c7cd4b7faeae33dad055e4ddad3ace28">end</a>.<a class="code" href="class_vector3_d.html#0e854a6bea339416f4b138972529dd06">X</a>, <a class="code" href="class_cell_sequence.html#c7cd4b7faeae33dad055e4ddad3ace28">end</a>.<a class="code" href="class_vector3_d.html#6f447a10666206e5a885a6112ff16bd3">Y</a>);
+<a name="l00186"></a>00186 
+<a name="l00187"></a>00187                 <a class="code" href="class_trajectory.html#8219e5e79084ca674fa16dbb2f557315">Trajectory::vec</a> allCells;
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189                 T.path(allCells);
+<a name="l00190"></a>00190 
+<a name="l00191"></a>00191                 <span class="keywordflow">for</span>(Trajectory::vec::iterator i = allCells.begin(); i != allCells.end(); ++i) {
+<a name="l00192"></a>00192                         <a class="code" href="class_cell_class.html">CellClass</a> *Cell = <a class="code" href="class_map_class.html#50def5505673490f156d03aedc9a4c50">MapClass::Instance</a>-&gt;<a class="code" href="class_map_class.html#d0b443988a90d48bb53fcd6a884c96e4">GetCellAt</a>(&amp;*i);
+<a name="l00193"></a>00193                         Callback(Cell);
+<a name="l00194"></a>00194                 }
+<a name="l00195"></a>00195         }
 </pre></div>
 <p>
 
@@ -143,7 +143,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_template_8h-source.html#l00133">133</a> of file <a class="el" href="_template_8h-source.html">Template.h</a>.</p>
+<p>Definition at line <a class="el" href="_other_8h-source.html#l00176">176</a> of file <a class="el" href="_other_8h-source.html">Other.h</a>.</p>
 
 </div>
 </div><p>
@@ -160,14 +160,14 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_template_8h-source.html#l00132">132</a> of file <a class="el" href="_template_8h-source.html">Template.h</a>.</p>
+<p>Definition at line <a class="el" href="_other_8h-source.html#l00175">175</a> of file <a class="el" href="_other_8h-source.html">Other.h</a>.</p>
 
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following file:<ul>
-<li>Helpers/<a class="el" href="_template_8h-source.html">Template.h</a></ul>
+<li>Helpers/<a class="el" href="_other_8h-source.html">Other.h</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:50 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:40:57 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

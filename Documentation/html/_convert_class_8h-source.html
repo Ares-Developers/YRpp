@@ -85,15 +85,15 @@
 <a name="l00052"></a>00052         <span class="comment">// == 1 ? alloc_a_few_blitters_for_uchar : alloc_a_fuckton_of_blitters_for_ushort</span>
 <a name="l00053"></a>00053         <span class="comment">// actually this is just the result of Surface-&gt;GetBytesPerPixel()</span>
 <a name="l00054"></a>00054         <span class="comment">// but this name sounds better</span>
-<a name="l00055"></a><a class="code" href="class_convert_class.html#281f051c258db2e3254d640f2dd3356e">00055</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(DWORD, <a class="code" href="class_convert_class.html#06ff75f8adb202f5661dba16c9cf70d0">LeanAndMean</a>);
+<a name="l00055"></a><a class="code" href="class_convert_class.html#281f051c258db2e3254d640f2dd3356e">00055</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_convert_class.html#06ff75f8adb202f5661dba16c9cf70d0">LeanAndMean</a>);
 <a name="l00056"></a><a class="code" href="class_convert_class.html#d94bbcaa16a354f2e6c5cf45dbc3cc2e">00056</a>         <a class="code" href="_y_r_p_p_core_8h.html#ce8113a64e15b3b3507e17e38bab4d26">PROPERTY_ARRAY</a>(<a class="code" href="class_blitter_core.html">BlitterCore</a> *, <a class="code" href="class_convert_class.html#047bbba83e3765ee1b74193d333fd10f">Blitters</a> , 89);
 <a name="l00057"></a><a class="code" href="class_convert_class.html#a0d8a3833871930253959dc29ab368fd">00057</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">size_t</span>, <a class="code" href="class_convert_class.html#6325df0acc81a4ad8f0b4d209315788a">Count</a>);
 <a name="l00058"></a><a class="code" href="class_convert_class.html#293925c5da95b7df1fc1950b11e8e43b">00058</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(byte *, <a class="code" href="class_convert_class.html#75f415a2c0734ea1ae27eda114049ee6">BufferA</a>); <span class="comment">// new(Count * 8 * LeanAndMean) - gets filled with pColorData values on CTOR</span>
 <a name="l00059"></a><a class="code" href="class_convert_class.html#d84864106c0d6635a5428aaebf90bec8">00059</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(byte *, <a class="code" href="class_convert_class.html#b179b8b2f1170b883c4e5d6300170932">Midpoint</a>); <span class="comment">// points to the middle of BufferA above, ??</span>
 <a name="l00060"></a><a class="code" href="class_convert_class.html#2edb0164a35bd61bd7f496ab37040ffb">00060</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(byte *, <a class="code" href="class_convert_class.html#1e872ec980f05f20ec5537dc884c1658">BufferB</a>); <span class="comment">// if(LeanAndMean == 1) { BufferB = new(0x100); }</span>
-<a name="l00061"></a><a class="code" href="class_convert_class.html#1973ca6c1c6403221f18919e7a6fa515">00061</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(DWORD, <a class="code" href="class_convert_class.html#e5860845e930e85d51389d35019f1547">f_17C</a>);
-<a name="l00062"></a><a class="code" href="class_convert_class.html#3328e0e9d1c5803068e241597c982787">00062</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(DWORD, <a class="code" href="class_convert_class.html#91ab52d7d1f9ab4f24822a60ac247cfe">f_180</a>);
-<a name="l00063"></a><a class="code" href="class_convert_class.html#1f1a5edb0e34ffce7b4b0e3f0bacc7e9">00063</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(DWORD, <a class="code" href="class_convert_class.html#abd3deeb9c00c9eedde454d1adf9d3f9">f_184</a>);
+<a name="l00061"></a><a class="code" href="class_convert_class.html#1973ca6c1c6403221f18919e7a6fa515">00061</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_convert_class.html#e5860845e930e85d51389d35019f1547">f_17C</a>);
+<a name="l00062"></a><a class="code" href="class_convert_class.html#3328e0e9d1c5803068e241597c982787">00062</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_convert_class.html#91ab52d7d1f9ab4f24822a60ac247cfe">f_180</a>);
+<a name="l00063"></a><a class="code" href="class_convert_class.html#1f1a5edb0e34ffce7b4b0e3f0bacc7e9">00063</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_convert_class.html#abd3deeb9c00c9eedde454d1adf9d3f9">f_184</a>);
 <a name="l00064"></a>00064 
 <a name="l00065"></a>00065 <span class="comment">//      PROTECTED_PROPERTY(BYTE, unknown_0[0x188]);</span>
 <a name="l00066"></a>00066 };
@@ -115,7 +115,7 @@
 <a name="l00082"></a>00082                 <span class="keywordtype">int</span> Color_B,
 <a name="l00083"></a>00083                 <span class="keywordtype">bool</span> SkipBlitters,
 <a name="l00084"></a>00084                 <span class="keywordtype">size_t</span> <a class="code" href="class_convert_class.html#6325df0acc81a4ad8f0b4d209315788a">Count</a>,
-<a name="l00085"></a>00085                 DWORD arg20) : <a class="code" href="class_convert_class.html">ConvertClass</a>(false)
+<a name="l00085"></a>00085                 <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> arg20) : <a class="code" href="class_convert_class.html">ConvertClass</a>(false)
 <a name="l00086"></a>00086                         JMP_THIS(0x555DA0);
 <a name="l00087"></a>00087 
 <a name="l00088"></a><a class="code" href="class_light_convert_class.html#5f37ffde15bc2e6f968dbec4e01d93b2">00088</a>         <span class="keyword">virtual</span> <a class="code" href="class_light_convert_class.html#5f37ffde15bc2e6f968dbec4e01d93b2">~LightConvertClass</a>() <a class="code" href="_y_r_p_p_core_8h.html#5070712bba21161ad840408134ee229f">RX</a>;
@@ -127,12 +127,12 @@
 <a name="l00094"></a>00094         <span class="comment">//===== Properties ==========================================================</span>
 <a name="l00095"></a>00095         <span class="comment">//===========================================================================</span>
 <a name="l00096"></a>00096         <span class="comment">//I have no idea...</span>
-<a name="l00097"></a><a class="code" href="class_light_convert_class.html#c20227616a2de7df96a0c024edaf65fe">00097</a>         <a class="code" href="_y_r_p_p_core_8h.html#2c10f8333b6a31fc65db95f0760bdbf1">PROTECTED_PROPERTY</a>(<a class="code" href="_syringe_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a>, <a class="code" href="class_light_convert_class.html#c20227616a2de7df96a0c024edaf65fe">unknown_0</a>[0x2C]);
+<a name="l00097"></a><a class="code" href="class_light_convert_class.html#c20227616a2de7df96a0c024edaf65fe">00097</a>         <a class="code" href="_y_r_p_p_core_8h.html#2c10f8333b6a31fc65db95f0760bdbf1">PROTECTED_PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a>, <a class="code" href="class_light_convert_class.html#c20227616a2de7df96a0c024edaf65fe">unknown_0</a>[0x2C]);
 <a name="l00098"></a>00098 };
 <a name="l00099"></a>00099 
 <a name="l00100"></a>00100 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:44 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:40:50 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

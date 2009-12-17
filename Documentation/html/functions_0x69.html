@@ -39,6 +39,8 @@
       <li><a href="functions_func.html"><span>Functions</span></a></li>
       <li><a href="functions_vars.html"><span>Variables</span></a></li>
       <li><a href="functions_type.html"><span>Typedefs</span></a></li>
+      <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
+      <li><a href="functions_eval.html"><span>Enumerator</span></a></li>
     </ul>
   </div>
   <div class="tabs">
@@ -116,12 +118,14 @@ Here is a list of all class members with links to the classes they belong to:
 : <a class="el" href="class_rules_class.html#bb92b2231332053015da41156793daa5">RulesClass</a>
 <li>Ignite()
 : <a class="el" href="class_object_class.html#f75c637c86e59122506f3ebae0bf2d61">ObjectClass</a>
-<li>ignoreDefenses
-: <a class="el" href="structargs___receive_damage.html#f452fd3980dc6087e100353475f31383">args_ReceiveDamage</a>
+<li>IgnoreDefenses
+: <a class="el" href="structargs___receive_damage.html#fc9be25fc45448cae39f1ae64fc86e83">args_ReceiveDamage</a>
 <li>IgnoreGlobalAITriggers
 : <a class="el" href="class_scenario_class.html#2c5a6a8f0c69a563b769d3255e782948">ScenarioClass</a>
 <li>IgnoresFirestorm
 : <a class="el" href="class_object_type_class.html#3b9fa4d9a8e8ab860b0f6b50b8954de7">ObjectTypeClass</a>
+<li>ILLEGAL
+: <a class="el" href="class_fire_error.html#7a5de64620daad28baa297354c3080510fe14050d06c6a8a5272dd0c957e4baf">FireError</a>
 <li>ILocomotion_B8()
 : <a class="el" href="class_locomotion_class.html#d43fd1e94257c51d0420da2515c54ace">LocomotionClass</a>
 , <a class="el" href="class_teleport_locomotion_class.html#cd858ee2aa462eceedc082e844b659ca">TeleportLocomotionClass</a>
@@ -376,8 +380,8 @@ Here is a list of all class members with links to the classes they belong to:
 <li>Is_Piggybacking()
 : <a class="el" href="class_teleport_locomotion_class.html#59cd6003b726f4e0f1a5ccd9c1d41997">TeleportLocomotionClass</a>
 <li>Is_Powered()
-: <a class="el" href="class_locomotion_class.html#b6bf5252bda8dd8e318075340fb46640">LocomotionClass</a>
-, <a class="el" href="class_house_class.html#ca8edb7bd2a7607776f73fde3ef251b9">HouseClass</a>
+: <a class="el" href="class_house_class.html#ca8edb7bd2a7607776f73fde3ef251b9">HouseClass</a>
+, <a class="el" href="class_locomotion_class.html#b6bf5252bda8dd8e318075340fb46640">LocomotionClass</a>
 <li>Is_Really_Moving_Now()
 : <a class="el" href="class_locomotion_class.html#4ee4a4d6f5ad715d715dd89572836d35">LocomotionClass</a>
 <li>Is_Strafe()
@@ -397,7 +401,7 @@ Here is a list of all class members with links to the classes they belong to:
 <li>IsAlive
 : <a class="el" href="class_object_class.html#d3ec9125f83a5f323a9fe2bbc9ba7229">ObjectClass</a>
 <li>IsAlliedWith()
-: <a class="el" href="class_house_class.html#a876fbf438388270e042d778b6118c4f">HouseClass</a>
+: <a class="el" href="class_house_class.html#c78a763450bcc998903f77b786b7fc21">HouseClass</a>
 <li>IsAllocated
 : <a class="el" href="class_vector_class.html#6eee22e12069543ac68349037d2ca2d5">VectorClass&lt; T &gt;</a>
 <li>IsAlt
@@ -416,6 +420,17 @@ Here is a list of all class members with links to the classes they belong to:
 : <a class="el" href="class_techno_class.html#23bb4f3e922f745b61a49d8a1dba14af">TechnoClass</a>
 <li>IsARock
 : <a class="el" href="class_overlay_type_class.html#5eb259f13fe7f3123801a1dc177da6fc">OverlayTypeClass</a>
+<li>IsArrayT
+: <a class="el" href="class_compound_t_3_01_t_01_c_1_1_5_01_4.html#5655888317c2146c73052b0d522df1887973f35f8f12f0614d790f8ffb414224">CompoundT&lt; T C::* &gt;</a>
+, <a class="el" href="class_type_t.html#dedb5f60be87cb1b10d99777b849e46b02d143bd69bc39450bc127a6dc0cf1bf">TypeT&lt; T &gt;</a>
+, <a class="el" href="class_compound_t_3_01_t_01_6_01_4.html#fb5cea081e56fac02082eedc07bdb431bca29cf8170b65003e5d2fd73ab594ac">CompoundT&lt; T &amp; &gt;</a>
+, <a class="el" href="class_compound_t.html#8523ae949ab6bc94cbe540b405eaae7cb6bf65cd440bdad0b4b754225ff747a3">CompoundT&lt; T &gt;</a>
+, <a class="el" href="class_compound_t_3_01_t_01_5_01_4.html#dab5738bb53d827088dd561db88ec0089ab592647c781028ec4c181379f58120">CompoundT&lt; T * &gt;</a>
+, <a class="el" href="class_compound_t_3_01_t[_n]_4.html#9d18f90f4c0ffd45b33dedbcbe0cf177e5503ee5dc5518699a5ba1dd1bf36cf1">CompoundT&lt; T[N]&gt;</a>
+, <a class="el" href="class_compound_t_3_01_t[]_4.html#a7d8ca3a9eec476684d6c9a0843a0fcebcb4eb57abd245cb950f806928884d2f">CompoundT&lt; T[]&gt;</a>
+, <a class="el" href="class_compound_t_3_01_r_07_08_4.html#7b74aa6e00a2b11bb5284ff36945648894088bc59af238d45671e6dfa1196d09">CompoundT&lt; R()&gt;</a>
+, <a class="el" href="class_compound_t_3_01_r_07_p1_08_4.html#9a90715c24c6297ede29a5812c964633d9facdee3468d6d226128274c3ebaa95">CompoundT&lt; R(P1)&gt;</a>
+, <a class="el" href="class_compound_t_3_01_r_07_p1_00_8_8_8_08_4.html#147e98970d6d7acb6bbf6a2189cfc8a2c38475d6ac6936ef0bfb42641c93f2ec">CompoundT&lt; R(P1,...)&gt;</a>
 <li>IsAvailableNow
 : <a class="el" href="class_radar_class.html#bd425df49ecdf8de9608353b04c8c0f6">RadarClass</a>
 <li>IsBaseDefense
@@ -433,13 +448,17 @@ Here is a list of all class members with links to the classes they belong to:
 : <a class="el" href="class_super_class.html#3b4b7e8a1874f4565ffe183b4fc4cf16">SuperClass</a>
 <li>IsChargeTurret
 : <a class="el" href="class_techno_type_class.html#5343a5676ac773a8cdcac97dc35c4c75">TechnoTypeClass</a>
+<li>IsClassT
+: <a class="el" href="class_type_t.html#dedb5f60be87cb1b10d99777b849e46bbaf659d9458c85576510fb9729c882a6">TypeT&lt; T &gt;</a>
 <li>IsCloakable()
 : <a class="el" href="class_techno_class.html#86d4e0788f067995545d830e9427f48f">TechnoClass</a>
 <li>IsCollinearTo()
-: <a class="el" href="class_vector3_d.html#18f38b0c25792ea043c961b88d868351">Vector3D&lt; T &gt;</a>
-, <a class="el" href="class_vector2_d.html#19c36b43a169a1c9ed7a569542284c75">Vector2D&lt; T &gt;</a>
+: <a class="el" href="class_vector2_d.html#19c36b43a169a1c9ed7a569542284c75">Vector2D&lt; T &gt;</a>
+, <a class="el" href="class_vector3_d.html#18f38b0c25792ea043c961b88d868351">Vector3D&lt; T &gt;</a>
 <li>IsCompleteAndSuspended
 : <a class="el" href="class_factory_class.html#c11cec12d2a1d83c40e6d9a6377cab50">FactoryClass</a>
+<li>IsControllable()
+: <a class="el" href="class_object_class.html#0ebc78b0ee061306e7adbcca18aef84f">ObjectClass</a>
 <li>IsControllingSomething()
 : <a class="el" href="class_capture_manager_class.html#e22554c324c1042bd422f13e5dbe2cbe">CaptureManagerClass</a>
 <li>IsCrashing
@@ -455,8 +474,8 @@ Here is a list of all class members with links to the classes they belong to:
 <li>IsDifferent
 : <a class="el" href="class_factory_class.html#52df234c5f413f001976aa83b3e3f2ae">FactoryClass</a>
 <li>IsDirty()
-: <a class="el" href="class_abstract_class.html#962bf41319df5e736c465dc551a22ba3">AbstractClass</a>
-, <a class="el" href="class_locomotion_class.html#b2fa190b55c2296e082cc2b89a4ab858">LocomotionClass</a>
+: <a class="el" href="class_locomotion_class.html#b2fa190b55c2296e082cc2b89a4ab858">LocomotionClass</a>
+, <a class="el" href="class_abstract_class.html#962bf41319df5e736c465dc551a22ba3">AbstractClass</a>
 <li>IsDisguised()
 : <a class="el" href="class_object_class.html#158c29940b59ccfdc98608e6afca6e6e">ObjectClass</a>
 <li>IsDisguisedAs()
@@ -473,8 +492,12 @@ Here is a list of all class members with links to the classes they belong to:
 : <a class="el" href="class_a_i_trigger_type_class.html#fc597c200e09b464be01849dfed1f995">AITriggerTypeClass</a>
 <li>IsEngineer()
 : <a class="el" href="class_techno_class.html#e82b364561170c65b30e8b059a6b93a4">TechnoClass</a>
+<li>IsEnumT
+: <a class="el" href="class_type_t.html#dedb5f60be87cb1b10d99777b849e46bf26b5a13366dc8bcfd9238a59767c37a">TypeT&lt; T &gt;</a>
 <li>IsEqual()
 : <a class="el" href="class_vector_class.html#229865f5999afa0987709bed230bfc29">VectorClass&lt; T &gt;</a>
+<li>isEqual()
+: <a class="el" href="class_f_p_u_control.html#93b17451bf819298006fcf88c0521ab1">FPUControl</a>
 <li>IsField0CNegative()
 : <a class="el" href="class_w_w_mouse_class.html#5e456b24d60a92e2a731a730774b8891">WWMouseClass</a>
 <li>IsFlamingGuy
@@ -482,18 +505,24 @@ Here is a list of all class members with links to the classes they belong to:
 <li>IsFlammable
 : <a class="el" href="class_terrain_type_class.html#1b27333729ad412a95ff05463fdf7e67">TerrainTypeClass</a>
 <li>IsFogged
-: <a class="el" href="class_anim_class.html#ef31365c2c1098d8d5ccee8efc12d26a">AnimClass</a>
-, <a class="el" href="class_building_class.html#40de05f4d5a43ebec0f565f8bd72f4ff">BuildingClass</a>
+: <a class="el" href="class_building_class.html#40de05f4d5a43ebec0f565f8bd72f4ff">BuildingClass</a>
+, <a class="el" href="class_anim_class.html#ef31365c2c1098d8d5ccee8efc12d26a">AnimClass</a>
 <li>IsForBaseDefense
 : <a class="el" href="class_a_i_trigger_type_class.html#5e83e9d983341f853393f4318777d15e">AITriggerTypeClass</a>
 <li>IsForSkirmish
 : <a class="el" href="class_a_i_trigger_type_class.html#2ec14bfe8378812995948302621f1ed6">AITriggerTypeClass</a>
+<li>IsFuncT
+: <a class="el" href="class_type_t.html#dedb5f60be87cb1b10d99777b849e46b2337162be9bb565f9c837c46f28583cd">TypeT&lt; T &gt;</a>
+<li>IsFundaT
+: <a class="el" href="class_type_t.html#dedb5f60be87cb1b10d99777b849e46bab51f97328f6c6f8399c97bb8191d221">TypeT&lt; T &gt;</a>
 <li>IsGattling
 : <a class="el" href="class_techno_type_class.html#9dd59bcd06d37b167cbdf52d7f3b6b9c">TechnoTypeClass</a>
 <li>IsGlobal
-: <a class="el" href="class_team_type_class.html#52f299352d98467c98929d51a0f5ca1e">TeamTypeClass</a>
-, <a class="el" href="class_a_i_trigger_type_class.html#a462b59672c72e32f0c86fafcd8c913a">AITriggerTypeClass</a>
+: <a class="el" href="class_a_i_trigger_type_class.html#a462b59672c72e32f0c86fafcd8c913a">AITriggerTypeClass</a>
 , <a class="el" href="class_script_type_class.html#a45bb8538e2714e66147d4dab0bcbe90">ScriptTypeClass</a>
+, <a class="el" href="class_team_type_class.html#52f299352d98467c98929d51a0f5ca1e">TeamTypeClass</a>
+<li>IsGreenHP()
+: <a class="el" href="class_object_class.html#31e8685885c196b9385d082e30bc60bc">ObjectClass</a>
 <li>IsHoming()
 : <a class="el" href="class_bullet_class.html#d6ba2e4b8fad4c40fdc9dc30ecd579fe">BulletClass</a>
 <li>IsHouseColor
@@ -516,6 +545,8 @@ Here is a list of all class members with links to the classes they belong to:
 : <a class="el" href="class_techno_class.html#bc5406e11a0edcdc4b9748a1938fe9fe">TechnoClass</a>
 <li>IsLaser
 : <a class="el" href="class_weapon_type_class.html#3f1734c4643d09694bbb0279f508ae47">WeaponTypeClass</a>
+<li>isLess()
+: <a class="el" href="class_f_p_u_control.html#5a9e7ede94f565032b0b43e97aeead43">FPUControl</a>
 <li>IsLine
 : <a class="el" href="class_weapon_type_class.html#c1a6e898d77199b53fe9280f71277e87">WeaponTypeClass</a>
 <li>IsLocationShrouded()
@@ -528,6 +559,8 @@ Here is a list of all class members with links to the classes they belong to:
 : <a class="el" href="class_anim_type_class.html#e82246e98626340c261097520a56d3d4">AnimTypeClass</a>
 <li>IsNegative()
 : <a class="el" href="struct_veterancy_struct.html#5204e491fd24516598a09953c0af2162">VeterancyStruct</a>
+<li>IsNotDisguisedAgain()
+: <a class="el" href="class_techno_class.html#be3e89069e03ad372e833a70d2b7c532">TechnoClass</a>
 <li>IsNotSprayAttack()
 : <a class="el" href="class_techno_class.html#8fcd76a634c58225d3896a282f0bfd5f">TechnoClass</a>
 <li>IsNotSprayAttack2()
@@ -570,6 +603,28 @@ Here is a list of all class members with links to the classes they belong to:
 : <a class="el" href="struct_scout_struct.html#ddd8712fa5ac2141ca2d9dc0e0646866">ScoutStruct</a>
 <li>IsPrimaryFactory
 : <a class="el" href="class_techno_class.html#4b6f48ae40fb09fced074f49832b290b">TechnoClass</a>
+<li>IsPtrMemT
+: <a class="el" href="class_compound_t.html#8523ae949ab6bc94cbe540b405eaae7c8f6427e3d678be7b40763386679ad1d5">CompoundT&lt; T &gt;</a>
+, <a class="el" href="class_compound_t_3_01_t_01_6_01_4.html#fb5cea081e56fac02082eedc07bdb431d5e4ad4ff1d0e8b8a80bd1e74aa09b0d">CompoundT&lt; T &amp; &gt;</a>
+, <a class="el" href="class_compound_t_3_01_t[_n]_4.html#9d18f90f4c0ffd45b33dedbcbe0cf177c6008342c0a7582e26f5ea29c355ae32">CompoundT&lt; T[N]&gt;</a>
+, <a class="el" href="class_compound_t_3_01_r_07_08_4.html#7b74aa6e00a2b11bb5284ff36945648891f91e9d5c68fab539d7fcece41737f2">CompoundT&lt; R()&gt;</a>
+, <a class="el" href="class_compound_t_3_01_r_07_p1_08_4.html#9a90715c24c6297ede29a5812c964633ea3ef4b17fcaa517ab90d9bae65baad0">CompoundT&lt; R(P1)&gt;</a>
+, <a class="el" href="class_type_t.html#dedb5f60be87cb1b10d99777b849e46b06b6795b199922b96d8dbaf1b41d16e3">TypeT&lt; T &gt;</a>
+, <a class="el" href="class_compound_t_3_01_r_07_p1_00_8_8_8_08_4.html#147e98970d6d7acb6bbf6a2189cfc8a27f5a52722717e1fbd90cd4654943f4ef">CompoundT&lt; R(P1,...)&gt;</a>
+, <a class="el" href="class_compound_t_3_01_t_01_5_01_4.html#dab5738bb53d827088dd561db88ec0089a3a8eaaeeacd23cfd4acab51fcd3cac">CompoundT&lt; T * &gt;</a>
+, <a class="el" href="class_compound_t_3_01_t_01_c_1_1_5_01_4.html#5655888317c2146c73052b0d522df18822f79bd9d75c46a8192700846ca09661">CompoundT&lt; T C::* &gt;</a>
+, <a class="el" href="class_compound_t_3_01_t[]_4.html#a7d8ca3a9eec476684d6c9a0843a0fce05a84a20c1729c3c3859919d31217a23">CompoundT&lt; T[]&gt;</a>
+<li>IsPtrT
+: <a class="el" href="class_compound_t_3_01_t_01_5_01_4.html#dab5738bb53d827088dd561db88ec0083c5904b0b332e0c47b2724593252c0d7">CompoundT&lt; T * &gt;</a>
+, <a class="el" href="class_compound_t_3_01_t[]_4.html#a7d8ca3a9eec476684d6c9a0843a0fcee7f47a70da23ac126f0ed3dbd01b3329">CompoundT&lt; T[]&gt;</a>
+, <a class="el" href="class_compound_t_3_01_r_07_p1_00_8_8_8_08_4.html#147e98970d6d7acb6bbf6a2189cfc8a2abc981d974d7cba16ae04a2beab206a9">CompoundT&lt; R(P1,...)&gt;</a>
+, <a class="el" href="class_compound_t_3_01_t_01_6_01_4.html#fb5cea081e56fac02082eedc07bdb43182c0e028391059bb816a18c6b7bfd2a4">CompoundT&lt; T &amp; &gt;</a>
+, <a class="el" href="class_compound_t_3_01_t_01_c_1_1_5_01_4.html#5655888317c2146c73052b0d522df1880ae8d18a2f58e9cbee182dbff06960e6">CompoundT&lt; T C::* &gt;</a>
+, <a class="el" href="class_compound_t_3_01_t[_n]_4.html#9d18f90f4c0ffd45b33dedbcbe0cf177897f69b1a363edcb47fde943bd9b8550">CompoundT&lt; T[N]&gt;</a>
+, <a class="el" href="class_compound_t.html#8523ae949ab6bc94cbe540b405eaae7cc48419fa798ca7cfabafcdcbb9c29252">CompoundT&lt; T &gt;</a>
+, <a class="el" href="class_type_t.html#dedb5f60be87cb1b10d99777b849e46bd3fa66a022d00a694e5cde34fabd6374">TypeT&lt; T &gt;</a>
+, <a class="el" href="class_compound_t_3_01_r_07_08_4.html#7b74aa6e00a2b11bb5284ff3694564883e61af52dd22d2a04bb950ff34b1e53c">CompoundT&lt; R()&gt;</a>
+, <a class="el" href="class_compound_t_3_01_r_07_p1_08_4.html#9a90715c24c6297ede29a5812c964633c35c895ba141e2ab5d1a6873805d6b5c">CompoundT&lt; R(P1)&gt;</a>
 <li>IsRadBeam
 : <a class="el" href="class_weapon_type_class.html#653b471d76fee528ddb20358f3d77e78">WeaponTypeClass</a>
 <li>IsRadEruption
@@ -580,6 +635,19 @@ Here is a list of all class members with links to the classes they belong to:
 : <a class="el" href="class_weapon_type_class.html#c2b12d6dbb2fa3bb1879d5421a1450cc">WeaponTypeClass</a>
 <li>IsRandom
 : <a class="el" href="class_scenario_class.html#c4daee0ab7d6cdbe734cb67efb7d06c5">ScenarioClass</a>
+<li>IsRedHP()
+: <a class="el" href="class_object_class.html#04bd354c9d02a22470e586e5e4ae85c7">ObjectClass</a>
+<li>IsRefT
+: <a class="el" href="class_compound_t_3_01_r_07_p1_00_8_8_8_08_4.html#147e98970d6d7acb6bbf6a2189cfc8a2eba31e3a67024604dfcbf468ee00c220">CompoundT&lt; R(P1,...)&gt;</a>
+, <a class="el" href="class_compound_t_3_01_t_01_c_1_1_5_01_4.html#5655888317c2146c73052b0d522df1886bab1dde558b00ed91cb0cf9155684a1">CompoundT&lt; T C::* &gt;</a>
+, <a class="el" href="class_compound_t_3_01_r_07_08_4.html#7b74aa6e00a2b11bb5284ff3694564885c1c989a7ac18d980d09eda711d922f6">CompoundT&lt; R()&gt;</a>
+, <a class="el" href="class_compound_t_3_01_t[_n]_4.html#9d18f90f4c0ffd45b33dedbcbe0cf177623815a0b07175c1046f8227b4f17137">CompoundT&lt; T[N]&gt;</a>
+, <a class="el" href="class_type_t.html#dedb5f60be87cb1b10d99777b849e46b78958a8896837257139f7d4dd8bfc6a3">TypeT&lt; T &gt;</a>
+, <a class="el" href="class_compound_t_3_01_r_07_p1_08_4.html#9a90715c24c6297ede29a5812c9646331ed458c138f4720488eae5473ab4b83a">CompoundT&lt; R(P1)&gt;</a>
+, <a class="el" href="class_compound_t_3_01_t_01_5_01_4.html#dab5738bb53d827088dd561db88ec008208281286e25e706b23cc72cf72fbfb6">CompoundT&lt; T * &gt;</a>
+, <a class="el" href="class_compound_t_3_01_t[]_4.html#a7d8ca3a9eec476684d6c9a0843a0fce3929d3a685e035b41269191f9c4e06ee">CompoundT&lt; T[]&gt;</a>
+, <a class="el" href="class_compound_t_3_01_t_01_6_01_4.html#fb5cea081e56fac02082eedc07bdb431aff8eb573a52602a1266f213afd3a5c6">CompoundT&lt; T &amp; &gt;</a>
+, <a class="el" href="class_compound_t.html#8523ae949ab6bc94cbe540b405eaae7c2fddf3e1b826832b2fcf3a1a4a066344">CompoundT&lt; T &gt;</a>
 <li>IsRubble
 : <a class="el" href="class_overlay_type_class.html#82a2db3ec3eead01870c5c3d0650e018">OverlayTypeClass</a>
 <li>IsSelectable()
@@ -639,6 +707,8 @@ Here is a list of all class members with links to the classes they belong to:
 : <a class="el" href="class_object_class.html#84bebbc2a85f7b1a094e794ed0257cb0">ObjectClass</a>
 <li>IsWarpingSomethingOut()
 : <a class="el" href="class_object_class.html#0f6fd4952ae28c3378bf1eb3867291e9">ObjectClass</a>
+<li>IsYellowHP()
+: <a class="el" href="class_object_class.html#b0a0d604bc3bcdcd95c8e7e23741114f">ObjectClass</a>
 <li>ItemIndex
 : <a class="el" href="struct_cameo_data_struct.html#5839a54637fca216546241e15503e709">CameoDataStruct</a>
 <li>Items
@@ -661,7 +731,7 @@ Here is a list of all class members with links to the classes they belong to:
 : <a class="el" href="class_rules_class.html#06e3d68188f6506021bc058109bab30e">RulesClass</a>
 </ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:47 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:40:53 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

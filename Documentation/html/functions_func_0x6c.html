@@ -39,6 +39,8 @@
       <li class="current"><a href="functions_func.html"><span>Functions</span></a></li>
       <li><a href="functions_vars.html"><span>Variables</span></a></li>
       <li><a href="functions_type.html"><span>Typedefs</span></a></li>
+      <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
+      <li><a href="functions_eval.html"><span>Enumerator</span></a></li>
     </ul>
   </div>
   <div class="tabs">
@@ -130,8 +132,8 @@
 , <a class="el" href="class_factory_class.html#984e924f0aab55d60822493c19afd5ef">FactoryClass</a>
 , <a class="el" href="class_t_event_class.html#4cde05167239a830c9aaeeacc36ef046">TEventClass</a>
 , <a class="el" href="class_trigger_class.html#6707b82a7a82242ff3dcc66f463c3e5d">TriggerClass</a>
-, <a class="el" href="class_weapon_type_class.html#dc548808077e1e8e12c20986a014abd0">WeaponTypeClass</a>
 , <a class="el" href="class_base_class.html#587858fe2c20b9222d9c7ea3a3897572">BaseClass</a>
+, <a class="el" href="class_weapon_type_class.html#dc548808077e1e8e12c20986a014abd0">WeaponTypeClass</a>
 , <a class="el" href="class_unit_class.html#9cc4ac44989ed5146b438cc6445d7856">UnitClass</a>
 , <a class="el" href="class_unit_type_class.html#c2f2bfd94fe3ab4aae5681efe5e5509e">UnitTypeClass</a>
 , <a class="el" href="class_house_class.html#ed73f6ceccc3e5969290ae080e84d578">HouseClass</a>
@@ -144,21 +146,21 @@
 , <a class="el" href="class_neuron_class.html#cdcf8b4f1a55bbf5bc276d8aa9e6a679">NeuronClass</a>
 , <a class="el" href="class_abstract_class.html#4b9e0e08e3b4a0ebd128c56f6f62649c">AbstractClass</a>
 , <a class="el" href="class_object_class.html#be5f1f9d39839c185c2d35f3fdd26caf">ObjectClass</a>
+, <a class="el" href="class_object_type_class.html#deb729d73904c52e404f142f8db07a55">ObjectTypeClass</a>
 , <a class="el" href="class_team_type_class.html#56ef2035602fe3483d190f8502ed317e">TeamTypeClass</a>
 , <a class="el" href="class_team_class.html#83ffe09775fa6819159e22f8ce960712">TeamClass</a>
 , <a class="el" href="class_task_force_class.html#19c19080021d1d1602e7d99f82c0b21a">TaskForceClass</a>
-, <a class="el" href="class_object_type_class.html#deb729d73904c52e404f142f8db07a55">ObjectTypeClass</a>
+, <a class="el" href="class_aircraft_class.html#a65a5cb34564c6cdbf5d954b4a5d6f85">AircraftClass</a>
 , <a class="el" href="class_super_weapon_type_class.html#eb8fc150fe4b4a3dc41e3f83f28753a3">SuperWeaponTypeClass</a>
 , <a class="el" href="class_super_class.html#34cfa4e2acf068b36c131207dedf8d5b">SuperClass</a>
-, <a class="el" href="class_aircraft_class.html#a65a5cb34564c6cdbf5d954b4a5d6f85">AircraftClass</a>
 , <a class="el" href="class_overlay_class.html#2dd829f0efca310dc9cc451e7701a1ea">OverlayClass</a>
+, <a class="el" href="class_overlay_type_class.html#20c4dfe291029678cdfd04bc9608dab1">OverlayTypeClass</a>
 , <a class="el" href="class_side_class.html#4ebb91b89c30557d2f8fc82e1996d166">SideClass</a>
 , <a class="el" href="class_script_type_class.html#ab44a86cf45b908fb67105ead86be40f">ScriptTypeClass</a>
 , <a class="el" href="class_script_class.html#2a0fb8d44a48606c8e5ee24f4a2d021c">ScriptClass</a>
-, <a class="el" href="class_overlay_type_class.html#20c4dfe291029678cdfd04bc9608dab1">OverlayTypeClass</a>
+, <a class="el" href="class_airstrike_class.html#bf03f57f83328854ccb1945d0f7e5260">AirstrikeClass</a>
 , <a class="el" href="class_radio_class.html#bf3571e77aee2d9822dd05bcca193ff8">RadioClass</a>
 , <a class="el" href="class_particle_type_class.html#90e721e719c3341d351f0bf3eeb67868">ParticleTypeClass</a>
-, <a class="el" href="class_airstrike_class.html#bf03f57f83328854ccb1945d0f7e5260">AirstrikeClass</a>
 , <a class="el" href="class_parasite_class.html#da582319ef8c6743a019b32b9cecafd8">ParasiteClass</a>
 , <a class="el" href="class_particle_class.html#e5b01cae9323bfa8e77cd4fd1386147e">ParticleClass</a>
 , <a class="el" href="class_a_i_trigger_type_class.html#69f731a38f418a4b6152d5eda32b8886">AITriggerTypeClass</a>
@@ -182,19 +184,19 @@
 <li>LoadBuildup()
 : <a class="el" href="class_building_type_class.html#cc9f6b453c5f1d0d6abff8739499c2f7">BuildingTypeClass</a>
 <li>LoadFile()
-: <a class="el" href="class_string_table.html#1ead17ac3e0361af30b6c62c2b12611f">StringTable</a>
-, <a class="el" href="class_p_c_x.html#34eb68c7f4c4eb3a55e6518434b0a027">PCX</a>
+: <a class="el" href="class_p_c_x.html#34eb68c7f4c4eb3a55e6518434b0a027">PCX</a>
+, <a class="el" href="class_string_table.html#1ead17ac3e0361af30b6c62c2b12611f">StringTable</a>
 , <a class="el" href="class_file_system.html#3cf58e8306a3abe90317ce82fb3b8706">FileSystem</a>
 <li>LoadFromINI()
-: <a class="el" href="class_mission_control_class.html#b54895bb4f05c39c79def81453936708">MissionControlClass</a>
-, <a class="el" href="class_display_class.html#0b74ee3e761109c9f202686ec30d1f98">DisplayClass</a>
+: <a class="el" href="class_t_event_class.html#ebbd5ae3a1ca991a8f2c6ae6916fe060">TEventClass</a>
+, <a class="el" href="class_mission_control_class.html#b54895bb4f05c39c79def81453936708">MissionControlClass</a>
 , <a class="el" href="class_t_action_class.html#1253cf97b3a6b6803401a28ee7c8ffdc">TActionClass</a>
-, <a class="el" href="class_t_event_class.html#ebbd5ae3a1ca991a8f2c6ae6916fe060">TEventClass</a>
+, <a class="el" href="class_display_class.html#0b74ee3e761109c9f202686ec30d1f98">DisplayClass</a>
 , <a class="el" href="class_abstract_type_class.html#a590b32920698bd2a3c28dcd678f398f">AbstractTypeClass</a>
 <li>LoadFromINIList()
-: <a class="el" href="class_team_type_class.html#e662a68c6d830d92b8e431dcf49a5280">TeamTypeClass</a>
+: <a class="el" href="class_script_type_class.html#aa95d97c8a0d2cfafa448b0f5b480763">ScriptTypeClass</a>
+, <a class="el" href="class_team_type_class.html#e662a68c6d830d92b8e431dcf49a5280">TeamTypeClass</a>
 , <a class="el" href="class_a_i_trigger_type_class.html#1be0b1117cd9e6cd43430255725b38dc">AITriggerTypeClass</a>
-, <a class="el" href="class_script_type_class.html#aa95d97c8a0d2cfafa448b0f5b480763">ScriptTypeClass</a>
 <li>LoadImage()
 : <a class="el" href="class_anim_type_class.html#4267bda2c4432957aa2103db086eaa48">AnimTypeClass</a>
 <li>LoadPALFile()
@@ -214,10 +216,11 @@
 <li>LocalUpdated()
 : <a class="el" href="class_trigger_class.html#5fd3e63b726733242cb09b93248dbcdf">TriggerClass</a>
 <li>Lock()
-: <a class="el" href="class_locomotion_class.html#e1b7c36bcb57538236a428afeb161179">LocomotionClass</a>
+: <a class="el" href="class_d_surface.html#121b0592a1877e9d2e153d42ca26b269">DSurface</a>
+, <a class="el" href="class_locomotion_class.html#e1b7c36bcb57538236a428afeb161179">LocomotionClass</a>
 , <a class="el" href="class_surface.html#9551130010044de3b503fb21789bac58">Surface</a>
 <li>LocomotionClass()
-: <a class="el" href="class_locomotion_class.html#fe1f7a8bc4efdd16811245b9ddedaa44">LocomotionClass</a>
+: <a class="el" href="class_locomotion_class.html#f5701077cfeb7e2156f1b42a922ed00a">LocomotionClass</a>
 <li>Lose()
 : <a class="el" href="class_house_class.html#9508d4546ffcf36be3f0b09cfa94ec80">HouseClass</a>
 <li>LoserIs()
@@ -226,7 +229,7 @@
 : <a class="el" href="class_house_class.html#03d77f766bc51546d025fce8116b9c4d">HouseClass</a>
 </ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:47 2009 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:40:53 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

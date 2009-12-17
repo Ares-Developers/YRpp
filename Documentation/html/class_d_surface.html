@@ -50,14 +50,1547 @@ Inheritance diagram for DSurface:</div>
 <p>
 <a href="class_d_surface-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#f00f7f7c155289e27141ba9cfee10c4b">DSurface</a> (int <a class="el" href="class_surface.html#f6a8f71c8fd150cd45599061ba538370">Width</a>, int <a class="el" href="class_surface.html#9028113b1532dc88ad876c02cb3bc4a2">Height</a>, bool BackBuffer, bool Force3D)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#021bec7c0afe6445c9bd981cade2c6c8">BlitWhole</a> (<a class="el" href="class_surface.html">Surface</a> *pSrc, bool bUnk1, bool bUnk2)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#7672fca7e31e345dc885c695f1b4f8d1">BlitPart</a> (<a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *pClipRect, <a class="el" href="class_surface.html">Surface</a> *pSrc, <a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *pSrcRect, bool bUnk1, bool bUnk2)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#05445c66c0782342f251a9aabe7ab8e5">Blit</a> (<a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *pClipRect, <a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *pClipRect2, <a class="el" href="class_surface.html">Surface</a> *pSrc, <a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *pDestRect, <a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *pSrcRect, bool bUnk1, bool bUnk2)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#d535031d4ba24977e53ced67a1f37fba">FillRectEx</a> (<a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *pClipRect, <a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *pFillRect, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwColor)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#dbb09d9f84e459d70779efa71998cee3">FillRect</a> (<a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *pFillRect, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwColor)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#ebd5ce8f9bdfacb98f18bde2400420cb">Fill</a> (<a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwColor)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#a284d009ce791e3003ef17a05914b5b8">vt_entry_1C</a> (<a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *pClipRect, <a class="el" href="struct_color_struct.html">ColorStruct</a> Color, int nUnknown)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#c1bfd633aaee3e3f752d81dc091ff20a">vt_entry_20</a> (<a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> ClipRect, <a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> Rect, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwColor)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#d687b43753d3186f4d2b509dd07d936c">SetPixel</a> (<a class="el" href="class_vector2_d.html">Point2D</a> *pPoint, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwColor)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#85a16afcfb82c68c275b41064bc6ac79">GetPixel</a> (<a class="el" href="class_vector2_d.html">Point2D</a> *pPoint)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#9d02d95378bb676e3822fe5631c64d0c">DrawLineEx</a> (<a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *pClipRect, <a class="el" href="class_vector2_d.html">Point2D</a> *pPoint1, <a class="el" href="class_vector2_d.html">Point2D</a> *pPoint2, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwColor)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#7eda1782a993db3ec0b46949a61425dc">DrawLine</a> (<a class="el" href="class_vector2_d.html">Point2D</a> *pPoint1, <a class="el" href="class_vector2_d.html">Point2D</a> *pPoint2, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwColor)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#45a09ef8b269cec647eb3568291e96c8">vt_entry_34</a> (<a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk1, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk2, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk3, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk4, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk5, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk6, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk7)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#aafdb623851dc226e868ca992ec04f5d">vt_entry_38</a> (<a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk1, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk2, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk3, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk4, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk5, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk6, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk7)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#8f55492a6f5549076beb1ebe0200a5f6">vt_entry_3C</a> (<a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk1, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk2, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk3, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk4, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk5, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk6, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk7, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk8, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk9, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk10, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk11)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#325499675599d721962b310551556646">vt_entry_40</a> (<a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk1, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk2, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk3, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk4, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk5, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk6, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk7)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#2d3ed4d9ad565dddabc5afec17fe2a20">vt_entry_44</a> (<a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk1, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk2, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk3, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk4)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#67e77f21b2c4dcbf2516903a6bf896ec">vt_entry_48</a> (<a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk1, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk2, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk3, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk4)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#2bc5cb7850ecdc6a9321f46b986059eb">vt_entry_4C</a> (<a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk1, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk2, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk3, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk4, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk5, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk6)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#8ebc6ca1f7d5d00ee3979036b25f5150">vt_entry_50</a> (<a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk1, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk2, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk3, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk4)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#0d5920355f1acbfeeaca1fb15ee4e76b">DrawRectEx</a> (<a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *pClipRect, <a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *pDrawRect, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwColor)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#dddde1d1d0d6a20a3a0a04c6d698eaeb">DrawRect</a> (<a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *pDrawRect, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwColor)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#121b0592a1877e9d2e153d42ca26b269">Lock</a> (int X, int Y)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#5b41a524a280f0241b3d2afa5c2e4448">Unlock</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#35a97b6b47eb820068598807c51c4d07">vt_entry_64</a> (<a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk1, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk2)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#451f9036a775a27fda4acc7eeddecc97">vt_entry_68</a> (<a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk1, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk2)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#4ceef2fbdcd4260cb72ae6aac5d6b52b">vt_entry_6C</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#ab5e013e278f84b82260d067e1534679">GetBytesPerPixel</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#d081bc616a7700a07881dc700f30d1c4">GetPitch</a> ()</td></tr>
+
+<tr><td colspan="2"><br><h2>Static Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="class_d_surface.html">DSurface</a> *&amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#42dde7f026dca6a37c24b0122e693dc9">Tile</a> = *( <a class="el" href="class_d_surface.html">DSurface</a> * *)( 0x8872FC )</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="class_d_surface.html">DSurface</a> *&amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#1d9ff7d714e8a24e13a4b9196f6b3f68">Sidebar</a> = *( <a class="el" href="class_d_surface.html">DSurface</a> * *)( 0x887300 )</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="class_d_surface.html">DSurface</a> *&amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#3209d7814c00bcb68a54b3bac1d48d7a">Primary</a> = *( <a class="el" href="class_d_surface.html">DSurface</a> * *)( 0x887308 )</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="class_d_surface.html">DSurface</a> *&amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#589a47d171d3c03f42d523809544d82e">Hidden</a> = *( <a class="el" href="class_d_surface.html">DSurface</a> * *)( 0x88730C )</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="class_d_surface.html">DSurface</a> *&amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#a12fed955cc62aa942075143618d297e">Alternate</a> = *( <a class="el" href="class_d_surface.html">DSurface</a> * *)( 0x887310 )</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="class_d_surface.html">DSurface</a> *&amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#433a420bd2fa3d74c7b6cf9175b2b520">Hidden_2</a> = *( <a class="el" href="class_d_surface.html">DSurface</a> * *)( 0x887314 )</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="class_d_surface.html">DSurface</a> *&amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_surface.html#f22adfd2886c72225eccafbed1cf71df">Composite</a> = *( <a class="el" href="class_d_surface.html">DSurface</a> * *)( 0x88731C )</td></tr>
+
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 
-<p>Definition at line <a class="el" href="_surface_8h-source.html#l00238">238</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
-<hr>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_surface_8h-source.html">Surface.h</a></ul>
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00243">243</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<hr><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" name="f00f7f7c155289e27141ba9cfee10c4b"></a><!-- doxytag: member="DSurface::DSurface" ref="f00f7f7c155289e27141ba9cfee10c4b" args="(int Width, int Height, bool BackBuffer, bool Force3D)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DSurface::DSurface           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>Width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>Height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>BackBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>Force3D</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Nov 14 05:45:50 2009 for YR++ by&nbsp;
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00254">254</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00255"></a>00255                 { JMP_THIS(0x4BA5A0); }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="05445c66c0782342f251a9aabe7ab8e5"></a><!-- doxytag: member="DSurface::Blit" ref="05445c66c0782342f251a9aabe7ab8e5" args="(RectangleStruct *pClipRect, RectangleStruct *pClipRect2, Surface *pSrc, RectangleStruct *pDestRect, RectangleStruct *pSrcRect, bool bUnk1, bool bUnk2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::Blit           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *&nbsp;</td>
+          <td class="paramname"> <em>pClipRect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *&nbsp;</td>
+          <td class="paramname"> <em>pClipRect2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_surface.html">Surface</a> *&nbsp;</td>
+          <td class="paramname"> <em>pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *&nbsp;</td>
+          <td class="paramname"> <em>pDestRect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *&nbsp;</td>
+          <td class="paramname"> <em>pSrcRect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>bUnk1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>bUnk2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#9d95a41921ed6ab1151dc2af7ae4691a">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00266">266</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00292"></a>00292                                                              :(
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="7672fca7e31e345dc885c695f1b4f8d1"></a><!-- doxytag: member="DSurface::BlitPart" ref="7672fca7e31e345dc885c695f1b4f8d1" args="(RectangleStruct *pClipRect, Surface *pSrc, RectangleStruct *pSrcRect, bool bUnk1, bool bUnk2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::BlitPart           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *&nbsp;</td>
+          <td class="paramname"> <em>pClipRect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_surface.html">Surface</a> *&nbsp;</td>
+          <td class="paramname"> <em>pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *&nbsp;</td>
+          <td class="paramname"> <em>pSrcRect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>bUnk1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>bUnk2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#ff9a3926a18da3d82fa7f48441f6c516">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00259">259</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00292"></a>00292                                                              :(
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="021bec7c0afe6445c9bd981cade2c6c8"></a><!-- doxytag: member="DSurface::BlitWhole" ref="021bec7c0afe6445c9bd981cade2c6c8" args="(Surface *pSrc, bool bUnk1, bool bUnk2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::BlitWhole           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_surface.html">Surface</a> *&nbsp;</td>
+          <td class="paramname"> <em>pSrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>bUnk1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>bUnk2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#413dc570640abdd11b679370659a0425">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00257">257</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00292"></a>00292 :(
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="7eda1782a993db3ec0b46949a61425dc"></a><!-- doxytag: member="DSurface::DrawLine" ref="7eda1782a993db3ec0b46949a61425dc" args="(Point2D *pPoint1, Point2D *pPoint2, DWORD dwColor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::DrawLine           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_vector2_d.html">Point2D</a> *&nbsp;</td>
+          <td class="paramname"> <em>pPoint1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_vector2_d.html">Point2D</a> *&nbsp;</td>
+          <td class="paramname"> <em>pPoint2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwColor</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#b65c79c75dd52e88605d3fd1fc63c9f3">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00310">310</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370                : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};             <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="9d02d95378bb676e3822fe5631c64d0c"></a><!-- doxytag: member="DSurface::DrawLineEx" ref="9d02d95378bb676e3822fe5631c64d0c" args="(RectangleStruct *pClipRect, Point2D *pPoint1, Point2D *pPoint2, DWORD dwColor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::DrawLineEx           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *&nbsp;</td>
+          <td class="paramname"> <em>pClipRect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_vector2_d.html">Point2D</a> *&nbsp;</td>
+          <td class="paramname"> <em>pPoint1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_vector2_d.html">Point2D</a> *&nbsp;</td>
+          <td class="paramname"> <em>pPoint2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwColor</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#55b0b251053aa466ad3d7c1fe69d3676">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00304">304</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370                : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};             <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="dddde1d1d0d6a20a3a0a04c6d698eaeb"></a><!-- doxytag: member="DSurface::DrawRect" ref="dddde1d1d0d6a20a3a0a04c6d698eaeb" args="(RectangleStruct *pDrawRect, DWORD dwColor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::DrawRect           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *&nbsp;</td>
+          <td class="paramname"> <em>pDrawRect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwColor</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#e646051a970186360562dd9923b45d38">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00350">350</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370                : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};             <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="0d5920355f1acbfeeaca1fb15ee4e76b"></a><!-- doxytag: member="DSurface::DrawRectEx" ref="0d5920355f1acbfeeaca1fb15ee4e76b" args="(RectangleStruct *pClipRect, RectangleStruct *pDrawRect, DWORD dwColor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::DrawRectEx           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *&nbsp;</td>
+          <td class="paramname"> <em>pClipRect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *&nbsp;</td>
+          <td class="paramname"> <em>pDrawRect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwColor</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#b9fab2b792e36da4516139163fb1debf">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00345">345</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370                : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};             <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="ebd5ce8f9bdfacb98f18bde2400420cb"></a><!-- doxytag: member="DSurface::Fill" ref="ebd5ce8f9bdfacb98f18bde2400420cb" args="(DWORD dwColor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::Fill           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwColor</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#a5cae07879c3e1514211e70f78011079">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00284">284</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00292"></a>00292                                                              :(
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="dbb09d9f84e459d70779efa71998cee3"></a><!-- doxytag: member="DSurface::FillRect" ref="dbb09d9f84e459d70779efa71998cee3" args="(RectangleStruct *pFillRect, DWORD dwColor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::FillRect           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *&nbsp;</td>
+          <td class="paramname"> <em>pFillRect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwColor</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#d7fb0a662f9485f032ab0150bf00ee4e">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00280">280</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00292"></a>00292                                                              :(
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="d535031d4ba24977e53ced67a1f37fba"></a><!-- doxytag: member="DSurface::FillRectEx" ref="d535031d4ba24977e53ced67a1f37fba" args="(RectangleStruct *pClipRect, RectangleStruct *pFillRect, DWORD dwColor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::FillRectEx           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *&nbsp;</td>
+          <td class="paramname"> <em>pClipRect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *&nbsp;</td>
+          <td class="paramname"> <em>pFillRect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwColor</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#28214d6625b1c9947aef0ce03e1db650">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00275">275</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00292"></a>00292                                                              :(
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="ab5e013e278f84b82260d067e1534679"></a><!-- doxytag: member="DSurface::GetBytesPerPixel" ref="ab5e013e278f84b82260d067e1534679" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int DSurface::GetBytesPerPixel           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#3121826a38b9411f5dcdf9fdcea654ec">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00364">364</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370 : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};            <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="d081bc616a7700a07881dc700f30d1c4"></a><!-- doxytag: member="DSurface::GetPitch" ref="d081bc616a7700a07881dc700f30d1c4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int DSurface::GetPitch           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#a183648920c68c4494b0120d3c853bfc">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00366">366</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370 : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};            <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="85a16afcfb82c68c275b41064bc6ac79"></a><!-- doxytag: member="DSurface::GetPixel" ref="85a16afcfb82c68c275b41064bc6ac79" args="(Point2D *pPoint)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> DSurface::GetPixel           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_vector2_d.html">Point2D</a> *&nbsp;</td>
+          <td class="paramname"> <em>pPoint</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#a0fd48c140869e06900318dbec680248">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00301">301</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370                : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};             <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="121b0592a1877e9d2e153d42ca26b269"></a><!-- doxytag: member="DSurface::Lock" ref="121b0592a1877e9d2e153d42ca26b269" args="(int X, int Y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void* DSurface::Lock           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>Y</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#9551130010044de3b503fb21789bac58">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00354">354</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370 : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};            <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="d687b43753d3186f4d2b509dd07d936c"></a><!-- doxytag: member="DSurface::SetPixel" ref="d687b43753d3186f4d2b509dd07d936c" args="(Point2D *pPoint, DWORD dwColor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::SetPixel           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_vector2_d.html">Point2D</a> *&nbsp;</td>
+          <td class="paramname"> <em>pPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwColor</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#2b7963fb6a3cea8d02c158c5b8fdcbce">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00297">297</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370                : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};             <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="5b41a524a280f0241b3d2afa5c2e4448"></a><!-- doxytag: member="DSurface::Unlock" ref="5b41a524a280f0241b3d2afa5c2e4448" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::Unlock           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#3e48ce277f169b571ffbf46d016e3d4a">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00356">356</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370 : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};            <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="a284d009ce791e3003ef17a05914b5b8"></a><!-- doxytag: member="DSurface::vt_entry_1C" ref="a284d009ce791e3003ef17a05914b5b8" args="(RectangleStruct *pClipRect, ColorStruct Color, int nUnknown)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::vt_entry_1C           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_rectangle_struct.html">RectangleStruct</a> *&nbsp;</td>
+          <td class="paramname"> <em>pClipRect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_color_struct.html">ColorStruct</a>&nbsp;</td>
+          <td class="paramname"> <em>Color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>nUnknown</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#5e6c596281670fafa40f1941bc7ba377">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00287">287</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00292"></a>00292                                                              :(
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="c1bfd633aaee3e3f752d81dc091ff20a"></a><!-- doxytag: member="DSurface::vt_entry_20" ref="c1bfd633aaee3e3f752d81dc091ff20a" args="(RectangleStruct ClipRect, RectangleStruct Rect, DWORD dwColor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::vt_entry_20           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_rectangle_struct.html">RectangleStruct</a>&nbsp;</td>
+          <td class="paramname"> <em>ClipRect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_rectangle_struct.html">RectangleStruct</a>&nbsp;</td>
+          <td class="paramname"> <em>Rect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwColor</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#d50e584fcef08b6cfa7b724cc981a377">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00292">292</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00292"></a>00292                                                              :(
+<a name="l00293"></a>00293                 <a class="code" href="struct_rectangle_struct.html">RectangleStruct</a> ClipRect,
+<a name="l00294"></a>00294                 <a class="code" href="struct_rectangle_struct.html">RectangleStruct</a> Rect,   <span class="comment">//no idea what this represents</span>
+<a name="l00295"></a>00295                 <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwColor) <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="45a09ef8b269cec647eb3568291e96c8"></a><!-- doxytag: member="DSurface::vt_entry_34" ref="45a09ef8b269cec647eb3568291e96c8" args="(DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::vt_entry_34           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk5</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk6</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk7</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#1e50c66e34a1d03e09315e7318a4e77d">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00315">315</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370                : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};             <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="aafdb623851dc226e868ca992ec04f5d"></a><!-- doxytag: member="DSurface::vt_entry_38" ref="aafdb623851dc226e868ca992ec04f5d" args="(DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::vt_entry_38           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk5</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk6</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk7</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#c1e79ef2f826a4ef50213a4250fbbdab">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00319">319</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370                : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};             <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="8f55492a6f5549076beb1ebe0200a5f6"></a><!-- doxytag: member="DSurface::vt_entry_3C" ref="8f55492a6f5549076beb1ebe0200a5f6" args="(DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8, DWORD dwUnk9, DWORD dwUnk10, DWORD dwUnk11)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::vt_entry_3C           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk5</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk6</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk7</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk8</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk9</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk10</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk11</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#9e6ea5f9f575f2ad618c58f690edd555">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00323">323</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370                : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};             <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="325499675599d721962b310551556646"></a><!-- doxytag: member="DSurface::vt_entry_40" ref="325499675599d721962b310551556646" args="(DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::vt_entry_40           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk5</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk6</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk7</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#712817423f712e3fed94f0712654b64f">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00328">328</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370                : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};             <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="2d3ed4d9ad565dddabc5afec17fe2a20"></a><!-- doxytag: member="DSurface::vt_entry_44" ref="2d3ed4d9ad565dddabc5afec17fe2a20" args="(DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::vt_entry_44           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk4</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#5cb544d88ea0d32aa8bec231a7fc22b6">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00332">332</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370                : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};             <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="67e77f21b2c4dcbf2516903a6bf896ec"></a><!-- doxytag: member="DSurface::vt_entry_48" ref="67e77f21b2c4dcbf2516903a6bf896ec" args="(DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::vt_entry_48           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk4</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#fc128631189d77d40a597269eb60b194">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00335">335</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370                : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};             <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="2bc5cb7850ecdc6a9321f46b986059eb"></a><!-- doxytag: member="DSurface::vt_entry_4C" ref="2bc5cb7850ecdc6a9321f46b986059eb" args="(DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5, DWORD dwUnk6)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::vt_entry_4C           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk5</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk6</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#d1e562e3d419d4452285da061e3cbf38">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00338">338</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370                : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};             <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="8ebc6ca1f7d5d00ee3979036b25f5150"></a><!-- doxytag: member="DSurface::vt_entry_50" ref="8ebc6ca1f7d5d00ee3979036b25f5150" args="(DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::vt_entry_50           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk4</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#fb49abe3c7dfb89fbc5b37770850056c">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00342">342</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370                : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};             <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="35a97b6b47eb820068598807c51c4d07"></a><!-- doxytag: member="DSurface::vt_entry_64" ref="35a97b6b47eb820068598807c51c4d07" args="(DWORD dwUnk1, DWORD dwUnk2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::vt_entry_64           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#4d16ce345a3aeac76bd8e72cef7af06e">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00358">358</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370 : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};            <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="451f9036a775a27fda4acc7eeddecc97"></a><!-- doxytag: member="DSurface::vt_entry_68" ref="451f9036a775a27fda4acc7eeddecc97" args="(DWORD dwUnk1, DWORD dwUnk2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::vt_entry_68           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td>
+          <td class="paramname"> <em>dwUnk2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#875a7424111b79aec9e88a022b6becd8">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00360">360</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370 : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};            <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="4ceef2fbdcd4260cb72ae6aac5d6b52b"></a><!-- doxytag: member="DSurface::vt_entry_6C" ref="4ceef2fbdcd4260cb72ae6aac5d6b52b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DSurface::vt_entry_6C           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Implements <a class="el" href="class_surface.html#857431eceebed50fee219f1268d08b56">Surface</a>.</p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00362">362</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00370"></a>00370 : <span class="keyword">public</span> <a class="code" href="class_surface.html">Surface</a> {};            <span class="comment">//WW's custom surfaces? (abstract)</span>
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<hr><h2>Member Data Documentation</h2>
+<a class="anchor" name="a12fed955cc62aa942075143618d297e"></a><!-- doxytag: member="DSurface::Alternate" ref="a12fed955cc62aa942075143618d297e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_surface.html">DSurface</a> *&amp; <a class="el" href="class_d_surface.html#a12fed955cc62aa942075143618d297e">DSurface::Alternate</a> = *( <a class="el" href="class_d_surface.html">DSurface</a> * *)( 0x887310 )<code> [static]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00249">249</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="f22adfd2886c72225eccafbed1cf71df"></a><!-- doxytag: member="DSurface::Composite" ref="f22adfd2886c72225eccafbed1cf71df" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_surface.html">DSurface</a> *&amp; <a class="el" href="class_d_surface.html#f22adfd2886c72225eccafbed1cf71df">DSurface::Composite</a> = *( <a class="el" href="class_d_surface.html">DSurface</a> * *)( 0x88731C )<code> [static]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00251">251</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="589a47d171d3c03f42d523809544d82e"></a><!-- doxytag: member="DSurface::Hidden" ref="589a47d171d3c03f42d523809544d82e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_surface.html">DSurface</a> *&amp; <a class="el" href="class_d_surface.html#589a47d171d3c03f42d523809544d82e">DSurface::Hidden</a> = *( <a class="el" href="class_d_surface.html">DSurface</a> * *)( 0x88730C )<code> [static]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00248">248</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="433a420bd2fa3d74c7b6cf9175b2b520"></a><!-- doxytag: member="DSurface::Hidden_2" ref="433a420bd2fa3d74c7b6cf9175b2b520" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_surface.html">DSurface</a> *&amp; <a class="el" href="class_d_surface.html#433a420bd2fa3d74c7b6cf9175b2b520">DSurface::Hidden_2</a> = *( <a class="el" href="class_d_surface.html">DSurface</a> * *)( 0x887314 )<code> [static]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00250">250</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="3209d7814c00bcb68a54b3bac1d48d7a"></a><!-- doxytag: member="DSurface::Primary" ref="3209d7814c00bcb68a54b3bac1d48d7a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_surface.html">DSurface</a> *&amp; <a class="el" href="class_d_surface.html#3209d7814c00bcb68a54b3bac1d48d7a">DSurface::Primary</a> = *( <a class="el" href="class_d_surface.html">DSurface</a> * *)( 0x887308 )<code> [static]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00247">247</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="1d9ff7d714e8a24e13a4b9196f6b3f68"></a><!-- doxytag: member="DSurface::Sidebar" ref="1d9ff7d714e8a24e13a4b9196f6b3f68" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_surface.html">DSurface</a> *&amp; <a class="el" href="class_d_surface.html#1d9ff7d714e8a24e13a4b9196f6b3f68">DSurface::Sidebar</a> = *( <a class="el" href="class_d_surface.html">DSurface</a> * *)( 0x887300 )<code> [static]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00246">246</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="42dde7f026dca6a37c24b0122e693dc9"></a><!-- doxytag: member="DSurface::Tile" ref="42dde7f026dca6a37c24b0122e693dc9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_surface.html">DSurface</a> *&amp; <a class="el" href="class_d_surface.html#42dde7f026dca6a37c24b0122e693dc9">DSurface::Tile</a> = *( <a class="el" href="class_d_surface.html">DSurface</a> * *)( 0x8872FC )<code> [static]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_surface_8h-source.html#l00245">245</a> of file <a class="el" href="_surface_8h-source.html">Surface.h</a>.</p>
+
+</div>
+</div><p>
+<hr>The documentation for this class was generated from the following files:<ul>
+<li><a class="el" href="_surface_8h-source.html">Surface.h</a><li><a class="el" href="_static_inits_8cpp-source.html">StaticInits.cpp</a></ul>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Dec 17 09:40:57 2009 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>
