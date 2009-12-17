@@ -34,14 +34,10 @@ public:
 	virtual int Size() R0;
 
 	//UnitClass
-	virtual void DrawVXL(
-		DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
-		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8)
+	virtual void DrawAsVXL(Point2D Coords, RectangleStruct BoundingRect, DWORD dwUnk7, DWORD dwUnk8)
 			JMP_THIS(0x73B470);
 
-	virtual void DrawSHP(
-		DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
-		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8)
+	virtual void DrawAsSHP(Point2D Coords, RectangleStruct BoundingRect, DWORD dwUnk7, DWORD dwUnk8)
 			JMP_THIS(0x73C5F0);
 	
 	//Constructor

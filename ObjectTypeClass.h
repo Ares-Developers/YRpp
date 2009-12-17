@@ -102,7 +102,7 @@ protected:
 	PROPERTY(BYTE,           unused_23F);
 	PROPERTY(int,            LineTrailColorDecrement);
 
-	PROTECTED_PROPERTY(BYTE, unknown_244[0x50]); //These don't even seem to be of any use...
+	PROPERTY_ARRAY(SomeVoxelCache, VoxelCaches, 4); //These don't even seem to be of any use...
 };
 
 #endif

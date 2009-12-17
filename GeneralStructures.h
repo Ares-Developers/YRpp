@@ -122,4 +122,12 @@ struct FacingStruct
 	}
 };
 
+struct SomeVoxelCache {
+	void *ptr;
+	DWORD f_4;
+	DWORD f_8;
+	BYTE f_C;
+	DWORD * ptr_10;
+};
+
 #endif

@@ -15,6 +15,7 @@ class TeamClass;
 class FootClass : public TechnoClass
 {
 public:
+	enum {AbsDerivateID = ABSFLAGS_ISFOOT};
 
 	//IPersistStream
 	//Destructor
@@ -42,17 +43,18 @@ public:
 	virtual bool StopMoving() R0;
 	virtual bool vt_entry_504() R0;
 	virtual bool ChronoWarpTo(CoordStruct pDest) R0; // fsds... only implemented for one new YR map trigger, other chrono events repeat the code...
-/* ,-> */ virtual void vt_entry_50C(
-/* | */ DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
-/* | */ DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8,
-/*P| */ DWORD dwUnk9, DWORD dwUnk10, DWORD dwUnk11, DWORD dwUnk12,
-/*A| */ DWORD dwUnk13, DWORD dwUnk14, DWORD dwUnk15, DWORD dwUnk16) RX;
-/*N| */
-/*I| */ virtual void vt_entry_510(
-/*C| */ DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5, 
-/* | */ DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8, DWORD dwUnk9, DWORD dwUnk10) RX;
-/* | */ virtual void vt_entry_514() RX;
-/* `- */ virtual void Panic() RX;
+	virtual void Draw_A_SHP(
+		SHPStruct *SHP, int idxFrame, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8,
+		DWORD dwUnk9, DWORD dwUnk10, DWORD dwUnk11, DWORD dwUnk12,
+		DWORD dwUnk13, DWORD dwUnk14, DWORD dwUnk15, DWORD dwUnk16) RX;
+
+	virtual void Draw_A_VXL(
+		VoxelStruct *VXL, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5, 
+		Point2D *CenterPoint, Matrix3DStruct *Matrix, DWORD dwUnk8, DWORD dwUnk9, DWORD dwUnk10) RX;
+
+	virtual void vt_entry_514() RX;
+	virtual void Panic() RX;
 	virtual void UnPanic() RX; //never
 	virtual void PlayIdleAnim(int nIdleAnimNumber) RX;
 	virtual DWORD vt_entry_524() R0;

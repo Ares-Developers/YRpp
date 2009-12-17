@@ -32,15 +32,14 @@
 #define BUFLEN 2048
 
 
-// absflags shorthand
-#define ABS_IS_OBJECT(var) \
-	((var->AbstractFlags & ABSFLAGS_ISOBJECT) != 0)
+//define ABS_IS_OBJECT(var) \
+//	((var->AbstractFlags & ABSFLAGS_ISOBJECT) != 0)
 
-#define ABS_IS_TECHNO(var) \
-	((var->AbstractFlags & ABSFLAGS_ISTECHNO) != 0)
+//define ABS_IS_TECHNO(var) \
+//	((var->AbstractFlags & ABSFLAGS_ISTECHNO) != 0)
 
-#define ABS_IS_FOOT(var) \
-	((var->AbstractFlags & ABSFLAGS_ISFOOT) != 0)
+//define ABS_IS_FOOT(var) \
+//	((var->AbstractFlags & ABSFLAGS_ISFOOT) != 0)
 
 // swizzle shorthand
 #define SWIZZLE(var) \

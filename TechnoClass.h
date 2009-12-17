@@ -111,6 +111,7 @@ struct RecoilData
 class TechnoClass : public RadioClass
 {
 public:
+	enum {AbsDerivateID = ABSFLAGS_ISTECHNO};
 
 	static DynamicVectorClass<DWORD>* Array; // HAX to instantiate
 

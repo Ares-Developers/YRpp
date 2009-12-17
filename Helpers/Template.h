@@ -98,8 +98,16 @@ class IndexBitfield {
 
 #include <AbstractClass.h>
 template <typename T>
-inline T game_cast(AbstractClass * Object) {
+inline T specific_cast(AbstractClass * Object) {
 	if(Object->WhatAmI() == CompoundT<T>::BaseT::AbsID) {
+		return reinterpret_cast<T>(Object);
+	}
+	return NULL;
+};
+
+template <typename T>
+inline T generic_cast(AbstractClass * Object) {
+	if((Object->AbstractFlags & CompoundT<T>::BaseT::AbsDerivateID) != 0) {
 		return reinterpret_cast<T>(Object);
 	}
 	return NULL;
