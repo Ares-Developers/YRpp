@@ -114,7 +114,7 @@ struct FacingStruct
 	DWORD GetFacing(DWORD *arg)
 		JMP_THIS(0x4C93D0);
 
-	operator eDirection() const {
+	operator int() {
 		// <DCoder> I don't know how or what it does, but that's what the game uses
 		DWORD nessie;
 		this->GetFacing(&nessie); // mysterious facing value from the depths of the game

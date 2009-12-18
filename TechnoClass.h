@@ -289,6 +289,9 @@ public:
 		return TT ? TT->get_ID() : NULL;
 	}
 
+	bool IsMindControlled()
+		JMP_THIS(0x7105E0);
+
 
 // CanTargetWhatAmI is a bitfield, if(!(CanTargetWhatAmI & (1 << tgt->WhatAmI())) { fail; }
 
