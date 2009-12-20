@@ -83,13 +83,13 @@ public:
 		this->Capacity = 0;
 	}
 
-	virtual int FindItemIndex(T tItem) {
+	virtual int FindItemIndex(T *tItem) {
 		if(!this->IsInitialized) {
 			return 0;
 		}
 
 		for(int i = 0; i < this->Capacity; ++i) {
-			if(this->Items[i] == tItem) {
+			if(this->Items[i] == *tItem) {
 				return i;
 			}
 		}
@@ -238,15 +238,14 @@ public:
 		VectorClass<T>::Purge();
 	}
 
-	// this doesn't work right for some reason, see Bugfixes.cpp TechnoTypeClass_GetCameo
-	// passing a pointer that's in the array still returns -1
-	virtual int FindItemIndex(T tItem) {
+	// aaaaaurgh , this takes T* , not plain T... what a silly mistake
+	virtual int FindItemIndex(T *tItem) {
 		if(!this->IsInitialized) {
 			return -1;
 		}
 
 		for(int i = 0; i < Count; i++) {
-			if(this->Items[i] == tItem) {
+			if(this->Items[i] == *tItem) {
 				return i;
 			}
 		}
