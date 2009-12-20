@@ -4,7 +4,6 @@
 #include <YRPPCore.h>
 #include <Helpers/Macro.h>
 #include <Memory.h>
-#include <SwizzleManagerClass.h>
 
 //========================================================================
 //=== VectorClass ========================================================
@@ -134,26 +133,13 @@ public:
 		}
 	}
 
+	inline void Load(IStream *pStm, bool bSwizzle);
+
 	void Save(IStream *pStm) {
 		int ii = this->Capacity;
 		pStm->Write(&ii, 4u, 0);
 		for ( ii = 0; ii < Capacity; ++ii ) {
 			pStm->Write(&(this->Items[ii]), 4, 0);
-		}
-	}
-
-	void Load(IStream *pStm, bool bSwizzle = 1) {
-		int ii = 0;
-		this->Purge();
-		pStm->Read(&ii, 4u, 0);
-		this->SetCapacity(ii, NULL);
-		for ( ii = 0; ii < this->Capacity; ++ii ) {
-			pStm->Read(&(this->Items[ii]), 4, 0);
-		}
-		if(bSwizzle) {
-			for ( ii = 0; ii < this->Capacity; ++ii ) {
-				SWIZZLE(this->Items[ii]);
-			}
 		}
 	}
 
@@ -180,27 +166,13 @@ public:
 		this->Clear();
 	}
 
+	inline void Load(IStream *pStm, bool bSwizzle);
+
 	void Save(IStream *pStm) {
 		int ii = this->Count;
 		pStm->Write(&ii, 4u, 0);
 		for ( ii = 0; ii < this->Count; ++ii ) {
 			pStm->Write(&(this->Items[ii]), 4, 0);
-		}
-	}
-
-	void Load(IStream *pStm, bool bSwizzle) {
-		int ii = 0;
-		this->Purge();
-		pStm->Read(&ii, 4u, 0);
-		this->SetCapacity(ii, NULL);
-		for ( int jj = 0; jj < ii; ++jj ) {
-			pStm->Read(&(this->Items[jj]), 4, 0);
-		}
-		this->Count = ii;
-		if(bSwizzle) {
-			for ( ii = 0; ii < this->Count; ++ii ) {
-				SWIZZLE(this->Items[ii]);
-			}
 		}
 	}
 
@@ -369,5 +341,39 @@ public:
 
 	PROPERTY(int, Count);	//not sure what this is, but it's different from DVC's count
 };
+
+template<typename T>
+void VectorClass<T>::Load(IStream *pStm, bool bSwizzle = 1) {
+	int ii = 0;
+	this->Purge();
+	pStm->Read(&ii, 4u, 0);
+	this->SetCapacity(ii, NULL);
+	for ( ii = 0; ii < this->Capacity; ++ii ) {
+		pStm->Read(&(this->Items[ii]), 4, 0);
+	}
+	if(bSwizzle) {
+		for ( ii = 0; ii < this->Capacity; ++ii ) {
+			SWIZZLE(this->Items[ii]);
+		}
+	}
+}
+
+#include <SwizzleManagerClass.h>
+template<typename T>
+void DynamicVectorClass<T>::Load(IStream *pStm, bool bSwizzle) {
+	int ii = 0;
+	this->Purge();
+	pStm->Read(&ii, 4u, 0);
+	this->SetCapacity(ii, NULL);
+	for ( int jj = 0; jj < ii; ++jj ) {
+		pStm->Read(&(this->Items[jj]), 4, 0);
+	}
+	this->Count = ii;
+	if(bSwizzle) {
+		for ( ii = 0; ii < this->Count; ++ii ) {
+			SWIZZLE(this->Items[ii]);
+		}
+	}
+}
 
 #endif

@@ -3,10 +3,11 @@
 
 class Randomizer
 {
-public:
+	// DO NOT USE THIS!!! Really.
+	// Use the ScenarioClass::Random object instead!
 	static Randomizer* Global()
 		{ return (Randomizer*)0x886B88; }
-
+public:
 	DWORD Random()
 		JMP_THIS(0x65C780);
 
