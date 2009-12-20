@@ -4,6 +4,7 @@
 #include <YRPPCore.h>
 #include <Helpers/Macro.h>
 #include <Memory.h>
+#include <SwizzleManagerClass.h>
 
 //========================================================================
 //=== VectorClass ========================================================
@@ -218,7 +219,7 @@ public:
 	}
 
 	virtual bool SetCapacity(int nNewCapacity, T* pMem) {
-		bool bRet = VectorClass::SetCapacity(nNewCapacity, pMem);
+		bool bRet = VectorClass<T>::SetCapacity(nNewCapacity, pMem);
 
 		if(this->Capacity < this->Count) {
 			this->Count = this->Capacity;
@@ -229,12 +230,12 @@ public:
 
 	virtual void Clear() {
 		this->Count = 0;
-		VectorClass::Clear();
+		VectorClass<T>::Clear();
 	}
 
 	void Purge() {
 		this->Count = 0;
-		VectorClass::Purge();
+		VectorClass<T>::Purge();
 	}
 
 	// this doesn't work right for some reason, see Bugfixes.cpp TechnoTypeClass_GetCameo
@@ -253,7 +254,7 @@ public:
 		return -1;
 	}
 
-	DynamicVectorClass() : VectorClass() {
+	DynamicVectorClass<T>() : VectorClass<T>() {
 		this->Count = 0;
 		this->CapacityIncrement = 10;
 /*
@@ -264,7 +265,7 @@ public:
 */
 	}
 
-	DynamicVectorClass(int nCapacity, T* pMem) : VectorClass<T>(nCapacity, pMem) {
+	DynamicVectorClass<T>(int nCapacity, T* pMem) : VectorClass<T>(nCapacity, pMem) {
 		this->Count = 0;
 		this->CapacityIncrement = 10;
 	}
@@ -317,11 +318,11 @@ public:
 		this->Clear();
 	}
 
-	TypeList() : DynamicVectorClass() {
+	TypeList<T>() : DynamicVectorClass<T>() {
 
 	}
 
-	TypeList(int nCapacity, T* pMem) : DynamicVectorClass(nCapacity, pMem) {
+	TypeList<T>(int nCapacity, T* pMem) : DynamicVectorClass<T>(nCapacity, pMem) {
 
 	}
 

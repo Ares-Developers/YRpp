@@ -1,7 +1,8 @@
 #ifndef INTERFACES_H
 #define INTERFACES_H
 
-#include <objidl.h>
+//#include <objidl.h>
+#include <windows.h>
 #include <GeneralDefinitions.h>
 
 interface ISwizzle : IUnknown{
