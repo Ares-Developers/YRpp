@@ -9,18 +9,18 @@
 // macros DCoder uses and pd dislikes :)
 
 #define GET(clsname, var, reg) \
-	clsname var = (clsname )R->get_ ## reg ();
+	clsname var = R->reg<clsname>();
 
 // it's really not a good idea to GET_STACK(not_a_pointer)
 // no, really
-#define GET_STACK(clsname, var, offset) \
-	clsname var = *((clsname *)(R->lea_ ## StackVar(offset)));
-
 #define LEA_STACK(clsname, var, offset) \
-	clsname var = ((clsname )(R->lea_ ## StackVar(offset)));
+	clsname var = R->lea_Stack<clsname>(offset);
+
+#define GET_STACK(clsname, var, offset) \
+	clsname var = R->Stack<clsname>(offset);
 
 #define GET_BASE(clsname, var, offset) \
-	clsname var = *((clsname *)(R->lea_ ## BaseVar(offset)));
+	clsname var = R->Base<clsname>(offset);
 
 #define RET_UNLESS(expr) \
 	if(!(expr)) { return 0; }

@@ -21,7 +21,7 @@ protected:
 public:
 	retfunc(REGISTERS *r, DWORD addr) : R(r), retAddr(addr) {};
 	int operator()( T Result ) {
-		R->set_EAX((DWORD)Result);
+		R->EAX(Result);
 		return retAddr;
 	}
 };
@@ -32,9 +32,9 @@ class retfunc_fixed : public retfunc<T> {
 protected:
 	T Result;
 public:
-	retfunc_fixed(REGISTERS *r, DWORD addr, T res) : retfunc(r, addr), Result(res) {};
+	retfunc_fixed(REGISTERS *r, DWORD addr, T res) : retfunc<T>(r, addr), Result(res) {};
 	int operator()() {
-		R->set_EAX((DWORD)Result);
+		this->R->EAX(Result);
 		return retAddr;
 	}
 };
@@ -44,7 +44,7 @@ class retfunc_bool : public retfunc<int> {
 protected:
 	DWORD negAddr;
 public:
-	retfunc_bool(REGISTERS *r, DWORD yAddr, DWORD nAddr) : retfunc(r, yAddr), negAddr(nAddr) {};
+	retfunc_bool(REGISTERS *r, DWORD yAddr, DWORD nAddr) : retfunc<int>(r, yAddr), negAddr(nAddr) {};
 	int operator()(bool choose) {
 		return choose ? retAddr : negAddr;
 	}

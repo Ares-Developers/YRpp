@@ -93,7 +93,8 @@
 #include <Ion.h>
 
 //Blitters
-#include <Blitters/Includer.h>
+//removing useless pieces of shit
+//include <Blitters/Includer.h>
 
 //The law!
 #include <RulesClass.h>
