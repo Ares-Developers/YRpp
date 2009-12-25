@@ -292,6 +292,15 @@ public:
 	bool IsMindControlled()
 		JMP_THIS(0x7105E0);
 
+	/*
+	 *  Cell->AddThreat(this->Owner, -this->ThreatPosed);
+	 *  this->ThreatPosed = 0;
+	 *  int Threat = this->CalculateThreat(); // this is another gem of a function, to be revealed another time...
+	 *  this->ThreatPosed = Threat;
+	 *  Cell->AddThreat(this->Owner, Threat);
+	 */
+	void UpdateThreatInCell(CellClass *Cell)
+		JMP_THIS(0x70F6E0);
 
 // CanTargetWhatAmI is a bitfield, if(!(CanTargetWhatAmI & (1 << tgt->WhatAmI())) { fail; }
 
