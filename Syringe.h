@@ -284,8 +284,8 @@ public:
 
 //Use this for DLL export functions
 //e.g. EXPORT FunctionName(REGISTERS* R)
-#define EXPORT extern "C" __declspec(dllexport) DWORD _cdecl
-#define EXPORT_FUNC(name) extern "C" __declspec(dllexport) DWORD _cdecl name (REGISTERS *R)
+#define EXPORT extern "C" __declspec(dllexport) DWORD __cdecl
+#define EXPORT_FUNC(name) extern "C" __declspec(dllexport) DWORD __cdecl name (REGISTERS *R)
 
 // injgen
 // in addition to the injgen-declaration, also includes the function opening

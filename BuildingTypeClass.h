@@ -35,7 +35,7 @@ public:
 	static int &HeightInLeptons;
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
+	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
 	//Destructor

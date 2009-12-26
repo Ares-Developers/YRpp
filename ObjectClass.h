@@ -38,7 +38,7 @@ public:
 	static DynamicVectorClass<ObjectClass*>* CurrentObjects;
 
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm) R0;
+	virtual HRESULT __stdcall Load(IStream* pStm) R0;
 
 	//Destructor
 	virtual ~ObjectClass() RX;

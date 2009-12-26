@@ -4,7 +4,7 @@
 #include <YRPPCore.h>
 
 #define MATH_FUNC(name, address)\
-	static double _cdecl name(double value)\
+	static double __cdecl name(double value)\
 	{\
 		double* p = &value;\
 		PUSH_VAR64(p);\

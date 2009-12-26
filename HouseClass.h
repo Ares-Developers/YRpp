@@ -99,8 +99,8 @@ public:
 	~BaseClass() { /*???*/ }; // gcc demands a virtual since virtual funcs exist
 
 	//VTable
-	virtual HRESULT _stdcall Load(IStream* pStm) R0;
-	virtual HRESULT _stdcall Save(IStream* pStm) R0;
+	virtual HRESULT __stdcall Load(IStream* pStm) R0;
+	virtual HRESULT __stdcall Save(IStream* pStm) R0;
 	virtual void CalculateChecksum(void* pChkSum) RX;
 
 	//Properties
@@ -127,40 +127,40 @@ public:
 	static HouseClass *&Player;
 
 	//IConnectionPointContainer
-	virtual HRESULT _stdcall EnumConnectionPoints(IEnumConnectionPoints** ppEnum) R0;
-	virtual HRESULT _stdcall FindConnectionPoint(GUID* riid, IConnectionPoint** ppCP) R0;
+	virtual HRESULT __stdcall EnumConnectionPoints(IEnumConnectionPoints** ppEnum) R0;
+	virtual HRESULT __stdcall FindConnectionPoint(GUID* riid, IConnectionPoint** ppCP) R0;
 
 	//IPublicHouse
-	virtual long _stdcall Apparent_Category_Quantity(eCategory category) R0;
-	virtual long _stdcall Apparent_Category_Power(eCategory category) R0;
-	virtual CellStruct _stdcall Apparent_Base_Center() { CellStruct DESU = {0, 0}; return DESU ;}
-	virtual bool _stdcall Is_Powered() R0;
+	virtual long __stdcall Apparent_Category_Quantity(eCategory category) R0;
+	virtual long __stdcall Apparent_Category_Power(eCategory category) R0;
+	virtual CellStruct __stdcall Apparent_Base_Center() { CellStruct DESU = {0, 0}; return DESU ;}
+	virtual bool __stdcall Is_Powered() R0;
 
 	//IHouse
-	virtual long _stdcall ID_Number() R0;
-	virtual BSTR _stdcall Name() R0;
-	virtual IApplication* _stdcall	Get_Application() R0;
-	virtual long _stdcall Available_Money() R0;
-	virtual long _stdcall Available_Storage() R0;
-	virtual long _stdcall Power_Output() R0;
-	virtual long _stdcall Power_Drain() R0;
-	virtual long _stdcall Category_Quantity(eCategory category) R0;
-	virtual long _stdcall Category_Power(eCategory category) R0;
-	virtual CellStruct _stdcall Base_Center() { CellStruct butts = {1337, 42}; return butts ;}
-	virtual HRESULT _stdcall Fire_Sale() R0;
-	virtual HRESULT _stdcall All_To_Hunt() R0;
+	virtual long __stdcall ID_Number() R0;
+	virtual BSTR __stdcall Name() R0;
+	virtual IApplication* __stdcall Get_Application() R0;
+	virtual long __stdcall Available_Money() R0;
+	virtual long __stdcall Available_Storage() R0;
+	virtual long __stdcall Power_Output() R0;
+	virtual long __stdcall Power_Drain() R0;
+	virtual long __stdcall Category_Quantity(eCategory category) R0;
+	virtual long __stdcall Category_Power(eCategory category) R0;
+	virtual CellStruct __stdcall Base_Center() { CellStruct butts = {1337, 42}; return butts ;}
+	virtual HRESULT __stdcall Fire_Sale() R0;
+	virtual HRESULT __stdcall All_To_Hunt() R0;
 
 	//IUnknown
-	virtual HRESULT _stdcall QueryInterface(REFIID iid, void** ppvObject) R0;
-	virtual ULONG _stdcall AddRef() R0;
-	virtual ULONG _stdcall Release() R0;
+	virtual HRESULT __stdcall QueryInterface(REFIID iid, void** ppvObject) R0;
+	virtual ULONG __stdcall AddRef() R0;
+	virtual ULONG __stdcall Release() R0;
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
+	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm) R0;
-	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
+	virtual HRESULT __stdcall Load(IStream* pStm) R0;
+	virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
 	//Destructor
 	virtual ~HouseClass() RX;

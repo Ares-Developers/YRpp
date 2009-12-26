@@ -24,24 +24,24 @@ public:
 	static DynamicVectorClass<AircraftClass*>* Array;
 
 	//IFlyControl
-	virtual int _stdcall Landing_Altitude() R0;
-	virtual int _stdcall Landing_Direction() R0;
-	virtual long _stdcall Is_Loaded() R0;
-	virtual long _stdcall Is_Strafe() R0;
-	virtual long _stdcall Is_Fighter() R0;
-	virtual long _stdcall Is_Locked() R0;
+	virtual int __stdcall Landing_Altitude() R0;
+	virtual int __stdcall Landing_Direction() R0;
+	virtual long __stdcall Is_Loaded() R0;
+	virtual long __stdcall Is_Strafe() R0;
+	virtual long __stdcall Is_Fighter() R0;
+	virtual long __stdcall Is_Locked() R0;
 
 	//IUnknown
-	virtual HRESULT _stdcall QueryInterface(REFIID iid, void** ppvObject) R0;
-	virtual ULONG _stdcall AddRef() R0;
-	virtual ULONG _stdcall Release() R0;
+	virtual HRESULT __stdcall QueryInterface(REFIID iid, void** ppvObject) R0;
+	virtual ULONG __stdcall AddRef() R0;
+	virtual ULONG __stdcall Release() R0;
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
+	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm) R0;
-	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
+	virtual HRESULT __stdcall Load(IStream* pStm) R0;
+	virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
 	//AbstractClass
 	virtual eAbstractType WhatAmI() R0;

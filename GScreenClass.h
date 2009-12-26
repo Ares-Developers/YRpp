@@ -12,9 +12,9 @@ public:
 		{ return (GScreenClass*)0x87F7E8; }
 
 	//IUnknown
-	virtual HRESULT _stdcall QueryInterface(REFIID iid,void** ppvObject) R0;
-	virtual ULONG _stdcall AddRef() R0;
-	virtual ULONG _stdcall Release() R0;
+	virtual HRESULT __stdcall QueryInterface(REFIID iid,void** ppvObject) R0;
+	virtual ULONG __stdcall AddRef() R0;
+	virtual ULONG __stdcall Release() R0;
 
 	//Destructor
 	virtual ~GScreenClass() RX;

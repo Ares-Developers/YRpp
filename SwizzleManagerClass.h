@@ -25,24 +25,24 @@ public:
 	static SwizzleManagerClass& Instance;
 
 	//IUnknown
-	virtual HRESULT _stdcall QueryInterface(REFIID iid, void** ppvObject) R0;
+	virtual HRESULT __stdcall QueryInterface(REFIID iid, void** ppvObject) R0;
 
-	virtual ULONG _stdcall AddRef() R0;
-	virtual ULONG _stdcall Release() R0;
+	virtual ULONG __stdcall AddRef() R0;
+	virtual ULONG __stdcall Release() R0;
 
 	//ISwizzle
-	virtual HRESULT _stdcall Reset() R0;
+	virtual HRESULT __stdcall Reset() R0;
 
-	virtual HRESULT _stdcall Swizzle(void** pointer) R0;
+	virtual HRESULT __stdcall Swizzle(void** pointer) R0;
 
-	virtual HRESULT _stdcall Fetch_Swizzle_ID(void* pointer, long* id) R0;
+	virtual HRESULT __stdcall Fetch_Swizzle_ID(void* pointer, long* id) R0;
 
-	virtual HRESULT _stdcall Here_I_Am(long id, void* pointer) R0;
+	virtual HRESULT __stdcall Here_I_Am(long id, void* pointer) R0;
 
-	virtual HRESULT _stdcall Save_Interface(IStream* stream, IUnknown* pointer) R0;
-	virtual HRESULT _stdcall Load_Interface(IStream* stream, GUID* riid, void** pointer) R0;
+	virtual HRESULT __stdcall Save_Interface(IStream* stream, IUnknown* pointer) R0;
+	virtual HRESULT __stdcall Load_Interface(IStream* stream, GUID* riid, void** pointer) R0;
 
-	virtual HRESULT _stdcall Get_Save_Size(int* psize) R0;
+	virtual HRESULT __stdcall Get_Save_Size(int* psize) R0;
 
 	//CTOR / DTOR
 	SwizzleManagerClass() JMP_THIS(0x6CF180);

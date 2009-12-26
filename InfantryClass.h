@@ -17,7 +17,7 @@ public:
 	static DynamicVectorClass<InfantryClass*>* Array;
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
+	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
 
 	//Destructor
 	virtual ~InfantryClass() RX;

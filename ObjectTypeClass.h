@@ -18,9 +18,9 @@ class ObjectTypeClass : public AbstractTypeClass
 {
 public:
 	//IPersistStream
-	virtual HRESULT _stdcall Load(IStream* pStm) R0;
-	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
-	virtual HRESULT _stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) R0;
+	virtual HRESULT __stdcall Load(IStream* pStm) R0;
+	virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
+	virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) R0;
 
 	//Destructor
 	virtual ~ObjectTypeClass() RX;

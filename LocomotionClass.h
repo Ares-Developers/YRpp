@@ -18,24 +18,24 @@ class LocomotionClass : public IPersistStream, public ILocomotion
 {
 public:
 	//IUnknown
-	virtual HRESULT _stdcall QueryInterface(REFIID iid, void** ppvObject)
+	virtual HRESULT __stdcall QueryInterface(REFIID iid, void** ppvObject)
 		JMP_STD(0x55A9B0);
 
-	virtual ULONG _stdcall AddRef()
+	virtual ULONG __stdcall AddRef()
 		JMP_STD(0x55A950);
 
-	virtual ULONG _stdcall Release()
+	virtual ULONG __stdcall Release()
 		JMP_STD(0x55A970);
 
 	//ILocomotion
 
-	virtual HRESULT _stdcall Link_To_Object(void* pointer)
+	virtual HRESULT __stdcall Link_To_Object(void* pointer)
 		JMP_STD(0x55A710);
 
-	virtual bool _stdcall Is_Moving()
+	virtual bool __stdcall Is_Moving()
 		{ return false; }
 
-	virtual CoordStruct* _stdcall Destination(CoordStruct* pcoord)
+	virtual CoordStruct* __stdcall Destination(CoordStruct* pcoord)
 		{
 			pcoord->X = 0;
 			pcoord->Y = 0;
@@ -43,7 +43,7 @@ public:
 			return pcoord;
 		}
 
-	virtual CoordStruct* _stdcall Head_To_Coord(CoordStruct* pcoord)
+	virtual CoordStruct* __stdcall Head_To_Coord(CoordStruct* pcoord)
 		{
 			pcoord->X = LinkedTo->get_Location()->X;
 			pcoord->Y = LinkedTo->get_Location()->Y;
@@ -51,124 +51,124 @@ public:
 			return pcoord;
 		}
 
-	virtual eMove _stdcall Can_Enter_Cell(CellStruct cell)
+	virtual eMove __stdcall Can_Enter_Cell(CellStruct cell)
 		{ return move_OK; }
 
-	virtual bool _stdcall Is_To_Have_Shadow()
+	virtual bool __stdcall Is_To_Have_Shadow()
 		{ return true; }
 
-	virtual Matrix3DStruct* _stdcall Draw_Matrix(Matrix3DStruct* pMatrix, int* key)
+	virtual Matrix3DStruct* __stdcall Draw_Matrix(Matrix3DStruct* pMatrix, int* key)
 		JMP_STD(0x55A730);
 
-	virtual Matrix3DStruct* _stdcall Shadow_Matrix(Matrix3DStruct* pMatrix, int* key)
+	virtual Matrix3DStruct* __stdcall Shadow_Matrix(Matrix3DStruct* pMatrix, int* key)
 		JMP_STD(0x55A7D0);
 
-	virtual Point2D* _stdcall Draw_Point(Point2D* pPoint)
+	virtual Point2D* __stdcall Draw_Point(Point2D* pPoint)
 		{ 
 			pPoint->X = 0;
 			pPoint->Y = 0;
 			return pPoint;
 		}
 
-	virtual Point2D* _stdcall Shadow_Point(Point2D* pPoint)
+	virtual Point2D* __stdcall Shadow_Point(Point2D* pPoint)
 		JMP_STD(0x55A8C0);
 
-	virtual eVisualType _stdcall Visual_Character(VARIANT_BOOL flag)
+	virtual eVisualType __stdcall Visual_Character(VARIANT_BOOL flag)
 		{ return vt_Normal; }
 
-	virtual int _stdcall Z_Adjust()
+	virtual int __stdcall Z_Adjust()
 		{ return 0; }
 
-	virtual eZGradient _stdcall Z_Gradient()
+	virtual eZGradient __stdcall Z_Gradient()
 		{ return zgrad_90Deg; }
 
-	virtual bool _stdcall Process()
+	virtual bool __stdcall Process()
 		{ return true; }
 
-	virtual void _stdcall Move_To(CoordStruct to) { }
-	virtual void _stdcall Stop_Moving() { }
-	virtual void _stdcall Do_Turn(DirStruct coord) { }
-	virtual void _stdcall Unlimbo() { }
-	virtual void _stdcall Tilt_Pitch_AI() { }
+	virtual void __stdcall Move_To(CoordStruct to) { }
+	virtual void __stdcall Stop_Moving() { }
+	virtual void __stdcall Do_Turn(DirStruct coord) { }
+	virtual void __stdcall Unlimbo() { }
+	virtual void __stdcall Tilt_Pitch_AI() { }
 
-	virtual bool _stdcall Power_On()
+	virtual bool __stdcall Power_On()
 		{ Powered = true; return Is_Powered(); }
 
-	virtual bool _stdcall Power_Off()
+	virtual bool __stdcall Power_Off()
 		{ Powered = false; return Is_Powered(); }
 
-	virtual bool _stdcall Is_Powered()
+	virtual bool __stdcall Is_Powered()
 		{ return Powered; }
 	
-	virtual bool _stdcall Is_Ion_Sensitive()
+	virtual bool __stdcall Is_Ion_Sensitive()
 		{ return false; }
 
-	virtual bool _stdcall Push(DirStruct dir)
+	virtual bool __stdcall Push(DirStruct dir)
 		{ return false; }
 
-	virtual bool _stdcall Shove(DirStruct dir)
+	virtual bool __stdcall Shove(DirStruct dir)
 		{ return false; }
 
-	virtual void _stdcall Force_Track(int track, CoordStruct coord) { }
+	virtual void __stdcall Force_Track(int track, CoordStruct coord) { }
 
 	//In_Which_Layer is not overloaded by LocomotionClass!
 
-	virtual void _stdcall Force_Immediate_Destination(CoordStruct coord) { }
-	virtual void _stdcall Force_New_Slope(int ramp){ }
+	virtual void __stdcall Force_Immediate_Destination(CoordStruct coord) { }
+	virtual void __stdcall Force_New_Slope(int ramp){ }
 
-	virtual bool _stdcall Is_Moving_Now()
+	virtual bool __stdcall Is_Moving_Now()
 		{ return Is_Moving(); }
 
-	virtual int _stdcall Apparent_Speed()
+	virtual int __stdcall Apparent_Speed()
 		{ return LinkedTo->GetCurrentSpeed(); }
 
-	virtual int _stdcall Drawing_Code()
+	virtual int __stdcall Drawing_Code()
 		{ return 0; }
 
-	virtual FireError _stdcall Can_Fire() 
+	virtual FireError __stdcall Can_Fire() 
 		{ return FireError::OK; }
 
-	virtual int _stdcall Get_Status()
+	virtual int __stdcall Get_Status()
 		{ return 0; }
 
-	virtual void _stdcall Acquire_Hunter_Seeker_Target() { }
+	virtual void __stdcall Acquire_Hunter_Seeker_Target() { }
 
-	virtual bool _stdcall Is_Surfacing()
+	virtual bool __stdcall Is_Surfacing()
 		{ return false; }
 
-	virtual void _stdcall Mark_All_Occupation_Bits(int mark) { }
+	virtual void __stdcall Mark_All_Occupation_Bits(int mark) { }
 
-	virtual bool _stdcall Is_Moving_Here(CoordStruct to)
+	virtual bool __stdcall Is_Moving_Here(CoordStruct to)
 		{ return false; }
 
-	virtual bool _stdcall Will_Jump_Tracks()
+	virtual bool __stdcall Will_Jump_Tracks()
 		{ return false; }
 
-	virtual bool _stdcall Is_Really_Moving_Now()
+	virtual bool __stdcall Is_Really_Moving_Now()
 		{ return Is_Moving_Now(); }
 
-	virtual void _stdcall Stop_Movement_Animation() { }
-	virtual void _stdcall Lock() { }
-	virtual void _stdcall Unlock() { }
-	virtual void _stdcall ILocomotion_B8() { }
+	virtual void __stdcall Stop_Movement_Animation() { }
+	virtual void __stdcall Lock() { }
+	virtual void __stdcall Unlock() { }
+	virtual void __stdcall ILocomotion_B8() { }
 
-	virtual int _stdcall Get_Track_Number()
+	virtual int __stdcall Get_Track_Number()
 		{ return -1; }
 
-	virtual int _stdcall Get_Track_Index()
+	virtual int __stdcall Get_Track_Index()
 		{ return -1; }
 
-	virtual int _stdcall Get_Speed_Accum()
+	virtual int __stdcall Get_Speed_Accum()
 		{ return -1; }
 
 	//IPersistStream
-	virtual HRESULT _stdcall IsDirty()
+	virtual HRESULT __stdcall IsDirty()
 		{ return Dirty ? S_OK: S_FALSE; }
 
-	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty)
+	virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty)
 		JMP_STD(0x55AA60);
 	
-	virtual HRESULT _stdcall GetSizeMax(ULARGE_INTEGER* pcbSize)
+	virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize)
 		JMP_STD(0x55AB40);
 
 	//Destructor

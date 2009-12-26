@@ -31,7 +31,7 @@
 
 // allocate scalars
 template<typename T>
-static void * _cdecl Allocate(bool inDLL) {
+static void * __cdecl Allocate(bool inDLL) {
 	size_t sz = sizeof(T);
 
 	if(inDLL) {
@@ -70,7 +70,7 @@ static void * _cdecl Allocate(bool inDLL) {
 
 // allocate vectors
 template<typename T>
-static void * _cdecl Allocate_Array(bool inDLL, size_t Capacity) {
+static void * __cdecl Allocate_Array(bool inDLL, size_t Capacity) {
 	size_t sz = sizeof(T) * Capacity;
 
 	if(inDLL) {
@@ -101,7 +101,7 @@ static void * _cdecl Allocate_Array(bool inDLL, size_t Capacity) {
 
 // deallocate scalars
 template<typename T>
-static void _cdecl Deallocate(T* Tptr, bool inDLL) {
+static void __cdecl Deallocate(T* Tptr, bool inDLL) {
 	Tptr->~T();
 	if(inDLL) {
 		operator delete(Tptr);
@@ -128,7 +128,7 @@ static void _cdecl Deallocate(T* Tptr, bool inDLL) {
 
 // deallocate vectors
 template<typename T>
-static void _cdecl Deallocate_Array(T* Tptr, bool inDLL) {
+static void __cdecl Deallocate_Array(T* Tptr, bool inDLL) {
 	Tptr->~T();
 	if(inDLL) {
 		operator delete[](Tptr);

@@ -54,30 +54,30 @@ public:
 	}
 
 	//IUnknown
-	virtual HRESULT _stdcall QueryInterface(REFIID iid, void** ppvObject) R0;
-	virtual ULONG _stdcall AddRef() R0;
-	virtual ULONG _stdcall Release() R0;
+	virtual HRESULT __stdcall QueryInterface(REFIID iid, void** ppvObject) R0;
+	virtual ULONG __stdcall AddRef() R0;
+	virtual ULONG __stdcall Release() R0;
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) = 0;
+	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) = 0;
 
 	//IPersistStream
-	virtual HRESULT _stdcall IsDirty() R0;
-	virtual HRESULT _stdcall Load(IStream* pStm) = 0;
-	virtual HRESULT _stdcall Save(IStream* pStm, BOOL fClearDirty) = 0;
+	virtual HRESULT __stdcall IsDirty() R0;
+	virtual HRESULT __stdcall Load(IStream* pStm) = 0;
+	virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) = 0;
 
-	virtual HRESULT _stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) R0;
+	virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) R0;
 
 	//IRTTITypeInfo
-	virtual eAbstractType _stdcall What_Am_I() R0;
-	virtual int _stdcall Fetch_ID() R0;
-	virtual void _stdcall Create_ID() RX;
+	virtual eAbstractType __stdcall What_Am_I() R0;
+	virtual int __stdcall Fetch_ID() R0;
+	virtual void __stdcall Create_ID() RX;
 
 	//INoticeSink
-	virtual bool _stdcall INoticeSink_Unknown(DWORD dwUnknown) R0;
+	virtual bool __stdcall INoticeSink_Unknown(DWORD dwUnknown) R0;
 	
 	//INoticeSource
-	virtual void _stdcall INoticeSource_Unknown() RX;
+	virtual void __stdcall INoticeSource_Unknown() RX;
 
 	//Destructor
 	virtual ~AbstractClass() RX;

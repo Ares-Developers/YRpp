@@ -21,7 +21,7 @@ public:
 	ABSTRACTTYPE_ARRAY(AnimTypeClass);
 
 	//IPersist
-	virtual HRESULT _stdcall GetClassID(CLSID* pClassID) R0;
+	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
 
 	//AbstractClass
 	virtual eAbstractType WhatAmI() R0;

@@ -59,7 +59,7 @@ public:
 		{ return (CellClass*)0xABDC50; }
 
 	//IGameMap
-	virtual long _stdcall Is_Visible(CellStruct cell) R0;
+	virtual long __stdcall Is_Visible(CellStruct cell) R0;
 
 	//Destructor
 	virtual ~MapClass() RX;
