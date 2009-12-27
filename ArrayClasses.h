@@ -3,6 +3,7 @@
 
 #include <YRPPCore.h>
 #include <Helpers/Macro.h>
+#include <Interfaces.h>
 #include <Memory.h>
 
 //========================================================================
@@ -341,6 +342,8 @@ public:
 
 	PROPERTY(int, Count);	//not sure what this is, but it's different from DVC's count
 };
+
+#include <SwizzleManagerClass.h>
 
 template<typename T>
 void VectorClass<T>::Load(IStream *pStm, bool bSwizzle = 1) {

@@ -45,7 +45,7 @@ struct AngerStruct
 
 	//need to define a == operator so it can be used in array classes
 	bool operator == (AngerStruct tAnger)
-	{ 
+	{
 		return (House == tAnger.House &&
 				AngerLevel == tAnger.AngerLevel);
 	}
@@ -58,7 +58,7 @@ struct ScoutStruct
 
 	//need to define a == operator so it can be used in array classes
 	bool operator == (ScoutStruct tScout)
-	{ 
+	{
 		return (House == tScout.House &&
 				IsPreferred == tScout.IsPreferred);
 	}
@@ -91,12 +91,12 @@ public:
 class HouseClass;	//forward declaration needed
 
 class BaseClass
-{	
+{
 public:
-	BaseClass() 
+	BaseClass()
 		JMP_THIS(0x42E6F0);
-	
-	~BaseClass() { /*???*/ }; // gcc demands a virtual since virtual funcs exist
+
+	virtual ~BaseClass() { /*???*/ }; // gcc demands a virtual since virtual funcs exist
 
 	//VTable
 	virtual HRESULT __stdcall Load(IStream* pStm) R0;
@@ -226,7 +226,7 @@ public:
 
 	// warning: logic pretty much broken
 	void LostPoweredCenter(TechnoTypeClass *pTechnoType)
-		JMP_THIS(0x50E0E0); 
+		JMP_THIS(0x50E0E0);
 	void GainedPoweredCenter(TechnoTypeClass *pTechnoType)
 		JMP_THIS(0x50E1B0);
 
@@ -733,7 +733,7 @@ public:
 	PROPERTY_STRUCT(TimerStruct,           unknown_timer_D);
 	PROPERTY_STRUCT(TimerStruct,           unknown_timer_E);
 	PROPERTY(DWORD,					unknown_57DC);
-	
+
 protected:
 	unsigned int                    ThreatPosedEstimates[130][130]; // BLARGH
 

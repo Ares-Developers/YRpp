@@ -128,11 +128,11 @@ public:
 
 	//argh! source of fail
 	virtual bool vt_entry_54(int a1, int a2, void *ptr, int a4, __int16 a5, int a6, int a7)
-		{ if (ptr && (a5 &0xFF00)) delete(ptr); return 0; } // 0x5C0EB0
+		{ /* if (ptr && (a5 &0xFF00)) delete(ptr); */ return 0; } // 0x5C0EB0
 
 	//argh! source of fail
 	virtual bool vt_entry_58(int a1, int a2, void *ptr, int a4, __int16 a5, int a6, int a7, int a8, int a9)
-		{ if (ptr && (a5 &0xFF00)) delete(ptr); return 0; } // 0x5C0E90
+		{ /* if (ptr && (a5 &0xFF00)) delete(ptr); */ return 0; } // 0x5C0E90
 
 	virtual bool vt_entry_5C(DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3)
 		{ return 1; }
@@ -201,7 +201,7 @@ public:
 		{ }
 
 	virtual bool vt_entry_B4(int a1, void *ptr, int a3, __int16 a4, int a5, int a6, int a7)
-		{ if (ptr && (a4 &0xFF00)) delete(ptr); return 0; }
+		{ /* if (ptr && (a4 &0xFF00)) delete(ptr); */ return 0; }
 
 	virtual int vt_entry_B8()
 		{ return 0; }
@@ -212,9 +212,9 @@ public:
 	virtual void CreateMPTeams(DynamicVectorClass<MPTeam> *vecTeams)
 		{ PUSH_VAR32(vecTeams); THISCALL(0x5D6690); }
 
-	virtual CellStruct * AssignStartingPositionsToHouse(CellStruct *result, int idxHouse, 
+	virtual CellStruct * AssignStartingPositionsToHouse(CellStruct *result, int idxHouse,
 		DynamicVectorClass<CellStruct> *vecCoords, byte *housesSatisfied)
-		{ PUSH_VAR32(result); PUSH_VAR32(idxHouse); PUSH_VAR32(vecCoords); PUSH_VAR32(housesSatisfied); 
+		{ PUSH_VAR32(result); PUSH_VAR32(idxHouse); PUSH_VAR32(vecCoords); PUSH_VAR32(housesSatisfied);
 			THISCALL(0x5D6890); }
 
 	virtual bool SpawnBaseUnits(HouseClass *House, DWORD dwUnused)
@@ -248,7 +248,7 @@ protected:
 };
 
 
-class MPBattleClass : public MPGameModeTypeClass 
+class MPBattleClass : public MPGameModeTypeClass
 {
 	//Destructor
 	virtual ~MPBattleClass()
@@ -268,7 +268,7 @@ class MPBattleClass : public MPGameModeTypeClass
 };
 
 
-class MPManBattleClass : public MPGameModeTypeClass 
+class MPManBattleClass : public MPGameModeTypeClass
 {
 	//Destructor
 	virtual ~MPManBattleClass()
@@ -285,7 +285,7 @@ class MPManBattleClass : public MPGameModeTypeClass
 };
 
 
-class MPFreeForAllClass : public MPGameModeTypeClass 
+class MPFreeForAllClass : public MPGameModeTypeClass
 {
 	//Destructor
 	virtual ~MPFreeForAllClass()
@@ -317,7 +317,7 @@ class MPFreeForAllClass : public MPGameModeTypeClass
 };
 
 
-class MPMegawealthClass : public MPGameModeTypeClass 
+class MPMegawealthClass : public MPGameModeTypeClass
 {
 	//Destructor
 	virtual ~MPMegawealthClass()
@@ -331,7 +331,7 @@ class MPMegawealthClass : public MPGameModeTypeClass
 };
 
 
-class MPUnholyAllianceClass : public MPGameModeTypeClass 
+class MPUnholyAllianceClass : public MPGameModeTypeClass
 {
 	//Destructor
 	virtual ~MPUnholyAllianceClass()
@@ -360,7 +360,7 @@ class MPUnholyAllianceClass : public MPGameModeTypeClass
 };
 
 
-class MPSiegeClass : public MPGameModeTypeClass 
+class MPSiegeClass : public MPGameModeTypeClass
 {
 	//Destructor
 	virtual ~MPSiegeClass()

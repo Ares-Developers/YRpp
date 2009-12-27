@@ -5,7 +5,7 @@
 
 // In this file: Alternatives to CTRL + H...
 
-#include <hash_map>
+#include <Compiler Specifics/hashmap.h>
 // macros DCoder uses and pd dislikes :)
 
 #define GET(clsname, var, reg) \
@@ -31,16 +31,6 @@
 // buffer length for tags containing a list such as AnimToInfantry=
 #define BUFLEN 2048
 
-
-//define ABS_IS_OBJECT(var) \
-//	((var->AbstractFlags & ABSFLAGS_ISOBJECT) != 0)
-
-//define ABS_IS_TECHNO(var) \
-//	((var->AbstractFlags & ABSFLAGS_ISTECHNO) != 0)
-
-//define ABS_IS_FOOT(var) \
-//	((var->AbstractFlags & ABSFLAGS_ISFOOT) != 0)
-
 // swizzle shorthand
 #define SWIZZLE(var) \
 	SwizzleManagerClass::Instance.Swizzle((void **)&var);
@@ -51,12 +41,13 @@
 	Debug::Log(__VA_ARGS__)
 #else
 #define DEBUGLOG(...) \
-	
+
 #endif
 
 
+#include <cmath>
 // float cmp
 #define CLOSE_ENOUGH(x, y) \
-	(abs(x - y) < 0.001)
+	(fabs(x - y) < 0.001)
 
 #endif

@@ -1,6 +1,7 @@
 #ifndef MEMORY_H
 #define MEMORY_H
 
+#include <ASMMacros.h>
 //include <Unsorted.h>
 
 /*
@@ -59,7 +60,7 @@ static void * __cdecl Allocate(bool inDLL) {
 	DO_ALLOC(0, TT, var, __VA_ARGS__); \
 }
 
-//	var = new TT(__VA_ARGS__); 
+//	var = new TT(__VA_ARGS__);
 
 // allocate in the DLL's pool
 // not sure if this is ever going to be needed
@@ -118,7 +119,7 @@ static void __cdecl Deallocate(T* Tptr, bool inDLL) {
 	Deallocate(var, 0); \
 } \
 
-//	delete var; 
+//	delete var;
 
 // deallocate from the DLL's pool
 #define DLL_DEALLOC(var) \

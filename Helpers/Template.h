@@ -4,7 +4,7 @@
 #include <Syringe.h>
 
 #include <functional>
-#include <hash_map>
+#include <xcompile.h>
 #include <Helpers/Type.h>
 
 // here be dragons(plenty)
@@ -35,7 +35,7 @@ public:
 	retfunc_fixed(REGISTERS *r, DWORD addr, T res) : retfunc<T>(r, addr), Result(res) {};
 	int operator()() {
 		this->R->EAX(Result);
-		return retAddr;
+		return this->retAddr;
 	}
 };
 
@@ -53,15 +53,16 @@ public:
 // invalid pointers
 
 template<typename T1, typename T2>
-void AnnounceInvalidPointerMap(stdext::hash_map<T1, T2> &map, void *ptr) {
-	stdext::hash_map<T1, T2>::iterator i = map.find(reinterpret_cast<T1>(ptr));
-	if(i != map.end()) {
-		map.erase(i);
+void AnnounceInvalidPointerMap(hash_map<T1, T2> &map, void *ptr) {
+	typename hash_map<T1, T2>::iterator ix;
+	ix = map.find(reinterpret_cast<T1>(ptr));
+	if(ix != map.end()) {
+		map.erase(ix);
 	}
 
-	for(i = map.begin(); i != map.end(); ++i) {
-		if(ptr == ((void *)(i->second))) {
-			map.erase(i->first);
+	for(ix = map.begin(); ix != map.end(); ++ix) {
+		if(ptr == ((void *)(ix->second))) {
+			map.erase(ix->first);
 		}
 	}
 }

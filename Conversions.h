@@ -2,6 +2,7 @@
 #define CONVERSIONS_H
 
 #include <Helpers/Macro.h>
+#include <YRPP.h>
 
 // converters
 class Conversions

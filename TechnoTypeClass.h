@@ -59,7 +59,7 @@ struct WeaponStruct
 		{ return true; }
 };
 
-#pragma pack(push, technotype)
+#pragma pack(push, 8)
 
 #pragma pack(4)
 
@@ -357,12 +357,12 @@ private: DWORD align_3C4;
 	//EliteWeapon
 	protected:
 		WeaponStruct            EliteWeapon[0x12];
-	public: 
+	public:
 		WeaponTypeClass* get_ElitePrimary()
 			{ return EliteWeapon[0].WeaponType; }
 		WeaponTypeClass* get_EliteSecondary()
 			{ return EliteWeapon[1].WeaponType; }
-		
+
 		WeaponTypeClass* get_EliteWeapon(int i)
 			{ return EliteWeapon[i].WeaponType; }
 		void set_EliteWeapon(int i, WeaponTypeClass* value)
@@ -508,6 +508,6 @@ public:
 	PROPERTY(int,             ArrayIndex); //in the respective class type's array!!
 };
 
-#pragma pack(pop, technotype)
+#pragma pack(pop)
 
 #endif

@@ -66,7 +66,7 @@ public:
 
 	virtual ~MixFileClass() RX;
 
-	MixFileClass(const char* pFileName) : Node(false)
+	MixFileClass(const char* pFileName) : Node<MixFileClass *>(false)
 	{
 		PUSH_IMM(0x886980);
 		PUSH_VAR32(pFileName);

@@ -6,6 +6,21 @@
 #include <YRPPCore.h>
 #include <GenericList.h>
 
+class eFileMode {
+	public:
+		enum FileAccess {
+			Any = 0,
+			Read = 1,
+			Write = 2
+		};
+	public:
+		enum MoveMethod {
+			FromBeginning = 0,
+			FromCurrent= 1,
+			FromEnd = 2
+		};
+};
+
 //--------------------------------------------------------------------
 //Abstract File class
 //--------------------------------------------------------------------
@@ -21,14 +36,10 @@ public:
 	virtual int DeleteFile() = 0;
 	virtual bool Exists(const char* pFileName) = 0; //If pFileName is NULL, use own.
 	virtual bool HasHandle() = 0;
-	virtual bool Open(int nFileAccess) = 0;
-	virtual bool OpenEx(const char* pFileName, int nFileAccess) = 0;
+	virtual bool Open(eFileMode::FileAccess nFileMode) = 0;
+	virtual bool OpenEx(const char* pFileName, eFileMode::FileAccess nFileAccess) = 0;
 	virtual int ReadBytes(void* pBuffer, int nNumBytes) = 0; //Returns number of bytes read.
-	virtual int MoveFilePointer(int nDistance, DWORD dwMoveMethod) = 0;	
-	//dwMoveMethod:
-	//0 = SEEK_SET
-	//1 = SEEK_CUR
-	//2 = SEEK_END
+	virtual int MoveFilePointer(int nDistance, eFileMode::MoveMethod nMoveMethod) = 0;
 	virtual int GetFileSize() = 0;
 	virtual int WriteBytes(void* pBuffer, int nNumBytes) = 0; //Returns number of bytes written.
 	virtual void Close() = 0;
@@ -43,9 +54,7 @@ protected:
 
 	//Properties
 	PROPERTY(bool,			SkipCDCheck);
-	PROPERTY(int,			FileAccess);		//0 = FILE_ANY_ACCESS
-												//1 = FILE_READ_ACCESS
-												//2 = FILE_WRITE_ACCESS
+	PROPERTY(int,			FileAccess);
 };
 
 //--------------------------------------------------------------------
@@ -64,10 +73,10 @@ public:
 	virtual int DeleteFile() R0;
 	virtual bool Exists(const char* pFileName) R0;
 	virtual bool HasHandle() R0;
-	virtual bool Open(int nFileAccess) R0;
-	virtual bool OpenEx(const char* pFileName, int nFileAccess) R0;
+	virtual bool Open(eFileMode::FileAccess nFileAccess) R0;
+	virtual bool OpenEx(const char* pFileName, eFileMode::FileAccess nFileAccess) R0;
 	virtual int ReadBytes(void* pBuffer, int nNumBytes) R0;
-	virtual int MoveFilePointer(int nDistance, DWORD dwMoveMethod) R0;
+	virtual int MoveFilePointer(int nDistance, eFileMode::MoveMethod dwMoveMethod) R0;
 	virtual int GetFileSize() R0;
 	virtual int WriteBytes(void* pBuffer, int nNumBytes) R0;
 	virtual void Close() RX;

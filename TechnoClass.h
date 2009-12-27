@@ -207,7 +207,7 @@ public:
 	virtual void SetTarget(AbstractClass *Target) RX;
 	virtual BulletClass* Fire(ObjectClass* pTarget, int nWeaponIndex) R0;
 	virtual DWORD vt_entry_3D0() R0;
-	virtual void SetOwningHouse(HouseClass* pHouse, DWORD dwUnk) RX;
+	virtual void SetOwningHouse(HouseClass* pHouse, DWORD dwUnk = 1) RX;
 	virtual void vt_entry_3D8(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
 	virtual bool Crash(ObjectClass *Killer) R0;
 	virtual bool IsAreaFire() R0;

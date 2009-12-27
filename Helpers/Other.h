@@ -129,7 +129,7 @@ class CellSequenceApplicator
 	: public std::unary_function<const CellClass *, void> {
 	public:
 		virtual void operator() (CellClass *cell) {
-		
+
 		}
 };
 
@@ -139,7 +139,7 @@ class CellSpreadApplicator
 	: public std::binary_function<const ObjectClass *, const CellStruct *, void> {
 	public:
 		virtual void operator() (ObjectClass *obj, CellStruct *origin) {
-		
+
 		}
 };
 
@@ -149,10 +149,10 @@ protected:
 	DWORD radius;
 	DWORD position;
 	CellSpreadApplicator callback;
-	
+
 	public:
-		CellSpreadIterator(CellSpreadApplicator &_callback, CellStruct *_origin, DWORD _radius) 
-			: callback(_callback), origin(_origin), radius(_radius), position(0)
+		CellSpreadIterator(CellSpreadApplicator &_callback, CellStruct *_origin, DWORD _radius)
+			: origin(_origin), radius(_radius), position(0), callback(_callback)
 			{ }
 
 		void Apply() {

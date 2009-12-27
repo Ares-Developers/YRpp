@@ -10,10 +10,12 @@
 
 #include <GeneralDefinitions.h>
 
+#include <Compiler Specifics/hashmap.h>
+
 #ifdef _MSC_VER
 #include <windows.h>
-#else 
-#include <fakewindows.h>
+#else
+#include <windows.h>
 #endif
 
 class LimitedRegister {

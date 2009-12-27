@@ -52,7 +52,7 @@ public:
 
 	// non-virtual
 
-	// teams finished script, and 
+	// teams finished script, and
 	void RegisterSuccess()
 		JMP_THIS(0x41FD60);
 
@@ -123,7 +123,7 @@ public:
 		} while(idx < 0x20 );
 		*condStr = '\0';
 
-		sprintf(buffer, "%X = %s,%s,%s,%d,%d,%s,%s,%lf,%lf,%lf,%d,%d,%d,%d,%s,%d,%d,%d\n", 
+		sprintf(buffer, "%s = %s,%s,%s,%d,%d,%s,%s,%lf,%lf,%lf,%d,%d,%d,%d,%s,%d,%d,%d\n",
 			this->ID,
 			this->Name,
 			Team1Name,

@@ -14,9 +14,11 @@ public:
 	// the game's own rounding function
 	// infamous for true'ing (F2I(-5.00) == -4.00)
 	static __int64 F2I(double val) {
+#ifdef _MSVC
 		double something = val;
-		_asm { fld something };
+		__asm { fld something };
 		CALL(0x7C5F00);
+#endif
 	}
 
 	static void RaiseError(HRESULT err)
@@ -34,7 +36,7 @@ public:
 
 	static void SetProgress(int progress)
 		{ SET_REG32(ECX, 0xA8B238); JMP_STD(0x69AE90); }
-		
+
 	static void UnknownCall()
 		{ JMP_STD(0x48D080); }
 
@@ -112,7 +114,7 @@ class MovieUnlockableInfo {
 	// both are 8 movies long, allocated statically, but limit is not enforced. Careful.
 	static MovieUnlockableInfo* SovietUnlockables;
 	static MovieUnlockableInfo* AlliedUnlockables;
-	
+
 	MovieUnlockableInfo(const char *_F, const wchar_t *_CSF, const int CD) :
 		Filename(_F), CSFName(_CSF), CDRequired(CD)
 	{ }
@@ -228,19 +230,19 @@ struct AudioController
   ++SomeMutex;
   obj->Put(blah);
   --SomeMutex;
-  
+
   AI base node generation uses it:
   int level = SomeMutex;
   SomeMutex = 0;
   House->GenerateAIBuildList();
   SomeMutex = level;
-  
+
   Building destruction uses it:
   if(!SomeMutex) {
   	Building->ShutdownSensorArray();
   	Building->ShutdownDisguiseSensor();
   }
-  
+
   Building placement uses it:
   if(!SomeMutex) {
   	UnitTypeClass *freebie = Building->Type->FreeUnit;
@@ -248,13 +250,13 @@ struct AudioController
   		freebie->CreateObject(blah);
   	}
   }
-  
+
   Building state animations use it:
   if(SomeMutex) {
   	// foreach attached anim
   	// update anim state (normal | damaged | garrisoned) if necessary, play anim
   }
-  
+
   building selling uses it:
   if(blah) {
   	++SomeMutex;
