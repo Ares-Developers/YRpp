@@ -60,7 +60,7 @@ public:
   	inf returns 0
   	unit returns !NonVehicle
   	Aircraft returns IsOnFloor()
- 
+
   users include:
   452656 - is this building click-repairable
   440C26 - should this building get considered in BaseSpacing
@@ -87,7 +87,7 @@ public:
 	virtual bool CanBeSold() R0;
 	virtual bool IsActive() R0;
 	virtual bool IsControllable() R0;
-	
+
 	// stupid! return this->GetCoords(pCrd);
 	virtual CoordStruct* GetPosition_0(CoordStruct* pCrd) R0;
 
@@ -126,7 +126,7 @@ public:
 	virtual void MarkAllOccupationBits(CoordStruct *coords) RX;
 	virtual void UnInit() RX;
 	virtual void Uncloak2() RX;// just calls this->Uncloak(0) on TechnoClass and higher
-	virtual int KickOutUnit(TechnoClass* pTechno, CellStruct uCell) R0;
+	virtual int KickOutUnit(TechnoClass* pTechno, CellStruct *pCell) R0;
 	virtual bool DrawIfVisible(RectangleStruct *VisibleArea, bool EvenIfCloaked, DWORD dwUnk3) R0;
 	virtual DWORD GetFoundationData(bool IncludeBib) R0;
 	virtual void vt_entry_10C(DWORD dwUnk, DWORD dwUnk2) RX;
@@ -194,7 +194,7 @@ public:
 	// technically it takes an ecx<this> , but it's not used and ecx is immediately overwritten on entry
 	// draws the mind control line when unit is selected
 	static void DrawALinkTo(int src_X, int src_Y, int src_Z, int dst_X, int dst_Y, int dst_Z, ColorStruct color)
-		{ PUSH_VAR32(color); PUSH_VAR32(dst_Z); PUSH_VAR32(dst_Y); PUSH_VAR32(dst_X); 
+		{ PUSH_VAR32(color); PUSH_VAR32(dst_Z); PUSH_VAR32(dst_Y); PUSH_VAR32(dst_X);
 		  PUSH_VAR32(src_Z); PUSH_VAR32(src_Y); PUSH_VAR32(src_X); CALL(0x704E40); }
 
 	int DistanceFrom(ObjectClass *that)

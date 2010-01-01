@@ -90,6 +90,9 @@ public:
 	bool IsDone()
 		{ return this->StartTime != -1 && this->GetTimeLeft() <= 0; }
 
+	bool Ignorable()
+		{ return this->StartTime == -1 || this->GetTimeLeft() <= 0; }
+
 	int GetTimeLeft()
 		JMP_STD(0x426630);
 
