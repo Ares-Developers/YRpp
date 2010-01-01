@@ -279,29 +279,39 @@ typedef int eBuildCat;
 #define	bcat_Combat		0x5
 
 
-typedef int eBuildingAnims;
+//typedef int eBuildingAnims;
 
-#define	ba_Upgrade1		0x0
-#define	ba_Upgrade2		0x1
-#define	ba_Upgrade3		0x2
-#define	ba_Active		0x3
-#define	ba_ActiveTwo		0x4
-#define	ba_ActiveThree		0x5
-#define	ba_ActiveFour		0x6
-#define	ba_Production		0x7
-#define	ba_PreProduction		0x8
-#define	ba_Turret		0x9
-#define	ba_Special		0xA
-#define	ba_SpecialTwo		0xB
-#define	ba_SpecialThree		0xC
-#define	ba_SpecialFour		0xD
-#define	ba_Super		0xE
-#define	ba_SuperTwo		0xF
-#define	ba_SuperThree		0x10
-#define	ba_SuperFour		0x11
-#define	ba_Idle		0x12
-#define	ba_LowPower		0x13
-#define	ba_SuperLowPower		0x14
+class BuildingAnimSlot {
+public:
+	enum E {
+		Upgrade1 = 0x0,
+		Upgrade2 = 0x1,
+		Upgrade3 = 0x2,
+		Active = 0x3,
+		ActiveTwo = 0x4,
+		ActiveThree = 0x5,
+		ActiveFour = 0x6,
+		Production = 0x7,
+		PreProduction = 0x8,
+		Turret = 0x9,
+		Special = 0xA,
+		SpecialTwo = 0xB,
+		SpecialThree = 0xC,
+		SpecialFour = 0xD,
+		Super = 0xE,
+		SuperTwo = 0xF,
+		SuperThree = 0x10,
+		SuperFour = 0x11,
+		Idle = 0x12,
+		LowPower = 0x13,
+		SuperLowPower = 0x14,
+		All = 0xFFFFFFFE, // -2
+	} _;
+
+	public:
+		BuildingAnimSlot(int val) { this->_ = static_cast<E>(val); };
+		operator int() { return this->_; };
+};
 
 
 typedef int eCategory;

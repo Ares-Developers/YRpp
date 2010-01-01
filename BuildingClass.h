@@ -64,7 +64,7 @@ public:
 	// depending on what facings of this building
 	// are connected to another FWall,
 	// returns the index of the image file
-	// to draw. 
+	// to draw.
 	DWORD GetFWFlags()
 		JMP_THIS(0x455B90);
 
@@ -87,6 +87,10 @@ public:
 	void AfterDestruction()
 		JMP_THIS(0x441F60);
 
+	// destroys the specific animation (active, turret, special, etc)
+	void DestroyNthAnim(BuildingAnimSlot Slot)
+		JMP_THIS(0x451E40);
+
 	//Constructor
 	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner) : TechnoClass(false)
 		JMP_THIS(0x43B740);
@@ -97,7 +101,7 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	
+
 	PROPERTY(BuildingTypeClass*, Type);
 	PROPERTY(FactoryClass*, Factory);
 	PROPERTY_STRUCT(TimerStruct, C4Timer);
@@ -189,7 +193,7 @@ public:
 	PROPERTY_STRUCT(TimerStruct, CashProductionTimer);
 	PROPERTY(bool, unknown_bool_6DC);
 	PROPERTY(bool, unknown_bool_6DD);
-	PROPERTY(bool, NeedsRepairs); // AI handholder for repair logic, 
+	PROPERTY(bool, NeedsRepairs); // AI handholder for repair logic,
 	PROPERTY(bool, C4Applied);
 	PROPERTY(bool, unknown_bool_6E0);
 	PROPERTY(bool, unknown_bool_6E1);
@@ -197,7 +201,7 @@ public:
 	PROPERTY(bool, unknown_bool_6E3);
 	PROPERTY(bool, ActuallyPlacedOnMap);
 	PROPERTY(bool, unknown_bool_6E5);
-	PROPERTY(bool, IsDamaged); // AI handholder for repair logic, 
+	PROPERTY(bool, IsDamaged); // AI handholder for repair logic,
 	PROPERTY(bool, IsFogged);
 	PROPERTY(bool, IsBeingRepaired); // show animooted repair wrench
 	PROPERTY(bool, unknown_bool_6E9);
