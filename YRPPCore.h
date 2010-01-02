@@ -27,16 +27,16 @@ typedef unsigned long DWORD;
 /*
 	protected:\
 		type name;\
-*/
-
-#define PROPERTY(type,name) \
-	public: \
-		type name; \
 	public:\
 		type get_ ## name() \
 			{ return name; }\
 		void set_ ## name(type value)\
 			{ name = value; }
+*/
+
+#define PROPERTY(type,name) \
+	public: \
+		type name; \
 
 #define PROPERTY_PTR(type,name)\
 	public: \

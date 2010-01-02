@@ -22,15 +22,16 @@ public:
 														//returns first node of the list
 		{
 			IsolateFromList();
-			
+
 			Next = pLink->Next;
 			Previous = pLink;
-			
-			pLink->set_Next(this);
-			
-			if(Next)
-				Next->set_Previous(this);
-			
+
+			pLink->Next = this;
+
+			if(Next) {
+				Next->Previous = this;
+			}
+
 			return GetFirst();
 		}
 
@@ -38,10 +39,10 @@ public:
 													//returns first node of that list
 		{
 			IsolateFromList();
-			
+
 			LinkClass* pLast = pLink->GetLast();
 
-			pLast->set_Next(this);
+			pLast->Next = this;
 			Previous = pLast;
 			Next = NULL;
 
@@ -52,7 +53,7 @@ public:
 														//returns first node of that list (this)
 		{
 			IsolateFromList();
-			
+
 			LinkClass* pFirst = pLink->GetFirst();
 
 			pFirst->Previous = this;
@@ -102,12 +103,14 @@ public:
 			LinkClass* pFirst = GetFirst();
 			LinkClass* pLast = GetLast();
 
-			if(Next)
+			if(Next) {
 				Next->Previous = Previous;
-				
-			if(Previous)
+			}
+
+			if(Previous) {
 				Previous->Next = Next;
-				
+			}
+
 			Previous = NULL;
 			Next = NULL;
 
