@@ -8,71 +8,16 @@
 #include <ConvertClass.h>
 #include <GeneralStructures.h>
 
+#include <FileFormats/_Loader.h>
+
 class CCFileClass;
 class DSurface;
 
-//Voxel file stuff
-//class VoxLib;	//VXL
-//class MotLib;	//HVA
-
-class MotLib {
-public:
-	DWORD f_0;
-	DWORD f_4;
-	DWORD f_8;
-	void* f_C;
-
-	MotLib(CCFileClass *Source)
-		JMP_THIS(0x5BD570);
-
-	~MotLib()
-		JMP_THIS(0x5BD5A0);
-};
-
-class VoxLib {
-public:
-	DWORD f_0;
-	DWORD f_4;
-	DWORD f_8;
-	DWORD f_C;
-	DWORD f_10;
-	DWORD f_14;
-	DWORD f_18;
-
-	VoxLib(CCFileClass *Source, DWORD dwUnk)
-		JMP_THIS(0x755CD0);
-
-	~VoxLib()
-		JMP_THIS(0x755D10);
-};
-
 struct VoxelStruct
 {
-	VoxLib*	VXL;
+	VoxLib* VXL;
 	MotLib* HVA;
 };
-
-//SHP file stuff
-struct SHPStruct
-{
-	WORD		unknown_0;
-	short		Width;
-	short		Height;
-	short		Frames;
-	DWORD		unknown_8;
-	DWORD		unknown_C;
-	//linked list of all SHPStructs
-	SHPStruct*	Next;
-	SHPStruct*	Prev;
-	
-	RectangleStruct *GetFrameHeader(RectangleStruct *buf, int FrameIndex)
-		JMP_THIS(0x69E7E0);
-};
-
-//=== GLOBAL LINKED LIST OF ALL LOADED SHP FILES
-// defined but not used
-// static SHPStruct* SHPStruct_first=(SHPStruct*)0xB077B0;
-//==============================================
 
 class FileSystem
 {
