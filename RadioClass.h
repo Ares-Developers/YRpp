@@ -32,7 +32,7 @@ public:
 
 	//Constructor
 	RadioClass() : MissionClass(false)
-		JMP_THIS(0x65A750);
+		{ JMP_THIS(0x65A750); }
 
 protected:
 	RadioClass(bool) : MissionClass(false) { }

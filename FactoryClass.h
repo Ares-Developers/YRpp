@@ -38,11 +38,11 @@ public:
 
 	//non-virtual
 	bool DemandProduction(TechnoTypeClass* pType, HouseClass* pOwner, bool bShouldQueue)
-		JMP_THIS(0x4C9C70);
+		{ JMP_THIS(0x4C9C70); }
 	bool AbandonProduction()
-		JMP_THIS(0x4C9FF0);
+		{ JMP_THIS(0x4C9FF0); }
 	unsigned int CountQueued(TechnoTypeClass * pType)
-		JMP_THIS(0x4CA670);
+		{ JMP_THIS(0x4CA670); }
 
 	static bool FindThisOwnerAndProduct(HouseClass *pHouse, TechnoTypeClass *pItem)
 	{
@@ -61,7 +61,7 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	
+
 	PROPERTY(int,                ProductionStatus); // hardcoded to be 54 steps (so cameo clock should be 54 frames)
 	PROPERTY(bool,               unknown_bool_28);
 	PROPERTY_STRUCT(TimerStruct,        ProductionTimer);

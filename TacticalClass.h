@@ -13,7 +13,7 @@ public:
 		{ return *((TacticalClass**)0x887324); }
 
 	Point2D* CoordsToClient(CoordStruct* pCoords, Point2D* pDest)
-		JMP_THIS(0x6D2140);
+		{ JMP_THIS(0x6D2140); }
 	/*
 	static Point2D* CoordsToClient(CoordStruct* pCrd, Point2D* pPoint)
 	{
@@ -23,9 +23,9 @@ public:
 		PUSH_VAR32(pCrd);
 		THISCALL_EX(pTactical, 0x6D2140);
 	}*/
-	
+
 	CoordStruct* ClientToCoords(Point2D* pClient, CoordStruct* pDest)
-			JMP_THIS(0x6D2280);
+			{ JMP_THIS(0x6D2280); }
 	/*
 	static CoordStruct* ClientToCoords(Point2D* pPoint, CoordStruct* pCrd)
 	{
@@ -37,23 +37,23 @@ public:
 	}*/
 
 	Point2D * AdjustForZShapeMove(Point2D* pDest, Point2D* pClient)
-		JMP_THIS(0x6D1FE0);
+		{ JMP_THIS(0x6D1FE0); }
 
 	// convert xyz height to xy height?
 	static int AdjustForZ(int Height)
-		JMP_THIS(0x6D20E0);
+		{ JMP_THIS(0x6D20E0); }
 
 	void FocusOn(CoordStruct* pDest, int Velocity)
-			JMP_THIS(0x6D2420);
+		{ JMP_THIS(0x6D2420); }
 
 
 	// called when area needs to be marked for redrawing due to external factors
 	// - alpha lights, terrain changes like cliff destruction, etc
 	void RegisterDirtyArea(RectangleStruct Area, bool bUnk)
-		JMP_THIS(0x6D2790);
+		{ JMP_THIS(0x6D2790); }
 
 	static int DrawTimer(int index, ColorScheme *Scheme, int Time, wchar_t *Text, Point2D *someXY1, Point2D *someXY2)
-		JMP_STD(0x64DB50);
+		{ JMP_STD(0x64DB50); }
 
 	PROPERTY(DWORD, field_24);
 	PROPERTY(DWORD, field_28);
@@ -108,7 +108,7 @@ public:
 	PROPERTY(DWORD, field_D74);
 	PROPERTY(DWORD, field_D78);
 	PROPERTY(bool, field_D7C);
-	PROPERTY(bool, Redrawing); // set while redrawing - cheap mutex 
+	PROPERTY(bool, Redrawing); // set while redrawing - cheap mutex
 	PROPERTY(DWORD, field_D80);
 	PROPERTY(DWORD, field_D84);
 	PROPERTY(DWORD, field_D88);

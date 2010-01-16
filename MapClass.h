@@ -76,7 +76,7 @@ public:
 
 	//Non-virtual
 	CellClass* GetCellAt(CoordStruct* pCrd)
-		JMP_THIS(0x565730);
+		{ JMP_THIS(0x565730); }
 
 	CellClass* GetCellAt(CellStruct* pMapCoords)
 		{
@@ -94,16 +94,16 @@ public:
 		}
 
 	bool IsLocationShrouded(CoordStruct* pCrd)
-		JMP_THIS(0x586360);
+		{ JMP_THIS(0x586360); }
 
 	bool CellExists(CellStruct* pMapCoords)
 		{ return (Cells[(pMapCoords->Y << 9) + pMapCoords->X] != NULL);}
 
 	void CellIteratorReset()
-		JMP_THIS(0x578350);
+		{ JMP_THIS(0x578350); }
 
 	CellClass* CellIteratorNext()
-		JMP_THIS(0x578290);
+		{ JMP_THIS(0x578290); }
 
 // the key damage delivery
 	static int __fastcall DamageArea(
@@ -113,25 +113,25 @@ public:
 		WarheadTypeClass *WH,
 		BYTE bUnk,
 		HouseClass* SourceHouse)
-			JMP_STD(0x489280);
+			{	JMP_STD(0x489280); }
 
 //int a2, int a3, wXY *where, int a5, int a6, int a7, int MovementZone
 
 	int GetCellFloorHeight(CoordStruct* XYZ)
-		JMP_THIS(0x578080);
+		{ JMP_THIS(0x578080); }
 
 	CellStruct * PickCellOnEdge(CellStruct* buffer, eEdge Edge, CellStruct *CurrentLocation, CellStruct *Fallback,
 		eSpeedType SpeedType, bool ValidateReachability, eMovementZone MovZone)
-			JMP_THIS(0x4AA440);
+			{ JMP_THIS(0x4AA440); }
 
 // Pathfinding voodoo
 // do not touch them, mmkay, they trigger ZoneConnection recalc which is a MUST for firestorm to work
 
 	void Update_Pathfinding_1()
-		JMP_THIS(0x56C510);
+		{ JMP_THIS(0x56C510); }
 
 	void Update_Pathfinding_2(DynamicVectorClass<CellStruct> *where)
-		JMP_THIS(0x586990);
+		{ JMP_THIS(0x586990); }
 
 // ====================================
 //        MAP REVEAL BRAINDAMAGE
@@ -151,7 +151,7 @@ public:
 		BYTE arg6,
 		BYTE arg7,
 		BYTE arg8)
-			JMP_STD(0x5673A0);
+			{ JMP_STD(0x5673A0); }
 
 /*
  * these come in pairs - first the last argument is 0 and then 1
@@ -174,7 +174,7 @@ public:
 		BYTE arg6,
 		BYTE arg7,
 		BYTE arg8)
-			JMP_STD(0x5678E0);
+			{ JMP_STD(0x5678E0); }
 
 /*
  * AircraftClass::SpyPlaneApproach
@@ -188,18 +188,18 @@ public:
  * TechnoClass::Fire uses this (r = 4) right after using RevealArea0, wtfcock
  */
 	static void RevealArea3(CoordStruct *Coords, int Height, int Radius, bool SkipReveal)
-		JMP_STD(0x567DA0);
+		{ JMP_STD(0x567DA0); }
 
 // the unknown functions that are srs bsns
 	int sub_578080(CoordStruct *Coords)
-		JMP_THIS(0x578080);
+		{ JMP_THIS(0x578080); }
 
 	// these two slowly reprocess the map after gapgen state changes
 	void sub_657CE0()
-		JMP_THIS(0x657CE0);
+		{ JMP_THIS(0x657CE0); }
 
 	void sub_4F42F0(int mode)
-		JMP_THIS(0x4F42F0);
+		{ JMP_THIS(0x4F42F0); }
 
 
 protected:

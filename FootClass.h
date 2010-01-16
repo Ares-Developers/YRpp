@@ -50,7 +50,7 @@ public:
 		DWORD dwUnk13, DWORD dwUnk14, DWORD dwUnk15, DWORD dwUnk16) RX;
 
 	virtual void Draw_A_VXL(
-		VoxelStruct *VXL, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5, 
+		VoxelStruct *VXL, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5,
 		Point2D *CenterPoint, Matrix3DStruct *Matrix, DWORD dwUnk8, DWORD dwUnk9, DWORD dwUnk10) RX;
 
 	virtual void vt_entry_514() RX;
@@ -71,18 +71,18 @@ public:
 	virtual bool vt_entry_550(DWORD dwUnk) R0;
 
 	bool CanBeRecruited(HouseClass *ByWhom)
-		JMP_THIS(0x4DA230);
+		{ JMP_THIS(0x4DA230); }
 
 	//Constructor
 	FootClass(HouseClass* owner) : TechnoClass(false)
-		JMP_THIS(0x4D31E0);
+		{ JMP_THIS(0x4D31E0); }
 
 	// non-virtual
 
 	// only used by squid damage routines, normal wakes are created differently it seems
 	// creates 3 wake animations behind the unit
 	void CreateWakes(CoordStruct coords)
-		JMP_THIS(0x629E90);
+		{ JMP_THIS(0x629E90); }
 
 protected:
 	FootClass() : TechnoClass(false)

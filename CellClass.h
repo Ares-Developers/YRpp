@@ -43,102 +43,102 @@ public:
 
 	// get content objects
 	ObjectClass *FindObjectNearestTo(CoordStruct *coords, bool alt, ObjectClass *ExcludeThis)
-		JMP_THIS(0x47C3D0);
+		{ JMP_THIS(0x47C3D0); }
 
 	ObjectClass *FindObjectOfType(int AbstractID, bool alt)
-		JMP_THIS(0x47C4D0);
+		{ JMP_THIS(0x47C4D0); }
 
 	BuildingClass *GetBuilding()
-		JMP_THIS(0x47C520);
+		{ JMP_THIS(0x47C520); }
 
 	UnitClass *GetUnit(bool alt)
-		JMP_THIS(0x47EBA0);
+		{ JMP_THIS(0x47EBA0); }
 
 	InfantryClass *GetInfantry(bool alt)
-		JMP_THIS(0x47EC40);
+		{ JMP_THIS(0x47EC40); }
 
 	AircraftClass *GetAircraft(bool alt)
-		JMP_THIS(0x47EBF0);
+		{ JMP_THIS(0x47EBF0); }
 
 	TerrainClass *GetTerrain(bool alt)
-		JMP_THIS(0x47C550);
+		{ JMP_THIS(0x47C550); }
 
 	/* craziest thing... first iterates Content looking to Aircraft,
 	 * failing that, calls FindObjectNearestTo,
 	 * if that fails too, reiterates Content looking for Terrain
 	 */
 	ObjectClass *GetSomeObject(CoordStruct *coords, bool alt)
-		JMP_THIS(0x47C5A0);
+		{ JMP_THIS(0x47C5A0); }
 
 	// misc
 	void SetWallOwner()
-		JMP_THIS(0x47D210);
+		{ JMP_THIS(0x47D210); }
 
 	// adjusts LAT
 	void SetupLAT()
-		JMP_THIS(0x47CA80);
+		{ JMP_THIS(0x47CA80); }
 
 	// checks for nearby cliff impassability, calls SetupLAT(), sets up TubeClass if tunnel, cell anim if attached, etc
 	void Setup(DWORD dwUnk)
-		JMP_THIS(0x47D2B0);
+		{ JMP_THIS(0x47D2B0); }
 
 	void BlowUpBridge()
-		JMP_THIS(0x47DD70);
+		{ JMP_THIS(0x47DD70); }
 
 	bool CanThisExistHere(eSpeedType SpeedType, BuildingTypeClass *Object, HouseClass* Owner)
-		JMP_THIS(0x47C620);
+		{ JMP_THIS(0x47C620); }
 
 	// those unks are passed to TechnoClass::Scatter in that same order
 	void ScatterContent(DWORD unk2, DWORD unk3, DWORD unk4, bool alt)
-		JMP_THIS(0x481670);
+		{ JMP_THIS(0x481670); }
 
 	CellClass *GetNeighbourCell(unsigned int direction)
-		JMP_THIS(0x481810);
+		{ JMP_THIS(0x481810); }
 
 	// called whenever anything moves, first to remove threat from source cell, second time to add threat to dest cell
 	void UpdateThreat(unsigned int SourceHouse, int ThreatLevel)
-		JMP_THIS(0x481870);
+		{ JMP_THIS(0x481870); }
 
 	void CollectCrate(FootClass *Collector)
-		JMP_THIS(0x481A00);
+		{ JMP_THIS(0x481A00); }
 
 	void ProcessColourComponents(int *arg0, int *Intensity, int *Ambient, int *a5, int *a6, int *tintR, int *tintG, int *tintB)
-		JMP_THIS(0x484180);
+		{ JMP_THIS(0x484180); }
 
 	/*TubeClass*/void GetTunnel()
-		JMP_THIS(0x484F20);
+		{ JMP_THIS(0x484F20); }
 
 	RectangleStruct *GetContainingRect(RectangleStruct *dest)
-		JMP_THIS(0x47FB90);
+		{ JMP_THIS(0x47FB90); }
 
 	// don't laugh, it returns the uiname of contained tiberium... which nobody ever sets
 	wchar_t *GetUIName()
-		JMP_THIS(0x484FF0);
+		{ JMP_THIS(0x484FF0); }
 
 	// returns the tiberium's index in OverlayTypes
 	int GetContainedTiberiumIndex()
-		JMP_THIS(0x485010);
+		{ JMP_THIS(0x485010); }
 
 	int GetContainedTiberiumValue()
-		JMP_THIS(0x485020);
+		{ JMP_THIS(0x485020); }
 
 	int SetMapCoords(CoordStruct *coords)
-		JMP_THIS(0x485240);
+		{ JMP_THIS(0x485240); }
 
 	// in leptons
 	CoordStruct *Get3DCoords(CoordStruct *result)
-		JMP_THIS(0x486840);
+		{ JMP_THIS(0x486840); }
 
 	// depends on one of the cell flags being set
 	CoordStruct *Get3DCoords2(CoordStruct *result)
-		JMP_THIS(0x486890);
+		{ JMP_THIS(0x486890); }
 
 	// used by ambient waves and stuff
 	CoordStruct *Get3DCoords3(CoordStruct *result)
-		JMP_THIS(0x480A30);
+		{ JMP_THIS(0x480A30); }
 
 	void ActivateVeins()
-		JMP_THIS(0x486920);
+		{ JMP_THIS(0x486920); }
 
 	// cloak generators
 	bool CloakGen_InclHouse(unsigned int idx)
@@ -152,7 +152,7 @@ public:
 
 	// unused, returns 0 if that house doesn't have cloakgens covering this cell or Player has sensors over this cell
 	bool DrawObjectsCloaked(int OwnerHouseIdx)
-		JMP_THIS(0x486800);
+		{ JMP_THIS(0x486800); }
 
 	// sensors
 	bool Sensors_InclHouse(unsigned int idx)
@@ -182,16 +182,16 @@ public:
 		{ return this->RadSite; }
 
 	bool IsRadiated()
-		JMP_THIS(0x487C90);
+		{ JMP_THIS(0x487C90); }
 
 	int GetRadLevel()
-		JMP_THIS(0x487CB0);
+		{ JMP_THIS(0x487CB0); }
 
 	void RadLevel_Increase(double amount)
-		JMP_THIS(0x487CE0);
+		{ JMP_THIS(0x487CE0); }
 
 	void RadLevel_Decrease(double amount)
-		JMP_THIS(0x487D00);
+		{ JMP_THIS(0x487D00); }
 
 	// helper mimicking game's behaviour
 	ObjectClass* GetContent()
@@ -200,7 +200,7 @@ public:
 	// tilesets
 #define ISTILE(tileset, addr) \
 	bool Tile_Is_ ## tileset() \
-		JMP_THIS(addr);
+		{ JMP_THIS(addr); }
 
 	ISTILE(Tunnel, 0x484AB0);
 	ISTILE(Water, 0x485060);
@@ -249,7 +249,7 @@ public:
 	}
 
 	CoordStruct * FindInfantrySubposition(CoordStruct *dst, CoordStruct *src, char bUnk1, char bUnk2, char bUnk3)
-		JMP_THIS(0x481180);
+		{ JMP_THIS(0x481180); }
 
 protected:
 	//Constructor

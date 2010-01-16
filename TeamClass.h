@@ -27,7 +27,7 @@ public:
 	virtual ~TeamClass() RX;
 
 	void GetTaskForceMembers(DynamicVectorClass<TechnoTypeClass *>*dest)
-		JMP_THIS(0x6EF4D0);
+		{ JMP_THIS(0x6EF4D0); }
 
 	//AbstractClass
 	virtual eAbstractType WhatAmI() R0;
@@ -35,7 +35,7 @@ public:
 
 	//Constructor
 	TeamClass(TeamTypeClass* pType) : AbstractClass(false)
-		JMP_THIS(0x6E8A90);
+		{ JMP_THIS(0x6E8A90); }
 
 protected:
 	TeamClass() : AbstractClass(false) { }

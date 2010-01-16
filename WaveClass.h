@@ -26,20 +26,20 @@ public:
 	virtual int Size() R0;
 
 	void Draw_Magnetic(CoordStruct* xyzFrom, CoordStruct* xyzTo)
-		JMP_THIS(0x762070);
+		{ JMP_THIS(0x762070); }
 
 	void Draw_NonMagnetic(CoordStruct* xyzFrom, CoordStruct* xyzTo)
-		JMP_THIS(0x761640);
+		{ JMP_THIS(0x761640); }
 
 	void Update_Wave()
-		JMP_THIS(0x762AF0);
+		{ JMP_THIS(0x762AF0); }
 
 	// ambient
 	void DamageArea(CoordStruct *location)
-		JMP_THIS(0x75F330);
+		{ JMP_THIS(0x75F330); }
 
 	WaveClass(CoordStruct *From, CoordStruct *To, TechnoClass *Owner, int mode, AbstractClass *Target) : ObjectClass(false)
-		JMP_THIS(0x75E950);
+		{ JMP_THIS(0x75E950); }
 
 protected:
 	WaveClass() : ObjectClass(false) {}
@@ -47,7 +47,7 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	
+
 	PROPERTY(TechnoClass*, Target);
 	PROPERTY(eWaveType, Type);
 	PROPERTY(Point2D, someCoords);

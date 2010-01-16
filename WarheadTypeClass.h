@@ -38,7 +38,7 @@ public:
 
 	//Constructor
 	WarheadTypeClass(const char* pID) : AbstractTypeClass(false)
-		JMP_THIS(0x75CEC0);
+		{ JMP_THIS(0x75CEC0); }
 
 protected:
 	WarheadTypeClass() : AbstractTypeClass(false) { }

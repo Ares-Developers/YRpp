@@ -83,7 +83,7 @@ class ABufferClass {
 	static ABufferClass* &ABuffer;
 
 	ABufferClass(RectangleStruct rect)
-		JMP_THIS(0x410CE0);
+		{ JMP_THIS(0x410CE0); }
 
 	RectangleStruct rect;
 	int field_10;
@@ -101,7 +101,7 @@ class ZBufferClass {
 	static ZBufferClass* &ZBuffer;
 
 	ZBufferClass(RectangleStruct rect)
-		JMP_THIS(0x7BC970);
+		{ JMP_THIS(0x7BC970); }
 
 	RectangleStruct rect;
 	int field_10;

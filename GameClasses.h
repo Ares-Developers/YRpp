@@ -75,6 +75,7 @@
 
 //Classes without a VTable
 #include <ColorScheme.h>
+#include <ConvertClass.h>
 #include <EBolt.h>
 #include <IonBlastClass.h>
 #include <LaserDrawClass.h>

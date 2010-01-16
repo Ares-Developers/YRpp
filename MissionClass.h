@@ -19,16 +19,16 @@ class MissionControlClass
 			{ return (const char**)0x816CAC; }
 
 		static MissionControlClass* Find(const char* pName)
-			JMP_STD(0x5B3910);
+			{ JMP_STD(0x5B3910); }
 
 		MissionControlClass()
-			JMP_THIS(0x5B3700);
+			{ JMP_THIS(0x5B3700); }
 
 		const char* GetName()
-			JMP_THIS(0x5B3740);
+			{ JMP_THIS(0x5B3740); }
 
 		void LoadFromINI(CCINIClass* pINI)
-			JMP_THIS(0x5B3760);
+			{ JMP_THIS(0x5B3760); }
 
 		//Properties
 		PROPERTY(int, ArrayIndex);
@@ -49,10 +49,10 @@ public:
 	virtual ~MissionClass() { /* ~ObjectClass() */ }
 
 	static eMission FindIndex(const char *name)
-		JMP_STD(0x5B3910);
+		{ JMP_STD(0x5B3910); }
 
 	static const char * FindName(int const *index)
-		JMP_STD(0x5B3740);
+		{ JMP_STD(0x5B3740); }
 
 	//MissionClass
 	virtual bool QueueMission(eMission mission, bool start_mission) R0;

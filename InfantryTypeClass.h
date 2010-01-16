@@ -53,7 +53,7 @@ public:
 
 	//Constructor
 	InfantryTypeClass(const char* pID) : TechnoTypeClass(false)
-		JMP_THIS(0x5236A0);
+		{ JMP_THIS(0x5236A0); }
 
 protected:
 	//default contructor, only used by polymorphism

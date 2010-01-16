@@ -11,13 +11,14 @@ public:
 	void* f_C;
 
 	MotLib(CCFileClass *Source)
-		JMP_THIS(0x5BD570);
+		{ JMP_THIS(0x5BD570); }
 
 	~MotLib()
-		JMP_THIS(0x5BD5A0);
+		{ JMP_THIS(0x5BD5A0); }
 
+	// 0 for valid, non 0 for invalid
 	signed int ReadFile(CCFileClass *ccFile)
-		JMP_THIS(0x5BD5C0);
+		{ JMP_THIS(0x5BD5C0); }
 };
 
 #endif

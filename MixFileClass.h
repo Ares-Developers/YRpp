@@ -60,9 +60,7 @@ public:
 	static GenericMixFiles* Generics;
 
 	static void Bootstrap()
-	{
-		JMP_THIS(0x5301A0);
-	}
+		{ JMP_THIS(0x5301A0); }
 
 	virtual ~MixFileClass() RX;
 

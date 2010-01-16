@@ -31,7 +31,7 @@ public:
 
 	//Constructor, Destructor
 	TerrainClass(TerrainTypeClass* tt, CellStruct coords) : ObjectClass(false)
-		JMP_THIS(0x71BB90);
+		{ JMP_THIS(0x71BB90); }
 
 	virtual ~TerrainClass() RX;
 

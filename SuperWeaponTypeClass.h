@@ -40,11 +40,11 @@ public:
 
 	// non-virtual
 	static SuperWeaponTypeClass * __fastcall FindFirstOfAction(eAction Action)
-		JMP_STD(0x6CEEB0);
+		{ JMP_STD(0x6CEEB0); }
 
 	//Constructor
 	SuperWeaponTypeClass(const char* pID) : AbstractTypeClass(false)
-		JMP_THIS(0x6CE5B0);
+		{ JMP_THIS(0x6CE5B0); }
 
 protected:
 	SuperWeaponTypeClass() : AbstractTypeClass(false) { }

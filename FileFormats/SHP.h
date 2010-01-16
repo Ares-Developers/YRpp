@@ -16,8 +16,11 @@ struct SHPStruct
 	SHPStruct*	Next;
 	SHPStruct*	Prev;
 
-	RectangleStruct *GetFrameHeader(RectangleStruct *buf, int FrameIndex)
-		JMP_THIS(0x69E7E0);
+	RectangleStruct *GetFrameHeader(RectangleStruct *buf, unsigned int FrameIndex)
+		{ JMP_THIS(0x69E7E0); }
+
+	bool HasCompression(int frameIdx)
+		{ JMP_THIS(0x69E900); }
 };
 
 //=== GLOBAL LINKED LIST OF ALL LOADED SHP FILES

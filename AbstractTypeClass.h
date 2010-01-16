@@ -54,7 +54,7 @@ public:
 
 	//Constructor
 	AbstractTypeClass(const char* pID) : AbstractClass(false)
-		JMP_THIS(0x410800);
+		{ JMP_THIS(0x410800); }
 
 protected:
 	AbstractTypeClass() : AbstractClass(false) { }

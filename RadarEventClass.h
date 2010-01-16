@@ -16,7 +16,7 @@ public:
 private:
 	//Constructor, Destructor
 	RadarEventClass(int nType, CellStruct nMapCoords)
-		JMP_THIS(0x65FB80);
+		{ JMP_THIS(0x65FB80); }
 
 	~RadarEventClass()		{/*???*/}
 

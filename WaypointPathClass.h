@@ -28,7 +28,7 @@ public:
 	//IPersistStream
 	virtual HRESULT __stdcall Load(IStream* pStm) R0;
 	virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
-	
+
 	//Destructor
 	virtual ~WaypointPathClass() RX;
 
@@ -37,15 +37,15 @@ public:
 	virtual int Size() R0;
 
 	WaypointClass * GetWaypoint(int idx)
-		JMP_THIS(0x763980);
+		{ JMP_THIS(0x763980); }
 	WaypointClass * GetWaypointAfter(int idx)
-		JMP_THIS(0x763BA0);
+		{ JMP_THIS(0x763BA0); }
 	bool WaypointExistsAt(WaypointClass *wpt)
-		JMP_THIS(0x763A50);
+		{ JMP_THIS(0x763A50); }
 
 	// Constructor
 	WaypointPathClass(int idx)
-		JMP_THIS(0x763810);
+		{ JMP_THIS(0x763810); }
 
 protected:
 	//Constructor

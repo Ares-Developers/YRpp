@@ -23,7 +23,7 @@ public:
 	//Destructor
 	//Constructor
 //	Surface(int Width, int Height, bool BackBuffer, bool Force3D) {/* ??? */}
-	
+
 	virtual ~Surface()
 		{ PUSH_IMM(SDDTOR_NODELETE); THISCALL(0x4115D0); }
 
@@ -186,10 +186,10 @@ public:
 		THISCALL(0x411510);
 
 	/*
-	 (void *DSurface<ecx>, ConvertClass *Palette, SHPStruct *SHP, int frameIdx, 
+	 (void *DSurface<ecx>, ConvertClass *Palette, SHPStruct *SHP, int frameIdx,
 			Point2D *pos, _DWORD arg5, _DWORD arg6, _DWORD arg7,
-			_DWORD arg8, _DWORD arg9, _DWORD argA, int TintColor, 
-			SHPStruct *BUILDINGZ_SHA, _DWORD argD, int ZS_X, int ZS_Y) 
+			_DWORD arg8, _DWORD arg9, _DWORD argA, int TintColor,
+			SHPStruct *BUILDINGZ_SHA, _DWORD argD, int ZS_X, int ZS_Y)
 	*/
 
 		PUSH_IMM(0);PUSH_IMM(0);PUSH_IMM(0);PUSH_IMM(0);
@@ -203,12 +203,12 @@ public:
 		THISCALL(0x4AED70);
 	}
 
-	void __fastcall DrawSHP(ConvertClass *Palette, SHPStruct *SHP, int frameIdx, 
+	void __fastcall DrawSHP(ConvertClass *Palette, SHPStruct *SHP, int frameIdx,
 		Point2D *pos, RectangleStruct *boundingRect, eBlitterFlags Flags, DWORD arg7,
-		signed int arg8, DWORD arg9, DWORD argA, int TintColor, 
+		signed int arg8, DWORD arg9, DWORD argA, int TintColor,
 		SHPStruct *BUILDINGZ_SHA, DWORD argD, int ZS_X, int ZS_Y)
 
-			JMP_STD(0x4AED70);
+			{ JMP_STD(0x4AED70); }
 
 
 	void DrawText(const wchar_t* pText,Point2D* pPoint,DWORD dwColor)

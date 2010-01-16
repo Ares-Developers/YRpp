@@ -56,13 +56,13 @@ public:
 
 	//Constructor
 	BuildingTypeClass(const char* pID) : TechnoTypeClass(false)
-		JMP_THIS(0x45DD90);
+		{ JMP_THIS(0x45DD90); }
 
 	//non-virtual
 	short GetFoundationWidth()
-		JMP_THIS(0x45EC90);
+		{ JMP_THIS(0x45EC90); }
 	short GetFoundationHeight(bool bIncludeBib)
-		JMP_THIS(0x45ECA0);
+		{ JMP_THIS(0x45ECA0); }
 
 protected:
 	BuildingTypeClass() : TechnoTypeClass(false) { }

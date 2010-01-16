@@ -52,7 +52,7 @@ public:
 
 	//Constructor
 	AircraftClass(AircraftTypeClass* pType, HouseClass* pOwner) : FootClass(false)
-		JMP_THIS(0x413D20);
+		{ JMP_THIS(0x413D20); }
 
 protected:
 	AircraftClass() : FootClass(false) { }

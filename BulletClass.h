@@ -55,24 +55,25 @@ public:
 		BulletTypeClass *pType,
 		ObjectClass *Target,
 		TechnoClass *Owner,
-		int Damage, 
+		int Damage,
 		WarheadTypeClass *WH,
 		int Speed,
-		bool Bright) JMP_THIS(0x4664C0);
+		bool Bright)
+		{ JMP_THIS(0x4664C0); }
 
 	// spawns the actual projectile onto the map
 	void Fire(CoordStruct *Target)
-		JMP_THIS(0x4690B0);
+		{ JMP_THIS(0x4690B0); }
 
 	void Detonate(bool bUnknown)
-		JMP_STD(0x468D80);
+		{ JMP_STD(0x468D80); }
 
 	// spawns off the proper amount of shrapnel projectiles
 	void Shrapnel()
-		JMP_THIS(0x46A310);
+		{ JMP_THIS(0x46A310); }
 
 	static void ApplyRadiationToCell(CellStruct coords, double *radius, int amount)
-		JMP_STD(0x46ADE0);
+		{ JMP_STD(0x46ADE0); }
 
 	bool IsHoming()
 		{ return this->Type->ROT > 0; }
@@ -85,16 +86,16 @@ public:
 
 	// only called in UnitClass::Fire if Type->Scalable
 	void InitScalable()
-		JMP_THIS(0x46B280);
+		{ JMP_THIS(0x46B280); }
 
 	// call only after the target, args, etc., have been set
 	void NukeMaker()
-		JMP_THIS(0x46B310);
+		{ JMP_THIS(0x46B310); }
 
 	//Constructor
 protected:
 	BulletClass() : ObjectClass(false)
-		JMP_THIS(0x466380);
+		{ JMP_THIS(0x466380); }
 
 
 	//===========================================================================

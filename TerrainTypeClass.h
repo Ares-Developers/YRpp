@@ -41,7 +41,7 @@ public:
 
 	//Constructor
 	TerrainTypeClass(const char* pID) : ObjectTypeClass(false)
-		JMP_THIS(0x71DA80);
+		{ JMP_THIS(0x71DA80); }
 
 protected:
 	TerrainTypeClass() : ObjectTypeClass(false) { }

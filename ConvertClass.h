@@ -30,13 +30,17 @@ public:
 		DSurface* pSurface,
 		size_t Count,
 		bool SkipBlitters)
-			JMP_THIS(0x48E740);
+			{ JMP_THIS(0x48E740); }
 
+	static void __fastcall CreateFromFile(const char* Filename, BytePalette **pPalette, ConvertClass ** pDestination)
+		{ JMP_STD(0x72ADE0); }
+
+	// if you're drawing a SHP, call SHPStruct::HasCompression and choose one of these two based on that
 	BlitterCore * SelectPlainBlitter(eBlitterFlags flags)
-			JMP_THIS(0x490B90);
+		{ JMP_THIS(0x490B90); }
 
 	RLEBlitterCore * SelectRLEBlitter(eBlitterFlags flags)
-			JMP_THIS(0x490E50);
+		{ JMP_THIS(0x490E50); }
 
 	virtual ~ConvertClass() RX;
 
@@ -83,7 +87,7 @@ public:
 		bool SkipBlitters,
 		size_t Count,
 		DWORD arg20) : ConvertClass(false)
-			JMP_THIS(0x555DA0);
+			{ JMP_THIS(0x555DA0); }
 
 	virtual ~LightConvertClass() RX;
 

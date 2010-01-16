@@ -13,7 +13,7 @@ public:
 
 	//Constructor
 	GenericNode()
-		JMP_THIS(0x40E320);
+		{ JMP_THIS(0x40E320); }
 
 	//Properties
 	PROPERTY(GenericNode*, Next);
@@ -31,7 +31,7 @@ public:
 
 	//Constructor
 	Node() : GenericNode(false)
-		JMP_THIS(0x40E320);
+		{ JMP_THIS(0x40E320); }
 
 protected:
 	Node(bool) : GenericNode(false) { }
@@ -45,7 +45,7 @@ public:
 
 	//Constructor
 	GenericList()
-		JMP_THIS(0x52ACE0);
+		{ JMP_THIS(0x52ACE0); }
 
 	//Properties
 	PROPERTY_STRUCT(GenericNode, First);
@@ -63,7 +63,7 @@ public:
 
 	//Constructor
 	List() : GenericList(false)
-		JMP_THIS(0x52ACE0);
+		{ JMP_THIS(0x52ACE0); }
 
 protected:
 	List(bool) : GenericList(false) { }

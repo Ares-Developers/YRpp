@@ -42,7 +42,7 @@ public:
 	}
 */
 	static int __fastcall FindIndex(const char *pName)
-		JMP_STD(0x7514D0);
+		{ JMP_STD(0x7514D0); }
 
 	/* Play a sound independant of the position.
 	   n = Index of VocClass in Array to be played
@@ -50,12 +50,12 @@ public:
 	   Panning = 0x0000 (left) to 0x4000 (right) (0x2000 is center)
 	   */
 	static void __fastcall PlayGlobal(int n, float Volume, int Panning, DWORD dwUnk = 0)
-		JMP_STD(0x750920);
+		{ JMP_STD(0x750920); }
 
 	/* Play a sound at a certain Position.
        n = Index of VocClass in Array to be played */
 	static void __fastcall PlayAt(int n, CoordStruct* pCoords, Unsorted::AudioController *ctrl)
-		JMP_STD(0x7509E0);
+		{ JMP_STD(0x7509E0); }
 
 	//Properties
 	PROPERTY(VocClass*,			Next);	//Linked list of VocClass instances
@@ -97,7 +97,7 @@ public:
 	PROPERTY(int,				Decay);
 	PROPERTY(DWORD,				unknown_140);
 	PROPERTY(DWORD,				unknown_144);
-	
+
 private:	//constructor and destructor should never be needed
 	VocClass(){}
 	~VocClass(){}

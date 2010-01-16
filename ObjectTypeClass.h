@@ -36,14 +36,14 @@ public:
 	virtual int GetBuildSpeed() R0;
 	virtual ObjectClass* CreateObject(HouseClass* pOwner) = 0;
 	virtual void vt_entry_90(DWORD dwUnk) RX;
-	virtual BuildingTypeClass* GetFactoryType(bool OverridePrereqs, bool OverridePower, bool OverrideBuildLimit, 
+	virtual BuildingTypeClass* GetFactoryType(bool OverridePrereqs, bool OverridePower, bool OverrideBuildLimit,
 		HouseClass *House) R0;
 	virtual SHPStruct* GetCameo() R0;
 	virtual SHPStruct* GetImage() R0;
 
 	//Constructor
 	ObjectTypeClass(const char* pID) : AbstractTypeClass(false)
-		JMP_THIS(0x5F7090);
+		{ JMP_THIS(0x5F7090); }
 
 protected:
 	ObjectTypeClass() : AbstractTypeClass(false) { }

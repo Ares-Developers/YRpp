@@ -22,6 +22,9 @@
 #define GET_BASE(clsname, var, offset) \
 	clsname var = R->Base<clsname>(offset);
 
+#define STACK_OFFS(cur_offset, wanted_offset) \
+		(cur_offset - wanted_offset)
+
 #define RET_UNLESS(expr) \
 	if(!(expr)) { return 0; }
 #define RETZ_UNLESS(expr) \

@@ -35,14 +35,14 @@ public:
 
 	//UnitClass
 	virtual void DrawAsVXL(Point2D Coords, RectangleStruct BoundingRect, DWORD dwUnk7, DWORD dwUnk8)
-			JMP_THIS(0x73B470);
+		{ JMP_THIS(0x73B470); }
 
 	virtual void DrawAsSHP(Point2D Coords, RectangleStruct BoundingRect, DWORD dwUnk7, DWORD dwUnk8)
-			JMP_THIS(0x73C5F0);
-	
+		{ JMP_THIS(0x73C5F0); }
+
 	//Constructor
 	UnitClass(UnitTypeClass* pType, HouseClass* pOwner) : FootClass(false)
-		JMP_THIS(0x7353C0);
+		{ JMP_THIS(0x7353C0); }
 
 protected:
 	UnitClass() : FootClass(false)
@@ -67,7 +67,7 @@ protected:
 	PROPERTY(bool, Deploying);
 	PROPERTY(bool, Undeploying);
 	PROPERTY(int, unknown_int_6E4);
-	
+
 // isn't this what PROPERTY_UNICODE was for?
 protected:
 	wchar_t ToolTipText[0x100];

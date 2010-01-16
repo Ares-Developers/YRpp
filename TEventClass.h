@@ -34,21 +34,23 @@ public:
 	// you are responsible for doing INI::ReadString and strtok'ing it before calling
 	// this func only calls strtok again, doesn't know anything about buffers
 	void LoadFromINI()
-		JMP_THIS(0x71F4A0);
+		{ JMP_THIS(0x71F4A0); }
 
 	// you allocate the buffer for this, and save it to ini yourself after this returns
 	// this func only sprintf's the stuff it needs into buffer
 	void PrepareSaveToINI(char *buffer)
-		JMP_THIS(0x71F390);
+		{ JMP_THIS(0x71F390); }
 
 	// fuck if I know what's the purpose of this, returns a bitfield of flags for trigger logic
 	static int __fastcall GetFlags(int eventKind)
-		JMP_STD(0x71F680);
+		{ JMP_STD(0x71F680); }
 
 	// used in TriggerClass::HaveEventsOccured , when trigger is repeating
 	// both need to be true to check this event as done
-	bool GetStateA() JMP_THIS(0x71F950);
-	bool GetStateB() JMP_THIS(0x71F9C0);
+	bool GetStateA()
+		{ JMP_THIS(0x71F950); }
+	bool GetStateB()
+		{ JMP_THIS(0x71F9C0); }
 
 	// main brain
 	bool HasOccured(
@@ -57,11 +59,11 @@ public:
 		ObjectClass *Object,
 		TimerStruct *ActivationFrame,
 		bool *isRepeating)
-			JMP_THIS(0x71E940);
+			{ JMP_THIS(0x71E940); }
 
 	//Constructor
 	TEventClass() : AbstractClass(false)
-		JMP_THIS(0x71E6A0);
+		{ JMP_THIS(0x71E6A0); }
 
 	//===========================================================================
 	//===== Properties ==========================================================

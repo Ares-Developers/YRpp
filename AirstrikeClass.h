@@ -30,11 +30,11 @@ public:
 
 	//Constructor
 	AirstrikeClass(TechnoClass* pOwner) : AbstractClass(false)
-		JMP_THIS(0x41D380);
+		{ JMP_THIS(0x41D380); }
 
 	//non-virtual
 	void StartMission(ObjectClass* pTarget)
-		JMP_THIS(0x41D830);
+		{ JMP_THIS(0x41D830); }
 
 protected:
 	AirstrikeClass() : AbstractClass(false) { }

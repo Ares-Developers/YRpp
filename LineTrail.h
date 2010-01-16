@@ -16,16 +16,16 @@ public:
 
 	//Constructor, Destructor
 	LineTrail()
-		JMP_THIS(0x556A20);
+		{ JMP_THIS(0x556A20); }
 
 	~LineTrail()
-		JMP_THIS(0x556B30);
+		{ JMP_THIS(0x556B30); }
 
 	void SetDecrement(int val)
-		JMP_THIS(0x556B50);
+		{ JMP_THIS(0x556B50); }
 
 	static void DeleteAll()
-		JMP_STD(0x556DF0);
+		{ JMP_STD(0x556DF0); }
 
 
 	//===========================================================================

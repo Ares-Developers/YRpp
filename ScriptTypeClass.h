@@ -40,11 +40,11 @@ public:
 
 	//AbstractTypeClass
 	static bool LoadFromINIList(CCINIClass *pINI, bool IsGlobal)
-		JMP_STD(0x691970);
+		{ JMP_STD(0x691970); }
 
 	//Constructor
 	ScriptTypeClass(const char* pID) : AbstractTypeClass(false)
-		JMP_THIS(0x6916B0);
+		{ JMP_THIS(0x6916B0); }
 
 protected:
 	ScriptTypeClass() : AbstractTypeClass(false) { }
@@ -52,7 +52,7 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	
+
 	PROPERTY(int,      ArrayIndex);
 	PROPERTY(bool,     IsGlobal);
 	PROPERTY(int,      ActionsCount);

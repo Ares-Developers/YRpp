@@ -39,10 +39,10 @@ public:
 
 	//Constructor, Destructor
 	ColorScheme(const char* pID, ColorStruct* BaseColor, DWORD arg8, DWORD argC, DWORD arg10, DWORD arg14)
-		JMP_THIS(0x68C710);
+		{ JMP_THIS(0x68C710); }
 
 	~ColorScheme()
-		JMP_THIS(0x68C8D0);
+		{ JMP_THIS(0x68C8D0); }
 
 	//===========================================================================
 	//===== Properties ==========================================================

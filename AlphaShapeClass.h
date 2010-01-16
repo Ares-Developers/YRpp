@@ -34,7 +34,7 @@ public:
 
 	//Constructor
 	AlphaShapeClass(ObjectClass* pObj,int nX,int nY) : AbstractClass(false)
-		JMP_THIS(0x420960);
+		{ JMP_THIS(0x420960); }
 
 protected:
 	AlphaShapeClass() : AbstractClass(false) { };

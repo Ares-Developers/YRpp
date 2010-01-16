@@ -29,10 +29,10 @@ public:
 	//InfantryClass
 	virtual bool IsDeployed() R0;
 	virtual bool PlayAnim(int nAnimNumber, bool bUnk, DWORD dwUnk) R0;
-	
+
 	//Constructor
 	InfantryClass(InfantryTypeClass* pType, HouseClass* pOwner) : FootClass(false)
-		JMP_THIS(0x517A50);
+		{ JMP_THIS(0x517A50); }
 
 protected:
 	InfantryClass() : FootClass(false)

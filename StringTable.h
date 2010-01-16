@@ -100,12 +100,12 @@ public:
 		char* pOutExtraData = NULL,
 		int nSourceCodeFileLine = 0,
 		const char* pSourceCodeFileName = "YR++")
-			JMP_STD(0x734E60);
+			{ JMP_STD(0x734E60); }
 
 	static bool __fastcall LoadFile(const char* pFileName)
-		JMP_STD(0x7346A0);
+		{ JMP_STD(0x7346A0); }
 	static bool __fastcall ReadFile(const char* pFileName)
-		JMP_STD(0x734990);
+		{ JMP_STD(0x734990); }
 };
 
 #endif

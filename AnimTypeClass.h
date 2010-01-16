@@ -40,7 +40,7 @@ public:
 
 	//Constructor
 	AnimTypeClass(const char* pID) : ObjectTypeClass(false)
-		JMP_THIS(0x427530);
+		{ JMP_THIS(0x427530); }
 
 protected:
 	AnimTypeClass() : ObjectTypeClass(false) { };

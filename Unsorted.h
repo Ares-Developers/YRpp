@@ -22,7 +22,7 @@ public:
 	}
 
 	static void RaiseError(HRESULT err)
-		JMP_STD(0x7DC720);
+		{ JMP_STD(0x7DC720); }
 
 	// the magic checksum for version validation - linked in StaticInits
 	static DWORD &Savegame_Magic;
@@ -32,7 +32,7 @@ public:
 
 	static int &CurrentFrameRate;
 	static int GetMinFrameRate()
-		JMP_STD(0x55AF60);
+		{ JMP_STD(0x55AF60); }
 
 	static void SetProgress(int progress)
 		{ SET_REG32(ECX, 0xA8B238); JMP_STD(0x69AE90); }
@@ -40,29 +40,26 @@ public:
 	static void UnknownCall()
 		{ JMP_STD(0x48D080); }
 
-	static int __fastcall GetResource(int ID, int Type) {
-		JMP_STD(0x4A3B40);
-	}
+	static int __fastcall GetResource(int ID, int Type)
+		{ JMP_STD(0x4A3B40); }
 
-	static void __fastcall CenterWindowIn(HWND Child, HWND Parent) {
-		JMP_STD(0x777080);
-	}
+	static void __fastcall CenterWindowIn(HWND Child, HWND Parent)
+		{ JMP_STD(0x777080); }
 
-	static void __fastcall sub_53E420(HWND hWnd) {
-		JMP_STD(0x53E420);
-	}
+	static void __fastcall sub_53E420(HWND hWnd)
+		{ JMP_STD(0x53E420); }
 
-	static void __fastcall sub_53E3C0(HWND hWnd) {
-		JMP_STD(0x53E3C0);
-	}
+	static void __fastcall sub_53E3C0(HWND hWnd)
+		{ JMP_STD(0x53E3C0); }
 
-	static void __fastcall sub_776D80(tagRECT *Rect) {
-		JMP_STD(0x776D80);
-	}
+	static void __fastcall sub_776D80(tagRECT *Rect)
+		{ JMP_STD(0x776D80); }
 
-	static HRESULT __fastcall Save_Sides(LPSTREAM pStm, DynamicVectorClass<SideClass *>* pVector) {
-		JMP_STD(0x6805F0);
-	}
+	static HRESULT __fastcall Save_Sides(LPSTREAM pStm, DynamicVectorClass<SideClass *>* pVector)
+		{ JMP_STD(0x6805F0); }
+
+	static void sub_53E6B0()
+		{ JMP_STD(0x53E6B0); }
 
 	static bool &bVideoBackBuffer;
 	static bool &bAllowVRAMSidebar;
@@ -187,34 +184,34 @@ struct AudioController
 	}
 
 	void DTOR_0()
-		JMP_THIS(0x405C00);
+		{ JMP_THIS(0x405C00); }
 
 	void DTOR_1()
-		JMP_THIS(0x405D40);
+		{ JMP_THIS(0x405D40); }
 
 	void DTOR_2()
-		JMP_THIS(0x405FD0);
+		{ JMP_THIS(0x405FD0); }
 
 	void DTOR_3()
-		JMP_THIS(0x406060);
+		{ JMP_THIS(0x406060); }
 
 	void __fastcall sub_4060F0(int a1, int a2)
-		JMP_STD(0x4060F0);
+		{ JMP_STD(0x4060F0); }
 
 	void sub_406130()
-		JMP_THIS(0x406130);
+		{ JMP_THIS(0x406130); }
 
 	void sub_406170()
-		JMP_THIS(0x406170);
+		{ JMP_THIS(0x406170); }
 
 	void __fastcall sub_4061D0(unsigned int arg)
-		JMP_STD(0x4061D0);
+		{ JMP_STD(0x4061D0); }
 
 	void __fastcall sub_406270(unsigned int arg)
-		JMP_THIS(0x406270);
+		{ JMP_THIS(0x406270); }
 
 	void sub_406310()
-		JMP_THIS(0x406310);
+		{ JMP_THIS(0x406310); }
 
 };
 

@@ -44,10 +44,13 @@ public:
 
 	//non-virtual
 public:
+	//Start irradiating an area. Be sure to set the BaseCell, Spread and RadLevel first!
 	void Activate()
-		JMP_THIS(0x65B580); //Start irradiating an area. Be sure to set the BaseCell, Spread and RadLevel first!
+		{ JMP_THIS(0x65B580); }
+
+	//Add this RadLevel to the current radiation.
 	void Add(int nRadLevel)
-		JMP_THIS(0x65B530); //Add this RadLevel to the current radiation.
+		{ JMP_THIS(0x65B530); }
 
 protected:
 	RadSiteClass() : AbstractClass(false) JMP_THIS(0x65B1E0);

@@ -41,7 +41,7 @@ public:
 	virtual int GetEnd() R0; //End tag from the AnimType
 
 	void SetOwnerObject(ObjectClass *pOwner)
-		JMP_THIS(0x424B50);
+		{ JMP_THIS(0x424B50); }
 
 	//Constructor
 	AnimClass(AnimTypeClass* pAnimType, CoordStruct* pLocation) : ObjectClass(false)
@@ -116,7 +116,7 @@ protected:
 	PROPERTY(BulletClass*, AttachedBullet);
 	PROPERTY(HouseClass*, Owner); //Used for remap (AltPalette).
 	PROPERTY(DWORD, unknown_184);
-	PROPERTY(double, Damage); // defaults to 1.0 , added to Type->Damage in some cases 
+	PROPERTY(double, Damage); // defaults to 1.0 , added to Type->Damage in some cases
 //	PROPERTY(DWORD, unknown_18C);
 	PROPERTY(eBlitterFlags, AnimFlags); // argument that's 0x600 most of the time
 	PROPERTY(byte, unknown_194);
@@ -128,7 +128,7 @@ protected:
 	PROPERTY(byte, unknown_19A);
 	PROPERTY(byte, CellOccupied); // dunno, that's the name my IDB gives
 	PROPERTY(byte, unknown_19C);
-	PROPERTY(bool, Invisible); // don't draw, but Update state anyway 
+	PROPERTY(bool, Invisible); // don't draw, but Update state anyway
 	PROPERTY(byte, unknown_19E);
 	PROPERTY(byte, unknown_19F);
 	PROPERTY_STRUCT(Unsorted::AudioController, Audio3);

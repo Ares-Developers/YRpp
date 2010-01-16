@@ -16,14 +16,14 @@ public:
 
 	//Constructor, Destructor
 	IonBlastClass(CoordStruct Crd)
-		JMP_THIS(0x53CB10);
+		{ JMP_THIS(0x53CB10); }
 
 	~IonBlastClass()		{/*???*/}
 
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	
+
 	PROPERTY_STRUCT(CoordStruct, Location);
 	PROPERTY(int, Lifetime);
 	PROPERTY(int, DisableIonBeam);	//0 = no, 1 = yes

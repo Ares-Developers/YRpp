@@ -27,7 +27,7 @@ public:
 
 	//Constructor
 	BuildingLightClass(ObjectClass *Owner) : ObjectClass(false)
-		JMP_THIS(0x435820);
+		{ JMP_THIS(0x435820); }
 
 protected:
 	BuildingLightClass() : ObjectClass(false) { }

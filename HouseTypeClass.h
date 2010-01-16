@@ -35,7 +35,7 @@ public:
 
 	//Constructor
 	HouseTypeClass(const char* pID) : AbstractTypeClass(false)
-		JMP_THIS(0x5113F0);
+		{ JMP_THIS(0x5113F0); }
 
 protected:
 	HouseTypeClass() : AbstractTypeClass(false) { }

@@ -38,7 +38,7 @@ public:
 
 	//Constructor
 	SmudgeTypeClass(const char* pID) : ObjectTypeClass(false)
-		JMP_THIS(0x6B5260);
+		{ JMP_THIS(0x6B5260); }
 
 protected:
 	SmudgeTypeClass() : ObjectTypeClass(false) { }

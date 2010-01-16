@@ -117,7 +117,7 @@ public:
 
 	//Constructor
 	TechnoTypeClass(const char* id, eSpeedType speedtype) : ObjectTypeClass(false)
-		JMP_THIS(0x710AF0);
+		{ JMP_THIS(0x710AF0); }
 
 protected:
 	//default contructor, only used by polymorphism

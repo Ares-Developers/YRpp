@@ -41,16 +41,16 @@ public:
 
 	//Constructor
 	BulletTypeClass(const char* pID) : ObjectTypeClass(false)
-		JMP_THIS(0x46BBC0);
+		{ JMP_THIS(0x46BBC0); }
 
 	BulletClass* __fastcall CreateBullet(
 		CellClass* Target,
 		TechnoClass* Owner,
-		int Damage, 
+		int Damage,
 		WarheadTypeClass *WH,
 		int Speed,
 		bool Bright)
-		JMP_STD(0x46B050);
+		{ JMP_STD(0x46B050); }
 
 protected:
 	BulletTypeClass() : ObjectTypeClass(false) {};

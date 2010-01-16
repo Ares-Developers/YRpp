@@ -57,7 +57,7 @@ public:
 
 	//Constructor
 	OverlayClass(OverlayTypeClass* pType) : ObjectClass(false)
-		JMP_THIS(0x5FC380);
+		{ JMP_THIS(0x5FC380); }
 
 protected:
 	OverlayClass() : ObjectClass(false) { }

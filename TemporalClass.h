@@ -32,27 +32,27 @@ public:
 
 	//Constructor
 	TemporalClass(TechnoClass* pOwnerUnit) : AbstractClass(false)
-		JMP_THIS(0x71A4E0);
+		{ JMP_THIS(0x71A4E0); }
 
 protected:
 	TemporalClass() : AbstractClass(false) { }
 
 	//non-virtual
 	void Fire(TechnoClass* pTarget)
-		JMP_THIS(0x71AF20);
+		{ JMP_THIS(0x71AF20); }
 	bool CanWarpTarget(TechnoClass* pTarget)
-		JMP_THIS(0x71AE50);
+		{ JMP_THIS(0x71AE50); }
 
 	// hardcoded to accumulate only up to 50 helpers
 	int GetWarpPerStep( int nHelperCount )
-		JMP_THIS(0x71AB10);
+		{ JMP_THIS(0x71AB10); }
 
 	void LetGo()
-		JMP_THIS(0x71ABC0);
+		{ JMP_THIS(0x71ABC0); }
 	void JustLetGo()
-		JMP_THIS(0x71AD40);
+		{ JMP_THIS(0x71AD40); }
 	void Detach()
-		JMP_THIS(0x71ADE0);
+		{ JMP_THIS(0x71ADE0); }
 
 	//===========================================================================
 	//===== Properties ==========================================================

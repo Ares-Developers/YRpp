@@ -14,7 +14,7 @@ public:
 		{ THISCALL(0x5FF2D0); }
 
 	void Draw()
-		{	JMP_THIS(0x5FF850); }
+		{ JMP_THIS(0x5FF850); }
 
 	//Constructor
 	SpotlightClass(TintStruct ColorTint, int size)

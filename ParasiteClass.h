@@ -29,25 +29,25 @@ public:
 
 	//Constructor
 	ParasiteClass(FootClass* pOwner = NULL) : AbstractClass(false)
-		JMP_THIS(0x6292B0);
+		{ JMP_THIS(0x6292B0); }
 
 	//non-virtual
 	void UpdateSquid()
-		JMP_THIS(0x6297F0);
+		{ JMP_THIS(0x6297F0); }
 
 	void ExitUnit()
-		JMP_THIS(0x62A4A0);
+		{ JMP_THIS(0x62A4A0); }
 
 	bool CanInfect(FootClass *pTarget)
-		JMP_THIS(0x62A8E0);
+		{ JMP_THIS(0x62A8E0); }
 
 	void TryInfect(FootClass *pTarget)
-		JMP_THIS(0x62A980);
+		{ JMP_THIS(0x62A980); }
 
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	
+
 	PROPERTY(FootClass*,         Owner);
 	PROPERTY(FootClass*,         Victim);
 	PROPERTY_STRUCT(TimerStruct, SuppressionTimer);

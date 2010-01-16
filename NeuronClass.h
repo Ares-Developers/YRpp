@@ -27,7 +27,7 @@ public:
 
 	//Constructor
 	NeuronClass() : AbstractClass(false)
-		JMP_THIS(0x43A350);
+		{ JMP_THIS(0x43A350); }
 
 protected:
 	NeuronClass(bool X) : AbstractClass(X) { }

@@ -17,7 +17,7 @@ public:
 	struct INISection { }; //nothing known about this
 
 	INIClass()
-		JMP_THIS(0x535AA0);
+		{ JMP_THIS(0x535AA0); }
 
 protected:
 	INIClass(bool) { }
@@ -26,46 +26,46 @@ public:
 	virtual ~INIClass() RX;
 
 	void Reset()
-		JMP_THIS(0x526B00);
+		{ JMP_THIS(0x526B00); }
 
 	void Clear(const char *s1, char *s2)
-		JMP_THIS(0x5257C0);
+		{ JMP_THIS(0x5257C0); }
 
 	INISection* GetSection(const char* pSection)
-		JMP_THIS(0x526810);
+		{ JMP_THIS(0x526810); }
 
 	int GetKeyCount(const char* pSection) //Get the amount of keys in a section.
-		JMP_THIS(0x526960);
+		{ JMP_THIS(0x526960); }
 	const char* GetKeyName(const char* pSection, int nKeyIndex) //Get the name of a key number in a section.
-		JMP_THIS(0x526CC0);
+		{ JMP_THIS(0x526CC0); }
 
 	//Reads an ANSI string. Returns the string's length.
 	int ReadString(const char* pSection, const char* pKey, const char* pDefault, char* pBuffer, size_t szBufferSize)
-		JMP_THIS(0x528A10);
+		{ JMP_THIS(0x528A10); }
 	//Writes an ANSI string.
 	bool WriteString(const char* pSection, const char* pKey, const char* pString)
-		JMP_THIS(0x528660);
+		{ JMP_THIS(0x528660); }
 
 	//Reads an escaped Unicode string. Returns the string's length.
 	int ReadUnicodeString(const char* pSection, const char* pKey, const wchar_t* pDefault, wchar_t* pBuffer, size_t szBufferSize)
-		JMP_THIS(0x528F00);
+		{ JMP_THIS(0x528F00); }
 	//Writes an escaped Unicode string.
 	bool WriteUnicodeString(const char* pSection, const char* pKey, const wchar_t* pString)
-		JMP_THIS(0x528E00);
+		{ JMP_THIS(0x528E00); }
 
 	//Reads an boolean value.
 	bool ReadBool(const char* pSection, const char* pKey, bool bDefault)
-		JMP_THIS(0x5295F0);
+		{ JMP_THIS(0x5295F0); }
 	//Writes an boolean value.
 	bool WriteBool(const char* pSection, const char* pKey, bool bValue)
-		JMP_THIS(0x529560);
+		{ JMP_THIS(0x529560); }
 
 	//Reads an integer value.
 	int ReadInteger(const char* pSection, const char* pKey, int nDefault)
-		JMP_THIS(0x5276D0);
+		{ JMP_THIS(0x5276D0); }
 	//Writes an integer value.
 	bool WriteInteger(const char* pSection, const char* pKey, int nValue, bool bHex)
-		JMP_THIS(0x5276D0);
+		{ JMP_THIS(0x5276D0); }
 
 	//Reads a decimal value.
 	double ReadDouble(const char* pSection, const char* pKey, double dDefault)
@@ -82,28 +82,28 @@ public:
 
 	//Reads two integer values.
 	int* Read2Integers(int* pBuffer, const char* pSection, const char* pKey, int* pDefault)
-		JMP_THIS(0x529880);
+		{ JMP_THIS(0x529880); }
 	//Writes two integer values.
 	bool Write2Integers(const char* pSection, const char* pKey, int* pValues)
-		JMP_THIS(0x5297E0);
+		{ JMP_THIS(0x5297E0); }
 
 	//Reads three integer values.
 	int* Read3Integers(int* pBuffer, const char* pSection, const char* pKey, int* pDefault)
-		JMP_THIS(0x529CA0);
+		{ JMP_THIS(0x529CA0); }
 
 	//Reads three byte values.
 	byte* Read3Bytes(byte* pBuffer, const char* pSection, const char* pKey, byte* pDefault)
-		JMP_THIS(0x474B50);
+		{ JMP_THIS(0x474B50); }
 	//Writes three byte values.
 	bool Write3Bytes(const char* pSection, const char* pKey, byte* pValues)
-		JMP_THIS(0x474C20);
+		{ JMP_THIS(0x474C20); }
 
 
 	// C&C helpers
 
 #define INI_READ(item, addr) \
 	int Read ## item(const char* pSection, const char* pKey, int pDefault) \
-		JMP_THIS(addr);
+		{ JMP_THIS(addr); }
 
 	// Pip= to idx ( pip strings with index < pDefault are not even scanned! )
 	INI_READ(Pip, 0x4748A0);
@@ -177,22 +177,22 @@ public:
 
 	// Color=%d,%d,%d to idx , used to parse [Colors]
 	ColorStruct* ReadColor(ColorStruct* pBuffer, const char* pSection, const char* pKey, ColorStruct* pDefault)
-		JMP_THIS(0x474C70);
+		{ JMP_THIS(0x474C70); }
 
 	// 18 bytes
 	byte* ReadAbilities(byte* pBuffer, const char* pSection, const char* pKey, byte* pDefault)
-		JMP_THIS(0x477640);
+		{ JMP_THIS(0x477640); }
 
 
 	TechnoTypeClass* GetTechnoType(const char* pSection, const char* pKey)
-		JMP_THIS(0x476EB0);
+		{ JMP_THIS(0x476EB0); }
 
 
 	// fsldargh who the fuck decided to pass structures by value here
-	static TypeList<int>* GetPrerequisites(TypeList<int>* pBuffer, INIClass* pINI, 
+	static TypeList<int>* GetPrerequisites(TypeList<int>* pBuffer, INIClass* pINI,
 		const char* pSection, const char* pKey, TypeList<int> Defaults)
 
-		{ 
+		{
 			/*
 			int eflags; __asm{ pushf } __asm{ pop eflags }
 			SUB_ESP(0x1C); __asm{ mov edi, esp } __asm{ lea esi, Defaults }
@@ -248,7 +248,7 @@ public:
 	static CCINIClass *INI_RA2MD; //0x8870C0
 
 	//non-static
-	CCINIClass() : INIClass(false) 
+	CCINIClass() : INIClass(false)
 	{
 		THISCALL(0x535AA0);
 		unknown_bool_40 = false;
@@ -259,14 +259,14 @@ public:
 
 	//Parses an INI file from a CCFile
 	CCINIClass* ReadCCFile(FileClass* pCCFile, byte bUnk = 0, int iUnk = 0)
-		JMP_THIS(0x4741F0);
+		{ JMP_THIS(0x4741F0); }
 
 	void WriteCCFile(FileClass *pCCFile, bool bUnk)
-		JMP_THIS(0x474430);
+		{ JMP_THIS(0x474430); }
 
 	//Copies the string table entry pointed to by the INI value into pBuffer.
 	int ReadStringtableEntry(const char* pSection, const char* pKey, wchar_t* pBuffer, size_t szBufferSize)
-		JMP_THIS(0x0529160);
+		{ JMP_THIS(0x0529160); }
 };
 
 #endif

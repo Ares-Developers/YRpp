@@ -19,18 +19,18 @@ class LocomotionClass : public IPersistStream, public ILocomotion
 public:
 	//IUnknown
 	virtual HRESULT __stdcall QueryInterface(REFIID iid, void** ppvObject)
-		JMP_STD(0x55A9B0);
+		{ JMP_STD(0x55A9B0); }
 
 	virtual ULONG __stdcall AddRef()
-		JMP_STD(0x55A950);
+		{ JMP_STD(0x55A950); }
 
 	virtual ULONG __stdcall Release()
-		JMP_STD(0x55A970);
+		{ JMP_STD(0x55A970); }
 
 	//ILocomotion
 
 	virtual HRESULT __stdcall Link_To_Object(void* pointer)
-		JMP_STD(0x55A710);
+		{ JMP_STD(0x55A710); }
 
 	virtual bool __stdcall Is_Moving()
 		{ return false; }
@@ -58,20 +58,20 @@ public:
 		{ return true; }
 
 	virtual Matrix3DStruct* __stdcall Draw_Matrix(Matrix3DStruct* pMatrix, int* key)
-		JMP_STD(0x55A730);
+		{ JMP_STD(0x55A730); }
 
 	virtual Matrix3DStruct* __stdcall Shadow_Matrix(Matrix3DStruct* pMatrix, int* key)
-		JMP_STD(0x55A7D0);
+		{ JMP_STD(0x55A7D0); }
 
 	virtual Point2D* __stdcall Draw_Point(Point2D* pPoint)
-		{ 
+		{
 			pPoint->X = 0;
 			pPoint->Y = 0;
 			return pPoint;
 		}
 
 	virtual Point2D* __stdcall Shadow_Point(Point2D* pPoint)
-		JMP_STD(0x55A8C0);
+		{ JMP_STD(0x55A8C0); }
 
 	virtual eVisualType __stdcall Visual_Character(VARIANT_BOOL flag)
 		{ return vt_Normal; }
@@ -99,7 +99,7 @@ public:
 
 	virtual bool __stdcall Is_Powered()
 		{ return Powered; }
-	
+
 	virtual bool __stdcall Is_Ion_Sensitive()
 		{ return false; }
 
@@ -125,7 +125,7 @@ public:
 	virtual int __stdcall Drawing_Code()
 		{ return 0; }
 
-	virtual FireError __stdcall Can_Fire() 
+	virtual FireError __stdcall Can_Fire()
 		{ return FireError::OK; }
 
 	virtual int __stdcall Get_Status()
@@ -166,14 +166,14 @@ public:
 		{ return Dirty ? S_OK: S_FALSE; }
 
 	virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty)
-		JMP_STD(0x55AA60);
-	
+		{ JMP_STD(0x55AA60); }
+
 	virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize)
-		JMP_STD(0x55AB40);
+		{ JMP_STD(0x55AB40); }
 
 	//Destructor
 	virtual ~LocomotionClass()
-		JMP_THIS(0x55A6F0);
+		{ JMP_THIS(0x55A6F0); }
 
 	//LocomotionClass
 	virtual	int Size() = 0;
@@ -197,7 +197,7 @@ public:
 
 	//Constructor
 	LocomotionClass()
-		JMP_THIS(0x55A6C0);
+		{ JMP_THIS(0x55A6C0); }
 
 protected:
 	LocomotionClass(bool) { }	//Hack to make child functions not call the base class constructor

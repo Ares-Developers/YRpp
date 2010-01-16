@@ -23,7 +23,7 @@ class FileSystem
 {
 public:
 	static void* __fastcall LoadFile(const char* pFileName, bool bLoadAsSHP)
-		JMP_STD(0x5B40B0);
+		{ JMP_STD(0x5B40B0); }
 
 	static SHPStruct *&PIPS_SHP;
 

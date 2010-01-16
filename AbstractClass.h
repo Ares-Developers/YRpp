@@ -46,8 +46,9 @@ public:
 		AbsTypeNameAssignment* ass;
 		for(ass = (AbsTypeNameAssignment*)0x816EE0; ass < (AbsTypeNameAssignment*)0x817130; ass++)
 		{
-			if(ass->AbsType == abs)
+			if(ass->AbsType == abs) {
 				return ass->Name;
+			}
 		}
 
 		return NULL;
@@ -75,7 +76,7 @@ public:
 
 	//INoticeSink
 	virtual bool __stdcall INoticeSink_Unknown(DWORD dwUnknown) R0;
-	
+
 	//INoticeSource
 	virtual void __stdcall INoticeSource_Unknown() RX;
 
@@ -101,11 +102,11 @@ public:
 
 	//Constructor
 	AbstractClass()
-		JMP_THIS(0x410170);
+		{ JMP_THIS(0x410170); }
 
 	//non-virtual
 	void AnnounceExpiredPointer()
-		JMP_THIS(0x7258D0);
+		{ JMP_THIS(0x7258D0); }
 
 protected:
 	AbstractClass(bool) { }	//trick to disable further base class construction!

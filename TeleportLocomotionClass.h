@@ -50,7 +50,7 @@ public:
 
 	//Constructor
 	TeleportLocomotionClass() : LocomotionClass(false)
-		JMP_THIS(0x718000);
+		{ JMP_THIS(0x718000); }
 
 protected:
 	TeleportLocomotionClass(bool) : LocomotionClass(false) { }

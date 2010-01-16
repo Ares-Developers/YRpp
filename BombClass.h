@@ -19,7 +19,7 @@ public:
 	//IPersistStream
 	virtual HRESULT __stdcall Load(IStream* pStm) R0;
 	virtual HRESULT __stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
-	
+
 	//Destructor
 	virtual ~BombClass() RX;
 
@@ -28,19 +28,19 @@ public:
 	virtual int	Size() R0;
 
 	void Detonate()
-		JMP_THIS(0x438720);
+		{ JMP_THIS(0x438720); }
 
 	void Disarm()
-		JMP_THIS(0x4389B0);
+		{ JMP_THIS(0x4389B0); }
 
 	void IsDeathBomb()
-		JMP_THIS(0x4389F0);
+		{ JMP_THIS(0x4389F0); }
 
 	void GetCurrentFlickerFrame() // which frame of the ticking bomb to draw
-		JMP_THIS(0x438A00);
+		{ JMP_THIS(0x438A00); }
 
 	void TimeToExplode()
-		JMP_THIS(0x438A70);
+		{ JMP_THIS(0x438A70); }
 
 
 protected:

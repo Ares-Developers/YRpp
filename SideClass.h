@@ -31,7 +31,7 @@ public:
 
 	//Constructor
 	SideClass(const char* pID) : AbstractTypeClass(false)
-		JMP_THIS(0x6A4550);
+		{ JMP_THIS(0x6A4550); }
 
 protected:
 	SideClass() : AbstractTypeClass(false) { }

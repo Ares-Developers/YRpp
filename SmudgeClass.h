@@ -32,7 +32,7 @@ public:
 
 	//Constructor
 	SmudgeClass(SmudgeTypeClass* pType) : ObjectClass(false)
-		JMP_THIS(0x6B4A50);
+		{ JMP_THIS(0x6B4A50); }
 
 protected:
 	SmudgeClass() : ObjectClass(false) { }

@@ -12,12 +12,12 @@ public:
 	virtual bool SetPlayerTeam(int idxPlayer) R0;
 
 	void AddToList(HWND hWnd)
-		JMP_THIS(0x5D8D10);
+		{ JMP_THIS(0x5D8D10); }
 
 protected:
 	//Constructor
 	MPTeam(wchar_t **title, int idx)
-		JMP_THIS(0x5D8C50);
+		{ JMP_THIS(0x5D8C50); }
 
 	MPTeam() {}
 
@@ -51,7 +51,7 @@ public:
 protected:
 	//Constructor
 	MPSiegeDefenderTeam()
-		JMP_THIS(0x5CAE10);
+		{ JMP_THIS(0x5CAE10); }
 };
 
 
@@ -63,7 +63,7 @@ public:
 
 	//Constructor
 	MPSiegeAttackerTeam()
-		JMP_THIS(0x5CAEB0);
+		{ JMP_THIS(0x5CAEB0); }
 };
 
 #endif

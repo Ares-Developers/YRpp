@@ -13,13 +13,13 @@ public:
 	//Constructor, Destructor
 	RadBeam(int mode) // anything else = rad, 1 = chrono, 2 = magnetron??
 	                  //(2 is invoked by RadEruption, but it uses MagnaBeamColor from rules... )
-		JMP_THIS(0x6593F0); 
+		{ JMP_THIS(0x6593F0); }
 
 	~RadBeam()
 		{ }
 
 	static RadBeam* Allocate(int mode)
-		JMP_STD(0x659110);
+		{ JMP_STD(0x659110); }
 
 	void SetColor(ColorStruct *color)
 		{ this->Color = *color; }
@@ -33,7 +33,7 @@ public:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	
+
 	PROPERTY(DWORD, unknown_0);
 	PROPERTY(TechnoClass*, Owner);
 	PROPERTY(byte, unknown_8);

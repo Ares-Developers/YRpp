@@ -31,7 +31,7 @@ public:
 
 	//Constructor
 	EMPulseClass(CellStruct dwCrd, int nSpread, int nDuration, DWORD dwUnk) : AbstractClass(false)
-		JMP_THIS(0x4C52B0);
+		{ JMP_THIS(0x4C52B0); }
 
 protected:
 	EMPulseClass() : AbstractClass(false){}

@@ -10,16 +10,16 @@ class ObjectTypeClass;
 class LayerClass : public DynamicVectorClass<ObjectClass*>
 {
 	virtual bool AddObject(ObjectClass* pObject, bool bUnknown)
-		JMP_THIS(0x5519B0);
+		{ JMP_THIS(0x5519B0); }
 
 	virtual void Clear_()
 		{ Clear(); }
 
 	void Load(IStream* pStm)
-		JMP_THIS(0x551B90);
+		{ JMP_THIS(0x551B90); }
 
 	void Save(IStream* pStm)
-		JMP_THIS(0x551B20);
+		{ JMP_THIS(0x551B20); }
 };
 
 #define		NUM_LAYERS		5

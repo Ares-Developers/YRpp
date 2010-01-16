@@ -329,16 +329,16 @@ public:
 	}
 
 	int GetItemCount(int nIndex)
-		JMP_THIS(0x49FAE0);
+		{ JMP_THIS(0x49FAE0); }
 
 	CounterClass() : VectorClass<int>()
 		{ this->Count = 0; }
 
 	int Increment(int nIndex)
-		JMP_THIS(0x49FA00);
+		{ JMP_THIS(0x49FA00); }
 
 	int Decrement(int nIndex)
-		JMP_THIS(0x49FA70);
+		{ JMP_THIS(0x49FA70); }
 
 	PROPERTY(int, Count);	//not sure what this is, but it's different from DVC's count
 };

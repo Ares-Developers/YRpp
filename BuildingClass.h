@@ -56,9 +56,9 @@ public:
 
 	// power up
 	void GoOnline()
-		JMP_THIS(0x452260);
+		{ JMP_THIS(0x452260); }
 	void GoOffline()
-		JMP_THIS(0x452360);
+		{ JMP_THIS(0x452360); }
 
 	// Firewall aka FirestormWall
 	// depending on what facings of this building
@@ -66,34 +66,34 @@ public:
 	// returns the index of the image file
 	// to draw.
 	DWORD GetFWFlags()
-		JMP_THIS(0x455B90);
+		{ JMP_THIS(0x455B90); }
 
 	void CreateEndPost(bool arg)
-		JMP_THIS(0x4533A0);
+		{ JMP_THIS(0x4533A0); }
 
 	// kick out content
 	void UnloadBunker()
-		JMP_THIS(0x4593A0);
+		{ JMP_THIS(0x4593A0); }
 
 	// content is dead - chronosphered away or died inside
 	void ClearBunker()
-		JMP_THIS(0x459470);
+		{ JMP_THIS(0x459470); }
 
 	// kick out content, remove anims, etc... don't ask me what's different from kick out
 	void EmptyBunker()
-		JMP_THIS(0x4595C0);
+		{ JMP_THIS(0x4595C0); }
 
 	// called after destruction - CrateBeneath, resetting foundation'ed cells
 	void AfterDestruction()
-		JMP_THIS(0x441F60);
+		{ JMP_THIS(0x441F60); }
 
 	// destroys the specific animation (active, turret, special, etc)
 	void DestroyNthAnim(BuildingAnimSlot Slot)
-		JMP_THIS(0x451E40);
+		{ JMP_THIS(0x451E40); }
 
 	//Constructor
 	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner) : TechnoClass(false)
-		JMP_THIS(0x43B740);
+		{ JMP_THIS(0x43B740); }
 
 protected:
 	BuildingClass() : TechnoClass(false) { }

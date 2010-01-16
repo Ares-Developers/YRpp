@@ -43,7 +43,7 @@ public:
 
 	//Constructor
 	OverlayTypeClass(const char* pID) : ObjectTypeClass(false)
-		JMP_THIS(0x5FE250);
+		{ JMP_THIS(0x5FE250); }
 
 protected:
 	OverlayTypeClass() : ObjectTypeClass(false) { }

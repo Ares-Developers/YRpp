@@ -49,6 +49,9 @@ public:
 
 	FileClass() { };
 
+	void * ReadWholeFile()
+		{ JMP_THIS(0x4A3890); }
+
 protected:
 	FileClass(bool) { }
 
@@ -84,7 +87,7 @@ public:
 
 	//Constructor
 	RawFileClass(const char* pFileName) : FileClass(false)
-		JMP_THIS(0x65CA80);
+		{ JMP_THIS(0x65CA80); }
 
 protected:
 	RawFileClass(bool X) : FileClass(X) { }
@@ -112,7 +115,7 @@ public:
 
 	//Constructor
 	BufferIOFileClass() : RawFileClass(false)
-		JMP_THIS(0x431B20);
+		{ JMP_THIS(0x431B20); }
 
 protected:
 	BufferIOFileClass(bool X) : RawFileClass(X) { }
@@ -148,7 +151,7 @@ public:
 
 	//Constructor
 	CDFileClass() : BufferIOFileClass(false)
-		JMP_THIS(0x47AA30);
+		{ JMP_THIS(0x47AA30); }
 
 protected:
 	CDFileClass(bool X) : BufferIOFileClass(X) { }
@@ -170,7 +173,7 @@ public:
 	//Constructor
 	CCFileClass() : CDFileClass(false) { }
 	CCFileClass(const char* pFileName) : CDFileClass(false)
-		JMP_THIS(0x4739F0);
+		{ JMP_THIS(0x4739F0); }
 
 	//Properties
 	PROPERTY_STRUCT(Allocator,		FileAllocator);

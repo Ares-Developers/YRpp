@@ -94,7 +94,7 @@ class BaseClass
 {
 public:
 	BaseClass()
-		JMP_THIS(0x42E6F0);
+		{ JMP_THIS(0x42E6F0); }
 
 	virtual ~BaseClass() { /*???*/ }; // gcc demands a virtual since virtual funcs exist
 
@@ -171,142 +171,142 @@ public:
 
 	//Constructor
 	HouseClass(HouseTypeClass* pCountry) : AbstractClass(false)
-  		JMP_THIS(0x4F54A0);
+  		{ JMP_THIS(0x4F54A0); }
 
 protected:
 	HouseClass() : AbstractClass(false) { }
 
 public:
 	bool IsAlliedWith(int iHouse)
-		JMP_THIS(0x4F9A10);
+		{ JMP_THIS(0x4F9A10); }
 	bool IsAlliedWith(HouseClass* pOther)
-		JMP_THIS(0x4F9A50);
+		{ JMP_THIS(0x4F9A50); }
 	bool IsAlliedWith(TechnoClass* pOther)
-		JMP_THIS(0x4F9A90);
+		{ JMP_THIS(0x4F9A90); }
 
 	void MakeAlly(int iHouse, bool bAnnounce)
-		JMP_THIS(0x4F9B50);
+		{ JMP_THIS(0x4F9B50); }
 	void MakeAlly(HouseClass* pWho, bool bAnnounce)
-		JMP_THIS(0x4F9B70);
+		{ JMP_THIS(0x4F9B70); }
 	void MakeEnemy(HouseClass* pWho, bool bAnnounce)
-		JMP_THIS(0x4F9F90);
+		{ JMP_THIS(0x4F9F90); }
 
 	void AllyAIHouses()
-		JMP_THIS(0x501640);
+		{ JMP_THIS(0x501640); }
 
 	// no explosions, just poooof
 	void SDDTORAllAndTriggers()
-		JMP_THIS(0x4FB920);
+		{ JMP_THIS(0x4FB920); }
 
 	// every matching object takes damage and explodes
 	void DestroyAll()
-		JMP_THIS(0x4FC6D0);
+		{ JMP_THIS(0x4FC6D0); }
 	void DestroyAllBuildings()
-		JMP_THIS(0x4FC790);
+		{ JMP_THIS(0x4FC790); }
 	void DestroyAllNonBuildingsNonNaval()
-		JMP_THIS(0x4FC820);
+		{ JMP_THIS(0x4FC820); }
 	void DestroyAllNonBuildingsNaval()
-		JMP_THIS(0x4FC8D0);
+		{ JMP_THIS(0x4FC8D0); }
 
 	void RespawnStartingBuildings()
-		JMP_THIS(0x50D320);
+		{ JMP_THIS(0x50D320); }
 	void RespawnStartingForces()
-		JMP_THIS(0x50D440);
+		{ JMP_THIS(0x50D440); }
 
 	BYTE Win(bool bSavourSomething)
-		JMP_THIS(0x4FC9E0);
+		{ JMP_THIS(0x4FC9E0); }
 	BYTE Lose(bool bSavourSomething)
-		JMP_THIS(0x4FCBD0);
+		{ JMP_THIS(0x4FCBD0); }
 
 	bool CanAlly(HouseClass* pOther)
-		JMP_THIS(0x501540);
+		{ JMP_THIS(0x501540); }
 
 	bool CanOverpower(TechnoClass *pTarget)
-		JMP_THIS(0x4F9AF0);
+		{ JMP_THIS(0x4F9AF0); }
 
 	// warning: logic pretty much broken
 	void LostPoweredCenter(TechnoTypeClass *pTechnoType)
-		JMP_THIS(0x50E0E0);
+		{ JMP_THIS(0x50E0E0); }
 	void GainedPoweredCenter(TechnoTypeClass *pTechnoType)
-		JMP_THIS(0x50E1B0);
+		{ JMP_THIS(0x50E1B0); }
 
 	bool DoInfantrySelfHeal()
 		{ return this->InfantrySelfHeal > 0; }
 	int GetInfSelfHealStep()
-		JMP_THIS(0x50D9E0);
+		{ JMP_THIS(0x50D9E0); }
 
 	bool DoUnitsSelfHeal()
 		{ return this->UnitsSelfHeal > 0; }
 	int GetUnitSelfHealStep()
-		JMP_THIS(0x50D9F0);
+		{ JMP_THIS(0x50D9F0); }
 
 	void CreatePowerOutage(int duration)
-		JMP_THIS(0x50BC90);
+		{ JMP_THIS(0x50BC90); }
 	void CreateRadarOutage(int duration)
-		JMP_THIS(0x50BCD0);
+		{ JMP_THIS(0x50BCD0); }
 
 	// won't work if has spysat
 	void ReshroudMap()
-		JMP_THIS(0x50BD10);
+		{ JMP_THIS(0x50BD10); }
 
 	void Cheer()
-		JMP_THIS(0x50C8C0);
+		{ JMP_THIS(0x50C8C0); }
 
 	void BuildingUnderAttack(BuildingClass *pBld)
-		JMP_THIS(0x4F93E0);
+		{ JMP_THIS(0x4F93E0); }
 
 	void TakeMoney(int amount)
-		JMP_THIS(0x4F9790);
+		{ JMP_THIS(0x4F9790); }
 	void GiveMoney(int amount)
-		JMP_THIS(0x4F9950);
+		{ JMP_THIS(0x4F9950); }
 
 	// no LostThreatNode() , this gets called also when node building dies! BUG
 	void AcquiredThreatNode()
-		JMP_THIS(0x509130);
+		{ JMP_THIS(0x509130); }
 
 	// these are for mostly for map actions - HouseClass* foo = IsMP() ? Find_YesMP() : Find_NoMP();
 	static bool Index_IsMP(int idx)
-		JMP_STD(0x510F60);
+		{ JMP_STD(0x510F60); }
 	static HouseClass * FindByIndex_NoMP(int idxHouse)
-		JMP_STD(0x502D30);
+		{ JMP_STD(0x502D30); }
 	static HouseClass * FindByIndex_YesMP(int idxHouse)
-		JMP_STD(0x510ED0);
+		{ JMP_STD(0x510ED0); }
 
 	CellStruct * PickIonCannonTarget(CellStruct &dest)
-		JMP_THIS(0x50CBF0);
+		{ JMP_THIS(0x50CBF0); }
 
 	WaypointClass * GetPlanningWaypointAt(CellStruct *coords)
-		JMP_THIS(0x5023B0);
+		{ JMP_THIS(0x5023B0); }
 	bool GetPlanningWaypointProperties(WaypointClass *wpt, int &idxPath, BYTE &idxWP)
-		JMP_THIS(0x502460);
+		{ JMP_THIS(0x502460); }
 
 	// calls WaypointPathClass::WaypointPathClass() if needed
 	void EnsurePlanningPathExists(int idx)
-		JMP_THIS(0x504740);
+		{ JMP_THIS(0x504740); }
 
 	// finds a buildingtype from the given array that this house can currently build
 	BuildingTypeClass* FirstBuildableFromArray(DynamicVectorClass<BuildingTypeClass*>* pArray)
-		JMP_THIS(0x5051E0);
+		{ JMP_THIS(0x5051E0); }
 
 	bool ControlledByHuman()
-		JMP_THIS(0x50B730);
+		{ JMP_THIS(0x50B730); }
 
 	bool ControlledByPlayer()
-		JMP_THIS(0x50B6F0);
+		{ JMP_THIS(0x50B6F0); }
 
 	// Target ought to be Object, I imagine, but cell doesn't work then
 	void __fastcall SendSpyPlanes(int AircraftTypeIdx, int AircraftAmount, eMission SetMission, AbstractClass *Target, ObjectClass *Destination)
-		JMP_STD(0x65EAB0);
+		{ JMP_STD(0x65EAB0); }
 
 	// registering in prereq counters (all technoes get logged, but only buildings get checked on validation... wtf)
 	void RegisterGain(TechnoClass *pTechno, DWORD dwUnk)
-		JMP_THIS(0x502A80);
+		{ JMP_THIS(0x502A80); }
 
 	void RegisterLoss(TechnoClass *pTechno, DWORD dwUnk)
-		JMP_THIS(0x5025F0);
+		{ JMP_THIS(0x5025F0); }
 
 	BuildingClass* FindBuildingOfType(int idx, int distance)
-		JMP_THIS(0x4FD060);
+		{ JMP_THIS(0x4FD060); }
 
 	AnimClass * __fastcall PsiWarn(CellClass *pTarget, BulletClass *Bullet, char *AnimName)
 		JMP_THIS(0x43B5E0);
@@ -433,7 +433,7 @@ public:
 	}
 
 	signed int CanBuild(TechnoTypeClass *item, bool bypassExtras, bool includeQueued)
-		JMP_THIS(0x4F7870);
+		{ JMP_THIS(0x4F7870); }
 
 	//===========================================================================
 	//===== Properties ==========================================================

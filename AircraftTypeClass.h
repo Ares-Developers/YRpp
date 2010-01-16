@@ -29,7 +29,7 @@ public:
 
 	//Constructor
 	AircraftTypeClass(const char* pID) : TechnoTypeClass(false)
-		JMP_THIS(0x41C8B0);
+		{ JMP_THIS(0x41C8B0); }
 
 protected:
 	//default contructor, only used by polymorphism

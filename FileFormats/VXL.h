@@ -18,22 +18,22 @@ public:
 	byte * BodyData;
 
 	VoxLib(CCFileClass *Source, bool UseContainedPalette = 0)
-		JMP_THIS(0x755CD0);
+		{ JMP_THIS(0x755CD0); }
 
 	~VoxLib()
-		JMP_THIS(0x755D10);
+		{ JMP_THIS(0x755D10); }
 
 	// returns 0 on success, non zero on failure
 	signed int ReadFile(CCFileClass *ccFile, bool UseContainedPalette)
-		JMP_THIS(0x755DB0);
+		{ JMP_THIS(0x755DB0); }
 
 	// return &this->HeaderData[headerIndex];
 	VoxelSectionHeader * leaSectionHeader(int headerIndex)
-		JMP_THIS(0x7564A0);
+		{ JMP_THIS(0x7564A0); }
 
 	// return &this->TailerData[a3 + this->HeaderData[headerIndex].limb_number];
 	VoxelSectionTailer * leaSectionTailer(int headerIndex, int a3)
-		JMP_THIS(0x7564B0);
+		{ JMP_THIS(0x7564B0); }
 };
 
 struct TransformVector {
@@ -78,7 +78,7 @@ public:
 	int span_end_off;
 	int span_data_off;
 	float DetFloat;
-	TransformMatrix TransformMatrix;
+	TransformMatrix TransformationMatrix;
 	Vector3D<float> MinBounds;
 	Vector3D<float> MaxBounds;
 	char size_X;
@@ -93,7 +93,7 @@ struct VoxelSectionTailer {
 	int span_end_off;
 	int span_data_off;
 	float HVAMultiplier;
-	TransformMatrix TransformMatrix;
+	TransformMatrix TransformationMatrix;
 	Vector3D<float> MinBounds;
 	int MaxBounds;
 	int field_50;

@@ -40,7 +40,7 @@ public:
 
 	//Constructor
 	TaskForceClass(const char* pID) : AbstractTypeClass(false)
-		JMP_THIS(0x6E7E80);
+		{ JMP_THIS(0x6E7E80); }
 
 protected:
 	TaskForceClass() : AbstractTypeClass(false) { }

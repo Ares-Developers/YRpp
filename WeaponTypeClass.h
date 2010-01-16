@@ -38,11 +38,11 @@ public:
 	//AbstractTypeClass
 
 	void CalculateSpeed()
-		JMP_THIS(0x7729F0);
+		{ JMP_THIS(0x7729F0); }
 
 	//Constructor
 	WeaponTypeClass(const char* pID = NULL) : AbstractTypeClass(false)
-		JMP_THIS(0x771C70);
+		{ JMP_THIS(0x771C70); }
 
 	//===========================================================================
 	//===== Properties ==========================================================

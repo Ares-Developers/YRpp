@@ -36,25 +36,25 @@ public:
 	// you are responsible for doing INI::ReadString and strtok'ing it before calling
 	// this func only calls strtok again, doesn't know anything about buffers
 	void LoadFromINI()
-		JMP_THIS(0x6DD5B0);
+		{ JMP_THIS(0x6DD5B0); }
 
 	// you allocate the buffer for this, and save it to ini yourself after this returns
 	// this func only sprintf's the stuff it needs into buffer
 	void PrepareSaveToINI(char *buffer)
-		JMP_THIS(0x6DD300);
+		{ JMP_THIS(0x6DD300); }
 
 	// fuck if I know what's the purpose of this, returns a bitfield of flags for trigger logic
 	static int GetFlags(int actionKind)
-		JMP_STD(0x6E3EE0);
+		{ JMP_STD(0x6E3EE0); }
 
 	// transforms actionKind to a number saying what to parse arguments as (team/tag/trigger id, waypoint, integer, etc)
 	static int GetMode(int actionKind)
-		JMP_STD(0x6E3B60);
+		{ JMP_STD(0x6E3B60); }
 
 	// main brain, returns whether succeeded (mostly, no consistency in results what so ever)
 	// trigger fires all actions regardless of result of this
 	bool Execute(HouseClass *House, ObjectClass *Object, TriggerClass *trigger, CellStruct *pos)
-		JMP_THIS(0x6DD8B0);
+		{ JMP_THIS(0x6DD8B0); }
 
 	// BIG LIST OF EXECUTE'S SLAVE FUNCTIONS - feel free to use
 
@@ -65,7 +65,7 @@ public:
 #ifndef ACTION_FUNC
 #define ACTION_FUNC(name, addr) \
 	bool name(HouseClass *TargetHouse, ObjectClass *SourceObject, TriggerTypeClass *TriggerType, CellStruct *pos) \
-		JMP_THIS(addr);
+		{ JMP_THIS(addr); }
 
 #endif
 
@@ -266,14 +266,15 @@ public:
 	// WHEEEEEW. End of slave functions.
 
 	HouseClass * FindHouseByIndex(TriggerClass *Trigger, int idx)
-		JMP_THIS(0x6E45E0);
+		{ JMP_THIS(0x6E45E0); }
 
 	// no duplication, please.. it's a waste of good coding
-	int GetIndexInArray() { return this->IndexInArray; }
+	int GetIndexInArray()
+		{ return this->IndexInArray; }
 
 	//Constructor
 	TActionClass() : AbstractClass(false)
-		JMP_THIS(0x71E6A0);
+		{ JMP_THIS(0x71E6A0); }
 
 	//===========================================================================
 	//===== Properties ==========================================================

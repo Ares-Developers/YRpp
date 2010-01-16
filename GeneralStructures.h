@@ -43,7 +43,12 @@ struct ColorStruct
 
 #ifndef PALETTE_STRUCT
 #define PALETTE_STRUCT
-typedef ColorStruct BytePalette[256];
+struct BytePalette {
+	ColorStruct Entries[256];
+	ColorStruct & operator [](const int idx) {
+		return this->Entries[idx];
+	}
+};
 #endif
 
 //used for light colors
@@ -94,13 +99,13 @@ public:
 		{ return this->StartTime == -1 || this->GetTimeLeft() <= 0; }
 
 	int GetTimeLeft()
-		JMP_STD(0x426630);
+		{ JMP_THIS(0x426630); }
 
 	void Start(int duration)
-		JMP_STD(0x46B640);
+		{ JMP_THIS(0x46B640); }
 
 	void StartIfEmpty() // just sets start frame
-		JMP_STD(0x6CE2C0);
+		{ JMP_THIS(0x6CE2C0); }
 };
 
 //also see FACING definitions
@@ -115,7 +120,7 @@ struct FacingStruct
 	WORD unused_16;
 
 	DWORD GetFacing(DWORD *arg)
-		JMP_THIS(0x4C93D0);
+		{ JMP_THIS(0x4C93D0); }
 
 	operator int() {
 		// <DCoder> I don't know how or what it does, but that's what the game uses

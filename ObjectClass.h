@@ -198,25 +198,25 @@ public:
 		  PUSH_VAR32(src_Z); PUSH_VAR32(src_Y); PUSH_VAR32(src_X); CALL(0x704E40); }
 
 	int DistanceFrom(ObjectClass *that)
-		JMP_THIS(0x5F6440);
+		{ JMP_THIS(0x5F6440); }
 
 
 	bool IsRedHP()
-		JMP_THIS(0x5F5CD0);
+		{ JMP_THIS(0x5F5CD0); }
 
 	bool IsYellowHP()
-		JMP_THIS(0x5F5D20);
+		{ JMP_THIS(0x5F5D20); }
 
 	bool IsGreenHP()
-		JMP_THIS(0x5F5D90);
+		{ JMP_THIS(0x5F5D90); }
 
 	HealthState GetHealthStatus()
-		JMP_THIS(0x5F5DD0);
+		{ JMP_THIS(0x5F5DD0); }
 
 
 	//Constructor
 	ObjectClass() : AbstractClass(false)
-		JMP_THIS(0x5F3900);
+		{ JMP_THIS(0x5F3900); }
 
 protected:
 	ObjectClass(bool) : AbstractClass(false) { }

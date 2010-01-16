@@ -18,19 +18,19 @@ public:
 
 	// draws all the visible bombs, expires the outdated ones
  	void Update()
-		JMP_THIS(0x438BF0);
-	
+		{ JMP_THIS(0x438BF0); }
+
 	// the main one, ivan planting a bomb (creates a BombClass inside)
 	void Plant(TechnoClass *SourceObject, TechnoClass *TargetObject)
-		JMP_THIS(0x438E70);
+		{ JMP_THIS(0x438E70); }
 
 	// duh
 	void AddDetector(TechnoClass *Detector)
-		JMP_THIS(0x439080);
+		{ JMP_THIS(0x439080); }
 
 	// duh
 	void RemoveDetector(TechnoClass *Detector)
-		JMP_THIS(0x4390D0);
+		{ JMP_THIS(0x4390D0); }
 
 protected:
 	//===========================================================================

@@ -14,12 +14,12 @@ public:
 
 	//Constructor, Destructor
 	EBolt()
-		JMP_THIS(0x4C1E10);
+		{ JMP_THIS(0x4C1E10); }
 
 	~EBolt() {/*???*/}
 
 	void Fire(CoordStruct P1, CoordStruct P2, DWORD arg18)
-		JMP_THIS(0x4C2A60);
+		{ JMP_THIS(0x4C2A60); }
 
 //	static void DeleteAll()
 //		JUMP_STD(0x4C2930);
@@ -27,7 +27,7 @@ public:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	
+
 	PROPERTY_STRUCT(CoordStruct, Point1);
 	PROPERTY_STRUCT(CoordStruct, Point2);
 	PROPERTY(DWORD, unknown_18);	//Duration?

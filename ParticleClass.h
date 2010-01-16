@@ -42,7 +42,7 @@ public:
 		CoordStruct* pCrd1,
 		CoordStruct* pCrd2,
 		ParticleSystemClass* pParticleSystem) : ObjectClass(false)
-			JMP_THIS(0x62B5E0);
+			{ JMP_THIS(0x62B5E0); }
 
 protected:
 	ParticleClass() : ObjectClass(false) { }

@@ -36,12 +36,12 @@ public:
 
 	//non-virtual
 	void Fire(TechnoClass* pOwner, TechnoClass* pTarget, WeaponTypeClass* pWeapon, int nDamage)
-		JMP_THIS(0x4A71A0);
+		{ JMP_THIS(0x4A71A0); }
 
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	
+
 	PROPERTY(TechnoClass*,		Owner);
 	PROPERTY(TechnoClass*,		Target);
 	PROPERTY(WeaponTypeClass*,	Weapon);

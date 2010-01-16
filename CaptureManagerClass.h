@@ -38,35 +38,35 @@ public:
 
 	//Constructor
 	CaptureManagerClass(TechnoClass* pOwner, int nMaxControlNodes, bool bInfiniteControl) : AbstractClass(false)
-		JMP_THIS(0x4717D0);
+		{ JMP_THIS(0x4717D0); }
 
 	//non-virtual
 	bool CaptureUnit(TechnoClass* pUnit)
-		JMP_THIS(0x471D40);
+		{ JMP_THIS(0x471D40); }
 	bool FreeUnit(TechnoClass* pUnit)
-		JMP_THIS(0x471FF0);
+		{ JMP_THIS(0x471FF0); }
 	void FreeAll()
-		JMP_THIS(0x472140);
+		{ JMP_THIS(0x472140); }
 
 	int NumControlNodes()
 		{ return ControlNodes.Count; }
 
 	bool CanCapture(TechnoClass *Target)
-		JMP_THIS(0x471C90);
+		{ JMP_THIS(0x471C90); }
 	bool CannotControlAnyMore()
-		JMP_THIS(0x4722A0);
+		{ JMP_THIS(0x4722A0); }
 	bool IsControllingSomething()
-		JMP_THIS(0x4722C0);
+		{ JMP_THIS(0x4722C0); }
 	bool IsOverloading(bool *result)
-		JMP_THIS(0x4726C0);
+		{ JMP_THIS(0x4726C0); }
 	void HandleOverload()
-		JMP_THIS(0x471A50);
+		{ JMP_THIS(0x471A50); }
 	bool NeedsToDrawLinks()
-		JMP_THIS(0x472640);
+		{ JMP_THIS(0x472640); }
 	bool DrawLinks()
-		JMP_THIS(0x472160);
+		{ JMP_THIS(0x472160); }
 	void DecideUnitFate(TechnoClass *Unit)
-		JMP_THIS(0x4723B0);
+		{ JMP_THIS(0x4723B0); }
 
 protected:
 	CaptureManagerClass() : AbstractClass(false) { }
@@ -74,7 +74,7 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	
+
 	PROPERTY_STRUCT(DynamicVectorClass<ControlNode*>, ControlNodes);
 	PROPERTY(int, MaxControlNodes);
 	PROPERTY(bool, InfiniteMindControl);

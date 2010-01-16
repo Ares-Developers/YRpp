@@ -30,26 +30,26 @@ public:
 	virtual int Size() R0;
 
 	ScriptActionNode* GetCurrentAction(ScriptActionNode *buffer)
-		JMP_THIS(0x691500);
+		{ JMP_THIS(0x691500); }
 
 	ScriptActionNode* GetNextAction(ScriptActionNode *buffer)
-		JMP_THIS(0x691540);
+		{ JMP_THIS(0x691540); }
 
 	bool Reset()
-		{ this->idxCurrentLine = -1; return true; } 
+		{ this->idxCurrentLine = -1; return true; }
 
 	bool SetCurrentLine(int idx)
-		{ this->idxCurrentLine = idx; return true; } 
+		{ this->idxCurrentLine = idx; return true; }
 
 	bool NextAction()
-		{ ++this->idxCurrentLine; return this->HasNextAction(); } 
+		{ ++this->idxCurrentLine; return this->HasNextAction(); }
 
 	bool HasNextAction()
-		{ return this->idxCurrentLine < this->Type->ActionsCount; } 
+		{ return this->idxCurrentLine < this->Type->ActionsCount; }
 
 	//Constructor
 	ScriptClass(ScriptTypeClass *pType) : AbstractClass(false)
-		JMP_THIS(0x6913C0);
+		{ JMP_THIS(0x6913C0); }
 
 protected:
 	ScriptClass() : AbstractClass(false) { }

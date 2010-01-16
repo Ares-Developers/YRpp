@@ -35,11 +35,11 @@ public:
 
 	// non virtual
 	void CreateChronoAnim(CoordStruct Coords)
-		JMP_THIS(0x6CB3A0);
+		{ JMP_THIS(0x6CB3A0); }
 
 	//Constructor
 	SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner) : AbstractClass(false)
-		JMP_THIS(0x6CAF90);
+		{ JMP_THIS(0x6CAF90); }
 
 protected:
 	SuperClass() : AbstractClass(false) { }
@@ -59,7 +59,7 @@ protected:
 	PROPERTY(DWORD,					unknown_4C);
 	PROPERTY(int,					SpecialSoundDuration); // see 0x6CD14F
 	PROPERTY_STRUCT(CoordStruct,	SpecialSoundLocation);		//unused?
-	PROPERTY(bool,					unknown_bool_60);          // 0x60 
+	PROPERTY(bool,					unknown_bool_60);          // 0x60
 	PROPERTY_STRUCT(CellStruct,			ChronoMapCoords);  // 0x62
 	PROPERTY(AnimClass *,		Animation);                // 0x68
 	PROPERTY(bool,					unknown_bool_6C);

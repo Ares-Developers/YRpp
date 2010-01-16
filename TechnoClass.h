@@ -35,28 +35,28 @@ struct VeterancyStruct
 	DWORD unknown_4;
 
 	bool IsElite()
-		JMP_THIS(0x750010);
+		{ JMP_THIS(0x750010); }
 
 	bool IsVeteran()
-		JMP_THIS(0x74FF90);
+		{ JMP_THIS(0x74FF90); }
 
 	bool IsNegative()
-		JMP_THIS(0x74FFF0);
+		{ JMP_THIS(0x74FFF0); }
 
 	eRank GetRemainingLevel()
-		JMP_THIS(0x750030);
+		{ JMP_THIS(0x750030); }
 
 	void Reset()
-		JMP_THIS(0x750080);
+		{ JMP_THIS(0x750080); }
 
 	void SetRookie(bool NotReally)
-		JMP_THIS(0x750060);
+		{ JMP_THIS(0x750060); }
 
 	void SetVeteran(bool YesReally)
-		JMP_THIS(0x750090);
+		{ JMP_THIS(0x750090); }
 
 	void SetElite(bool YesReally)
-		JMP_THIS(0x7500B0);
+		{ JMP_THIS(0x7500B0); }
 };
 
 class PassengersClass
@@ -66,19 +66,19 @@ public:
 	FootClass* FirstPassenger;
 
 	void AddPassenger(FootClass* pPassenger)
-		JMP_THIS(0x4733A0);
+		{ JMP_THIS(0x4733A0); }
 
 	FootClass* GetFirstPassenger()
 		{ return this->FirstPassenger; }
 
 	FootClass* RemoveFirstPassenger()
-		JMP_THIS(0x473430);
+		{ JMP_THIS(0x473430); }
 
 	int GetTotalSize()
-		JMP_THIS(0x473460);
+		{ JMP_THIS(0x473460); }
 
 	int IndexOf(FootClass* candidate)
-		JMP_THIS(0x473500);
+		{ JMP_THIS(0x473500); }
 };
 
 struct FlashData
@@ -87,7 +87,7 @@ struct FlashData
 	bool FlashingNow;
 
 	bool Update()
-		JMP_THIS(0x4CC770);
+		{ JMP_THIS(0x4CC770); }
 };
 
 struct RecoilData
@@ -102,10 +102,10 @@ struct RecoilData
 	int f_1C;
 
 	void Update()
-		JMP_THIS(0x70ED10);
+		{ JMP_THIS(0x70ED10); }
 
 	void Fire()
-		JMP_THIS(0x70ECE0);
+		{ JMP_THIS(0x70ECE0); }
 };
 
 class TechnoClass : public RadioClass
@@ -278,10 +278,10 @@ public:
 
 	//non-virtual
 	void ReloadNow()
-		JMP_THIS(0x6FB080);
+		{ JMP_THIS(0x6FB080); }
 
 	bool ShouldSuppress(CellStruct *coords)
-		JMP_THIS(0x6F79A0);
+		{ JMP_THIS(0x6F79A0); }
 
 	// smooth operator
 	const char *get_ID() {
@@ -290,7 +290,7 @@ public:
 	}
 
 	bool IsMindControlled()
-		JMP_THIS(0x7105E0);
+		{ JMP_THIS(0x7105E0); }
 
 	/*
 	 *  Cell->AddThreat(this->Owner, -this->ThreatPosed);
@@ -300,7 +300,7 @@ public:
 	 *  Cell->AddThreat(this->Owner, Threat);
 	 */
 	void UpdateThreatInCell(CellClass *Cell)
-		JMP_THIS(0x70F6E0);
+		{ JMP_THIS(0x70F6E0); }
 
 // CanTargetWhatAmI is a bitfield, if(!(CanTargetWhatAmI & (1 << tgt->WhatAmI())) { fail; }
 
@@ -313,7 +313,7 @@ public:
 		int *ThreatPosed,
 		DWORD dwUnk,
 		CoordStruct *SourceCoords)
-			JMP_THIS(0x6F7CA0);
+			{ JMP_THIS(0x6F7CA0); }
 
 // called by AITeam Attack Target Type and autoscan
 	bool TryAutoTargetObject(
@@ -324,17 +324,17 @@ public:
 		DWORD *dwUnk2,
 		int *ThreatPosed,
 		DWORD dwUnk3)
-			JMP_THIS(0x6F8960);
+			{ JMP_THIS(0x6F8960); }
 
 	void Reactivate()
-		JMP_THIS(0x70FBE0);
+		{ JMP_THIS(0x70FBE0); }
 
 	void Deactivate()
-		JMP_THIS(0x70FC90);
+		{ JMP_THIS(0x70FC90); }
 
 	//Constructor
 	TechnoClass(HouseClass* pOwner) : RadioClass(false)
-		JMP_THIS(0x6F2B40);
+		{ JMP_THIS(0x6F2B40); }
 
 protected:
 	TechnoClass(bool) : RadioClass(false) { }

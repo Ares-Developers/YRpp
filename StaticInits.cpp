@@ -66,6 +66,7 @@ DECL(CommandClass, 0x87F658);
 
 #include <ConvertClass.h>
 DECL(ConvertClass, 0x89ECF8);
+DECL(LightConvertClass, 0x87F698);
 
 #include <Drawing.h>
 ALIAS(ABufferClass *, ABufferClass::ABuffer, 0x87E8A4);
@@ -118,9 +119,6 @@ DECL(IonBlastClass, 0xAA0118);
 
 #include <InfantryTypeClass.h>
 DECL(InfantryTypeClass, 0xA8E348);
-
-#include <ConvertClass.h>
-DECL(LightConvertClass, 0x87F698);
 
 #include <MixFileClass.h>
 List<MixFileClass*>* MixFileClass::MIXes = (List<MixFileClass*>* )0xABEFD8;

@@ -13,7 +13,7 @@ public:
 protected:
 	//CTOR
 	CDDriveManagerClass()
-		JMP_THIS(0x4E6070);
+		{ JMP_THIS(0x4E6070); }
 
 public:
 	/*
@@ -23,7 +23,7 @@ public:
 	2 = YR
 	*/
 	int GetCDNumber()
-		JMP_THIS(0x4A80D0);
+		{ JMP_THIS(0x4A80D0); }
 
 	//Properties
 	PROPERTY_ARRAY(int, CDDriveNames, 26); //int + 'A' would be the drive's name
@@ -42,4 +42,4 @@ public:
 
 protected:
 	CD() RX;
-}
+};
