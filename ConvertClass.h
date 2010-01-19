@@ -11,6 +11,8 @@
 
 #include <Blitters.h>
 
+#include <FileFormats/SHP.h>
+
 struct ColorStruct;
 class DSurface;
 
@@ -41,6 +43,13 @@ public:
 
 	RLEBlitterCore * SelectRLEBlitter(eBlitterFlags flags)
 		{ JMP_THIS(0x490E50); }
+
+	void* SelectProperBlitter(SHPStruct * SHP, int FrameIndex, eBlitterFlags flags) {
+		return (SHP->HasCompression(FrameIndex))
+			? (void*)this->SelectRLEBlitter(flags)
+			: (void*)this->SelectPlainBlitter(flags)
+		;
+	}
 
 	virtual ~ConvertClass() RX;
 

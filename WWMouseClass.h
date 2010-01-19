@@ -67,7 +67,7 @@ public:
 		{ JMP_THIS(0x7B9D90); }
 
 	PROPERTY(SHPStruct *, Image);
-	PROPERTY(DWORD      , field_8);
+	PROPERTY(int        , ImageFrameIndex);
 	PROPERTY(DWORD      , field_C);
 	PROPERTY(byte       , field_10);
 	PROPERTY(byte       , field_11);
