@@ -44,14 +44,14 @@ public:
 	virtual bool vt_entry_504() R0;
 	virtual bool ChronoWarpTo(CoordStruct pDest) R0; // fsds... only implemented for one new YR map trigger, other chrono events repeat the code...
 	virtual void Draw_A_SHP(
-		SHPStruct *SHP, int idxFrame, DWORD dwUnk3, DWORD dwUnk4,
-		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8,
-		DWORD dwUnk9, DWORD dwUnk10, DWORD dwUnk11, DWORD dwUnk12,
+		SHPStruct *SHP, int idxFacing, Point2D * Coords, RectangleStruct *Rectangle,
+		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7, int ZGradient,
+		DWORD dwUnk9, int extraLight, DWORD dwUnk11, DWORD dwUnk12,
 		DWORD dwUnk13, DWORD dwUnk14, DWORD dwUnk15, DWORD dwUnk16) RX;
 
 	virtual void Draw_A_VXL(
-		VoxelStruct *VXL, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5,
-		Point2D *CenterPoint, Matrix3DStruct *Matrix, DWORD dwUnk8, DWORD dwUnk9, DWORD dwUnk10) RX;
+		VoxelStruct *VXL, int HVAFrameIndex, int Flags, SomeVoxelCache *Cache, RectangleStruct *Rectangle,
+		Point2D *CenterPoint, Matrix3DStruct *Matrix, DWORD dwUnk8, DWORD DrawFlags, DWORD dwUnk10) RX;
 
 	virtual void vt_entry_514() RX;
 	virtual void Panic() RX;
@@ -146,7 +146,7 @@ protected:
 
 	PROPERTY(DWORD,             unknown_664);
 	PROPERTY_STRUCT(TimerStruct,       unknown_timer_668);
-	PROPERTY_PTR(LocomotionClass*,  Locomotor);
+	PROPERTY_PTR(ILocomotion*,  Locomotor);
 	PROPERTY_STRUCT(CoordStruct,       unknown_point3d_678);
 	PROPERTY(signed char,       TubeIndex);	//I'm in this tunnel
 	PROPERTY(bool,              unknown_bool_685);
@@ -176,7 +176,7 @@ protected:
 	PROPERTY(bool,              unknown_bool_6B3);
 	PROPERTY(bool,              unknown_bool_6B4);
 	PROPERTY(bool,              unknown_bool_6B5);
-	PROPERTY(bool,              unknown_bool_6B6);
+	PROPERTY(bool,              FrozenStill); // frozen in first frame of the proper facing - when magnetron'd or warping
 	PROPERTY(bool,              unknown_bool_6B7);
 	PROPERTY(bool,              unknown_bool_6B8);
 	PROTECTED_PROPERTY(DWORD,   unused_6BC);	//???

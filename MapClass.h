@@ -96,8 +96,10 @@ public:
 	bool IsLocationShrouded(CoordStruct* pCrd)
 		{ JMP_THIS(0x586360); }
 
-	bool CellExists(CellStruct* pMapCoords)
-		{ return (Cells[(pMapCoords->Y << 9) + pMapCoords->X] != NULL);}
+	bool CellExists(CellStruct* pMapCoords) {
+		int n = (pMapCoords->Y << 9) + pMapCoords->X;
+		return (n < 0 || n >= MAX_CELLS) && Cells[n] != NULL;
+	}
 
 	void CellIteratorReset()
 		{ JMP_THIS(0x578350); }
@@ -113,9 +115,7 @@ public:
 		WarheadTypeClass *WH,
 		BYTE bUnk,
 		HouseClass* SourceHouse)
-			{	JMP_STD(0x489280); }
-
-//int a2, int a3, wXY *where, int a5, int a6, int a7, int MovementZone
+			{ JMP_STD(0x489280); }
 
 	int GetCellFloorHeight(CoordStruct* XYZ)
 		{ JMP_THIS(0x578080); }
@@ -194,7 +194,7 @@ public:
 	int sub_578080(CoordStruct *Coords)
 		{ JMP_THIS(0x578080); }
 
-	// these two slowly reprocess the map after gapgen state changes
+	// these two VERY slowly reprocess the map after gapgen state changes
 	void sub_657CE0()
 		{ JMP_THIS(0x657CE0); }
 

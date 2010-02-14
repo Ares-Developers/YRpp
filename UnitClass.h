@@ -34,6 +34,7 @@ public:
 	virtual int Size() R0;
 
 	//UnitClass
+	// main drawing functions - Draw() calles one of these, they call parent's Draw_A_smth
 	virtual void DrawAsVXL(Point2D Coords, RectangleStruct BoundingRect, DWORD dwUnk7, DWORD dwUnk8)
 		{ JMP_THIS(0x73B470); }
 
