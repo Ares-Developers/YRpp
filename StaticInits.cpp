@@ -139,9 +139,16 @@ ALIAS_O(MapClass *, MapClass::Instance, 0x87F7E8);
 ALIAS_O(MouseClass *, MouseClass::Instance, 0x87F7E8);
 MouseCursor* MouseCursor::First = (MouseCursor*)0x82D028;
 
+#include <NetworkEvents.h>
+ALIAS(int, Networking::LastEventIndex, 0xA802C8);
+ALIAS(int, Networking::NextPacketIndex, 0xA802D0);
+ALIAS_O(NetworkEvent *, Networking::QueuedEvents, 0xA802D4);
+ALIAS_O(int *, Networking::QueuedEventTimestamps, 0xA83A54);
+
+
 #include <ObjectClass.h>
 DynamicVectorClass<ObjectClass*>* ObjectClass::CurrentObjects =
-								(DynamicVectorClass<ObjectClass*>*)0xA8ECB8;
+	(DynamicVectorClass<ObjectClass*>*)0xA8ECB8;
 
 #include <OverlayClass.h>
 DECL(OverlayClass, 0xA8EC50);
@@ -255,6 +262,7 @@ ALIAS(IID, IIDs::AbstractClass_2, 0x7F7C70);
 ALIAS(IID, IIDs::AbstractClass_3, 0x7E9AE0);
 
 ALIAS(Imports::FP_OleLoadFromStream, Imports::OleLoadFromStream, 0x7E15F8);
+ALIAS(Imports::FP_TimeGetTime, Imports::TimeGetTime, 0x7E1530);
 
 DynamicVectorClass<MovieInfo> *MovieInfo::Array = (DynamicVectorClass<MovieInfo>*)0xABF390;
 

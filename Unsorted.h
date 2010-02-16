@@ -82,6 +82,9 @@ public:
 	// OleLoadFromStream
 	typedef HRESULT (__stdcall * FP_OleLoadFromStream)(LPSTREAM pStm, const IID *const iidInterface, LPVOID *ppvObj);
 	static FP_OleLoadFromStream &OleLoadFromStream;
+
+	typedef DWORD (* FP_TimeGetTime)();
+	static FP_TimeGetTime &TimeGetTime;
 };
 
 class MovieInfo
