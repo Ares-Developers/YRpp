@@ -7,6 +7,7 @@
 
 #include <ArrayClasses.h>
 #include <GeneralDefinitions.h>
+#include <Unsorted.h>
 
 struct VolumeStruct	//pretty uncreative name, but it's all I can come up with atm
 {
