@@ -9,6 +9,12 @@
 #include <GeneralDefinitions.h>
 #include <Unsorted.h>
 
+struct VocClassHeader {
+	VocClassHeader* Next;
+	VocClassHeader* Prev;
+	DWORD Magic;
+};
+
 struct VolumeStruct	//pretty uncreative name, but it's all I can come up with atm
 {
 	int			Volume;		//Between 0 and 16384, lowest bit is forced to 1, default is 0
@@ -59,9 +65,7 @@ public:
 		{ JMP_STD(0x7509E0); }
 
 	//Properties
-	PROPERTY(VocClass*,			Next);	//Linked list of VocClass instances
-	PROPERTY(VocClass*,			unknown_04);	//not sure whether this is "Previous"?
-	PROPERTY(VocClass*,			unknown_08);	//no idea, some invalid
+	PROPERTY_STRUCT(VocClassHeader, Header);
 	PROPERTY(int,				SamplesOK);	//0 or 1, determines whether all samples are OK to use
 	PROPERTY(DWORD,				unknown_10);
 	PROPERTY(eSoundType,		Type);

@@ -35,6 +35,9 @@ DECL(AnimClass, 0xA8E9A8);
 #include <AnimTypeClass.h>
 DECL(AnimTypeClass, 0x8B4150);
 
+#include <Audio.h>
+ALIAS(AudioIDXData *, AudioIDXData::IDX, 0x87E294);
+
 #include <BulletClass.h>
 DECL(BulletClass, 0xA8ED40);
 
@@ -104,6 +107,9 @@ ALIAS(ConvertClass *, FileSystem::GRFTXT_TIBERIUM_PAL, 0x87F6BC);
 ALIAS(ConvertClass *, FileSystem::ANIM_PAL, 0x87F6C0);
 ALIAS(ConvertClass *, FileSystem::THEATER_PAL, 0x87F6C4);
 ALIAS(ConvertClass *, FileSystem::MOUSE_PAL, 0x87F6C8);
+
+#include <GameModeOptionsClass.h>
+ALIAS_O(GameModeOptionsClass *, GameModeOptionsClass::Instance, 0xA8B250);
 
 #include <HouseClass.h>
 DECL(HouseClass, 0xA80228);

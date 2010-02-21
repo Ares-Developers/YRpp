@@ -198,6 +198,9 @@ public:
 	void SDDTORAllAndTriggers()
 		{ JMP_THIS(0x4FB920); }
 
+	void AcceptDefeat()
+		{ JMP_THIS(0x4FC0B0); }
+
 	// every matching object takes damage and explodes
 	void DestroyAll()
 		{ JMP_THIS(0x4FC6D0); }
