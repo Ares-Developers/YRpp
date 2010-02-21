@@ -43,6 +43,7 @@ DECL(BulletTypeClass, 0xA83C80);
 
 #include <BuildingClass.h>
 DECL(BuildingClass, 0xA8EB40);
+ALIAS(CellStruct, BuildingClass::DefaultCellCoords, 0x89C818);
 
 #include <BuildingTypeClass.h>
 DECL(BuildingTypeClass, 0xA83C68);
