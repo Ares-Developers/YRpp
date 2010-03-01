@@ -912,15 +912,24 @@ typedef int eBlitterFlags;
 #define	bf_4000		0x4000
 
 // UI
-typedef BYTE eMouseEventFlags;
+class MouseEvent {
+public:
+	enum E {
+		LeftDown = 0x1,
+		LeftHeld = 0x2,
+		LeftUp = 0x4,
+		Move = 0x8,
+		RightDown = 0x10,
+		RightHeld = 0x20,
+		RightUp = 0x40
+	} _;
 
-#define	mevf_LBUTTONDOWN		0x01
-#define	mevf_LBUTTONHELD		0x02
-#define	mevf_LBUTTONUP		0x04
-#define	mevf_MOVE		0x08
-#define	mevf_RBUTTONDOWN		0x10
-#define	mevf_RBUTTONHELD		0x20
-#define	mevf_RBUTTONUP		0x40
+	public:
+		MouseEvent(unsigned char val) { this->_ = static_cast<E>(val); };
+		operator int() { return this->_; };
+};
+
+// typedef BYTE eMouseEventFlags;
 
 //control key flags
 typedef DWORD eControlKeyFlags;

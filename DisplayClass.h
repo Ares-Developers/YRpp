@@ -29,6 +29,9 @@ class DisplayClass : public MapClass
 public:
 	//WIP: DisplayClass::TacticalClass goes HERE
 
+	bool ProcessClickCoords(Point2D *src, CellStruct *XYdst, CoordStruct *XYZdst, ObjectClass **Target, BYTE *a5, BYTE *a6)
+		{ JMP_THIS(0x692300); }
+
 	//Static
 	static DisplayClass* Global()
 		{ return (DisplayClass*)0x87F7E8; }
@@ -83,6 +86,14 @@ public:
 	virtual void RightMouseButtonUp(DWORD dwUnk) RX;
 
 	//Non-virtual
+
+	void LMBUp(CoordStruct *XYZ, CellStruct* pMapCoords, ObjectClass* pObject, eAction nAction, DWORD dwUnk2)
+		{ JMP_THIS(0x4AB9B0); }
+	void RMBUp(DWORD dwUnk)
+		{ JMP_THIS(0x4AAD30); }
+
+	eAction DecideAction(CellStruct* pMapCoords, ObjectClass* pObject, DWORD dwUnk)
+		{ JMP_THIS(0x692610); }
 
 protected:
 	//Constructor

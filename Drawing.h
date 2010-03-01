@@ -13,6 +13,11 @@
 class Drawing
 {
 public:
+
+	static RectangleStruct &SurfaceDimensions_Hidden;
+
+	static ColorStruct &TooltipColor;
+
 	//TextBox dimensions for tooltip-style boxes
 	static RectangleStruct GetTextBox(const wchar_t* pText, int nX, int nY, int nMargin)
 		{
