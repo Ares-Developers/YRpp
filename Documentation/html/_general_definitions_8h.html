@@ -45,6 +45,8 @@
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_health_state.html">HealthState</a></td></tr>
 
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mouse_event.html">MouseEvent</a></td></tr>
+
 <tr><td colspan="2"><br><h2>Defines</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_general_definitions_8h.html#7fc8ef0e6b66bfeda8687c78926b7947">SDDTOR_NODELETE</a>&nbsp;&nbsp;&nbsp;0x00</td></tr>
 
@@ -1324,20 +1326,6 @@
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_general_definitions_8h.html#ef451d0a884202054a66c526c3665aee">bf_4000</a>&nbsp;&nbsp;&nbsp;0x4000</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_general_definitions_8h.html#ba50e9d486916d2e39ea2fe519e27a9c">mevf_LBUTTONDOWN</a>&nbsp;&nbsp;&nbsp;0x01</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_general_definitions_8h.html#2523d8fba7f933808a5f4e664e8d2aca">mevf_LBUTTONHELD</a>&nbsp;&nbsp;&nbsp;0x02</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_general_definitions_8h.html#a521f470265fddc9502685f20bdc169b">mevf_LBUTTONUP</a>&nbsp;&nbsp;&nbsp;0x04</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_general_definitions_8h.html#5342ce1a24480c2985550c01ad5876db">mevf_MOVE</a>&nbsp;&nbsp;&nbsp;0x08</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_general_definitions_8h.html#8e66ed5340966d0123b621b37247e956">mevf_RBUTTONDOWN</a>&nbsp;&nbsp;&nbsp;0x10</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_general_definitions_8h.html#8ad8916d6be2ae805ec9df33e6066650">mevf_RBUTTONHELD</a>&nbsp;&nbsp;&nbsp;0x20</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_general_definitions_8h.html#6310f66480ae1bc40d320a3df44c255b">mevf_RBUTTONUP</a>&nbsp;&nbsp;&nbsp;0x40</td></tr>
-
 <tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_general_definitions_8h.html#3db90ce373a9c7ac1e9cbc76d3f7d165">ckf_SHIFT</a>&nbsp;&nbsp;&nbsp;0x01</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_general_definitions_8h.html#33eb267b041749231cc73bf9af0096f4">ckf_CTRL</a>&nbsp;&nbsp;&nbsp;0x02</td></tr>
@@ -1500,8 +1488,6 @@
 <tr><td class="memItemLeft" nowrap align="right" valign="top">typedef int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_general_definitions_8h.html#b8e2c622ea1172f3817f6a5f2eb32168">eWarheadFlags</a></td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">typedef int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_general_definitions_8h.html#52f4e012e3364039fc2f608a2d8d4358">eBlitterFlags</a></td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef <a class="el" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_general_definitions_8h.html#09fef71fb09b5dd24e75963ceceb6141">eMouseEventFlags</a></td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">typedef <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_general_definitions_8h.html#17e082dc659f8d9537c9a3a13c4388dd">eControlKeyFlags</a></td></tr>
 
@@ -5402,7 +5388,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00930">930</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00939">939</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -5419,7 +5405,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00929">929</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00938">938</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -5436,7 +5422,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00928">928</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00937">937</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -5759,7 +5745,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00939">939</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00948">948</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -5776,7 +5762,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00936">936</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00945">945</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -5793,7 +5779,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00935">935</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00944">944</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -5810,7 +5796,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00937">937</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00946">946</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -5827,7 +5813,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00938">938</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00947">947</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -6936,125 +6922,6 @@
 
 </div>
 </div><p>
-<a class="anchor" name="ba50e9d486916d2e39ea2fe519e27a9c"></a><!-- doxytag: member="GeneralDefinitions.h::mevf_LBUTTONDOWN" ref="ba50e9d486916d2e39ea2fe519e27a9c" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define mevf_LBUTTONDOWN&nbsp;&nbsp;&nbsp;0x01          </td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00917">917</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
-
-</div>
-</div><p>
-<a class="anchor" name="2523d8fba7f933808a5f4e664e8d2aca"></a><!-- doxytag: member="GeneralDefinitions.h::mevf_LBUTTONHELD" ref="2523d8fba7f933808a5f4e664e8d2aca" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define mevf_LBUTTONHELD&nbsp;&nbsp;&nbsp;0x02          </td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00918">918</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
-
-</div>
-</div><p>
-<a class="anchor" name="a521f470265fddc9502685f20bdc169b"></a><!-- doxytag: member="GeneralDefinitions.h::mevf_LBUTTONUP" ref="a521f470265fddc9502685f20bdc169b" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define mevf_LBUTTONUP&nbsp;&nbsp;&nbsp;0x04          </td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00919">919</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
-
-</div>
-</div><p>
-<a class="anchor" name="5342ce1a24480c2985550c01ad5876db"></a><!-- doxytag: member="GeneralDefinitions.h::mevf_MOVE" ref="5342ce1a24480c2985550c01ad5876db" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define mevf_MOVE&nbsp;&nbsp;&nbsp;0x08          </td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00920">920</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
-
-</div>
-</div><p>
-<a class="anchor" name="8e66ed5340966d0123b621b37247e956"></a><!-- doxytag: member="GeneralDefinitions.h::mevf_RBUTTONDOWN" ref="8e66ed5340966d0123b621b37247e956" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define mevf_RBUTTONDOWN&nbsp;&nbsp;&nbsp;0x10          </td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00921">921</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
-
-</div>
-</div><p>
-<a class="anchor" name="8ad8916d6be2ae805ec9df33e6066650"></a><!-- doxytag: member="GeneralDefinitions.h::mevf_RBUTTONHELD" ref="8ad8916d6be2ae805ec9df33e6066650" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define mevf_RBUTTONHELD&nbsp;&nbsp;&nbsp;0x20          </td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00922">922</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
-
-</div>
-</div><p>
-<a class="anchor" name="6310f66480ae1bc40d320a3df44c255b"></a><!-- doxytag: member="GeneralDefinitions.h::mevf_RBUTTONUP" ref="6310f66480ae1bc40d320a3df44c255b" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define mevf_RBUTTONUP&nbsp;&nbsp;&nbsp;0x40          </td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00923">923</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
-
-</div>
-</div><p>
 <a class="anchor" name="11f0f222dcbd4add31ca9dbf9715354e"></a><!-- doxytag: member="GeneralDefinitions.h::mission_Ambush" ref="11f0f222dcbd4add31ca9dbf9715354e" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -7646,7 +7513,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00945">945</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00954">954</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -7663,7 +7530,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00947">947</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00956">956</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -7680,7 +7547,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00952">952</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00961">961</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -7697,7 +7564,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00949">949</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00958">958</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -7714,7 +7581,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00948">948</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00957">957</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -7731,7 +7598,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00946">946</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00955">955</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -7748,7 +7615,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00951">951</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00960">960</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -7765,7 +7632,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00944">944</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00953">953</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -7782,7 +7649,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00950">950</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00959">959</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -12797,7 +12664,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00973">973</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00982">982</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -12814,7 +12681,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00977">977</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00986">986</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -12831,7 +12698,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00970">970</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00979">979</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -12848,7 +12715,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00979">979</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00988">988</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -12865,7 +12732,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00971">971</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00980">980</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -12882,7 +12749,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00965">965</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00974">974</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -12899,7 +12766,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00968">968</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00977">977</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -12916,7 +12783,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00967">967</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00976">976</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -12933,7 +12800,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00975">975</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00984">984</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -12950,7 +12817,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00961">961</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00970">970</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -12967,7 +12834,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00959">959</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00968">968</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -12984,7 +12851,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00960">960</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00969">969</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -13001,7 +12868,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00962">962</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00971">971</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -13018,7 +12885,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00958">958</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00967">967</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -13035,7 +12902,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00957">957</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00966">966</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -13308,7 +13175,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00926">926</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00935">935</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -13359,7 +13226,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00933">933</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00942">942</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -13482,23 +13349,6 @@
 
 </div>
 </div><p>
-<a class="anchor" name="09fef71fb09b5dd24e75963ceceb6141"></a><!-- doxytag: member="GeneralDefinitions.h::eMouseEventFlags" ref="09fef71fb09b5dd24e75963ceceb6141" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef <a class="el" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="el" href="_general_definitions_8h.html#09fef71fb09b5dd24e75963ceceb6141">eMouseEventFlags</a>          </td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00915">915</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
-
-</div>
-</div><p>
 <a class="anchor" name="d16895f5d441b5f67e18375193c1cd07"></a><!-- doxytag: member="GeneralDefinitions.h::eMouseHotSpotX" ref="d16895f5d441b5f67e18375193c1cd07" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -13546,7 +13396,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00942">942</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00951">951</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -13937,7 +13787,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00955">955</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
+<p>Definition at line <a class="el" href="_general_definitions_8h-source.html#l00964">964</a> of file <a class="el" href="_general_definitions_8h-source.html">GeneralDefinitions.h</a>.</p>
 
 </div>
 </div><p>
@@ -13959,7 +13809,7 @@
 </div>
 </div><p>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Jan 2 21:12:31 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:09 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

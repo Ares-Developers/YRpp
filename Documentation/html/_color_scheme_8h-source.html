@@ -72,19 +72,19 @@
 <a name="l00039"></a>00039 
 <a name="l00040"></a>00040         <span class="comment">//Constructor, Destructor</span>
 <a name="l00041"></a><a class="code" href="class_color_scheme.html#8b968f3de67b5b1ae296f448964dfa66">00041</a>         <a class="code" href="class_color_scheme.html#8b968f3de67b5b1ae296f448964dfa66">ColorScheme</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* pID, <a class="code" href="struct_color_struct.html">ColorStruct</a>* <a class="code" href="class_color_scheme.html#f195b08f164111ea54e3e36984550eb5">BaseColor</a>, <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> arg8, <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> argC, <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> arg10, <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> arg14)
-<a name="l00042"></a>00042                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x68C710);
+<a name="l00042"></a>00042                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x68C710); }
 <a name="l00043"></a>00043 
 <a name="l00044"></a><a class="code" href="class_color_scheme.html#d427e52b00c856170e2ae0c8b70582d0">00044</a>         <a class="code" href="class_color_scheme.html#d427e52b00c856170e2ae0c8b70582d0">~ColorScheme</a>()
-<a name="l00045"></a><a class="code" href="class_color_scheme.html#217e4ad952b282fc2e7f8e01de5da56c">00045</a>                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x68C8D0);
+<a name="l00045"></a>00045                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x68C8D0); }
 <a name="l00046"></a>00046 
 <a name="l00047"></a>00047         <span class="comment">//===========================================================================</span>
 <a name="l00048"></a>00048         <span class="comment">//===== Properties ==========================================================</span>
 <a name="l00049"></a>00049         <span class="comment">//===========================================================================</span>
 <a name="l00050"></a><a class="code" href="class_color_scheme.html#59b374e422d2fbb4274b6acd4a610300">00050</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>,                <a class="code" href="class_color_scheme.html#217e4ad952b282fc2e7f8e01de5da56c">ArrayIndex</a>);
 <a name="l00051"></a>00051 
-<a name="l00052"></a>00052         protected:
+<a name="l00052"></a>00052         <span class="keyword">protected</span>:
 <a name="l00053"></a>00053                 <a class="code" href="struct_color_struct.html">ColorStruct</a>                <a class="code" href="class_color_scheme.html#59b374e422d2fbb4274b6acd4a610300">Colors</a>[0x100];
-<a name="l00054"></a>00054         public:
+<a name="l00054"></a>00054         <span class="keyword">public</span>:
 <a name="l00055"></a><a class="code" href="class_color_scheme.html#b652ad7def7938d4bd9c923334aaa9ec">00055</a>                 <a class="code" href="struct_color_struct.html">ColorStruct</a>    <a class="code" href="class_color_scheme.html#b652ad7def7938d4bd9c923334aaa9ec">get_Color</a>(<span class="keywordtype">int</span> i)
 <a name="l00056"></a>00056                         { <span class="keywordflow">return</span> <a class="code" href="class_color_scheme.html#59b374e422d2fbb4274b6acd4a610300">Colors</a>[i]; }
 <a name="l00057"></a><a class="code" href="class_color_scheme.html#125a13d72928ab7369c5bc576e28a356">00057</a>                 <span class="keywordtype">void</span>           <a class="code" href="class_color_scheme.html#125a13d72928ab7369c5bc576e28a356">set_Color</a>(<span class="keywordtype">int</span> i, <a class="code" href="struct_color_struct.html">ColorStruct</a> value)
@@ -109,7 +109,7 @@
 <a name="l00076"></a>00076 <span class="preprocessor"></span>
 <a name="l00077"></a>00077 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Jan 2 21:12:29 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:06 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

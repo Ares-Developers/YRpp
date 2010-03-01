@@ -362,22 +362,22 @@
 <a name="l00329"></a>00329         }
 <a name="l00330"></a>00330 
 <a name="l00331"></a><a class="code" href="class_counter_class.html#fc302845ede86f3f7e91b3be000ab09f">00331</a>         <span class="keywordtype">int</span> <a class="code" href="class_counter_class.html#fc302845ede86f3f7e91b3be000ab09f">GetItemCount</a>(<span class="keywordtype">int</span> nIndex)
-<a name="l00332"></a>00332                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x49FAE0);
+<a name="l00332"></a>00332                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x49FAE0); }
 <a name="l00333"></a>00333 
 <a name="l00334"></a><a class="code" href="class_counter_class.html#477dc04f95f21c08f73e6b0ee8a1ed76">00334</a>         <a class="code" href="class_counter_class.html#477dc04f95f21c08f73e6b0ee8a1ed76">CounterClass</a>() : <a class="code" href="class_vector_class.html">VectorClass</a>&lt;int&gt;()
 <a name="l00335"></a>00335                 { this-&gt;<a class="code" href="class_counter_class.html#451d85b9d2ebb5a0d98a57a09cbcd132">Count</a> = 0; }
 <a name="l00336"></a>00336 
 <a name="l00337"></a><a class="code" href="class_counter_class.html#b837826c7505331787206dc61ed9353b">00337</a>         <span class="keywordtype">int</span> <a class="code" href="class_counter_class.html#b837826c7505331787206dc61ed9353b">Increment</a>(<span class="keywordtype">int</span> nIndex)
-<a name="l00338"></a>00338                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x49FA00);
+<a name="l00338"></a>00338                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x49FA00); }
 <a name="l00339"></a>00339 
 <a name="l00340"></a><a class="code" href="class_counter_class.html#a799e1939034dd49c2255261a2cb6028">00340</a>         <span class="keywordtype">int</span> <a class="code" href="class_counter_class.html#a799e1939034dd49c2255261a2cb6028">Decrement</a>(<span class="keywordtype">int</span> nIndex)
-<a name="l00341"></a><a class="code" href="class_counter_class.html#451d85b9d2ebb5a0d98a57a09cbcd132">00341</a>                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x49FA70);
+<a name="l00341"></a>00341                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x49FA70); }
 <a name="l00342"></a>00342 
-<a name="l00343"></a>00343         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_counter_class.html#451d85b9d2ebb5a0d98a57a09cbcd132">Count</a>);   <span class="comment">//not sure what this is, but it's different from DVC's count</span>
+<a name="l00343"></a><a class="code" href="class_counter_class.html#451d85b9d2ebb5a0d98a57a09cbcd132">00343</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_counter_class.html#451d85b9d2ebb5a0d98a57a09cbcd132">Count</a>);   <span class="comment">//not sure what this is, but it's different from DVC's count</span>
 <a name="l00344"></a>00344 };
 <a name="l00345"></a>00345 
-<a name="l00346"></a>00346 <span class="preprocessor">#include &lt;SwizzleManagerClass.h&gt;</span>
-<a name="l00347"></a>00347 <span class="preprocessor"></span>
+<a name="l00346"></a>00346 <span class="preprocessor">#include &lt;<a class="code" href="_swizzle_manager_class_8h.html">SwizzleManagerClass.h</a>&gt;</span>
+<a name="l00347"></a>00347 
 <a name="l00348"></a>00348 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
 <a name="l00349"></a><a class="code" href="class_vector_class.html#bc90c64e6de2aa6bc40c7696f071ecea">00349</a> <span class="keywordtype">void</span> <a class="code" href="class_vector_class.html#bc90c64e6de2aa6bc40c7696f071ecea">VectorClass&lt;T&gt;::Load</a>(IStream *pStm, <span class="keywordtype">bool</span> bSwizzle = 1) {
 <a name="l00350"></a>00350         <span class="keywordtype">int</span> ii = 0;
@@ -404,9 +404,9 @@
 <a name="l00371"></a>00371         <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> jj = 0; jj &lt; ii; ++jj ) {
 <a name="l00372"></a>00372                 pStm-&gt;Read(&amp;(this-&gt;<a class="code" href="class_vector_class.html#ab52e8a14af105bd0b4666ea822ae697">Items</a>[jj]), 4, 0);
 <a name="l00373"></a>00373         }
-<a name="l00374"></a>00374         this-&gt;Count = ii;
+<a name="l00374"></a>00374         this-&gt;<a class="code" href="class_dynamic_vector_class.html#c0f04654b648014dd7b11730163174fb">Count</a> = ii;
 <a name="l00375"></a>00375         <span class="keywordflow">if</span>(bSwizzle) {
-<a name="l00376"></a>00376                 <span class="keywordflow">for</span> ( ii = 0; ii &lt; this-&gt;Count; ++ii ) {
+<a name="l00376"></a>00376                 <span class="keywordflow">for</span> ( ii = 0; ii &lt; this-&gt;<a class="code" href="class_dynamic_vector_class.html#c0f04654b648014dd7b11730163174fb">Count</a>; ++ii ) {
 <a name="l00377"></a>00377                         <a class="code" href="_macro_8h.html#10a84b1fb7dec6fb531fbb180ba732da">SWIZZLE</a>(this-&gt;<a class="code" href="class_vector_class.html#ab52e8a14af105bd0b4666ea822ae697">Items</a>[ii]);
 <a name="l00378"></a>00378                 }
 <a name="l00379"></a>00379         }
@@ -414,7 +414,7 @@
 <a name="l00381"></a>00381 
 <a name="l00382"></a>00382 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Jan 2 21:12:28 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:05 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

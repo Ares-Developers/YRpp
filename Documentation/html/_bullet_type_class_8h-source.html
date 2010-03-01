@@ -74,19 +74,19 @@
 <a name="l00041"></a>00041 
 <a name="l00042"></a>00042         <span class="comment">//Constructor</span>
 <a name="l00043"></a><a class="code" href="class_bullet_type_class.html#8870c38691b3c7be6025b420fba8722e">00043</a>         <a class="code" href="class_bullet_type_class.html">BulletTypeClass</a>(const <span class="keywordtype">char</span>* pID) : <a class="code" href="class_object_type_class.html">ObjectTypeClass</a>(false)
-<a name="l00044"></a>00044                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x46BBC0);
+<a name="l00044"></a>00044                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x46BBC0); }
 <a name="l00045"></a>00045 
 <a name="l00046"></a><a class="code" href="class_bullet_type_class.html#2850a09f47ef0ca0dd9869ed5854ec75">00046</a>         <a class="code" href="class_bullet_class.html">BulletClass</a>* __fastcall <a class="code" href="class_bullet_type_class.html#2850a09f47ef0ca0dd9869ed5854ec75">CreateBullet</a>(
 <a name="l00047"></a>00047                 <a class="code" href="class_cell_class.html">CellClass</a>* Target,
 <a name="l00048"></a>00048                 <a class="code" href="class_techno_class.html">TechnoClass</a>* Owner,
-<a name="l00049"></a>00049                 <span class="keywordtype">int</span> Damage, 
+<a name="l00049"></a>00049                 <span class="keywordtype">int</span> Damage,
 <a name="l00050"></a>00050                 <a class="code" href="class_warhead_type_class.html">WarheadTypeClass</a> *WH,
 <a name="l00051"></a>00051                 <span class="keywordtype">int</span> Speed,
 <a name="l00052"></a>00052                 <span class="keywordtype">bool</span> Bright)
-<a name="l00053"></a>00053                 <a class="code" href="_a_s_m_macros_8h.html#31c80ef106ed4d49102bf51af2ab63bc">JMP_STD</a>(0x46B050);
+<a name="l00053"></a>00053                 { <a class="code" href="_a_s_m_macros_8h.html#31c80ef106ed4d49102bf51af2ab63bc">JMP_STD</a>(0x46B050); }
 <a name="l00054"></a>00054 
-<a name="l00055"></a>00055 protected:
-<a name="l00056"></a><a class="code" href="class_bullet_type_class.html#afdb0aa3cac7ff61bd9ca6f82e008ffd">00056</a>         <a class="code" href="class_bullet_type_class.html">BulletTypeClass</a>() : <a class="code" href="class_object_type_class.html">ObjectTypeClass</a>(false) {};
+<a name="l00055"></a>00055 <span class="keyword">protected</span>:
+<a name="l00056"></a><a class="code" href="class_bullet_type_class.html#afdb0aa3cac7ff61bd9ca6f82e008ffd">00056</a>         <a class="code" href="class_bullet_type_class.html#afdb0aa3cac7ff61bd9ca6f82e008ffd">BulletTypeClass</a>() : <a class="code" href="class_object_type_class.html">ObjectTypeClass</a>(false) {};
 <a name="l00057"></a>00057 
 <a name="l00058"></a>00058         <span class="comment">//===========================================================================</span>
 <a name="l00059"></a>00059         <span class="comment">//===== Properties ==========================================================</span>
@@ -137,7 +137,7 @@
 <a name="l00104"></a>00104 
 <a name="l00105"></a>00105 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Jan 2 21:12:29 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:05 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

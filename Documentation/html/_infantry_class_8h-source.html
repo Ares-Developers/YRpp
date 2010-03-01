@@ -62,13 +62,13 @@
 <a name="l00029"></a>00029         <span class="comment">//InfantryClass</span>
 <a name="l00030"></a><a class="code" href="class_infantry_class.html#16264365f5ff99f3beee817e1ff98738">00030</a>         virtual <span class="keywordtype">bool</span> <a class="code" href="class_infantry_class.html#16264365f5ff99f3beee817e1ff98738">IsDeployed</a>() R0;
 <a name="l00031"></a><a class="code" href="class_infantry_class.html#9f5e3916e6b094d361127738fda4f3f7">00031</a>         virtual <span class="keywordtype">bool</span> <a class="code" href="class_infantry_class.html#9f5e3916e6b094d361127738fda4f3f7">PlayAnim</a>(<span class="keywordtype">int</span> nAnimNumber, <span class="keywordtype">bool</span> bUnk, <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk) R0;
-<a name="l00032"></a>00032         
+<a name="l00032"></a>00032 
 <a name="l00033"></a>00033         <span class="comment">//Constructor</span>
 <a name="l00034"></a><a class="code" href="class_infantry_class.html#7b1e431b5f7db0540292a1c6b94afbb9">00034</a>         <a class="code" href="class_infantry_class.html">InfantryClass</a>(<a class="code" href="class_infantry_type_class.html">InfantryTypeClass</a>* pType, <a class="code" href="class_house_class.html">HouseClass</a>* pOwner) : <a class="code" href="class_foot_class.html">FootClass</a>(false)
-<a name="l00035"></a>00035                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x517A50);
+<a name="l00035"></a>00035                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x517A50); }
 <a name="l00036"></a>00036 
-<a name="l00037"></a>00037 protected:
-<a name="l00038"></a><a class="code" href="class_infantry_class.html#eccdfbc31ad4e98ad91630f458907e10">00038</a>         <a class="code" href="class_infantry_class.html">InfantryClass</a>() : <a class="code" href="class_foot_class.html">FootClass</a>(false)
+<a name="l00037"></a>00037 <span class="keyword">protected</span>:
+<a name="l00038"></a><a class="code" href="class_infantry_class.html#eccdfbc31ad4e98ad91630f458907e10">00038</a>         <a class="code" href="class_infantry_class.html#eccdfbc31ad4e98ad91630f458907e10">InfantryClass</a>() : <a class="code" href="class_foot_class.html">FootClass</a>(false)
 <a name="l00039"></a>00039                 { }
 <a name="l00040"></a>00040 
 <a name="l00041"></a>00041         <span class="comment">//===========================================================================</span>
@@ -92,7 +92,7 @@
 <a name="l00059"></a>00059 
 <a name="l00060"></a>00060 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Jan 2 21:12:29 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:06 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

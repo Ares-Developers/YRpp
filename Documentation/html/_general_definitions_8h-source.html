@@ -945,75 +945,84 @@
 <a name="l00912"></a><a class="code" href="_general_definitions_8h.html#ef451d0a884202054a66c526c3665aee">00912</a> <span class="preprocessor"></span><span class="preprocessor">#define bf_4000         0x4000</span>
 <a name="l00913"></a>00913 <span class="preprocessor"></span>
 <a name="l00914"></a>00914 <span class="comment">// UI</span>
-<a name="l00915"></a><a class="code" href="_general_definitions_8h.html#09fef71fb09b5dd24e75963ceceb6141">00915</a> <span class="keyword">typedef</span> <a class="code" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="_general_definitions_8h.html#09fef71fb09b5dd24e75963ceceb6141">eMouseEventFlags</a>;
-<a name="l00916"></a>00916 
-<a name="l00917"></a><a class="code" href="_general_definitions_8h.html#ba50e9d486916d2e39ea2fe519e27a9c">00917</a> <span class="preprocessor">#define mevf_LBUTTONDOWN                0x01</span>
-<a name="l00918"></a><a class="code" href="_general_definitions_8h.html#2523d8fba7f933808a5f4e664e8d2aca">00918</a> <span class="preprocessor"></span><span class="preprocessor">#define mevf_LBUTTONHELD                0x02</span>
-<a name="l00919"></a><a class="code" href="_general_definitions_8h.html#a521f470265fddc9502685f20bdc169b">00919</a> <span class="preprocessor"></span><span class="preprocessor">#define mevf_LBUTTONUP          0x04</span>
-<a name="l00920"></a><a class="code" href="_general_definitions_8h.html#5342ce1a24480c2985550c01ad5876db">00920</a> <span class="preprocessor"></span><span class="preprocessor">#define mevf_MOVE               0x08</span>
-<a name="l00921"></a><a class="code" href="_general_definitions_8h.html#8e66ed5340966d0123b621b37247e956">00921</a> <span class="preprocessor"></span><span class="preprocessor">#define mevf_RBUTTONDOWN                0x10</span>
-<a name="l00922"></a><a class="code" href="_general_definitions_8h.html#8ad8916d6be2ae805ec9df33e6066650">00922</a> <span class="preprocessor"></span><span class="preprocessor">#define mevf_RBUTTONHELD                0x20</span>
-<a name="l00923"></a><a class="code" href="_general_definitions_8h.html#6310f66480ae1bc40d320a3df44c255b">00923</a> <span class="preprocessor"></span><span class="preprocessor">#define mevf_RBUTTONUP          0x40</span>
-<a name="l00924"></a>00924 <span class="preprocessor"></span>
-<a name="l00925"></a>00925 <span class="comment">//control key flags</span>
-<a name="l00926"></a><a class="code" href="_general_definitions_8h.html#17e082dc659f8d9537c9a3a13c4388dd">00926</a> <span class="keyword">typedef</span> <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="_general_definitions_8h.html#17e082dc659f8d9537c9a3a13c4388dd">eControlKeyFlags</a>;
-<a name="l00927"></a>00927 
-<a name="l00928"></a><a class="code" href="_general_definitions_8h.html#3db90ce373a9c7ac1e9cbc76d3f7d165">00928</a> <span class="preprocessor">#define ckf_SHIFT 0x01</span>
-<a name="l00929"></a><a class="code" href="_general_definitions_8h.html#33eb267b041749231cc73bf9af0096f4">00929</a> <span class="preprocessor"></span><span class="preprocessor">#define ckf_CTRL 0x02</span>
-<a name="l00930"></a><a class="code" href="_general_definitions_8h.html#905cdbeefbeae9a1c13b419473e6172c">00930</a> <span class="preprocessor"></span><span class="preprocessor">#define ckf_ALT 0x04</span>
-<a name="l00931"></a>00931 <span class="preprocessor"></span>
-<a name="l00932"></a>00932 
-<a name="l00933"></a><a class="code" href="_general_definitions_8h.html#a7304ed8cadc19ddf7c856fa184fcc2e">00933</a> <span class="keyword">typedef</span> <span class="keywordtype">int</span> <a class="code" href="_general_definitions_8h.html#a7304ed8cadc19ddf7c856fa184fcc2e">eEdge</a>;
-<a name="l00934"></a>00934 
-<a name="l00935"></a><a class="code" href="_general_definitions_8h.html#a0391f9b1c8fe893493696cfd8969a9d">00935</a> <span class="preprocessor">#define edge_NORTH              0x00</span>
-<a name="l00936"></a><a class="code" href="_general_definitions_8h.html#e841fdda32f686d27cbd165fe9756cca">00936</a> <span class="preprocessor"></span><span class="preprocessor">#define edge_EAST               0x01</span>
-<a name="l00937"></a><a class="code" href="_general_definitions_8h.html#bd78c1d16b4e8b38bb5b0c0fcac1c818">00937</a> <span class="preprocessor"></span><span class="preprocessor">#define edge_SOUTH              0x02</span>
-<a name="l00938"></a><a class="code" href="_general_definitions_8h.html#3d349512ced90e5ffd7069fa5984113d">00938</a> <span class="preprocessor"></span><span class="preprocessor">#define edge_WEST               0x03</span>
-<a name="l00939"></a><a class="code" href="_general_definitions_8h.html#d4ee5e6e8cf54f6c828d81ae062fe0ad">00939</a> <span class="preprocessor"></span><span class="preprocessor">#define edge_AIR                0x04</span>
+<a name="l00915"></a><a class="code" href="class_mouse_event.html">00915</a> <span class="keyword">class </span><a class="code" href="class_mouse_event.html">MouseEvent</a> {
+<a name="l00916"></a>00916 <span class="keyword">public</span>:
+<a name="l00917"></a><a class="code" href="class_mouse_event.html#42025883a40481be8fabceb76ae66057">00917</a>         <span class="keyword">enum</span> <a class="code" href="class_mouse_event.html#42025883a40481be8fabceb76ae66057">E</a> {
+<a name="l00918"></a><a class="code" href="class_mouse_event.html#42025883a40481be8fabceb76ae660570717899f4ad4a1e3da225227c2471b5b">00918</a>                 <a class="code" href="class_mouse_event.html#42025883a40481be8fabceb76ae660570717899f4ad4a1e3da225227c2471b5b">LeftDown</a> = 0x1,
+<a name="l00919"></a><a class="code" href="class_mouse_event.html#42025883a40481be8fabceb76ae660576570dafb3491a78fdaae7e18ab0b2225">00919</a>                 <a class="code" href="class_mouse_event.html#42025883a40481be8fabceb76ae660576570dafb3491a78fdaae7e18ab0b2225">LeftHeld</a> = 0x2,
+<a name="l00920"></a><a class="code" href="class_mouse_event.html#42025883a40481be8fabceb76ae660576d77967ccf11261e5c02d15027772821">00920</a>                 <a class="code" href="class_mouse_event.html#42025883a40481be8fabceb76ae660576d77967ccf11261e5c02d15027772821">LeftUp</a> = 0x4,
+<a name="l00921"></a><a class="code" href="class_mouse_event.html#42025883a40481be8fabceb76ae66057a7c37746fd19c7e7cb0d3247a998df09">00921</a>                 <a class="code" href="class_mouse_event.html#42025883a40481be8fabceb76ae66057a7c37746fd19c7e7cb0d3247a998df09">Move</a> = 0x8,
+<a name="l00922"></a><a class="code" href="class_mouse_event.html#42025883a40481be8fabceb76ae660572a5b81dfe2fcdea5718eaba260f6a159">00922</a>                 <a class="code" href="class_mouse_event.html#42025883a40481be8fabceb76ae660572a5b81dfe2fcdea5718eaba260f6a159">RightDown</a> = 0x10,
+<a name="l00923"></a><a class="code" href="class_mouse_event.html#42025883a40481be8fabceb76ae66057711cb1565d0631f330fbfac7c14a433f">00923</a>                 <a class="code" href="class_mouse_event.html#42025883a40481be8fabceb76ae66057711cb1565d0631f330fbfac7c14a433f">RightHeld</a> = 0x20,
+<a name="l00924"></a><a class="code" href="class_mouse_event.html#42025883a40481be8fabceb76ae660572f9ba35034fc2e694f7ec3b1a10b398c">00924</a>                 <a class="code" href="class_mouse_event.html#42025883a40481be8fabceb76ae660572f9ba35034fc2e694f7ec3b1a10b398c">RightUp</a> = 0x40
+<a name="l00925"></a>00925         } <a class="code" href="class_mouse_event.html#4cbc3189e237e2f7904502ec5b0c03d5">_</a>;
+<a name="l00926"></a>00926 
+<a name="l00927"></a>00927         <span class="keyword">public</span>:
+<a name="l00928"></a><a class="code" href="class_mouse_event.html#ecec9aad65235ec67e73e165da40bc2c">00928</a>                 <a class="code" href="class_mouse_event.html#ecec9aad65235ec67e73e165da40bc2c">MouseEvent</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> val) { this-&gt;<a class="code" href="class_mouse_event.html#4cbc3189e237e2f7904502ec5b0c03d5">_</a> = <span class="keyword">static_cast&lt;</span><a class="code" href="class_mouse_event.html#42025883a40481be8fabceb76ae66057">E</a><span class="keyword">&gt;</span>(val); };
+<a name="l00929"></a><a class="code" href="class_mouse_event.html#2633c4625941a946938442d9f879932e">00929</a>                 <a class="code" href="class_mouse_event.html#2633c4625941a946938442d9f879932e">operator int</a>() { <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_mouse_event.html#4cbc3189e237e2f7904502ec5b0c03d5">_</a>; };
+<a name="l00930"></a>00930 };
+<a name="l00931"></a>00931 
+<a name="l00932"></a>00932 <span class="comment">// typedef BYTE eMouseEventFlags;</span>
+<a name="l00933"></a>00933 
+<a name="l00934"></a>00934 <span class="comment">//control key flags</span>
+<a name="l00935"></a><a class="code" href="_general_definitions_8h.html#17e082dc659f8d9537c9a3a13c4388dd">00935</a> <span class="keyword">typedef</span> <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="_general_definitions_8h.html#17e082dc659f8d9537c9a3a13c4388dd">eControlKeyFlags</a>;
+<a name="l00936"></a>00936 
+<a name="l00937"></a><a class="code" href="_general_definitions_8h.html#3db90ce373a9c7ac1e9cbc76d3f7d165">00937</a> <span class="preprocessor">#define ckf_SHIFT 0x01</span>
+<a name="l00938"></a><a class="code" href="_general_definitions_8h.html#33eb267b041749231cc73bf9af0096f4">00938</a> <span class="preprocessor"></span><span class="preprocessor">#define ckf_CTRL 0x02</span>
+<a name="l00939"></a><a class="code" href="_general_definitions_8h.html#905cdbeefbeae9a1c13b419473e6172c">00939</a> <span class="preprocessor"></span><span class="preprocessor">#define ckf_ALT 0x04</span>
 <a name="l00940"></a>00940 <span class="preprocessor"></span>
 <a name="l00941"></a>00941 
-<a name="l00942"></a><a class="code" href="_general_definitions_8h.html#1d580590ffa38ba38c761ea8a8d84187">00942</a> <span class="keyword">typedef</span> <span class="keywordtype">int</span> <a class="code" href="_general_definitions_8h.html#1d580590ffa38ba38c761ea8a8d84187">eMove</a>;
+<a name="l00942"></a><a class="code" href="_general_definitions_8h.html#a7304ed8cadc19ddf7c856fa184fcc2e">00942</a> <span class="keyword">typedef</span> <span class="keywordtype">int</span> <a class="code" href="_general_definitions_8h.html#a7304ed8cadc19ddf7c856fa184fcc2e">eEdge</a>;
 <a name="l00943"></a>00943 
-<a name="l00944"></a><a class="code" href="_general_definitions_8h.html#7110c71f6d0f028b08f43141ca13c508">00944</a> <span class="preprocessor">#define move_OK         0</span>
-<a name="l00945"></a><a class="code" href="_general_definitions_8h.html#f7eb091bf652780181b2f385260d94c7">00945</a> <span class="preprocessor"></span><span class="preprocessor">#define move_Cloak              1</span>
-<a name="l00946"></a><a class="code" href="_general_definitions_8h.html#162ff3cbe2a9632af8b4753a9ca75b63">00946</a> <span class="preprocessor"></span><span class="preprocessor">#define move_Moving_Block               2</span>
-<a name="l00947"></a><a class="code" href="_general_definitions_8h.html#3ac3878df1a0f71514e6e76b409bf911">00947</a> <span class="preprocessor"></span><span class="preprocessor">#define move_Closed_Gate                3</span>
-<a name="l00948"></a><a class="code" href="_general_definitions_8h.html#927a58780a793b80971e025df7663861">00948</a> <span class="preprocessor"></span><span class="preprocessor">#define move_Friendly_Destroyable               4</span>
-<a name="l00949"></a><a class="code" href="_general_definitions_8h.html#bc22f2e9f3be80bf4a5ab754ccd5beda">00949</a> <span class="preprocessor"></span><span class="preprocessor">#define move_Destroyable                5</span>
-<a name="l00950"></a><a class="code" href="_general_definitions_8h.html#f213df2dc010fdca70842eaa13bf3d32">00950</a> <span class="preprocessor"></span><span class="preprocessor">#define move_Temp               6</span>
-<a name="l00951"></a><a class="code" href="_general_definitions_8h.html#773101135de0882c24eeca4a4918af55">00951</a> <span class="preprocessor"></span><span class="preprocessor">#define move_No         7</span>
-<a name="l00952"></a><a class="code" href="_general_definitions_8h.html#8f3277880752edd09f2e9babb8976ce3">00952</a> <span class="preprocessor"></span><span class="preprocessor">#define move_Count              8</span>
-<a name="l00953"></a>00953 <span class="preprocessor"></span>
-<a name="l00954"></a>00954 
-<a name="l00955"></a><a class="code" href="_general_definitions_8h.html#5fca5492e95dffe2104708d34fd88ff4">00955</a> <span class="keyword">typedef</span> <span class="keywordtype">int</span> <a class="code" href="_general_definitions_8h.html#5fca5492e95dffe2104708d34fd88ff4">eZGradient</a>;
-<a name="l00956"></a>00956 
-<a name="l00957"></a><a class="code" href="_general_definitions_8h.html#04c9d1e91a5533852c5fd4414ffb93ca">00957</a> <span class="preprocessor">#define zgrad_None              -1</span>
-<a name="l00958"></a><a class="code" href="_general_definitions_8h.html#f52a3a0aacf96d65a844a1e5f9b06f82">00958</a> <span class="preprocessor"></span><span class="preprocessor">#define zgrad_Ground            0</span>
-<a name="l00959"></a><a class="code" href="_general_definitions_8h.html#6566589b0f232d9ae5809635aa556801">00959</a> <span class="preprocessor"></span><span class="preprocessor">#define zgrad_45Deg             1</span>
-<a name="l00960"></a><a class="code" href="_general_definitions_8h.html#f0799008d55762822726953b62630968">00960</a> <span class="preprocessor"></span><span class="preprocessor">#define zgrad_90Deg             2</span>
-<a name="l00961"></a><a class="code" href="_general_definitions_8h.html#1e583922f5ba2ce17f9c0a64de723a56">00961</a> <span class="preprocessor"></span><span class="preprocessor">#define zgrad_135Deg            3</span>
-<a name="l00962"></a><a class="code" href="_general_definitions_8h.html#1599c484a8afd68674e7899eb3023fe9">00962</a> <span class="preprocessor"></span><span class="preprocessor">#define zgrad_Count             4</span>
-<a name="l00963"></a>00963 <span class="preprocessor"></span>
-<a name="l00964"></a>00964 <span class="comment">//Westwood custom messages (e.g. for SendMessage)</span>
-<a name="l00965"></a><a class="code" href="_general_definitions_8h.html#76a4ff66b459eb1579329439794bb6c9">00965</a> <span class="preprocessor">#define WW_SLIDER_GETVALUE                      0x400</span>
-<a name="l00966"></a>00966 <span class="preprocessor"></span>
-<a name="l00967"></a><a class="code" href="_general_definitions_8h.html#c78cc77c168167c35d3b87a0df4cfa4a">00967</a> <span class="preprocessor">#define WW_SLIDER_SETVALUE                      0x405</span>
-<a name="l00968"></a><a class="code" href="_general_definitions_8h.html#5079b04df7d7a81236b8d99df692d2bc">00968</a> <span class="preprocessor"></span><span class="preprocessor">#define WW_SLIDER_SETRANGE                      0x406</span>
-<a name="l00969"></a>00969 <span class="preprocessor"></span>
-<a name="l00970"></a><a class="code" href="_general_definitions_8h.html#eceb452f7c326c8bd194c2a5d147805e">00970</a> <span class="preprocessor">#define WW_INITDIALOG                           0x497</span>
-<a name="l00971"></a><a class="code" href="_general_definitions_8h.html#c851f903b37a8ca53b6183f37d355ff9">00971</a> <span class="preprocessor"></span><span class="preprocessor">#define WW_SETCOLOR                                     0x498</span>
+<a name="l00944"></a><a class="code" href="_general_definitions_8h.html#a0391f9b1c8fe893493696cfd8969a9d">00944</a> <span class="preprocessor">#define edge_NORTH              0x00</span>
+<a name="l00945"></a><a class="code" href="_general_definitions_8h.html#e841fdda32f686d27cbd165fe9756cca">00945</a> <span class="preprocessor"></span><span class="preprocessor">#define edge_EAST               0x01</span>
+<a name="l00946"></a><a class="code" href="_general_definitions_8h.html#bd78c1d16b4e8b38bb5b0c0fcac1c818">00946</a> <span class="preprocessor"></span><span class="preprocessor">#define edge_SOUTH              0x02</span>
+<a name="l00947"></a><a class="code" href="_general_definitions_8h.html#3d349512ced90e5ffd7069fa5984113d">00947</a> <span class="preprocessor"></span><span class="preprocessor">#define edge_WEST               0x03</span>
+<a name="l00948"></a><a class="code" href="_general_definitions_8h.html#d4ee5e6e8cf54f6c828d81ae062fe0ad">00948</a> <span class="preprocessor"></span><span class="preprocessor">#define edge_AIR                0x04</span>
+<a name="l00949"></a>00949 <span class="preprocessor"></span>
+<a name="l00950"></a>00950 
+<a name="l00951"></a><a class="code" href="_general_definitions_8h.html#1d580590ffa38ba38c761ea8a8d84187">00951</a> <span class="keyword">typedef</span> <span class="keywordtype">int</span> <a class="code" href="_general_definitions_8h.html#1d580590ffa38ba38c761ea8a8d84187">eMove</a>;
+<a name="l00952"></a>00952 
+<a name="l00953"></a><a class="code" href="_general_definitions_8h.html#7110c71f6d0f028b08f43141ca13c508">00953</a> <span class="preprocessor">#define move_OK         0</span>
+<a name="l00954"></a><a class="code" href="_general_definitions_8h.html#f7eb091bf652780181b2f385260d94c7">00954</a> <span class="preprocessor"></span><span class="preprocessor">#define move_Cloak              1</span>
+<a name="l00955"></a><a class="code" href="_general_definitions_8h.html#162ff3cbe2a9632af8b4753a9ca75b63">00955</a> <span class="preprocessor"></span><span class="preprocessor">#define move_Moving_Block               2</span>
+<a name="l00956"></a><a class="code" href="_general_definitions_8h.html#3ac3878df1a0f71514e6e76b409bf911">00956</a> <span class="preprocessor"></span><span class="preprocessor">#define move_Closed_Gate                3</span>
+<a name="l00957"></a><a class="code" href="_general_definitions_8h.html#927a58780a793b80971e025df7663861">00957</a> <span class="preprocessor"></span><span class="preprocessor">#define move_Friendly_Destroyable               4</span>
+<a name="l00958"></a><a class="code" href="_general_definitions_8h.html#bc22f2e9f3be80bf4a5ab754ccd5beda">00958</a> <span class="preprocessor"></span><span class="preprocessor">#define move_Destroyable                5</span>
+<a name="l00959"></a><a class="code" href="_general_definitions_8h.html#f213df2dc010fdca70842eaa13bf3d32">00959</a> <span class="preprocessor"></span><span class="preprocessor">#define move_Temp               6</span>
+<a name="l00960"></a><a class="code" href="_general_definitions_8h.html#773101135de0882c24eeca4a4918af55">00960</a> <span class="preprocessor"></span><span class="preprocessor">#define move_No         7</span>
+<a name="l00961"></a><a class="code" href="_general_definitions_8h.html#8f3277880752edd09f2e9babb8976ce3">00961</a> <span class="preprocessor"></span><span class="preprocessor">#define move_Count              8</span>
+<a name="l00962"></a>00962 <span class="preprocessor"></span>
+<a name="l00963"></a>00963 
+<a name="l00964"></a><a class="code" href="_general_definitions_8h.html#5fca5492e95dffe2104708d34fd88ff4">00964</a> <span class="keyword">typedef</span> <span class="keywordtype">int</span> <a class="code" href="_general_definitions_8h.html#5fca5492e95dffe2104708d34fd88ff4">eZGradient</a>;
+<a name="l00965"></a>00965 
+<a name="l00966"></a><a class="code" href="_general_definitions_8h.html#04c9d1e91a5533852c5fd4414ffb93ca">00966</a> <span class="preprocessor">#define zgrad_None              -1</span>
+<a name="l00967"></a><a class="code" href="_general_definitions_8h.html#f52a3a0aacf96d65a844a1e5f9b06f82">00967</a> <span class="preprocessor"></span><span class="preprocessor">#define zgrad_Ground            0</span>
+<a name="l00968"></a><a class="code" href="_general_definitions_8h.html#6566589b0f232d9ae5809635aa556801">00968</a> <span class="preprocessor"></span><span class="preprocessor">#define zgrad_45Deg             1</span>
+<a name="l00969"></a><a class="code" href="_general_definitions_8h.html#f0799008d55762822726953b62630968">00969</a> <span class="preprocessor"></span><span class="preprocessor">#define zgrad_90Deg             2</span>
+<a name="l00970"></a><a class="code" href="_general_definitions_8h.html#1e583922f5ba2ce17f9c0a64de723a56">00970</a> <span class="preprocessor"></span><span class="preprocessor">#define zgrad_135Deg            3</span>
+<a name="l00971"></a><a class="code" href="_general_definitions_8h.html#1599c484a8afd68674e7899eb3023fe9">00971</a> <span class="preprocessor"></span><span class="preprocessor">#define zgrad_Count             4</span>
 <a name="l00972"></a>00972 <span class="preprocessor"></span>
-<a name="l00973"></a><a class="code" href="_general_definitions_8h.html#72aa093105fdd6513c299ce91e845d7a">00973</a> <span class="preprocessor">#define WW_BLITDDS                                      0x4A8   //lParam is some structure</span>
-<a name="l00974"></a>00974 <span class="preprocessor"></span>
-<a name="l00975"></a><a class="code" href="_general_definitions_8h.html#33f5ece22892441ce801a55ac82edabf">00975</a> <span class="preprocessor">#define WW_STATIC_SETTEXT                       0x4B2</span>
-<a name="l00976"></a>00976 <span class="preprocessor"></span>
-<a name="l00977"></a><a class="code" href="_general_definitions_8h.html#26284da7138367c71eeebe96037f86ce">00977</a> <span class="preprocessor">#define WW_CB_ADDITEM                           0x4C2</span>
+<a name="l00973"></a>00973 <span class="comment">//Westwood custom messages (e.g. for SendMessage)</span>
+<a name="l00974"></a><a class="code" href="_general_definitions_8h.html#76a4ff66b459eb1579329439794bb6c9">00974</a> <span class="preprocessor">#define WW_SLIDER_GETVALUE                      0x400</span>
+<a name="l00975"></a>00975 <span class="preprocessor"></span>
+<a name="l00976"></a><a class="code" href="_general_definitions_8h.html#c78cc77c168167c35d3b87a0df4cfa4a">00976</a> <span class="preprocessor">#define WW_SLIDER_SETVALUE                      0x405</span>
+<a name="l00977"></a><a class="code" href="_general_definitions_8h.html#5079b04df7d7a81236b8d99df692d2bc">00977</a> <span class="preprocessor"></span><span class="preprocessor">#define WW_SLIDER_SETRANGE                      0x406</span>
 <a name="l00978"></a>00978 <span class="preprocessor"></span>
-<a name="l00979"></a><a class="code" href="_general_definitions_8h.html#53e37f4675a616089c9fd87f4559b76a">00979</a> <span class="preprocessor">#define WW_LB_ADDITEM                           0x4CD</span>
-<a name="l00980"></a>00980 <span class="preprocessor"></span>
-<a name="l00981"></a>00981 <span class="preprocessor">#endif</span>
+<a name="l00979"></a><a class="code" href="_general_definitions_8h.html#eceb452f7c326c8bd194c2a5d147805e">00979</a> <span class="preprocessor">#define WW_INITDIALOG                           0x497</span>
+<a name="l00980"></a><a class="code" href="_general_definitions_8h.html#c851f903b37a8ca53b6183f37d355ff9">00980</a> <span class="preprocessor"></span><span class="preprocessor">#define WW_SETCOLOR                                     0x498</span>
+<a name="l00981"></a>00981 <span class="preprocessor"></span>
+<a name="l00982"></a><a class="code" href="_general_definitions_8h.html#72aa093105fdd6513c299ce91e845d7a">00982</a> <span class="preprocessor">#define WW_BLITDDS                                      0x4A8   //lParam is some structure</span>
+<a name="l00983"></a>00983 <span class="preprocessor"></span>
+<a name="l00984"></a><a class="code" href="_general_definitions_8h.html#33f5ece22892441ce801a55ac82edabf">00984</a> <span class="preprocessor">#define WW_STATIC_SETTEXT                       0x4B2</span>
+<a name="l00985"></a>00985 <span class="preprocessor"></span>
+<a name="l00986"></a><a class="code" href="_general_definitions_8h.html#26284da7138367c71eeebe96037f86ce">00986</a> <span class="preprocessor">#define WW_CB_ADDITEM                           0x4C2</span>
+<a name="l00987"></a>00987 <span class="preprocessor"></span>
+<a name="l00988"></a><a class="code" href="_general_definitions_8h.html#53e37f4675a616089c9fd87f4559b76a">00988</a> <span class="preprocessor">#define WW_LB_ADDITEM                           0x4CD</span>
+<a name="l00989"></a>00989 <span class="preprocessor"></span>
+<a name="l00990"></a>00990 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Jan 2 21:12:29 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:06 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

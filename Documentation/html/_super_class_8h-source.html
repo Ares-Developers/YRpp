@@ -68,14 +68,14 @@
 <a name="l00035"></a>00035 
 <a name="l00036"></a>00036         <span class="comment">// non virtual</span>
 <a name="l00037"></a><a class="code" href="class_super_class.html#14a5d370840bb81f099d67ea0629c616">00037</a>         <span class="keywordtype">void</span> <a class="code" href="class_super_class.html#14a5d370840bb81f099d67ea0629c616">CreateChronoAnim</a>(<a class="code" href="class_vector3_d.html">CoordStruct</a> Coords)
-<a name="l00038"></a>00038                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x6CB3A0);
+<a name="l00038"></a>00038                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x6CB3A0); }
 <a name="l00039"></a>00039 
 <a name="l00040"></a>00040         <span class="comment">//Constructor</span>
-<a name="l00041"></a><a class="code" href="class_super_class.html#128aebb08597fc0d31c015e8960f09f7">00041</a>         <a class="code" href="class_super_class.html">SuperClass</a>(<a class="code" href="class_super_weapon_type_class.html">SuperWeaponTypeClass</a>* pSWType, <a class="code" href="class_house_class.html">HouseClass</a>* pOwner) : <a class="code" href="class_abstract_class.html">AbstractClass</a>(false)
-<a name="l00042"></a>00042                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x6CAF90);
+<a name="l00041"></a><a class="code" href="class_super_class.html#128aebb08597fc0d31c015e8960f09f7">00041</a>         <a class="code" href="class_super_class.html#580a0feaf7d02a33d23e09b6e0d36bca">SuperClass</a>(<a class="code" href="class_super_weapon_type_class.html">SuperWeaponTypeClass</a>* pSWType, <a class="code" href="class_house_class.html">HouseClass</a>* pOwner) : <a class="code" href="class_abstract_class.html">AbstractClass</a>(false)
+<a name="l00042"></a>00042                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x6CAF90); }
 <a name="l00043"></a>00043 
-<a name="l00044"></a>00044 protected:
-<a name="l00045"></a><a class="code" href="class_super_class.html#580a0feaf7d02a33d23e09b6e0d36bca">00045</a>         <a class="code" href="class_super_class.html">SuperClass</a>() : <a class="code" href="class_abstract_class.html">AbstractClass</a>(false) { }
+<a name="l00044"></a>00044 <span class="keyword">protected</span>:
+<a name="l00045"></a><a class="code" href="class_super_class.html#580a0feaf7d02a33d23e09b6e0d36bca">00045</a>         <a class="code" href="class_super_class.html#580a0feaf7d02a33d23e09b6e0d36bca">SuperClass</a>() : <a class="code" href="class_abstract_class.html">AbstractClass</a>(false) { }
 <a name="l00046"></a>00046 
 <a name="l00047"></a>00047         <span class="comment">//===========================================================================</span>
 <a name="l00048"></a>00048         <span class="comment">//===== Properties ==========================================================</span>
@@ -92,7 +92,7 @@
 <a name="l00059"></a><a class="code" href="class_super_class.html#9f034bdc85b5c0ce7bdb4e6faa56a01b">00059</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>,                                 <a class="code" href="class_super_class.html#4636f8bf43a8e64789b6d4e05a0544ff">unknown_4C</a>);
 <a name="l00060"></a><a class="code" href="class_super_class.html#6f305f76b0886ae4eb0a7d905753dc70">00060</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>,                                   <a class="code" href="class_super_class.html#9f034bdc85b5c0ce7bdb4e6faa56a01b">SpecialSoundDuration</a>); <span class="comment">// see 0x6CD14F</span>
 <a name="l00061"></a><a class="code" href="class_super_class.html#7afd32f1abfd43e29d0a20503f742295">00061</a>         <a class="code" href="_y_r_p_p_core_8h.html#aae3cb398fbfa33cc83eddc740386cd4">PROPERTY_STRUCT</a>(<a class="code" href="class_vector3_d.html">CoordStruct</a>,    <a class="code" href="class_super_class.html#6f305f76b0886ae4eb0a7d905753dc70">SpecialSoundLocation</a>);          <span class="comment">//unused?</span>
-<a name="l00062"></a><a class="code" href="class_super_class.html#0ba5d793600173115d5c5065d49c2f12">00062</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>,                                  <a class="code" href="class_super_class.html#7afd32f1abfd43e29d0a20503f742295">unknown_bool_60</a>);          <span class="comment">// 0x60 </span>
+<a name="l00062"></a><a class="code" href="class_super_class.html#0ba5d793600173115d5c5065d49c2f12">00062</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>,                                  <a class="code" href="class_super_class.html#7afd32f1abfd43e29d0a20503f742295">unknown_bool_60</a>);          <span class="comment">// 0x60</span>
 <a name="l00063"></a><a class="code" href="class_super_class.html#c44508a4da5f3a5b5beff5ea4fa70f0a">00063</a>         <a class="code" href="_y_r_p_p_core_8h.html#aae3cb398fbfa33cc83eddc740386cd4">PROPERTY_STRUCT</a>(<a class="code" href="class_vector2_d.html">CellStruct</a>,                     <a class="code" href="class_super_class.html#0ba5d793600173115d5c5065d49c2f12">ChronoMapCoords</a>);  <span class="comment">// 0x62</span>
 <a name="l00064"></a><a class="code" href="class_super_class.html#f3a7aa479ef34081de7396075d5a98f9">00064</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="class_anim_class.html">AnimClass</a> *,           <a class="code" href="class_super_class.html#3030f28d2522c66a0b7087451d2bde48">Animation</a>);                <span class="comment">// 0x68</span>
 <a name="l00065"></a><a class="code" href="class_super_class.html#8f05108189785f7e3351a47e8977d442">00065</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>,                                  <a class="code" href="class_super_class.html#f3a7aa479ef34081de7396075d5a98f9">unknown_bool_6C</a>);
@@ -164,7 +164,7 @@
 <a name="l00131"></a>00131 
 <a name="l00132"></a>00132 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Jan 2 21:12:30 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:08 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

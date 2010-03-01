@@ -46,14 +46,14 @@
 <a name="l00013"></a>00013 
 <a name="l00014"></a>00014         <span class="comment">//Constructor</span>
 <a name="l00015"></a><a class="code" href="class_generic_node.html#2baac9c7009c8fd79b9b2d925441cf4c">00015</a>         <a class="code" href="class_generic_node.html">GenericNode</a>()
-<a name="l00016"></a><a class="code" href="class_generic_node.html#2592b959e8fe551af7f8f880b5ac724e">00016</a>                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x40E320);
+<a name="l00016"></a>00016                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x40E320); }
 <a name="l00017"></a>00017 
 <a name="l00018"></a>00018         <span class="comment">//Properties</span>
 <a name="l00019"></a><a class="code" href="class_generic_node.html#94bd1d6550080f47f4b4dcce4aa2ab4a">00019</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="class_generic_node.html">GenericNode</a>*, <a class="code" href="class_generic_node.html#2592b959e8fe551af7f8f880b5ac724e">Next</a>);
-<a name="l00020"></a>00020         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(GenericNode*, <a class="code" href="class_generic_node.html#94bd1d6550080f47f4b4dcce4aa2ab4a">Previous</a>);
+<a name="l00020"></a>00020         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="class_generic_node.html">GenericNode</a>*, <a class="code" href="class_generic_node.html#94bd1d6550080f47f4b4dcce4aa2ab4a">Previous</a>);
 <a name="l00021"></a>00021 
-<a name="l00022"></a>00022 protected:
-<a name="l00023"></a><a class="code" href="class_generic_node.html#7a15eb438afd2bb348f5851d0f78d68b">00023</a>         GenericNode(<span class="keywordtype">bool</span>) { }
+<a name="l00022"></a>00022 <span class="keyword">protected</span>:
+<a name="l00023"></a><a class="code" href="class_generic_node.html#7a15eb438afd2bb348f5851d0f78d68b">00023</a>         <a class="code" href="class_generic_node.html#7a15eb438afd2bb348f5851d0f78d68b">GenericNode</a>(<span class="keywordtype">bool</span>) { }
 <a name="l00024"></a>00024 };
 <a name="l00025"></a>00025 
 <a name="l00026"></a><a class="code" href="class_node.html">00026</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="class_node.html">Node</a> : <span class="keyword">public</span> <a class="code" href="class_generic_node.html">GenericNode</a>
@@ -64,10 +64,10 @@
 <a name="l00031"></a>00031 
 <a name="l00032"></a>00032         <span class="comment">//Constructor</span>
 <a name="l00033"></a><a class="code" href="class_node.html#0ac1d44cfe588be564acf25485029bd8">00033</a>         <a class="code" href="class_node.html">Node</a>() : <a class="code" href="class_generic_node.html">GenericNode</a>(false)
-<a name="l00034"></a>00034                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x40E320);
+<a name="l00034"></a>00034                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x40E320); }
 <a name="l00035"></a>00035 
-<a name="l00036"></a>00036 protected:
-<a name="l00037"></a><a class="code" href="class_node.html#7a490fc51ed386b67a3158c71c8ae815">00037</a>         <a class="code" href="class_node.html">Node</a>(<span class="keywordtype">bool</span>) : <a class="code" href="class_generic_node.html">GenericNode</a>(false) { }
+<a name="l00036"></a>00036 <span class="keyword">protected</span>:
+<a name="l00037"></a><a class="code" href="class_node.html#7a490fc51ed386b67a3158c71c8ae815">00037</a>         <a class="code" href="class_node.html#7a490fc51ed386b67a3158c71c8ae815">Node</a>(<span class="keywordtype">bool</span>) : <a class="code" href="class_generic_node.html">GenericNode</a>(false) { }
 <a name="l00038"></a>00038 };
 <a name="l00039"></a>00039 
 <a name="l00040"></a><a class="code" href="class_generic_list.html">00040</a> <span class="keyword">class </span><a class="code" href="class_generic_list.html">GenericList</a>
@@ -78,14 +78,14 @@
 <a name="l00045"></a>00045 
 <a name="l00046"></a>00046         <span class="comment">//Constructor</span>
 <a name="l00047"></a><a class="code" href="class_generic_list.html#ab820ef9dadf7190a9caabbaee8b133d">00047</a>         <a class="code" href="class_generic_list.html">GenericList</a>()
-<a name="l00048"></a><a class="code" href="class_generic_list.html#019dfcede0172df44aab887461548271">00048</a>                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x52ACE0);
+<a name="l00048"></a>00048                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x52ACE0); }
 <a name="l00049"></a>00049 
 <a name="l00050"></a>00050         <span class="comment">//Properties</span>
 <a name="l00051"></a><a class="code" href="class_generic_list.html#3d8e257ef91ab70ac9f04efaedb560f8">00051</a>         <a class="code" href="_y_r_p_p_core_8h.html#aae3cb398fbfa33cc83eddc740386cd4">PROPERTY_STRUCT</a>(<a class="code" href="class_generic_node.html">GenericNode</a>, <a class="code" href="class_generic_list.html#019dfcede0172df44aab887461548271">First</a>);
-<a name="l00052"></a><a class="code" href="class_generic_list.html#5713d68d0084f0a24079690c01552efb">00052</a>         <a class="code" href="_y_r_p_p_core_8h.html#aae3cb398fbfa33cc83eddc740386cd4">PROPERTY_STRUCT</a>(GenericNode, <a class="code" href="class_generic_list.html#60a02aa1a7eb199651dbe8bf28d1aed0">Last</a>);
+<a name="l00052"></a><a class="code" href="class_generic_list.html#5713d68d0084f0a24079690c01552efb">00052</a>         <a class="code" href="_y_r_p_p_core_8h.html#aae3cb398fbfa33cc83eddc740386cd4">PROPERTY_STRUCT</a>(<a class="code" href="class_generic_node.html">GenericNode</a>, <a class="code" href="class_generic_list.html#60a02aa1a7eb199651dbe8bf28d1aed0">Last</a>);
 <a name="l00053"></a>00053 
-<a name="l00054"></a>00054 protected:
-<a name="l00055"></a><a class="code" href="class_generic_list.html#5c173fd981601a33621e00adf249b35a">00055</a>         <a class="code" href="class_generic_list.html">GenericList</a>(<span class="keywordtype">bool</span>) { }
+<a name="l00054"></a>00054 <span class="keyword">protected</span>:
+<a name="l00055"></a><a class="code" href="class_generic_list.html#5c173fd981601a33621e00adf249b35a">00055</a>         <a class="code" href="class_generic_list.html#5c173fd981601a33621e00adf249b35a">GenericList</a>(<span class="keywordtype">bool</span>) { }
 <a name="l00056"></a>00056 };
 <a name="l00057"></a>00057 
 <a name="l00058"></a><a class="code" href="class_list.html">00058</a> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="class_list.html">List</a> : <span class="keyword">public</span> <a class="code" href="class_generic_list.html">GenericList</a>
@@ -96,15 +96,15 @@
 <a name="l00063"></a>00063 
 <a name="l00064"></a>00064         <span class="comment">//Constructor</span>
 <a name="l00065"></a><a class="code" href="class_list.html#5c5e27671b21b3815d4e25b953c69454">00065</a>         <a class="code" href="class_list.html">List</a>() : <a class="code" href="class_generic_list.html">GenericList</a>(false)
-<a name="l00066"></a>00066                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x52ACE0);
+<a name="l00066"></a>00066                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x52ACE0); }
 <a name="l00067"></a>00067 
-<a name="l00068"></a>00068 protected:
-<a name="l00069"></a><a class="code" href="class_list.html#afd08a2d4753fbbd9009cda016c8838d">00069</a>         <a class="code" href="class_list.html">List</a>(<span class="keywordtype">bool</span>) : <a class="code" href="class_generic_list.html">GenericList</a>(false) { }
+<a name="l00068"></a>00068 <span class="keyword">protected</span>:
+<a name="l00069"></a><a class="code" href="class_list.html#afd08a2d4753fbbd9009cda016c8838d">00069</a>         <a class="code" href="class_list.html#afd08a2d4753fbbd9009cda016c8838d">List</a>(<span class="keywordtype">bool</span>) : <a class="code" href="class_generic_list.html">GenericList</a>(false) { }
 <a name="l00070"></a>00070 };
 <a name="l00071"></a>00071 
 <a name="l00072"></a>00072 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Jan 2 21:12:29 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:06 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -49,16 +49,16 @@
 <a name="l00016"></a>00016 
 <a name="l00017"></a>00017         <span class="comment">//Constructor, Destructor</span>
 <a name="l00018"></a><a class="code" href="class_line_trail.html#35f427c6a69c342c9f467f9ec6204f07">00018</a>         <a class="code" href="class_line_trail.html#35f427c6a69c342c9f467f9ec6204f07">LineTrail</a>()
-<a name="l00019"></a>00019                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x556A20);
+<a name="l00019"></a>00019                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x556A20); }
 <a name="l00020"></a>00020 
-<a name="l00021"></a><a class="code" href="class_line_trail.html#8fc3070f27669f8c9d4f7ca3ca68610f">00021</a>         ~<a class="code" href="class_line_trail.html">LineTrail</a>()
-<a name="l00022"></a>00022                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x556B30);
+<a name="l00021"></a><a class="code" href="class_line_trail.html#8fc3070f27669f8c9d4f7ca3ca68610f">00021</a>         <a class="code" href="class_line_trail.html#8fc3070f27669f8c9d4f7ca3ca68610f">~LineTrail</a>()
+<a name="l00022"></a>00022                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x556B30); }
 <a name="l00023"></a>00023 
 <a name="l00024"></a><a class="code" href="class_line_trail.html#12653a759aa3bde3196ae52c0b4c4832">00024</a>         <span class="keywordtype">void</span> <a class="code" href="class_line_trail.html#12653a759aa3bde3196ae52c0b4c4832">SetDecrement</a>(<span class="keywordtype">int</span> val)
-<a name="l00025"></a>00025                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x556B50);
+<a name="l00025"></a>00025                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x556B50); }
 <a name="l00026"></a>00026 
-<a name="l00027"></a><a class="code" href="class_line_trail.html#5ec8fdfcc76e79200a6b5cdcb691f4e0">00027</a>         static <span class="keywordtype">void</span> <a class="code" href="class_line_trail.html#5ec8fdfcc76e79200a6b5cdcb691f4e0">DeleteAll</a>()
-<a name="l00028"></a><a class="code" href="class_line_trail.html#839a8c75d45df805c1ce033882ccd896">00028</a>                 <a class="code" href="_a_s_m_macros_8h.html#31c80ef106ed4d49102bf51af2ab63bc">JMP_STD</a>(0x556DF0);
+<a name="l00027"></a><a class="code" href="class_line_trail.html#5ec8fdfcc76e79200a6b5cdcb691f4e0">00027</a>         <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_line_trail.html#5ec8fdfcc76e79200a6b5cdcb691f4e0">DeleteAll</a>()
+<a name="l00028"></a>00028                 { <a class="code" href="_a_s_m_macros_8h.html#31c80ef106ed4d49102bf51af2ab63bc">JMP_STD</a>(0x556DF0); }
 <a name="l00029"></a>00029 
 <a name="l00030"></a>00030 
 <a name="l00031"></a>00031         <span class="comment">//===========================================================================</span>
@@ -67,13 +67,13 @@
 <a name="l00034"></a><a class="code" href="class_line_trail.html#8ba5ff7492f1aeb60eee0134ec8099e9">00034</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="struct_color_struct.html">ColorStruct</a>, <a class="code" href="class_line_trail.html#839a8c75d45df805c1ce033882ccd896">Color</a>);
 <a name="l00035"></a><a class="code" href="class_line_trail.html#a052e82d6b6402da442355724389212c">00035</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="class_object_class.html">ObjectClass</a>*, <a class="code" href="class_line_trail.html#8ba5ff7492f1aeb60eee0134ec8099e9">Owner</a>);
 <a name="l00036"></a><a class="code" href="class_line_trail.html#c17f75d6892a985a3c57014b60ad285d">00036</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_line_trail.html#a052e82d6b6402da442355724389212c">Decrement</a>);
-<a name="l00037"></a><a class="code" href="class_line_trail.html#22f8bd5625fb9d6fe872209948c13fa8">00037</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(DWORD, <a class="code" href="class_line_trail.html#c17f75d6892a985a3c57014b60ad285d">ActiveSlot</a>);
+<a name="l00037"></a><a class="code" href="class_line_trail.html#22f8bd5625fb9d6fe872209948c13fa8">00037</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_line_trail.html#c17f75d6892a985a3c57014b60ad285d">ActiveSlot</a>);
 <a name="l00038"></a><a class="code" href="class_line_trail.html#28ce2f557640402c2f3759e173ee8c43">00038</a>         <a class="code" href="_y_r_p_p_core_8h.html#5698d452f0bb3291f8ad7ff2a052d84e">PROPERTY_STRUCT_ARRAY</a>(<a class="code" href="struct_line_trail_node.html">LineTrailNode</a>, <a class="code" href="class_line_trail.html#22f8bd5625fb9d6fe872209948c13fa8">Trails</a>, 32);
 <a name="l00039"></a>00039 };
 <a name="l00040"></a>00040 
 <a name="l00041"></a>00041 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Jan 2 21:12:29 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:06 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

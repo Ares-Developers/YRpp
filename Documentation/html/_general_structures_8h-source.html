@@ -76,99 +76,104 @@
 <a name="l00043"></a>00043 
 <a name="l00044"></a>00044 <span class="preprocessor">#ifndef PALETTE_STRUCT</span>
 <a name="l00045"></a>00045 <span class="preprocessor"></span><span class="preprocessor">#define PALETTE_STRUCT</span>
-<a name="l00046"></a><a class="code" href="_general_structures_8h.html#fa59e7b84835cd11d8c7a0f48c06d474">00046</a> <span class="preprocessor"></span><span class="keyword">typedef</span> <a class="code" href="struct_color_struct.html">ColorStruct</a> <a class="code" href="_general_structures_8h.html#fa59e7b84835cd11d8c7a0f48c06d474">BytePalette</a>[256];
-<a name="l00047"></a>00047 <span class="preprocessor">#endif</span>
-<a name="l00048"></a>00048 <span class="preprocessor"></span>
-<a name="l00049"></a>00049 <span class="comment">//used for light colors</span>
-<a name="l00050"></a><a class="code" href="struct_tint_struct.html">00050</a> <span class="keyword">struct </span><a class="code" href="struct_tint_struct.html">TintStruct</a>
-<a name="l00051"></a>00051 {
-<a name="l00052"></a><a class="code" href="struct_tint_struct.html#c8b2c772c32ad8aef9a3d67548320da8">00052</a>         <span class="keywordtype">int</span> <a class="code" href="struct_tint_struct.html#c8b2c772c32ad8aef9a3d67548320da8">Red</a>, <a class="code" href="struct_tint_struct.html#5112ef3f41d336adbc56a9b1740267b1">Green</a>, <a class="code" href="struct_tint_struct.html#5ce6e5819f70e10a67812990dd547730">Blue</a>;
-<a name="l00053"></a>00053 };
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055 <span class="comment">//uses the clock values</span>
-<a name="l00056"></a><a class="code" href="struct_dir_struct.html">00056</a> <span class="keyword">struct </span><a class="code" href="struct_dir_struct.html">DirStruct</a>
-<a name="l00057"></a>00057 {
-<a name="l00058"></a><a class="code" href="struct_dir_struct.html#8588d5e0a8e4762fd721c8afccf3bb35">00058</a>         <span class="keywordtype">short</span> <a class="code" href="struct_dir_struct.html#8588d5e0a8e4762fd721c8afccf3bb35">Facing</a>;
-<a name="l00059"></a>00059 };
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061 <span class="comment">//Random numbe range</span>
-<a name="l00062"></a><a class="code" href="struct_random_struct.html">00062</a> <span class="keyword">struct </span><a class="code" href="struct_random_struct.html">RandomStruct</a>
-<a name="l00063"></a>00063 {
-<a name="l00064"></a><a class="code" href="struct_random_struct.html#8fd9eedc1f6492882beee9dfa6a9e290">00064</a>         <span class="keywordtype">int</span> <a class="code" href="struct_random_struct.html#8fd9eedc1f6492882beee9dfa6a9e290">Min</a>, <a class="code" href="struct_random_struct.html#7cccf0593a0232d554281e952a6a1a08">Max</a>;
-<a name="l00065"></a>00065 };
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067 <span class="comment">//3D Matrix</span>
-<a name="l00068"></a><a class="code" href="struct_matrix3_d_struct.html">00068</a> <span class="keyword">struct </span><a class="code" href="struct_matrix3_d_struct.html">Matrix3DStruct</a>
-<a name="l00069"></a>00069 {
-<a name="l00070"></a><a class="code" href="struct_matrix3_d_struct.html#88ae6ca5e0a98b95c4fe61e641180757">00070</a>         <span class="keywordtype">float</span> <a class="code" href="struct_matrix3_d_struct.html#88ae6ca5e0a98b95c4fe61e641180757">Data</a>[12];
-<a name="l00071"></a>00071 };
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073 <span class="comment">//obvious</span>
-<a name="l00074"></a><a class="code" href="struct_rectangle_struct.html">00074</a> <span class="keyword">struct </span><a class="code" href="struct_rectangle_struct.html">RectangleStruct</a>
-<a name="l00075"></a>00075 {
-<a name="l00076"></a><a class="code" href="struct_rectangle_struct.html#c15accf174f540c7188b8dda39635dad">00076</a>         <span class="keywordtype">int</span> <a class="code" href="struct_rectangle_struct.html#c0b1aef3b6def5d607f11bf1dbb86a6b">X</a>, <a class="code" href="struct_rectangle_struct.html#c15accf174f540c7188b8dda39635dad">Y</a>, <a class="code" href="struct_rectangle_struct.html#d1de37d3a6ca6698ac7255eb947e17ce">Width</a>, <a class="code" href="struct_rectangle_struct.html#808738f5dbe0283b56da678efc4cab08">Height</a>;
-<a name="l00077"></a>00077 };
-<a name="l00078"></a>00078 
-<a name="l00079"></a>00079 <span class="comment">//used for timed events, time measured in frames!</span>
-<a name="l00080"></a><a class="code" href="class_timer_struct.html">00080</a> <span class="keyword">class </span><a class="code" href="class_timer_struct.html">TimerStruct</a>
-<a name="l00081"></a>00081 {
-<a name="l00082"></a>00082 <span class="keyword">public</span>:
-<a name="l00083"></a><a class="code" href="class_timer_struct.html#03bbeef1b42b60e6cc7e9042486b2ebc">00083</a>         <span class="keywordtype">int</span> <a class="code" href="class_timer_struct.html#03bbeef1b42b60e6cc7e9042486b2ebc">StartTime</a>;
-<a name="l00084"></a><a class="code" href="class_timer_struct.html#e0da73453f4d7c4ea22849e088217768">00084</a>         <span class="keywordtype">int</span> <a class="code" href="class_timer_struct.html#e0da73453f4d7c4ea22849e088217768">unknown</a>;
-<a name="l00085"></a><a class="code" href="class_timer_struct.html#2a666008a9671dd2f7e474a2b206df67">00085</a>         <span class="keywordtype">int</span> <a class="code" href="class_timer_struct.html#2a666008a9671dd2f7e474a2b206df67">TimeLeft</a>;
-<a name="l00086"></a>00086 
-<a name="l00087"></a><a class="code" href="class_timer_struct.html#9a00bbb9690636feeb0caf6ae0b9a1de">00087</a>         <span class="keywordtype">void</span> <a class="code" href="class_timer_struct.html#9a00bbb9690636feeb0caf6ae0b9a1de">Stop</a>()
-<a name="l00088"></a>00088                 { this-&gt;<a class="code" href="class_timer_struct.html#03bbeef1b42b60e6cc7e9042486b2ebc">StartTime</a> = -1; this-&gt;<a class="code" href="class_timer_struct.html#2a666008a9671dd2f7e474a2b206df67">TimeLeft</a> = 0; }
-<a name="l00089"></a>00089 
-<a name="l00090"></a><a class="code" href="class_timer_struct.html#bf6ecb4baabb47790e36862e9e06826f">00090</a>         <span class="keywordtype">bool</span> <a class="code" href="class_timer_struct.html#bf6ecb4baabb47790e36862e9e06826f">IsDone</a>()
-<a name="l00091"></a>00091                 { <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_timer_struct.html#03bbeef1b42b60e6cc7e9042486b2ebc">StartTime</a> != -1 &amp;&amp; this-&gt;<a class="code" href="class_timer_struct.html#de7e9350900a569a5960c74ef7a9e597">GetTimeLeft</a>() &lt;= 0; }
-<a name="l00092"></a>00092 
-<a name="l00093"></a><a class="code" href="class_timer_struct.html#697506efb9a685dd9b3f72cc953694ea">00093</a>         <span class="keywordtype">bool</span> <a class="code" href="class_timer_struct.html#697506efb9a685dd9b3f72cc953694ea">Ignorable</a>()
-<a name="l00094"></a>00094                 { <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_timer_struct.html#03bbeef1b42b60e6cc7e9042486b2ebc">StartTime</a> == -1 || this-&gt;<a class="code" href="class_timer_struct.html#de7e9350900a569a5960c74ef7a9e597">GetTimeLeft</a>() &lt;= 0; }
-<a name="l00095"></a>00095 
-<a name="l00096"></a><a class="code" href="class_timer_struct.html#de7e9350900a569a5960c74ef7a9e597">00096</a>         <span class="keywordtype">int</span> <a class="code" href="class_timer_struct.html#de7e9350900a569a5960c74ef7a9e597">GetTimeLeft</a>()
-<a name="l00097"></a>00097                 <a class="code" href="_a_s_m_macros_8h.html#31c80ef106ed4d49102bf51af2ab63bc">JMP_STD</a>(0x426630);
-<a name="l00098"></a>00098 
-<a name="l00099"></a><a class="code" href="class_timer_struct.html#da86e60c9588d80bd768f971dd6538cb">00099</a>         <span class="keywordtype">void</span> <a class="code" href="class_timer_struct.html#da86e60c9588d80bd768f971dd6538cb">Start</a>(<span class="keywordtype">int</span> duration)
-<a name="l00100"></a>00100                 <a class="code" href="_a_s_m_macros_8h.html#31c80ef106ed4d49102bf51af2ab63bc">JMP_STD</a>(0x46B640);
-<a name="l00101"></a>00101 
-<a name="l00102"></a><a class="code" href="class_timer_struct.html#b5a930db84c82d0d1fd6bed065479767">00102</a>         <span class="keywordtype">void</span> <a class="code" href="class_timer_struct.html#b5a930db84c82d0d1fd6bed065479767">StartIfEmpty</a>() <span class="comment">// just sets start frame</span>
-<a name="l00103"></a>00103                 <a class="code" href="_a_s_m_macros_8h.html#31c80ef106ed4d49102bf51af2ab63bc">JMP_STD</a>(0x6CE2C0);
-<a name="l00104"></a>00104 };
-<a name="l00105"></a>00105 
-<a name="l00106"></a>00106 <span class="comment">//also see FACING definitions</span>
-<a name="l00107"></a><a class="code" href="struct_facing_struct.html">00107</a> struct <a class="code" href="struct_facing_struct.html">FacingStruct</a>
-<a name="l00108"></a>00108 {
-<a name="l00109"></a><a class="code" href="struct_facing_struct.html#dc43f849749caf4c78ef1384acb5cebf">00109</a>         <a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> Facing1; <span class="comment">//current facing?</span>
-<a name="l00110"></a><a class="code" href="struct_facing_struct.html#77b49a0c41c540c602a3bbdf186febd8">00110</a>         <a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> unused_2;
-<a name="l00111"></a><a class="code" href="struct_facing_struct.html#7a2d7e779e21591b90065579eaf43c95">00111</a>         <a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> Facing2; <span class="comment">//??</span>
-<a name="l00112"></a><a class="code" href="struct_facing_struct.html#ae9ca44ad5ef3875569cbbe83e3c2ba9">00112</a>         <a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> unused_6;
-<a name="l00113"></a><a class="code" href="struct_facing_struct.html#0643fd8bb5a11d7b83e16db70cb9bb57">00113</a>         <a class="code" href="class_timer_struct.html">TimerStruct</a> Timer; <span class="comment">//rotation?</span>
-<a name="l00114"></a><a class="code" href="struct_facing_struct.html#257dde18d79d5572ddccc6e3476900b5">00114</a>         <a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> ROT; <span class="comment">//Rate of Turn. INI Value * 256</span>
-<a name="l00115"></a><a class="code" href="struct_facing_struct.html#9ca77947351baad508dccd0056de7d7e">00115</a>         <a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> unused_16;
-<a name="l00116"></a>00116 
-<a name="l00117"></a><a class="code" href="struct_facing_struct.html#d990ce26e86470b1b2cb258a4fc1b59c">00117</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> GetFacing(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> *arg)
-<a name="l00118"></a>00118                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x4C93D0);
-<a name="l00119"></a>00119 
-<a name="l00120"></a><a class="code" href="struct_facing_struct.html#42246f0517b9f4d0712e592cd8b8c479">00120</a>         <a class="code" href="struct_facing_struct.html#42246f0517b9f4d0712e592cd8b8c479">operator int</a>() {
-<a name="l00121"></a>00121                 <span class="comment">// &lt;DCoder&gt; I don't know how or what it does, but that's what the game uses</span>
-<a name="l00122"></a>00122                 <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> nessie;
-<a name="l00123"></a>00123                 this-&gt;GetFacing(&amp;nessie); <span class="comment">// mysterious facing value from the depths of the game</span>
-<a name="l00124"></a>00124                 <span class="keywordflow">return</span> (((nessie &gt;&gt; 7) + 1) &gt;&gt; 1) &amp; 0xFF;
-<a name="l00125"></a>00125         }
-<a name="l00126"></a>00126 };
-<a name="l00127"></a>00127 
-<a name="l00128"></a><a class="code" href="struct_some_voxel_cache.html">00128</a> <span class="keyword">struct </span><a class="code" href="struct_some_voxel_cache.html">SomeVoxelCache</a> {
-<a name="l00129"></a><a class="code" href="struct_some_voxel_cache.html#e314d5bcd90e8258cc33d477ffb4763a">00129</a>         <span class="keywordtype">void</span> *ptr;
-<a name="l00130"></a><a class="code" href="struct_some_voxel_cache.html#59d9c260bfbcea07b62186b38a64bafb">00130</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> f_4;
-<a name="l00131"></a><a class="code" href="struct_some_voxel_cache.html#2e8b43be3a2a569b19db7e67bc5b9646">00131</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> f_8;
-<a name="l00132"></a><a class="code" href="struct_some_voxel_cache.html#4d229ad1f30682628f5bb82bad1a2c12">00132</a>         <a class="code" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a> f_C;
-<a name="l00133"></a><a class="code" href="struct_some_voxel_cache.html#a54b3d21f865ecc66f9a266de8664f2b">00133</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> * ptr_10;
-<a name="l00134"></a>00134 };
-<a name="l00135"></a>00135 
-<a name="l00136"></a>00136 <span class="preprocessor">#endif</span>
+<a name="l00046"></a><a class="code" href="struct_byte_palette.html">00046</a> <span class="preprocessor"></span><span class="keyword">struct </span><a class="code" href="struct_byte_palette.html">BytePalette</a> {
+<a name="l00047"></a><a class="code" href="struct_byte_palette.html#57a6817cf028290ddbecab1d72a219fb">00047</a>         <a class="code" href="struct_color_struct.html">ColorStruct</a> <a class="code" href="struct_byte_palette.html#57a6817cf028290ddbecab1d72a219fb">Entries</a>[256];
+<a name="l00048"></a><a class="code" href="struct_byte_palette.html#512e5b657ecec16742ed4f4837c393d9">00048</a>         <a class="code" href="struct_color_struct.html">ColorStruct</a> &amp; <a class="code" href="struct_byte_palette.html#512e5b657ecec16742ed4f4837c393d9">operator []</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> idx) {
+<a name="l00049"></a>00049                 <span class="keywordflow">return</span> this-&gt;<a class="code" href="struct_byte_palette.html#57a6817cf028290ddbecab1d72a219fb">Entries</a>[idx];
+<a name="l00050"></a>00050         }
+<a name="l00051"></a>00051 };
+<a name="l00052"></a>00052 <span class="preprocessor">#endif</span>
+<a name="l00053"></a>00053 <span class="preprocessor"></span>
+<a name="l00054"></a>00054 <span class="comment">//used for light colors</span>
+<a name="l00055"></a><a class="code" href="struct_tint_struct.html">00055</a> <span class="keyword">struct </span><a class="code" href="struct_tint_struct.html">TintStruct</a>
+<a name="l00056"></a>00056 {
+<a name="l00057"></a><a class="code" href="struct_tint_struct.html#c8b2c772c32ad8aef9a3d67548320da8">00057</a>         <span class="keywordtype">int</span> <a class="code" href="struct_tint_struct.html#c8b2c772c32ad8aef9a3d67548320da8">Red</a>, <a class="code" href="struct_tint_struct.html#5112ef3f41d336adbc56a9b1740267b1">Green</a>, <a class="code" href="struct_tint_struct.html#5ce6e5819f70e10a67812990dd547730">Blue</a>;
+<a name="l00058"></a>00058 };
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 <span class="comment">//uses the clock values</span>
+<a name="l00061"></a><a class="code" href="struct_dir_struct.html">00061</a> <span class="keyword">struct </span><a class="code" href="struct_dir_struct.html">DirStruct</a>
+<a name="l00062"></a>00062 {
+<a name="l00063"></a><a class="code" href="struct_dir_struct.html#8588d5e0a8e4762fd721c8afccf3bb35">00063</a>         <span class="keywordtype">short</span> <a class="code" href="struct_dir_struct.html#8588d5e0a8e4762fd721c8afccf3bb35">Facing</a>;
+<a name="l00064"></a>00064 };
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066 <span class="comment">//Random numbe range</span>
+<a name="l00067"></a><a class="code" href="struct_random_struct.html">00067</a> <span class="keyword">struct </span><a class="code" href="struct_random_struct.html">RandomStruct</a>
+<a name="l00068"></a>00068 {
+<a name="l00069"></a><a class="code" href="struct_random_struct.html#8fd9eedc1f6492882beee9dfa6a9e290">00069</a>         <span class="keywordtype">int</span> <a class="code" href="struct_random_struct.html#8fd9eedc1f6492882beee9dfa6a9e290">Min</a>, <a class="code" href="struct_random_struct.html#7cccf0593a0232d554281e952a6a1a08">Max</a>;
+<a name="l00070"></a>00070 };
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072 <span class="comment">//3D Matrix</span>
+<a name="l00073"></a><a class="code" href="struct_matrix3_d_struct.html">00073</a> <span class="keyword">struct </span><a class="code" href="struct_matrix3_d_struct.html">Matrix3DStruct</a>
+<a name="l00074"></a>00074 {
+<a name="l00075"></a><a class="code" href="struct_matrix3_d_struct.html#88ae6ca5e0a98b95c4fe61e641180757">00075</a>         <span class="keywordtype">float</span> <a class="code" href="struct_matrix3_d_struct.html#88ae6ca5e0a98b95c4fe61e641180757">Data</a>[12];
+<a name="l00076"></a>00076 };
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078 <span class="comment">//obvious</span>
+<a name="l00079"></a><a class="code" href="struct_rectangle_struct.html">00079</a> <span class="keyword">struct </span><a class="code" href="struct_rectangle_struct.html">RectangleStruct</a>
+<a name="l00080"></a>00080 {
+<a name="l00081"></a><a class="code" href="struct_rectangle_struct.html#c15accf174f540c7188b8dda39635dad">00081</a>         <span class="keywordtype">int</span> <a class="code" href="struct_rectangle_struct.html#c0b1aef3b6def5d607f11bf1dbb86a6b">X</a>, <a class="code" href="struct_rectangle_struct.html#c15accf174f540c7188b8dda39635dad">Y</a>, <a class="code" href="struct_rectangle_struct.html#d1de37d3a6ca6698ac7255eb947e17ce">Width</a>, <a class="code" href="struct_rectangle_struct.html#808738f5dbe0283b56da678efc4cab08">Height</a>;
+<a name="l00082"></a>00082 };
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084 <span class="comment">//used for timed events, time measured in frames!</span>
+<a name="l00085"></a><a class="code" href="class_timer_struct.html">00085</a> <span class="keyword">class </span><a class="code" href="class_timer_struct.html">TimerStruct</a>
+<a name="l00086"></a>00086 {
+<a name="l00087"></a>00087 <span class="keyword">public</span>:
+<a name="l00088"></a><a class="code" href="class_timer_struct.html#03bbeef1b42b60e6cc7e9042486b2ebc">00088</a>         <span class="keywordtype">int</span> <a class="code" href="class_timer_struct.html#03bbeef1b42b60e6cc7e9042486b2ebc">StartTime</a>;
+<a name="l00089"></a><a class="code" href="class_timer_struct.html#e0da73453f4d7c4ea22849e088217768">00089</a>         <span class="keywordtype">int</span> <a class="code" href="class_timer_struct.html#e0da73453f4d7c4ea22849e088217768">unknown</a>;
+<a name="l00090"></a><a class="code" href="class_timer_struct.html#2a666008a9671dd2f7e474a2b206df67">00090</a>         <span class="keywordtype">int</span> <a class="code" href="class_timer_struct.html#2a666008a9671dd2f7e474a2b206df67">TimeLeft</a>;
+<a name="l00091"></a>00091 
+<a name="l00092"></a><a class="code" href="class_timer_struct.html#9a00bbb9690636feeb0caf6ae0b9a1de">00092</a>         <span class="keywordtype">void</span> <a class="code" href="class_timer_struct.html#9a00bbb9690636feeb0caf6ae0b9a1de">Stop</a>()
+<a name="l00093"></a>00093                 { this-&gt;<a class="code" href="class_timer_struct.html#03bbeef1b42b60e6cc7e9042486b2ebc">StartTime</a> = -1; this-&gt;<a class="code" href="class_timer_struct.html#2a666008a9671dd2f7e474a2b206df67">TimeLeft</a> = 0; }
+<a name="l00094"></a>00094 
+<a name="l00095"></a><a class="code" href="class_timer_struct.html#bf6ecb4baabb47790e36862e9e06826f">00095</a>         <span class="keywordtype">bool</span> <a class="code" href="class_timer_struct.html#bf6ecb4baabb47790e36862e9e06826f">IsDone</a>()
+<a name="l00096"></a>00096                 { <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_timer_struct.html#03bbeef1b42b60e6cc7e9042486b2ebc">StartTime</a> != -1 &amp;&amp; this-&gt;<a class="code" href="class_timer_struct.html#de7e9350900a569a5960c74ef7a9e597">GetTimeLeft</a>() &lt;= 0; }
+<a name="l00097"></a>00097 
+<a name="l00098"></a><a class="code" href="class_timer_struct.html#697506efb9a685dd9b3f72cc953694ea">00098</a>         <span class="keywordtype">bool</span> <a class="code" href="class_timer_struct.html#697506efb9a685dd9b3f72cc953694ea">Ignorable</a>()
+<a name="l00099"></a>00099                 { <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_timer_struct.html#03bbeef1b42b60e6cc7e9042486b2ebc">StartTime</a> == -1 || this-&gt;<a class="code" href="class_timer_struct.html#de7e9350900a569a5960c74ef7a9e597">GetTimeLeft</a>() &lt;= 0; }
+<a name="l00100"></a>00100 
+<a name="l00101"></a><a class="code" href="class_timer_struct.html#de7e9350900a569a5960c74ef7a9e597">00101</a>         <span class="keywordtype">int</span> <a class="code" href="class_timer_struct.html#de7e9350900a569a5960c74ef7a9e597">GetTimeLeft</a>()
+<a name="l00102"></a>00102                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x426630); }
+<a name="l00103"></a>00103 
+<a name="l00104"></a><a class="code" href="class_timer_struct.html#da86e60c9588d80bd768f971dd6538cb">00104</a>         <span class="keywordtype">void</span> <a class="code" href="class_timer_struct.html#da86e60c9588d80bd768f971dd6538cb">Start</a>(<span class="keywordtype">int</span> duration)
+<a name="l00105"></a>00105                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x46B640); }
+<a name="l00106"></a>00106 
+<a name="l00107"></a><a class="code" href="class_timer_struct.html#b5a930db84c82d0d1fd6bed065479767">00107</a>         <span class="keywordtype">void</span> <a class="code" href="class_timer_struct.html#b5a930db84c82d0d1fd6bed065479767">StartIfEmpty</a>() <span class="comment">// just sets start frame</span>
+<a name="l00108"></a>00108                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x6CE2C0); }
+<a name="l00109"></a>00109 };
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111 <span class="comment">//also see FACING definitions</span>
+<a name="l00112"></a><a class="code" href="struct_facing_struct.html">00112</a> <span class="keyword">struct </span><a class="code" href="struct_facing_struct.html">FacingStruct</a>
+<a name="l00113"></a>00113 {
+<a name="l00114"></a><a class="code" href="struct_facing_struct.html#dc43f849749caf4c78ef1384acb5cebf">00114</a>         <a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> <a class="code" href="struct_facing_struct.html#dc43f849749caf4c78ef1384acb5cebf">Facing1</a>; <span class="comment">//current facing?</span>
+<a name="l00115"></a><a class="code" href="struct_facing_struct.html#77b49a0c41c540c602a3bbdf186febd8">00115</a>         <a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> <a class="code" href="struct_facing_struct.html#77b49a0c41c540c602a3bbdf186febd8">unused_2</a>;
+<a name="l00116"></a><a class="code" href="struct_facing_struct.html#7a2d7e779e21591b90065579eaf43c95">00116</a>         <a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> <a class="code" href="struct_facing_struct.html#7a2d7e779e21591b90065579eaf43c95">Facing2</a>; <span class="comment">//??</span>
+<a name="l00117"></a><a class="code" href="struct_facing_struct.html#ae9ca44ad5ef3875569cbbe83e3c2ba9">00117</a>         <a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> <a class="code" href="struct_facing_struct.html#ae9ca44ad5ef3875569cbbe83e3c2ba9">unused_6</a>;
+<a name="l00118"></a><a class="code" href="struct_facing_struct.html#0643fd8bb5a11d7b83e16db70cb9bb57">00118</a>         <a class="code" href="class_timer_struct.html">TimerStruct</a> <a class="code" href="struct_facing_struct.html#0643fd8bb5a11d7b83e16db70cb9bb57">Timer</a>; <span class="comment">//rotation?</span>
+<a name="l00119"></a><a class="code" href="struct_facing_struct.html#257dde18d79d5572ddccc6e3476900b5">00119</a>         <a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> <a class="code" href="struct_facing_struct.html#257dde18d79d5572ddccc6e3476900b5">ROT</a>; <span class="comment">//Rate of Turn. INI Value * 256</span>
+<a name="l00120"></a><a class="code" href="struct_facing_struct.html#9ca77947351baad508dccd0056de7d7e">00120</a>         <a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> <a class="code" href="struct_facing_struct.html#9ca77947351baad508dccd0056de7d7e">unused_16</a>;
+<a name="l00121"></a>00121 
+<a name="l00122"></a><a class="code" href="struct_facing_struct.html#d990ce26e86470b1b2cb258a4fc1b59c">00122</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="struct_facing_struct.html#d990ce26e86470b1b2cb258a4fc1b59c">GetFacing</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> *arg)
+<a name="l00123"></a>00123                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x4C93D0); }
+<a name="l00124"></a>00124 
+<a name="l00125"></a><a class="code" href="struct_facing_struct.html#42246f0517b9f4d0712e592cd8b8c479">00125</a>         <a class="code" href="struct_facing_struct.html#42246f0517b9f4d0712e592cd8b8c479">operator int</a>() {
+<a name="l00126"></a>00126                 <span class="comment">// &lt;DCoder&gt; I don't know how or what it does, but that's what the game uses</span>
+<a name="l00127"></a>00127                 <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> nessie;
+<a name="l00128"></a>00128                 this-&gt;<a class="code" href="struct_facing_struct.html#d990ce26e86470b1b2cb258a4fc1b59c">GetFacing</a>(&amp;nessie); <span class="comment">// mysterious facing value from the depths of the game</span>
+<a name="l00129"></a>00129                 <span class="keywordflow">return</span> (((nessie &gt;&gt; 7) + 1) &gt;&gt; 1) &amp; 0xFF;
+<a name="l00130"></a>00130         }
+<a name="l00131"></a>00131 };
+<a name="l00132"></a>00132 
+<a name="l00133"></a><a class="code" href="struct_some_voxel_cache.html">00133</a> <span class="keyword">struct </span><a class="code" href="struct_some_voxel_cache.html">SomeVoxelCache</a> {
+<a name="l00134"></a><a class="code" href="struct_some_voxel_cache.html#e314d5bcd90e8258cc33d477ffb4763a">00134</a>         <span class="keywordtype">void</span> *<a class="code" href="struct_some_voxel_cache.html#e314d5bcd90e8258cc33d477ffb4763a">ptr</a>;
+<a name="l00135"></a><a class="code" href="struct_some_voxel_cache.html#59d9c260bfbcea07b62186b38a64bafb">00135</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="struct_some_voxel_cache.html#59d9c260bfbcea07b62186b38a64bafb">f_4</a>;
+<a name="l00136"></a><a class="code" href="struct_some_voxel_cache.html#2e8b43be3a2a569b19db7e67bc5b9646">00136</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="struct_some_voxel_cache.html#2e8b43be3a2a569b19db7e67bc5b9646">f_8</a>;
+<a name="l00137"></a><a class="code" href="struct_some_voxel_cache.html#4d229ad1f30682628f5bb82bad1a2c12">00137</a>         <a class="code" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="struct_some_voxel_cache.html#4d229ad1f30682628f5bb82bad1a2c12">f_C</a>;
+<a name="l00138"></a><a class="code" href="struct_some_voxel_cache.html#a54b3d21f865ecc66f9a266de8664f2b">00138</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> * <a class="code" href="struct_some_voxel_cache.html#a54b3d21f865ecc66f9a266de8664f2b">ptr_10</a>;
+<a name="l00139"></a>00139 };
+<a name="l00140"></a>00140 
+<a name="l00141"></a>00141 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Jan 2 21:12:29 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:06 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

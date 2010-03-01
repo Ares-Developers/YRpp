@@ -69,17 +69,17 @@
 <a name="l00036"></a><a class="code" href="class_object_type_class.html#751c2752c576ca7e4240e6af86a282d0">00036</a>         virtual <span class="keywordtype">int</span> <a class="code" href="class_object_type_class.html#751c2752c576ca7e4240e6af86a282d0">GetBuildSpeed</a>() R0;
 <a name="l00037"></a>00037         virtual <a class="code" href="class_object_class.html">ObjectClass</a>* <a class="code" href="class_object_type_class.html#3293bdbb026f40a9b8d16844ec30c3c8">CreateObject</a>(<a class="code" href="class_house_class.html">HouseClass</a>* pOwner) = 0;
 <a name="l00038"></a><a class="code" href="class_object_type_class.html#2a8f0b483df710dfe85d4a1b66ebdb3c">00038</a>         virtual <span class="keywordtype">void</span> <a class="code" href="class_object_type_class.html#2a8f0b483df710dfe85d4a1b66ebdb3c">vt_entry_90</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> dwUnk) RX;
-<a name="l00039"></a><a class="code" href="class_object_type_class.html#e2a66544fdb86d5d492cf73061d07f49">00039</a>         virtual <a class="code" href="class_building_type_class.html">BuildingTypeClass</a>* <a class="code" href="class_object_type_class.html#e2a66544fdb86d5d492cf73061d07f49">GetFactoryType</a>(<span class="keywordtype">bool</span> OverridePrereqs, <span class="keywordtype">bool</span> OverridePower, <span class="keywordtype">bool</span> OverrideBuildLimit, 
+<a name="l00039"></a><a class="code" href="class_object_type_class.html#e2a66544fdb86d5d492cf73061d07f49">00039</a>         virtual <a class="code" href="class_building_type_class.html">BuildingTypeClass</a>* <a class="code" href="class_object_type_class.html#e2a66544fdb86d5d492cf73061d07f49">GetFactoryType</a>(<span class="keywordtype">bool</span> OverridePrereqs, <span class="keywordtype">bool</span> OverridePower, <span class="keywordtype">bool</span> OverrideBuildLimit,
 <a name="l00040"></a>00040                 <a class="code" href="class_house_class.html">HouseClass</a> *House) R0;
 <a name="l00041"></a><a class="code" href="class_object_type_class.html#daf64b63fba2fb9b2e22617d646b8867">00041</a>         virtual <a class="code" href="struct_s_h_p_struct.html">SHPStruct</a>* <a class="code" href="class_object_type_class.html#daf64b63fba2fb9b2e22617d646b8867">GetCameo</a>() R0;
 <a name="l00042"></a><a class="code" href="class_object_type_class.html#e73a62f1f13e3fae19f74feb1196d2a5">00042</a>         virtual <a class="code" href="struct_s_h_p_struct.html">SHPStruct</a>* <a class="code" href="class_object_type_class.html#e73a62f1f13e3fae19f74feb1196d2a5">GetImage</a>() R0;
 <a name="l00043"></a>00043 
 <a name="l00044"></a>00044         <span class="comment">//Constructor</span>
 <a name="l00045"></a><a class="code" href="class_object_type_class.html#0b6e2e82efe0670bd7823c32d991c7c3">00045</a>         <a class="code" href="class_object_type_class.html">ObjectTypeClass</a>(const <span class="keywordtype">char</span>* pID) : <a class="code" href="class_abstract_type_class.html">AbstractTypeClass</a>(false)
-<a name="l00046"></a>00046                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x5F7090);
+<a name="l00046"></a>00046                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x5F7090); }
 <a name="l00047"></a>00047 
-<a name="l00048"></a>00048 protected:
-<a name="l00049"></a><a class="code" href="class_object_type_class.html#be8ddc7c38f5298a8819378add6f6a23">00049</a>         <a class="code" href="class_object_type_class.html">ObjectTypeClass</a>() : <a class="code" href="class_abstract_type_class.html">AbstractTypeClass</a>(false) { }
+<a name="l00048"></a>00048 <span class="keyword">protected</span>:
+<a name="l00049"></a><a class="code" href="class_object_type_class.html#be8ddc7c38f5298a8819378add6f6a23">00049</a>         <a class="code" href="class_object_type_class.html#be8ddc7c38f5298a8819378add6f6a23">ObjectTypeClass</a>() : <a class="code" href="class_abstract_type_class.html">AbstractTypeClass</a>(false) { }
 <a name="l00050"></a><a class="code" href="class_object_type_class.html#81411dfbd243037e4b286ae4d9e1ddf2">00050</a>         <a class="code" href="class_object_type_class.html#be8ddc7c38f5298a8819378add6f6a23">ObjectTypeClass</a>(<span class="keywordtype">bool</span>) : <a class="code" href="class_abstract_type_class.html">AbstractTypeClass</a>(false) { };
 <a name="l00051"></a>00051 
 <a name="l00052"></a>00052         <span class="comment">//===========================================================================</span>
@@ -140,7 +140,7 @@
 <a name="l00107"></a>00107 
 <a name="l00108"></a>00108 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Jan 2 21:12:29 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:06 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

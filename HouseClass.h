@@ -438,6 +438,20 @@ public:
 	signed int CanBuild(TechnoTypeClass *item, bool bypassExtras, bool includeQueued)
 		{ JMP_THIS(0x4F7870); }
 
+	/*!
+		At the moment, this function is really just a more intuitively named mask for
+		this->Type->MultiplayPassive, but it might be expanded into something more
+		complicated later.
+
+		Primarily used to check if something is owned by the neutral house.
+		\return true if house is passive in multiplayer, false if not.
+		\author Renegade
+		\date 01.03.10
+	*/
+	bool IsNeutral() {
+		return this->Type->MultiplayPassive;
+	}
+
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================

@@ -76,44 +76,44 @@
 <a name="l00043"></a><a class="code" href="class_a_i_trigger_type_class.html#e8bc994c56c16be841c10fb50814953d">00043</a>         virtual <span class="keywordtype">int</span> <a class="code" href="class_a_i_trigger_type_class.html#e8bc994c56c16be841c10fb50814953d">Size</a>() R0;
 <a name="l00044"></a>00044 
 <a name="l00045"></a><a class="code" href="class_a_i_trigger_type_class.html#b479d2f1885375a163b2b0680e2c3b38">00045</a>         static <span class="keywordtype">bool</span> <a class="code" href="class_a_i_trigger_type_class.html#b479d2f1885375a163b2b0680e2c3b38">LoadFromINIList</a>(<a class="code" href="class_c_c_i_n_i_class.html">CCINIClass</a> *pINI)
-<a name="l00046"></a>00046                 <a class="code" href="_a_s_m_macros_8h.html#31c80ef106ed4d49102bf51af2ab63bc">JMP_STD</a>(0x41F2E0);
+<a name="l00046"></a>00046                 { <a class="code" href="_a_s_m_macros_8h.html#31c80ef106ed4d49102bf51af2ab63bc">JMP_STD</a>(0x41F2E0); }
 <a name="l00047"></a>00047 
 <a name="l00048"></a>00048         <span class="comment">// Global == saving into AI.ini as opposed to map?</span>
 <a name="l00049"></a>00049         <span class="comment">// if !Global, [AITriggerTypesEnable] gets saved as well</span>
-<a name="l00050"></a><a class="code" href="class_a_i_trigger_type_class.html#092063e3e40898083377e969c8c9bf1f">00050</a>         static <span class="keywordtype">bool</span> <a class="code" href="class_a_i_trigger_type_class.html#092063e3e40898083377e969c8c9bf1f">SaveToINIList</a>(<a class="code" href="class_c_c_i_n_i_class.html">CCINIClass</a> *pINI, <span class="keywordtype">bool</span> Global)
-<a name="l00051"></a>00051                 <a class="code" href="_a_s_m_macros_8h.html#31c80ef106ed4d49102bf51af2ab63bc">JMP_STD</a>(0x41F490);
+<a name="l00050"></a><a class="code" href="class_a_i_trigger_type_class.html#092063e3e40898083377e969c8c9bf1f">00050</a>         <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_a_i_trigger_type_class.html#092063e3e40898083377e969c8c9bf1f">SaveToINIList</a>(<a class="code" href="class_c_c_i_n_i_class.html">CCINIClass</a> *pINI, <span class="keywordtype">bool</span> Global)
+<a name="l00051"></a>00051                 { <a class="code" href="_a_s_m_macros_8h.html#31c80ef106ed4d49102bf51af2ab63bc">JMP_STD</a>(0x41F490); }
 <a name="l00052"></a>00052 
 <a name="l00053"></a>00053         <span class="comment">// non-virtual</span>
 <a name="l00054"></a>00054 
 <a name="l00055"></a>00055         <span class="comment">// teams finished script, and</span>
 <a name="l00056"></a><a class="code" href="class_a_i_trigger_type_class.html#2f8a4f20197c1f0880d07ac8ad495d65">00056</a>         <span class="keywordtype">void</span> <a class="code" href="class_a_i_trigger_type_class.html#2f8a4f20197c1f0880d07ac8ad495d65">RegisterSuccess</a>()
-<a name="l00057"></a>00057                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41FD60);
+<a name="l00057"></a>00057                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41FD60); }
 <a name="l00058"></a>00058 
 <a name="l00059"></a><a class="code" href="class_a_i_trigger_type_class.html#334610c60aac7ceb4a4d39be299f8702">00059</a>         <span class="keywordtype">void</span> <a class="code" href="class_a_i_trigger_type_class.html#334610c60aac7ceb4a4d39be299f8702">RegisterFailure</a>()
-<a name="l00060"></a>00060                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41FE20);
+<a name="l00060"></a>00060                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41FE20); }
 <a name="l00061"></a>00061 
 <a name="l00062"></a>00062         <span class="comment">// the main condition</span>
 <a name="l00063"></a><a class="code" href="class_a_i_trigger_type_class.html#b66b9ff49ba0df7570866e05d281a102">00063</a>         <span class="keywordtype">bool</span> <a class="code" href="class_a_i_trigger_type_class.html#b66b9ff49ba0df7570866e05d281a102">ConditionMet</a>(<a class="code" href="class_house_class.html">HouseClass</a> *CallingHouse, <a class="code" href="class_house_class.html">HouseClass</a> *TargetHouse, <span class="keywordtype">bool</span> EnoughBaseDefense)
-<a name="l00064"></a>00064                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41E720);
+<a name="l00064"></a>00064                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41E720); }
 <a name="l00065"></a>00065 
 <a name="l00066"></a>00066         <span class="comment">// slaves</span>
 <a name="l00067"></a><a class="code" href="class_a_i_trigger_type_class.html#3ec223482a4577d3fbaae6c76794dc06">00067</a>         <span class="keywordtype">bool</span> <a class="code" href="class_a_i_trigger_type_class.html#3ec223482a4577d3fbaae6c76794dc06">OwnerHouseOwns</a>(<a class="code" href="class_house_class.html">HouseClass</a> *CallingHouse, <a class="code" href="class_house_class.html">HouseClass</a> *TargetHouse)
-<a name="l00068"></a>00068                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41EAF0);
+<a name="l00068"></a>00068                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41EAF0); }
 <a name="l00069"></a>00069 
 <a name="l00070"></a><a class="code" href="class_a_i_trigger_type_class.html#77b5df046cd5096dda67bb15ec307208">00070</a>         <span class="keywordtype">bool</span> <a class="code" href="class_a_i_trigger_type_class.html#77b5df046cd5096dda67bb15ec307208">CivilianHouseOwns</a>(<a class="code" href="class_house_class.html">HouseClass</a> *CallingHouse, <a class="code" href="class_house_class.html">HouseClass</a> *TargetHouse)
-<a name="l00071"></a>00071                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41EC90);
+<a name="l00071"></a>00071                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41EC90); }
 <a name="l00072"></a>00072 
 <a name="l00073"></a><a class="code" href="class_a_i_trigger_type_class.html#c31493fae5f544e5cda9ea85aafc9d5e">00073</a>         <span class="keywordtype">bool</span> <a class="code" href="class_a_i_trigger_type_class.html#c31493fae5f544e5cda9ea85aafc9d5e">EnemyHouseOwns</a>(<a class="code" href="class_house_class.html">HouseClass</a> *CallingHouse, <a class="code" href="class_house_class.html">HouseClass</a> *TargetHouse)
-<a name="l00074"></a>00074                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41EE90);
+<a name="l00074"></a>00074                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41EE90); }
 <a name="l00075"></a>00075 
 <a name="l00076"></a><a class="code" href="class_a_i_trigger_type_class.html#bde26273bb7836d9bf3513b86cc6b95b">00076</a>         <span class="keywordtype">bool</span> <a class="code" href="class_a_i_trigger_type_class.html#bde26273bb7836d9bf3513b86cc6b95b">IronCurtainCharged</a>(<a class="code" href="class_house_class.html">HouseClass</a> *CallingHouse, <a class="code" href="class_house_class.html">HouseClass</a> *TargetHouse)
-<a name="l00077"></a>00077                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41F0D0);
+<a name="l00077"></a>00077                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41F0D0); }
 <a name="l00078"></a>00078 
 <a name="l00079"></a><a class="code" href="class_a_i_trigger_type_class.html#4f28697cd43cdb2773cf56607b15a8ad">00079</a>         <span class="keywordtype">bool</span> <a class="code" href="class_a_i_trigger_type_class.html#4f28697cd43cdb2773cf56607b15a8ad">ChronoSphereCharged</a>(<a class="code" href="class_house_class.html">HouseClass</a> *CallingHouse, <a class="code" href="class_house_class.html">HouseClass</a> *TargetHouse)
-<a name="l00080"></a>00080                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41F180);
+<a name="l00080"></a>00080                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41F180); }
 <a name="l00081"></a>00081 
 <a name="l00082"></a><a class="code" href="class_a_i_trigger_type_class.html#354a95097b944d1d4fb1a26616ef126d">00082</a>         <span class="keywordtype">bool</span> <a class="code" href="class_a_i_trigger_type_class.html#354a95097b944d1d4fb1a26616ef126d">HouseCredits</a>(<a class="code" href="class_house_class.html">HouseClass</a> *CallingHouse, <a class="code" href="class_house_class.html">HouseClass</a> *TargetHouse)
-<a name="l00083"></a>00083                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41F230);
+<a name="l00083"></a>00083                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41F230); }
 <a name="l00084"></a>00084 
 <a name="l00085"></a><a class="code" href="class_a_i_trigger_type_class.html#5ac76a14181b77b235108677979fc4c9">00085</a>         <span class="keywordtype">void</span> <a class="code" href="class_a_i_trigger_type_class.html#5ac76a14181b77b235108677979fc4c9">FormatForSaving</a>(<span class="keywordtype">char</span> * buffer) {
 <a name="l00086"></a>00086                 <span class="keyword">const</span> <span class="keywordtype">char</span> *Team1Name = <span class="stringliteral">"&lt;none&gt;"</span>;
@@ -182,7 +182,7 @@
 <a name="l00149"></a>00149 
 <a name="l00150"></a>00150         <span class="comment">//Constructor</span>
 <a name="l00151"></a><a class="code" href="class_a_i_trigger_type_class.html#59872a24c20289edbcf67b6d2df26cd2">00151</a>         <a class="code" href="class_a_i_trigger_type_class.html#3758eb67201433b36eed8b439a9da003">AITriggerTypeClass</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* pID) : <a class="code" href="class_abstract_type_class.html">AbstractTypeClass</a>(false)
-<a name="l00152"></a>00152                 <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41E350);
+<a name="l00152"></a>00152                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x41E350); }
 <a name="l00153"></a>00153 
 <a name="l00154"></a>00154 <span class="keyword">protected</span>:
 <a name="l00155"></a><a class="code" href="class_a_i_trigger_type_class.html#3758eb67201433b36eed8b439a9da003">00155</a>         <a class="code" href="class_a_i_trigger_type_class.html#3758eb67201433b36eed8b439a9da003">AITriggerTypeClass</a>() : <a class="code" href="class_abstract_type_class.html">AbstractTypeClass</a>(false) { }
@@ -220,7 +220,7 @@
 <a name="l00187"></a>00187 
 <a name="l00188"></a>00188 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Jan 2 21:12:28 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:05 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>
