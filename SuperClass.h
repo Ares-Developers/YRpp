@@ -37,6 +37,9 @@ public:
 	void CreateChronoAnim(CoordStruct Coords)
 		{ JMP_THIS(0x6CB3A0); }
 
+	void Reset()
+		{ JMP_THIS(0x6CE0B0); }
+
 	//Constructor
 	SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner) : AbstractClass(false)
 		{ JMP_THIS(0x6CAF90); }
