@@ -10,6 +10,7 @@
 #include <UnitTypeClass.h>
 #include <UnitClass.h>
 #include <InfantryTypeClass.h>
+#include <SideClass.h>
 
 //forward declarations
 class AnimClass;
@@ -172,6 +173,7 @@ public:
 	//Constructor
 	HouseClass(HouseTypeClass* pCountry) : AbstractClass(false)
   		{ JMP_THIS(0x4F54A0); }
+	// needs SideClass::Houses.Add(this);
 
 protected:
 	HouseClass() : AbstractClass(false) { }

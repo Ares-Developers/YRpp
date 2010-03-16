@@ -6,6 +6,7 @@
 #define HOUSETYPE_H
 
 #include <AbstractTypeClass.h>
+#include <SideClass.h>
 
 class AircraftTypeClass;
 class InfantryTypeClass;
@@ -33,9 +34,17 @@ public:
 	virtual eAbstractType WhatAmI() R0;
 	virtual int	Size() R0;
 
+	SideClass::eSides Side;
+
 	//Constructor
-	HouseTypeClass(const char* pID) : AbstractTypeClass(false)
+	HouseTypeClass(const char* pID) : AbstractTypeClass(false), Side(SideClass::NONE_ERROR)
 		{ JMP_THIS(0x5113F0); }
+
+	/*
+		// needs
+		Side = SideClass::DetermineSide(SideIndex);
+		SideClass::HouseTypes.Add(this);
+	*/
 
 protected:
 	HouseTypeClass() : AbstractTypeClass(false) { }
