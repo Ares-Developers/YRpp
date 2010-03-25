@@ -5,12 +5,11 @@
 #ifndef HOUSE_H
 #define HOUSE_H
 
-#include <BuildingClass.h>
 #include <HouseTypeClass.h>
+#include <BuildingClass.h>
 #include <UnitTypeClass.h>
 #include <UnitClass.h>
 #include <InfantryTypeClass.h>
-#include <SideClass.h>
 
 //forward declarations
 class AnimClass;
@@ -173,7 +172,6 @@ public:
 	//Constructor
 	HouseClass(HouseTypeClass* pCountry) : AbstractClass(false)
   		{ JMP_THIS(0x4F54A0); }
-	// needs SideClass::Houses.Add(this);
 
 protected:
 	HouseClass() : AbstractClass(false) { }
@@ -759,6 +757,7 @@ protected:
 	PROPERTY_STRING(InitialName,		0x15);
 	PROPERTY_UNICODE(NoIdeaButWillCheck,0x11);
 	PROPERTY_UNICODE(UIName,			0x11);
+	PROPERTY(DWORD,                 unknown_16050);
 	PROPERTY(int,                   ColorSchemeIndex);
 	PROPERTY_STRUCT(CellStruct,            StartingCell);
 	PROPERTY(DWORD,                 StartingAllies);
