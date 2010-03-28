@@ -53,4 +53,7 @@
 #define CLOSE_ENOUGH(x, y) \
 	(fabs(x - y) < 0.001)
 
+#define LESS_EQUAL(x, y) \
+	((x - y) <= 0.001)
+
 #endif

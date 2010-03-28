@@ -12,6 +12,14 @@ class AnimTypeClass;
 class ParticleTypeClass;
 class VoxelAnimTypeClass;
 
+struct WarheadFlags {
+	bool ForceFire : 1;
+	bool Retaliate : 1;
+	bool PassiveAcquire : 1;
+
+	WarheadFlags(bool FF = true, bool Retal = true, bool Acquire = true) : ForceFire(FF), Retaliate(Retal), PassiveAcquire(Acquire) {};
+};
+
 class WarheadTypeClass : public AbstractTypeClass
 {
 public:

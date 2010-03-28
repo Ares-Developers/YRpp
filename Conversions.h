@@ -3,52 +3,46 @@
 
 #include <Helpers/Macro.h>
 #include <YRPP.h>
+#include <WarheadTypeClass.h>
 
 // converters
 class Conversions
 {
 public:
-	static double Str2Armor(char *buf, DWORD *specialFX) {
+	static double Str2Armor(const char *buf, WarheadFlags *whFlags) {
 		if(!buf) { return 0.0; }
+
+		bool ForceFire = true;
+		bool Retaliate = true;
+		bool PassiveAcquire = true;
+
 		if(strchr(buf, '%')) {
-			bool specialed = false;
+
 			if(strlen(buf) == 2) {
 				switch(*buf) {
 					case '0':
-						*specialFX &= ~verses_ForceFire;
+						ForceFire = false;
 					case '1':
-						*specialFX &= ~verses_Retaliate;
+						Retaliate = false;
 					case '2':
-						*specialFX &= ~verses_PassiveAcquire;
-						specialed = true;
+						PassiveAcquire = false;
 						break;
 				}
 			}
-			if(!specialed) {
-				*specialFX |= verses_ForceFire;
-				*specialFX |= verses_Retaliate;
-				*specialFX |= verses_PassiveAcquire;
-			}
+			whFlags->ForceFire = ForceFire;
+			whFlags->Retaliate = Retaliate;
+			whFlags->PassiveAcquire = PassiveAcquire;
 			return atoi(buf) * 0.01;
 		} else {
 			double vs = atof(buf);
-			bool specialed = false;
-			if(CLOSE_ENOUGH(vs, 0.02)) {
-				*specialFX &= ~verses_PassiveAcquire;
-				specialed = true;
+			if(LESS_EQUAL(vs, 0.02)) {
+				whFlags->PassiveAcquire = PassiveAcquire;
 			}
-			if(CLOSE_ENOUGH(vs, 0.01)) {
-				*specialFX &= ~verses_Retaliate;
-				specialed = true;
+			if(LESS_EQUAL(vs, 0.01)) {
+				whFlags->Retaliate = Retaliate;
 			}
-			if(CLOSE_ENOUGH(vs, 0.00)) {
-				*specialFX &= ~verses_ForceFire;
-				specialed = true;
-			}
-			if(!specialed) {
-				*specialFX |= verses_ForceFire;
-				*specialFX |= verses_Retaliate;
-				*specialFX |= verses_PassiveAcquire;
+			if(LESS_EQUAL(vs, 0.00)) {
+				whFlags->ForceFire = ForceFire;
 			}
 			return vs;
 		}
