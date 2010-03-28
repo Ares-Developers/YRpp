@@ -37,6 +37,9 @@ public:
 	HouseTypeClass(const char* pID) : AbstractTypeClass(false)
 		{ JMP_THIS(0x5113F0); }
 
+	static signed int FindIndexOfName(const char *name)
+		{ JMP_STD(0x5117D0); }
+
 protected:
 	HouseTypeClass() : AbstractTypeClass(false) { }
 

@@ -121,6 +121,9 @@ class HouseClass : public AbstractClass, public IHouse, public IPublicHouse, pub
 public:
 	enum {AbsID = abs_House};
 
+	// <Player @ A> and friends map to these constants
+	enum {PlayerAtA = 4475, PlayerAtB, PlayerAtC, PlayerAtD, PlayerAtE, PlayerAtF, PlayerAtG, PlayerAtH};
+
 	//Static
 	static DynamicVectorClass<HouseClass*>* Array;
 
@@ -270,10 +273,10 @@ public:
 	// these are for mostly for map actions - HouseClass* foo = IsMP() ? Find_YesMP() : Find_NoMP();
 	static bool Index_IsMP(int idx)
 		{ JMP_STD(0x510F60); }
-	static HouseClass * FindByIndex_NoMP(int idxHouse)
+	static HouseClass * FindByCountryIndex(int HouseType) // find first house of this houseType
 		{ JMP_STD(0x502D30); }
-	static HouseClass * FindByIndex_YesMP(int idxHouse)
-		{ JMP_STD(0x510ED0); }
+	static HouseClass * FindByIndex(int idxHouse) // find house at given index
+		{ JMP_STD(0x510ED0); }                    // 0..15 map to ScenarioClass::HouseIndices, also supports PlayerAtA and up
 
 	CellStruct * PickIonCannonTarget(CellStruct &dest)
 		{ JMP_THIS(0x50CBF0); }

@@ -39,9 +39,11 @@ public:
 			}
 			if(CLOSE_ENOUGH(vs, 0.01)) {
 				*specialFX &= ~verses_Retaliate;
+				specialed = true;
 			}
 			if(CLOSE_ENOUGH(vs, 0.00)) {
 				*specialFX &= ~verses_ForceFire;
+				specialed = true;
 			}
 			if(!specialed) {
 				*specialFX |= verses_ForceFire;
