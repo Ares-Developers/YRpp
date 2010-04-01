@@ -271,11 +271,11 @@ public:
 		{ JMP_THIS(0x509130); }
 
 	// these are for mostly for map actions - HouseClass* foo = IsMP() ? Find_YesMP() : Find_NoMP();
-	static bool Index_IsMP(int idx)
+	static bool __fastcall Index_IsMP(int idx)
 		{ JMP_STD(0x510F60); }
-	static HouseClass * FindByCountryIndex(int HouseType) // find first house of this houseType
+	static HouseClass * __fastcall FindByCountryIndex(int HouseType) // find first house of this houseType
 		{ JMP_STD(0x502D30); }
-	static HouseClass * FindByIndex(int idxHouse) // find house at given index
+	static HouseClass * __fastcall FindByIndex(int idxHouse) // find house at given index
 		{ JMP_STD(0x510ED0); }                    // 0..15 map to ScenarioClass::HouseIndices, also supports PlayerAtA and up
 
 	CellStruct * PickIonCannonTarget(CellStruct &dest)
