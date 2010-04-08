@@ -86,9 +86,6 @@ protected:
 	PROPERTY(bool,					unknown_bool_14D9);
 	PROPERTY(bool,					unknown_bool_14DA);
 	PROPERTY_STRUCT(RectangleStruct,		unknown_rect_14DC);
-	PROPERTY(DWORD,					unknown_14E0);
-	PROPERTY(DWORD,					unknown_14E4);
-	PROPERTY(DWORD,					unknown_14E8);
 	PROPERTY(DWORD,					unknown_14EC);
 	PROPERTY(DWORD,					unknown_14F0);
 	PROPERTY(DWORD,					unknown_14F4);

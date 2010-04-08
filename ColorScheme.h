@@ -15,12 +15,18 @@ class ColorScheme
 public:
 	//global array
 	static DynamicVectorClass<ColorScheme*>* Array;
-	static ColorScheme* Find(const char* find_id)
+/*
+ * trap! most schemes are duplicated - ShadeCount 1 and ShadeCount 53
+*/
+	static ColorScheme* Find(const char* find_id, int ShadeCount = 1)
 		{
 //			ColorScheme* current=NULL;
 			for(int i = 0; i < Array->Count; ++i) {
-				if(!_strcmpi(Array->GetItem(i)->ID, find_id)) {
-					return Array->GetItem(i);
+				ColorScheme *CS = Array->GetItem(i);
+				if(!_strcmpi(CS->ID, find_id)) {
+					if(CS->ShadeCount == ShadeCount) {
+						return Array->GetItem(i);
+					}
 				}
 			}
 			return NULL;
@@ -37,6 +43,9 @@ public:
 			return -1;
 		}
 
+	static ColorScheme * __fastcall FindByName(const char *Name, ColorStruct *BaseColor, BytePalette *Pal1, BytePalette *Pal2, int ShadeCount)
+		{ JMP_THIS(0x68C9C0); }
+
 	//Constructor, Destructor
 	ColorScheme(const char* pID, ColorStruct* BaseColor, DWORD arg8, DWORD argC, DWORD arg10, DWORD arg14)
 		{ JMP_THIS(0x68C710); }
@@ -49,18 +58,15 @@ public:
 	//===========================================================================
 	PROPERTY(int,                ArrayIndex);
 
-	protected:
-		ColorStruct                Colors[0x100];
-	public:
-		ColorStruct    get_Color(int i)
-			{ return Colors[i]; }
-		void           set_Color(int i, ColorStruct value)
-			{ Colors[i] = value; }
+	PROPERTY_STRUCT(BytePalette, Colors);
 
 	PROPERTY(char*,              ID);
 	PROPERTY_STRUCT(ColorStruct,        BaseColor);
-	PROPERTY(LightConvertClass*, LightConvert);	//???
-	PROTECTED_PROPERTY(BYTE,     unknown_310[0x2C]);
+	PROPERTY(LightConvertClass*, LightConvert);	//??? remap - indices #16-#31 are changed to mathefuckikally derived shades of BaseColor, think unittem.pal
+	PROPERTY(int,   ShadeCount);
+	PROTECTED_PROPERTY(BYTE,     unknown_314[0x1C]);
+	PROPERTY(int,   MainShadeIndex);
+	PROTECTED_PROPERTY(BYTE,     unknown_334[0x8]);
 };
 
 //ColorScheme indices, since they are hardcoded all over the exe, why shan't we do it as well?

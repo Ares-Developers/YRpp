@@ -131,7 +131,7 @@ protected:
 	PROPERTY(bool,					unknown_bool_11CC);
 	PROPERTY(bool,					unknown_bool_11CD);
 	PROPERTY(bool,					unknown_bool_11CE);
-	PROPERTY(bool,					unknown_bool_11CF);
+	PROPERTY(bool,					DraggingRectangle);
 	PROPERTY(bool,					unknown_bool_11D0);
 	PROPERTY(bool,					unknown_bool_11D1);
 	PROPERTY(DWORD,					unknown_11D4);

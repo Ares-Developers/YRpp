@@ -57,6 +57,21 @@ public:
 	static SidebarClass* Global()
 		{ return (SidebarClass*)0x87F7E8; }
 
+	void SidebarNeedsRepaint(DWORD unk = 0)
+		{
+			// yeah, unknown voodoo magic shticks
+			this->unknown_bool_53A6 = this->unknown_bool_53A7 = true;
+			this->Tabs[this->ActiveTabIndex].unknown_1C = this->Tabs[this->ActiveTabIndex].unknown_3C = 1;
+			this->sub_4F42F0(unk);
+			SidebarClass::Draw(1);
+		}
+
+	void RepaintSidebar(int tab = 0)
+		{ JMP_THIS(0x6A60A0); }
+
+	virtual void Draw(DWORD dwUnk)
+		{ JMP_THIS(0x6A6C30); }
+
 	//Destructor
 	virtual ~SidebarClass() RX;
 
@@ -74,7 +89,7 @@ protected:
 	PROPERTY_STRUCT_ARRAY(TabDataStruct, Tabs, 0x4);
 	PROPERTY(DWORD,				unknown_5394);
 	PROPERTY(DWORD,				unknown_5398);
-	PROPERTY(DWORD,				unknown_539C);
+	PROPERTY(int,				ActiveTabIndex);
 	PROPERTY(DWORD,				unknown_53A0);
 	PROPERTY(bool,				unknown_bool_53A4);
 	PROPERTY(bool,				unknown_bool_53A5);
