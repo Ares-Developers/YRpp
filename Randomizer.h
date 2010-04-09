@@ -3,10 +3,12 @@
 
 class Randomizer
 {
-	// DO NOT USE THIS!!! Really.
-	// Use the ScenarioClass::Random object instead!
+public:
+	// for any randomization happening inside a match (odds of a survivor, crate, etc), use the ScenarioClass::Random object instead!
+	// this object should only be used for RMG and other randomness outside a match
 	static Randomizer* Global()
 		{ return (Randomizer*)0x886B88; }
+
 public:
 	DWORD Random()
 		{ JMP_THIS(0x65C780); }
