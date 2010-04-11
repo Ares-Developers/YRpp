@@ -103,7 +103,9 @@ static void * __cdecl Allocate_Array(bool inDLL, size_t Capacity) {
 // deallocate scalars
 template<typename T>
 static void __cdecl Deallocate(T* Tptr, bool inDLL) {
-	Tptr->~T();
+	if(Tptr) {
+		Tptr->~T();
+	}
 	if(inDLL) {
 		operator delete(Tptr);
 		return;
@@ -130,7 +132,17 @@ static void __cdecl Deallocate(T* Tptr, bool inDLL) {
 // deallocate vectors
 template<typename T>
 static void __cdecl Deallocate_Array(T* Tptr, bool inDLL) {
-	Tptr->~T();
+	if(Tptr) {
+		T *iter = Tptr;
+		// ye olde black magick
+		size_t *p = reinterpret_cast<size_t *>(iter) - 1;
+		size_t amount = *p;
+		while(amount > 0 && iter) {
+			iter->~T();
+			++iter;
+			--amount;
+		}
+	}
 	if(inDLL) {
 		operator delete[](Tptr);
 		return;
