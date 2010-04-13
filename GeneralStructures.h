@@ -29,6 +29,11 @@ struct ColorStruct
 		B = Color.B;
 	}
 
+	bool operator == (ColorStruct rhs)
+	{
+		return R == rhs.R && G == rhs.G && B == rhs.B;
+	}
+
 	ColorStruct()
 	{
 	}

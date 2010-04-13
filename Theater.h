@@ -6,6 +6,7 @@
 struct Theater	//US English spelling to keep it consistent with the game
 {
 	public:
+	static Theater* Array;
 	static Theater* TH_Temperate;
 	static Theater* TH_Snow;
 	static Theater* TH_Urban;

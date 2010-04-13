@@ -238,6 +238,7 @@ DynamicVectorClass<DWORD>* TechnoClass::Array = (DynamicVectorClass<DWORD>*)0xA8
 DynamicVectorClass<DWORD>* TechnoTypeClass::Array = (DynamicVectorClass<DWORD>*)0xA8EB00;
 
 #include <Theater.h>
+Theater* Theater::Array        = (Theater *)0x7E1B78;
 Theater* Theater::TH_Temperate = (Theater *)0x7E1B78;
 Theater* Theater::TH_Snow      = (Theater *)0x7E1BE8;
 Theater* Theater::TH_Urban     = (Theater *)0x7E1C58;
