@@ -98,7 +98,7 @@ public:
 
 	bool CellExists(CellStruct* pMapCoords) {
 		int n = (pMapCoords->Y << 9) + pMapCoords->X;
-		return (n < 0 || n >= MAX_CELLS) && Cells[n] != NULL;
+		return (n >= 0 && n < MAX_CELLS) && Cells[n] != NULL; // WTF this was so wrong...
 	}
 
 	void CellIteratorReset()
@@ -116,7 +116,7 @@ public:
 	\param AffectsTiberium If this is false, Tiberium=yes is ignored.
 	\param SourceHouse The house to which SourceObject belongs, the owner/bringer of damage.
 */
-	static int __fastcall DamageArea(
+	static void __fastcall DamageArea(
 		CoordStruct* Coords,
 		int Damage,
 		TechnoClass* SourceObject,
