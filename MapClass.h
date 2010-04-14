@@ -108,12 +108,20 @@ public:
 		{ JMP_THIS(0x578290); }
 
 // the key damage delivery
+/*! The key damage delivery function.
+	\param Coords Location of the impact/center of damage.
+	\param Damage Amount of damage to deal.
+	\param SourceObject The object which caused the damage to be delivered (iow, the shooter).
+	\param WH The warhead to use to apply the damage.
+	\param AffectsTiberium If this is false, Tiberium=yes is ignored.
+	\param SourceHouse The house to which SourceObject belongs, the owner/bringer of damage.
+*/
 	static int __fastcall DamageArea(
 		CoordStruct* Coords,
 		int Damage,
 		TechnoClass* SourceObject,
 		WarheadTypeClass *WH,
-		BYTE bUnk,
+		bool AffectsTiberium,
 		HouseClass* SourceHouse)
 			{ JMP_STD(0x489280); }
 
