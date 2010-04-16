@@ -44,6 +44,7 @@ public:
 		{ JMP_THIS(0x424B50); }
 
 	//Constructor
+	// TODO fix
 	AnimClass(AnimTypeClass* pAnimType, CoordStruct* pLocation) : ObjectClass(false)
 	{
 		PUSH_IMM(0); //???

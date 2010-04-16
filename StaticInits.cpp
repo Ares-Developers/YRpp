@@ -37,6 +37,7 @@ DECL(AnimTypeClass, 0x8B4150);
 
 #include <Audio.h>
 ALIAS(AudioIDXData *, AudioIDXData::IDX, 0x87E294);
+ALIAS(AudioStream *, AudioStream::Instance, 0xB1D4D8);
 
 #include <BulletClass.h>
 DECL(BulletClass, 0xA8ED40);

@@ -4,6 +4,7 @@
 #include <GScreenClass.h>
 #include <ArrayClasses.h>
 #include <CellClass.h>
+#include <AnimTypeClass.h>
 
 class WarheadTypeClass;
 
@@ -124,6 +125,22 @@ public:
 		bool AffectsTiberium,
 		HouseClass* SourceHouse)
 			{ JMP_STD(0x489280); }
+
+	/*
+	 * Picks the appropriate anim from WH's AnimList= based on damage dealt and land type (Conventional= )
+	 * so after DamageArea:
+	 * if(AnimTypeClass *damageAnimType = SelectDamageAnimation()) {
+	 * 	AnimClass *anim;
+	 * 	GAME_ALLOC(AnimClass, anim, damageAnimType, location);
+	 * }
+	 */
+	static AnimTypeClass * __fastcall SelectDamageAnimation
+		(int Damage, WarheadTypeClass *WH, eLandType LandType, CoordStruct *coords)
+			{ JMP_STD(0x48A4F0); }
+
+	static void __fastcall FlashbangWarheadAt
+		(int Damage, WarheadTypeClass *WH, CoordStruct coords, bool Force, int CLDisableFlags)
+			{JMP_STD(0x48A620); }
 
 	int GetCellFloorHeight(CoordStruct* XYZ)
 		{ JMP_THIS(0x578080); }

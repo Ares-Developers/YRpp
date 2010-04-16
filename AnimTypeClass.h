@@ -29,7 +29,7 @@ public:
 
 	//ObjectTypeClass
 	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords,HouseClass* pOwner) R0;
-	virtual ObjectClass* CreateObject(HouseClass* owner) R0;
+	virtual ObjectClass* CreateObject(HouseClass* owner) R0; // ! this just returns NULL instead of creating the anim, fucking slackers
 
 	//AnimTypeClass
 	virtual SHPStruct* LoadImage() R0;

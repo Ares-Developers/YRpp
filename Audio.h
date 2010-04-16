@@ -121,4 +121,17 @@ public:
 		{ JMP_STD(0x408610); }
 };
 
+class AudioStream {
+public:
+	static AudioStream* &Instance;
+
+	bool __fastcall PlayWAV(const char * filename, bool bUnk)
+		{ JMP_STD(0x407B60); }
+};
+
+struct TauntDataStruct {
+	DWORD tauntIdx: 4;
+	DWORD countryIdx :4;
+};
+
 #endif
