@@ -139,7 +139,7 @@ public:
 			{ JMP_STD(0x48A4F0); }
 
 	static void __fastcall FlashbangWarheadAt
-		(int Damage, WarheadTypeClass *WH, CoordStruct coords, bool Force, int CLDisableFlags)
+		(int Damage, WarheadTypeClass *WH, CoordStruct coords, bool Force = 0, int CLDisableFlags = 0)
 			{JMP_STD(0x48A620); }
 
 	int GetCellFloorHeight(CoordStruct* XYZ)
