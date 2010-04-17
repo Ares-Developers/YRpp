@@ -193,9 +193,12 @@ public:
 	void RadLevel_Decrease(double amount)
 		{ JMP_THIS(0x487D00); }
 
+	// helper
+	bool ContainsBridge()
+		{ return (this->Flags & cf_Bridge) != 0; }
 	// helper mimicking game's behaviour
 	ObjectClass* GetContent()
-		{ return ((this->Flags & cf_Bridge) != 0) ? this->AltObject : this->FirstObject; }
+		{ return this->ContainsBridge() ? this->AltObject : this->FirstObject; }
 
 	// tilesets
 #define ISTILE(tileset, addr) \
@@ -246,6 +249,13 @@ public:
 	{
 		crd->Z += ((this->Flags & cf_Bridge) != 0) * BridgeHeight();
 		return crd;
+	}
+
+	// helper - gets coords and fixes height for bridge
+	CoordStruct * GetCoordsWithBridge(CoordStruct *crd)
+	{
+		this->GetCoords(crd);
+		return this->FixHeight(crd);
 	}
 
 	CoordStruct * FindInfantrySubposition(CoordStruct *dst, CoordStruct *src, char bUnk1, char bUnk2, char bUnk3)
