@@ -80,7 +80,7 @@ ALIAS(RectangleStruct, Drawing::SurfaceDimensions_Hidden, 0x886FA0);
 ALIAS(ColorStruct, Drawing::TooltipColor, 0xB0FA1C);
 
 #include <YRDDraw.h>
-ALIAS(void *, DirectDrawWrap::lpDD, 0x8A0094);
+ALIAS(DirectDrawWrap *, DirectDrawWrap::lpDD, 0x8A0094);
 ALIAS(byte, DirectDrawWrap::DoSmth, 0x8A0DEF);
 
 #include <Surface.h>

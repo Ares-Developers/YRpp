@@ -45,6 +45,10 @@ struct CSFString
 {
 	CSFString *PreviousEntry;
 	wchar_t Text[102];
+
+	CSFString() : PreviousEntry(NULL) {
+		*Text = 0;
+	}
 };
 
 class StringTable
