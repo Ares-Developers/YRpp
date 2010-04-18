@@ -97,6 +97,21 @@ public:
 	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner) : TechnoClass(false)
 		{ JMP_THIS(0x43B740); }
 
+	// helpers
+	bool HasSuperWeapon(int Type) {
+		if(this->Type->HasSuperWeapon(Type)) {
+			return true;
+		}
+		for(int i = 0; i < 3; ++i) {
+			if(BuildingTypeClass * BType = this->Upgrades[i]) {
+				if(BType->HasSuperWeapon(Type)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
 protected:
 	BuildingClass() : TechnoClass(false) { }
 

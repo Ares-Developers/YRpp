@@ -64,6 +64,11 @@ public:
 	short GetFoundationHeight(bool bIncludeBib)
 		{ JMP_THIS(0x45ECA0); }
 
+	// helpers
+	bool HasSuperWeapon(int Type) {
+		return (this->SuperWeapon == Type || this->SuperWeapon2 == Type);
+	}
+
 protected:
 	BuildingTypeClass() : TechnoTypeClass(false) { }
 
