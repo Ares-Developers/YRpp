@@ -165,7 +165,7 @@ public:
 	virtual void UpdatePosition(int dwUnk) RX;
 	virtual BuildingTypeClass* GetFactoryType(bool bOverridePrereqs, bool bOverridePower) R0;
 	virtual void ReceiveCommand(TechnoClass *From, eRadioCommands rcDoThis, DWORD dwUnk3) RX;
-	virtual bool vt_entry_198(DWORD dwUnk) R0;
+	virtual bool UpdateOwner(HouseClass *pHouse) R0;
 	virtual void vt_entry_19C(DWORD dwUnk) RX;
 	virtual void Sell(DWORD dwUnk) RX;
 	virtual void AssignPlanningPath(signed int idxPath, signed char idxWP) RX;
