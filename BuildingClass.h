@@ -199,8 +199,8 @@ public:
 	PROPERTY_STRUCT(DynamicVectorClass<InfantryClass*>, Occupants);
 	PROPERTY(int, FiringOccupantIndex); // which occupant should get XP, which weapon should be fired (see 6FF074)
 
-	PROPERTY_STRUCT(Unsorted::AudioController, Audio7);
-	PROPERTY_STRUCT(Unsorted::AudioController, Audio8);
+	PROPERTY_STRUCT(AudioController, Audio7);
+	PROPERTY_STRUCT(AudioController, Audio8);
 
 	PROPERTY(bool, unknown_bool_6C8);
 	PROPERTY(bool, ShowRealName);

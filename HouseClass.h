@@ -10,6 +10,7 @@
 #include <UnitTypeClass.h>
 #include <UnitClass.h>
 #include <InfantryTypeClass.h>
+#include <Unsorted.h>
 
 //forward declarations
 class AnimClass;

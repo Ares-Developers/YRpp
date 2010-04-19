@@ -132,8 +132,8 @@ protected:
 	PROPERTY(bool, Invisible); // don't draw, but Update state anyway
 	PROPERTY(byte, unknown_19E);
 	PROPERTY(byte, unknown_19F);
-	PROPERTY_STRUCT(Unsorted::AudioController, Audio3);
-	PROPERTY_STRUCT(Unsorted::AudioController, Audio4);
+	PROPERTY_STRUCT(AudioController, Audio3);
+	PROPERTY_STRUCT(AudioController, Audio4);
 };
 
 #endif

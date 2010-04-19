@@ -530,22 +530,22 @@ public:
  // if DistributedFire=yes, this is used to determine which possible targets should be ignored in the latest threat scan
 	PROPERTY_STRUCT(DynamicVectorClass<AbstractClass*>, AttackedTargets);
 
-	PROPERTY_STRUCT(Unsorted::AudioController, Audio3);
+	PROPERTY_STRUCT(AudioController, Audio3);
 
 	PROPERTY(DWORD,              unknown_49C);
 	PROPERTY(DWORD,              unknown_4A0);
 
-	PROPERTY_STRUCT(Unsorted::AudioController, Audio4);
+	PROPERTY_STRUCT(AudioController, Audio4);
 
 	PROPERTY(bool,               unknown_bool_4B8);
 	PROPERTY(DWORD,              unknown_4BC);
 
-	PROPERTY_STRUCT(Unsorted::AudioController, Audio5);
+	PROPERTY_STRUCT(AudioController, Audio5);
 
 	PROPERTY(bool,               unknown_bool_4D4);
 	PROPERTY(DWORD,              unknown_4D8);
 
-	PROPERTY_STRUCT(Unsorted::AudioController, Audio6);
+	PROPERTY_STRUCT(AudioController, Audio6);
 
 	PROPERTY(DWORD,              QueuedVoiceIndex);
 	PROPERTY(DWORD,              unknown_4F4);

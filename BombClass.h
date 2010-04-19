@@ -2,7 +2,7 @@
 #define BOMB_H
 
 #include <AbstractClass.h>
-#include <Unsorted.h>
+#include <Audio.h>
 
 //forward declarations
 class TechnoClass;
@@ -57,7 +57,7 @@ protected:
 	PROPERTY(DWORD,				DeathBomb); // unused - if so, [General]CanDetonateDeathBomb applies instead of CanDetonateTimeBomb
 	PROPERTY(int,				PlantingFrame);
 	PROPERTY(int,				DetonationFrame);
-	PROPERTY_STRUCT(Unsorted::AudioController, Audio);
+	PROPERTY_STRUCT(AudioController, Audio);
 	PROPERTY(int,					TickSound);
 	PROPERTY(DWORD,					ShouldPlayTickingSound); // seems so
 	PROPERTY(byte,					Harmless); // (mostly) set to 0 on plant, 1 on detonation/removal ?

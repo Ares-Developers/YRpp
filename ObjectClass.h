@@ -6,7 +6,7 @@
 #define OBJECT_H
 
 #include <AbstractClass.h>
-#include <Unsorted.h>
+#include <Audio.h>
 
 #include <Helpers/Template.h>
 
@@ -154,7 +154,7 @@ public:
 	virtual bool IsCloseEnough3D(DWORD dwUnk, DWORD dwUnk2) R0;
 	virtual int GetWeaponRange(int idxWeapon) R0;
 	virtual eDamageState ReceiveDamage(int* pDamage, int DistanceFromEpicenter, WarheadTypeClass* pWH,
-	  ObjectClass* Attacker, bool IgnoreDefenses, bool PreventPassengerEscape, HouseClass* pAttackingHouse) R0;
+	  ObjectClass* Attacker, BOOL IgnoreDefenses, BOOL PreventPassengerEscape, HouseClass* pAttackingHouse) R0;
 	virtual void Destroy() RX;
 	virtual void Scatter(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
 	virtual bool Ignite() R0;
@@ -231,8 +231,8 @@ protected:
 	PROTECTED_PROPERTY(DWORD,    AttachedTag); //Should be TagClass , TODO: change when implemented
 	PROPERTY(BombClass*,         AttachedBomb); //Ivan's little friends.
 
-	PROPERTY_STRUCT(Unsorted::AudioController, Audio1); // the "mofo" struct, evil evil stuff
-	PROPERTY_STRUCT(Unsorted::AudioController, Audio2); // the "mofo" struct, evil evil stuff
+	PROPERTY_STRUCT(AudioController, Audio1); // the "mofo" struct, evil evil stuff
+	PROPERTY_STRUCT(AudioController, Audio2); // the "mofo" struct, evil evil stuff
 
 	PROPERTY(int,                unknown_64);		//idx of OverlayType this is posing as (Mirage Tank)
 	PROPERTY(bool,               BombVisible); // In range of player's bomb seeing units, so should draw it

@@ -9,8 +9,9 @@ struct args_ReceiveDamage {
 	int DistanceToEpicenter;
 	WarheadTypeClass *WH;
 	TechnoClass *Attacker;
-	bool IgnoreDefenses;
-	bool PreventsPassengerEscape;
+	BOOL IgnoreDefenses;
+	/* don't lowercase these - padding voodoo */
+	BOOL PreventsPassengerEscape;
 	HouseClass *SourceHouse;
 };
 
