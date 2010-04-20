@@ -18,7 +18,7 @@ class MissionControlClass
 		static const char** Names()
 			{ return (const char**)0x816CAC; }
 
-		static MissionControlClass* Find(const char* pName)
+		static MissionControlClass* __fastcall Find(const char* pName)
 			{ JMP_STD(0x5B3910); }
 
 		MissionControlClass()
@@ -48,10 +48,10 @@ public:
 	//Destructor
 	virtual ~MissionClass() { /* ~ObjectClass() */ }
 
-	static eMission FindIndex(const char *name)
+	static eMission __fastcall FindIndex(const char *name)
 		{ JMP_STD(0x5B3910); }
 
-	static const char * FindName(int const *index)
+	static const char * __fastcall FindName(int const *index)
 		{ JMP_STD(0x5B3740); }
 
 	//MissionClass
