@@ -350,7 +350,7 @@ public:
 	PROPERTY(char,               Height);
 	PROPERTY(char,               Level);
 
-	PROTECTED_PROPERTY(BYTE,     unknown_11C);
+	PROPERTY(BYTE,               SlopeIndex);  // this + 2 == cell's slope shape as reflected by PLACE.SHP
 	PROTECTED_PROPERTY(BYTE,     unknown_11D);
 
 	PROPERTY(char,               Powerup);	//The crate type on this cell.

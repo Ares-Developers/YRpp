@@ -59,7 +59,7 @@
 #include <WaypointPathClass.h>
 
 //MP Stuff
-#include <MPGameModeTypeClass.h>
+#include <MPGameModeClass.h>
 #include <MPTeams.h>
 
 //LocomotionClass Tree

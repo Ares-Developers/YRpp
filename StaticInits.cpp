@@ -193,7 +193,10 @@ ALIAS(RulesClass*, RulesClass::Instance, 0x8871E0);
 //bool RulesClass::Initialized = false;
 
 #include <ScenarioClass.h>
-ALIAS(ScenarioClass*, ScenarioClass::Instance, 0xA8B230);
+ALIAS(ScenarioClass*, ScenarioClass::Instance, 0xA8B238);
+
+#include <SessionClass.h>
+ALIAS_O(SessionClass*, SessionClass::Instance, 0xA8B230);
 
 #include <SideClass.h>
 DECL(SideClass, 0x8B4120);

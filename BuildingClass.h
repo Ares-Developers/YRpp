@@ -93,6 +93,14 @@ public:
 	void DestroyNthAnim(BuildingAnimSlot Slot)
 		{ JMP_THIS(0x451E40); }
 
+	// when the building is switched off
+	void DisableStuff()
+		{ JMP_THIS(0x452480); }
+
+	// when the building is switched on
+	void EnableStuff()
+		{ JMP_THIS(0x452410); }
+
 	//Constructor
 	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner) : TechnoClass(false)
 		{ JMP_THIS(0x43B740); }

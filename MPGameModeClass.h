@@ -13,8 +13,10 @@ NOTE:
 #ifndef GAMEMODE_H
 #define GAMEMODE_H
 
+#include <GeneralDefinitions.h>
+#include <MPTeams.h>
+
 //forward declarations
-class MPTeam;
 class HouseClass;
 class CCINIClass;
 
@@ -49,13 +51,13 @@ struct Initializer
 */
 
 //BAAAAH THIS FILE IS HELL - rewrite requested :P -pd
-#define MPMODE_CTOR(clsname, addr) clsname() {}
+//WAAAAH - rewrite in progress :D
 
-class MPGameModeTypeClass
+class MPGameModeClass
 {
 public:
 	//global arrays
-	static DynamicVectorClass<MPGameModeTypeClass*>* GameModes;
+	static DynamicVectorClass<MPGameModeClass*>* GameModes;
 
 	/*
 	static UNINIT_FUNC(0x5D7FD0);
@@ -63,8 +65,8 @@ public:
 	*/
 
 	//Destructor
-	virtual ~MPGameModeTypeClass()
-		{ THISCALL(0x5D7F20); }
+	virtual ~MPGameModeClass()
+		{ JMP_THIS(0x5D7F20); }
 
 	virtual bool vt_entry_04()
 		{ return 0; }
@@ -76,7 +78,7 @@ public:
 		{ return 1; }
 
 	virtual bool vt_entry_10()
-		{ THISCALL(0x5D62C0); }
+		{ JMP_THIS(0x5D62C0); }
 
 	virtual bool vt_entry_14(DWORD dwUnk)
 		{ return 1; }
@@ -102,8 +104,8 @@ public:
 	virtual signed int vt_entry_30()
 		{ return this->AlliesAllowed ? 3 : -2 ; } // (-(this->AlliesAllowed != 0) & 5) - 2
 
-	virtual bool vt_entry_34(int idx)
-		{ PUSH_VAR32(idx); THISCALL(0x5D5DE0); }
+	virtual bool CanAllyWith(int idx)
+		{ JMP_THIS(0x5D5DE0); }
 
 	virtual void vt_entry_38(DWORD dwUnk)
 		{ }
@@ -114,25 +116,25 @@ public:
 	virtual bool vt_entry_40()
 		{ return 0; }
 
-	virtual signed int vt_entry_44()
-		{ THISCALL(0x5D6370); }
+	virtual signed int FirstValidMapIndex()
+		{ JMP_THIS(0x5D6370); }
 
 	virtual void PopulateTeamDropdown(HWND hWnd, DynamicVectorClass<MPTeam*> *vecTeams, MPTeam *Team)
-		{ PUSH_VAR32(Team); PUSH_VAR32(vecTeams); PUSH_VAR32(hWnd); THISCALL(0x5D6450); }
+		{ JMP_THIS(0x5D6450); }
 
 	virtual void DrawTeamDropdown(HWND hWnd, DynamicVectorClass<MPTeam*> *vecTeams, MPTeam *Team)
-		{ PUSH_VAR32(Team); PUSH_VAR32(vecTeams); PUSH_VAR32(hWnd); THISCALL(0x5D64C0); }
+		{ JMP_THIS(0x5D64C0); }
 
 	virtual void PopulateTeamDropdownForPlayer(HWND hWnd, int idx)
-		{ PUSH_VAR32(idx); PUSH_VAR32(hWnd); THISCALL(0x5D6540); }
+		{ JMP_THIS(0x5D6540); }
 
 	//argh! source of fail
 	virtual bool vt_entry_54(int a1, int a2, void *ptr, int a4, __int16 a5, int a6, int a7)
-		{ /* if (ptr && (a5 &0xFF00)) delete(ptr); */ return 0; } // 0x5C0EB0
+		{ JMP_THIS(0x5C0EB0); } // 0x5C0EB0
 
 	//argh! source of fail
 	virtual bool vt_entry_58(int a1, int a2, void *ptr, int a4, __int16 a5, int a6, int a7, int a8, int a9)
-		{ /* if (ptr && (a5 &0xFF00)) delete(ptr); */ return 0; } // 0x5C0E90
+		{ JMP_THIS(0x5C0E90); } // 0x5C0E90
 
 	virtual bool vt_entry_5C(DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3)
 		{ return 1; }
@@ -146,11 +148,11 @@ public:
 	virtual bool vt_entry_68()
 		{ return 1; }
 
-	virtual int vt_entry_6C()
-		{ THISCALL(0x5D6430); }
+	virtual int RandomHumanCountryIndex()
+		{ JMP_THIS(0x5D6430); }
 
-	virtual int vt_entry_70()
-		{ return this->vt_entry_6C(); }
+	virtual int RandomAICountryIndex()
+		{ return this->RandomHumanCountryIndex(); }
 
 	virtual void vt_entry_74(DWORD dwUnk1, DWORD dwUnk2)
 		{ }
@@ -158,17 +160,17 @@ public:
 	virtual void vt_entry_78(DWORD dwUnk1)
 		{ }
 
-	virtual bool vt_entry_7C()
-		{ THISCALL(0x5D6790); }
+	virtual bool UnfixAlliances()
+		{ JMP_THIS(0x5D6790); }
 
 	virtual bool StartingPositionsToHouseBaseCells(char unused)
-		{ PUSH_VAR8(unused); THISCALL(0x5D6BE0); }
+		{ JMP_THIS(0x5D6BE0); }
 
 	virtual bool StartingPositionsToHouseBaseCells2(bool arg)
-		{ PUSH_VAR8(arg); THISCALL(0x5D6C70); }
+		{ JMP_THIS(0x5D6C70); }
 
 	virtual bool AllyTeams()
-		{ THISCALL(0x5D74A0); }
+		{ JMP_THIS(0x5D74A0); }
 
 	virtual bool vt_entry_8C()
 		{ return 1; }
@@ -201,7 +203,7 @@ public:
 		{ }
 
 	virtual bool vt_entry_B4(int a1, void *ptr, int a3, __int16 a4, int a5, int a6, int a7)
-		{ /* if (ptr && (a4 &0xFF00)) delete(ptr); */ return 0; }
+		{ JMP_THIS(0); }
 
 	virtual int vt_entry_B8()
 		{ return 0; }
@@ -210,22 +212,25 @@ public:
 		{ return 1; }
 
 	virtual void CreateMPTeams(DynamicVectorClass<MPTeam> *vecTeams)
-		{ PUSH_VAR32(vecTeams); THISCALL(0x5D6690); }
+		{ JMP_THIS(0x5D6690); }
 
 	virtual CellStruct * AssignStartingPositionsToHouse(CellStruct *result, int idxHouse,
 		DynamicVectorClass<CellStruct> *vecCoords, byte *housesSatisfied)
-		{ PUSH_VAR32(result); PUSH_VAR32(idxHouse); PUSH_VAR32(vecCoords); PUSH_VAR32(housesSatisfied);
-			THISCALL(0x5D6890); }
+		{ JMP_THIS(0x5D6890); }
 
 	virtual bool SpawnBaseUnits(HouseClass *House, DWORD dwUnused)
-		{ PUSH_VAR32(dwUnused); PUSH_VAR32(House); THISCALL(0x5D7030); }
+		{ JMP_THIS(0x5D7030); }
 
 	virtual bool GenerateStartingUnits(HouseClass *House, int &AmountToSpend)
-		{ PUSH_VAR32(AmountToSpend); PUSH_VAR32(House); THISCALL(0x5D70F0); }
+		{ JMP_THIS(0x5D70F0); }
 
 protected:
 	//Constructor
-	MPMODE_CTOR(MPGameModeTypeClass, 0x5D5B60);
+	MPGameModeClass(wchar_t **CSFTitle, wchar_t **CSFTooltip, char **INIFileName, char **mapfilter, bool AIAllowed, int MPModeIndex)
+		{ JMP_THIS(0x5D5B60); }
+
+	MPGameModeClass()
+		{}
 	//FACTORY(0x7EEE74);
 
 	//===========================================================================
@@ -248,11 +253,11 @@ protected:
 };
 
 
-class MPBattleClass : public MPGameModeTypeClass
+class MPBattleClass : public MPGameModeClass
 {
 	//Destructor
 	virtual ~MPBattleClass()
-		{ THISCALL(0x5C0FE0); }
+		{ JMP_THIS(0x5C0FE0); }
 
 	virtual bool vt_entry_40()
 		{ return 1; }
@@ -262,13 +267,13 @@ class MPBattleClass : public MPGameModeTypeClass
 	static (void __stdcall * Allocate)(INIT_ARGLIST) = (void __stdcall * Allocate)(INIT_ARGLIST)0x5D8170;
 	*/
 
-	//Constructor
-	MPMODE_CTOR(MPBattleClass, 0x5C0DD0);
+	MPBattleClass(wchar_t **CSFTitle, wchar_t **CSFTooltip, char **INIFileName, char **mapfilter, bool AIAllowed, int MPModeIndex)
+		{ JMP_THIS(0x5D8170); }
 	//FACTORY(0x7EEEBC);
 };
 
 
-class MPManBattleClass : public MPGameModeTypeClass
+class MPManBattleClass : public MPGameModeClass
 {
 	//Destructor
 	virtual ~MPManBattleClass()
@@ -280,31 +285,32 @@ class MPManBattleClass : public MPGameModeTypeClass
 	*/
 
 	//Constructor
-	MPMODE_CTOR(MPManBattleClass, 0x5C6150);
+	MPManBattleClass(wchar_t **CSFTitle, wchar_t **CSFTooltip, char **INIFileName, char **mapfilter, bool AIAllowed, int MPModeIndex)
+		{ JMP_THIS(0x5C6150); }
 	//FACTORY(0x7EEEB0);
 };
 
 
-class MPFreeForAllClass : public MPGameModeTypeClass
+class MPFreeForAllClass : public MPGameModeClass
 {
 	//Destructor
 	virtual ~MPFreeForAllClass()
 		{ THISCALL(0x5C5E40); }
 
 	virtual bool vt_entry_10()
-		{ THISCALL(0x5C5D30); }
+		{ JMP_THIS(0x5C5D30); }
 
 	virtual bool vt_entry_14(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x5C5D40); }
+		{ JMP_THIS(0x5C5D40); }
 
 	virtual bool vt_entry_18()
-		{ THISCALL(0x5C5D90); }
+		{ JMP_THIS(0x5C5D90); }
 
 	virtual bool vt_entry_40()
 		{ return 1; }
 
 	virtual void PopulateTeamDropdownForPlayer(HWND hWnd, int idx)
-		{ PUSH_VAR32(idx); PUSH_VAR32(hWnd); THISCALL(0x5C5DD0); }
+		{ JMP_THIS(0x5C5DD0); }
 
 	/*
 	static UNINIT_FUNC(0x5D8070);
@@ -312,42 +318,44 @@ class MPFreeForAllClass : public MPGameModeTypeClass
 	*/
 
 	//Constructor
-	MPMODE_CTOR(MPFreeForAllClass, 0x5C5CE0);
+	MPFreeForAllClass(wchar_t **CSFTitle, wchar_t **CSFTooltip, char **INIFileName, char **mapfilter, bool AIAllowed, int MPModeIndex)
+		{ JMP_THIS(0x5C5CE0); }
 	//FACTORY(0x7EEE8C);
 };
 
 
-class MPMegawealthClass : public MPGameModeTypeClass
+class MPMegawealthClass : public MPGameModeClass
 {
 	//Destructor
 	virtual ~MPMegawealthClass()
-		{ THISCALL(0x5C9440); }
+		{ JMP_THIS(0x5C9440); }
 
 	virtual bool vt_entry_8C()
-		{ THISCALL(0x5C9430); }
+		{ JMP_THIS(0x5C9430); }
 
 	//Constructor
-	MPMODE_CTOR(MPMegawealthClass, 0x5C93E0);
+	MPMegawealthClass(wchar_t **CSFTitle, wchar_t **CSFTooltip, char **INIFileName, char **mapfilter, bool AIAllowed, int MPModeIndex)
+		{ JMP_THIS(0x5C93E0); }
 };
 
 
-class MPUnholyAllianceClass : public MPGameModeTypeClass
+class MPUnholyAllianceClass : public MPGameModeClass
 {
 	//Destructor
 	virtual ~MPUnholyAllianceClass()
-		{ THISCALL(0x5CB540); }
+		{ JMP_THIS(0x5CB540); }
 
 	virtual bool vt_entry_10()
-		{ THISCALL(0x5CB3F0); }
+		{ JMP_THIS(0x5CB3F0); }
 
 	virtual bool vt_entry_14(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x5CB400); }
+		{ JMP_THIS(0x5CB400); }
 
 	virtual bool vt_entry_18()
-		{ THISCALL(0x5CB430); }
+		{ JMP_THIS(0x5CB430); }
 
 	virtual bool SpawnBaseUnits(HouseClass *House, DWORD dwUnused)
-		{ PUSH_VAR32(dwUnused); PUSH_VAR32(House); THISCALL(0x5CB440); }
+		{ JMP_THIS(0x5CB440); }
 
 	/*
 	static UNINIT_FUNC(0x5D8050);
@@ -355,40 +363,41 @@ class MPUnholyAllianceClass : public MPGameModeTypeClass
 	*/
 
 	//Constructor
-	MPMODE_CTOR(MPUnholyAllianceClass, 0x5CB3A0);
+	MPUnholyAllianceClass(wchar_t **CSFTitle, wchar_t **CSFTooltip, char **INIFileName, char **mapfilter, bool AIAllowed, int MPModeIndex)
+		{ JMP_THIS(0x5CB3A0); }
 	//FACTORY(0x7EEE98);
 };
 
 
-class MPSiegeClass : public MPGameModeTypeClass
+class MPSiegeClass : public MPGameModeClass
 {
 	//Destructor
 	virtual ~MPSiegeClass()
-		{ THISCALL(0x5CABD0); }
+		{ JMP_THIS(0x5CABD0); }
 
 	virtual bool vt_entry_10()
-		{ THISCALL(0x5CA680); }
+		{ JMP_THIS(0x5CA680); }
 
 	virtual bool vt_entry_14(DWORD dwUnk)
-		{ PUSH_VAR32(dwUnk); THISCALL(0x5CA6D0); }
+		{ JMP_THIS(0x5CA6D0); }
 
 	virtual bool vt_entry_18()
-		{ THISCALL(0x5CA7D0); }
+		{ JMP_THIS(0x5CA7D0); }
 
 	virtual bool AIAllowed()
 		{ return 0; }
 
-	virtual bool vt_entry_7C()
-		{ return MPGameModeTypeClass::vt_entry_7C(); } // yes they did code this explicitly -_-
+	virtual bool UnfixAlliances()
+		{ return MPGameModeClass::UnfixAlliances(); } // yes they did code this explicitly -_-
 
 	virtual bool StartingPositionsToHouseBaseCells2(bool arg)
-		{ PUSH_VAR8(arg); THISCALL(0x5CA800); }
+		{ JMP_THIS(0x5CA800); }
 
 	virtual void CreateMPTeams(DynamicVectorClass<MPTeam> *vecTeams)
-		{ PUSH_VAR32(vecTeams); THISCALL(0x5CA9B0); }
+		{ JMP_THIS(0x5CA9B0); }
 
 	virtual bool SpawnBaseUnits(HouseClass *House, DWORD dwUnused)
-		{ PUSH_VAR32(dwUnused); PUSH_VAR32(House); THISCALL(0x5CAA50); }
+		{ JMP_THIS(0x5CAA50); }
 
 	/*
 	static UNINIT_FUNC(0x5D8030);
@@ -396,7 +405,8 @@ class MPSiegeClass : public MPGameModeTypeClass
 	*/
 
 	//Constructor
-	MPMODE_CTOR(MPSiegeClass, 0x5CA630);
+	MPSiegeClass(wchar_t **CSFTitle, wchar_t **CSFTooltip, char **INIFileName, char **mapfilter, bool AIAllowed, int MPModeIndex)
+		{ JMP_THIS(0x5CA630); }
 	//FACTORY(0x7EEEA4);
 };
 
