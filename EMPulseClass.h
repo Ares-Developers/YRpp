@@ -30,7 +30,7 @@ public:
 	virtual int Size() R0;
 
 	//Constructor
-	EMPulseClass(CellStruct dwCrd, int nSpread, int nDuration, HouseClass *OwnerHouse) : AbstractClass(false)
+	EMPulseClass(CellStruct dwCrd, int nSpread, int nDuration, TechnoClass *Generator) : AbstractClass(false)
 		{ JMP_THIS(0x4C52B0); }
 
 protected:
