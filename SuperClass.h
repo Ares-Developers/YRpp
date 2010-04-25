@@ -40,6 +40,9 @@ public:
 	void Reset()
 		{ JMP_THIS(0x6CE0B0); }
 
+	void SetOnHold(bool status)
+		{ JMP_THIS(0x6CB4D0); }
+
 	//Constructor
 	SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner) : AbstractClass(false)
 		{ JMP_THIS(0x6CAF90); }
