@@ -21,10 +21,10 @@ public:
 	virtual bool IsField0CNegative()
 		{ JMP_THIS(0x7BA320); }
 
-	virtual void func_0C()
+	virtual void HideCursor()
 		{ JMP_THIS(0x7B9930); }
 
-	virtual void func_10()
+	virtual void ShowCursor()
 		{ JMP_THIS(0x7B9750); }
 
 	virtual void ReleaseMouse()
