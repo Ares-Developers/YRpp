@@ -57,6 +57,9 @@ ALIAS(int, BuildingTypeClass::HeightInLeptons, 0x89DDB8);
 #include <BuildingLightClass.h>
 DECL(BuildingLightClass, 0x8B4190);
 
+#include <CaptureManagerClass.h>
+DECL(CaptureManagerClass, 0x89E0F0);
+
 #include <CCINIClass.h>
 ALIAS(CCINIClass*, CCINIClass::INI_Rules, 0x887048);
 
@@ -206,6 +209,9 @@ DECL(SmudgeClass, 0xA8B1E0);
 
 #include <SmudgeTypeClass.h>
 DECL(SmudgeTypeClass, 0xA8EC18);
+
+#include <SpawnManagerClass.h>
+DECL(SpawnManagerClass, 0xB0B880);
 
 #include <SpotlightClass.h>
 DECL(SpotlightClass, 0xAC1678);

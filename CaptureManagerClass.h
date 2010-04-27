@@ -20,6 +20,9 @@ struct ControlNode
 class CaptureManagerClass : public AbstractClass
 {
 public:
+
+	static DynamicVectorClass<CaptureManagerClass *>* Array;
+
 	enum {AbsID = abs_CaptureManager};
 
 	//IPersist

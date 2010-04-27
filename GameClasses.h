@@ -42,6 +42,7 @@
 #include <ScriptTypeClass.h>
 #include <SideClass.h>
 #include <SmudgeClass.h>
+#include <SpawnManagerClass.h>
 #include <SuperClass.h>
 #include <WarheadTypeClass.h>
 #include <WeaponTypeClass.h>
