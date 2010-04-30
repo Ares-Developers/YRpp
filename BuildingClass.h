@@ -101,6 +101,14 @@ public:
 	void EnableStuff()
 		{ JMP_THIS(0x452410); }
 
+	// returns Type->SuperWeapon, if its AuxBuilding is satisfied
+	int FirstActiveSWIdx()
+		{ JMP_THIS(0x457630); }
+
+	// returns Type->SuperWeapon2, if its AuxBuilding is satisfied
+	int SecondActiveSWIdx()
+		{ JMP_THIS(0x457690); }
+
 	//Constructor
 	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner) : TechnoClass(false)
 		{ JMP_THIS(0x43B740); }

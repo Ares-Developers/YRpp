@@ -40,8 +40,16 @@ public:
 	void Reset()
 		{ JMP_THIS(0x6CE0B0); }
 
-	void SetOnHold(bool status)
+	// was the setting successful? (did we have to change the state (true) or was it already in the same hold state(false))
+	bool SetOnHold(bool status)
 		{ JMP_THIS(0x6CB4D0); }
+
+	// true if this was ->Granted
+	bool Lose()
+		{ JMP_THIS(0x6CB7B0); }
+
+	bool IsPowered()
+		{ return this->Type->IsPowered; }
 
 	//Constructor
 	SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner) : AbstractClass(false)
@@ -69,7 +77,7 @@ protected:
 	PROPERTY_STRUCT(CellStruct,			ChronoMapCoords);  // 0x62
 	PROPERTY(AnimClass *,		Animation);                // 0x68
 	PROPERTY(bool,					unknown_bool_6C);
-	PROPERTY(bool,					unknown_bool_6D);
+	PROPERTY(bool,					Granted);
 	PROPERTY(bool,					Quantity); // Stupidity - 0 means unlimited, 1 means one-shot
 	PROPERTY(bool,					IsCharged);
 	PROPERTY(bool,					HasPower);
