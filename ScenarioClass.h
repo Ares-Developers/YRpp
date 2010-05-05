@@ -60,6 +60,14 @@ public:
 	static ScenarioClass* Global()
 		{ return *((ScenarioClass**)0xA8B230); }
 
+	static void __fastcall UpdateCellLighting()
+		{ JMP_STD(0x4AE4C0); }
+
+	// this calls UpdateCellLighting() from above and does other good stuff
+	// initializers call it with -1, -1, -1, 0 , map retint actions use current tint * 10, 0
+	static void __fastcall RecalcLighting(int R, int G, int B, DWORD dwUnk)
+		{ JMP_STD(0x53AD00); }
+
 	//CTOR / DTOR
 protected:
 	ScenarioClass() { THISCALL(0x6832C0); }
@@ -166,40 +174,40 @@ public:
 	PROPERTY(TypeList<int>, AllowableUnitMaximums);
 
 	//General Lighting
-	PROPERTY(float, Ambient);
-	PROPERTY(DWORD, unknown_352C); //current ambient for ambient change?
-	PROPERTY(DWORD, unknown_3530); //target ambient for ambient change?
-	PROPERTY(float, Red);
-	PROPERTY(float, Green);
-	PROPERTY(float, Blue);
-	PROPERTY(float, Ground);
-	PROPERTY(float, Level);
+	PROPERTY(int, AmbientOriginal); // set at map creation
+	PROPERTY(int, AmbientCurrent); // current ambient
+	PROPERTY(int, AmbientTarget); // target ambient (while changing)
+	PROPERTY(int, Red);
+	PROPERTY(int, Green);
+	PROPERTY(int, Blue);
+	PROPERTY(int, Ground); // all these are stored as ini value * 100 + 0.01
+	PROPERTY(int, Level); // this one is stored as ini value * 1000 + 0.01
 
 	//Ion lighting
-	PROPERTY(float, IonAmbient);
-	PROPERTY(float, IonRed);
-	PROPERTY(float, IonGreen);
-	PROPERTY(float, IonBlue);
-	PROPERTY(float, IonGround);
-	PROPERTY(float, IonLevel);
+	PROPERTY(int, IonAmbient);
+	PROPERTY(int, IonRed);
+	PROPERTY(int, IonGreen);
+	PROPERTY(int, IonBlue);
+	PROPERTY(int, IonGround);
+	PROPERTY(int, IonLevel);
 
 	//Nuke flash lighting
-	PROPERTY(float, NukeAmbient);
-	PROPERTY(float, NukeRed);
-	PROPERTY(float, NukeGreen);
-	PROPERTY(float, NukeBlue);
-	PROPERTY(float, NukeGround);
-	PROPERTY(float, NukeLevel);
-	PROPERTY(float, NukeAmbientChangeRate);
+	PROPERTY(int, NukeAmbient);
+	PROPERTY(int, NukeRed);
+	PROPERTY(int, NukeGreen);
+	PROPERTY(int, NukeBlue);
+	PROPERTY(int, NukeGround);
+	PROPERTY(int, NukeLevel);
+	PROPERTY(int, NukeAmbientChangeRate);
 
 	//Dominator lighting
-	PROPERTY(float, DominatorAmbient);
-	PROPERTY(float, DominatorRed);
-	PROPERTY(float, DominatorGreen);
-	PROPERTY(float, DominatorBlue);
-	PROPERTY(float, DominatorGround);
-	PROPERTY(float, DominatorLevel);
-	PROPERTY(float, DominatorAmbientChangeRate);
+	PROPERTY(int, DominatorAmbient);
+	PROPERTY(int, DominatorRed);
+	PROPERTY(int, DominatorGreen);
+	PROPERTY(int, DominatorBlue);
+	PROPERTY(int, DominatorGround);
+	PROPERTY(int, DominatorLevel);
+	PROPERTY(int, DominatorAmbientChangeRate);
 
 	PROPERTY(DWORD, unknown_3598);
 	PROPERTY(int, InitTime);

@@ -18,7 +18,7 @@ public:
 	virtual void Draw(CellStruct *Coords, SHPStruct *Image, int Unk)
 		{ JMP_THIS(0x7B8A00); }
 
-	virtual bool IsField0CNegative()
+	virtual bool IsRefCountNegative()
 		{ JMP_THIS(0x7BA320); }
 
 	virtual void HideCursor()
@@ -42,7 +42,7 @@ public:
 	virtual void CallFunc10()
 		{ JMP_THIS(0x7B9D80); }
 
-	virtual DWORD GetField0C()
+	virtual DWORD GetRefCount()
 		{ JMP_THIS(0x7B89F0); }
 
 	virtual int GetX()
@@ -68,7 +68,7 @@ public:
 
 	PROPERTY(SHPStruct *, Image);
 	PROPERTY(int        , ImageFrameIndex);
-	PROPERTY(DWORD      , field_C);
+	PROPERTY(DWORD      , RefCount);
 	PROPERTY(byte       , field_10);
 	PROPERTY(byte       , field_11);
 	PROPERTY(byte       , field_12);

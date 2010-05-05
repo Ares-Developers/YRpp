@@ -226,7 +226,6 @@ public:
 	void sub_4F42F0(int mode)
 		{ JMP_THIS(0x4F42F0); }
 
-
 protected:
 	//Constructor
 	MapClass() {}	//don't need this

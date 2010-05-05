@@ -102,4 +102,6 @@
 #include <RulesClass.h>
 #include <ScenarioClass.h>
 
+#include <UI.h>
+
 #endif

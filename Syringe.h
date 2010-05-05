@@ -15,6 +15,7 @@
 #ifdef _MSC_VER
 #include <windows.h>
 #else
+#include <gcc.h>
 #include <windows.h>
 #endif
 

@@ -185,6 +185,9 @@ DECL(ParticleSystemTypeClass, 0xA83D68);
 #include <ParticleTypeClass.h>
 DECL(ParticleTypeClass, 0xA83D98);
 
+#include <PCX.h>
+ALIAS_O(PCX *, PCX::Instance, 0xAC4848);
+
 #include <RadBeam.h>
 DECL(RadBeam, 0xB04A60);
 
