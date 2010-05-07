@@ -216,6 +216,9 @@ DECL(SmudgeTypeClass, 0xA8EC18);
 #include <SpawnManagerClass.h>
 DECL(SpawnManagerClass, 0xB0B880);
 
+#include <SlaveManagerClass.h>
+DECL(SlaveManagerClass, 0xB0B5F0);
+
 #include <SpotlightClass.h>
 DECL(SpotlightClass, 0xAC1678);
 

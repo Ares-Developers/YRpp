@@ -758,10 +758,9 @@ public:
 protected:
 	unsigned int                    ThreatPosedEstimates[130][130]; // BLARGH
 
-	PROPERTY_STRING(InitialName,		0x15);
-	PROPERTY_UNICODE(NoIdeaButWillCheck,0x11);
-	PROPERTY_UNICODE(UIName,			0x11);
-	PROPERTY(DWORD,                 unknown_16050);
+	PROPERTY_STRING(PlainName,		0x15); // this defaults to the owner country's name in SP or <human player><computer player> in MP. Used as owner for preplaced map objects
+	PROPERTY_STRING(UINameString, 0x20); // this contains the UIName= text from the INI! or
+	PROPERTY_UNICODE(UIName,			0x15); // this contains the CSF string from UIName= above, or a copy of the country's UIName if not defined. Take note that this is shorter than the country's UIName can be...
 	PROPERTY(int,                   ColorSchemeIndex);
 	PROPERTY_STRUCT(CellStruct,            StartingCell);
 	PROPERTY(DWORD,                 StartingAllies);
