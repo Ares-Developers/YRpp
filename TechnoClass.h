@@ -8,6 +8,7 @@
 #include <RadioClass.h>
 #include <TechnoTypeClass.h>
 #include <CaptureManagerClass.h>
+#include <SlaveManagerClass.h>
 #include <TemporalClass.h>
 #include <Helpers/Template.h>
 
@@ -23,7 +24,6 @@ class HouseClass;
 class InfantryTypeClass;
 class ObjectTypeClass;
 class ParticleSystemClass;
-class SlaveManagerClass;
 class SpawnManagerClass;
 class WaveClass;
 

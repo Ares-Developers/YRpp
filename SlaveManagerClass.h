@@ -5,6 +5,7 @@
 
 class HouseClass;
 class TechnoClass;
+class InfantryClass;
 
 class SlaveManagerClass : public AbstractClass
 {
@@ -63,7 +64,6 @@ public:
 	bool ShouldWakeUpNow()
 		{ JMP_THIS(0x6B1020); }
 
-protected:
 	SlaveManagerClass() : AbstractClass(false) { }
 
 	//===========================================================================
