@@ -234,13 +234,19 @@ typedef int eArmor;
 
 
 //spotlight behaviour
-typedef int eSpotlightBehaviour;
+class SpotlightBehaviour {
+public:
+	enum E {
+		None = 0x0,
+		Sweep = 0x1,
+		Circle = 0x2,
+		Follow = 0x3,
+	} _;
 
-#define	sb_None		0x0
-#define	sb_Sweep		0x1
-#define	sb_Circle		0x2
-#define	sb_Follow		0x3
-
+	public:
+		SpotlightBehaviour(int val = 0) { this->_ = static_cast<E>(val); };
+		operator int() { return this->_; };
+};
 
 typedef int eSpotlightFlags;
 
