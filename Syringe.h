@@ -12,12 +12,8 @@
 
 #include <Compiler Specifics/hashmap.h>
 
-#ifdef _MSC_VER
+#include <xcompile.h>
 #include <windows.h>
-#else
-#include <gcc.h>
-#include <windows.h>
-#endif
 
 class LimitedRegister {
 protected:
