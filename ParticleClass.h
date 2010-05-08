@@ -51,35 +51,37 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(ParticleTypeClass*, Type);
-	PROPERTY(BYTE,   unknown_B0);
-	PROPERTY(BYTE,   unknown_B1);
-	PROPERTY(BYTE,   unknown_B2);
-	PROPERTY(DWORD,  unknown_B4);
-	PROPERTY(DWORD,  unknown_B8);
-	PROPERTY(DWORD,  unknown_BC);
-	PROPERTY(DWORD,  unknown_C0);
-	PROPERTY(DWORD,  unknown_C4);
-	PROPERTY(DWORD,  unknown_C8);
-	PROPERTY(DWORD,  unknown_CC);
-	PROPERTY(double, unknown_double_D0);
-	PROPERTY(DWORD,  unknown_D8);
-	PROPERTY(DWORD,  unknown_DC);
-	PROPERTY(DWORD,  unknown_E0);
-	PROPERTY(float,  Velocity);
-	PROPERTY_STRUCT(CoordStruct,     unknown_coords_E4); //Crd2 in CTOR
-	PROPERTY(DWORD,  unknown_F0); //unused
-	PROPERTY_STRUCT(CoordStruct,     unknown_coords_F4); //Crd1 in CTOR
-	PROPERTY_STRUCT(CoordStruct,     unknown_coords_100); //{ 0, 0, 0} in CTOR
-	PROPERTY_STRUCT(Vector3D<float>, unknown_vector3d_10C);
-	PROPERTY_STRUCT(Vector3D<float>, unknown_vector3d_118);
-	PROPERTY(ParticleSystemClass*,   ParticleSystem);
-	PROPERTY(BYTE,   StateAIAdvance);
-	PROPERTY(BYTE,   unknown_12D);
-	PROPERTY(BYTE,   StartStateAI);
-	PROPERTY(BYTE,   Translucency);
-	PROPERTY(BYTE,   unknown_130);
-	PROPERTY(BYTE,   unknown_131);
+public:
+
+	ParticleTypeClass* Type;
+	BYTE   unknown_B0;
+	BYTE   unknown_B1;
+	BYTE   unknown_B2;
+	DWORD  unknown_B4;
+	DWORD  unknown_B8;
+	DWORD  unknown_BC;
+	DWORD  unknown_C0;
+	DWORD  unknown_C4;
+	DWORD  unknown_C8;
+	DWORD  unknown_CC;
+	double unknown_double_D0;
+	DWORD  unknown_D8;
+	DWORD  unknown_DC;
+	DWORD  unknown_E0;
+	float  Velocity;
+	CoordStruct unknown_coords_E4; //Crd2 in CTOR
+	DWORD  unknown_F0; //unused
+	CoordStruct unknown_coords_F4; //Crd1 in CTOR
+	CoordStruct unknown_coords_100; //{ 0, 0, 0} in CTOR
+	Vector3D<float> unknown_vector3d_10C;
+	Vector3D<float> unknown_vector3d_118;
+	ParticleSystemClass*   ParticleSystem;
+	BYTE   StateAIAdvance;
+	BYTE   unknown_12D;
+	BYTE   StartStateAI;
+	BYTE   Translucency;
+	BYTE   unknown_130;
+	BYTE   unknown_131;
 	PROTECTED_PROPERTY(DWORD,        unused_134); //??
 };
 

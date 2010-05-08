@@ -102,42 +102,45 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY_STRUCT(CellStruct,			CurrentPlacingMapCoords);	//Currently placing the building here
-	PROPERTY_STRUCT(CellStruct,			unknown_cell_1178);		//related to the placing foundation
-	PROPERTY(CellStruct*,			CurrentFoundationData);	//Foundation data of the building we're currently placing
-	PROPERTY(bool,					unknown_1180);
-	PROPERTY(bool,					unknown_1181);
-	PROPERTY_STRUCT(CellStruct,			unknown_cell_1182);
-	PROPERTY_STRUCT(CellStruct,			unknown_cell_1186);
-	PROPERTY(DWORD,					unknown_118C);
-	PROPERTY(DWORD,					unknown_1190);
-	PROPERTY(DWORD,					unknown_1194);
-	PROPERTY(DWORD,					unknown_1198);
-	PROPERTY(bool,					FollowObject);
-	PROPERTY(ObjectClass*,			ObjectToFollow);
-	PROPERTY(ObjectClass*,			CurrentBuilding);		//Building we're currently placing
-	PROPERTY(ObjectTypeClass*,		CurrentBuildingType);	//Type of that building
-	PROPERTY(DWORD,					unknown_11AC);
-	PROPERTY(bool,					RepairMode);
-	PROPERTY(bool,					SellMode);
-	PROPERTY(bool,					PowerToggleMode);
-	PROPERTY(bool,					PlanningMode);
-	PROPERTY(bool,					PlaceBeaconMode);
-	PROPERTY(int,					CurrentSWTypeIndex);	//Index of the SuperWeaponType we have currently selected
-	PROPERTY(DWORD,					unknown_11BC);
-	PROPERTY(DWORD,					unknown_11C0);
-	PROPERTY(DWORD,					unknown_11C4);
-	PROPERTY(DWORD,					unknown_11C8);
-	PROPERTY(bool,					unknown_bool_11CC);
-	PROPERTY(bool,					unknown_bool_11CD);
-	PROPERTY(bool,					unknown_bool_11CE);
-	PROPERTY(bool,					DraggingRectangle);
-	PROPERTY(bool,					unknown_bool_11D0);
-	PROPERTY(bool,					unknown_bool_11D1);
-	PROPERTY(DWORD,					unknown_11D4);
-	PROPERTY(DWORD,					unknown_11D8);
-	PROPERTY(DWORD,					unknown_11DC);
-	PROPERTY(DWORD,					unknown_11E0);
+
+public:
+
+	CellStruct CurrentPlacingMapCoords;	//Currently placing the building here
+	CellStruct unknown_cell_1178;		//related to the placing foundation
+	CellStruct* CurrentFoundationData;	//Foundation data of the building we're currently placing
+	bool unknown_1180;
+	bool unknown_1181;
+	CellStruct unknown_cell_1182;
+	CellStruct unknown_cell_1186;
+	DWORD unknown_118C;
+	DWORD unknown_1190;
+	DWORD unknown_1194;
+	DWORD unknown_1198;
+	bool FollowObject;
+	ObjectClass* ObjectToFollow;
+	ObjectClass* CurrentBuilding;		//Building we're currently placing
+	ObjectTypeClass* CurrentBuildingType;	//Type of that building
+	DWORD unknown_11AC;
+	bool RepairMode;
+	bool SellMode;
+	bool PowerToggleMode;
+	bool PlanningMode;
+	bool PlaceBeaconMode;
+	int CurrentSWTypeIndex;	//Index of the SuperWeaponType we have currently selected
+	DWORD unknown_11BC;
+	DWORD unknown_11C0;
+	DWORD unknown_11C4;
+	DWORD unknown_11C8;
+	bool unknown_bool_11CC;
+	bool unknown_bool_11CD;
+	bool unknown_bool_11CE;
+	bool DraggingRectangle;
+	bool unknown_bool_11D0;
+	bool unknown_bool_11D1;
+	DWORD unknown_11D4;
+	DWORD unknown_11D8;
+	DWORD unknown_11DC;
+	DWORD unknown_11E0;
 };
 
 #endif

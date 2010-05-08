@@ -54,79 +54,74 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(double,  Deform);
 
-	PROPERTY_ARRAY(double, Verses, 0xB);
-/*
-	//MISTYPE BY WESTWOOD!
-	protected: double Verses[0x0B]; //access using the Armor Type definitions
-	public: double get_Verses(int ArmorType)
-		{ return Verses[ArmorType]; }
-				void set_Verses(int ArmorType, double value)
-		{ Verses[ArmorType] = value; }
-*/
+public:
 
-	PROPERTY(double,  ProneDamage);
-	PROPERTY(int,     DeformTreshold);
+	double  Deform;
 
-	PROPERTY_STRUCT(TypeList<AnimTypeClass*>, AnimList);
+	double Verses [0xB];
 
-	PROPERTY(int,     InfDeath);
-	PROPERTY(float,   CellSpread);
-	PROPERTY(float,   CellInset);
-	PROPERTY(float,   PercentAtMax);
-	PROPERTY(bool,    CausesDelayKill);
-	PROPERTY(int,     DelayKillFrames);
-	PROPERTY(float,   DelayKillAtMax);
-	PROPERTY(float,   CombatLightSize);
-	PROPERTY(ParticleTypeClass*, Particle);
-	PROPERTY(bool,    Wall);
-	PROPERTY(bool,    WallAbsoluteDestroyer);
-	PROPERTY(bool,    PenetratesBunker);
-	PROPERTY(bool,    Wood);
-	PROPERTY(bool,    Tiberium);
-	PROPERTY(bool,    unknown_bool_149);
-	PROPERTY(bool,    Sparky);
-	PROPERTY(bool,    Sonic);
-	PROPERTY(bool,    Fire);
-	PROPERTY(bool,    Conventional);
-	PROPERTY(bool,    Rocker);
-	PROPERTY(bool,    DirectRocker);
-	PROPERTY(bool,    Bright);
-	PROPERTY(bool,    CLDisableRed);
-	PROPERTY(bool,    CLDisableGreen);
-	PROPERTY(bool,    CLDisableBlue);
-	PROPERTY(bool,    EMEffect);
-	PROPERTY(bool,    MindControl);
-	PROPERTY(bool,    Poison);
-	PROPERTY(bool,    IvanBomb);
-	PROPERTY(bool,    ElectricAssault);
-	PROPERTY(bool,    Parasite);
-	PROPERTY(bool,    Temporal);
-	PROPERTY(bool,    IsLocomotor);
-	PROPERTY(_GUID,   Locomotor);
-	PROPERTY(bool,    Airstrike);
-	PROPERTY(bool,    Psychedelic);
-	PROPERTY(bool,    BombDisarm);
-	PROPERTY(int,     Paralyzes);
-	PROPERTY(bool,    Culling);
-	PROPERTY(bool,    MakesDisguise);
-	PROPERTY(bool,    NukeMaker);
-	PROPERTY(bool,    Radiation);
-	PROPERTY(bool,    PsychicDamage);
-	PROPERTY(bool,    AffectsAllies);
-	PROPERTY(bool,    Bullets);
-	PROPERTY(bool,    Veinhole);
-	PROPERTY(int,     ShakeXlo);
-	PROPERTY(int,     ShakeXhi);
-	PROPERTY(int,     ShakeYlo);
-	PROPERTY(int,     ShakeYhi);
+	double  ProneDamage;
+	int     DeformTreshold;
 
-	PROPERTY_STRUCT(TypeList<VoxelAnimTypeClass*>, DebrisTypes);
-	PROPERTY_STRUCT(TypeList<int>, DebrisMaximums);
+	TypeList<AnimTypeClass*> AnimList;
 
-	PROPERTY(int,     MaxDebris);
-	PROPERTY(int,     MinDebris);
+	int     InfDeath;
+	float   CellSpread;
+	float   CellInset;
+	float   PercentAtMax;
+	bool    CausesDelayKill;
+	int     DelayKillFrames;
+	float   DelayKillAtMax;
+	float   CombatLightSize;
+	ParticleTypeClass* Particle;
+	bool    Wall;
+	bool    WallAbsoluteDestroyer;
+	bool    PenetratesBunker;
+	bool    Wood;
+	bool    Tiberium;
+	bool    unknown_bool_149;
+	bool    Sparky;
+	bool    Sonic;
+	bool    Fire;
+	bool    Conventional;
+	bool    Rocker;
+	bool    DirectRocker;
+	bool    Bright;
+	bool    CLDisableRed;
+	bool    CLDisableGreen;
+	bool    CLDisableBlue;
+	bool    EMEffect;
+	bool    MindControl;
+	bool    Poison;
+	bool    IvanBomb;
+	bool    ElectricAssault;
+	bool    Parasite;
+	bool    Temporal;
+	bool    IsLocomotor;
+	_GUID   Locomotor;
+	bool    Airstrike;
+	bool    Psychedelic;
+	bool    BombDisarm;
+	int     Paralyzes;
+	bool    Culling;
+	bool    MakesDisguise;
+	bool    NukeMaker;
+	bool    Radiation;
+	bool    PsychicDamage;
+	bool    AffectsAllies;
+	bool    Bullets;
+	bool    Veinhole;
+	int     ShakeXlo;
+	int     ShakeXhi;
+	int     ShakeYlo;
+	int     ShakeYhi;
+
+	TypeList<VoxelAnimTypeClass*> DebrisTypes;
+	TypeList<int> DebrisMaximums;
+
+	int     MaxDebris;
+	int     MinDebris;
 	PROTECTED_PROPERTY(DWORD, unused_1CC); //???
 };
 

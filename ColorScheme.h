@@ -56,16 +56,19 @@ public:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(int,                ArrayIndex);
 
-	PROPERTY_STRUCT(BytePalette, Colors);
+public:
 
-	PROPERTY(char*,              ID);
-	PROPERTY_STRUCT(ColorStruct,        BaseColor);
-	PROPERTY(LightConvertClass*, LightConvert);	//??? remap - indices #16-#31 are changed to mathefuckikally derived shades of BaseColor, think unittem.pal
-	PROPERTY(int,   ShadeCount);
+	int                ArrayIndex;
+
+	BytePalette Colors;
+
+	char*              ID;
+	ColorStruct BaseColor;
+	LightConvertClass* LightConvert;	//??? remap - indices #16-#31 are changed to mathefuckikally derived shades of BaseColor, think unittem.pal
+	int   ShadeCount;
 	PROTECTED_PROPERTY(BYTE,     unknown_314[0x1C]);
-	PROPERTY(int,   MainShadeIndex);
+	int   MainShadeIndex;
 	PROTECTED_PROPERTY(BYTE,     unknown_334[0x8]);
 };
 

@@ -75,159 +75,159 @@ protected:
 
 public:
 	//Properties
-	PROPERTY(ScenarioFlags, SpecialFlags);
-	PROPERTY_STRING(NextScenario, 0x104);
-	PROPERTY_STRING(AltNextScenario, 0x104);
-	PROPERTY(int, HomeCell); //CellStruct?
-	PROPERTY(int, AltHomeCell); //CellStruct?
-	PROPERTY(int, UniqueID); //defaults to 1,000,000 - random salt for this game's communications
-	PROPERTY_STRUCT(Randomizer, Random); //218
-	PROPERTY(DWORD, Difficulty1);
-	PROPERTY(DWORD, Difficulty2); // 2 - Difficulty1
-	PROPERTY_STRUCT(TimerStruct, ElapsedTime);
-	PROPERTY_STRUCT(TimerStruct, Pause);
-	PROPERTY(DWORD, unknown_62C);
-	PROPERTY(WORD, unknown_630);
-	PROPERTY_ARRAY(CellStruct, Waypoints, 702);
+	ScenarioFlags SpecialFlags;
+	char NextScenario [0x104];
+	char AltNextScenario [0x104];
+	int HomeCell; //CellStruct?
+	int AltHomeCell; //CellStruct?
+	int UniqueID; //defaults to 1,000,000 - random salt for this game's communications
+	Randomizer Random; //218
+	DWORD Difficulty1;
+	DWORD Difficulty2; // 2 - Difficulty1
+	TimerStruct ElapsedTime;
+	TimerStruct Pause;
+	DWORD unknown_62C;
+	WORD unknown_630;
+	CellStruct Waypoints [702];
 
 	//Map Header
-	PROPERTY(int, StartX);
-	PROPERTY(int, StartY);
-	PROPERTY(int, Width);
-	PROPERTY(int, Height);
-	PROPERTY(int, NumberStartingPoints);
-	PROPERTY_ARRAY(Point2D, StartingPoints, 0x8);
-	PROPERTY_ARRAY(int, HouseIndices, 0x10); // starting position => HouseClass::Array->GetItem(#)
-	PROPERTY_ARRAY(CellStruct, HouseHomeCells, 0x8);
-	PROPERTY(bool, TeamsPresent);
-	PROPERTY(int, NumCoopHumanStartSpots);
-	PROPERTY_STRUCT(TimerStruct, MissionTimer);
-	PROPERTY(wchar_t *, MissionTimerTextCSF);
-	PROPERTY_ARRAY(char, MissionTimerText, 32);
-	PROPERTY_STRUCT(TimerStruct, ShroudRegrow);
-	PROPERTY_STRUCT(TimerStruct, Timer1);
-	PROPERTY_STRUCT(TimerStruct, Timer2);
-	PROPERTY_STRUCT(TimerStruct, Timer3);
-	PROPERTY_STRUCT(TimerStruct, Timer4);
-	PROPERTY(int, TechLevel);
-	PROPERTY(int, Theater);
-	PROPERTY_STRING(FileName, 0x104);
-	PROPERTY_UNICODE(Name, 0x2D);
-	PROPERTY_STRING(UIName, 0x20);
-	PROPERTY_UNICODE(UINameLoaded, 0x2D);
+	int StartX;
+	int StartY;
+	int Width;
+	int Height;
+	int NumberStartingPoints;
+	Point2D StartingPoints [0x8];
+	int HouseIndices [0x10]; // starting position => HouseClass::Array->GetItem(#)
+	CellStruct HouseHomeCells [0x8];
+	bool TeamsPresent;
+	int NumCoopHumanStartSpots;
+	TimerStruct MissionTimer;
+	wchar_t * MissionTimerTextCSF;
+	char MissionTimerText [32];
+	TimerStruct ShroudRegrow;
+	TimerStruct Timer1;
+	TimerStruct Timer2;
+	TimerStruct Timer3;
+	TimerStruct Timer4;
+	int TechLevel;
+	int Theater;
+	char FileName [0x104];
+	wchar_t Name [0x2D];
+	char UIName [0x20];
+	wchar_t UINameLoaded [0x2D];
 
 	//Movies
-	PROPERTY(const char*, Intro); //Movie name
-	PROPERTY(const char*, Brief);
-	PROPERTY(const char*, Win);
-	PROPERTY(const char*, Lose);
-	PROPERTY(const char*, Action);
-	PROPERTY(const char*, PostScore);
-	PROPERTY(const char*, PreMapSelect);
+	const char* Intro; //Movie name
+	const char* Brief;
+	const char* Win;
+	const char* Lose;
+	const char* Action;
+	const char* PostScore;
+	const char* PreMapSelect;
 
-	PROPERTY_UNICODE(Briefing, 0x400);
-	PROPERTY_STRING(BriefingCSF, 0x20);
-	PROPERTY(int, ThemeIndex);
-	PROPERTY(int, HumanPlayerHouseTypeIndex);
-	PROPERTY(double, CarryOverMoney);
-	PROPERTY(int, CarryOverCap);
-	PROPERTY(int, Percent);
+	wchar_t Briefing [0x400];
+	char BriefingCSF [0x20];
+	int ThemeIndex;
+	int HumanPlayerHouseTypeIndex;
+	double CarryOverMoney;
+	int CarryOverCap;
+	int Percent;
 
-	PROPERTY_ARRAY(Variable, GlobalVariables, 50);
-	PROPERTY_ARRAY(Variable, LocalVariables, 100);
+	Variable GlobalVariables [50];
+	Variable LocalVariables [100];
 
-	PROPERTY_STRUCT(CellStruct, View1);
-	PROPERTY_STRUCT(CellStruct, View2);
-	PROPERTY_STRUCT(CellStruct, View3);
-	PROPERTY_STRUCT(CellStruct, View4);
-	PROPERTY(DWORD, unknown_34A0);
-	PROPERTY(bool, FreeRadar); //34A4
-	PROPERTY(bool, TrainCrate);
-	PROPERTY(bool, TiberiumGrowthEnabled);
-	PROPERTY(bool, VeinGrowthEnabled);
-	PROPERTY(bool, IceGrowthEnabled); //34A8
-	PROPERTY(bool, unknown_bool_34A9);
-	PROPERTY(bool, unknown_bool_34AA);
-	PROPERTY(bool, unknown_bool_34AB);
-	PROPERTY(bool, EndOfGame); //34AC
-	PROPERTY(bool, TimerInherit);
-	PROPERTY(bool, SkipScore);
-	PROPERTY(bool, OneTimeOnly);
-	PROPERTY(bool, SkipMapSelect);  //34B0
-	PROPERTY(bool, TruckCrate);
-	PROPERTY(bool, FillSilos);
-	PROPERTY(bool, TiberiumDeathToVisceroid);
-	PROPERTY(bool, IgnoreGlobalAITriggers); //34B4
-	PROPERTY(bool, unknown_bool_34B5);
-	PROPERTY(bool, unknown_bool_34B6);
-	PROPERTY(bool, unknown_bool_34B7);
-	PROPERTY(int, PlayerSideIndex); //34B8
-	PROPERTY(bool, MultiplayerOnly); //34BC
-	PROPERTY(bool, IsRandom);
-	PROPERTY(DWORD, unknown_34C0);
-	PROPERTY(DWORD, unknown_34C4);
-	PROPERTY(DWORD, unknown_34C8);
-	PROPERTY(int, CampaignIndex);
-	PROPERTY(int, StartingDropshipsCount);
-	PROPERTY(TypeList<TechnoTypeClass*>, StartingDropships);
-	PROPERTY(TypeList<int>, AllowableUnits);
-	PROPERTY(TypeList<int>, AllowableUnitMaximums);
+	CellStruct View1;
+	CellStruct View2;
+	CellStruct View3;
+	CellStruct View4;
+	DWORD unknown_34A0;
+	bool FreeRadar; //34A4
+	bool TrainCrate;
+	bool TiberiumGrowthEnabled;
+	bool VeinGrowthEnabled;
+	bool IceGrowthEnabled; //34A8
+	bool unknown_bool_34A9;
+	bool unknown_bool_34AA;
+	bool unknown_bool_34AB;
+	bool EndOfGame; //34AC
+	bool TimerInherit;
+	bool SkipScore;
+	bool OneTimeOnly;
+	bool SkipMapSelect;  //34B0
+	bool TruckCrate;
+	bool FillSilos;
+	bool TiberiumDeathToVisceroid;
+	bool IgnoreGlobalAITriggers; //34B4
+	bool unknown_bool_34B5;
+	bool unknown_bool_34B6;
+	bool unknown_bool_34B7;
+	int PlayerSideIndex; //34B8
+	bool MultiplayerOnly; //34BC
+	bool IsRandom;
+	DWORD unknown_34C0;
+	DWORD unknown_34C4;
+	DWORD unknown_34C8;
+	int CampaignIndex;
+	int StartingDropshipsCount;
+	TypeList<TechnoTypeClass*> StartingDropships;
+	TypeList<int> AllowableUnits;
+	TypeList<int> AllowableUnitMaximums;
 
 	//General Lighting
-	PROPERTY(int, AmbientOriginal); // set at map creation
-	PROPERTY(int, AmbientCurrent); // current ambient
-	PROPERTY(int, AmbientTarget); // target ambient (while changing)
-	PROPERTY(int, Red);
-	PROPERTY(int, Green);
-	PROPERTY(int, Blue);
-	PROPERTY(int, Ground); // all these are stored as ini value * 100 + 0.01
-	PROPERTY(int, Level); // this one is stored as ini value * 1000 + 0.01
+	int AmbientOriginal; // set at map creation
+	int AmbientCurrent; // current ambient
+	int AmbientTarget; // target ambient (while changing)
+	int Red;
+	int Green;
+	int Blue;
+	int Ground; // all these are stored as ini value * 100 + 0.01
+	int Level; // this one is stored as ini value * 1000 + 0.01
 
 	//Ion lighting
-	PROPERTY(int, IonAmbient);
-	PROPERTY(int, IonRed);
-	PROPERTY(int, IonGreen);
-	PROPERTY(int, IonBlue);
-	PROPERTY(int, IonGround);
-	PROPERTY(int, IonLevel);
+	int IonAmbient;
+	int IonRed;
+	int IonGreen;
+	int IonBlue;
+	int IonGround;
+	int IonLevel;
 
 	//Nuke flash lighting
-	PROPERTY(int, NukeAmbient);
-	PROPERTY(int, NukeRed);
-	PROPERTY(int, NukeGreen);
-	PROPERTY(int, NukeBlue);
-	PROPERTY(int, NukeGround);
-	PROPERTY(int, NukeLevel);
-	PROPERTY(int, NukeAmbientChangeRate);
+	int NukeAmbient;
+	int NukeRed;
+	int NukeGreen;
+	int NukeBlue;
+	int NukeGround;
+	int NukeLevel;
+	int NukeAmbientChangeRate;
 
 	//Dominator lighting
-	PROPERTY(int, DominatorAmbient);
-	PROPERTY(int, DominatorRed);
-	PROPERTY(int, DominatorGreen);
-	PROPERTY(int, DominatorBlue);
-	PROPERTY(int, DominatorGround);
-	PROPERTY(int, DominatorLevel);
-	PROPERTY(int, DominatorAmbientChangeRate);
+	int DominatorAmbient;
+	int DominatorRed;
+	int DominatorGreen;
+	int DominatorBlue;
+	int DominatorGround;
+	int DominatorLevel;
+	int DominatorAmbientChangeRate;
 
-	PROPERTY(DWORD, unknown_3598);
-	PROPERTY(int, InitTime);
-	PROPERTY(DWORD, unknown_35A0);
-	PROPERTY(int, ParTimeEasy);
-	PROPERTY(int, ParTimeMedium);
-	PROPERTY(int, ParTimeDifficult);
-	PROPERTY_STRING(UnderParTitle, 0x1F); //35B0
-	PROPERTY_STRING(UnderParMessage, 0x1F); //35CF
-	PROPERTY_STRING(OverParTitle, 0x1F); //35EE
-	PROPERTY_STRING(OverParMessage, 0x1F); //360D
-	PROPERTY_STRING(LSLoadMessage, 0x1F); //362C
-	PROPERTY_STRING(LSBrief, 0x1F); //364B
-	PROPERTY(int, LS640BriefLocX);
-	PROPERTY(int, LS640BriefLocY);
-	PROPERTY(int, LS800BriefLocX);
-	PROPERTY(int, LS800BriefLocY);
-	PROPERTY_STRING(LS640BkgdName, 0x40);
-	PROPERTY_STRING(LS800BkgdName, 0x40);
-	PROPERTY_STRING(LS800BkgdPal, 0x40);
+	DWORD unknown_3598;
+	int InitTime;
+	DWORD unknown_35A0;
+	int ParTimeEasy;
+	int ParTimeMedium;
+	int ParTimeDifficult;
+	char UnderParTitle [0x1F]; //35B0
+	char UnderParMessage [0x1F]; //35CF
+	char OverParTitle [0x1F]; //35EE
+	char OverParMessage [0x1F]; //360D
+	char LSLoadMessage [0x1F]; //362C
+	char LSBrief [0x1F]; //364B
+	int LS640BriefLocX;
+	int LS640BriefLocY;
+	int LS800BriefLocX;
+	int LS800BriefLocY;
+	char LS640BkgdName [0x40];
+	char LS800BkgdName [0x40];
+	char LS800BkgdPal [0x40];
 };
 
 #endif

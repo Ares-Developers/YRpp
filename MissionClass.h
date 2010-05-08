@@ -31,15 +31,15 @@ class MissionControlClass
 			{ JMP_THIS(0x5B3760); }
 
 		//Properties
-		PROPERTY(int, ArrayIndex);
-		PROPERTY(bool, NoThreat);
-		PROPERTY(bool, Zombie);
-		PROPERTY(bool, Recruitable);
-		PROPERTY(bool, Paralyzed);
-		PROPERTY(bool, Retaliate);
-		PROPERTY(bool, Scatter);
-		PROPERTY(double, Rate); //default 0.016
-		PROPERTY(double, AARate); //default 0.016
+		int ArrayIndex;
+		bool NoThreat;
+		bool Zombie;
+		bool Recruitable;
+		bool Paralyzed;
+		bool Retaliate;
+		bool Scatter;
+		double Rate; //default 0.016
+		double AARate; //default 0.016
 };
 
 class MissionClass : public ObjectClass
@@ -102,14 +102,17 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(eMission, CurrentMission);	//see MISSION definitions
-	PROPERTY(eMission, unknown_mission_B0);	//see MISSION definitions
-	PROPERTY(eMission, QueuedMission);	//see MISSION definitions
-	PROPERTY(bool,     unknown_bool_B8);
-	PROPERTY(int,      MissionStatus);
-	PROPERTY(int,      CurrentMissionStartTime);	//in frames
-	PROPERTY(DWORD,    unknown_C4);
-	PROPERTY_STRUCT(TimerStruct, UpdateTimer);
+
+public:
+
+	eMission CurrentMission;	//see MISSION definitions
+	eMission unknown_mission_B0;	//see MISSION definitions
+	eMission QueuedMission;	//see MISSION definitions
+	bool     unknown_bool_B8;
+	int      MissionStatus;
+	int      CurrentMissionStartTime;	//in frames
+	DWORD    unknown_C4;
+	TimerStruct UpdateTimer;
 };
 
 #endif

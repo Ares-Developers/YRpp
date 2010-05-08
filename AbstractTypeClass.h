@@ -56,6 +56,9 @@ public:
 	AbstractTypeClass(const char* pID) : AbstractClass(false)
 		{ JMP_THIS(0x410800); }
 
+	char *get_ID()
+		{ return this->ID; }
+
 protected:
 	AbstractTypeClass() : AbstractClass(false) { }
 	AbstractTypeClass(bool X) : AbstractClass(X) { }
@@ -63,11 +66,14 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY_STRING(ID, 0x18);
+
+public:
+
+	char ID [0x18];
 	PROTECTED_PROPERTY(BYTE, zero_3C);
-	PROPERTY_STRING(UINameLabel, 0x20);
-	PROPERTY(wchar_t*, UIName);
-	PROPERTY_STRING(Name, 0x31);
+	char UINameLabel [0x20];
+	wchar_t* UIName;
+	char Name [0x31];
 };
 
 #endif

@@ -46,11 +46,14 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(int, ArrayIndex);
-	PROPERTY(int, Width);
-	PROPERTY(int, Height);
-	PROPERTY(bool, Crater);
-	PROPERTY(bool, Burn);
+
+public:
+
+	int ArrayIndex;
+	int Width;
+	int Height;
+	bool Crater;
+	bool Burn;
 };
 
 #endif

@@ -16,8 +16,11 @@ public:
 		{ JMP_THIS(0x40E320); }
 
 	//Properties
-	PROPERTY(GenericNode*, Next);
-	PROPERTY(GenericNode*, Previous);
+
+public:
+
+	GenericNode* Next;
+	GenericNode* Previous;
 
 protected:
 	GenericNode(bool) { }
@@ -48,8 +51,11 @@ public:
 		{ JMP_THIS(0x52ACE0); }
 
 	//Properties
-	PROPERTY_STRUCT(GenericNode, First);
-	PROPERTY_STRUCT(GenericNode, Last);
+
+public:
+
+	GenericNode First;
+	GenericNode Last;
 
 protected:
 	GenericList(bool) { }

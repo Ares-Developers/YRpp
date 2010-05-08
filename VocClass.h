@@ -65,43 +65,46 @@ public:
 		{ JMP_STD(0x7509E0); }
 
 	//Properties
-	PROPERTY_STRUCT(VocClassHeader, Header);
-	PROPERTY(int,				SamplesOK);	//0 or 1, determines whether all samples are OK to use
-	PROPERTY(DWORD,				unknown_10);
-	PROPERTY(eSoundType,		Type);
-	PROPERTY_STRUCT(VolumeStruct,		Volume);
-	PROPERTY(DWORD,				unknown_38);
-	PROPERTY(DWORD,				unknown_3C);
-	PROPERTY(eSoundPriority,	Priority);
-	PROPERTY(DWORD,				unknown_44);
-	PROPERTY(int,				Limit);	//as in sound.ini
-	PROPERTY(int,				Loop);	//as in sound.ini
-	PROPERTY(int,				Range);	//as in sound.ini
-	PROPERTY(float,				MinVolume);	//as in sound.ini
-	PROPERTY(int,				MinDelay);	//as in sound.ini
-	PROPERTY(int,				MaxDelay);	//as in sound.ini
-	PROPERTY(int,				MinFDelta);	//as in sound.ini
-	PROPERTY(int,				MaxFDelta);	//as in sound.ini
-	PROPERTY(int,				VShift);	//as in sound.ini
-	PROPERTY_STRING(Name,0x1F); //as in sound.ini
-	PROPERTY(DWORD,				unknown_8C);
-	PROPERTY(DWORD,				unknown_90);
-	PROPERTY(DWORD,				unknown_94);
-	PROPERTY(DWORD,				unknown_98);
-	PROPERTY(DWORD,				unknown_9C);
-	PROPERTY(DWORD,				unknown_A0);
-	PROPERTY(DWORD,				unknown_A4);
-	PROPERTY(DWORD,				unknown_A8);
-	PROPERTY(DWORD,				unknown_AC);
-	PROPERTY(DWORD,				unknown_B0);
 
-	PROPERTY_ARRAY(int, SampleIndex, 0x20);
+public:
 
-	PROPERTY(int,				NumSamples);
-	PROPERTY(int,				Attack);
-	PROPERTY(int,				Decay);
-	PROPERTY(DWORD,				unknown_140);
-	PROPERTY(DWORD,				unknown_144);
+	VocClassHeader Header;
+	int SamplesOK;	//0 or 1, determines whether all samples are OK to use
+	DWORD unknown_10;
+	eSoundType Type;
+	VolumeStruct Volume;
+	DWORD unknown_38;
+	DWORD unknown_3C;
+	eSoundPriority Priority;
+	DWORD unknown_44;
+	int Limit;	//as in sound.ini
+	int Loop;	//as in sound.ini
+	int Range;	//as in sound.ini
+	float MinVolume;	//as in sound.ini
+	int MinDelay;	//as in sound.ini
+	int MaxDelay;	//as in sound.ini
+	int MinFDelta;	//as in sound.ini
+	int MaxFDelta;	//as in sound.ini
+	int VShift;	//as in sound.ini
+	char Name [0x1F]; //as in sound.ini
+	DWORD unknown_8C;
+	DWORD unknown_90;
+	DWORD unknown_94;
+	DWORD unknown_98;
+	DWORD unknown_9C;
+	DWORD unknown_A0;
+	DWORD unknown_A4;
+	DWORD unknown_A8;
+	DWORD unknown_AC;
+	DWORD unknown_B0;
+
+	int SampleIndex [0x20];
+
+	int NumSamples;
+	int Attack;
+	int Decay;
+	DWORD unknown_140;
+	DWORD unknown_144;
 
 private:	//constructor and destructor should never be needed
 	VocClass(){}

@@ -270,102 +270,92 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY_STRUCT(CellStruct,         MapCoords);	//Where on the map does this Cell lie?
+public:
+
+	CellStruct MapCoords;	//Where on the map does this Cell lie?
 
 	PROTECTED_PROPERTY(BYTE,     unknown_28[0xC]);
 
-	PROPERTY(LightConvertClass*, LightConvert);
-	PROPERTY(int,                IsoTileTypeIndex);	//What tile is this Cell?
+	LightConvertClass* LightConvert;
+	int                IsoTileTypeIndex;	//What tile is this Cell?
 
 	PROTECTED_PROPERTY(BYTE,     unknown_3C[8]);
 
-	PROPERTY(int,                OverlayTypeIndex);	//What Overlay lies on this Cell?
-	PROPERTY(int,                SmudgeTypeIndex);	//What Smudge lies on this Cell?
+	int                OverlayTypeIndex;	//What Overlay lies on this Cell?
+	int                SmudgeTypeIndex;	//What Smudge lies on this Cell?
 
-	PROPERTY(DWORD,              unknown_4C);
-	PROPERTY(int,                WallOwnerIndex); // Which House owns the wall placed in this Cell?
+	DWORD              unknown_4C;
+	int                WallOwnerIndex; // Which House owns the wall placed in this Cell?
 	                                              // Determined by finding the nearest BuildingType and taking its owner
-	PROPERTY(DWORD,              unknown_54);
-	PROPERTY(DWORD,              unknown_58);
-	PROPERTY(DWORD,              unknown_5C);
-	PROPERTY(DWORD,              unknown_60);
-	PROPERTY(DWORD,              unknown_64);
-	PROPERTY(DWORD,              unknown_68);
-	PROPERTY(DWORD,              unknown_6C);
-	PROPERTY(DWORD,              unknown_70);
-	PROPERTY(DWORD,              unknown_74);
-	PROPERTY(DWORD,              CloakedByHouses);	//Is this cell in a cloak generator's radius? One bit per House.
+	DWORD              unknown_54;
+	DWORD              unknown_58;
+	DWORD              unknown_5C;
+	DWORD              unknown_60;
+	DWORD              unknown_64;
+	DWORD              unknown_68;
+	DWORD              unknown_6C;
+	DWORD              unknown_70;
+	DWORD              unknown_74;
+	DWORD              CloakedByHouses;	//Is this cell in a cloak generator's radius? One bit per House.
 
 	// Is this cell in range of some SensorsSight= equipment? One Word(!) per House, ++ and -- per unit.
 protected:
 	unsigned short               SensorsOfHouses[0x18]; // ! 24 houses instead of 32 like cloakgen
-/*
 	// use Sensors_ funcs above
-public:
-	unsigned short               get_SensorsOfHouses(int idx)
-		{ return SensorsOfHouses[i]; }
-	void                         set_SensorsOfHouses(int idx, unsigned short val)
-		{ SensorsOfHouses[i] = val; }
-*/
 
 	// Is this cell in range of some DetectDisguise= equipment? One Word(!) per House, ++ and -- per unit.
 protected:
 	unsigned short               DisguiseSensorsOfHouses[0x18]; // ! 24 houses instead of 32 like cloakgen
-/*
-public:
 	// use DisguiseSensors_ funcs above
-	unsigned short               get_DisguiseSensorsOfHouses(int idx)
-		{ return DisguiseSensorsOfHouses[i]; }
-	void                         set_DisguiseSensorsOfHouses(int idx, unsigned short val)
-		{ DisguiseSensorsOfHouses[i] = val; }
-*/
 
-	PROPERTY(DWORD,              BaseSpacerOfHouses); // & (1 << HouseX->ArrayIndex) == base spacing dummy for HouseX
-	PROPERTY(DWORD,              unknown_E0);
+public:
 
-	PROPERTY(ObjectClass*,       FirstObject);	//The first Object on this Cell. NextObject functions as a linked list.
+	DWORD              BaseSpacerOfHouses; // & (1 << HouseX->ArrayIndex) == base spacing dummy for HouseX
+	DWORD              unknown_E0;
 
-	PROPERTY(ObjectClass*,       AltObject);
+	ObjectClass*       FirstObject;	//The first Object on this Cell. NextObject functions as a linked list.
+
+	ObjectClass*       AltObject;
 
 //	PROTECTED_PROPERTY(BYTE,	unknown_E8[4]);
 
-	PROPERTY(eLandType,          LandType);	//What type of floor is this Cell?
-	PROPERTY(double,             RadLevel);	//The level of radiation on this Cell.
-	PROPERTY(RadSiteClass*,      RadSite);	//A pointer to the responsible RadSite.
+	eLandType          LandType;	//What type of floor is this Cell?
+	double             RadLevel;	//The level of radiation on this Cell.
+	RadSiteClass*      RadSite;	//A pointer to the responsible RadSite.
 
-	PROPERTY(DWORD,              unknown_FC);
-	PROPERTY(DWORD,              unknown_100);
-	PROPERTY(DWORD,              unknown_104);
-	PROPERTY(WORD,               unknown_108);
-	PROPERTY(WORD,               unknown_10A);
-	PROPERTY(WORD,               unknown_10C);
-	PROPERTY(WORD,               unknown_10E);
-	PROPERTY(WORD,               unknown_110);
-	PROPERTY(WORD,               unknown_112);
-	PROPERTY(WORD,               unknown_114);
-	PROPERTY(signed short,       TubeIndex); // !@#% Westwood braindamage, can't use > 127! (movsx eax, al)
+	DWORD              unknown_FC;
+	DWORD              unknown_100;
+	DWORD              unknown_104;
+	WORD               unknown_108;
+	WORD               unknown_10A;
+	WORD               unknown_10C;
+	WORD               unknown_10E;
+	WORD               unknown_110;
+	WORD               unknown_112;
+	WORD               unknown_114;
+	signed short       TubeIndex; // !@#% Westwood braindamage, can't use > 127! (movsx eax, al)
 
-	PROPERTY(char,               unknown_118);
-	PROPERTY(char,               unknown_119);
-	PROPERTY(char,               Height);
-	PROPERTY(char,               Level);
+	char               unknown_118;
+	char               unknown_119;
+	char               Height;
+	char               Level;
 
-	PROPERTY(BYTE,               SlopeIndex);  // this + 2 == cell's slope shape as reflected by PLACE.SHP
+	BYTE               SlopeIndex;  // this + 2 == cell's slope shape as reflected by PLACE.SHP
 	PROTECTED_PROPERTY(BYTE,     unknown_11D);
 
-	PROPERTY(char,               Powerup);	//The crate type on this cell.
+	char               Powerup;	//The crate type on this cell.
 
 	PROTECTED_PROPERTY(BYTE,     unknown_11F);
-	PROPERTY(BYTE,               Shroudedness); // trust me, you don't wanna know... if you do, see 0x7F4194 and cry
+	BYTE               Shroudedness; // trust me, you don't wanna know... if you do, see 0x7F4194 and cry
 	PROTECTED_PROPERTY(BYTE,     unknown_121[0xB]);
 
-	PROPERTY(eCellFlags_12C,     CopyFlags);	// related to Flags below
-	PROPERTY(DWORD,              IsUnderShroud); // only 0 or 1, but modified as an integer
-	PROPERTY(DWORD,              GapsCoveringThisCell); // actual count of gapgens in this cell, no idea why they need a second layer
+	eCellFlags_12C     CopyFlags;	// related to Flags below
+	DWORD              IsUnderShroud; // only 0 or 1, but modified as an integer
+	DWORD              GapsCoveringThisCell; // actual count of gapgens in this cell, no idea why they need a second layer
 	PROTECTED_PROPERTY(BYTE,     unknown_138[0x4]);
-	PROPERTY(DWORD,              unknown_13C);
+	DWORD              unknown_13C;
 
-	PROPERTY(eCellFlags,         Flags);	//Various settings.
+	eCellFlags         Flags;	//Various settings.
 	PROTECTED_PROPERTY(BYTE,     unknown_144[4]);
 };
 

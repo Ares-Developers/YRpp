@@ -22,22 +22,6 @@ typedef unsigned long DWORD;
 #include <wchar.h>
 #include <cstdio>
 
-//Macro for class members with getters and setters! Thanks DCoder!
-// Sod it, primitive data types are too annoying to get() all the time
-/*
-	protected:\
-		type name;\
-	public:\
-		type get_ ## name() \
-			{ return name; }\
-		void set_ ## name(type value)\
-			{ name = value; }
-*/
-
-#define PROPERTY(type,name) \
-	public: \
-		type name; \
-
 #define PROPERTY_PTR(type,name)\
 	public: \
 		type name;\
@@ -49,75 +33,11 @@ typedef unsigned long DWORD;
 		type* lea_ ## name() \
 			{ return &name; }
 
-//readonly version
-#define PROPERTY_READONLY(type,name)\
-	protected:\
-		type name;\
-	public:\
-		const type get_ ## name() \
-			{ return name; }
-
-//struct or class instances
-#define PROPERTY_STRUCT(type,name)\
-	public: \
-		type name;\
-	public:\
-		type* get_ ## name() \
-			{ return &name; }\
-		void set_ ## name(type* value)\
-			{ name = *value; }
-
-//readonly
-#define PROPERTY_READO_STRUCT(type,name)\
-	protected:\
-		type name;\
-	public:\
-		type* _ ## name() \
-			{ return &name; }
-
-//Arrays
-#define PROPERTY_ARRAY(type,name,length)\
-	public: \
-		type name[length];\
-	public:\
-		type get_ ## name(int n)\
-			{ return name[n]; }\
-		void set_ ## name(int n, type value)\
-			{ name[n] = value; }
-
-//Arrays of struct or class instances
-#define PROPERTY_STRUCT_ARRAY(type,name,length)\
-	public: \
-		type name[length];\
-	public:\
-		type* get_ ## name(int n)\
-			{ return &name[n]; }\
-		void set_ ## name(int n, type value)\
-			{ name[n] = value; }
-
-//Strings
-#define PROPERTY_STRING(name,length)\
-	public: \
-		char name[length];\
-	public:\
-		char* get_ ## name()\
-			{ return name; }\
-		void  set_ ## name(const char* value)\
-			{ strncpy(name, value, length); }
-
-#define PROPERTY_UNICODE(name,length)\
-	public: \
-		wchar_t name[length];\
-	public:\
-		wchar_t* get_ ## name()\
-			{ return name; }\
-		void  set_ ## name(const wchar_t* value)\
-			{ wcsncpy(name, value, length); }
-
 //Not gettable/settable members
 #define PROTECTED_PROPERTY(type,name)\
 	protected:\
-		type name;
+		type name; \
+	public:
 
 // following westwood's style
 #define VALIDTAG(str) \

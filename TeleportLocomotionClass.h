@@ -59,14 +59,16 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY_STRUCT(CoordStruct,	MovingDestination);	//Current destination
-	PROPERTY_STRUCT(CoordStruct,	unknown_coords_28);
-	PROPERTY(bool,			Moving);	//Is currently moving
-	PROPERTY(bool,			unknown_bool_35);
-	PROPERTY(bool,			unknown_bool_36);
-	PROPERTY(DWORD,			unknown_38);
-	PROPERTY_STRUCT(TimerStruct,	unknown_timer_3C);
-	PROPERTY(DWORD,			unknown_48);
+public:
+
+	CoordStruct MovingDestination;	//Current destination
+	CoordStruct unknown_coords_28;
+	bool Moving;	//Is currently moving
+	bool unknown_bool_35;
+	bool unknown_bool_36;
+	DWORD unknown_38;
+	TimerStruct unknown_timer_3C;
+	DWORD unknown_48;
 };
 
 #endif

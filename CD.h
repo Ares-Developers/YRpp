@@ -26,9 +26,12 @@ public:
 		{ JMP_THIS(0x4A80D0); }
 
 	//Properties
-	PROPERTY_ARRAY(int, CDDriveNames, 26); //int + 'A' would be the drive's name
-	PROPERTY(int, NumCDDrives);
-	PROPERTY(DWORD, unknown_6C);
+
+public:
+
+	int CDDriveNames [26]; //int + 'A' would be the drive's name
+	int NumCDDrives;
+	DWORD unknown_6C;
 };
 
 class CD
@@ -38,7 +41,9 @@ public:
 	virtual bool InsertCDDialog() R0;
 	virtual void SwapToDisk() R0;
 
-	PROPERTY(DWORD, unknown_04);
+public:
+
+	DWORD unknown_04;
 
 protected:
 	CD() RX;

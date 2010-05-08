@@ -26,8 +26,10 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(wchar_t *, Title);
-	PROPERTY(int, idx);
+public:
+
+	wchar_t * Title;
+	int idx;
 };
 
 class MPCombatTeam : public MPTeam

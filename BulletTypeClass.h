@@ -58,48 +58,51 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(bool, Airburst);
-	PROPERTY(bool, Floater);
-	PROPERTY(bool, SubjectToCliffs);
-	PROPERTY(bool, SubjectToElevation);
-	PROPERTY(bool, SubjectToWalls);
-	PROPERTY(bool, VeryHigh);
-	PROPERTY(bool, Shadow);
-	PROPERTY(bool, Arcing);
-	PROPERTY(bool, Dropping);
-	PROPERTY(bool, Level);
-	PROPERTY(bool, Inviso);
-	PROPERTY(bool, Proximity);
-	PROPERTY(bool, Ranged);
-	PROPERTY(bool, Rotates);
-	PROPERTY(bool, Inaccurate);
-	PROPERTY(bool, FlakScatter);
-	PROPERTY(bool, AA);
-	PROPERTY(bool, AG);
-	PROPERTY(bool, Degenerates);
-	PROPERTY(bool, Bouncy);
-	PROPERTY(bool, AnimPalette);
-	PROPERTY(bool, FirersPalette);
-	PROPERTY(int, Cluster);
-	PROPERTY(WeaponTypeClass*, AirburstWeapon);
-	PROPERTY(WeaponTypeClass*, ShrapnelWeapon);
-	PROPERTY(int, ShrapnelCount);
-	PROPERTY(int, DetonationAltitude);
-	PROPERTY(bool, Vertical);
-	PROPERTY(double, Elasticity);
-	PROPERTY(int, Acceleration);
-	PROPERTY(ColorScheme*, Color);
-	PROPERTY(AnimTypeClass*, Trailer);
-	PROPERTY(int, ROT);
-	PROPERTY(int, CourseLockDuration);
-	PROPERTY(int, SpawnDelay);
-	PROPERTY(int, unknown_int_2E8); //Related to SpawnDelay
-	PROPERTY(bool, Scalable);
-	PROPERTY(int, Arm);
-	PROPERTY(char, AnimLow);
-	PROPERTY(char, AnimHigh);
-	PROPERTY(char, AnimRate);
-	PROPERTY(bool, Flat);
+
+public:
+
+	bool Airburst;
+	bool Floater;
+	bool SubjectToCliffs;
+	bool SubjectToElevation;
+	bool SubjectToWalls;
+	bool VeryHigh;
+	bool Shadow;
+	bool Arcing;
+	bool Dropping;
+	bool Level;
+	bool Inviso;
+	bool Proximity;
+	bool Ranged;
+	bool Rotates;
+	bool Inaccurate;
+	bool FlakScatter;
+	bool AA;
+	bool AG;
+	bool Degenerates;
+	bool Bouncy;
+	bool AnimPalette;
+	bool FirersPalette;
+	int Cluster;
+	WeaponTypeClass* AirburstWeapon;
+	WeaponTypeClass* ShrapnelWeapon;
+	int ShrapnelCount;
+	int DetonationAltitude;
+	bool Vertical;
+	double Elasticity;
+	int Acceleration;
+	ColorScheme* Color;
+	AnimTypeClass* Trailer;
+	int ROT;
+	int CourseLockDuration;
+	int SpawnDelay;
+	int unknown_int_2E8; //Related to SpawnDelay
+	bool Scalable;
+	int Arm;
+	char AnimLow;
+	char AnimHigh;
+	char AnimRate;
+	bool Flat;
 };
 
 #endif

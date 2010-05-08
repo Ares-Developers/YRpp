@@ -31,11 +31,14 @@ public:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(ColorStruct, Color);
-	PROPERTY(ObjectClass*, Owner);
-	PROPERTY(DWORD, Decrement);
-	PROPERTY(DWORD, ActiveSlot);
-	PROPERTY_STRUCT_ARRAY(LineTrailNode, Trails, 32);
+
+public:
+
+	ColorStruct Color;
+	ObjectClass* Owner;
+	DWORD Decrement;
+	DWORD ActiveSlot;
+	LineTrailNode Trails [32];
 };
 
 #endif

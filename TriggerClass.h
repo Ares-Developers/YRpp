@@ -93,16 +93,19 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(TriggerTypeClass *,	Type);
-	PROPERTY(TriggerClass*,	      AttachedTrigger);
-	PROPERTY(HouseClass *,	      House);
-	PROPERTY(bool,	              Destroyed); // ActionClass::DestroyTrigger called on
-	PROPERTY(bool,	              padding_31);
-	PROPERTY(bool,	              padding_32);
-	PROPERTY(bool,	              padding_33);
-	PROPERTY_STRUCT(TimerStruct,	        ExistenceTimer);
-	PROPERTY(int,	                EventsAlreadyFired); // bitfield like TechnoClass::Owner
-	PROPERTY(bool,                Enabled);
+
+public:
+
+	TriggerTypeClass * Type;
+	TriggerClass* AttachedTrigger;
+	HouseClass * House;
+	bool Destroyed; // ActionClass::DestroyTrigger called on
+	bool padding_31;
+	bool padding_32;
+	bool padding_33;
+	TimerStruct ExistenceTimer;
+	int EventsAlreadyFired; // bitfield like TechnoClass::Owner
+	bool                Enabled;
 
 };
 

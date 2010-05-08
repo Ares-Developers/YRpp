@@ -53,37 +53,39 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(int,     ArrayIndex);
-	PROPERTY(WeaponTypeClass*, WeaponType);
+public:
+
+	int     ArrayIndex;
+	WeaponTypeClass* WeaponType;
 
 	//I believe these four are the leftover TS sounds
-	PROPERTY(int,     unknown_A0);
-	PROPERTY(int,     unknown_A4);
-	PROPERTY(int,     unknown_A8);
-	PROPERTY(int,     unknown_AC);
+	int     unknown_A0;
+	int     unknown_A4;
+	int     unknown_A8;
+	int     unknown_AC;
 	//---
 
-	PROPERTY(int,     RechargeTime); //in frames
-	PROPERTY(int,     Type); //SWTYPE definitions
-	PROPERTY(SHPStruct*, SidebarImage);
-	PROPERTY(eAction, Action); //ACTION definitions
-	PROPERTY(int,     SpecialSound);
-	PROPERTY(int,     StartSound);
-	PROPERTY(BuildingTypeClass*, AuxBuilding);
-	PROPERTY_STRING(SidebarImageFile, 0x18);
+	int     RechargeTime; //in frames
+	int     Type; //SWTYPE definitions
+	SHPStruct* SidebarImage;
+	eAction Action; //ACTION definitions
+	int     SpecialSound;
+	int     StartSound;
+	BuildingTypeClass* AuxBuilding;
+	char SidebarImageFile [0x18];
 	PROTECTED_PROPERTY(BYTE, zero_E4);
-	PROPERTY(bool,    UseChargeDrain);
-	PROPERTY(bool,    IsPowered);
-	PROPERTY(bool,    DisableableFromShell);
-	PROPERTY(int,     FlashSidebarTabFrames);
-	PROPERTY(bool,    AIDefendAgainst);
-	PROPERTY(bool,    PreClick);
-	PROPERTY(bool,    PostClick);
-	PROPERTY(SuperWeaponTypeClass*, PreDependent);
-	PROPERTY(bool,    ShowTimer);
-	PROPERTY(bool,    ManualControl);
-	PROPERTY(float,   Range);
-	PROPERTY(int,     LineMultiplier);
+	bool    UseChargeDrain;
+	bool    IsPowered;
+	bool    DisableableFromShell;
+	int     FlashSidebarTabFrames;
+	bool    AIDefendAgainst;
+	bool    PreClick;
+	bool    PostClick;
+	SuperWeaponTypeClass* PreDependent;
+	bool    ShowTimer;
+	bool    ManualControl;
+	float   Range;
+	int     LineMultiplier;
 
 };
 

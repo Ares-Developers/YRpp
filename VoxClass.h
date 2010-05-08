@@ -45,15 +45,18 @@ public:
 		{ JMP_STD(0x752A40); }
 
 	//Properties
-	PROPERTY_STRING(Name, 0x28);
 
-	PROPERTY(float, Volume);			//as in eva.ini
-	PROPERTY_STRING(Yuri, 0x9);			//as in eva.ini
-	PROPERTY_STRING(Russian, 0x9);		//as in eva.ini
-	PROPERTY_STRING(Allied, 0x9);		//as in eva.ini
-	PROPERTY(eSoundPriority, Priority);	//as in eva.ini
-	PROPERTY(eSoundType, Type);	//as in eva.ini
-	PROPERTY(int, unknown_int_50);
+public:
+
+	char Name [0x28];
+
+	float Volume;			//as in eva.ini
+	char Yuri [0x9];			//as in eva.ini
+	char Russian [0x9];		//as in eva.ini
+	char Allied [0x9];		//as in eva.ini
+	eSoundPriority Priority;	//as in eva.ini
+	eSoundType Type;	//as in eva.ini
+	int unknown_int_50;
 
 private:	//constructor and destructor should never be needed
 	VoxClass(){}

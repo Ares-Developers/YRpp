@@ -66,7 +66,9 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(OverlayTypeClass*, Type);
+public:
+
+	OverlayTypeClass* Type;
 };
 
 #endif

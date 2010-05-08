@@ -46,60 +46,63 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY_STRING(ParentCountry, 0x18);
+
+public:
+
+	char ParentCountry [0x18];
 	PROTECTED_PROPERTY(BYTE, zero_B0);
 
-	PROPERTY(int,            ArrayIndex);
-	PROPERTY(int,            ArrayIndex2); //dunno why
-	PROPERTY(int,            SideIndex);
-	PROPERTY(int,            ColorSchemeIndex);
-private: DWORD align_C4;
+	int            ArrayIndex;
+	int            ArrayIndex2; //dunno why
+	int            SideIndex;
+	int            ColorSchemeIndex;
+	DWORD align_C4;
 
 	//are these unused TS leftovers?
-	PROPERTY(double,         FirepowerMult);
-	PROPERTY(double,         GroundspeedMult);
-	PROPERTY(double,         AirspeedMult);
-	PROPERTY(double,         ArmorMult);
-	PROPERTY(double,         ROFMult);
-	PROPERTY(double,         CostMult);
-	PROPERTY(double,         BuildtimeMult);
+	double         FirepowerMult;
+	double         GroundspeedMult;
+	double         AirspeedMult;
+	double         ArmorMult;
+	double         ROFMult;
+	double         CostMult;
+	double         BuildtimeMult;
 	//---
 
-	PROPERTY(float,          ArmorInfantryMult);
-	PROPERTY(float,          ArmorUnitsMult);
-	PROPERTY(float,          ArmorAircraftMult);
-	PROPERTY(float,          ArmorBuildingsMult);
-	PROPERTY(float,          ArmorDefensesMult);
+	float          ArmorInfantryMult;
+	float          ArmorUnitsMult;
+	float          ArmorAircraftMult;
+	float          ArmorBuildingsMult;
+	float          ArmorDefensesMult;
 
-	PROPERTY(float,          CostInfantryMult);
-	PROPERTY(float,          CostUnitsMult);
-	PROPERTY(float,          CostAircraftMult);
-	PROPERTY(float,          CostBuildingsMult);
-	PROPERTY(float,          CostDefensesMult);
+	float          CostInfantryMult;
+	float          CostUnitsMult;
+	float          CostAircraftMult;
+	float          CostBuildingsMult;
+	float          CostDefensesMult;
 
-	PROPERTY(float,          SpeedInfantryMult);
-	PROPERTY(float,          SpeedUnitsMult);
-	PROPERTY(float,          SpeedAircraftMult);
+	float          SpeedInfantryMult;
+	float          SpeedUnitsMult;
+	float          SpeedAircraftMult;
 
-	PROPERTY(float,          BuildtimeInfantryMult);
-	PROPERTY(float,          BuildtimeUnitsMult);
-	PROPERTY(float,          BuildtimeAircraftMult);
-	PROPERTY(float,          BuildtimeBuildingsMult);
-	PROPERTY(float,          BuildtimeDefensesMult);
+	float          BuildtimeInfantryMult;
+	float          BuildtimeUnitsMult;
+	float          BuildtimeAircraftMult;
+	float          BuildtimeBuildingsMult;
+	float          BuildtimeDefensesMult;
 
-	PROPERTY(float,          IncomeMult);
+	float          IncomeMult;
 
-	PROPERTY_STRUCT(TypeList<InfantryTypeClass*>, VeteranInfantry);
-	PROPERTY_STRUCT(TypeList<UnitTypeClass*>, VeteranUnits);
-	PROPERTY_STRUCT(TypeList<AircraftTypeClass*>, VeteranAircraft);
+	TypeList<InfantryTypeClass*> VeteranInfantry;
+	TypeList<UnitTypeClass*> VeteranUnits;
+	TypeList<AircraftTypeClass*> VeteranAircraft;
 
-	PROPERTY_STRING(Suffix,  4);
+	char Suffix [4];
 
-	PROPERTY(char,           Prefix);
-	PROPERTY(bool,           Multiplay);
-	PROPERTY(bool,           MultiplayPassive);
-	PROPERTY(bool,           WallOwner);
-	PROPERTY(bool,           SmartAI); //"smart"?
+	char           Prefix;
+	bool           Multiplay;
+	bool           MultiplayPassive;
+	bool           WallOwner;
+	bool           SmartAI; //"smart"?
 private: DWORD align_1A4;
 };
 

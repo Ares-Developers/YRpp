@@ -28,14 +28,16 @@ public:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY_STRUCT(CoordStruct, Point1);
-	PROPERTY_STRUCT(CoordStruct, Point2);
-	PROPERTY(DWORD, unknown_18);	//Duration?
-	PROPERTY(int, Random);	//Random number between 0 and 256
-	PROPERTY(TechnoClass*, Owner);
-	PROPERTY(DWORD, unknown_24);
-	PROPERTY(int, Lifetime); // this is >>= 1 each time DrawAll() is called, 0 => dtor (inline). Hi, welcome to dumb ideas.
-	PROPERTY(bool, AlternateColor);
+public:
+
+	CoordStruct Point1;
+	CoordStruct Point2;
+	DWORD unknown_18;	//Duration?
+	int Random;	//Random number between 0 and 256
+	TechnoClass* Owner;
+	DWORD unknown_24;
+	int Lifetime; // this is >>= 1 each time DrawAll() is called, 0 => dtor (inline). Hi, welcome to dumb ideas.
+	bool AlternateColor;
 
 };
 

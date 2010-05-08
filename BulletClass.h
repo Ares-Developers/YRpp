@@ -97,37 +97,39 @@ protected:
 	BulletClass() : ObjectClass(false)
 		{ JMP_THIS(0x466380); }
 
-
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(BulletTypeClass*, Type);
-	PROPERTY(TechnoClass*, Owner);
-	PROPERTY(bool, unknown_B4);
-	PROPERTY_STRUCT(BulletData, Data);
-	PROPERTY(bool, Bright);
-	PROPERTY(DWORD, unknown_E4);
-	PROPERTY_STRUCT(BulletVelocity, Velocity);
-	PROPERTY(DWORD, unknown_100);
-	PROPERTY(bool, unknown_104);
-	PROPERTY(DWORD, unknown_108);
-	PROPERTY(ObjectClass*, Target);
-	PROPERTY(DWORD, unknown_110);
-	PROPERTY(DWORD, InheritedColor);
-	PROPERTY(DWORD, unknown_118);
-	PROPERTY(DWORD, unknown_11C);
-	PROPERTY(DWORD, unknown_120);
-	PROPERTY(DWORD, unknown_124);
-	PROPERTY(WarheadTypeClass*, WH);
-	PROPERTY(byte, AnimRate);
-	PROPERTY(WeaponTypeClass*, WeaponType);
-	PROPERTY_STRUCT(CoordStruct, posSrc);
-	PROPERTY_STRUCT(CoordStruct, posTgt);
-	PROPERTY_STRUCT(CellStruct, unknown_14C);
-	PROPERTY(int, DamageMultiplier);
-	PROPERTY(AnimClass*, NextAnim);
-	PROPERTY(bool, SpawnNextAnim);
-	PROPERTY(DWORD, unknown_15C);
+
+public:
+
+	BulletTypeClass* Type;
+	TechnoClass* Owner;
+	bool unknown_B4;
+	BulletData Data;
+	bool Bright;
+	DWORD unknown_E4;
+	BulletVelocity Velocity;
+	DWORD unknown_100;
+	bool unknown_104;
+	DWORD unknown_108;
+	ObjectClass* Target;
+	DWORD unknown_110;
+	DWORD InheritedColor;
+	DWORD unknown_118;
+	DWORD unknown_11C;
+	DWORD unknown_120;
+	DWORD unknown_124;
+	WarheadTypeClass* WH;
+	byte AnimRate;
+	WeaponTypeClass* WeaponType;
+	CoordStruct posSrc;
+	CoordStruct posTgt;
+	CellStruct unknown_14C;
+	int DamageMultiplier;
+	AnimClass* NextAnim;
+	bool SpawnNextAnim;
+	DWORD unknown_15C;
 };
 
 #endif

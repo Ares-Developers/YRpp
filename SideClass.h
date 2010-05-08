@@ -40,7 +40,9 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY_STRUCT(TypeList<int>, HouseTypes);	//indices!
+public:
+
+	TypeList<int> HouseTypes;	//indices!
 
 };
 

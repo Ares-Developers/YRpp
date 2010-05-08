@@ -91,34 +91,37 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY_STRUCT_ARRAY(TabDataStruct, Tabs, 0x4);
-	PROPERTY(DWORD,				unknown_5394);
-	PROPERTY(DWORD,				unknown_5398);
-	PROPERTY(int,				ActiveTabIndex);
-	PROPERTY(DWORD,				unknown_53A0);
-	PROPERTY(bool,				unknown_bool_53A4);
-	PROPERTY(bool,				unknown_bool_53A5);
-	PROPERTY(bool,				unknown_bool_53A6);
-	PROPERTY(bool,				unknown_bool_53A7);
-	PROPERTY(bool,				unknown_bool_53A8);
+
+public:
+
+	TabDataStruct Tabs [0x4];
+	DWORD unknown_5394;
+	DWORD unknown_5398;
+	int ActiveTabIndex;
+	DWORD unknown_53A0;
+	bool unknown_bool_53A4;
+	bool unknown_bool_53A5;
+	bool unknown_bool_53A6;
+	bool unknown_bool_53A7;
+	bool unknown_bool_53A8;
 
 	//Information for the Diplomacy menu, I believe
-	PROPERTY_ARRAY(HouseClass*,		DiplomacyHouses, 0x8);		//8 players max!
-	PROPERTY_ARRAY(int,				DiplomacyKills, 0x8);		//total amount of kills per house
-	PROPERTY_ARRAY(int,				DiplomacyOwned, 0x8);		//total amount of currently owned unit/buildings per house
-	PROPERTY_ARRAY(int,				DiplomacyPowerDrain, 0x8);	//current power drain per house
-	PROPERTY_ARRAY(ColorScheme*,	DiplomacyColors, 0x8);		//color scheme per house
-	PROPERTY_ARRAY(DWORD,			unknown_544C, 0x8);			//??? per house - unused
-	PROPERTY_ARRAY(DWORD,			unknown_546C, 0x8);			//??? per house - unused
-	PROPERTY_ARRAY(DWORD,			unknown_548C, 0x8);			//??? per house - unused
-	PROPERTY_ARRAY(DWORD,			unknown_54AC, 0x8);			//??? per house - unused
-	PROPERTY_ARRAY(DWORD,			unknown_54CC, 0x8);			//??? per house - unused
-	PROPERTY_ARRAY(DWORD,			unknown_54EC, 0x8);			//??? per house - unused
-	PROPERTY(BYTE,				unknown_550C);
-	PROPERTY(int,				DiplomacyNumHouses);			//possibly?
+	HouseClass* DiplomacyHouses [0x8];		//8 players max!
+	int DiplomacyKills [0x8];		//total amount of kills per house
+	int DiplomacyOwned [0x8];		//total amount of currently owned unit/buildings per house
+	int DiplomacyPowerDrain [0x8];	//current power drain per house
+	ColorScheme* DiplomacyColors [0x8];		//color scheme per house
+	DWORD unknown_544C [0x8];			//??? per house - unused
+	DWORD unknown_546C [0x8];			//??? per house - unused
+	DWORD unknown_548C [0x8];			//??? per house - unused
+	DWORD unknown_54AC [0x8];			//??? per house - unused
+	DWORD unknown_54CC [0x8];			//??? per house - unused
+	DWORD unknown_54EC [0x8];			//??? per house - unused
+	BYTE unknown_550C;
+	int DiplomacyNumHouses;			//possibly?
 
-	PROPERTY(bool,				unknown_bool_5514);
-	PROPERTY(bool,				unknown_bool_5515);
+	bool unknown_bool_5514;
+	bool unknown_bool_5515;
 
 };
 

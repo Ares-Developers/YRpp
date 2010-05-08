@@ -124,8 +124,11 @@ public:
 		}
 
 	//Properties
-	PROPERTY(LinkClass*,	Next);
-	PROPERTY(LinkClass*,	Previous);
+
+public:
+
+	LinkClass* Next;
+	LinkClass* Previous;
 };
 
 #endif

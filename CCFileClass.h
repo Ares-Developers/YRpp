@@ -56,8 +56,11 @@ protected:
 	FileClass(bool) { }
 
 	//Properties
-	PROPERTY(bool,			SkipCDCheck);
-	PROPERTY(int,			FileAccess);
+
+public:
+
+	bool SkipCDCheck;
+	int FileAccess;
 };
 
 //--------------------------------------------------------------------
@@ -94,13 +97,16 @@ protected:
 	RawFileClass() : FileClass(false) { }
 
 	//Properties
-	PROPERTY(int,			FilePointer);
-	PROPERTY(int,			FileSize);
-	PROPERTY(HANDLE,		Handle);
-	PROPERTY(const char*,	FileName);
-	PROPERTY(short,			unknown_short_1C);	//FatTime?
-	PROPERTY(short,			unknown_short_1E);	//FatDate?
-	PROPERTY(bool,			FileNameAllocated);
+
+public:
+
+	int FilePointer;
+	int FileSize;
+	HANDLE Handle;
+	const char* FileName;
+	short unknown_short_1C;	//FatTime?
+	short unknown_short_1E;	//FatDate?
+	bool FileNameAllocated;
 };
 
 //--------------------------------------------------------------------
@@ -121,22 +127,25 @@ protected:
 	BufferIOFileClass(bool X) : RawFileClass(X) { }
 
 	//Properties
-	PROPERTY(bool,			unknown_bool_24);
-	PROPERTY(bool,			unknown_bool_25);
-	PROPERTY(bool,			unknown_bool_26);
-	PROPERTY(bool,			unknown_bool_27);
-	PROPERTY(bool,			unknown_bool_28);
-	PROPERTY(bool,			unknown_bool_29);
-	PROPERTY(DWORD,			unknown_2C);
-	PROPERTY(DWORD,			unknown_30);
-	PROPERTY(DWORD,			unknown_34);
-	PROPERTY(DWORD,			unknown_38);
-	PROPERTY(DWORD,			unknown_3C);
-	PROPERTY(DWORD,			unknown_40);
-	PROPERTY(int,			unknown_int_44);
-	PROPERTY(int,			unknown_int_48);
-	PROPERTY(DWORD,			unknown_4C);
-	PROPERTY(DWORD,			unknown_50);
+
+public:
+
+	bool unknown_bool_24;
+	bool unknown_bool_25;
+	bool unknown_bool_26;
+	bool unknown_bool_27;
+	bool unknown_bool_28;
+	bool unknown_bool_29;
+	DWORD unknown_2C;
+	DWORD unknown_30;
+	DWORD unknown_34;
+	DWORD unknown_38;
+	DWORD unknown_3C;
+	DWORD unknown_40;
+	int unknown_int_44;
+	int unknown_int_48;
+	DWORD unknown_4C;
+	DWORD unknown_50;
 };
 
 //--------------------------------------------------------------------
@@ -157,7 +166,10 @@ protected:
 	CDFileClass(bool X) : BufferIOFileClass(X) { }
 
 	//Property
-	PROPERTY(DWORD,			unknown_54);
+
+public:
+
+	DWORD unknown_54;
 };
 
 //--------------------------------------------------------------------
@@ -176,9 +188,12 @@ public:
 		{ JMP_THIS(0x4739F0); }
 
 	//Properties
-	PROPERTY_STRUCT(Allocator,		FileAllocator);
-	PROPERTY(DWORD,			unknown_64);
-	PROPERTY(DWORD,			unknown_68);
+
+public:
+
+	Allocator FileAllocator;
+	DWORD unknown_64;
+	DWORD unknown_68;
 };
 
 //TO BE CREATED WHEN NEEDED

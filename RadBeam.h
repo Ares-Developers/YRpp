@@ -34,42 +34,44 @@ public:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(DWORD, unknown_0);
-	PROPERTY(TechnoClass*, Owner);
-	PROPERTY(byte, unknown_8);
-	PROPERTY(DWORD, unknown_C);
-	PROPERTY(DWORD, unknown_10);
-	PROPERTY(DWORD, unknown_14);
-	PROPERTY(double, unknown_18);
-	PROPERTY_STRUCT(ColorStruct, Color);
-	PROPERTY_STRUCT(CoordStruct, SourceLocation); //FLH
-	PROPERTY_STRUCT(CoordStruct, TargetLocation);
-	PROPERTY(DWORD, Period);
-	PROPERTY(double, Amplitude);
-	PROPERTY(double, unknown_48);
-	PROPERTY(DWORD, unknown_50);
-	PROPERTY(DWORD, unknown_54);
-	PROPERTY(byte, unknown_58);
-	PROPERTY(DWORD, unknown_5C);
-	PROPERTY(DWORD, unknown_60);
-	PROPERTY(DWORD, unknown_64);
-	PROPERTY(double, unknown_68);
-	PROPERTY_STRUCT(CoordStruct, AnotherLocation);
-	PROPERTY(DWORD, unknown_7C);
-	PROPERTY(double, unknown_80);
-	PROPERTY(DWORD, unknown_88);
-	PROPERTY(DWORD, unknown_8C);
-	PROPERTY_STRUCT(CoordStruct, AndAnotherLocation);
-	PROPERTY(DWORD, unknown_9C);
-	PROPERTY(DWORD, unknown_A0);
-	PROPERTY(DWORD, unknown_A4);
-	PROPERTY(DWORD, unknown_A8);
-	PROPERTY(DWORD, unknown_AC);
-	PROPERTY(DWORD, unknown_B0);
-	PROPERTY(DWORD, unknown_B4);
-	PROPERTY(double, unknown_B8);
-	PROPERTY(byte, unknown_C0);
-	PROPERTY(DWORD, unknown_C4);
+public:
+
+	DWORD unknown_0;
+	TechnoClass* Owner;
+	byte unknown_8;
+	DWORD unknown_C;
+	DWORD unknown_10;
+	DWORD unknown_14;
+	double unknown_18;
+	ColorStruct Color;
+	CoordStruct SourceLocation; //FLH
+	CoordStruct TargetLocation;
+	DWORD Period;
+	double Amplitude;
+	double unknown_48;
+	DWORD unknown_50;
+	DWORD unknown_54;
+	byte unknown_58;
+	DWORD unknown_5C;
+	DWORD unknown_60;
+	DWORD unknown_64;
+	double unknown_68;
+	CoordStruct AnotherLocation;
+	DWORD unknown_7C;
+	double unknown_80;
+	DWORD unknown_88;
+	DWORD unknown_8C;
+	CoordStruct AndAnotherLocation;
+	DWORD unknown_9C;
+	DWORD unknown_A0;
+	DWORD unknown_A4;
+	DWORD unknown_A8;
+	DWORD unknown_AC;
+	DWORD unknown_B0;
+	DWORD unknown_B4;
+	double unknown_B8;
+	byte unknown_C0;
+	DWORD unknown_C4;
 };
 
 #endif

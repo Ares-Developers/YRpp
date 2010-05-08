@@ -35,10 +35,13 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(void*,			unknown_ptr_24);
-	PROPERTY(void*,			unknown_ptr_28);
-	PROPERTY(void*,			unknown_ptr_2C);
-	PROPERTY_STRUCT(TimerStruct,	unknown_timer_30);
+
+public:
+
+	void* unknown_ptr_24;
+	void* unknown_ptr_28;
+	void* unknown_ptr_2C;
+	TimerStruct unknown_timer_30;
 };
 
 //Even more questions marks on the use of this... >.<
@@ -51,7 +54,7 @@ public:
 		{ THISCALL(0x43A600); }
 
 	//Properties
-	PROPERTY(VectorClass<NeuronClass*>, Neurons);	//???
+	VectorClass<NeuronClass*> Neurons;	//???
 };
 
 #endif

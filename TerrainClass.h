@@ -45,18 +45,21 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(DWORD,				unknown_AC);
-	PROPERTY(BYTE,				unknown_B0);
-	PROPERTY_STRUCT(TimerStruct,		unknown_timer_B4);
-	PROPERTY(DWORD,				unknown_C0);
-	PROPERTY(DWORD,				unknown_C4);
-	PROPERTY(TerrainTypeClass*, Type);
-	PROPERTY(BYTE,				unknown_CC);
-	PROPERTY(BYTE,				unknown_CD);
-	PROPERTY(DWORD,				unknown_D0);
-	PROPERTY(DWORD,				unknown_D4);
-	PROPERTY(DWORD,				unknown_D8);
-	PROPERTY(DWORD,				unknown_DC);
+
+public:
+
+	DWORD unknown_AC;
+	BYTE unknown_B0;
+	TimerStruct unknown_timer_B4;
+	DWORD unknown_C0;
+	DWORD unknown_C4;
+	TerrainTypeClass* Type;
+	BYTE unknown_CC;
+	BYTE unknown_CD;
+	DWORD unknown_D0;
+	DWORD unknown_D4;
+	DWORD unknown_D8;
+	DWORD unknown_DC;
 
 };
 

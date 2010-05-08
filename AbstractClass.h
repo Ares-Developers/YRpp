@@ -1,8 +1,3 @@
-//fuck security, of course nothing here is secure
-#ifndef _CRT_SECURE_NO_WARNINGS
-#define _CRT_SECURE_NO_WARNINGS
-#endif
-
 #ifndef ABSTRACT_H
 #define ABSTRACT_H
 
@@ -115,11 +110,13 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(DWORD, unknown_10);
-	PROPERTY(DWORD, AbstractFlags);	//Flags, see ABSFLAGS definitions in GeneralDefinitions.
-	PROPERTY(DWORD, unknown_18);
-	PROPERTY(DWORD, unknown_1C);
-	PROPERTY(bool, bIsDirty);		//For IUnknown.
+public:
+
+	DWORD unknown_10;
+	DWORD AbstractFlags;	//Flags, see ABSFLAGS definitions in GeneralDefinitions.
+	DWORD unknown_18;
+	DWORD unknown_1C;
+	bool bIsDirty;		//For IUnknown.
 };
 
 #endif

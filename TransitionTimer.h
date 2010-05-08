@@ -46,11 +46,14 @@ public:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(double,      Rate1);
-	PROPERTY_STRUCT(TimerStruct, ActionTimer);
-	PROPERTY(DWORD,       Rate2);
-	PROPERTY(bool,        State1);
-	PROPERTY(bool,        State2);
+
+public:
+
+	double      Rate1;
+	TimerStruct ActionTimer;
+	DWORD       Rate2;
+	bool        State1;
+	bool        State2;
 };
 
 #endif

@@ -46,29 +46,31 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(int,      HoldsWhat); //ParticleType Array index
-	PROPERTY(bool,     Spawns);
-	PROPERTY(int,      SpawnFrames);
-	PROPERTY(float,    Slowdown);
-	PROPERTY(int,      ParticleCap);
-	PROPERTY(int,      SpawnRadius);
-	PROPERTY(float,    SpawnCutoff);
-	PROPERTY(float,    SpawnTranslucencyCutoff);
-	PROPERTY(eBehavesLike, BehavesLike);
-	PROPERTY(int,      Lifetime);
-	PROPERTY_STRUCT(Vector3D<float>, SpawnDirection);
-	PROPERTY(double,   ParticlesPerCoord);
-	PROPERTY(double,   SpiralDeltaPerCoord);
-	PROPERTY(double,   SpiralRadius);
-	PROPERTY(double,   PositionPerturbationCoefficient);
-	PROPERTY(double,   MovementPerturbationCoefficient);
-	PROPERTY(double,   VelocityPerturbationCoefficient);
-	PROPERTY(double,   SpawnSparkPercentage);
-	PROPERTY(int,      SparkSpawnFrames);
-	PROPERTY(int,      LightSize);
-	PROPERTY_STRUCT(ColorStruct, LaserColor);
-	PROPERTY(bool,     Laser);
-	PROPERTY(bool,     OneFrameLight);
+public:
+
+	int      HoldsWhat; //ParticleType Array index
+	bool     Spawns;
+	int      SpawnFrames;
+	float    Slowdown;
+	int      ParticleCap;
+	int      SpawnRadius;
+	float    SpawnCutoff;
+	float    SpawnTranslucencyCutoff;
+	eBehavesLike BehavesLike;
+	int      Lifetime;
+	Vector3D<float> SpawnDirection;
+	double   ParticlesPerCoord;
+	double   SpiralDeltaPerCoord;
+	double   SpiralRadius;
+	double   PositionPerturbationCoefficient;
+	double   MovementPerturbationCoefficient;
+	double   VelocityPerturbationCoefficient;
+	double   SpawnSparkPercentage;
+	int      SparkSpawnFrames;
+	int      LightSize;
+	ColorStruct LaserColor;
+	bool     Laser;
+	bool     OneFrameLight;
 };
 
 #endif

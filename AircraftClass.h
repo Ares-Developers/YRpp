@@ -60,17 +60,20 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(AircraftTypeClass*, Type);
-	PROPERTY(bool, unknown_bool_6C8);
-	PROPERTY(bool, HasPassengers);	//parachutes
-	PROPERTY(bool, IsCrashing); // when crashing down, duh
-	PROPERTY(DWORD, unknown_6CC);
-	PROPERTY(bool, unknown_bool_6D0);
-	PROPERTY(bool, unknown_bool_6D1);
-	PROPERTY(bool, unknown_bool_6D2);
-	PROPERTY(char, unknown_char_6D3);
-	PROPERTY(bool, unknown_bool_6D4);
-	PROPERTY(bool, unknown_bool_6D5);
+
+public:
+
+	AircraftTypeClass* Type;
+	bool unknown_bool_6C8;
+	bool HasPassengers;	//parachutes
+	bool IsCrashing; // when crashing down, duh
+	DWORD unknown_6CC;
+	bool unknown_bool_6D0;
+	bool unknown_bool_6D1;
+	bool unknown_bool_6D2;
+	char unknown_char_6D3;
+	bool unknown_bool_6D4;
+	bool unknown_bool_6D5;
 };
 
 #endif

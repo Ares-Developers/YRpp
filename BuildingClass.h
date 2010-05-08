@@ -135,128 +135,107 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(BuildingTypeClass*, Type);
-	PROPERTY(FactoryClass*, Factory);
-	PROPERTY_STRUCT(TimerStruct, C4Timer);
-	PROPERTY(int, unknown_int_534);
-	PROPERTY(int, unknown_int_538);
-	PROPERTY(DWORD, OwnerCountryIndex);
-	PROPERTY(DWORD, unknown_540); //pointer
-	PROPERTY(DWORD, unknown_544);
-	PROPERTY(AnimClass*, FirestormAnim); //pointer
-	PROPERTY(DWORD, PsiWarnAnim); //pointer
-	PROPERTY_STRUCT(TimerStruct, unknown_timer_550);
+public:
 
+	BuildingTypeClass* Type;
+	FactoryClass* Factory;
+	TimerStruct C4Timer;
+	int unknown_int_534;
+	int unknown_int_538;
+	DWORD OwnerCountryIndex;
+	DWORD unknown_540; //pointer
+	DWORD unknown_544;
+	AnimClass* FirestormAnim; //pointer
+	DWORD PsiWarnAnim; //pointer
+	TimerStruct unknown_timer_550;
 
 // see eBuildingAnims above for slot index meanings
-	PROPERTY_ARRAY(AnimClass *, Anims, 0x15);
-/*
-	//55C = AnimClass* Anims[0x15]
-			//Anims[3] = ActiveAnim
-protected:
-	AnimClass* StateAnims[0x15];
-public:
-	AnimClass* get_StateAnims(int i)
-		{ return StateAnims[i]; }
-*/
+	AnimClass * Anims [0x15];
 
 protected:
 	DWORD align_5B0, align_5B4, align_5B8, align_5BC;
 	DWORD align_5C0, align_5C4;
 
-	PROPERTY_ARRAY(AnimClass *, DamageFireAnims, 0x8);
-	//5C8 = array of ??? pointers [8]
-/*
-protected:
-	AnimClass* DamageFireAnims[0x8];
 public:
-	AnimClass* get_DamageFireAnims(int i)
-		{ return DamageFireAnims[i]; }
-*/
 
-	PROPERTY(bool, RequiresDamageFires); // if set, ::Update spawns damage fire anims and zeroes it
+	AnimClass * DamageFireAnims [0x8];
+
+	bool RequiresDamageFires; // if set, ::Update spawns damage fire anims and zeroes it
 	//5E8 - 5F8 ????????
-	PROPERTY_ARRAY(BuildingTypeClass *, Upgrades, 0x3);
-/*
-protected:
-	BuildingTypeClass* Upgrades[0x3];
-public:
-	BuildingTypeClass* get_Upgrades(int i)
-		{ return Upgrades[i]; }
-*/
+	BuildingTypeClass * Upgrades [0x3];
 
-	PROPERTY(DWORD, FiringSWType); // type # of sw being launched
-	PROPERTY(DWORD, unknown_5FC);
-	PROPERTY(BuildingLightClass*, Spotlight);
-	PROPERTY_STRUCT(TimerStruct, unknown_timer_604);
-	PROPERTY(DWORD, unknown_610);
-	PROPERTY(LightSourceClass *, LightSource); // tiled light , LightIntensity > 0
-	PROPERTY(DWORD, LaserFenceFrame); // 0-7 for active directionals, 8/12 for offline ones, check ntfnce.shp or whatever
-	PROPERTY(DWORD, FirestormWallFrame); // anim data for firestorm active animations
-	PROPERTY(DWORD, unknown_620);
-	PROPERTY(bool, unknown_bool_624);
-	PROPERTY_STRUCT(TimerStruct, LastInfantryEntry); // for hospital, armory, etc
-	PROPERTY(int, unknown_int_634);
-	PROPERTY(int, unknown_int_638);
-	PROPERTY_STRUCT(RectangleStruct, unknown_rect_63C);
-	PROPERTY_STRUCT(CoordStruct, unknown_coord_64C);
-	PROPERTY(int, unknown_int_658);
-	PROPERTY(DWORD, unknown_65C);
-	PROPERTY(bool, HasPower);
-	PROPERTY(bool, IsOverpowered);
+	DWORD FiringSWType; // type # of sw being launched
+	DWORD unknown_5FC;
+	BuildingLightClass* Spotlight;
+	TimerStruct unknown_timer_604;
+	DWORD unknown_610;
+	LightSourceClass * LightSource; // tiled light , LightIntensity > 0
+	DWORD LaserFenceFrame; // 0-7 for active directionals, 8/12 for offline ones, check ntfnce.shp or whatever
+	DWORD FirestormWallFrame; // anim data for firestorm active animations
+	DWORD unknown_620;
+	bool unknown_bool_624;
+	TimerStruct LastInfantryEntry; // for hospital, armory, etc
+	int unknown_int_634;
+	int unknown_int_638;
+	RectangleStruct unknown_rect_63C;
+	CoordStruct unknown_coord_64C;
+	int unknown_int_658;
+	DWORD unknown_65C;
+	bool HasPower;
+	bool IsOverpowered;
 
 	// each powered unit controller building gets this set on power activation and unset on power outage
-	PROPERTY(bool, RegisteredAsPoweredUnitSource);
+	bool RegisteredAsPoweredUnitSource;
 
-	PROPERTY(DWORD, SupportingPrisms);
-	PROPERTY(bool, unknown_bool_668);
-	PROPERTY(bool, ConsumesExtraPower);
-	PROPERTY_STRUCT(DynamicVectorClass<InfantryClass*>, Overpowerers);
-	PROPERTY_STRUCT(DynamicVectorClass<InfantryClass*>, Occupants);
-	PROPERTY(int, FiringOccupantIndex); // which occupant should get XP, which weapon should be fired (see 6FF074)
+	DWORD SupportingPrisms;
+	bool unknown_bool_668;
+	bool ConsumesExtraPower;
+	DynamicVectorClass<InfantryClass*> Overpowerers;
+	DynamicVectorClass<InfantryClass*> Occupants;
+	int FiringOccupantIndex; // which occupant should get XP, which weapon should be fired (see 6FF074)
 
-	PROPERTY_STRUCT(AudioController, Audio7);
-	PROPERTY_STRUCT(AudioController, Audio8);
+	AudioController Audio7;
+	AudioController Audio8;
 
-	PROPERTY(bool, unknown_bool_6C8);
-	PROPERTY(bool, ShowRealName);
-	PROPERTY(bool, BeingProduced);
-	PROPERTY(bool, ShouldRebuild);
-	PROPERTY(bool, unknown_bool_6CC);
-	PROPERTY_STRUCT(TimerStruct, CashProductionTimer);
-	PROPERTY(bool, unknown_bool_6DC);
-	PROPERTY(bool, unknown_bool_6DD);
-	PROPERTY(bool, NeedsRepairs); // AI handholder for repair logic,
-	PROPERTY(bool, C4Applied);
-	PROPERTY(bool, unknown_bool_6E0);
-	PROPERTY(bool, unknown_bool_6E1);
-	PROPERTY(bool, unknown_bool_6E2);
-	PROPERTY(bool, unknown_bool_6E3);
-	PROPERTY(bool, ActuallyPlacedOnMap);
-	PROPERTY(bool, unknown_bool_6E5);
-	PROPERTY(bool, IsDamaged); // AI handholder for repair logic,
-	PROPERTY(bool, IsFogged);
-	PROPERTY(bool, IsBeingRepaired); // show animooted repair wrench
-	PROPERTY(bool, unknown_bool_6E9);
-	PROPERTY(bool, unknown_bool_6EA);
-	PROPERTY(bool, HasCloakingData); // some fugly buffers
-	PROPERTY(byte, CloakRadius); // from Type->CloakRadiusInCells
-	PROPERTY(bool, unknown_bool_6ED);
-	PROPERTY(DWORD, StorageFilledSlots); // the old "silo needed" logic
+	bool unknown_bool_6C8;
+	bool ShowRealName;
+	bool BeingProduced;
+	bool ShouldRebuild;
+	bool unknown_bool_6CC;
+	TimerStruct CashProductionTimer;
+	bool unknown_bool_6DC;
+	bool unknown_bool_6DD;
+	bool NeedsRepairs; // AI handholder for repair logic,
+	bool C4Applied;
+	bool unknown_bool_6E0;
+	bool unknown_bool_6E1;
+	bool unknown_bool_6E2;
+	bool unknown_bool_6E3;
+	bool ActuallyPlacedOnMap;
+	bool unknown_bool_6E5;
+	bool IsDamaged; // AI handholder for repair logic,
+	bool IsFogged;
+	bool IsBeingRepaired; // show animooted repair wrench
+	bool unknown_bool_6E9;
+	bool unknown_bool_6EA;
+	bool HasCloakingData; // some fugly buffers
+	byte CloakRadius; // from Type->CloakRadiusInCells
+	bool unknown_bool_6ED;
+	DWORD StorageFilledSlots; // the old "silo needed" logic
 
 		// randomly assigned secret lab bonus, one of those three gets returned instead if NULL
-	PROPERTY(TechnoTypeClass *, SecretProduction); /*pointer, something to do with SecretInfantry, SecretUnit, SecretBuilding */
+	TechnoTypeClass * SecretProduction; /*pointer, something to do with SecretInfantry, SecretUnit, SecretBuilding */
 
-	PROPERTY_STRUCT(ColorStruct, ColorAdd);
-	PROPERTY(int, unknown_int_6FC);
-	PROPERTY(short, unknown_short_700);
-	PROPERTY(bool, UpgradeLevel); // as defined by Type->UpgradesToLevel=
-	PROPERTY(ePrismChargeState, PrismStage);
-	PROPERTY_STRUCT(CoordStruct, PrismTargetCoords);
-	PROPERTY(DWORD, PrismReloadDelay);
+	ColorStruct ColorAdd;
+	int unknown_int_6FC;
+	short unknown_short_700;
+	bool UpgradeLevel; // as defined by Type->UpgradesToLevel=
+	ePrismChargeState PrismStage;
+	CoordStruct PrismTargetCoords;
+	DWORD PrismReloadDelay;
 
-	PROPERTY(DWORD, unknown_714);
-	PROPERTY(DWORD, unknown_718); // "healing unit" sound, old hospital mode
+	DWORD unknown_714;
+	DWORD unknown_718; // "healing unit" sound, old hospital mode
 
 protected:
 	DWORD align_71C;

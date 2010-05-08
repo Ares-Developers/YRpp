@@ -39,16 +39,18 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(bool, Carryall);
-	PROPERTY(AnimTypeClass*, Trailer);
-	PROPERTY(int, SpawnDelay);
-	PROPERTY(bool, Rotors);
-	PROPERTY(bool, CustomRotor);
-	PROPERTY(bool, Landable);
-	PROPERTY(bool, FlyBy);
-	PROPERTY(bool, FlyBack);
-	PROPERTY(bool, AirportBound);
-	PROPERTY(bool, Fighter);
+public:
+
+	bool Carryall;
+	AnimTypeClass* Trailer;
+	int SpawnDelay;
+	bool Rotors;
+	bool CustomRotor;
+	bool Landable;
+	bool FlyBy;
+	bool FlyBack;
+	bool AirportBound;
+	bool Fighter;
 };
 
 #endif

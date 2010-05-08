@@ -78,13 +78,15 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY_STRUCT(DynamicVectorClass<ControlNode*>, ControlNodes);
-	PROPERTY(int, MaxControlNodes);
-	PROPERTY(bool, InfiniteMindControl);
-	PROPERTY(bool, IsOwnerDead);
-	PROPERTY(DWORD, unknown_44);
-	PROPERTY(TechnoClass*, Owner);
-	PROPERTY(int, unknown_int_4C);	//defaults to 30
+public:
+
+	DynamicVectorClass<ControlNode*> ControlNodes;
+	int MaxControlNodes;
+	bool InfiniteMindControl;
+	bool IsOwnerDead;
+	DWORD unknown_44;
+	TechnoClass* Owner;
+	int unknown_int_4C;	//defaults to 30
 };
 
 #endif

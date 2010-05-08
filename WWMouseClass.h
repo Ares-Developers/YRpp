@@ -66,29 +66,31 @@ public:
 	virtual void func_44(int *arg1, int *arg2)
 		{ JMP_THIS(0x7B9D90); }
 
-	PROPERTY(SHPStruct *, Image);
-	PROPERTY(int        , ImageFrameIndex);
-	PROPERTY(DWORD      , RefCount);
-	PROPERTY(byte       , field_10);
-	PROPERTY(byte       , field_11);
-	PROPERTY(byte       , field_12);
-	PROPERTY(byte       , field_13);
-	PROPERTY(DWORD      , field_14);
-	PROPERTY(DWORD      , field_18);
-	PROPERTY(Point2D    , XY1);
-	PROPERTY(DSurface * , Surface);
-	PROPERTY(HWND       , hWnd);
-	PROPERTY(RectangleStruct, Rect0);
-	PROPERTY(Point2D    , XY2);
-	PROPERTY(DWORD      , field_44);
-	PROPERTY(RectangleStruct, Rect1);
-	PROPERTY(DWORD      , field_58);
-	PROPERTY(RectangleStruct, Rect2);
-	PROPERTY(DWORD      , field_6C);
-	PROPERTY(RectangleStruct, Rect3);
-	PROPERTY(RectangleStruct, Rect4);
-	PROPERTY(DWORD      , field_90);
-	PROPERTY(DWORD      , field_94);
+public:
+
+	SHPStruct * Image;
+	int         ImageFrameIndex;
+	DWORD       RefCount;
+	byte        field_10;
+	byte        field_11;
+	byte        field_12;
+	byte        field_13;
+	DWORD       field_14;
+	DWORD       field_18;
+	Point2D     XY1;
+	DSurface *  Surface;
+	HWND        hWnd;
+	RectangleStruct Rect0;
+	Point2D     XY2;
+	DWORD       field_44;
+	RectangleStruct Rect1;
+	DWORD       field_58;
+	RectangleStruct Rect2;
+	DWORD       field_6C;
+	RectangleStruct Rect3;
+	RectangleStruct Rect4;
+	DWORD       field_90;
+	DWORD       field_94;
 
 };
 #endif

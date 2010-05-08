@@ -47,36 +47,38 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY_STRUCT(CoordStruct, NextParticleOffset);
-	PROPERTY(int,    XVelocity);
-	PROPERTY(int,    YVelocity);
-	PROPERTY(int,    MinZVelocity);
-	PROPERTY(int,    ZVelocityRange);
-	PROPERTY(double, ColorSpeed);
-	PROPERTY_STRUCT(TypeList<RGBClass*>, ColorList);
-	PROPERTY_STRUCT(ColorStruct, StartColor1);
-	PROPERTY_STRUCT(ColorStruct, StartColor2);
-	PROPERTY(int,    MaxDC);
-	PROPERTY(int,    MaxEC);
-	PROPERTY(WarheadTypeClass*, Warhead);
-	PROPERTY(int,    Damage);
-	PROPERTY(int,    StartFrame);
-	PROPERTY(int,    NumLoopFrames);
-	PROPERTY(int,    Translucency);
-	PROPERTY(int,    WindEffect);
-	PROPERTY(float,  Velocity);
-	PROPERTY(float,  Deacc);
-	PROPERTY(int,    Radius);
-	PROPERTY(bool,   DeleteOnStateLimit);
-	PROPERTY(BYTE,   EndStateAI);
-	PROPERTY(BYTE,   StartStateAI);
-	PROPERTY(BYTE,   StateAIAdvance);
-	PROPERTY(BYTE,   FinalDamageState);
-	PROPERTY(BYTE,   Translucent25State);
-	PROPERTY(BYTE,   Translucent50State);
-	PROPERTY(bool,   Normalized);
-	PROPERTY(ParticleTypeClass*, NextParticle);
-	PROPERTY(eBehavesLike, BehavesLike);
+public:
+
+	CoordStruct NextParticleOffset;
+	int    XVelocity;
+	int    YVelocity;
+	int    MinZVelocity;
+	int    ZVelocityRange;
+	double ColorSpeed;
+	TypeList<RGBClass*> ColorList;
+	ColorStruct StartColor1;
+	ColorStruct StartColor2;
+	int    MaxDC;
+	int    MaxEC;
+	WarheadTypeClass* Warhead;
+	int    Damage;
+	int    StartFrame;
+	int    NumLoopFrames;
+	int    Translucency;
+	int    WindEffect;
+	float  Velocity;
+	float  Deacc;
+	int    Radius;
+	bool   DeleteOnStateLimit;
+	BYTE   EndStateAI;
+	BYTE   StartStateAI;
+	BYTE   StateAIAdvance;
+	BYTE   FinalDamageState;
+	BYTE   Translucent25State;
+	BYTE   Translucent50State;
+	bool   Normalized;
+	ParticleTypeClass* NextParticle;
+	eBehavesLike BehavesLike;
 
 };
 

@@ -51,16 +51,19 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(TechnoClass*,		OwnerObject);		//Most likely Ivan.
-	PROPERTY(HouseClass*,		OwnerHouse);
-	PROPERTY(TechnoClass*,		TargetUnit);
-	PROPERTY(DWORD,				DeathBomb); // unused - if so, [General]CanDetonateDeathBomb applies instead of CanDetonateTimeBomb
-	PROPERTY(int,				PlantingFrame);
-	PROPERTY(int,				DetonationFrame);
-	PROPERTY_STRUCT(AudioController, Audio);
-	PROPERTY(int,					TickSound);
-	PROPERTY(DWORD,					ShouldPlayTickingSound); // seems so
-	PROPERTY(byte,					Harmless); // (mostly) set to 0 on plant, 1 on detonation/removal ?
+
+public:
+
+	TechnoClass* OwnerObject;		//Most likely Ivan.
+	HouseClass* OwnerHouse;
+	TechnoClass* TargetUnit;
+	DWORD DeathBomb; // unused - if so, [General]CanDetonateDeathBomb applies instead of CanDetonateTimeBomb
+	int PlantingFrame;
+	int DetonationFrame;
+	AudioController Audio;
+	int TickSound;
+	DWORD ShouldPlayTickingSound; // seems so
+	byte Harmless; // (mostly) set to 0 on plant, 1 on detonation/removal ?
 };
 
 #endif

@@ -43,48 +43,51 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(TeamTypeClass*, Type);
-	PROPERTY(ScriptClass*,   CurrentScript);
-	PROPERTY(HouseClass*,    Owner);
-	PROPERTY(HouseClass*,    Target);
-	PROPERTY(CellClass*,     SpawnCell);
-	PROPERTY(DWORD,          unknown_38);
-	PROPERTY(DWORD,          unknown_3C);
-	PROPERTY(DWORD,          unknown_40);
-	PROPERTY(int,            unknown_44);
-	PROPERTY(int,            TotalObjects);
-	PROPERTY(int,            TotalThreatValue);
-	PROPERTY(int,            CreationFrame);
-	PROPERTY(FootClass *,    FirstUnit);
-	PROPERTY_STRUCT(TimerStruct, GuardAreaTimer);
-	PROPERTY_STRUCT(TimerStruct, SuspendTimer);
-	PROPERTY(DWORD,          Tag); // TagClass *
-	PROPERTY(bool,           unknown_74);
-	PROPERTY(bool,           unknown_75);
-	PROPERTY(bool,           unknown_76);
-	PROPERTY(bool,           unknown_77);
 
-	PROPERTY(bool,           unknown_78);
-	PROPERTY(bool,           unknown_79);
-	PROPERTY(bool,           unknown_7A);
-	PROPERTY(bool,           unknown_7B);
+public:
 
-	PROPERTY(bool,           unknown_7C);
-	PROPERTY(bool,           NeedsToDisappear);
-	PROPERTY(bool,           unknown_7E);
-	PROPERTY(bool,           unknown_7F);
+	TeamTypeClass* Type;
+	ScriptClass*   CurrentScript;
+	HouseClass*    Owner;
+	HouseClass*    Target;
+	CellClass*     SpawnCell;
+	DWORD          unknown_38;
+	DWORD          unknown_3C;
+	DWORD          unknown_40;
+	int            unknown_44;
+	int            TotalObjects;
+	int            TotalThreatValue;
+	int            CreationFrame;
+	FootClass *    FirstUnit;
+	TimerStruct GuardAreaTimer;
+	TimerStruct SuspendTimer;
+	DWORD          Tag; // TagClass *
+	bool           unknown_74;
+	bool           unknown_75;
+	bool           unknown_76;
+	bool           unknown_77;
 
-	PROPERTY(bool,           StepCompleted); // can proceed to the next step of the script
-	PROPERTY(bool,           unknown_81);
-	PROPERTY(bool,           unknown_82);
-	PROPERTY(bool,           IsSuspended);
+	bool           unknown_78;
+	bool           unknown_79;
+	bool           unknown_7A;
+	bool           unknown_7B;
 
-	PROPERTY(bool,           AchievedGreatSuccess); // executed script action 49, 0
-	PROPERTY(bool,           unknown_85);
-	PROPERTY(bool,           unknown_86);
-	PROPERTY(bool,           unknown_87);
+	bool           unknown_7C;
+	bool           NeedsToDisappear;
+	bool           unknown_7E;
+	bool           unknown_7F;
 
-	PROPERTY_ARRAY(int,      CountObjects, 6); // counts of each object specified in the Type
+	bool           StepCompleted; // can proceed to the next step of the script
+	bool           unknown_81;
+	bool           unknown_82;
+	bool           IsSuspended;
+
+	bool           AchievedGreatSuccess; // executed script action 49, 0
+	bool           unknown_85;
+	bool           unknown_86;
+	bool           unknown_87;
+
+	int CountObjects [6]; // counts of each object specified in the Type
 };
 
 #endif

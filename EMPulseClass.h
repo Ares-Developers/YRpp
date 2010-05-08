@@ -39,10 +39,13 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY_STRUCT(CellStruct, BaseCoords);
-	PROPERTY(int, Spread);
-	PROPERTY(int, CreationTime);	//frame in which this EMP got created
-	PROPERTY(int, Duration);
+
+public:
+
+	CellStruct BaseCoords;
+	int Spread;
+	int CreationTime;	//frame in which this EMP got created
+	int Duration;
 };
 
 #endif

@@ -24,9 +24,11 @@ public:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY_STRUCT(CoordStruct, Location);
-	PROPERTY(int, Lifetime);
-	PROPERTY(int, DisableIonBeam);	//0 = no, 1 = yes
+public:
+
+	CoordStruct Location;
+	int Lifetime;
+	int DisableIonBeam;	//0 = no, 1 = yes
 
 };
 

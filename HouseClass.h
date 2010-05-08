@@ -77,15 +77,15 @@ public:
 	{
 		return
 			(BuildingTypeIndex == tBaseNode.BuildingTypeIndex) &&
-			(MapCoords == *tBaseNode.get_MapCoords()) &&
+			(MapCoords == tBaseNode.MapCoords) &&
 			(unknown_8 == tBaseNode.unknown_8) &&
 			(unknown_C == tBaseNode.unknown_C);
 	}
 
-	PROPERTY(int,         BuildingTypeIndex);
-	PROPERTY_STRUCT(CellStruct,  MapCoords);
-	PROPERTY(DWORD,       unknown_8);
-	PROPERTY(DWORD,       unknown_C);
+	int         BuildingTypeIndex;
+	CellStruct MapCoords;
+	DWORD       unknown_8;
+	DWORD       unknown_C;
 };
 
 //--- BaseClass - holds information about a player's base!
@@ -105,15 +105,15 @@ public:
 	virtual void CalculateChecksum(void* pChkSum) RX;
 
 	//Properties
-	PROPERTY(DynamicVectorClass<BaseNodeClass>, BaseNodes);
-	PROPERTY(int,                               PercentBuilt);
-	PROPERTY(DynamicVectorClass<CellStruct>,    Cells_24);
-	PROPERTY(DynamicVectorClass<CellStruct>,    Cells_38);
-	PROPERTY_STRUCT(CellStruct,                        Center);
+	DynamicVectorClass<BaseNodeClass> BaseNodes;
+	int                               PercentBuilt;
+	DynamicVectorClass<CellStruct>    Cells_24;
+	DynamicVectorClass<CellStruct>    Cells_38;
+	CellStruct Center;
 
 	PROTECTED_PROPERTY(BYTE,                    unknown_54[0x20]);
 
-	PROPERTY(HouseClass*,                       Owner);
+	HouseClass*                       Owner;
 };
 
 //--- Here we go, finally...
@@ -459,89 +459,92 @@ public:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(int,                   ArrayIndex);
-	PROPERTY(HouseTypeClass*,       Type);
-	PROPERTY_STRUCT(DynamicVectorClass<TagClass*>,        RelatedTags);
-	PROPERTY_STRUCT(DynamicVectorClass<BuildingClass*>,   ConYards);
-	PROPERTY_STRUCT(DynamicVectorClass<BuildingClass*>,   Buildings);
-	PROPERTY_STRUCT(DynamicVectorClass<BuildingClass*>,   UnitRepairStations);
-	PROPERTY_STRUCT(DynamicVectorClass<BuildingClass*>,   Grinders);
-	PROPERTY_STRUCT(DynamicVectorClass<BuildingClass*>,   Absorbers);
-	PROPERTY_STRUCT(DynamicVectorClass<BuildingClass*>,   Bunkers);
-	PROPERTY_STRUCT(DynamicVectorClass<BuildingClass*>,   Occupiables);
-	PROPERTY_STRUCT(DynamicVectorClass<BuildingClass*>,   CloningVats);
-	PROPERTY_STRUCT(DynamicVectorClass<BuildingClass*>,   SecretLabs);
-	PROPERTY_STRUCT(DynamicVectorClass<BuildingClass*>,   PsychicDetectionBuildings);
-	PROPERTY_STRUCT(DynamicVectorClass<BuildingClass*>,   FactoryPlants);
-	PROPERTY(int,                   CountResourceGatherers);
-	PROPERTY(int,                   CountResourceDestinations);
-	PROPERTY(int,                   CountWarfactories);
-	PROPERTY(int,                   InfantrySelfHeal);
-	PROPERTY(int,                   UnitsSelfHeal);
-	PROPERTY_STRUCT(DynamicVectorClass<StartingTechnoStruct*>,   StartingUnits);
-	PROPERTY(int,                   AIDifficulty);
-	PROPERTY(double,                FirepowerMultiplier); // used
-	PROPERTY(double,                GroundspeedMultiplier); // unused ...
-	PROPERTY(double,                AirspeedMultiplier);
-	PROPERTY(double,                ArmorMultiplier);
-	PROPERTY(double,                ROFMultiplier);
-	PROPERTY(double,                CostMultiplier);
-	PROPERTY(double,                BuildTimeMultiplier); // ... unused ends
-	PROPERTY(double,                RepairDelay);
-	PROPERTY(double,                BuildDelay);
-	PROPERTY(int,                   IQLevel);
-	PROPERTY(int,                   TechLevel);
+
+public:
+
+	int                   ArrayIndex;
+	HouseTypeClass*       Type;
+	DynamicVectorClass<TagClass*> RelatedTags;
+	DynamicVectorClass<BuildingClass*> ConYards;
+	DynamicVectorClass<BuildingClass*> Buildings;
+	DynamicVectorClass<BuildingClass*> UnitRepairStations;
+	DynamicVectorClass<BuildingClass*> Grinders;
+	DynamicVectorClass<BuildingClass*> Absorbers;
+	DynamicVectorClass<BuildingClass*> Bunkers;
+	DynamicVectorClass<BuildingClass*> Occupiables;
+	DynamicVectorClass<BuildingClass*> CloningVats;
+	DynamicVectorClass<BuildingClass*> SecretLabs;
+	DynamicVectorClass<BuildingClass*> PsychicDetectionBuildings;
+	DynamicVectorClass<BuildingClass*> FactoryPlants;
+	int                   CountResourceGatherers;
+	int                   CountResourceDestinations;
+	int                   CountWarfactories;
+	int                   InfantrySelfHeal;
+	int                   UnitsSelfHeal;
+	DynamicVectorClass<StartingTechnoStruct*> StartingUnits;
+	int                   AIDifficulty;
+	double                FirepowerMultiplier; // used
+	double                GroundspeedMultiplier; // unused ...
+	double                AirspeedMultiplier;
+	double                ArmorMultiplier;
+	double                ROFMultiplier;
+	double                CostMultiplier;
+	double                BuildTimeMultiplier; // ... unused ends
+	double                RepairDelay;
+	double                BuildDelay;
+	int                   IQLevel;
+	int                   TechLevel;
 	PROTECTED_PROPERTY(DWORD,       AltAllies); // ask question, receive brain damage
-	PROPERTY(int,                   StartingCredits);	//not sure how these are used // actual credits = this * 100
-	PROPERTY(eEdge,                  StartingEdge);		//??? use the EDGE macros
-	PROPERTY(DWORD,                 unknown_1E4);
-	PROPERTY(int,                   SideIndex);
-	PROPERTY(bool,                  CurrentPlayer);		//is controlled by the player at this computer
-	PROPERTY(bool,                  PlayerControl);		//a human controls this House
-	PROPERTY(bool,                  Production);		//AI production has begun
-	PROPERTY(bool,                  AutocreateAllowed);
+	int                   StartingCredits;	//not sure how these are used // actual credits = this * 100
+	eEdge                  StartingEdge;		//??? use the EDGE macros
+	DWORD                 unknown_1E4;
+	int                   SideIndex;
+	bool                  CurrentPlayer;		//is controlled by the player at this computer
+	bool                  PlayerControl;		//a human controls this House
+	bool                  Production;		//AI production has begun
+	bool                  AutocreateAllowed;
 	PROTECTED_PROPERTY(BYTE,        unknown_1EB[2]);
-	PROPERTY(bool,                  AITriggersActive);
-	PROPERTY(bool,                  AutoBaseBuilding);
+	bool                  AITriggersActive;
+	bool                  AutoBaseBuilding;
 	PROTECTED_PROPERTY(BYTE,        unknown_1EF[1]);
-	PROPERTY(bool,                  Defeated);
+	bool                  Defeated;
 	PROTECTED_PROPERTY(BYTE,        unknown_1D2[0x4]);
-	PROPERTY(bool,                  FirestormActive);
-	PROPERTY(bool,                  HasThreatNode);
-	PROPERTY(bool,                  ShouldRecheckTechTree);
+	bool                  FirestormActive;
+	bool                  HasThreatNode;
+	bool                  ShouldRecheckTechTree;
 	PROTECTED_PROPERTY(BYTE,        unknown_1F6[0x0F]);
-	PROPERTY(int,                   SelectedPathIndex);
-	PROPERTY_ARRAY(WaypointPathClass*, PlanningPaths, 0x0C); // 12 paths for "planning mode"
-	PROPERTY(char,                  Visionary);			//??? exe says so
-	PROPERTY(bool,                  MapIsClear);
-	PROPERTY(bool,                  unknown_bool_242);
-	PROPERTY(bool,                  unknown_bool_243);
-	PROPERTY(bool,                  unknown_bool_244);
-	PROPERTY(bool,                  Repairing); // BuildingClass::Repair, handholder for hurr durf AI
-	PROPERTY(bool,                  unknown_bool_246);
-	PROPERTY(bool,                  unknown_bool_247);
-	PROPERTY(bool,                  unknown_bool_248);
-	PROPERTY(bool,                  AllToHunt);
-	PROPERTY(bool,                  unknown_bool_24A);
-	PROPERTY(bool,                  unknown_bool_24B);
-	PROPERTY(int,                   IQLevel2);			//no idea why we got this twice
-	PROPERTY(eAIModes,              AIMode);
-	PROPERTY_STRUCT(DynamicVectorClass<SuperClass*>,   Supers);
-	PROPERTY(int,                   LastBuiltBuildingType);
-	PROPERTY(int,                   LastBuiltInfantryType);
-	PROPERTY(int,                   LastBuiltAircraftType);
-	PROPERTY(int,                   LastBuiltVehicleType);
-	PROPERTY(int,                   AllowWinBlocks); // some ra1 residue map trigger-fu, should die a painful death
-	PROPERTY_STRUCT(TimerStruct,           RepairTimer); // for AI
-	PROPERTY_STRUCT(TimerStruct,           unknown_timer_28C);
-	PROPERTY_STRUCT(TimerStruct,           unknown_timer_298);
-	PROPERTY_STRUCT(TimerStruct,           PowerBlackoutTimer);
-	PROPERTY_STRUCT(TimerStruct,           RadarBlackoutTimer);
-	PROPERTY(bool,                  Side2TechInfiltrated); // asswards! whether this player has infiltrated stuff
-	PROPERTY(bool,                  Side1TechInfiltrated); // which is listed in [AI]->BuildTech
-	PROPERTY(bool,                  Side0TechInfiltrated); // and has the appropriate AIBasePlanningSide
-	PROPERTY(bool,                  BarracksInfiltrated);
-	PROPERTY(bool,                  WarFactoryInfiltrated);
+	int                   SelectedPathIndex;
+	WaypointPathClass* PlanningPaths [0x0C]; // 12 paths for "planning mode"
+	char                  Visionary;			//??? exe says so
+	bool                  MapIsClear;
+	bool                  unknown_bool_242;
+	bool                  unknown_bool_243;
+	bool                  unknown_bool_244;
+	bool                  Repairing; // BuildingClass::Repair, handholder for hurr durf AI
+	bool                  unknown_bool_246;
+	bool                  unknown_bool_247;
+	bool                  unknown_bool_248;
+	bool                  AllToHunt;
+	bool                  unknown_bool_24A;
+	bool                  unknown_bool_24B;
+	int                   IQLevel2;			//no idea why we got this twice
+	eAIModes              AIMode;
+	DynamicVectorClass<SuperClass*> Supers;
+	int                   LastBuiltBuildingType;
+	int                   LastBuiltInfantryType;
+	int                   LastBuiltAircraftType;
+	int                   LastBuiltVehicleType;
+	int                   AllowWinBlocks; // some ra1 residue map trigger-fu, should die a painful death
+	TimerStruct RepairTimer; // for AI
+	TimerStruct unknown_timer_28C;
+	TimerStruct unknown_timer_298;
+	TimerStruct PowerBlackoutTimer;
+	TimerStruct RadarBlackoutTimer;
+	bool                  Side2TechInfiltrated; // asswards! whether this player has infiltrated stuff
+	bool                  Side1TechInfiltrated; // which is listed in [AI]->BuildTech
+	bool                  Side0TechInfiltrated; // and has the appropriate AIBasePlanningSide
+	bool                  BarracksInfiltrated;
+	bool                  WarFactoryInfiltrated;
 
 		// these four are unused horrors
 		// checking prerequisites:
@@ -554,230 +557,229 @@ public:
 		)
 			{ can build }
 		 */
-	PROPERTY(DWORD,					InfantryAltOwner);
-	PROPERTY(DWORD,					UnitAltOwner);
-	PROPERTY(DWORD,					AircraftAltOwner);
-	PROPERTY(DWORD,					BuildingAltOwner);
+	DWORD InfantryAltOwner;
+	DWORD UnitAltOwner;
+	DWORD AircraftAltOwner;
+	DWORD BuildingAltOwner;
 
-	PROPERTY(int,                   AirportDocks);
-	PROPERTY(int,                   PoweredUnitCenters);
-	PROPERTY(DWORD,					unknown_2DC);
-	PROPERTY(DWORD,					unknown_2E0);
-	PROPERTY(DWORD,					unknown_2E4);
-	PROPERTY(int,                   OwnedUnits);
-	PROPERTY(int,                   OwnedNavy);
-	PROPERTY(int,                   OwnedBuildings);
-	PROPERTY(int,                   OwnedInfantry);
-	PROPERTY(int,                   OwnedAircraft);
-	PROPERTY_STRUCT(OwnedTiberiumStruct,	OwnedTiberium);
-	PROPERTY(int,                   Balance);
+	int                   AirportDocks;
+	int                   PoweredUnitCenters;
+	DWORD unknown_2DC;
+	DWORD unknown_2E0;
+	DWORD unknown_2E4;
+	int                   OwnedUnits;
+	int                   OwnedNavy;
+	int                   OwnedBuildings;
+	int                   OwnedInfantry;
+	int                   OwnedAircraft;
+	OwnedTiberiumStruct OwnedTiberium;
+	int                   Balance;
 	PROTECTED_PROPERTY(int,			Balance_);	//somehow connected to the Balance
-	PROPERTY_STRUCT(OwnedTiberiumStruct,	unknown_OwnedTiberium_314);
-	PROPERTY(DWORD,					unknown_324);
-	PROPERTY_STRUCT(ScoreStruct,           BuiltInfantryTypes);
-	PROPERTY_STRUCT(ScoreStruct,           BuiltUnitTypes);
-	PROPERTY_STRUCT(ScoreStruct,           BuiltAircraftTypes);
-	PROPERTY_STRUCT(ScoreStruct,           BuiltBuildingTypes);
-	PROPERTY_STRUCT(ScoreStruct,           KilledInfantryTypes);
-	PROPERTY_STRUCT(ScoreStruct,           KilledUnitTypes);
-	PROPERTY_STRUCT(ScoreStruct,           KilledAircraftTypes);
-	PROPERTY_STRUCT(ScoreStruct,           KilledBuildingTypes);
-	PROPERTY_STRUCT(ScoreStruct,           UnknownScores);
-	PROPERTY_STRUCT(ScoreStruct,           CollectedPowerups);	//YES, THIS IS HOW WW WASTES TONS OF RAM
-	PROPERTY(int,                   NumAirpads);
-	PROPERTY(int,                   NumBarracks);
-	PROPERTY(int,                   NumWarFactories);
-	PROPERTY(int,                   NumConYards);
-	PROPERTY(int,                   NumShipyards);
-	PROPERTY(int,                   NumOrePurifiers);
-	PROPERTY(float,                 CostInfantryMult);
-	PROPERTY(float,                 CostUnitsMult);
-	PROPERTY(float,                 CostAircraftMult);
-	PROPERTY(float,                 CostBuildingsMult);
-	PROPERTY(float,                 CostDefensesMult);
-	PROPERTY(int,                   PowerOutput);
-	PROPERTY(int,                   PowerDrain);
-	PROPERTY(FactoryClass*,         Primary_ForAircraft);
-	PROPERTY(FactoryClass*,         Primary_ForInfantry);
-	PROPERTY(FactoryClass*,         Primary_ForVehicles);
-	PROPERTY(FactoryClass*,         Primary_ForShips);
-	PROPERTY(FactoryClass*,         Primary_ForBuildings);
-	PROPERTY(FactoryClass*,         Primary_Unused1);
-	PROPERTY(FactoryClass*,         Primary_Unused2);
-	PROPERTY(FactoryClass*,         Primary_Unused3);
-	PROPERTY(FactoryClass*,         Primary_ForDefenses);
-	PROPERTY(BYTE,					unknown_53D0);
-	PROPERTY(BYTE,					unknown_53D1);
-	PROPERTY(BYTE,					unknown_53D2);
-	PROPERTY(BYTE,					unknown_53D3);
-	PROPERTY(BYTE,					unknown_53D4);
-	PROPERTY(BYTE,					unknown_53D5);
-	PROPERTY(BYTE,					unknown_53D6);
-	PROPERTY(BYTE,					unknown_53D7);
-	PROPERTY(BYTE,					unknown_53D8);
-	PROPERTY(BYTE,					unknown_53D9);
-	PROPERTY(BYTE,					unknown_53DA);
-	PROPERTY(BYTE,					unknown_53DB);
-	PROPERTY(ObjectClass*,          OurFlagCarrier);
-	PROPERTY_STRUCT(CellStruct,            OurFlagCoords);
+	OwnedTiberiumStruct unknown_OwnedTiberium_314;
+	DWORD unknown_324;
+	ScoreStruct BuiltInfantryTypes;
+	ScoreStruct BuiltUnitTypes;
+	ScoreStruct BuiltAircraftTypes;
+	ScoreStruct BuiltBuildingTypes;
+	ScoreStruct KilledInfantryTypes;
+	ScoreStruct KilledUnitTypes;
+	ScoreStruct KilledAircraftTypes;
+	ScoreStruct KilledBuildingTypes;
+	ScoreStruct UnknownScores;
+	ScoreStruct CollectedPowerups;	//YES, THIS IS HOW WW WASTES TONS OF RAM
+	int                   NumAirpads;
+	int                   NumBarracks;
+	int                   NumWarFactories;
+	int                   NumConYards;
+	int                   NumShipyards;
+	int                   NumOrePurifiers;
+	float                 CostInfantryMult;
+	float                 CostUnitsMult;
+	float                 CostAircraftMult;
+	float                 CostBuildingsMult;
+	float                 CostDefensesMult;
+	int                   PowerOutput;
+	int                   PowerDrain;
+	FactoryClass*         Primary_ForAircraft;
+	FactoryClass*         Primary_ForInfantry;
+	FactoryClass*         Primary_ForVehicles;
+	FactoryClass*         Primary_ForShips;
+	FactoryClass*         Primary_ForBuildings;
+	FactoryClass*         Primary_Unused1;
+	FactoryClass*         Primary_Unused2;
+	FactoryClass*         Primary_Unused3;
+	FactoryClass*         Primary_ForDefenses;
+	BYTE unknown_53D0;
+	BYTE unknown_53D1;
+	BYTE unknown_53D2;
+	BYTE unknown_53D3;
+	BYTE unknown_53D4;
+	BYTE unknown_53D5;
+	BYTE unknown_53D6;
+	BYTE unknown_53D7;
+	BYTE unknown_53D8;
+	BYTE unknown_53D9;
+	BYTE unknown_53DA;
+	BYTE unknown_53DB;
+	ObjectClass*          OurFlagCarrier;
+	CellStruct OurFlagCoords;
 	//for endgame score screen
-	PROPERTY_ARRAY(int, KilledUnitsOfHouses, 0x14);		// 20 Houses only!
-	PROPERTY(int,                   TotalKilledUnits);
-	PROPERTY_ARRAY(int, KilledBuildingsOfHouses, 0x14);	// 20 Houses only!
-	PROPERTY(int,                   TotalKilledBuildings);
-	PROPERTY(DWORD,                 unknown_548C);
-	PROPERTY(CellStruct*,           BaseSpawnCell);
-	PROPERTY_STRUCT(CellStruct,            unknown_cell_5494);
-	PROPERTY(DWORD,					unknown_5498);
-	PROPERTY(DWORD,					unknown_549C);
-	PROPERTY(DWORD,					unknown_54A0);
-	PROPERTY(DWORD,					unknown_54A4);
-	PROPERTY(DWORD,					unknown_54A8);
-	PROPERTY(DWORD,					unknown_54AC);
-	PROPERTY(DWORD,					unknown_54B0);
-	PROPERTY(DWORD,					unknown_54B4);
-	PROPERTY(DWORD,					unknown_54B8);
-	PROPERTY(DWORD,					unknown_54BC);
-	PROPERTY(DWORD,					unknown_54C0);
-	PROPERTY(DWORD,					unknown_54C4);
-	PROPERTY(DWORD,					unknown_54C8);
-	PROPERTY(DWORD,					unknown_54CC);
-	PROPERTY(DWORD,					unknown_54D0);
-	PROPERTY(DWORD,					unknown_54D4);
-	PROPERTY(DWORD,					unknown_54D8);
-	PROPERTY(DWORD,					unknown_54DC);
-	PROPERTY(DWORD,					unknown_54E0);
-//	PROPERTY(IndexBitfield<HouseTypeClass *>, RadarVisibleTo); // these house types(!?!, fuck you WW) can see my radar
-	PROPERTY(IndexBitfield<HouseClass *>, RadarVisibleTo); // this crap is being rewritten to use house indices instead of house types
-	PROPERTY(int,                   SiloMoney);
-	PROPERTY(int,                   PreferredTargetWaypoint); // set via map actions
-	PROPERTY_STRUCT(CellStruct,            unknown_54F0);
-	PROPERTY_STRUCT(CellStruct,            unknown_54F4);
-	PROPERTY_STRUCT(CellStruct,            unknown_54F8);
-	PROPERTY(int,                   PreferredDefensiveCellStartTime); // don't look at me...
+	int KilledUnitsOfHouses [0x14];		// 20 Houses only!
+	int                   TotalKilledUnits;
+	int KilledBuildingsOfHouses [0x14];	// 20 Houses only!
+	int                   TotalKilledBuildings;
+	DWORD                 unknown_548C;
+	CellStruct*           BaseSpawnCell;
+	CellStruct unknown_cell_5494;
+	DWORD unknown_5498;
+	DWORD unknown_549C;
+	DWORD unknown_54A0;
+	DWORD unknown_54A4;
+	DWORD unknown_54A8;
+	DWORD unknown_54AC;
+	DWORD unknown_54B0;
+	DWORD unknown_54B4;
+	DWORD unknown_54B8;
+	DWORD unknown_54BC;
+	DWORD unknown_54C0;
+	DWORD unknown_54C4;
+	DWORD unknown_54C8;
+	DWORD unknown_54CC;
+	DWORD unknown_54D0;
+	DWORD unknown_54D4;
+	DWORD unknown_54D8;
+	DWORD unknown_54DC;
+	DWORD unknown_54E0;
+//	IndexBitfield<HouseTypeClass *> RadarVisibleTo; // these house types(!?!, fuck you WW) can see my radar
+	IndexBitfield<HouseClass *> RadarVisibleTo; // this crap is being rewritten to use house indices instead of house types
+	int                   SiloMoney;
+	int                   PreferredTargetWaypoint; // set via map actions
+	CellStruct unknown_54F0;
+	CellStruct unknown_54F4;
+	CellStruct unknown_54F8;
+	int                   PreferredDefensiveCellStartTime; // don't look at me...
 	                                // map actions let you set an ai's ForceShield firing cell, this is related
 
 		// Used for: Counting objects ever owned
 		// altered on object gain only
 		// BuildLimit < 0 validation uses this
-	PROPERTY_STRUCT(CounterClass,          OwnedBuildingTypes);
-	PROPERTY_STRUCT(CounterClass,          OwnedUnitTypes);
-	PROPERTY_STRUCT(CounterClass,          OwnedInfantryTypes);
-	PROPERTY_STRUCT(CounterClass,          OwnedAircraftTypes);
+	CounterClass OwnedBuildingTypes;
+	CounterClass OwnedUnitTypes;
+	CounterClass OwnedInfantryTypes;
+	CounterClass OwnedAircraftTypes;
 
 		// Used for: Counting objects currently owned
 		// altered on each object's loss or gain
 		// AITriggerType condition uses this
-	PROPERTY_STRUCT(CounterClass,          OwnedBuildingTypes1);
-	PROPERTY_STRUCT(CounterClass,          OwnedUnitTypes1);
-	PROPERTY_STRUCT(CounterClass,          OwnedInfantryTypes1);
-	PROPERTY_STRUCT(CounterClass,          OwnedAircraftTypes1);
+	CounterClass OwnedBuildingTypes1;
+	CounterClass OwnedUnitTypes1;
+	CounterClass OwnedInfantryTypes1;
+	CounterClass OwnedAircraftTypes1;
 
 		// Used for: Counting objects produced from Factory
 		// not altered when things get taken over or removed
 		// BuildLimit > 0 uses this
-	PROPERTY_STRUCT(CounterClass,          OwnedBuildingTypes2);
-	PROPERTY_STRUCT(CounterClass,          OwnedUnitTypes2);
-	PROPERTY_STRUCT(CounterClass,          OwnedInfantryTypes2);
-	PROPERTY_STRUCT(CounterClass,          OwnedAircraftTypes2);
-	PROPERTY(DWORD,					unknown_55F0);
-	PROPERTY(DWORD,					unknown_55F4);
-	PROPERTY(int,                   AttackDelayA);
-	PROPERTY(int,                   AttackDelayB); // both unused
-	PROPERTY(int,                   EnemyHouseIndex);
-	PROPERTY_STRUCT(DynamicVectorClass<AngerStruct>,   AngerNodes); //arghghghgh bugged
-	PROPERTY_STRUCT(DynamicVectorClass<ScoutStruct>,   ScoutNodes); // filled with data which is never used, jood gob WW
-	PROPERTY_STRUCT(TimerStruct,           unkTimer3);
-	PROPERTY_STRUCT(TimerStruct,           unkTimer4);
-	PROPERTY(int,                   ProducingBuildingTypeIndex);
-	PROPERTY(int,                   ProducingUnitTypeIndex);
-	PROPERTY(int,                   ProducingInfantryTypeIndex);
-	PROPERTY(int,                   ProducingAircraftTypeIndex);
-	PROPERTY(int,                   RatioAITriggerTeam);
-	PROPERTY(int,                   RatioTeamAircraft);
-	PROPERTY(int,                   RatioTeamInfantry);
-	PROPERTY(int,                   RatioTeamBuildings);
-	PROPERTY(int,                   BaseDefenseTeamCount);
-	PROPERTY(DWORD,					unknown_5670);
-	PROPERTY(DWORD,					unknown_5674);
-	PROPERTY(DWORD,					unknown_5678);
-	PROPERTY(DWORD,					unknown_567C);
-	PROPERTY(DWORD,					unknown_5680);
-	PROPERTY(DWORD,					unknown_5684);
-	PROPERTY(DWORD,					unknown_5688);
-	PROPERTY(DWORD,					unknown_568C);
-	PROPERTY(DWORD,					unknown_5690);
-	PROPERTY(DWORD,					unknown_5694);
-	PROPERTY(DWORD,					unknown_5698);
-	PROPERTY(DWORD,					unknown_569C);
-	PROPERTY(DWORD,					unknown_56A0);
-	PROPERTY(DWORD,					unknown_56A4);
-	PROPERTY(DWORD,					unknown_56A8);
-	PROPERTY(DWORD,					unknown_56AC);
-	PROPERTY(DWORD,					unknown_56B0);
-	PROPERTY(DWORD,					unknown_56B4);
-	PROPERTY(DWORD,					unknown_56B8);
-	PROPERTY(DWORD,					unknown_56BC);
-	PROPERTY(DWORD,					unknown_56C0);
-	PROPERTY(DWORD,					unknown_56C4);
-	PROPERTY(DWORD,					unknown_56C8);
-	PROPERTY(DWORD,					unknown_56CC);
-	PROPERTY(DWORD,					unknown_56D0);
-	PROPERTY(DWORD,					unknown_56D4);
-	PROPERTY(DWORD,					unknown_56D8);
-	PROPERTY(DWORD,					unknown_56DC);
-	PROPERTY(DWORD,					unknown_56E0);
-	PROPERTY(DWORD,					unknown_56E4);
-	PROPERTY(DWORD,					unknown_56E8);
-	PROPERTY(DWORD,					unknown_56EC);
-	PROPERTY(DWORD,					unknown_56F0);
-	PROPERTY(DWORD,					unknown_56F4);
-	PROPERTY(byte,          HasCloakingRanges); // don't ask
-	PROPERTY_STRUCT(ColorStruct,           Color);
-	PROPERTY_STRUCT(ColorStruct,           Color2); // my idb says so
-	PROPERTY(byte,          padding);
-	PROPERTY_STRUCT(BaseClass,             Base);
-	PROPERTY(bool,                  PowerBlackout);
-	PROPERTY(bool,                  RadarBlackout);
-	PROPERTY(bool,                  SpySatActive);
-	PROPERTY(bool,                  IsBeingDrained);
-	PROPERTY(eEdge,                   Edge); //??? use the EDGE macros
-	PROPERTY_STRUCT(CellStruct,            EMPTarget);
-	PROPERTY_STRUCT(CellStruct,            NukeTarget);
-	PROPERTY(DWORD,                 Allies);	//flags, one bit per HouseClass instance
+	CounterClass OwnedBuildingTypes2;
+	CounterClass OwnedUnitTypes2;
+	CounterClass OwnedInfantryTypes2;
+	CounterClass OwnedAircraftTypes2;
+	DWORD unknown_55F0;
+	DWORD unknown_55F4;
+	int                   AttackDelayA;
+	int                   AttackDelayB; // both unused
+	int                   EnemyHouseIndex;
+	DynamicVectorClass<AngerStruct> AngerNodes; //arghghghgh bugged
+	DynamicVectorClass<ScoutStruct> ScoutNodes; // filled with data which is never used, jood gob WW
+	TimerStruct unkTimer3;
+	TimerStruct unkTimer4;
+	int                   ProducingBuildingTypeIndex;
+	int                   ProducingUnitTypeIndex;
+	int                   ProducingInfantryTypeIndex;
+	int                   ProducingAircraftTypeIndex;
+	int                   RatioAITriggerTeam;
+	int                   RatioTeamAircraft;
+	int                   RatioTeamInfantry;
+	int                   RatioTeamBuildings;
+	int                   BaseDefenseTeamCount;
+	DWORD unknown_5670;
+	DWORD unknown_5674;
+	DWORD unknown_5678;
+	DWORD unknown_567C;
+	DWORD unknown_5680;
+	DWORD unknown_5684;
+	DWORD unknown_5688;
+	DWORD unknown_568C;
+	DWORD unknown_5690;
+	DWORD unknown_5694;
+	DWORD unknown_5698;
+	DWORD unknown_569C;
+	DWORD unknown_56A0;
+	DWORD unknown_56A4;
+	DWORD unknown_56A8;
+	DWORD unknown_56AC;
+	DWORD unknown_56B0;
+	DWORD unknown_56B4;
+	DWORD unknown_56B8;
+	DWORD unknown_56BC;
+	DWORD unknown_56C0;
+	DWORD unknown_56C4;
+	DWORD unknown_56C8;
+	DWORD unknown_56CC;
+	DWORD unknown_56D0;
+	DWORD unknown_56D4;
+	DWORD unknown_56D8;
+	DWORD unknown_56DC;
+	DWORD unknown_56E0;
+	DWORD unknown_56E4;
+	DWORD unknown_56E8;
+	DWORD unknown_56EC;
+	DWORD unknown_56F0;
+	DWORD unknown_56F4;
+	byte          HasCloakingRanges; // don't ask
+	ColorStruct Color;
+	ColorStruct Color2; // my idb says so
+	byte          padding;
+	BaseClass Base;
+	bool                  PowerBlackout;
+	bool                  RadarBlackout;
+	bool                  SpySatActive;
+	bool                  IsBeingDrained;
+	eEdge                   Edge; //??? use the EDGE macros
+	CellStruct EMPTarget;
+	CellStruct NukeTarget;
+	DWORD                 Allies;	//flags, one bit per HouseClass instance
 	                                        	//-> 32 players possible here
-	PROPERTY_STRUCT(TimerStruct,           unknown_timer_5788);
-	PROPERTY_STRUCT(TimerStruct,           TeamDelayTimer); // for AI attacks
-	PROPERTY_STRUCT(TimerStruct,           unknown_timer_A);
-	PROPERTY_STRUCT(TimerStruct,           unknown_timer_B);
-	PROPERTY_STRUCT(TimerStruct,           unknown_timer_C);
-	PROPERTY_STRUCT(TimerStruct,           unknown_timer_D);
-	PROPERTY_STRUCT(TimerStruct,           unknown_timer_E);
-	PROPERTY(DWORD,					unknown_57DC);
+	TimerStruct unknown_timer_5788;
+	TimerStruct TeamDelayTimer; // for AI attacks
+	TimerStruct unknown_timer_A;
+	TimerStruct unknown_timer_B;
+	TimerStruct unknown_timer_C;
+	TimerStruct unknown_timer_D;
+	TimerStruct unknown_timer_E;
+	DWORD unknown_57DC;
 
-protected:
 	unsigned int                    ThreatPosedEstimates[130][130]; // BLARGH
 
-	PROPERTY_STRING(PlainName,		0x15); // this defaults to the owner country's name in SP or <human player><computer player> in MP. Used as owner for preplaced map objects
-	PROPERTY_STRING(UINameString, 0x20); // this contains the UIName= text from the INI! or
-	PROPERTY_UNICODE(UIName,			0x15); // this contains the CSF string from UIName= above, or a copy of the country's UIName if not defined. Take note that this is shorter than the country's UIName can be...
-	PROPERTY(int,                   ColorSchemeIndex);
-	PROPERTY_STRUCT(CellStruct,            StartingCell);
-	PROPERTY(DWORD,                 StartingAllies);
-	PROPERTY(DWORD,                 unknown_16060);
-	PROPERTY_STRUCT(DynamicVectorClass<IConnectionPoint*>,   WaypointPath);
-	PROPERTY(DWORD,					unknown_1607C);
-	PROPERTY(DWORD,					unknown_16080);
-	PROPERTY(DWORD,					unknown_16084);
-	PROPERTY(double,				unknown_double_16088);
-	PROPERTY(double,				unknown_double_16090);
-	PROPERTY(double,				unknown_double_16098);
-	PROPERTY(float,					unknown_float_160A0);
-	PROPERTY(float,					unknown_float_160A4);
-	PROPERTY(int,					TotalOwnedInfantryCost);
-	PROPERTY(int,                   TotalOwnedVehicleCost);
-	PROPERTY(int,                   TotalOwnedAircraftCost);
-	PROPERTY(DWORD,					unknown_160B4);
+	char PlainName [0x15]; // this defaults to the owner country's name in SP or <human player><computer player> in MP. Used as owner for preplaced map objects
+	char UINameString [0x20]; // this contains the UIName= text from the INI! or
+	wchar_t UIName [0x15]; // this contains the CSF string from UIName= above, or a copy of the country's UIName if not defined. Take note that this is shorter than the country's UIName can be...
+	int                   ColorSchemeIndex;
+	CellStruct StartingCell;
+	DWORD                 StartingAllies;
+	DWORD                 unknown_16060;
+	DynamicVectorClass<IConnectionPoint*> WaypointPath;
+	DWORD unknown_1607C;
+	DWORD unknown_16080;
+	DWORD unknown_16084;
+	double unknown_double_16088;
+	double unknown_double_16090;
+	double unknown_double_16098;
+	float unknown_float_160A0;
+	float unknown_float_160A4;
+	int TotalOwnedInfantryCost;
+	int                   TotalOwnedVehicleCost;
+	int                   TotalOwnedAircraftCost;
+	DWORD unknown_160B4;
 };
 
 #endif

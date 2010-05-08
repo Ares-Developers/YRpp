@@ -40,8 +40,11 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY_ARRAY(eRadioCommands, LastCommands, 3); // new command updates these
-	PROPERTY_STRUCT(VectorClass<TechnoClass*>,	RadioLinks);	//Docked units etc
+
+public:
+
+	eRadioCommands LastCommands [3]; // new command updates these
+	VectorClass<TechnoClass*> RadioLinks;	//Docked units etc
 };
 
 #endif

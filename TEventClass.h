@@ -68,14 +68,17 @@ public:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(int,               indexInArray);
-	PROPERTY(TEventClass*,       NextEvent);
-	PROPERTY(int,               EventKind);
-	PROPERTY(void*,             TeamType); // AITeamTypeClass*, really
-	PROPERTY(int,               arg);
-	PROPERTY_STRING(TechnoName, 0x1C); // YR introduced this sort of referencing
+
+public:
+
+	int               indexInArray;
+	TEventClass*       NextEvent;
+	int               EventKind;
+	void*             TeamType; // AITeamTypeClass*, really
+	int               arg;
+	char TechnoName [0x1C]; // YR introduced this sort of referencing
 	                                   // must've been to hard to follow the old convention of simple indexing
-	PROPERTY(HouseClass*,       House);
+	HouseClass*       House;
 
 };
 

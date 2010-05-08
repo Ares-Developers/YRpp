@@ -41,19 +41,22 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(InfantryTypeClass*, Type);
-	PROPERTY(int,            SequenceAnim); //which is currently playing
-	PROPERTY_STRUCT(TimerStruct,    unknown_Timer_6C8);
-	PROPERTY(DWORD,          PanicDurationLeft); // set in ReceiveDamage on panicky units
-	PROPERTY(bool,           unknown_bool_6D8);
-	PROPERTY(bool,           Technician);
-	PROPERTY(bool,           unknown_bool_6DA);
-	PROPERTY(bool,           Crawling);
-	PROPERTY(bool,           unknown_bool_6DC);
-	PROPERTY(bool,           unknown_bool_6DD);
-	PROPERTY(DWORD,          unknown_6E0);
-	PROPERTY(bool,           unknown_bool_6E4);
-	PROPERTY(int,            unknown_int_6E8);
+
+public:
+
+	InfantryTypeClass* Type;
+	int            SequenceAnim; //which is currently playing
+	TimerStruct unknown_Timer_6C8;
+	DWORD          PanicDurationLeft; // set in ReceiveDamage on panicky units
+	bool           unknown_bool_6D8;
+	bool           Technician;
+	bool           unknown_bool_6DA;
+	bool           Crawling;
+	bool           unknown_bool_6DC;
+	bool           unknown_bool_6DD;
+	DWORD          unknown_6E0;
+	bool           unknown_bool_6E4;
+	int            unknown_int_6E8;
 	PROTECTED_PROPERTY(DWORD, unused_6EC); //??
 };
 

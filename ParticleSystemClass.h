@@ -47,21 +47,23 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(ParticleSystemTypeClass*, Type);
-	PROPERTY(DWORD,        unknown_B0);
-	PROPERTY(DWORD,        unknown_B4);
-	PROPERTY(DWORD,        unknown_B8);
-	PROPERTY_STRUCT(DynamicVectorClass<ParticleClass*>, Particles);
-	PROPERTY_STRUCT(CoordStruct, unknown_coords_D4);
-	PROPERTY(TechnoClass*, Owner);
-	PROPERTY(CellClass*,   unknown_cell_E4);
-	PROPERTY(int,          SpawnFrames); //from ParSysTypeClass
-	PROPERTY(int,          Lifetime); //from ParSysTypeClass
-	PROPERTY(int,          SparkSpawnFrames); //from ParSysTypeClass
-	PROPERTY(int,          unknown_int_F4); //defaults to 29
-	PROPERTY(bool,         unknown_bool_F8);
-	PROPERTY(bool,         unknown_bool_F9);
-	PROPERTY(DWORD,        unknown_FC);
+public:
+
+	ParticleSystemTypeClass* Type;
+	DWORD        unknown_B0;
+	DWORD        unknown_B4;
+	DWORD        unknown_B8;
+	DynamicVectorClass<ParticleClass*> Particles;
+	CoordStruct unknown_coords_D4;
+	TechnoClass* Owner;
+	CellClass*   unknown_cell_E4;
+	int          SpawnFrames; //from ParSysTypeClass
+	int          Lifetime; //from ParSysTypeClass
+	int          SparkSpawnFrames; //from ParSysTypeClass
+	int          unknown_int_F4; //defaults to 29
+	bool         unknown_bool_F8;
+	bool         unknown_bool_F9;
+	DWORD        unknown_FC;
 };
 
 #endif

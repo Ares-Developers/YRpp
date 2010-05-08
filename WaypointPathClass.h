@@ -10,13 +10,12 @@ public:
 	//need to define a == operator so it can be used in array classes
 	bool operator == (WaypointClass tWaypoint)
 	{
-		return (Coords == *tWaypoint.get_Coords() &&
-				unknown == tWaypoint.unknown);
+		return (Coords == tWaypoint.Coords && unknown == tWaypoint.unknown);
 	}
 
 	//Properties
-	PROPERTY_STRUCT(CellStruct,  Coords);
-	PROPERTY(DWORD,       unknown);
+	CellStruct Coords;
+	DWORD       unknown;
 };
 
 class WaypointPathClass : public AbstractClass
@@ -57,8 +56,11 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(int,  CurrentWaypointIndex); //seems that way
-	PROPERTY_STRUCT(DynamicVectorClass<WaypointClass>,  Waypoints); // actual path waypoints, no *
+
+public:
+
+	int  CurrentWaypointIndex; //seems that way
+	DynamicVectorClass<WaypointClass> Waypoints; // actual path waypoints, no *
 };
 
 #endif

@@ -60,22 +60,24 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(LightSourceClass*,    LightSource);
-	PROPERTY_STRUCT(TimerStruct,   RadLevelTimer);
-	PROPERTY_STRUCT(TimerStruct,   RadLightTimer);
-	PROPERTY_STRUCT(CellStruct,    BaseCell);
-	PROPERTY(int,       Spread);	//CellSpread in cells.
-	PROPERTY(int,       Spread_Leptons);	//CellSpread in leptons.
-	PROPERTY(int,       RadLevel);
-	PROPERTY(DWORD,     unknown_50);
-	PROPERTY(DWORD,     unknown_54);
-	PROPERTY(DWORD,     unknown_58);	//unused?
-	PROPERTY(DWORD,     unknown_5C);	//unused?
-	PROPERTY(DWORD,     unknown_60);	//unused?
-	PROPERTY(DWORD,     unknown_64);
-	PROPERTY(DWORD,     unknown_68);
-	PROPERTY(DWORD,     RadLevel_Start);
-	PROPERTY(DWORD,     RadLevel_Current);
+public:
+
+	LightSourceClass*    LightSource;
+	TimerStruct RadLevelTimer;
+	TimerStruct RadLightTimer;
+	CellStruct BaseCell;
+	int       Spread;	//CellSpread in cells.
+	int       Spread_Leptons;	//CellSpread in leptons.
+	int       RadLevel;
+	DWORD     unknown_50;
+	DWORD     unknown_54;
+	DWORD     unknown_58;	//unused?
+	DWORD     unknown_5C;	//unused?
+	DWORD     unknown_60;	//unused?
+	DWORD     unknown_64;
+	DWORD     unknown_68;
+	DWORD     RadLevel_Start;
+	DWORD     RadLevel_Current;
 };
 
 #endif

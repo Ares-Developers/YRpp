@@ -94,91 +94,93 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(int,             PlanningPathIdx); // which planning path am I following?
-	PROPERTY(short,           unknown_short_524);
-	PROPERTY(short,           unknown_short_526);
-	PROPERTY(short,           unknown_short_528);
-	PROPERTY(short,           unknown_short_52A);
-	PROPERTY(DWORD,           unknown_52C);	//unused?
-	PROPERTY(DWORD,           unknown_530);
-	PROPERTY(DWORD,           unknown_534);
-	PROPERTY(DWORD,           unknown_538);
-	PROPERTY(bool,            unknown_bool_53C);
-	PROPERTY(DWORD,           unknown_540);
+public:
 
-	PROPERTY_STRUCT(AudioController, Audio7);
+	int             PlanningPathIdx; // which planning path am I following?
+	short           unknown_short_524;
+	short           unknown_short_526;
+	short           unknown_short_528;
+	short           unknown_short_52A;
+	DWORD           unknown_52C;	//unused?
+	DWORD           unknown_530;
+	DWORD           unknown_534;
+	DWORD           unknown_538;
+	bool            unknown_bool_53C;
+	DWORD           unknown_540;
 
-	PROPERTY_STRUCT(CellStruct,      CurrentMapCoords);
-	PROPERTY_STRUCT(CellStruct,      LastMapCoords); // ::UpdatePosition uses this to remove threat from last occupied cell, etc
-	PROPERTY(short,           unknown_short_560);
-	PROPERTY(short,           unknown_short_562);
-	PROPERTY(short,           unknown_short_564);
-	PROPERTY(short,           unknown_short_566);
-	PROPERTY(DWORD,           unknown_568);
-	PROPERTY(DWORD,           unknown_56C);
-	PROPERTY(DWORD,           unknown_570);
-	PROPERTY(DWORD,           unknown_574);	//unused?
-	PROPERTY(DWORD,           unknown_578);
-	PROPERTY(DWORD,           unknown_57C);
-	PROPERTY(double,          SpeedMultiplier);
-	PROPERTY_STRUCT(DynamicVectorClass<AbstractClass*>,  unknown_abstract_array_588);
-	PROPERTY(DWORD,           unknown_5A0);
-	PROPERTY(CellClass*,      Destination); // possibly other objects as well
-	PROPERTY(DWORD,           unknown_5A8);
-	PROPERTY_STRUCT(DynamicVectorClass<AbstractClass*>,  unknown_abstract_array_5AC);
-	PROPERTY(int,             unknown_int_5C4);
-	PROPERTY(DWORD,           unknown_5C8);
-	PROPERTY(DWORD,           unknown_5CC);
-	PROPERTY(BYTE,            unknown_5D0);	//unused?
-	PROPERTY(bool,            unknown_bool_5D1);
-	PROPERTY(TeamClass*,      Team);
-	PROPERTY(FootClass*,      NextTeamMember);        //next unit in team
-	PROPERTY(DWORD,           unknown_5DC);
-	PROPERTY(int,             unknown_int_5E0);
+	AudioController Audio7;
+
+	CellStruct CurrentMapCoords;
+	CellStruct LastMapCoords; // ::UpdatePosition uses this to remove threat from last occupied cell, etc
+	short           unknown_short_560;
+	short           unknown_short_562;
+	short           unknown_short_564;
+	short           unknown_short_566;
+	DWORD           unknown_568;
+	DWORD           unknown_56C;
+	DWORD           unknown_570;
+	DWORD           unknown_574;	//unused?
+	DWORD           unknown_578;
+	DWORD           unknown_57C;
+	double          SpeedMultiplier;
+	DynamicVectorClass<AbstractClass*> unknown_abstract_array_588;
+	DWORD           unknown_5A0;
+	CellClass*      Destination; // possibly other objects as well
+	DWORD           unknown_5A8;
+	DynamicVectorClass<AbstractClass*> unknown_abstract_array_5AC;
+	int             unknown_int_5C4;
+	DWORD           unknown_5C8;
+	DWORD           unknown_5CC;
+	BYTE            unknown_5D0;	//unused?
+	bool            unknown_bool_5D1;
+	TeamClass*      Team;
+	FootClass*      NextTeamMember;        //next unit in team
+	DWORD           unknown_5DC;
+	int             unknown_int_5E0;
 
 	PROTECTED_PROPERTY(BYTE,  unknown_5E4[0x5C]);
 
-	PROPERTY_STRUCT(TimerStruct,     unknown_timer_640);
-	PROPERTY(int,             unknown_int_64C);
-	PROPERTY_STRUCT(TimerStruct,     unknown_timer_650);
+	TimerStruct unknown_timer_640;
+	int             unknown_int_64C;
+	TimerStruct unknown_timer_650;
 
 	PROTECTED_PROPERTY(BYTE,  unknown_65C[0x8]);
 
-	PROPERTY(DWORD,             unknown_664);
-	PROPERTY_STRUCT(TimerStruct,       unknown_timer_668);
-	PROPERTY_PTR(ILocomotion*,  Locomotor);
-	PROPERTY_STRUCT(CoordStruct,       unknown_point3d_678);
-	PROPERTY(signed char,       TubeIndex);	//I'm in this tunnel
-	PROPERTY(bool,              unknown_bool_685);
-	PROPERTY(signed char,       WaypointIndex); // which waypoint in my planning path am I following?
-	PROPERTY(bool,              unknown_bool_687);
-	PROPERTY(bool,              unknown_bool_688);
-	PROPERTY(bool,              IsTeamLeader);
-	PROPERTY(bool,              ShouldScanForTarget);
-	PROPERTY(bool,              unknown_bool_68B);
-	PROPERTY(bool,              unknown_bool_68C);
-	PROPERTY(bool,              unknown_bool_68D);
-	PROPERTY(bool,              unknown_bool_68E);
-	PROPERTY(bool,              unknown_bool_68F);
-	PROPERTY(bool,              unknown_bool_690);
-	PROPERTY(bool,              unknown_bool_691);
-	PROPERTY(FootClass*,        ParasiteEatingMe); // the tdrone/squid that's eating me
-	PROPERTY(DWORD,             unknown_698);
-	PROPERTY(ParasiteClass*,    ParasiteImUsing);	// my parasitic half, nonzero for, eg, terror drone or squiddy
-	PROPERTY_STRUCT(TimerStruct,       ParalysisTimer); // for squid victims
-	PROPERTY(bool,              unknown_bool_6AC);
-	PROPERTY(bool,              unknown_bool_6AD);
-	PROPERTY(bool,              unknown_bool_6AE);
-	PROPERTY(bool,              unknown_bool_6AF);
-	PROPERTY(bool,              unknown_bool_6B0);
-	PROPERTY(bool,              unknown_bool_6B1);
-	PROPERTY(bool,              unknown_bool_6B2);
-	PROPERTY(bool,              unknown_bool_6B3);
-	PROPERTY(bool,              unknown_bool_6B4);
-	PROPERTY(bool,              unknown_bool_6B5);
-	PROPERTY(bool,              FrozenStill); // frozen in first frame of the proper facing - when magnetron'd or warping
-	PROPERTY(bool,              unknown_bool_6B7);
-	PROPERTY(bool,              unknown_bool_6B8);
+	DWORD             unknown_664;
+	TimerStruct unknown_timer_668;
+	ILocomotion*  Locomotor;
+	CoordStruct unknown_point3d_678;
+	signed char       TubeIndex;	//I'm in this tunnel
+	bool              unknown_bool_685;
+	signed char       WaypointIndex; // which waypoint in my planning path am I following?
+	bool              unknown_bool_687;
+	bool              unknown_bool_688;
+	bool              IsTeamLeader;
+	bool              ShouldScanForTarget;
+	bool              unknown_bool_68B;
+	bool              unknown_bool_68C;
+	bool              unknown_bool_68D;
+	bool              unknown_bool_68E;
+	bool              unknown_bool_68F;
+	bool              unknown_bool_690;
+	bool              unknown_bool_691;
+	FootClass*        ParasiteEatingMe; // the tdrone/squid that's eating me
+	DWORD             unknown_698;
+	ParasiteClass*    ParasiteImUsing;	// my parasitic half, nonzero for, eg, terror drone or squiddy
+	TimerStruct ParalysisTimer; // for squid victims
+	bool              unknown_bool_6AC;
+	bool              unknown_bool_6AD;
+	bool              unknown_bool_6AE;
+	bool              unknown_bool_6AF;
+	bool              unknown_bool_6B0;
+	bool              unknown_bool_6B1;
+	bool              unknown_bool_6B2;
+	bool              unknown_bool_6B3;
+	bool              unknown_bool_6B4;
+	bool              unknown_bool_6B5;
+	bool              FrozenStill; // frozen in first frame of the proper facing - when magnetron'd or warping
+	bool              unknown_bool_6B7;
+	bool              unknown_bool_6B8;
 	PROTECTED_PROPERTY(DWORD,   unused_6BC);	//???
 };
 

@@ -7,8 +7,8 @@
 
 class SwizzlePointerClass
 {
-	PROPERTY(DWORD, unknown_0); //no idea, only found it being zero
-	PROPERTY(void*, pAnything); //the pointer, to literally any object type
+	DWORD unknown_0; //no idea, only found it being zero
+	void* pAnything; //the pointer, to literally any object type
 
 public:
 	bool operator==(SwizzlePointerClass tOther)
@@ -49,8 +49,11 @@ public:
 	virtual ~SwizzleManagerClass() RX;
 
 	//Properties
-	PROPERTY_STRUCT(DynamicVectorClass<SwizzlePointerClass>, Swizzles_Old);
-	PROPERTY_STRUCT(DynamicVectorClass<SwizzlePointerClass>, Swizzles_New);
+
+public:
+
+	DynamicVectorClass<SwizzlePointerClass> Swizzles_Old;
+	DynamicVectorClass<SwizzlePointerClass> Swizzles_New;
 
 };
 

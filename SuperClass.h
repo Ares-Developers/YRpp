@@ -62,28 +62,30 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(DWORD,					unknown_24);
-	PROPERTY(SuperWeaponTypeClass*,	Type);
-	PROPERTY(HouseClass*,			Owner);
-	PROPERTY_STRUCT(TimerStruct,			RechargeTimer);
-	PROPERTY(DWORD,					unknown_3C);		//unused?
-	PROPERTY(bool,					unknown_bool_40);
-	PROPERTY(DWORD,					unknown_44);		//unused?
-	PROPERTY(DWORD,					unknown_48);
-	PROPERTY(DWORD,					unknown_4C);
-	PROPERTY(int,					SpecialSoundDuration); // see 0x6CD14F
-	PROPERTY_STRUCT(CoordStruct,	SpecialSoundLocation);		//unused?
-	PROPERTY(bool,					unknown_bool_60);          // 0x60
-	PROPERTY_STRUCT(CellStruct,			ChronoMapCoords);  // 0x62
-	PROPERTY(AnimClass *,		Animation);                // 0x68
-	PROPERTY(bool,					unknown_bool_6C);
-	PROPERTY(bool,					Granted);
-	PROPERTY(bool,					Quantity); // Stupidity - 0 means unlimited, 1 means one-shot
-	PROPERTY(bool,					IsCharged);
-	PROPERTY(bool,					HasPower);
-	PROPERTY(int,					ReadinessFrame); // when did it become ready?
-	PROPERTY(DWORD,					unknown_78);
-	PROPERTY(DWORD,					ChargeDrainState);
+public:
+
+	DWORD unknown_24;
+	SuperWeaponTypeClass* Type;
+	HouseClass* Owner;
+	TimerStruct RechargeTimer;
+	DWORD unknown_3C;		//unused?
+	bool unknown_bool_40;
+	DWORD unknown_44;		//unused?
+	DWORD unknown_48;
+	DWORD unknown_4C;
+	int SpecialSoundDuration; // see 0x6CD14F
+	CoordStruct SpecialSoundLocation;		//unused?
+	bool unknown_bool_60;          // 0x60
+	CellStruct ChronoMapCoords;  // 0x62
+	AnimClass * Animation;                // 0x68
+	bool unknown_bool_6C;
+	bool Granted;
+	bool Quantity; // Stupidity - 0 means unlimited, 1 means one-shot
+	bool IsCharged;
+	bool HasPower;
+	int ReadinessFrame; // when did it become ready?
+	DWORD unknown_78;
+	DWORD ChargeDrainState;
 };
 
 class LightningStorm

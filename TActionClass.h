@@ -279,25 +279,28 @@ public:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(int,                IndexInArray);
-	PROPERTY(TActionClass*,      NextTAction);
-	PROPERTY(int,                ActionKind);
-	PROPERTY(void*,              TeamType); // AITeamTypeClass*, really
-	PROPERTY(int,                arg3);
-	PROPERTY(int,                arg4);
-	PROPERTY(int,                arg5);
-	PROPERTY(int,                arg6);
-	PROPERTY(int,                arg7);
-	PROPERTY(int,                arg_48); // multipurpose
-	PROPERTY(TagTypeClass*,      TagType);
-	PROPERTY(TriggerTypeClass*,  TriggerType);
-	PROPERTY_STRING(text1, 0x18);
-	PROPERTY_STRING(text2, 0x20); // first char is actually reserved for \0 of the earlier string
-	PROPERTY(bool,               unknown_8C);
-	PROPERTY(bool,               padding_8D);
-	PROPERTY(bool,               padding_8E);
-	PROPERTY(bool,               padding_8F);
-	PROPERTY(int,                arg_90); // multipurpose
+
+public:
+
+	int                IndexInArray;
+	TActionClass*      NextTAction;
+	int                ActionKind;
+	void*              TeamType; // AITeamTypeClass*, really
+	int                arg3;
+	int                arg4;
+	int                arg5;
+	int                arg6;
+	int                arg7;
+	int                arg_48; // multipurpose
+	TagTypeClass*      TagType;
+	TriggerTypeClass*  TriggerType;
+	char text1 [0x18];
+	char text2 [0x20]; // first char is actually reserved for \0 of the earlier string
+	bool               unknown_8C;
+	bool               padding_8D;
+	bool               padding_8E;
+	bool               padding_8F;
+	int                arg_90; // multipurpose
 
 };
 

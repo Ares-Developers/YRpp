@@ -40,6 +40,9 @@ ALIAS(AudioIDXData *, AudioIDXData::IDX, 0x87E294);
 ALIAS(AudioStream *, AudioStream::Instance, 0xB1D4D8);
 ALIAS(DWORD *, AudioController::Audio_IDX_Container, 0x87E294);
 
+#include <BombListClass.h>
+ALIAS(BombListClass *, BombListClass::Instance, 0x87F5D8);
+
 #include <BulletClass.h>
 DECL(BulletClass, 0xA8ED40);
 

@@ -45,43 +45,46 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(eLandType, MovementRestrictedTo);
-	PROPERTY_STRUCT(CoordStruct, HalfDamageSmokeLocation);
-	PROPERTY(bool, Passive);
-	PROPERTY(bool, CrateGoodie);
-	PROPERTY(bool, Harvester);
-	PROPERTY(bool, Weeder);
-	PROPERTY(bool, unknown_E10);
-	PROPERTY(bool, HasTurret); //not read from the INIs
-	PROPERTY(bool, DeployToFire);
-	PROPERTY(bool, IsSimpleDeployer);
-	PROPERTY(bool, IsTilter);
-	PROPERTY(bool, UseTurretShadow);
-	PROPERTY(bool, TooBigToFitUnderBridge);
-	PROPERTY(bool, CanBeach);
-	PROPERTY(bool, SmallVisceroid);
-	PROPERTY(bool, LargeVisceroid);
-	PROPERTY(bool, CarriesCrate);
-	PROPERTY(bool, NonVehicle);
-	PROPERTY(int, StandingFrames);
-	PROPERTY(int, DeathFrames);
-	PROPERTY(int, DeathFrameRate);
-	PROPERTY(int, StartStandFrame);
-	PROPERTY(int, StartWalkFrame);
-	PROPERTY(int, StartFiringFrame);
-	PROPERTY(int, StartDeathFrame);
-	PROPERTY(int, MaxDeathCounter);
-	PROPERTY(int, Facings);
-	PROPERTY(int, FiringSyncFrame0);
-	PROPERTY(int, FiringSyncFrame1);
-	PROPERTY(int, BurstDelay0);
-	PROPERTY(int, BurstDelay1);
-	PROPERTY(int, BurstDelay2);
-	PROPERTY(int, BurstDelay3);
-	PROPERTY(SHPStruct*, AltImage);
-	PROPERTY(char, WalkFrames);
-	PROPERTY(char, FiringFrames);
-	PROPERTY_STRING(AltImageFile, 0x19);
+
+public:
+
+	eLandType MovementRestrictedTo;
+	CoordStruct HalfDamageSmokeLocation;
+	bool Passive;
+	bool CrateGoodie;
+	bool Harvester;
+	bool Weeder;
+	bool unknown_E10;
+	bool HasTurret; //not read from the INIs
+	bool DeployToFire;
+	bool IsSimpleDeployer;
+	bool IsTilter;
+	bool UseTurretShadow;
+	bool TooBigToFitUnderBridge;
+	bool CanBeach;
+	bool SmallVisceroid;
+	bool LargeVisceroid;
+	bool CarriesCrate;
+	bool NonVehicle;
+	int StandingFrames;
+	int DeathFrames;
+	int DeathFrameRate;
+	int StartStandFrame;
+	int StartWalkFrame;
+	int StartFiringFrame;
+	int StartDeathFrame;
+	int MaxDeathCounter;
+	int Facings;
+	int FiringSyncFrame0;
+	int FiringSyncFrame1;
+	int BurstDelay0;
+	int BurstDelay1;
+	int BurstDelay2;
+	int BurstDelay3;
+	SHPStruct* AltImage;
+	char WalkFrames;
+	char FiringFrames;
+	char AltImageFile [0x19];
 };
 
 #endif

@@ -12,9 +12,7 @@ class TechnoClass;
 class BombListClass
 {
 public:
-	// get the one static instance:
-	static BombListClass* Global()
-		{ return (BombListClass*)0x87F5D8; }
+	static BombListClass* &Instance;
 
 	// draws all the visible bombs, expires the outdated ones
  	void Update()
@@ -36,9 +34,12 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY_STRUCT(DynamicVectorClass<BombClass *>, Bombs);				//all the BombClass instances on the map
-	PROPERTY_STRUCT(DynamicVectorClass<TechnoClass *>, Detectors);		//all the BombSight'ed objects currently on the map
-	PROPERTY(int, SomeArgument); // defaults to 100, some iterators set it to 1
+
+public:
+
+	DynamicVectorClass<BombClass *> Bombs;				//all the BombClass instances on the map
+	DynamicVectorClass<TechnoClass *> Detectors;		//all the BombSight'ed objects currently on the map
+	int SomeArgument; // defaults to 100, some iterators set it to 1
 };
 
 #endif

@@ -73,15 +73,18 @@ public:
 
 protected:
 	/*PROPERTY(MixFileClass*, Next);
-	PROPERTY(MixFileClass*, Prev);*/
-	PROPERTY(const char*, FileName);
-	PROPERTY(bool, Blowfish);
-	PROPERTY(bool, Encryption);
-	PROPERTY(int, CountFiles);
-	PROPERTY(int, FileSize);
-	PROPERTY(int, FileStartOffset);
-	PROPERTY(MixHeaderData*, Headers);
-	PROPERTY(int, field_24);
+	MixFileClass* Prev;*/
+
+public:
+
+	const char* FileName;
+	bool Blowfish;
+	bool Encryption;
+	int CountFiles;
+	int FileSize;
+	int FileStartOffset;
+	MixHeaderData* Headers;
+	int field_24;
 };
 
 #endif

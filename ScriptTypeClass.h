@@ -53,10 +53,12 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(int,      ArrayIndex);
-	PROPERTY(bool,     IsGlobal);
-	PROPERTY(int,      ActionsCount);
-	PROPERTY_STRUCT_ARRAY(ScriptActionNode, ScriptActions, 50);
+public:
+
+	int      ArrayIndex;
+	bool     IsGlobal;
+	int      ActionsCount;
+	ScriptActionNode ScriptActions [50];
 };
 
 #endif

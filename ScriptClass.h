@@ -58,9 +58,11 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(ScriptTypeClass *, Type);
-	PROPERTY(int, field_28);
-	PROPERTY(int, idxCurrentLine);
+public:
+
+	ScriptTypeClass * Type;
+	int field_28;
+	int idxCurrentLine;
 
 };
 

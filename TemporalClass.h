@@ -57,17 +57,20 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(TechnoClass*,       Owner);
-	PROPERTY(TechnoClass*,       Target);
-	PROPERTY_STRUCT(TimerStruct, LifeTimer);
-	PROPERTY(void*,              unknown_pointer_38);
-	PROPERTY(SuperClass*,        SourceSW);
 
-	PROPERTY(TemporalClass*,     NextTemporal);
-	PROPERTY(TemporalClass*,     PrevTemporal);
+public:
 
-	PROPERTY(int,                WarpRemaining);
-	PROPERTY(int,                WarpPerStep);
+	TechnoClass*       Owner;
+	TechnoClass*       Target;
+	TimerStruct LifeTimer;
+	void*              unknown_pointer_38;
+	SuperClass*        SourceSW;
+
+	TemporalClass*     NextTemporal;
+	TemporalClass*     PrevTemporal;
+
+	int                WarpRemaining;
+	int                WarpPerStep;
 };
 
 #endif

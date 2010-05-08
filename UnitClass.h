@@ -53,31 +53,25 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(int, unknown_int_6C0);
-	PROPERTY(UnitTypeClass*, Type);
-	PROPERTY(UnitClass*, FollowerCar); // groovy - link defined in the map's [Units] section, looked up on startup
-	PROPERTY(int, FlagHouseIndex); //Carrying the flag of this House
-	PROPERTY(bool, HasFollowerCar); // yes, this vehicle has a another vehicle (a train's locomotive towing the cars)
-	PROPERTY(bool, Unloading);
-	PROPERTY(bool, unknown_bool_6D2);
-	PROPERTY(bool, TerrainPalette);
-	PROPERTY(int, unknown_int_6D4);
-	PROPERTY(int, DeathFrameCounter);
-	PROPERTY(EBolt*, ElectricBolt); //Unit is the owner of this
-	PROPERTY(bool, Deployed);
-	PROPERTY(bool, Deploying);
-	PROPERTY(bool, Undeploying);
-	PROPERTY(int, unknown_int_6E4);
-
-// isn't this what PROPERTY_UNICODE was for?
-protected:
-	wchar_t ToolTipText[0x100];
-
 public:
-	const wchar_t* get_ToolTipText()
-		{ return ToolTipText; }
-	void set_ToolTipText(const wchar_t* src)
-		{ wcsncpy(ToolTipText, src, 0x100); }
+
+	int unknown_int_6C0;
+	UnitTypeClass* Type;
+	UnitClass* FollowerCar; // groovy - link defined in the map's [Units] section, looked up on startup
+	int FlagHouseIndex; //Carrying the flag of this House
+	bool HasFollowerCar; // yes, this vehicle has a another vehicle (a train's locomotive towing the cars)
+	bool Unloading;
+	bool unknown_bool_6D2;
+	bool TerrainPalette;
+	int unknown_int_6D4;
+	int DeathFrameCounter;
+	EBolt* ElectricBolt; //Unit is the owner of this
+	bool Deployed;
+	bool Deploying;
+	bool Undeploying;
+	int unknown_int_6E4;
+
+	wchar_t ToolTipText[0x100];
 };
 
 #endif

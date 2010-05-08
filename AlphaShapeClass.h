@@ -43,10 +43,12 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(ObjectClass*, AttachedTo);	//To which object is this AlphaShape attached?
-	PROPERTY_STRUCT(RectangleStruct, Rect);
-	PROPERTY(SHPStruct*, AlphaImage);
-	PROPERTY(bool, IsObjectGone);	//Set if AttachedTo is NULL.
+public:
+
+	ObjectClass* AttachedTo;	//To which object is this AlphaShape attached?
+	RectangleStruct Rect;
+	SHPStruct* AlphaImage;
+	bool IsObjectGone;	//Set if AttachedTo is NULL.
 };
 
 #endif

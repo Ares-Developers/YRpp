@@ -48,15 +48,17 @@ public:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(FootClass*,         Owner);
-	PROPERTY(FootClass*,         Victim);
-	PROPERTY_STRUCT(TimerStruct, SuppressionTimer);
-	PROPERTY_STRUCT(TimerStruct, DamageDeliveryTimer);
-	PROPERTY(AnimClass*,         SomeAnim); // squid grapple?
-	PROPERTY(DWORD,              unknown_48);
-	PROPERTY(DWORD,              unknown_4C);
-	PROPERTY(DWORD,              unknown_50);
-	PROPERTY(BYTE,               unknown_54);
+public:
+
+	FootClass*         Owner;
+	FootClass*         Victim;
+	TimerStruct SuppressionTimer;
+	TimerStruct DamageDeliveryTimer;
+	AnimClass*         SomeAnim; // squid grapple?
+	DWORD              unknown_48;
+	DWORD              unknown_4C;
+	DWORD              unknown_50;
+	BYTE               unknown_54;
 };
 
 #endif

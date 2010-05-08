@@ -24,10 +24,12 @@ public:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY_STRUCT(TintStruct, Color);
-	PROPERTY(int, MovementRadius);
-	PROPERTY(int, Size);
-	PROPERTY(eSpotlightFlags, DisableFlags);
+public:
+
+	TintStruct Color;
+	int MovementRadius;
+	int Size;
+	eSpotlightFlags DisableFlags;
 };
 
 #endif

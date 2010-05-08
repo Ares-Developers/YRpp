@@ -45,9 +45,12 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(DWORD,		unknown_04);
-	PROPERTY(DWORD,		unknown_08);
-	PROPERTY(int,		unknown_int_0C);	//default is 2
+
+public:
+
+	DWORD unknown_04;
+	DWORD unknown_08;
+	int unknown_int_0C;	//default is 2
 
 
 };

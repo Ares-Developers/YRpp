@@ -225,36 +225,38 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
+public:
+
 	PROTECTED_PROPERTY(BYTE,     unknown_24[0x8]);
-	PROPERTY(int,                FallRate); //how fast is it falling down? only works if FallingDown is set below, and actually positive numbers will move the thing UPWARDS
-	PROPERTY(ObjectClass*,       NextObject);	//Next Object in the same cell or transport. This is a linked list of Objects.
+	int                FallRate; //how fast is it falling down? only works if FallingDown is set below, and actually positive numbers will move the thing UPWARDS
+	ObjectClass*       NextObject;	//Next Object in the same cell or transport. This is a linked list of Objects.
 	PROTECTED_PROPERTY(DWORD,    AttachedTag); //Should be TagClass , TODO: change when implemented
-	PROPERTY(BombClass*,         AttachedBomb); //Ivan's little friends.
+	BombClass*         AttachedBomb; //Ivan's little friends.
 
-	PROPERTY_STRUCT(AudioController, Audio1); // the "mofo" struct, evil evil stuff
-	PROPERTY_STRUCT(AudioController, Audio2); // the "mofo" struct, evil evil stuff
+	AudioController Audio1; // the "mofo" struct, evil evil stuff
+	AudioController Audio2; // the "mofo" struct, evil evil stuff
 
-	PROPERTY(int,                unknown_64);		//idx of OverlayType this is posing as (Mirage Tank)
-	PROPERTY(bool,               BombVisible); // In range of player's bomb seeing units, so should draw it
-	PROPERTY(int,                Health);		//The current Health.
-	PROPERTY(DWORD,              unknown_70);
-	PROPERTY(DWORD,              unknown_74);
-	PROPERTY(DWORD,              unknown_78);
-	PROPERTY(DWORD,              unknown_7C);
-	PROPERTY(bool,               IsSensed); // Sensed by sensors
-	PROPERTY(bool,               InLimbo); // act as if it doesn't exist - e.g., post mortem state before being deleted
-	PROPERTY(bool,               InOpenToppedTransport);
-	PROPERTY(bool,               IsSelected);	//Has the player selected this Object?
-	PROPERTY(bool,               HasParachute);	//Is this Object parachuting?
-	PROPERTY(AnimClass*,         Parachute);		//Current parachute Anim.
-	PROPERTY(bool,               OnBridge);
-	PROPERTY(bool,               FallingDown);
-	PROPERTY(bool,               unknown_8E);
-	PROPERTY(bool,               IsABomb); // if set, will explode after FallingDown brings it to contact with the ground
-	PROPERTY(bool,               IsAlive);		//Self-explanatory.
+	int                unknown_64;		//idx of OverlayType this is posing as (Mirage Tank)
+	bool               BombVisible; // In range of player's bomb seeing units, so should draw it
+	int                Health;		//The current Health.
+	DWORD              unknown_70;
+	DWORD              unknown_74;
+	DWORD              unknown_78;
+	DWORD              unknown_7C;
+	bool               IsSensed; // Sensed by sensors
+	bool               InLimbo; // act as if it doesn't exist - e.g., post mortem state before being deleted
+	bool               InOpenToppedTransport;
+	bool               IsSelected;	//Has the player selected this Object?
+	bool               HasParachute;	//Is this Object parachuting?
+	AnimClass*         Parachute;		//Current parachute Anim.
+	bool               OnBridge;
+	bool               FallingDown;
+	bool               unknown_8E;
+	bool               IsABomb; // if set, will explode after FallingDown brings it to contact with the ground
+	bool               IsAlive;		//Self-explanatory.
 	PROTECTED_PROPERTY(BYTE,     unknown_91[0xB]);
-	PROPERTY_STRUCT(CoordStruct, Location);		//Absolute current 3D location (in leptons?)
-	PROPERTY(LineTrail*,         LineTrailer);
+	CoordStruct Location;		//Absolute current 3D location (in leptons?)
+	LineTrail*         LineTrailer;
  };
 
 #endif

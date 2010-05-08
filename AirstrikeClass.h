@@ -42,22 +42,25 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(int, AirstrikeTeam);			//As in the INI files.
-	PROPERTY(int, EliteAirstrikeTeam);	//As in the INI files.
-	PROPERTY(int, AirstrikeTeamTypeIndex);	//As in the INI files.
-	PROPERTY(int, EliteAirstrikeTeamTypeIndex);	//As in the INI files.
-	PROPERTY(DWORD, unknown_34);
-	PROPERTY(DWORD, unknown_38);	//unused?
-	PROPERTY(bool, IsOnMission);	//Is the Aircraft on its way?
-	PROPERTY(bool, unknown_bool_3D);
-	PROPERTY(DWORD, TeamDissolveFrame);	//when was the last time this team was invoked and subsequently dissolved
-	PROPERTY(int, AirstrikeRechargeTime);	//As in the INI files.
-	PROPERTY(int, EliteAirstrikeRechargeTime);	//As in the INI files.
-	PROPERTY(TechnoClass*, Owner);		//The unit that called the Airstrike (usually Boris).
-	PROPERTY(ObjectClass*, Target);	//The Airstrike's target.
-	PROPERTY(AircraftTypeClass*, AirstrikeTeamType);	//As in the INI files.
-	PROPERTY(AircraftTypeClass*, EliteAirstrikeTeamType);	//As in the INI files.
-	PROPERTY(FootClass*, FirstObject);
+
+public:
+
+	int AirstrikeTeam;			//As in the INI files.
+	int EliteAirstrikeTeam;	//As in the INI files.
+	int AirstrikeTeamTypeIndex;	//As in the INI files.
+	int EliteAirstrikeTeamTypeIndex;	//As in the INI files.
+	DWORD unknown_34;
+	DWORD unknown_38;	//unused?
+	bool IsOnMission;	//Is the Aircraft on its way?
+	bool unknown_bool_3D;
+	DWORD TeamDissolveFrame;	//when was the last time this team was invoked and subsequently dissolved
+	int AirstrikeRechargeTime;	//As in the INI files.
+	int EliteAirstrikeRechargeTime;	//As in the INI files.
+	TechnoClass* Owner;		//The unit that called the Airstrike (usually Boris).
+	ObjectClass* Target;	//The Airstrike's target.
+	AircraftTypeClass* AirstrikeTeamType;	//As in the INI files.
+	AircraftTypeClass* EliteAirstrikeTeamType;	//As in the INI files.
+	FootClass* FirstObject;
 };
 
 #endif

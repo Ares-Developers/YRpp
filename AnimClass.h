@@ -64,76 +64,78 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(int, CurrentFrame); //Current animation frame.
-	PROPERTY(DWORD, unknown_B0);
-	PROPERTY_STRUCT(TimerStruct, IterationTimer); // Duration == Type->Rate, each expiration decrements remainingIterations
-	PROPERTY(int, Rate);
-	PROPERTY(DWORD, unknown_C4);
-	PROPERTY(AnimTypeClass*, Type); //The AnimType.
-	PROPERTY(ObjectClass *,	OwnerObject); // set by AnimClass::SetOwnerObject (0x424B50)
-	PROPERTY(DWORD, unknown_D0);
-	PROPERTY(LightConvertClass*, LightConvert);	 //Palette?
-	PROPERTY(int, LightConvertIndex); // assert( (*ColorScheme::Array)[this->LightConvertIndex] == this->LightConvert );
-	PROPERTY(BYTE, unknown_DC);
-	PROPERTY(DWORD, unknown_E0);
-	PROPERTY(DWORD, unknown_E4);
-	PROPERTY(DWORD, unknown_E8);
-	PROPERTY(DWORD, unknown_EC);
-	PROPERTY(DWORD, unknown_F0);
-	PROPERTY(DWORD, unknown_F4);
-	PROPERTY(DWORD, unknown_F8);
-	PROPERTY(int, TintColor);
-	PROPERTY(int, ZAdjust);
-	PROPERTY(int, YSortAdjust); // same as YSortAdjust from Type
-	PROPERTY(DWORD, unknown_108);
-	PROPERTY(DWORD, unknown_10C);
-	PROPERTY(DWORD, unknown_110);
-	PROPERTY(DWORD, unknown_114);
-	PROPERTY(BYTE, unknown_118);
-	PROPERTY(bool, UnderTemporal); // temporal'd building's active anims
-	PROPERTY(DWORD, unknown_11C);
-	PROPERTY(DWORD, unknown_120);
-	PROPERTY(DWORD, unknown_124);
-	PROPERTY(DWORD, unknown_128);
-	PROPERTY(DWORD, unknown_12C);
-	PROPERTY(DWORD, unknown_130);
-	PROPERTY(DWORD, unknown_134);
-	PROPERTY(DWORD, unknown_138);
-	PROPERTY(DWORD, unknown_13C);
-	PROPERTY(CoordStruct, ExpireAnimCoords);
-	PROPERTY(DWORD, unknown_14C);
-	PROPERTY(DWORD, unknown_150);
-	PROPERTY(DWORD, unknown_154);
-	PROPERTY(DWORD, unknown_158);
-	PROPERTY(DWORD, unknown_15C);
-	PROPERTY(DWORD, unknown_160);
-	PROPERTY(DWORD, unknown_164);
-	PROPERTY(DWORD, unknown_168);
-	PROPERTY(DWORD, unknown_16C);
-	PROPERTY(DWORD, unknown_170);
-	PROPERTY(DWORD, unknown_174);
-	PROPERTY(BYTE, TranslucencyLevel); // on a scale of 1 - 100
-	PROPERTY(bool, TimeToDie); // or something to that effect, set just before UnInit
-	PROPERTY(BulletClass*, AttachedBullet);
-	PROPERTY(HouseClass*, Owner); //Used for remap (AltPalette).
-	PROPERTY(DWORD, unknown_184);
-	PROPERTY(double, Damage); // defaults to 1.0 , added to Type->Damage in some cases
-//	PROPERTY(DWORD, unknown_18C);
-	PROPERTY(eBlitterFlags, AnimFlags); // argument that's 0x600 most of the time
-	PROPERTY(byte, unknown_194);
-	PROPERTY(byte, RemainingIterations); // defaulted to deleteAfterIterations, when reaches zero, UnInit() is called
-	PROPERTY(byte, unknown_196);
-	PROPERTY(byte, unknown_197);
-	PROPERTY(bool, IsPlaying);
-	PROPERTY(bool, IsFogged);
-	PROPERTY(byte, unknown_19A);
-	PROPERTY(byte, CellOccupied); // dunno, that's the name my IDB gives
-	PROPERTY(byte, unknown_19C);
-	PROPERTY(bool, Invisible); // don't draw, but Update state anyway
-	PROPERTY(byte, unknown_19E);
-	PROPERTY(byte, unknown_19F);
-	PROPERTY_STRUCT(AudioController, Audio3);
-	PROPERTY_STRUCT(AudioController, Audio4);
+public:
+
+	int CurrentFrame; //Current animation frame.
+	DWORD unknown_B0;
+	TimerStruct IterationTimer; // Duration == Type->Rate, each expiration decrements remainingIterations
+	int Rate;
+	DWORD unknown_C4;
+	AnimTypeClass* Type; //The AnimType.
+	ObjectClass * OwnerObject; // set by AnimClass::SetOwnerObject (0x424B50)
+	DWORD unknown_D0;
+	LightConvertClass* LightConvert;	 //Palette?
+	int LightConvertIndex; // assert( (*ColorScheme::Array)[this->LightConvertIndex] == this->LightConvert ;
+	BYTE unknown_DC;
+	DWORD unknown_E0;
+	DWORD unknown_E4;
+	DWORD unknown_E8;
+	DWORD unknown_EC;
+	DWORD unknown_F0;
+	DWORD unknown_F4;
+	DWORD unknown_F8;
+	int TintColor;
+	int ZAdjust;
+	int YSortAdjust; // same as YSortAdjust from Type
+	DWORD unknown_108;
+	DWORD unknown_10C;
+	DWORD unknown_110;
+	DWORD unknown_114;
+	BYTE unknown_118;
+	bool UnderTemporal; // temporal'd building's active anims
+	DWORD unknown_11C;
+	DWORD unknown_120;
+	DWORD unknown_124;
+	DWORD unknown_128;
+	DWORD unknown_12C;
+	DWORD unknown_130;
+	DWORD unknown_134;
+	DWORD unknown_138;
+	DWORD unknown_13C;
+	CoordStruct ExpireAnimCoords;
+	DWORD unknown_14C;
+	DWORD unknown_150;
+	DWORD unknown_154;
+	DWORD unknown_158;
+	DWORD unknown_15C;
+	DWORD unknown_160;
+	DWORD unknown_164;
+	DWORD unknown_168;
+	DWORD unknown_16C;
+	DWORD unknown_170;
+	DWORD unknown_174;
+	BYTE TranslucencyLevel; // on a scale of 1 - 100
+	bool TimeToDie; // or something to that effect, set just before UnInit
+	BulletClass* AttachedBullet;
+	HouseClass* Owner; //Used for remap (AltPalette).
+	DWORD unknown_184;
+	double Damage; // defaults to 1.0 , added to Type->Damage in some cases
+//	DWORD unknown_18C;
+	eBlitterFlags AnimFlags; // argument that's 0x600 most of the time
+	byte unknown_194;
+	byte RemainingIterations; // defaulted to deleteAfterIterations, when reaches zero, UnInit() is called
+	byte unknown_196;
+	byte unknown_197;
+	bool IsPlaying;
+	bool IsFogged;
+	byte unknown_19A;
+	byte CellOccupied; // dunno, that's the name my IDB gives
+	byte unknown_19C;
+	bool Invisible; // don't draw, but Update state anyway
+	byte unknown_19E;
+	byte unknown_19F;
+	AudioController Audio3;
+	AudioController Audio4;
 };
 
 #endif

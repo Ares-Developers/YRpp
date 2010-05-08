@@ -22,16 +22,19 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(bool,					unknown_bool_150C);
-	PROPERTY_STRUCT(TimerStruct,			unknown_timer_1510);
-	PROPERTY(DWORD,					unknown_151C);
-	PROPERTY_STRUCT(TimerStruct,			unknown_timer_1520);
-	PROPERTY(DWORD,					unknown_152C);
-	PROPERTY(DWORD,					unknown_1530);
-	PROPERTY(DWORD,					unknown_1534);
-	PROPERTY(bool,					unknown_bool_1538);
-	PROPERTY(int,					unknown_int_153C);
-	PROPERTY(int,					unknown_int_1540);
+
+public:
+
+	bool unknown_bool_150C;
+	TimerStruct unknown_timer_1510;
+	DWORD unknown_151C;
+	TimerStruct unknown_timer_1520;
+	DWORD unknown_152C;
+	DWORD unknown_1530;
+	DWORD unknown_1534;
+	bool unknown_bool_1538;
+	int unknown_int_153C;
+	int unknown_int_1540;
 };
 
 #endif

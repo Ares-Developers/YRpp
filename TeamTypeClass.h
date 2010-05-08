@@ -82,48 +82,50 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(int,      ArrayIndex);
-	PROPERTY(int,      Group);
-	PROPERTY(int,      VeteranLevel);
-	PROPERTY(bool,     Loadable);
-	PROPERTY(bool,     Full);
-	PROPERTY(bool,     Annoyance);
-	PROPERTY(bool,     GuardSlower);
-	PROPERTY(bool,     Recruiter);
-	PROPERTY(bool,     Autocreate);
-	PROPERTY(bool,     Prebuild);
-	PROPERTY(bool,     Reinforce);
-	PROPERTY(bool,     Whiner);
-	PROPERTY(bool,     Aggressive);
-	PROPERTY(bool,     LooseRecruit);
-	PROPERTY(bool,     Suicide);
-	PROPERTY(bool,     Droppod);
-	PROPERTY(bool,     UseTransportOrigin);
-	PROPERTY(bool,     field_B2);
-	PROPERTY(bool,     OnTransOnly);
-	PROPERTY(int,      Priority);
-	PROPERTY(int,      Max);
-	PROPERTY(int,      field_BC);
-	PROPERTY(int,      MindControlDecision);
-	PROPERTY(HouseClass *,     Owner);
-	PROPERTY(int,      idxHouse); // idx for MP
-	PROPERTY(int,      TechLevel);
-	PROPERTY(DWORD,    Tag); // TagClass *
-	PROPERTY(int,      Waypoint);
-	PROPERTY(int,      TransportWaypoint);
-	PROPERTY(int,      cntInstances);
-	PROPERTY(ScriptTypeClass*,  ScriptType);
-	PROPERTY(TaskForceClass*,   TaskForce);
-	PROPERTY(int,      IsGlobal);
-	PROPERTY(int,      field_EC);
-	PROPERTY(bool,     field_F0);
-	PROPERTY(bool,     field_F1);
-	PROPERTY(bool,     AvoidThreats);
-	PROPERTY(bool,     IonImmune);
-	PROPERTY(bool,     TransportsReturnOnUnload);
-	PROPERTY(bool,     AreTeamMembersRecruitable);
-	PROPERTY(bool,     IsBaseDefense);
-	PROPERTY(bool,     OnlyTargetHouseEnemy);
+public:
+
+	int      ArrayIndex;
+	int      Group;
+	int      VeteranLevel;
+	bool     Loadable;
+	bool     Full;
+	bool     Annoyance;
+	bool     GuardSlower;
+	bool     Recruiter;
+	bool     Autocreate;
+	bool     Prebuild;
+	bool     Reinforce;
+	bool     Whiner;
+	bool     Aggressive;
+	bool     LooseRecruit;
+	bool     Suicide;
+	bool     Droppod;
+	bool     UseTransportOrigin;
+	bool     field_B2;
+	bool     OnTransOnly;
+	int      Priority;
+	int      Max;
+	int      field_BC;
+	int      MindControlDecision;
+	HouseClass *     Owner;
+	int      idxHouse; // idx for MP
+	int      TechLevel;
+	DWORD    Tag; // TagClass *
+	int      Waypoint;
+	int      TransportWaypoint;
+	int      cntInstances;
+	ScriptTypeClass*  ScriptType;
+	TaskForceClass*   TaskForce;
+	int      IsGlobal;
+	int      field_EC;
+	bool     field_F0;
+	bool     field_F1;
+	bool     AvoidThreats;
+	bool     IonImmune;
+	bool     TransportsReturnOnUnload;
+	bool     AreTeamMembersRecruitable;
+	bool     IsBaseDefense;
+	bool     OnlyTargetHouseEnemy;
 
 };
 

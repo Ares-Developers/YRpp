@@ -51,26 +51,29 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(int,                ArrayIndex);
-	PROPERTY(eLandType,          LandType);
-	PROPERTY(AnimTypeClass*,     CellAnim);
-	PROPERTY(int,                DamageLevels);
-	PROPERTY(int,                Strength);
-	PROPERTY(bool,               Wall);
-	PROPERTY(bool,               Tiberium);
-	PROPERTY(bool,               Crate);
-	PROPERTY(bool,               CrateTrigger);
-	PROPERTY(bool,               NoUseTileLandType);
-	PROPERTY(bool,               IsVeinholeMonster);
-	PROPERTY(bool,               IsVeins);
-	PROPERTY(bool,               ImageLoaded);	//not INI
-	PROPERTY(bool,               Explodes);
-	PROPERTY(bool,               ChainReaction);
-	PROPERTY(bool,               Overrides);
-	PROPERTY(bool,               DrawFlat);
-	PROPERTY(bool,               IsRubble);
-	PROPERTY(bool,               IsARock);
-	PROPERTY_STRUCT(ColorStruct, RadarColor);
+
+public:
+
+	int                ArrayIndex;
+	eLandType          LandType;
+	AnimTypeClass*     CellAnim;
+	int                DamageLevels;
+	int                Strength;
+	bool               Wall;
+	bool               Tiberium;
+	bool               Crate;
+	bool               CrateTrigger;
+	bool               NoUseTileLandType;
+	bool               IsVeinholeMonster;
+	bool               IsVeins;
+	bool               ImageLoaded;	//not INI
+	bool               Explodes;
+	bool               ChainReaction;
+	bool               Overrides;
+	bool               DrawFlat;
+	bool               IsRubble;
+	bool               IsARock;
+	ColorStruct RadarColor;
 
 };
 

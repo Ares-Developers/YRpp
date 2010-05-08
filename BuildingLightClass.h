@@ -36,17 +36,19 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(DWORD, field_AC);
-	PROPERTY(DWORD, field_B0);
-	PROPERTY(DWORD, field_B4);
-	PROPERTY_STRUCT(CoordStruct, field_B8);
-	PROPERTY_STRUCT(CoordStruct, field_C4);
-	PROPERTY(DWORD, field_D0);
-	PROPERTY(DWORD, field_D4);
-	PROPERTY(bool, field_D8);
-	PROPERTY(eSpotlightBehaviour, BehaviourMode);
-	PROPERTY(ObjectClass *, FollowingObject);
-	PROPERTY(TechnoClass *, OwnerObject);
+public:
+
+	DWORD field_AC;
+	DWORD field_B0;
+	DWORD field_B4;
+	CoordStruct field_B8;
+	CoordStruct field_C4;
+	DWORD field_D0;
+	DWORD field_D4;
+	bool field_D8;
+	eSpotlightBehaviour BehaviourMode;
+	ObjectClass * FollowingObject;
+	TechnoClass * OwnerObject;
 };
 
 #endif

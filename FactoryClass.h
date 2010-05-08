@@ -62,21 +62,23 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(int,                ProductionStatus); // hardcoded to be 54 steps (so cameo clock should be 54 frames)
-	PROPERTY(bool,               unknown_bool_28);
-	PROPERTY_STRUCT(TimerStruct,        ProductionTimer);
-	PROPERTY(DWORD,              ProductionRemainingFrames);
-	PROPERTY(int,                unknown_int_3C);
-	PROPERTY_STRUCT(DynamicVectorClass<TechnoTypeClass*>, QueuedObjects);
-	PROPERTY(TechnoClass*,       InProduction);
-	PROPERTY(bool,               OnHold); // paused when out of money, restored when funds available
-	PROPERTY(bool,               IsDifferent);	//Not sure what this means.
-	PROPERTY(int,                Balance); // credits house still owes us for building this
-	PROPERTY(int,                OriginalBalance);
-	PROPERTY(int,                SpecialItem); // only case of it being used is 0x6AB2D9:
+public:
+
+	int                ProductionStatus; // hardcoded to be 54 steps (so cameo clock should be 54 frames)
+	bool               unknown_bool_28;
+	TimerStruct ProductionTimer;
+	DWORD              ProductionRemainingFrames;
+	int                unknown_int_3C;
+	DynamicVectorClass<TechnoTypeClass*> QueuedObjects;
+	TechnoClass*       InProduction;
+	bool               OnHold; // paused when out of money, restored when funds available
+	bool               IsDifferent;	//Not sure what this means.
+	int                Balance; // credits house still owes us for building this
+	int                OriginalBalance;
+	int                SpecialItem; // only case of it being used is 0x6AB2D9:
 	                                           // if(SpecialItem != -1) { Map->CurrentSWType = 1; }
-	PROPERTY(HouseClass*,        Owner);
-	PROPERTY(bool,               IsCompleteAndSuspended);	//completed production, before next (or waiting to place)
+	HouseClass*        Owner;
+	bool               IsCompleteAndSuspended;	//completed production, before next (or waiting to place)
 };
 
 #endif

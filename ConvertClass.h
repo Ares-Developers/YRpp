@@ -60,20 +60,23 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
+
+public:
+
 	//That's right, I don't know anything about this class, except what it's used for...
 
 	// == 1 ? alloc_a_few_blitters_for_uchar : alloc_a_fuckton_of_blitters_for_ushort
 	// actually this is just the result of Surface->GetBytesPerPixel()
 	// but this name sounds better
-	PROPERTY(DWORD, LeanAndMean);
-	PROPERTY_ARRAY(BlitterCore *, Blitters , 89);
-	PROPERTY(size_t, Count);
-	PROPERTY(byte *, BufferA); // new(Count * 8 * LeanAndMean) - gets filled with pColorData values on CTOR
-	PROPERTY(byte *, Midpoint); // points to the middle of BufferA above, ??
-	PROPERTY(byte *, BufferB); // if(LeanAndMean == 1) { BufferB = new(0x100); }
-	PROPERTY(DWORD, f_17C);
-	PROPERTY(DWORD, f_180);
-	PROPERTY(DWORD, f_184);
+	DWORD LeanAndMean;
+	BlitterCore * Blitters  [89];
+	size_t Count;
+	byte * BufferA; // new(Count * 8 * LeanAndMean) - gets filled with pColorData values on CTOR
+	byte * Midpoint; // points to the middle of BufferA above, ??
+	byte * BufferB; // if(LeanAndMean == 1) { BufferB = new byte[0x100]; }
+	DWORD f_17C;
+	DWORD f_180;
+	DWORD f_184;
 
 //	PROTECTED_PROPERTY(BYTE, unknown_0[0x188]);
 };

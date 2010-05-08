@@ -63,43 +63,46 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(int, Pip); //see PIP definitions
-	PROPERTY(int, OccupyPip); //see PIP definitions
-	PROPERTY_STRUCT(WeaponStruct, OccupyWeapon);
-	PROPERTY_STRUCT(WeaponStruct, EliteOccupyWeapon);
-	PROPERTY(SequenceStruct*, Sequence);
-	PROPERTY(int, FireUp);
-	PROPERTY(int, FireProne);
-	PROPERTY(int, SecondaryFire);
-	PROPERTY(int, SecondaryProne);
-	PROPERTY_STRUCT(TypeList<AnimTypeClass*>, DeadBodies);
-	PROPERTY_STRUCT(TypeList<AnimTypeClass*>, DeathAnims);
-	PROPERTY_STRUCT(TypeList<int>, VoiceComment);
-	PROPERTY(int, EnterWaterSound);
-	PROPERTY(int, LeaveWaterSound);
-	PROPERTY(bool, Cyborg);
-	PROPERTY(bool, NotHuman);
-	PROPERTY(bool, Ivan); //used for the bomb attack cursor...
-	PROPERTY(int, DirectionDistance);
-	PROPERTY(bool, Occupier);
-	PROPERTY(bool, Assaulter);
-	PROPERTY(int, HarvestRate);
-	PROPERTY(bool, Fearless);
-	PROPERTY(bool, Crawls);
-	PROPERTY(bool, Infiltrate);
-	PROPERTY(bool, Fraidycat);
-	PROPERTY(bool, TiberiumProof);
-	PROPERTY(bool, Civilian);
-	PROPERTY(bool, C4);
-	PROPERTY(bool, Engineer);
-	PROPERTY(bool, Agent);
-	PROPERTY(bool, Thief);
-	PROPERTY(bool, VehicleThief);
-	PROPERTY(bool, Doggie);
-	PROPERTY(bool, Deployer);
-	PROPERTY(bool, DeployedCrushable);
-	PROPERTY(bool, UseOwnName);
-	PROPERTY(bool, JumpJetTurn);
+
+public:
+
+	int Pip; //see PIP definitions
+	int OccupyPip; //see PIP definitions
+	WeaponStruct OccupyWeapon;
+	WeaponStruct EliteOccupyWeapon;
+	SequenceStruct* Sequence;
+	int FireUp;
+	int FireProne;
+	int SecondaryFire;
+	int SecondaryProne;
+	TypeList<AnimTypeClass*> DeadBodies;
+	TypeList<AnimTypeClass*> DeathAnims;
+	TypeList<int> VoiceComment;
+	int EnterWaterSound;
+	int LeaveWaterSound;
+	bool Cyborg;
+	bool NotHuman;
+	bool Ivan; //used for the bomb attack cursor...
+	int DirectionDistance;
+	bool Occupier;
+	bool Assaulter;
+	int HarvestRate;
+	bool Fearless;
+	bool Crawls;
+	bool Infiltrate;
+	bool Fraidycat;
+	bool TiberiumProof;
+	bool Civilian;
+	bool C4;
+	bool Engineer;
+	bool Agent;
+	bool Thief;
+	bool VehicleThief;
+	bool Doggie;
+	bool Deployer;
+	bool DeployedCrushable;
+	bool UseOwnName;
+	bool JumpJetTurn;
 private: DWORD align_ECC;
 };
 

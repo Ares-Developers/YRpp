@@ -18,9 +18,12 @@ public:
 		{ JMP_THIS(0x43AE50); }
 
 	//Properties
-	PROPERTY(void*, Pointer);
-	PROPERTY(int, Size);
-	PROPERTY(bool, Allocated);
+
+public:
+
+	void* Pointer;
+	int Size;
+	bool Allocated;
 };
 
 #endif

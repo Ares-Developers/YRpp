@@ -189,47 +189,29 @@ public:
 
 
 	// fsldargh who the fuck decided to pass structures by value here
-	static TypeList<int>* GetPrerequisites(TypeList<int>* pBuffer, INIClass* pINI,
+	static TypeList<int>* __fastcall GetPrerequisites(TypeList<int>* pBuffer, INIClass* pINI,
 		const char* pSection, const char* pKey, TypeList<int> Defaults)
 
-		{
-			/*
-			int eflags; __asm{ pushf } __asm{ pop eflags }
-			SUB_ESP(0x1C); __asm{ mov edi, esp } __asm{ lea esi, Defaults }
-			__asm{ cld } __asm{ mov ecx, 7 } __asm{ rep movsd }
-			__asm{ push eflags } __asm{ popf }
-			*/
-
-	#define GETDW() \
-		val =* (DWORD* )(&Defaults + offset); \
-		PUSH_VAR32(val);
-
-			for(int offset = 6, val = 0; offset; --offset)
-			{
-				GETDW();
-			}
-
-			PUSH_VAR32(pKey);
-			PUSH_VAR32(pSection);
-			SET_REG32(ecx, pBuffer); SET_REG32(edx, pINI);
-			CALL(0x4770E0);
-		}
+			{ JMP_STD(0x4770E0); }
 
 	//Properties
-	PROPERTY(DWORD, unknown_4);
-	PROPERTY(DWORD, unknown_8);
-	PROPERTY_STRUCT(List<INISection>, Sections);
-	PROPERTY(DWORD, unknown_28);
-	PROPERTY(DWORD, unknown_2C);
-	PROPERTY(DWORD, unknown_30);
-	PROPERTY(bool, unknown_bool_34);
-	PROPERTY(DWORD, unknown_38);
-	PROPERTY(DWORD, unknown_3C);
-	PROPERTY(bool, unknown_bool_40);
-	PROPERTY(DWORD, unknown_44);
-	PROPERTY(DWORD, unknown_48);
-	PROPERTY(DWORD, unknown_4C);
-	PROPERTY(DWORD, unknown_50);
+
+public:
+
+	DWORD unknown_4;
+	DWORD unknown_8;
+	List<INISection> Sections;
+	DWORD unknown_28;
+	DWORD unknown_2C;
+	DWORD unknown_30;
+	bool unknown_bool_34;
+	DWORD unknown_38;
+	DWORD unknown_3C;
+	bool unknown_bool_40;
+	DWORD unknown_44;
+	DWORD unknown_48;
+	DWORD unknown_4C;
+	DWORD unknown_50;
 };
 
 //Extended INI class specified for C&C use

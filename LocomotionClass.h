@@ -45,9 +45,7 @@ public:
 
 	virtual CoordStruct* __stdcall Head_To_Coord(CoordStruct* pcoord)
 		{
-			pcoord->X = LinkedTo->get_Location()->X;
-			pcoord->Y = LinkedTo->get_Location()->Y;
-			pcoord->Z = LinkedTo->get_Location()->Z;
+			*pcoord = LinkedTo->Location;
 			return pcoord;
 		}
 
@@ -205,11 +203,14 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(DWORD,				unknown_08);
-	PROPERTY(FootClass*,		LinkedTo);	//This Locomotor is linked to this object.
-	PROPERTY(bool,				Powered);	//Does this Locomotor currently have power?
-	PROPERTY(bool,				Dirty);		//bIsDirty - Has something changed?
-	PROPERTY(DWORD,				unknown_14);
+
+public:
+
+	DWORD unknown_08;
+	FootClass* LinkedTo;	//This Locomotor is linked to this object.
+	bool Powered;	//Does this Locomotor currently have power?
+	bool Dirty;		//bIsDirty - Has something changed?
+	DWORD unknown_14;
 };
 
 #endif

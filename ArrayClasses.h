@@ -150,10 +150,10 @@ public:
 		this->Capacity = 0;
 	}
 
-	PROPERTY(T*, Items);
-	PROPERTY_READONLY(int, Capacity);
-	PROPERTY(bool, IsInitialized);
-	PROPERTY(bool, IsAllocated);
+	T* Items;
+	int Capacity;
+	bool IsInitialized;
+	bool IsAllocated;
 };
 
 //========================================================================
@@ -275,8 +275,8 @@ public:
 		return false;
 	}
 
-	PROPERTY(int, Count);
-	PROPERTY(int, CapacityIncrement);
+	int Count;
+	int CapacityIncrement;
 };
 
 //========================================================================
@@ -298,7 +298,7 @@ public:
 
 	}
 
-	PROPERTY(DWORD, unknown_18);
+	DWORD unknown_18;
 };
 
 //========================================================================
@@ -340,7 +340,7 @@ public:
 	int Decrement(int nIndex)
 		{ JMP_THIS(0x49FA70); }
 
-	PROPERTY(int, Count);	//not sure what this is, but it's different from DVC's count
+	int Count;	//not sure what this is, but it's different from DVC's count
 };
 
 #include <SwizzleManagerClass.h>

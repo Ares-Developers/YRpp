@@ -5,82 +5,85 @@
 #include <MPGameModeClass.h>
 
 struct GameTypePreferencesStruct {
-	PROPERTY(DWORD, idxMPMode);
-	PROPERTY(DWORD, idxScenario);
-	PROPERTY(int, GameSpeed);
-	PROPERTY(int, Credits);
-	PROPERTY(int, UnitCount);
-	PROPERTY(bool, ShortGame);
-	PROPERTY(bool, SuperWeapons);
-	PROPERTY(bool, BuildOffAlly);
-	PROPERTY(bool, MCVRepacks);
-	PROPERTY(bool, CratesAppear);
-	PROPERTY_ARRAY(DWORD, unknown_fields, 0x18);
+	DWORD idxMPMode;
+	DWORD idxScenario;
+	int GameSpeed;
+	int Credits;
+	int UnitCount;
+	bool ShortGame;
+	bool SuperWeapons;
+	bool BuildOffAlly;
+	bool MCVRepacks;
+	bool CratesAppear;
+	DWORD unknown_fields [0x18];
 };
 
 struct AISlotsStruct {
-	PROPERTY_ARRAY(int, AIDifficulties, 8);
-	PROPERTY_ARRAY(void *, StartingSpots, 8);
-	PROPERTY_ARRAY(int, Colours, 8);
-	PROPERTY_ARRAY(int, Starts, 8);
-	PROPERTY_ARRAY(int, Teams, 8);
+	int AIDifficulties [8];
+	void * StartingSpots [8];
+	int Colours [8];
+	int Starts [8];
+	int Teams [8];
 };
 
 struct SessionOptionsClass {
-	PROPERTY(DWORD, idxMPMode);
-	PROPERTY(DWORD, idxScenario);
-	PROPERTY(bool, Bases);
-	PROPERTY(DWORD, Money);
-	PROPERTY(bool, BridgeDestruction);
-	PROPERTY(bool, Crates);
-	PROPERTY(bool, ShortGame);
-	PROPERTY(bool, SuperWeaponsOn);
-	PROPERTY(bool, BuildOffAlly);
-	PROPERTY(int, GameSpeed);
-	PROPERTY(bool, MultiEngineer);
-	PROPERTY(int, UnitCount);
-	PROPERTY(int, AIPlayers);
-	PROPERTY(int, AIDifficulty);
-	PROPERTY_STRUCT(AISlotsStruct, AISlots);
-	PROPERTY(bool, AlliesAllowed);
-	PROPERTY(bool, HarvesterTruce);
-	PROPERTY(bool, CTF);
-	PROPERTY(bool, FogOfWar);
-	PROPERTY(bool, MCVRedeploy);
-	PROPERTY_UNICODE(unnamed, 45);
+	DWORD idxMPMode;
+	DWORD idxScenario;
+	bool Bases;
+	DWORD Money;
+	bool BridgeDestruction;
+	bool Crates;
+	bool ShortGame;
+	bool SuperWeaponsOn;
+	bool BuildOffAlly;
+	int GameSpeed;
+	bool MultiEngineer;
+	int UnitCount;
+	int AIPlayers;
+	int AIDifficulty;
+	AISlotsStruct AISlots;
+	bool AlliesAllowed;
+	bool HarvesterTruce;
+	bool CTF;
+	bool FogOfWar;
+	bool MCVRedeploy;
+	wchar_t unnamed [45];
 };
 
 class SessionClass {
+
+	public:
+
 	static SessionClass * Instance;
 
 	eGameMode GameMode;
-	PROPERTY(MPGameModeClass *, MPGameMode);
-	PROPERTY(DWORD, unknown_08);
-	PROPERTY(DWORD, unknown_0C);
-	PROPERTY(DWORD, unknown_10);
-	PROPERTY(DWORD, unknown_14);
-	PROPERTY(DWORD, unknown_18);
-	PROPERTY_STRUCT(SessionOptionsClass, Config);
-	PROPERTY(DWORD, UniqueID);
-	PROPERTY_STRING(Handle, 20);
-	PROPERTY(int, PlayerColor);
-	PROPERTY(DWORD, unknown_160);
-	PROPERTY(DWORD, unknown_164);
-	PROPERTY(DWORD, unknown_168);
-	PROPERTY(DWORD, unknown_16C);
-	PROPERTY(DWORD, unknown_170);
-	PROPERTY(int, idxSide);
-	PROPERTY(int, idxSide2);
-	PROPERTY(int, Color);
-	PROPERTY(int, Color2);
-	PROPERTY(int, Side);
-	PROPERTY(int, Side2);
-	PROPERTY_STRUCT(GameTypePreferencesStruct, SkirmishPreferences);
-	PROPERTY_STRUCT(GameTypePreferencesStruct, LANPreferences);
-	PROPERTY_STRUCT(GameTypePreferencesStruct, WOLPreferences);
-	PROPERTY_ARRAY(byte, unknown_300, 8);
-	PROPERTY(bool, WOLLimitResolution);
-	PROPERTY(int, LastNickSlot);
+	MPGameModeClass * MPGameMode;
+	DWORD unknown_08;
+	DWORD unknown_0C;
+	DWORD unknown_10;
+	DWORD unknown_14;
+	DWORD unknown_18;
+	SessionOptionsClass Config;
+	DWORD UniqueID;
+	char Handle [20];
+	int PlayerColor;
+	DWORD unknown_160;
+	DWORD unknown_164;
+	DWORD unknown_168;
+	DWORD unknown_16C;
+	DWORD unknown_170;
+	int idxSide;
+	int idxSide2;
+	int Color;
+	int Color2;
+	int Side;
+	int Side2;
+	GameTypePreferencesStruct SkirmishPreferences;
+	GameTypePreferencesStruct LANPreferences;
+	GameTypePreferencesStruct WOLPreferences;
+	byte unknown_300 [8];
+	bool WOLLimitResolution;
+	int LastNickSlot;
 
 };
 

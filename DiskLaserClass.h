@@ -42,13 +42,15 @@ public:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(TechnoClass*,		Owner);
-	PROPERTY(TechnoClass*,		Target);
-	PROPERTY(WeaponTypeClass*,	Weapon);
-	PROPERTY(DWORD,				unknown_30);
-	PROPERTY(DWORD,				unknown_34);
-	PROPERTY(DWORD,				unknown_38);
-	PROPERTY(int,				Damage);
+public:
+
+	TechnoClass* Owner;
+	TechnoClass* Target;
+	WeaponTypeClass* Weapon;
+	DWORD unknown_30;
+	DWORD unknown_34;
+	DWORD unknown_38;
+	int Damage;
 };
 
 #endif

@@ -13,8 +13,8 @@ class Crate
 {
 public:
 	//Properties
-	PROPERTY_STRUCT(TimerStruct,	CrateTimer);
-	PROPERTY_STRUCT(CellStruct,	Location);
+	TimerStruct CrateTimer;
+	CellStruct Location;
 };
 
 //ZoneConnectionClass - Holding zone connection info from tubes or bridges (probably used for pathfinding)
@@ -90,7 +90,7 @@ public:
 
 			CellClass* pCell = InvalidCell();
 
-			pCell->set_MapCoords(pMapCoords);
+			pCell->MapCoords = *pMapCoords;
 			return pCell;
 		}
 
@@ -233,46 +233,49 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(DWORD,					unknown_10);
-	PROPERTY(void*,					unknown_pointer_14);
-	PROPERTY_ARRAY(void*, unknown_pointer_array_18, 0xD);
-	PROPERTY(DWORD,					unknown_4C);
-	PROPERTY_STRUCT(DynamicVectorClass<ZoneConnectionClass>,		ZoneConnections);
-	PROPERTY(void*,					unknown_array_68);
-	PROPERTY(int,					num_items_in_68);
-	PROPERTY(DWORD,					unknown_70);
-	PROPERTY(DWORD,					unknown_74);
-	PROPERTY(DWORD,					unknown_78);
-	PROPERTY(DWORD,					unknown_7C);
-	PROPERTY(DWORD,					unknown_80);
-	PROPERTY(DWORD,					unknown_84);
-	PROPERTY(DWORD,					unknown_88);
-	PROPERTY_STRUCT(DynamicVectorClass<SubzoneTrackingStruct>,		SubzoneTracking1);
-	PROPERTY_STRUCT(DynamicVectorClass<SubzoneTrackingStruct>,		SubzoneTracking2);
-	PROPERTY_STRUCT(DynamicVectorClass<SubzoneTrackingStruct>,		SubzoneTracking3);
-	PROPERTY_STRUCT(DynamicVectorClass<CellStruct>,				CellStructs1);
-	PROPERTY_STRUCT(RectangleStruct,		MapRect);
-	PROPERTY_STRUCT(RectangleStruct,		VisibleRect);
-	PROPERTY(int,					CellIterator_NextX);
-	PROPERTY(int,					CellIterator_NextY);
-	PROPERTY(int,					CellIterator_CurrentY);
-	PROPERTY(CellClass*,			CellIterator_NextCell);
-	PROPERTY(DWORD,					unknown_11C);
-	PROPERTY(DWORD,					unknown_120);
-	PROPERTY(DWORD,					unknown_124);
-	PROPERTY(DWORD,					unknown_128);
-	PROPERTY(DWORD,					unknown_12C);
-	PROPERTY(DWORD,					unknown_130);
-	PROPERTY(DWORD,					unknown_134);
-	PROPERTY_STRUCT(VectorClass<CellClass*>,					Cells);
-	PROPERTY(int,					MaxWidth);
-	PROPERTY(int,					MaxHeight);
-	PROPERTY(int,					MaxNumCells);
-	PROPERTY(DWORD, _padding_01);
-	PROPERTY(DWORD, _padding_02);
-	PROPERTY_STRUCT_ARRAY(Crate, Crates, 0x100);
-//	PROPERTY(bool,					unknown_bool_1158);
-	PROPERTY_STRUCT(DynamicVectorClass<CellStruct>,				CellStructs2);
+
+public:
+
+	DWORD unknown_10;
+	void* unknown_pointer_14;
+	void* unknown_pointer_array_18 [0xD];
+	DWORD unknown_4C;
+	DynamicVectorClass<ZoneConnectionClass> ZoneConnections;
+	void* unknown_array_68;
+	int num_items_in_68;
+	DWORD unknown_70;
+	DWORD unknown_74;
+	DWORD unknown_78;
+	DWORD unknown_7C;
+	DWORD unknown_80;
+	DWORD unknown_84;
+	DWORD unknown_88;
+	DynamicVectorClass<SubzoneTrackingStruct> SubzoneTracking1;
+	DynamicVectorClass<SubzoneTrackingStruct> SubzoneTracking2;
+	DynamicVectorClass<SubzoneTrackingStruct> SubzoneTracking3;
+	DynamicVectorClass<CellStruct> CellStructs1;
+	RectangleStruct MapRect;
+	RectangleStruct VisibleRect;
+	int CellIterator_NextX;
+	int CellIterator_NextY;
+	int CellIterator_CurrentY;
+	CellClass* CellIterator_NextCell;
+	DWORD unknown_11C;
+	DWORD unknown_120;
+	DWORD unknown_124;
+	DWORD unknown_128;
+	DWORD unknown_12C;
+	DWORD unknown_130;
+	DWORD unknown_134;
+	VectorClass<CellClass*> Cells;
+	int MaxWidth;
+	int MaxHeight;
+	int MaxNumCells;
+	DWORD _padding_01;
+	DWORD _padding_02;
+	Crate Crates [0x100];
+//	bool unknown_bool_1158;
+	DynamicVectorClass<CellStruct> CellStructs2;
 
 };
 

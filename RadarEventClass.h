@@ -24,19 +24,21 @@ private:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(int,				Type);
-	PROPERTY(int,				RadarX);	//not sure
-	PROPERTY(int,				RadarY);	//not sure
-	PROPERTY(float,				unknown_float_0C);
-	PROPERTY(DWORD,				unknown_10);
-	PROPERTY(float,				RotationSpeed);
-	PROPERTY(DWORD,				unknown_18);
-	PROPERTY(float,				ColorSpeed);
-	PROPERTY_STRUCT(CellStruct,		MapCoords);
-	PROPERTY_STRUCT(TimerStruct,		unknown_timer_24);	//Rotation timer?
-	PROPERTY_STRUCT(TimerStruct,		unknown_timer_30);	//Color timer?
-	PROPERTY(bool,				unknown_bool_3C);
-	PROPERTY(bool,				unknown_bool_3D);
+public:
+
+	int Type;
+	int RadarX;	//not sure
+	int RadarY;	//not sure
+	float unknown_float_0C;
+	DWORD unknown_10;
+	float RotationSpeed;
+	DWORD unknown_18;
+	float ColorSpeed;
+	CellStruct MapCoords;
+	TimerStruct unknown_timer_24;	//Rotation timer?
+	TimerStruct unknown_timer_30;	//Color timer?
+	bool unknown_bool_3C;
+	bool unknown_bool_3D;
 };
 
 #endif

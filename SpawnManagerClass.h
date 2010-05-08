@@ -66,17 +66,19 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(TechnoClass*, Owner);
-	PROPERTY(AircraftTypeClass*, SpawnType);
-	PROPERTY(int, SpawnCount);
-	PROPERTY(int, RegenRate);
-	PROPERTY(int, ReloadRate);
-	PROPERTY_STRUCT(DynamicVectorClass<SpawnNode*>, SpawnedNodes);
-	PROPERTY_STRUCT(TimerStruct, UnknownTimer);
-	PROPERTY_STRUCT(TimerStruct, SpawnTimer);
-	PROPERTY(int, Destination);
-	PROPERTY(int, Target);
-	PROPERTY(int, SomeTimestamp);
+public:
+
+	TechnoClass* Owner;
+	AircraftTypeClass* SpawnType;
+	int SpawnCount;
+	int RegenRate;
+	int ReloadRate;
+	DynamicVectorClass<SpawnNode*> SpawnedNodes;
+	TimerStruct UnknownTimer;
+	TimerStruct SpawnTimer;
+	int Destination;
+	int Target;
+	int SomeTimestamp;
 };
 
 #endif

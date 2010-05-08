@@ -52,57 +52,60 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY_STRUCT(ColorStruct,   RadialColor);
-	PROPERTY(BYTE,          unused_9B);
-	PROPERTY(int,           Armor);
-	PROPERTY(int,           Strength);
-	PROPERTY(SHPStruct*,    Image);
-	PROPERTY(bool,          IsImageAllocated);
-	PROPERTY(bool,          unused_A9);
-	PROPERTY(bool,          unused_AA);
-	PROPERTY(bool,          unused_AB);
-	PROPERTY(SHPStruct*,    AlphaImage);
-	PROPERTY_STRUCT(VoxelStruct,   MainVoxel);
-	PROPERTY_STRUCT(VoxelStruct,   TurretVoxel); //also used for WO voxels
-	PROPERTY_STRUCT(VoxelStruct,   BarrelVoxel);
 
-	PROPERTY_STRUCT_ARRAY(VoxelStruct, ChargerTurrets, 0x12);
-	PROPERTY_STRUCT_ARRAY(VoxelStruct, ChargerBarrels, 0x12);
+public:
 
-	PROPERTY(bool,          NoSpawnAlt);
-	PROPERTY(BYTE,          unused_1E9);
-	PROPERTY(BYTE,          unused_1EA);
-	PROPERTY(BYTE,          unused_1EB);
-	PROPERTY(int,           MaxDimension);
-	PROPERTY(int,           CrushSound); //index
-	PROPERTY(int,           AmbientSound); //index
+	ColorStruct RadialColor;
+	BYTE          unused_9B;
+	int           Armor;
+	int           Strength;
+	SHPStruct*    Image;
+	bool          IsImageAllocated;
+	bool          unused_A9;
+	bool          unused_AA;
+	bool          unused_AB;
+	SHPStruct*    AlphaImage;
+	VoxelStruct MainVoxel;
+	VoxelStruct TurretVoxel; //also used for WO voxels
+	VoxelStruct BarrelVoxel;
 
-	PROPERTY_STRING(ImageFile, 0x19);
+	VoxelStruct ChargerTurrets [0x12];
+	VoxelStruct ChargerBarrels [0x12];
 
-	PROPERTY(bool,           AlternateArcticArt);
-	PROPERTY(bool,           ArcticArtInUse); //not read from ini
+	bool          NoSpawnAlt;
+	BYTE          unused_1E9;
+	BYTE          unused_1EA;
+	BYTE          unused_1EB;
+	int           MaxDimension;
+	int           CrushSound; //index
+	int           AmbientSound; //index
 
-	PROPERTY_STRING(AlphaImageFile, 0x19);
+	char ImageFile [0x19];
 
-	PROPERTY(bool,           Theater);
-	PROPERTY(bool,           Crushable);
-	PROPERTY(bool,           Bombable);
-	PROPERTY(bool,           RadarInvisible);
-	PROPERTY(bool,           Selectable);
-	PROPERTY(bool,           LegalTarget);
-	PROPERTY(bool,           Insignificant);
-	PROPERTY(bool,           Immune);
-	PROPERTY(bool,           Voxel);
-	PROPERTY(bool,           NewTheater);
-	PROPERTY(bool,           HasRadialIndicator);
-	PROPERTY(bool,           IgnoresFirestorm);
-	PROPERTY(bool,           UseLineTrail);
-	PROPERTY_STRUCT(ColorStruct,    LineTrailColor);
-	PROPERTY(BYTE,           unused_23E);
-	PROPERTY(BYTE,           unused_23F);
-	PROPERTY(int,            LineTrailColorDecrement);
+	bool           AlternateArcticArt;
+	bool           ArcticArtInUse; //not read from ini
 
-	PROPERTY_ARRAY(SomeVoxelCache, VoxelCaches, 4); //These don't even seem to be of any use...
+	char AlphaImageFile [0x19];
+
+	bool           Theater;
+	bool           Crushable;
+	bool           Bombable;
+	bool           RadarInvisible;
+	bool           Selectable;
+	bool           LegalTarget;
+	bool           Insignificant;
+	bool           Immune;
+	bool           Voxel;
+	bool           NewTheater;
+	bool           HasRadialIndicator;
+	bool           IgnoresFirestorm;
+	bool           UseLineTrail;
+	ColorStruct LineTrailColor;
+	BYTE           unused_23E;
+	BYTE           unused_23F;
+	int            LineTrailColorDecrement;
+
+	SomeVoxelCache VoxelCaches [4]; //These don't even seem to be of any use...
 };
 
 #endif

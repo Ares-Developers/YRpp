@@ -48,76 +48,79 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(int,				ArrayIndex);
-	PROPERTY(DWORD,				unknown_298);
-	PROPERTY(DWORD,				unknown_29C);
-	PROPERTY(DWORD,				unknown_2A0);
-	PROPERTY(DWORD,				unknown_2A4);
-	PROPERTY(double,			Damage);
-	PROPERTY(int,				Rate);
-	PROPERTY(int,				Start);
-	PROPERTY(int,				LoopStart);
-	PROPERTY(int,				LoopEnd);
-	PROPERTY(int,				End);
-	PROPERTY(int,				LoopCount);
-	PROPERTY(AnimTypeClass*,	Next);
-	PROPERTY(int, SpawnsParticle); // index of that ParticleTypeClass
-	PROPERTY(int,				NumParticles);
-	PROPERTY(int,				DetailLevel);
-	PROPERTY(int,				TranslucencyDetailLevel);
-	PROPERTY(RandomStruct,		RandomLoopDelay);
-	PROPERTY(RandomStruct,		RandomRate);
-	PROPERTY(int,				Translucency);
-	PROPERTY(AnimTypeClass*,	Spawns);
-	PROPERTY(int,				SpawnCount);
-	PROPERTY(int,				Report);		//VocClass index
-	PROPERTY(int,				StopSound);		//VocClass index
-	PROPERTY(AnimTypeClass*,	BounceAnim);
-	PROPERTY(AnimTypeClass*,	ExpireAnim);
-	PROPERTY(AnimTypeClass*,	TrailerAnim);
-	PROPERTY(int,				TrailerSeperation);	//MISTYPE BY WESTWOOD!
-	PROPERTY(double,			Elasticity);
-	PROPERTY(double,			MinZVel);
-	PROPERTY(double,			unknown_double_320);
-	PROPERTY(double,			MaxXYVel);
-	PROPERTY(WarheadTypeClass*,	Warhead);
-	PROPERTY(int,				DamageRadius);
-	PROPERTY(OverlayTypeClass*,	TiberiumSpawnType);
-	PROPERTY(int,				TiberiumSpreadRadius);
-	PROPERTY(int,				YSortAdjust);
-	PROPERTY(int,				YDrawOffset);
-	PROPERTY(int,				ZAdjust);
-	PROPERTY(int,				MakeInfantry);
-	PROPERTY(int,				RunningFrames);
-	PROPERTY(bool,				IsFlamingGuy);
-	PROPERTY(bool,				IsVeins);
-	PROPERTY(bool,				IsMeteor);
-	PROPERTY(bool,				TiberiumChainReaction);
-	PROPERTY(bool,				IsTiberium);
-	PROPERTY(bool,				HideIfNoOre);
-	PROPERTY(bool,				Bouncer);
-	PROPERTY(bool,				Tiled);
-	PROPERTY(bool,				ShouldUseCellDrawer);
-	PROPERTY(bool,				UseNormalLight);
-	PROPERTY(bool,				DemandLoad); // not loaded from ini anymore
-	PROPERTY(bool,				FreeLoad);  // not loaded from ini anymore
-	PROPERTY(bool,				IsAnimatedTiberium);
-	PROPERTY(bool,				AltPalette);
-	PROPERTY(bool,				Normalized);
-	PROPERTY(int,				Layer);
-	PROPERTY(bool,				DoubleThick);
-	PROPERTY(bool,				Flat);
-	PROPERTY(bool,				Translucent);
-	PROPERTY(bool,				Scorch);
-	PROPERTY(bool,				Flamer);
-	PROPERTY(bool,				Crater);
-	PROPERTY(bool,				ForceBigCraters);
-	PROPERTY(bool,				Sticky);
-	PROPERTY(bool,				PingPong);
-	PROPERTY(bool,				Reverse);
-	PROPERTY(bool,				Shadow);
-	PROPERTY(bool,				PsiWarning);
-	PROPERTY(bool,				ShouldFogRemove);
+
+public:
+
+	int ArrayIndex;
+	DWORD unknown_298;
+	DWORD unknown_29C;
+	DWORD unknown_2A0;
+	DWORD unknown_2A4;
+	double Damage;
+	int Rate;
+	int Start;
+	int LoopStart;
+	int LoopEnd;
+	int End;
+	int LoopCount;
+	AnimTypeClass* Next;
+	int SpawnsParticle; // index of that ParticleTypeClass
+	int NumParticles;
+	int DetailLevel;
+	int TranslucencyDetailLevel;
+	RandomStruct RandomLoopDelay;
+	RandomStruct RandomRate;
+	int Translucency;
+	AnimTypeClass* Spawns;
+	int SpawnCount;
+	int Report;		//VocClass index
+	int StopSound;		//VocClass index
+	AnimTypeClass* BounceAnim;
+	AnimTypeClass* ExpireAnim;
+	AnimTypeClass* TrailerAnim;
+	int TrailerSeperation;	//MISTYPE BY WESTWOOD!
+	double Elasticity;
+	double MinZVel;
+	double unknown_double_320;
+	double MaxXYVel;
+	WarheadTypeClass* Warhead;
+	int DamageRadius;
+	OverlayTypeClass* TiberiumSpawnType;
+	int TiberiumSpreadRadius;
+	int YSortAdjust;
+	int YDrawOffset;
+	int ZAdjust;
+	int MakeInfantry;
+	int RunningFrames;
+	bool IsFlamingGuy;
+	bool IsVeins;
+	bool IsMeteor;
+	bool TiberiumChainReaction;
+	bool IsTiberium;
+	bool HideIfNoOre;
+	bool Bouncer;
+	bool Tiled;
+	bool ShouldUseCellDrawer;
+	bool UseNormalLight;
+	bool DemandLoad; // not loaded from ini anymore
+	bool FreeLoad;  // not loaded from ini anymore
+	bool IsAnimatedTiberium;
+	bool AltPalette;
+	bool Normalized;
+	int Layer;
+	bool DoubleThick;
+	bool Flat;
+	bool Translucent;
+	bool Scorch;
+	bool Flamer;
+	bool Crater;
+	bool ForceBigCraters;
+	bool Sticky;
+	bool PingPong;
+	bool Reverse;
+	bool Shadow;
+	bool PsiWarning;
+	bool ShouldFogRemove;
 };
 
 #endif

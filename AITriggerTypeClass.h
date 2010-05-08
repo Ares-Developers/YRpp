@@ -158,30 +158,31 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(eAITrigCondition, ConditionType);
-	PROPERTY(int,              IsGlobal);
-	PROPERTY(eAITrigHouseType, OwnerHouseType);
-	PROPERTY(bool,             IsEnabled);
-	PROPERTY(int,              HouseIndex);
-	PROPERTY(int,              SideIndex);
-	PROPERTY(int,              TechLevel);
-	PROPERTY(int,              unknown_B4);
-	PROPERTY(double,           Weight_Current);
-	PROPERTY(double,           Weight_Minimum);
-	PROPERTY(double,           Weight_Maximum);
-	PROPERTY(bool,             IsForSkirmish);
-	PROPERTY(bool,             IsForBaseDefense);
-	PROPERTY(bool,             Enabled_Easy);
-	PROPERTY(bool,             Enabled_Normal);
-	PROPERTY(bool,             Enabled_Hard);
-	PROPERTY(TechnoTypeClass*, ConditionObject);
-	PROPERTY(TeamTypeClass*,   Team1);
-	PROPERTY(TeamTypeClass*,   Team2);
-	PROPERTY_STRUCT_ARRAY(
-		AITriggerConditionComparator, Conditions, 4); // don't ask
-	PROPERTY(int,              TimesExecuted);
-	PROPERTY(int,              TimesCompleted);
-	PROPERTY(int,              unknown_10C);
+public:
+
+	eAITrigCondition ConditionType;
+	int              IsGlobal;
+	eAITrigHouseType OwnerHouseType;
+	bool             IsEnabled;
+	int              HouseIndex;
+	int              SideIndex;
+	int              TechLevel;
+	int              unknown_B4;
+	double           Weight_Current;
+	double           Weight_Minimum;
+	double           Weight_Maximum;
+	bool             IsForSkirmish;
+	bool             IsForBaseDefense;
+	bool             Enabled_Easy;
+	bool             Enabled_Normal;
+	bool             Enabled_Hard;
+	TechnoTypeClass* ConditionObject;
+	TeamTypeClass*   Team1;
+	TeamTypeClass*   Team2;
+	AITriggerConditionComparator Conditions [4]; // don't ask
+	int              TimesExecuted;
+	int              TimesCompleted;
+	int              unknown_10C;
 
 };
 

@@ -49,9 +49,11 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(int,     Group);
-	PROPERTY(int,     CountEntries);
-	PROPERTY_STRUCT_ARRAY(TaskForceEntryStruct, Entries, 0x6);
+public:
+
+	int     Group;
+	int     CountEntries;
+	TaskForceEntryStruct Entries [0x6];
 };
 
 #endif

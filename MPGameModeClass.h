@@ -237,19 +237,21 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(bool, unknown_4);
-	PROPERTY_STRUCT(DynamicVectorClass<MPTeam *>, MPTeams);
-	PROPERTY(wchar_t *, CSFTitle);
-	PROPERTY(wchar_t *, CSFTooltip);
-	PROPERTY(int, MPModeIndex);
-	PROPERTY(char*, INIFilename);
-	PROPERTY(char*, MapFilter);
-	PROPERTY(bool, AIAllowed);
-	PROPERTY(CCINIClass*, INI);
-	PROPERTY(bool, AlliesAllowed);
-	PROPERTY(bool, wolTourney);
-	PROPERTY(bool, wolClanTourney);
-	PROPERTY(bool, MustAlly);
+public:
+
+	bool unknown_4;
+	DynamicVectorClass<MPTeam *> MPTeams;
+	wchar_t * CSFTitle;
+	wchar_t * CSFTooltip;
+	int MPModeIndex;
+	char* INIFilename;
+	char* MapFilter;
+	bool AIAllowed;
+	CCINIClass* INI;
+	bool AlliesAllowed;
+	bool wolTourney;
+	bool wolClanTourney;
+	bool MustAlly;
 };
 
 

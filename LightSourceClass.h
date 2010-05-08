@@ -45,12 +45,14 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
-	PROPERTY(int, LightIntensity);
-	PROPERTY_STRUCT(TintStruct, LightTint);
-	PROPERTY(int, unknown_int_30);
-	PROPERTY_STRUCT(CoordStruct, Location);
-	PROPERTY(int, LightVisibility);
-	PROPERTY(bool, Activated);
+public:
+
+	int LightIntensity;
+	TintStruct LightTint;
+	int unknown_int_30;
+	CoordStruct Location;
+	int LightVisibility;
+	bool Activated;
 };
 
 #endif

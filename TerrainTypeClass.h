@@ -49,19 +49,22 @@ protected:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROPERTY(int,			ArrayIndex);
-	PROPERTY(int,			Foundation);
-	PROPERTY_STRUCT(ColorStruct,	RadarColor);
-	PROPERTY(int,			AnimationRate);
-	PROPERTY(float,			AnimationProbability);
-	PROPERTY(int,			TemperateOccupationBits);
-	PROPERTY(int,			SnowOccupationBits);
-	PROPERTY(bool,			WaterBound);
-	PROPERTY(bool,			SpawnsTiberium);
-	PROPERTY(bool,			IsFlammable);
-	PROPERTY(bool,			IsAnimated);
-	PROPERTY(bool,			IsVeinhole);
-	PROPERTY(CellStruct*,	FoundationData);
+
+public:
+
+	int ArrayIndex;
+	int Foundation;
+	ColorStruct RadarColor;
+	int AnimationRate;
+	float AnimationProbability;
+	int TemperateOccupationBits;
+	int SnowOccupationBits;
+	bool WaterBound;
+	bool SpawnsTiberium;
+	bool IsFlammable;
+	bool IsAnimated;
+	bool IsVeinhole;
+	CellStruct* FoundationData;
 };
 
 #endif

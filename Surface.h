@@ -159,18 +159,18 @@ public:
 
 public:
 	//Properties
-	PROPERTY(int, Width);
-	PROPERTY(int, Height);
-	PROPERTY(int, LockLevel);
-	PROPERTY(int, BytesPerPixel);
-//	PROPERTY(Allocator,				PixelData);
-	PROPERTY(void *, Buffer);
-	PROPERTY(bool, Allocated);
-	PROPERTY(bool, VRAMmed);
-	PROPERTY(BYTE, unknown_1A);
-	PROPERTY(BYTE, unknown_1B);
-	PROPERTY(IDirectDrawSurface*, Surf);
-	PROPERTY(DDSURFACEDESC2*, SurfDesc);
+	int Width;
+	int Height;
+	int LockLevel;
+	int BytesPerPixel;
+//	Allocator PixelData;
+	void * Buffer;
+	bool Allocated;
+	bool VRAMmed;
+	BYTE unknown_1A;
+	BYTE unknown_1B;
+	IDirectDrawSurface* Surf;
+	DDSURFACEDESC2* SurfDesc;
 
 	//Helper functions
 public:
