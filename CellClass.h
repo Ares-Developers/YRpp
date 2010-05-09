@@ -343,7 +343,7 @@ public:
 	BYTE               SlopeIndex;  // this + 2 == cell's slope shape as reflected by PLACE.SHP
 	PROTECTED_PROPERTY(BYTE,     unknown_11D);
 
-	char               Powerup;	//The crate type on this cell.
+	unsigned char      Powerup;	//The crate type on this cell. Also indicates some other weird properties
 
 	PROTECTED_PROPERTY(BYTE,     unknown_11F);
 	BYTE               Shroudedness; // trust me, you don't wanna know... if you do, see 0x7F4194 and cry

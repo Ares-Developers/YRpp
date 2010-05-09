@@ -2,6 +2,7 @@
 #define BUILDINGTYPE_H
 
 #include <TechnoTypeClass.h>
+class OverlayTypeClass;
 
 struct BuildingAnimStruct
 {
@@ -93,7 +94,7 @@ public:
 	int LightBlueTint;
 	Point2D PrimaryFirePixelOffset;
 	Point2D SecondaryFirePixelOffset;
-	int ToOverlay;
+	OverlayTypeClass *ToOverlay;
 	int ToTile;
 	char BuildupFile [0x10];
 	int BuildupSound;
