@@ -51,6 +51,49 @@ public:
 	bool IsPowered()
 		{ return this->Type->IsPowered; }
 
+	void Launch(CellStruct *Cell, bool IsPlayer)
+		{ JMP_THIS(0x6CC390); }
+
+	char CanFire()
+		{ JMP_THIS(0x6CC360); }
+
+	void SetReadiness(bool Ready) // this->IsCharged = Ready
+		{ JMP_THIS(0x6CB820); }
+
+	char StopPreclickAnim(bool /*IsPlayer*/) // if this is a PostClick SW, firing it does this
+		{ JMP_THIS(0x6CB830); }
+
+	char ClickFire(bool IsPlayer, CellStruct *Coords) // calls Launch after printing Lightning Storm warning and other fluff
+		{ JMP_THIS(0x6CB920); }
+
+	bool HasChargeProgressed(bool IsPlayer) // true if the charge has changed (charge overlay on the cameo)
+		{ JMP_THIS(0x6CBCA0); }               // triggers the EVA Announcement if it's ready
+
+	signed int GetCameoChargeState() // which cameo charge overlay frame to show
+		{ JMP_THIS(0x6CBEE0); }
+
+	void SetCharge(int Percentage)
+		{ JMP_THIS(0x6CC1E0); }
+
+	int GetRechargeTime() // the time it takes this SW to recharge fully
+		{ JMP_THIS(0x6CC260); }
+
+	void SetRechargeTime(int time) // makes this SW rechange in this many frames, as opposed to [Type]RechargeTime
+		{ JMP_THIS(0x6CC280); }
+
+	void ResetRechargeTime() // nullifies the previous call
+		{ JMP_THIS(0x6CC290); }
+
+	wchar_t *NameReadiness() // the string to be displayed over the SW in the sidebar - "Ready" or ChargeDrain state
+		{ JMP_THIS(0x6CC2B0); }
+
+	bool ShouldDrawProgress() // sidebar
+		{ JMP_THIS(0x6CDE90); }
+
+	bool ShouldFlashTab() // sidebar
+		{ JMP_THIS(0x6CE1A0); }
+
+
 	//Constructor
 	SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner) : AbstractClass(false)
 		{ JMP_THIS(0x6CAF90); }
