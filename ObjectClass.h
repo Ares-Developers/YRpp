@@ -250,7 +250,7 @@ public:
 	bool               HasParachute;	//Is this Object parachuting?
 	AnimClass*         Parachute;		//Current parachute Anim.
 	bool               OnBridge;
-	bool               FallingDown;
+	bool               IsFallingDown;
 	bool               unknown_8E;
 	bool               IsABomb; // if set, will explode after FallingDown brings it to contact with the ground
 	bool               IsAlive;		//Self-explanatory.

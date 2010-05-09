@@ -488,8 +488,8 @@ public:
 	short              unknown_short_3C8;
 	WORD               unknown_3CA;
 	bool               unknown_bool_3CC;
-	bool               unknown_bool_3CD;
-	bool               unknown_bool_3CE;
+	bool               IsSinking;
+	bool               WasSinkingAlready; // if(IsSinking && !WasSinkingAlready) { play SinkingSound; WasSinkingAlready = 1; }
 	bool               unknown_bool_3CF;
 	bool               unknown_bool_3D0;
 	bool               HasBeenAttacked; // ReceiveDamage when not HouseClass_IsAlly
@@ -512,8 +512,8 @@ public:
 	bool               RecruitableB; // they're usually set on preplaced objects in maps
 	bool               unknown_bool_423;
 	bool               unknown_bool_424;
-	bool               unknown_bool_425;
-	bool               unknown_bool_426;
+	bool               IsCrashing;
+	bool               WasCrashingAlready;
 	bool               unknown_bool_427;
 	DWORD              unknown_428;
 	HouseClass*        ChronoWarpedByHouse;
