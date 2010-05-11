@@ -473,11 +473,14 @@ struct ColorPacker
  * This thing is ridiculous
  * all xxTypeClass::Create functions use it:
 
+  // doing this makes no sense - it's just a wrapper around CTOR, which doesn't call any Mutex'd functions... but who cares
   InfantryTypeClass *foo = something;
   ++SomeMutex;
-  InfantryClass *obj = something->CreateObject();
+  InfantryClass *obj = foo->CreateObject();
   --SomeMutex;
 
+  // XXX do not do this if you aren't sure if the object can exist in this place
+  // - this flag overrides any placement checks so you can put Terror Drones into trees and stuff
   ++SomeMutex;
   obj->Put(blah);
   --SomeMutex;
@@ -522,7 +525,8 @@ struct ColorPacker
 
   and so on...
  */
-	static int &SomeMutex = *(int *)0xA8E7AC;
+	// Note: SomeMutex has been renamed to this because it reflects the usage better
+	static int &IKnowWhatImDoing = *(int *)0xA8E7AC; // h2ik
 };
 
 struct CheatData {
