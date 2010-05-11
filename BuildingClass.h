@@ -109,6 +109,9 @@ public:
 	int SecondActiveSWIdx()
 		{ JMP_THIS(0x457690); }
 
+	void FireLaser(CoordStruct Coords)
+		{ JMP_THIS(0x44ABD0); }
+
 	//Constructor
 	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner) : TechnoClass(false)
 		{ JMP_THIS(0x43B740); }
