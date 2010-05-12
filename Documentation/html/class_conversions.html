@@ -42,14 +42,14 @@
 <a href="class_conversions-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">static double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_conversions.html#caf41ae6b164335fa2a9466eb4c04c62">Str2Armor</a> (char *buf, <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> *specialFX)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_conversions.html#75c0041f1352752e1f9452fb142618ab">Str2Armor</a> (const char *buf, <a class="el" href="struct_warhead_flags.html">WarheadFlags</a> *whFlags)</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">static int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_conversions.html#e8d4f32fa751343f1f4af6cd7c07e68c">Int2Highest</a> (<a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> v)</td></tr>
 
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 
-<p>Definition at line <a class="el" href="_conversions_8h-source.html#l00008">8</a> of file <a class="el" href="_conversions_8h-source.html">Conversions.h</a>.</p>
+<p>Definition at line <a class="el" href="_conversions_8h-source.html#l00009">9</a> of file <a class="el" href="_conversions_8h-source.html">Conversions.h</a>.</p>
 <hr><h2>Member Function Documentation</h2>
 <a class="anchor" name="e8d4f32fa751343f1f4af6cd7c07e68c"></a><!-- doxytag: member="Conversions::Int2Highest" ref="e8d4f32fa751343f1f4af6cd7c07e68c" args="(DWORD v)" -->
 <div class="memitem">
@@ -69,39 +69,39 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_conversions_8h-source.html#l00057">57</a> of file <a class="el" href="_conversions_8h-source.html">Conversions.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00057"></a>00057                                         {
-<a name="l00058"></a>00058                 <span class="keyword">register</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> r; <span class="comment">// result of log2(v) will go here</span>
-<a name="l00059"></a>00059                 <span class="keyword">register</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> shift;
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061                 r =     (v &gt; 0xFFFF) &lt;&lt; 4; v &gt;&gt;= r;
-<a name="l00062"></a>00062                 shift = (v &gt; 0xFF  ) &lt;&lt; 3; v &gt;&gt;= shift; r |= shift;
-<a name="l00063"></a>00063                 shift = (v &gt; 0xF   ) &lt;&lt; 2; v &gt;&gt;= shift; r |= shift;
-<a name="l00064"></a>00064                 shift = (v &gt; 0x3   ) &lt;&lt; 1; v &gt;&gt;= shift; r |= shift;
-<a name="l00065"></a>00065                                                         r |= (v &gt;&gt; 1);
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067                 <span class="keywordflow">return</span> r;
-<a name="l00068"></a>00068         }
+<p>Definition at line <a class="el" href="_conversions_8h-source.html#l00053">53</a> of file <a class="el" href="_conversions_8h-source.html">Conversions.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00053"></a>00053                                         {
+<a name="l00054"></a>00054                 <span class="keyword">register</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> r; <span class="comment">// result of log2(v) will go here</span>
+<a name="l00055"></a>00055                 <span class="keyword">register</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> shift;
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057                 r =     (v &gt; 0xFFFF) &lt;&lt; 4; v &gt;&gt;= r;
+<a name="l00058"></a>00058                 shift = (v &gt; 0xFF  ) &lt;&lt; 3; v &gt;&gt;= shift; r |= shift;
+<a name="l00059"></a>00059                 shift = (v &gt; 0xF   ) &lt;&lt; 2; v &gt;&gt;= shift; r |= shift;
+<a name="l00060"></a>00060                 shift = (v &gt; 0x3   ) &lt;&lt; 1; v &gt;&gt;= shift; r |= shift;
+<a name="l00061"></a>00061                                                         r |= (v &gt;&gt; 1);
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063                 <span class="keywordflow">return</span> r;
+<a name="l00064"></a>00064         }
 </pre></div>
 <p>
 
 </div>
 </div><p>
-<a class="anchor" name="caf41ae6b164335fa2a9466eb4c04c62"></a><!-- doxytag: member="Conversions::Str2Armor" ref="caf41ae6b164335fa2a9466eb4c04c62" args="(char *buf, DWORD *specialFX)" -->
+<a class="anchor" name="75c0041f1352752e1f9452fb142618ab"></a><!-- doxytag: member="Conversions::Str2Armor" ref="75c0041f1352752e1f9452fb142618ab" args="(const char *buf, WarheadFlags *whFlags)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">static double Conversions::Str2Armor           </td>
           <td>(</td>
-          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramtype">const char *&nbsp;</td>
           <td class="paramname"> <em>buf</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> *&nbsp;</td>
-          <td class="paramname"> <em>specialFX</em></td><td>&nbsp;</td>
+          <td class="paramtype"><a class="el" href="struct_warhead_flags.html">WarheadFlags</a> *&nbsp;</td>
+          <td class="paramname"> <em>whFlags</em></td><td>&nbsp;</td>
         </tr>
         <tr>
           <td></td>
@@ -114,50 +114,45 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_conversions_8h-source.html#l00011">11</a> of file <a class="el" href="_conversions_8h-source.html">Conversions.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00011"></a>00011                                                              {
-<a name="l00012"></a>00012                 <span class="keywordflow">if</span>(!buf) { <span class="keywordflow">return</span> 0.0; }
-<a name="l00013"></a>00013                 <span class="keywordflow">if</span>(strchr(buf, <span class="charliteral">'%'</span>)) {
-<a name="l00014"></a>00014                         <span class="keywordtype">bool</span> specialed = <span class="keyword">false</span>;
-<a name="l00015"></a>00015                         <span class="keywordflow">if</span>(strlen(buf) == 2) {
-<a name="l00016"></a>00016                                 <span class="keywordflow">switch</span>(*buf) {
-<a name="l00017"></a>00017                                         <span class="keywordflow">case</span> <span class="charliteral">'0'</span>:
-<a name="l00018"></a>00018                                                 *specialFX &amp;= ~<a class="code" href="_general_definitions_8h.html#07b6535cef63b721ea3b02e12c44c256">verses_ForceFire</a>;
-<a name="l00019"></a>00019                                         <span class="keywordflow">case</span> <span class="charliteral">'1'</span>:
-<a name="l00020"></a>00020                                                 *specialFX &amp;= ~<a class="code" href="_general_definitions_8h.html#151904a64e649df729005cadd0fa5b84">verses_Retaliate</a>;
-<a name="l00021"></a>00021                                         <span class="keywordflow">case</span> <span class="charliteral">'2'</span>:
-<a name="l00022"></a>00022                                                 *specialFX &amp;= ~<a class="code" href="_general_definitions_8h.html#05782a950183e18bffdf893c0384ad14">verses_PassiveAcquire</a>;
-<a name="l00023"></a>00023                                                 specialed = <span class="keyword">true</span>;
-<a name="l00024"></a>00024                                                 <span class="keywordflow">break</span>;
-<a name="l00025"></a>00025                                 }
-<a name="l00026"></a>00026                         }
-<a name="l00027"></a>00027                         <span class="keywordflow">if</span>(!specialed) {
-<a name="l00028"></a>00028                                 *specialFX |= <a class="code" href="_general_definitions_8h.html#07b6535cef63b721ea3b02e12c44c256">verses_ForceFire</a>;
-<a name="l00029"></a>00029                                 *specialFX |= <a class="code" href="_general_definitions_8h.html#151904a64e649df729005cadd0fa5b84">verses_Retaliate</a>;
-<a name="l00030"></a>00030                                 *specialFX |= <a class="code" href="_general_definitions_8h.html#05782a950183e18bffdf893c0384ad14">verses_PassiveAcquire</a>;
+<p>Definition at line <a class="el" href="_conversions_8h-source.html#l00012">12</a> of file <a class="el" href="_conversions_8h-source.html">Conversions.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00012"></a>00012                                                                         {
+<a name="l00013"></a>00013                 <span class="keywordflow">if</span>(!buf) { <span class="keywordflow">return</span> 0.0; }
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015                 <span class="keywordtype">bool</span> ForceFire = <span class="keyword">true</span>;
+<a name="l00016"></a>00016                 <span class="keywordtype">bool</span> Retaliate = <span class="keyword">true</span>;
+<a name="l00017"></a>00017                 <span class="keywordtype">bool</span> PassiveAcquire = <span class="keyword">true</span>;
+<a name="l00018"></a>00018 
+<a name="l00019"></a>00019                 <span class="keywordflow">if</span>(strchr(buf, <span class="charliteral">'%'</span>)) {
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021                         <span class="keywordflow">if</span>(strlen(buf) == 2) {
+<a name="l00022"></a>00022                                 <span class="keywordflow">switch</span>(*buf) {
+<a name="l00023"></a>00023                                         <span class="keywordflow">case</span> <span class="charliteral">'0'</span>:
+<a name="l00024"></a>00024                                                 ForceFire = <span class="keyword">false</span>;
+<a name="l00025"></a>00025                                         <span class="keywordflow">case</span> <span class="charliteral">'1'</span>:
+<a name="l00026"></a>00026                                                 Retaliate = <span class="keyword">false</span>;
+<a name="l00027"></a>00027                                         <span class="keywordflow">case</span> <span class="charliteral">'2'</span>:
+<a name="l00028"></a>00028                                                 PassiveAcquire = <span class="keyword">false</span>;
+<a name="l00029"></a>00029                                                 <span class="keywordflow">break</span>;
+<a name="l00030"></a>00030                                 }
 <a name="l00031"></a>00031                         }
-<a name="l00032"></a>00032                         <span class="keywordflow">return</span> atoi(buf) * 0.01;
-<a name="l00033"></a>00033                 } <span class="keywordflow">else</span> {
-<a name="l00034"></a>00034                         <span class="keywordtype">double</span> vs = atof(buf);
-<a name="l00035"></a>00035                         <span class="keywordtype">bool</span> specialed = <span class="keyword">false</span>;
-<a name="l00036"></a>00036                         <span class="keywordflow">if</span>(<a class="code" href="_macro_8h.html#c03b8229790ee6761c9da920a7decc1a">CLOSE_ENOUGH</a>(vs, 0.02)) {
-<a name="l00037"></a>00037                                 *specialFX &amp;= ~<a class="code" href="_general_definitions_8h.html#05782a950183e18bffdf893c0384ad14">verses_PassiveAcquire</a>;
-<a name="l00038"></a>00038                                 specialed = <span class="keyword">true</span>;
-<a name="l00039"></a>00039                         }
-<a name="l00040"></a>00040                         <span class="keywordflow">if</span>(<a class="code" href="_macro_8h.html#c03b8229790ee6761c9da920a7decc1a">CLOSE_ENOUGH</a>(vs, 0.01)) {
-<a name="l00041"></a>00041                                 *specialFX &amp;= ~<a class="code" href="_general_definitions_8h.html#151904a64e649df729005cadd0fa5b84">verses_Retaliate</a>;
-<a name="l00042"></a>00042                         }
-<a name="l00043"></a>00043                         <span class="keywordflow">if</span>(<a class="code" href="_macro_8h.html#c03b8229790ee6761c9da920a7decc1a">CLOSE_ENOUGH</a>(vs, 0.00)) {
-<a name="l00044"></a>00044                                 *specialFX &amp;= ~<a class="code" href="_general_definitions_8h.html#07b6535cef63b721ea3b02e12c44c256">verses_ForceFire</a>;
-<a name="l00045"></a>00045                         }
-<a name="l00046"></a>00046                         <span class="keywordflow">if</span>(!specialed) {
-<a name="l00047"></a>00047                                 *specialFX |= <a class="code" href="_general_definitions_8h.html#07b6535cef63b721ea3b02e12c44c256">verses_ForceFire</a>;
-<a name="l00048"></a>00048                                 *specialFX |= <a class="code" href="_general_definitions_8h.html#151904a64e649df729005cadd0fa5b84">verses_Retaliate</a>;
-<a name="l00049"></a>00049                                 *specialFX |= <a class="code" href="_general_definitions_8h.html#05782a950183e18bffdf893c0384ad14">verses_PassiveAcquire</a>;
-<a name="l00050"></a>00050                         }
-<a name="l00051"></a>00051                         <span class="keywordflow">return</span> vs;
-<a name="l00052"></a>00052                 }
-<a name="l00053"></a>00053         }
+<a name="l00032"></a>00032                         whFlags-&gt;<a class="code" href="struct_warhead_flags.html#b44b668ae18d02c5472cd4ea615cc99a">ForceFire</a> = ForceFire;
+<a name="l00033"></a>00033                         whFlags-&gt;<a class="code" href="struct_warhead_flags.html#23fa2c8b2614177baebc91acf1d69062">Retaliate</a> = Retaliate;
+<a name="l00034"></a>00034                         whFlags-&gt;<a class="code" href="struct_warhead_flags.html#f178dd858440f8daf29ea093525b4ef5">PassiveAcquire</a> = PassiveAcquire;
+<a name="l00035"></a>00035                         <span class="keywordflow">return</span> atoi(buf) * 0.01;
+<a name="l00036"></a>00036                 } <span class="keywordflow">else</span> {
+<a name="l00037"></a>00037                         <span class="keywordtype">double</span> vs = atof(buf);
+<a name="l00038"></a>00038                         <span class="keywordflow">if</span>(<a class="code" href="_macro_8h.html#a1daac02db627e798cfe2d16411a2bff">LESS_EQUAL</a>(vs, 0.02)) {
+<a name="l00039"></a>00039                                 whFlags-&gt;<a class="code" href="struct_warhead_flags.html#f178dd858440f8daf29ea093525b4ef5">PassiveAcquire</a> = PassiveAcquire;
+<a name="l00040"></a>00040                         }
+<a name="l00041"></a>00041                         <span class="keywordflow">if</span>(<a class="code" href="_macro_8h.html#a1daac02db627e798cfe2d16411a2bff">LESS_EQUAL</a>(vs, 0.01)) {
+<a name="l00042"></a>00042                                 whFlags-&gt;<a class="code" href="struct_warhead_flags.html#23fa2c8b2614177baebc91acf1d69062">Retaliate</a> = Retaliate;
+<a name="l00043"></a>00043                         }
+<a name="l00044"></a>00044                         <span class="keywordflow">if</span>(<a class="code" href="_macro_8h.html#a1daac02db627e798cfe2d16411a2bff">LESS_EQUAL</a>(vs, 0.00)) {
+<a name="l00045"></a>00045                                 whFlags-&gt;<a class="code" href="struct_warhead_flags.html#b44b668ae18d02c5472cd4ea615cc99a">ForceFire</a> = ForceFire;
+<a name="l00046"></a>00046                         }
+<a name="l00047"></a>00047                         <span class="keywordflow">return</span> vs;
+<a name="l00048"></a>00048                 }
+<a name="l00049"></a>00049         }
 </pre></div>
 <p>
 
@@ -166,7 +161,7 @@
 <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="_conversions_8h-source.html">Conversions.h</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:14 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:27 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

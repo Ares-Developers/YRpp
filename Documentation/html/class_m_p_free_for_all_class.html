@@ -35,7 +35,7 @@
   </div>
 </div>
 <div class="contents">
-<h1>MPFreeForAllClass Class Reference</h1><!-- doxytag: class="MPFreeForAllClass" --><!-- doxytag: inherits="MPGameModeTypeClass" --><code>#include &lt;<a class="el" href="_m_p_game_mode_type_class_8h-source.html">MPGameModeTypeClass.h</a>&gt;</code>
+<h1>MPFreeForAllClass Class Reference</h1><!-- doxytag: class="MPFreeForAllClass" --><!-- doxytag: inherits="MPGameModeClass" --><code>#include &lt;<a class="el" href="_m_p_game_mode_class_8h-source.html">MPGameModeClass.h</a>&gt;</code>
 <p>
 <div class="dynheader">
 Inheritance diagram for MPFreeForAllClass:</div>
@@ -43,7 +43,7 @@ Inheritance diagram for MPFreeForAllClass:</div>
 
 <p><center><img src="class_m_p_free_for_all_class.png" usemap="#MPFreeForAllClass_map" border="0" alt=""></center>
 <map name="MPFreeForAllClass_map">
-<area href="class_m_p_game_mode_type_class.html" alt="MPGameModeTypeClass" shape="rect" coords="0,0,154,24">
+<area href="class_m_p_game_mode_class.html" alt="MPGameModeClass" shape="rect" coords="0,0,126,24">
 </map>
 </div>
 
@@ -63,12 +63,12 @@ Inheritance diagram for MPFreeForAllClass:</div>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_free_for_all_class.html#809df316e9d48da83a80e3d410ed1ab9">PopulateTeamDropdownForPlayer</a> (HWND hWnd, int idx)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_free_for_all_class.html#b58b614adb672eeb9b933c757a053e4c">MPFreeForAllClass</a> ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_free_for_all_class.html#22aef2f7cde17e2cacebd2fc3c59fa23">MPFreeForAllClass</a> (wchar_t **<a class="el" href="class_m_p_game_mode_class.html#f245ed66d47bcc607e11d6b56809d441">CSFTitle</a>, wchar_t **<a class="el" href="class_m_p_game_mode_class.html#51707063ad3ed177eae85ab4fef2dac2">CSFTooltip</a>, char **INIFileName, char **mapfilter, bool <a class="el" href="class_m_p_game_mode_class.html#0613f7bc413d62db8115486833d39b17">AIAllowed</a>, int <a class="el" href="class_m_p_game_mode_class.html#c42bfa8e607399152eb287e2b4674c7f">MPModeIndex</a>)</td></tr>
 
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 
-<p>Definition at line <a class="el" href="_m_p_game_mode_type_class_8h-source.html#l00288">288</a> of file <a class="el" href="_m_p_game_mode_type_class_8h-source.html">MPGameModeTypeClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_m_p_game_mode_class_8h-source.html#l00296">296</a> of file <a class="el" href="_m_p_game_mode_class_8h-source.html">MPGameModeClass.h</a>.</p>
 <hr><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" name="c0ac37c664fa13513c0e0387ff1f84e9"></a><!-- doxytag: member="MPFreeForAllClass::~MPFreeForAllClass" ref="c0ac37c664fa13513c0e0387ff1f84e9" args="()" -->
 <div class="memitem">
@@ -87,23 +87,57 @@ Inheritance diagram for MPFreeForAllClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_m_p_game_mode_type_class_8h-source.html#l00291">291</a> of file <a class="el" href="_m_p_game_mode_type_class_8h-source.html">MPGameModeTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00292"></a>00292                 { <a class="code" href="_a_s_m_macros_8h.html#4ce8f281bdacd856d64382138de094b5">THISCALL</a>(0x5C5E40); }
+<p>Definition at line <a class="el" href="_m_p_game_mode_class_8h-source.html#l00299">299</a> of file <a class="el" href="_m_p_game_mode_class_8h-source.html">MPGameModeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00300"></a>00300                 { <a class="code" href="_a_s_m_macros_8h.html#4ce8f281bdacd856d64382138de094b5">THISCALL</a>(0x5C5E40); }
 </pre></div>
 <p>
 
 </div>
 </div><p>
-<a class="anchor" name="b58b614adb672eeb9b933c757a053e4c"></a><!-- doxytag: member="MPFreeForAllClass::MPFreeForAllClass" ref="b58b614adb672eeb9b933c757a053e4c" args="()" -->
+<a class="anchor" name="22aef2f7cde17e2cacebd2fc3c59fa23"></a><!-- doxytag: member="MPFreeForAllClass::MPFreeForAllClass" ref="22aef2f7cde17e2cacebd2fc3c59fa23" args="(wchar_t **CSFTitle, wchar_t **CSFTooltip, char **INIFileName, char **mapfilter, bool AIAllowed, int MPModeIndex)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">MPFreeForAllClass::MPFreeForAllClass           </td>
           <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline, private]</code></td>
+          <td class="paramtype">wchar_t **&nbsp;</td>
+          <td class="paramname"> <em>CSFTitle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">wchar_t **&nbsp;</td>
+          <td class="paramname"> <em>CSFTooltip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&nbsp;</td>
+          <td class="paramname"> <em>INIFileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&nbsp;</td>
+          <td class="paramname"> <em>mapfilter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>AIAllowed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>MPModeIndex</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, private]</code></td>
         </tr>
       </table>
 </div>
@@ -111,8 +145,8 @@ Inheritance diagram for MPFreeForAllClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_m_p_game_mode_type_class_8h-source.html#l00315">315</a> of file <a class="el" href="_m_p_game_mode_type_class_8h-source.html">MPGameModeTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00320"></a>00320 : <span class="keyword">public</span> <a class="code" href="class_m_p_game_mode_type_class.html">MPGameModeTypeClass</a>
+<p>Definition at line <a class="el" href="_m_p_game_mode_class_8h-source.html#l00323">323</a> of file <a class="el" href="_m_p_game_mode_class_8h-source.html">MPGameModeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00324"></a>00324                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x5C5CE0); }
 </pre></div>
 <p>
 
@@ -146,10 +180,10 @@ Inheritance diagram for MPFreeForAllClass:</div>
 
 <p>
 
-<p>Reimplemented from <a class="el" href="class_m_p_game_mode_type_class.html#de0ad725e1d309f8820228ebfad22064">MPGameModeTypeClass</a>.</p>
+<p>Reimplemented from <a class="el" href="class_m_p_game_mode_class.html#c98581430d1ba0aba5235dd5096035b5">MPGameModeClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_m_p_game_mode_type_class_8h-source.html#l00306">306</a> of file <a class="el" href="_m_p_game_mode_type_class_8h-source.html">MPGameModeTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00307"></a>00307                 { <a class="code" href="_a_s_m_macros_8h.html#87492c1f652c8993c057dca4801e02d4">PUSH_VAR32</a>(idx); <a class="code" href="_a_s_m_macros_8h.html#87492c1f652c8993c057dca4801e02d4">PUSH_VAR32</a>(hWnd); <a class="code" href="_a_s_m_macros_8h.html#4ce8f281bdacd856d64382138de094b5">THISCALL</a>(0x5C5DD0); }
+<p>Definition at line <a class="el" href="_m_p_game_mode_class_8h-source.html#l00314">314</a> of file <a class="el" href="_m_p_game_mode_class_8h-source.html">MPGameModeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00315"></a>00315                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x5C5DD0); }
 </pre></div>
 <p>
 
@@ -172,10 +206,10 @@ Inheritance diagram for MPFreeForAllClass:</div>
 
 <p>
 
-<p>Reimplemented from <a class="el" href="class_m_p_game_mode_type_class.html#07912aba851965f53b397b01c8a1a915">MPGameModeTypeClass</a>.</p>
+<p>Reimplemented from <a class="el" href="class_m_p_game_mode_class.html#0d51db16a199911065372626439495fa">MPGameModeClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_m_p_game_mode_type_class_8h-source.html#l00294">294</a> of file <a class="el" href="_m_p_game_mode_type_class_8h-source.html">MPGameModeTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00295"></a>00295                 { <a class="code" href="_a_s_m_macros_8h.html#4ce8f281bdacd856d64382138de094b5">THISCALL</a>(0x5C5D30); }
+<p>Definition at line <a class="el" href="_m_p_game_mode_class_8h-source.html#l00302">302</a> of file <a class="el" href="_m_p_game_mode_class_8h-source.html">MPGameModeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00303"></a>00303                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x5C5D30); }
 </pre></div>
 <p>
 
@@ -199,10 +233,10 @@ Inheritance diagram for MPFreeForAllClass:</div>
 
 <p>
 
-<p>Reimplemented from <a class="el" href="class_m_p_game_mode_type_class.html#75f31491792d55c9230c312fd6d934ae">MPGameModeTypeClass</a>.</p>
+<p>Reimplemented from <a class="el" href="class_m_p_game_mode_class.html#80eae2e9fc740b6042377abbbe2567ba">MPGameModeClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_m_p_game_mode_type_class_8h-source.html#l00297">297</a> of file <a class="el" href="_m_p_game_mode_type_class_8h-source.html">MPGameModeTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00298"></a>00298                 { <a class="code" href="_a_s_m_macros_8h.html#87492c1f652c8993c057dca4801e02d4">PUSH_VAR32</a>(dwUnk); <a class="code" href="_a_s_m_macros_8h.html#4ce8f281bdacd856d64382138de094b5">THISCALL</a>(0x5C5D40); }
+<p>Definition at line <a class="el" href="_m_p_game_mode_class_8h-source.html#l00305">305</a> of file <a class="el" href="_m_p_game_mode_class_8h-source.html">MPGameModeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00306"></a>00306                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x5C5D40); }
 </pre></div>
 <p>
 
@@ -225,10 +259,10 @@ Inheritance diagram for MPFreeForAllClass:</div>
 
 <p>
 
-<p>Reimplemented from <a class="el" href="class_m_p_game_mode_type_class.html#b628781861c243efb8caa9da78fc60c8">MPGameModeTypeClass</a>.</p>
+<p>Reimplemented from <a class="el" href="class_m_p_game_mode_class.html#2c69c706b3e0bf1cd5a6f4e69c031ea5">MPGameModeClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_m_p_game_mode_type_class_8h-source.html#l00300">300</a> of file <a class="el" href="_m_p_game_mode_type_class_8h-source.html">MPGameModeTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00301"></a>00301                 { <a class="code" href="_a_s_m_macros_8h.html#4ce8f281bdacd856d64382138de094b5">THISCALL</a>(0x5C5D90); }
+<p>Definition at line <a class="el" href="_m_p_game_mode_class_8h-source.html#l00308">308</a> of file <a class="el" href="_m_p_game_mode_class_8h-source.html">MPGameModeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00309"></a>00309                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x5C5D90); }
 </pre></div>
 <p>
 
@@ -251,19 +285,19 @@ Inheritance diagram for MPFreeForAllClass:</div>
 
 <p>
 
-<p>Reimplemented from <a class="el" href="class_m_p_game_mode_type_class.html#cce175286b3adbbdd13041f0b9fb2555">MPGameModeTypeClass</a>.</p>
+<p>Reimplemented from <a class="el" href="class_m_p_game_mode_class.html#058ce061287366e6413e9d63330724fb">MPGameModeClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_m_p_game_mode_type_class_8h-source.html#l00303">303</a> of file <a class="el" href="_m_p_game_mode_type_class_8h-source.html">MPGameModeTypeClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00304"></a>00304                 { <span class="keywordflow">return</span> 1; }
+<p>Definition at line <a class="el" href="_m_p_game_mode_class_8h-source.html#l00311">311</a> of file <a class="el" href="_m_p_game_mode_class_8h-source.html">MPGameModeClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00312"></a>00312                 { <span class="keywordflow">return</span> 1; }
 </pre></div>
 <p>
 
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_m_p_game_mode_type_class_8h-source.html">MPGameModeTypeClass.h</a></ul>
+<li><a class="el" href="_m_p_game_mode_class_8h-source.html">MPGameModeClass.h</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:16 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:29 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

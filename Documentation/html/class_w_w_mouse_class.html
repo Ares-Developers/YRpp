@@ -46,11 +46,11 @@
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_w_mouse_class.html#cf8b75fae3a93eb08baa0842f951962f">Draw</a> (<a class="el" href="class_vector2_d.html">CellStruct</a> *Coords, <a class="el" href="struct_s_h_p_struct.html">SHPStruct</a> *<a class="el" href="class_w_w_mouse_class.html#2cd7660c14b3f5ac141d190e15c3ebae">Image</a>, int Unk)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_w_mouse_class.html#5e456b24d60a92e2a731a730774b8891">IsField0CNegative</a> ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_w_mouse_class.html#d100632f01c4acde2fbfa429cddc7935">IsRefCountNegative</a> ()</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_w_mouse_class.html#61e78f5938b402e3113eb4311f95a9e5">func_0C</a> ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_w_mouse_class.html#f4f9b26d78c424422eaa0479e025093d">HideCursor</a> ()</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_w_mouse_class.html#8ddb7680d216069e691e8ee287d66507">func_10</a> ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_w_mouse_class.html#52b9e7255f6a179cc397f5e8559717b2">ShowCursor</a> ()</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_w_mouse_class.html#1ee51bd1e794b93c272de44d16963e48">ReleaseMouse</a> ()</td></tr>
 
@@ -62,7 +62,7 @@
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_w_mouse_class.html#10d21dfa4cfdbbffcf9ca6c8523611fd">CallFunc10</a> ()</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_w_mouse_class.html#e77ca1988f2c7682a9cb288baf25fd21">GetField0C</a> ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_w_mouse_class.html#93e151192a727afc0fa72a0e2597c4f2">GetRefCount</a> ()</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_w_mouse_class.html#23486ff5fdb858eb00528246a2372ee8">GetX</a> ()</td></tr>
 
@@ -83,7 +83,7 @@
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_w_mouse_class.html#f5f80d7cce1fed63dc9ea8298d42f24c">ImageFrameIndex</a></td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_w_mouse_class.html#893b2821ba18d6f200a59aa1527faa17">field_C</a></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_w_mouse_class.html#69d6537b6c52ec652efa3936065bbac6">RefCount</a></td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">byte&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_w_w_mouse_class.html#03b8246d15b22ff7c9c27b0a01ef75e8">field_10</a></td></tr>
 
@@ -246,54 +246,6 @@
 
 </div>
 </div><p>
-<a class="anchor" name="61e78f5938b402e3113eb4311f95a9e5"></a><!-- doxytag: member="WWMouseClass::func_0C" ref="61e78f5938b402e3113eb4311f95a9e5" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void WWMouseClass::func_0C           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00024">24</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00025"></a>00025                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x7B9930); }
-</pre></div>
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="8ddb7680d216069e691e8ee287d66507"></a><!-- doxytag: member="WWMouseClass::func_10" ref="8ddb7680d216069e691e8ee287d66507" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void WWMouseClass::func_10           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00027">27</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00028"></a>00028                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x7B9750); }
-</pre></div>
-<p>
-
-</div>
-</div><p>
 <a class="anchor" name="6cf62ad6c0f0ea78fad0d8fe84f2c232"></a><!-- doxytag: member="WWMouseClass::func_20" ref="6cf62ad6c0f0ea78fad0d8fe84f2c232" args="(RectangleStruct Useless)" -->
 <div class="memitem">
 <div class="memproto">
@@ -446,30 +398,6 @@
 
 </div>
 </div><p>
-<a class="anchor" name="e77ca1988f2c7682a9cb288baf25fd21"></a><!-- doxytag: member="WWMouseClass::GetField0C" ref="e77ca1988f2c7682a9cb288baf25fd21" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> WWMouseClass::GetField0C           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00045">45</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00046"></a>00046                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x7B89F0); }
-</pre></div>
-<p>
-
-</div>
-</div><p>
 <a class="anchor" name="565464cf0006a02d1d680a093702965f"></a><!-- doxytag: member="WWMouseClass::GetField10" ref="565464cf0006a02d1d680a093702965f" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -489,6 +417,30 @@
 
 <p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00036">36</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 <div class="fragment"><pre class="fragment"><a name="l00037"></a>00037                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x7BA330); }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="93e151192a727afc0fa72a0e2597c4f2"></a><!-- doxytag: member="WWMouseClass::GetRefCount" ref="93e151192a727afc0fa72a0e2597c4f2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> WWMouseClass::GetRefCount           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00045">45</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00046"></a>00046                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x7B89F0); }
 </pre></div>
 <p>
 
@@ -542,12 +494,36 @@
 
 </div>
 </div><p>
-<a class="anchor" name="5e456b24d60a92e2a731a730774b8891"></a><!-- doxytag: member="WWMouseClass::IsField0CNegative" ref="5e456b24d60a92e2a731a730774b8891" args="()" -->
+<a class="anchor" name="f4f9b26d78c424422eaa0479e025093d"></a><!-- doxytag: member="WWMouseClass::HideCursor" ref="f4f9b26d78c424422eaa0479e025093d" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool WWMouseClass::IsField0CNegative           </td>
+          <td class="memname">virtual void WWMouseClass::HideCursor           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00024">24</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00025"></a>00025                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x7B9930); }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="d100632f01c4acde2fbfa429cddc7935"></a><!-- doxytag: member="WWMouseClass::IsRefCountNegative" ref="d100632f01c4acde2fbfa429cddc7935" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool WWMouseClass::IsRefCountNegative           </td>
           <td>(</td>
           <td class="paramname">          </td>
           <td>&nbsp;)&nbsp;</td>
@@ -615,6 +591,30 @@
 
 </div>
 </div><p>
+<a class="anchor" name="52b9e7255f6a179cc397f5e8559717b2"></a><!-- doxytag: member="WWMouseClass::ShowCursor" ref="52b9e7255f6a179cc397f5e8559717b2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WWMouseClass::ShowCursor           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00027">27</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00028"></a>00028                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x7B9750); }
+</pre></div>
+<p>
+
+</div>
+</div><p>
 <hr><h2>Member Data Documentation</h2>
 <a class="anchor" name="03b8246d15b22ff7c9c27b0a01ef75e8"></a><!-- doxytag: member="WWMouseClass::field_10" ref="03b8246d15b22ff7c9c27b0a01ef75e8" args="" -->
 <div class="memitem">
@@ -629,7 +629,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00071">71</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00074">74</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -646,7 +646,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00072">72</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00075">75</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -663,7 +663,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00073">73</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00076">76</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -680,7 +680,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00074">74</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00077">77</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -697,7 +697,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00075">75</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00078">78</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -714,7 +714,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00076">76</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00079">79</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -731,7 +731,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00082">82</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00085">85</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -748,7 +748,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00084">84</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00087">87</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -765,7 +765,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00086">86</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00089">89</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -782,7 +782,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00089">89</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00092">92</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -799,24 +799,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00090">90</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
-
-</div>
-</div><p>
-<a class="anchor" name="893b2821ba18d6f200a59aa1527faa17"></a><!-- doxytag: member="WWMouseClass::field_C" ref="893b2821ba18d6f200a59aa1527faa17" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="el" href="class_w_w_mouse_class.html#893b2821ba18d6f200a59aa1527faa17">WWMouseClass::field_C</a>          </td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00070">70</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00093">93</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -833,7 +816,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00079">79</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00082">82</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -850,7 +833,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00069">69</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00071">71</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -867,7 +850,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00069">69</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00072">72</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -901,7 +884,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00080">80</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00083">83</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -918,7 +901,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00083">83</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00086">86</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -935,7 +918,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00085">85</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00088">88</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -952,7 +935,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00087">87</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00090">90</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -969,7 +952,24 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00088">88</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00091">91</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="69d6537b6c52ec652efa3936065bbac6"></a><!-- doxytag: member="WWMouseClass::RefCount" ref="69d6537b6c52ec652efa3936065bbac6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="el" href="class_w_w_mouse_class.html#69d6537b6c52ec652efa3936065bbac6">WWMouseClass::RefCount</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00073">73</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -986,7 +986,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00078">78</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00081">81</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1003,7 +1003,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00077">77</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00080">80</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1020,14 +1020,14 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00081">81</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_w_w_mouse_class_8h-source.html#l00084">84</a> of file <a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a>.</p>
 
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_w_w_mouse_class_8h-source.html">WWMouseClass.h</a><li><a class="el" href="_static_inits_8cpp-source.html">StaticInits.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:22 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:34 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

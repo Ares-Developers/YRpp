@@ -183,10 +183,10 @@
 <a name="l00150"></a>00150                 this-&gt;<a class="code" href="class_vector_class.html#ced55004edc530d783fd6648115b93a3">Capacity</a> = 0;
 <a name="l00151"></a>00151         }
 <a name="l00152"></a>00152 
-<a name="l00153"></a><a class="code" href="class_vector_class.html#ab52e8a14af105bd0b4666ea822ae697">00153</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(T*, <a class="code" href="class_vector_class.html#ab52e8a14af105bd0b4666ea822ae697">Items</a>);
-<a name="l00154"></a><a class="code" href="class_vector_class.html#2006763a401d7cd26940e41ec007e0ac">00154</a>         <a class="code" href="_y_r_p_p_core_8h.html#b7a315cf29bbe3bd84c0393082c9b86a">PROPERTY_READONLY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_vector_class.html#ced55004edc530d783fd6648115b93a3">Capacity</a>);
-<a name="l00155"></a><a class="code" href="class_vector_class.html#6eee22e12069543ac68349037d2ca2d5">00155</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>, <a class="code" href="class_vector_class.html#2006763a401d7cd26940e41ec007e0ac">IsInitialized</a>);
-<a name="l00156"></a>00156         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>, <a class="code" href="class_vector_class.html#6eee22e12069543ac68349037d2ca2d5">IsAllocated</a>);
+<a name="l00153"></a><a class="code" href="class_vector_class.html#ab52e8a14af105bd0b4666ea822ae697">00153</a>         T* <a class="code" href="class_vector_class.html#ab52e8a14af105bd0b4666ea822ae697">Items</a>;
+<a name="l00154"></a><a class="code" href="class_vector_class.html#ced55004edc530d783fd6648115b93a3">00154</a>         <span class="keywordtype">int</span> <a class="code" href="class_vector_class.html#ced55004edc530d783fd6648115b93a3">Capacity</a>;
+<a name="l00155"></a><a class="code" href="class_vector_class.html#2006763a401d7cd26940e41ec007e0ac">00155</a>         <span class="keywordtype">bool</span> <a class="code" href="class_vector_class.html#2006763a401d7cd26940e41ec007e0ac">IsInitialized</a>;
+<a name="l00156"></a><a class="code" href="class_vector_class.html#6eee22e12069543ac68349037d2ca2d5">00156</a>         <span class="keywordtype">bool</span> <a class="code" href="class_vector_class.html#6eee22e12069543ac68349037d2ca2d5">IsAllocated</a>;
 <a name="l00157"></a>00157 };
 <a name="l00158"></a>00158 
 <a name="l00159"></a>00159 <span class="comment">//========================================================================</span>
@@ -308,8 +308,8 @@
 <a name="l00275"></a>00275                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00276"></a>00276         }
 <a name="l00277"></a>00277 
-<a name="l00278"></a><a class="code" href="class_dynamic_vector_class.html#c0f04654b648014dd7b11730163174fb">00278</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_dynamic_vector_class.html#c0f04654b648014dd7b11730163174fb">Count</a>);
-<a name="l00279"></a>00279         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_dynamic_vector_class.html#065a7e736a329e1e2c51e66504f8d7e8">CapacityIncrement</a>);
+<a name="l00278"></a><a class="code" href="class_dynamic_vector_class.html#c0f04654b648014dd7b11730163174fb">00278</a>         <span class="keywordtype">int</span> <a class="code" href="class_dynamic_vector_class.html#c0f04654b648014dd7b11730163174fb">Count</a>;
+<a name="l00279"></a><a class="code" href="class_dynamic_vector_class.html#065a7e736a329e1e2c51e66504f8d7e8">00279</a>         <span class="keywordtype">int</span> <a class="code" href="class_dynamic_vector_class.html#065a7e736a329e1e2c51e66504f8d7e8">CapacityIncrement</a>;
 <a name="l00280"></a>00280 };
 <a name="l00281"></a>00281 
 <a name="l00282"></a>00282 <span class="comment">//========================================================================</span>
@@ -331,7 +331,7 @@
 <a name="l00298"></a>00298 
 <a name="l00299"></a>00299         }
 <a name="l00300"></a>00300 
-<a name="l00301"></a><a class="code" href="class_type_list.html#bf0caa358a0651198d4ea5844a797282">00301</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_type_list.html#bf0caa358a0651198d4ea5844a797282">unknown_18</a>);
+<a name="l00301"></a><a class="code" href="class_type_list.html#bf0caa358a0651198d4ea5844a797282">00301</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_type_list.html#bf0caa358a0651198d4ea5844a797282">unknown_18</a>;
 <a name="l00302"></a>00302 };
 <a name="l00303"></a>00303 
 <a name="l00304"></a>00304 <span class="comment">//========================================================================</span>
@@ -373,7 +373,7 @@
 <a name="l00340"></a><a class="code" href="class_counter_class.html#a799e1939034dd49c2255261a2cb6028">00340</a>         <span class="keywordtype">int</span> <a class="code" href="class_counter_class.html#a799e1939034dd49c2255261a2cb6028">Decrement</a>(<span class="keywordtype">int</span> nIndex)
 <a name="l00341"></a>00341                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x49FA70); }
 <a name="l00342"></a>00342 
-<a name="l00343"></a><a class="code" href="class_counter_class.html#451d85b9d2ebb5a0d98a57a09cbcd132">00343</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_counter_class.html#451d85b9d2ebb5a0d98a57a09cbcd132">Count</a>);   <span class="comment">//not sure what this is, but it's different from DVC's count</span>
+<a name="l00343"></a><a class="code" href="class_counter_class.html#451d85b9d2ebb5a0d98a57a09cbcd132">00343</a>         <span class="keywordtype">int</span> <a class="code" href="class_counter_class.html#451d85b9d2ebb5a0d98a57a09cbcd132">Count</a>;      <span class="comment">//not sure what this is, but it's different from DVC's count</span>
 <a name="l00344"></a>00344 };
 <a name="l00345"></a>00345 
 <a name="l00346"></a>00346 <span class="preprocessor">#include &lt;<a class="code" href="_swizzle_manager_class_8h.html">SwizzleManagerClass.h</a>&gt;</span>
@@ -414,7 +414,7 @@
 <a name="l00381"></a>00381 
 <a name="l00382"></a>00382 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:05 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:20 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

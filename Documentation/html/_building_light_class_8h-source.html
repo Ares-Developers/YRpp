@@ -62,29 +62,35 @@
 <a name="l00029"></a><a class="code" href="class_building_light_class.html#1b49d6a183791f21e38abd453391fc40">00029</a>         <a class="code" href="class_building_light_class.html">BuildingLightClass</a>(<a class="code" href="class_object_class.html">ObjectClass</a> *Owner) : <a class="code" href="class_object_class.html">ObjectClass</a>(false)
 <a name="l00030"></a>00030                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x435820); }
 <a name="l00031"></a>00031 
-<a name="l00032"></a>00032 <span class="keyword">protected</span>:
-<a name="l00033"></a><a class="code" href="class_building_light_class.html#f1642f3549e6d73273a5fd20e36c7f7b">00033</a>         <a class="code" href="class_building_light_class.html#f1642f3549e6d73273a5fd20e36c7f7b">BuildingLightClass</a>() : <a class="code" href="class_object_class.html">ObjectClass</a>(false) { }
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035         <span class="comment">//===========================================================================</span>
-<a name="l00036"></a>00036         <span class="comment">//===== Properties ==========================================================</span>
-<a name="l00037"></a>00037         <span class="comment">//===========================================================================</span>
+<a name="l00032"></a>00032         <span class="comment">// non-virtual</span>
+<a name="l00033"></a><a class="code" href="class_building_light_class.html#a706f8aee3d7572dac9b8bac29874b11">00033</a>         <span class="keywordtype">void</span> <a class="code" href="class_building_light_class.html#a706f8aee3d7572dac9b8bac29874b11">SetBehaviour</a>(<a class="code" href="class_spotlight_behaviour.html">SpotlightBehaviour</a> mode)
+<a name="l00034"></a>00034                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x436BE0); }
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036 <span class="keyword">protected</span>:
+<a name="l00037"></a><a class="code" href="class_building_light_class.html#f1642f3549e6d73273a5fd20e36c7f7b">00037</a>         <a class="code" href="class_building_light_class.html#f1642f3549e6d73273a5fd20e36c7f7b">BuildingLightClass</a>() : <a class="code" href="class_object_class.html">ObjectClass</a>(false) { }
 <a name="l00038"></a>00038 
-<a name="l00039"></a><a class="code" href="class_building_light_class.html#dff904152d0b6ef67b4f24ada3044edf">00039</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_building_light_class.html#21f6dea667a54ca10a0a6499185b3222">field_AC</a>);
-<a name="l00040"></a><a class="code" href="class_building_light_class.html#b303cdbe8da9af761afba684f9acff76">00040</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_building_light_class.html#dff904152d0b6ef67b4f24ada3044edf">field_B0</a>);
-<a name="l00041"></a><a class="code" href="class_building_light_class.html#f68e158bc67c44fc1ec64b31c22759e5">00041</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_building_light_class.html#b303cdbe8da9af761afba684f9acff76">field_B4</a>);
-<a name="l00042"></a><a class="code" href="class_building_light_class.html#106f1207d88101c1f07175c3198a9d99">00042</a>         <a class="code" href="_y_r_p_p_core_8h.html#aae3cb398fbfa33cc83eddc740386cd4">PROPERTY_STRUCT</a>(<a class="code" href="class_vector3_d.html">CoordStruct</a>, <a class="code" href="class_building_light_class.html#f68e158bc67c44fc1ec64b31c22759e5">field_B8</a>);
-<a name="l00043"></a><a class="code" href="class_building_light_class.html#d40edd3d817472aedbe83ecb7f8d06de">00043</a>         <a class="code" href="_y_r_p_p_core_8h.html#aae3cb398fbfa33cc83eddc740386cd4">PROPERTY_STRUCT</a>(<a class="code" href="class_vector3_d.html">CoordStruct</a>, <a class="code" href="class_building_light_class.html#d485a01006fd400838fea190a451d1f9">field_C4</a>);
-<a name="l00044"></a><a class="code" href="class_building_light_class.html#0c09ac66506c18ad95cc6cf1a9003f46">00044</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_building_light_class.html#c54fe9b6304925a4ce6c6d8ed762dc14">field_D0</a>);
-<a name="l00045"></a><a class="code" href="class_building_light_class.html#3c08b1143a0ddb7ea679ee54b6cae585">00045</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_building_light_class.html#0c09ac66506c18ad95cc6cf1a9003f46">field_D4</a>);
-<a name="l00046"></a><a class="code" href="class_building_light_class.html#abfa58d40629af31e8adba2928bb3222">00046</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>, <a class="code" href="class_building_light_class.html#3c08b1143a0ddb7ea679ee54b6cae585">field_D8</a>);
-<a name="l00047"></a><a class="code" href="class_building_light_class.html#961663f939c49891be46426ee9f501be">00047</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_general_definitions_8h.html#1f9cc9a0a0e060712bea161dee8cd81c">eSpotlightBehaviour</a>, <a class="code" href="class_building_light_class.html#abfa58d40629af31e8adba2928bb3222">BehaviourMode</a>);
-<a name="l00048"></a><a class="code" href="class_building_light_class.html#13ec77b9da479fc69b615b7bf38b4e2e">00048</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="class_object_class.html">ObjectClass</a> *, <a class="code" href="class_building_light_class.html#961663f939c49891be46426ee9f501be">FollowingObject</a>);
-<a name="l00049"></a>00049         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="class_techno_class.html">TechnoClass</a> *, <a class="code" href="class_building_light_class.html#13ec77b9da479fc69b615b7bf38b4e2e">OwnerObject</a>);
-<a name="l00050"></a>00050 };
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052 <span class="preprocessor">#endif</span>
+<a name="l00039"></a>00039         <span class="comment">//===========================================================================</span>
+<a name="l00040"></a>00040         <span class="comment">//===== Properties ==========================================================</span>
+<a name="l00041"></a>00041         <span class="comment">//===========================================================================</span>
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 <span class="keyword">public</span>:
+<a name="l00044"></a>00044 
+<a name="l00045"></a><a class="code" href="class_building_light_class.html#21f6dea667a54ca10a0a6499185b3222">00045</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_building_light_class.html#21f6dea667a54ca10a0a6499185b3222">field_AC</a>;
+<a name="l00046"></a><a class="code" href="class_building_light_class.html#dff904152d0b6ef67b4f24ada3044edf">00046</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_building_light_class.html#dff904152d0b6ef67b4f24ada3044edf">field_B0</a>;
+<a name="l00047"></a><a class="code" href="class_building_light_class.html#b303cdbe8da9af761afba684f9acff76">00047</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_building_light_class.html#b303cdbe8da9af761afba684f9acff76">field_B4</a>;
+<a name="l00048"></a><a class="code" href="class_building_light_class.html#f68e158bc67c44fc1ec64b31c22759e5">00048</a>         <a class="code" href="class_vector3_d.html">CoordStruct</a> <a class="code" href="class_building_light_class.html#f68e158bc67c44fc1ec64b31c22759e5">field_B8</a>;
+<a name="l00049"></a><a class="code" href="class_building_light_class.html#d485a01006fd400838fea190a451d1f9">00049</a>         <a class="code" href="class_vector3_d.html">CoordStruct</a> <a class="code" href="class_building_light_class.html#d485a01006fd400838fea190a451d1f9">field_C4</a>;
+<a name="l00050"></a><a class="code" href="class_building_light_class.html#c54fe9b6304925a4ce6c6d8ed762dc14">00050</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_building_light_class.html#c54fe9b6304925a4ce6c6d8ed762dc14">field_D0</a>;
+<a name="l00051"></a><a class="code" href="class_building_light_class.html#0c09ac66506c18ad95cc6cf1a9003f46">00051</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_building_light_class.html#0c09ac66506c18ad95cc6cf1a9003f46">field_D4</a>;
+<a name="l00052"></a><a class="code" href="class_building_light_class.html#3c08b1143a0ddb7ea679ee54b6cae585">00052</a>         <span class="keywordtype">bool</span> <a class="code" href="class_building_light_class.html#3c08b1143a0ddb7ea679ee54b6cae585">field_D8</a>;
+<a name="l00053"></a><a class="code" href="class_building_light_class.html#e6cebcf389d90b1455f5487169f48823">00053</a>         <a class="code" href="class_spotlight_behaviour.html">SpotlightBehaviour</a> <a class="code" href="class_building_light_class.html#e6cebcf389d90b1455f5487169f48823">BehaviourMode</a>;
+<a name="l00054"></a><a class="code" href="class_building_light_class.html#961663f939c49891be46426ee9f501be">00054</a>         <a class="code" href="class_object_class.html">ObjectClass</a> * <a class="code" href="class_building_light_class.html#961663f939c49891be46426ee9f501be">FollowingObject</a>;
+<a name="l00055"></a><a class="code" href="class_building_light_class.html#13ec77b9da479fc69b615b7bf38b4e2e">00055</a>         <a class="code" href="class_techno_class.html">TechnoClass</a> * <a class="code" href="class_building_light_class.html#13ec77b9da479fc69b615b7bf38b4e2e">OwnerObject</a>;
+<a name="l00056"></a>00056 };
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:05 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:21 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

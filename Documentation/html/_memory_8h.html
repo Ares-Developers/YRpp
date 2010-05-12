@@ -122,7 +122,7 @@
         <a class="code" href="_memory_8h.html#a7c1d24293c53841de8f626ceea13393">Deallocate</a>(var, 1); \
 } \
 </pre></div>
-<p>Definition at line <a class="el" href="_memory_8h-source.html#l00125">125</a> of file <a class="el" href="_memory_8h-source.html">Memory.h</a>.</p>
+<p>Definition at line <a class="el" href="_memory_8h-source.html#l00127">127</a> of file <a class="el" href="_memory_8h-source.html">Memory.h</a>.</p>
 
 </div>
 </div><p>
@@ -287,7 +287,7 @@
         <a class="code" href="_memory_8h.html#a7c1d24293c53841de8f626ceea13393">Deallocate</a>(var, 0); \
 } \
 </pre></div>
-<p>Definition at line <a class="el" href="_memory_8h-source.html#l00117">117</a> of file <a class="el" href="_memory_8h-source.html">Memory.h</a>.</p>
+<p>Definition at line <a class="el" href="_memory_8h-source.html#l00119">119</a> of file <a class="el" href="_memory_8h-source.html">Memory.h</a>.</p>
 
 </div>
 </div><p>
@@ -312,7 +312,7 @@
         <a class="code" href="_memory_8h.html#c658a934bccb1f2459e2a33f144c030a">Deallocate_Array</a>(var, 0); \
 } \
 </pre></div>
-<p>Definition at line <a class="el" href="_memory_8h-source.html#l00144">144</a> of file <a class="el" href="_memory_8h-source.html">Memory.h</a>.</p>
+<p>Definition at line <a class="el" href="_memory_8h-source.html#l00156">156</a> of file <a class="el" href="_memory_8h-source.html">Memory.h</a>.</p>
 
 </div>
 </div><p>
@@ -431,15 +431,17 @@ template&lt;typename T &gt; </div>
 
 <p>Definition at line <a class="el" href="_memory_8h-source.html#l00105">105</a> of file <a class="el" href="_memory_8h-source.html">Memory.h</a>.</p>
 <div class="fragment"><pre class="fragment"><a name="l00105"></a>00105                                                     {
-<a name="l00106"></a>00106         Tptr-&gt;~T();
-<a name="l00107"></a>00107         <span class="keywordflow">if</span>(inDLL) {
-<a name="l00108"></a>00108                 operator delete(Tptr);
-<a name="l00109"></a>00109                 <span class="keywordflow">return</span>;
-<a name="l00110"></a>00110         }
-<a name="l00111"></a>00111         <a class="code" href="_a_s_m_macros_8h.html#87492c1f652c8993c057dca4801e02d4">PUSH_VAR32</a>(Tptr);
-<a name="l00112"></a>00112         <a class="code" href="_a_s_m_macros_8h.html#8f412ce32e9c7538131b83ec54ddd590">CALL</a>(0x7C8B3D);
-<a name="l00113"></a>00113         <a class="code" href="_a_s_m_macros_8h.html#88fa64198d358802e535171a5dcf86ce">ADD_ESP</a>(4);
-<a name="l00114"></a>00114 };
+<a name="l00106"></a>00106         <span class="keywordflow">if</span>(Tptr) {
+<a name="l00107"></a>00107                 Tptr-&gt;~T();
+<a name="l00108"></a>00108         }
+<a name="l00109"></a>00109         <span class="keywordflow">if</span>(inDLL) {
+<a name="l00110"></a>00110                 operator delete(Tptr);
+<a name="l00111"></a>00111                 <span class="keywordflow">return</span>;
+<a name="l00112"></a>00112         }
+<a name="l00113"></a>00113         <a class="code" href="_a_s_m_macros_8h.html#87492c1f652c8993c057dca4801e02d4">PUSH_VAR32</a>(Tptr);
+<a name="l00114"></a>00114         <a class="code" href="_a_s_m_macros_8h.html#8f412ce32e9c7538131b83ec54ddd590">CALL</a>(0x7C8B3D);
+<a name="l00115"></a>00115         <a class="code" href="_a_s_m_macros_8h.html#88fa64198d358802e535171a5dcf86ce">ADD_ESP</a>(4);
+<a name="l00116"></a>00116 };
 </pre></div>
 <p>
 
@@ -474,24 +476,34 @@ template&lt;typename T &gt; </div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_memory_8h-source.html#l00132">132</a> of file <a class="el" href="_memory_8h-source.html">Memory.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00132"></a>00132                                                           {
-<a name="l00133"></a>00133         Tptr-&gt;~T();
-<a name="l00134"></a>00134         <span class="keywordflow">if</span>(inDLL) {
-<a name="l00135"></a>00135                 operator delete[](Tptr);
-<a name="l00136"></a>00136                 <span class="keywordflow">return</span>;
-<a name="l00137"></a>00137         }
-<a name="l00138"></a>00138         <a class="code" href="_a_s_m_macros_8h.html#87492c1f652c8993c057dca4801e02d4">PUSH_VAR32</a>(Tptr);
-<a name="l00139"></a>00139         <a class="code" href="_a_s_m_macros_8h.html#8f412ce32e9c7538131b83ec54ddd590">CALL</a>(0x7C8B3D);
-<a name="l00140"></a>00140         <a class="code" href="_a_s_m_macros_8h.html#88fa64198d358802e535171a5dcf86ce">ADD_ESP</a>(4);
-<a name="l00141"></a>00141 };
+<p>Definition at line <a class="el" href="_memory_8h-source.html#l00134">134</a> of file <a class="el" href="_memory_8h-source.html">Memory.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00134"></a>00134                                                           {
+<a name="l00135"></a>00135         <span class="keywordflow">if</span>(Tptr) {
+<a name="l00136"></a>00136                 T *iter = Tptr;
+<a name="l00137"></a>00137                 <span class="comment">// ye olde black magick</span>
+<a name="l00138"></a>00138                 <span class="keywordtype">size_t</span> *p = <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">size_t</span> *<span class="keyword">&gt;</span>(iter) - 1;
+<a name="l00139"></a>00139                 <span class="keywordtype">size_t</span> amount = *p;
+<a name="l00140"></a>00140                 <span class="keywordflow">while</span>(amount &gt; 0 &amp;&amp; iter) {
+<a name="l00141"></a>00141                         iter-&gt;~T();
+<a name="l00142"></a>00142                         ++iter;
+<a name="l00143"></a>00143                         --amount;
+<a name="l00144"></a>00144                 }
+<a name="l00145"></a>00145         }
+<a name="l00146"></a>00146         <span class="keywordflow">if</span>(inDLL) {
+<a name="l00147"></a>00147                 operator delete[](Tptr);
+<a name="l00148"></a>00148                 <span class="keywordflow">return</span>;
+<a name="l00149"></a>00149         }
+<a name="l00150"></a>00150         <a class="code" href="_a_s_m_macros_8h.html#87492c1f652c8993c057dca4801e02d4">PUSH_VAR32</a>(Tptr);
+<a name="l00151"></a>00151         <a class="code" href="_a_s_m_macros_8h.html#8f412ce32e9c7538131b83ec54ddd590">CALL</a>(0x7C8B3D);
+<a name="l00152"></a>00152         <a class="code" href="_a_s_m_macros_8h.html#88fa64198d358802e535171a5dcf86ce">ADD_ESP</a>(4);
+<a name="l00153"></a>00153 };
 </pre></div>
 <p>
 
 </div>
 </div><p>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:09 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:23 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

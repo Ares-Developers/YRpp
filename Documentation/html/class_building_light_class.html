@@ -68,13 +68,7 @@ Inheritance diagram for BuildingLightClass:</div>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building_light_class.html#1b49d6a183791f21e38abd453391fc40">BuildingLightClass</a> (<a class="el" href="class_object_class.html">ObjectClass</a> *Owner)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="class_vector3_d.html">CoordStruct</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building_light_class.html#960522d077b485ba37d1cbf46c2db514">get_field_B8</a> ()</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building_light_class.html#106f1207d88101c1f07175c3198a9d99">set_field_B8</a> (<a class="el" href="class_vector3_d.html">CoordStruct</a> *value)</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="class_vector3_d.html">CoordStruct</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building_light_class.html#56d9e105cc63f75bbdc10c531cec218b">get_field_C4</a> ()</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building_light_class.html#d40edd3d817472aedbe83ecb7f8d06de">set_field_C4</a> (<a class="el" href="class_vector3_d.html">CoordStruct</a> *value)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building_light_class.html#a706f8aee3d7572dac9b8bac29874b11">SetBehaviour</a> (<a class="el" href="class_spotlight_behaviour.html">SpotlightBehaviour</a> mode)</td></tr>
 
 <tr><td colspan="2"><br><h2>Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building_light_class.html#21f6dea667a54ca10a0a6499185b3222">field_AC</a></td></tr>
@@ -93,7 +87,7 @@ Inheritance diagram for BuildingLightClass:</div>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building_light_class.html#3c08b1143a0ddb7ea679ee54b6cae585">field_D8</a></td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="_general_definitions_8h.html#1f9cc9a0a0e060712bea161dee8cd81c">eSpotlightBehaviour</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building_light_class.html#abfa58d40629af31e8adba2928bb3222">BehaviourMode</a></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="class_spotlight_behaviour.html">SpotlightBehaviour</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building_light_class.html#e6cebcf389d90b1455f5487169f48823">BehaviourMode</a></td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="class_object_class.html">ObjectClass</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_building_light_class.html#961663f939c49891be46426ee9f501be">FollowingObject</a></td></tr>
 
@@ -205,56 +199,14 @@ Inheritance diagram for BuildingLightClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00033">33</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00033"></a>00033 : <a class="code" href="class_object_class.html#2c2fe669430058b5cb1c34b4efb2a21c">ObjectClass</a>(<span class="keyword">false</span>) { }
+<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00037">37</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00037"></a>00037 : <a class="code" href="class_object_class.html#2c2fe669430058b5cb1c34b4efb2a21c">ObjectClass</a>(<span class="keyword">false</span>) { }
 </pre></div>
 <p>
 
 </div>
 </div><p>
 <hr><h2>Member Function Documentation</h2>
-<a class="anchor" name="960522d077b485ba37d1cbf46c2db514"></a><!-- doxytag: member="BuildingLightClass::get_field_B8" ref="960522d077b485ba37d1cbf46c2db514" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_vector3_d.html">CoordStruct</a>* BuildingLightClass::get_field_B8           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00042">42</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
-
-</div>
-</div><p>
-<a class="anchor" name="56d9e105cc63f75bbdc10c531cec218b"></a><!-- doxytag: member="BuildingLightClass::get_field_C4" ref="56d9e105cc63f75bbdc10c531cec218b" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_vector3_d.html">CoordStruct</a>* BuildingLightClass::get_field_C4           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00043">43</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
-
-</div>
-</div><p>
 <a class="anchor" name="b5a8fb5469282074381fc9a182e8e7ea"></a><!-- doxytag: member="BuildingLightClass::GetClassID" ref="b5a8fb5469282074381fc9a182e8e7ea" args="(CLSID *pClassID)" -->
 <div class="memitem">
 <div class="memproto">
@@ -318,15 +270,15 @@ Inheritance diagram for BuildingLightClass:</div>
 
 </div>
 </div><p>
-<a class="anchor" name="106f1207d88101c1f07175c3198a9d99"></a><!-- doxytag: member="BuildingLightClass::set_field_B8" ref="106f1207d88101c1f07175c3198a9d99" args="(CoordStruct *value)" -->
+<a class="anchor" name="a706f8aee3d7572dac9b8bac29874b11"></a><!-- doxytag: member="BuildingLightClass::SetBehaviour" ref="a706f8aee3d7572dac9b8bac29874b11" args="(SpotlightBehaviour mode)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void BuildingLightClass::set_field_B8           </td>
+          <td class="memname">void BuildingLightClass::SetBehaviour           </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_vector3_d.html">CoordStruct</a> *&nbsp;</td>
-          <td class="paramname"> <em>value</em>          </td>
+          <td class="paramtype"><a class="el" href="class_spotlight_behaviour.html">SpotlightBehaviour</a>&nbsp;</td>
+          <td class="paramname"> <em>mode</em>          </td>
           <td>&nbsp;)&nbsp;</td>
           <td><code> [inline]</code></td>
         </tr>
@@ -336,29 +288,10 @@ Inheritance diagram for BuildingLightClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00042">42</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
-
-</div>
-</div><p>
-<a class="anchor" name="d40edd3d817472aedbe83ecb7f8d06de"></a><!-- doxytag: member="BuildingLightClass::set_field_C4" ref="d40edd3d817472aedbe83ecb7f8d06de" args="(CoordStruct *value)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BuildingLightClass::set_field_C4           </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_vector3_d.html">CoordStruct</a> *&nbsp;</td>
-          <td class="paramname"> <em>value</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
+<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00033">33</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00034"></a>00034                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x436BE0); }
+</pre></div>
 <p>
-
-<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00043">43</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -432,12 +365,12 @@ Inheritance diagram for BuildingLightClass:</div>
 
 </div>
 </div><p>
-<a class="anchor" name="abfa58d40629af31e8adba2928bb3222"></a><!-- doxytag: member="BuildingLightClass::BehaviourMode" ref="abfa58d40629af31e8adba2928bb3222" args="" -->
+<a class="anchor" name="e6cebcf389d90b1455f5487169f48823"></a><!-- doxytag: member="BuildingLightClass::BehaviourMode" ref="e6cebcf389d90b1455f5487169f48823" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_general_definitions_8h.html#1f9cc9a0a0e060712bea161dee8cd81c">eSpotlightBehaviour</a> <a class="el" href="class_building_light_class.html#abfa58d40629af31e8adba2928bb3222">BuildingLightClass::BehaviourMode</a>          </td>
+          <td class="memname"><a class="el" href="class_spotlight_behaviour.html">SpotlightBehaviour</a> <a class="el" href="class_building_light_class.html#e6cebcf389d90b1455f5487169f48823">BuildingLightClass::BehaviourMode</a>          </td>
         </tr>
       </table>
 </div>
@@ -445,7 +378,7 @@ Inheritance diagram for BuildingLightClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00046">46</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00053">53</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -462,7 +395,7 @@ Inheritance diagram for BuildingLightClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00039">39</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00045">45</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -479,7 +412,7 @@ Inheritance diagram for BuildingLightClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00039">39</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00046">46</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -496,7 +429,7 @@ Inheritance diagram for BuildingLightClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00040">40</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00047">47</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -513,7 +446,7 @@ Inheritance diagram for BuildingLightClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00041">41</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00048">48</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -530,7 +463,7 @@ Inheritance diagram for BuildingLightClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00042">42</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00049">49</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -547,7 +480,7 @@ Inheritance diagram for BuildingLightClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00043">43</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00050">50</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -564,7 +497,7 @@ Inheritance diagram for BuildingLightClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00044">44</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00051">51</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -581,7 +514,7 @@ Inheritance diagram for BuildingLightClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00045">45</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00052">52</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -598,7 +531,7 @@ Inheritance diagram for BuildingLightClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00047">47</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00054">54</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -615,14 +548,14 @@ Inheritance diagram for BuildingLightClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00048">48</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_building_light_class_8h-source.html#l00055">55</a> of file <a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a>.</p>
 
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_building_light_class_8h-source.html">BuildingLightClass.h</a><li><a class="el" href="_static_inits_8cpp-source.html">StaticInits.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:13 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:26 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -48,10 +48,6 @@
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_node_class.html#c9d8153873a2e33e1b9b5e458162c13e">operator==</a> (<a class="el" href="class_base_node_class.html">BaseNodeClass</a> tBaseNode)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="class_vector2_d.html">CellStruct</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_node_class.html#d950b32ecaa663989696662adafacac1">get_MapCoords</a> ()</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_node_class.html#5d0cd01fea757f7665d1a8f8a10f97d9">set_MapCoords</a> (<a class="el" href="class_vector2_d.html">CellStruct</a> *value)</td></tr>
-
 <tr><td colspan="2"><br><h2>Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_node_class.html#7dfc25af3f771ecc5e67f98ed37fcd64">BuildingTypeIndex</a></td></tr>
 
@@ -64,7 +60,7 @@
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 
-<p>Definition at line <a class="el" href="_house_class_8h-source.html#l00068">68</a> of file <a class="el" href="_house_class_8h-source.html">HouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_house_class_8h-source.html#l00069">69</a> of file <a class="el" href="_house_class_8h-source.html">HouseClass.h</a>.</p>
 <hr><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" name="33c111ffdf99c3219210f6f92c88e57b"></a><!-- doxytag: member="BaseNodeClass::BaseNodeClass" ref="33c111ffdf99c3219210f6f92c88e57b" args="()" -->
 <div class="memitem">
@@ -83,8 +79,8 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_house_class_8h-source.html#l00071">71</a> of file <a class="el" href="_house_class_8h-source.html">HouseClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00071"></a>00071 {};
+<p>Definition at line <a class="el" href="_house_class_8h-source.html#l00072">72</a> of file <a class="el" href="_house_class_8h-source.html">HouseClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00072"></a>00072 {};
 </pre></div>
 <p>
 
@@ -107,38 +103,14 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_house_class_8h-source.html#l00072">72</a> of file <a class="el" href="_house_class_8h-source.html">HouseClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00072"></a>00072 {};
+<p>Definition at line <a class="el" href="_house_class_8h-source.html#l00073">73</a> of file <a class="el" href="_house_class_8h-source.html">HouseClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00073"></a>00073 {};
 </pre></div>
 <p>
 
 </div>
 </div><p>
 <hr><h2>Member Function Documentation</h2>
-<a class="anchor" name="d950b32ecaa663989696662adafacac1"></a><!-- doxytag: member="BaseNodeClass::get_MapCoords" ref="d950b32ecaa663989696662adafacac1" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_vector2_d.html">CellStruct</a>* BaseNodeClass::get_MapCoords           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_house_class_8h-source.html#l00085">85</a> of file <a class="el" href="_house_class_8h-source.html">HouseClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00094"></a>00094 {
-</pre></div>
-<p>
-
-</div>
-</div><p>
 <a class="anchor" name="c9d8153873a2e33e1b9b5e458162c13e"></a><!-- doxytag: member="BaseNodeClass::operator==" ref="c9d8153873a2e33e1b9b5e458162c13e" args="(BaseNodeClass tBaseNode)" -->
 <div class="memitem">
 <div class="memproto">
@@ -157,39 +129,14 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_house_class_8h-source.html#l00075">75</a> of file <a class="el" href="_house_class_8h-source.html">HouseClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00076"></a>00076         {
-<a name="l00077"></a>00077                 <span class="keywordflow">return</span>
-<a name="l00078"></a>00078                         (<a class="code" href="class_base_node_class.html#7dfc25af3f771ecc5e67f98ed37fcd64">BuildingTypeIndex</a> == tBaseNode.<a class="code" href="class_base_node_class.html#7dfc25af3f771ecc5e67f98ed37fcd64">BuildingTypeIndex</a>) &amp;&amp;
-<a name="l00079"></a>00079                         (<a class="code" href="class_base_node_class.html#2264551c82a8187c30ac00e7f6c4fe9e">MapCoords</a> == *tBaseNode.<a class="code" href="class_base_node_class.html#d950b32ecaa663989696662adafacac1">get_MapCoords</a>()) &amp;&amp;
-<a name="l00080"></a>00080                         (<a class="code" href="class_base_node_class.html#b111e030827fa600ceb7d10a16a1256c">unknown_8</a> == tBaseNode.<a class="code" href="class_base_node_class.html#b111e030827fa600ceb7d10a16a1256c">unknown_8</a>) &amp;&amp;
-<a name="l00081"></a>00081                         (<a class="code" href="class_base_node_class.html#e5c45efa5d0d344ada99f438d20b0fba">unknown_C</a> == tBaseNode.<a class="code" href="class_base_node_class.html#e5c45efa5d0d344ada99f438d20b0fba">unknown_C</a>);
-<a name="l00082"></a>00082         }
-</pre></div>
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="5d0cd01fea757f7665d1a8f8a10f97d9"></a><!-- doxytag: member="BaseNodeClass::set_MapCoords" ref="5d0cd01fea757f7665d1a8f8a10f97d9" args="(CellStruct *value)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BaseNodeClass::set_MapCoords           </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_vector2_d.html">CellStruct</a> *&nbsp;</td>
-          <td class="paramname"> <em>value</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_house_class_8h-source.html#l00085">85</a> of file <a class="el" href="_house_class_8h-source.html">HouseClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00094"></a>00094 {
+<p>Definition at line <a class="el" href="_house_class_8h-source.html#l00076">76</a> of file <a class="el" href="_house_class_8h-source.html">HouseClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00077"></a>00077         {
+<a name="l00078"></a>00078                 <span class="keywordflow">return</span>
+<a name="l00079"></a>00079                         (<a class="code" href="class_base_node_class.html#7dfc25af3f771ecc5e67f98ed37fcd64">BuildingTypeIndex</a> == tBaseNode.<a class="code" href="class_base_node_class.html#7dfc25af3f771ecc5e67f98ed37fcd64">BuildingTypeIndex</a>) &amp;&amp;
+<a name="l00080"></a>00080                         (<a class="code" href="class_base_node_class.html#2264551c82a8187c30ac00e7f6c4fe9e">MapCoords</a> == tBaseNode.<a class="code" href="class_base_node_class.html#2264551c82a8187c30ac00e7f6c4fe9e">MapCoords</a>) &amp;&amp;
+<a name="l00081"></a>00081                         (<a class="code" href="class_base_node_class.html#b111e030827fa600ceb7d10a16a1256c">unknown_8</a> == tBaseNode.<a class="code" href="class_base_node_class.html#b111e030827fa600ceb7d10a16a1256c">unknown_8</a>) &amp;&amp;
+<a name="l00082"></a>00082                         (<a class="code" href="class_base_node_class.html#e5c45efa5d0d344ada99f438d20b0fba">unknown_C</a> == tBaseNode.<a class="code" href="class_base_node_class.html#e5c45efa5d0d344ada99f438d20b0fba">unknown_C</a>);
+<a name="l00083"></a>00083         }
 </pre></div>
 <p>
 
@@ -209,7 +156,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_house_class_8h-source.html#l00084">84</a> of file <a class="el" href="_house_class_8h-source.html">HouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_house_class_8h-source.html#l00085">85</a> of file <a class="el" href="_house_class_8h-source.html">HouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -226,7 +173,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_house_class_8h-source.html#l00084">84</a> of file <a class="el" href="_house_class_8h-source.html">HouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_house_class_8h-source.html#l00086">86</a> of file <a class="el" href="_house_class_8h-source.html">HouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -243,7 +190,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_house_class_8h-source.html#l00085">85</a> of file <a class="el" href="_house_class_8h-source.html">HouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_house_class_8h-source.html#l00087">87</a> of file <a class="el" href="_house_class_8h-source.html">HouseClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -260,14 +207,14 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_house_class_8h-source.html#l00086">86</a> of file <a class="el" href="_house_class_8h-source.html">HouseClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_house_class_8h-source.html#l00088">88</a> of file <a class="el" href="_house_class_8h-source.html">HouseClass.h</a>.</p>
 
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="_house_class_8h-source.html">HouseClass.h</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:10 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:25 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

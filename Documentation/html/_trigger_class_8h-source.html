@@ -45,7 +45,7 @@
 <a name="l00012"></a><a class="code" href="class_trigger_class.html">00012</a> <span class="keyword">class </span><a class="code" href="class_trigger_class.html">TriggerClass</a> : <span class="keyword">public</span> <a class="code" href="class_abstract_class.html">AbstractClass</a>
 <a name="l00013"></a>00013 {
 <a name="l00014"></a>00014 <span class="keyword">public</span>:
-<a name="l00015"></a><a class="code" href="class_trigger_class.html#88f5dd150bd61480de9601ed967c49b3f069e48ea70ed2031a527b7db53ff50f">00015</a>         <span class="keyword">enum</span> {<a class="code" href="class_trigger_class.html#88f5dd150bd61480de9601ed967c49b3f069e48ea70ed2031a527b7db53ff50f">AbsID</a> = <a class="code" href="_general_definitions_8h.html#6c69d5aa951a2ff46639f7a5152980e2">abs_Trigger</a>};
+<a name="l00015"></a><a class="code" href="class_trigger_class.html#26a49f99f5040becc41784a6a649c2eaf069e48ea70ed2031a527b7db53ff50f">00015</a>         <span class="keyword">enum</span> {<a class="code" href="class_trigger_class.html#26a49f99f5040becc41784a6a649c2eaf069e48ea70ed2031a527b7db53ff50f">AbsID</a> = <a class="code" href="_general_definitions_8h.html#6c69d5aa951a2ff46639f7a5152980e2">abs_Trigger</a>};
 <a name="l00016"></a>00016 
 <a name="l00017"></a>00017         <span class="comment">//Static</span>
 <a name="l00018"></a><a class="code" href="class_trigger_class.html#88bac77ab9fed0a6c30df9cead5680f2">00018</a>         <span class="keyword">static</span> <a class="code" href="class_dynamic_vector_class.html">DynamicVectorClass&lt;TriggerClass*&gt;</a>* <a class="code" href="class_trigger_class.html#88bac77ab9fed0a6c30df9cead5680f2">Array</a>;
@@ -126,22 +126,25 @@
 <a name="l00093"></a>00093         <span class="comment">//===========================================================================</span>
 <a name="l00094"></a>00094         <span class="comment">//===== Properties ==========================================================</span>
 <a name="l00095"></a>00095         <span class="comment">//===========================================================================</span>
-<a name="l00096"></a><a class="code" href="class_trigger_class.html#b1d0fd7412c594490d89bdacb088527d">00096</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(TriggerTypeClass *,    <a class="code" href="class_trigger_class.html#b1d0fd7412c594490d89bdacb088527d">Type</a>);
-<a name="l00097"></a><a class="code" href="class_trigger_class.html#a1aa71d994ae4d68d4602021e3f4694d">00097</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="class_trigger_class.html">TriggerClass</a>*,       <a class="code" href="class_trigger_class.html#65a7d7721dade2b55365348660b846e1">AttachedTrigger</a>);
-<a name="l00098"></a><a class="code" href="class_trigger_class.html#258b6568ff59f24cc2c070a581ca9a1e">00098</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="class_house_class.html">HouseClass</a> *,        <a class="code" href="class_trigger_class.html#a1aa71d994ae4d68d4602021e3f4694d">House</a>);
-<a name="l00099"></a><a class="code" href="class_trigger_class.html#358a64ba5376e7ecff4909c185742766">00099</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>,                <a class="code" href="class_trigger_class.html#258b6568ff59f24cc2c070a581ca9a1e">Destroyed</a>); <span class="comment">// ActionClass::DestroyTrigger called on</span>
-<a name="l00100"></a><a class="code" href="class_trigger_class.html#596a704b7cd8543f1cc31ed103207353">00100</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>,                <a class="code" href="class_trigger_class.html#358a64ba5376e7ecff4909c185742766">padding_31</a>);
-<a name="l00101"></a><a class="code" href="class_trigger_class.html#3da6051daf968aeb0a2eec2e1ab3b650">00101</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>,                <a class="code" href="class_trigger_class.html#596a704b7cd8543f1cc31ed103207353">padding_32</a>);
-<a name="l00102"></a><a class="code" href="class_trigger_class.html#6a51a096054e12951b2c9b08d8882bc1">00102</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>,                <a class="code" href="class_trigger_class.html#3da6051daf968aeb0a2eec2e1ab3b650">padding_33</a>);
-<a name="l00103"></a><a class="code" href="class_trigger_class.html#fceeadc8eb256a2a876ac2bfd4220b94">00103</a>         <a class="code" href="_y_r_p_p_core_8h.html#aae3cb398fbfa33cc83eddc740386cd4">PROPERTY_STRUCT</a>(<a class="code" href="class_timer_struct.html">TimerStruct</a>,            <a class="code" href="class_trigger_class.html#6a51a096054e12951b2c9b08d8882bc1">ExistenceTimer</a>);
-<a name="l00104"></a><a class="code" href="class_trigger_class.html#a2a2c32e50e4b4902f179cfae5fc7854">00104</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>,                   <a class="code" href="class_trigger_class.html#0d4f15da9cdc61086b68d200c0138d0e">EventsAlreadyFired</a>); <span class="comment">// bitfield like TechnoClass::Owner</span>
-<a name="l00105"></a>00105         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>,                <a class="code" href="class_trigger_class.html#a2a2c32e50e4b4902f179cfae5fc7854">Enabled</a>);
-<a name="l00106"></a>00106 
-<a name="l00107"></a>00107 };
-<a name="l00108"></a>00108 
-<a name="l00109"></a>00109 <span class="preprocessor">#endif</span>
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097 <span class="keyword">public</span>:
+<a name="l00098"></a>00098 
+<a name="l00099"></a><a class="code" href="class_trigger_class.html#b1d0fd7412c594490d89bdacb088527d">00099</a>         TriggerTypeClass * <a class="code" href="class_trigger_class.html#b1d0fd7412c594490d89bdacb088527d">Type</a>;
+<a name="l00100"></a><a class="code" href="class_trigger_class.html#65a7d7721dade2b55365348660b846e1">00100</a>         <a class="code" href="class_trigger_class.html">TriggerClass</a>* <a class="code" href="class_trigger_class.html#65a7d7721dade2b55365348660b846e1">AttachedTrigger</a>;
+<a name="l00101"></a><a class="code" href="class_trigger_class.html#a1aa71d994ae4d68d4602021e3f4694d">00101</a>         <a class="code" href="class_house_class.html">HouseClass</a> * <a class="code" href="class_trigger_class.html#a1aa71d994ae4d68d4602021e3f4694d">House</a>;
+<a name="l00102"></a><a class="code" href="class_trigger_class.html#258b6568ff59f24cc2c070a581ca9a1e">00102</a>         <span class="keywordtype">bool</span> <a class="code" href="class_trigger_class.html#258b6568ff59f24cc2c070a581ca9a1e">Destroyed</a>; <span class="comment">// ActionClass::DestroyTrigger called on</span>
+<a name="l00103"></a><a class="code" href="class_trigger_class.html#358a64ba5376e7ecff4909c185742766">00103</a>         <span class="keywordtype">bool</span> <a class="code" href="class_trigger_class.html#358a64ba5376e7ecff4909c185742766">padding_31</a>;
+<a name="l00104"></a><a class="code" href="class_trigger_class.html#596a704b7cd8543f1cc31ed103207353">00104</a>         <span class="keywordtype">bool</span> <a class="code" href="class_trigger_class.html#596a704b7cd8543f1cc31ed103207353">padding_32</a>;
+<a name="l00105"></a><a class="code" href="class_trigger_class.html#3da6051daf968aeb0a2eec2e1ab3b650">00105</a>         <span class="keywordtype">bool</span> <a class="code" href="class_trigger_class.html#3da6051daf968aeb0a2eec2e1ab3b650">padding_33</a>;
+<a name="l00106"></a><a class="code" href="class_trigger_class.html#6a51a096054e12951b2c9b08d8882bc1">00106</a>         <a class="code" href="class_timer_struct.html">TimerStruct</a> <a class="code" href="class_trigger_class.html#6a51a096054e12951b2c9b08d8882bc1">ExistenceTimer</a>;
+<a name="l00107"></a><a class="code" href="class_trigger_class.html#0d4f15da9cdc61086b68d200c0138d0e">00107</a>         <span class="keywordtype">int</span> <a class="code" href="class_trigger_class.html#0d4f15da9cdc61086b68d200c0138d0e">EventsAlreadyFired</a>; <span class="comment">// bitfield like TechnoClass::Owner</span>
+<a name="l00108"></a><a class="code" href="class_trigger_class.html#a2a2c32e50e4b4902f179cfae5fc7854">00108</a>         <span class="keywordtype">bool</span>                <a class="code" href="class_trigger_class.html#a2a2c32e50e4b4902f179cfae5fc7854">Enabled</a>;
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110 };
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:08 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:22 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

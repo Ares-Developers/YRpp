@@ -154,9 +154,70 @@
 <a name="l00121"></a>00121                 { <a class="code" href="_a_s_m_macros_8h.html#31c80ef106ed4d49102bf51af2ab63bc">JMP_STD</a>(0x408610); }
 <a name="l00122"></a>00122 };
 <a name="l00123"></a>00123 
-<a name="l00124"></a>00124 <span class="preprocessor">#endif</span>
+<a name="l00124"></a><a class="code" href="class_audio_stream.html">00124</a> <span class="keyword">class </span><a class="code" href="class_audio_stream.html">AudioStream</a> {
+<a name="l00125"></a>00125 <span class="keyword">public</span>:
+<a name="l00126"></a><a class="code" href="class_audio_stream.html#575e0baa6eeb90ac873195a17de6eb77">00126</a>         <span class="keyword">static</span> <a class="code" href="class_audio_stream.html">AudioStream</a>* &amp;<a class="code" href="class_audio_stream.html#575e0baa6eeb90ac873195a17de6eb77">Instance</a>;
+<a name="l00127"></a>00127 
+<a name="l00128"></a><a class="code" href="class_audio_stream.html#dd49ebc9e8c4e8ad4da12eaa4b426866">00128</a>         <span class="keywordtype">bool</span> __fastcall <a class="code" href="class_audio_stream.html#dd49ebc9e8c4e8ad4da12eaa4b426866">PlayWAV</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * filename, <span class="keywordtype">bool</span> bUnk)
+<a name="l00129"></a>00129                 { <a class="code" href="_a_s_m_macros_8h.html#31c80ef106ed4d49102bf51af2ab63bc">JMP_STD</a>(0x407B60); }
+<a name="l00130"></a>00130 };
+<a name="l00131"></a>00131 
+<a name="l00132"></a><a class="code" href="struct_taunt_data_struct.html">00132</a> <span class="keyword">struct </span><a class="code" href="struct_taunt_data_struct.html">TauntDataStruct</a> {
+<a name="l00133"></a><a class="code" href="struct_taunt_data_struct.html#f905a2dee3bff76d643bc951dc9e2c8f">00133</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="struct_taunt_data_struct.html#f905a2dee3bff76d643bc951dc9e2c8f">tauntIdx</a>: 4;
+<a name="l00134"></a><a class="code" href="struct_taunt_data_struct.html#6de5f05093425f8226035d6d52080c17">00134</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="struct_taunt_data_struct.html#6de5f05093425f8226035d6d52080c17">countryIdx</a> :4;
+<a name="l00135"></a>00135 };
+<a name="l00136"></a>00136 
+<a name="l00137"></a><a class="code" href="struct_audio_controller.html">00137</a> <span class="keyword">struct </span><a class="code" href="struct_audio_controller.html">AudioController</a>
+<a name="l00138"></a>00138 {
+<a name="l00139"></a><a class="code" href="struct_audio_controller.html#9e067ade3d7e966834a674abf4929f8c">00139</a>         <span class="keyword">static</span> <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> * &amp;<a class="code" href="struct_audio_controller.html#9e067ade3d7e966834a674abf4929f8c">Audio_IDX_Container</a>;
+<a name="l00140"></a>00140 
+<a name="l00141"></a><a class="code" href="struct_audio_controller.html#07442a0fcf6cb923a69af7e1e0851445">00141</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="struct_audio_controller.html#07442a0fcf6cb923a69af7e1e0851445">f_0</a>;
+<a name="l00142"></a><a class="code" href="struct_audio_controller.html#80308c78b0f0acfd1186c3ced279c93c">00142</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="struct_audio_controller.html#80308c78b0f0acfd1186c3ced279c93c">f_4</a>;
+<a name="l00143"></a><a class="code" href="struct_audio_controller.html#7e0904cf944070c85c35cd2504a02a52">00143</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="struct_audio_controller.html#7e0904cf944070c85c35cd2504a02a52">f_8</a>;
+<a name="l00144"></a><a class="code" href="struct_audio_controller.html#efd1a733d41029e50dc9009e0e7903f6">00144</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> *<a class="code" href="struct_audio_controller.html#efd1a733d41029e50dc9009e0e7903f6">f_C</a>;
+<a name="l00145"></a><a class="code" href="struct_audio_controller.html#2b7f8ec776915ff6567b72a339a05ca7">00145</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="struct_audio_controller.html#2b7f8ec776915ff6567b72a339a05ca7">f_10</a>;
+<a name="l00146"></a>00146 
+<a name="l00147"></a><a class="code" href="struct_audio_controller.html#ce94000a3e52f0473572395b0ef767a7">00147</a>         <a class="code" href="struct_audio_controller.html#ce94000a3e52f0473572395b0ef767a7">AudioController</a>()
+<a name="l00148"></a>00148         {
+<a name="l00149"></a>00149                 this-&gt;<a class="code" href="struct_audio_controller.html#07442a0fcf6cb923a69af7e1e0851445">f_0</a> = this-&gt;<a class="code" href="struct_audio_controller.html#80308c78b0f0acfd1186c3ced279c93c">f_4</a> = this-&gt;<a class="code" href="struct_audio_controller.html#7e0904cf944070c85c35cd2504a02a52">f_8</a> = 0;
+<a name="l00150"></a>00150                 this-&gt;<a class="code" href="struct_audio_controller.html#efd1a733d41029e50dc9009e0e7903f6">f_C</a> = <a class="code" href="struct_audio_controller.html#9e067ade3d7e966834a674abf4929f8c">Audio_IDX_Container</a>;
+<a name="l00151"></a>00151         }
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153         <span class="comment">// no idea how these differ really</span>
+<a name="l00154"></a><a class="code" href="struct_audio_controller.html#f2645bafefa0ea41e3a05905d0fccca1">00154</a>         <span class="keywordtype">void</span> <a class="code" href="struct_audio_controller.html#f2645bafefa0ea41e3a05905d0fccca1">DTOR_0</a>()
+<a name="l00155"></a>00155                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x405C00); }
+<a name="l00156"></a>00156 
+<a name="l00157"></a><a class="code" href="struct_audio_controller.html#647691d906b874d86061dfbc60f5ace5">00157</a>         <span class="keywordtype">void</span> <a class="code" href="struct_audio_controller.html#647691d906b874d86061dfbc60f5ace5">DTOR_1</a>()
+<a name="l00158"></a>00158                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x405D40); }
+<a name="l00159"></a>00159 
+<a name="l00160"></a><a class="code" href="struct_audio_controller.html#c090fc1b2933f3509743737bf84951e3">00160</a>         <span class="keywordtype">void</span> <a class="code" href="struct_audio_controller.html#c090fc1b2933f3509743737bf84951e3">DTOR_2</a>()
+<a name="l00161"></a>00161                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x405FD0); }
+<a name="l00162"></a>00162 
+<a name="l00163"></a><a class="code" href="struct_audio_controller.html#b7739127565388c15f269e166420ca05">00163</a>         <span class="keywordtype">void</span> <a class="code" href="struct_audio_controller.html#b7739127565388c15f269e166420ca05">ShutUp</a>()
+<a name="l00164"></a>00164                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x406060); }
+<a name="l00165"></a>00165 
+<a name="l00166"></a><a class="code" href="struct_audio_controller.html#b2794193d0dd12dbe13eaefdaf452c3d">00166</a>         <span class="keywordtype">void</span> __fastcall <a class="code" href="struct_audio_controller.html#b2794193d0dd12dbe13eaefdaf452c3d">sub_4060F0</a>(<span class="keywordtype">int</span> a1, <span class="keywordtype">int</span> a2)
+<a name="l00167"></a>00167                 { <a class="code" href="_a_s_m_macros_8h.html#31c80ef106ed4d49102bf51af2ab63bc">JMP_STD</a>(0x4060F0); }
+<a name="l00168"></a>00168 
+<a name="l00169"></a><a class="code" href="struct_audio_controller.html#2457ca51e23d413ddd88187841e43288">00169</a>         <span class="keywordtype">void</span> <a class="code" href="struct_audio_controller.html#2457ca51e23d413ddd88187841e43288">sub_406130</a>()
+<a name="l00170"></a>00170                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x406130); }
+<a name="l00171"></a>00171 
+<a name="l00172"></a><a class="code" href="struct_audio_controller.html#f7aaa4159f023c4c67291cefca2dd32a">00172</a>         <span class="keywordtype">void</span> <a class="code" href="struct_audio_controller.html#f7aaa4159f023c4c67291cefca2dd32a">sub_406170</a>()
+<a name="l00173"></a>00173                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x406170); }
+<a name="l00174"></a>00174 
+<a name="l00175"></a><a class="code" href="struct_audio_controller.html#239ff315a8b48c7136424846d2e9dfe7">00175</a>         <span class="keywordtype">void</span> __fastcall <a class="code" href="struct_audio_controller.html#239ff315a8b48c7136424846d2e9dfe7">sub_4061D0</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> arg)
+<a name="l00176"></a>00176                 { <a class="code" href="_a_s_m_macros_8h.html#31c80ef106ed4d49102bf51af2ab63bc">JMP_STD</a>(0x4061D0); }
+<a name="l00177"></a>00177 
+<a name="l00178"></a><a class="code" href="struct_audio_controller.html#22a81ff1ab20024c50e0dc38788afed7">00178</a>         <span class="keywordtype">void</span> __fastcall <a class="code" href="struct_audio_controller.html#22a81ff1ab20024c50e0dc38788afed7">sub_406270</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> arg)
+<a name="l00179"></a>00179                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x406270); }
+<a name="l00180"></a>00180 
+<a name="l00181"></a><a class="code" href="struct_audio_controller.html#978f10ed56084b4c25855e627d537779">00181</a>         <span class="keywordtype">void</span> <a class="code" href="struct_audio_controller.html#978f10ed56084b4c25855e627d537779">sub_406310</a>()
+<a name="l00182"></a>00182                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x406310); }
+<a name="l00183"></a>00183 };
+<a name="l00184"></a>00184 
+<a name="l00185"></a>00185 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:05 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:20 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -48,64 +48,70 @@
 <a name="l00015"></a>00015 <span class="comment"></span>
 <a name="l00016"></a>00016 <span class="comment"> */</span>
 <a name="l00017"></a>00017 
-<a name="l00018"></a><a class="code" href="_overlay_class_8h.html#f65d92e410b4d34eafd4824e917bf852">00018</a> <span class="preprocessor">#define OVERLAY_VEINS 0x7E</span>
-<a name="l00019"></a><a class="code" href="_overlay_class_8h.html#77c46406dc09f7ab1aac824e59646765">00019</a> <span class="preprocessor"></span><span class="preprocessor">#define OVERLAY_VEINHOLE 0xA7</span>
-<a name="l00020"></a><a class="code" href="_overlay_class_8h.html#6b19ac6cbae3a276254cf9e7198abd96">00020</a> <span class="preprocessor"></span><span class="preprocessor">#define OVERLAY_VEINHOLEDUMMY 0xB2</span>
+<a name="l00018"></a><a class="code" href="_overlay_class_8h.html#a67884532ba878aed65212b4e11d5e90">00018</a> <span class="preprocessor">#define OVERLAY_GASAND 0x00</span>
+<a name="l00019"></a><a class="code" href="_overlay_class_8h.html#d785ab7cbf75fb1f8a95c45296035d11">00019</a> <span class="preprocessor"></span><span class="preprocessor">#define OVERLAY_GAWALL 0x02</span>
+<a name="l00020"></a><a class="code" href="_overlay_class_8h.html#af0b9392a745a70142942af99b087c71">00020</a> <span class="preprocessor"></span><span class="preprocessor">#define OVERLAY_NAWALL 0x1A</span>
 <a name="l00021"></a>00021 <span class="preprocessor"></span>
-<a name="l00022"></a><a class="code" href="_overlay_class_8h.html#e41bdd6133237d0385b1f35701bc0615">00022</a> <span class="preprocessor">#define OVERLAY_BRIDGEHEAD11 0x18</span>
-<a name="l00023"></a><a class="code" href="_overlay_class_8h.html#5157f4036686e40e142b358105ca20fc">00023</a> <span class="preprocessor"></span><span class="preprocessor">#define OVERLAY_BRIDGEHEAD12 0x19</span>
-<a name="l00024"></a>00024 <span class="preprocessor"></span>
-<a name="l00025"></a><a class="code" href="_overlay_class_8h.html#c8363e0c55cb12eea990f2bcde4928af">00025</a> <span class="preprocessor">#define OVERLAY_BRIDGEHEAD21 0xED</span>
-<a name="l00026"></a><a class="code" href="_overlay_class_8h.html#bff97f62011f26766af5f83a7880d4d5">00026</a> <span class="preprocessor"></span><span class="preprocessor">#define OVERLAY_BRIDGEHEAD22 0xEE</span>
-<a name="l00027"></a>00027 <span class="preprocessor"></span>
-<a name="l00028"></a><a class="code" href="_overlay_class_8h.html#84c54110af328394bcc31725c1116069">00028</a> <span class="preprocessor">#define OVERLAY_LOBRIDGE1 0x7A</span>
-<a name="l00029"></a><a class="code" href="_overlay_class_8h.html#287fcb1009052673912f209c61f81382">00029</a> <span class="preprocessor"></span><span class="preprocessor">#define OVERLAY_LOBRIDGE2 0x7B</span>
-<a name="l00030"></a><a class="code" href="_overlay_class_8h.html#904d553fbeabfa4ff0e31d15b05fd959">00030</a> <span class="preprocessor"></span><span class="preprocessor">#define OVERLAY_LOBRIDGE3 0x7C</span>
-<a name="l00031"></a><a class="code" href="_overlay_class_8h.html#1be3e21391e93bb3b66e3208855ebfb4">00031</a> <span class="preprocessor"></span><span class="preprocessor">#define OVERLAY_LOBRIDGE4 0x7D</span>
-<a name="l00032"></a>00032 <span class="preprocessor"></span>
-<a name="l00033"></a>00033 <span class="preprocessor">#include &lt;<a class="code" href="_object_class_8h.html">ObjectClass.h</a>&gt;</span>
-<a name="l00034"></a>00034 <span class="preprocessor">#include &lt;<a class="code" href="_overlay_type_class_8h.html">OverlayTypeClass.h</a>&gt;</span>
-<a name="l00035"></a>00035 
-<a name="l00036"></a><a class="code" href="class_overlay_class.html">00036</a> <span class="keyword">class </span><a class="code" href="class_overlay_class.html">OverlayClass</a> : <span class="keyword">public</span> <a class="code" href="class_object_class.html">ObjectClass</a>
-<a name="l00037"></a>00037 {
-<a name="l00038"></a>00038 <span class="keyword">public</span>:
-<a name="l00039"></a><a class="code" href="class_overlay_class.html#2ec74b08ab82307fe3a254cf65f6e080e56288511f40fae91f40b8c4d27b1e42">00039</a>         <span class="keyword">enum</span> {<a class="code" href="class_overlay_class.html#2ec74b08ab82307fe3a254cf65f6e080e56288511f40fae91f40b8c4d27b1e42">AbsID</a> = <a class="code" href="_general_definitions_8h.html#cc5a3e9a08d648d2d6a7c0d58c6edc1c">abs_Overlay</a>};
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041         <span class="comment">//Static</span>
-<a name="l00042"></a><a class="code" href="class_overlay_class.html#6e83988028a003d84c6874895821a7c3">00042</a>         <span class="keyword">static</span> <a class="code" href="class_dynamic_vector_class.html">DynamicVectorClass&lt;OverlayClass*&gt;</a>* <a class="code" href="class_overlay_class.html#6e83988028a003d84c6874895821a7c3">Array</a>;
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044         <span class="comment">//IPersist</span>
-<a name="l00045"></a><a class="code" href="class_overlay_class.html#36266c793244aa3baf671a5d375ac926">00045</a>         <span class="keyword">virtual</span> HRESULT __stdcall <a class="code" href="class_overlay_class.html#36266c793244aa3baf671a5d375ac926">GetClassID</a>(CLSID* pClassID) <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047         <span class="comment">//IPersistStream</span>
-<a name="l00048"></a><a class="code" href="class_overlay_class.html#a8faad3dc2c693b41cb0b67df0da9ce7">00048</a>         <span class="keyword">virtual</span> HRESULT __stdcall <a class="code" href="class_overlay_class.html#a8faad3dc2c693b41cb0b67df0da9ce7">Load</a>(IStream* pStm) <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
-<a name="l00049"></a><a class="code" href="class_overlay_class.html#e7ec87961744f73f4cbb65e51f58a2da">00049</a>         <span class="keyword">virtual</span> HRESULT __stdcall <a class="code" href="class_overlay_class.html#e7ec87961744f73f4cbb65e51f58a2da">Save</a>(IStream* pStm, BOOL fClearDirty) <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
+<a name="l00022"></a><a class="code" href="_overlay_class_8h.html#f65d92e410b4d34eafd4824e917bf852">00022</a> <span class="preprocessor">#define OVERLAY_VEINS 0x7E</span>
+<a name="l00023"></a><a class="code" href="_overlay_class_8h.html#77c46406dc09f7ab1aac824e59646765">00023</a> <span class="preprocessor"></span><span class="preprocessor">#define OVERLAY_VEINHOLE 0xA7</span>
+<a name="l00024"></a><a class="code" href="_overlay_class_8h.html#6b19ac6cbae3a276254cf9e7198abd96">00024</a> <span class="preprocessor"></span><span class="preprocessor">#define OVERLAY_VEINHOLEDUMMY 0xB2</span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span>
+<a name="l00026"></a><a class="code" href="_overlay_class_8h.html#e41bdd6133237d0385b1f35701bc0615">00026</a> <span class="preprocessor">#define OVERLAY_BRIDGEHEAD11 0x18</span>
+<a name="l00027"></a><a class="code" href="_overlay_class_8h.html#5157f4036686e40e142b358105ca20fc">00027</a> <span class="preprocessor"></span><span class="preprocessor">#define OVERLAY_BRIDGEHEAD12 0x19</span>
+<a name="l00028"></a>00028 <span class="preprocessor"></span>
+<a name="l00029"></a><a class="code" href="_overlay_class_8h.html#c8363e0c55cb12eea990f2bcde4928af">00029</a> <span class="preprocessor">#define OVERLAY_BRIDGEHEAD21 0xED</span>
+<a name="l00030"></a><a class="code" href="_overlay_class_8h.html#bff97f62011f26766af5f83a7880d4d5">00030</a> <span class="preprocessor"></span><span class="preprocessor">#define OVERLAY_BRIDGEHEAD22 0xEE</span>
+<a name="l00031"></a>00031 <span class="preprocessor"></span>
+<a name="l00032"></a><a class="code" href="_overlay_class_8h.html#84c54110af328394bcc31725c1116069">00032</a> <span class="preprocessor">#define OVERLAY_LOBRIDGE1 0x7A</span>
+<a name="l00033"></a><a class="code" href="_overlay_class_8h.html#287fcb1009052673912f209c61f81382">00033</a> <span class="preprocessor"></span><span class="preprocessor">#define OVERLAY_LOBRIDGE2 0x7B</span>
+<a name="l00034"></a><a class="code" href="_overlay_class_8h.html#904d553fbeabfa4ff0e31d15b05fd959">00034</a> <span class="preprocessor"></span><span class="preprocessor">#define OVERLAY_LOBRIDGE3 0x7C</span>
+<a name="l00035"></a><a class="code" href="_overlay_class_8h.html#1be3e21391e93bb3b66e3208855ebfb4">00035</a> <span class="preprocessor"></span><span class="preprocessor">#define OVERLAY_LOBRIDGE4 0x7D</span>
+<a name="l00036"></a>00036 <span class="preprocessor"></span>
+<a name="l00037"></a>00037 <span class="preprocessor">#include &lt;<a class="code" href="_object_class_8h.html">ObjectClass.h</a>&gt;</span>
+<a name="l00038"></a>00038 <span class="preprocessor">#include &lt;<a class="code" href="_overlay_type_class_8h.html">OverlayTypeClass.h</a>&gt;</span>
+<a name="l00039"></a>00039 
+<a name="l00040"></a><a class="code" href="class_overlay_class.html">00040</a> <span class="keyword">class </span><a class="code" href="class_overlay_class.html">OverlayClass</a> : <span class="keyword">public</span> <a class="code" href="class_object_class.html">ObjectClass</a>
+<a name="l00041"></a>00041 {
+<a name="l00042"></a>00042 <span class="keyword">public</span>:
+<a name="l00043"></a><a class="code" href="class_overlay_class.html#d67db310f0f773e4a6f14aa578007c0ae56288511f40fae91f40b8c4d27b1e42">00043</a>         <span class="keyword">enum</span> {<a class="code" href="class_overlay_class.html#d67db310f0f773e4a6f14aa578007c0ae56288511f40fae91f40b8c4d27b1e42">AbsID</a> = <a class="code" href="_general_definitions_8h.html#cc5a3e9a08d648d2d6a7c0d58c6edc1c">abs_Overlay</a>};
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045         <span class="comment">//Static</span>
+<a name="l00046"></a><a class="code" href="class_overlay_class.html#6e83988028a003d84c6874895821a7c3">00046</a>         <span class="keyword">static</span> <a class="code" href="class_dynamic_vector_class.html">DynamicVectorClass&lt;OverlayClass*&gt;</a>* <a class="code" href="class_overlay_class.html#6e83988028a003d84c6874895821a7c3">Array</a>;
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048         <span class="comment">//IPersist</span>
+<a name="l00049"></a><a class="code" href="class_overlay_class.html#36266c793244aa3baf671a5d375ac926">00049</a>         <span class="keyword">virtual</span> HRESULT __stdcall <a class="code" href="class_overlay_class.html#36266c793244aa3baf671a5d375ac926">GetClassID</a>(CLSID* pClassID) <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
 <a name="l00050"></a>00050 
-<a name="l00051"></a>00051         <span class="comment">//Destructor</span>
-<a name="l00052"></a><a class="code" href="class_overlay_class.html#0652c52ab5481a682a53ee19811b9240">00052</a>         <span class="keyword">virtual</span> <a class="code" href="class_overlay_class.html#0652c52ab5481a682a53ee19811b9240">~OverlayClass</a>() <a class="code" href="_y_r_p_p_core_8h.html#5070712bba21161ad840408134ee229f">RX</a>;
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054         <span class="comment">//AbstractClass</span>
-<a name="l00055"></a><a class="code" href="class_overlay_class.html#41d3744068fa19b542c0a08ab62f0ddd">00055</a>         virtual <a class="code" href="_general_definitions_8h.html#a1d95645c44dc819c084adc2b96a3d6a">eAbstractType</a> <a class="code" href="class_overlay_class.html#41d3744068fa19b542c0a08ab62f0ddd">WhatAmI</a>() <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
-<a name="l00056"></a><a class="code" href="class_overlay_class.html#7cab571915c600ea6c4d4f637aef4723">00056</a>         virtual <span class="keywordtype">int</span> <a class="code" href="class_overlay_class.html#7cab571915c600ea6c4d4f637aef4723">Size</a>() R0;
+<a name="l00051"></a>00051         <span class="comment">//IPersistStream</span>
+<a name="l00052"></a><a class="code" href="class_overlay_class.html#a8faad3dc2c693b41cb0b67df0da9ce7">00052</a>         <span class="keyword">virtual</span> HRESULT __stdcall <a class="code" href="class_overlay_class.html#a8faad3dc2c693b41cb0b67df0da9ce7">Load</a>(IStream* pStm) <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
+<a name="l00053"></a><a class="code" href="class_overlay_class.html#e7ec87961744f73f4cbb65e51f58a2da">00053</a>         <span class="keyword">virtual</span> HRESULT __stdcall <a class="code" href="class_overlay_class.html#e7ec87961744f73f4cbb65e51f58a2da">Save</a>(IStream* pStm, BOOL fClearDirty) <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055         <span class="comment">//Destructor</span>
+<a name="l00056"></a><a class="code" href="class_overlay_class.html#0652c52ab5481a682a53ee19811b9240">00056</a>         <span class="keyword">virtual</span> <a class="code" href="class_overlay_class.html#0652c52ab5481a682a53ee19811b9240">~OverlayClass</a>() <a class="code" href="_y_r_p_p_core_8h.html#5070712bba21161ad840408134ee229f">RX</a>;
 <a name="l00057"></a>00057 
-<a name="l00058"></a>00058         <span class="comment">//Constructor</span>
-<a name="l00059"></a><a class="code" href="class_overlay_class.html#971cd0c7a267086698582b4075ec3892">00059</a>         <a class="code" href="class_overlay_class.html">OverlayClass</a>(<a class="code" href="class_overlay_type_class.html">OverlayTypeClass</a>* pType) : <a class="code" href="class_object_class.html">ObjectClass</a>(false)
-<a name="l00060"></a>00060                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x5FC380); }
+<a name="l00058"></a>00058         <span class="comment">//AbstractClass</span>
+<a name="l00059"></a><a class="code" href="class_overlay_class.html#41d3744068fa19b542c0a08ab62f0ddd">00059</a>         virtual <a class="code" href="_general_definitions_8h.html#a1d95645c44dc819c084adc2b96a3d6a">eAbstractType</a> <a class="code" href="class_overlay_class.html#41d3744068fa19b542c0a08ab62f0ddd">WhatAmI</a>() <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
+<a name="l00060"></a><a class="code" href="class_overlay_class.html#7cab571915c600ea6c4d4f637aef4723">00060</a>         virtual <span class="keywordtype">int</span> <a class="code" href="class_overlay_class.html#7cab571915c600ea6c4d4f637aef4723">Size</a>() R0;
 <a name="l00061"></a>00061 
-<a name="l00062"></a>00062 <span class="keyword">protected</span>:
-<a name="l00063"></a><a class="code" href="class_overlay_class.html#42e4b28b5b6567a3c778239a804c68b5">00063</a>         <a class="code" href="class_overlay_class.html#42e4b28b5b6567a3c778239a804c68b5">OverlayClass</a>() : <a class="code" href="class_object_class.html">ObjectClass</a>(false) { }
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065         <span class="comment">//===========================================================================</span>
-<a name="l00066"></a>00066         <span class="comment">//===== Properties ==========================================================</span>
-<a name="l00067"></a>00067         <span class="comment">//===========================================================================</span>
+<a name="l00062"></a>00062         <span class="comment">//Constructor</span>
+<a name="l00063"></a><a class="code" href="class_overlay_class.html#971cd0c7a267086698582b4075ec3892">00063</a>         <a class="code" href="class_overlay_class.html">OverlayClass</a>(<a class="code" href="class_overlay_type_class.html">OverlayTypeClass</a>* pType) : <a class="code" href="class_object_class.html">ObjectClass</a>(false)
+<a name="l00064"></a>00064                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x5FC380); }
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066 <span class="keyword">protected</span>:
+<a name="l00067"></a><a class="code" href="class_overlay_class.html#42e4b28b5b6567a3c778239a804c68b5">00067</a>         <a class="code" href="class_overlay_class.html#42e4b28b5b6567a3c778239a804c68b5">OverlayClass</a>() : <a class="code" href="class_object_class.html">ObjectClass</a>(false) { }
 <a name="l00068"></a>00068 
-<a name="l00069"></a><a class="code" href="class_overlay_class.html#1acc6144f738f851d5b301c208915ebb">00069</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="class_overlay_type_class.html">OverlayTypeClass</a>*, <a class="code" href="class_overlay_class.html#1acc6144f738f851d5b301c208915ebb">Type</a>);
-<a name="l00070"></a>00070 };
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072 <span class="preprocessor">#endif</span>
-<a name="l00073"></a>00073 <span class="preprocessor"></span>
+<a name="l00069"></a>00069         <span class="comment">//===========================================================================</span>
+<a name="l00070"></a>00070         <span class="comment">//===== Properties ==========================================================</span>
+<a name="l00071"></a>00071         <span class="comment">//===========================================================================</span>
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073 <span class="keyword">public</span>:
+<a name="l00074"></a>00074 
+<a name="l00075"></a><a class="code" href="class_overlay_class.html#1acc6144f738f851d5b301c208915ebb">00075</a>         <a class="code" href="class_overlay_type_class.html">OverlayTypeClass</a>* <a class="code" href="class_overlay_class.html#1acc6144f738f851d5b301c208915ebb">Type</a>;
+<a name="l00076"></a>00076 };
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078 <span class="preprocessor">#endif</span>
+<a name="l00079"></a>00079 <span class="preprocessor"></span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:06 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:21 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

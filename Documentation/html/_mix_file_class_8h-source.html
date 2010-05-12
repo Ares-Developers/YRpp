@@ -106,20 +106,23 @@
 <a name="l00073"></a>00073 
 <a name="l00074"></a>00074 <span class="keyword">protected</span>:
 <a name="l00075"></a>00075         <span class="comment">/*PROPERTY(MixFileClass*, Next);</span>
-<a name="l00076"></a>00076 <span class="comment">        PROPERTY(MixFileClass*, Prev);*/</span>
-<a name="l00077"></a><a class="code" href="class_mix_file_class.html#aa0fc541a83647a66a566540f11fedab">00077</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>*, <a class="code" href="class_mix_file_class.html#aa0fc541a83647a66a566540f11fedab">FileName</a>);
-<a name="l00078"></a><a class="code" href="class_mix_file_class.html#8d0b472d32a7545ddfd7b8ea09997011">00078</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>, <a class="code" href="class_mix_file_class.html#275bc2b80517aa536eef08d5ca2fb34c">Blowfish</a>);
-<a name="l00079"></a><a class="code" href="class_mix_file_class.html#3ce6fc50b2992f484720a358baad4c01">00079</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>, <a class="code" href="class_mix_file_class.html#8d0b472d32a7545ddfd7b8ea09997011">Encryption</a>);
-<a name="l00080"></a><a class="code" href="class_mix_file_class.html#39a697255b7778cb95525f8beaf05eab">00080</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_mix_file_class.html#3ce6fc50b2992f484720a358baad4c01">CountFiles</a>);
-<a name="l00081"></a><a class="code" href="class_mix_file_class.html#3c1dd0859009735b9be2e0ab4b2d3ce5">00081</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_mix_file_class.html#39a697255b7778cb95525f8beaf05eab">FileSize</a>);
-<a name="l00082"></a><a class="code" href="class_mix_file_class.html#f3656d9c35a3e8404325e70abc029154">00082</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_mix_file_class.html#3c1dd0859009735b9be2e0ab4b2d3ce5">FileStartOffset</a>);
-<a name="l00083"></a><a class="code" href="class_mix_file_class.html#d0cdf27e4ad3aef0c6dfb1376101d4c8">00083</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="struct_mix_header_data.html">MixHeaderData</a>*, <a class="code" href="class_mix_file_class.html#f3656d9c35a3e8404325e70abc029154">Headers</a>);
-<a name="l00084"></a>00084         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_mix_file_class.html#d0cdf27e4ad3aef0c6dfb1376101d4c8">field_24</a>);
-<a name="l00085"></a>00085 };
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087 <span class="preprocessor">#endif</span>
+<a name="l00076"></a>00076 <span class="comment">        MixFileClass* Prev;*/</span>
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078 <span class="keyword">public</span>:
+<a name="l00079"></a>00079 
+<a name="l00080"></a><a class="code" href="class_mix_file_class.html#aa0fc541a83647a66a566540f11fedab">00080</a>         <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="class_mix_file_class.html#aa0fc541a83647a66a566540f11fedab">FileName</a>;
+<a name="l00081"></a><a class="code" href="class_mix_file_class.html#275bc2b80517aa536eef08d5ca2fb34c">00081</a>         <span class="keywordtype">bool</span> <a class="code" href="class_mix_file_class.html#275bc2b80517aa536eef08d5ca2fb34c">Blowfish</a>;
+<a name="l00082"></a><a class="code" href="class_mix_file_class.html#8d0b472d32a7545ddfd7b8ea09997011">00082</a>         <span class="keywordtype">bool</span> <a class="code" href="class_mix_file_class.html#8d0b472d32a7545ddfd7b8ea09997011">Encryption</a>;
+<a name="l00083"></a><a class="code" href="class_mix_file_class.html#3ce6fc50b2992f484720a358baad4c01">00083</a>         <span class="keywordtype">int</span> <a class="code" href="class_mix_file_class.html#3ce6fc50b2992f484720a358baad4c01">CountFiles</a>;
+<a name="l00084"></a><a class="code" href="class_mix_file_class.html#39a697255b7778cb95525f8beaf05eab">00084</a>         <span class="keywordtype">int</span> <a class="code" href="class_mix_file_class.html#39a697255b7778cb95525f8beaf05eab">FileSize</a>;
+<a name="l00085"></a><a class="code" href="class_mix_file_class.html#3c1dd0859009735b9be2e0ab4b2d3ce5">00085</a>         <span class="keywordtype">int</span> <a class="code" href="class_mix_file_class.html#3c1dd0859009735b9be2e0ab4b2d3ce5">FileStartOffset</a>;
+<a name="l00086"></a><a class="code" href="class_mix_file_class.html#f3656d9c35a3e8404325e70abc029154">00086</a>         <a class="code" href="struct_mix_header_data.html">MixHeaderData</a>* <a class="code" href="class_mix_file_class.html#f3656d9c35a3e8404325e70abc029154">Headers</a>;
+<a name="l00087"></a><a class="code" href="class_mix_file_class.html#d0cdf27e4ad3aef0c6dfb1376101d4c8">00087</a>         <span class="keywordtype">int</span> <a class="code" href="class_mix_file_class.html#d0cdf27e4ad3aef0c6dfb1376101d4c8">field_24</a>;
+<a name="l00088"></a>00088 };
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:06 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:21 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -74,18 +74,6 @@ Inheritance diagram for AnimClass:</div>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anim_class.html#a70515fd5b122d984836cc7fa98c5b46">AnimClass</a> (<a class="el" href="class_anim_type_class.html">AnimTypeClass</a> *pAnimType, <a class="el" href="class_vector3_d.html">CoordStruct</a> *pLocation)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="class_timer_struct.html">TimerStruct</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anim_class.html#b943bddaffe457a0b738521802357a6b">get_IterationTimer</a> ()</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anim_class.html#7ca4ca1efe855df4de7f148a8e6786c5">set_IterationTimer</a> (<a class="el" href="class_timer_struct.html">TimerStruct</a> *value)</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="struct_unsorted_1_1_audio_controller.html">Unsorted::AudioController</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anim_class.html#f715a03bb5e2817903abe1a8d0bd779d">get_Audio3</a> ()</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anim_class.html#ac567dcb41b4a2ad2666b1223d1ad077">set_Audio3</a> (<a class="el" href="struct_unsorted_1_1_audio_controller.html">Unsorted::AudioController</a> *value)</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="struct_unsorted_1_1_audio_controller.html">Unsorted::AudioController</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anim_class.html#4920de79f4714e0184fb0e3082f94852">get_Audio4</a> ()</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anim_class.html#386f54c35676d87786d17bf22c8fdd27">set_Audio4</a> (<a class="el" href="struct_unsorted_1_1_audio_controller.html">Unsorted::AudioController</a> *value)</td></tr>
-
 <tr><td colspan="2"><br><h2>Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anim_class.html#241b8af0f8aa4bf947dc1746666c7b66">CurrentFrame</a></td></tr>
 
@@ -221,9 +209,9 @@ Inheritance diagram for AnimClass:</div>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">byte&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anim_class.html#d5b8950eba586883b56ce90b054572e4">unknown_19F</a></td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="struct_unsorted_1_1_audio_controller.html">Unsorted::AudioController</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anim_class.html#308784786d12e958ce6af3240394c423">Audio3</a></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="struct_audio_controller.html">AudioController</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anim_class.html#a53216aec9d03677c066521b6cdcadc3">Audio3</a></td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="struct_unsorted_1_1_audio_controller.html">Unsorted::AudioController</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anim_class.html#d43a697e56ef88b3060869af316e6e31">Audio4</a></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="struct_audio_controller.html">AudioController</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anim_class.html#6b521f7cf7867d1d84011786b81acaf5">Audio4</a></td></tr>
 
 <tr><td colspan="2"><br><h2>Static Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="class_dynamic_vector_class.html">DynamicVectorClass</a><br class="typebreak">
@@ -315,18 +303,18 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00047">47</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00047"></a>00047                                                                     : <a class="code" href="class_object_class.html#2c2fe669430058b5cb1c34b4efb2a21c">ObjectClass</a>(<span class="keyword">false</span>)
-<a name="l00048"></a>00048         {
-<a name="l00049"></a>00049                 <a class="code" href="_a_s_m_macros_8h.html#2ff2ad4240ecc3af7b705c85f5b920d3">PUSH_IMM</a>(0); <span class="comment">//???</span>
-<a name="l00050"></a>00050                 <a class="code" href="_a_s_m_macros_8h.html#2ff2ad4240ecc3af7b705c85f5b920d3">PUSH_IMM</a>(0); <span class="comment">//ZAdjust</span>
-<a name="l00051"></a>00051                 <a class="code" href="_a_s_m_macros_8h.html#2ff2ad4240ecc3af7b705c85f5b920d3">PUSH_IMM</a>(0x600); <span class="comment">// eBlitterFlags , certain calls use 0x1600 or 0x2600 instead, iow bitfield</span>
-<a name="l00052"></a>00052                 <a class="code" href="_a_s_m_macros_8h.html#2ff2ad4240ecc3af7b705c85f5b920d3">PUSH_IMM</a>(1); <span class="comment">//deleteAfterIterations</span>
-<a name="l00053"></a>00053                 <a class="code" href="_a_s_m_macros_8h.html#2ff2ad4240ecc3af7b705c85f5b920d3">PUSH_IMM</a>(0); <span class="comment">//???</span>
-<a name="l00054"></a>00054                 <a class="code" href="_a_s_m_macros_8h.html#87492c1f652c8993c057dca4801e02d4">PUSH_VAR32</a>(pLocation);
-<a name="l00055"></a>00055                 <a class="code" href="_a_s_m_macros_8h.html#87492c1f652c8993c057dca4801e02d4">PUSH_VAR32</a>(pAnimType);
-<a name="l00056"></a>00056                 <a class="code" href="_a_s_m_macros_8h.html#4ce8f281bdacd856d64382138de094b5">THISCALL</a>(0x421EA0);
-<a name="l00057"></a>00057         }
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00048">48</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00048"></a>00048                                                                     : <a class="code" href="class_object_class.html#2c2fe669430058b5cb1c34b4efb2a21c">ObjectClass</a>(<span class="keyword">false</span>)
+<a name="l00049"></a>00049         {
+<a name="l00050"></a>00050                 <a class="code" href="_a_s_m_macros_8h.html#2ff2ad4240ecc3af7b705c85f5b920d3">PUSH_IMM</a>(0); <span class="comment">//???</span>
+<a name="l00051"></a>00051                 <a class="code" href="_a_s_m_macros_8h.html#2ff2ad4240ecc3af7b705c85f5b920d3">PUSH_IMM</a>(0); <span class="comment">//ZAdjust</span>
+<a name="l00052"></a>00052                 <a class="code" href="_a_s_m_macros_8h.html#2ff2ad4240ecc3af7b705c85f5b920d3">PUSH_IMM</a>(0x600); <span class="comment">// eBlitterFlags , certain calls use 0x1600 or 0x2600 instead, iow bitfield</span>
+<a name="l00053"></a>00053                 <a class="code" href="_a_s_m_macros_8h.html#2ff2ad4240ecc3af7b705c85f5b920d3">PUSH_IMM</a>(1); <span class="comment">//deleteAfterIterations</span>
+<a name="l00054"></a>00054                 <a class="code" href="_a_s_m_macros_8h.html#2ff2ad4240ecc3af7b705c85f5b920d3">PUSH_IMM</a>(0); <span class="comment">//???</span>
+<a name="l00055"></a>00055                 <a class="code" href="_a_s_m_macros_8h.html#87492c1f652c8993c057dca4801e02d4">PUSH_VAR32</a>(pLocation);
+<a name="l00056"></a>00056                 <a class="code" href="_a_s_m_macros_8h.html#87492c1f652c8993c057dca4801e02d4">PUSH_VAR32</a>(pAnimType);
+<a name="l00057"></a>00057                 <a class="code" href="_a_s_m_macros_8h.html#4ce8f281bdacd856d64382138de094b5">THISCALL</a>(0x421EA0);
+<a name="l00058"></a>00058         }
 </pre></div>
 <p>
 
@@ -349,8 +337,8 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00060">60</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00060"></a>00060 : <a class="code" href="class_object_class.html#2c2fe669430058b5cb1c34b4efb2a21c">ObjectClass</a>(<span class="keyword">false</span>) { }
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00061">61</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00061"></a>00061 : <a class="code" href="class_object_class.html#2c2fe669430058b5cb1c34b4efb2a21c">ObjectClass</a>(<span class="keyword">false</span>) { }
 </pre></div>
 <p>
 
@@ -378,69 +366,6 @@ Inheritance diagram for AnimClass:</div>
 <div class="fragment"><pre class="fragment"><a name="l00044"></a>00044 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x424B50); }
 </pre></div>
 <p>
-
-</div>
-</div><p>
-<a class="anchor" name="f715a03bb5e2817903abe1a8d0bd779d"></a><!-- doxytag: member="AnimClass::get_Audio3" ref="f715a03bb5e2817903abe1a8d0bd779d" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct_unsorted_1_1_audio_controller.html">Unsorted::AudioController</a>* AnimClass::get_Audio3           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00134">134</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
-
-</div>
-</div><p>
-<a class="anchor" name="4920de79f4714e0184fb0e3082f94852"></a><!-- doxytag: member="AnimClass::get_Audio4" ref="4920de79f4714e0184fb0e3082f94852" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct_unsorted_1_1_audio_controller.html">Unsorted::AudioController</a>* AnimClass::get_Audio4           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00135">135</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
-
-</div>
-</div><p>
-<a class="anchor" name="b943bddaffe457a0b738521802357a6b"></a><!-- doxytag: member="AnimClass::get_IterationTimer" ref="b943bddaffe457a0b738521802357a6b" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_timer_struct.html">TimerStruct</a>* AnimClass::get_IterationTimer           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00068">68</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -528,72 +453,6 @@ Inheritance diagram for AnimClass:</div>
 <div class="fragment"><pre class="fragment"><a name="l00044"></a>00044 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x424B50); }
 </pre></div>
 <p>
-
-</div>
-</div><p>
-<a class="anchor" name="ac567dcb41b4a2ad2666b1223d1ad077"></a><!-- doxytag: member="AnimClass::set_Audio3" ref="ac567dcb41b4a2ad2666b1223d1ad077" args="(Unsorted::AudioController *value)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AnimClass::set_Audio3           </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_unsorted_1_1_audio_controller.html">Unsorted::AudioController</a> *&nbsp;</td>
-          <td class="paramname"> <em>value</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00134">134</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
-
-</div>
-</div><p>
-<a class="anchor" name="386f54c35676d87786d17bf22c8fdd27"></a><!-- doxytag: member="AnimClass::set_Audio4" ref="386f54c35676d87786d17bf22c8fdd27" args="(Unsorted::AudioController *value)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AnimClass::set_Audio4           </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_unsorted_1_1_audio_controller.html">Unsorted::AudioController</a> *&nbsp;</td>
-          <td class="paramname"> <em>value</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00135">135</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
-
-</div>
-</div><p>
-<a class="anchor" name="7ca4ca1efe855df4de7f148a8e6786c5"></a><!-- doxytag: member="AnimClass::set_IterationTimer" ref="7ca4ca1efe855df4de7f148a8e6786c5" args="(TimerStruct *value)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AnimClass::set_IterationTimer           </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_timer_struct.html">TimerStruct</a> *&nbsp;</td>
-          <td class="paramname"> <em>value</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00068">68</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -688,7 +547,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00119">119</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00124">124</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -722,16 +581,16 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00115">115</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00119">119</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
-<a class="anchor" name="308784786d12e958ce6af3240394c423"></a><!-- doxytag: member="AnimClass::Audio3" ref="308784786d12e958ce6af3240394c423" args="" -->
+<a class="anchor" name="a53216aec9d03677c066521b6cdcadc3"></a><!-- doxytag: member="AnimClass::Audio3" ref="a53216aec9d03677c066521b6cdcadc3" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_unsorted_1_1_audio_controller.html">Unsorted::AudioController</a> <a class="el" href="class_anim_class.html#308784786d12e958ce6af3240394c423">AnimClass::Audio3</a>          </td>
+          <td class="memname"><a class="el" href="struct_audio_controller.html">AudioController</a> <a class="el" href="class_anim_class.html#a53216aec9d03677c066521b6cdcadc3">AnimClass::Audio3</a>          </td>
         </tr>
       </table>
 </div>
@@ -739,16 +598,16 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00133">133</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00137">137</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
-<a class="anchor" name="d43a697e56ef88b3060869af316e6e31"></a><!-- doxytag: member="AnimClass::Audio4" ref="d43a697e56ef88b3060869af316e6e31" args="" -->
+<a class="anchor" name="6b521f7cf7867d1d84011786b81acaf5"></a><!-- doxytag: member="AnimClass::Audio4" ref="6b521f7cf7867d1d84011786b81acaf5" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_unsorted_1_1_audio_controller.html">Unsorted::AudioController</a> <a class="el" href="class_anim_class.html#d43a697e56ef88b3060869af316e6e31">AnimClass::Audio4</a>          </td>
+          <td class="memname"><a class="el" href="struct_audio_controller.html">AudioController</a> <a class="el" href="class_anim_class.html#6b521f7cf7867d1d84011786b81acaf5">AnimClass::Audio4</a>          </td>
         </tr>
       </table>
 </div>
@@ -756,7 +615,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00134">134</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00138">138</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -773,7 +632,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00128">128</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00132">132</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -790,7 +649,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00066">66</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00069">69</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -807,7 +666,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00118">118</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00122">122</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -824,7 +683,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00101">101</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00105">105</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -841,7 +700,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00130">130</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00134">134</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -858,7 +717,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00126">126</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00130">130</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -875,7 +734,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00125">125</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00129">129</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -892,7 +751,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00067">67</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00071">71</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -909,7 +768,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00073">73</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00077">77</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -926,7 +785,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00074">74</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00078">78</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -943,7 +802,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00116">116</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00120">120</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -960,7 +819,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00071">71</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00075">75</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -977,7 +836,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00068">68</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00072">72</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -994,7 +853,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00122">122</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00126">126</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1011,7 +870,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00114">114</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00118">118</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1028,7 +887,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00083">83</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00087">87</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1045,7 +904,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00113">113</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00117">117</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1062,7 +921,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00070">70</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00074">74</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1079,7 +938,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00091">91</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00095">95</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1096,7 +955,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00086">86</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00090">90</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1113,7 +972,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00087">87</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00091">91</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1130,7 +989,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00088">88</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00092">92</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1147,7 +1006,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00089">89</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00093">93</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1164,7 +1023,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00090">90</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00094">94</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1181,7 +1040,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00092">92</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00096">96</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1198,7 +1057,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00093">93</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00097">97</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1215,7 +1074,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00094">94</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00098">98</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1232,7 +1091,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00095">95</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00099">99</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1249,7 +1108,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00096">96</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00100">100</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1266,7 +1125,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00097">97</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00101">101</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1283,7 +1142,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00098">98</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00102">102</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1300,7 +1159,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00099">99</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00103">103</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1317,7 +1176,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00100">100</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00104">104</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1334,7 +1193,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00102">102</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00106">106</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1351,7 +1210,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00103">103</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00107">107</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1368,7 +1227,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00104">104</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00108">108</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1385,7 +1244,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00105">105</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00109">109</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1402,7 +1261,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00106">106</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00110">110</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1419,7 +1278,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00107">107</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00111">111</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1436,7 +1295,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00108">108</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00112">112</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1453,7 +1312,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00109">109</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00113">113</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1470,7 +1329,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00110">110</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00114">114</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1487,7 +1346,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00111">111</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00115">115</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1504,7 +1363,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00112">112</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00116">116</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1521,7 +1380,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00117">117</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00121">121</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1538,7 +1397,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00121">121</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00125">125</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1555,7 +1414,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00123">123</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00127">127</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1572,7 +1431,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00124">124</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00128">128</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1589,7 +1448,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00127">127</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00131">131</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1606,7 +1465,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00129">129</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00133">133</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1623,7 +1482,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00131">131</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00135">135</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1640,7 +1499,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00132">132</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00136">136</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1657,7 +1516,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00066">66</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00070">70</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1674,7 +1533,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00069">69</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00073">73</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1691,7 +1550,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00072">72</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00076">76</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1708,7 +1567,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00075">75</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00079">79</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1725,7 +1584,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00076">76</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00080">80</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1742,7 +1601,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00077">77</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00081">81</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1759,7 +1618,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00078">78</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00082">82</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1776,7 +1635,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00079">79</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00083">83</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1793,7 +1652,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00080">80</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00084">84</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1810,7 +1669,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00081">81</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00085">85</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1827,7 +1686,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00082">82</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00086">86</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1844,7 +1703,7 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00085">85</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00089">89</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -1861,14 +1720,14 @@ Inheritance diagram for AnimClass:</div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00084">84</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_anim_class_8h-source.html#l00088">88</a> of file <a class="el" href="_anim_class_8h-source.html">AnimClass.h</a>.</p>
 
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_anim_class_8h-source.html">AnimClass.h</a><li><a class="el" href="_static_inits_8cpp-source.html">StaticInits.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:10 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:24 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

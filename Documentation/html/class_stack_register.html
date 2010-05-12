@@ -66,7 +66,7 @@ Inheritance diagram for StackRegister:</div>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 
-<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00073">73</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
+<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00070">70</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
 <hr><h2>Member Function Documentation</h2>
 <a class="anchor" name="c132f7f83304fb265eeb74f5a3dd3696"></a><!-- doxytag: member="StackRegister::At" ref="c132f7f83304fb265eeb74f5a3dd3696" args="(signed int byteOffset, T value)" -->
 <div class="memitem">
@@ -97,10 +97,10 @@ template&lt;typename T &gt; </div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00090">90</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00090"></a>00090                                                                {
-<a name="l00091"></a>00091                 *(<span class="keyword">reinterpret_cast&lt;</span>T *<span class="keyword">&gt;</span>(this-&gt;<a class="code" href="class_limited_register.html#3f5ba09366894caca361b63ac0212ab5">data</a> + byteOffset)) = value;
-<a name="l00092"></a>00092         }
+<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00087">87</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00087"></a>00087                                                                {
+<a name="l00088"></a>00088                 *(<span class="keyword">reinterpret_cast&lt;</span>T *<span class="keyword">&gt;</span>(this-&gt;<a class="code" href="class_limited_register.html#3f5ba09366894caca361b63ac0212ab5">data</a> + byteOffset)) = value;
+<a name="l00089"></a>00089         }
 </pre></div>
 <p>
 
@@ -126,10 +126,10 @@ template&lt;typename T &gt; </div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00085">85</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00085"></a>00085                                                    {
-<a name="l00086"></a>00086                 <span class="keywordflow">return</span> *(<span class="keyword">reinterpret_cast&lt;</span>T *<span class="keyword">&gt;</span>(this-&gt;<a class="code" href="class_limited_register.html#3f5ba09366894caca361b63ac0212ab5">data</a> + byteOffset));
-<a name="l00087"></a>00087         }
+<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00082">82</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00082"></a>00082                                                    {
+<a name="l00083"></a>00083                 <span class="keywordflow">return</span> *(<span class="keyword">reinterpret_cast&lt;</span>T *<span class="keyword">&gt;</span>(this-&gt;<a class="code" href="class_limited_register.html#3f5ba09366894caca361b63ac0212ab5">data</a> + byteOffset));
+<a name="l00084"></a>00084         }
 </pre></div>
 <p>
 
@@ -153,10 +153,10 @@ template&lt;typename T &gt; </div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00080">80</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00080"></a>00080                                                 {
-<a name="l00081"></a>00081                 <span class="keywordflow">return</span> (<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>) (((<span class="keywordtype">signed</span> int)this-&gt;<a class="code" href="class_limited_register.html#3f5ba09366894caca361b63ac0212ab5">data</a>) + byteOffset);
-<a name="l00082"></a>00082         }
+<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00077">77</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00077"></a>00077                                                 {
+<a name="l00078"></a>00078                 <span class="keywordflow">return</span> (<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>) (((<span class="keywordtype">signed</span> int)this-&gt;<a class="code" href="class_limited_register.html#3f5ba09366894caca361b63ac0212ab5">data</a>) + byteOffset);
+<a name="l00079"></a>00079         }
 </pre></div>
 <p>
 
@@ -182,10 +182,10 @@ template&lt;typename T &gt; </div>
 
 <p>
 
-<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00076">76</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00076"></a>00076                                                       {
-<a name="l00077"></a>00077                 <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>T *<span class="keyword">&gt;</span>(this-&gt;<a class="code" href="class_limited_register.html#3f5ba09366894caca361b63ac0212ab5">data</a> + byteOffset);
-<a name="l00078"></a>00078         }
+<p>Definition at line <a class="el" href="_syringe_8h-source.html#l00073">73</a> of file <a class="el" href="_syringe_8h-source.html">Syringe.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00073"></a>00073                                                       {
+<a name="l00074"></a>00074                 <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>T *<span class="keyword">&gt;</span>(this-&gt;<a class="code" href="class_limited_register.html#3f5ba09366894caca361b63ac0212ab5">data</a> + byteOffset);
+<a name="l00075"></a>00075         }
 </pre></div>
 <p>
 
@@ -194,7 +194,7 @@ template&lt;typename T &gt; </div>
 <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="_syringe_8h-source.html">Syringe.h</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:20 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:31 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

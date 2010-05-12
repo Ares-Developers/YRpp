@@ -75,18 +75,20 @@
 <a name="l00042"></a>00042         <span class="comment">//===== Properties ==========================================================</span>
 <a name="l00043"></a>00043         <span class="comment">//===========================================================================</span>
 <a name="l00044"></a>00044 
-<a name="l00045"></a><a class="code" href="class_disk_laser_class.html#6ab9a6a79a11973f14e29c2c51bae984">00045</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="class_techno_class.html">TechnoClass</a>*,          <a class="code" href="class_disk_laser_class.html#93abb6f65a0dfbc37af10596528749ee">Owner</a>);
-<a name="l00046"></a><a class="code" href="class_disk_laser_class.html#c9b09f03101b1ed6aa8ca3ff768c52e4">00046</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="class_techno_class.html">TechnoClass</a>*,          <a class="code" href="class_disk_laser_class.html#6ab9a6a79a11973f14e29c2c51bae984">Target</a>);
-<a name="l00047"></a><a class="code" href="class_disk_laser_class.html#59007f5bca851ec974146146a0e20218">00047</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="class_weapon_type_class.html">WeaponTypeClass</a>*,      <a class="code" href="class_disk_laser_class.html#c9b09f03101b1ed6aa8ca3ff768c52e4">Weapon</a>);
-<a name="l00048"></a><a class="code" href="class_disk_laser_class.html#e9afe32b3aa79cd6811e30625e49b119">00048</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>,                         <a class="code" href="class_disk_laser_class.html#59007f5bca851ec974146146a0e20218">unknown_30</a>);
-<a name="l00049"></a><a class="code" href="class_disk_laser_class.html#5cb39376f215f693851a379910562b24">00049</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>,                         <a class="code" href="class_disk_laser_class.html#e9afe32b3aa79cd6811e30625e49b119">unknown_34</a>);
-<a name="l00050"></a><a class="code" href="class_disk_laser_class.html#33d51682b77fa34ed8bf1cd4eecfa734">00050</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>,                         <a class="code" href="class_disk_laser_class.html#5cb39376f215f693851a379910562b24">unknown_38</a>);
-<a name="l00051"></a>00051         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>,                           <a class="code" href="class_disk_laser_class.html#33d51682b77fa34ed8bf1cd4eecfa734">Damage</a>);
-<a name="l00052"></a>00052 };
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054 <span class="preprocessor">#endif</span>
+<a name="l00045"></a>00045 <span class="keyword">public</span>:
+<a name="l00046"></a>00046 
+<a name="l00047"></a><a class="code" href="class_disk_laser_class.html#93abb6f65a0dfbc37af10596528749ee">00047</a>         <a class="code" href="class_techno_class.html">TechnoClass</a>* <a class="code" href="class_disk_laser_class.html#93abb6f65a0dfbc37af10596528749ee">Owner</a>;
+<a name="l00048"></a><a class="code" href="class_disk_laser_class.html#6ab9a6a79a11973f14e29c2c51bae984">00048</a>         <a class="code" href="class_techno_class.html">TechnoClass</a>* <a class="code" href="class_disk_laser_class.html#6ab9a6a79a11973f14e29c2c51bae984">Target</a>;
+<a name="l00049"></a><a class="code" href="class_disk_laser_class.html#c9b09f03101b1ed6aa8ca3ff768c52e4">00049</a>         <a class="code" href="class_weapon_type_class.html">WeaponTypeClass</a>* <a class="code" href="class_disk_laser_class.html#c9b09f03101b1ed6aa8ca3ff768c52e4">Weapon</a>;
+<a name="l00050"></a><a class="code" href="class_disk_laser_class.html#59007f5bca851ec974146146a0e20218">00050</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_disk_laser_class.html#59007f5bca851ec974146146a0e20218">unknown_30</a>;
+<a name="l00051"></a><a class="code" href="class_disk_laser_class.html#e9afe32b3aa79cd6811e30625e49b119">00051</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_disk_laser_class.html#e9afe32b3aa79cd6811e30625e49b119">unknown_34</a>;
+<a name="l00052"></a><a class="code" href="class_disk_laser_class.html#5cb39376f215f693851a379910562b24">00052</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_disk_laser_class.html#5cb39376f215f693851a379910562b24">unknown_38</a>;
+<a name="l00053"></a><a class="code" href="class_disk_laser_class.html#33d51682b77fa34ed8bf1cd4eecfa734">00053</a>         <span class="keywordtype">int</span> <a class="code" href="class_disk_laser_class.html#33d51682b77fa34ed8bf1cd4eecfa734">Damage</a>;
+<a name="l00054"></a>00054 };
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:06 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:21 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -43,7 +43,7 @@
 <a name="l00010"></a><a class="code" href="class_light_source_class.html">00010</a> <span class="keyword">class </span><a class="code" href="class_light_source_class.html">LightSourceClass</a> : <span class="keyword">public</span> <a class="code" href="class_abstract_class.html">AbstractClass</a>
 <a name="l00011"></a>00011 {
 <a name="l00012"></a>00012 <span class="keyword">public</span>:
-<a name="l00013"></a><a class="code" href="class_light_source_class.html#ebef56427fd409aa26b6d389e7a22c3662c6fba29925eae801c125e2db285d3e">00013</a>         <span class="keyword">enum</span> {<a class="code" href="class_light_source_class.html#ebef56427fd409aa26b6d389e7a22c3662c6fba29925eae801c125e2db285d3e">AbsID</a> = <a class="code" href="_general_definitions_8h.html#b1c489870eec5d743e571c8962c0c3f4">abs_LightSource</a>};
+<a name="l00013"></a><a class="code" href="class_light_source_class.html#a3cd38b187ed388c565fca37392f06e962c6fba29925eae801c125e2db285d3e">00013</a>         <span class="keyword">enum</span> {<a class="code" href="class_light_source_class.html#a3cd38b187ed388c565fca37392f06e962c6fba29925eae801c125e2db285d3e">AbsID</a> = <a class="code" href="_general_definitions_8h.html#b1c489870eec5d743e571c8962c0c3f4">abs_LightSource</a>};
 <a name="l00014"></a>00014 
 <a name="l00015"></a>00015         <span class="comment">//IPersist</span>
 <a name="l00016"></a><a class="code" href="class_light_source_class.html#584944201303c20419250d1402d24fd7">00016</a>         <span class="keyword">virtual</span> HRESULT __stdcall <a class="code" href="class_light_source_class.html#584944201303c20419250d1402d24fd7">GetClassID</a>(CLSID* pClassID) <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
@@ -78,17 +78,19 @@
 <a name="l00045"></a>00045         <span class="comment">//===== Properties ==========================================================</span>
 <a name="l00046"></a>00046         <span class="comment">//===========================================================================</span>
 <a name="l00047"></a>00047 
-<a name="l00048"></a><a class="code" href="class_light_source_class.html#50f8b30b413f354d3df1064a8efd6f97">00048</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_light_source_class.html#1976f5e8054d5db543db33abed17c06b">LightIntensity</a>);
-<a name="l00049"></a><a class="code" href="class_light_source_class.html#049eb2d4b14775a6f1361ab3e15e4219">00049</a>         <a class="code" href="_y_r_p_p_core_8h.html#aae3cb398fbfa33cc83eddc740386cd4">PROPERTY_STRUCT</a>(<a class="code" href="struct_tint_struct.html">TintStruct</a>, <a class="code" href="class_light_source_class.html#50f8b30b413f354d3df1064a8efd6f97">LightTint</a>);
-<a name="l00050"></a><a class="code" href="class_light_source_class.html#4f882392ed90de6d0af0dc5422a9af84">00050</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_light_source_class.html#049eb2d4b14775a6f1361ab3e15e4219">unknown_int_30</a>);
-<a name="l00051"></a><a class="code" href="class_light_source_class.html#0f3cd68e6cce3dc27df1cd85fb3d152c">00051</a>         <a class="code" href="_y_r_p_p_core_8h.html#aae3cb398fbfa33cc83eddc740386cd4">PROPERTY_STRUCT</a>(<a class="code" href="class_vector3_d.html">CoordStruct</a>, <a class="code" href="class_light_source_class.html#4f882392ed90de6d0af0dc5422a9af84">Location</a>);
-<a name="l00052"></a><a class="code" href="class_light_source_class.html#116f110e66cc6a8d32fc198900b10561">00052</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_light_source_class.html#81cb7db03f5360266d243ef75e294438">LightVisibility</a>);
-<a name="l00053"></a>00053         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>, <a class="code" href="class_light_source_class.html#116f110e66cc6a8d32fc198900b10561">Activated</a>);
-<a name="l00054"></a>00054 };
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056 <span class="preprocessor">#endif</span>
+<a name="l00048"></a>00048 <span class="keyword">public</span>:
+<a name="l00049"></a>00049 
+<a name="l00050"></a><a class="code" href="class_light_source_class.html#1976f5e8054d5db543db33abed17c06b">00050</a>         <span class="keywordtype">int</span> <a class="code" href="class_light_source_class.html#1976f5e8054d5db543db33abed17c06b">LightIntensity</a>;
+<a name="l00051"></a><a class="code" href="class_light_source_class.html#50f8b30b413f354d3df1064a8efd6f97">00051</a>         <a class="code" href="struct_tint_struct.html">TintStruct</a> <a class="code" href="class_light_source_class.html#50f8b30b413f354d3df1064a8efd6f97">LightTint</a>;
+<a name="l00052"></a><a class="code" href="class_light_source_class.html#049eb2d4b14775a6f1361ab3e15e4219">00052</a>         <span class="keywordtype">int</span> <a class="code" href="class_light_source_class.html#049eb2d4b14775a6f1361ab3e15e4219">unknown_int_30</a>;
+<a name="l00053"></a><a class="code" href="class_light_source_class.html#4f882392ed90de6d0af0dc5422a9af84">00053</a>         <a class="code" href="class_vector3_d.html">CoordStruct</a> <a class="code" href="class_light_source_class.html#4f882392ed90de6d0af0dc5422a9af84">Location</a>;
+<a name="l00054"></a><a class="code" href="class_light_source_class.html#81cb7db03f5360266d243ef75e294438">00054</a>         <span class="keywordtype">int</span> <a class="code" href="class_light_source_class.html#81cb7db03f5360266d243ef75e294438">LightVisibility</a>;
+<a name="l00055"></a><a class="code" href="class_light_source_class.html#116f110e66cc6a8d32fc198900b10561">00055</a>         <span class="keywordtype">bool</span> <a class="code" href="class_light_source_class.html#116f110e66cc6a8d32fc198900b10561">Activated</a>;
+<a name="l00056"></a>00056 };
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:06 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:21 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

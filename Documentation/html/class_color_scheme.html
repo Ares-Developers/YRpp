@@ -46,21 +46,17 @@
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#d427e52b00c856170e2ae0c8b70582d0">~ColorScheme</a> ()</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="struct_color_struct.html">ColorStruct</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#b652ad7def7938d4bd9c923334aaa9ec">get_Color</a> (int i)</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#125a13d72928ab7369c5bc576e28a356">set_Color</a> (int i, <a class="el" href="struct_color_struct.html">ColorStruct</a> value)</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="struct_color_struct.html">ColorStruct</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#afadeaf89d3de0cf5484d5077c624f8a">get_BaseColor</a> ()</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#d34327a30317a936c3ee9f811f76633f">set_BaseColor</a> (<a class="el" href="struct_color_struct.html">ColorStruct</a> *value)</td></tr>
-
 <tr><td colspan="2"><br><h2>Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="class_color_scheme.html">ColorScheme</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#ec334091d3af1eeaf5d5b595f5e881a0">Find</a> (const char *find_id)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="class_color_scheme.html">ColorScheme</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#2fc58cc8a085da68b22ad8e7ad057f1f">Find</a> (const char *find_id, int <a class="el" href="class_color_scheme.html#db5b90f5dae39e3028e0cf55f0d25d86">ShadeCount</a>=1)</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">static int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#eb420535a6189f83c5719baeb3d569ac">FindIndex</a> (const char *find_id)</td></tr>
 
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="class_color_scheme.html">ColorScheme</a> *__fastcall&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#fc4479ba4d3d132c9d02a469846c253b">FindByName</a> (const char *Name, <a class="el" href="struct_color_struct.html">ColorStruct</a> *<a class="el" href="class_color_scheme.html#f195b08f164111ea54e3e36984550eb5">BaseColor</a>, <a class="el" href="struct_byte_palette.html">BytePalette</a> *Pal1, <a class="el" href="struct_byte_palette.html">BytePalette</a> *Pal2, int <a class="el" href="class_color_scheme.html#db5b90f5dae39e3028e0cf55f0d25d86">ShadeCount</a>)</td></tr>
+
 <tr><td colspan="2"><br><h2>Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#217e4ad952b282fc2e7f8e01de5da56c">ArrayIndex</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="struct_byte_palette.html">BytePalette</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#579c2f8843d8ab0b05b74988999a5794">Colors</a></td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#cd65c00bb5806c8ccb2cfaaed5ce2a67">ID</a></td></tr>
 
@@ -68,14 +64,18 @@
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="class_light_convert_class.html">LightConvertClass</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#2d092143abb075cb48104900472b1393">LightConvert</a></td></tr>
 
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#db5b90f5dae39e3028e0cf55f0d25d86">ShadeCount</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#dd28e21e5752903f1dafba1c9ba72d2c">MainShadeIndex</a></td></tr>
+
 <tr><td colspan="2"><br><h2>Static Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="class_dynamic_vector_class.html">DynamicVectorClass</a><br class="typebreak">
 &lt; <a class="el" href="class_color_scheme.html">ColorScheme</a> * &gt; *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#e9348b2ad052e434b2d0a26c7aea19e7">Array</a> = (<a class="el" href="class_dynamic_vector_class.html">DynamicVectorClass</a>&lt; <a class="el" href="class_color_scheme.html">ColorScheme</a> *&gt;*) 0xB054D0</td></tr>
 
 <tr><td colspan="2"><br><h2>Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="struct_color_struct.html">ColorStruct</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#59b374e422d2fbb4274b6acd4a610300">Colors</a> [0x100]</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#412008531cb363affc335f8659b4d751">unknown_314</a> [0x1C]</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#f645fb9daa70510d0d50a00cd1d02c5a">unknown_310</a> [0x2C]</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_scheme.html#7e54c4fd7aabec0688107dc26c87412e">unknown_334</a> [0x8]</td></tr>
 
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
@@ -133,8 +133,8 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00041">41</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00042"></a>00042                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x68C710); }
+<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00050">50</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00051"></a>00051                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x68C710); }
 </pre></div>
 <p>
 
@@ -157,15 +157,15 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00044">44</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00045"></a>00045                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x68C8D0); }
+<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00053">53</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00054"></a>00054                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x68C8D0); }
 </pre></div>
 <p>
 
 </div>
 </div><p>
 <hr><h2>Member Function Documentation</h2>
-<a class="anchor" name="ec334091d3af1eeaf5d5b595f5e881a0"></a><!-- doxytag: member="ColorScheme::Find" ref="ec334091d3af1eeaf5d5b595f5e881a0" args="(const char *find_id)" -->
+<a class="anchor" name="2fc58cc8a085da68b22ad8e7ad057f1f"></a><!-- doxytag: member="ColorScheme::Find" ref="2fc58cc8a085da68b22ad8e7ad057f1f" args="(const char *find_id, int ShadeCount=1)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -173,9 +173,18 @@
           <td class="memname">static <a class="el" href="class_color_scheme.html">ColorScheme</a>* ColorScheme::Find           </td>
           <td>(</td>
           <td class="paramtype">const char *&nbsp;</td>
-          <td class="paramname"> <em>find_id</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline, static]</code></td>
+          <td class="paramname"> <em>find_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>ShadeCount</em> = <code>1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, static]</code></td>
         </tr>
       </table>
 </div>
@@ -183,16 +192,71 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00018">18</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00019"></a>00019                 {
-<a name="l00020"></a>00020 <span class="comment">//                      ColorScheme* current=NULL;</span>
-<a name="l00021"></a>00021                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_color_scheme.html#e9348b2ad052e434b2d0a26c7aea19e7">Array</a>-&gt;<a class="code" href="class_dynamic_vector_class.html#c0f04654b648014dd7b11730163174fb">Count</a>; ++i) {
-<a name="l00022"></a>00022                                 <span class="keywordflow">if</span>(!_strcmpi(<a class="code" href="class_color_scheme.html#e9348b2ad052e434b2d0a26c7aea19e7">Array</a>-&gt;<a class="code" href="class_vector_class.html#f2eb3e27c9b91c1c5991d98c206b4782">GetItem</a>(i)-&gt;<a class="code" href="class_color_scheme.html#cd65c00bb5806c8ccb2cfaaed5ce2a67">ID</a>, find_id)) {
-<a name="l00023"></a>00023                                         <span class="keywordflow">return</span> <a class="code" href="class_color_scheme.html#e9348b2ad052e434b2d0a26c7aea19e7">Array</a>-&gt;<a class="code" href="class_vector_class.html#f2eb3e27c9b91c1c5991d98c206b4782">GetItem</a>(i);
-<a name="l00024"></a>00024                                 }
-<a name="l00025"></a>00025                         }
-<a name="l00026"></a>00026                         <span class="keywordflow">return</span> NULL;
-<a name="l00027"></a>00027                 }
+<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00021">21</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00022"></a>00022                 {
+<a name="l00023"></a>00023 <span class="comment">//                      ColorScheme* current=NULL;</span>
+<a name="l00024"></a>00024                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_color_scheme.html#e9348b2ad052e434b2d0a26c7aea19e7">Array</a>-&gt;<a class="code" href="class_dynamic_vector_class.html#c0f04654b648014dd7b11730163174fb">Count</a>; ++i) {
+<a name="l00025"></a>00025                                 <a class="code" href="class_color_scheme.html">ColorScheme</a> *CS = <a class="code" href="class_color_scheme.html#e9348b2ad052e434b2d0a26c7aea19e7">Array</a>-&gt;<a class="code" href="class_vector_class.html#f2eb3e27c9b91c1c5991d98c206b4782">GetItem</a>(i);
+<a name="l00026"></a>00026                                 <span class="keywordflow">if</span>(!_strcmpi(CS-&gt;<a class="code" href="class_color_scheme.html#cd65c00bb5806c8ccb2cfaaed5ce2a67">ID</a>, find_id)) {
+<a name="l00027"></a>00027                                         <span class="keywordflow">if</span>(CS-&gt;<a class="code" href="class_color_scheme.html#db5b90f5dae39e3028e0cf55f0d25d86">ShadeCount</a> == <a class="code" href="class_color_scheme.html#db5b90f5dae39e3028e0cf55f0d25d86">ShadeCount</a>) {
+<a name="l00028"></a>00028                                                 <span class="keywordflow">return</span> <a class="code" href="class_color_scheme.html#e9348b2ad052e434b2d0a26c7aea19e7">Array</a>-&gt;<a class="code" href="class_vector_class.html#f2eb3e27c9b91c1c5991d98c206b4782">GetItem</a>(i);
+<a name="l00029"></a>00029                                         }
+<a name="l00030"></a>00030                                 }
+<a name="l00031"></a>00031                         }
+<a name="l00032"></a>00032                         <span class="keywordflow">return</span> NULL;
+<a name="l00033"></a>00033                 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="fc4479ba4d3d132c9d02a469846c253b"></a><!-- doxytag: member="ColorScheme::FindByName" ref="fc4479ba4d3d132c9d02a469846c253b" args="(const char *Name, ColorStruct *BaseColor, BytePalette *Pal1, BytePalette *Pal2, int ShadeCount)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_color_scheme.html">ColorScheme</a>* __fastcall ColorScheme::FindByName           </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>Name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_color_struct.html">ColorStruct</a> *&nbsp;</td>
+          <td class="paramname"> <em>BaseColor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_byte_palette.html">BytePalette</a> *&nbsp;</td>
+          <td class="paramname"> <em>Pal1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_byte_palette.html">BytePalette</a> *&nbsp;</td>
+          <td class="paramname"> <em>Pal2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>ShadeCount</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00046">46</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00047"></a>00047                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x68C9C0); }
 </pre></div>
 <p>
 
@@ -216,118 +280,16 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00029">29</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00030"></a>00030                 {
-<a name="l00031"></a>00031 <span class="comment">//                      ColorScheme* current=NULL;</span>
-<a name="l00032"></a>00032                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_color_scheme.html#e9348b2ad052e434b2d0a26c7aea19e7">Array</a>-&gt;<a class="code" href="class_dynamic_vector_class.html#c0f04654b648014dd7b11730163174fb">Count</a>; ++i) {
-<a name="l00033"></a>00033                                 <span class="keywordflow">if</span>(!_strcmpi(<a class="code" href="class_color_scheme.html#e9348b2ad052e434b2d0a26c7aea19e7">Array</a>-&gt;<a class="code" href="class_vector_class.html#f2eb3e27c9b91c1c5991d98c206b4782">GetItem</a>(i)-&gt;<a class="code" href="class_color_scheme.html#cd65c00bb5806c8ccb2cfaaed5ce2a67">ID</a>,find_id)) {
-<a name="l00034"></a>00034                                         <span class="keywordflow">return</span> i;
-<a name="l00035"></a>00035                                 }
-<a name="l00036"></a>00036                         }
-<a name="l00037"></a>00037                         <span class="keywordflow">return</span> -1;
-<a name="l00038"></a>00038                 }
-</pre></div>
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="afadeaf89d3de0cf5484d5077c624f8a"></a><!-- doxytag: member="ColorScheme::get_BaseColor" ref="afadeaf89d3de0cf5484d5077c624f8a" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct_color_struct.html">ColorStruct</a>* ColorScheme::get_BaseColor           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00061">61</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
-
-</div>
-</div><p>
-<a class="anchor" name="b652ad7def7938d4bd9c923334aaa9ec"></a><!-- doxytag: member="ColorScheme::get_Color" ref="b652ad7def7938d4bd9c923334aaa9ec" args="(int i)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct_color_struct.html">ColorStruct</a> ColorScheme::get_Color           </td>
-          <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>i</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00055">55</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00056"></a>00056                         { <span class="keywordflow">return</span> <a class="code" href="class_color_scheme.html#59b374e422d2fbb4274b6acd4a610300">Colors</a>[i]; }
-</pre></div>
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="d34327a30317a936c3ee9f811f76633f"></a><!-- doxytag: member="ColorScheme::set_BaseColor" ref="d34327a30317a936c3ee9f811f76633f" args="(ColorStruct *value)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ColorScheme::set_BaseColor           </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_color_struct.html">ColorStruct</a> *&nbsp;</td>
-          <td class="paramname"> <em>value</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00061">61</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
-
-</div>
-</div><p>
-<a class="anchor" name="125a13d72928ab7369c5bc576e28a356"></a><!-- doxytag: member="ColorScheme::set_Color" ref="125a13d72928ab7369c5bc576e28a356" args="(int i, ColorStruct value)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ColorScheme::set_Color           </td>
-          <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>i</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct_color_struct.html">ColorStruct</a>&nbsp;</td>
-          <td class="paramname"> <em>value</em></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00057">57</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00058"></a>00058                         { <a class="code" href="class_color_scheme.html#59b374e422d2fbb4274b6acd4a610300">Colors</a>[i] = value; }
+<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00035">35</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00036"></a>00036                 {
+<a name="l00037"></a>00037 <span class="comment">//                      ColorScheme* current=NULL;</span>
+<a name="l00038"></a>00038                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_color_scheme.html#e9348b2ad052e434b2d0a26c7aea19e7">Array</a>-&gt;<a class="code" href="class_dynamic_vector_class.html#c0f04654b648014dd7b11730163174fb">Count</a>; ++i) {
+<a name="l00039"></a>00039                                 <span class="keywordflow">if</span>(!_strcmpi(<a class="code" href="class_color_scheme.html#e9348b2ad052e434b2d0a26c7aea19e7">Array</a>-&gt;<a class="code" href="class_vector_class.html#f2eb3e27c9b91c1c5991d98c206b4782">GetItem</a>(i)-&gt;<a class="code" href="class_color_scheme.html#cd65c00bb5806c8ccb2cfaaed5ce2a67">ID</a>,find_id)) {
+<a name="l00040"></a>00040                                         <span class="keywordflow">return</span> i;
+<a name="l00041"></a>00041                                 }
+<a name="l00042"></a>00042                         }
+<a name="l00043"></a>00043                         <span class="keywordflow">return</span> -1;
+<a name="l00044"></a>00044                 }
 </pre></div>
 <p>
 
@@ -364,7 +326,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00050">50</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
+<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00062">62</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
 
 </div>
 </div><p>
@@ -381,16 +343,16 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00060">60</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
+<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00067">67</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
 
 </div>
 </div><p>
-<a class="anchor" name="59b374e422d2fbb4274b6acd4a610300"></a><!-- doxytag: member="ColorScheme::Colors" ref="59b374e422d2fbb4274b6acd4a610300" args="[0x100]" -->
+<a class="anchor" name="579c2f8843d8ab0b05b74988999a5794"></a><!-- doxytag: member="ColorScheme::Colors" ref="579c2f8843d8ab0b05b74988999a5794" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_color_struct.html">ColorStruct</a> <a class="el" href="class_color_scheme.html#59b374e422d2fbb4274b6acd4a610300">ColorScheme::Colors</a>[0x100]<code> [protected]</code>          </td>
+          <td class="memname"><a class="el" href="struct_byte_palette.html">BytePalette</a> <a class="el" href="class_color_scheme.html#579c2f8843d8ab0b05b74988999a5794">ColorScheme::Colors</a>          </td>
         </tr>
       </table>
 </div>
@@ -398,7 +360,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00050">50</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
+<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00064">64</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
 
 </div>
 </div><p>
@@ -415,7 +377,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00060">60</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
+<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00066">66</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
 
 </div>
 </div><p>
@@ -432,16 +394,16 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00061">61</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
+<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00068">68</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
 
 </div>
 </div><p>
-<a class="anchor" name="f645fb9daa70510d0d50a00cd1d02c5a"></a><!-- doxytag: member="ColorScheme::unknown_310" ref="f645fb9daa70510d0d50a00cd1d02c5a" args="[0x2C]" -->
+<a class="anchor" name="dd28e21e5752903f1dafba1c9ba72d2c"></a><!-- doxytag: member="ColorScheme::MainShadeIndex" ref="dd28e21e5752903f1dafba1c9ba72d2c" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="el" href="class_color_scheme.html#f645fb9daa70510d0d50a00cd1d02c5a">ColorScheme::unknown_310</a>[0x2C]<code> [protected]</code>          </td>
+          <td class="memname">int <a class="el" href="class_color_scheme.html#dd28e21e5752903f1dafba1c9ba72d2c">ColorScheme::MainShadeIndex</a>          </td>
         </tr>
       </table>
 </div>
@@ -449,14 +411,65 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00062">62</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
+<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00070">70</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="db5b90f5dae39e3028e0cf55f0d25d86"></a><!-- doxytag: member="ColorScheme::ShadeCount" ref="db5b90f5dae39e3028e0cf55f0d25d86" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_color_scheme.html#db5b90f5dae39e3028e0cf55f0d25d86">ColorScheme::ShadeCount</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00069">69</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="412008531cb363affc335f8659b4d751"></a><!-- doxytag: member="ColorScheme::unknown_314" ref="412008531cb363affc335f8659b4d751" args="[0x1C]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="el" href="class_color_scheme.html#412008531cb363affc335f8659b4d751">ColorScheme::unknown_314</a>[0x1C]<code> [protected]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00070">70</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="7e54c4fd7aabec0688107dc26c87412e"></a><!-- doxytag: member="ColorScheme::unknown_334" ref="7e54c4fd7aabec0688107dc26c87412e" args="[0x8]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_y_r_p_p_core_8h.html#4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="el" href="class_color_scheme.html#7e54c4fd7aabec0688107dc26c87412e">ColorScheme::unknown_334</a>[0x8]<code> [protected]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definition at line <a class="el" href="_color_scheme_8h-source.html#l00072">72</a> of file <a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a>.</p>
 
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_color_scheme_8h-source.html">ColorScheme.h</a><li><a class="el" href="_static_inits_8cpp-source.html">StaticInits.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:14 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:27 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

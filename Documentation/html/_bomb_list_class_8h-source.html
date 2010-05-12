@@ -45,38 +45,39 @@
 <a name="l00012"></a><a class="code" href="class_bomb_list_class.html">00012</a> <span class="keyword">class </span><a class="code" href="class_bomb_list_class.html">BombListClass</a>
 <a name="l00013"></a>00013 {
 <a name="l00014"></a>00014 <span class="keyword">public</span>:
-<a name="l00015"></a>00015         <span class="comment">// get the one static instance:</span>
-<a name="l00016"></a><a class="code" href="class_bomb_list_class.html#87e808c39132357c0f21a14588d40996">00016</a>         <span class="keyword">static</span> <a class="code" href="class_bomb_list_class.html">BombListClass</a>* <a class="code" href="class_bomb_list_class.html#87e808c39132357c0f21a14588d40996">Global</a>()
-<a name="l00017"></a>00017                 { <span class="keywordflow">return</span> (<a class="code" href="class_bomb_list_class.html">BombListClass</a>*)0x87F5D8; }
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019         <span class="comment">// draws all the visible bombs, expires the outdated ones</span>
-<a name="l00020"></a><a class="code" href="class_bomb_list_class.html#93aae32ffc369dae60626fa72c9dc246">00020</a>         <span class="keywordtype">void</span> <a class="code" href="class_bomb_list_class.html#93aae32ffc369dae60626fa72c9dc246">Update</a>()
-<a name="l00021"></a>00021                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x438BF0); }
-<a name="l00022"></a>00022 
-<a name="l00023"></a>00023         <span class="comment">// the main one, ivan planting a bomb (creates a BombClass inside)</span>
-<a name="l00024"></a><a class="code" href="class_bomb_list_class.html#a7f2ea93972ee42ff31d4f9a2680746f">00024</a>         <span class="keywordtype">void</span> <a class="code" href="class_bomb_list_class.html#a7f2ea93972ee42ff31d4f9a2680746f">Plant</a>(<a class="code" href="class_techno_class.html">TechnoClass</a> *SourceObject, <a class="code" href="class_techno_class.html">TechnoClass</a> *TargetObject)
-<a name="l00025"></a>00025                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x438E70); }
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027         <span class="comment">// duh</span>
-<a name="l00028"></a><a class="code" href="class_bomb_list_class.html#661397c84aeeb1398137a267fcf8091f">00028</a>         <span class="keywordtype">void</span> <a class="code" href="class_bomb_list_class.html#661397c84aeeb1398137a267fcf8091f">AddDetector</a>(<a class="code" href="class_techno_class.html">TechnoClass</a> *Detector)
-<a name="l00029"></a>00029                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x439080); }
-<a name="l00030"></a>00030 
-<a name="l00031"></a>00031         <span class="comment">// duh</span>
-<a name="l00032"></a><a class="code" href="class_bomb_list_class.html#47f8cf1ad6124e962ed53daa32ddc302">00032</a>         <span class="keywordtype">void</span> <a class="code" href="class_bomb_list_class.html#47f8cf1ad6124e962ed53daa32ddc302">RemoveDetector</a>(<a class="code" href="class_techno_class.html">TechnoClass</a> *Detector)
-<a name="l00033"></a>00033                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x4390D0); }
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <span class="keyword">protected</span>:
+<a name="l00015"></a><a class="code" href="class_bomb_list_class.html#497a67ff84f5bb71504aa8ad997a100e">00015</a>         <span class="keyword">static</span> <a class="code" href="class_bomb_list_class.html">BombListClass</a>* <a class="code" href="class_bomb_list_class.html#497a67ff84f5bb71504aa8ad997a100e">Instance</a>;
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017         <span class="comment">// draws all the visible bombs, expires the outdated ones</span>
+<a name="l00018"></a><a class="code" href="class_bomb_list_class.html#93aae32ffc369dae60626fa72c9dc246">00018</a>         <span class="keywordtype">void</span> <a class="code" href="class_bomb_list_class.html#93aae32ffc369dae60626fa72c9dc246">Update</a>()
+<a name="l00019"></a>00019                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x438BF0); }
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021         <span class="comment">// the main one, ivan planting a bomb (creates a BombClass inside)</span>
+<a name="l00022"></a><a class="code" href="class_bomb_list_class.html#a7f2ea93972ee42ff31d4f9a2680746f">00022</a>         <span class="keywordtype">void</span> <a class="code" href="class_bomb_list_class.html#a7f2ea93972ee42ff31d4f9a2680746f">Plant</a>(<a class="code" href="class_techno_class.html">TechnoClass</a> *SourceObject, <a class="code" href="class_techno_class.html">TechnoClass</a> *TargetObject)
+<a name="l00023"></a>00023                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x438E70); }
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025         <span class="comment">// duh</span>
+<a name="l00026"></a><a class="code" href="class_bomb_list_class.html#661397c84aeeb1398137a267fcf8091f">00026</a>         <span class="keywordtype">void</span> <a class="code" href="class_bomb_list_class.html#661397c84aeeb1398137a267fcf8091f">AddDetector</a>(<a class="code" href="class_techno_class.html">TechnoClass</a> *Detector)
+<a name="l00027"></a>00027                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x439080); }
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029         <span class="comment">// duh</span>
+<a name="l00030"></a><a class="code" href="class_bomb_list_class.html#47f8cf1ad6124e962ed53daa32ddc302">00030</a>         <span class="keywordtype">void</span> <a class="code" href="class_bomb_list_class.html#47f8cf1ad6124e962ed53daa32ddc302">RemoveDetector</a>(<a class="code" href="class_techno_class.html">TechnoClass</a> *Detector)
+<a name="l00031"></a>00031                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x4390D0); }
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033 <span class="keyword">protected</span>:
+<a name="l00034"></a>00034         <span class="comment">//===========================================================================</span>
+<a name="l00035"></a>00035         <span class="comment">//===== Properties ==========================================================</span>
 <a name="l00036"></a>00036         <span class="comment">//===========================================================================</span>
-<a name="l00037"></a>00037         <span class="comment">//===== Properties ==========================================================</span>
-<a name="l00038"></a>00038         <span class="comment">//===========================================================================</span>
-<a name="l00039"></a><a class="code" href="class_bomb_list_class.html#e5426b311875bb5dac9bc980ea9bd056">00039</a>         <a class="code" href="_y_r_p_p_core_8h.html#aae3cb398fbfa33cc83eddc740386cd4">PROPERTY_STRUCT</a>(<a class="code" href="class_dynamic_vector_class.html">DynamicVectorClass&lt;BombClass *&gt;</a>, <a class="code" href="class_bomb_list_class.html#309fd409451f705c7c242aaf0bfd4889">Bombs</a>);                                <span class="comment">//all the BombClass instances on the map</span>
-<a name="l00040"></a><a class="code" href="class_bomb_list_class.html#1388a05819e4f26e92efcd18069243b8">00040</a>         <a class="code" href="_y_r_p_p_core_8h.html#aae3cb398fbfa33cc83eddc740386cd4">PROPERTY_STRUCT</a>(<a class="code" href="class_dynamic_vector_class.html">DynamicVectorClass&lt;TechnoClass *&gt;</a>, <a class="code" href="class_bomb_list_class.html#71864204ba1fa1ff0b6cfd31a16265c6">Detectors</a>);          <span class="comment">//all the BombSight'ed objects currently on the map</span>
-<a name="l00041"></a>00041         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_bomb_list_class.html#1388a05819e4f26e92efcd18069243b8">SomeArgument</a>); <span class="comment">// defaults to 100, some iterators set it to 1</span>
-<a name="l00042"></a>00042 };
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044 <span class="preprocessor">#endif</span>
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038 <span class="keyword">public</span>:
+<a name="l00039"></a>00039 
+<a name="l00040"></a><a class="code" href="class_bomb_list_class.html#309fd409451f705c7c242aaf0bfd4889">00040</a>         <a class="code" href="class_dynamic_vector_class.html">DynamicVectorClass&lt;BombClass *&gt;</a> <a class="code" href="class_bomb_list_class.html#309fd409451f705c7c242aaf0bfd4889">Bombs</a>;                          <span class="comment">//all the BombClass instances on the map</span>
+<a name="l00041"></a><a class="code" href="class_bomb_list_class.html#71864204ba1fa1ff0b6cfd31a16265c6">00041</a>         <a class="code" href="class_dynamic_vector_class.html">DynamicVectorClass&lt;TechnoClass *&gt;</a> <a class="code" href="class_bomb_list_class.html#71864204ba1fa1ff0b6cfd31a16265c6">Detectors</a>;            <span class="comment">//all the BombSight'ed objects currently on the map</span>
+<a name="l00042"></a><a class="code" href="class_bomb_list_class.html#1388a05819e4f26e92efcd18069243b8">00042</a>         <span class="keywordtype">int</span> <a class="code" href="class_bomb_list_class.html#1388a05819e4f26e92efcd18069243b8">SomeArgument</a>; <span class="comment">// defaults to 100, some iterators set it to 1</span>
+<a name="l00043"></a>00043 };
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:05 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:21 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

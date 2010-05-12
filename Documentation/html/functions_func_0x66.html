@@ -105,13 +105,13 @@
 , <a class="el" href="class_bullet_type_class.html#857bf4f730c58c8cbc60fc82ada97570">BulletTypeClass</a>
 , <a class="el" href="class_unit_type_class.html#07422bfa39137c827d9a80f617ebd511">UnitTypeClass</a>
 , <a class="el" href="class_voc_class.html#b8bf90aecd9a8c8d6a6d97efa5bcad79">VocClass</a>
-, <a class="el" href="class_color_scheme.html#ec334091d3af1eeaf5d5b595f5e881a0">ColorScheme</a>
+, <a class="el" href="class_color_scheme.html#2fc58cc8a085da68b22ad8e7ad057f1f">ColorScheme</a>
 , <a class="el" href="class_vox_class.html#1131ab49e023e19c68ef96bcef11721b">VoxClass</a>
 , <a class="el" href="class_warhead_type_class.html#2b25d97d36a229b66222d02c2730bfc1">WarheadTypeClass</a>
 , <a class="el" href="class_house_type_class.html#972286218fbf24d4b9edc0740cef11ee">HouseTypeClass</a>
 , <a class="el" href="class_weapon_type_class.html#9ad52523be7beee564c0f74ce88719d0">WeaponTypeClass</a>
 , <a class="el" href="class_infantry_type_class.html#38c494c22b97e7aba6c32b8d7e44e3a7">InfantryTypeClass</a>
-, <a class="el" href="class_mission_control_class.html#eab2c21760b074923b1a99d039cf4c65">MissionControlClass</a>
+, <a class="el" href="class_mission_control_class.html#f301539b3ad2bba0165e893f891973a3">MissionControlClass</a>
 , <a class="el" href="class_overlay_type_class.html#71335b973afe90974d5e80e0a32285c5">OverlayTypeClass</a>
 , <a class="el" href="class_particle_system_type_class.html#8fddedefd9f8f3c200937e39cdcff935">ParticleSystemTypeClass</a>
 , <a class="el" href="class_particle_type_class.html#dfabc7f67bedc26ee52c2a5743cf2422">ParticleTypeClass</a>
@@ -127,10 +127,12 @@
 , <a class="el" href="class_techno_type_class.html#38c7f2349d377b15f26caf339dc29e40">TechnoTypeClass</a>
 <li>FindBuildingOfType()
 : <a class="el" href="class_house_class.html#cfb4320f74af1828ee364686eb3aaa36">HouseClass</a>
-<li>FindByIndex_NoMP()
-: <a class="el" href="class_house_class.html#6aaf957fa8d01e7ad890bac205cdb080">HouseClass</a>
-<li>FindByIndex_YesMP()
-: <a class="el" href="class_house_class.html#844f10c4ac021b769cd9640df7e6e85f">HouseClass</a>
+<li>FindByCountryIndex()
+: <a class="el" href="class_house_class.html#e84f5e3d3cfc69eb97249c1931b6595e">HouseClass</a>
+<li>FindByIndex()
+: <a class="el" href="class_house_class.html#b24d2ad616bec7e7a876f45621bf8d53">HouseClass</a>
+<li>FindByName()
+: <a class="el" href="class_color_scheme.html#fc4479ba4d3d132c9d02a469846c253b">ColorScheme</a>
 <li>FindConnectionPoint()
 : <a class="el" href="class_house_class.html#f448e0b7b6ad9495e884218a752b13c6">HouseClass</a>
 <li>FindFirstInstance()
@@ -140,7 +142,8 @@
 <li>FindHouseByIndex()
 : <a class="el" href="class_t_action_class.html#8d867e64388d70957bd8e68cc58daf82">TActionClass</a>
 <li>FindIndex()
-: <a class="el" href="class_techno_type_class.html#660df1220dffd9d3a18196ff0e696632">TechnoTypeClass</a>
+: <a class="el" href="class_team_type_class.html#850a10deffcaa87f31863190e4378f3b">TeamTypeClass</a>
+, <a class="el" href="class_techno_type_class.html#660df1220dffd9d3a18196ff0e696632">TechnoTypeClass</a>
 , <a class="el" href="class_terrain_type_class.html#2455550b8ae404a74a28b50d07fb9725">TerrainTypeClass</a>
 , <a class="el" href="struct_theater.html#a680df002bffc52dc141a76b48e2cbaa">Theater</a>
 , <a class="el" href="class_unit_type_class.html#68cfabc5688862bf8b28066188085f59">UnitTypeClass</a>
@@ -156,7 +159,7 @@
 , <a class="el" href="class_color_scheme.html#eb420535a6189f83c5719baeb3d569ac">ColorScheme</a>
 , <a class="el" href="class_house_type_class.html#9795d94effcdf61087239317f57e2444">HouseTypeClass</a>
 , <a class="el" href="class_infantry_type_class.html#28a73a55cbe60caecb160cbe4604e4c9">InfantryTypeClass</a>
-, <a class="el" href="class_mission_class.html#24dc9247be7daec3492e8e3fc6b7a4a7">MissionClass</a>
+, <a class="el" href="class_mission_class.html#9ee5b8f7cabaafa78aee57577db88841">MissionClass</a>
 , <a class="el" href="class_overlay_type_class.html#2fed40295320cda7c801078266bf915b">OverlayTypeClass</a>
 , <a class="el" href="class_particle_system_type_class.html#6962d96cab6e96719209bd6271cb63f2">ParticleSystemTypeClass</a>
 , <a class="el" href="class_particle_type_class.html#57434c6fd9250247a5254aaf9a7e9cc5">ParticleTypeClass</a>
@@ -165,40 +168,41 @@
 , <a class="el" href="class_smudge_type_class.html#b97f5913b43b45e9f8380d7607ed31b1">SmudgeTypeClass</a>
 , <a class="el" href="class_super_weapon_type_class.html#02c0c77e259263e7933b5b3f9a586486">SuperWeaponTypeClass</a>
 , <a class="el" href="class_task_force_class.html#5f23cdc5d6ee0cc4bf0ac0bbe421f4b5">TaskForceClass</a>
-, <a class="el" href="class_team_type_class.html#850a10deffcaa87f31863190e4378f3b">TeamTypeClass</a>
+<li>FindIndexOfName()
+: <a class="el" href="class_house_type_class.html#7693706228d99a2d661dc20f1ad5f33b">HouseTypeClass</a>
 <li>FindInfantrySubposition()
 : <a class="el" href="class_cell_class.html#0e1f62af5caf8c9ed9e89f6aecbf4816">CellClass</a>
 <li>FindItemIndex()
 : <a class="el" href="class_vector_class.html#97830d3e3ff3088aafd548c44b09748e">VectorClass&lt; T &gt;</a>
 , <a class="el" href="class_dynamic_vector_class.html#e92141daebe6c4a5299368a4935732c5">DynamicVectorClass&lt; T &gt;</a>
 <li>FindName()
-: <a class="el" href="class_mission_class.html#6849e52142106644e148e40fdfc235d8">MissionClass</a>
+: <a class="el" href="class_mission_class.html#fb9455c8f3bf45e36aff81371d1bf498">MissionClass</a>
 <li>FindObjectNearestTo()
 : <a class="el" href="class_cell_class.html#c49dd74dddbfa91415ea35c937020806">CellClass</a>
 <li>FindObjectOfType()
 : <a class="el" href="class_cell_class.html#f6e110a1bcabae1f19f32bcec65ecad4">CellClass</a>
 <li>FindOrAllocate()
-: <a class="el" href="class_terrain_type_class.html#f4f9e32f900464b02613a12b59b565a2">TerrainTypeClass</a>
+: <a class="el" href="class_warhead_type_class.html#16cbcab17128da879b673c8f0e682b66">WarheadTypeClass</a>
+, <a class="el" href="class_task_force_class.html#0c0fe2ed71eb5925f5cb7595a133f1c0">TaskForceClass</a>
 , <a class="el" href="class_aircraft_type_class.html#ff5209f912a5ea18e318db72580aab5b">AircraftTypeClass</a>
+, <a class="el" href="class_a_i_trigger_type_class.html#eff8ba4f1439b3c9aa36676d6090dc5a">AITriggerTypeClass</a>
 , <a class="el" href="class_anim_type_class.html#a796b44399988700b5d7409b1479b1f5">AnimTypeClass</a>
 , <a class="el" href="class_building_type_class.html#bd247b3788dda06059e8776b6c1e7996">BuildingTypeClass</a>
 , <a class="el" href="class_bullet_type_class.html#fb8e092c0d849c9304611c1f27b99dbf">BulletTypeClass</a>
 , <a class="el" href="class_convert_class.html#1c7b82760f3678f0641d52e7494caa12">ConvertClass</a>
 , <a class="el" href="class_house_type_class.html#48c4f32af6ddc6c1057d55d77baf7ace">HouseTypeClass</a>
-, <a class="el" href="class_infantry_type_class.html#ce941607ff59bc6ac83a42ad8c34398d">InfantryTypeClass</a>
 , <a class="el" href="class_overlay_type_class.html#3d570fb2082dc2b9691c3c38610a082e">OverlayTypeClass</a>
-, <a class="el" href="class_smudge_type_class.html#7e920448ab632ce0e5ffcdd6660d6c3b">SmudgeTypeClass</a>
-, <a class="el" href="class_particle_type_class.html#cd4e648caee2c39fe286a0ec5fba2582">ParticleTypeClass</a>
-, <a class="el" href="class_script_type_class.html#d77bfcf9d5b19813be206880e953c47b">ScriptTypeClass</a>
-, <a class="el" href="class_side_class.html#08b609e8949902b3c8c1e625960e5f33">SideClass</a>
-, <a class="el" href="class_super_weapon_type_class.html#b577ec93f0cef462745941d460022aef">SuperWeaponTypeClass</a>
-, <a class="el" href="class_task_force_class.html#0c0fe2ed71eb5925f5cb7595a133f1c0">TaskForceClass</a>
-, <a class="el" href="class_team_type_class.html#be1ecadd96d04175e51877f24d8d6332">TeamTypeClass</a>
 , <a class="el" href="class_particle_system_type_class.html#660f3849dfcd3e2128a9ca7eb6f59bac">ParticleSystemTypeClass</a>
+, <a class="el" href="class_particle_type_class.html#cd4e648caee2c39fe286a0ec5fba2582">ParticleTypeClass</a>
+, <a class="el" href="class_side_class.html#08b609e8949902b3c8c1e625960e5f33">SideClass</a>
+, <a class="el" href="class_smudge_type_class.html#7e920448ab632ce0e5ffcdd6660d6c3b">SmudgeTypeClass</a>
+, <a class="el" href="class_super_weapon_type_class.html#b577ec93f0cef462745941d460022aef">SuperWeaponTypeClass</a>
+, <a class="el" href="class_team_type_class.html#be1ecadd96d04175e51877f24d8d6332">TeamTypeClass</a>
+, <a class="el" href="class_terrain_type_class.html#f4f9e32f900464b02613a12b59b565a2">TerrainTypeClass</a>
 , <a class="el" href="class_unit_type_class.html#91e471a6c932037efcab68d80b01d3ad">UnitTypeClass</a>
-, <a class="el" href="class_warhead_type_class.html#16cbcab17128da879b673c8f0e682b66">WarheadTypeClass</a>
 , <a class="el" href="class_weapon_type_class.html#f52f69d5a5e6b74a10eaf438c1768327">WeaponTypeClass</a>
-, <a class="el" href="class_a_i_trigger_type_class.html#eff8ba4f1439b3c9aa36676d6090dc5a">AITriggerTypeClass</a>
+, <a class="el" href="class_script_type_class.html#d77bfcf9d5b19813be206880e953c47b">ScriptTypeClass</a>
+, <a class="el" href="class_infantry_type_class.html#ce941607ff59bc6ac83a42ad8c34398d">InfantryTypeClass</a>
 <li>FindSampleIndex()
 : <a class="el" href="class_audio_i_d_x_data.html#b380893cde5b6d48ea9254d1678459f4">AudioIDXData</a>
 <li>FindScalar()
@@ -208,11 +212,11 @@
 : <a class="el" href="class_factory_class.html#132e84334c0af8c364e2fafaeefbcb40">FactoryClass</a>
 <li>Fire()
 : <a class="el" href="class_bullet_class.html#84796961e48a60faf15dc3a3d6af7f81">BulletClass</a>
-, <a class="el" href="class_psy_dom.html#58570918c9cf91c7d205328c51b10edd">PsyDom</a>
-, <a class="el" href="class_e_bolt.html#ed29588ae21ac2b40e9ea80b14d7c44d">EBolt</a>
-, <a class="el" href="class_disk_laser_class.html#869a12378e9d6a1b15c2983a81b8baea">DiskLaserClass</a>
 , <a class="el" href="class_techno_class.html#292384cde87dcff764bb1a79800d23d3">TechnoClass</a>
 , <a class="el" href="struct_recoil_data.html#abf53356c4a4b1ab1141e85990ae5f02">RecoilData</a>
+, <a class="el" href="class_e_bolt.html#ed29588ae21ac2b40e9ea80b14d7c44d">EBolt</a>
+, <a class="el" href="class_disk_laser_class.html#869a12378e9d6a1b15c2983a81b8baea">DiskLaserClass</a>
+, <a class="el" href="class_psy_dom.html#58570918c9cf91c7d205328c51b10edd">PsyDom</a>
 , <a class="el" href="class_temporal_class.html#24172528ff55eb277849922a30b9489a">TemporalClass</a>
 <li>Fire_Sale()
 : <a class="el" href="class_house_class.html#3fbc665839c26cf3057871124008de54">HouseClass</a>
@@ -220,28 +224,40 @@
 : <a class="el" href="class_trigger_class.html#45c0c61cc6a96386f55dbe61fcae6bde">TriggerClass</a>
 <li>FireError()
 : <a class="el" href="class_fire_error.html#9234d15666d4f8c7736691184a68e170">FireError</a>
+<li>FireLaser()
+: <a class="el" href="class_building_class.html#6fa528e00ac1becb908d9e46f1ba78c1">BuildingClass</a>
 <li>FireSale()
 : <a class="el" href="class_t_action_class.html#40c603ba0e5eae047247004cafb2896e">TActionClass</a>
 <li>FireWeaponAtWP()
 : <a class="el" href="class_t_action_class.html#90691539e25df0c81874a6b22ff2e7c7">TActionClass</a>
+<li>FirstActiveSWIdx()
+: <a class="el" href="class_building_class.html#769bd7eca8e1b2d59501c0c62a6adae8">BuildingClass</a>
 <li>FirstBuildableFromArray()
 : <a class="el" href="class_house_class.html#6874e4a3e5d588cb55518b3e8a98e19f">HouseClass</a>
+<li>FirstValidMapIndex()
+: <a class="el" href="class_m_p_game_mode_class.html#087cd7332a68990247ec1363b07576f8">MPGameModeClass</a>
 <li>FixHeight()
 : <a class="el" href="class_cell_class.html#4bc2b94e8ff5da21c4d44745af33cd74">CellClass</a>
 <li>Flash()
 : <a class="el" href="class_object_class.html#87b81d10bb0d230ae8a2531c1be620da">ObjectClass</a>
 <li>FlashAllInstances()
 : <a class="el" href="class_team_type_class.html#e260a8c373f40ca322903984f114e215">TeamTypeClass</a>
+<li>FlashbangWarheadAt()
+: <a class="el" href="class_map_class.html#72ca6c47cffa947712bb5d6936747ef0">MapClass</a>
 <li>FlashBuildingsOfType()
 : <a class="el" href="class_t_action_class.html#3b7539b08eeae1e63d771164f0c06a0c">TActionClass</a>
 <li>FlashCameo()
 : <a class="el" href="class_t_action_class.html#8ced4614e2fd73cb879294e1208896af">TActionClass</a>
 <li>FlashTeamFor()
 : <a class="el" href="class_t_action_class.html#72484f36f370653ccb5261f6f096f3ce">TActionClass</a>
+<li>FlipToGDISurface()
+: <a class="el" href="class_direct_draw_wrap.html#174aac45b592f09db79c06dcdf32f319">DirectDrawWrap</a>
 <li>FocusOn()
 : <a class="el" href="class_tactical_class.html#728fc5fbb4f12b090ec2033a575e318b">TacticalClass</a>
+<li>FocusOnWindow()
+: <a class="el" href="class_u_i.html#dbe69cfd6cf3e18f7aab5f8c7f7669de">UI</a>
 <li>FootClass()
-: <a class="el" href="class_foot_class.html#694b36d4931b08a38a65576c7d5dec6d">FootClass</a>
+: <a class="el" href="class_foot_class.html#733e378db12b94de24b788b91061deec">FootClass</a>
 <li>Force_Immediate_Destination()
 : <a class="el" href="class_locomotion_class.html#1c108358c6d7dcbcc154c2a36c7eaafa">LocomotionClass</a>
 <li>Force_New_Slope()
@@ -250,6 +266,8 @@
 : <a class="el" href="class_locomotion_class.html#5c7c3decfac348b57deaa1c00c5a7fa9">LocomotionClass</a>
 <li>ForceAvailable()
 : <a class="el" href="class_c_d.html#70459859c30b19944dacb1bf6cba423a">CD</a>
+<li>ForceLoadFile()
+: <a class="el" href="class_p_c_x.html#72a440494a98f90bc77b8a8139cceb16">PCX</a>
 <li>ForceMission()
 : <a class="el" href="class_mission_class.html#74fbbea629f10098de38301a2a7444aa">MissionClass</a>
 <li>ForceTrigger()
@@ -264,10 +282,6 @@
 : <a class="el" href="class_capture_manager_class.html#d147ffcd7e87c5557c37075758fe832f">CaptureManagerClass</a>
 <li>FreeUnit()
 : <a class="el" href="class_capture_manager_class.html#246019e281e1c07d6bea6328aef379a9">CaptureManagerClass</a>
-<li>func_0C()
-: <a class="el" href="class_w_w_mouse_class.html#61e78f5938b402e3113eb4311f95a9e5">WWMouseClass</a>
-<li>func_10()
-: <a class="el" href="class_w_w_mouse_class.html#8ddb7680d216069e691e8ee287d66507">WWMouseClass</a>
 <li>func_20()
 : <a class="el" href="class_w_w_mouse_class.html#6cf62ad6c0f0ea78fad0d8fe84f2c232">WWMouseClass</a>
 <li>func_3C()
@@ -278,7 +292,7 @@
 : <a class="el" href="class_w_w_mouse_class.html#97d66980f0bb7004ae201ec5fe15681c">WWMouseClass</a>
 </ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:09 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:24 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

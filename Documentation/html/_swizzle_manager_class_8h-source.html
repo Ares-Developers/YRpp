@@ -40,8 +40,8 @@
 <a name="l00007"></a>00007 
 <a name="l00008"></a><a class="code" href="class_swizzle_pointer_class.html">00008</a> <span class="keyword">class </span><a class="code" href="class_swizzle_pointer_class.html">SwizzlePointerClass</a>
 <a name="l00009"></a>00009 {
-<a name="l00010"></a><a class="code" href="class_swizzle_pointer_class.html#b9bb52198c666825592aa6d3265bd663">00010</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_swizzle_pointer_class.html#b9bb52198c666825592aa6d3265bd663">unknown_0</a>); <span class="comment">//no idea, only found it being zero</span>
-<a name="l00011"></a>00011         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">void</span>*, <a class="code" href="class_swizzle_pointer_class.html#5369efc2c9a95f903a94f656fe7d4a2c">pAnything</a>); <span class="comment">//the pointer, to literally any object type</span>
+<a name="l00010"></a><a class="code" href="class_swizzle_pointer_class.html#b9bb52198c666825592aa6d3265bd663">00010</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_swizzle_pointer_class.html#b9bb52198c666825592aa6d3265bd663">unknown_0</a>; <span class="comment">//no idea, only found it being zero</span>
+<a name="l00011"></a><a class="code" href="class_swizzle_pointer_class.html#5369efc2c9a95f903a94f656fe7d4a2c">00011</a>         <span class="keywordtype">void</span>* <a class="code" href="class_swizzle_pointer_class.html#5369efc2c9a95f903a94f656fe7d4a2c">pAnything</a>; <span class="comment">//the pointer, to literally any object type</span>
 <a name="l00012"></a>00012 
 <a name="l00013"></a>00013 <span class="keyword">public</span>:
 <a name="l00014"></a><a class="code" href="class_swizzle_pointer_class.html#162e608a275955ab3fc85c76db52b45f">00014</a>         <span class="keywordtype">bool</span> <a class="code" href="class_swizzle_pointer_class.html#162e608a275955ab3fc85c76db52b45f">operator==</a>(<a class="code" href="class_swizzle_pointer_class.html">SwizzlePointerClass</a> tOther)
@@ -82,14 +82,17 @@
 <a name="l00049"></a><a class="code" href="class_swizzle_manager_class.html#f1971ff5213982b4d9c780f90e9eeef9">00049</a>         virtual ~<a class="code" href="class_swizzle_manager_class.html">SwizzleManagerClass</a>() <a class="code" href="_y_r_p_p_core_8h.html#5070712bba21161ad840408134ee229f">RX</a>;
 <a name="l00050"></a>00050 
 <a name="l00051"></a>00051         <span class="comment">//Properties</span>
-<a name="l00052"></a><a class="code" href="class_swizzle_manager_class.html#38c41cedf04069b82ae186fb323c6c7a">00052</a>         <a class="code" href="_y_r_p_p_core_8h.html#aae3cb398fbfa33cc83eddc740386cd4">PROPERTY_STRUCT</a>(<a class="code" href="class_dynamic_vector_class.html">DynamicVectorClass</a>&lt;<a class="code" href="class_swizzle_pointer_class.html">SwizzlePointerClass</a>&gt;, <a class="code" href="class_swizzle_manager_class.html#a755c661a5e334c69a9091a6c4342459">Swizzles_Old</a>);
-<a name="l00053"></a><a class="code" href="class_swizzle_manager_class.html#1338a082461f839bab09ca06a24f78c9">00053</a>         <a class="code" href="_y_r_p_p_core_8h.html#aae3cb398fbfa33cc83eddc740386cd4">PROPERTY_STRUCT</a>(<a class="code" href="class_dynamic_vector_class.html">DynamicVectorClass</a>&lt;SwizzlePointerClass&gt;, <a class="code" href="class_swizzle_manager_class.html#38c41cedf04069b82ae186fb323c6c7a">Swizzles_New</a>);
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053 public:
 <a name="l00054"></a>00054 
-<a name="l00055"></a>00055 };
-<a name="l00056"></a>00056 
-<a name="l00057"></a>00057 <span class="preprocessor">#endif</span>
+<a name="l00055"></a>00055         <a class="code" href="class_dynamic_vector_class.html">DynamicVectorClass</a>&lt;<a class="code" href="class_swizzle_pointer_class.html">SwizzlePointerClass</a>&gt; <a class="code" href="class_swizzle_manager_class.html#a755c661a5e334c69a9091a6c4342459">Swizzles_Old</a>;
+<a name="l00056"></a><a class="code" href="class_swizzle_manager_class.html#38c41cedf04069b82ae186fb323c6c7a">00056</a>         <a class="code" href="class_dynamic_vector_class.html">DynamicVectorClass</a>&lt;<a class="code" href="class_swizzle_pointer_class.html">SwizzlePointerClass</a>&gt; <a class="code" href="class_swizzle_manager_class.html#38c41cedf04069b82ae186fb323c6c7a">Swizzles_New</a>;
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 };
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:08 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:22 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -52,7 +52,7 @@
 <a name="l00019"></a><a class="code" href="class_script_type_class.html">00019</a> <span class="keyword">class </span><a class="code" href="class_script_type_class.html">ScriptTypeClass</a> : <span class="keyword">public</span> <a class="code" href="class_abstract_type_class.html">AbstractTypeClass</a>
 <a name="l00020"></a>00020 {
 <a name="l00021"></a>00021 <span class="keyword">public</span>:
-<a name="l00022"></a><a class="code" href="class_script_type_class.html#0281019e04c535e23ff701022dd158bada977f1c89ed8fe69d754c1b5693afee">00022</a>         <span class="keyword">enum</span> {<a class="code" href="class_script_type_class.html#0281019e04c535e23ff701022dd158bada977f1c89ed8fe69d754c1b5693afee">AbsID</a> = <a class="code" href="_general_definitions_8h.html#52cc37327ff2d91d07f70e8f238c287f">abs_ScriptType</a>};
+<a name="l00022"></a><a class="code" href="class_script_type_class.html#32a57eee22edc85fcc4ada4243bd8672da977f1c89ed8fe69d754c1b5693afee">00022</a>         <span class="keyword">enum</span> {<a class="code" href="class_script_type_class.html#32a57eee22edc85fcc4ada4243bd8672da977f1c89ed8fe69d754c1b5693afee">AbsID</a> = <a class="code" href="_general_definitions_8h.html#52cc37327ff2d91d07f70e8f238c287f">abs_ScriptType</a>};
 <a name="l00023"></a>00023 
 <a name="l00024"></a>00024         <span class="comment">//Array</span>
 <a name="l00025"></a><a class="code" href="class_script_type_class.html#d77bfcf9d5b19813be206880e953c47b">00025</a>         <a class="code" href="_abstract_type_class_8h.html#fe8bccea0bab253a8541b71c149a9d81">ABSTRACTTYPE_ARRAY</a>(<a class="code" href="class_script_type_class.html">ScriptTypeClass</a>);
@@ -86,15 +86,17 @@
 <a name="l00053"></a>00053         <span class="comment">//===== Properties ==========================================================</span>
 <a name="l00054"></a>00054         <span class="comment">//===========================================================================</span>
 <a name="l00055"></a>00055 
-<a name="l00056"></a><a class="code" href="class_script_type_class.html#a45bb8538e2714e66147d4dab0bcbe90">00056</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>,      <a class="code" href="class_script_type_class.html#b53be6902391532e03255ffa2e41ff53">ArrayIndex</a>);
-<a name="l00057"></a><a class="code" href="class_script_type_class.html#3dae3388c3f608905d1c1d805d60cba5">00057</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">bool</span>,     <a class="code" href="class_script_type_class.html#a45bb8538e2714e66147d4dab0bcbe90">IsGlobal</a>);
-<a name="l00058"></a><a class="code" href="class_script_type_class.html#ec1fa5a5b6ccbd01fa22a612a3360551">00058</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>,      <a class="code" href="class_script_type_class.html#3dae3388c3f608905d1c1d805d60cba5">ActionsCount</a>);
-<a name="l00059"></a><a class="code" href="class_script_type_class.html#50c646200ae7392ae418b633c9b7bf60">00059</a>         <a class="code" href="_y_r_p_p_core_8h.html#5698d452f0bb3291f8ad7ff2a052d84e">PROPERTY_STRUCT_ARRAY</a>(<a class="code" href="struct_script_action_node.html">ScriptActionNode</a>, <a class="code" href="class_script_type_class.html#ec1fa5a5b6ccbd01fa22a612a3360551">ScriptActions</a>, 50);
-<a name="l00060"></a>00060 };
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062 <span class="preprocessor">#endif</span>
+<a name="l00056"></a>00056 <span class="keyword">public</span>:
+<a name="l00057"></a>00057 
+<a name="l00058"></a><a class="code" href="class_script_type_class.html#b53be6902391532e03255ffa2e41ff53">00058</a>         <span class="keywordtype">int</span>      <a class="code" href="class_script_type_class.html#b53be6902391532e03255ffa2e41ff53">ArrayIndex</a>;
+<a name="l00059"></a><a class="code" href="class_script_type_class.html#a45bb8538e2714e66147d4dab0bcbe90">00059</a>         <span class="keywordtype">bool</span>     <a class="code" href="class_script_type_class.html#a45bb8538e2714e66147d4dab0bcbe90">IsGlobal</a>;
+<a name="l00060"></a><a class="code" href="class_script_type_class.html#3dae3388c3f608905d1c1d805d60cba5">00060</a>         <span class="keywordtype">int</span>      <a class="code" href="class_script_type_class.html#3dae3388c3f608905d1c1d805d60cba5">ActionsCount</a>;
+<a name="l00061"></a><a class="code" href="class_script_type_class.html#ec1fa5a5b6ccbd01fa22a612a3360551">00061</a>         <a class="code" href="struct_script_action_node.html">ScriptActionNode</a> <a class="code" href="class_script_type_class.html#ec1fa5a5b6ccbd01fa22a612a3360551">ScriptActions</a> [50];
+<a name="l00062"></a>00062 };
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:07 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:22 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

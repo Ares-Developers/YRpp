@@ -109,52 +109,54 @@
 <a name="l00076"></a>00076 };
 <a name="l00077"></a>00077 
 <a name="l00078"></a>00078 <span class="comment">//A few preset 16bit colors.</span>
-<a name="l00079"></a><a class="code" href="_drawing_8h.html#ba2a7fe77a7501e5844370eec0185207">00079</a> <span class="preprocessor">#define         COLOR_BLACK             0x0000</span>
-<a name="l00080"></a><a class="code" href="_drawing_8h.html#9b44987ffdc2af19b635206b94334b69">00080</a> <span class="preprocessor"></span><span class="preprocessor">#define         COLOR_WHITE             0xFFFF</span>
+<a name="l00079"></a><a class="code" href="_drawing_8h.html#ba2a7fe77a7501e5844370eec0185207">00079</a> <span class="preprocessor">#define         COLOR_BLACK  0x0000</span>
+<a name="l00080"></a><a class="code" href="_drawing_8h.html#9b44987ffdc2af19b635206b94334b69">00080</a> <span class="preprocessor"></span><span class="preprocessor">#define         COLOR_WHITE  0xFFFF</span>
 <a name="l00081"></a>00081 <span class="preprocessor"></span>
-<a name="l00082"></a><a class="code" href="_drawing_8h.html#d86358bf19927183dd7b4ae215a29731">00082</a> <span class="preprocessor">#define         COLOR_RED               0xF800</span>
-<a name="l00083"></a><a class="code" href="_drawing_8h.html#fc9149f5de51bd9ac4f5ebbfa153f018">00083</a> <span class="preprocessor"></span><span class="preprocessor">#define         COLOR_GREEN             0x07E0</span>
-<a name="l00084"></a><a class="code" href="_drawing_8h.html#23c70d699a5a775bc2e1ebeb8603f630">00084</a> <span class="preprocessor"></span><span class="preprocessor">#define         COLOR_BLUE              0x001F</span>
+<a name="l00082"></a><a class="code" href="_drawing_8h.html#d86358bf19927183dd7b4ae215a29731">00082</a> <span class="preprocessor">#define         COLOR_RED    0xF800</span>
+<a name="l00083"></a><a class="code" href="_drawing_8h.html#fc9149f5de51bd9ac4f5ebbfa153f018">00083</a> <span class="preprocessor"></span><span class="preprocessor">#define         COLOR_GREEN  0x07E0</span>
+<a name="l00084"></a><a class="code" href="_drawing_8h.html#23c70d699a5a775bc2e1ebeb8603f630">00084</a> <span class="preprocessor"></span><span class="preprocessor">#define         COLOR_BLUE   0x001F</span>
 <a name="l00085"></a>00085 <span class="preprocessor"></span>
-<a name="l00086"></a><a class="code" href="class_a_buffer_class.html">00086</a> <span class="keyword">class </span><a class="code" href="class_a_buffer_class.html">ABufferClass</a> {
-<a name="l00087"></a>00087 
-<a name="l00088"></a><a class="code" href="class_a_buffer_class.html#cdd0a00bdaac69cb69f0cb332c33f4dd">00088</a>         <span class="keyword">static</span> <a class="code" href="class_a_buffer_class.html">ABufferClass</a>* &amp;<a class="code" href="class_a_buffer_class.html#cdd0a00bdaac69cb69f0cb332c33f4dd">ABuffer</a>;
+<a name="l00086"></a><a class="code" href="_drawing_8h.html#361bd41194ac13caf9169f3f689dc179">00086</a> <span class="preprocessor">#define         COLOR_PURPLE (COLOR_RED | COLOR_BLUE)</span>
+<a name="l00087"></a>00087 <span class="preprocessor"></span>
+<a name="l00088"></a><a class="code" href="class_a_buffer_class.html">00088</a> <span class="keyword">class </span><a class="code" href="class_a_buffer_class.html">ABufferClass</a> {
 <a name="l00089"></a>00089 
-<a name="l00090"></a><a class="code" href="class_a_buffer_class.html#1f46760f9062ec049b60504b4d11ee14">00090</a>         <a class="code" href="class_a_buffer_class.html#1f46760f9062ec049b60504b4d11ee14">ABufferClass</a>(<a class="code" href="struct_rectangle_struct.html">RectangleStruct</a> <a class="code" href="class_a_buffer_class.html#083771e80920a78039168a02adb36688">rect</a>)
-<a name="l00091"></a>00091                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x410CE0); }
-<a name="l00092"></a>00092 
-<a name="l00093"></a><a class="code" href="class_a_buffer_class.html#083771e80920a78039168a02adb36688">00093</a>         <a class="code" href="struct_rectangle_struct.html">RectangleStruct</a> <a class="code" href="class_a_buffer_class.html#083771e80920a78039168a02adb36688">rect</a>;
-<a name="l00094"></a><a class="code" href="class_a_buffer_class.html#15c9bb102ed008e0bdc70854107aa14c">00094</a>         <span class="keywordtype">int</span> <a class="code" href="class_a_buffer_class.html#15c9bb102ed008e0bdc70854107aa14c">field_10</a>;
-<a name="l00095"></a><a class="code" href="class_a_buffer_class.html#0c7b76253c67cbc91027e714c91a7d88">00095</a>         <a class="code" href="class_b_surface.html">BSurface</a> *<a class="code" href="class_surface.html">Surface</a>;
-<a name="l00096"></a><a class="code" href="class_a_buffer_class.html#b83de31f48694d40b69cf1d92a0c911d">00096</a>         byte* <a class="code" href="class_a_buffer_class.html#b83de31f48694d40b69cf1d92a0c911d">BufferStart</a>;
-<a name="l00097"></a><a class="code" href="class_a_buffer_class.html#e65b6b80770e16d58069f6a8061f70e1">00097</a>         byte* <a class="code" href="class_a_buffer_class.html#e65b6b80770e16d58069f6a8061f70e1">BufferEndpoint</a>;
-<a name="l00098"></a><a class="code" href="class_a_buffer_class.html#2d0539119ea5cac28287587e30fc6c67">00098</a>         <span class="keywordtype">int</span> <a class="code" href="class_a_buffer_class.html#2d0539119ea5cac28287587e30fc6c67">BufferSize</a>;
-<a name="l00099"></a><a class="code" href="class_a_buffer_class.html#f4a5ca17c3758fbffc87b452446c6848">00099</a>         <span class="keywordtype">int</span> <a class="code" href="class_a_buffer_class.html#f4a5ca17c3758fbffc87b452446c6848">field_24</a>;
-<a name="l00100"></a><a class="code" href="class_a_buffer_class.html#2f96f6a86a737119fb7f4a37125e221b">00100</a>         <span class="keywordtype">int</span> <a class="code" href="class_a_buffer_class.html#2f96f6a86a737119fb7f4a37125e221b">W</a>;
-<a name="l00101"></a><a class="code" href="class_a_buffer_class.html#26eb89fb6be202d03fee941d64540bf3">00101</a>         <span class="keywordtype">int</span> <a class="code" href="class_a_buffer_class.html#26eb89fb6be202d03fee941d64540bf3">H</a>;
-<a name="l00102"></a>00102 };
-<a name="l00103"></a>00103 
-<a name="l00104"></a><a class="code" href="class_z_buffer_class.html">00104</a> <span class="keyword">class </span><a class="code" href="class_z_buffer_class.html">ZBufferClass</a> {
+<a name="l00090"></a><a class="code" href="class_a_buffer_class.html#cdd0a00bdaac69cb69f0cb332c33f4dd">00090</a>         <span class="keyword">static</span> <a class="code" href="class_a_buffer_class.html">ABufferClass</a>* &amp;<a class="code" href="class_a_buffer_class.html#cdd0a00bdaac69cb69f0cb332c33f4dd">ABuffer</a>;
+<a name="l00091"></a>00091 
+<a name="l00092"></a><a class="code" href="class_a_buffer_class.html#1f46760f9062ec049b60504b4d11ee14">00092</a>         <a class="code" href="class_a_buffer_class.html#1f46760f9062ec049b60504b4d11ee14">ABufferClass</a>(<a class="code" href="struct_rectangle_struct.html">RectangleStruct</a> <a class="code" href="class_a_buffer_class.html#083771e80920a78039168a02adb36688">rect</a>)
+<a name="l00093"></a>00093                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x410CE0); }
+<a name="l00094"></a>00094 
+<a name="l00095"></a><a class="code" href="class_a_buffer_class.html#083771e80920a78039168a02adb36688">00095</a>         <a class="code" href="struct_rectangle_struct.html">RectangleStruct</a> <a class="code" href="class_a_buffer_class.html#083771e80920a78039168a02adb36688">rect</a>;
+<a name="l00096"></a><a class="code" href="class_a_buffer_class.html#15c9bb102ed008e0bdc70854107aa14c">00096</a>         <span class="keywordtype">int</span> <a class="code" href="class_a_buffer_class.html#15c9bb102ed008e0bdc70854107aa14c">field_10</a>;
+<a name="l00097"></a><a class="code" href="class_a_buffer_class.html#0c7b76253c67cbc91027e714c91a7d88">00097</a>         <a class="code" href="class_b_surface.html">BSurface</a> *<a class="code" href="class_surface.html">Surface</a>;
+<a name="l00098"></a><a class="code" href="class_a_buffer_class.html#b83de31f48694d40b69cf1d92a0c911d">00098</a>         byte* <a class="code" href="class_a_buffer_class.html#b83de31f48694d40b69cf1d92a0c911d">BufferStart</a>;
+<a name="l00099"></a><a class="code" href="class_a_buffer_class.html#e65b6b80770e16d58069f6a8061f70e1">00099</a>         byte* <a class="code" href="class_a_buffer_class.html#e65b6b80770e16d58069f6a8061f70e1">BufferEndpoint</a>;
+<a name="l00100"></a><a class="code" href="class_a_buffer_class.html#2d0539119ea5cac28287587e30fc6c67">00100</a>         <span class="keywordtype">int</span> <a class="code" href="class_a_buffer_class.html#2d0539119ea5cac28287587e30fc6c67">BufferSize</a>;
+<a name="l00101"></a><a class="code" href="class_a_buffer_class.html#f4a5ca17c3758fbffc87b452446c6848">00101</a>         <span class="keywordtype">int</span> <a class="code" href="class_a_buffer_class.html#f4a5ca17c3758fbffc87b452446c6848">field_24</a>;
+<a name="l00102"></a><a class="code" href="class_a_buffer_class.html#2f96f6a86a737119fb7f4a37125e221b">00102</a>         <span class="keywordtype">int</span> <a class="code" href="class_a_buffer_class.html#2f96f6a86a737119fb7f4a37125e221b">W</a>;
+<a name="l00103"></a><a class="code" href="class_a_buffer_class.html#26eb89fb6be202d03fee941d64540bf3">00103</a>         <span class="keywordtype">int</span> <a class="code" href="class_a_buffer_class.html#26eb89fb6be202d03fee941d64540bf3">H</a>;
+<a name="l00104"></a>00104 };
 <a name="l00105"></a>00105 
-<a name="l00106"></a><a class="code" href="class_z_buffer_class.html#8c4395807faa1f9624d452b2e1812482">00106</a>         <span class="keyword">static</span> <a class="code" href="class_z_buffer_class.html">ZBufferClass</a>* &amp;<a class="code" href="class_z_buffer_class.html#8c4395807faa1f9624d452b2e1812482">ZBuffer</a>;
+<a name="l00106"></a><a class="code" href="class_z_buffer_class.html">00106</a> <span class="keyword">class </span><a class="code" href="class_z_buffer_class.html">ZBufferClass</a> {
 <a name="l00107"></a>00107 
-<a name="l00108"></a><a class="code" href="class_z_buffer_class.html#3eeeb59f25e6347bb86aac4a2e8b0ffc">00108</a>         <a class="code" href="class_z_buffer_class.html#3eeeb59f25e6347bb86aac4a2e8b0ffc">ZBufferClass</a>(<a class="code" href="struct_rectangle_struct.html">RectangleStruct</a> <a class="code" href="class_z_buffer_class.html#e10cec70e069c2be36899b7554138c60">rect</a>)
-<a name="l00109"></a>00109                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x7BC970); }
-<a name="l00110"></a>00110 
-<a name="l00111"></a><a class="code" href="class_z_buffer_class.html#e10cec70e069c2be36899b7554138c60">00111</a>         <a class="code" href="struct_rectangle_struct.html">RectangleStruct</a> <a class="code" href="class_z_buffer_class.html#e10cec70e069c2be36899b7554138c60">rect</a>;
-<a name="l00112"></a><a class="code" href="class_z_buffer_class.html#d1c31a98a7c2d39e5568cda00c54d436">00112</a>         <span class="keywordtype">int</span> <a class="code" href="class_z_buffer_class.html#d1c31a98a7c2d39e5568cda00c54d436">field_10</a>;
-<a name="l00113"></a><a class="code" href="class_z_buffer_class.html#5086b960db247f7213089b13c5b67c4c">00113</a>         <a class="code" href="class_b_surface.html">BSurface</a> *<a class="code" href="class_surface.html">Surface</a>;
-<a name="l00114"></a><a class="code" href="class_z_buffer_class.html#1f0e2df4a087ed990c04fb9a99f29d3a">00114</a>         byte* <a class="code" href="class_z_buffer_class.html#1f0e2df4a087ed990c04fb9a99f29d3a">BufferStart</a>;
-<a name="l00115"></a><a class="code" href="class_z_buffer_class.html#cfc6feef35a71e331d74cbc1730f051f">00115</a>         byte* <a class="code" href="class_z_buffer_class.html#cfc6feef35a71e331d74cbc1730f051f">BufferEndpoint</a>;
-<a name="l00116"></a><a class="code" href="class_z_buffer_class.html#4306b3bdd441a283a98ab21666d1b36e">00116</a>         <span class="keywordtype">int</span> <a class="code" href="class_z_buffer_class.html#4306b3bdd441a283a98ab21666d1b36e">BufferSize</a>;
-<a name="l00117"></a><a class="code" href="class_z_buffer_class.html#46b8ff1b817174ff29342c874aea42bb">00117</a>         <span class="keywordtype">int</span> <a class="code" href="class_z_buffer_class.html#46b8ff1b817174ff29342c874aea42bb">field_24</a>;
-<a name="l00118"></a><a class="code" href="class_z_buffer_class.html#f2c6e90319db4e3fb8c0b32f85d65348">00118</a>         <span class="keywordtype">int</span> <a class="code" href="class_z_buffer_class.html#f2c6e90319db4e3fb8c0b32f85d65348">W</a>;
-<a name="l00119"></a><a class="code" href="class_z_buffer_class.html#e177fab7df1a56941ae0850eabc45a0b">00119</a>         <span class="keywordtype">int</span> <a class="code" href="class_z_buffer_class.html#e177fab7df1a56941ae0850eabc45a0b">H</a>;
-<a name="l00120"></a>00120 };
-<a name="l00121"></a>00121 
-<a name="l00122"></a>00122 <span class="preprocessor">#endif</span>
+<a name="l00108"></a><a class="code" href="class_z_buffer_class.html#8c4395807faa1f9624d452b2e1812482">00108</a>         <span class="keyword">static</span> <a class="code" href="class_z_buffer_class.html">ZBufferClass</a>* &amp;<a class="code" href="class_z_buffer_class.html#8c4395807faa1f9624d452b2e1812482">ZBuffer</a>;
+<a name="l00109"></a>00109 
+<a name="l00110"></a><a class="code" href="class_z_buffer_class.html#3eeeb59f25e6347bb86aac4a2e8b0ffc">00110</a>         <a class="code" href="class_z_buffer_class.html#3eeeb59f25e6347bb86aac4a2e8b0ffc">ZBufferClass</a>(<a class="code" href="struct_rectangle_struct.html">RectangleStruct</a> <a class="code" href="class_z_buffer_class.html#e10cec70e069c2be36899b7554138c60">rect</a>)
+<a name="l00111"></a>00111                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x7BC970); }
+<a name="l00112"></a>00112 
+<a name="l00113"></a><a class="code" href="class_z_buffer_class.html#e10cec70e069c2be36899b7554138c60">00113</a>         <a class="code" href="struct_rectangle_struct.html">RectangleStruct</a> <a class="code" href="class_z_buffer_class.html#e10cec70e069c2be36899b7554138c60">rect</a>;
+<a name="l00114"></a><a class="code" href="class_z_buffer_class.html#d1c31a98a7c2d39e5568cda00c54d436">00114</a>         <span class="keywordtype">int</span> <a class="code" href="class_z_buffer_class.html#d1c31a98a7c2d39e5568cda00c54d436">field_10</a>;
+<a name="l00115"></a><a class="code" href="class_z_buffer_class.html#5086b960db247f7213089b13c5b67c4c">00115</a>         <a class="code" href="class_b_surface.html">BSurface</a> *<a class="code" href="class_surface.html">Surface</a>;
+<a name="l00116"></a><a class="code" href="class_z_buffer_class.html#1f0e2df4a087ed990c04fb9a99f29d3a">00116</a>         byte* <a class="code" href="class_z_buffer_class.html#1f0e2df4a087ed990c04fb9a99f29d3a">BufferStart</a>;
+<a name="l00117"></a><a class="code" href="class_z_buffer_class.html#cfc6feef35a71e331d74cbc1730f051f">00117</a>         byte* <a class="code" href="class_z_buffer_class.html#cfc6feef35a71e331d74cbc1730f051f">BufferEndpoint</a>;
+<a name="l00118"></a><a class="code" href="class_z_buffer_class.html#4306b3bdd441a283a98ab21666d1b36e">00118</a>         <span class="keywordtype">int</span> <a class="code" href="class_z_buffer_class.html#4306b3bdd441a283a98ab21666d1b36e">BufferSize</a>;
+<a name="l00119"></a><a class="code" href="class_z_buffer_class.html#46b8ff1b817174ff29342c874aea42bb">00119</a>         <span class="keywordtype">int</span> <a class="code" href="class_z_buffer_class.html#46b8ff1b817174ff29342c874aea42bb">field_24</a>;
+<a name="l00120"></a><a class="code" href="class_z_buffer_class.html#f2c6e90319db4e3fb8c0b32f85d65348">00120</a>         <span class="keywordtype">int</span> <a class="code" href="class_z_buffer_class.html#f2c6e90319db4e3fb8c0b32f85d65348">W</a>;
+<a name="l00121"></a><a class="code" href="class_z_buffer_class.html#e177fab7df1a56941ae0850eabc45a0b">00121</a>         <span class="keywordtype">int</span> <a class="code" href="class_z_buffer_class.html#e177fab7df1a56941ae0850eabc45a0b">H</a>;
+<a name="l00122"></a>00122 };
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:06 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:21 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

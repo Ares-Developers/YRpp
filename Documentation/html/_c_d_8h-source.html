@@ -59,25 +59,30 @@
 <a name="l00026"></a>00026                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x4A80D0); }
 <a name="l00027"></a>00027 
 <a name="l00028"></a>00028         <span class="comment">//Properties</span>
-<a name="l00029"></a><a class="code" href="class_c_d_drive_manager_class.html#dee75b6dd1c3e802bc53253274cbd158">00029</a>         <a class="code" href="_y_r_p_p_core_8h.html#ce8113a64e15b3b3507e17e38bab4d26">PROPERTY_ARRAY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_c_d_drive_manager_class.html#867ceb0adc7a181465360bc8cd14cb63">CDDriveNames</a>, 26); <span class="comment">//int + 'A' would be the drive's name</span>
-<a name="l00030"></a><a class="code" href="class_c_d_drive_manager_class.html#8e7717b39dd40465d34111ba93dc48ec">00030</a>         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<span class="keywordtype">int</span>, <a class="code" href="class_c_d_drive_manager_class.html#b17c995286677ee43b873a44958d0ace">NumCDDrives</a>);
-<a name="l00031"></a>00031         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_c_d_drive_manager_class.html#8e7717b39dd40465d34111ba93dc48ec">unknown_6C</a>);
-<a name="l00032"></a>00032 };
-<a name="l00033"></a>00033 
-<a name="l00034"></a><a class="code" href="class_c_d.html">00034</a> <span class="keyword">class </span><a class="code" href="class_c_d.html">CD</a>
-<a name="l00035"></a>00035 {
-<a name="l00036"></a>00036 <span class="keyword">public</span>:
-<a name="l00037"></a><a class="code" href="class_c_d.html#70459859c30b19944dacb1bf6cba423a">00037</a>         <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_c_d.html#70459859c30b19944dacb1bf6cba423a">ForceAvailable</a>(<span class="keywordtype">int</span> nCDNumber) <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
-<a name="l00038"></a><a class="code" href="class_c_d.html#407f327d51eea02e6d70425fb58a12e0">00038</a>         <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_c_d.html#407f327d51eea02e6d70425fb58a12e0">InsertCDDialog</a>() <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
-<a name="l00039"></a><a class="code" href="class_c_d.html#a28265eee070bb1417eb01fd51f6aaf3">00039</a>         virtual <span class="keywordtype">void</span> <a class="code" href="class_c_d.html#7fe628932ad55cf2c407e7ec1c8efaff">SwapToDisk</a>() <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041         <a class="code" href="_y_r_p_p_core_8h.html#58f95a3dea8a46c174f20eab6751836d">PROPERTY</a>(<a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>, <a class="code" href="class_c_d.html#a28265eee070bb1417eb01fd51f6aaf3">unknown_04</a>);
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043 protected:
-<a name="l00044"></a><a class="code" href="class_c_d.html#42728f0dd399d7fdeafaef8ffdcf48e6">00044</a>         <a class="code" href="class_c_d.html">CD</a>() <a class="code" href="_y_r_p_p_core_8h.html#5070712bba21161ad840408134ee229f">RX</a>;
-<a name="l00045"></a>00045 };
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 <span class="keyword">public</span>:
+<a name="l00031"></a>00031 
+<a name="l00032"></a><a class="code" href="class_c_d_drive_manager_class.html#867ceb0adc7a181465360bc8cd14cb63">00032</a>         <span class="keywordtype">int</span> <a class="code" href="class_c_d_drive_manager_class.html#867ceb0adc7a181465360bc8cd14cb63">CDDriveNames</a> [26]; <span class="comment">//int + 'A' would be the drive's name</span>
+<a name="l00033"></a><a class="code" href="class_c_d_drive_manager_class.html#b17c995286677ee43b873a44958d0ace">00033</a>         <span class="keywordtype">int</span> <a class="code" href="class_c_d_drive_manager_class.html#b17c995286677ee43b873a44958d0ace">NumCDDrives</a>;
+<a name="l00034"></a><a class="code" href="class_c_d_drive_manager_class.html#8e7717b39dd40465d34111ba93dc48ec">00034</a>         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_c_d_drive_manager_class.html#8e7717b39dd40465d34111ba93dc48ec">unknown_6C</a>;
+<a name="l00035"></a>00035 };
+<a name="l00036"></a>00036 
+<a name="l00037"></a><a class="code" href="class_c_d.html">00037</a> <span class="keyword">class </span><a class="code" href="class_c_d.html">CD</a>
+<a name="l00038"></a>00038 {
+<a name="l00039"></a>00039 <span class="keyword">public</span>:
+<a name="l00040"></a><a class="code" href="class_c_d.html#70459859c30b19944dacb1bf6cba423a">00040</a>         <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_c_d.html#70459859c30b19944dacb1bf6cba423a">ForceAvailable</a>(<span class="keywordtype">int</span> nCDNumber) <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
+<a name="l00041"></a><a class="code" href="class_c_d.html#407f327d51eea02e6d70425fb58a12e0">00041</a>         <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_c_d.html#407f327d51eea02e6d70425fb58a12e0">InsertCDDialog</a>() <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
+<a name="l00042"></a><a class="code" href="class_c_d.html#a28265eee070bb1417eb01fd51f6aaf3">00042</a>         virtual <span class="keywordtype">void</span> <a class="code" href="class_c_d.html#7fe628932ad55cf2c407e7ec1c8efaff">SwapToDisk</a>() <a class="code" href="_y_r_p_p_core_8h.html#30ab9da60435727bc80839d416461b8f">R0</a>;
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 public:
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046         <a class="code" href="_y_r_p_p_core_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a> <a class="code" href="class_c_d.html#a28265eee070bb1417eb01fd51f6aaf3">unknown_04</a>;
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048 protected:
+<a name="l00049"></a><a class="code" href="class_c_d.html#42728f0dd399d7fdeafaef8ffdcf48e6">00049</a>         <a class="code" href="class_c_d.html">CD</a>() <a class="code" href="_y_r_p_p_core_8h.html#5070712bba21161ad840408134ee229f">RX</a>;
+<a name="l00050"></a>00050 };
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:06 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:21 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

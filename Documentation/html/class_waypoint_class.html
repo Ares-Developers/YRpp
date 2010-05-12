@@ -44,10 +44,6 @@
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_waypoint_class.html#0cc0e164e2058b130a4c5a77635ef480">operator==</a> (<a class="el" href="class_waypoint_class.html">WaypointClass</a> tWaypoint)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="class_vector2_d.html">CellStruct</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_waypoint_class.html#ebee13e6a4016d7245b4641755d3ddaf">get_Coords</a> ()</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_waypoint_class.html#97fcc24112ab853a49f39bb66bf19386">set_Coords</a> (<a class="el" href="class_vector2_d.html">CellStruct</a> *value)</td></tr>
-
 <tr><td colspan="2"><br><h2>Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="class_vector2_d.html">CellStruct</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_waypoint_class.html#dfd65dfc3b3dee70de69fa856edde321">Coords</a></td></tr>
 
@@ -58,30 +54,6 @@
 
 <p>Definition at line <a class="el" href="_waypoint_path_class_8h-source.html#l00007">7</a> of file <a class="el" href="_waypoint_path_class_8h-source.html">WaypointPathClass.h</a>.</p>
 <hr><h2>Member Function Documentation</h2>
-<a class="anchor" name="ebee13e6a4016d7245b4641755d3ddaf"></a><!-- doxytag: member="WaypointClass::get_Coords" ref="ebee13e6a4016d7245b4641755d3ddaf" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_vector2_d.html">CellStruct</a>* WaypointClass::get_Coords           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_waypoint_path_class_8h-source.html#l00018">18</a> of file <a class="el" href="_waypoint_path_class_8h-source.html">WaypointPathClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00022"></a>00022 : <span class="keyword">public</span> <a class="code" href="class_abstract_class.html">AbstractClass</a>
-</pre></div>
-<p>
-
-</div>
-</div><p>
 <a class="anchor" name="0cc0e164e2058b130a4c5a77635ef480"></a><!-- doxytag: member="WaypointClass::operator==" ref="0cc0e164e2058b130a4c5a77635ef480" args="(WaypointClass tWaypoint)" -->
 <div class="memitem">
 <div class="memproto">
@@ -102,34 +74,8 @@
 
 <p>Definition at line <a class="el" href="_waypoint_path_class_8h-source.html#l00011">11</a> of file <a class="el" href="_waypoint_path_class_8h-source.html">WaypointPathClass.h</a>.</p>
 <div class="fragment"><pre class="fragment"><a name="l00012"></a>00012         {
-<a name="l00013"></a>00013                 <span class="keywordflow">return</span> (<a class="code" href="class_waypoint_class.html#dfd65dfc3b3dee70de69fa856edde321">Coords</a> == *tWaypoint.<a class="code" href="class_waypoint_class.html#ebee13e6a4016d7245b4641755d3ddaf">get_Coords</a>() &amp;&amp;
-<a name="l00014"></a>00014                                 <a class="code" href="class_waypoint_class.html#7810798a922cbef639dffa0ebdd8f49a">unknown</a> == tWaypoint.<a class="code" href="class_waypoint_class.html#7810798a922cbef639dffa0ebdd8f49a">unknown</a>);
-<a name="l00015"></a>00015         }
-</pre></div>
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="97fcc24112ab853a49f39bb66bf19386"></a><!-- doxytag: member="WaypointClass::set_Coords" ref="97fcc24112ab853a49f39bb66bf19386" args="(CellStruct *value)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void WaypointClass::set_Coords           </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_vector2_d.html">CellStruct</a> *&nbsp;</td>
-          <td class="paramname"> <em>value</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-<p>Definition at line <a class="el" href="_waypoint_path_class_8h-source.html#l00018">18</a> of file <a class="el" href="_waypoint_path_class_8h-source.html">WaypointPathClass.h</a>.</p>
-<div class="fragment"><pre class="fragment"><a name="l00022"></a>00022 : <span class="keyword">public</span> <a class="code" href="class_abstract_class.html">AbstractClass</a>
+<a name="l00013"></a>00013                 <span class="keywordflow">return</span> (<a class="code" href="class_waypoint_class.html#dfd65dfc3b3dee70de69fa856edde321">Coords</a> == tWaypoint.<a class="code" href="class_waypoint_class.html#dfd65dfc3b3dee70de69fa856edde321">Coords</a> &amp;&amp; <a class="code" href="class_waypoint_class.html#7810798a922cbef639dffa0ebdd8f49a">unknown</a> == tWaypoint.<a class="code" href="class_waypoint_class.html#7810798a922cbef639dffa0ebdd8f49a">unknown</a>);
+<a name="l00014"></a>00014         }
 </pre></div>
 <p>
 
@@ -149,7 +95,7 @@
 
 <p>
 
-<p>Definition at line <a class="el" href="_waypoint_path_class_8h-source.html#l00018">18</a> of file <a class="el" href="_waypoint_path_class_8h-source.html">WaypointPathClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_waypoint_path_class_8h-source.html#l00017">17</a> of file <a class="el" href="_waypoint_path_class_8h-source.html">WaypointPathClass.h</a>.</p>
 
 </div>
 </div><p>
@@ -173,7 +119,7 @@
 <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="_waypoint_path_class_8h-source.html">WaypointPathClass.h</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:22 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:34 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

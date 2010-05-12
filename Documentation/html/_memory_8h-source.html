@@ -136,52 +136,64 @@
 <a name="l00103"></a>00103 <span class="comment">// deallocate scalars</span>
 <a name="l00104"></a>00104 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
 <a name="l00105"></a><a class="code" href="_memory_8h.html#a7c1d24293c53841de8f626ceea13393">00105</a> <span class="keyword">static</span> <span class="keywordtype">void</span> __cdecl <a class="code" href="_memory_8h.html#a7c1d24293c53841de8f626ceea13393">Deallocate</a>(T* Tptr, <span class="keywordtype">bool</span> inDLL) {
-<a name="l00106"></a>00106         Tptr-&gt;~T();
-<a name="l00107"></a>00107         <span class="keywordflow">if</span>(inDLL) {
-<a name="l00108"></a>00108                 operator delete(Tptr);
-<a name="l00109"></a>00109                 <span class="keywordflow">return</span>;
-<a name="l00110"></a>00110         }
-<a name="l00111"></a>00111         <a class="code" href="_a_s_m_macros_8h.html#87492c1f652c8993c057dca4801e02d4">PUSH_VAR32</a>(Tptr);
-<a name="l00112"></a>00112         <a class="code" href="_a_s_m_macros_8h.html#8f412ce32e9c7538131b83ec54ddd590">CALL</a>(0x7C8B3D);
-<a name="l00113"></a>00113         <a class="code" href="_a_s_m_macros_8h.html#88fa64198d358802e535171a5dcf86ce">ADD_ESP</a>(4);
-<a name="l00114"></a>00114 };
-<a name="l00115"></a>00115 
-<a name="l00116"></a>00116 <span class="comment">// deallocate from the game's pool</span>
-<a name="l00117"></a><a class="code" href="_memory_8h.html#502faddf708b0eb41925f8ee7ce806d4">00117</a> <span class="preprocessor">#define GAME_DEALLOC(var) \</span>
-<a name="l00118"></a>00118 <span class="preprocessor">{ \</span>
-<a name="l00119"></a>00119 <span class="preprocessor">        Deallocate(var, 0); \</span>
-<a name="l00120"></a>00120 <span class="preprocessor">} \</span>
-<a name="l00121"></a>00121 <span class="preprocessor"></span>
-<a name="l00122"></a>00122 <span class="preprocessor"></span><span class="comment">//      delete var;</span>
-<a name="l00123"></a>00123 
-<a name="l00124"></a>00124 <span class="comment">// deallocate from the DLL's pool</span>
-<a name="l00125"></a><a class="code" href="_memory_8h.html#e5251ccf38c1253a3251d86468f8c736">00125</a> <span class="preprocessor">#define DLL_DEALLOC(var) \</span>
-<a name="l00126"></a>00126 <span class="preprocessor">{ \</span>
-<a name="l00127"></a>00127 <span class="preprocessor">        Deallocate(var, 1); \</span>
-<a name="l00128"></a>00128 <span class="preprocessor">} \</span>
-<a name="l00129"></a>00129 <span class="preprocessor"></span>
-<a name="l00130"></a>00130 <span class="preprocessor"></span><span class="comment">// deallocate vectors</span>
-<a name="l00131"></a>00131 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
-<a name="l00132"></a><a class="code" href="_memory_8h.html#c658a934bccb1f2459e2a33f144c030a">00132</a> <span class="keyword">static</span> <span class="keywordtype">void</span> __cdecl <a class="code" href="_memory_8h.html#c658a934bccb1f2459e2a33f144c030a">Deallocate_Array</a>(T* Tptr, <span class="keywordtype">bool</span> inDLL) {
-<a name="l00133"></a>00133         Tptr-&gt;~T();
-<a name="l00134"></a>00134         <span class="keywordflow">if</span>(inDLL) {
-<a name="l00135"></a>00135                 operator delete[](Tptr);
-<a name="l00136"></a>00136                 <span class="keywordflow">return</span>;
-<a name="l00137"></a>00137         }
-<a name="l00138"></a>00138         <a class="code" href="_a_s_m_macros_8h.html#87492c1f652c8993c057dca4801e02d4">PUSH_VAR32</a>(Tptr);
-<a name="l00139"></a>00139         <a class="code" href="_a_s_m_macros_8h.html#8f412ce32e9c7538131b83ec54ddd590">CALL</a>(0x7C8B3D);
-<a name="l00140"></a>00140         <a class="code" href="_a_s_m_macros_8h.html#88fa64198d358802e535171a5dcf86ce">ADD_ESP</a>(4);
-<a name="l00141"></a>00141 };
-<a name="l00142"></a>00142 
-<a name="l00143"></a>00143 <span class="comment">// deallocate from the game's pool</span>
-<a name="l00144"></a><a class="code" href="_memory_8h.html#fb20a7409cb818a428dabcb838b72102">00144</a> <span class="preprocessor">#define GAME_DEALLOC_ARR(var) \</span>
-<a name="l00145"></a>00145 <span class="preprocessor">{ \</span>
-<a name="l00146"></a>00146 <span class="preprocessor">        Deallocate_Array(var, 0); \</span>
-<a name="l00147"></a>00147 <span class="preprocessor">} \</span>
-<a name="l00148"></a>00148 <span class="preprocessor"></span>
-<a name="l00149"></a>00149 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00106"></a>00106         <span class="keywordflow">if</span>(Tptr) {
+<a name="l00107"></a>00107                 Tptr-&gt;~T();
+<a name="l00108"></a>00108         }
+<a name="l00109"></a>00109         <span class="keywordflow">if</span>(inDLL) {
+<a name="l00110"></a>00110                 operator delete(Tptr);
+<a name="l00111"></a>00111                 <span class="keywordflow">return</span>;
+<a name="l00112"></a>00112         }
+<a name="l00113"></a>00113         <a class="code" href="_a_s_m_macros_8h.html#87492c1f652c8993c057dca4801e02d4">PUSH_VAR32</a>(Tptr);
+<a name="l00114"></a>00114         <a class="code" href="_a_s_m_macros_8h.html#8f412ce32e9c7538131b83ec54ddd590">CALL</a>(0x7C8B3D);
+<a name="l00115"></a>00115         <a class="code" href="_a_s_m_macros_8h.html#88fa64198d358802e535171a5dcf86ce">ADD_ESP</a>(4);
+<a name="l00116"></a>00116 };
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118 <span class="comment">// deallocate from the game's pool</span>
+<a name="l00119"></a><a class="code" href="_memory_8h.html#502faddf708b0eb41925f8ee7ce806d4">00119</a> <span class="preprocessor">#define GAME_DEALLOC(var) \</span>
+<a name="l00120"></a>00120 <span class="preprocessor">{ \</span>
+<a name="l00121"></a>00121 <span class="preprocessor">        Deallocate(var, 0); \</span>
+<a name="l00122"></a>00122 <span class="preprocessor">} \</span>
+<a name="l00123"></a>00123 <span class="preprocessor"></span>
+<a name="l00124"></a>00124 <span class="preprocessor"></span><span class="comment">//      delete var;</span>
+<a name="l00125"></a>00125 
+<a name="l00126"></a>00126 <span class="comment">// deallocate from the DLL's pool</span>
+<a name="l00127"></a><a class="code" href="_memory_8h.html#e5251ccf38c1253a3251d86468f8c736">00127</a> <span class="preprocessor">#define DLL_DEALLOC(var) \</span>
+<a name="l00128"></a>00128 <span class="preprocessor">{ \</span>
+<a name="l00129"></a>00129 <span class="preprocessor">        Deallocate(var, 1); \</span>
+<a name="l00130"></a>00130 <span class="preprocessor">} \</span>
+<a name="l00131"></a>00131 <span class="preprocessor"></span>
+<a name="l00132"></a>00132 <span class="preprocessor"></span><span class="comment">// deallocate vectors</span>
+<a name="l00133"></a>00133 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;
+<a name="l00134"></a><a class="code" href="_memory_8h.html#c658a934bccb1f2459e2a33f144c030a">00134</a> <span class="keyword">static</span> <span class="keywordtype">void</span> __cdecl <a class="code" href="_memory_8h.html#c658a934bccb1f2459e2a33f144c030a">Deallocate_Array</a>(T* Tptr, <span class="keywordtype">bool</span> inDLL) {
+<a name="l00135"></a>00135         <span class="keywordflow">if</span>(Tptr) {
+<a name="l00136"></a>00136                 T *iter = Tptr;
+<a name="l00137"></a>00137                 <span class="comment">// ye olde black magick</span>
+<a name="l00138"></a>00138                 <span class="keywordtype">size_t</span> *p = <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">size_t</span> *<span class="keyword">&gt;</span>(iter) - 1;
+<a name="l00139"></a>00139                 <span class="keywordtype">size_t</span> amount = *p;
+<a name="l00140"></a>00140                 <span class="keywordflow">while</span>(amount &gt; 0 &amp;&amp; iter) {
+<a name="l00141"></a>00141                         iter-&gt;~T();
+<a name="l00142"></a>00142                         ++iter;
+<a name="l00143"></a>00143                         --amount;
+<a name="l00144"></a>00144                 }
+<a name="l00145"></a>00145         }
+<a name="l00146"></a>00146         <span class="keywordflow">if</span>(inDLL) {
+<a name="l00147"></a>00147                 operator delete[](Tptr);
+<a name="l00148"></a>00148                 <span class="keywordflow">return</span>;
+<a name="l00149"></a>00149         }
+<a name="l00150"></a>00150         <a class="code" href="_a_s_m_macros_8h.html#87492c1f652c8993c057dca4801e02d4">PUSH_VAR32</a>(Tptr);
+<a name="l00151"></a>00151         <a class="code" href="_a_s_m_macros_8h.html#8f412ce32e9c7538131b83ec54ddd590">CALL</a>(0x7C8B3D);
+<a name="l00152"></a>00152         <a class="code" href="_a_s_m_macros_8h.html#88fa64198d358802e535171a5dcf86ce">ADD_ESP</a>(4);
+<a name="l00153"></a>00153 };
+<a name="l00154"></a>00154 
+<a name="l00155"></a>00155 <span class="comment">// deallocate from the game's pool</span>
+<a name="l00156"></a><a class="code" href="_memory_8h.html#fb20a7409cb818a428dabcb838b72102">00156</a> <span class="preprocessor">#define GAME_DEALLOC_ARR(var) \</span>
+<a name="l00157"></a>00157 <span class="preprocessor">{ \</span>
+<a name="l00158"></a>00158 <span class="preprocessor">        Deallocate_Array(var, 0); \</span>
+<a name="l00159"></a>00159 <span class="preprocessor">} \</span>
+<a name="l00160"></a>00160 <span class="preprocessor"></span>
+<a name="l00161"></a>00161 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:06 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:21 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

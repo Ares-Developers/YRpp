@@ -36,32 +36,44 @@
 <a name="l00003"></a>00003 <span class="preprocessor">#ifndef PCX_H</span>
 <a name="l00004"></a>00004 <span class="preprocessor"></span><span class="preprocessor">#define PCX_H</span>
 <a name="l00005"></a>00005 <span class="preprocessor"></span>
-<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;<a class="code" href="_surface_8h.html">Surface.h</a>&gt;</span>
-<a name="l00007"></a>00007 
-<a name="l00008"></a><a class="code" href="class_p_c_x.html">00008</a> <span class="keyword">class </span><a class="code" href="class_p_c_x.html">PCX</a>
-<a name="l00009"></a>00009 {
-<a name="l00010"></a>00010 <span class="keyword">public</span>:
-<a name="l00011"></a>00011         <span class="comment">//Load a PCX file</span>
-<a name="l00012"></a><a class="code" href="class_p_c_x.html#34eb68c7f4c4eb3a55e6518434b0a027">00012</a>         <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_p_c_x.html#34eb68c7f4c4eb3a55e6518434b0a027">LoadFile</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* pFileName)
-<a name="l00013"></a>00013         {
-<a name="l00014"></a>00014                 <a class="code" href="_a_s_m_macros_8h.html#2ff2ad4240ecc3af7b705c85f5b920d3">PUSH_IMM</a>(0);
-<a name="l00015"></a>00015                 <a class="code" href="_a_s_m_macros_8h.html#2ff2ad4240ecc3af7b705c85f5b920d3">PUSH_IMM</a>(2);
-<a name="l00016"></a>00016                 <a class="code" href="_a_s_m_macros_8h.html#87492c1f652c8993c057dca4801e02d4">PUSH_VAR32</a>(pFileName);
-<a name="l00017"></a>00017                 <a class="code" href="_a_s_m_macros_8h.html#1e93c40663edaedb888f4a0bed8be53f">THISCALL_EX</a>(0xAC4848, 0x6B9D00);
-<a name="l00018"></a>00018         }
-<a name="l00019"></a>00019         
-<a name="l00020"></a>00020         <span class="comment">//Get a BSurface for a PCX file. File needs to be loaded some time first!</span>
-<a name="l00021"></a><a class="code" href="class_p_c_x.html#73d19cabae09ee9fa03f1464e2599b27">00021</a>         <span class="keyword">static</span> <a class="code" href="class_b_surface.html">BSurface</a>* <a class="code" href="class_p_c_x.html#73d19cabae09ee9fa03f1464e2599b27">GetSurface</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* pFileName)
-<a name="l00022"></a>00022         {
-<a name="l00023"></a>00023                 <a class="code" href="_a_s_m_macros_8h.html#2ff2ad4240ecc3af7b705c85f5b920d3">PUSH_IMM</a>(0);
-<a name="l00024"></a>00024                 <a class="code" href="_a_s_m_macros_8h.html#87492c1f652c8993c057dca4801e02d4">PUSH_VAR32</a>(pFileName);
-<a name="l00025"></a>00025                 <a class="code" href="_a_s_m_macros_8h.html#1e93c40663edaedb888f4a0bed8be53f">THISCALL_EX</a>(0xAC4848, 0x6BA140);
-<a name="l00026"></a>00026         }
-<a name="l00027"></a>00027 };
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029 <span class="preprocessor">#endif</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;<a class="code" href="_drawing_8h.html">Drawing.h</a>&gt;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;<a class="code" href="_surface_8h.html">Surface.h</a>&gt;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &lt;<a class="code" href="_general_definitions_8h.html">GeneralDefinitions.h</a>&gt;</span>
+<a name="l00009"></a>00009 
+<a name="l00010"></a><a class="code" href="class_p_c_x.html">00010</a> <span class="keyword">class </span><a class="code" href="class_p_c_x.html">PCX</a>
+<a name="l00011"></a>00011 {
+<a name="l00012"></a>00012 <span class="keyword">protected</span>:
+<a name="l00013"></a>00013                 <span class="comment">// Load a PCX file</span>
+<a name="l00014"></a><a class="code" href="class_p_c_x.html#72a440494a98f90bc77b8a8139cceb16">00014</a>                 <span class="keywordtype">bool</span> <a class="code" href="class_p_c_x.html#72a440494a98f90bc77b8a8139cceb16">ForceLoadFile</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* pFileName, <span class="keywordtype">int</span> flag1, <span class="keywordtype">int</span> flag2)
+<a name="l00015"></a>00015                         { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x6B9D00); }
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017 <span class="keyword">public</span>:
+<a name="l00018"></a>00018 
+<a name="l00019"></a><a class="code" href="class_p_c_x.html#d56a9ddf049b8a9aad726d93a80eba5d">00019</a>         <span class="keyword">static</span> <a class="code" href="class_p_c_x.html">PCX</a> *<a class="code" href="class_p_c_x.html#d56a9ddf049b8a9aad726d93a80eba5d">Instance</a>;
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021         <span class="comment">//Load a PCX file</span>
+<a name="l00022"></a><a class="code" href="class_p_c_x.html#c23d40629cb01f97e3b573b5c82f0f51">00022</a>         <span class="keywordtype">bool</span> <a class="code" href="class_p_c_x.html#c23d40629cb01f97e3b573b5c82f0f51">LoadFile</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* pFileName, <span class="keywordtype">int</span> flag1 = 2, <span class="keywordtype">int</span> flag2 = 0)
+<a name="l00023"></a>00023         {
+<a name="l00024"></a>00024                 <span class="keywordflow">if</span>(<a class="code" href="class_p_c_x.html#d56a9ddf049b8a9aad726d93a80eba5d">Instance</a>-&gt;<a class="code" href="class_p_c_x.html#b4c3807aab4111a1fbb7ed0998e776af">GetSurface</a>(pFileName, NULL)) {
+<a name="l00025"></a>00025                         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00026"></a>00026                 }
+<a name="l00027"></a>00027                 <span class="keywordflow">return</span> <a class="code" href="class_p_c_x.html#d56a9ddf049b8a9aad726d93a80eba5d">Instance</a>-&gt;<a class="code" href="class_p_c_x.html#72a440494a98f90bc77b8a8139cceb16">ForceLoadFile</a>(pFileName, flag1, flag2);
+<a name="l00028"></a>00028         }
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030         <span class="comment">// Get a BSurface for a PCX file. File needs to be loaded some time first!</span>
+<a name="l00031"></a><a class="code" href="class_p_c_x.html#b4c3807aab4111a1fbb7ed0998e776af">00031</a>         <a class="code" href="class_b_surface.html">BSurface</a>* <a class="code" href="class_p_c_x.html#b4c3807aab4111a1fbb7ed0998e776af">GetSurface</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* pFileName, <a class="code" href="struct_byte_palette.html">BytePalette</a> * pPalette = NULL)
+<a name="l00032"></a>00032                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x6BA140); }
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034         <span class="comment">// Draws a PCX file</span>
+<a name="l00035"></a><a class="code" href="class_p_c_x.html#822383a5252329aaa47784d91d3f80de">00035</a>         <span class="keywordtype">bool</span> <a class="code" href="class_p_c_x.html#822383a5252329aaa47784d91d3f80de">BlitToSurface</a>(<a class="code" href="struct_rectangle_struct.html">RectangleStruct</a> *BoundingRect, <a class="code" href="class_d_surface.html">DSurface</a> *TargetSurface, <a class="code" href="class_b_surface.html">BSurface</a> *PCXSurface, <a class="code" href="_y_r_p_p_core_8h.html#197942eefa7db30960ae396d68339b97">WORD</a> TransparentColor = <a class="code" href="_drawing_8h.html#361bd41194ac13caf9169f3f689dc179">COLOR_PURPLE</a>)
+<a name="l00036"></a>00036                 { <a class="code" href="_a_s_m_macros_8h.html#41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x6BA580); }
+<a name="l00037"></a>00037 
+<a name="l00038"></a><a class="code" href="class_p_c_x.html#be0b18be9af3eceb09ae6ce976c8fd65">00038</a>         <span class="keywordtype">void</span> *<a class="code" href="class_p_c_x.html#be0b18be9af3eceb09ae6ce976c8fd65">Buffer</a>;
+<a name="l00039"></a>00039 };
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Mar 1 23:55:07 2010 for YR++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 13 01:21:21 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>
