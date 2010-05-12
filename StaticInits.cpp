@@ -254,8 +254,8 @@ DECL(TemporalClass, 0xB0EC60);
 
 #include <TechnoClass.h>
 
-DynamicVectorClass<DWORD>* TechnoClass::Array = (DynamicVectorClass<DWORD>*)0xA8EC78;
-DynamicVectorClass<DWORD>* TechnoTypeClass::Array = (DynamicVectorClass<DWORD>*)0xA8EB00;
+DynamicVectorClass<TechnoClass *>* TechnoClass::Array = (DynamicVectorClass<TechnoClass *>*)0xA8EC78;
+DynamicVectorClass<TechnoTypeClass *>* TechnoTypeClass::Array = (DynamicVectorClass<TechnoTypeClass *>*)0xA8EB00;
 
 #include <Theater.h>
 Theater* Theater::Array        = (Theater *)0x7E1B78;

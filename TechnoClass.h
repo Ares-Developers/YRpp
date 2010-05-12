@@ -113,7 +113,7 @@ class TechnoClass : public RadioClass
 public:
 	enum {AbsDerivateID = ABSFLAGS_ISTECHNO};
 
-	static DynamicVectorClass<DWORD>* Array; // HAX to instantiate
+	static DynamicVectorClass<TechnoClass *>* Array; // HAX to instantiate
 
 	//IPersistStream
 	virtual HRESULT __stdcall Load(IStream* pStm) R0;

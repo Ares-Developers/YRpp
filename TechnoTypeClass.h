@@ -67,7 +67,7 @@ class TechnoTypeClass : public ObjectTypeClass
 {
 public:
 
-	static DynamicVectorClass<DWORD>* Array; // HAX to instantiate
+	static DynamicVectorClass<TechnoTypeClass *>* Array; // HAX to instantiate
 
 	static TechnoTypeClass* Find(const char* pID)
 	{
