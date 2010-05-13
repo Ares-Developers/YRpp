@@ -93,6 +93,27 @@ public:
 	void DestroyNthAnim(BuildingAnimSlot Slot)
 		{ JMP_THIS(0x451E40); }
 
+	void PlayNthAnim(BuildingAnimSlot Slot, int dwUnk = 0) {
+		bool Damaged = !this->IsGreenHP();
+		bool Garrisoned = this->GetOccupantCount() > 0;
+
+		BuildingAnimStruct *AnimData = &this->Type->Anims[Slot];
+		char *AnimName = NULL;
+		if(Damaged) {
+			AnimName = AnimData->Damaged;
+		} else if(Garrisoned) {
+			AnimName = AnimData->Garrisoned;
+		} else {
+			AnimName = AnimData->Anim;
+		}
+		if(AnimName && *AnimName) {
+			this->PlayAnim(AnimName, Slot, Damaged, Garrisoned, dwUnk);
+		}
+	}
+
+	int PlayAnim(char *animName, BuildingAnimSlot Slot, bool Damaged, bool Garrisoned, int dwUnk = 0)
+		{ JMP_THIS(0x451890); }
+
 	// when the building is switched off
 	void DisableStuff()
 		{ JMP_THIS(0x452480); }
@@ -111,6 +132,9 @@ public:
 
 	void FireLaser(CoordStruct Coords)
 		{ JMP_THIS(0x44ABD0); }
+
+	bool IsBeingDrained()
+		{ JMP_THIS(0x70FEC0); }
 
 	//Constructor
 	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner) : TechnoClass(false)

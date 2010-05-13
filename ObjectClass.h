@@ -201,6 +201,9 @@ public:
 		{ JMP_THIS(0x5F6440); }
 
 
+	double GetHealthPercentage()
+		{ return double(this->Health) / this->GetType()->Strength; }
+
 	bool IsRedHP()
 		{ JMP_THIS(0x5F5CD0); }
 
@@ -212,7 +215,6 @@ public:
 
 	HealthState GetHealthStatus()
 		{ JMP_THIS(0x5F5DD0); }
-
 
 	//Constructor
 	ObjectClass() : AbstractClass(false)

@@ -619,8 +619,8 @@ typedef int ePrerequisite;
 typedef int ePrismChargeState;
 
 #define		pcs_Idle		0
-#define		pcs_Charging		1
-#define		pcs_Firing		2
+#define		pcs_Master		1
+#define		pcs_Slave		2
 
 
 typedef int RadarEventType;
