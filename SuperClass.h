@@ -125,7 +125,7 @@ public:
 	bool Granted;
 	bool Quantity; // Stupidity - 0 means unlimited, 1 means one-shot
 	bool IsCharged;
-	bool HasPower;
+	bool IsOnHold;
 	int ReadinessFrame; // when did it become ready?
 	DWORD unknown_78;
 	DWORD ChargeDrainState;

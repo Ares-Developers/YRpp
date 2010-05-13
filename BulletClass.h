@@ -92,6 +92,15 @@ public:
 	void NukeMaker()
 		{ JMP_THIS(0x46B310); }
 
+	// helpers
+	void GetTargetCoords(CoordStruct * Coords) {
+		if(this->Target) {
+			this->Target->GetCoords(Coords);
+		} else {
+			this->GetCoords(Coords);
+		}
+	}
+
 	//Constructor
 protected:
 	BulletClass() : ObjectClass(false)
