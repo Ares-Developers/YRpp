@@ -97,7 +97,7 @@ public:
 		bool Damaged = !this->IsGreenHP();
 		bool Garrisoned = this->GetOccupantCount() > 0;
 
-		BuildingAnimStruct *AnimData = &this->Type->Anims[Slot];
+		BuildingAnimStruct *AnimData = &this->Type->BuildingAnim[Slot];
 		char *AnimName = NULL;
 		if(Damaged) {
 			AnimName = AnimData->Damaged;

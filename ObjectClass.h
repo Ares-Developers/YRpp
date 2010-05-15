@@ -7,6 +7,7 @@
 
 #include <AbstractClass.h>
 #include <Audio.h>
+#include <ObjectTypeClass.h>
 
 #include <Helpers/Template.h>
 
@@ -19,7 +20,6 @@ class BombClass;
 class BuildingTypeClass;
 class CellClass;
 class InfantryTypeClass;
-class ObjectTypeClass;
 class TechnoClass;
 class TechnoTypeClass;
 class WarheadTypeClass;
