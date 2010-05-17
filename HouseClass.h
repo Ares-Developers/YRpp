@@ -442,6 +442,15 @@ public:
 	signed int CanBuild(TechnoTypeClass *item, bool bypassExtras, bool includeQueued)
 		{ JMP_THIS(0x4F7870); }
 
+	void UpdateFlagCoords(UnitClass *NewCarrier, DWORD dwUnk)
+		{ JMP_THIS(0x4FBE40); }
+
+	void DroppedFlag(CellStruct *Where, UnitClass *Who)
+		{ JMP_THIS(0x4FBF60); }
+
+	char PickedUpFlag(UnitClass *Who, DWORD dwUnk)
+		{ JMP_THIS(0x4FC060); }
+
 	/*!
 		At the moment, this function is really just a more intuitively named mask for
 		this->Type->MultiplayPassive, but it might be expanded into something more
@@ -621,8 +630,8 @@ public:
 	BYTE unknown_53D9;
 	BYTE unknown_53DA;
 	BYTE unknown_53DB;
-	ObjectClass*          OurFlagCarrier;
-	CellStruct OurFlagCoords;
+	UnitClass* OurFlagCarrier;
+	CellStruct  OurFlagCoords;
 	//for endgame score screen
 	int KilledUnitsOfHouses [0x14];		// 20 Houses only!
 	int                   TotalKilledUnits;

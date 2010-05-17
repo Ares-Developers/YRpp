@@ -18,7 +18,7 @@ struct ScenarioFlags
 	bool bit01 : 1;
 	bool bit02 : 1;
 	bool bit03 : 1;
-	bool bit04 : 1;
+	bool CTFMode : 1; // the base for it does exist...
 	bool Inert : 1;
 	bool TiberiumGrows : 1;
 	bool TiberiumSpreads : 1;
