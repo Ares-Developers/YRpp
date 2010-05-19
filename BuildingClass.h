@@ -259,7 +259,7 @@ public:
 	bool UpgradeLevel; // as defined by Type->UpgradesToLevel=
 	ePrismChargeState PrismStage;
 	CoordStruct PrismTargetCoords;
-	DWORD PrismReloadDelay;
+	DWORD DelayBeforeFiring;
 
 	DWORD unknown_714;
 	DWORD unknown_718; // "healing unit" sound, old hospital mode

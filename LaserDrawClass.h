@@ -42,7 +42,33 @@ public:
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	PROTECTED_PROPERTY(BYTE,  unknown[0x5C]);
+public:
+	int TimeElapsed;
+	bool field_4;
+	TimerStruct CreationFrame;
+	int field_14;
+	int TimeElapsedPerFrame;
+	int field_1C;
+	bool IsHouseColor;
+	char field_21;
+	char field_22;
+	char field_23;
+	CoordStruct Source;
+	CoordStruct Target;
+	int field_3C;
+	char field_40;
+	ColorStruct InnerColor;
+	ColorStruct OuterColor;
+	ColorStruct OuterSpread;
+	char field_4A;
+	char field_4B;
+	int Duration;
+	char Blinks;
+	char BlinkState;
+	char field_52;
+	char field_53;
+	float floatVal;
+	int field_58;
 };
 
 #endif

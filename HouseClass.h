@@ -746,7 +746,7 @@ public:
 	DWORD unknown_56F4;
 	byte          HasCloakingRanges; // don't ask
 	ColorStruct Color;
-	ColorStruct Color2; // my idb says so
+	ColorStruct LaserColor; // my idb says so
 	byte          padding;
 	BaseClass Base;
 	bool                  PowerBlackout;
