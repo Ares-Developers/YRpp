@@ -7,6 +7,7 @@
 
 #include <ObjectTypeClass.h>
 #include <RulesClass.h>
+#include <WeaponTypeClass.h>
 
 //forward declarations
 class AircraftTypeClass;
@@ -15,7 +16,6 @@ class BuildingTypeClass;
 class InfantryTypeClass;
 class ParticleSystemTypeClass;
 class VoxelAnimTypeClass;
-class WeaponTypeClass;
 class UnitTypeClass;
 
 struct AbilitiesStruct
