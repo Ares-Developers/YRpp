@@ -30,7 +30,7 @@ public:
 		{ JMP_THIS(0x435820); }
 
 	// non-virtual
-	void SetBehaviour(SpotlightBehaviour mode)
+	void SetBehaviour(SpotlightBehaviour::Value mode)
 		{ JMP_THIS(0x436BE0); }
 
 protected:
@@ -50,7 +50,7 @@ public:
 	DWORD field_D0;
 	DWORD field_D4;
 	bool field_D8;
-	SpotlightBehaviour BehaviourMode;
+	SpotlightBehaviour::Value BehaviourMode;
 	ObjectClass * FollowingObject;
 	TechnoClass * OwnerObject;
 };

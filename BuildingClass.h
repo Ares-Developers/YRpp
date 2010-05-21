@@ -90,10 +90,10 @@ public:
 		{ JMP_THIS(0x441F60); }
 
 	// destroys the specific animation (active, turret, special, etc)
-	void DestroyNthAnim(BuildingAnimSlot Slot)
+	void DestroyNthAnim(BuildingAnimSlot::Value Slot)
 		{ JMP_THIS(0x451E40); }
 
-	void PlayNthAnim(BuildingAnimSlot Slot, int dwUnk = 0) {
+	void PlayNthAnim(BuildingAnimSlot::Value Slot, int dwUnk = 0) {
 		bool Damaged = !this->IsGreenHP();
 		bool Garrisoned = this->GetOccupantCount() > 0;
 
@@ -111,7 +111,7 @@ public:
 		}
 	}
 
-	int PlayAnim(char *animName, BuildingAnimSlot Slot, bool Damaged, bool Garrisoned, int dwUnk = 0)
+	int PlayAnim(char *animName, BuildingAnimSlot::Value Slot, bool Damaged, bool Garrisoned, int dwUnk = 0)
 		{ JMP_THIS(0x451890); }
 
 	// when the building is switched off

@@ -213,7 +213,7 @@ public:
 	bool IsGreenHP()
 		{ JMP_THIS(0x5F5D90); }
 
-	HealthState GetHealthStatus()
+	HealthState::Value GetHealthStatus()
 		{ JMP_THIS(0x5F5DD0); }
 
 	//Constructor

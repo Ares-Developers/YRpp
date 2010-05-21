@@ -201,8 +201,8 @@ public:
 	virtual DWORD IsCloseEnoughToAttackCoords(CoordStruct *Coords) R0;
 	virtual DWORD vt_entry_3B4(DWORD dwUnk) R0;
 	virtual void Destroyed(ObjectClass *Killer) = 0;
-	virtual FireError GetFireErrorWithoutRange(ObjectClass *Target, int nWeaponIndex) R0;
-	virtual FireError GetFireError(ObjectClass *Target, int nWeaponIndex, bool ignoreRange) R0;
+	virtual FireError::Value GetFireErrorWithoutRange(ObjectClass *Target, int nWeaponIndex) R0;
+	virtual FireError::Value GetFireError(ObjectClass *Target, int nWeaponIndex, bool ignoreRange) R0;
 	virtual CellClass* SelectAutoTarget(eTargetFlags TargetFlags, int CurrentThreat, bool OnlyTargetHouseEnemy) R0;
 	virtual void SetTarget(AbstractClass *Target) RX;
 	virtual BulletClass* Fire(ObjectClass* pTarget, int nWeaponIndex) R0;

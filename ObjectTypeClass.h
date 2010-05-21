@@ -60,7 +60,7 @@ public:
 	int           Armor;
 	int           Strength;
 	SHPStruct*    Image;
-	bool          IsImageAllocated;
+	bool          ImageIsOutdated;
 	bool          unused_A9;
 	bool          unused_AA;
 	bool          unused_AB;

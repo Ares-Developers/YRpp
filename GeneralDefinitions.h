@@ -236,16 +236,13 @@ typedef int eArmor;
 //spotlight behaviour
 class SpotlightBehaviour {
 public:
-	enum E {
+	typedef unsigned int Value;
+	enum {
 		None = 0x0,
 		Sweep = 0x1,
 		Circle = 0x2,
 		Follow = 0x3,
-	} _;
-
-	public:
-		SpotlightBehaviour(int val = 0) { this->_ = static_cast<E>(val); };
-		operator int() { return this->_; };
+	};
 };
 
 typedef int eSpotlightFlags;
@@ -289,7 +286,8 @@ typedef int eBuildCat;
 
 class BuildingAnimSlot {
 public:
-	enum E {
+	typedef unsigned int Value;
+	enum {
 		Upgrade1 = 0x0,
 		Upgrade2 = 0x1,
 		Upgrade3 = 0x2,
@@ -312,11 +310,7 @@ public:
 		LowPower = 0x13,
 		SuperLowPower = 0x14,
 		All = 0xFFFFFFFE, // -2
-	} _;
-
-	public:
-		BuildingAnimSlot(int val) { this->_ = static_cast<E>(val); };
-		operator int() { return this->_; };
+	};
 };
 
 
@@ -381,12 +375,11 @@ typedef int eDirection;
 #define	dir_NW		0x7
 
 
-//typedef int eFireError;
-
-// the first of its kind, this is how I plan to represent game's internal enums from now on
+// this is how game's enums are to be defined from now on
 class FireError {
 public:
-	enum E {
+	typedef unsigned int Value;
+	enum {
 		OK = 0, // no problem, can fire
 		AMMO = 1, // no ammo
 		FACING = 2, // bad facing
@@ -399,25 +392,18 @@ public:
 		CLOAKED = 9, // need to decloak
 		BUSY = 10, // busy, please hold
 		MUST_DEPLOY = 11 // deploy first!
-	} _;
-
-	public:
-		FireError(int val) { this->_ = static_cast<E>(val); };
-		operator int() { return this->_; };
+	};
 };
 
 
 class HealthState {
 public:
-	enum E {
+	typedef unsigned int Value;
+	enum {
 		Red = 0,
 		Yellow = 1,
 		Green = 2
-	} _;
-
-	public:
-		HealthState(int val) { this->_ = static_cast<E>(val); };
-		operator int() { return this->_; };
+	};
 };
 
 
@@ -912,7 +898,8 @@ typedef int eBlitterFlags;
 // UI
 class MouseEvent {
 public:
-	enum E {
+	typedef unsigned char Value;
+	enum {
 		LeftDown = 0x1,
 		LeftHeld = 0x2,
 		LeftUp = 0x4,
@@ -920,11 +907,7 @@ public:
 		RightDown = 0x10,
 		RightHeld = 0x20,
 		RightUp = 0x40
-	} _;
-
-	public:
-		MouseEvent(unsigned char val) { this->_ = static_cast<E>(val); };
-		operator int() { return this->_; };
+	};
 };
 
 // typedef BYTE eMouseEventFlags;
