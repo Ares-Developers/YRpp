@@ -380,6 +380,7 @@ class FireError {
 public:
 	typedef unsigned int Value;
 	enum {
+		NotAValue = 0xFF,
 		OK = 0, // no problem, can fire
 		AMMO = 1, // no ammo
 		FACING = 2, // bad facing
@@ -718,15 +719,19 @@ typedef int eTheater;
 #define	th_Lunar		0x5
 
 
-typedef int eVisualType;
-
-#define	vt_Normal		0x00
-#define	vt_Indistinct		0x01
-#define	vt_Darken		0x02
-#define	vt_Shadowy		0x03
-#define	vt_Ripple		0x04
-#define	vt_Hidden		0x05
-
+//typedef int eVisualType;
+class VisualType {
+public:
+	typedef unsigned int Value;
+	enum {
+		Normal = 0x00,
+		Indistinct = 0x01,
+		Darken = 0x02,
+		Shadowy = 0x03,
+		Ripple = 0x04,
+		Hidden = 0x05,
+	};
+};
 
 typedef int eRadioCommands;
 

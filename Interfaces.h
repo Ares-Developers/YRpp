@@ -139,7 +139,7 @@ interface ILocomotion : IUnknown
     virtual Matrix3DStruct* __stdcall Shadow_Matrix(Matrix3DStruct* pMatrix, int* key) = 0;	//Fetch shadow draw matrix.
     virtual Point2D* __stdcall Draw_Point(Point2D* pPoint) = 0;	//Draw point center location.
     virtual Point2D* __stdcall Shadow_Point(Point2D* pPoint) = 0;	//Shadow draw point center location.
-    virtual eVisualType __stdcall Visual_Character(VARIANT_BOOL flag) = 0;	//Visual character for drawing.
+    virtual VisualType::Value __stdcall Visual_Character(VARIANT_BOOL unused) = 0;	//Visual character for drawing.
     virtual int __stdcall Z_Adjust() = 0;	//Z adjust control value.
     virtual eZGradient __stdcall Z_Gradient() = 0;	//Z gradient control value.
     virtual bool __stdcall Process() = 0;	//Process movement of object.]
