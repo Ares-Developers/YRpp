@@ -32,6 +32,11 @@ public:
 		static int __cdecl swprintf(wchar_t *Buffer, const wchar_t *Format, ...)
 			{ JMP_STD(0x7CA564); }
 
+		static char* __cdecl strdup(const char *Src)
+			{ JMP_STD(0x7D5408); }
+
+		static void* __cdecl free(const void* p)
+			{ JMP_STD(0x7C93E8); }
 };
 
 #endif

@@ -13,8 +13,46 @@ class TechnoTypeClass;
 class INIClass
 {
 public:
-	struct INIEntry { }; //nothing known about this
-	struct INISection { }; //nothing known about this
+	class INIEntry : public Node<INIEntry*>
+	{
+		public:
+			virtual ~INIEntry() {}
+
+			char* Key;
+			char* Value;
+			DWORD unknown_14;
+			DWORD unknown_18;
+			DWORD unknown_1C;
+			DWORD unknown_20;
+			DWORD unknown_24;
+	};
+
+	class INISection : public Node<INISection*>
+	{
+		public:
+			struct CheckedEntry
+			{
+				unsigned int Checksum; //CRC32 of Entry's vaue
+				INIEntry* Entry;
+			};
+
+			struct CheckedEntryList //instead of using another list class, WW decided to create this...
+			{
+				CheckedEntry* Entries;
+				int Count;
+				int Capacity;
+				unsigned char Unknown_0C;
+				unsigned int Unknown_10;
+			};
+
+			virtual ~INISection() {}
+
+			char* Name;
+			List<INIEntry*> Entries;
+			CheckedEntryList CheckedEntries;
+
+			unsigned int Unknown_40;
+	};
 
 	INIClass()
 		{ JMP_THIS(0x535AA0); }
@@ -98,6 +136,9 @@ public:
 	bool Write3Bytes(const char* pSection, const char* pKey, byte* pValues)
 		{ JMP_THIS(0x474C20); }
 
+	//Tests whether the given section and key exists. If key is NULL, only the section will be looked for.
+	bool Exists(const char* pSection, const char* pKey)
+		{ JMP_THIS(0x679F40); }
 
 	// C&C helpers
 

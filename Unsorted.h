@@ -68,6 +68,24 @@ public:
 	static bool &bAllowVRAMSidebar;
 };
 
+// this class calculates CRC32 checksums using the game's functions
+class CRC32 {
+public:
+	unsigned int Value;
+
+	CRC32()
+	{
+		Value = 0;
+	}
+
+	void Reset() {
+		Value = 0;
+	}
+
+	unsigned int Add(const void* src, size_t len)
+		{ JMP_THIS(0x4A1DE0); }
+};
+
 // this fake class contains the IIDs used by the game
 // no comments because the IIDs suck
 class IIDs {
