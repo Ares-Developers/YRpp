@@ -356,7 +356,7 @@ public:
 	int				 IonCannonDamage;
 	int				 RailgunDamageRadius;
 	BuildingTypeClass*		 PrismType;
-	float				 PrismSupportModifier;
+	int		PrismSupportModifier; // this is int(100 * ini value)
 	int				 PrismSupportMax;
 	int				 PrismSupportDelay;
 	int				 PrismSupportDuration;

@@ -57,8 +57,8 @@ public:
 	int Speed;
 	WarheadTypeClass* Warhead;
 	int ROF;
-	float Range;
-	float MinimumRange;
+	int Range; // int(256 * ini value)
+	int MinimumRange; // int(256 * ini value)
 	TypeList<int> Report;		//sound indices
 	TypeList<int> DownReport;	//sound indices
 	TypeList<AnimTypeClass*> Anim;
