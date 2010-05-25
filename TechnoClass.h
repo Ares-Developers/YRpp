@@ -452,7 +452,7 @@ public:
 		//units point to the Building bunkering them, building points to Foot contained within
 	TechnoClass*       BunkerLinkedItem;
 
-	DWORD              unknown_2E8;
+	float PitchAngle; // not exactly, and it doesn't affect the drawing, only internal state of a dropship
 	TimerStruct DiskLaserTimer;
 	DWORD              unknown_2F8;
 	int                Ammo;
@@ -469,10 +469,17 @@ public:
 	ParticleSystemClass* FiringParticleSystem;
 
 	WaveClass*         Wave; //Beams
-	DWORD              unknown_328;
-	DWORD              unknown_32C;
-	DWORD              unknown_330;
-	DWORD              unknown_334;
+
+
+	// rocking effect
+	float AngleRotatedSideways; // in this frame, in radians - if abs() exceeds pi/2, it dies
+	float AngleRotatedForwards; // same
+
+	// set these and leave the previous two alone!
+	// if these are set, the unit will roll up to pi/4, by this step each frame, and balance back
+	float  RockingSidewaysPerFrame; // left to right - positive pushes left side up
+	float  RockingForwardsPerFrame; // back to front - positive pushes ass up
+
 	int                HijackerInfantryType; // mutant hijacker
 
 	OwnedTiberiumStruct Tiberium;
