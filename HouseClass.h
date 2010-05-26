@@ -491,7 +491,7 @@ public:
 	int                   InfantrySelfHeal;
 	int                   UnitsSelfHeal;
 	DynamicVectorClass<StartingTechnoStruct*> StartingUnits;
-	int                   AIDifficulty;
+	AIDifficulty::Value   AIDifficulty; // be advised that it's reverse, Hard == 0 and Easy == 2. I'm sure Westwood has a good reason for this. Yep.
 	double                FirepowerMultiplier; // used
 	double                GroundspeedMultiplier; // unused ...
 	double                AirspeedMultiplier;

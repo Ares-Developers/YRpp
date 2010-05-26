@@ -189,6 +189,15 @@ typedef int eAbilities;
 #define	ability_GUARD_AREA		0x10
 #define	ability_CRUSHER		0x11
 
+class AIDifficulty {
+public:
+	typedef unsigned int Value;
+	enum {
+		Hard = 0,
+		Normal = 1,
+		Easy = 2
+	};
+};
 
 typedef int eAIModes;
 
