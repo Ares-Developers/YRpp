@@ -93,7 +93,7 @@ struct Color16Struct
 	{
 	}
 };
-#pragma pack(pop);
+#pragma pack(pop)
 
 //uses the clock values
 struct DirStruct

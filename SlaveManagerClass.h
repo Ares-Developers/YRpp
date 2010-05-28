@@ -4,7 +4,6 @@
 #include <AbstractClass.h>
 
 class HouseClass;
-class TechnoClass;
 class InfantryClass;
 
 class SlaveManagerClass : public AbstractClass
@@ -58,11 +57,16 @@ public:
 	void LostSlave(InfantryClass *Slave)
 		{ JMP_THIS(0x6B0A20); }
 
+	// switches the slaves to the killer house with cheers and hoorahs
+	// note that this->Owner will be NULL once this function is done
 	void Killed(TechnoClass *Killer, HouseClass * ForcedOwnerHouse = NULL)
 		{ JMP_THIS(0x6B0AE0); }
 
 	bool ShouldWakeUpNow()
 		{ JMP_THIS(0x6B1020); }
+
+	// the slaves will become free citizens without any announcements or cheers, if you don't call Killed() beforehand
+	void ZeroOutSlaves();
 
 	SlaveManagerClass() : AbstractClass(false) { }
 

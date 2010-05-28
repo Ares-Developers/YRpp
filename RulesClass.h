@@ -68,7 +68,7 @@ struct RocketStruct
 		PitchInitial = 0.0f;
 		PitchFinal = 0.0f;
 		TurnRate = 0.0f;
-		RaiseRate = 0.0f;
+		RaiseRate = 0;
 		Acceleration = 0.0f;
 		Altitude = 0;
 		Damage = 0;

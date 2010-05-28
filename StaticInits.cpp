@@ -432,3 +432,15 @@ ALIAS(WWMouseClass *, WWMouseClass::Instance, 0x887640);
 
 #undef ALIAS
 #undef DECL
+
+void SlaveManagerClass::ZeroOutSlaves() {
+	for(int i = this->SlaveNodes.Count - 1; i >= 0; --i) {
+		SlaveManagerClass::SlaveControl *SlaveNode = this->SlaveNodes[i];
+		if(InfantryClass *Slave = SlaveNode->Slave) {
+			Slave->SlaveOwner = NULL;
+		}
+		SlaveNode->Slave = NULL;
+		SlaveNode->State = SlaveManagerClass::SlaveControl::state_Dead;
+		SlaveNode->RespawnTimer.Start(this->RegenRate);
+	}
+}
