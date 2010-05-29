@@ -79,6 +79,10 @@ public:
 
 	int IndexOf(FootClass* candidate)
 		{ JMP_THIS(0x473500); }
+
+	PassengersClass() : NumPassengers(0), FirstPassenger(NULL) {};
+
+	~PassengersClass() { };
 };
 
 struct FlashData
