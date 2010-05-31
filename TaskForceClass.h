@@ -12,8 +12,8 @@ class TechnoTypeClass;
 
 struct TaskForceEntryStruct
 {
-	TechnoTypeClass* Type;
 	int Amount;
+	TechnoTypeClass* Type;
 };
 
 class TaskForceClass : public AbstractTypeClass

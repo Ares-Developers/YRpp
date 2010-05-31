@@ -194,6 +194,9 @@ DECL(ParticleTypeClass, 0xA83D98);
 #include <PCX.h>
 ALIAS_O(PCX *, PCX::Instance, 0xAC4848);
 
+#include <ProgressScreenClass.h>
+ALIAS_O(ProgressScreenClass *, ProgressScreenClass::Instance, 0xAC4F58);
+
 #include <RadBeam.h>
 DECL(RadBeam, 0xB04A60);
 

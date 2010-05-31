@@ -10,7 +10,7 @@
 #include <UnitTypeClass.h>
 #include <UnitClass.h>
 #include <InfantryTypeClass.h>
-#include <Unsorted.h>
+#include <SessionClass.h>
 
 //forward declarations
 class AnimClass;
@@ -278,6 +278,11 @@ public:
 		{ JMP_STD(0x502D30); }
 	static HouseClass * __fastcall FindByIndex(int idxHouse) // find house at given index
 		{ JMP_STD(0x510ED0); }                    // 0..15 map to ScenarioClass::HouseIndices, also supports PlayerAtA and up
+	static signed int __fastcall FindIndexByName(const char *name)
+		{ JMP_STD(0x50C170); }
+
+	static void __fastcall LoadFromINIList(CCINIClass *pINI)
+		{ JMP_STD(0x5009B0); }
 
 	CellStruct * PickIonCannonTarget(CellStruct &dest)
 		{ JMP_THIS(0x50CBF0); }
@@ -433,7 +438,7 @@ public:
 
 	bool IsHumanoid() {
 		bool result = this->CurrentPlayer;
-		if(Unsorted::GameMode == gm_Campaign) {
+		if(SessionClass::Instance->GameMode == GameMode::Campaign) {
 			result = result || this->PlayerControl;
 		}
 		return result;

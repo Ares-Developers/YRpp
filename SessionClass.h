@@ -56,7 +56,7 @@ class SessionClass {
 
 	static SessionClass * Instance;
 
-	eGameMode GameMode;
+	GameMode::Value GameMode;
 	MPGameModeClass * MPGameMode;
 	DWORD unknown_08;
 	DWORD unknown_0C;

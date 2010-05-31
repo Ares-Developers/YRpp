@@ -449,9 +449,6 @@ namespace Unsorted
 	static byte &ArmageddonMode  = *(byte *)0xA8ED6B;
 	static byte &WTFMode  = *(byte *)0xA8E9A0;
 
-	// this is really a struct, TODO define it
-	static eGameMode &GameMode   = *(eGameMode *)0xA8B238;
-
 	static DynamicVectorClass<ObjectClass *>** vec_ObjectsInLayers = (DynamicVectorClass<ObjectClass *>**)0x8A0360;
 
 // checkbox states, afaik

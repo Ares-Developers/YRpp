@@ -443,13 +443,16 @@ typedef int eFoundation;
 #define	fnd_0x0		0x15
 
 
-typedef int eGameMode;
-
-#define	gm_Campaign		0x0
-#define	gm_LAN		0x3
-#define	gm_Internet		0x4
-#define	gm_Skirmish		0x5
-
+class GameMode {
+public:
+	typedef unsigned int Value;
+	enum {
+		Campaign = 0x0,
+		LAN = 0x3,
+		Internet = 0x4,
+		Skirmish = 0x5,
+	};
+};
 
 typedef int eInfDeath;
 
