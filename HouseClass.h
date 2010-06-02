@@ -300,6 +300,10 @@ public:
 	BuildingTypeClass* FirstBuildableFromArray(DynamicVectorClass<BuildingTypeClass*>* pArray)
 		{ JMP_THIS(0x5051E0); }
 
+	// are all prereqs for Techno listed in vectorBuildings[0..vectorLength]. Yes, the length is needed...
+	bool AllPrerequisitesAvailable(TechnoTypeClass *Techno, DynamicVectorClass<BuildingTypeClass *> *vectorBuildings, int vectorLength)
+		{ JMP_THIS(0x505360); }
+
 	bool ControlledByHuman()
 		{ JMP_THIS(0x50B730); }
 
