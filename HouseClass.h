@@ -789,14 +789,15 @@ public:
 	DWORD unknown_1607C;
 	DWORD unknown_16080;
 	DWORD unknown_16084;
-	double unknown_double_16088;
-	double unknown_double_16090;
-	double unknown_double_16098;
-	float unknown_float_160A0;
-	float unknown_float_160A4;
+	double unused_16088;
+	double unused_16090;
+	DWORD padding_16098;
+	float PredictionEnemyArmor; // defaults to 0.33, AIForcePredictionFudge'd later
+	float PredictionEnemyAir;
+	float PredictionEnemyInfantry;
 	int TotalOwnedInfantryCost;
-	int                   TotalOwnedVehicleCost;
-	int                   TotalOwnedAircraftCost;
+	int TotalOwnedVehicleCost;
+	int TotalOwnedAircraftCost;
 	DWORD unknown_160B4;
 };
 

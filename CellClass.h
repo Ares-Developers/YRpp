@@ -261,6 +261,9 @@ public:
 	CoordStruct * FindInfantrySubposition(CoordStruct *dst, CoordStruct *src, char bUnk1, char bUnk2, char bUnk3)
 		{ JMP_THIS(0x481180); }
 
+	bool TryAssignJumpjet(FootClass *Object)
+		{ JMP_THIS(0x487D70); }
+
 protected:
 	//Constructor
 	CellClass() : AbstractClass(false)
@@ -311,7 +314,7 @@ protected:
 public:
 
 	DWORD              BaseSpacerOfHouses; // & (1 << HouseX->ArrayIndex) == base spacing dummy for HouseX
-	DWORD              unknown_E0;
+	FootClass *        Jumpjet; // a jumpjet occupying this cell atm
 
 	ObjectClass*       FirstObject;	//The first Object on this Cell. NextObject functions as a linked list.
 

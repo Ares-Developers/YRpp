@@ -6,9 +6,11 @@
 #define TECHNO_H
 
 #include <RadioClass.h>
+#include <RadBeam.h>
 #include <TechnoTypeClass.h>
 #include <CaptureManagerClass.h>
 #include <SlaveManagerClass.h>
+#include <TeamClass.h>
 #include <TemporalClass.h>
 #include <Helpers/Template.h>
 
@@ -187,7 +189,7 @@ public:
 	virtual int VoiceMove() R0;
 	virtual int VoiceDeploy() R0;
 	virtual int VoiceAttack(ObjectClass *Target) R0;
-	virtual bool vt_entry_374(DWORD dwUnk) R0;
+	virtual bool ClickedEvent(eNetworkEvents event) R0;
 	virtual bool ClickedMission(eMission Mission, DWORD dwUnk2, DWORD dwUnk3, ObjectClass *Target) R0;
 	virtual bool IsUnderEMP() R0;
 	virtual bool IsParalyzed() R0;
@@ -350,117 +352,117 @@ protected:
 
 public:
 
-	FlashData Flashing;
-	int                DeployingAnimStartFrame;
-	bool               unknown_bool_FC;
-	TimerStruct DeployingAnimTimer;
-	DWORD              unknown_10C;
-	int                unknown_int_110;
-	PassengersClass Passengers;
-	TechnoClass*       Transporter; // unit carrying me
-	int                unknown_int_120;
-	int                CurrentWeaponNumber; // for gattling
-	int                unknown_int_128;
-	AnimClass*         BehindAnim;
-	AnimClass*         DeployAnim;
-	bool               InAir;
-	int                CurrentTurret;
-	int                CurrentRanking; //see RANK definitons, only used for promotion detection
-	DWORD              CurrentGattlingStage;
-	DWORD              unknown_144;
-	DWORD              unknown_148;
-	HouseClass*        OwningPlayer2; // only set in ctor
-	VeterancyStruct Veterancy;
-	double             ArmorMultiplier;
-	double             FirepowerMultiplier;
-	TimerStruct IdleActionTimer; // MOO
-	TimerStruct RadarFlashTimer;
-	TimerStruct TargetingTimer; //Duration = 45 on init!
-	TimerStruct IronCurtainTimer;
-	TimerStruct IronTintTimer; // how often to alternate the effect color
-	int                IronTintStage; // ^
-	TimerStruct AirstrikeTimer;
-	TimerStruct AirstrikeTintTimer; // tracks alternation of the effect color
-	DWORD              AirstrikeTintStage; //  ^
-	int                ForceShielded;	//0 or 1, NOT a bool - is this under ForceShield as opposed to IC?
-	bool               Deactivated; //Robot Tanks without power for instance
-	TechnoClass*       DrainTarget; // eg Disk -> PowerPlant, this points to PowerPlant
-	TechnoClass*       DrainingMe;  // eg Disk -> PowerPlant, this points to Disk
-	AnimClass*         DrainAnim;
-	bool               Disguised;
-	DWORD              DisguiseCreationFrame;
-	TimerStruct InfantryBlinkTimer; // Rules->InfantryBlinkDisguiseTime , detects mirage firing per description
-	TimerStruct DisguiseBlinkTimer; // disguise disruption timer
-	bool               unknown_bool_1F8;
-	TimerStruct ReloadTimer;
-	DWORD              unknown_208;
-	DWORD              unknown_20C;
+	FlashData        Flashing;
+	int              DeployingAnimStartFrame;
+	bool             unknown_bool_FC;
+	TimerStruct      DeployingAnimTimer;
+	DWORD            unknown_10C;
+	int              unknown_int_110;
+	PassengersClass  Passengers;
+	TechnoClass*     Transporter; // unit carrying me
+	int              unknown_int_120;
+	int              CurrentWeaponNumber; // for gattling
+	int              unknown_int_128;
+	AnimClass*       BehindAnim;
+	AnimClass*       DeployAnim;
+	bool             InAir;
+	int              CurrentTurret;
+	int              CurrentRanking; //see RANK definitons, only used for promotion detection
+	DWORD            CurrentGattlingStage;
+	DWORD            unknown_144;
+	DWORD            unknown_148;
+	HouseClass*      OwningPlayer2; // only set in ctor
+	VeterancyStruct  Veterancy;
+	double           ArmorMultiplier;
+	double           FirepowerMultiplier;
+	TimerStruct      IdleActionTimer; // MOO
+	TimerStruct      RadarFlashTimer;
+	TimerStruct      TargetingTimer; //Duration = 45 on init!
+	TimerStruct      IronCurtainTimer;
+	TimerStruct      IronTintTimer; // how often to alternate the effect color
+	int              IronTintStage; // ^
+	TimerStruct      AirstrikeTimer;
+	TimerStruct      AirstrikeTintTimer; // tracks alternation of the effect color
+	DWORD            AirstrikeTintStage; //  ^
+	int              ForceShielded;	//0 or 1, NOT a bool - is this under ForceShield as opposed to IC?
+	bool             Deactivated; //Robot Tanks without power for instance
+	TechnoClass*     DrainTarget; // eg Disk -> PowerPlant, this points to PowerPlant
+	TechnoClass*     DrainingMe;  // eg Disk -> PowerPlant, this points to Disk
+	AnimClass*       DrainAnim;
+	bool             Disguised;
+	DWORD            DisguiseCreationFrame;
+	TimerStruct      InfantryBlinkTimer; // Rules->InfantryBlinkDisguiseTime , detects mirage firing per description
+	TimerStruct      DisguiseBlinkTimer; // disguise disruption timer
+	bool             unknown_bool_1F8;
+	TimerStruct      ReloadTimer;
+	DWORD            unknown_208;
+	DWORD            unknown_20C;
 
 	// WARNING! this is actually an index of HouseTypeClass es, but it's being changed to fix typical WW bugs.
 	IndexBitfield<HouseClass *> DisplayProductionTo; // each bit corresponds to one player on the map, telling us whether that player has (1) or hasn't (0) spied this building, and the game should display what's being produced inside it to that player. The bits are arranged by player ID, i.e. bit 0 refers to house #0 in HouseClass::Array, 1 to 1, etc.; query like ((1 << somePlayer->ArrayIndex) & someFactory->DisplayProductionToHouses) != 0
 
-	int                Group; //0-9, assigned by CTRL+Number, these kinds // also set by aimd TeamType->Group !
-	TechnoClass*       FocusOnUnit; // when told to guard a unit or such
-	HouseClass*        Owner;
-	eCloakStates       CloakState;
-	int                CloakingStage; // phase from [opaque] -> [fading] -> [transparent] , [General]CloakingStages= long
-	bool               Cloaking;
-	TimerStruct CloakTimer;
-	int                CloakingSpeed;
-	int                CloakingIncrementAmount; //defaults to 1
-	TimerStruct CloakDelayTimer; // delay before cloaking again
-	DWORD              unknown_24C;
-	bool               unknown_bool_250;
-	CoordStruct unknown_point3d_254;
-	DWORD              unknown_260;
-	DWORD              unknown_264;
-	bool               GapSuperCharged; // GapGenerator, when SuperGapRadiusInCells != GapRadiusInCells, you can deploy the gap to boost radius
-	bool               GeneratingGap; // is currently generating gap
-	int                GapRadius;
-	bool               BeingWarpedOut; // is being warped by CLEG
-	bool               WarpingOut; // phasing in after chrono-jump
-	bool               unknown_bool_272;
-	BYTE               unused_273;
-	TemporalClass*     TemporalImUsing; // CLEG attacking Power Plant : CLEG's this
-	TemporalClass*     TemporalTargetingMe; 	// CLEG attacking Power Plant : PowerPlant's this
-	bool               IsImmobilized; // by chrono aftereffects
-	DWORD              unknown_280;
-	int                ChronoLockRemaining; // countdown after chronosphere warps things around
-	CoordStruct ChronoDestCoords; // teleport loco and chsphere set this
-	AirstrikeClass*    Airstrike; //Boris
-	bool               Berzerk;
-	DWORD              BerzerkDurationLeft;
-	DWORD              SprayOffsetIndex; // hardcoded array of xyz offsets for sprayattack, 0 - 7, see 6FE0AD
-	bool               Uncrushable; // DeployedCrushable fiddles this, otherwise all 0
+	int              Group; //0-9, assigned by CTRL+Number, these kinds // also set by aimd TeamType->Group !
+	TechnoClass*     FocusOnUnit; // when told to guard a unit or such
+	HouseClass*      Owner;
+	eCloakStates     CloakState;
+	int              CloakingStage; // phase from [opaque] -> [fading] -> [transparent] , [General]CloakingStages= long
+	bool             Cloaking;
+	TimerStruct      CloakTimer;
+	int              CloakingSpeed;
+	int              CloakingIncrementAmount; //defaults to 1
+	TimerStruct      CloakDelayTimer; // delay before cloaking again
+	DWORD            unknown_24C;
+	bool             unknown_bool_250;
+	CoordStruct      unknown_point3d_254;
+	DWORD            unknown_260;
+	DWORD            unknown_264;
+	bool             GapSuperCharged; // GapGenerator, when SuperGapRadiusInCells != GapRadiusInCells, you can deploy the gap to boost radius
+	bool             GeneratingGap; // is currently generating gap
+	int              GapRadius;
+	bool             BeingWarpedOut; // is being warped by CLEG
+	bool             WarpingOut; // phasing in after chrono-jump
+	bool             unknown_bool_272;
+	BYTE             unused_273;
+	TemporalClass*   TemporalImUsing; // CLEG attacking Power Plant : CLEG's this
+	TemporalClass*   TemporalTargetingMe; 	// CLEG attacking Power Plant : PowerPlant's this
+	bool             IsImmobilized; // by chrono aftereffects
+	DWORD            unknown_280;
+	int              ChronoLockRemaining; // countdown after chronosphere warps things around
+	CoordStruct      ChronoDestCoords; // teleport loco and chsphere set this
+	AirstrikeClass*  Airstrike; //Boris
+	bool             Berzerk;
+	DWORD            BerzerkDurationLeft;
+	DWORD            SprayOffsetIndex; // hardcoded array of xyz offsets for sprayattack, 0 - 7, see 6FE0AD
+	bool             Uncrushable; // DeployedCrushable fiddles this, otherwise all 0
 
  // unless source is Pushy=
  // abs_Infantry source links with abs_Unit target and vice versa - can't attack others until current target flips
  // no checking whether source is Infantry, but no update for other types either
  // old Brute hack
-	FootClass*         DirectRockerLinkedUnit;
-	FootClass*         LocomotorTarget; // mag->LocoTarget = victim
-	FootClass*         LocomotorSource; // victim->LocoSource = mag
-	ObjectClass*       Target; //if attacking
-	ObjectClass*       LastTarget;
+	FootClass*       DirectRockerLinkedUnit;
+	FootClass*       LocomotorTarget; // mag->LocoTarget = victim
+	FootClass*       LocomotorSource; // victim->LocoSource = mag
+	ObjectClass*     Target; //if attacking
+	ObjectClass*     LastTarget;
 	CaptureManagerClass* CaptureManager; //for Yuris
-	TechnoClass*       MindControlledBy;
-	bool               MindControlledByAUnit;
-	AnimClass*         MindControlRingAnim;
-	HouseClass*        MindControlledByHouse; //used for a TAction
+	TechnoClass*     MindControlledBy;
+	bool             MindControlledByAUnit;
+	AnimClass*       MindControlRingAnim;
+	HouseClass*      MindControlledByHouse; //used for a TAction
 	SpawnManagerClass* SpawnManager;
-	TechnoClass*       SpawnOwner; // on DMISL , points to DRED and such
+	TechnoClass*     SpawnOwner; // on DMISL , points to DRED and such
 	SlaveManagerClass* SlaveManager;
-	TechnoClass*       SlaveOwner; // on SLAV, points to YAREFN
-	HouseClass*        OriginallyOwnedByHouse; //used for mind control
+	TechnoClass*     SlaveOwner; // on SLAV, points to YAREFN
+	HouseClass*      OriginallyOwnedByHouse; //used for mind control
 
 		//units point to the Building bunkering them, building points to Foot contained within
-	TechnoClass*       BunkerLinkedItem;
+	TechnoClass*     BunkerLinkedItem;
 
-	float PitchAngle; // not exactly, and it doesn't affect the drawing, only internal state of a dropship
-	TimerStruct DiskLaserTimer;
-	DWORD              unknown_2F8;
-	int                Ammo;
-	int                Value; // set to actual cost when this gets queued in factory, updated only in building's 42C
+	float            PitchAngle; // not exactly, and it doesn't affect the drawing, only internal state of a dropship
+	TimerStruct      DiskLaserTimer;
+	DWORD            unknown_2F8;
+	int              Ammo;
+	int              Value; // set to actual cost when this gets queued in factory, updated only in building's 42C
 
 
 	ParticleSystemClass* FireParticleSystem;
@@ -472,105 +474,106 @@ public:
 	ParticleSystemClass* unk2ParticleSystem;
 	ParticleSystemClass* FiringParticleSystem;
 
-	WaveClass*         Wave; //Beams
+	WaveClass*       Wave; //Beams
 
 
 	// rocking effect
-	float AngleRotatedSideways; // in this frame, in radians - if abs() exceeds pi/2, it dies
-	float AngleRotatedForwards; // same
+	float            AngleRotatedSideways; // in this frame, in radians - if abs() exceeds pi/2, it dies
+	float            AngleRotatedForwards; // same
 
 	// set these and leave the previous two alone!
 	// if these are set, the unit will roll up to pi/4, by this step each frame, and balance back
-	float  RockingSidewaysPerFrame; // left to right - positive pushes left side up
-	float  RockingForwardsPerFrame; // back to front - positive pushes ass up
+	float            RockingSidewaysPerFrame; // left to right - positive pushes left side up
+	float            RockingForwardsPerFrame; // back to front - positive pushes ass up
 
-	int                HijackerInfantryType; // mutant hijacker
+	int              HijackerInfantryType; // mutant hijacker
 
 	OwnedTiberiumStruct Tiberium;
-	DWORD unknown_34C;
+	DWORD            unknown_34C;
 
-	TransitionTimer UnloadTimer; // times the deploy, unload, etc. cycles
+	TransitionTimer  UnloadTimer; // times the deploy, unload, etc. cycles
 
-	FacingStruct BarrelFacing;
-	FacingStruct Facing;
-	FacingStruct TurretFacing;
-	DWORD              unknown_3B8;
-	TimerStruct TargetLaserTimer;
-	short              unknown_short_3C8;
-	WORD               unknown_3CA;
-	bool               unknown_bool_3CC;
-	bool               IsSinking;
-	bool               WasSinkingAlready; // if(IsSinking && !WasSinkingAlready) { play SinkingSound; WasSinkingAlready = 1; }
-	bool               unknown_bool_3CF;
-	bool               unknown_bool_3D0;
-	bool               HasBeenAttacked; // ReceiveDamage when not HouseClass_IsAlly
-	bool               Cloakable;
-	bool               IsPrimaryFactory; // doubleclicking a warfac/barracks sets it as primary
-	bool               Spawned;
-	bool               Produced;
-	RecoilData TurretRecoil;
-	RecoilData BarrelRecoil;
-	bool               unknown_bool_418;
-	bool               unknown_bool_419;
-	bool               IsHumanControlled;
-	bool               unknown_bool_41B;
-	bool               unknown_bool_41C;
-	bool               unknown_bool_41D;
-	bool               unknown_bool_41E;
-	bool               unknown_bool_41F;
-	bool               unknown_bool_420;
-	bool               RecruitableA; // these two are like Lenny and Carl, weird purpose and never seen separate
-	bool               RecruitableB; // they're usually set on preplaced objects in maps
-	bool               unknown_bool_423;
-	bool               unknown_bool_424;
-	bool               IsCrashing;
-	bool               WasCrashingAlready;
-	bool               unknown_bool_427;
-	DWORD              unknown_428;
-	HouseClass*        ChronoWarpedByHouse;
-	bool               unknown_bool_430;
-	bool               unknown_bool_431;
-	bool               unknown_bool_432;
-	DWORD              OldTeam; // AITeamClass * really, TODO: fix when defined
-	bool               unknown_bool_438;
-	bool               Absorbed; // in UnitAbsorb/InfantryAbsorb or smth, lousy memory
-	bool               unknown_bool_43A;
-	DWORD              unknown_43C;
+	FacingStruct     BarrelFacing;
+	FacingStruct     Facing;
+	FacingStruct     TurretFacing;
+	DWORD            unknown_3B8;
+	TimerStruct      TargetLaserTimer;
+	short            unknown_short_3C8;
+	WORD             unknown_3CA;
+	bool             unknown_bool_3CC;
+	bool             IsSinking;
+	bool             WasSinkingAlready; // if(IsSinking && !WasSinkingAlready) { play SinkingSound; WasSinkingAlready = 1; }
+	bool             unknown_bool_3CF;
+	bool             unknown_bool_3D0;
+	bool             HasBeenAttacked; // ReceiveDamage when not HouseClass_IsAlly
+	bool             Cloakable;
+	bool             IsPrimaryFactory; // doubleclicking a warfac/barracks sets it as primary
+	bool             Spawned;
+	bool             Produced;
+	RecoilData       TurretRecoil;
+	RecoilData       BarrelRecoil;
+	bool             unknown_bool_418;
+	bool             unknown_bool_419;
+	bool             IsHumanControlled;
+	bool             unknown_bool_41B;
+	bool             unknown_bool_41C;
+	bool             unknown_bool_41D;
+	bool             unknown_bool_41E;
+	bool             unknown_bool_41F;
+	bool             unknown_bool_420;
+	bool             RecruitableA; // these two are like Lenny and Carl, weird purpose and never seen separate
+	bool             RecruitableB; // they're usually set on preplaced objects in maps
+	bool             unknown_bool_423;
+	bool             unknown_bool_424;
+	bool             IsCrashing;
+	bool             WasCrashingAlready;
+	bool             IsBeingManipulated;
+	TechnoClass*     BeingManipulatedBy; // set when something is being molested by a locomotor such as magnetron
+	                                       // the pointee will be marked as the killer of whatever the victim falls onto
+	HouseClass*      ChronoWarpedByHouse;
+	bool             unknown_bool_430;
+	bool             unknown_bool_431;
+	bool             unknown_bool_432;
+	TeamClass*       OldTeam;
+	bool             unknown_bool_438;
+	bool             Absorbed; // in UnitAbsorb/InfantryAbsorb or smth, lousy memory
+	bool             unknown_bool_43A;
+	DWORD            unknown_43C;
 	DynamicVectorClass<int> CurrentTargetThreatValues;
 	DynamicVectorClass<AbstractClass*> CurrentTargets;
 
  // if DistributedFire=yes, this is used to determine which possible targets should be ignored in the latest threat scan
 	DynamicVectorClass<AbstractClass*> AttackedTargets;
 
-	AudioController Audio3;
+	AudioController  Audio3;
 
-	DWORD              unknown_49C;
-	DWORD              unknown_4A0;
+	DWORD            unknown_49C;
+	DWORD            unknown_4A0;
 
-	AudioController Audio4;
+	AudioController  Audio4;
 
-	bool               unknown_bool_4B8;
-	DWORD              unknown_4BC;
+	bool             unknown_bool_4B8;
+	DWORD            unknown_4BC;
 
-	AudioController Audio5;
+	AudioController  Audio5;
 
-	bool               unknown_bool_4D4;
-	DWORD              unknown_4D8;
+	bool             unknown_bool_4D4;
+	DWORD            unknown_4D8;
 
-	AudioController Audio6;
+	AudioController  Audio6;
 
-	DWORD              QueuedVoiceIndex;
-	DWORD              unknown_4F4;
-	bool               unknown_bool_4F8;
-	DWORD unknown_4FC;	//gets initialized with the current Frame, but this is NOT a TimerStruct!
-	DWORD unknown_500;
-	DWORD              EMPLockRemaining;
-	DWORD              ThreatPosed; // calculated to include cargo etc
-	DWORD              ShouldLoseTargetNow;
-	DWORD              FiringRadBeam; // RadBeamClass *, TODO: fix when declared
-	DWORD              PlanningToken; // PlanningTokenClass *, user waypoint voodoo, TODO: fix when declared
-	ObjectTypeClass*   Disguise;
-	HouseClass*        DisguisedAsHouse;
+	DWORD            QueuedVoiceIndex;
+	DWORD            unknown_4F4;
+	bool             unknown_bool_4F8;
+	DWORD            unknown_4FC;	//gets initialized with the current Frame, but this is NOT a TimerStruct!
+	DWORD            unknown_500;
+	DWORD            EMPLockRemaining;
+	DWORD            ThreatPosed; // calculated to include cargo etc
+	DWORD            ShouldLoseTargetNow;
+	RadBeam*         FiringRadBeam;
+	DWORD            PlanningToken; // PlanningTokenClass *, user waypoint voodoo, TODO: fix when declared
+	ObjectTypeClass* Disguise;
+	HouseClass*      DisguisedAsHouse;
 };
 
 #endif

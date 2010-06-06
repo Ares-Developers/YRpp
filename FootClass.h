@@ -84,6 +84,13 @@ public:
 	void CreateWakes(CoordStruct coords)
 		{ JMP_THIS(0x629E90); }
 
+	// can this jumpjet stay in this cell or not? (two jumpjets in one cell are not okay, locomotor kicks one of them out in the next frame)
+	bool Jumpjet_LocationClear()
+		{ JMP_THIS(0x4135A0); }
+
+	void Jumpjet_OccupyCell(CellStruct Cell)
+		{ JMP_THIS(0x4E00B0); }
+
 protected:
 	FootClass() : TechnoClass(false)
 		{ }
@@ -112,10 +119,8 @@ public:
 
 	CellStruct CurrentMapCoords;
 	CellStruct LastMapCoords; // ::UpdatePosition uses this to remove threat from last occupied cell, etc
-	short           unknown_short_560;
-	short           unknown_short_562;
-	short           unknown_short_564;
-	short           unknown_short_566;
+	CellStruct      LastJumpjetMapCoords; // which cell was I occupying previously? only for jumpjets
+	CellStruct      CurrentJumpjetMapCoords; // which cell am I occupying? only for jumpjets
 	DWORD           unknown_568;
 	DWORD           unknown_56C;
 	DWORD           unknown_570;
@@ -125,7 +130,7 @@ public:
 	double          SpeedMultiplier;
 	DynamicVectorClass<AbstractClass*> unknown_abstract_array_588;
 	DWORD           unknown_5A0;
-	CellClass*      Destination; // possibly other objects as well
+	AbstractClass*  Destination; // possibly other objects as well
 	DWORD           unknown_5A8;
 	DynamicVectorClass<AbstractClass*> unknown_abstract_array_5AC;
 	int             unknown_int_5C4;

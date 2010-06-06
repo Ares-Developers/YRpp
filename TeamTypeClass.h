@@ -12,6 +12,7 @@
 //forward declarations
 class TechnoTypeClass;
 class TeamClass;
+class FootClass;
 
 class TeamTypeClass : public AbstractTypeClass
 {
