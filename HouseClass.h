@@ -451,6 +451,9 @@ public:
 	signed int CanBuild(TechnoTypeClass *item, bool bypassExtras, bool includeQueued)
 		{ JMP_THIS(0x4F7870); }
 
+	signed int AI_BaseConstructionUpdate()
+		{ JMP_THIS(0x4FE3E0); }
+
 	void UpdateFlagCoords(UnitClass *NewCarrier, DWORD dwUnk)
 		{ JMP_THIS(0x4FBE40); }
 

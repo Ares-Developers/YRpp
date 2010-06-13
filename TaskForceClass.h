@@ -53,6 +53,7 @@ public:
 
 	int     Group;
 	int     CountEntries;
+	bool    isGlobal;
 	TaskForceEntryStruct Entries [0x6];
 };
 
