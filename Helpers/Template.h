@@ -68,7 +68,7 @@ void AnnounceInvalidPointerMap(hash_map<T1, T2> &map, void *ptr) {
 }
 
 template<typename T1>
-void AnnounceInvalidPointer(T1 elem, void *ptr) {
+void AnnounceInvalidPointer(T1 &elem, void *ptr) {
 	if(ptr == (void *)elem) {
 		elem = NULL;
 	}
