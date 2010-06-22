@@ -36,6 +36,9 @@ struct VeterancyStruct
 	float Veterancy;
 	DWORD unknown_4;
 
+	void Add(int OwnerCost, int VictimCost)
+		{ JMP_THIS(0x74FF50); }
+
 	bool IsElite()
 		{ JMP_THIS(0x750010); }
 

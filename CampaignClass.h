@@ -13,6 +13,9 @@ public:
 	static void __fastcall CreateFromINIList(CCINIClass *pINI)
 		{ JMP_STD(0x46CE10); }
 
+	static signed int __fastcall FindIndex(const char* name)
+		{ JMP_STD(0x46CC90); }
+
 public:
 	int idxCD;
 	char Scenario[512];
