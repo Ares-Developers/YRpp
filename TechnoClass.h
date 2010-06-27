@@ -243,7 +243,7 @@ public:
 	virtual bool vt_entry_434(DWORD dwUnk) R0;
 	virtual void DrawActionLines(bool Force, DWORD dwUnk2) RX;
 	virtual DWORD GetDisguiseFlags(DWORD existingFlags) R0;
-	virtual bool IsNotDisguisedAgain(HouseClass *House) R0;
+	virtual bool IsClearlyVisibleTo(HouseClass *House) R0; // can House see right through my disguise?
 
 	//nooooooooooooooooooooooooooooooo (vader-style)
 	//thought 666 is the number of the beast? in hex it's 444 D=
