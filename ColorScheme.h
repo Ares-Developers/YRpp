@@ -13,6 +13,19 @@ class LightConvertClass;
 class ColorScheme
 {
 public:
+	enum {
+		//ColorScheme indices, since they are hardcoded all over the exe, why shan't we do it as well?
+		Yellow  =   3,
+		White   =   5,
+		Grey    =   7,
+		Red     =  11,
+		Orange  =  13,
+		Pink    =  15,
+		Purple  =  17,
+		Blue    =  21,
+		Green   =  29,
+	};
+
 	//global array
 	static DynamicVectorClass<ColorScheme*>* Array;
 /*
@@ -71,16 +84,5 @@ public:
 	int   MainShadeIndex;
 	PROTECTED_PROPERTY(BYTE,     unknown_334[0x8]);
 };
-
-//ColorScheme indices, since they are hardcoded all over the exe, why shan't we do it as well?
-#define	CS_YELLOW		3
-#define	CS_WHITE		5
-#define	CS_GREY			7
-#define	CS_RED			11
-#define	CS_ORANGE		13
-#define	CS_PINK			15
-#define	CS_PURPLE		17
-#define	CS_BLUE			21
-#define	CS_GREEN		29
 
 #endif

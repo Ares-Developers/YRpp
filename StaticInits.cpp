@@ -140,6 +140,9 @@ DECL(InfantryTypeClass, 0xA8E348);
 #include <IsometricTileTypeClass.h>
 DECL(IsometricTileTypeClass, 0xA8ED28);
 
+#include <MessageListClass.h>
+ALIAS_O(MessageListClass *, MessageListClass::Instance, 0xA8BC60);
+
 #include <MixFileClass.h>
 List<MixFileClass*>* MixFileClass::MIXes = (List<MixFileClass*>* )0xABEFD8;
 DECL(MixFileClass, 0x884D90);

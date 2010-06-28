@@ -7,24 +7,26 @@
 
 #include <wchar.h>
 #include <ASMMacros.h>
+#include <ColorScheme.h>
 
 class MessageListClass
 {
 public:
-	static void PrintMessage(const wchar_t* pMessage, int nColorSchemeIndex)
-		{
-			PUSH_IMM(0);
-			PUSH_IMM(0x96);
-			PUSH_IMM(0x4046);
-			PUSH_VAR32(nColorSchemeIndex);
-			PUSH_VAR32(pMessage);
-			PUSH_IMM(0);
-			PUSH_IMM(0);
-			THISCALL_EX(0xA8BC60,0x5D3BA0);
-		}
+	static MessageListClass * Instance;
 
-	static void PrintMessage(const wchar_t* pMessage)
-		{ PrintMessage(pMessage, 3); }
+	// if pLabel is given, the message will be {$pLabel}:{$pMessage}
+	// else it will be just {$pMessage}
+
+	void PrintMessage(const wchar_t * pLabel, DWORD dwUnk1, const wchar_t* pMessage, int nColorSchemeIndex = 3,
+		DWORD dwUnk2 = 0x4046, DWORD dwUnk3 = 0x96, DWORD dwUnk4 = 0)
+		{ JMP_THIS(0x5D3BA0); };
+
+	void PrintMessage(const wchar_t* pLabel, const wchar_t* pMessage, int nColorSchemeIndex = ColorScheme::White)
+		{ this->PrintMessage(pLabel, 0, pMessage, nColorSchemeIndex); }
+
+	void PrintMessage(const wchar_t* pMessage, int nColorSchemeIndex = ColorScheme::White)
+		{ this->PrintMessage(NULL, 0, pMessage, nColorSchemeIndex); }
+
 };
 
 #endif
