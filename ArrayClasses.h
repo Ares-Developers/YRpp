@@ -169,6 +169,10 @@ public:
 
 	inline void Load(IStream *pStm, bool bSwizzle);
 
+	inline bool ValidIndex(signed int idx) {
+		return idx > -1 && idx < this->Count;
+	}
+
 	void Save(IStream *pStm) {
 		int ii = this->Count;
 		pStm->Write(&ii, 4u, 0);
