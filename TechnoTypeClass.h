@@ -40,6 +40,14 @@ struct AbilitiesStruct
 	bool CRUSHER; //0x11
 };
 
+struct TurretControl
+{
+	int Travel;
+	int CompressFrames;
+	int HoldFrames;
+	int RecoverFrames;
+};
+
 struct WeaponStruct
 {
 	WeaponTypeClass*  WeaponType;
@@ -394,15 +402,9 @@ public:
 	bool            DamageSelf;
 	bool            Turret;
 	bool            TurretRecoil;
-	int             TurretTravel;
-	int             TurretCompressFrames;
-	int             TurretHoldFrames;
-	int             TurretRecoverFrames;
+	TurretControl   TurretAnimData;
 	bool            unknown_bool_CB4; //always false?
-	int             BarrelTravel;
-	int             BarrelCompressFrames;
-	int             BarrelHoldFrames;
-	int             BarrelRecoverFrames;
+	TurretControl   BarrelAnimData;
 	bool            unknown_bool_CC8; //always false?
 
 protected:

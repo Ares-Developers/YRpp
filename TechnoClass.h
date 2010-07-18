@@ -101,14 +101,21 @@ struct FlashData
 
 struct RecoilData
 {
+	enum RecoilState {
+		Inactive = 0,
+		Compressing = 1,
+		Recovering = 2,
+		Holding = 3,
+	};
+
 	int Travel;
 	int CompressFrames;
 	int HoldFrames;
 	int RecoverFrames;
-	int f_10;
-	int f_14;
-	int f_18;
-	int f_1C;
+	float TravelPerFrame;
+	float TravelSoFar;
+	RecoilState State;
+	int TravelFramesLeft;
 
 	void Update()
 		{ JMP_THIS(0x70ED10); }
