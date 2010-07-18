@@ -18,6 +18,8 @@ public:
 
 	static PCX *Instance;
 
+	static WORD DefaultTransparentColor;
+
 	//Load a PCX file
 	bool LoadFile(const char* pFileName, int flag1 = 2, int flag2 = 0)
 	{
@@ -32,7 +34,7 @@ public:
 		{ JMP_THIS(0x6BA140); }
 
 	// Draws a PCX file
-	bool BlitToSurface(RectangleStruct *BoundingRect, DSurface *TargetSurface, BSurface *PCXSurface, WORD TransparentColor = COLOR_PURPLE)
+	bool BlitToSurface(RectangleStruct *BoundingRect, DSurface *TargetSurface, BSurface *PCXSurface, WORD TransparentColor = DefaultTransparentColor)
 		{ JMP_THIS(0x6BA580); }
 
 	void *Buffer;

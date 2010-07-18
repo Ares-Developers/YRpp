@@ -196,6 +196,7 @@ DECL(ParticleTypeClass, 0xA83D98);
 
 #include <PCX.h>
 ALIAS_O(PCX *, PCX::Instance, 0xAC4848);
+WORD PCX::DefaultTransparentColor = COLOR_PURPLE;
 
 #include <ProgressScreenClass.h>
 ALIAS_O(ProgressScreenClass *, ProgressScreenClass::Instance, 0xAC4F58);
