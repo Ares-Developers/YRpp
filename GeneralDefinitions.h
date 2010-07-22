@@ -372,17 +372,28 @@ typedef int eDamageState;
 #define	ds_PostMortem		0x5
 
 
-typedef int eDirection;
-
-#define	dir_N		0x0
-#define	dir_NE		0x1
-#define	dir_E		0x2
-#define	dir_SE		0x3
-#define	dir_S		0x4
-#define	dir_SW		0x5
-#define	dir_W		0x6
-#define	dir_NW		0x7
-
+class Direction {
+public:
+	typedef unsigned int Value;
+	enum {
+		N = 0x0,
+		North = 0x0,
+		NE = 0x1,
+		NorthEast = 0x1,
+		E = 0x2,
+		East = 0x2,
+		SE = 0x3,
+		SouthEast = 0x3,
+		S = 0x4,
+		South = 0x4,
+		SW = 0x5,
+		SouthWest = 0x5,
+		W = 0x6,
+		West = 0x6,
+		NW = 0x7,
+		NorthWest = 0x7,
+	};
+};
 
 // this is how game's enums are to be defined from now on
 class FireError {

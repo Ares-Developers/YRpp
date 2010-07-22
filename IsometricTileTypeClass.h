@@ -55,6 +55,7 @@ protected:
 	//===== Properties ==========================================================
 	//===========================================================================
 
+public:
 	int ArrayIndex;
 	int MarbleMadnessTile;
 	int NonMarbleMadnessTile;
@@ -78,7 +79,7 @@ protected:
 	DWORD unk_2EC;
 	int unk_2F0; //default 1, no idea
 	bool unk_2F4; //like always true
-	char FileName[0x10];
+	char FileName[0xE]; // WARNING! Westwood strncpy's 0xE bytes into this buffer without NULL terminating it.
 	bool AllowBurrowing;
 	bool AllowTiberium;
 	DWORD unk_308;

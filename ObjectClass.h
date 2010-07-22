@@ -110,7 +110,7 @@ public:
 	virtual bool Remove() R0;
 
 	// place the object on the map
-	virtual bool Put(CoordStruct* pCrd, eDirection dFaceDir) R0;
+	virtual bool Put(CoordStruct* pCrd, Direction::Value dFaceDir) R0;
 
 	// cleanup things (lose line trail, deselect, etc)
 	virtual void ReachedEndOfLife(bool Silently) RX;
