@@ -95,6 +95,15 @@ public:
 	eAction DecideAction(CellStruct* pMapCoords, ObjectClass* pObject, DWORD dwUnk)
 		{ JMP_THIS(0x692610); }
 
+
+	/* pass in CurrentFoundationData and receive the width/height of a bounding rectangle in cells */
+	CellStruct * FoundationBoundsSize(CellStruct *buffer, CellStruct *FoundationData)
+		{ JMP_THIS(0x4A94F0); }
+
+	/* marks or unmarks the cells pointed to by CurrentFoundationData as containing a building */
+	void MarkFoundation(CellStruct * BaseCell, bool Mark)
+		{ JMP_THIS(0x4A95A0); }
+
 protected:
 	//Constructor
 	DisplayClass() {}	//don't need this
@@ -105,14 +114,14 @@ protected:
 
 public:
 
-	CellStruct CurrentPlacingMapCoords;	//Currently placing the building here
-	CellStruct unknown_cell_1178;		//related to the placing foundation
-	CellStruct* CurrentFoundationData;	//Foundation data of the building we're currently placing
+	CellStruct CurrentFoundation_CenterCell;	//Currently placing the building here
+	CellStruct CurrentFoundation_TopLeftOffset;		// offset from center cell of the current foundation (under the mouse) to the top left cell
+	CellStruct* CurrentFoundation_Data;	//Foundation data of the building we're currently placing (note: limited to 120 cells)
 	bool unknown_1180;
 	bool unknown_1181;
-	CellStruct unknown_cell_1182;
-	CellStruct unknown_cell_1186;
-	DWORD unknown_118C;
+	CellStruct CurrentFoundationCopy_CenterCell; // this is a copy of the CurrentFoundation data above..
+	CellStruct CurrentFoundationCopy_TopLeftOffset;
+	CellStruct * CurrentFoundationCopy_Data; // (note: limited to 50 [!] cells)
 	DWORD unknown_1190;
 	DWORD unknown_1194;
 	DWORD unknown_1198;

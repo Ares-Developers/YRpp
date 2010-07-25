@@ -351,6 +351,7 @@ typedef int eCellFlags;
 
 typedef int eCellFlags_12C;
 
+#define cf2_ContainsBuilding	0x02
 #define	cf2_NoShadow			0x08 //else tooltip is TXT_SHADOW
 
 
