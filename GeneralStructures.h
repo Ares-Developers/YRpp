@@ -149,6 +149,12 @@ public:
 //also see FACING definitions
 struct FacingStruct
 {
+	struct Facet {
+		BYTE Vertical;
+		BYTE Horizontal;
+		WORD Nop;
+	};
+
 	WORD Facing1; //current facing?
 	WORD unused_2;
 	WORD Facing2; //??
@@ -159,6 +165,9 @@ struct FacingStruct
 
 	DWORD GetFacing(DWORD *arg)
 		{ JMP_THIS(0x4C93D0); }
+
+	void SetFacing(Facet *arg)
+		{ JMP_THIS(0x4C9300); }
 
 	operator int() {
 		// <DCoder> I don't know how or what it does, but that's what the game uses

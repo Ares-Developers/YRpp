@@ -17,6 +17,22 @@ NOTE:
 class LocomotionClass : public IPersistStream, public ILocomotion
 {
 public:
+
+	class CLSIDs {
+	public:
+		static CLSID &Drive;
+		static CLSID &Jumpjet;
+		static CLSID &Hover;
+		static CLSID &Rocket;
+		static CLSID &Tunnel;
+		static CLSID &Walk;
+		static CLSID &Droppod;
+		static CLSID &Fly;
+		static CLSID &Teleport;
+		static CLSID &Mech;
+		static CLSID &Ship;
+	};
+
 	//IUnknown
 	virtual HRESULT __stdcall QueryInterface(REFIID iid, void** ppvObject)
 		{ JMP_STD(0x55A9B0); }
@@ -176,14 +192,14 @@ public:
 	//LocomotionClass
 	virtual	int Size() = 0;
 
-	// blargh fsssds
-	// LocomotionClass *Dummy = NULL;
-	// Xchg(&foot->Locomotion, &Dummy);
-	// foot's loco is now NULL, Dummy contains a pointer to its old content
-	static HRESULT Xchg(LocomotionClass **Old, LocomotionClass **New)
-		{ PUSH_VAR32(Old); SET_REG32(ECX, New); CALL(0x45AF20); }
+	// ---------------------------------------------------
 
-	static HRESULT CreateInstance(LocomotionClass **ppv, CLSID *rclsid, LPUNKNOWN pUnkOuter, int arg)
+	// wow, I was so wrong about this
+	// will fill Piggy with the right pointer if the Loco supports it
+	static HRESULT TryPiggyback(IPiggyback **Piggy, ILocomotion **Loco)
+		{ PUSH_VAR32(Loco); SET_REG32(ECX, Piggy); CALL(0x45AF20); }
+
+	static HRESULT CreateInstance(ILocomotion **ppv, CLSID *rclsid, LPUNKNOWN pUnkOuter, int arg)
 		{ PUSH_VAR32(arg); PUSH_VAR32(pUnkOuter); PUSH_VAR32(rclsid); SET_REG32(ECX, ppv); CALL(0x41C250); }
 
 	// these two are identical, why do they both exist...
@@ -192,6 +208,54 @@ public:
 
 	static void AddRef2(LocomotionClass **Loco)
 		{ SET_REG32(ECX, Loco); CALL(0x6CE270); }
+
+	static void ChangeLocomotorTo(FootClass *Object, CLSID *clsid) {
+		ILocomotion * firstLoco = Object->Locomotor;
+		if(firstLoco) {
+			firstLoco->AddRef();
+		}
+
+		ILocomotion *ppLoco = NULL;
+		HRESULT result = CreateInstance(&ppLoco, clsid, 0, 7);
+		CheckPtr(result, ppLoco);
+		ppLoco->Link_To_Object(Object);
+
+		IPiggyback *ppPiggy = NULL;
+		result = TryPiggyback(&ppPiggy, &ppLoco);
+		CheckPtr(result, ppPiggy);
+		ppPiggy->Begin_Piggyback(firstLoco);
+
+		ILocomotion * secondLoco = Object->Locomotor;
+		if(secondLoco != ppLoco) {
+			Object->Locomotor = ppLoco;
+			if(ppLoco) {
+				ppLoco->AddRef();
+			}
+			ReleaseIf(secondLoco);
+		}
+		ReleaseIf(ppPiggy);
+		ReleaseIf(ppLoco);
+		ReleaseIf(firstLoco);
+	}
+
+/*
+	static void RestoreLocomotor(FootClass *Object) {
+		ILocomotion * currentLoco = Object->Locomotor;
+
+		DWORD lptr = reinterpret_cast<DWORD>(currentLoco);
+		lptr -= 4;
+		LocomotionClass* theMotion = reinterpret_cast<LocomotionClass *>(lptr); // dirty... so dirty...
+
+		theMotion->AddRef();
+		ILocomotion ** ptr = &Object->Locomotor;
+		ReleaseIf(*ptr);
+		*ptr = 0;
+		// theMotion->EndPiggyback(ptr); only works if the locomotor supports piggyback -> should be done from inside the locomotor itself
+		theMotion->Release();
+	}
+*/
+
+	// ----------------------------------------------------
 
 	//Constructor
 	LocomotionClass()

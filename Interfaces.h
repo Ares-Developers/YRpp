@@ -187,4 +187,21 @@ interface IPiggyback : IUnknown //'Piggyback' one locomotor onto another.
     virtual bool __stdcall Is_Piggybacking() = 0;	//Is it currently piggy backing another locomotor?
 };
 
+template<class T>
+inline void CheckPtr(HRESULT hr, T ptr) {
+	if(FAILED(hr)) {
+		if(hr != E_NOINTERFACE) {
+			Game::RaiseError(hr);
+		}
+	}
+
+	if(!ptr) {
+		Game::RaiseError(E_POINTER);
+	}
+}
+
+void ReleaseIf(IUnknown *ptr);
+
+void ReleaseIf(ILocomotion *ptr);
+
 #endif

@@ -91,6 +91,11 @@ public:
 	void Jumpjet_OccupyCell(CellStruct Cell)
 		{ JMP_THIS(0x4E00B0); }
 
+	// changes locomotor to the given one, Magnetron style
+	// mind that this locks up the source too, Magnetron style
+	void FootClass_ImbueLocomotor(FootClass *target, CLSID clsid)
+		{ JMP_THIS(0x710000); }
+
 protected:
 	FootClass() : TechnoClass(false)
 		{ }
