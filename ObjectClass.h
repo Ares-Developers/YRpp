@@ -128,7 +128,7 @@ public:
 	virtual void Uncloak2() RX;// just calls this->Uncloak(0) on TechnoClass and higher
 	virtual int KickOutUnit(TechnoClass* pTechno, CellStruct *pCell) R0;
 	virtual bool DrawIfVisible(RectangleStruct *VisibleArea, bool EvenIfCloaked, DWORD dwUnk3) R0;
-	virtual DWORD GetFoundationData(bool IncludeBib) R0;
+	virtual CellStruct * GetFoundationData(bool IncludeBib) R0;
 	virtual void vt_entry_10C(DWORD dwUnk, DWORD dwUnk2) RX;
 	virtual void DrawExtras(DWORD dwUnk, DWORD dwUnk2) RX; // draws ivan bomb, health bar, talk bubble, etc
 	virtual void Draw(Point2D* pCoords, DWORD dwUnk) RX;

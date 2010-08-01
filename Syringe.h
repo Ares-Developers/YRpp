@@ -219,6 +219,14 @@ public:
 		inline T lea_Stack(signed int offset)
 			{ return reinterpret_cast<T>(this->_ESP.lea(offset)); }
 
+	template<>
+		inline DWORD lea_Stack(signed int offset)
+			{ return this->_ESP.lea(offset); }
+
+	template<>
+		inline int lea_Stack(signed int offset)
+			{ return this->_ESP.lea(offset); }
+
 	template<typename T>
 		inline T Stack(signed int offset)
 			{ return this->_ESP.At<T>(offset); }
