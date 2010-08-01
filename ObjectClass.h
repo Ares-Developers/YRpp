@@ -52,7 +52,7 @@ public:
 	virtual SHPStruct* GetImage() R0;
 	virtual eAction MouseOverCell(CellStruct uCell, bool bUnk1, bool bUnk2) R0;
 	virtual eAction MouseOverObject(ObjectClass* pObj, bool bUnk1) R0;
-	virtual eLayer InWhichLayer() R0;
+	virtual Layer::Value InWhichLayer() R0;
 	virtual bool vt_entry_7C() R0;
 
  /*
@@ -135,7 +135,7 @@ public:
 	virtual void DrawAgain(Point2D* pCoords, DWORD dwUnk) RX; // just forwards the call to Draw
 	virtual void vt_entry_11C() RX;
 	virtual void See(DWORD dwUnk, DWORD dwUnk2) RX;
-	virtual bool SetLayer(eLayer value) R0;
+	virtual bool SetLayer(Layer::Value value) R0;
 	virtual RectangleStruct* vt_entry_128(RectangleStruct* pRect) R0;
 	virtual RectangleStruct* vt_entry_12C(RectangleStruct* pRect) R0;
 	virtual void DrawRadialIndicator(DWORD dwUnk) RX;

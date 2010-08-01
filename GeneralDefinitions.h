@@ -496,14 +496,42 @@ typedef int eLandType;
 #define	lt_Weeds		0xB
 
 
-typedef int eLayer;
-
-#define	lyr_None		-0x1
-#define	lyr_Underground		0x0
-#define	lyr_Surface		0x1
-#define	lyr_Ground		0x2
-#define	lyr_Air		0x3
-#define	lyr_Top		0x4
+/*
+ *
+ * Some helpers
+ *  let W = a result of creepy maths = 104 (leptons)
+ *  let GH = this->GetHeight()
+ *
+ *  ObjectClass::InWhichLayer, used by practically all ObjectClass derivates except Foot, returns
+ *   Ground if GH < 2*W leptons
+ *   Air if it returns < Rules->CruiseHeight leptons
+ *   Top otherwise
+ *
+ * FootClass::InWhichLayer, used by Infantry, Unit and Aircraft, returns results depending on the locomotor
+ *  Drive         : Ground
+ *  DropPod       : Air
+ *  Fly           : Ground if GH <= 0, Top otherwise
+ *  Hover         : Ground
+ *  Jumpjet       : Ground if GH <= 2*W, Air if it's not at the height of its flight (rising/landing), Top otherwise
+ *  Mech          : Ground
+ *  Rocket        : Air
+ *  Ship          : Ground
+ *  Subterrannean : Underground if really underground, Ground if on ground, diving or elevating
+ *  Walk          : Ground
+ *
+ */
+class Layer {
+public:
+	typedef unsigned int Value;
+	enum {
+		None = -0x1,
+		Underground = 0x0,
+		Surface = 0x1,
+		Ground = 0x2,
+		Air = 0x3,
+		Top = 0x4,
+	};
+};
 
 typedef int eMouseHotSpotX;
 typedef int eMouseHotSpotY;

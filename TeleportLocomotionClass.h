@@ -27,7 +27,7 @@ public:
 	virtual void __stdcall Move_To(CoordStruct to) RX;
 	virtual void __stdcall Stop_Moving() RX;
 	virtual void __stdcall Do_Turn(DirStruct coord) RX;
-	virtual eLayer __stdcall In_Which_Layer() R0;
+	virtual Layer::Value __stdcall In_Which_Layer() R0;
 	virtual void __stdcall Mark_All_Occupation_Bits(int mark) RX;
 	virtual void __stdcall ILocomotion_B8() RX;
 
