@@ -327,7 +327,7 @@ public:
 	RadSiteClass*      RadSite;	//A pointer to the responsible RadSite.
 
 	DWORD              unknown_FC;
-	DWORD              unknown_100;
+	int                OccupyHeightsCoveringMe;
 	DWORD              unknown_104;
 	WORD               unknown_108;
 	WORD               unknown_10A;

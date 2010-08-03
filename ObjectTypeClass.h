@@ -35,7 +35,7 @@ public:
 	virtual int GetActualCost(HouseClass* pHouse) R0;
 	virtual int GetBuildSpeed() R0;
 	virtual ObjectClass* CreateObject(HouseClass* pOwner) = 0;
-	virtual void vt_entry_90(DWORD dwUnk) RX;
+	virtual CellStruct * GetFoundationData(bool IncludeBib) R0;
 	virtual BuildingTypeClass* GetFactoryType(bool OverridePrereqs, bool OverridePower, bool OverrideBuildLimit,
 		HouseClass *House) R0;
 	virtual SHPStruct* GetCameo() R0;

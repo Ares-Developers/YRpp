@@ -112,7 +112,7 @@ public:
 	virtual bool CanAttackMove() R0;
 	virtual bool vt_entry_A8(CellStruct* pMapCoords, DWORD dwUnk) R0;
 	virtual int GetCost() R0;
-	virtual int vt_entry_B4() R0;
+	virtual int GetRepairStepCost() R0;
 	virtual int GetRepairStep() R0;
 	virtual int GetRefund(HouseClass* pHouse, bool bUnk) R0;
 	virtual int GetFlightLevel() R0;
