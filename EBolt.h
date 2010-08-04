@@ -35,7 +35,7 @@ public:
 	DWORD unknown_18;	//Duration?
 	int Random;	//Random number between 0 and 256
 	TechnoClass* Owner;
-	DWORD unknown_24;
+	int WeaponSlot; // which weapon # to use from owner
 	int Lifetime; // this is >>= 1 each time DrawAll() is called, 0 => dtor (inline). Hi, welcome to dumb ideas.
 	bool AlternateColor;
 

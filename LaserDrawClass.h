@@ -48,7 +48,7 @@ public:
 	TimerStruct CreationFrame;
 	int field_14;
 	int TimeElapsedPerFrame;
-	int field_1C;
+	int Thickness; // only respected if IsHouseColor
 	bool IsHouseColor;
 	char field_21;
 	char field_22;
