@@ -12,6 +12,7 @@
 #include <SlaveManagerClass.h>
 #include <TeamClass.h>
 #include <TemporalClass.h>
+#include <LaserDrawClass.h>
 #include <Helpers/Template.h>
 
 //forward declarations
@@ -308,6 +309,9 @@ public:
 	bool IsMindControlled()
 		{ JMP_THIS(0x7105E0); }
 
+	LaserDrawClass* CreateLaser(ObjectClass *Target, int idxWeapon, WeaponTypeClass *weapon, CoordStruct *Coords)
+		{ JMP_THIS(0x6FD210); }
+
 	/*
 	 *  Cell->AddThreat(this->Owner, -this->ThreatPosed);
 	 *  this->ThreatPosed = 0;
@@ -347,6 +351,11 @@ public:
 
 	void Deactivate()
 		{ JMP_THIS(0x70FC90); }
+
+	// statics
+	static CoordStruct DefaultCoords() {
+		return *(CoordStruct*)0xB0EA90;
+	}
 
 	//Constructor
 	TechnoClass(HouseClass* pOwner) : RadioClass(false)
