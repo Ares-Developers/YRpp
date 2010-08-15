@@ -60,9 +60,12 @@ void AnnounceInvalidPointerMap(hash_map<T1, T2> &map, void *ptr) {
 		map.erase(ix);
 	}
 
-	for(ix = map.begin(); ix != map.end(); ++ix) {
-		if(ptr == ((void *)(ix->second))) {
-			map.erase(ix->first);
+	for(ix = map.begin(); ix != map.end(); ) {
+		T1 k = ix->first;
+		T2 v = ix->second;
+		++ix;
+		if(ptr == ((void *)(v))) {
+			map.erase(k);
 		}
 	}
 }
@@ -100,7 +103,7 @@ class IndexBitfield {
 #include <AbstractClass.h>
 template <typename T>
 inline T specific_cast(AbstractClass * Object) {
-	if(Object->WhatAmI() == CompoundT<T>::BaseT::AbsID) {
+	if(Object && Object->WhatAmI() == CompoundT<T>::BaseT::AbsID) {
 		return reinterpret_cast<T>(Object);
 	}
 	return NULL;
@@ -108,7 +111,7 @@ inline T specific_cast(AbstractClass * Object) {
 
 template <typename T>
 inline T generic_cast(AbstractClass * Object) {
-	if((Object->AbstractFlags & CompoundT<T>::BaseT::AbsDerivateID) != 0) {
+	if(Object && (Object->AbstractFlags & CompoundT<T>::BaseT::AbsDerivateID) != 0) {
 		return reinterpret_cast<T>(Object);
 	}
 	return NULL;
