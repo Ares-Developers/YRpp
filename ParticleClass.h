@@ -69,13 +69,14 @@ public:
 	DWORD  unknown_DC;
 	DWORD  unknown_E0;
 	float  Velocity;
-	CoordStruct unknown_coords_E4; //Crd2 in CTOR
-	DWORD  unknown_F0; //unused
+	CoordStruct unknown_coords_E8; //Crd2 in CTOR
 	CoordStruct unknown_coords_F4; //Crd1 in CTOR
 	CoordStruct unknown_coords_100; //{ 0, 0, 0} in CTOR
 	Vector3D<float> unknown_vector3d_10C;
 	Vector3D<float> unknown_vector3d_118;
 	ParticleSystemClass*   ParticleSystem;
+	WORD   RemainingEC;
+	WORD   RemainingDC;
 	BYTE   StateAIAdvance;
 	BYTE   unknown_12D;
 	BYTE   StartStateAI;

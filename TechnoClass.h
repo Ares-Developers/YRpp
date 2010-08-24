@@ -430,7 +430,7 @@ public:
 	int              CloakingSpeed;
 	int              CloakingIncrementAmount; //defaults to 1
 	TimerStruct      CloakDelayTimer; // delay before cloaking again
-	DWORD            unknown_24C;
+	float            WarpFactor; // don't ask! set to 0 in CTOR, never modified, only used as ((this->Fetch_ID) + this->WarpFactor) % 400 for something in cloak ripple
 	bool             unknown_bool_250;
 	CoordStruct      unknown_point3d_254;
 	DWORD            unknown_260;
