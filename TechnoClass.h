@@ -352,6 +352,22 @@ public:
 	void Deactivate()
 		{ JMP_THIS(0x70FC90); }
 
+
+	// this should be the transport, but it's unused
+	// marks passenger as "InOpenTopped" for targeting, range scanning and other purposes
+	void EnteredOpenTopped(TechnoClass *Who)
+		{ JMP_THIS(0x710470); }
+
+	// this should be the transport, but it's unused
+	// reverses the above
+	void ExitedOpenTopped(TechnoClass *Who)
+		{ JMP_THIS(0x7104A0); }
+
+	// called when the source unit dies - passengers are about to get kicked out, this basically calls ->ExitedOpenTransport on each passenger
+	void MarkPassengersAsExited()
+		{ JMP_THIS(0x7104C0); }
+
+
 	// statics
 	static CoordStruct DefaultCoords() {
 		return *(CoordStruct*)0xB0EA90;
