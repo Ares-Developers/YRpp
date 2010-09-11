@@ -363,6 +363,11 @@ public:
 		void set_Weapon(int i, WeaponTypeClass* value)
 			{ Weapon[i].WeaponType = value; }
 
+		CoordStruct get_WeaponFLH(int i)
+			{ return Weapon[i].FLH;}
+		void set_WeaponFLH(int i, CoordStruct value)
+			{ Weapon[i].FLH = value;}
+
 	bool            ClearAllWeapons;
 
 	//EliteWeapon
@@ -378,6 +383,11 @@ public:
 			{ return EliteWeapon[i].WeaponType; }
 		void set_EliteWeapon(int i, WeaponTypeClass* value)
 			{ EliteWeapon[i].WeaponType = value; }
+
+		CoordStruct get_EliteWeaponFLH(int i)
+			{ return EliteWeapon[i].FLH;}
+		void set_EliteWeaponFLH(int i, CoordStruct value)
+			{ EliteWeapon[i].FLH = value;}
 
 	bool            TypeImmune;
 	bool            MoveToShroud;

@@ -204,8 +204,8 @@ public:
 	virtual bool ClickedMission(eMission Mission, DWORD dwUnk2, DWORD dwUnk3, ObjectClass *Target) R0;
 	virtual bool IsUnderEMP() R0;
 	virtual bool IsParalyzed() R0;
-	virtual bool vt_entry_384() R0;
-	virtual void vt_entry_388(DWORD dwUnk) RX;
+	virtual bool CanCheer() R0;
+	virtual void Cheer(bool Force) RX;
 	virtual int GetDefaultSpeed() R0;
 	virtual void DecreaseAmmo() RX;
 	virtual void AddPassenger(FootClass* pPassenger) RX;
