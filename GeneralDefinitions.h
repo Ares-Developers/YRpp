@@ -683,6 +683,16 @@ typedef int RadarEventType;
 #define		RADAREVENT_ALLYUNDERATTACK		0x10
 
 
+class RadBeamType {
+public:
+	typedef unsigned int Value;
+	enum {
+		Temporal = 0x0,
+		RadBeam = 0x1,
+		Eruption = 0x2, // this sets the beam color to MagnaBeamColor! There probably was no reason for that whatsoever.
+	};
+};
+
 typedef int eRank;
 
 #define	rank_Invalid		-0x1

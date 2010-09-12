@@ -131,6 +131,7 @@ public:
 	enum {AbsDerivateID = ABSFLAGS_ISTECHNO};
 
 	static DynamicVectorClass<TechnoClass *>* Array; // HAX to instantiate
+	static CoordStruct &DefaultCoords;
 
 	//IPersistStream
 	virtual HRESULT __stdcall Load(IStream* pStm) R0;
@@ -366,12 +367,6 @@ public:
 	// called when the source unit dies - passengers are about to get kicked out, this basically calls ->ExitedOpenTransport on each passenger
 	void MarkPassengersAsExited()
 		{ JMP_THIS(0x7104C0); }
-
-
-	// statics
-	static CoordStruct DefaultCoords() {
-		return *(CoordStruct*)0xB0EA90;
-	}
 
 	//Constructor
 	TechnoClass(HouseClass* pOwner) : RadioClass(false)

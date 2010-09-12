@@ -276,6 +276,7 @@ DECL(TeamTypeClass, 0xA8ECA0);
 DECL(TemporalClass, 0xB0EC60);
 
 #include <TechnoClass.h>
+ALIAS(CoordStruct, TechnoClass::DefaultCoords, 0xB0EA90);
 
 DynamicVectorClass<TechnoClass *>* TechnoClass::Array = (DynamicVectorClass<TechnoClass *>*)0xA8EC78;
 DynamicVectorClass<TechnoTypeClass *>* TechnoTypeClass::Array = (DynamicVectorClass<TechnoTypeClass *>*)0xA8EB00;

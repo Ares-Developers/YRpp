@@ -10,15 +10,12 @@ class RadBeam
 public:
 	static DynamicVectorClass<RadBeam*>* Array;
 
-	//Constructor, Destructor
-	RadBeam(int mode) // anything else = rad, 1 = chrono, 2 = magnetron??
-	                  //(2 is invoked by RadEruption, but it uses MagnaBeamColor from rules... )
-		{ JMP_THIS(0x6593F0); }
+	// Constructor removed - do not use it, use Allocate instead
 
 	~RadBeam()
 		{ }
 
-	static RadBeam* Allocate(int mode)
+	static RadBeam* __fastcall Allocate(RadBeamType::Value mode)
 		{ JMP_STD(0x659110); }
 
 	void SetColor(ColorStruct *color)
@@ -39,8 +36,16 @@ public:
 	DWORD unknown_0;
 	TechnoClass* Owner;
 	byte unknown_8;
+
+	/**
+	 * if there's difference in the Y coord of SourceLocation and TargetLocation,
+	 * they're both converted to screen coords (2D)
+	 * and the difference of those Y coords is taken as this field
+	 */
 	DWORD unknown_C;
-	DWORD unknown_10;
+
+
+	RadBeamType::Value Type;
 	DWORD unknown_14;
 	double unknown_18;
 	ColorStruct Color;
