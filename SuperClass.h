@@ -18,6 +18,7 @@ public:
 
 	//Static
 	//static DynamicVectorClass<SuperClass*>* Array; //- per player
+	static CellStruct &DefaultCoords; //0xB0C000
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
@@ -136,16 +137,44 @@ class LightningStorm
 public:
 	static CellStruct Coords()
 		{ CellStruct retval; MEM_READ32(retval, 0xA9F9CC); return retval; }
+	static void Coords(CellStruct value)
+		{ MEM_WRITE32(0xA9F9CC, value); }
+
 	static HouseClass *Owner()
 		{ HouseClass *retval; MEM_READ32(retval, 0xA9FACC); return retval; }
+	static void Owner(HouseClass *value)
+		{ MEM_WRITE32(0xA9FACC, value); }
+
 	static int Deferment()
 		{ int retval; MEM_READ32(retval, 0xA9FAB8); return retval; }
+	static void Deferment(int value)
+		{ MEM_WRITE32(0xA9FAB8, value); }
+
+	static int Duration()
+		{ int retval; MEM_READ32(retval, 0x827FC4); return retval; }
+	static void Duration(int value)
+		{ MEM_WRITE32(0x827FC4, value); }
+
 	static int Status()
 		{ int retval; MEM_READ32(retval, 0xA9FABC); return retval; }
+	static void Status(int value)
+		{ MEM_WRITE32(0xA9FABC, value); }
+
+	static int StartTime()
+		{ int retval; MEM_READ32(retval, 0x827FC0); return retval; }
+	static void StartTime(int value)
+		{ MEM_WRITE32(0x827FC0, value); }
+
 	static byte Active()
 		{ byte retval; MEM_READ8(retval, 0xA9FAB4); return retval; }
+	static void Active(byte value)
+		{ MEM_WRITE8(0xA9FAB4, value); }
+
 	static byte TimeToEnd()
 		{ byte retval; MEM_READ8(retval, 0xA9FAD0); return retval; }
+	static void TimeToEnd(byte value)
+		{ MEM_WRITE8(0xA9FAD0, value); }
+
 	static void Start(int Duration, int Deferment, CellStruct Coords, HouseClass *pOwner)
 		{ PUSH_VAR32(pOwner); PUSH_VAR32(Coords); SET_REG32(EDX, Deferment); SET_REG32(ECX, Duration);
 			CALL(0x539EB0); }
@@ -159,6 +188,9 @@ public:
 	static void Strike(CellStruct Coords)
 		{ PUSH_VAR32(Coords); CALL(0x53A140); }
 
+	static void Strike2(CellStruct Coords)
+		{ PUSH_VAR32(Coords); CALL(0x53A300); }
+
 	static void PrintMessage()
 		{ CALL(0x53AE00); }
 };
@@ -168,12 +200,24 @@ class PsyDom
 public:
 	static CellStruct Coords()
 		{ CellStruct retval; MEM_READ32(retval, 0xA9FA48); return retval; }
+	static void Coords(CellStruct value)
+		{ MEM_WRITE32(0xA9FA48, value); }
+
 	static HouseClass *Owner()
 		{ HouseClass *retval; MEM_READ32(retval, 0xA9FAC8); return retval; }
+	static void Owner(HouseClass* value)
+		{ MEM_WRITE32(0xA9FAC8, value); }
+
 	static AnimClass *Anim()
 		{ AnimClass *retval; MEM_READ32(retval, 0xA9FAC4); return retval; }
+	static void Anim(AnimClass* value)
+		{ MEM_WRITE32(0xA9FAC4, value); }
+
 	static int Status()
 		{ int retval; MEM_READ32(retval, 0xA9FAC0); return retval; }
+	static void Status(int value)
+		{ MEM_WRITE32(0xA9FAC0, value); }
+
 	static void Start(HouseClass *pOwner, CellStruct Coords)
 		{ PUSH_VAR32(Coords); SET_REG32(ECX, pOwner);
 			CALL(0x53AE50); }
@@ -186,6 +230,9 @@ public:
 
 	static void PrintMessage()
 		{ CALL(0x53B410); }
+
+	static bool Active()
+		{ CALL(0x53B400); }
 };
 
 #endif

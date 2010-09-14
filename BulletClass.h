@@ -75,6 +75,11 @@ public:
 	static void ApplyRadiationToCell(CellStruct coords, double *radius, int amount)
 		{ JMP_STD(0x46ADE0); }
 
+	// this bullet will miss and hit the ground instead.
+	// if the original target is in air, it will disappear.
+	void LoseTarget()
+	{ JMP_THIS(0x468430); }
+
 	bool IsHoming()
 		{ return this->Type->ROT > 0; }
 

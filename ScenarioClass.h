@@ -63,6 +63,9 @@ public:
 	static void __fastcall UpdateCellLighting()
 		{ JMP_STD(0x4AE4C0); }
 
+	static void __fastcall UpdateLighting()
+		{ JMP_STD(0x53C280); }
+
 	// this calls UpdateCellLighting() from above and does other good stuff
 	// initializers call it with -1, -1, -1, 0 , map retint actions use current tint * 10, 0
 	static void __fastcall RecalcLighting(int R, int G, int B, DWORD dwUnk)

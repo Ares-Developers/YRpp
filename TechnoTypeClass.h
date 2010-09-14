@@ -110,7 +110,7 @@ public:
 	//TechnoTypeClass
 	virtual bool vt_entry_A0() R0;
 	virtual bool CanAttackMove() R0;
-	virtual bool vt_entry_A8(CellStruct* pMapCoords, DWORD dwUnk) R0;
+	virtual bool CanCreateHere(CellStruct* pMapCoords, DWORD dwUnk) R0;
 	virtual int GetCost() R0;
 	virtual int GetRepairStepCost() R0;
 	virtual int GetRepairStep() R0;

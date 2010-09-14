@@ -81,7 +81,7 @@ public:
 	bool    AIDefendAgainst;
 	bool    PreClick;
 	bool    PostClick;
-	SuperWeaponTypeClass* PreDependent;
+	int		PreDependent;
 	bool    ShowTimer;
 	bool    ManualControl;
 	float   Range;

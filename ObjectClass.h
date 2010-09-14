@@ -216,6 +216,9 @@ public:
 	HealthState::Value GetHealthStatus()
 		{ JMP_THIS(0x5F5DD0); }
 
+	void BecomeUntargetable()
+		{ JMP_THIS(0x70D4A0); }
+
 	//Constructor
 	ObjectClass() : AbstractClass(false)
 		{ JMP_THIS(0x5F3900); }

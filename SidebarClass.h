@@ -62,7 +62,7 @@ public:
 			// yeah, unknown voodoo magic shticks
 			this->unknown_bool_53A6 = this->unknown_bool_53A7 = true;
 			this->Tabs[this->ActiveTabIndex].unknown_1C = this->Tabs[this->ActiveTabIndex].unknown_3C = 1;
-			this->sub_4F42F0(unk);
+			this->RedrawSidebar(unk);
 			SidebarClass::Draw(1);
 		}
 

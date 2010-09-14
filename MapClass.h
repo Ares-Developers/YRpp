@@ -158,6 +158,11 @@ public:
 	void Update_Pathfinding_2(DynamicVectorClass<CellStruct> *where)
 		{ JMP_THIS(0x586990); }
 
+	// Find nearest spot
+	CellStruct* Pathfinding_Find(int *a2, CellStruct *position, int SpeedType, int a5, int MovementZone, int InAir, int a8, int a9, int a10, char a11, char a12, char a13, int *a14, char a15, char a16)
+		{ JMP_THIS(0x56DC20); }
+
+
 // ====================================
 //        MAP REVEAL BRAINDAMAGE
 // ====================================
@@ -167,7 +172,7 @@ public:
  * TechnoClass::See uses this on all (singleCampaign || !MultiplayPassive) units
  * TalkBubble uses this to display the unit to the player
  */
-	static void RevealArea1(
+	void RevealArea1(
 		CoordStruct* Coords,
 		int Radius,
 		HouseClass* OwnerHouse,
@@ -176,7 +181,7 @@ public:
 		BYTE arg6,
 		BYTE arg7,
 		BYTE arg8)
-			{ JMP_STD(0x5673A0); }
+			{ JMP_THIS(0x5673A0); }
 
 /*
  * these come in pairs - first the last argument is 0 and then 1
@@ -190,7 +195,7 @@ public:
  * ActionClass::RevealWaypoint - reveal RevealTriggerRadius= to player (0,0,0,1,x)
  * ActionClass::RevealZoneOfWaypoint - reveal (r = 2) to player (0,0,0,1,x)
  */
-	static void RevealArea2(
+	void RevealArea2(
 		CoordStruct* Coords,
 		int Radius,
 		HouseClass* OwnerHouse,
@@ -199,7 +204,7 @@ public:
 		BYTE arg6,
 		BYTE arg7,
 		BYTE arg8)
-			{ JMP_STD(0x5678E0); }
+			{ JMP_THIS(0x5678E0); }
 
 /*
  * AircraftClass::SpyPlaneApproach
@@ -212,8 +217,8 @@ public:
  * TechnoClass::Put
  * TechnoClass::Fire uses this (r = 4) right after using RevealArea0, wtfcock
  */
-	static void RevealArea3(CoordStruct *Coords, int Height, int Radius, bool SkipReveal)
-		{ JMP_STD(0x567DA0); }
+	void RevealArea3(CoordStruct *Coords, int Height, int Radius, bool SkipReveal)
+		{ JMP_THIS(0x567DA0); }
 
 // the unknown functions that are srs bsns
 	int sub_578080(CoordStruct *Coords)
@@ -223,7 +228,7 @@ public:
 	void sub_657CE0()
 		{ JMP_THIS(0x657CE0); }
 
-	void sub_4F42F0(int mode)
+	void RedrawSidebar(int mode)
 		{ JMP_THIS(0x4F42F0); }
 
 protected:

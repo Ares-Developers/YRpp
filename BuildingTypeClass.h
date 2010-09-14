@@ -65,6 +65,9 @@ public:
 	short GetFoundationHeight(bool bIncludeBib)
 		{ JMP_THIS(0x45ECA0); }
 
+	bool CanPlaceHere(CellStruct* cell, HouseClass* owner)
+		{ JMP_THIS(0x464AC0); }
+
 	// helpers
 	bool HasSuperWeapon(int Type) {
 		return (this->SuperWeapon == Type || this->SuperWeapon2 == Type);

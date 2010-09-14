@@ -948,7 +948,7 @@ public:
 	int				 LightningStormDuration;
 	int				 LightningHitDelay;
 	int				 LightningScatterDelay;
-	int				 Lightningintpread;
+	int				 LightningCellSpread;
 	int				 LightningSeparation;
 	bool				 LightningPrintText;
 	WarheadTypeClass*			 LightningWarhead;

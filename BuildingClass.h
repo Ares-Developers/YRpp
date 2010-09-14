@@ -122,6 +122,14 @@ public:
 	void EnableStuff()
 		{ JMP_THIS(0x452410); }
 
+	// when the building is warped
+	void DisableTemporal()
+		{ JMP_THIS(0x4521C0); }
+
+	// when the building warped back in
+	void EnableTemporal()
+		{ JMP_THIS(0x452210); }
+
 	// returns Type->SuperWeapon, if its AuxBuilding is satisfied
 	int FirstActiveSWIdx()
 		{ JMP_THIS(0x457630); }
@@ -215,8 +223,8 @@ public:
 	bool RegisteredAsPoweredUnitSource;
 
 	DWORD SupportingPrisms;
-	bool unknown_bool_668;
-	bool ConsumesExtraPower;
+	bool HasExtraPowerBonus;
+	bool HasExtraPowerDrain;
 	DynamicVectorClass<InfantryClass*> Overpowerers;
 	DynamicVectorClass<InfantryClass*> Occupants;
 	int FiringOccupantIndex; // which occupant should get XP, which weapon should be fired (see 6FF074)

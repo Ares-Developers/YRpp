@@ -114,7 +114,7 @@ MSVC++
 		_asm{mov dl, byte ptr ds:mem}\
 		_asm{mov dst, dl}
 #define MEM_WRITE8(mem,src) \
-		_asm{mov dl, dst}\
+		_asm{mov dl, src}\
 		_asm{mov byte ptr ds:mem, dl}
 
 #define MEM_READ16(dst,mem) \

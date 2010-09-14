@@ -127,6 +127,7 @@ public:
 
 	//Static
 	static DynamicVectorClass<HouseClass*>* Array;
+	static CellStruct &DefaultIonCannonCoords; //0xA8EF98
 
 	static HouseClass *&Player;
 
@@ -327,6 +328,18 @@ public:
 	AnimClass * __fastcall PsiWarn(CellClass *pTarget, BulletClass *Bullet, char *AnimName)
 		JMP_THIS(0x43B5E0);
 
+	bool Fire_LightningStorm(SuperClass* pSuper)
+		{ JMP_THIS(0x509E00); }
+
+	bool Fire_ParaDrop(SuperClass* pSuper)
+		{ JMP_THIS(0x509CD0); }
+
+	bool Fire_PsyDom(SuperClass* pSuper)
+		{ JMP_THIS(0x50A150); }
+
+	bool Fire_GenMutator(SuperClass* pSuper)
+		{ JMP_THIS(0x509F60); }
+
 	const char *get_ID() {
 		return this->Type->get_ID();
 	}
@@ -453,6 +466,15 @@ public:
 
 	signed int AI_BaseConstructionUpdate()
 		{ JMP_THIS(0x4FE3E0); }
+
+	void AI_TryFireSW()
+		{ JMP_THIS(0x5098F0); }
+
+	bool Fire_SW(int idx, CellStruct *coords)
+		{ JMP_THIS(0x4FAE50); }
+
+	CellStruct* sub_50D170(CellStruct *a2, int TargetType)
+		{ JMP_THIS(0x50D170); }
 
 	void UpdateFlagCoords(UnitClass *NewCarrier, DWORD dwUnk)
 		{ JMP_THIS(0x4FBE40); }
@@ -666,7 +688,7 @@ public:
 	DWORD unknown_54C4;
 	DWORD unknown_54C8;
 	DWORD unknown_54CC;
-	DWORD unknown_54D0;
+	CellStruct PreferredDefensiveCell2;
 	DWORD unknown_54D4;
 	DWORD unknown_54D8;
 	DWORD unknown_54DC;
@@ -675,9 +697,9 @@ public:
 	IndexBitfield<HouseClass *> RadarVisibleTo; // this crap is being rewritten to use house indices instead of house types
 	int                   SiloMoney;
 	int                   PreferredTargetWaypoint; // set via map actions
-	CellStruct unknown_54F0;
+	CellStruct PreferredTargetCell;
 	CellStruct unknown_54F4;
-	CellStruct unknown_54F8;
+	CellStruct PreferredDefensiveCell;
 	int                   PreferredDefensiveCellStartTime; // don't look at me...
 	                                // map actions let you set an ai's ForceShield firing cell, this is related
 

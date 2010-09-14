@@ -124,6 +124,7 @@ ALIAS_O(GameModeOptionsClass *, GameModeOptionsClass::Instance, 0xA8B250);
 #include <HouseClass.h>
 DECL(HouseClass, 0xA80228);
 ALIAS(HouseClass *, HouseClass::Player, 0xA83D4C);
+ALIAS(CellStruct, HouseClass::DefaultIonCannonCoords, 0xA8EF98);
 
 #include <HouseTypeClass.h>
 DECL(HouseTypeClass, 0xA83C98);
@@ -250,6 +251,9 @@ DECL(SpotlightClass, 0xAC1678);
 
 #include <StringTable.h>
 ALIAS(CSFString *, StringTable::LastLoadedString, 0xB1CF88);
+
+#include <SuperClass.h>
+ALIAS(CellStruct, SuperClass::DefaultCoords, 0xB0C000);
 
 #include <SuperWeaponTypeClass.h>
 DECL(SuperWeaponTypeClass, 0xA8E330);
