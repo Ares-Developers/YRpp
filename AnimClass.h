@@ -45,16 +45,11 @@ public:
 
 	//Constructor
 	// TODO fix
-	AnimClass(AnimTypeClass* pAnimType, CoordStruct* pLocation) : ObjectClass(false)
+	AnimClass(AnimTypeClass* pAnimType, CoordStruct* pLocation, DWORD dwUnk1 = 0
+		, int LoopCount = 1, DWORD flags = 0x600, int ForceZAdjust = 0, DWORD dwUnk2 = 0)
+			: ObjectClass(false)
 	{
-		PUSH_IMM(0); //???
-		PUSH_IMM(0); //ZAdjust
-		PUSH_IMM(0x600); // eBlitterFlags , certain calls use 0x1600 or 0x2600 instead, iow bitfield
-		PUSH_IMM(1); //deleteAfterIterations
-		PUSH_IMM(0); //???
-		PUSH_VAR32(pLocation);
-		PUSH_VAR32(pAnimType);
-		THISCALL(0x421EA0);
+		JMP_THIS(0x421EA0);
 	}
 
 protected:
