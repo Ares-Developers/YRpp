@@ -78,14 +78,14 @@ public:
 		return
 			(BuildingTypeIndex == tBaseNode.BuildingTypeIndex) &&
 			(MapCoords == tBaseNode.MapCoords) &&
-			(unknown_8 == tBaseNode.unknown_8) &&
-			(unknown_C == tBaseNode.unknown_C);
+			(Placed == tBaseNode.Placed) &&
+			(Attempts == tBaseNode.Attempts);
 	}
 
-	int         BuildingTypeIndex;
+	int        BuildingTypeIndex;
 	CellStruct MapCoords;
-	DWORD       unknown_8;
-	DWORD       unknown_C;
+	bool       Placed;
+	int        Attempts;
 };
 
 //--- BaseClass - holds information about a player's base!
@@ -103,6 +103,9 @@ public:
 	virtual HRESULT __stdcall Load(IStream* pStm) R0;
 	virtual HRESULT __stdcall Save(IStream* pStm) R0;
 	virtual void CalculateChecksum(void* pChkSum) RX;
+
+	int FailedToPlaceNode(BaseNodeClass *Node) // called after AI fails to place building, obviously
+		{ JMP_THIS(0x42F380); }
 
 	//Properties
 	DynamicVectorClass<BaseNodeClass> BaseNodes;

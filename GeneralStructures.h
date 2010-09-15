@@ -185,4 +185,25 @@ struct SomeVoxelCache {
 	DWORD * ptr_10;
 };
 
+struct BasePlanningCell {
+	int Weight;
+	CellStruct Position;
+};
+
+// this crap is used in several Base planning routines
+struct BasePlanningCellContainer {
+	BasePlanningCell * Items;
+	int Count;
+	int Capacity;
+	bool Sorted;
+	DWORD Unknown_10;
+
+	bool AddCapacity(int AdditionalCapacity)
+		{ JMP_THIS(0x510860); }
+
+	// for qsort
+	static int __cdecl Comparator(const void *, const void *)
+		{ JMP_STD(0x5108F0); }
+};
+
 #endif
