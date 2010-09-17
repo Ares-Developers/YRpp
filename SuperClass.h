@@ -188,8 +188,8 @@ public:
 	static void Strike(CellStruct Coords)
 		{ PUSH_VAR32(Coords); CALL(0x53A140); }
 
-	static void Strike2(CellStruct Coords)
-		{ PUSH_VAR32(Coords); CALL(0x53A300); }
+	static void Strike2(CoordStruct Coords)
+		{ JMP_STD(0x53A300); }
 
 	static void PrintMessage()
 		{ CALL(0x53AE00); }
@@ -233,6 +233,30 @@ public:
 
 	static bool Active()
 		{ CALL(0x53B400); }
+};
+
+class ChronoScreenEffect
+{
+public:
+	static int Status()
+		{ int retval; MEM_READ32(retval, 0xA9FAB0); return retval; }
+	static void Status(int value)
+		{ MEM_WRITE32(0xA9FAB0, value); }
+
+	static int Duration()
+		{ int retval; MEM_READ32(retval, 0xA9FA98); return retval; }
+	static void Duration(int value)
+		{ MEM_WRITE32(0xA9FA98, value); }
+
+	static void Start(int duration)
+		{ SET_REG32(ECX, duration);
+			CALL(0x53B460); }
+
+	static void Update()
+		{ CALL(0x53B560); }
+
+	static bool Active()
+		{ CALL(0x53BAD0); }
 };
 
 #endif
