@@ -368,6 +368,13 @@ public:
 	void MarkPassengersAsExited()
 		{ JMP_THIS(0x7104C0); }
 
+	// for gattlings
+	void SetCurrentWeaponStage(int idx)
+		{ JMP_THIS(0x70DDD0); }
+
+	void SetFocus(TechnoClass *what)
+		{ JMP_THIS(0x70C610); }
+
 	//Constructor
 	TechnoClass(HouseClass* pOwner) : RadioClass(false)
 		{ JMP_THIS(0x6F2B40); }
