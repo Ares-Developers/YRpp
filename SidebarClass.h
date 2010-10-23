@@ -57,6 +57,10 @@ public:
 	static SidebarClass* Global()
 		{ return (SidebarClass*)0x87F7E8; }
 
+	enum {TooltipLength = 0x42};
+
+	static wchar_t *TooltipBuffer;
+
 	void SidebarNeedsRepaint(DWORD unk = 0)
 		{
 			// yeah, unknown voodoo magic shticks
@@ -99,7 +103,7 @@ public:
 	DWORD unknown_5398;
 	int ActiveTabIndex;
 	DWORD unknown_53A0;
-	bool unknown_bool_53A4;
+	bool HideObjectNameInTooltip; // see 0x6A9343
 	bool unknown_bool_53A5;
 	bool unknown_bool_53A6;
 	bool unknown_bool_53A7;

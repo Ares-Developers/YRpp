@@ -234,6 +234,9 @@ ALIAS_O(SessionClass*, SessionClass::Instance, 0xA8B238);
 #include <SideClass.h>
 DECL(SideClass, 0x8B4120);
 
+#include <SidebarClass.h>
+ALIAS_O(wchar_t *, SidebarClass::TooltipBuffer, 0xB07BC4);
+
 #include <SmudgeClass.h>
 DECL(SmudgeClass, 0xA8B1E0);
 
