@@ -108,6 +108,9 @@ Inheritance diagram for SidebarClass:</div>
 
 <p><a href="class_sidebar_class-members.html">List of all members.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Public Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="class_sidebar_class.html#a319bdf7a32b34f82531d37e753cd4703af88be9d5d33a6f3a0c1e2a91556c295b">TooltipLength</a> =  0x42
+ }</td></tr>
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sidebar_class.html#a304080dea9e453cab660b6d9ec45b26e">SidebarNeedsRepaint</a> (<a class="el" href="_y_r_p_p_core_8h.html#ad342ac907eb044443153a22f964bf0af">DWORD</a> unk=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sidebar_class.html#a0564701cc5055736e1a582be14f5626b">RepaintSidebar</a> (int tab=0)</td></tr>
@@ -123,7 +126,7 @@ Inheritance diagram for SidebarClass:</div>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_y_r_p_p_core_8h.html#ad342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sidebar_class.html#a0ae8c28ef64b7a03bd667d5d45402e00">unknown_5398</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sidebar_class.html#a376b406ab1bf8cbf7af0d45e4a4df659">ActiveTabIndex</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_y_r_p_p_core_8h.html#ad342ac907eb044443153a22f964bf0af">DWORD</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sidebar_class.html#a5b28ed5bed1edcb012ea43aeb65f4930">unknown_53A0</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sidebar_class.html#a18f810d61ae55cb7da070730e88fed53">unknown_bool_53A4</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sidebar_class.html#a2b5016fe4fdfb9b79d46ea605f2d4c4b">HideObjectNameInTooltip</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sidebar_class.html#aa4ee9c2b88665451ae6e585aba7446c5">unknown_bool_53A5</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sidebar_class.html#afd29b5dfaa903ac40a3edfe54acb6849">unknown_bool_53A6</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sidebar_class.html#a788211b8531aaa643a6cf54d9a81211e">unknown_bool_53A7</a></td></tr>
@@ -143,12 +146,39 @@ Inheritance diagram for SidebarClass:</div>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sidebar_class.html#a78138eaf0783fc71c4285565cc7d08b1">DiplomacyNumHouses</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sidebar_class.html#aa061e59e780e404a9e29e0b4e975c677">unknown_bool_5514</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sidebar_class.html#a62bf65379fe0f76710d11beae7554e45">unknown_bool_5515</a></td></tr>
+<tr><td colspan="2"><h2>Static Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static wchar_t *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sidebar_class.html#a570e46a84af2cddab185af3bffeaa574">TooltipBuffer</a> = ( wchar_t * )( 0xB07BC4 )</td></tr>
 <tr><td colspan="2"><h2>Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sidebar_class.html#ace030f91af60e612e0d920e8a2f389e1">SidebarClass</a> ()</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 
 <p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00053">53</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<hr/><h2>Member Enumeration Documentation</h2>
+<a class="anchor" id="a319bdf7a32b34f82531d37e753cd4703"></a><!-- doxytag: member="SidebarClass::@67" ref="a319bdf7a32b34f82531d37e753cd4703" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a319bdf7a32b34f82531d37e753cd4703af88be9d5d33a6f3a0c1e2a91556c295b"></a><!-- doxytag: member="TooltipLength" ref="a319bdf7a32b34f82531d37e753cd4703af88be9d5d33a6f3a0c1e2a91556c295b" args="" -->TooltipLength</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00060">60</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00060"></a>00060 {<a class="code" href="class_sidebar_class.html#a319bdf7a32b34f82531d37e753cd4703af88be9d5d33a6f3a0c1e2a91556c295b">TooltipLength</a> = 0x42};
+</pre></div></p>
+
+</div>
+</div>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a26ccee198a5bdd7134264c80ad71e7b8"></a><!-- doxytag: member="SidebarClass::~SidebarClass" ref="a26ccee198a5bdd7134264c80ad71e7b8" args="()" -->
 <div class="memitem">
@@ -165,9 +195,9 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00076">76</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00080">80</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
-<p><div class="fragment"><pre class="fragment"><a name="l00085"></a>00085 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x6ABC60); }
+<p><div class="fragment"><pre class="fragment"><a name="l00089"></a>00089 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x6ABC60); }
 </pre></div></p>
 
 </div>
@@ -187,9 +217,9 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00089">89</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00093">93</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
-<p><div class="fragment"><pre class="fragment"><a name="l00089"></a>00089 {}      <span class="comment">//don&#39;t need this</span>
+<p><div class="fragment"><pre class="fragment"><a name="l00093"></a>00093 {}      <span class="comment">//don&#39;t need this</span>
 </pre></div></p>
 
 </div>
@@ -213,9 +243,9 @@ Inheritance diagram for SidebarClass:</div>
 
 <p>Reimplemented from <a class="el" href="class_g_screen_class.html#a710b076a5e121b2f0f2dd443ec52aff2">GScreenClass</a>.</p>
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00072">72</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00076">76</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
-<p><div class="fragment"><pre class="fragment"><a name="l00073"></a>00073                 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x6A6C30); }
+<p><div class="fragment"><pre class="fragment"><a name="l00077"></a>00077                 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x6A6C30); }
 </pre></div></p>
 
 </div>
@@ -251,9 +281,9 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00084">84</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00088">88</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
-<p><div class="fragment"><pre class="fragment"><a name="l00085"></a>00085                 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x6ABC60); }
+<p><div class="fragment"><pre class="fragment"><a name="l00089"></a>00089                 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x6ABC60); }
 </pre></div></p>
 
 </div>
@@ -298,9 +328,9 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00069">69</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00073">73</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
-<p><div class="fragment"><pre class="fragment"><a name="l00070"></a>00070                 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x6A60A0); }
+<p><div class="fragment"><pre class="fragment"><a name="l00074"></a>00074                 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x6A60A0); }
 </pre></div></p>
 
 </div>
@@ -321,15 +351,15 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00060">60</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00064">64</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
-<p><div class="fragment"><pre class="fragment"><a name="l00061"></a>00061                 {
-<a name="l00062"></a>00062                         <span class="comment">// yeah, unknown voodoo magic shticks</span>
-<a name="l00063"></a>00063                         this-&gt;<a class="code" href="class_sidebar_class.html#afd29b5dfaa903ac40a3edfe54acb6849">unknown_bool_53A6</a> = this-&gt;<a class="code" href="class_sidebar_class.html#a788211b8531aaa643a6cf54d9a81211e">unknown_bool_53A7</a> = <span class="keyword">true</span>;
-<a name="l00064"></a>00064                         this-&gt;<a class="code" href="class_sidebar_class.html#a60f360138703ba13b1e842e6c103367c">Tabs</a>[this-&gt;<a class="code" href="class_sidebar_class.html#a376b406ab1bf8cbf7af0d45e4a4df659">ActiveTabIndex</a>].<a class="code" href="struct_tab_data_struct.html#a4a305cc82d36b89b3322035e392920ea">unknown_1C</a> = this-&gt;<a class="code" href="class_sidebar_class.html#a60f360138703ba13b1e842e6c103367c">Tabs</a>[this-&gt;<a class="code" href="class_sidebar_class.html#a376b406ab1bf8cbf7af0d45e4a4df659">ActiveTabIndex</a>].<a class="code" href="struct_tab_data_struct.html#a7f3d541cb3e5d1c1a96af11657624b01">unknown_3C</a> = 1;
-<a name="l00065"></a>00065                         this-&gt;<a class="code" href="class_map_class.html#a9ad546bcc75f5dd10d4f042d6ca03057">RedrawSidebar</a>(unk);
-<a name="l00066"></a>00066                         <a class="code" href="class_sidebar_class.html#acfcce4a8b9b692b24cdaa321bc827b8e">SidebarClass::Draw</a>(1);
-<a name="l00067"></a>00067                 }
+<p><div class="fragment"><pre class="fragment"><a name="l00065"></a>00065                 {
+<a name="l00066"></a>00066                         <span class="comment">// yeah, unknown voodoo magic shticks</span>
+<a name="l00067"></a>00067                         this-&gt;<a class="code" href="class_sidebar_class.html#afd29b5dfaa903ac40a3edfe54acb6849">unknown_bool_53A6</a> = this-&gt;<a class="code" href="class_sidebar_class.html#a788211b8531aaa643a6cf54d9a81211e">unknown_bool_53A7</a> = <span class="keyword">true</span>;
+<a name="l00068"></a>00068                         this-&gt;<a class="code" href="class_sidebar_class.html#a60f360138703ba13b1e842e6c103367c">Tabs</a>[this-&gt;<a class="code" href="class_sidebar_class.html#a376b406ab1bf8cbf7af0d45e4a4df659">ActiveTabIndex</a>].<a class="code" href="struct_tab_data_struct.html#a4a305cc82d36b89b3322035e392920ea">unknown_1C</a> = this-&gt;<a class="code" href="class_sidebar_class.html#a60f360138703ba13b1e842e6c103367c">Tabs</a>[this-&gt;<a class="code" href="class_sidebar_class.html#a376b406ab1bf8cbf7af0d45e4a4df659">ActiveTabIndex</a>].<a class="code" href="struct_tab_data_struct.html#a7f3d541cb3e5d1c1a96af11657624b01">unknown_3C</a> = 1;
+<a name="l00069"></a>00069                         this-&gt;<a class="code" href="class_map_class.html#a9ad546bcc75f5dd10d4f042d6ca03057">RedrawSidebar</a>(unk);
+<a name="l00070"></a>00070                         <a class="code" href="class_sidebar_class.html#acfcce4a8b9b692b24cdaa321bc827b8e">SidebarClass::Draw</a>(1);
+<a name="l00071"></a>00071                 }
 </pre></div></p>
 
 </div>
@@ -350,9 +380,9 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00079">79</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00083">83</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
-<p><div class="fragment"><pre class="fragment"><a name="l00085"></a>00085 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x6ABC60); }
+<p><div class="fragment"><pre class="fragment"><a name="l00089"></a>00089 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x6ABC60); }
 </pre></div></p>
 
 </div>
@@ -369,7 +399,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00100">100</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00104">104</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -384,7 +414,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00113">113</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00117">117</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -399,7 +429,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00109">109</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00113">113</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -414,7 +444,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00110">110</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00114">114</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -429,7 +459,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00121">121</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00125">125</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -444,7 +474,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00111">111</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00115">115</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -459,7 +489,22 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00112">112</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00116">116</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b5016fe4fdfb9b79d46ea605f2d4c4b"></a><!-- doxytag: member="SidebarClass::HideObjectNameInTooltip" ref="a2b5016fe4fdfb9b79d46ea605f2d4c4b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_sidebar_class.html#a2b5016fe4fdfb9b79d46ea605f2d4c4b">SidebarClass::HideObjectNameInTooltip</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00106">106</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -474,7 +519,22 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00097">97</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00101">101</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a570e46a84af2cddab185af3bffeaa574"></a><!-- doxytag: member="SidebarClass::TooltipBuffer" ref="a570e46a84af2cddab185af3bffeaa574" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">wchar_t * <a class="el" href="class_sidebar_class.html#a570e46a84af2cddab185af3bffeaa574">SidebarClass::TooltipBuffer</a> = ( wchar_t * )( 0xB07BC4 )<code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00062">62</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -489,7 +549,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00098">98</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00102">102</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -504,7 +564,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00099">99</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00103">103</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -519,7 +579,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00101">101</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00105">105</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -534,7 +594,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00114">114</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00118">118</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -549,7 +609,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00115">115</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00119">119</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -564,7 +624,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00116">116</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00120">120</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -579,7 +639,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00117">117</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00121">121</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -594,7 +654,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00118">118</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00122">122</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -609,7 +669,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00119">119</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00123">123</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -624,22 +684,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00120">120</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a18f810d61ae55cb7da070730e88fed53"></a><!-- doxytag: member="SidebarClass::unknown_bool_53A4" ref="a18f810d61ae55cb7da070730e88fed53" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="class_sidebar_class.html#a18f810d61ae55cb7da070730e88fed53">SidebarClass::unknown_bool_53A4</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00102">102</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00124">124</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -654,7 +699,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00103">103</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00107">107</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -669,7 +714,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00104">104</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00108">108</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -684,7 +729,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00105">105</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00109">109</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -699,7 +744,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00106">106</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00110">110</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -714,7 +759,7 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00123">123</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00127">127</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
@@ -729,12 +774,13 @@ Inheritance diagram for SidebarClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00124">124</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_sidebar_class_8h_source.html#l00128">128</a> of file <a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_sidebar_class_8h_source.html">SidebarClass.h</a></li>
+<li><a class="el" href="_static_inits_8cpp_source.html">StaticInits.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -751,7 +797,7 @@ Inheritance diagram for SidebarClass:</div>
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Fri Oct 15 21:05:52 2010 for YR++ by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Nov 6 20:23:02 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>
