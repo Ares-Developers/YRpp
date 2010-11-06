@@ -398,12 +398,12 @@ public:
 	PassengersClass  Passengers;
 	TechnoClass*     Transporter; // unit carrying me
 	int              unknown_int_120;
-	int              CurrentWeaponNumber; // for gattling
+	int              CurrentTurretNumber; // for IFV/gattling/charge turrets
 	int              unknown_int_128;
 	AnimClass*       BehindAnim;
 	AnimClass*       DeployAnim;
 	bool             InAir;
-	int              CurrentTurret;
+	int              CurrentWeaponNumber; // for IFV/gattling
 	int              CurrentRanking; //see RANK definitons, only used for promotion detection
 	DWORD            CurrentGattlingStage;
 	DWORD            unknown_144;
