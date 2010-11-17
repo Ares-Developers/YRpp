@@ -121,6 +121,9 @@ ALIAS(ConvertClass *, FileSystem::MOUSE_PAL, 0x87F6C8);
 #include <GameModeOptionsClass.h>
 ALIAS_O(GameModeOptionsClass *, GameModeOptionsClass::Instance, 0xA8B250);
 
+#include <GetCDClass.h>
+ALIAS_O(GetCDClass*, GetCDClass::Instance, 0xA8E8E8);
+
 #include <HouseClass.h>
 DECL(HouseClass, 0xA80228);
 ALIAS(HouseClass *, HouseClass::Player, 0xA83D4C);
