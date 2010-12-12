@@ -30,6 +30,8 @@ class ParticleSystemClass;
 class SpawnManagerClass;
 class WaveClass;
 
+struct NetworkEvent;
+
 #include <TransitionTimer.h>
 
 struct VeterancyStruct
@@ -202,7 +204,9 @@ public:
 	virtual int VoiceDeploy() R0;
 	virtual int VoiceAttack(ObjectClass *Target) R0;
 	virtual bool ClickedEvent(eNetworkEvents event) R0;
-	virtual bool ClickedMission(eMission Mission, DWORD dwUnk2, DWORD dwUnk3, ObjectClass *Target) R0;
+
+	// depending on the mission you click, cells/Target are not always needed
+	virtual bool ClickedMission(eMission Mission, ObjectClass *Target, CellClass * TargetCell, CellClass *NearestTargetCellICanEnter) R0;
 	virtual bool IsUnderEMP() R0;
 	virtual bool IsParalyzed() R0;
 	virtual bool CanCheer() R0;
@@ -374,6 +378,15 @@ public:
 
 	void SetFocus(TechnoClass *what)
 		{ JMP_THIS(0x70C610); }
+
+	int sub_70DE00(int State)
+		{ JMP_THIS(0x70DE00); }
+
+	int __fastcall ClearPlanningTokens(NetworkEvent *Event)
+		{ JMP_STD(0x6386E0); }
+
+	void SetTargetForPassengers(ObjectClass *Target)
+		{ JMP_THIS(0x710550); }
 
 	//Constructor
 	TechnoClass(HouseClass* pOwner) : RadioClass(false)

@@ -34,9 +34,6 @@ public:
 	TemporalClass(TechnoClass* pOwnerUnit) : AbstractClass(false)
 		{ JMP_THIS(0x71A4E0); }
 
-protected:
-	TemporalClass() : AbstractClass(false) { }
-
 	//non-virtual
 	void Fire(TechnoClass* pTarget)
 		{ JMP_THIS(0x71AF20); }
@@ -53,6 +50,9 @@ protected:
 		{ JMP_THIS(0x71AD40); }
 	void Detach()
 		{ JMP_THIS(0x71ADE0); }
+
+protected:
+	TemporalClass() : AbstractClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================

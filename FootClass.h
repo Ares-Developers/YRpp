@@ -96,6 +96,16 @@ public:
 	void FootClass_ImbueLocomotor(FootClass *target, CLSID clsid)
 		{ JMP_THIS(0x710000); }
 
+	// var $this = this; $.each($this.Passengers, function(ix, p) { p.Location = $this.Location; });
+	void UpdatePassengerCoords()
+		{ JMP_THIS(0x7104F0); }
+
+	void AbortMotion()
+		{ JMP_THIS(0x4DF0D0); }
+
+	void ClearSomeVector() // clears 5AC
+		{ JMP_THIS(0x4DA1C0); }
+
 protected:
 	FootClass() : TechnoClass(false)
 		{ }

@@ -86,6 +86,8 @@ public:
 	virtual bool CanBeRepaired() R0;
 	virtual bool CanBeSold() R0;
 	virtual bool IsActive() R0;
+
+	// can the current player control this unit? (owned by him, not paralyzed, not spawned, not warping, not slaved...)
 	virtual bool IsControllable() R0;
 
 	// stupid! return this->GetCoords(pCrd);

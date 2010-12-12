@@ -92,6 +92,7 @@ public:
 	static NetworkEvent *QueuedEvents; // these are really 128 length arrays
 	static int *QueuedEventTimestamps; // these are really 128 length arrays
 
+	// custom helper for Ares logics
 	static bool AddEvent(NetworkEvent *event) {
 		event->Timestamp = Unsorted::CurrentFrame;
 		if(LastEventIndex >= 128) {
@@ -103,6 +104,23 @@ public:
 		++LastEventIndex;
 		return true;
 	}
+
+	// existing functions from Westwood
+
+	/**
+	 * dam girl, you crazy
+	 *
+	 * this gets called when you click-command your objects
+	 * from inside TechnoClass::ClickedMission, where this is the selected object
+	 *
+	 * selfID and selfWhatAmI are results of Pack(this)
+	 * PackedTarget and PackedTargetCell are pointers to the Pack()ed versions of the Target and TargetCell of ClickedMission
+	 */
+	static bool __fastcall CreateClickedMissionEvent
+			(eMission Mission, NetID *PackedTarget, int selfID, char selfWhatAmI, NetID *PackedTargetCell)
+		{ JMP_STD(0x646E90); }
+
+
 };
 
 #endif
