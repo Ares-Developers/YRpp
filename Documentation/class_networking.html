@@ -95,6 +95,7 @@ window.onload = initDynSections;
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_networking.html#a4a5ccc5912d06f8886d81337e164fb9b">AddEvent</a> (<a class="el" href="struct_network_event.html">NetworkEvent</a> *event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool __fastcall&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_networking.html#ac4c97e358d5c9da5e6f703568cafc8eb">CreateClickedMissionEvent</a> (<a class="el" href="_general_definitions_8h.html#abceefb2d0082035b67838517b76c025d">eMission</a> Mission, <a class="el" href="struct_net_i_d.html">NetID</a> *PackedTarget, int selfID, char selfWhatAmI, <a class="el" href="struct_net_i_d.html">NetID</a> *PackedTargetCell)</td></tr>
 <tr><td colspan="2"><h2>Static Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static int &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_networking.html#a4459cdddcce8b6448d9527bc093f5ac0">LastEventIndex</a> = *( int *)( 0xA802C8 )</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static int &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_networking.html#ae6596b264c006cc2b7fd398d317ea624">NextPacketIndex</a> = *( int *)( 0xA802D0 )</td></tr>
@@ -121,19 +122,72 @@ window.onload = initDynSections;
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_network_events_8h_source.html#l00095">95</a> of file <a class="el" href="_network_events_8h_source.html">NetworkEvents.h</a>.</p>
+<p>Definition at line <a class="el" href="_network_events_8h_source.html#l00096">96</a> of file <a class="el" href="_network_events_8h_source.html">NetworkEvents.h</a>.</p>
 
-<p><div class="fragment"><pre class="fragment"><a name="l00095"></a>00095                                                   {
-<a name="l00096"></a>00096                 <span class="keyword">event</span>-&gt;Timestamp = <a class="code" href="namespace_unsorted.html#a85ad902c794ff9f08aae754093df63b3">Unsorted::CurrentFrame</a>;
-<a name="l00097"></a>00097                 <span class="keywordflow">if</span>(<a class="code" href="class_networking.html#a4459cdddcce8b6448d9527bc093f5ac0">LastEventIndex</a> &gt;= 128) {
-<a name="l00098"></a>00098                         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00099"></a>00099                 }
-<a name="l00100"></a>00100                 memcpy(&amp;<a class="code" href="class_networking.html#a240e7f26f18a6c8a50e535b0320d85f9">QueuedEvents</a>[<a class="code" href="class_networking.html#ae6596b264c006cc2b7fd398d317ea624">NextPacketIndex</a>], event, <span class="keyword">sizeof</span>(*event));
-<a name="l00101"></a>00101                 <a class="code" href="class_networking.html#af6997cac15e1251aeedc62e8ab5996c5">QueuedEventTimestamps</a>[NextPacketIndex] = <a class="code" href="class_imports.html#a5ba4dd30584236e0bf666703857513d6">Imports::TimeGetTime</a>();
-<a name="l00102"></a>00102                 NextPacketIndex = (NextPacketIndex + 1) &amp; 0x7F;
-<a name="l00103"></a>00103                 ++<a class="code" href="class_networking.html#a4459cdddcce8b6448d9527bc093f5ac0">LastEventIndex</a>;
-<a name="l00104"></a>00104                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00105"></a>00105         }
+<p><div class="fragment"><pre class="fragment"><a name="l00096"></a>00096                                                   {
+<a name="l00097"></a>00097                 <span class="keyword">event</span>-&gt;Timestamp = <a class="code" href="namespace_unsorted.html#a85ad902c794ff9f08aae754093df63b3">Unsorted::CurrentFrame</a>;
+<a name="l00098"></a>00098                 <span class="keywordflow">if</span>(<a class="code" href="class_networking.html#a4459cdddcce8b6448d9527bc093f5ac0">LastEventIndex</a> &gt;= 128) {
+<a name="l00099"></a>00099                         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00100"></a>00100                 }
+<a name="l00101"></a>00101                 memcpy(&amp;<a class="code" href="class_networking.html#a240e7f26f18a6c8a50e535b0320d85f9">QueuedEvents</a>[<a class="code" href="class_networking.html#ae6596b264c006cc2b7fd398d317ea624">NextPacketIndex</a>], event, <span class="keyword">sizeof</span>(*event));
+<a name="l00102"></a>00102                 <a class="code" href="class_networking.html#af6997cac15e1251aeedc62e8ab5996c5">QueuedEventTimestamps</a>[NextPacketIndex] = <a class="code" href="class_imports.html#a5ba4dd30584236e0bf666703857513d6">Imports::TimeGetTime</a>();
+<a name="l00103"></a>00103                 NextPacketIndex = (NextPacketIndex + 1) &amp; 0x7F;
+<a name="l00104"></a>00104                 ++<a class="code" href="class_networking.html#a4459cdddcce8b6448d9527bc093f5ac0">LastEventIndex</a>;
+<a name="l00105"></a>00105                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00106"></a>00106         }
+</pre></div></p>
+
+</div>
+</div>
+<a class="anchor" id="ac4c97e358d5c9da5e6f703568cafc8eb"></a><!-- doxytag: member="Networking::CreateClickedMissionEvent" ref="ac4c97e358d5c9da5e6f703568cafc8eb" args="(eMission Mission, NetID *PackedTarget, int selfID, char selfWhatAmI, NetID *PackedTargetCell)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool __fastcall Networking::CreateClickedMissionEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_general_definitions_8h.html#abceefb2d0082035b67838517b76c025d">eMission</a>&nbsp;</td>
+          <td class="paramname"> <em>Mission</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_net_i_d.html">NetID</a> *&nbsp;</td>
+          <td class="paramname"> <em>PackedTarget</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>selfID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>selfWhatAmI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_net_i_d.html">NetID</a> *&nbsp;</td>
+          <td class="paramname"> <em>PackedTargetCell</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>dam girl, you crazy</p>
+<p>this gets called when you click-command your objects from inside <a class="el" href="class_techno_class.html#a74a8b0e2cc2daf1430a48ee09591860a">TechnoClass::ClickedMission</a>, where this is the selected object</p>
+<p>selfID and selfWhatAmI are results of Pack(this) PackedTarget and PackedTargetCell are pointers to the Pack()ed versions of the Target and TargetCell of ClickedMission </p>
+
+<p>Definition at line <a class="el" href="_network_events_8h_source.html#l00120">120</a> of file <a class="el" href="_network_events_8h_source.html">NetworkEvents.h</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00121"></a>00121                 { <a class="code" href="_a_s_m_macros_8h.html#a31c80ef106ed4d49102bf51af2ab63bc">JMP_STD</a>(0x646E90); }
 </pre></div></p>
 
 </div>
@@ -218,7 +272,7 @@ window.onload = initDynSections;
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Nov 6 20:23:00 2010 for YR++ by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Dec 14 21:14:33 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

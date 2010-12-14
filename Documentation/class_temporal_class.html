@@ -114,6 +114,12 @@ Inheritance diagram for TemporalClass:</div>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_general_definitions_8h.html#aa1d95645c44dc819c084adc2b96a3d6a">eAbstractType</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temporal_class.html#a8b63cba07d3a511943588af7177c260f">WhatAmI</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temporal_class.html#a2c801b0a9355c68235986a0d9997f2bd">Size</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temporal_class.html#a9a2cd2839f4b5a40bce1021693c86309">TemporalClass</a> (<a class="el" href="class_techno_class.html">TechnoClass</a> *pOwnerUnit)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temporal_class.html#a24172528ff55eb277849922a30b9489a">Fire</a> (<a class="el" href="class_techno_class.html">TechnoClass</a> *pTarget)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temporal_class.html#a46f5be8ee69e959065b6fe1f7c478afc">CanWarpTarget</a> (<a class="el" href="class_techno_class.html">TechnoClass</a> *pTarget)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temporal_class.html#a9fadb726f0b5437bf2531ddd925a81f1">GetWarpPerStep</a> (int nHelperCount)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temporal_class.html#ae1921e4b5d2e8bf044faee927c11bbf6">LetGo</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temporal_class.html#afc4f932e15038e8c3884b4d738719b7c">JustLetGo</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temporal_class.html#aa2efb64b5f846f64109f2f8a84fbe52d">Detach</a> ()</td></tr>
 <tr><td colspan="2"><h2>Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_techno_class.html">TechnoClass</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temporal_class.html#a01b1602c389089ae9733d731097c6e10">Owner</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_techno_class.html">TechnoClass</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temporal_class.html#aaa512bd1047121f2c1796bbdffb8d18a">Target</a></td></tr>
@@ -129,12 +135,6 @@ Inheritance diagram for TemporalClass:</div>
 &lt; <a class="el" href="class_temporal_class.html">TemporalClass</a> * &gt; *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temporal_class.html#a6fb904c93af29dd1745a900ee7538211">Array</a> = (<a class="el" href="class_dynamic_vector_class.html">DynamicVectorClass</a>&lt; <a class="el" href="class_temporal_class.html">TemporalClass</a> *&gt;*) 0xB0EC60</td></tr>
 <tr><td colspan="2"><h2>Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temporal_class.html#ac04051ed5e1521cc29e198807bed25e6">TemporalClass</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temporal_class.html#a24172528ff55eb277849922a30b9489a">Fire</a> (<a class="el" href="class_techno_class.html">TechnoClass</a> *pTarget)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temporal_class.html#a46f5be8ee69e959065b6fe1f7c478afc">CanWarpTarget</a> (<a class="el" href="class_techno_class.html">TechnoClass</a> *pTarget)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temporal_class.html#a9fadb726f0b5437bf2531ddd925a81f1">GetWarpPerStep</a> (int nHelperCount)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temporal_class.html#ae1921e4b5d2e8bf044faee927c11bbf6">LetGo</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temporal_class.html#afc4f932e15038e8c3884b4d738719b7c">JustLetGo</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temporal_class.html#aa2efb64b5f846f64109f2f8a84fbe52d">Detach</a> ()</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 
@@ -226,9 +226,9 @@ Inheritance diagram for TemporalClass:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_temporal_class_8h_source.html#l00038">38</a> of file <a class="el" href="_temporal_class_8h_source.html">TemporalClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_temporal_class_8h_source.html#l00055">55</a> of file <a class="el" href="_temporal_class_8h_source.html">TemporalClass.h</a>.</p>
 
-<p><div class="fragment"><pre class="fragment"><a name="l00038"></a>00038 : <a class="code" href="class_abstract_class.html#a81ebc7990006b7fd67c476157db0d6fb">AbstractClass</a>(<span class="keyword">false</span>) { }
+<p><div class="fragment"><pre class="fragment"><a name="l00055"></a>00055 : <a class="code" href="class_abstract_class.html#a81ebc7990006b7fd67c476157db0d6fb">AbstractClass</a>(<span class="keyword">false</span>) { }
 </pre></div></p>
 
 </div>
@@ -244,15 +244,15 @@ Inheritance diagram for TemporalClass:</div>
           <td class="paramtype"><a class="el" href="class_techno_class.html">TechnoClass</a> *&nbsp;</td>
           <td class="paramname"> <em>pTarget</em></td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline, protected]</code></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_temporal_class_8h_source.html#l00043">43</a> of file <a class="el" href="_temporal_class_8h_source.html">TemporalClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_temporal_class_8h_source.html#l00040">40</a> of file <a class="el" href="_temporal_class_8h_source.html">TemporalClass.h</a>.</p>
 
-<p><div class="fragment"><pre class="fragment"><a name="l00044"></a>00044                 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x71AE50); }
+<p><div class="fragment"><pre class="fragment"><a name="l00041"></a>00041                 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x71AE50); }
 </pre></div></p>
 
 </div>
@@ -266,15 +266,15 @@ Inheritance diagram for TemporalClass:</div>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline, protected]</code></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_temporal_class_8h_source.html#l00054">54</a> of file <a class="el" href="_temporal_class_8h_source.html">TemporalClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_temporal_class_8h_source.html#l00051">51</a> of file <a class="el" href="_temporal_class_8h_source.html">TemporalClass.h</a>.</p>
 
-<p><div class="fragment"><pre class="fragment"><a name="l00055"></a>00055                 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x71ADE0); }
+<p><div class="fragment"><pre class="fragment"><a name="l00052"></a>00052                 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x71ADE0); }
 </pre></div></p>
 
 </div>
@@ -289,15 +289,15 @@ Inheritance diagram for TemporalClass:</div>
           <td class="paramtype"><a class="el" href="class_techno_class.html">TechnoClass</a> *&nbsp;</td>
           <td class="paramname"> <em>pTarget</em></td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline, protected]</code></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_temporal_class_8h_source.html#l00041">41</a> of file <a class="el" href="_temporal_class_8h_source.html">TemporalClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_temporal_class_8h_source.html#l00038">38</a> of file <a class="el" href="_temporal_class_8h_source.html">TemporalClass.h</a>.</p>
 
-<p><div class="fragment"><pre class="fragment"><a name="l00042"></a>00042                 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x71AF20); }
+<p><div class="fragment"><pre class="fragment"><a name="l00039"></a>00039                 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x71AF20); }
 </pre></div></p>
 
 </div>
@@ -337,15 +337,15 @@ Inheritance diagram for TemporalClass:</div>
           <td class="paramtype">int&nbsp;</td>
           <td class="paramname"> <em>nHelperCount</em></td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline, protected]</code></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_temporal_class_8h_source.html#l00047">47</a> of file <a class="el" href="_temporal_class_8h_source.html">TemporalClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_temporal_class_8h_source.html#l00044">44</a> of file <a class="el" href="_temporal_class_8h_source.html">TemporalClass.h</a>.</p>
 
-<p><div class="fragment"><pre class="fragment"><a name="l00048"></a>00048                 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x71AB10); }
+<p><div class="fragment"><pre class="fragment"><a name="l00045"></a>00045                 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x71AB10); }
 </pre></div></p>
 
 </div>
@@ -359,15 +359,15 @@ Inheritance diagram for TemporalClass:</div>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline, protected]</code></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_temporal_class_8h_source.html#l00052">52</a> of file <a class="el" href="_temporal_class_8h_source.html">TemporalClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_temporal_class_8h_source.html#l00049">49</a> of file <a class="el" href="_temporal_class_8h_source.html">TemporalClass.h</a>.</p>
 
-<p><div class="fragment"><pre class="fragment"><a name="l00053"></a>00053                 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x71AD40); }
+<p><div class="fragment"><pre class="fragment"><a name="l00050"></a>00050                 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x71AD40); }
 </pre></div></p>
 
 </div>
@@ -381,15 +381,15 @@ Inheritance diagram for TemporalClass:</div>
           <td>(</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline, protected]</code></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_temporal_class_8h_source.html#l00050">50</a> of file <a class="el" href="_temporal_class_8h_source.html">TemporalClass.h</a>.</p>
+<p>Definition at line <a class="el" href="_temporal_class_8h_source.html#l00047">47</a> of file <a class="el" href="_temporal_class_8h_source.html">TemporalClass.h</a>.</p>
 
-<p><div class="fragment"><pre class="fragment"><a name="l00051"></a>00051                 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x71ABC0); }
+<p><div class="fragment"><pre class="fragment"><a name="l00048"></a>00048                 { <a class="code" href="_a_s_m_macros_8h.html#a41c9bc50d803785ad20ac28b521f5b9c">JMP_THIS</a>(0x71ABC0); }
 </pre></div></p>
 
 </div>
@@ -671,7 +671,7 @@ Inheritance diagram for TemporalClass:</div>
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Nov 6 20:23:03 2010 for YR++ by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Dec 14 21:14:36 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

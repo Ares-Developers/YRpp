@@ -166,9 +166,10 @@ window.onload = initDynSections;
   <tr class="memlist"><td><a class="el" href="class_techno_class.html#a5404ef993b83dcb885e1664f74aa8486">ChronoWarpedByHouse</a></td><td><a class="el" href="class_techno_class.html">TechnoClass</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_building_class.html#a1d526913702367ef69020b12c3647b44">ClearBunker</a>()</td><td><a class="el" href="class_building_class.html">BuildingClass</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_techno_class.html#a9205e4c319f57ed0b8c588b767c53eca">ClearDisguise</a>()</td><td><a class="el" href="class_techno_class.html">TechnoClass</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_techno_class.html#a7224df128b0e00cc6f7f9ce8123f8f56">ClearPlanningTokens</a>(NetworkEvent *Event)</td><td><a class="el" href="class_techno_class.html">TechnoClass</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_object_class.html#aea12dfb99b5a07b38f59b922f8b2b732">ClickedAction</a>(eAction Action, ObjectClass *Target, bool bUnk)</td><td><a class="el" href="class_object_class.html">ObjectClass</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_techno_class.html#aacb287964cc8057096e7845cdbac6c0f">ClickedEvent</a>(eNetworkEvents event)</td><td><a class="el" href="class_techno_class.html">TechnoClass</a></td><td><code> [inline, virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_techno_class.html#afd0a22c34609f75ce685c0cfc2b5b117">ClickedMission</a>(eMission Mission, DWORD dwUnk2, DWORD dwUnk3, ObjectClass *Target)</td><td><a class="el" href="class_techno_class.html">TechnoClass</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_techno_class.html#a74a8b0e2cc2daf1430a48ee09591860a">ClickedMission</a>(eMission Mission, ObjectClass *Target, CellClass *TargetCell, CellClass *NearestTargetCellICanEnter)</td><td><a class="el" href="class_techno_class.html">TechnoClass</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_techno_class.html#a6adae8583308ec284238002670d9eec6">Cloak</a>(bool bPlaySound)</td><td><a class="el" href="class_techno_class.html">TechnoClass</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_techno_class.html#afa7f2220524aa8f81a732aa292ed8a71">Cloakable</a></td><td><a class="el" href="class_techno_class.html">TechnoClass</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_techno_class.html#aa006617035fa031eb9c58c5f57172a0d">CloakDelayTimer</a></td><td><a class="el" href="class_techno_class.html">TechnoClass</a></td><td></td></tr>
@@ -552,6 +553,7 @@ window.onload = initDynSections;
   <tr class="memlist"><td><a class="el" href="class_techno_class.html#a2d5b66f4c4d6c90be87e856c900f27a4">SetOwningHouse</a>(HouseClass *pHouse, DWORD dwUnk=1)</td><td><a class="el" href="class_techno_class.html">TechnoClass</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_techno_class.html#a314e32d591fc5937a485a1ad77ba5a36">SetSomeCellStruct</a>(CellStruct *Buffer)</td><td><a class="el" href="class_techno_class.html">TechnoClass</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_techno_class.html#ae94c82abe48e92b885236322a48d33da">SetTarget</a>(AbstractClass *Target)</td><td><a class="el" href="class_techno_class.html">TechnoClass</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_techno_class.html#a9e55e81566ba5bc539958cbe9cdbaca7">SetTargetForPassengers</a>(ObjectClass *Target)</td><td><a class="el" href="class_techno_class.html">TechnoClass</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_techno_class.html#a07724b2098f059f1f3362f7a29b6c0b2">ShouldBeCloaked</a>()</td><td><a class="el" href="class_techno_class.html">TechnoClass</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_techno_class.html#aaf1d05aa7005bd7d0620d152c4257330">ShouldLoseTargetNow</a></td><td><a class="el" href="class_techno_class.html">TechnoClass</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_techno_class.html#a37674d248cda37dcf0165df7607e6082">ShouldNotBeCloaked</a>()</td><td><a class="el" href="class_techno_class.html">TechnoClass</a></td><td><code> [inline, virtual]</code></td></tr>
@@ -571,6 +573,7 @@ window.onload = initDynSections;
   <tr class="memlist"><td><a class="el" href="class_object_class.html#ac19342f1bb848fd980169501dcf0d94c">StartAirstrikeTimer</a>(int Duration)</td><td><a class="el" href="class_object_class.html">ObjectClass</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_object_class.html#a530013aebc959b434f30d3a4c792dc07">StopAirstrikeTimer</a>()</td><td><a class="el" href="class_object_class.html">ObjectClass</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_building_class.html#a12408728f202e8b81a4fdbdd66c3a156">StorageFilledSlots</a></td><td><a class="el" href="class_building_class.html">BuildingClass</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_techno_class.html#ac9c1d413eac55127a775de2795cb73ce">sub_70DE00</a>(int State)</td><td><a class="el" href="class_techno_class.html">TechnoClass</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_building_class.html#a6887f939f66bf2fcb2ad6e0ba76ec225">SupportingPrisms</a></td><td><a class="el" href="class_building_class.html">BuildingClass</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_techno_class.html#a605e661d53cdf8500bce9b6f590290b5">Target</a></td><td><a class="el" href="class_techno_class.html">TechnoClass</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_techno_class.html#a75ef15f7cfe897c518174dc54e8ffab9">TargetAndEstimateDamage</a>(DWORD dwUnk, DWORD dwUnk2)</td><td><a class="el" href="class_techno_class.html">TechnoClass</a></td><td><code> [inline, virtual]</code></td></tr>
@@ -819,7 +822,7 @@ window.onload = initDynSections;
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sat Nov 6 20:22:56 2010 for YR++ by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Tue Dec 14 21:14:31 2010 for YR++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>
