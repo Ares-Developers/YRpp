@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><title></title>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="search.css"/>
+<script type="text/javascript" src="search.js"></script>
+</head>
+<body class="SRPage">
+<div id="SRIndex">
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRResult" id="SR_yellow">
+ <div class="SREntry">
+  <a id="Item0" onkeydown="return searchResults.Nav(event,0)" onkeypress="return searchResults.Nav(event,0)" onkeyup="return searchResults.Nav(event,0)" class="SRSymbol" href="javascript:searchResults.Toggle('SR_yellow')">Yellow</a>
+  <div class="SRChildren">
+    <a id="Item0_c0" onkeydown="return searchResults.NavChild(event,0,0)" onkeypress="return searchResults.NavChild(event,0,0)" onkeyup="return searchResults.NavChild(event,0,0)" class="SRScope" href="../class_color_scheme.html#a637f662241ab65837999252c120f1634abf9c24fa72c403eea221e5f681f68a6c" target="_parent">ColorScheme::Yellow()</a>
+    <a id="Item0_c1" onkeydown="return searchResults.NavChild(event,0,1)" onkeypress="return searchResults.NavChild(event,0,1)" onkeyup="return searchResults.NavChild(event,0,1)" class="SRScope" href="../class_health_state.html#a912d124f609ff9d3e4d09730a6814765af75dca9545010c73ea2717ab9a91d4e5" target="_parent">HealthState::Yellow()</a>
+  </div>
+ </div>
+</div>
+<div class="SRResult" id="SR_yes">
+ <div class="SREntry">
+  <a id="Item1" onkeydown="return searchResults.Nav(event,1)" onkeypress="return searchResults.Nav(event,1)" onkeyup="return searchResults.Nav(event,1)" class="SRSymbol" href="javascript:searchResults.Toggle('SR_yes')">Yes</a>
+  <div class="SRChildren">
+    <a id="Item1_c0" onkeydown="return searchResults.NavChild(event,1,0)" onkeypress="return searchResults.NavChild(event,1,0)" onkeyup="return searchResults.NavChild(event,1,0)" class="SRScope" href="../class_is_funda_t.html#a91986607b4dfd5a8254f21a1cbc6ef0bab2f819d39cb4d1c70fcbf29c6a098684" target="_parent">IsFundaT::Yes()</a>
+    <a id="Item1_c1" onkeydown="return searchResults.NavChild(event,1,1)" onkeypress="return searchResults.NavChild(event,1,1)" onkeyup="return searchResults.NavChild(event,1,1)" class="SRScope" href="../class_is_enum_t.html#a49c5079129286b304abc6811861ab3baae7d065a676b6b4a7e27feffb1f92e3ee" target="_parent">IsEnumT::Yes()</a>
+    <a id="Item1_c2" onkeydown="return searchResults.NavChild(event,1,2)" onkeypress="return searchResults.NavChild(event,1,2)" onkeyup="return searchResults.NavChild(event,1,2)" class="SRScope" href="../class_is_class_t.html#a6e84ad8bb87e45d77e1b7c0c517bfbb6a7aca49ccdc4a6eb62fea7261eb393f6f" target="_parent">IsClassT::Yes()</a>
+  </div>
+ </div>
+</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+<script type="text/javascript"><!--
+document.getElementById("Loading").style.display="none";
+document.getElementById("NoMatches").style.display="none";
+var searchResults = new SearchResults("searchResults");
+searchResults.Search();
+--></script>
+</div>
+</body>
+</html>
