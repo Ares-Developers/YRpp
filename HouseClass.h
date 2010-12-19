@@ -347,75 +347,14 @@ public:
 		return this->Type->get_ID();
 	}
 
-	int CountOwnedNow(TechnoTypeClass *Item) {
-		int Index = Item->GetArrayIndex();
-		int Sum = 0;
-		BuildingTypeClass *BT = NULL;
-		UnitTypeClass *UT = NULL;
-		UnitClass *U = NULL;
-		InfantryTypeClass *IT = NULL;
+	// I don't want to talk about these
+	// read the code <_<
 
-		switch(Item->WhatAmI()) {
-			case abs_BuildingType:
-				Sum = this->OwnedBuildingTypes.GetItemCount(Index);
-				BT = (BuildingTypeClass *)Item;
-				UT = BT->UndeploysInto;
-				if(UT) {
-					Sum += this->OwnedUnitTypes.GetItemCount(UT->GetArrayIndex());
-				}
-			break;
+	int CountOwnedNow(TechnoTypeClass *Item);
 
-			case abs_UnitType:
-				Sum = this->OwnedUnitTypes.GetItemCount(Index);
-				UT = (UnitTypeClass *)Item;
-				BT = UT->DeploysInto;
-				if(BT) {
-					Sum += this->OwnedBuildingTypes.GetItemCount(BT->GetArrayIndex());
-				}
-			break;
+	int CountOwnedAndPresent(TechnoTypeClass *Item);
 
-			case abs_InfantryType:
-				Sum = this->OwnedInfantryTypes.GetItemCount(Index);
-				IT = (InfantryTypeClass *)Item;
-				if(IT->VehicleThief) {
-					for(int i = 0; i < UnitClass::Array->Count; ++i) {
-						U = UnitClass::Array->GetItem(i);
-						if(U->Owner == this && U->HijackerInfantryType == Index) {
-							++Sum;
-						}
-					}
-				}
-			break;
-
-			case abs_AircraftType:
-				Sum = this->OwnedAircraftTypes.GetItemCount(Index);
-			break;
-
-			default:
-				;
-		}
-		return Sum;
-	}
-
-	int CountOwnedEver(TechnoTypeClass *Item) {
-		int Index = Item->GetArrayIndex();
-		switch(Item->WhatAmI()) {
-			case abs_BuildingType:
-				return this->OwnedBuildingTypes2.GetItemCount(Index);
-
-			case abs_UnitType:
-				return this->OwnedUnitTypes2.GetItemCount(Index);
-
-			case abs_InfantryType:
-				return this->OwnedInfantryTypes2.GetItemCount(Index);
-
-			case abs_AircraftType:
-				return this->OwnedAircraftTypes2.GetItemCount(Index);
-
-			default:
-				return 0;
-		}
-	}
+	int CountOwnedEver(TechnoTypeClass *Item);
 
 	bool HasFromSecretLab(TechnoTypeClass *Item) {
 		for(int i = 0; i < this->SecretLabs.Count; ++i) {
@@ -707,16 +646,19 @@ public:
 	                                // map actions let you set an ai's ForceShield firing cell, this is related
 
 		// Used for: Counting objects ever owned
-		// altered on object gain only
-		// BuildLimit < 0 validation uses this
+		// altered on each object's loss or gain
+		// BuildLimit > 0 validation uses this
 	CounterClass OwnedBuildingTypes;
 	CounterClass OwnedUnitTypes;
 	CounterClass OwnedInfantryTypes;
 	CounterClass OwnedAircraftTypes;
 
-		// Used for: Counting objects currently owned
+		// Used for: Counting objects currently owned and on the map
 		// altered on each object's loss or gain
 		// AITriggerType condition uses this
+		// original PrereqOverride check uses this
+		// original Prerequisite check uses this
+		// AuxBuilding check uses this
 	CounterClass OwnedBuildingTypes1;
 	CounterClass OwnedUnitTypes1;
 	CounterClass OwnedInfantryTypes1;
@@ -724,11 +666,12 @@ public:
 
 		// Used for: Counting objects produced from Factory
 		// not altered when things get taken over or removed
-		// BuildLimit > 0 uses this
+		// BuildLimit < 0 validation uses this
 	CounterClass OwnedBuildingTypes2;
 	CounterClass OwnedUnitTypes2;
 	CounterClass OwnedInfantryTypes2;
 	CounterClass OwnedAircraftTypes2;
+
 	DWORD unknown_55F0;
 	DWORD unknown_55F4;
 	int                   AttackDelayA;

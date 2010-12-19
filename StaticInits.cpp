@@ -487,3 +487,107 @@ void ReleaseIf(ILocomotion *ptr) {
 		ptr->Release();
 	}
 }
+
+int HouseClass::CountOwnedNow(TechnoTypeClass *Item) {
+	int Index = Item->GetArrayIndex();
+	int Sum = 0;
+	BuildingTypeClass *BT = NULL;
+	UnitTypeClass *UT = NULL;
+	UnitClass *U = NULL;
+	InfantryTypeClass *IT = NULL;
+
+	switch(Item->WhatAmI()) {
+		case abs_BuildingType:
+			BT = reinterpret_cast<BuildingTypeClass *>(Item);
+			if(BT->PowersUpBuilding[0]) {
+				if(auto plug = BuildingTypeClass::Find(BT->PowersUpBuilding)) {
+					for(int i = 0; i < this->Buildings.Count; ++i) {
+						auto Base = this->Buildings[i];
+						if(Base->Type == plug) {
+							for(int j = 0; j < 3; ++j) {
+								if(Base->Upgrades[j] == plug) {
+									++Sum;
+								}
+							}
+						}
+					}
+				}
+			} else {
+				Sum = this->OwnedBuildingTypes.GetItemCount(Index);
+				if(UT = BT->UndeploysInto) {
+					Sum += this->OwnedUnitTypes.GetItemCount(UT->GetArrayIndex());
+				}
+			}
+		break;
+
+		case abs_UnitType:
+			Sum = this->OwnedUnitTypes.GetItemCount(Index);
+			UT = reinterpret_cast<UnitTypeClass *>(Item);
+			BT = UT->DeploysInto;
+			if(BT) {
+				Sum += this->OwnedBuildingTypes.GetItemCount(BT->GetArrayIndex());
+			}
+		break;
+
+		case abs_InfantryType:
+			Sum = this->OwnedInfantryTypes.GetItemCount(Index);
+			IT = reinterpret_cast<InfantryTypeClass *>(Item);
+			if(IT->VehicleThief) {
+				for(int i = 0; i < UnitClass::Array->Count; ++i) {
+					U = UnitClass::Array->GetItem(i);
+					if(U->Owner == this && U->HijackerInfantryType == Index) {
+						++Sum;
+					}
+				}
+			}
+		break;
+
+		case abs_AircraftType:
+			Sum = this->OwnedAircraftTypes.GetItemCount(Index);
+		break;
+
+		default:
+			;
+	}
+	return Sum;
+}
+
+int HouseClass::CountOwnedAndPresent(TechnoTypeClass *Item) {
+	int Index = Item->GetArrayIndex();
+	switch(Item->WhatAmI()) {
+		case abs_BuildingType:
+			return this->OwnedBuildingTypes1.GetItemCount(Index);
+
+		case abs_UnitType:
+			return this->OwnedUnitTypes1.GetItemCount(Index);
+
+		case abs_InfantryType:
+			return this->OwnedInfantryTypes1.GetItemCount(Index);
+
+		case abs_AircraftType:
+			return this->OwnedAircraftTypes1.GetItemCount(Index);
+
+		default:
+			return 0;
+	}
+}
+
+int HouseClass::CountOwnedEver(TechnoTypeClass *Item) {
+	int Index = Item->GetArrayIndex();
+	switch(Item->WhatAmI()) {
+		case abs_BuildingType:
+			return this->OwnedBuildingTypes2.GetItemCount(Index);
+
+		case abs_UnitType:
+			return this->OwnedUnitTypes2.GetItemCount(Index);
+
+		case abs_InfantryType:
+			return this->OwnedInfantryTypes2.GetItemCount(Index);
+
+		case abs_AircraftType:
+			return this->OwnedAircraftTypes2.GetItemCount(Index);
+
+		default:
+			return 0;
+	}
+}
