@@ -300,6 +300,10 @@ public:
 	void EnsurePlanningPathExists(int idx)
 		{ JMP_THIS(0x504740); }
 
+	// call after the availability of a factory has changed.
+	void Update_FactoriesQueues(eAbstractType FactoryOf, int isNaval, int buildingCat)
+		{ JMP_THIS(0x509140); }
+
 	// finds a buildingtype from the given array that this house can currently build
 	BuildingTypeClass* FirstBuildableFromArray(DynamicVectorClass<BuildingTypeClass*>* pArray)
 		{ JMP_THIS(0x5051E0); }

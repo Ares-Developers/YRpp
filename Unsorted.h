@@ -446,6 +446,9 @@ namespace Unsorted
 	// if != 0, EVA_SWxxxActivated is skipped
 	static int &MuteSWLaunches   = *(int *)0xA8B538;
 
+	// skip unit selection and move command voices?
+	static bool &MoveFeedback    = *(bool*)0x822CF2;
+
 	static byte &ArmageddonMode  = *(byte *)0xA8ED6B;
 	static byte &WTFMode  = *(byte *)0xA8E9A0;
 

@@ -253,7 +253,7 @@ public:
 	bool IsBeingRepaired; // show animooted repair wrench
 	bool unknown_bool_6E9;
 	bool unknown_bool_6EA;
-	bool HasCloakingData; // some fugly buffers
+	char HasCloakingData; // some fugly buffers
 	byte CloakRadius; // from Type->CloakRadiusInCells
 	bool unknown_bool_6ED;
 	DWORD StorageFilledSlots; // the old "silo needed" logic
