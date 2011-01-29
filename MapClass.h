@@ -231,6 +231,18 @@ public:
 	void RedrawSidebar(int mode)
 		{ JMP_THIS(0x4F42F0); }
 
+	void SetTogglePowerMode(int mode)
+		{ JMP_THIS(0x4AC820); }
+
+	void SetPlaceBeaconMode(int mode)
+		{ JMP_THIS(0x4AC960); }
+
+	void SetSellMode(int mode)
+		{ JMP_THIS(0x4AC660); }
+
+	void SetRepairMode(int mode)
+		{ JMP_THIS(0x4AC8C0); }
+
 protected:
 	//Constructor
 	MapClass() {}	//don't need this

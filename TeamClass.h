@@ -29,6 +29,9 @@ public:
 	void GetTaskForceMembers(DynamicVectorClass<TechnoTypeClass *>*dest)
 		{ JMP_THIS(0x6EF4D0); }
 
+	void LiberateMember(FootClass* pFoot, int idx=-1, byte count=0)
+		{ JMP_THIS(0x6EA870); }
+
 	//AbstractClass
 	virtual eAbstractType WhatAmI() R0;
 	virtual int Size() R0;
