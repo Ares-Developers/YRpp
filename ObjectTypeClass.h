@@ -95,6 +95,8 @@ public:
 	bool           LegalTarget;
 	bool           Insignificant;
 	bool           Immune;
+	BYTE           unused_234;
+	BYTE           unused_235;
 	bool           Voxel;
 	bool           NewTheater;
 	bool           HasRadialIndicator;
