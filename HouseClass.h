@@ -347,6 +347,9 @@ public:
 	bool Fire_GenMutator(SuperClass* pSuper)
 		{ JMP_THIS(0x509F60); }
 
+	bool IonSensitivesShouldBeOffline()
+		{ JMP_THIS(0x53A130); }
+
 	const char *get_ID() {
 		return this->Type->get_ID();
 	}
@@ -634,7 +637,7 @@ public:
 	DWORD unknown_54C4;
 	DWORD unknown_54C8;
 	DWORD unknown_54CC;
-	CellStruct PreferredDefensiveCell2;
+	DWORD unknown_54D0;
 	DWORD unknown_54D4;
 	DWORD unknown_54D8;
 	DWORD unknown_54DC;
@@ -644,8 +647,8 @@ public:
 	int                   SiloMoney;
 	int                   PreferredTargetWaypoint; // set via map actions
 	CellStruct PreferredTargetCell;
-	CellStruct unknown_54F4;
 	CellStruct PreferredDefensiveCell;
+	CellStruct PreferredDefensiveCell2;
 	int                   PreferredDefensiveCellStartTime; // don't look at me...
 	                                // map actions let you set an ai's ForceShield firing cell, this is related
 
