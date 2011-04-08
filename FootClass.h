@@ -29,8 +29,8 @@ public:
 	virtual void vt_entry_490(DWORD dwUnk, DWORD dwUnk2) RX;
 
 	//FootClass
-	virtual void vt_entry_4D4(DWORD dwUnk) RX;
-	virtual void vt_entry_4D8(DWORD dwUnk) RX;
+	virtual void ReceiveGunner(FootClass* Gunner) RX;
+	virtual void RemoveGunner(FootClass* Gunner) RX;
 	virtual bool vt_entry_4DC() R0;
 	virtual bool vt_entry_4E0() R0;
 	virtual bool vt_entry_4E4() R0;
@@ -102,6 +102,18 @@ public:
 
 	void AbortMotion()
 		{ JMP_THIS(0x4DF0D0); }
+
+	// Removes the first passenger and updates the Gunner.
+	FootClass* RemoveFirstPassenger()
+		{ JMP_THIS(0x4DE710); }
+
+	// Removes a specific passenger and updates the Gunner.
+	FootClass* RemovePassenger(FootClass* pPassenger)
+		{ JMP_THIS(0x4DE670); }
+
+	// Adds a specific passenger and updates the Gunner.
+	void EnterAsPassenger(FootClass* pPassenger)
+		{ JMP_THIS(0x4DE630); }
 
 	void ClearSomeVector() // clears 5AC
 		{ JMP_THIS(0x4DA1C0); }
