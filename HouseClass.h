@@ -304,11 +304,12 @@ public:
 	void Update_FactoriesQueues(eAbstractType FactoryOf, int isNaval, int buildingCat)
 		{ JMP_THIS(0x509140); }
 
-	// finds a buildingtype from the given array that this house can currently build
+	// finds a buildingtype from the given array that this house can build
+	// this checks whether the Owner=, Required/ForbiddenHouses= , AIBasePlanningSide= match and if SuperWeapon= (not SW2=) is not forbidden
 	BuildingTypeClass* FirstBuildableFromArray(DynamicVectorClass<BuildingTypeClass*>* pArray)
 		{ JMP_THIS(0x5051E0); }
 
-	// are all prereqs for Techno listed in vectorBuildings[0..vectorLength]. Yes, the length is needed...
+	// are all prereqs for Techno listed in vectorBuildings[0..vectorLength]. Yes, the length is needed (the vector is used for breadth-first search)
 	bool AllPrerequisitesAvailable(TechnoTypeClass *Techno, DynamicVectorClass<BuildingTypeClass *> *vectorBuildings, int vectorLength)
 		{ JMP_THIS(0x505360); }
 
@@ -389,6 +390,8 @@ public:
 		}
 		return false;
 	}
+
+	bool CanExpectToBuild(TechnoTypeClass *const Item);
 
 	bool InRequiredHouses(TechnoTypeClass *Item) {
 		int Test = Item->RequiredHouses;

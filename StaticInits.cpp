@@ -591,3 +591,19 @@ int HouseClass::CountOwnedEver(TechnoTypeClass *Item) {
 			return 0;
 	}
 }
+
+bool HouseClass::CanExpectToBuild(TechnoTypeClass *const Item) {
+	HouseTypeClass *pType = this->Type;
+	DWORD parentOwnerMask = 1 << pType->FindIndexOfName(pType->ParentCountry);
+	if(Item->OwnerFlags & parentOwnerMask) {
+		if(this->InRequiredHouses(Item)) {
+			if(!this->InForbiddenHouses(Item)) {
+				auto BaseSide = Item->AIBasePlanningSide;
+				if(BaseSide == -1 || BaseSide == pType->SideIndex) {
+					return true;
+				}
+			}
+		}
+	}
+	return false;
+}
