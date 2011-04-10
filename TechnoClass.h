@@ -574,7 +574,7 @@ public:
 	bool             RecruitableA; // these two are like Lenny and Carl, weird purpose and never seen separate
 	bool             RecruitableB; // they're usually set on preplaced objects in maps
 	bool             unknown_bool_423;
-	bool             unknown_bool_424;
+	bool             IsOnCarryall;
 	bool             IsCrashing;
 	bool             WasCrashingAlready;
 	bool             IsBeingManipulated;
