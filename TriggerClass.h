@@ -2,12 +2,12 @@
 #define TRIGGER_H
 
 #include <AbstractClass.h>
+#include <TeamTypeClass.h>
 
 //forward declarations
 class SuperClass;
 class TechnoClass;
 class TriggerTypeClass; // TODO: define
-class AITeamTypeClass; // TODO: define
 
 class TriggerClass : public AbstractClass
 {

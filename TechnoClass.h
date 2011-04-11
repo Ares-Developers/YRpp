@@ -166,7 +166,7 @@ public:
 	virtual int GetAntiAirValue() R0;
 	virtual int GetAntiArmorValue() R0;
 	virtual int GetAntiInfantryValue() R0;
-	virtual void vt_entry_2E0() RX;
+	virtual void GotHijacked() RX;
 	virtual DWORD SelectWeapon(ObjectClass *Target) R0;
 	virtual int SelectNavalTargeting(ObjectClass *Target) R0;
 	virtual int GetZAdjustment() R0;

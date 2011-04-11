@@ -276,6 +276,9 @@ DECL(ScriptTypeClass, 0x8B41C8);
 #include <SwizzleManagerClass.h>
 SwizzleManagerClass& SwizzleManagerClass::Instance = *(SwizzleManagerClass*)0xB0C110;
 
+#include <TagClass.h>
+DECL(TagClass, 0xB0E720);
+
 #include <TeamClass.h>
 DECL(TeamClass, 0x8B40E8);
 

@@ -6,7 +6,6 @@
 //forward declarations
 class SuperClass;
 class TechnoClass;
-class AITeamTypeClass; // TODO: define
 class TagTypeClass; // TODO: define
 class TriggerTypeClass; // TODO: define
 class TriggerClass;
@@ -285,7 +284,7 @@ public:
 	int                IndexInArray;
 	TActionClass*      NextTAction;
 	int                ActionKind;
-	void*              TeamType; // AITeamTypeClass*, really
+	TeamTypeClass*   TeamType; // AITeamTypeClass*, really
 	int                arg3;
 	int                arg4;
 	int                arg5;

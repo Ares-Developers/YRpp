@@ -38,6 +38,9 @@ public:
 		
 	virtual const wchar_t* GetUIString_GameSaved()
 		{ JMP_THIS(0x597FE0); }
+
+	static MapSeedClass* Global()
+		{ return (MapSeedClass*)0xABDFD8; }
 	
 	//Properties
 public:

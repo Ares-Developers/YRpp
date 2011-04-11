@@ -8,6 +8,7 @@
 #include <AbstractClass.h>
 #include <Audio.h>
 #include <ObjectTypeClass.h>
+#include <TagClass.h>
 
 #include <Helpers/Template.h>
 
@@ -221,6 +222,9 @@ public:
 	void BecomeUntargetable()
 		{ JMP_THIS(0x70D4A0); }
 
+	void ReplaceTag(TagClass* pTag)
+		{ JMP_THIS(0x5F5B4C); }
+
 	//Constructor
 	ObjectClass() : AbstractClass(false)
 		{ JMP_THIS(0x5F3900); }
@@ -237,7 +241,7 @@ public:
 	PROTECTED_PROPERTY(BYTE,     unknown_24[0x8]);
 	int                FallRate; //how fast is it falling down? only works if FallingDown is set below, and actually positive numbers will move the thing UPWARDS
 	ObjectClass*       NextObject;	//Next Object in the same cell or transport. This is a linked list of Objects.
-	PROTECTED_PROPERTY(DWORD,    AttachedTag); //Should be TagClass , TODO: change when implemented
+	TagClass*          AttachedTag; //Should be TagClass , TODO: change when implemented
 	BombClass*         AttachedBomb; //Ivan's little friends.
 
 	AudioController Audio1; // the "mofo" struct, evil evil stuff
