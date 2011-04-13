@@ -199,6 +199,75 @@ public:
 	};
 };
 
+class TriggerEvent {
+public:
+	typedef unsigned int Value;
+	enum {
+		None = 0x0,
+		EnteredBy = 0x1,
+		SpiedBy = 0x2,
+		ThievedBy = 0x3,
+		DiscoveredByPlayer  = 0x4,
+		HouseDiscovered = 0x5,
+		AttackedByAnybody = 0x6,
+		DestroyedByAnybody = 0x7,
+		AnyEvent = 0x8,
+		DestroyedUnitsAll = 0x9,
+		DestroyedBuildingsAll = 0xA,
+		DestroyedAll = 0xB,
+		CreditsExceed = 0xC,
+		ElapsedTime = 0xD,
+		MissionTimerExpired = 0xE,
+		DestroyedBuildingsNum  = 0xF,
+		DestroyedUnitsNum = 0x10,
+		NoFactoriesLeft = 0x11,
+		CiviliansEvacuated = 0x12,
+		BuildBuildingType = 0x13,
+		BuildUnitType = 0x14,
+		BuildInfantryType = 0x15,
+		BuildAircraftType = 0x16,
+		TeamLeavesMap = 0x17,
+		ZoneEntryBy = 0x18,
+		CrossesHorizontalLine = 0x19,
+		CrossesVerticalLine = 0x1A,
+		GlobalSet = 0x1B,
+		GlobalCleared = 0x1C,
+		DestroyedFakesAll = 0x1D,
+		LowPower = 0x1E,
+		AllBridgesDestroyed = 0x1F,
+		BuildingExists = 0x20,
+		SelectedByPlayer = 0x21,
+		ComesNearWaypoint = 0x22,
+		EnemyInSpotlight = 0x23,
+		LocalSet = 0x24,
+		LocalCleared = 0x25,
+		FirstDamaged_combatonly = 0x26,
+		HalfHealth_combatonly = 0x27,
+		QuarterHealth_combatonly = 0x28,
+		FirstDamaged_anysource = 0x29,
+		HalfHealth_anysource = 0x2A,
+		QuarterHealth_anysource = 0x2B,
+		AttackedByHouse = 0x2C,
+		AmbientLightBelow = 0x2D,
+		AmbientLightAbove = 0x2E,
+		ElapsedScenarioTime = 0x2F,
+		DestroyedByAnything = 0x30,
+		PickupCrate = 0x31,
+		PickupCrate_any = 0x32,
+		RandomDelay = 0x33,
+		CreditsBelow = 0x34,
+		SpyAsHouse = 0x35,
+		SpyAsInfantry = 0x36,
+		DestroyedUnitsNaval = 0x37,
+		DestroyedUnitsLand = 0x38,
+		BuildingDoesNotExist = 0x39,
+		PowerFull = 0x3A,
+		EnteredOrOverflownBy = 0x3B,
+		TechTypeExists = 0x3C,
+		TechTypeDoesntExist = 0x3D
+	};
+};
+
 typedef int eAIModes;
 
 #define		aim_General		0x00
