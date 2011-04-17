@@ -68,6 +68,19 @@ public:
 	// the slaves will become free citizens without any announcements or cheers, if you don't call Killed() beforehand
 	void ZeroOutSlaves();
 
+	// stops scanning, spawning slaves and driving around.
+	void SuspendWork() {
+		this->RespawnTimer.StartTime = -1;
+		if(!this->RespawnTimer.TimeLeft) {
+			this->RespawnTimer.TimeLeft = 1;
+		}
+	}
+
+	// resumes to harvest automatically.
+	void ResumeWork() {
+		this->RespawnTimer.StartIfEmpty();
+	}
+
 	SlaveManagerClass() : AbstractClass(false) { }
 
 	//===========================================================================

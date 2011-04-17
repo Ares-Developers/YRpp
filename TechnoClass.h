@@ -145,7 +145,7 @@ public:
 	//TechnoClass
 	virtual bool IsUnitFactory() R0;
 	virtual bool IsCloakable() R0;
-	virtual bool vt_entry_28C() R0;
+	virtual bool CanScatter() R0;
 	virtual bool BelongsToATeam() R0;
 	virtual bool SelfHealNow() R0;
 	virtual bool IsVoxel() R0;

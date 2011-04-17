@@ -70,6 +70,8 @@ public:
 		{ JMP_THIS(0x472160); }
 	void DecideUnitFate(TechnoClass *Unit)
 		{ JMP_THIS(0x4723B0); }
+	HouseClass* GetOriginalOwner(TechnoClass *Unit)
+		{ JMP_THIS(0x4722F0); }
 
 protected:
 	CaptureManagerClass() : AbstractClass(false) { }
