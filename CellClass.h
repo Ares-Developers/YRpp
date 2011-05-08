@@ -350,7 +350,7 @@ public:
 
 	PROTECTED_PROPERTY(BYTE,     unknown_11F);
 	BYTE               Shroudedness; // trust me, you don't wanna know... if you do, see 0x7F4194 and cry
-	PROTECTED_PROPERTY(BYTE,     unknown_121[0xB]);
+	BYTE               unknown_121[0xB];
 
 	eCellFlags_12C     CopyFlags;	// related to Flags below
 	DWORD              IsUnderShroud; // only 0 or 1, but modified as an integer
