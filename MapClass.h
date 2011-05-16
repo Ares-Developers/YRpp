@@ -243,6 +243,9 @@ public:
 	void SetRepairMode(int mode)
 		{ JMP_THIS(0x4AC8C0); }
 
+	void DestroyCliff(CellClass *Cell)
+		{ JMP_THIS(0x581140); }
+
 protected:
 	//Constructor
 	MapClass() {}	//don't need this
