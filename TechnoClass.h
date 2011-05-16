@@ -388,6 +388,11 @@ public:
 	void SetTargetForPassengers(ObjectClass *Target)
 		{ JMP_THIS(0x710550); }
 
+	// returns the house that created this object (factoring in Mind Control)
+	HouseClass * GetOriginalOwner()
+		{ JMP_THIS(0x70F820); }
+
+
 	//Constructor
 	TechnoClass(HouseClass* pOwner) : RadioClass(false)
 		{ JMP_THIS(0x6F2B40); }
