@@ -7,6 +7,8 @@
 
 #include <GeneralDefinitions.h>
 
+class UnitClass;
+
 class EBolt
 {
 public:
