@@ -248,11 +248,8 @@ public:
 	bool unknown_bool_34;
 	DWORD unknown_38;
 	DWORD unknown_3C;
-	bool unknown_bool_40;
-	DWORD unknown_44;
-	DWORD unknown_48;
-	DWORD unknown_4C;
-	DWORD unknown_50;
+	bool Digested;
+	byte Digest[20];
 };
 
 //Extended INI class specified for C&C use
@@ -260,6 +257,10 @@ class CCINIClass : public INIClass
 {
 public:
 	//STATIC
+	static DWORD &RulesHash;
+	static DWORD &ArtHash;
+	static DWORD &AIHash;
+
 	// westwood genius shines again
 
 	// this is a pointer in the class
@@ -274,7 +275,7 @@ public:
 	CCINIClass() : INIClass(false)
 	{
 		THISCALL(0x535AA0);
-		unknown_bool_40 = false;
+		Digested = false;
 		*(DWORD*)this = 0x7E1AF4;
 	}
 
@@ -290,6 +291,11 @@ public:
 	//Copies the string table entry pointed to by the INI value into pBuffer.
 	int ReadStringtableEntry(const char* pSection, const char* pKey, wchar_t* pBuffer, size_t szBufferSize)
 		{ JMP_THIS(0x0529160); }
+
+
+	DWORD GetCRC()
+		{ JMP_THIS(0x476D80); }
+
 };
 
 #endif

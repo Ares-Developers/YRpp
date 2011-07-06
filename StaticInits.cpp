@@ -64,6 +64,10 @@ DECL(BuildingLightClass, 0x8B4190);
 DECL(CaptureManagerClass, 0x89E0F0);
 
 #include <CCINIClass.h>
+ALIAS(DWORD, CCINIClass::RulesHash, 0xB77E00);
+ALIAS(DWORD, CCINIClass::ArtHash, 0xB77E04);
+ALIAS(DWORD, CCINIClass::AIHash, 0xB77E08);
+
 ALIAS(CCINIClass*, CCINIClass::INI_Rules, 0x887048);
 
 ALIAS_O(CCINIClass*, CCINIClass::INI_AI, 0x887128);
