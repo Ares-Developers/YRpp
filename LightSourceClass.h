@@ -38,6 +38,9 @@ public:
 	void Activate(DWORD dwZero = 0)	//Start lighting
 		{ JMP_THIS(0x554A60); }
 
+	void Deactivate(DWORD dwZero = 0)	//Stop lighting
+		{ JMP_THIS(0x554A80); }
+
 protected:
 	LightSourceClass() : AbstractClass(false) { }
 
