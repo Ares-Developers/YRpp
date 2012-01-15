@@ -219,6 +219,13 @@ DECL(ParticleTypeClass, 0xA83D98);
 ALIAS_O(PCX *, PCX::Instance, 0xAC4848);
 WORD PCX::DefaultTransparentColor = COLOR_PURPLE;
 
+#include <Powerups.h>
+ALIAS(int *, Powerups::Weights, 0x81DA8C);
+ALIAS(double *, Powerups::Arguments, 0x89EC28);
+ALIAS(bool *, Powerups::Naval, 0x89ECC0);
+ALIAS(int *, Powerups::Anims, 0x81DAD8);
+ALIAS(char **, Powerups::Effects, 0x7E523C);
+
 #include <ProgressScreenClass.h>
 ALIAS_O(ProgressScreenClass *, ProgressScreenClass::Instance, 0xAC4F58);
 
