@@ -392,6 +392,9 @@ public:
 	HouseClass * GetOriginalOwner()
 		{ JMP_THIS(0x70F820); }
 
+	void FireDeathWeapon(int additionalDamage)
+		{ JMP_THIS(0x70D690); }
+
 
 	//Constructor
 	TechnoClass(HouseClass* pOwner) : RadioClass(false)
