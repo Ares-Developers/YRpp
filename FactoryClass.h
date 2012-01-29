@@ -44,6 +44,12 @@ public:
 	unsigned int CountQueued(TechnoTypeClass * pType)
 		{ JMP_THIS(0x4CA670); }
 
+	int GetProgress()
+		{ JMP_THIS(0x4CA120); }
+
+	signed int GetBuildTimeFrames()
+		{ JMP_THIS(0x4C9FB0); }
+
 	static bool FindThisOwnerAndProduct(HouseClass *pHouse, TechnoTypeClass *pItem)
 	{
 		for(int i = 0; i < Array->Count; ++i) {

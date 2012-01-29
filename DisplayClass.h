@@ -44,6 +44,10 @@ public:
 			return NULL;
 	}
 
+	// the foundation for placement with green/red
+	void  SetActiveFoundation(CellStruct *Coords)
+		{ JMP_THIS(0x4A8BF0); }
+
 	//Destructor
 	virtual ~DisplayClass() RX;
 

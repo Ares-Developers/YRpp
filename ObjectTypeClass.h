@@ -12,7 +12,7 @@
 class TechnoTypeClass;
 class HouseTypeClass;
 class ObjectClass;
-class BuildingTypeClass;
+class BuildingClass;
 
 class ObjectTypeClass : public AbstractTypeClass
 {
@@ -36,10 +36,17 @@ public:
 	virtual int GetBuildSpeed() R0;
 	virtual ObjectClass* CreateObject(HouseClass* pOwner) = 0;
 	virtual CellStruct * GetFoundationData(bool IncludeBib) R0;
-	virtual BuildingTypeClass* GetFactoryType(bool OverridePrereqs, bool OverridePower, bool OverrideBuildLimit,
+	virtual BuildingClass* GetFactoryType(bool OverridePrereqs, bool OverridePower, bool OverrideBuildLimit,
 		HouseClass *House) R0;
 	virtual SHPStruct* GetCameo() R0;
 	virtual SHPStruct* GetImage() R0;
+
+	static bool __fastcall IsBuildCat5(eAbstractType abstractID, int idx)
+		{ JMP_STD(0x5004E0); }
+
+	static TechnoTypeClass * __fastcall GetTechnoType(eAbstractType abstractID, int idx)
+		{ JMP_STD(0x48DCD0); }
+
 
 	//Constructor
 	ObjectTypeClass(const char* pID) : AbstractTypeClass(false)

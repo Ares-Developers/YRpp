@@ -437,6 +437,9 @@ public:
 	char PickedUpFlag(UnitClass *Who, DWORD dwUnk)
 		{ JMP_THIS(0x4FC060); }
 
+	FactoryClass * GetPrimaryFactory(eAbstractType ID, bool Naval, eBuildCat BuildCat)
+		{ JMP_THIS(0x500510); }
+
 	/*!
 		At the moment, this function is really just a more intuitively named mask for
 		this->Type->MultiplayPassive, but it might be expanded into something more

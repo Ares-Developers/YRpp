@@ -38,6 +38,30 @@ struct NetworkEvent {
 	NetworkEvent() {
 		memset(this, 0, sizeof(*this));
 	}
+
+	NetworkEvent * FillEvent_ProduceAbandonSuspend(int PlayerNumber, eNetworkEvents eventKind, int abstractId, int idx, int isNaval)
+		{ JMP_THIS(0x4C6970); }
+
+	NetworkEvent * FillEvent_SellCell(int dwUnk, eNetworkEvents eventKind, CellStruct *Coords)
+		{ JMP_THIS(0x4C6650); }
+
+	NetworkEvent * FillEvent_Noopt(int PlayerNumber, eNetworkEvents eventKind)
+		{ JMP_THIS(0x4C66C0); }
+
+	NetworkEvent * FillEvent_PlayerBased(int a2, eNetworkEvents eventKind, int a4)
+		{ JMP_THIS(0x4C6720); }
+
+	NetworkEvent * FillEvent_Waypoints(int PlayerNumber, eNetworkEvents eventKind, int a4, char a5, int a6, char a7)
+		{ JMP_THIS(0x4C6780); }
+
+	NetworkEvent * FillEvent_Animation(int PlayerNumber, eNetworkEvents eventKind, int a4, int a5)
+		{ JMP_THIS(0x4C6800); }
+
+	NetworkEvent * FillEvent_Place(int a2, eNetworkEvents eventKind, int a4, int a5, int a6, CellStruct *loc)
+		{ JMP_THIS(0x4C6AE0); }
+
+	NetworkEvent * FillEvent_SWPlace(int PlayerNumber, eNetworkEvents eventKind, int swTypeIdx, CellStruct *loc)
+		{ JMP_THIS(0x4C6B60); }
 };
 
 struct NetID {
