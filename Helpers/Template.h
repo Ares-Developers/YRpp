@@ -6,6 +6,7 @@
 #include <functional>
 #include <xcompile.h>
 #include <Helpers/Type.h>
+#include <ArrayClasses.h>
 
 // here be dragons(plenty)
 
@@ -74,6 +75,14 @@ template<typename T1>
 void AnnounceInvalidPointer(T1 &elem, void *ptr) {
 	if(ptr == (void *)elem) {
 		elem = NULL;
+	}
+}
+
+template<typename T>
+void AnnounceInvalidPointer(DynamicVectorClass<T> &elem, void *ptr) {
+	auto idx = elem.FindItemIndex(reinterpret_cast<T *>(ptr));
+	if(idx != -1) {
+		elem.RemoveItem(idx);
 	}
 }
 
