@@ -189,7 +189,9 @@ ALIAS_O(MapClass *, MapClass::Instance, 0x87F7E8);
 ALIAS_O(MouseClass *, MouseClass::Instance, 0x87F7E8);
 MouseCursor* MouseCursor::First = (MouseCursor*)0x82D028;
 
-#include <NetworkEvents.h>
+#include <Networking.h>
+ALIAS(DWORD, Networking::CurrentFrameCRC, 0xAC51FC);
+ALIAS_O(DWORD *, Networking::LatestFramesCRC, 0xB04474);
 ALIAS(int, Networking::LastEventIndex, 0xA802C8);
 ALIAS(int, Networking::NextPacketIndex, 0xA802D0);
 ALIAS_O(NetworkEvent *, Networking::QueuedEvents, 0xA802D4);

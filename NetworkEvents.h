@@ -1,5 +1,5 @@
-#ifndef NETWORKEVENTS_H_
-#define NETWORKEVENTS_H_
+#ifndef YRPP_NETWORKEVENTS_H_
+#define YRPP_NETWORKEVENTS_H_
 
 #include <GeneralDefinitions.h>
 #include <Unsorted.h>
@@ -33,7 +33,10 @@ struct NetworkEvent {
 	byte Unused;
 	byte HouseIndex;
 	DWORD Timestamp;
-	byte ExtraData[0x68];
+	DWORD Checksum;
+	WORD CommandCount;
+	byte Delay;
+	byte ExtraData[0x61];
 
 	NetworkEvent() {
 		memset(this, 0, sizeof(*this));
@@ -108,43 +111,5 @@ struct NetID {
 		{ JMP_THIS(0x6E6B70); }
 };
 #pragma pack(pop)
-
-class Networking {
-public:
-	static int &LastEventIndex;
-	static int &NextPacketIndex;
-	static NetworkEvent *QueuedEvents; // these are really 128 length arrays
-	static int *QueuedEventTimestamps; // these are really 128 length arrays
-
-	// custom helper for Ares logics
-	static bool AddEvent(NetworkEvent *event) {
-		event->Timestamp = Unsorted::CurrentFrame;
-		if(LastEventIndex >= 128) {
-			return false;
-		}
-		memcpy(&QueuedEvents[NextPacketIndex], event, sizeof(*event));
-		QueuedEventTimestamps[NextPacketIndex] = Imports::TimeGetTime();
-		NextPacketIndex = (NextPacketIndex + 1) & 0x7F;
-		++LastEventIndex;
-		return true;
-	}
-
-	// existing functions from Westwood
-
-	/**
-	 * dam girl, you crazy
-	 *
-	 * this gets called when you click-command your objects
-	 * from inside TechnoClass::ClickedMission, where this is the selected object
-	 *
-	 * selfID and selfWhatAmI are results of Pack(this)
-	 * PackedTarget and PackedTargetCell are pointers to the Pack()ed versions of the Target and TargetCell of ClickedMission
-	 */
-	static bool __fastcall CreateClickedMissionEvent
-			(eMission Mission, NetID *PackedTarget, int selfID, char selfWhatAmI, NetID *PackedTargetCell)
-		{ JMP_STD(0x646E90); }
-
-
-};
 
 #endif
