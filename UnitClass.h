@@ -30,8 +30,8 @@ public:
 	virtual ~UnitClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	//UnitClass
 	// main drawing functions - Draw() calles one of these, they call parent's Draw_A_smth

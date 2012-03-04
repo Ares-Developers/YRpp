@@ -17,7 +17,7 @@ public:
 		Clear();
 	}
 
-	virtual bool IsEqual(VectorClass* pVec) {
+	virtual bool IsEqual(VectorClass* pVec) const {
 		if(this->Capacity == pVec->Capacity) {
 			if(this->Capacity == 0) {
 				return true;
@@ -83,7 +83,7 @@ public:
 		this->Capacity = 0;
 	}
 
-	virtual int FindItemIndex(T *tItem) {
+	virtual int FindItemIndex(T *tItem) const {
 		if(!this->IsInitialized) {
 			return 0;
 		}
@@ -97,7 +97,7 @@ public:
 		return -1;
 	}
 
-	virtual int GetItemIndex(T* pItem) {
+	virtual int GetItemIndex(T* pItem) const {
 		if(!this->IsInitialized) return 0;
 		return (pItem - this->Items) / sizeof(T);
 	}
@@ -107,6 +107,10 @@ public:
 	}
 
 	T& operator [](int i) {
+		return this->Items[i];
+	}
+
+	const T& operator [](int i) const {
 		return this->Items[i];
 	}
 
@@ -169,11 +173,11 @@ public:
 
 	inline void Load(IStream *pStm, bool bSwizzle);
 
-	inline bool ValidIndex(signed int idx) {
+	inline bool ValidIndex(signed int idx) const {
 		return idx > -1 && idx < this->Count;
 	}
 
-	void Save(IStream *pStm) {
+	void Save(IStream *pStm) const {
 		int ii = this->Count;
 		pStm->Write(&ii, 4u, 0);
 		for ( ii = 0; ii < this->Count; ++ii ) {
@@ -181,14 +185,14 @@ public:
 		}
 	}
 
-	T* start() {
+	T* start() const {
 		if(!this->IsInitialized) {
 			return NULL;
 		}
 		return &this->Items[0];
 	}
 
-	T* end() {
+	T* end() const {
 		if(!this->IsInitialized) {
 			return NULL;
 		}
@@ -216,7 +220,7 @@ public:
 	}
 
 	// aaaaaurgh , this takes T* , not plain T... what a silly mistake
-	virtual int FindItemIndex(T *tItem) {
+	virtual int FindItemIndex(T *tItem) const {
 		if(!this->IsInitialized) {
 			return -1;
 		}
@@ -332,7 +336,7 @@ public:
 		this->Count = 0;
 	}
 
-	int GetItemCount(int nIndex)
+	int GetItemCount(int nIndex) const
 		{ JMP_THIS(0x49FAE0); }
 
 	CounterClass() : VectorClass<int>()

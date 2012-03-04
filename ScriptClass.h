@@ -26,13 +26,13 @@ public:
 	virtual ~ScriptClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
-	ScriptActionNode* GetCurrentAction(ScriptActionNode *buffer)
+	ScriptActionNode* GetCurrentAction(ScriptActionNode *buffer) const
 		{ JMP_THIS(0x691500); }
 
-	ScriptActionNode* GetNextAction(ScriptActionNode *buffer)
+	ScriptActionNode* GetNextAction(ScriptActionNode *buffer) const
 		{ JMP_THIS(0x691540); }
 
 	bool Reset()
@@ -44,7 +44,7 @@ public:
 	bool NextAction()
 		{ ++this->idxCurrentLine; return this->HasNextAction(); }
 
-	bool HasNextAction()
+	bool HasNextAction() const
 		{ return this->idxCurrentLine < this->Type->ActionsCount; }
 
 	//Constructor

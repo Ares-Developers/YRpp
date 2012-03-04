@@ -43,8 +43,8 @@ public:
 	virtual ~BuildingTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	//AbstractTypeClass
 	//ObjectTypeClass
@@ -60,16 +60,16 @@ public:
 		{ JMP_THIS(0x45DD90); }
 
 	//non-virtual
-	short GetFoundationWidth()
+	short GetFoundationWidth() const
 		{ JMP_THIS(0x45EC90); }
-	short GetFoundationHeight(bool bIncludeBib)
+	short GetFoundationHeight(bool bIncludeBib) const
 		{ JMP_THIS(0x45ECA0); }
 
-	bool CanPlaceHere(CellStruct* cell, HouseClass* owner)
+	bool CanPlaceHere(CellStruct* cell, HouseClass* owner) const
 		{ JMP_THIS(0x464AC0); }
 
 	// helpers
-	bool HasSuperWeapon(int Type) {
+	bool HasSuperWeapon(int Type) const {
 		return (this->SuperWeapon == Type || this->SuperWeapon2 == Type);
 	}
 

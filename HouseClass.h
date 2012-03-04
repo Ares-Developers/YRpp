@@ -174,8 +174,8 @@ public:
 	virtual ~HouseClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int	Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int	Size() const R0;
 
 	//Constructor
 	HouseClass(HouseTypeClass* pCountry) : AbstractClass(false)
@@ -185,11 +185,11 @@ protected:
 	HouseClass() : AbstractClass(false) { }
 
 public:
-	bool IsAlliedWith(int iHouse)
+	bool IsAlliedWith(int iHouse) const
 		{ JMP_THIS(0x4F9A10); }
-	bool IsAlliedWith(HouseClass* pOther)
+	bool IsAlliedWith(HouseClass* pOther) const
 		{ JMP_THIS(0x4F9A50); }
-	bool IsAlliedWith(TechnoClass* pOther)
+	bool IsAlliedWith(TechnoClass* pOther) const
 		{ JMP_THIS(0x4F9A90); }
 
 	void MakeAlly(int iHouse, bool bAnnounce)
@@ -229,10 +229,10 @@ public:
 	BYTE Lose(bool bSavourSomething)
 		{ JMP_THIS(0x4FCBD0); }
 
-	bool CanAlly(HouseClass* pOther)
+	bool CanAlly(HouseClass* pOther) const
 		{ JMP_THIS(0x501540); }
 
-	bool CanOverpower(TechnoClass *pTarget)
+	bool CanOverpower(TechnoClass *pTarget) const
 		{ JMP_THIS(0x4F9AF0); }
 
 	// warning: logic pretty much broken
@@ -241,14 +241,14 @@ public:
 	void GainedPoweredCenter(TechnoTypeClass *pTechnoType)
 		{ JMP_THIS(0x50E1B0); }
 
-	bool DoInfantrySelfHeal()
+	bool DoInfantrySelfHeal() const
 		{ return this->InfantrySelfHeal > 0; }
-	int GetInfSelfHealStep()
+	int GetInfSelfHealStep() const
 		{ JMP_THIS(0x50D9E0); }
 
-	bool DoUnitsSelfHeal()
+	bool DoUnitsSelfHeal() const
 		{ return this->UnitsSelfHeal > 0; }
-	int GetUnitSelfHealStep()
+	int GetUnitSelfHealStep() const
 		{ JMP_THIS(0x50D9F0); }
 
 	void CreatePowerOutage(int duration)
@@ -313,10 +313,10 @@ public:
 	bool AllPrerequisitesAvailable(TechnoTypeClass *Techno, DynamicVectorClass<BuildingTypeClass *> *vectorBuildings, int vectorLength)
 		{ JMP_THIS(0x505360); }
 
-	bool ControlledByHuman()
+	bool ControlledByHuman() const
 		{ JMP_THIS(0x50B730); }
 
-	bool ControlledByPlayer()
+	bool ControlledByPlayer() const
 		{ JMP_THIS(0x50B6F0); }
 
 	// Target ought to be Object, I imagine, but cell doesn't work then
@@ -330,7 +330,7 @@ public:
 	void RegisterLoss(TechnoClass *pTechno, DWORD dwUnk)
 		{ JMP_THIS(0x5025F0); }
 
-	BuildingClass* FindBuildingOfType(int idx, int distance)
+	BuildingClass* FindBuildingOfType(int idx, int distance) const
 		{ JMP_THIS(0x4FD060); }
 
 	AnimClass * __fastcall PsiWarn(CellClass *pTarget, BulletClass *Bullet, char *AnimName)
@@ -348,23 +348,23 @@ public:
 	bool Fire_GenMutator(SuperClass* pSuper)
 		{ JMP_THIS(0x509F60); }
 
-	bool IonSensitivesShouldBeOffline()
+	bool IonSensitivesShouldBeOffline() const
 		{ JMP_THIS(0x53A130); }
 
-	const char *get_ID() {
+	const char *get_ID() const {
 		return this->Type->get_ID();
 	}
 
 	// I don't want to talk about these
 	// read the code <_<
 
-	int CountOwnedNow(TechnoTypeClass *Item);
+	int CountOwnedNow(const TechnoTypeClass *Item) const;
 
-	int CountOwnedAndPresent(TechnoTypeClass *Item);
+	int CountOwnedAndPresent(const TechnoTypeClass *Item) const;
 
-	int CountOwnedEver(TechnoTypeClass *Item);
+	int CountOwnedEver(const TechnoTypeClass *Item) const;
 
-	bool HasFromSecretLab(TechnoTypeClass *Item) {
+	bool HasFromSecretLab(const TechnoTypeClass *Item) const {
 		for(int i = 0; i < this->SecretLabs.Count; ++i) {
 			if(this->SecretLabs[i]->SecretProduction == Item) {
 				return true;
@@ -373,14 +373,14 @@ public:
 		return false;
 	}
 
-	bool HasAllStolenTech(TechnoTypeClass *Item) {
+	bool HasAllStolenTech(const TechnoTypeClass *Item) const {
 		if(Item->RequiresStolenAlliedTech && !this->Side0TechInfiltrated) { return false; }
 		if(Item->RequiresStolenSovietTech && !this->Side1TechInfiltrated) { return false; }
 		if(Item->RequiresStolenThirdTech && !this->Side2TechInfiltrated) { return false; }
 		return true;
 	}
 
-	bool HasFactoryForObject(TechnoTypeClass *Item) {
+	bool HasFactoryForObject(const TechnoTypeClass *Item) const {
 		for(int i = 0; i < this->Buildings.Count; ++i) {
 			BuildingTypeClass *pType = this->Buildings[i]->Type;
 			if(pType->Factory == Item->WhatAmI()
@@ -391,21 +391,21 @@ public:
 		return false;
 	}
 
-	bool CanExpectToBuild(TechnoTypeClass *const Item);
+	bool CanExpectToBuild(const TechnoTypeClass * Item) const;
 
-	bool InRequiredHouses(TechnoTypeClass *Item) {
+	bool InRequiredHouses(const TechnoTypeClass *Item) const {
 		int Test = Item->RequiredHouses;
 		if(Test == -1) { return 1; }
 		return 0 != (Test & ( 1 << this->Type->ArrayIndex));
 	}
 
-	bool InForbiddenHouses(TechnoTypeClass *Item) {
+	bool InForbiddenHouses(const TechnoTypeClass *Item) const {
 		int Test = Item->ForbiddenHouses;
 		if(Test == -1) { return 0; }
 		return 0 != (Test & ( 1 << this->Type->ArrayIndex));
 	}
 
-	bool IsHumanoid() {
+	bool IsHumanoid() const {
 		bool result = this->CurrentPlayer;
 		if(SessionClass::Instance->GameMode == GameMode::Campaign) {
 			result = result || this->PlayerControl;
@@ -413,7 +413,7 @@ public:
 		return result;
 	}
 
-	signed int CanBuild(TechnoTypeClass *item, bool bypassExtras, bool includeQueued)
+	signed int CanBuild(TechnoTypeClass *item, bool bypassExtras, bool includeQueued) const
 		{ JMP_THIS(0x4F7870); }
 
 	signed int AI_BaseConstructionUpdate()
@@ -450,7 +450,7 @@ public:
 		\author Renegade
 		\date 01.03.10
 	*/
-	bool IsNeutral() {
+	bool IsNeutral() const {
 		return this->Type->MultiplayPassive;
 	}
 

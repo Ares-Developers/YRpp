@@ -29,8 +29,8 @@ public:
 	virtual ~FactoryClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	//Constructor
 	FactoryClass() : AbstractClass(false)
@@ -44,10 +44,10 @@ public:
 	unsigned int CountQueued(TechnoTypeClass * pType)
 		{ JMP_THIS(0x4CA670); }
 
-	int GetProgress()
+	int GetProgress() const
 		{ JMP_THIS(0x4CA120); }
 
-	signed int GetBuildTimeFrames()
+	signed int GetBuildTimeFrames() const
 		{ JMP_THIS(0x4C9FB0); }
 
 	static bool FindThisOwnerAndProduct(HouseClass *pHouse, TechnoTypeClass *pItem)

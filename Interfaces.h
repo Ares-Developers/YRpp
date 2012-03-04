@@ -6,12 +6,12 @@
 
 interface ISwizzle : IUnknown{
     virtual HRESULT __stdcall Reset()=0;
-    virtual HRESULT __stdcall Swizzle(void** pointer)=0;
-    virtual HRESULT __stdcall Fetch_Swizzle_ID( void* pointer,long* id)=0;
+    virtual HRESULT __stdcall Swizzle(void** pointer) = 0;
+    virtual HRESULT __stdcall Fetch_Swizzle_ID( void* pointer,long* id) const = 0;
     virtual HRESULT __stdcall Here_I_Am(long id,void* pointer)=0;
-    virtual HRESULT __stdcall Save_Interface(IStream* stream,IUnknown* pointer)=0;
-    virtual HRESULT __stdcall Load_Interface(IStream* stream,GUID* riid,void** pointer)=0;
-    virtual HRESULT __stdcall Get_Save_Size(int* size)=0;
+    virtual HRESULT __stdcall Save_Interface(IStream* stream,IUnknown* pointer) = 0;
+    virtual HRESULT __stdcall Load_Interface(IStream* stream,GUID* riid,void** pointer) = 0;
+    virtual HRESULT __stdcall Get_Save_Size(int* size) const =0;
 };
 
 interface IApplication : IUnknown
@@ -36,9 +36,9 @@ interface INoticeSink
 
 interface IRTTITypeInfo : IUnknown
 {
-    virtual eAbstractType __stdcall What_Am_I()=0;
-    virtual int __stdcall Fetch_ID()=0;
-    virtual void __stdcall Create_ID()=0;
+    virtual eAbstractType __stdcall What_Am_I() const = 0;
+    virtual int __stdcall Fetch_ID() const = 0;
+    virtual void __stdcall Create_ID() = 0;
 };
 
 interface IHouse : IUnknown

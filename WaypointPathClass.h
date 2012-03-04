@@ -32,14 +32,14 @@ public:
 	virtual ~WaypointPathClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
-	WaypointClass * GetWaypoint(int idx)
+	WaypointClass * GetWaypoint(int idx) const
 		{ JMP_THIS(0x763980); }
-	WaypointClass * GetWaypointAfter(int idx)
+	WaypointClass * GetWaypointAfter(int idx) const
 		{ JMP_THIS(0x763BA0); }
-	bool WaypointExistsAt(WaypointClass *wpt)
+	bool WaypointExistsAt(WaypointClass *wpt) const
 		{ JMP_THIS(0x763A50); }
 
 	// Constructor

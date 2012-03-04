@@ -41,11 +41,11 @@ public:
 	virtual ~BulletClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	//BulletClass
-	virtual BYTE GetAnimRate() R0;
+	virtual BYTE GetAnimRate() const R0;
 	virtual void SetTarget(ObjectClass *Target) RX;
 	virtual BYTE MoveTo(CoordStruct *where, BulletVelocity *Velocity) R0;
 
@@ -78,15 +78,15 @@ public:
 	// this bullet will miss and hit the ground instead.
 	// if the original target is in air, it will disappear.
 	void LoseTarget()
-	{ JMP_THIS(0x468430); }
+		{ JMP_THIS(0x468430); }
 
-	bool IsHoming()
+	bool IsHoming() const
 		{ return this->Type->ROT > 0; }
 
 	void SetWeaponType(WeaponTypeClass *weapon)
 		{ this->WeaponType = weapon; }
 
-	WeaponTypeClass * GetWeaponType()
+	WeaponTypeClass * GetWeaponType() const
 		{ return this->WeaponType; }
 
 	// only called in UnitClass::Fire if Type->Scalable
@@ -98,7 +98,7 @@ public:
 		{ JMP_THIS(0x46B310); }
 
 	// helpers
-	void GetTargetCoords(CoordStruct * Coords) {
+	void GetTargetCoords(CoordStruct * Coords) const {
 		if(this->Target) {
 			this->Target->GetCoords(Coords);
 		} else {

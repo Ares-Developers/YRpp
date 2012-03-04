@@ -14,6 +14,9 @@
 #define ALIAS_O(Type, Obj, Addr) \
 	Type Obj = (Type )(Addr);
 
+#include <AbstractClass.h>
+ALIAS_O(DynamicVectorClass<AbstractClass *>*, AbstractClass::Array0, 0xB0F720);
+
 #include <AbstractTypeClass.h>
 DECL(AbstractTypeClass, 0xA8E968);
 
@@ -192,10 +195,16 @@ ALIAS(int, Networking::NextPacketIndex, 0xA802D0);
 ALIAS_O(NetworkEvent *, Networking::QueuedEvents, 0xA802D4);
 ALIAS_O(int *, Networking::QueuedEventTimestamps, 0xA83A54);
 
-
 #include <ObjectClass.h>
 DynamicVectorClass<ObjectClass*>* ObjectClass::CurrentObjects =
 	(DynamicVectorClass<ObjectClass*>*)0xA8ECB8;
+
+DynamicVectorClass<ObjectClass*>* ObjectClass::Logics =
+	(DynamicVectorClass<ObjectClass*>*)0x87F778;
+
+DynamicVectorClass<ObjectClass*>* ObjectClass::ObjectsInLayers =
+	(DynamicVectorClass<ObjectClass*>*)0x8A0360;
+
 
 #include <OverlayClass.h>
 DECL(OverlayClass, 0xA8EC50);
@@ -505,17 +514,17 @@ void ReleaseIf(ILocomotion *ptr) {
 	}
 }
 
-int HouseClass::CountOwnedNow(TechnoTypeClass *Item) {
+int HouseClass::CountOwnedNow(const TechnoTypeClass *Item) const {
 	int Index = Item->GetArrayIndex();
 	int Sum = 0;
-	BuildingTypeClass *BT = NULL;
-	UnitTypeClass *UT = NULL;
-	UnitClass *U = NULL;
-	InfantryTypeClass *IT = NULL;
+	const BuildingTypeClass *BT = NULL;
+	const UnitTypeClass *UT = NULL;
+	const UnitClass *U = NULL;
+	const InfantryTypeClass *IT = NULL;
 
 	switch(Item->WhatAmI()) {
 		case abs_BuildingType:
-			BT = reinterpret_cast<BuildingTypeClass *>(Item);
+			BT = reinterpret_cast<const BuildingTypeClass *>(Item);
 			if(BT->PowersUpBuilding[0]) {
 				if(auto plug = BuildingTypeClass::Find(BT->PowersUpBuilding)) {
 					for(int i = 0; i < this->Buildings.Count; ++i) {
@@ -539,7 +548,7 @@ int HouseClass::CountOwnedNow(TechnoTypeClass *Item) {
 
 		case abs_UnitType:
 			Sum = this->OwnedUnitTypes.GetItemCount(Index);
-			UT = reinterpret_cast<UnitTypeClass *>(Item);
+			UT = reinterpret_cast<const UnitTypeClass *>(Item);
 			BT = UT->DeploysInto;
 			if(BT) {
 				Sum += this->OwnedBuildingTypes.GetItemCount(BT->GetArrayIndex());
@@ -548,7 +557,7 @@ int HouseClass::CountOwnedNow(TechnoTypeClass *Item) {
 
 		case abs_InfantryType:
 			Sum = this->OwnedInfantryTypes.GetItemCount(Index);
-			IT = reinterpret_cast<InfantryTypeClass *>(Item);
+			IT = reinterpret_cast<const InfantryTypeClass *>(Item);
 			if(IT->VehicleThief) {
 				for(int i = 0; i < UnitClass::Array->Count; ++i) {
 					U = UnitClass::Array->GetItem(i);
@@ -569,7 +578,7 @@ int HouseClass::CountOwnedNow(TechnoTypeClass *Item) {
 	return Sum;
 }
 
-int HouseClass::CountOwnedAndPresent(TechnoTypeClass *Item) {
+int HouseClass::CountOwnedAndPresent(const TechnoTypeClass *Item) const {
 	int Index = Item->GetArrayIndex();
 	switch(Item->WhatAmI()) {
 		case abs_BuildingType:
@@ -589,7 +598,7 @@ int HouseClass::CountOwnedAndPresent(TechnoTypeClass *Item) {
 	}
 }
 
-int HouseClass::CountOwnedEver(TechnoTypeClass *Item) {
+int HouseClass::CountOwnedEver(const TechnoTypeClass *Item) const {
 	int Index = Item->GetArrayIndex();
 	switch(Item->WhatAmI()) {
 		case abs_BuildingType:
@@ -609,7 +618,7 @@ int HouseClass::CountOwnedEver(TechnoTypeClass *Item) {
 	}
 }
 
-bool HouseClass::CanExpectToBuild(TechnoTypeClass *const Item) {
+bool HouseClass::CanExpectToBuild(const TechnoTypeClass * Item) const {
 	HouseTypeClass *pType = this->Type;
 	DWORD parentOwnerMask = 1 << pType->FindIndexOfName(pType->ParentCountry);
 	if(Item->OwnerFlags & parentOwnerMask) {

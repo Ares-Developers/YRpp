@@ -44,8 +44,8 @@ public:
 	virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int	Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int	Size() const R0;
 
 	//Destructor
 	virtual ~AircraftClass() RX;

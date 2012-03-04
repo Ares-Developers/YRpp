@@ -23,11 +23,11 @@ public:
 	virtual ~InfantryClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int	Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int	Size() const R0;
 
 	//InfantryClass
-	virtual bool IsDeployed() R0;
+	virtual bool IsDeployed() const R0;
 	virtual bool PlayAnim(int nAnimNumber, bool bUnk, DWORD dwUnk) R0;
 
 	//Constructor

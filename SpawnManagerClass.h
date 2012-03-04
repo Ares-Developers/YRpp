@@ -33,8 +33,8 @@ public:
 	virtual ~SpawnManagerClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	//Constructor
 	SpawnManagerClass(TechnoClass* pOwner, AircraftTypeClass *SpawnType, int nMaxNodes, int RegenRate, int ReloadRate) : AbstractClass(false)
@@ -50,13 +50,13 @@ public:
 	void SpawnMissingNodes()
 		{ JMP_THIS(0x6B7BB0); }
 
-	int CountReadySpawns1()
+	int CountReadySpawns1() const
 		{ JMP_THIS(0x6B7D30); }
 
-	int CountReadySpawns2()
+	int CountReadySpawns2() const
 		{ JMP_THIS(0x6B7D50); }
 
-	int CountReadySpawns3()
+	int CountReadySpawns3() const
 		{ JMP_THIS(0x6B7D80); }
 
 protected:

@@ -42,16 +42,16 @@ struct VeterancyStruct
 	void Add(int OwnerCost, int VictimCost)
 		{ JMP_THIS(0x74FF50); }
 
-	bool IsElite()
+	bool IsElite() const
 		{ JMP_THIS(0x750010); }
 
-	bool IsVeteran()
+	bool IsVeteran() const
 		{ JMP_THIS(0x74FF90); }
 
-	bool IsNegative()
+	bool IsNegative() const
 		{ JMP_THIS(0x74FFF0); }
 
-	eRank GetRemainingLevel()
+	eRank GetRemainingLevel() const
 		{ JMP_THIS(0x750030); }
 
 	void Reset()
@@ -76,16 +76,16 @@ public:
 	void AddPassenger(FootClass* pPassenger)
 		{ JMP_THIS(0x4733A0); }
 
-	FootClass* GetFirstPassenger()
+	FootClass* GetFirstPassenger() const
 		{ return this->FirstPassenger; }
 
 	FootClass* RemoveFirstPassenger()
 		{ JMP_THIS(0x473430); }
 
-	int GetTotalSize()
+	int GetTotalSize() const
 		{ JMP_THIS(0x473460); }
 
-	int IndexOf(FootClass* candidate)
+	int IndexOf(FootClass* candidate) const
 		{ JMP_THIS(0x473500); }
 
 	PassengersClass() : NumPassengers(0), FirstPassenger(NULL) {};

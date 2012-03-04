@@ -31,8 +31,8 @@ public:
 	virtual ~BulletTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	//AbstractTypeClass
 	//ObjectTypeClass

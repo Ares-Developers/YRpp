@@ -29,8 +29,8 @@ public:
 	virtual ~TActionClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	// you are responsible for doing INI::ReadString and strtok'ing it before calling
 	// this func only calls strtok again, doesn't know anything about buffers
@@ -39,7 +39,7 @@ public:
 
 	// you allocate the buffer for this, and save it to ini yourself after this returns
 	// this func only sprintf's the stuff it needs into buffer
-	void PrepareSaveToINI(char *buffer)
+	void PrepareSaveToINI(char *buffer) const
 		{ JMP_THIS(0x6DD300); }
 
 	// fuck if I know what's the purpose of this, returns a bitfield of flags for trigger logic
@@ -264,11 +264,11 @@ public:
 
 	// WHEEEEEW. End of slave functions.
 
-	HouseClass * FindHouseByIndex(TriggerClass *Trigger, int idx)
+	HouseClass * FindHouseByIndex(TriggerClass *Trigger, int idx) const
 		{ JMP_THIS(0x6E45E0); }
 
 	// no duplication, please.. it's a waste of good coding
-	int GetIndexInArray()
+	int GetIndexInArray() const
 		{ return this->IndexInArray; }
 
 	//Constructor

@@ -27,8 +27,8 @@ public:
 	virtual ~TEventClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 
 	// you are responsible for doing INI::ReadString and strtok'ing it before calling
@@ -38,7 +38,7 @@ public:
 
 	// you allocate the buffer for this, and save it to ini yourself after this returns
 	// this func only sprintf's the stuff it needs into buffer
-	void PrepareSaveToINI(char *buffer)
+	void PrepareSaveToINI(char *buffer) const
 		{ JMP_THIS(0x71F390); }
 
 	// fuck if I know what's the purpose of this, returns a bitfield of flags for trigger logic
@@ -47,9 +47,9 @@ public:
 
 	// used in TriggerClass::HaveEventsOccured , when trigger is repeating
 	// both need to be true to check this event as done
-	bool GetStateA()
+	bool GetStateA() const
 		{ JMP_THIS(0x71F950); }
-	bool GetStateB()
+	bool GetStateB() const
 		{ JMP_THIS(0x71F9C0); }
 
 	// main brain
@@ -58,7 +58,7 @@ public:
 		HouseClass *pHouse,
 		ObjectClass *Object,
 		TimerStruct *ActivationFrame,
-		bool *isRepeating)
+		bool *isRepeating) const
 			{ JMP_THIS(0x71E940); }
 
 	//Constructor
