@@ -178,7 +178,7 @@ public:
 	//magnitude
 	double Magnitude()
 	{
-		return sqrt((double)(X*X+Y*Y+Z*Z));
+		return sqrt(((double)X)*X+((double)Y)*Y+((double)Z)*Z);
 	}
 	//distance from another vector
 	double DistanceFrom(Vector3D a)
