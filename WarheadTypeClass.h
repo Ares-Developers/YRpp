@@ -13,9 +13,9 @@ class ParticleTypeClass;
 class VoxelAnimTypeClass;
 
 struct WarheadFlags {
-	bool ForceFire : 1;
-	bool Retaliate : 1;
-	bool PassiveAcquire : 1;
+	bool ForceFire;
+	bool Retaliate;
+	bool PassiveAcquire;
 
 	WarheadFlags(bool FF = true, bool Retal = true, bool Acquire = true) : ForceFire(FF), Retaliate(Retal), PassiveAcquire(Acquire) {};
 };

@@ -36,13 +36,13 @@ public:
 		} else {
 			double vs = atof(buf);
 			if(LESS_EQUAL(vs, 0.02)) {
-				whFlags->PassiveAcquire = PassiveAcquire;
+				whFlags->PassiveAcquire = false;
 			}
 			if(LESS_EQUAL(vs, 0.01)) {
-				whFlags->Retaliate = Retaliate;
+				whFlags->Retaliate = false;
 			}
 			if(LESS_EQUAL(vs, 0.00)) {
-				whFlags->ForceFire = ForceFire;
+				whFlags->ForceFire = false;
 			}
 			return vs;
 		}
