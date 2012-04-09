@@ -163,6 +163,12 @@ public:
 		{ JMP_THIS(0x56DC20); }
 
 
+	void  AddContentAt(CellStruct *coords, TechnoClass *Content)
+		{ JMP_THIS(0x5683C0); }
+
+	void  RemoveContentAt(CellStruct *coords, TechnoClass *Content)
+		{ JMP_THIS(0x5687F0); }
+
 // ====================================
 //        MAP REVEAL BRAINDAMAGE
 // ====================================

@@ -15,6 +15,8 @@
 #include <LaserDrawClass.h>
 #include <Helpers/Template.h>
 
+#include <PlanningTokenClass.h>
+
 //forward declarations
 class AirstrikeClass;
 class AnimClass;
@@ -626,7 +628,7 @@ public:
 	DWORD            ThreatPosed; // calculated to include cargo etc
 	DWORD            ShouldLoseTargetNow;
 	RadBeam*         FiringRadBeam;
-	DWORD            PlanningToken; // PlanningTokenClass *, user waypoint voodoo, TODO: fix when declared
+	PlanningTokenClass* PlanningToken;
 	ObjectTypeClass* Disguise;
 	HouseClass*      DisguisedAsHouse;
 };

@@ -264,6 +264,12 @@ public:
 	bool TryAssignJumpjet(FootClass *Object)
 		{ JMP_THIS(0x487D70); }
 
+	void  AddContent(ObjectClass *Content, byte OnBridge)
+		{ JMP_THIS(0x47E8A0); }
+
+	void  RemoveContent(ObjectClass *Content, byte OnBridge)
+		{ JMP_THIS(0x47EA90); }
+
 protected:
 	//Constructor
 	CellClass() : AbstractClass(false)
