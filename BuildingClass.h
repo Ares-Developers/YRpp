@@ -186,11 +186,10 @@ public:
 
 // see eBuildingAnims above for slot index meanings
 	AnimClass * Anims [0x15];
+	bool AnimStates [0x15]; // one flag for each of the above anims (whether the anim was enabled when power went offline?)
 
 protected:
-	DWORD align_5B0, align_5B4, align_5B8, align_5BC;
-	DWORD align_5C0, align_5C4;
-
+	char align_5C5[3];
 public:
 
 	AnimClass * DamageFireAnims [0x8];
@@ -232,7 +231,7 @@ public:
 	AudioController Audio7;
 	AudioController Audio8;
 
-	bool unknown_bool_6C8;
+	bool WasOnline; // the the last state when Update()ing. if this changed since the last Update(), UpdatePowered is called.
 	bool ShowRealName;
 	bool BeingProduced;
 	bool ShouldRebuild;

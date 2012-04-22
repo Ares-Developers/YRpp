@@ -201,8 +201,8 @@ public:
 	ParasiteClass*    ParasiteImUsing;	// my parasitic half, nonzero for, eg, terror drone or squiddy
 	TimerStruct ParalysisTimer; // for squid victims
 	bool              unknown_bool_6AC;
-	bool              unknown_bool_6AD;
-	bool              unknown_bool_6AE;
+	bool              IsAttackedByLocomotor; // the unit's locomotor is jammed by a magnetron
+	bool              IsLetGoByLocomotor; // a magnetron attacked this unit and let it go. falling, landing, or sitting on the ground
 	bool              unknown_bool_6AF;
 	bool              unknown_bool_6B0;
 	bool              unknown_bool_6B1;
