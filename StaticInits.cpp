@@ -161,6 +161,8 @@ ALIAS(CLSID, LocomotionClass::CLSIDs::Teleport, 0x7E9A90);
 ALIAS(CLSID, LocomotionClass::CLSIDs::Mech, 0x7E9AA0);
 ALIAS(CLSID, LocomotionClass::CLSIDs::Ship, 0x7E9AB0);
 
+ALIAS(IID, LocomotionClass::IIDs::IPiggyback, 0x7E9B10);
+
 #include <MessageListClass.h>
 ALIAS_O(MessageListClass *, MessageListClass::Instance, 0xA8BC60);
 
@@ -500,6 +502,10 @@ void ReleaseIf(ILocomotion *ptr) {
 	if(ptr) {
 		ptr->Release();
 	}
+}
+
+void RaiseError(HRESULT hr) {
+	Game::RaiseError(hr);
 }
 
 int HouseClass::CountOwnedNow(TechnoTypeClass *Item) {

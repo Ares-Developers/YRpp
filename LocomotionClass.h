@@ -33,6 +33,11 @@ public:
 		static CLSID &Ship;
 	};
 
+	class IIDs {
+	public:
+		static IID &IPiggyback;
+	};
+
 	//IUnknown
 	virtual HRESULT __stdcall QueryInterface(REFIID iid, void** ppvObject)
 		{ JMP_STD(0x55A9B0); }
@@ -236,6 +241,74 @@ public:
 		ReleaseIf(ppPiggy);
 		ReleaseIf(ppLoco);
 		ReleaseIf(firstLoco);
+	}
+
+	// releases the object and clears the pointer
+	static void Release(ILocomotion* &pLoco) {
+		if(pLoco) {
+			pLoco->Release();
+			pLoco = NULL;
+		}
+	}
+
+	// copies a locomotor from source to target, maintaining
+	// a proper reference count.
+	static void Copy(ILocomotion* &target, ILocomotion* &source) {
+		ILocomotion* OldLoco = target;
+
+		if(OldLoco != source) {
+			target = source;
+			if(source) {
+				source->AddRef();
+			}
+			Release(OldLoco);
+		}
+	}
+
+	// moves a locomotor from source to target and clears the source
+	static void Move(ILocomotion* &target, ILocomotion* &source) {
+		Copy(target, source);
+		Release(source);
+	}
+
+	// creates a new instance by class ID. returns true if the creation succeeded.
+	static bool CreateInstance(ILocomotion* &loco, CLSID* rclsid) {
+		Release(loco);
+
+		HRESULT res = LocomotionClass::CreateInstance(&loco, rclsid, NULL, 7);
+		if(res < 0) {
+			if(res != E_NOINTERFACE) {
+				RaiseError(res);
+			}
+			return false;
+		}
+		return true;
+	}
+
+	// finds out whether a locomotor is currently piggybacking and restores
+	// the original locomotor. this function ignores Is_Ok_To_End().
+	static void End_Piggyback(ILocomotion* &pLoco) {
+		if(!pLoco) {
+			RaiseError(E_POINTER);
+		}
+		
+		IPiggyback* pPiggy = NULL;
+		HRESULT res = pLoco->QueryInterface(IIDs::IPiggyback, (void**)&pPiggy);
+		if(SUCCEEDED(res)) {
+			if(pPiggy->Is_Piggybacking()) {
+				// this frees the current locomotor
+				Release(pLoco);
+
+				// this restores the old one
+				res = pPiggy->End_Piggyback(&pLoco);
+				if(FAILED(res)) {
+					RaiseError(res);
+				}
+			}
+
+			pPiggy->Release();
+			pPiggy = NULL;
+		}
 	}
 
 /*

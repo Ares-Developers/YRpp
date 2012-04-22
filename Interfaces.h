@@ -204,4 +204,6 @@ void ReleaseIf(IUnknown *ptr);
 
 void ReleaseIf(ILocomotion *ptr);
 
+void RaiseError(HRESULT hr);
+
 #endif
