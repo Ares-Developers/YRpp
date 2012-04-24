@@ -86,7 +86,7 @@ public:
 
 	// which tab does the 'th object of that type belong in?
 	static int __fastcall GetObjectTabIdx(eAbstractType WhatIsIt, int IdxIt, int unused)
-		{ JMP_THIS(0x6ABC60); }
+		{ JMP_STD(0x6ABC60); }
 
 protected:
 	//Constructor
