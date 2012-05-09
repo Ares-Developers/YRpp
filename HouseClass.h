@@ -648,12 +648,11 @@ public:
 //	IndexBitfield<HouseTypeClass *> RadarVisibleTo; // these house types(!?!, fuck you WW) can see my radar
 	IndexBitfield<HouseClass *> RadarVisibleTo; // this crap is being rewritten to use house indices instead of house types
 	int                   SiloMoney;
-	int                   PreferredTargetWaypoint; // set via map actions
-	CellStruct PreferredTargetCell;
-	CellStruct PreferredDefensiveCell;
-	CellStruct PreferredDefensiveCell2;
-	int                   PreferredDefensiveCellStartTime; // don't look at me...
-	                                // map actions let you set an ai's ForceShield firing cell, this is related
+	int PreferredTargetWaypoint; // Set via map action 35. The preferred object type to attack.
+	CellStruct PreferredTargetCell; // Set via map action 135 and 136. Used to override firing location of targettable SWs.
+	CellStruct PreferredDefensiveCell; // Set via map action 140 and 141, or when an AIDefendAgainst SW is launched.
+	CellStruct PreferredDefensiveCell2; // No known function sets this to a real value, but it would take precedence over the other.
+	int PreferredDefensiveCellStartTime; // The frame the PreferredDefensiveCell was set. Used to fire the Force Shield.
 
 		// Used for: Counting objects ever owned
 		// altered on each object's loss or gain

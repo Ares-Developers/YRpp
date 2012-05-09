@@ -262,7 +262,7 @@ public:
 	AnimClass*         Parachute;		//Current parachute Anim.
 	bool               OnBridge;
 	bool               IsFallingDown;
-	bool               unknown_8E;
+	bool               WasFallingDown; // last falling state when FootClass::Update executed. used to find out whether it changed.
 	bool               IsABomb; // if set, will explode after FallingDown brings it to contact with the ground
 	bool               IsAlive;		//Self-explanatory.
 	PROTECTED_PROPERTY(BYTE,     unknown_91[0xB]);
