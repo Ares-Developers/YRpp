@@ -498,23 +498,24 @@ public:
 	bool                  PlayerControl;		//a human controls this House
 	bool                  Production;		//AI production has begun
 	bool                  AutocreateAllowed;
-	PROTECTED_PROPERTY(BYTE,        unknown_1EB[2]);
+	PROTECTED_PROPERTY(BYTE,        unknown_1F0[2]);
 	bool                  AITriggersActive;
 	bool                  AutoBaseBuilding;
-	PROTECTED_PROPERTY(BYTE,        unknown_1EF[1]);
+	bool                  DiscoveredByPlayer;
 	bool                  Defeated;
-	PROTECTED_PROPERTY(BYTE,        unknown_1D2[0x4]);
+	PROTECTED_PROPERTY(BYTE,        unknown_1F6[0x3]);
+	bool                  CiviliansEvacuated; // used by the CivEvac triggers
 	bool                  FirestormActive;
 	bool                  HasThreatNode;
 	bool                  ShouldRecheckTechTree;
-	PROTECTED_PROPERTY(BYTE,        unknown_1F6[0x0F]);
+	PROTECTED_PROPERTY(BYTE,        unknown_1FD[0x0F]);
 	int                   SelectedPathIndex;
 	WaypointPathClass* PlanningPaths [0x0C]; // 12 paths for "planning mode"
 	char                  Visionary;			//??? exe says so
 	bool                  MapIsClear;
 	bool                  unknown_bool_242;
 	bool                  unknown_bool_243;
-	bool                  unknown_bool_244;
+	bool                  HasBeenThieved; // Something of this house has been entered by a Thief/VehicleThief
 	bool                  Repairing; // BuildingClass::Repair, handholder for hurr durf AI
 	bool                  unknown_bool_246;
 	bool                  unknown_bool_247;
