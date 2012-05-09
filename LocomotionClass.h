@@ -287,7 +287,8 @@ public:
 
 	// finds out whether a locomotor is currently piggybacking and restores
 	// the original locomotor. this function ignores Is_Ok_To_End().
-	static void End_Piggyback(ILocomotion* &pLoco) {
+	static bool End_Piggyback(ILocomotion* &pLoco) {
+		bool ret = false;
 		if(!pLoco) {
 			RaiseError(E_POINTER);
 		}
@@ -304,11 +305,13 @@ public:
 				if(FAILED(res)) {
 					RaiseError(res);
 				}
+				ret = (ret == S_OK);
 			}
 
 			pPiggy->Release();
 			pPiggy = NULL;
 		}
+		return ret;
 	}
 
 /*
