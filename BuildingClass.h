@@ -178,7 +178,7 @@ public:
 	int unknown_int_534;
 	int unknown_int_538;
 	DWORD OwnerCountryIndex;
-	DWORD unknown_540; //pointer
+	InfantryClass* C4AppliedBy;
 	DWORD unknown_544;
 	AnimClass* FirestormAnim; //pointer
 	DWORD PsiWarnAnim; //pointer
@@ -244,7 +244,7 @@ public:
 	bool unknown_bool_6E0;
 	bool unknown_bool_6E1;
 	bool unknown_bool_6E2;
-	bool unknown_bool_6E3;
+	bool HasBeenCaptured; // has this building changed ownership at least once? affects crew and repair.
 	bool ActuallyPlacedOnMap;
 	bool unknown_bool_6E5;
 	bool IsDamaged; // AI handholder for repair logic,
