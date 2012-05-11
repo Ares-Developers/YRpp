@@ -12,7 +12,7 @@
 class TechnoTypeClass;
 class HouseTypeClass;
 class ObjectClass;
-class BuildingTypeClass;
+class BuildingClass;
 
 class ObjectTypeClass : public AbstractTypeClass
 {
@@ -36,7 +36,7 @@ public:
 	virtual int GetBuildSpeed() R0;
 	virtual ObjectClass* CreateObject(HouseClass* pOwner) = 0;
 	virtual CellStruct * GetFoundationData(bool IncludeBib) R0;
-	virtual BuildingTypeClass* GetFactoryType(bool OverridePrereqs, bool OverridePower, bool OverrideBuildLimit,
+	virtual BuildingClass* FindFactory(bool CheckPrereqs, bool CheckPower, bool CheckBuildLimit,
 		HouseClass *House) R0;
 	virtual SHPStruct* GetCameo() R0;
 	virtual SHPStruct* GetImage() R0;
