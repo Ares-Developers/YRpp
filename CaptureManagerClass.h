@@ -60,7 +60,7 @@ public:
 		{ JMP_THIS(0x4722A0); }
 	bool IsControllingSomething()
 		{ JMP_THIS(0x4722C0); }
-	bool IsOverloading(bool *result)
+	bool IsOverloading(bool *wasDamageApplied)
 		{ JMP_THIS(0x4726C0); }
 	void HandleOverload()
 		{ JMP_THIS(0x471A50); }
@@ -85,10 +85,10 @@ public:
 	DynamicVectorClass<ControlNode*> ControlNodes;
 	int MaxControlNodes;
 	bool InfiniteMindControl;
-	bool IsOwnerDead;
-	DWORD unknown_44;
+	bool OverloadDeathSoundPlayed; // Has the mind control death sound played already?
+	int OverloadPipState; // Used to create the red overloading pip by returning true in IsOverloading's wasDamageApplied for 10 frames.
 	TechnoClass* Owner;
-	int unknown_int_4C;	//defaults to 30
+	int OverloadDamageDelay; // Decremented every frame. If it reaches zero, OverloadDamage is applied.
 };
 
 #endif
