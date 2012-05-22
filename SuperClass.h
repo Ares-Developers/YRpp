@@ -259,4 +259,18 @@ public:
 		{ CALL(0x53BAD0); }
 };
 
+class NukeFlash
+{
+public:
+	static int StartTime()
+		{ int retval; MEM_READ32(retval, 0x827FC8); return retval; }
+	static void StartTime(int value)
+		{ MEM_WRITE32(0x827FC8, value); }
+
+	static int Duration()
+		{ int retval; MEM_READ32(retval, 0x827FCC); return retval; }
+	static void Duration(int value)
+		{ MEM_WRITE32(0xA827FCC, value); }
+};
+
 #endif
