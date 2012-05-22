@@ -135,6 +135,13 @@ public:
 class LightningStorm
 {
 public:
+	static CoordStruct &EmptyCoords;
+	static double &CloudHeightFactor;
+
+	static DynamicVectorClass<AnimClass*>* CloudsPresent;
+	static DynamicVectorClass<AnimClass*>* CloudsManifesting;
+	static DynamicVectorClass<AnimClass*>* BoltsPresent;
+
 	static CellStruct Coords()
 		{ CellStruct retval; MEM_READ32(retval, 0xA9F9CC); return retval; }
 	static void Coords(CellStruct value)

@@ -273,6 +273,11 @@ ALIAS(CSFString *, StringTable::LastLoadedString, 0xB1CF88);
 
 #include <SuperClass.h>
 ALIAS(CellStruct, SuperClass::DefaultCoords, 0xB0C000);
+ALIAS(CoordStruct, LightningStorm::EmptyCoords, 0xA9FA30);
+ALIAS(double, LightningStorm::CloudHeightFactor, 0xB0CDD8);
+ALIAS_O(DynamicVectorClass<AnimClass*>*, LightningStorm::CloudsPresent, 0xA9F9D0);
+ALIAS_O(DynamicVectorClass<AnimClass*>*, LightningStorm::CloudsManifesting, 0xA9FA60);
+ALIAS_O(DynamicVectorClass<AnimClass*>*, LightningStorm::BoltsPresent, 0xA9FA18);
 
 #include <SuperWeaponTypeClass.h>
 DECL(SuperWeaponTypeClass, 0xA8E330);
