@@ -64,6 +64,10 @@ public:
 	static void __fastcall PlayAt(int n, CoordStruct* pCoords, AudioController *ctrl)
 		{ JMP_STD(0x7509E0); }
 
+	// calls the one above ^ - probably sanity checks and whatnot
+	static void __fastcall PlayIndexAtPos(int n, CoordStruct *pCoords, int a3 = 0)
+		{ JMP_STD(0x750E20); }
+
 	//Properties
 
 public:

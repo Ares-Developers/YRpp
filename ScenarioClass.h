@@ -71,6 +71,13 @@ public:
 	static void __fastcall RecalcLighting(int R, int G, int B, DWORD dwUnk)
 		{ JMP_STD(0x53AD00); }
 
+	// valid range [0..701]
+	bool IsDefinedWaypoint(int idx)
+		{ JMP_THIS(0x68BD80); }
+
+	CellStruct * GetWaypointCoords(CellStruct *dest, int idx)
+		{ JMP_THIS(0x68BCC0); }
+
 	//CTOR / DTOR
 protected:
 	ScenarioClass() { THISCALL(0x6832C0); }
