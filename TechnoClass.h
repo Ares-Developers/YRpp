@@ -592,7 +592,7 @@ public:
 	bool             unknown_bool_431;
 	bool             unknown_bool_432;
 	TeamClass*       OldTeam;
-	bool             unknown_bool_438;
+	bool             CountedAsOwned; // is this techno contained in OwningPlayer->Owned... counts?
 	bool             Absorbed; // in UnitAbsorb/InfantryAbsorb or smth, lousy memory
 	bool             unknown_bool_43A;
 	DWORD            unknown_43C;
