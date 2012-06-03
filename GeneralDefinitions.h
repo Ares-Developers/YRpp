@@ -168,26 +168,31 @@ typedef int eAction;
 #define	act_PsychicReveal		0x48
 
 
-typedef int eAbilities;
+class Abilities {
+public:
+	typedef int Value;
+	enum {
+		FASTER = 0x0,
+		STRONGER = 0x1,
+		FIREPOWER = 0x2,
+		SCATTER = 0x3,
+		ROF = 0x4,
+		SIGHT = 0x5,
+		CLOAK = 0x6,
+		TIBERIUM_PROOF = 0x7,
+		VEIN_PROOF = 0x8,
+		SELF_HEAL = 0x9,
+		EXPLODES = 0xA,
+		RADAR_INVISIBLE = 0xB,
+		SENSORS = 0xC,
+		FEARLESS = 0xD,
+		C4 = 0xE,
+		TIBERIUM_HEAL = 0xF,
+		GUARD_AREA = 0x10,
+		CRUSHER = 0x11
+	};
+};
 
-#define	ability_FASTER		0x0
-#define	ability_STRONGER		0x1
-#define	ability_FIREPOWER		0x2
-#define	ability_SCATTER		0x3
-#define	ability_ROF		0x4
-#define	ability_SIGHT		0x5
-#define	ability_CLOAK		0x6
-#define	ability_TIBERIUM_PROOF		0x7
-#define	ability_VEIN_PROOF		0x8
-#define	ability_SELF_HEAL		0x9
-#define	ability_EXPLODES		0xA
-#define	ability_RADAR_INVISIBLE		0xB
-#define	ability_SENSORS		0xC
-#define	ability_FEARLESS		0xD
-#define	ability_C4		0xE
-#define	ability_TIBERIUM_HEAL		0xF
-#define	ability_GUARD_AREA		0x10
-#define	ability_CRUSHER		0x11
 
 class AIDifficulty {
 public:

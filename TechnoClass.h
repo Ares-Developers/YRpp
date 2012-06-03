@@ -394,6 +394,8 @@ public:
 	HouseClass * GetOriginalOwner()
 		{ JMP_THIS(0x70F820); }
 
+	bool HasAbility(Abilities::Value index)
+		{ JMP_THIS(0x70D0D0); }
 
 	//Constructor
 	TechnoClass(HouseClass* pOwner) : RadioClass(false)
