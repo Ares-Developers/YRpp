@@ -277,7 +277,7 @@ public:
 	static int Duration()
 		{ int retval; MEM_READ32(retval, 0x827FCC); return retval; }
 	static void Duration(int value)
-		{ MEM_WRITE32(0xA827FCC, value); }
+		{ MEM_WRITE32(0x827FCC, value); }
 };
 
 #endif
