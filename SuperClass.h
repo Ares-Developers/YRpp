@@ -28,8 +28,8 @@ public:
 	virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	//Destructor
 	virtual ~SuperClass() RX;
@@ -49,13 +49,13 @@ public:
 	bool Lose()
 		{ JMP_THIS(0x6CB7B0); }
 
-	bool IsPowered()
+	bool IsPowered() const
 		{ return this->Type->IsPowered; }
 
 	void Launch(CellStruct *Cell, bool IsPlayer)
 		{ JMP_THIS(0x6CC390); }
 
-	char CanFire()
+	char CanFire() const
 		{ JMP_THIS(0x6CC360); }
 
 	void SetReadiness(bool Ready) // this->IsCharged = Ready
@@ -70,13 +70,13 @@ public:
 	bool HasChargeProgressed(bool IsPlayer) // true if the charge has changed (charge overlay on the cameo)
 		{ JMP_THIS(0x6CBCA0); }               // triggers the EVA Announcement if it's ready
 
-	signed int GetCameoChargeState() // which cameo charge overlay frame to show
+	signed int GetCameoChargeState() const // which cameo charge overlay frame to show
 		{ JMP_THIS(0x6CBEE0); }
 
 	void SetCharge(int Percentage)
 		{ JMP_THIS(0x6CC1E0); }
 
-	int GetRechargeTime() // the time it takes this SW to recharge fully
+	int GetRechargeTime() const // the time it takes this SW to recharge fully
 		{ JMP_THIS(0x6CC260); }
 
 	void SetRechargeTime(int time) // makes this SW rechange in this many frames, as opposed to [Type]RechargeTime
@@ -85,13 +85,13 @@ public:
 	void ResetRechargeTime() // nullifies the previous call
 		{ JMP_THIS(0x6CC290); }
 
-	wchar_t *NameReadiness() // the string to be displayed over the SW in the sidebar - "Ready" or ChargeDrain state
+	wchar_t *NameReadiness() const // the string to be displayed over the SW in the sidebar - "Ready" or ChargeDrain state
 		{ JMP_THIS(0x6CC2B0); }
 
-	bool ShouldDrawProgress() // sidebar
+	bool ShouldDrawProgress() const // sidebar
 		{ JMP_THIS(0x6CDE90); }
 
-	bool ShouldFlashTab() // sidebar
+	bool ShouldFlashTab() const // sidebar
 		{ JMP_THIS(0x6CE1A0); }
 
 

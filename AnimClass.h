@@ -32,13 +32,13 @@ public:
 	virtual ~AnimClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int	Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int	Size() const R0;
 
 	//ObjectClass
 	//AnimClass
 	virtual int AnimExtras() R0; // no idea what this does
-	virtual int GetEnd() R0; //End tag from the AnimType
+	virtual int GetEnd() const R0; //End tag from the AnimType
 
 	void SetOwnerObject(ObjectClass *pOwner)
 		{ JMP_THIS(0x424B50); }

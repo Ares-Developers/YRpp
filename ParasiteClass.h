@@ -24,8 +24,8 @@ public:
 	virtual ~ParasiteClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	//Constructor
 	ParasiteClass(FootClass* pOwner = NULL) : AbstractClass(false)
@@ -38,7 +38,7 @@ public:
 	void ExitUnit()
 		{ JMP_THIS(0x62A4A0); }
 
-	bool CanInfect(FootClass *pTarget)
+	bool CanInfect(FootClass *pTarget) const
 		{ JMP_THIS(0x62A8E0); }
 
 	void TryInfect(FootClass *pTarget)

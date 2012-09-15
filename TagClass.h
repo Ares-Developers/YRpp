@@ -26,8 +26,8 @@ public:
 	virtual ~TagClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	//Constructor
 	TagClass(TagTypeClass *pType) : AbstractClass(false)
@@ -36,7 +36,7 @@ public:
 	bool RaiseEvent(TriggerEvent::Value eventKind, ObjectClass* tagObject, CellStruct loc, bool isRepeating, TechnoClass* source)
 		{ JMP_THIS(0x6E53A0); }
 
-	bool IsTriggerRepeating()
+	bool IsTriggerRepeating() const
 		{ JMP_THIS(0x6E57C0); }
 
 protected:

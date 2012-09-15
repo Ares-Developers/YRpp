@@ -8,6 +8,7 @@
 #define DRAWING_H
 
 #include <GeneralDefinitions.h>
+#include "ColorScheme.h"
 #include <Surface.h>
 
 class Drawing
@@ -73,6 +74,11 @@ public:
 			color.B = (bits & 0x001F) << 3;
 			return color;
 		}
+
+	/** Message is a vswprintf format specifier, ... is for any arguments needed */
+	static Point2D * __cdecl PrintUnicode(Point2D *Position1, wchar_t *Message, Surface *a3, RectangleStruct *Rect, Point2D *Position2,
+			ColorScheme *a6, int a7, int a8, ...)
+		{ JMP_STD(0x4A61C0); };
 };
 
 //A few preset 16bit colors.

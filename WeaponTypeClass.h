@@ -32,12 +32,12 @@ public:
 	virtual ~WeaponTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	//AbstractTypeClass
 
-	void CalculateSpeed()
+	void CalculateSpeed() const
 		{ JMP_THIS(0x7729F0); }
 
 	//Constructor

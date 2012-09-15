@@ -38,6 +38,11 @@ public:
 	//global arrays
 	static DynamicVectorClass<ObjectClass*>* CurrentObjects;
 
+	static DynamicVectorClass<ObjectClass*>* Logics;
+
+	// this actually points to 5 vectors, one for each layer
+	static DynamicVectorClass<ObjectClass*>* ObjectsInLayers;
+
 	//IPersistStream
 	virtual HRESULT __stdcall Load(IStream* pStm) R0;
 

@@ -32,11 +32,11 @@ public:
 	virtual ~SuperWeaponTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	//SuperWeaponTypeClass
-	virtual eAction MouseOverObject(DWORD dwUnk, ObjectClass* pObjBelowMouse) R0;
+	virtual eAction MouseOverObject(DWORD dwUnk, ObjectClass* pObjBelowMouse) const R0;
 
 	// non-virtual
 	static SuperWeaponTypeClass * __fastcall FindFirstOfAction(eAction Action)

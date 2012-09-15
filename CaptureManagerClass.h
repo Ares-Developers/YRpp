@@ -36,8 +36,8 @@ public:
 	virtual ~CaptureManagerClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	//Constructor
 	CaptureManagerClass(TechnoClass* pOwner, int nMaxControlNodes, bool bInfiniteControl) : AbstractClass(false)
@@ -51,26 +51,26 @@ public:
 	void FreeAll()
 		{ JMP_THIS(0x472140); }
 
-	int NumControlNodes()
+	int NumControlNodes() const
 		{ return ControlNodes.Count; }
 
-	bool CanCapture(TechnoClass *Target)
+	bool CanCapture(TechnoClass *Target) const
 		{ JMP_THIS(0x471C90); }
-	bool CannotControlAnyMore()
+	bool CannotControlAnyMore() const
 		{ JMP_THIS(0x4722A0); }
-	bool IsControllingSomething()
+	bool IsControllingSomething() const
 		{ JMP_THIS(0x4722C0); }
-	bool IsOverloading(bool *wasDamageApplied)
+	bool IsOverloading(bool *wasDamageApplied) const
 		{ JMP_THIS(0x4726C0); }
 	void HandleOverload()
 		{ JMP_THIS(0x471A50); }
-	bool NeedsToDrawLinks()
+	bool NeedsToDrawLinks() const
 		{ JMP_THIS(0x472640); }
 	bool DrawLinks()
 		{ JMP_THIS(0x472160); }
 	void DecideUnitFate(TechnoClass *Unit)
 		{ JMP_THIS(0x4723B0); }
-	HouseClass* GetOriginalOwner(TechnoClass *Unit)
+	HouseClass* GetOriginalOwner(TechnoClass *Unit) const
 		{ JMP_THIS(0x4722F0); }
 
 protected:

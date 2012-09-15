@@ -24,8 +24,8 @@ public:
 	virtual ~BombClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int	Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int	Size() const R0;
 
 	void Detonate()
 		{ JMP_THIS(0x438720); }
@@ -33,10 +33,10 @@ public:
 	void Disarm()
 		{ JMP_THIS(0x4389B0); }
 
-	void IsDeathBomb()
+	void IsDeathBomb() const
 		{ JMP_THIS(0x4389F0); }
 
-	void GetCurrentFlickerFrame() // which frame of the ticking bomb to draw
+	void GetCurrentFlickerFrame() const // which frame of the ticking bomb to draw
 		{ JMP_THIS(0x438A00); }
 
 	void TimeToExplode()

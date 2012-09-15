@@ -36,38 +36,38 @@ public:
 	virtual ~CellClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	// non-virtual
 
 	// get content objects
-	ObjectClass *FindObjectNearestTo(CoordStruct *coords, bool alt, ObjectClass *ExcludeThis)
+	ObjectClass *FindObjectNearestTo(CoordStruct *coords, bool alt, ObjectClass *ExcludeThis) const
 		{ JMP_THIS(0x47C3D0); }
 
-	ObjectClass *FindObjectOfType(int AbstractID, bool alt)
+	ObjectClass *FindObjectOfType(int AbstractID, bool alt) const
 		{ JMP_THIS(0x47C4D0); }
 
-	BuildingClass *GetBuilding()
+	BuildingClass *GetBuilding() const
 		{ JMP_THIS(0x47C520); }
 
-	UnitClass *GetUnit(bool alt)
+	UnitClass *GetUnit(bool alt) const
 		{ JMP_THIS(0x47EBA0); }
 
-	InfantryClass *GetInfantry(bool alt)
+	InfantryClass *GetInfantry(bool alt) const
 		{ JMP_THIS(0x47EC40); }
 
-	AircraftClass *GetAircraft(bool alt)
+	AircraftClass *GetAircraft(bool alt) const
 		{ JMP_THIS(0x47EBF0); }
 
-	TerrainClass *GetTerrain(bool alt)
+	TerrainClass *GetTerrain(bool alt) const
 		{ JMP_THIS(0x47C550); }
 
 	/* craziest thing... first iterates Content looking to Aircraft,
 	 * failing that, calls FindObjectNearestTo,
 	 * if that fails too, reiterates Content looking for Terrain
 	 */
-	ObjectClass *GetSomeObject(CoordStruct *coords, bool alt)
+	ObjectClass *GetSomeObject(CoordStruct *coords, bool alt) const
 		{ JMP_THIS(0x47C5A0); }
 
 	// misc
@@ -85,14 +85,14 @@ public:
 	void BlowUpBridge()
 		{ JMP_THIS(0x47DD70); }
 
-	bool CanThisExistHere(eSpeedType SpeedType, BuildingTypeClass *Object, HouseClass* Owner)
+	bool CanThisExistHere(eSpeedType SpeedType, BuildingTypeClass *Object, HouseClass* Owner) const
 		{ JMP_THIS(0x47C620); }
 
 	// those unks are passed to TechnoClass::Scatter in that same order
 	void ScatterContent(DWORD unk2, DWORD unk3, DWORD unk4, bool alt)
 		{ JMP_THIS(0x481670); }
 
-	CellClass *GetNeighbourCell(unsigned int direction)
+	CellClass *GetNeighbourCell(unsigned int direction) const
 		{ JMP_THIS(0x481810); }
 
 	// called whenever anything moves, first to remove threat from source cell, second time to add threat to dest cell
@@ -108,18 +108,18 @@ public:
 	/*TubeClass*/void GetTunnel()
 		{ JMP_THIS(0x484F20); }
 
-	RectangleStruct *GetContainingRect(RectangleStruct *dest)
+	RectangleStruct *GetContainingRect(RectangleStruct *dest) const
 		{ JMP_THIS(0x47FB90); }
 
 	// don't laugh, it returns the uiname of contained tiberium... which nobody ever sets
-	wchar_t *GetUIName()
+	wchar_t *GetUIName() const
 		{ JMP_THIS(0x484FF0); }
 
 	// returns the tiberium's index in OverlayTypes
-	int GetContainedTiberiumIndex()
+	int GetContainedTiberiumIndex() const
 		{ JMP_THIS(0x485010); }
 
-	int GetContainedTiberiumValue()
+	int GetContainedTiberiumValue() const
 		{ JMP_THIS(0x485020); }
 
 	int SetMapCoords(CoordStruct *coords)
@@ -141,7 +141,7 @@ public:
 		{ JMP_THIS(0x486920); }
 
 	// cloak generators
-	bool CloakGen_InclHouse(unsigned int idx)
+	bool CloakGen_InclHouse(unsigned int idx) const
 		{ return ((1 << idx) & this->CloakedByHouses) != 0; }
 
 	void CloakGen_AddHouse(unsigned int idx)
@@ -151,11 +151,11 @@ public:
 		{ this->CloakedByHouses &= ~(1 << idx); }
 
 	// unused, returns 0 if that house doesn't have cloakgens covering this cell or Player has sensors over this cell
-	bool DrawObjectsCloaked(int OwnerHouseIdx)
+	bool DrawObjectsCloaked(int OwnerHouseIdx) const
 		{ JMP_THIS(0x486800); }
 
 	// sensors
-	bool Sensors_InclHouse(unsigned int idx)
+	bool Sensors_InclHouse(unsigned int idx) const
 		{ return this->SensorsOfHouses[idx] > 0; }
 
 	void Sensors_AddOfHouse(unsigned int idx)
@@ -165,7 +165,7 @@ public:
 		{ --this->SensorsOfHouses[idx]; }
 
 	// disguise sensors
-	bool DisguiseSensors_InclHouse(unsigned int idx)
+	bool DisguiseSensors_InclHouse(unsigned int idx) const
 		{ return this->DisguiseSensorsOfHouses[idx] > 0; }
 
 	void DisguiseSensors_AddOfHouse(unsigned int idx)
@@ -178,13 +178,13 @@ public:
 	void SetRadSite(RadSiteClass *Rad)
 		{ this->RadSite = Rad; }
 
-	RadSiteClass* GetRadSite()
+	RadSiteClass* GetRadSite() const
 		{ return this->RadSite; }
 
-	bool IsRadiated()
+	bool IsRadiated() const
 		{ JMP_THIS(0x487C90); }
 
-	int GetRadLevel()
+	int GetRadLevel() const
 		{ JMP_THIS(0x487CB0); }
 
 	void RadLevel_Increase(double amount)
@@ -194,15 +194,15 @@ public:
 		{ JMP_THIS(0x487D00); }
 
 	// helper
-	bool ContainsBridge()
+	bool ContainsBridge() const
 		{ return (this->Flags & cf_Bridge) != 0; }
 	// helper mimicking game's behaviour
-	ObjectClass* GetContent()
+	ObjectClass* GetContent() const
 		{ return this->ContainsBridge() ? this->AltObject : this->FirstObject; }
 
 	// tilesets
 #define ISTILE(tileset, addr) \
-	bool Tile_Is_ ## tileset() \
+	bool Tile_Is_ ## tileset() const \
 		{ JMP_THIS(addr); }
 
 	ISTILE(Tunnel, 0x484AB0);
@@ -245,14 +245,14 @@ public:
 		return cell;
 	}
 
-	CoordStruct * FixHeight(CoordStruct *crd)
+	CoordStruct * FixHeight(CoordStruct *crd) const
 	{
 		crd->Z += ((this->Flags & cf_Bridge) != 0) * BridgeHeight();
 		return crd;
 	}
 
 	// helper - gets coords and fixes height for bridge
-	CoordStruct * GetCoordsWithBridge(CoordStruct *crd)
+	CoordStruct * GetCoordsWithBridge(CoordStruct *crd) const
 	{
 		this->GetCoords(crd);
 		return this->FixHeight(crd);

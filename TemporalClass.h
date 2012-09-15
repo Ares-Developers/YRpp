@@ -27,8 +27,8 @@ public:
 	virtual ~TemporalClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	//Constructor
 	TemporalClass(TechnoClass* pOwnerUnit) : AbstractClass(false)
@@ -37,11 +37,11 @@ public:
 	//non-virtual
 	void Fire(TechnoClass* pTarget)
 		{ JMP_THIS(0x71AF20); }
-	bool CanWarpTarget(TechnoClass* pTarget)
+	bool CanWarpTarget(TechnoClass* pTarget) const
 		{ JMP_THIS(0x71AE50); }
 
 	// hardcoded to accumulate only up to 50 helpers
-	int GetWarpPerStep( int nHelperCount )
+	int GetWarpPerStep( int nHelperCount ) const
 		{ JMP_THIS(0x71AB10); }
 
 	void LetGo()

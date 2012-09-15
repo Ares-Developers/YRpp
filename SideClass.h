@@ -26,8 +26,8 @@ public:
 	virtual ~SideClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	//Constructor
 	SideClass(const char* pID) : AbstractTypeClass(false)

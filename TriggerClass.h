@@ -30,32 +30,32 @@ public:
 	virtual ~TriggerClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	// events include 25 (Cross_Horizontal_Line) ?
-	bool InvolvesCrossingHorizontal()
+	bool InvolvesCrossingHorizontal() const
 		{ JMP_THIS(0x726250); }
 
 	// events include 26 (Cross_Vertical_Line) ?
-	bool InvolvesCrossingVertical()
+	bool InvolvesCrossingVertical() const
 		{ JMP_THIS(0x726290); }
 
 	// events include 24 (Entered_Zone) ? // fuck knows what "Zone" is
-	bool InvolvesZoneEntry()
+	bool InvolvesZoneEntry() const
 		{ JMP_THIS(0x7262D0); }
 
 	// events include 14 (Allow_Win) ? // god awful logic, creator should curl up and die
-	bool InvolvesAllowWin()
+	bool InvolvesAllowWin() const
 		{ JMP_THIS(0x726310); }
 
 	// events include 27/28 (Global_Set/Cleared) ?
-	bool InvolvesGlobalChecking(int idx)
+	bool InvolvesGlobalChecking(int idx) const
 		{ JMP_THIS(0x726350); }
 
-	void GlobalUpdated(int idx)
+	void GlobalUpdated(int idx) const
 		{ JMP_THIS(0x7263A0); }
-	void LocalUpdated(int idx)
+	void LocalUpdated(int idx) const
 		{ JMP_THIS(0x7263D0); }
 
 	void ResetTimers()
@@ -65,15 +65,15 @@ public:
 		{ this->EventsAlreadyFired |= (1 << idx); }
 	void MarkEventAsNotOccured(int idx)
 		{ this->EventsAlreadyFired &= ~(1 << idx); }
-	bool HasEventOccured(int idx)
+	bool HasEventOccured(int idx) const
 		{ return (this->EventsAlreadyFired & (1 << idx)) != 0; }
 
-	bool HasBeenDestroyed()
+	bool HasBeenDestroyed() const
 		{ return this->Destroyed; }
 
 	void SetHouse(HouseClass *House)
 		{ this->House = House; }
-	HouseClass * GetHouse()
+	HouseClass * GetHouse() const
 		{ return this->House; }
 
 	// called whenever an event bubbles up , returns true if all of this trigger's events are up

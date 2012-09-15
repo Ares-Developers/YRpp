@@ -33,8 +33,8 @@ public:
 	virtual ~TeamTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	static bool LoadFromINIList(CCINIClass *pINI, bool IsGlobal)
 		{ PUSH_VAR8(IsGlobal); SET_REG32(ECX, pINI); CALL(0x6F19B0); }
@@ -45,22 +45,22 @@ public:
 	void DestroyAllInstances()
 		{ JMP_THIS(0x6F0A70); }
 
-	int GetGroup()
+	int GetGroup() const
 		{ JMP_THIS(0x6F1870); }
 
-	CellStruct* GetWaypoint(CellStruct *buffer)
+	CellStruct* GetWaypoint(CellStruct *buffer) const
 		{ JMP_THIS(0x6F18A0); }
 
-	CellStruct* GetTransportWaypoint(CellStruct *buffer)
+	CellStruct* GetTransportWaypoint(CellStruct *buffer) const
 		{ JMP_THIS(0x6F18E0); }
 
-	bool CanRecruitUnit(FootClass *Unit, HouseClass *Owner)
+	bool CanRecruitUnit(FootClass *Unit, HouseClass *Owner) const
 		{ JMP_THIS(0x6F1320); }
 
 	void FlashAllInstances(int Duration)
 		{ JMP_THIS(0x6F1F30); }
 
-	TeamClass * FindFirstInstance()
+	TeamClass * FindFirstInstance() const
 		{ JMP_THIS(0x6F1F70); }
 
 	void ProcessTaskForce()
@@ -69,7 +69,7 @@ public:
 	static void ProcessAllTaskforces()
 		{ JMP_STD(0x6F2040); }
 
-	HouseClass* GetHouse()
+	HouseClass* GetHouse() const
 		{ JMP_THIS(0x6F2070); }
 
 	//Constructor

@@ -18,11 +18,11 @@ class IsometricTileTypeClass : public ObjectTypeClass
 
 	//AbstractClass
 	virtual void PointerExpired(void* p,bool bUnknown) RX;
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
-	virtual void CalculateChecksum(void* pChkSum) RX;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
+	virtual void CalculateChecksum(void* pChkSum) const RX;
 
-	virtual int GetArrayIndex() R0;
+	virtual int GetArrayIndex() const R0;
 
 	//ObjectTypeClass
 	virtual CoordStruct* vt_entry_6C(CoordStruct* pDest, CoordStruct* pSrc) R0;

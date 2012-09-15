@@ -19,7 +19,41 @@ struct CameoDataStruct
 	TimerStruct       ProcessingTimer;
 	int               RemainingTime;
 	int               unknown_2C;
-	int               unknown_30;
+	int               FlashEndFrame;
+
+	CameoDataStruct() {
+		ClearFully();
+	}
+
+	void Clear()
+		{ JMP_THIS(0x6AC7C0); }
+
+	void ClearFully() {
+		this->ItemIndex = 0;
+		this->ItemType = 0;
+		this->IsAlt = false;
+		this->CurrentFactory = NULL;
+		this->unknown_10 = 0;
+		this->Progress = 0;
+		this->ProcessingTimer.StartTime = 0; // normally this initializes to Unsorted::CurrentFrame, let's see if this breaks anything
+		this->ProcessingTimer.TimeLeft = 0;
+		this->unknown_2C = 0;
+		this->FlashEndFrame = 0;
+	}
+
+	bool operator == (const CameoDataStruct &rhs) {
+		return ItemIndex == rhs.ItemIndex && ItemType == rhs.ItemType
+				&& IsAlt == rhs.IsAlt && CurrentFactory == rhs.CurrentFactory
+				&& unknown_10 == rhs.unknown_10 && Progress == rhs.Progress
+				&& ProcessingTimer.StartTime == rhs.ProcessingTimer.StartTime
+				&& ProcessingTimer.TimeLeft == rhs.ProcessingTimer.TimeLeft
+				&& FlashEndFrame == rhs.FlashEndFrame
+			;
+	}
+
+	static bool __stdcall SortsBefore(eAbstractType leftType, int leftIndex, eAbstractType rightType, int rightIndex)
+		{ JMP_STD(0x6A8420); }
+
 };
 
 // sizeof() == 0xF94
@@ -40,7 +74,10 @@ struct TabDataStruct
 	DWORD             unknown_30;
 	DWORD             unknown_34;
 	DWORD             unknown_38;
-	DWORD             unknown_3C;
+	BYTE              unknown_3C;
+	BYTE              unknown_3D;
+	BYTE              unknown_3E;
+	BYTE              unknown_3F;
 	DWORD             unknown_40;
 	int               TopRowIndex; // scroll position, which row is topmost visible
 	DWORD             unknown_48;

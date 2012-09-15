@@ -26,8 +26,8 @@ public:
 	virtual ~EMPulseClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	//Constructor
 	EMPulseClass(CellStruct dwCrd, int nSpread, int nDuration, TechnoClass *Generator) : AbstractClass(false)

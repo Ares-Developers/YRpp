@@ -7,6 +7,7 @@
 
 //forward declarations
 class HouseClass;
+class Checksummer;
 
 //--- OwnedTiberiumStruct - holds info about how much of each tiberium type is held.
 struct OwnedTiberiumStruct
@@ -24,10 +25,12 @@ class AbstractClass : public IPersistStream, public IRTTITypeInfo, public INotic
 public:
 	enum {AbsID = abs_Abstract};
 
+	static DynamicVectorClass<AbstractClass *>* Array0;
+
 	//static
-	const char* GetClassName()
+	const char* GetClassName() const
 	{
-		return AbstractClass::GetClassName(WhatAmI());
+		return AbstractClass::GetClassName(this->WhatAmI());
 	}
 
 	static const char* GetClassName(eAbstractType abs)
@@ -65,8 +68,8 @@ public:
 	virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) R0;
 
 	//IRTTITypeInfo
-	virtual eAbstractType __stdcall What_Am_I() R0;
-	virtual int __stdcall Fetch_ID() R0;
+	virtual eAbstractType __stdcall What_Am_I() const R0;
+	virtual int __stdcall Fetch_ID() const R0;
 	virtual void __stdcall Create_ID() RX;
 
 	//INoticeSink
@@ -81,18 +84,18 @@ public:
 	//AbstractClass
 	virtual void Init() RX;
 	virtual void PointerExpired(void* p,bool bUnknown) RX;
-	virtual eAbstractType WhatAmI() = 0;
-	virtual int Size() = 0;
-	virtual void CalculateChecksum(void* pChkSum) RX;
-	virtual int GetOwningHouseIndex() R0;
-	virtual HouseClass* GetOwningHouse() R0;
-	virtual int GetArrayIndex() R0;
-	virtual bool IsDead() R0;
-	virtual CoordStruct* GetCoords(CoordStruct* pCrd) R0;
-	virtual CoordStruct* GetCoords_(CoordStruct* pCrd) R0;
-	virtual bool IsOnFloor() R0;
-	virtual bool IsInAir() R0;
-	virtual CoordStruct* GetCoords__(CoordStruct* pCrd) R0;
+	virtual eAbstractType WhatAmI() const = 0;
+	virtual int Size() const = 0;
+	virtual void CalculateChecksum(Checksummer* pChkSum) const RX;
+	virtual int GetOwningHouseIndex() const R0;
+	virtual HouseClass* GetOwningHouse() const R0;
+	virtual int GetArrayIndex() const R0;
+	virtual bool IsDead() const R0;
+	virtual CoordStruct* GetCoords(CoordStruct* pCrd) const R0;
+	virtual CoordStruct* GetCoords_(CoordStruct* pCrd) const R0;
+	virtual bool IsOnFloor() const R0;
+	virtual bool IsInAir() const R0;
+	virtual CoordStruct* GetCoords__(CoordStruct* pCrd) const R0;
 	virtual void Update() RX;
 
 	//Constructor

@@ -39,8 +39,8 @@ public:
 	virtual ~AITriggerTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() R0;
-	virtual int Size() R0;
+	virtual eAbstractType WhatAmI() const R0;
+	virtual int Size() const R0;
 
 	static bool LoadFromINIList(CCINIClass *pINI)
 		{ JMP_STD(0x41F2E0); }
@@ -60,29 +60,29 @@ public:
 		{ JMP_THIS(0x41FE20); }
 
 	// the main condition
-	bool ConditionMet(HouseClass *CallingHouse, HouseClass *TargetHouse, bool EnoughBaseDefense)
+	bool ConditionMet(HouseClass *CallingHouse, HouseClass *TargetHouse, bool EnoughBaseDefense) const
 		{ JMP_THIS(0x41E720); }
 
 	// slaves
-	bool OwnerHouseOwns(HouseClass *CallingHouse, HouseClass *TargetHouse)
+	bool OwnerHouseOwns(HouseClass *CallingHouse, HouseClass *TargetHouse) const
 		{ JMP_THIS(0x41EAF0); }
 
-	bool CivilianHouseOwns(HouseClass *CallingHouse, HouseClass *TargetHouse)
+	bool CivilianHouseOwns(HouseClass *CallingHouse, HouseClass *TargetHouse) const
 		{ JMP_THIS(0x41EC90); }
 
-	bool EnemyHouseOwns(HouseClass *CallingHouse, HouseClass *TargetHouse)
+	bool EnemyHouseOwns(HouseClass *CallingHouse, HouseClass *TargetHouse) const
 		{ JMP_THIS(0x41EE90); }
 
-	bool IronCurtainCharged(HouseClass *CallingHouse, HouseClass *TargetHouse)
+	bool IronCurtainCharged(HouseClass *CallingHouse, HouseClass *TargetHouse) const
 		{ JMP_THIS(0x41F0D0); }
 
-	bool ChronoSphereCharged(HouseClass *CallingHouse, HouseClass *TargetHouse)
+	bool ChronoSphereCharged(HouseClass *CallingHouse, HouseClass *TargetHouse) const
 		{ JMP_THIS(0x41F180); }
 
-	bool HouseCredits(HouseClass *CallingHouse, HouseClass *TargetHouse)
+	bool HouseCredits(HouseClass *CallingHouse, HouseClass *TargetHouse) const
 		{ JMP_THIS(0x41F230); }
 
-	void FormatForSaving(char * buffer) {
+	void FormatForSaving(char * buffer) const {
 		const char *Team1Name = "<none>";
 		const char *Team2Name = "<none>";
 		const char *HouseName = "<none>";

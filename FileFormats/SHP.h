@@ -21,6 +21,9 @@ struct SHPStruct
 
 	bool HasCompression(int frameIdx)
 		{ JMP_THIS(0x69E900); }
+
+	void Unload()
+		{ JMP_THIS(0x69E500); }
 };
 
 //=== GLOBAL LINKED LIST OF ALL LOADED SHP FILES

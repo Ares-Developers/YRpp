@@ -1,5 +1,5 @@
-#ifndef NETWORKEVENTS_H_
-#define NETWORKEVENTS_H_
+#ifndef YRPP_NETWORKEVENTS_H_
+#define YRPP_NETWORKEVENTS_H_
 
 #include <GeneralDefinitions.h>
 #include <Unsorted.h>
@@ -33,11 +33,38 @@ struct NetworkEvent {
 	byte Unused;
 	byte HouseIndex;
 	DWORD Timestamp;
-	byte ExtraData[0x68];
+	DWORD Checksum;
+	WORD CommandCount;
+	byte Delay;
+	byte ExtraData[0x61];
 
 	NetworkEvent() {
 		memset(this, 0, sizeof(*this));
 	}
+
+	NetworkEvent * FillEvent_ProduceAbandonSuspend(int PlayerNumber, eNetworkEvents eventKind, int abstractId, int idx, int isNaval)
+		{ JMP_THIS(0x4C6970); }
+
+	NetworkEvent * FillEvent_SellCell(int dwUnk, eNetworkEvents eventKind, CellStruct *Coords)
+		{ JMP_THIS(0x4C6650); }
+
+	NetworkEvent * FillEvent_Noopt(int PlayerNumber, eNetworkEvents eventKind)
+		{ JMP_THIS(0x4C66C0); }
+
+	NetworkEvent * FillEvent_PlayerBased(int a2, eNetworkEvents eventKind, int a4)
+		{ JMP_THIS(0x4C6720); }
+
+	NetworkEvent * FillEvent_Waypoints(int PlayerNumber, eNetworkEvents eventKind, int a4, char a5, int a6, char a7)
+		{ JMP_THIS(0x4C6780); }
+
+	NetworkEvent * FillEvent_Animation(int PlayerNumber, eNetworkEvents eventKind, int a4, int a5)
+		{ JMP_THIS(0x4C6800); }
+
+	NetworkEvent * FillEvent_Place(int a2, eNetworkEvents eventKind, int a4, int a5, int a6, CellStruct *loc)
+		{ JMP_THIS(0x4C6AE0); }
+
+	NetworkEvent * FillEvent_SWPlace(int PlayerNumber, eNetworkEvents eventKind, int swTypeIdx, CellStruct *loc)
+		{ JMP_THIS(0x4C6B60); }
 };
 
 struct NetID {
@@ -84,43 +111,5 @@ struct NetID {
 		{ JMP_THIS(0x6E6B70); }
 };
 #pragma pack(pop)
-
-class Networking {
-public:
-	static int &LastEventIndex;
-	static int &NextPacketIndex;
-	static NetworkEvent *QueuedEvents; // these are really 128 length arrays
-	static int *QueuedEventTimestamps; // these are really 128 length arrays
-
-	// custom helper for Ares logics
-	static bool AddEvent(NetworkEvent *event) {
-		event->Timestamp = Unsorted::CurrentFrame;
-		if(LastEventIndex >= 128) {
-			return false;
-		}
-		memcpy(&QueuedEvents[NextPacketIndex], event, sizeof(*event));
-		QueuedEventTimestamps[NextPacketIndex] = Imports::TimeGetTime();
-		NextPacketIndex = (NextPacketIndex + 1) & 0x7F;
-		++LastEventIndex;
-		return true;
-	}
-
-	// existing functions from Westwood
-
-	/**
-	 * dam girl, you crazy
-	 *
-	 * this gets called when you click-command your objects
-	 * from inside TechnoClass::ClickedMission, where this is the selected object
-	 *
-	 * selfID and selfWhatAmI are results of Pack(this)
-	 * PackedTarget and PackedTargetCell are pointers to the Pack()ed versions of the Target and TargetCell of ClickedMission
-	 */
-	static bool __fastcall CreateClickedMissionEvent
-			(eMission Mission, NetID *PackedTarget, int selfID, char selfWhatAmI, NetID *PackedTargetCell)
-		{ JMP_STD(0x646E90); }
-
-
-};
 
 #endif
