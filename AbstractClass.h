@@ -103,7 +103,7 @@ public:
 		{ JMP_THIS(0x410170); }
 
 	//non-virtual
-	void AnnounceExpiredPointer()
+	void AnnounceExpiredPointer(BOOL unk=1)
 		{ JMP_THIS(0x7258D0); }
 
 protected:

@@ -572,14 +572,14 @@ public:
 	bool             Cloakable;
 	bool             IsPrimaryFactory; // doubleclicking a warfac/barracks sets it as primary
 	bool             Spawned;
-	bool             Produced;
+	bool             IsInPlayfield;
 	RecoilData       TurretRecoil;
 	RecoilData       BarrelRecoil;
 	bool             unknown_bool_418;
 	bool             unknown_bool_419;
 	bool             IsHumanControlled;
-	bool             unknown_bool_41B;
-	bool             unknown_bool_41C;
+	bool             DiscoveredByPlayer;
+	bool             DiscoveredByComputer;
 	bool             unknown_bool_41D;
 	bool             unknown_bool_41E;
 	bool             unknown_bool_41F;

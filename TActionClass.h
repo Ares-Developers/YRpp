@@ -284,23 +284,16 @@ public:
 	int                IndexInArray;
 	TActionClass*      NextTAction;
 	int                ActionKind;
-	TeamTypeClass*   TeamType; // AITeamTypeClass*, really
-	int                arg3;
-	int                arg4;
-	int                arg5;
-	int                arg6;
-	int                arg7;
-	int                arg_48; // multipurpose
+	TeamTypeClass*     TeamType; // AITeamTypeClass*, really
+	RectangleStruct    Bounds; // map bounds for use with action 40
+	int                Waypoint;
+	int                Value2; // multipurpose
 	TagTypeClass*      TagType;
 	TriggerTypeClass*  TriggerType;
-	char text1 [0x18];
-	char text2 [0x20]; // first char is actually reserved for \0 of the earlier string
-	bool               unknown_8C;
-	bool               padding_8D;
-	bool               padding_8E;
-	bool               padding_8F;
-	int                arg_90; // multipurpose
-
+	char               TechnoID[0x19];
+	char               Text[0x20];
+	bool               padding_8D[0x3];
+	int                Value; // multipurpose
 };
 
 #endif

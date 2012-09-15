@@ -296,8 +296,8 @@ public:
 	DWORD              unknown_4C;
 	int                WallOwnerIndex; // Which House owns the wall placed in this Cell?
 	                                              // Determined by finding the nearest BuildingType and taking its owner
-	DWORD              unknown_54;
-	DWORD              unknown_58;
+	int                InfantryOwnerIndex;
+	int                AltInfantryOwnerIndex;
 	DWORD              unknown_5C;
 	DWORD              unknown_60;
 	DWORD              unknown_64;
@@ -356,7 +356,9 @@ public:
 
 	PROTECTED_PROPERTY(BYTE,     unknown_11F);
 	BYTE               Shroudedness; // trust me, you don't wanna know... if you do, see 0x7F4194 and cry
-	BYTE               unknown_121[0xB];
+	BYTE               unknown_121[0x3];
+	DWORD              OccupationFlags; // 0x1F: infantry subpositions: center, TL, TR, BL, BR
+	DWORD              AltOccupationFlags; // 0x20: other Foots, 0x40: Terrain, 0x80: Building
 
 	eCellFlags_12C     CopyFlags;	// related to Flags below
 	DWORD              IsUnderShroud; // only 0 or 1, but modified as an integer

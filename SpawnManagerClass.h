@@ -9,7 +9,14 @@ class TechnoClass;
 struct SpawnNode
 {
 	TechnoClass* Unit;
-	int Status;
+	enum eSpawnState {
+				state_Idle = 0,
+				state_Launching = 1,
+				state_Approaching = 2,
+				state_Firing = 3,
+				state_Returning = 4,
+				state_Dead = 7
+		} Status;
 	TimerStruct SpawnTimer;
 	bool IsSpawnMissile;
 };

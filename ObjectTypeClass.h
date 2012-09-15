@@ -102,7 +102,7 @@ public:
 	bool           LegalTarget;
 	bool           Insignificant;
 	bool           Immune;
-	BYTE           unused_234;
+	bool           IsLogic; // add objects to the logic vector
 	BYTE           unused_235;
 	bool           Voxel;
 	bool           NewTheater;

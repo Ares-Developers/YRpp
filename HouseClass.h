@@ -506,7 +506,9 @@ public:
 	bool                  AutoBaseBuilding;
 	bool                  DiscoveredByPlayer;
 	bool                  Defeated;
-	PROTECTED_PROPERTY(BYTE,        unknown_1F6[0x3]);
+	bool                  IsGameOver;
+	bool                  IsWinner;
+	bool                  IsLoser;
 	bool                  CiviliansEvacuated; // used by the CivEvac triggers
 	bool                  FirestormActive;
 	bool                  HasThreatNode;
@@ -536,7 +538,7 @@ public:
 	int                   AllowWinBlocks; // some ra1 residue map trigger-fu, should die a painful death
 	TimerStruct RepairTimer; // for AI
 	TimerStruct unknown_timer_28C;
-	TimerStruct unknown_timer_298;
+	TimerStruct SavourTimer;
 	TimerStruct PowerBlackoutTimer;
 	TimerStruct RadarBlackoutTimer;
 	bool                  Side2TechInfiltrated; // asswards! whether this player has infiltrated stuff
@@ -629,7 +631,7 @@ public:
 	int                   TotalKilledBuildings;
 	DWORD                 unknown_548C;
 	CellStruct*           BaseSpawnCell;
-	CellStruct unknown_cell_5494;
+	CellStruct            BaseCenter; // set by map action 137 and 138
 	DWORD unknown_5498;
 	DWORD unknown_549C;
 	DWORD unknown_54A0;
@@ -751,7 +753,7 @@ public:
 	CellStruct NukeTarget;
 	DWORD                 Allies;	//flags, one bit per HouseClass instance
 	                                        	//-> 32 players possible here
-	TimerStruct unknown_timer_5788;
+	TimerStruct DamageDelayTimer;
 	TimerStruct TeamDelayTimer; // for AI attacks
 	TimerStruct unknown_timer_A;
 	TimerStruct unknown_timer_B;

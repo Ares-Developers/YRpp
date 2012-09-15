@@ -673,6 +673,7 @@ typedef int eMovementZone;
 
 typedef int ePip;
 
+#define	pip_empty		0x0
 #define	pip_green		0x1
 #define	pip_yellow		0x2
 #define	pip_white		0x3
@@ -817,19 +818,19 @@ public:
 		AttackOutOfRange = 0x15,
 		Protect = 0x16,
 		DesolatorDeploy = 0x17,
-		// ??? = 0x18,
+		Cursor_18 = 0x18,
 		Enter = 0x19,
 		NoEnter = 0x1A,
 		Deploy = 0x1B,
 		NoDeploy = 0x1C,
-		// ??? = 0x1D,
+		Cursor_1D = 0x1D,
 		Sell = 0x1E,
 		SellUnit = 0x1F,
 		NoSell = 0x20,
 		Repair = 0x21,
-		Repairing = 0x22,
+		EngineerRepair = 0x22,
 		NoRepair = 0x23,
-		Waypoint = 0x24, // ???
+		Waypoint = 0x24,
 		Disguise = 0x25,
 		IvanBomb = 0x26,
 		MindControl = 0x27,
@@ -837,19 +838,19 @@ public:
 		Crush = 0x29,
 		SpyTech = 0x2A,
 		SpyPower = 0x2B,
-		// ??? = 0x2C,
+		Cursor_2C = 0x2C,
 		GIDeploy = 0x2D,
-		// ??? = 0x2E,
+		Cursor_2E = 0x2E,
 		ParaDrop = 0x2F,
-		// ??? = 0x30, // RallyPoint
+		Cursor_30 = 0x30, // RallyPoint
 		CloseWaypoint = 0x31, // ???
 		LightningStorm = 0x32,
 		Detonate = 0x33,
 		Demolish = 0x34,
 		Nuke = 0x35,
-		// ??? = 0x36, // BlueMove
+		Cursor_36 = 0x36, // BlueMove
 		Power = 0x37,
-		// ??? = 0x38, // NoBlueMove
+		Cursor_38 = 0x38, // NoBlueMove
 		IronCurtain = 0x39,
 		Chronosphere = 0x3A,
 		Disarm = 0x3B,
@@ -865,12 +866,12 @@ public:
 		Scroll_ES = 0x45,
 		Protect2 = 0x46,
 		AttackOutOfRange2 = 0x47,
-		// ??? = 0x48, // LeaveBuilding
+		Cursor_48 = 0x48, // LeaveBuilding
 		InfantryAbsorb = 0x49,
 		NoMindControl = 0x4A,
-		// ??? = 0x4B, // NoRallyPoint
-		// ??? = 0x4C,
-		// ??? = 0x4D,
+		Cursor_4B = 0x4B, // NoRallyPoint
+		Cursor_4C = 0x4C,
+		Cursor_4D = 0x4D,
 		Beacon = 0x4E,
 		ForceShield = 0x4F,
 		NoForceShield = 0x50,

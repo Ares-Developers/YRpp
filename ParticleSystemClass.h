@@ -50,20 +50,18 @@ protected:
 public:
 
 	ParticleSystemTypeClass* Type;
-	DWORD        unknown_B0;
-	DWORD        unknown_B4;
-	DWORD        unknown_B8;
+	CoordStruct  unknown_coords_B0;
 	DynamicVectorClass<ParticleClass*> Particles;
 	CoordStruct unknown_coords_D4;
 	TechnoClass* Owner;
-	CellClass*   unknown_cell_E4;
+	AbstractClass* Target; // CellClass or TechnoClass
 	int          SpawnFrames; //from ParSysTypeClass
 	int          Lifetime; //from ParSysTypeClass
 	int          SparkSpawnFrames; //from ParSysTypeClass
 	int          unknown_int_F4; //defaults to 29
 	bool         unknown_bool_F8;
 	bool         unknown_bool_F9;
-	DWORD        unknown_FC;
+	HouseClass*  OwnerHouse;
 };
 
 #endif

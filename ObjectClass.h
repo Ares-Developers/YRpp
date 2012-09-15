@@ -99,8 +99,8 @@ public:
 	// stupid! return this->GetCoords(pCrd);
 	virtual CoordStruct* GetPosition_0(CoordStruct* pCrd) R0;
 
-	// stupid! return this->GetCoords(pCrd); again
-	virtual CoordStruct* GetPosition_1(CoordStruct* pCrd, DWORD dwUnk) R0;
+	// gets a building's free dock coordinates for a unit. falls back to this->GetCoords(pCrd);
+	virtual CoordStruct* GetDockCoords(CoordStruct* pCrd, TechnoClass* docker) R0;
 
 	// stupid! guess what happens again?
 	virtual CoordStruct* GetPosition_2(CoordStruct* pCrd) R0;
@@ -141,7 +141,7 @@ public:
 	virtual void DrawExtras(DWORD dwUnk, DWORD dwUnk2) RX; // draws ivan bomb, health bar, talk bubble, etc
 	virtual void Draw(Point2D* pCoords, DWORD dwUnk) RX;
 	virtual void DrawAgain(Point2D* pCoords, DWORD dwUnk) RX; // just forwards the call to Draw
-	virtual void vt_entry_11C() RX;
+	virtual void Undiscover() RX;
 	virtual void See(DWORD dwUnk, DWORD dwUnk2) RX;
 	virtual bool SetLayer(Layer::Value value) R0;
 	virtual RectangleStruct* vt_entry_128(RectangleStruct* pRect) R0;
@@ -173,8 +173,8 @@ public:
 	virtual void UpdatePosition(int dwUnk) RX;
 	virtual BuildingTypeClass* GetFactoryType(bool bOverridePrereqs, bool bOverridePower) R0;
 	virtual void ReceiveCommand(TechnoClass *From, eRadioCommands rcDoThis, DWORD dwUnk3) RX;
-	virtual bool UpdateOwner(HouseClass *pHouse) R0;
-	virtual void vt_entry_19C(DWORD dwUnk) RX;
+	virtual bool DiscoveredBy(HouseClass *pHouse) R0;
+	virtual void SetRepairState(int state) RX; // 0 - off, 1 - on, -1 - toggle
 	virtual void Sell(DWORD dwUnk) RX;
 	virtual void AssignPlanningPath(signed int idxPath, signed char idxWP) RX;
 	virtual void vt_entry_1A8(DWORD dwUnk) RX;

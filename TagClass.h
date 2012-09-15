@@ -50,7 +50,7 @@ public:
 
 	TagTypeClass * Type;
 	TriggerClass * AttachedTrigger;
-	DWORD unknown_2C;
+	int InstanceCount;
 	CellStruct * DefaultCoords;
 	char unknown_34;
 	bool IsExecuting;
