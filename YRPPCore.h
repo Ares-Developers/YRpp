@@ -41,7 +41,7 @@ typedef unsigned long DWORD;
 
 // following westwood's style
 #define VALIDTAG(str) \
-	(strcmpi("<none>", str) && strcmpi("none", str))
+	(_strcmpi("<none>", str) && _strcmpi("none", str))
 
 /*
 Operation: The Cleansing
