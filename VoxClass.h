@@ -7,11 +7,14 @@
 
 #include <ArrayClasses.h>
 #include <GeneralDefinitions.h>
+#include <CCINIClass.h>
 
 class VoxClass
 {
 public:
 	static DynamicVectorClass<VoxClass*>* Array;
+	static int &EVAIndex;
+
 	static VoxClass* Find(const char* pName)
 	{
 		for(int i = 0; i < Array->Count; ++i) {
@@ -21,6 +24,7 @@ public:
 		}
 		return NULL;
 	}
+
 	static int FindIndex(const char* pName)
 	{
 		for(int i = 0; i < Array->Count; ++i) {
@@ -44,12 +48,14 @@ public:
 	static void __fastcall SilenceIndex(int index)
 		{ JMP_STD(0x752A40); }
 
+	static const char* GetName(int index)
+		{ JMP_STD(0x753330); }
+
 	//Properties
 
 public:
 
-	char Name [0x28];
-
+	char Name[0x28];
 	float Volume;			//as in eva.ini
 	char Yuri [0x9];			//as in eva.ini
 	char Russian [0x9];		//as in eva.ini
@@ -58,10 +64,25 @@ public:
 	eSoundType Type;	//as in eva.ini
 	int unknown_int_50;
 
-private:	//constructor and destructor should never be needed
-	VoxClass(){}
-	~VoxClass(){}
-};
+	//constructor and destructor should never be needed
+	VoxClass(char* pName)
+		{ JMP_THIS(0x752CB0) }
 
+	~VoxClass()
+	{
+		VoxClass* item = this;
+		int index = Array->FindItemIndex(&item);
+
+		if(index > -1 && index < Array->Count) {
+			Array->RemoveItem(index);
+		}
+	}
+
+	const char* GetFilename()
+		{ JMP_THIS(0x753380) }
+
+	bool LoadFromINI(CCINIClass *pINI)
+		{ JMP_THIS(0x752DB0) }
+};
 
 #endif

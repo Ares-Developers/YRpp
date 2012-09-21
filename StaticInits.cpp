@@ -483,6 +483,7 @@ DECL(LineTrail, 0xABCB78);
 
 #include <VoxClass.h>
 DECL(VoxClass, 0xB1D4A0);
+ALIAS(int, VoxClass::EVAIndex, 0xB1D4C8);
 
 #include <WarheadTypeClass.h>
 DECL(WarheadTypeClass, 0x8874C0);
