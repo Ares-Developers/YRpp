@@ -431,8 +431,8 @@ public:
 	bool             InAir;
 	int              CurrentWeaponNumber; // for IFV/gattling
 	int              CurrentRanking; //see RANK definitons, only used for promotion detection
-	DWORD            CurrentGattlingStage;
-	DWORD            unknown_144;
+	int              CurrentGattlingStage;
+	int              GattlingValue; // sum of RateUps and RateDowns
 	DWORD            unknown_148;
 	HouseClass*      OwningPlayer2; // only set in ctor
 	VeterancyStruct  Veterancy;
