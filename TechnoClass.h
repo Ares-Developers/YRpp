@@ -559,7 +559,7 @@ public:
 	FacingStruct     BarrelFacing;
 	FacingStruct     Facing;
 	FacingStruct     TurretFacing;
-	DWORD            unknown_3B8;
+	int              CurrentBurstIndex;
 	TimerStruct      TargetLaserTimer;
 	short            unknown_short_3C8;
 	WORD             unknown_3CA;
