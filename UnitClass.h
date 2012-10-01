@@ -45,6 +45,11 @@ public:
 	UnitClass(UnitTypeClass* pType, HouseClass* pOwner) : FootClass(false)
 		{ JMP_THIS(0x7353C0); }
 
+	// non-virtual
+
+	bool IsDeactivated()
+		{ JMP_THIS(0x70FBD0); }
+
 protected:
 	UnitClass() : FootClass(false)
 		{ }
