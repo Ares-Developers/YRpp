@@ -130,13 +130,13 @@ public:
 	void Stop()
 		{ this->StartTime = -1; this->TimeLeft = 0; }
 
-	bool IsDone()
+	bool IsDone() const
 		{ return this->StartTime != -1 && this->GetTimeLeft() <= 0; }
 
-	bool Ignorable()
+	bool Ignorable() const
 		{ return this->StartTime == -1 || this->GetTimeLeft() <= 0; }
 
-	int GetTimeLeft()
+	int GetTimeLeft() const
 		{ JMP_THIS(0x426630); }
 
 	void Start(int duration)
