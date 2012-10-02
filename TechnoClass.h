@@ -246,7 +246,7 @@ public:
 	virtual DWORD vt_entry_404() R0;
 	virtual int GetOccupantCount() R0;
 	virtual void OnFinishRepair() RX;
-	virtual void UpdateTimers(DWORD dwUnk = 1) RX;
+	virtual void UpdateCloak(bool bUnk = 1) RX;
 	virtual void CreateGap() RX;
 	virtual void DestroyGap() RX;
 	virtual void vt_entry_41C() RX;
