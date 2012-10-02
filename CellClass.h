@@ -122,6 +122,14 @@ public:
 	int GetContainedTiberiumValue() const
 		{ JMP_THIS(0x485020); }
 
+	// add or create tiberium of the specified type
+	bool IncreaseTiberium(int idxTiberium, int amount)
+		{ JMP_THIS(0x487190); }
+
+	// decreases thze tiberium in the cell
+	void ReduceTiberium(int amount)
+		{ JMP_THIS(0x480A80); }
+
 	int SetMapCoords(CoordStruct *coords)
 		{ JMP_THIS(0x485240); }
 
