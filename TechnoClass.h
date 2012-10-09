@@ -185,7 +185,7 @@ public:
 	virtual int GetROF(int nWeapon) R0;
 	virtual int GetGuardRange(int dwUnk) R0;
 	virtual bool vt_entry_320() R0;
-	virtual bool vt_entry_324(DWORD dwUnk) R0;
+	virtual bool IsRadarVisible(int* pOutDetection) R0; // out value will be set to 1 if unit is cloaked and 2 if it is subterranean, otherwise it's unchanged
 	virtual bool IsSensorVisibleToPlayer() R0;
 	virtual bool IsSensorVisibleToHouse(HouseClass *House) R0;
 	virtual bool IsEngineer() R0;
@@ -283,10 +283,10 @@ public:
 	virtual void UpdateSight(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5) RX;
 	virtual void vt_entry_48C(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) RX;
 	virtual void vt_entry_490(DWORD dwUnk, DWORD dwUnk2) = 0; //pure virtual
-	virtual void vt_entry_494() RX;
-	virtual void vt_entry_498() RX;
-	virtual void vt_entry_49C() RX;
-	virtual void vt_entry_4A0(DWORD dwUnk) RX;
+	virtual void RadarTrackingStart() RX;
+	virtual void RadarTrackingStop() RX;
+	virtual void RadarTrackingFlash() RX;
+	virtual void RadarTrackingUpdate(bool bUnk) RX;
 	virtual void vt_entry_4A4(DWORD dwUnk) RX;
 	virtual void vt_entry_4A8() RX;
 	virtual bool vt_entry_4AC() R0;
@@ -586,7 +586,7 @@ public:
 	bool             unknown_bool_420;
 	bool             RecruitableA; // these two are like Lenny and Carl, weird purpose and never seen separate
 	bool             RecruitableB; // they're usually set on preplaced objects in maps
-	bool             unknown_bool_423;
+	bool             IsRadarTracked;
 	bool             IsOnCarryall;
 	bool             IsCrashing;
 	bool             WasCrashingAlready;
