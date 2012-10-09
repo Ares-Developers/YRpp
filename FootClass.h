@@ -31,7 +31,7 @@ public:
 	//FootClass
 	virtual void ReceiveGunner(FootClass* Gunner) RX;
 	virtual void RemoveGunner(FootClass* Gunner) RX;
-	virtual bool vt_entry_4DC() R0;
+	virtual bool IsLeavingMap() R0;
 	virtual bool vt_entry_4E0() R0;
 	virtual bool vt_entry_4E4() R0;
 	virtual void vt_entry_4E8(CellStruct* pCell) RX;

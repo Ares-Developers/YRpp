@@ -47,11 +47,11 @@ public:
 	virtual void vt_entry_4E4(DWORD dwUnk, DWORD dwUnk2) RX;
 	virtual CellStruct* vt_entry_4E8(CellStruct* pCellStruct, DWORD dwUnk) R0;
 	virtual void vt_entry_4EC(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) RX;
-	virtual bool vt_entry_4F0() R0;
-	virtual void vt_entry_4F4(DWORD dwUnk) RX;
-	virtual void vt_entry_4F8(DWORD dwUnk) RX;
-	virtual void vt_entry_4FC(DWORD dwUnk) RX;
-	virtual void vt_entry_500(DWORD dwUnk) RX;
+	virtual bool TogglePrimaryFactory() R0;
+	virtual void SensorArrayActivate(CellStruct cell=CellStruct::Empty) RX;
+	virtual void SensorArrayDeactivate(CellStruct cell=CellStruct::Empty) RX;
+	virtual void DisguiseDetectorActivate(CellStruct cell=CellStruct::Empty) RX;
+	virtual void DisguiseDetectorDeactivate(CellStruct cell=CellStruct::Empty) RX;
 	virtual DWORD vt_entry_504() R0;
 
 	// non-vt
@@ -235,7 +235,7 @@ public:
 	bool ShowRealName;
 	bool BeingProduced;
 	bool ShouldRebuild;
-	bool unknown_bool_6CC;
+	bool HasEngineer; // used to pass the NeedsEngineer check
 	TimerStruct CashProductionTimer;
 	bool unknown_bool_6DC;
 	bool unknown_bool_6DD;
