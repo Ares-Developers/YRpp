@@ -11,6 +11,8 @@
 template <typename T> class Vector2D
 {
 public:
+	static const Vector2D Empty;
+
 	//no constructor, so this class stays aggregate and can be initialized using the curly braces {}
 	T X,Y;
 
@@ -105,6 +107,9 @@ public:
 	}
 };
 
+template <typename T>
+const Vector2D<T> Vector2D<T>::Empty = {T(), T()};
+
 /*==========================================
 ============ 3D Vector =====================
 ==========================================*/
@@ -112,6 +117,8 @@ public:
 template <typename T> class Vector3D
 {
 public:
+	static const Vector3D Empty;
+
 	//no constructor, so this class stays aggregate and can be initialized using the curly braces {}
 	T X,Y,Z;
 
@@ -214,5 +221,8 @@ public:
 		return v;
 	}
 };
+
+template <typename T>
+const Vector3D<T> Vector3D<T>::Empty = {T(), T(), T()};
 
 #endif
