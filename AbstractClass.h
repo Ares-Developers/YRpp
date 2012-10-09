@@ -12,10 +12,25 @@ class Checksummer;
 //--- OwnedTiberiumStruct - holds info about how much of each tiberium type is held.
 struct OwnedTiberiumStruct
 {
-	int Tiberium1;
-	int Tiberium2;
-	int Tiberium3;
-	int Tiberium4;
+	float GetAmount(int index)
+		{ JMP_THIS(0x6C9680); }
+
+	float GetTotalAmount()
+		{ JMP_THIS(0x6C9650); }
+
+	void AddAmount(float amount, int index)
+		{ JMP_THIS(0x6C9690); }
+
+	void RemoveAmount(float amount, int index)
+		{ JMP_THIS(0x6C96B0); }
+
+	int GetTotalValue()
+		{ JMP_THIS(0x6C9600); }
+
+	float Tiberium1;
+	float Tiberium2;
+	float Tiberium3;
+	float Tiberium4;
 };
 //---
 

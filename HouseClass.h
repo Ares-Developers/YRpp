@@ -270,6 +270,10 @@ public:
 		{ JMP_THIS(0x4F9790); }
 	void GiveMoney(int amount)
 		{ JMP_THIS(0x4F9950); }
+	void GiveTiberium(float amount, int type)
+		{ JMP_THIS(0x4F9610); }
+	void UpdateAllSilos(int prevStorage, int prevTotalStorage)
+		{ JMP_THIS(0x4F9970); }
 
 	// no LostThreatNode() , this gets called also when node building dies! BUG
 	void AcquiredThreatNode()
@@ -573,10 +577,10 @@ public:
 	int                   OwnedBuildings;
 	int                   OwnedInfantry;
 	int                   OwnedAircraft;
-	OwnedTiberiumStruct OwnedTiberium;
+	OwnedTiberiumStruct   OwnedTiberium;
 	int                   Balance;
-	PROTECTED_PROPERTY(int,			Balance_);	//somehow connected to the Balance
-	OwnedTiberiumStruct unknown_OwnedTiberium_314;
+	int                   TotalStorage; // capacity of all building Storage
+	OwnedTiberiumStruct   OwnedWeed;
 	DWORD unknown_324;
 	ScoreStruct BuiltInfantryTypes;
 	ScoreStruct BuiltUnitTypes;

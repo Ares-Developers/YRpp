@@ -58,8 +58,7 @@ public:
 	int Value;
 	int Power;
 	int Color;
-	DynamicVectorClass<AnimTypeClass*> Debris;
-	int field_DC;
+	TypeList<AnimTypeClass*> Debris;
 	OverlayTypeClass* Image;
 	int NumFrames;
 	int NumImages;
