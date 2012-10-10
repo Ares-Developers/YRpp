@@ -143,11 +143,11 @@ public:
 	virtual void DrawAgain(Point2D* pCoords, DWORD dwUnk) RX; // just forwards the call to Draw
 	virtual void Undiscover() RX;
 	virtual void See(DWORD dwUnk, DWORD dwUnk2) RX;
-	virtual bool SetLayer(Layer::Value value) R0;
+	virtual bool UpdatePlacement(PlacementType::Value value) R0;
 	virtual RectangleStruct* vt_entry_128(RectangleStruct* pRect) R0;
 	virtual RectangleStruct* vt_entry_12C(RectangleStruct* pRect) R0;
 	virtual void DrawRadialIndicator(DWORD dwUnk) RX;
-	virtual void vt_entry_134() RX;
+	virtual void MarkForRedraw() RX;
 	virtual bool CanBeSelected() R0;
 	virtual bool CanBeSelectedNow() R0;
 	virtual bool vt_entry_140(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) R0;
@@ -256,7 +256,8 @@ public:
 	bool               BombVisible; // In range of player's bomb seeing units, so should draw it
 	int                Health;		//The current Health.
 	DWORD              unknown_70;
-	DWORD              unknown_74;
+	bool               IsOnMap; // has this object been placed on the map?
+	PROTECTED_PROPERTY(BYTE,     unknown_75[0x3]);
 	DWORD              unknown_78;
 	DWORD              unknown_7C;
 	bool               IsSensed; // Sensed by sensors

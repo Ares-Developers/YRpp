@@ -760,6 +760,17 @@ public:
 	};
 };
 
+class PlacementType {
+public:
+	typedef int Value;
+	enum {
+		Remove = 0,
+		Put = 1,
+		Redraw = 2,
+		AddContent = 3
+	};
+};
+
 typedef int eMouseHotSpotX;
 typedef int eMouseHotSpotY;
 
