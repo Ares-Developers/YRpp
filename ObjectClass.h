@@ -260,7 +260,7 @@ public:
 	PROTECTED_PROPERTY(BYTE,     unknown_75[0x3]);
 	DWORD              unknown_78;
 	DWORD              unknown_7C;
-	bool               IsSensed; // Sensed by sensors
+	bool               NeedsRedraw;
 	bool               InLimbo; // act as if it doesn't exist - e.g., post mortem state before being deleted
 	bool               InOpenToppedTransport;
 	bool               IsSelected;	//Has the player selected this Object?
