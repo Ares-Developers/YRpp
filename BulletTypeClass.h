@@ -44,7 +44,7 @@ public:
 		{ JMP_THIS(0x46BBC0); }
 
 	BulletClass* __fastcall CreateBullet(
-		CellClass* Target,
+		AbstractClass* Target,
 		TechnoClass* Owner,
 		int Damage,
 		WarheadTypeClass *WH,

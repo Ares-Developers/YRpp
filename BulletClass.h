@@ -127,15 +127,15 @@ public:
 	DWORD unknown_100;
 	bool unknown_104;
 	DWORD unknown_108;
-	ObjectClass* Target;
-	DWORD unknown_110;
-	DWORD InheritedColor;
+	AbstractClass* Target;
+	int Speed;
+	int InheritedColor;
 	DWORD unknown_118;
 	DWORD unknown_11C;
-	DWORD unknown_120;
-	DWORD unknown_124;
+	double unknown_120;
 	WarheadTypeClass* WH;
 	byte AnimRate;
+	byte unknown_12D; // AnimRate from Type
 	WeaponTypeClass* WeaponType;
 	CoordStruct posSrc;
 	CoordStruct posTgt;
