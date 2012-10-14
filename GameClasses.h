@@ -54,6 +54,7 @@
 #include <TEventClass.h>
 #include <TemporalClass.h>
 #include <TerrainClass.h>
+#include <TiberiumClass.h>
 #include <TriggerClass.h>
 #include <UnitClass.h>
 #include <WaveClass.h>
@@ -65,6 +66,7 @@
 
 //LocomotionClass Tree
 #include <LocomotionClass.h>
+#include <RocketLocomotionClass.h>
 #include <TeleportLocomotionClass.h>
 
 //GScreenClass Tree
