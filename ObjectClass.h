@@ -169,7 +169,7 @@ public:
 	virtual void vt_entry_17C() RX;
 	virtual DWORD GetPointsValue() R0;
 	virtual eMission GetCurrentMission() R0;
-	virtual void vt_entry_188(DWORD dwUnk) RX;
+	virtual void RestoreMission(eMission mission) RX;
 	virtual void UpdatePosition(int dwUnk) RX;
 	virtual BuildingTypeClass* GetFactoryType(bool bOverridePrereqs, bool bOverridePower) R0;
 	virtual void ReceiveCommand(TechnoClass *From, eRadioCommands rcDoThis, DWORD dwUnk3) RX;
