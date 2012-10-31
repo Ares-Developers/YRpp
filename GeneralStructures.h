@@ -149,31 +149,45 @@ public:
 //also see FACING definitions
 struct FacingStruct
 {
-	struct Facet {
-		BYTE Vertical;
-		BYTE Horizontal;
-		WORD Nop;
+	// contains an unsigned fixed point value.
+	struct Data {
+		typedef WORD Raw;
+		typedef int Rounded;
+
+		Data() : Value(0) { }
+		Data(Raw value) : Value(value) { }
+		Data(Rounded facing) : Value((facing & 0xFF) << 8) { }
+
+		operator Rounded() const {
+			// value / 256 with rounding
+			return (((this->Value >> 7) + 1) >> 1) & 0xFF;
+		}
+
+		operator Raw() const {
+			return this->Value;
+		}
+
+		Raw Value;
+	private:
+		WORD unused_2;
 	};
 
-	WORD Facing1; //current facing?
-	WORD unused_2;
-	WORD Facing2; //??
-	WORD unused_6;
+	Data Value; //current facing
+	Data Target; //target facing
 	TimerStruct Timer; //rotation?
-	WORD ROT; //Rate of Turn. INI Value * 256
-	WORD unused_16;
+	Data ROT; //Rate of Turn. INI Value * 256
 
-	DWORD GetFacing(DWORD *arg)
+	Data* GetFacing(Data *buffer)
 		{ JMP_THIS(0x4C93D0); }
 
-	void SetFacing(Facet *arg)
+	void SetFacing(Data *arg)
 		{ JMP_THIS(0x4C9300); }
 
 	operator int() {
 		// <DCoder> I don't know how or what it does, but that's what the game uses
-		DWORD nessie;
+		Data nessie;
 		this->GetFacing(&nessie); // mysterious facing value from the depths of the game
-		return (((nessie >> 7) + 1) >> 1) & 0xFF;
+		return nessie;
 	}
 };
 

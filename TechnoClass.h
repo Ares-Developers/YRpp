@@ -154,7 +154,7 @@ public:
 	virtual bool vt_entry_29C() R0;
 	virtual bool ShouldBeCloaked() R0;
 	virtual bool ShouldNotBeCloaked() R0;
-	virtual FacingStruct* GetFacing(FacingStruct* pBuffer) R0;
+	virtual FacingStruct::Data* GetFacing(FacingStruct::Data* pBuffer) R0;
 	virtual bool IsArmed() R0; // GetWeapon(primary) && GetWeapon(primary)->WeaponType
 	virtual void vt_entry_2B0() RX;
 	virtual double GetStoragePercentage() R0;
@@ -178,7 +178,7 @@ public:
 	virtual CellStruct* vt_entry_2FC(CellStruct* Buffer, DWORD dwUnk2, DWORD dwUnk3) R0;
 	virtual CoordStruct * vt_entry_300(CoordStruct * Buffer, DWORD dwUnk2) R0;
 	virtual DWORD vt_entry_304(DWORD dwUnk, DWORD dwUnk2) R0;
-	virtual DWORD GetRealFacing(DWORD dwUnk) R0;
+	virtual FacingStruct::Data* GetRealFacing(FacingStruct::Data* pBuffer) R0;
 	virtual InfantryTypeClass* GetCrew() R0;
 	virtual bool vt_entry_310() R0;
 	virtual bool CanDeploySlashUnload() R0;
