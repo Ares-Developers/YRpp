@@ -22,6 +22,16 @@ public:
 	MATH_FUNC(asin,	 0x4CAD80);
 	MATH_FUNC(acos,	 0x4CADB0);
 	MATH_FUNC(atan,	 0x4CADE0);
+
+	static __declspec(noinline) double __cdecl arctanfoo(double a, double b)
+	{
+		double* p = &a;
+		double* r = &b;
+		PUSH_VAR64(p);
+		PUSH_VAR64(r);
+		CALL(0x4CAE30);
+		ADD_ESP(16);
+	}
 };
 
 #endif
