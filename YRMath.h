@@ -4,11 +4,12 @@
 #include <YRPPCore.h>
 
 #define MATH_FUNC(name, address)\
-	static double __cdecl name(double value)\
+	static __declspec(noinline) double __cdecl name(double value)\
 	{\
 		double* p = &value;\
 		PUSH_VAR64(p);\
 		CALL(address);\
+		ADD_ESP(8);\
 	}
 
 class Math
