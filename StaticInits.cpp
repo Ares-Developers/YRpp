@@ -557,7 +557,7 @@ int HouseClass::CountOwnedNow(const TechnoTypeClass *Item) const {
 				}
 			} else {
 				Sum = this->OwnedBuildingTypes.GetItemCount(Index);
-				if(UT = BT->UndeploysInto) {
+				if((UT = BT->UndeploysInto) != NULL) {
 					Sum += this->OwnedUnitTypes.GetItemCount(UT->GetArrayIndex());
 				}
 			}
