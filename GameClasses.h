@@ -66,6 +66,7 @@
 
 //LocomotionClass Tree
 #include <LocomotionClass.h>
+#include <FlyLocomotionClass.h>
 #include <RocketLocomotionClass.h>
 #include <TeleportLocomotionClass.h>
 
