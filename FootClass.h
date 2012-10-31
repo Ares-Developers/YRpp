@@ -148,9 +148,7 @@ public:
 	CellStruct LastMapCoords; // ::UpdatePosition uses this to remove threat from last occupied cell, etc
 	CellStruct      LastJumpjetMapCoords; // which cell was I occupying previously? only for jumpjets
 	CellStruct      CurrentJumpjetMapCoords; // which cell am I occupying? only for jumpjets
-	DWORD           unknown_568;
-	DWORD           unknown_56C;
-	DWORD           unknown_570;
+	CoordStruct     unknown_coords_568;
 	DWORD           unknown_574;	//unused?
 	DWORD           unknown_578;
 	DWORD           unknown_57C;
