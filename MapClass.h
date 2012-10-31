@@ -158,7 +158,7 @@ public:
 	void Update_Pathfinding_2(DynamicVectorClass<CellStruct> *where)
 		{ JMP_THIS(0x586990); }
 
-	// Find nearest spot
+	// Find nearest spot. a2 and a14 are pointers to CellStruct buffers
 	CellStruct* Pathfinding_Find(int *a2, CellStruct *position, int SpeedType, int a5, int MovementZone, int InAir, int a8, int a9, int a10, char a11, char a12, char a13, int *a14, char a15, char a16)
 		{ JMP_THIS(0x56DC20); }
 
@@ -168,6 +168,19 @@ public:
 
 	void  RemoveContentAt(CellStruct *coords, TechnoClass *Content)
 		{ JMP_THIS(0x5687F0); }
+
+
+	bool IsWithinUsableArea(CellStruct* cell, bool checkLevel)
+		{ JMP_THIS(0x578460); }
+
+	bool IsWithinUsableArea(CellClass* pCell, bool checkLevel)
+		{ JMP_THIS(0x578540); }
+
+	bool IsWithinUsableArea(CoordStruct* coords)
+		{ JMP_THIS(0x5785F0); }
+
+	bool CoordinatesLegal(CellStruct* cell)
+		{ JMP_THIS(0x568300); }
 
 // ====================================
 //        MAP REVEAL BRAINDAMAGE
