@@ -67,7 +67,7 @@ public:
 		return v;
 	}
 	//scalar multiplication
-	Vector2D operator*=(double r)
+	void operator*=(double r)
 	{
 		X*=r;Y*=r;
 	}
@@ -173,7 +173,7 @@ public:
 		return v;
 	}
 	//scalar multiplication
-	Vector3D operator*=(double r)
+	void operator*=(double r)
 	{
 		X*=r;Y*=r;Z*=r;
 	}
