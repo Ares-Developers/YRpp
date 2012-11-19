@@ -53,8 +53,7 @@ protected:
 public:
 
 	CoordStruct MovingDestination;
-	TimerStruct MissionTimer;
-	int MissionTimerLastDuration;
+	RepeatableTimerStruct MissionTimer;
 	TimerStruct TrailerTimer;
 	int MissionState;
 	DWORD unknown_44;

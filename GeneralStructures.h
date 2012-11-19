@@ -146,6 +146,18 @@ public:
 		{ JMP_THIS(0x6CE2C0); }
 };
 
+class RepeatableTimerStruct : public TimerStruct
+{
+public:
+	int Duration;
+
+	void Start(int duration)
+		{ this->Duration = duration; this->Restart(); }
+
+	void Restart()
+		{ this->TimerStruct::Start(this->Duration); }
+};
+
 //also see FACING definitions
 struct FacingStruct
 {

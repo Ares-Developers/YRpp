@@ -416,10 +416,9 @@ protected:
 public:
 
 	FlashData        Flashing;
-	int              DeployingAnimStartFrame;
+	int              AnimationFrame;
 	bool             unknown_bool_FC;
-	TimerStruct      DeployingAnimTimer;
-	DWORD            unknown_10C;
+	RepeatableTimerStruct AnimationTimer;
 	int              unknown_int_110;
 	PassengersClass  Passengers;
 	TechnoClass*     Transporter; // unit carrying me
