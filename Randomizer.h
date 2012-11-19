@@ -19,6 +19,12 @@ public:
 	Randomizer(DWORD dwSeed = GetTickCount())
 		{ JMP_THIS(0x65C6D0); }
 
+	// helper methods
+	double RandomDouble()
+	{
+		return this->RandomRanged(0, 2147483646) / 2147483646.0;
+	}
+
 	//Properties
 
 public:
