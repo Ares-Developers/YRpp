@@ -350,7 +350,7 @@ public:
 	FootClass* LinkedTo;	//This Locomotor is linked to this object.
 	bool Powered;	//Does this Locomotor currently have power?
 	bool Dirty;		//bIsDirty - Has something changed?
-	DWORD unknown_14;
+	LONG RefCount; // COM reference count. Don't touch.
 };
 
 #endif

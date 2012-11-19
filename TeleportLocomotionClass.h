@@ -66,9 +66,9 @@ public:
 	bool Moving;	//Is currently moving
 	bool unknown_bool_35;
 	bool unknown_bool_36;
-	DWORD unknown_38;
-	TimerStruct unknown_timer_3C;
-	DWORD unknown_48;
+	int State;
+	TimerStruct Timer;
+	ILocomotion* Piggybackee;
 };
 
 #endif
