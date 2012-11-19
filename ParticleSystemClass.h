@@ -7,6 +7,7 @@
 
 #include <ObjectClass.h>
 #include <ParticleSystemTypeClass.h>
+#include <ParticleClass.h>
 
 class ParticleSystemClass : public ObjectClass
 {
@@ -33,10 +34,10 @@ public:
 	//Constructor
 	ParticleSystemClass(
 		ParticleSystemTypeClass* pParticleSystemType,
-		CoordStruct Crd1,
+		CoordStruct* Crd1,
 		AbstractClass* pTarget,
 		TechnoClass* pOwner,
-		CoordStruct Crd2,
+		CoordStruct* Crd2,
 		DWORD dwUnk) : ObjectClass(false)
 			{ JMP_THIS(0x62DC50); }
 
