@@ -98,7 +98,25 @@ struct Color16Struct
 //uses the clock values
 struct DirStruct
 {
-	short Facing;
+	typedef WORD Raw;
+	typedef int Rounded;
+
+	DirStruct() : Value(0) { }
+	DirStruct(Raw value) : Value(value) { }
+	DirStruct(Rounded facing) : Value((facing & 0xFF) << 8) { }
+
+	operator Rounded() const {
+		// value / 256 with rounding
+		return (((this->Value >> 7) + 1) >> 1) & 0xFF;
+	}
+
+	operator Raw() const {
+		return this->Value;
+	}
+
+	Raw Value;
+private:
+	WORD unused_2;
 };
 
 //Random numbe range
@@ -161,43 +179,20 @@ public:
 //also see FACING definitions
 struct FacingStruct
 {
-	// contains an unsigned fixed point value.
-	struct Data {
-		typedef WORD Raw;
-		typedef int Rounded;
-
-		Data() : Value(0) { }
-		Data(Raw value) : Value(value) { }
-		Data(Rounded facing) : Value((facing & 0xFF) << 8) { }
-
-		operator Rounded() const {
-			// value / 256 with rounding
-			return (((this->Value >> 7) + 1) >> 1) & 0xFF;
-		}
-
-		operator Raw() const {
-			return this->Value;
-		}
-
-		Raw Value;
-	private:
-		WORD unused_2;
-	};
-
-	Data Value; //current facing
-	Data Target; //target facing
+	DirStruct Value; //current facing
+	DirStruct Target; //target facing
 	TimerStruct Timer; //rotation?
-	Data ROT; //Rate of Turn. INI Value * 256
+	DirStruct ROT; //Rate of Turn. INI Value * 256
 
-	Data* GetFacing(Data *buffer)
+	DirStruct* GetFacing(DirStruct *buffer)
 		{ JMP_THIS(0x4C93D0); }
 
-	void SetFacing(Data *arg)
+	void SetFacing(DirStruct *dir)
 		{ JMP_THIS(0x4C9300); }
 
 	operator int() {
 		// <DCoder> I don't know how or what it does, but that's what the game uses
-		Data nessie;
+		DirStruct nessie;
 		this->GetFacing(&nessie); // mysterious facing value from the depths of the game
 		return nessie;
 	}
