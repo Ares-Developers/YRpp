@@ -70,8 +70,8 @@ public:
 			return pcoord;
 		}
 
-	virtual eMove __stdcall Can_Enter_Cell(CellStruct cell)
-		{ return move_OK; }
+	virtual Move::Value __stdcall Can_Enter_Cell(CellStruct cell)
+		{ return Move::OK; }
 
 	virtual bool __stdcall Is_To_Have_Shadow()
 		{ return true; }
@@ -98,8 +98,8 @@ public:
 	virtual int __stdcall Z_Adjust()
 		{ return 0; }
 
-	virtual eZGradient __stdcall Z_Gradient()
-		{ return zgrad_90Deg; }
+	virtual ZGradient::Value __stdcall Z_Gradient()
+		{ return ZGradient::Deg90; }
 
 	virtual bool __stdcall Process()
 		{ return true; }

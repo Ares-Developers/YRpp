@@ -1361,27 +1361,32 @@ typedef int eEdge;
 #define	edge_AIR		0x04
 
 
-typedef int eMove;
+class Move {
+public:
+	typedef int Value;
+	enum {
+		OK = 0,
+		Cloak = 1,
+		MovingBlock = 2,
+		ClosedGate = 3,
+		FriendlyDestroyable = 4,
+		Destroyable = 5,
+		Temp = 6,
+		No = 7
+	};
+};
 
-#define	move_OK		0
-#define	move_Cloak		1
-#define	move_Moving_Block		2
-#define	move_Closed_Gate		3
-#define	move_Friendly_Destroyable		4
-#define	move_Destroyable		5
-#define	move_Temp		6
-#define	move_No		7
-#define	move_Count		8
-
-
-typedef int eZGradient;
-
-#define	zgrad_None		-1
-#define	zgrad_Ground		0
-#define	zgrad_45Deg		1
-#define	zgrad_90Deg		2
-#define	zgrad_135Deg		3
-#define	zgrad_Count		4
+class ZGradient {
+public:
+	typedef int Value;
+	enum {
+		None = -1,
+		Ground = 0,
+		Deg45 = 1,
+		Deg90 = 2,
+		Deg135 = 3
+	};
+};
 
 //Westwood custom messages (e.g. for SendMessage)
 #define	WW_SLIDER_GETVALUE			0x400

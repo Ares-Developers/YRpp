@@ -133,7 +133,7 @@ interface ILocomotion : IUnknown
 	virtual bool __stdcall Is_Moving() = 0;	//Sees if object is moving.
     virtual CoordStruct* __stdcall Destination(CoordStruct* pcoord) = 0;	//Fetches destination coordinate.
     virtual CoordStruct* __stdcall Head_To_Coord(CoordStruct* pcoord) = 0; // Fetches immediate (next cell) destination coordinate.
-    virtual eMove __stdcall Can_Enter_Cell(CellStruct cell) = 0; //Determine if specific cell can be entered.
+    virtual Move::Value __stdcall Can_Enter_Cell(CellStruct cell) = 0; //Determine if specific cell can be entered.
     virtual bool __stdcall Is_To_Have_Shadow() = 0;	//Should object cast a shadow?
     virtual Matrix3DStruct* __stdcall Draw_Matrix(Matrix3DStruct* pMatrix, int* key) = 0; //Fetch voxel draw matrix.
     virtual Matrix3DStruct* __stdcall Shadow_Matrix(Matrix3DStruct* pMatrix, int* key) = 0;	//Fetch shadow draw matrix.
@@ -141,7 +141,7 @@ interface ILocomotion : IUnknown
     virtual Point2D* __stdcall Shadow_Point(Point2D* pPoint) = 0;	//Shadow draw point center location.
     virtual VisualType::Value __stdcall Visual_Character(VARIANT_BOOL unused) = 0;	//Visual character for drawing.
     virtual int __stdcall Z_Adjust() = 0;	//Z adjust control value.
-    virtual eZGradient __stdcall Z_Gradient() = 0;	//Z gradient control value.
+    virtual ZGradient::Value __stdcall Z_Gradient() = 0;	//Z gradient control value.
     virtual bool __stdcall Process() = 0;	//Process movement of object.]
     virtual void __stdcall Move_To(CoordStruct to) = 0;	//Instruct to move to location specified.
     virtual void __stdcall Stop_Moving() = 0;	//Stop moving at first opportunity.
