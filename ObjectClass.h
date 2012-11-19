@@ -108,7 +108,7 @@ public:
 	virtual CoordStruct* GetExitCoords(CoordStruct* pCrd, DWORD dwUnk) R0;
 	virtual int vt_entry_B8() R0;
 	virtual bool vt_entry_BC(DWORD dwUnk) R0;
-	virtual bool vt_entry_C0() R0;
+	virtual bool IsStandingStill() R0;
 	virtual bool IsDisguised() R0;
 	virtual bool IsDisguisedAs(HouseClass *target) R0; // only works correctly on infantry!
 	virtual ObjectTypeClass* GetDisguise(bool DisguisedAgainstAllies) R0;
@@ -229,6 +229,9 @@ public:
 
 	void ReplaceTag(TagClass* pTag)
 		{ JMP_THIS(0x5F5B4C); }
+
+	int GetCellLevel()
+		{ JMP_THIS(0x5F5F00); }
 
 	//Constructor
 	ObjectClass() : AbstractClass(false)

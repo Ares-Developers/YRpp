@@ -829,6 +829,7 @@ typedef int eMovementZone;
 #define	mz_AmphibiousCrusher		0x4
 #define	mz_Amphibious		0x5
 #define	mz_Subterrannean		0x6
+#define	mz_Infantry		0x7
 #define	mz_InfantryDestroyer		0x8
 #define	mz_Fly		0x9
 #define	mz_WaterBeach		0xB

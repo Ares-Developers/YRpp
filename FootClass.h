@@ -103,6 +103,9 @@ public:
 	void AbortMotion()
 		{ JMP_THIS(0x4DF0D0); }
 
+	bool UpdatePathfinding(CellStruct unkCell, CellStruct unkCell2, int unk3)
+		{ JMP_THIS(0x4D3920); }
+
 	// Removes the first passenger and updates the Gunner.
 	FootClass* RemoveFirstPassenger()
 		{ JMP_THIS(0x4DE710); }
@@ -144,8 +147,8 @@ public:
 
 	AudioController Audio7;
 
-	CellStruct CurrentMapCoords;
-	CellStruct LastMapCoords; // ::UpdatePosition uses this to remove threat from last occupied cell, etc
+	CellStruct      CurrentMapCoords;
+	CellStruct      LastMapCoords; // ::UpdatePosition uses this to remove threat from last occupied cell, etc
 	CellStruct      LastJumpjetMapCoords; // which cell was I occupying previously? only for jumpjets
 	CellStruct      CurrentJumpjetMapCoords; // which cell am I occupying? only for jumpjets
 	CoordStruct     unknown_coords_568;
@@ -166,20 +169,17 @@ public:
 	TeamClass*      Team;
 	FootClass*      NextTeamMember;        //next unit in team
 	DWORD           unknown_5DC;
-	int             unknown_int_5E0;
-
-	PROTECTED_PROPERTY(BYTE,  unknown_5E4[0x5C]);
-
-	TimerStruct unknown_timer_640;
+	int             PathDirections[24]; // list of directions to move in next, like tube directions
+	TimerStruct     PathDelayTimer;
 	int             unknown_int_64C;
-	TimerStruct unknown_timer_650;
+	TimerStruct     unknown_timer_650;
 
 	PROTECTED_PROPERTY(BYTE,  unknown_65C[0x8]);
 
 	DWORD             unknown_664;
-	TimerStruct unknown_timer_668;
-	ILocomotion*  Locomotor;
-	CoordStruct unknown_point3d_678;
+	TimerStruct       BlockagePathTimer;
+	ILocomotion*      Locomotor;
+	CoordStruct       unknown_point3d_678;
 	signed char       TubeIndex;	//I'm in this tunnel
 	bool              unknown_bool_685;
 	signed char       WaypointIndex; // which waypoint in my planning path am I following?
@@ -197,7 +197,7 @@ public:
 	FootClass*        ParasiteEatingMe; // the tdrone/squid that's eating me
 	DWORD             unknown_698;
 	ParasiteClass*    ParasiteImUsing;	// my parasitic half, nonzero for, eg, terror drone or squiddy
-	TimerStruct ParalysisTimer; // for squid victims
+	TimerStruct       ParalysisTimer; // for squid victims
 	bool              unknown_bool_6AC;
 	bool              IsAttackedByLocomotor; // the unit's locomotor is jammed by a magnetron
 	bool              IsLetGoByLocomotor; // a magnetron attacked this unit and let it go. falling, landing, or sitting on the ground
