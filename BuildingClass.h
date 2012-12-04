@@ -198,7 +198,7 @@ public:
 	//5E8 - 5F8 ????????
 	BuildingTypeClass * Upgrades [0x3];
 
-	DWORD FiringSWType; // type # of sw being launched
+	int FiringSWType; // type # of sw being launched
 	DWORD unknown_5FC;
 	BuildingLightClass* Spotlight;
 	TimerStruct GateCloseTimer;
