@@ -42,14 +42,11 @@ protected:
 
 public:
 
-	DWORD field_AC;
-	DWORD field_B0;
-	DWORD field_B4;
+	double Speed;
 	CoordStruct field_B8;
 	CoordStruct field_C4;
-	DWORD field_D0;
-	DWORD field_D4;
-	bool field_D8;
+	double Acceleration;
+	bool Direction;
 	SpotlightBehaviour::Value BehaviourMode;
 	ObjectClass * FollowingObject;
 	TechnoClass * OwnerObject;
