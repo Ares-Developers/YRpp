@@ -94,8 +94,8 @@ public:
 	Randomizer Random; //218
 	DWORD Difficulty1;
 	DWORD Difficulty2; // 2 - Difficulty1
-	TimerStruct ElapsedTime;
-	TimerStruct Pause;
+	TimerStruct ElapsedTimer;
+	TimerStruct PauseTimer;
 	DWORD unknown_62C;
 	WORD unknown_630;
 	CellStruct Waypoints [702];
@@ -114,11 +114,11 @@ public:
 	TimerStruct MissionTimer;
 	wchar_t * MissionTimerTextCSF;
 	char MissionTimerText [32];
-	TimerStruct ShroudRegrow;
-	TimerStruct Timer1;
+	TimerStruct ShroudRegrowTimer;
+	TimerStruct FogTimer;
 	TimerStruct Timer2;
 	TimerStruct Timer3;
-	TimerStruct Timer4;
+	TimerStruct Timer4; //AmbientTimer;
 	int TechLevel;
 	int Theater;
 	char FileName [0x104];
@@ -156,9 +156,9 @@ public:
 	bool TiberiumGrowthEnabled;
 	bool VeinGrowthEnabled;
 	bool IceGrowthEnabled; //34A8
-	bool unknown_bool_34A9;
-	bool unknown_bool_34AA;
-	bool unknown_bool_34AB;
+	bool unknown_bool_34A9; // unused, initialized in CTOR, cleared every frame
+	bool VariablesChanged; // global or local has been updated 34AA
+	bool AmbientChanged; // ambient has been changed 34AB
 	bool EndOfGame; //34AC
 	bool TimerInherit;
 	bool SkipScore;
@@ -174,9 +174,8 @@ public:
 	int PlayerSideIndex; //34B8
 	bool MultiplayerOnly; //34BC
 	bool IsRandom;
-	DWORD unknown_34C0;
-	DWORD unknown_34C4;
-	DWORD unknown_34C8;
+	bool PickedUpAnyCrate;
+	TimerStruct unknown_timer_34C0;
 	int CampaignIndex;
 	int StartingDropshipsCount;
 	TypeList<TechnoTypeClass*> StartingDropships;
