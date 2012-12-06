@@ -156,7 +156,7 @@ public:
 	bool TiberiumGrowthEnabled;
 	bool VeinGrowthEnabled;
 	bool IceGrowthEnabled; //34A8
-	bool unknown_bool_34A9; // unused, initialized in CTOR, cleared every frame
+	bool BridgeDestroyed; // RA1 leftover, no logic attached
 	bool VariablesChanged; // global or local has been updated 34AA
 	bool AmbientChanged; // ambient has been changed 34AB
 	bool EndOfGame; //34AC

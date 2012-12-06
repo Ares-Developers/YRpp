@@ -29,16 +29,16 @@ public:
 	int Type;
 	int RadarX;	//not sure
 	int RadarY;	//not sure
-	float unknown_float_0C;
-	DWORD unknown_10;
+	float Speed;
+	float RotationValue;
 	float RotationSpeed;
-	DWORD unknown_18;
+	float ColorValue;
 	float ColorSpeed;
 	CellStruct MapCoords;
-	TimerStruct unknown_timer_24;	//Rotation timer?
-	TimerStruct unknown_timer_30;	//Color timer?
-	bool unknown_bool_3C;
-	bool unknown_bool_3D;
+	TimerStruct DurationTimer;	//Rotation timer?
+	TimerStruct VisibilityTimer;	//Color timer?
+	bool Rotating;
+	bool Visible;
 };
 
 #endif

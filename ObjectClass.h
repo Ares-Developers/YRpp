@@ -129,7 +129,7 @@ public:
 	virtual void RegisterKill(HouseClass *Destroyer) RX; // ++destroyer's kill counters , etc
 
 	virtual bool SpawnParachuted(CoordStruct *coords) R0;
-	virtual void vt_entry_EC(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) RX;
+	virtual void DropAsBomb() RX;
 	virtual void UnmarkAllOccupationBits(CoordStruct *coords) RX;
 	virtual void MarkAllOccupationBits(CoordStruct *coords) RX;
 	virtual void UnInit() RX;
