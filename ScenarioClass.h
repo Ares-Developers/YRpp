@@ -116,9 +116,9 @@ public:
 	char MissionTimerText [32];
 	TimerStruct ShroudRegrowTimer;
 	TimerStruct FogTimer;
-	TimerStruct Timer2;
-	TimerStruct Timer3;
-	TimerStruct Timer4; //AmbientTimer;
+	TimerStruct IceTimer;
+	TimerStruct unknown_timer_123c;
+	TimerStruct AmbientTimer;
 	int TechLevel;
 	int Theater;
 	char FileName [0x104];

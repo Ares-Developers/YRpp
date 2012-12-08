@@ -181,7 +181,7 @@ public:
 	InfantryClass* C4AppliedBy;
 	DWORD unknown_544;
 	AnimClass* FirestormAnim; //pointer
-	DWORD PsiWarnAnim; //pointer
+	AnimClass* PsiWarnAnim; //pointer
 	TimerStruct unknown_timer_550;
 
 // see eBuildingAnims above for slot index meanings
@@ -201,8 +201,7 @@ public:
 	int FiringSWType; // type # of sw being launched
 	DWORD unknown_5FC;
 	BuildingLightClass* Spotlight;
-	TimerStruct GateCloseTimer;
-	DWORD GateCloseTimerLastDuration;
+	RepeatableTimerStruct GateTimer;
 	LightSourceClass * LightSource; // tiled light , LightIntensity > 0
 	DWORD LaserFenceFrame; // 0-7 for active directionals, 8/12 for offline ones, check ntfnce.shp or whatever
 	DWORD FirestormWallFrame; // anim data for firestorm active animations
