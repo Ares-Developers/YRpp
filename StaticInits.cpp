@@ -503,6 +503,10 @@ ALIAS(WWMouseClass *, WWMouseClass::Instance, 0x887640);
 #undef ALIAS
 #undef DECL
 
+const double Math::Pi = 3.1415926535897932384626433832795;
+const double Math::TwoPi = 6.283185307179586476925286766559;
+const double Math::HalfPi = 1.5707963267948966192313216916398;
+
 void SlaveManagerClass::ZeroOutSlaves() {
 	for(int i = this->SlaveNodes.Count - 1; i >= 0; --i) {
 		SlaveManagerClass::SlaveControl *SlaveNode = this->SlaveNodes[i];

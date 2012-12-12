@@ -15,6 +15,10 @@
 class Math
 {
 public:
+	static const double Pi;
+	static const double TwoPi;
+	static const double HalfPi;
+
 	MATH_FUNC(sqrt,	 0x4CAC40);
 	MATH_FUNC(sin,	 0x4CACB0);
 	MATH_FUNC(cos,	 0x4CAD00);
