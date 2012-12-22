@@ -110,6 +110,8 @@ public:
 		{
 			double* pdDefault = &dDefault;
 			PUSH_VAR64(pdDefault); PUSH_VAR32(pKey); PUSH_VAR32(pSection); THISCALL(0x5283D0);
+			_asm {fstp dDefault};
+			return dDefault;
 		}
 	//Writes a decimal value.
 	bool WriteDouble(const char* pSection, const char* pKey, double dValue)
