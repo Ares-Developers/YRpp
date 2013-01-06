@@ -74,7 +74,7 @@ public:
 	bool Deployed;
 	bool Deploying;
 	bool Undeploying;
-	int unknown_int_6E4;
+	int NonPassengerCount; // Set when unloading passengers. Units with TurretCount>0 will not unload the gunner.
 
 	wchar_t ToolTipText[0x100];
 };

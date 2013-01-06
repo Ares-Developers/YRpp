@@ -48,14 +48,14 @@ public:
 	int            SequenceAnim; //which is currently playing
 	TimerStruct unknown_Timer_6C8;
 	DWORD          PanicDurationLeft; // set in ReceiveDamage on panicky units
-	bool           unknown_bool_6D8;
+	bool           IsBerzerk;
 	bool           Technician;
 	bool           unknown_bool_6DA;
 	bool           Crawling;
 	bool           unknown_bool_6DC;
 	bool           unknown_bool_6DD;
 	DWORD          unknown_6E0;
-	bool           unknown_bool_6E4;
+	bool           ShouldDeploy;
 	int            unknown_int_6E8;
 	PROTECTED_PROPERTY(DWORD, unused_6EC); //??
 };
