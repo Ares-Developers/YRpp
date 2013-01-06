@@ -52,10 +52,10 @@ protected:
 public:
 
 	int ArrayIndex;
-	DWORD unknown_298;
-	DWORD unknown_29C;
-	DWORD unknown_2A0;
-	DWORD unknown_2A4;
+	int MiddleFrameIndex;
+	int MiddleFrameWidth;
+	int MiddleFrameHeight;
+	BYTE unknown_2A4;
 	double Damage;
 	int Rate;
 	int Start;
