@@ -531,7 +531,7 @@ void ReleaseIf(ILocomotion *ptr) {
 	}
 }
 
-void RaiseError(HRESULT hr) {
+void __declspec(noreturn) RaiseError(HRESULT hr) {
 	Game::RaiseError(hr);
 }
 
