@@ -116,7 +116,7 @@ public:
 
 			if(pFirst != this) {
 				return pFirst;
-			} else if(pLast != this) {
+			} else if(pLast && pLast != this) {
 				return pLast->GetFirst();
 			} else {
 				return NULL;
