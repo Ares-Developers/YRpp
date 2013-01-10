@@ -522,7 +522,7 @@ typedef int eBuildCat;
 
 class BuildingAnimSlot {
 public:
-	typedef unsigned int Value;
+	typedef int Value;
 	enum {
 		Upgrade1 = 0x0,
 		Upgrade2 = 0x1,
