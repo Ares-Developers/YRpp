@@ -43,7 +43,7 @@ public:
 	virtual CellStruct* vt_entry_4D4(CellStruct* pCellStruct, DWORD dwUnk, DWORD dwUnk2) R0;
 	virtual int vt_entry_4D8(ObjectClass* pObj) R0;
 	virtual void Place(bool bUnk) RX;
-	virtual int vt_entry_4E0() R0;
+	virtual void UpdateConstructionOptions() RX;
 	virtual void vt_entry_4E4(DWORD dwUnk, DWORD dwUnk2) RX;
 	virtual CellStruct* vt_entry_4E8(CellStruct* pCellStruct, DWORD dwUnk) R0;
 	virtual void vt_entry_4EC(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) RX;
