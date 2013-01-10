@@ -21,7 +21,7 @@ public:
 #endif
 	}
 
-	static void RaiseError(HRESULT err)
+	static void __declspec(noreturn) RaiseError(HRESULT err)
 		{ JMP_STD(0x7DC720); }
 
 	// the magic checksum for version validation - linked in StaticInits
