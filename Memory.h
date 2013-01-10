@@ -46,10 +46,11 @@ static void * __cdecl Allocate(bool inDLL) {
 
 #define DO_ALLOC(inDLL, TT, var, ...) \
 { \
-	void *p = Allocate<TT>(inDLL); \
-	if(p) { \
+	var = nullptr; \
+	if(void *p = Allocate<TT>(inDLL)) { \
 		var = new (p) TT(__VA_ARGS__); \
-	} else { \
+	} \
+	if(!var) { \
 		ExitProcess(1); \
 	} \
 } \
@@ -86,10 +87,11 @@ static void * __cdecl Allocate_Array(bool inDLL, size_t Capacity) {
 // allocate arrays
 #define DO_ALLOC_ARR(inDLL, TT, Capacity, var) \
 { \
-	void *p = Allocate_Array<TT>(inDLL, Capacity); \
-	if(p) { \
+	var = nullptr; \
+	if(void *p = Allocate_Array<TT>(inDLL, Capacity)) { \
 		var = new (p) TT[Capacity]; \
-	} else { \
+	} \
+	if(!var) { \
 		ExitProcess(1); \
 	} \
 } \
