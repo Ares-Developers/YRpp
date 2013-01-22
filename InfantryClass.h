@@ -48,7 +48,7 @@ public:
 	int            SequenceAnim; //which is currently playing
 	TimerStruct unknown_Timer_6C8;
 	DWORD          PanicDurationLeft; // set in ReceiveDamage on panicky units
-	bool           IsBerzerk;
+	bool           PermanentBerzerk; // set by script action, not cleared anywhere
 	bool           Technician;
 	bool           unknown_bool_6DA;
 	bool           Crawling;
