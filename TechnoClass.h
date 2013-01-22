@@ -243,7 +243,7 @@ public:
 	virtual WeaponStruct* GetWeapon(int nWeaponIndex) R0;
 	virtual bool HasTurret() R0;
 	virtual bool CanOccupyFire() R0;
-	virtual DWORD vt_entry_404() R0;
+	virtual int GetOccupyRangeBonus() R0;
 	virtual int GetOccupantCount() R0;
 	virtual void OnFinishRepair() RX;
 	virtual void UpdateCloak(bool bUnk = 1) RX;
