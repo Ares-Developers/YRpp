@@ -529,7 +529,7 @@ public:
 	int				 GenericClick;
 	int				 GenericBeep;
 	int				 BuildingDamageSound;
-	int				 HealCrateSound;
+	int				 HealCrateSound; // also "healing unit" sound, old hospital mode
 	int				 ChuteSound;
 	int				 StopSound;
 	int				 GuardSound;

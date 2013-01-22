@@ -144,6 +144,9 @@ public:
 	bool IsBeingDrained()
 		{ JMP_THIS(0x70FEC0); }
 
+	bool UpdateBunker()
+		{ JMP_THIS(0x458E50); }
+
 	//Constructor
 	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner) : TechnoClass(false)
 		{ JMP_THIS(0x43B740); }
@@ -263,16 +266,12 @@ public:
 	int unknown_int_6FC;
 	short unknown_short_700;
 	bool UpgradeLevel; // as defined by Type->UpgradesToLevel=
+	char GateStage;
 	ePrismChargeState PrismStage;
 	CoordStruct PrismTargetCoords;
 	DWORD DelayBeforeFiring;
 
-	DWORD unknown_714;
-	DWORD unknown_718; // "healing unit" sound, old hospital mode
-
-protected:
-	DWORD align_71C;
-
+	int BunkerState; // used in UpdateBunker and friends
 };
 
 #endif
