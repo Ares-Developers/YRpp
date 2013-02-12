@@ -125,6 +125,11 @@ ALIAS(ConvertClass *, FileSystem::ANIM_PAL, 0x87F6C0);
 ALIAS(ConvertClass *, FileSystem::THEATER_PAL, 0x87F6C4);
 ALIAS(ConvertClass *, FileSystem::MOUSE_PAL, 0x87F6C8);
 
+#include <FPSCounter.h>
+ALIAS(unsigned int, FPSCounter::CurrentFrameRate, 0xABCD44);
+ALIAS(unsigned int, FPSCounter::TotalFramesElapsed, 0xABCD48);
+ALIAS(unsigned int, FPSCounter::TotalTimeElapsed, 0xABCD4C);
+
 #include <GameModeOptionsClass.h>
 ALIAS_O(GameModeOptionsClass *, GameModeOptionsClass::Instance, 0xA8B250);
 
