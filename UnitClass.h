@@ -47,7 +47,7 @@ public:
 
 	// non-virtual
 
-	bool IsDeactivated()
+	bool IsDeactivated() const
 		{ JMP_THIS(0x70FBD0); }
 
 protected:

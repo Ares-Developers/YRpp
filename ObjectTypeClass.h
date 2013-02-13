@@ -26,20 +26,20 @@ public:
 	virtual ~ObjectTypeClass() RX;
 
 	//ObjectTypeClass
-	virtual CoordStruct* vt_entry_6C(CoordStruct* pDest, CoordStruct* pSrc) R0;
-	virtual DWORD GetOwners() R0;
-	virtual int GetPipMax() R0;
-	virtual void vt_entry_78(DWORD dwUnk) RX;
+	virtual CoordStruct* vt_entry_6C(CoordStruct* pDest, CoordStruct* pSrc) const R0;
+	virtual DWORD GetOwners() const R0;
+	virtual int GetPipMax() const R0;
+	virtual void vt_entry_78(DWORD dwUnk) const RX;
 	virtual void vt_entry_7C(DWORD dwUnk) RX;
 	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) = 0;
-	virtual int GetActualCost(HouseClass* pHouse) R0;
-	virtual int GetBuildSpeed() R0;
+	virtual int GetActualCost(HouseClass* pHouse) const R0;
+	virtual int GetBuildSpeed() const R0;
 	virtual ObjectClass* CreateObject(HouseClass* pOwner) = 0;
-	virtual CellStruct * GetFoundationData(bool IncludeBib) R0;
+	virtual CellStruct * GetFoundationData(bool IncludeBib) const R0;
 	virtual BuildingClass* FindFactory(bool CheckPrereqs, bool CheckPower, bool CheckBuildLimit,
-		HouseClass *House) R0;
-	virtual SHPStruct* GetCameo() R0;
-	virtual SHPStruct* GetImage() R0;
+		HouseClass *House) const R0;
+	virtual SHPStruct* GetCameo() const R0;
+	virtual SHPStruct* GetImage() const R0;
 
 	static bool __fastcall IsBuildCat5(eAbstractType abstractID, int idx)
 		{ JMP_STD(0x5004E0); }

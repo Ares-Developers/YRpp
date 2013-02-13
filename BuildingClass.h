@@ -40,12 +40,12 @@ public:
 	virtual void vt_entry_490(DWORD dwUnk, DWORD dwUnk2) RX;
 
 	//BuildingClass
-	virtual CellStruct* vt_entry_4D4(CellStruct* pCellStruct, DWORD dwUnk, DWORD dwUnk2) R0;
-	virtual int vt_entry_4D8(ObjectClass* pObj) R0;
+	virtual CellStruct* vt_entry_4D4(CellStruct* pCellStruct, DWORD dwUnk, DWORD dwUnk2) const R0;
+	virtual int vt_entry_4D8(ObjectClass* pObj) const R0;
 	virtual void Place(bool bUnk) RX;
 	virtual void UpdateConstructionOptions() RX;
 	virtual void vt_entry_4E4(DWORD dwUnk, DWORD dwUnk2) RX;
-	virtual CellStruct* vt_entry_4E8(CellStruct* pCellStruct, DWORD dwUnk) R0;
+	virtual CellStruct* vt_entry_4E8(CellStruct* pCellStruct, DWORD dwUnk) const R0;
 	virtual void vt_entry_4EC(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) RX;
 	virtual bool TogglePrimaryFactory() R0;
 	virtual void SensorArrayActivate(CellStruct cell=CellStruct::Empty) RX;
@@ -67,7 +67,7 @@ public:
 	// are connected to another FWall,
 	// returns the index of the image file
 	// to draw.
-	DWORD GetFWFlags()
+	DWORD GetFWFlags() const
 		{ JMP_THIS(0x455B90); }
 
 	void CreateEndPost(bool arg)
@@ -131,17 +131,17 @@ public:
 		{ JMP_THIS(0x452210); }
 
 	// returns Type->SuperWeapon, if its AuxBuilding is satisfied
-	int FirstActiveSWIdx()
+	int FirstActiveSWIdx() const
 		{ JMP_THIS(0x457630); }
 
 	// returns Type->SuperWeapon2, if its AuxBuilding is satisfied
-	int SecondActiveSWIdx()
+	int SecondActiveSWIdx() const
 		{ JMP_THIS(0x457690); }
 
 	void FireLaser(CoordStruct Coords)
 		{ JMP_THIS(0x44ABD0); }
 
-	bool IsBeingDrained()
+	bool IsBeingDrained() const
 		{ JMP_THIS(0x70FEC0); }
 
 	bool UpdateBunker()
@@ -152,7 +152,7 @@ public:
 		{ JMP_THIS(0x43B740); }
 
 	// helpers
-	bool HasSuperWeapon(int Type) {
+	bool HasSuperWeapon(int Type) const {
 		if(this->Type->HasSuperWeapon(Type)) {
 			return true;
 		}

@@ -31,9 +31,9 @@ public:
 	//FootClass
 	virtual void ReceiveGunner(FootClass* Gunner) RX;
 	virtual void RemoveGunner(FootClass* Gunner) RX;
-	virtual bool IsLeavingMap() R0;
-	virtual bool vt_entry_4E0() R0;
-	virtual bool vt_entry_4E4() R0;
+	virtual bool IsLeavingMap() const R0;
+	virtual bool vt_entry_4E0() const R0;
+	virtual bool vt_entry_4E4() const R0;
 	virtual void vt_entry_4E8(CellStruct* pCell) RX;
 	virtual void vt_entry_4EC(CellStruct* pCell) RX;
 	virtual CoordStruct* vt_entry_4F0(CoordStruct* pCrd) R0;
@@ -58,11 +58,11 @@ public:
 	virtual void UnPanic() RX; //never
 	virtual void PlayIdleAnim(int nIdleAnimNumber) RX;
 	virtual DWORD vt_entry_524() R0;
-	virtual DWORD vt_entry_528 ( DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3 ) R0;
-	virtual DWORD vt_entry_52C(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) R0;
-	virtual DWORD vt_entry_530(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) R0;
+	virtual DWORD vt_entry_528 ( DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3 ) const R0;
+	virtual DWORD vt_entry_52C(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) const R0;
+	virtual DWORD vt_entry_530(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) const R0;
 	virtual void vt_entry_534(DWORD dwUnk, DWORD dwUnk2) RX;
-	virtual int GetCurrentSpeed() R0;
+	virtual int GetCurrentSpeed() const R0;
 	virtual DWORD vt_entry_53C(DWORD dwUnk) R0;
 	virtual void vt_entry_540(DWORD dwUnk) RX;
 	virtual void vt_entry_544(DWORD dwUnk, DWORD dwUnk2) RX;
@@ -70,7 +70,7 @@ public:
 	virtual void vt_entry_54C() RX;
 	virtual bool vt_entry_550(DWORD dwUnk) R0;
 
-	bool CanBeRecruited(HouseClass *ByWhom)
+	bool CanBeRecruited(HouseClass *ByWhom) const
 		{ JMP_THIS(0x4DA230); }
 
 	//Constructor
@@ -85,7 +85,7 @@ public:
 		{ JMP_THIS(0x629E90); }
 
 	// can this jumpjet stay in this cell or not? (two jumpjets in one cell are not okay, locomotor kicks one of them out in the next frame)
-	bool Jumpjet_LocationClear()
+	bool Jumpjet_LocationClear() const
 		{ JMP_THIS(0x4135A0); }
 
 	void Jumpjet_OccupyCell(CellStruct Cell)

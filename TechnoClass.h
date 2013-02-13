@@ -145,58 +145,58 @@ public:
 	virtual ~TechnoClass() RX;
 
 	//TechnoClass
-	virtual bool IsUnitFactory() R0;
-	virtual bool IsCloakable() R0;
-	virtual bool CanScatter() R0;
-	virtual bool BelongsToATeam() R0;
+	virtual bool IsUnitFactory() const R0;
+	virtual bool IsCloakable() const R0;
+	virtual bool CanScatter() const R0;
+	virtual bool BelongsToATeam() const R0;
 	virtual bool SelfHealNow() R0;
-	virtual bool IsVoxel() R0;
+	virtual bool IsVoxel() const R0;
 	virtual bool vt_entry_29C() R0;
-	virtual bool ShouldBeCloaked() R0;
-	virtual bool ShouldNotBeCloaked() R0;
-	virtual DirStruct* GetFacing(DirStruct* pBuffer) R0;
-	virtual bool IsArmed() R0; // GetWeapon(primary) && GetWeapon(primary)->WeaponType
-	virtual void vt_entry_2B0() RX;
-	virtual double GetStoragePercentage() R0;
-	virtual int GetPipFillLevel() R0;
-	virtual int GetRefund() R0;
-	virtual int GetThreatValue() R0;
+	virtual bool ShouldBeCloaked() const R0;
+	virtual bool ShouldNotBeCloaked() const R0;
+	virtual DirStruct* GetFacing(DirStruct* pBuffer) const R0;
+	virtual bool IsArmed() const R0; // GetWeapon(primary) && GetWeapon(primary)->WeaponType
+	virtual void vt_entry_2B0() const RX;
+	virtual double GetStoragePercentage() const R0;
+	virtual int GetPipFillLevel() const R0;
+	virtual int GetRefund() const R0;
+	virtual int GetThreatValue() const R0;
 	virtual bool vt_entry_2C4(DWORD dwUnk) R0;
 	virtual DWORD vt_entry_2C8(DWORD dwUnk, DWORD dwUnk2) R0;
 	virtual bool vt_entry_2CC(DWORD dwUnk) R0;
-	virtual int IsCrewed() R0;
-	virtual int GetAntiAirValue() R0;
-	virtual int GetAntiArmorValue() R0;
-	virtual int GetAntiInfantryValue() R0;
+	virtual int IsCrewed() const R0;
+	virtual int GetAntiAirValue() const R0;
+	virtual int GetAntiArmorValue() const R0;
+	virtual int GetAntiInfantryValue() const R0;
 	virtual void GotHijacked() RX;
-	virtual DWORD SelectWeapon(ObjectClass *Target) R0;
-	virtual int SelectNavalTargeting(ObjectClass *Target) R0;
-	virtual int GetZAdjustment() R0;
-	virtual int GetZGradient() R0;
-	virtual CellStruct* GetSomeCellStruct() R0;
+	virtual DWORD SelectWeapon(ObjectClass *Target) const R0;
+	virtual int SelectNavalTargeting(ObjectClass *Target) const R0;
+	virtual int GetZAdjustment() const R0;
+	virtual int GetZGradient() const R0;
+	virtual CellStruct* GetSomeCellStruct() const R0;
 	virtual void SetSomeCellStruct(CellStruct* Buffer) RX;
-	virtual CellStruct* vt_entry_2FC(CellStruct* Buffer, DWORD dwUnk2, DWORD dwUnk3) R0;
-	virtual CoordStruct * vt_entry_300(CoordStruct * Buffer, DWORD dwUnk2) R0;
-	virtual DWORD vt_entry_304(DWORD dwUnk, DWORD dwUnk2) R0;
-	virtual DirStruct* GetRealFacing(DirStruct* pBuffer) R0;
-	virtual InfantryTypeClass* GetCrew() R0;
-	virtual bool vt_entry_310() R0;
-	virtual bool CanDeploySlashUnload() R0;
-	virtual int GetROF(int nWeapon) R0;
-	virtual int GetGuardRange(int dwUnk) R0;
-	virtual bool vt_entry_320() R0;
-	virtual bool IsRadarVisible(int* pOutDetection) R0; // out value will be set to 1 if unit is cloaked and 2 if it is subterranean, otherwise it's unchanged
-	virtual bool IsSensorVisibleToPlayer() R0;
-	virtual bool IsSensorVisibleToHouse(HouseClass *House) R0;
-	virtual bool IsEngineer() R0;
+	virtual CellStruct* vt_entry_2FC(CellStruct* Buffer, DWORD dwUnk2, DWORD dwUnk3) const R0;
+	virtual CoordStruct * vt_entry_300(CoordStruct * Buffer, DWORD dwUnk2) const R0;
+	virtual DWORD vt_entry_304(DWORD dwUnk, DWORD dwUnk2) const R0;
+	virtual DirStruct* GetRealFacing(DirStruct* pBuffer) const R0;
+	virtual InfantryTypeClass* GetCrew() const R0;
+	virtual bool vt_entry_310() const R0;
+	virtual bool CanDeploySlashUnload() const R0;
+	virtual int GetROF(int nWeapon) const R0;
+	virtual int GetGuardRange(int dwUnk) const R0;
+	virtual bool vt_entry_320() const R0;
+	virtual bool IsRadarVisible(int* pOutDetection) const R0; // out value will be set to 1 if unit is cloaked and 2 if it is subterranean, otherwise it's unchanged
+	virtual bool IsSensorVisibleToPlayer() const R0;
+	virtual bool IsSensorVisibleToHouse(HouseClass *House) const R0;
+	virtual bool IsEngineer() const R0;
 	virtual void ProceedToNextPlanningWaypoint() RX;
-	virtual DWORD ScanForTiberium(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) R0;
+	virtual DWORD ScanForTiberium(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) const R0;
 	virtual bool OnEnterGrinder() R0;
 	virtual bool OnEnterBioReactor() R0;
 	virtual bool OnEnterTankBunker() R0;
 	virtual bool OnEnterBattleBunker() R0;
 	virtual bool OnGarrisonStructure() R0;
-	virtual bool IsPowerOnline() R0;
+	virtual bool IsPowerOnline() const R0;
 	virtual void QueueVoice(int idxVoc) RX;
 	virtual int VoiceEnter() R0;
 	virtual int VoiceHarvest() R0;
@@ -209,24 +209,24 @@ public:
 
 	// depending on the mission you click, cells/Target are not always needed
 	virtual bool ClickedMission(eMission Mission, ObjectClass *Target, CellClass * TargetCell, CellClass *NearestTargetCellICanEnter) R0;
-	virtual bool IsUnderEMP() R0;
-	virtual bool IsParalyzed() R0;
-	virtual bool CanCheer() R0;
+	virtual bool IsUnderEMP() const R0;
+	virtual bool IsParalyzed() const R0;
+	virtual bool CanCheer() const R0;
 	virtual void Cheer(bool Force) RX;
-	virtual int GetDefaultSpeed() R0;
+	virtual int GetDefaultSpeed() const R0;
 	virtual void DecreaseAmmo() RX;
 	virtual void AddPassenger(FootClass* pPassenger) RX;
-	virtual bool CanDisguiseAs(ObjectClass *Target) R0;
+	virtual bool CanDisguiseAs(ObjectClass *Target) const R0;
 	virtual bool TargetAndEstimateDamage(DWORD dwUnk, DWORD dwUnk2) R0;
 	virtual DWORD vt_entry_3A0() R0;
 	virtual bool TriggersCellInset(ObjectClass *Target) R0;
-	virtual bool IsCloseEnough(ObjectClass *Target, int idxWeapon) R0;
-	virtual DWORD IsCloseEnoughToAttack(ObjectClass *Target) R0;
-	virtual DWORD IsCloseEnoughToAttackCoords(CoordStruct *Coords) R0;
-	virtual DWORD vt_entry_3B4(DWORD dwUnk) R0;
+	virtual bool IsCloseEnough(ObjectClass *Target, int idxWeapon) const R0;
+	virtual DWORD IsCloseEnoughToAttack(ObjectClass *Target) const R0;
+	virtual DWORD IsCloseEnoughToAttackCoords(CoordStruct *Coords) const R0;
+	virtual DWORD vt_entry_3B4(DWORD dwUnk) const R0;
 	virtual void Destroyed(ObjectClass *Killer) = 0;
-	virtual FireError::Value GetFireErrorWithoutRange(ObjectClass *Target, int nWeaponIndex) R0;
-	virtual FireError::Value GetFireError(ObjectClass *Target, int nWeaponIndex, bool ignoreRange) R0;
+	virtual FireError::Value GetFireErrorWithoutRange(ObjectClass *Target, int nWeaponIndex) const R0;
+	virtual FireError::Value GetFireError(ObjectClass *Target, int nWeaponIndex, bool ignoreRange) const R0;
 	virtual CellClass* SelectAutoTarget(eTargetFlags TargetFlags, int CurrentThreat, bool OnlyTargetHouseEnemy) R0;
 	virtual void SetTarget(AbstractClass *Target) RX;
 	virtual BulletClass* Fire(ObjectClass* pTarget, int nWeaponIndex) R0;
@@ -234,17 +234,17 @@ public:
 	virtual void SetOwningHouse(HouseClass* pHouse, DWORD dwUnk = 1) RX;
 	virtual void vt_entry_3D8(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
 	virtual bool Crash(ObjectClass *Killer) R0;
-	virtual bool IsAreaFire() R0;
-	virtual int IsNotSprayAttack() R0;
+	virtual bool IsAreaFire() const R0;
+	virtual int IsNotSprayAttack() const R0;
 	virtual int vt_entry_3E8() R0;
-	virtual int IsNotSprayAttack2() R0;
-	virtual WeaponStruct* GetDeployWeapon() R0;
-	virtual WeaponStruct* GetTurretWeapon() R0;
-	virtual WeaponStruct* GetWeapon(int nWeaponIndex) R0;
-	virtual bool HasTurret() R0;
-	virtual bool CanOccupyFire() R0;
-	virtual int GetOccupyRangeBonus() R0;
-	virtual int GetOccupantCount() R0;
+	virtual int IsNotSprayAttack2() const R0;
+	virtual WeaponStruct* GetDeployWeapon() const R0;
+	virtual WeaponStruct* GetTurretWeapon() const R0;
+	virtual WeaponStruct* GetWeapon(int nWeaponIndex) const R0;
+	virtual bool HasTurret() const R0;
+	virtual bool CanOccupyFire() const R0;
+	virtual int GetOccupyRangeBonus() const R0;
+	virtual int GetOccupantCount() const R0;
 	virtual void OnFinishRepair() RX;
 	virtual void UpdateCloak(bool bUnk = 1) RX;
 	virtual void CreateGap() RX;
@@ -253,12 +253,12 @@ public:
 	virtual void Sensed() RX;
 	virtual void Reload() RX;
 	virtual void vt_entry_428() RX;
-	virtual CoordStruct* GetTargetCoords(CoordStruct* pCrd) R0;
-	virtual bool IsNotWarpingIn() R0;
-	virtual bool vt_entry_434(DWORD dwUnk) R0;
+	virtual CoordStruct* GetTargetCoords(CoordStruct* pCrd) const R0;
+	virtual bool IsNotWarpingIn() const R0;
+	virtual bool vt_entry_434(DWORD dwUnk) const R0;
 	virtual void DrawActionLines(bool Force, DWORD dwUnk2) RX;
-	virtual DWORD GetDisguiseFlags(DWORD existingFlags) R0;
-	virtual bool IsClearlyVisibleTo(HouseClass *House) R0; // can House see right through my disguise?
+	virtual DWORD GetDisguiseFlags(DWORD existingFlags) const R0;
+	virtual bool IsClearlyVisibleTo(HouseClass *House) const R0; // can House see right through my disguise?
 
 	//nooooooooooooooooooooooooooooooo (vader-style)
 	//thought 666 is the number of the beast? in hex it's 444 D=
@@ -271,11 +271,11 @@ public:
 	virtual void DrawExtraInfo(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
 	virtual void Uncloak(bool bPlaySound) RX;
 	virtual void Cloak(bool bPlaySound) RX;
-	virtual DWORD vt_entry_464(DWORD dwUnk) R0;
+	virtual DWORD vt_entry_464(DWORD dwUnk) const R0;
 	virtual void UpdateRefinerySmokeSystems() RX;
 	virtual DWORD DisguiseAs(ObjectClass *Target) R0;
 	virtual void ClearDisguise() RX;
-	virtual bool IsItTimeForIdleActionYet() R0;
+	virtual bool IsItTimeForIdleActionYet() const R0;
 	virtual bool UpdateIdleAction() R0;
 	virtual void vt_entry_47C(DWORD dwUnk) RX;
 	virtual void SetDestination(CellClass* pCell, bool bUnk) RX;
@@ -289,13 +289,13 @@ public:
 	virtual void RadarTrackingUpdate(bool bUnk) RX;
 	virtual void vt_entry_4A4(DWORD dwUnk) RX;
 	virtual void vt_entry_4A8() RX;
-	virtual bool vt_entry_4AC() R0;
-	virtual bool vt_entry_4B0() R0;
-	virtual int vt_entry_4B4() R0;
+	virtual bool vt_entry_4AC() const R0;
+	virtual bool vt_entry_4B0() const R0;
+	virtual int vt_entry_4B4() const R0;
 	virtual CoordStruct* vt_entry_4B8(CoordStruct* pCrd) R0;
 	virtual DWORD vt_entry_4BC() R0;
-	virtual bool CanAttackOnTheMove() R0;
-	virtual bool vt_entry_4C4() R0;
+	virtual bool CanAttackOnTheMove() const R0;
+	virtual bool vt_entry_4C4() const R0;
 	virtual bool vt_entry_4C8() R0;
 	virtual void vt_entry_4CC() RX;
 	virtual bool vt_entry_4D0() R0;
@@ -304,16 +304,16 @@ public:
 	void ReloadNow()
 		{ JMP_THIS(0x6FB080); }
 
-	bool ShouldSuppress(CellStruct *coords)
+	bool ShouldSuppress(CellStruct *coords) const
 		{ JMP_THIS(0x6F79A0); }
 
 	// smooth operator
-	const char *get_ID() {
+	const char *get_ID() const {
 		ObjectTypeClass *TT = this->GetType();
 		return TT ? TT->get_ID() : NULL;
 	}
 
-	bool IsMindControlled()
+	bool IsMindControlled() const
 		{ JMP_THIS(0x7105E0); }
 
 	LaserDrawClass* CreateLaser(ObjectClass *Target, int idxWeapon, WeaponTypeClass *weapon, CoordStruct *Coords)
@@ -339,7 +339,7 @@ public:
 		TechnoClass *Target,
 		int *ThreatPosed,
 		DWORD dwUnk,
-		CoordStruct *SourceCoords)
+		CoordStruct *SourceCoords) const
 			{ JMP_THIS(0x6F7CA0); }
 
 // called by AITeam Attack Target Type and autoscan
@@ -397,7 +397,7 @@ public:
 	void FireDeathWeapon(int additionalDamage)
 		{ JMP_THIS(0x70D690); }
 
-	bool HasAbility(Abilities::Value index)
+	bool HasAbility(Abilities::Value index) const
 		{ JMP_THIS(0x70D0D0); }
 
 

@@ -184,13 +184,13 @@ struct FacingStruct
 	TimerStruct Timer; //rotation?
 	DirStruct ROT; //Rate of Turn. INI Value * 256
 
-	DirStruct* GetFacing(DirStruct *buffer)
+	DirStruct* GetFacing(DirStruct *buffer) const
 		{ JMP_THIS(0x4C93D0); }
 
 	void SetFacing(DirStruct *dir)
 		{ JMP_THIS(0x4C9300); }
 
-	operator int() {
+	operator int() const {
 		// <DCoder> I don't know how or what it does, but that's what the game uses
 		DirStruct nessie;
 		this->GetFacing(&nessie); // mysterious facing value from the depths of the game

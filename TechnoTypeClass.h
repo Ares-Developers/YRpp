@@ -109,16 +109,16 @@ public:
 
 	//TechnoTypeClass
 	virtual bool vt_entry_A0() R0;
-	virtual bool CanAttackMove() R0;
-	virtual bool CanCreateHere(CellStruct* pMapCoords, DWORD dwUnk) R0;
-	virtual int GetCost() R0;
-	virtual int GetRepairStepCost() R0;
-	virtual int GetRepairStep() R0;
-	virtual int GetRefund(HouseClass* pHouse, bool bUnk) R0;
-	virtual int GetFlightLevel() R0;
+	virtual bool CanAttackMove() const R0;
+	virtual bool CanCreateHere(CellStruct* pMapCoords, DWORD dwUnk) const R0;
+	virtual int GetCost() const R0;
+	virtual int GetRepairStepCost() const R0;
+	virtual int GetRepairStep() const R0;
+	virtual int GetRefund(HouseClass* pHouse, bool bUnk) const R0;
+	virtual int GetFlightLevel() const R0;
 
 	// non-virtual
-	bool HasMultipleTurrets()
+	bool HasMultipleTurrets() const
 	{
 		return this->TurretCount > 0;
 	}

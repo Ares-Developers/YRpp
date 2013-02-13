@@ -53,12 +53,12 @@ public:
 
 	//ObjectClass
 	virtual void AnimPointerExpired(AnimClass* pAnim) RX;
-	virtual bool IsSelectable() R0;
-	virtual VisualType::Value VisualCharacter(VARIANT_BOOL SpecificOwner, HouseClass * WhoIsAsking) R0;
-	virtual SHPStruct* GetImage() R0;
-	virtual eAction MouseOverCell(CellStruct uCell, bool bUnk1, bool bUnk2) R0;
-	virtual eAction MouseOverObject(ObjectClass* pObj, bool bUnk1) R0;
-	virtual Layer::Value InWhichLayer() R0;
+	virtual bool IsSelectable() const R0;
+	virtual VisualType::Value VisualCharacter(VARIANT_BOOL SpecificOwner, HouseClass * WhoIsAsking) const R0;
+	virtual SHPStruct* GetImage() const R0;
+	virtual eAction MouseOverCell(CellStruct uCell, bool bUnk1, bool bUnk2) const R0;
+	virtual eAction MouseOverObject(ObjectClass* pObj, bool bUnk1) const R0;
+	virtual Layer::Value InWhichLayer() const R0;
 	virtual bool vt_entry_7C() R0;
 
  /*
@@ -83,36 +83,36 @@ public:
   6F8242 - can this aircraft be auto-target
   6F85BE - can this aircraft be auto-attacked
   */
-	virtual bool IsStrange() R0;
+	virtual bool IsStrange() const R0;
 
-	virtual TechnoTypeClass* GetTechnoType() R0;
-	virtual ObjectTypeClass* GetType() R0;
-	virtual IndexBitfield<HouseTypeClass *> GetTypeOwners() R0;
-	virtual wchar_t* GetUIName() R0;
-	virtual bool CanBeRepaired() R0;
-	virtual bool CanBeSold() R0;
-	virtual bool IsActive() R0;
+	virtual TechnoTypeClass* GetTechnoType() const R0;
+	virtual ObjectTypeClass* GetType() const R0;
+	virtual IndexBitfield<HouseTypeClass *> GetTypeOwners() const R0;
+	virtual wchar_t* GetUIName() const R0;
+	virtual bool CanBeRepaired() const R0;
+	virtual bool CanBeSold() const R0;
+	virtual bool IsActive() const R0;
 
 	// can the current player control this unit? (owned by him, not paralyzed, not spawned, not warping, not slaved...)
-	virtual bool IsControllable() R0;
+	virtual bool IsControllable() const R0;
 
 	// stupid! return this->GetCoords(pCrd);
-	virtual CoordStruct* GetPosition_0(CoordStruct* pCrd) R0;
+	virtual CoordStruct* GetPosition_0(CoordStruct* pCrd) const R0;
 
 	// gets a building's free dock coordinates for a unit. falls back to this->GetCoords(pCrd);
-	virtual CoordStruct* GetDockCoords(CoordStruct* pCrd, TechnoClass* docker) R0;
+	virtual CoordStruct* GetDockCoords(CoordStruct* pCrd, TechnoClass* docker) const R0;
 
 	// stupid! guess what happens again?
-	virtual CoordStruct* GetPosition_2(CoordStruct* pCrd) R0;
-	virtual CoordStruct* GetFLH(CoordStruct *pDest, int idxWeapon, CoordStruct BaseCoords) R0;
-	virtual CoordStruct* GetExitCoords(CoordStruct* pCrd, DWORD dwUnk) R0;
-	virtual int vt_entry_B8() R0;
-	virtual bool vt_entry_BC(DWORD dwUnk) R0;
-	virtual bool IsStandingStill() R0;
-	virtual bool IsDisguised() R0;
-	virtual bool IsDisguisedAs(HouseClass *target) R0; // only works correctly on infantry!
-	virtual ObjectTypeClass* GetDisguise(bool DisguisedAgainstAllies) R0;
-	virtual HouseClass* GetDisguiseHouse(bool DisguisedAgainstAllies) R0;
+	virtual CoordStruct* GetPosition_2(CoordStruct* pCrd) const R0;
+	virtual CoordStruct* GetFLH(CoordStruct *pDest, int idxWeapon, CoordStruct BaseCoords) const R0;
+	virtual CoordStruct* GetExitCoords(CoordStruct* pCrd, DWORD dwUnk) const R0;
+	virtual int vt_entry_B8() const R0;
+	virtual bool vt_entry_BC(DWORD dwUnk) const R0;
+	virtual bool IsStandingStill() const R0;
+	virtual bool IsDisguised() const R0;
+	virtual bool IsDisguisedAs(HouseClass *target) const R0; // only works correctly on infantry!
+	virtual ObjectTypeClass* GetDisguise(bool DisguisedAgainstAllies) const R0;
+	virtual HouseClass* GetDisguiseHouse(bool DisguisedAgainstAllies) const R0;
 
 	// remove object from the map
 	virtual bool Remove() R0;
@@ -136,7 +136,7 @@ public:
 	virtual void Uncloak2() RX;// just calls this->Uncloak(0) on TechnoClass and higher
 	virtual int KickOutUnit(TechnoClass* pTechno, CellStruct *pCell) R0;
 	virtual bool DrawIfVisible(RectangleStruct *VisibleArea, bool EvenIfCloaked, DWORD dwUnk3) R0;
-	virtual CellStruct * GetFoundationData(bool IncludeBib) R0;
+	virtual CellStruct * GetFoundationData(bool IncludeBib) const R0;
 	virtual void vt_entry_10C(DWORD dwUnk, DWORD dwUnk2) RX;
 	virtual void DrawExtras(DWORD dwUnk, DWORD dwUnk2) RX; // draws ivan bomb, health bar, talk bubble, etc
 	virtual void Draw(Point2D* pCoords, DWORD dwUnk) RX;
@@ -144,12 +144,12 @@ public:
 	virtual void Undiscover() RX;
 	virtual void See(DWORD dwUnk, DWORD dwUnk2) RX;
 	virtual bool UpdatePlacement(PlacementType::Value value) R0;
-	virtual RectangleStruct* vt_entry_128(RectangleStruct* pRect) R0;
+	virtual RectangleStruct* vt_entry_128(RectangleStruct* pRect) const R0;
 	virtual RectangleStruct* vt_entry_12C(RectangleStruct* pRect) R0;
 	virtual void DrawRadialIndicator(DWORD dwUnk) RX;
 	virtual void MarkForRedraw() RX;
-	virtual bool CanBeSelected() R0;
-	virtual bool CanBeSelectedNow() R0;
+	virtual bool CanBeSelected() const R0;
+	virtual bool CanBeSelectedNow() const R0;
 	virtual bool vt_entry_140(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) R0;
 	virtual bool ClickedAction(eAction Action, ObjectClass *Target, bool bUnk) R0;
 	virtual void Flash(int Duration) RX;
@@ -158,46 +158,46 @@ public:
 	virtual void IronCurtain(int nDuration, HouseClass *pSource, bool ForceShield) RX;
 	virtual void StopAirstrikeTimer() RX;
 	virtual void StartAirstrikeTimer(int Duration) RX;
-	virtual bool IsIronCurtained() R0;
-	virtual bool IsCloseEnough3D(DWORD dwUnk, DWORD dwUnk2) R0;
-	virtual int GetWeaponRange(int idxWeapon) R0;
+	virtual bool IsIronCurtained() const R0;
+	virtual bool IsCloseEnough3D(DWORD dwUnk, DWORD dwUnk2) const R0;
+	virtual int GetWeaponRange(int idxWeapon) const R0;
 	virtual eDamageState ReceiveDamage(int* pDamage, int DistanceFromEpicenter, WarheadTypeClass* pWH,
 	  ObjectClass* Attacker, BOOL IgnoreDefenses, BOOL PreventPassengerEscape, HouseClass* pAttackingHouse) R0;
 	virtual void Destroy() RX;
 	virtual void Scatter(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
 	virtual bool Ignite() R0;
 	virtual void vt_entry_17C() RX;
-	virtual DWORD GetPointsValue() R0;
-	virtual eMission GetCurrentMission() R0;
+	virtual DWORD GetPointsValue() const R0;
+	virtual eMission GetCurrentMission() const R0;
 	virtual void RestoreMission(eMission mission) RX;
 	virtual void UpdatePosition(int dwUnk) RX;
-	virtual BuildingTypeClass* GetFactoryType(bool bOverridePrereqs, bool bOverridePower) R0;
+	virtual BuildingTypeClass* GetFactoryType(bool bOverridePrereqs, bool bOverridePower) const R0;
 	virtual void ReceiveCommand(TechnoClass *From, eRadioCommands rcDoThis, DWORD dwUnk3) RX;
 	virtual bool DiscoveredBy(HouseClass *pHouse) R0;
 	virtual void SetRepairState(int state) RX; // 0 - off, 1 - on, -1 - toggle
 	virtual void Sell(DWORD dwUnk) RX;
 	virtual void AssignPlanningPath(signed int idxPath, signed char idxWP) RX;
 	virtual void vt_entry_1A8(DWORD dwUnk) RX;
-	virtual Move::Value IsCellOccupied(CellClass *Cell, signed int Facing, int Level, DWORD dwUnk4, DWORD dwUnk5) R0;
+	virtual Move::Value IsCellOccupied(CellClass *Cell, signed int Facing, int Level, DWORD dwUnk4, DWORD dwUnk5) const R0;
 	virtual DWORD vt_entry_1B0(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5) R0;
 	virtual void SetLocation(CoordStruct* pCrd) RX;
 
 // these two work through the object's Location
-	virtual CellStruct* GetMapCoords(CellStruct* pUCell) R0;
-	virtual CellClass* GetCell() R0;
+	virtual CellStruct* GetMapCoords(CellStruct* pUCell) const R0;
+	virtual CellClass* GetCell() const R0;
 
 // these two call ::GetCoords_() instead
-	virtual CellStruct* GetMapCoordsAgain(CellStruct* pUCell) R0;
-	virtual CellClass* GetCellAgain() R0;
+	virtual CellStruct* GetMapCoordsAgain(CellStruct* pUCell) const R0;
+	virtual CellClass* GetCellAgain() const R0;
 
-	virtual int GetHeight() R0;
+	virtual int GetHeight() const R0;
 	virtual void SetHeight(DWORD dwUnk) RX;
-	virtual int GetZ() R0;
-	virtual bool IsBeingWarpedOut() R0;
-	virtual bool IsWarpingIn() R0;
-	virtual bool IsWarpingSomethingOut() R0;
-	virtual bool IsNotWarping() R0;
-	virtual LightConvertClass *GetRemapColour() R0;
+	virtual int GetZ() const R0;
+	virtual bool IsBeingWarpedOut() const R0;
+	virtual bool IsWarpingIn() const R0;
+	virtual bool IsWarpingSomethingOut() const R0;
+	virtual bool IsNotWarping() const R0;
+	virtual LightConvertClass *GetRemapColour() const R0;
 
 	// technically it takes an ecx<this> , but it's not used and ecx is immediately overwritten on entry
 	// draws the mind control line when unit is selected
@@ -205,23 +205,23 @@ public:
 		{ PUSH_VAR32(color); PUSH_VAR32(dst_Z); PUSH_VAR32(dst_Y); PUSH_VAR32(dst_X);
 		  PUSH_VAR32(src_Z); PUSH_VAR32(src_Y); PUSH_VAR32(src_X); CALL(0x704E40); }
 
-	int DistanceFrom(ObjectClass *that)
+	int DistanceFrom(ObjectClass *that) const
 		{ JMP_THIS(0x5F6440); }
 
 
-	double GetHealthPercentage()
+	double GetHealthPercentage() const
 		{ return double(this->Health) / this->GetType()->Strength; }
 
-	bool IsRedHP()
+	bool IsRedHP() const
 		{ JMP_THIS(0x5F5CD0); }
 
-	bool IsYellowHP()
+	bool IsYellowHP() const
 		{ JMP_THIS(0x5F5D20); }
 
-	bool IsGreenHP()
+	bool IsGreenHP() const
 		{ JMP_THIS(0x5F5D90); }
 
-	HealthState::Value GetHealthStatus()
+	HealthState::Value GetHealthStatus() const
 		{ JMP_THIS(0x5F5DD0); }
 
 	void BecomeUntargetable()
@@ -230,7 +230,7 @@ public:
 	void ReplaceTag(TagClass* pTag)
 		{ JMP_THIS(0x5F5B4C); }
 
-	int GetCellLevel()
+	int GetCellLevel() const
 		{ JMP_THIS(0x5F5F00); }
 
 	//Constructor
