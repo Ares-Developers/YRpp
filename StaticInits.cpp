@@ -133,6 +133,9 @@ ALIAS(unsigned int, FPSCounter::TotalTimeElapsed, 0xABCD4C);
 #include <GameModeOptionsClass.h>
 ALIAS_O(GameModeOptionsClass *, GameModeOptionsClass::Instance, 0xA8B250);
 
+#include <GameOptionsClass.h>
+ALIAS_O(GameOptionsClass *, GameOptionsClass::Instance, 0xA8EB60);
+
 #include <GetCDClass.h>
 ALIAS_O(GetCDClass*, GetCDClass::Instance, 0xA8E8E8);
 
