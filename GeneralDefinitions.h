@@ -902,25 +902,29 @@ typedef int ePrismChargeState;
 #define		pcs_Slave		2
 
 
-typedef int RadarEventType;
-
-#define		RADAREVENT_0		0x00
-#define		RADAREVENT_1		0x01
-#define		RADAREVENT_2		0x02
-#define		RADAREVENT_BASEUNDERATTACK		0x03
-#define		RADAREVENT_OREMINERUNDERATTACK		0x04
-#define		RADAREVENT_5		0x05
-#define		RADAREVENT_UNITREADY		0x06
-#define		RADAREVENT_UNITLOST			0x07
-#define		RADAREVENT_UNITREPAIRED		0x08
-#define		RADAREVENT_STRUCTUREINFILTRATED		0x09
-#define		RADAREVENT_BUILDINGCAPTURED		0x0A
-#define		RADAREVENT_BEACONDETECTED		0x0B
-#define		RADAREVENT_SUPERWEAPONDETECTED		0x0C
-#define		RADAREVENT_SUPERWEAPONLAUNCHED		0x0D
-#define		RADAREVENT_BRIDGEREPAIRED		0x0E
-#define		RADAREVENT_STRUCTUREABANDONED		0x0F
-#define		RADAREVENT_ALLYUNDERATTACK		0x10
+class RadarEventType {
+public:
+	typedef int Value;
+	enum {
+		Combat = 0,
+		Noncombat = 1,
+		DropZone = 2,
+		BaseAttacked = 3,
+		HarvesterAttacked = 4,
+		EnemySensed = 5,
+		UnitProduced = 6,
+		UnitLost = 7,
+		UnitRepaired = 8,
+		BuildingInfiltrated = 9,
+		BuildingCaptured = 10,
+		BeaconPlaced = 11,
+		SuperweaponDetected = 12,
+		SuperweaponActivated = 13,
+		BridgeRepaired = 14,
+		GarrisonAbandoned = 15,
+		AllyBaseAttacked = 16
+	};
+};
 
 class PsychicDominatorStatus {
 public:

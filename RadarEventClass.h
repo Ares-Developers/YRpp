@@ -10,7 +10,7 @@
 class RadarEventClass
 {
 public:
-	static bool Create(int nType, CellStruct nMapCoords)
+	static bool Create(RadarEventType::Value nType, CellStruct nMapCoords)
 		{ PUSH_VAR32(nMapCoords); SET_REG32(ecx, nType); CALL(0x65FA70); }
 
 private:
@@ -26,7 +26,7 @@ private:
 
 public:
 
-	int Type;
+	RadarEventType::Value Type;
 	int RadarX;	//not sure
 	int RadarY;	//not sure
 	float Speed;
