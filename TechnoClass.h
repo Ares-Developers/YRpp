@@ -172,7 +172,7 @@ public:
 	virtual int SelectWeapon(AbstractClass *Target) const R0;
 	virtual int SelectNavalTargeting(AbstractClass *Target) const R0;
 	virtual int GetZAdjustment() const R0;
-	virtual int GetZGradient() const R0;
+	virtual ZGradient::Value GetZGradient() const R0;
 	virtual CellStruct* GetSomeCellStruct() const R0;
 	virtual void SetSomeCellStruct(CellStruct* Buffer) RX;
 	virtual CellStruct* vt_entry_2FC(CellStruct* Buffer, DWORD dwUnk2, DWORD dwUnk3) const R0;
