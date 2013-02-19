@@ -164,7 +164,7 @@ public:
 	virtual bool vt_entry_2C4(DWORD dwUnk) R0;
 	virtual DWORD vt_entry_2C8(DWORD dwUnk, DWORD dwUnk2) R0;
 	virtual bool vt_entry_2CC(DWORD dwUnk) R0;
-	virtual int IsCrewed() const R0;
+	virtual int GetCrewCount() const R0;
 	virtual int GetAntiAirValue() const R0;
 	virtual int GetAntiArmorValue() const R0;
 	virtual int GetAntiInfantryValue() const R0;
