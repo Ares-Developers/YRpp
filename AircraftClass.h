@@ -66,7 +66,7 @@ public:
 	AircraftTypeClass* Type;
 	bool unknown_bool_6C8;
 	bool HasPassengers;	//parachutes
-	bool IsCrashing; // when crashing down, duh
+	bool IsKamikaze; // when crashing down, duh
 	DWORD unknown_6CC;
 	bool unknown_bool_6D0;
 	bool unknown_bool_6D1;
