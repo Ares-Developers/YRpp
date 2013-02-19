@@ -169,8 +169,8 @@ public:
 	virtual int GetAntiArmorValue() const R0;
 	virtual int GetAntiInfantryValue() const R0;
 	virtual void GotHijacked() RX;
-	virtual DWORD SelectWeapon(ObjectClass *Target) const R0;
-	virtual int SelectNavalTargeting(ObjectClass *Target) const R0;
+	virtual int SelectWeapon(AbstractClass *Target) const R0;
+	virtual int SelectNavalTargeting(AbstractClass *Target) const R0;
 	virtual int GetZAdjustment() const R0;
 	virtual int GetZGradient() const R0;
 	virtual CellStruct* GetSomeCellStruct() const R0;
@@ -216,20 +216,20 @@ public:
 	virtual int GetDefaultSpeed() const R0;
 	virtual void DecreaseAmmo() RX;
 	virtual void AddPassenger(FootClass* pPassenger) RX;
-	virtual bool CanDisguiseAs(ObjectClass *Target) const R0;
+	virtual bool CanDisguiseAs(AbstractClass* Target) const R0;
 	virtual bool TargetAndEstimateDamage(DWORD dwUnk, DWORD dwUnk2) R0;
 	virtual DWORD vt_entry_3A0() R0;
-	virtual bool TriggersCellInset(ObjectClass *Target) R0;
-	virtual bool IsCloseEnough(ObjectClass *Target, int idxWeapon) const R0;
-	virtual DWORD IsCloseEnoughToAttack(ObjectClass *Target) const R0;
-	virtual DWORD IsCloseEnoughToAttackCoords(CoordStruct *Coords) const R0;
+	virtual bool TriggersCellInset(AbstractClass *Target) R0;
+	virtual bool IsCloseEnough(AbstractClass *Target, int idxWeapon) const R0;
+	virtual bool IsCloseEnoughToAttack(AbstractClass *Target) const R0;
+	virtual bool IsCloseEnoughToAttackCoords(CoordStruct *Coords) const R0;
 	virtual DWORD vt_entry_3B4(DWORD dwUnk) const R0;
 	virtual void Destroyed(ObjectClass *Killer) = 0;
-	virtual FireError::Value GetFireErrorWithoutRange(ObjectClass *Target, int nWeaponIndex) const R0;
-	virtual FireError::Value GetFireError(ObjectClass *Target, int nWeaponIndex, bool ignoreRange) const R0;
+	virtual FireError::Value GetFireErrorWithoutRange(AbstractClass *Target, int nWeaponIndex) const R0;
+	virtual FireError::Value GetFireError(AbstractClass *Target, int nWeaponIndex, bool ignoreRange) const R0;
 	virtual CellClass* SelectAutoTarget(eTargetFlags TargetFlags, int CurrentThreat, bool OnlyTargetHouseEnemy) R0;
 	virtual void SetTarget(AbstractClass *Target) RX;
-	virtual BulletClass* Fire(ObjectClass* pTarget, int nWeaponIndex) R0;
+	virtual BulletClass* Fire(AbstractClass* pTarget, int nWeaponIndex) R0;
 	virtual DWORD vt_entry_3D0() R0;
 	virtual void SetOwningHouse(HouseClass* pHouse, DWORD dwUnk = 1) RX;
 	virtual void vt_entry_3D8(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
@@ -273,12 +273,12 @@ public:
 	virtual void Cloak(bool bPlaySound) RX;
 	virtual DWORD vt_entry_464(DWORD dwUnk) const R0;
 	virtual void UpdateRefinerySmokeSystems() RX;
-	virtual DWORD DisguiseAs(ObjectClass *Target) R0;
+	virtual DWORD DisguiseAs(AbstractClass *Target) R0;
 	virtual void ClearDisguise() RX;
 	virtual bool IsItTimeForIdleActionYet() const R0;
 	virtual bool UpdateIdleAction() R0;
 	virtual void vt_entry_47C(DWORD dwUnk) RX;
-	virtual void SetDestination(CellClass* pCell, bool bUnk) RX;
+	virtual void SetDestination(AbstractClass* pDest, bool bUnk) RX;
 	virtual bool vt_entry_484(DWORD dwUnk, DWORD dwUnk2) R0;
 	virtual void UpdateSight(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5) RX;
 	virtual void vt_entry_48C(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) RX;
@@ -387,7 +387,7 @@ public:
 	int __fastcall ClearPlanningTokens(NetworkEvent *Event)
 		{ JMP_STD(0x6386E0); }
 
-	void SetTargetForPassengers(ObjectClass *Target)
+	void SetTargetForPassengers(AbstractClass *Target)
 		{ JMP_THIS(0x710550); }
 
 	// returns the house that created this object (factoring in Mind Control)
@@ -504,8 +504,8 @@ public:
 	FootClass*       DirectRockerLinkedUnit;
 	FootClass*       LocomotorTarget; // mag->LocoTarget = victim
 	FootClass*       LocomotorSource; // victim->LocoSource = mag
-	ObjectClass*     Target; //if attacking
-	ObjectClass*     LastTarget;
+	AbstractClass*   Target; //if attacking
+	AbstractClass*   LastTarget;
 	CaptureManagerClass* CaptureManager; //for Yuris
 	TechnoClass*     MindControlledBy;
 	bool             MindControlledByAUnit;

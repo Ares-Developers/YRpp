@@ -159,7 +159,7 @@ public:
 	DynamicVectorClass<AbstractClass*> unknown_abstract_array_588;
 	DWORD           unknown_5A0;
 	AbstractClass*  Destination; // possibly other objects as well
-	DWORD           unknown_5A8;
+	AbstractClass*  LastDestination;
 	DynamicVectorClass<AbstractClass*> unknown_abstract_array_5AC;
 	int             unknown_int_5C4;
 	DWORD           unknown_5C8;
