@@ -466,7 +466,7 @@ public:
 	int              Group; //0-9, assigned by CTRL+Number, these kinds // also set by aimd TeamType->Group !
 	TechnoClass*     FocusOnUnit; // when told to guard a unit or such
 	HouseClass*      Owner;
-	eCloakStates     CloakState;
+	CloakState::Value CloakState;
 	int              CloakingStage; // phase from [opaque] -> [fading] -> [transparent] , [General]CloakingStages= long
 	bool             Cloaking;
 	TimerStruct      CloakTimer;

@@ -155,13 +155,13 @@ public:
 	virtual void Flash(int Duration) RX;
 	virtual bool Select() R0;
 	virtual void Deselect() RX;
-	virtual void IronCurtain(int nDuration, HouseClass *pSource, bool ForceShield) RX;
+	virtual DamageState::Value IronCurtain(int nDuration, HouseClass *pSource, bool ForceShield) R0;
 	virtual void StopAirstrikeTimer() RX;
 	virtual void StartAirstrikeTimer(int Duration) RX;
 	virtual bool IsIronCurtained() const R0;
 	virtual bool IsCloseEnough3D(DWORD dwUnk, DWORD dwUnk2) const R0;
 	virtual int GetWeaponRange(int idxWeapon) const R0;
-	virtual eDamageState ReceiveDamage(int* pDamage, int DistanceFromEpicenter, WarheadTypeClass* pWH,
+	virtual DamageState::Value ReceiveDamage(int* pDamage, int DistanceFromEpicenter, WarheadTypeClass* pWH,
 	  ObjectClass* Attacker, BOOL IgnoreDefenses, BOOL PreventPassengerEscape, HouseClass* pAttackingHouse) R0;
 	virtual void Destroy() RX;
 	virtual void Scatter(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;

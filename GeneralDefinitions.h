@@ -582,23 +582,29 @@ typedef int eCellFlags_12C;
 #define	cf2_NoShadow			0x08 //else tooltip is TXT_SHADOW
 
 
-typedef int eCloakStates;
+class CloakState {
+public:
+	typedef int Value;
+	enum {
+		Uncloaked = 0,
+		Cloaking = 1,
+		Cloaked = 2,
+		Uncloaking = 3
+	};
+};
 
-#define	cs_Uncloaked		0x0
-#define	cs_Cloaking		0x1
-#define	cs_Cloaked		0x2
-#define	cs_Uncloaking		0x3
-
-
-typedef int eDamageState;
-
-#define	ds_Unaffected		0x0
-#define	ds_Unchanged		0x1
-#define	ds_NowYellow		0x2
-#define	ds_NowRed		0x3
-#define	ds_NowDead		0x4
-#define	ds_PostMortem		0x5
-
+class DamageState {
+public:
+	typedef int Value;
+	enum {
+		Unaffected = 0,
+		Unchanged = 1,
+		NowYellow = 2,
+		NowRed = 3,
+		NowDead = 4,
+		PostMortem = 5
+	};
+};
 
 class Direction {
 public:
