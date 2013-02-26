@@ -937,10 +937,10 @@ public:
 	DWORD align_176C;
 	double			 MovieTime;
 	int				 TiberiumShortScan;
-	int				 TiberiumintScan;
+	int				 TiberiumLongScan;
 	int				 SlaveMinerShortScan;
 	int				 SlaveMinerSlaveScan;
-	int				 SlaveMinerintScan;
+	int				 SlaveMinerLongScan;
 	int				 SlaveMinerScanCorrection;
 	int				 SlaveMinerKickFrameDelay;
 	int				 LightningDeferment;
