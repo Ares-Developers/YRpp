@@ -19,6 +19,8 @@ public:
 	static const double TwoPi;
 	static const double HalfPi;
 
+	static const double Sqrt2;
+
 	MATH_FUNC(sqrt,	 0x4CAC40);
 	MATH_FUNC(sin,	 0x4CACB0);
 	MATH_FUNC(cos,	 0x4CAD00);
@@ -35,6 +37,16 @@ public:
 		PUSH_VAR64(r);
 		CALL(0x4CAE30);
 		ADD_ESP(16);
+	}
+
+	static inline double rad2deg(double rad)
+	{
+		return rad * 180.0 / Pi;
+	}
+
+	static inline double deg2rad(double deg)
+	{
+		return deg * Pi / 180.0;
 	}
 };
 
