@@ -35,6 +35,9 @@ public:
 	void UpdateSquid()
 		{ JMP_THIS(0x6297F0); }
 
+	bool UpdateGrapple()
+		{ JMP_THIS(0x629720); }
+
 	void ExitUnit()
 		{ JMP_THIS(0x62A4A0); }
 
@@ -44,21 +47,24 @@ public:
 	void TryInfect(FootClass *pTarget)
 		{ JMP_THIS(0x62A980); }
 
+	bool CanExistOnVictimCell() const
+		{ JMP_THIS(0x62AB40); }
+
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
 
 public:
 
-	FootClass*         Owner;
-	FootClass*         Victim;
-	TimerStruct SuppressionTimer;
-	TimerStruct DamageDeliveryTimer;
-	AnimClass*         SomeAnim; // squid grapple?
-	DWORD              unknown_48;
-	DWORD              unknown_4C;
-	DWORD              unknown_50;
-	BYTE               unknown_54;
+	FootClass*           Owner;
+	FootClass*           Victim;
+	TimerStruct          SuppressionTimer;
+	TimerStruct          DamageDeliveryTimer;
+	AnimClass*           GrappleAnim;
+	ParasiteState::Value GrappleState;
+	int                  GrappleAnimFrame;
+	int                  GrappleAnimDelay;
+	bool                 GrappleAnimGotInvalid;
 };
 
 #endif
