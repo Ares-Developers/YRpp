@@ -18,7 +18,7 @@ public:
 	// else it will be just {$pMessage}
 
 	void PrintMessage(const wchar_t * pLabel, DWORD dwUnk1, const wchar_t* pMessage, int nColorSchemeIndex = 3,
-		DWORD dwUnk2 = 0x4046, DWORD dwUnk3 = 0x96, DWORD dwUnk4 = 0)
+		DWORD dwUnk2 = 0x4046, DWORD dwUnk3 = 0x96, bool bSilent = false)
 		{ JMP_THIS(0x5D3BA0); };
 
 	void PrintMessage(const wchar_t* pLabel, const wchar_t* pMessage, int nColorSchemeIndex = ColorScheme::White)
