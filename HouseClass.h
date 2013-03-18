@@ -364,6 +364,8 @@ public:
 
 	int CountOwnedNow(const TechnoTypeClass *Item) const;
 
+	int CountOwnedNowTotal(const TechnoTypeClass *Item) const;
+
 	int CountOwnedAndPresent(const TechnoTypeClass *Item) const;
 
 	int CountOwnedEver(const TechnoTypeClass *Item) const;

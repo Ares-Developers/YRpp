@@ -557,7 +557,7 @@ void __declspec(noreturn) RaiseError(HRESULT hr) {
 	Game::RaiseError(hr);
 }
 
-int HouseClass::CountOwnedNow(const TechnoTypeClass *Item) const {
+int HouseClass::CountOwnedNowTotal(const TechnoTypeClass *Item) const {
 	int Index = Item->GetArrayIndex();
 	int Sum = 0;
 	const BuildingTypeClass *BT = NULL;
@@ -619,6 +619,26 @@ int HouseClass::CountOwnedNow(const TechnoTypeClass *Item) const {
 			;
 	}
 	return Sum;
+}
+
+int HouseClass::CountOwnedNow(const TechnoTypeClass *Item) const {
+	int Index = Item->GetArrayIndex();
+	switch(Item->WhatAmI()) {
+		case abs_BuildingType:
+			return this->OwnedBuildingTypes.GetItemCount(Index);
+
+		case abs_UnitType:
+			return this->OwnedUnitTypes.GetItemCount(Index);
+
+		case abs_InfantryType:
+			return this->OwnedInfantryTypes.GetItemCount(Index);
+
+		case abs_AircraftType:
+			return this->OwnedAircraftTypes.GetItemCount(Index);
+
+		default:
+			return 0;
+	}
 }
 
 int HouseClass::CountOwnedAndPresent(const TechnoTypeClass *Item) const {
