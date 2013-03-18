@@ -191,11 +191,11 @@ public:
 	virtual bool IsEngineer() const R0;
 	virtual void ProceedToNextPlanningWaypoint() RX;
 	virtual DWORD ScanForTiberium(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) const R0;
-	virtual bool OnEnterGrinder() R0;
-	virtual bool OnEnterBioReactor() R0;
-	virtual bool OnEnterTankBunker() R0;
-	virtual bool OnEnterBattleBunker() R0;
-	virtual bool OnGarrisonStructure() R0;
+	virtual bool EnterGrinder() R0;
+	virtual bool EnterBioReactor() R0;
+	virtual bool EnterTankBunker() R0;
+	virtual bool EnterBattleBunker() R0;
+	virtual bool GarrisonStructure() R0;
 	virtual bool IsPowerOnline() const R0;
 	virtual void QueueVoice(int idxVoc) RX;
 	virtual int VoiceEnter() R0;
