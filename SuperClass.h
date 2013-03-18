@@ -122,7 +122,7 @@ public:
 	bool unknown_bool_60;          // 0x60
 	CellStruct ChronoMapCoords;  // 0x62
 	AnimClass * Animation;                // 0x68
-	bool unknown_bool_6C;
+	bool AnimationGotInvalid;
 	bool Granted;
 	bool Quantity; // Stupidity - 0 means unlimited, 1 means one-shot
 	bool IsCharged;
