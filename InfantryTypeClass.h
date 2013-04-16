@@ -66,8 +66,8 @@ protected:
 
 public:
 
-	int Pip; //see PIP definitions
-	int OccupyPip; //see PIP definitions
+	Pip::Value Pip;
+	Pip::Value OccupyPip;
 	WeaponStruct OccupyWeapon;
 	WeaponStruct EliteOccupyWeapon;
 	SequenceStruct* Sequence;

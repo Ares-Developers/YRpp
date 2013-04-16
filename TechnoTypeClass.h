@@ -179,7 +179,7 @@ public:
 	DWORD align_3C4;
 	double          DeployTime;
 	int             FireAngle;
-	int             PipScale;
+	PipScale::Value PipScale;
 	bool            PipsDrawForAll;
 	int             LeptonMindControlOffset;
 	int             PixelSelectionBracketDelta;

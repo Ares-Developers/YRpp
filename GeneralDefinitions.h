@@ -842,30 +842,38 @@ typedef int eMovementZone;
 #define	mz_CrusherAll		0xC
 
 
-typedef int ePip;
+class Pip {
+public:
+	typedef int Value;
+	enum {
+		Empty = 0,
+		Green = 1,
+		Yellow = 2,
+		White = 3,
+		Red = 4,
+		Blue = 5,
+		PersonEmpty = 6,
+		PersonGreen = 7,
+		PersonYellow = 8,
+		PersonWhite = 9,
+		PersonRed = 10,
+		PersonBlue = 11,
+		PersonPurple = 12
+	};
+};
 
-#define	pip_empty		0x0
-#define	pip_green		0x1
-#define	pip_yellow		0x2
-#define	pip_white		0x3
-#define	pip_red		0x4
-#define	pip_blue		0x5
-#define	pip_wtf		0x6
-#define	pip_persongreen		0x7
-#define	pip_personyellow		0x8
-#define	pip_personwhite		0x9
-#define	pip_personred		0xA
-#define	pip_personblue		0xB
-#define	pip_personpurple		0xC
-
-
-typedef int ePipScale;
-
-#define	ps_Ammo		0x1
-#define	ps_Tiberium		0x2
-#define	ps_Passengers		0x3
-#define	ps_Storage		0x4
-#define	ps_MindControl		0x5
+class PipScale {
+public:
+	typedef int Value;
+	enum {
+		None = 0,
+		Ammo = 1,
+		Tiberium = 2,
+		Passengers = 3,
+		Storage = 4,
+		MindControl = 5
+	};
+};
 
 
 typedef int ePowerup;
