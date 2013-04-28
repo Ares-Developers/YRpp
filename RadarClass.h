@@ -66,8 +66,8 @@ public:
 	DWORD unknown_1258;
 	DynamicVectorClass<Point2D> unknown_points_125C;
 	DWORD unknown_1274;
-	DynamicVectorClass<Point2D> unknown_points_array_1278 [0x16];
-	DWORD unknown_1488;
+	DynamicVectorClass<Point2D> FoundationTypePixels[22];
+	float RadarSizeFactor;
 	int unknown_int_148C;
 	DWORD unknown_1490;
 	DWORD unknown_1494;
