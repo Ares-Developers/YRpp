@@ -133,6 +133,7 @@ public:
 	static CellStruct &DefaultIonCannonCoords; //0xA8EF98
 
 	static HouseClass *&Player;
+	static HouseClass *&Observer;
 
 	//IConnectionPointContainer
 	virtual HRESULT __stdcall EnumConnectionPoints(IEnumConnectionPoints** ppEnum) R0;
