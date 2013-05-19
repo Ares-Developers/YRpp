@@ -237,6 +237,10 @@ public:
 
 			{ JMP_STD(0x4770E0); }
 
+	static bool IsBlank(const char *pValue) {
+		return !_strcmpi(pValue, "<none>") || !_strcmpi(pValue, "none");
+	}
+
 	//Properties
 
 public:
