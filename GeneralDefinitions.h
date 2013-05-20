@@ -458,20 +458,23 @@ typedef int eAITrigHouseType;
 #define		th_Any		0x2
 
 
-typedef int eArmor;
-
-#define	armor_None		0x0
-#define	armor_Flak		0x1
-#define	armor_Plate		0x2
-#define	armor_Light		0x3
-#define	armor_Medium		0x4
-#define	armor_Heavy		0x5
-#define	armor_Wood		0x6
-#define	armor_Steel		0x7
-#define	armor_Concrete		0x8
-#define	armor_Special_1		0x9
-#define	armor_Special_2		0xA
-
+class Armor {
+public:
+	typedef int Value;
+	enum {
+		None = 0,
+		Flak = 1,
+		Plate = 2,
+		Light = 3,
+		Medium = 4,
+		Heavy = 5,
+		Wood = 6,
+		Steel = 7,
+		Concrete = 8,
+		Special_1 = 9,
+		Special_2 = 10
+	};
+};
 
 //spotlight behaviour
 class SpotlightBehaviour {
