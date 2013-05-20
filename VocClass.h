@@ -74,12 +74,12 @@ public:
 
 	VocClassHeader Header;
 	int SamplesOK;	//0 or 1, determines whether all samples are OK to use
-	DWORD unknown_10;
-	eSoundType Type;
+	SoundControl::Value Control;
+	SoundType::Value Type;
 	VolumeStruct Volume;
 	DWORD unknown_38;
 	DWORD unknown_3C;
-	eSoundPriority Priority;
+	SoundPriority::Value Priority;
 	DWORD unknown_44;
 	int Limit;	//as in sound.ini
 	int Loop;	//as in sound.ini
@@ -90,7 +90,7 @@ public:
 	int MinFDelta;	//as in sound.ini
 	int MaxFDelta;	//as in sound.ini
 	int VShift;	//as in sound.ini
-	char Name [0x1F]; //as in sound.ini
+	char Name [0x20]; //as in sound.ini
 	DWORD unknown_8C;
 	DWORD unknown_90;
 	DWORD unknown_94;

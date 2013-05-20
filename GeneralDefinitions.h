@@ -1277,13 +1277,76 @@ typedef int eNetworkEvents;
 
 
 // Sound specific
-typedef int eSoundPriority;
+class SoundPriority {
+public:
+	typedef int Value;
+	enum {
+		Lowest = 0,
+		Low = 1,
+		Normal = 2,
+		High = 3,
+		Critical = 4
+	};
+};
 
-#define	sp_LOWEST		0x1
-#define	sp_LOW		0x2
-#define	sp_NORMAL		0x3
-#define	sp_HIGH		0x4
-#define	sp_CRITICAL		0x5
+class SoundType {
+public:
+	typedef unsigned int Value;
+	enum {
+		Normal = 0x0,
+		Violent = 0x1,
+		Movement = 0x2,
+		Quiet = 0x4,
+		Loud = 0x8,
+		Global = 0x10,
+		Screen = 0x20,
+		Local = 0x40,
+		Player = 0x80,
+		NoiseShy = 0x100,
+		GunShy = 0x200,
+		Unshroud = 0x400,
+		Shroud = 0x800,
+		Ambient = 0x1000
+	};
+};
+
+class SoundControl {
+public:
+	typedef unsigned int Value;
+	enum {
+		None = 0x0,
+		Loop = 0x1,
+		Random = 0x2,
+		All = 0x4,
+		Predelay = 0x8,
+		Interrupt = 0x10,
+		Attack = 0x20,
+		Decay = 0x40,
+		Ambient = 0x80
+	};
+};
+
+class VoxType {
+public:
+	typedef int Value;
+	enum {
+		Standard = 0,
+		Queue = 1,
+		Interrupt = 2,
+		QueuedInterrupt = 3
+	};
+};
+
+class VoxPriority {
+public:
+	typedef int Value;
+	enum {
+		Low = 0,
+		Normal = 1,
+		Important = 2,
+		Critical = 3
+	};
+};
 
 typedef int eWaveType;
 
@@ -1291,25 +1354,6 @@ typedef int eWaveType;
 #define wave_Laser 0x1
 #define wave_BigLaser 0x2
 #define wave_Magnetron 0x3
-
-typedef int eSoundType;
-
-#define	sndtype_STANDARD		0x0
-#define	sndtype_QUEUE		0x1
-#define	sndtype_INTERRUPT		0x2
-#define	sndtype_QUEUED_INTERRUPT		0x3
-
-
-typedef int eSoundControl;
-
-#define	sndc_LOOP		0x1
-#define	sndc_RANDOM		0x2
-#define	sndc_ALL		0x4
-#define	sndc_PREDELAY		0x8
-#define	sndc_INTERRUPT		0x10
-#define	sndc_ATTACK		0x20
-#define	sndc_DECAY		0x40
-#define	sndc_AMBIENT		0x80
 
 
 typedef int eTargetFlags;

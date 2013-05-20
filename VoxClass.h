@@ -60,8 +60,8 @@ public:
 	char Yuri [0x9];			//as in eva.ini
 	char Russian [0x9];		//as in eva.ini
 	char Allied [0x9];		//as in eva.ini
-	eSoundPriority Priority;	//as in eva.ini
-	eSoundType Type;	//as in eva.ini
+	VoxPriority::Value Priority;	//as in eva.ini
+	VoxType::Value Type;	//as in eva.ini
 	int unknown_int_50;
 
 	//constructor and destructor should never be needed
