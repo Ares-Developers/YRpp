@@ -965,6 +965,17 @@ public:
 	};
 };
 
+class ChargeDrainState {
+public:
+	typedef int Value;
+	enum {
+		None = -1,
+		Charging = 0,
+		Ready = 1,
+		Draining = 2
+	};
+};
+
 class SuperWeaponType {
 public:
 	typedef unsigned char Value;

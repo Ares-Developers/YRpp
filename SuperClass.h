@@ -129,7 +129,7 @@ public:
 	bool IsOnHold;
 	int ReadinessFrame; // when did it become ready?
 	DWORD unknown_78;
-	DWORD ChargeDrainState;
+	ChargeDrainState::Value ChargeDrainState;
 };
 
 class LightningStorm
