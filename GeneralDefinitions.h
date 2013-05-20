@@ -699,18 +699,23 @@ public:
 	};
 };
 
-typedef int eInfDeath;
-
-#define	id_Die1		0x1
-#define	id_Die2		0x2
-#define	id_Explode		0x3
-#define	id_Flames		0x4
-#define	id_Electro		0x5
-#define	id_HeadPop		0x6
-#define	id_Nuked		0x7
-#define	id_Virus		0x8
-#define	id_Mutate		0x9
-#define	id_Brute		0xA
+class InfDeath {
+public:
+	typedef int Value;
+	enum {
+		None = 0,
+		Die1 = 1,
+		Die2 = 2,
+		Explode = 3,
+		Flames = 4,
+		Electro = 5,
+		HeadPop = 6,
+		Nuked = 7,
+		Virus = 8,
+		Mutate = 9,
+		Brute = 10,
+	};
+};
 
 
 typedef int eLandType;
