@@ -536,7 +536,7 @@ public:
 	bool                  unknown_bool_24A;
 	bool                  unknown_bool_24B;
 	int                   IQLevel2;			//no idea why we got this twice
-	eAIModes              AIMode;
+	AIMode::Value         AIMode;
 	DynamicVectorClass<SuperClass*> Supers;
 	int                   LastBuiltBuildingType;
 	int                   LastBuiltInfantryType;

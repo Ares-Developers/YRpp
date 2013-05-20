@@ -426,12 +426,16 @@ public:
 	};
 };
 
-typedef int eAIModes;
-
-#define		aim_General		0x00
-#define		aim_LowOnCash 0x01 // if HouseClass::AvailableMoney < 25 ! stupidly low value
-#define		aim_BuildBase		0x03
-#define		aim_SellAll		0x04
+class AIMode {
+public:
+	typedef int Value;
+	enum {
+		General = 0,
+		LowOnCash = 1, // if HouseClass::AvailableMoney < 25 ! stupidly low value
+		BuildBase = 3,
+		SellAll = 4,
+	};
+};
 
 
 typedef int eAITrigCondition;
