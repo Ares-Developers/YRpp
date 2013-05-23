@@ -71,14 +71,7 @@ public:
 	DWORD unknown_D0;
 	LightConvertClass* LightConvert;	 //Palette?
 	int LightConvertIndex; // assert( (*ColorScheme::Array)[this->LightConvertIndex] == this->LightConvert ;
-	BYTE unknown_DC;
-	DWORD unknown_E0;
-	DWORD unknown_E4;
-	DWORD unknown_E8;
-	DWORD unknown_EC;
-	DWORD unknown_F0;
-	DWORD unknown_F4;
-	DWORD unknown_F8;
+	char PaletteName[0x20]; // filename set for destroy anims
 	int TintColor;
 	int ZAdjust;
 	int YSortAdjust; // same as YSortAdjust from Type
