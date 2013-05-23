@@ -75,10 +75,8 @@ public:
 	int TintColor;
 	int ZAdjust;
 	int YSortAdjust; // same as YSortAdjust from Type
-	DWORD unknown_108;
-	DWORD unknown_10C;
-	DWORD unknown_110;
-	DWORD unknown_114;
+	CoordStruct FlamingGuyCoords; // the destination the anim tries to reach
+	int FlamingGuyRetries; // number of failed attemts to reach water. the random destination generator stops if >= 7
 	BYTE unknown_118;
 	bool UnderTemporal; // temporal'd building's active anims
 	BYTE unknown_11A;
@@ -117,7 +115,7 @@ public:
 	byte unknown_197;
 	bool IsPlaying;
 	bool IsFogged;
-	byte unknown_19A;
+	bool FlamingGuyExpire; // finish animation and remove
 	byte CellOccupied; // dunno, that's the name my IDB gives
 	byte unknown_19C;
 	bool Invisible; // don't draw, but Update state anyway
