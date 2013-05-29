@@ -40,7 +40,7 @@ public:
 	char CTF;
 	char FogOfWar;
 	char MCVRedeploy;
-	wchar_t wchars[45];
+	wchar_t MapDescription[45];
 };
 
 #endif
