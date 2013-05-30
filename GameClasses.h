@@ -57,6 +57,7 @@
 #include <TiberiumClass.h>
 #include <TriggerClass.h>
 #include <UnitClass.h>
+#include <VoxelAnimTypeClass.h>
 #include <WaveClass.h>
 #include <WaypointPathClass.h>
 
