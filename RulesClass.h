@@ -24,7 +24,19 @@ struct SHPStruct;
 //Difficulty
 struct DifficultyStruct
 {
-	BYTE will_do_soon[0x50];
+	double Firepower;
+	double GroundSpeed;
+	double AirSpeed;
+	double Armor;
+	double ROF;
+	double Cost;
+	double BuildTime;
+	double RepairDelay;
+	double BuildDelay;
+	bool BuildSlowdown;
+	bool DestroyWalls;
+	bool ContentScan;
+	PROTECTED_PROPERTY(BYTE, unused_4B[0x5]);
 };
 
 //Rockets
