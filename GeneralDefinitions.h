@@ -887,28 +887,31 @@ public:
 	};
 };
 
-
-typedef int ePowerup;
-
-#define	pow_Money		0x0
-#define	pow_Unit		0x1
-#define	pow_HealBase		0x2
-#define	pow_Cloak		0x3
-#define	pow_Explosion		0x4
-#define	pow_Napalm		0x5
-#define	pow_Squad		0x6
-#define	pow_Darkness		0x7
-#define	pow_Reveal		0x8
-#define	pow_Armor		0x9
-#define	pow_Speed		0xA
-#define	pow_Firepower		0xB
-#define	pow_ICBM		0xC
-#define	pow_Invulnerability		0xD
-#define	pow_Veteran		0xE
-#define	pow_IonStorm		0xF
-#define	pow_Gas		0x10
-#define	pow_Tiberium		0x11
-#define	pow_Pod		0x12
+class Powerup {
+public:
+	typedef int Value;
+	enum {
+		Money = 0,
+		Unit = 1,
+		HealBase = 2,
+		Cloak = 3,
+		Explosion = 4,
+		Napalm = 5,
+		Squad = 6,
+		Darkness = 7,
+		Reveal = 8,
+		Armor = 9,
+		Speed = 10,
+		Firepower = 11,
+		ICBM = 12,
+		Invulnerability = 13,
+		Veteran = 14,
+		IonStorm = 15,
+		Gas = 16,
+		Tiberium = 17,
+		Pod = 18
+	};
+};
 
 
 typedef int ePrerequisite;
