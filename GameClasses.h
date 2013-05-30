@@ -58,6 +58,7 @@
 #include <TriggerClass.h>
 #include <UnitClass.h>
 #include <VoxelAnimTypeClass.h>
+#include <VoxelAnimClass.h>
 #include <WaveClass.h>
 #include <WaypointPathClass.h>
 
