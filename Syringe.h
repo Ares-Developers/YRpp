@@ -294,6 +294,9 @@ public:
 #define EXPORT extern "C" __declspec(dllexport) DWORD __cdecl
 #define EXPORT_FUNC(name) extern "C" __declspec(dllexport) DWORD __cdecl name (REGISTERS *R)
 
+
+#if SYR_VER == 2
+
 #pragma pack(push, 16)
 #pragma warning(push)
 #pragma warning( disable : 4324)
@@ -326,6 +329,18 @@ namespace SyringeData { namespace Hosts { __declspec(allocate(".syexe00")) hostd
 
 #define declhook(hook, funcname, size) \
 namespace SyringeData { namespace Hooks { __declspec(allocate(".syhks00")) hookdecl _hk__ ## hook ## funcname = { 0x ## hook, 0x ## size, #funcname }; }; };
+
+#endif // SYR_VER == 2
+
+
+// create empty macros
+#ifndef declhost
+#define declhost(exename, checksum)
+#endif // declhost
+
+#ifndef declhook
+#define declhook(hook, funcname, size)
+#endif // declhook
 
 // injgen
 // in addition to the injgen-declaration, also includes the function opening
