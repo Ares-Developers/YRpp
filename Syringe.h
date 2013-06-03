@@ -295,6 +295,22 @@ public:
 #define EXPORT_FUNC(name) extern "C" __declspec(dllexport) DWORD __cdecl name (REGISTERS *R)
 
 
+//Handshake definitions
+struct SyringeHandshakeInfo
+{
+	int cbSize;
+	int num_hooks;
+	unsigned int checksum;
+	DWORD exeFilesize;
+	DWORD exeTimestamp;
+	unsigned int exeCRC;
+	int cchMessage;
+	char* Message;
+};
+
+#define SYRINGE_HANDSHAKE(pInfo) extern "C" __declspec(dllexport) HRESULT __cdecl SyringeHandshake(SyringeHandshakeInfo* pInfo)
+
+
 #if SYR_VER == 2
 
 #pragma pack(push, 16)
