@@ -325,7 +325,7 @@ namespace SyringeData {
 namespace SyringeData { namespace Hosts { __declspec(allocate(".syexe00")) hostdecl _hst__ ## exename = { checksum, #exename }; }; };
 
 #define declhook(hook, funcname, size) \
-namespace SyringeData { namespace Hooks { __declspec(allocate(".syhks00")) hookdecl _hk__ ## hook ## funcname = { hook, size, #funcname }; }; };
+namespace SyringeData { namespace Hooks { __declspec(allocate(".syhks00")) hookdecl _hk__ ## hook ## funcname = { 0x ## hook, 0x ## size, #funcname }; }; };
 
 // injgen
 // in addition to the injgen-declaration, also includes the function opening
