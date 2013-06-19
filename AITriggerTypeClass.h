@@ -65,13 +65,13 @@ public:
 
 	// slaves
 	bool OwnerHouseOwns(HouseClass *CallingHouse, HouseClass *TargetHouse) const
-		{ JMP_THIS(0x41EAF0); }
+		{ JMP_THIS(0x41EE90); }
 
 	bool CivilianHouseOwns(HouseClass *CallingHouse, HouseClass *TargetHouse) const
 		{ JMP_THIS(0x41EC90); }
 
 	bool EnemyHouseOwns(HouseClass *CallingHouse, HouseClass *TargetHouse) const
-		{ JMP_THIS(0x41EE90); }
+		{ JMP_THIS(0x41EAF0); }
 
 	bool IronCurtainCharged(HouseClass *CallingHouse, HouseClass *TargetHouse) const
 		{ JMP_THIS(0x41F0D0); }
