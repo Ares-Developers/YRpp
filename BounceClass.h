@@ -2,14 +2,14 @@
 	Ballistic trajectory data used by Animations and Voxel Animations.
 */
 
-#ifndef BALLISTICDATA_H
-#define BALLISTICDATA_H
+#ifndef BOUNCE_H
+#define BOUNCE_H
 
 #include <GeneralStructures.h>
 #include <YRMathVector.h>
 #include <Quaternion.h>
 
-class BallisticData
+class BounceClass
 {
 public:
 	class Status {
@@ -23,9 +23,9 @@ public:
 	};
 
 	// constructors
-	BallisticData() : Elasticity(0.0), Gravity(0.0), MaxVelocity(0.0) {}
+	BounceClass() : Elasticity(0.0), Gravity(0.0), MaxVelocity(0.0) {}
 
-	BallisticData(CoordStruct* pCoords, double elasticity, double gravity,
+	BounceClass(CoordStruct* pCoords, double elasticity, double gravity,
 		double maxVelocity, Vector3D<float>* velocity, double angularVelocity)
 	{
 		this->Initialize(pCoords, elasticity, gravity, maxVelocity, velocity, angularVelocity);

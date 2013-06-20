@@ -7,7 +7,7 @@
 
 #include <ObjectClass.h>
 #include <VoxelAnimTypeClass.h>
-#include <BallisticData.h>
+#include <BounceClass.h>
 
 //forward declarations
 class HouseClass;
@@ -54,7 +54,7 @@ protected:
 public:
 
 	PROTECTED_PROPERTY(DWORD, unused_AC);
-	BallisticData BallisticData;
+	BounceClass Bounce;
 	int unknown_int_100;
 	VoxelAnimTypeClass* Type;
 	ParticleSystemClass* AttachedSystem;

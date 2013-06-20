@@ -7,7 +7,7 @@
 
 #include <ObjectClass.h>
 #include <AnimTypeClass.h>
-#include <BallisticData.h>
+#include <BounceClass.h>
 
 //forward declarations
 class AnimTypeClass;
@@ -85,7 +85,7 @@ public:
 	DWORD unknown_11C;
 	bool Reverse; // anim is forced to be played from end to start
 	DWORD unknown_124;
-	BallisticData BallisticData;
+	BounceClass Bounce;
 	BYTE TranslucencyLevel; // on a scale of 1 - 100
 	bool TimeToDie; // or something to that effect, set just before UnInit
 	BulletClass* AttachedBullet;
