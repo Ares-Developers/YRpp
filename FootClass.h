@@ -152,9 +152,8 @@ public:
 	CellStruct      LastJumpjetMapCoords; // which cell was I occupying previously? only for jumpjets
 	CellStruct      CurrentJumpjetMapCoords; // which cell am I occupying? only for jumpjets
 	CoordStruct     unknown_coords_568;
-	DWORD           unknown_574;	//unused?
-	DWORD           unknown_578;
-	DWORD           unknown_57C;
+	PROTECTED_PROPERTY(DWORD,   unused_574);
+	double          SpeedPercentage;
 	double          SpeedMultiplier;
 	DynamicVectorClass<AbstractClass*> unknown_abstract_array_588;
 	DWORD           unknown_5A0;
