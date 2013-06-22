@@ -80,9 +80,9 @@ public:
 	int FlamingGuyRetries; // number of failed attemts to reach water. the random destination generator stops if >= 7
 	BYTE unknown_118;
 	bool UnderTemporal; // temporal'd building's active anims
-	BYTE unknown_11A;
-	BYTE unknown_11B;
-	DWORD unknown_11C;
+	bool Paused; // if paused, does not advance anim, does not deliver damage
+	bool Unpaused; // set when unpaused
+	int PausedAnimFrame; // the animation value when paused
 	bool Reverse; // anim is forced to be played from end to start
 	DWORD unknown_124;
 	BounceClass Bounce;
@@ -100,11 +100,11 @@ public:
 	bool IsPlaying;
 	bool IsFogged;
 	bool FlamingGuyExpire; // finish animation and remove
-	byte CellOccupied; // dunno, that's the name my IDB gives
-	byte unknown_19C;
+	bool UnableToContinue; // set when something prevents the anim from going on: cell occupied, veins destoyed or unit gone, ...
+	bool SkipProcessOnce; // set in constructor, cleared during Update. skips damage, veins, tiberium chain reaction and animation progress
 	bool Invisible; // don't draw, but Update state anyway
-	byte unknown_19E;
-	byte unknown_19F;
+	bool PowerOff; // powered animation has no power
+	PROTECTED_PROPERTY(BYTE, unused_19F);
 	AudioController Audio3;
 	AudioController Audio4;
 };
