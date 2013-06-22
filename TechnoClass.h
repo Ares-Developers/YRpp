@@ -562,7 +562,7 @@ public:
 	TimerStruct      TargetLaserTimer;
 	short            unknown_short_3C8;
 	WORD             unknown_3CA;
-	bool             unknown_bool_3CC;
+	bool             CountedAsOwned; // is this techno contained in OwningPlayer->Owned... counts?
 	bool             IsSinking;
 	bool             WasSinkingAlready; // if(IsSinking && !WasSinkingAlready) { play SinkingSound; WasSinkingAlready = 1; }
 	bool             unknown_bool_3CF;
@@ -597,7 +597,7 @@ public:
 	bool             unknown_bool_431;
 	bool             unknown_bool_432;
 	TeamClass*       OldTeam;
-	bool             CountedAsOwned; // is this techno contained in OwningPlayer->Owned... counts?
+	bool             CountedAsOwnedSpecial; // for absorbers, infantry uses this to manually control OwnedInfantry count
 	bool             Absorbed; // in UnitAbsorb/InfantryAbsorb or smth, lousy memory
 	bool             unknown_bool_43A;
 	DWORD            unknown_43C;
