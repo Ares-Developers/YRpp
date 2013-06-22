@@ -6,6 +6,7 @@
 #define LASERDRAW_H
 
 #include <GeneralDefinitions.h>
+#include <ProgressTimer.h>
 
 class LaserDrawClass
 {
@@ -43,11 +44,7 @@ public:
 	//===== Properties ==========================================================
 	//===========================================================================
 public:
-	int TimeElapsed;
-	bool field_4;
-	TimerStruct CreationFrame;
-	int field_14;
-	int TimeElapsedPerFrame;
+	ProgressTimer Progress;
 	int Thickness; // only respected if IsHouseColor
 	bool IsHouseColor;
 	char field_21;

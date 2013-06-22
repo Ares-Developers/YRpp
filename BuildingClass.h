@@ -8,6 +8,7 @@
 #include <TechnoClass.h>
 #include <BuildingTypeClass.h>
 #include <BuildingLightClass.h>
+#include <ProgressTimer.h>
 class FactoryClass;
 class InfantryClass;
 class LightSourceClass;
@@ -208,11 +209,7 @@ public:
 	LightSourceClass * LightSource; // tiled light , LightIntensity > 0
 	DWORD LaserFenceFrame; // 0-7 for active directionals, 8/12 for offline ones, check ntfnce.shp or whatever
 	DWORD FirestormWallFrame; // anim data for firestorm active animations
-	DWORD unknown_620;
-	bool unknown_bool_624;
-	TimerStruct LastInfantryEntry; // for hospital, armory, etc
-	int unknown_int_634;
-	int unknown_int_638;
+	ProgressTimer RepairProgress; // for hospital, armory, unitrepair etc
 	RectangleStruct unknown_rect_63C;
 	CoordStruct unknown_coord_64C;
 	int unknown_int_658;

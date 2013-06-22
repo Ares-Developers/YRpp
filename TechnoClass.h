@@ -14,7 +14,7 @@
 #include <TemporalClass.h>
 #include <LaserDrawClass.h>
 #include <Helpers/Template.h>
-
+#include <ProgressTimer.h>
 #include <PlanningTokenClass.h>
 
 //forward declarations
@@ -416,10 +416,7 @@ protected:
 public:
 
 	FlashData        Flashing;
-	int              AnimationFrame;
-	bool             unknown_bool_FC;
-	RepeatableTimerStruct AnimationTimer;
-	int              unknown_int_110;
+	ProgressTimer    Animation; // how the unit animates
 	PassengersClass  Passengers;
 	TechnoClass*     Transporter; // unit carrying me
 	int              unknown_int_120;
@@ -467,11 +464,7 @@ public:
 	TechnoClass*     FocusOnUnit; // when told to guard a unit or such
 	HouseClass*      Owner;
 	CloakState::Value CloakState;
-	int              CloakingStage; // phase from [opaque] -> [fading] -> [transparent] , [General]CloakingStages= long
-	bool             Cloaking;
-	TimerStruct      CloakTimer;
-	int              CloakingSpeed;
-	int              CloakingIncrementAmount; //defaults to 1
+	ProgressTimer    CloakProgress; // phase from [opaque] -> [fading] -> [transparent] , [General]CloakingStages= long
 	TimerStruct      CloakDelayTimer; // delay before cloaking again
 	float            WarpFactor; // don't ask! set to 0 in CTOR, never modified, only used as ((this->Fetch_ID) + this->WarpFactor) % 400 for something in cloak ripple
 	bool             unknown_bool_250;

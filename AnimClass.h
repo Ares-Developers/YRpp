@@ -8,6 +8,7 @@
 #include <ObjectClass.h>
 #include <AnimTypeClass.h>
 #include <BounceClass.h>
+#include <ProgressTimer.h>
 
 //forward declarations
 class AnimTypeClass;
@@ -62,11 +63,7 @@ protected:
 
 public:
 
-	int CurrentFrame; //Current animation frame.
-	DWORD unknown_B0;
-	TimerStruct IterationTimer; // Duration == Type->Rate, each expiration decrements remainingIterations
-	int Rate;
-	int FrameDelta; // the delta to the next frame. 1 is playing forward, -1 for playing backwards (PingPong, Reverse)
+	ProgressTimer Animation;
 	AnimTypeClass* Type; //The AnimType.
 	ObjectClass * OwnerObject; // set by AnimClass::SetOwnerObject (0x424B50)
 	DWORD unknown_D0;

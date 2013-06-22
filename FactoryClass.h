@@ -6,6 +6,7 @@
 #define FACTORY_H
 
 #include <AbstractClass.h>
+#include <ProgressTimer.h>
 
 class HouseClass;
 class TechnoClass;
@@ -70,11 +71,7 @@ protected:
 
 public:
 
-	int                ProductionStatus; // hardcoded to be 54 steps (so cameo clock should be 54 frames)
-	bool               unknown_bool_28;
-	TimerStruct ProductionTimer;
-	DWORD              ProductionRemainingFrames;
-	int                unknown_int_3C;
+	ProgressTimer      Production; // hardcoded to be 54 steps (so cameo clock should be 54 frames)
 	DynamicVectorClass<TechnoTypeClass*> QueuedObjects;
 	TechnoClass*       InProduction;
 	bool               OnHold; // paused when out of money, restored when funds available

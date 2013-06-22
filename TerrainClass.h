@@ -13,6 +13,7 @@
 
 #include <ObjectClass.h>
 #include <TerrainTypeClass.h>
+#include <ProgressTimer.h>
 
 class TerrainClass : public ObjectClass
 {
@@ -48,10 +49,7 @@ protected:
 
 public:
 
-	int AnimationFrame; // the current animation frame
-	bool AnimationAdvanced; // if the animation timer expired this frame and the animation advanced
-	RepeatableTimerStruct AnimationTimer;
-	int AnimationFrameDelta; // added to AnimationFrame every time the animation timer expires
+	ProgressTimer Animation;
 	TerrainTypeClass* Type;
 	bool IsBurning; // this terrain object has been ignited
 	bool TimeToDie; // finish the animation and uninit

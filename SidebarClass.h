@@ -2,6 +2,7 @@
 #define SIDEBAR_H
 
 #include <PowerClass.h>
+#include <ProgressTimer.h>
 
 class ColorScheme;
 class FactoryClass;
@@ -14,11 +15,7 @@ struct CameoDataStruct
 	bool              IsAlt; // set on buildings that go on tab 2
 	FactoryClass*     CurrentFactory;
 	DWORD             unknown_10;
-	int               Progress; // 0 to 54, how much of this object is constructed (gclock anim level)
-	bool              unknown_18;
-	TimerStruct       ProcessingTimer;
-	int               RemainingTime;
-	int               unknown_2C;
+	ProgressTimer     Progress; // 0 to 54, how much of this object is constructed (gclock anim level)
 	int               FlashEndFrame;
 
 	CameoDataStruct() {
@@ -34,19 +31,19 @@ struct CameoDataStruct
 		this->IsAlt = false;
 		this->CurrentFactory = NULL;
 		this->unknown_10 = 0;
-		this->Progress = 0;
-		this->ProcessingTimer.StartTime = 0; // normally this initializes to Unsorted::CurrentFrame, let's see if this breaks anything
-		this->ProcessingTimer.TimeLeft = 0;
-		this->unknown_2C = 0;
+		this->Progress.Value = 0;
+		this->Progress.Timer.StartTime = 0; // normally this initializes to Unsorted::CurrentFrame, let's see if this breaks anything
+		this->Progress.Timer.TimeLeft = 0;
+		this->Progress.Step = 0;
 		this->FlashEndFrame = 0;
 	}
 
 	bool operator == (const CameoDataStruct &rhs) {
 		return ItemIndex == rhs.ItemIndex && ItemType == rhs.ItemType
 				&& IsAlt == rhs.IsAlt && CurrentFactory == rhs.CurrentFactory
-				&& unknown_10 == rhs.unknown_10 && Progress == rhs.Progress
-				&& ProcessingTimer.StartTime == rhs.ProcessingTimer.StartTime
-				&& ProcessingTimer.TimeLeft == rhs.ProcessingTimer.TimeLeft
+				&& unknown_10 == rhs.unknown_10 && Progress.Value == rhs.Progress.Value
+				&& Progress.Timer.StartTime == rhs.Progress.Timer.StartTime
+				&& Progress.Timer.TimeLeft == rhs.Progress.Timer.TimeLeft
 				&& FlashEndFrame == rhs.FlashEndFrame
 			;
 	}
@@ -59,13 +56,7 @@ struct CameoDataStruct
 // sizeof() == 0xF94
 struct TabDataStruct
 {
-	DWORD             unknown_00;
-	DWORD             unknown_04;
-	DWORD             unknown_08;
-	DWORD             unknown_0C;
-	DWORD             unknown_10;
-	DWORD             unknown_14;
-	DWORD             unknown_18;
+	ProgressTimer     Progress;
 	DWORD             unknown_1C;
 	DWORD             unknown_20;
 	DWORD             unknown_24;
