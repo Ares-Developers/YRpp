@@ -166,7 +166,7 @@ public:
 	virtual void Destroy() RX;
 	virtual void Scatter(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
 	virtual bool Ignite() R0;
-	virtual void vt_entry_17C() RX;
+	virtual void Extinguish() RX;
 	virtual DWORD GetPointsValue() const R0;
 	virtual eMission GetCurrentMission() const R0;
 	virtual void RestoreMission(eMission mission) RX;
@@ -178,7 +178,7 @@ public:
 	virtual void Sell(DWORD dwUnk) RX;
 	virtual void AssignPlanningPath(signed int idxPath, signed char idxWP) RX;
 	virtual void vt_entry_1A8(DWORD dwUnk) RX;
-	virtual Move::Value IsCellOccupied(CellClass *Cell, signed int Facing, int Level, DWORD dwUnk4, DWORD dwUnk5) const R0;
+	virtual Move::Value IsCellOccupied(CellClass *pDestCell, int facing, int level, CellClass* pSourceCell, bool alt) const R0;
 	virtual DWORD vt_entry_1B0(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5) R0;
 	virtual void SetLocation(CoordStruct* pCrd) RX;
 
@@ -205,7 +205,7 @@ public:
 		{ PUSH_VAR32(color); PUSH_VAR32(dst_Z); PUSH_VAR32(dst_Y); PUSH_VAR32(dst_X);
 		  PUSH_VAR32(src_Z); PUSH_VAR32(src_Y); PUSH_VAR32(src_X); CALL(0x704E40); }
 
-	int DistanceFrom(ObjectClass *that) const
+	int DistanceFrom(AbstractClass *that) const
 		{ JMP_THIS(0x5F6440); }
 
 
