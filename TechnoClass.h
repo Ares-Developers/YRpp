@@ -475,9 +475,9 @@ public:
 	TimerStruct      CloakDelayTimer; // delay before cloaking again
 	float            WarpFactor; // don't ask! set to 0 in CTOR, never modified, only used as ((this->Fetch_ID) + this->WarpFactor) % 400 for something in cloak ripple
 	bool             unknown_bool_250;
-	CoordStruct      unknown_point3d_254;
-	DWORD            unknown_260;
-	DWORD            unknown_264;
+	CoordStruct      LastSightCoords;
+	int              LastSightRange;
+	int              LastSightHeight;
 	bool             GapSuperCharged; // GapGenerator, when SuperGapRadiusInCells != GapRadiusInCells, you can deploy the gap to boost radius
 	bool             GeneratingGap; // is currently generating gap
 	int              GapRadius;
@@ -582,7 +582,7 @@ public:
 	bool             unknown_bool_41D;
 	bool             unknown_bool_41E;
 	bool             unknown_bool_41F;
-	bool             unknown_bool_420;
+	char             SightIncrease; // used for LeptonsPerSightIncrease
 	bool             RecruitableA; // these two are like Lenny and Carl, weird purpose and never seen separate
 	bool             RecruitableB; // they're usually set on preplaced objects in maps
 	bool             IsRadarTracked;
