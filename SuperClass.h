@@ -108,17 +108,17 @@ protected:
 
 public:
 
-	DWORD unknown_24;
+	int CustomChargeTime;
 	SuperWeaponTypeClass* Type;
 	HouseClass* Owner;
 	TimerStruct RechargeTimer;
 	DWORD unknown_3C;		//unused?
-	bool unknown_bool_40;
+	bool BlinkState;
 	DWORD unknown_44;		//unused?
 	DWORD unknown_48;
 	DWORD unknown_4C;
 	int SpecialSoundDuration; // see 0x6CD14F
-	CoordStruct SpecialSoundLocation;		//unused?
+	CoordStruct SpecialSoundLocation;
 	bool unknown_bool_60;          // 0x60
 	CellStruct ChronoMapCoords;  // 0x62
 	AnimClass * Animation;                // 0x68
@@ -128,7 +128,7 @@ public:
 	bool IsCharged;
 	bool IsOnHold;
 	int ReadinessFrame; // when did it become ready?
-	DWORD unknown_78;
+	int CameoChargeState;
 	ChargeDrainState::Value ChargeDrainState;
 };
 
