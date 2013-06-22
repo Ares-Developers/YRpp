@@ -1110,50 +1110,54 @@ typedef int eRank;
 #define	rank_Rookie		0x2
 
 
-typedef int eSequence;
-
-#define	seq_Ready		0x00
-#define	seq_Guard		0x01
-#define	seq_Prone		0x02
-#define	seq_Walk		0x03
-#define	seq_FireUp		0x04
-#define	seq_Down		0x05
-#define	seq_Crawl		0x06
-#define	seq_Up		0x07
-#define	seq_FireProne		0x08
-#define	seq_Idle1		0x09
-#define	seq_Idle2		0x0A
-#define	seq_Die1		0x0B
-#define	seq_Die2		0x0C
-#define	seq_Die3		0x0D
-#define	seq_Die4		0x0E
-#define	seq_Die5		0x0F
-#define	seq_Tread		0x10
-#define	seq_Swim		0x11
-#define	seq_WetIdle1		0x12
-#define	seq_WetIdle2		0x13
-#define	seq_WetDie1		0x14
-#define	seq_WetDie2		0x15
-#define	seq_WetAttack		0x16
-#define	seq_Hover		0x17
-#define	seq_Fly		0x18
-#define	seq_Tumble		0x19
-#define	seq_FireFly		0x1A
-#define	seq_Deploy		0x1B
-#define	seq_Deployed		0x1C
-#define	seq_DeployedFire		0x1D
-#define	seq_DeployedIdle		0x1E
-#define	seq_Undeploy		0x1F
-#define	seq_Cheer		0x20
-#define	seq_Paradrop		0x21
-#define	seq_AirDeathStart		0x22
-#define	seq_AirDeathFalling		0x23
-#define	seq_AirDeathFinish		0x24
-#define	seq_Panic		0x25
-#define	seq_Shovel		0x26
-#define	seq_Carry		0x27
-#define	seq_SecondaryFire		0x28
-#define	seq_SecondaryProne		0x29
+class Sequence {
+public:
+	typedef int Value;
+	enum {
+		Ready = 0,
+		Guard = 1,
+		Prone = 2,
+		Walk = 3,
+		FireUp = 4,
+		Down = 5,
+		Crawl = 6,
+		Up = 7,
+		FireProne = 8,
+		Idle1 = 9,
+		Idle2 = 10,
+		Die1 = 11,
+		Die2 = 12,
+		Die3 = 13,
+		Die4 = 14,
+		Die5 = 15,
+		Tread = 16,
+		Swim = 17,
+		WetIdle1 = 18,
+		WetIdle2 = 19,
+		WetDie1 = 20,
+		WetDie2 = 21,
+		WetAttack = 22,
+		Hover = 23,
+		Fly = 24,
+		Tumble = 25,
+		FireFly = 26,
+		Deploy = 27,
+		Deployed = 28,
+		DeployedFire = 29,
+		DeployedIdle = 30,
+		Undeploy = 31,
+		Cheer = 32,
+		Paradrop = 33,
+		AirDeathStart = 34,
+		AirDeathFalling = 35,
+		AirDeathFinish = 36,
+		Panic = 37,
+		Shovel = 38,
+		Carry = 39,
+		SecondaryFire = 40,
+		SecondaryProne = 41
+	};
+};
 
 
 typedef int eSequenceFacing;
