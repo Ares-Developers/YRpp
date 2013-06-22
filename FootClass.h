@@ -65,7 +65,7 @@ public:
 	virtual int GetCurrentSpeed() const R0;
 	virtual DWORD vt_entry_53C(DWORD dwUnk) R0;
 	virtual void vt_entry_540(DWORD dwUnk) RX;
-	virtual void vt_entry_544(DWORD dwUnk, DWORD dwUnk2) RX;
+	virtual void SetSpeedPercentage(double percentage) RX;
 	virtual void vt_entry_548() RX;
 	virtual void vt_entry_54C() RX;
 	virtual bool vt_entry_550(DWORD dwUnk) R0;
@@ -172,10 +172,7 @@ public:
 	TimerStruct     PathDelayTimer;
 	int             unknown_int_64C;
 	TimerStruct     unknown_timer_650;
-
-	PROTECTED_PROPERTY(BYTE,  unknown_65C[0x8]);
-
-	DWORD             unknown_664;
+	TimerStruct       SightTimer;
 	TimerStruct       BlockagePathTimer;
 	ILocomotion*      Locomotor;
 	CoordStruct       unknown_point3d_678;

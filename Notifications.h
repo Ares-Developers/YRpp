@@ -6,8 +6,8 @@
 class AbstractClass;
 
 // encapsulates a bunch of vectors that are used for announcing invalid pointers.
-// if an AbstractClass is contained in a type list it will be notified through
-// PointerExpired, whenever an object of thas type expires.
+// if an AbstractClass is contained in an list it will be notified through
+// PointerExpired whenever an object of that type expires.
 class PointerExpiredNotification {
 public:
 	static PointerExpiredNotification &NotifyInvalidObject; // Object class hierarchy

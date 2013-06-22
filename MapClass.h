@@ -313,8 +313,7 @@ public:
 	DWORD _padding_01;
 	DWORD _padding_02;
 	Crate Crates [0x100];
-//	bool unknown_bool_1158;
-	DynamicVectorClass<CellStruct> CellStructs2;
+	DynamicVectorClass<CellStruct> TaggedCells;
 
 };
 

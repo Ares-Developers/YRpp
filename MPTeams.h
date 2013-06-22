@@ -68,4 +68,16 @@ public:
 		{ JMP_THIS(0x5CAEB0); }
 };
 
+
+class MPObserverTeam : public MPTeam
+{
+public:
+	//Destructor
+	virtual ~MPObserverTeam() RX
+
+	//Constructor
+	MPObserverTeam()
+		{ JMP_THIS(0x5C9470); }
+};
+
 #endif
