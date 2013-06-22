@@ -34,23 +34,56 @@ public:
 	RadSiteClass(CellStruct nBaseCoords, int nSpread, int nRadLevel):AbstractClass(false)
 	{
 		THISCALL(0x65B1E0);
-		BaseCell = nBaseCoords;
-		Spread = nSpread;
-		Spread_Leptons = (nSpread << 8) + 0x80;
-
-		PUSH_VAR32(nRadLevel);
-		THISCALL(0x65B4F0);
+		SetBaseCell(&nBaseCoords);
+		SetSpread(nSpread);
+		SetRadLevel(nRadLevel);
 	}
 
 	//non-virtual
 public:
-	//Start irradiating an area. Be sure to set the BaseCell, Spread and RadLevel first!
+	// Start irradiating an area. Be sure to set the BaseCell, Spread and RadLevel first!
 	void Activate()
 		{ JMP_THIS(0x65B580); }
 
-	//Add this RadLevel to the current radiation.
+	// Remove the radiation effect of this site completely
+	void Deactivate()
+		{ JMP_THIS(0x65BB50); }
+
+	// Add this RadLevel to the current radiation.
 	void Add(int nRadLevel)
 		{ JMP_THIS(0x65B530); }
+
+	// Gets the current rad level (corresponds to the RadLevel at BaseCell).
+	int GetRadLevel()
+		{ JMP_THIS(0x65B510); }
+
+	// Gets the rad level applied by this RadSite to a certain cell.
+	int GetRadLevelAt(CellStruct* pCell)
+		{ JMP_THIS(0x65B8F0); }
+
+	// Sets the rad level and the appropriate duration values.
+	void SetRadLevel(int nRadLevel)
+		{ JMP_THIS(0x65B4F0); }
+
+	// Sets the center cell. Do not change when RadSite is activated.
+	void SetBaseCell(CellStruct* pCell)
+		{ JMP_THIS(0x65B4C0); }
+
+	// Gets the spread in cells.
+	void GetSpread()
+		{ JMP_THIS(0x65B4B0); }
+
+	// Sets the spread in cells. Also updates the SpreadInLeptons.
+	void SetSpread(int nCells)
+		{ JMP_THIS(0x65B4D0); }
+
+	//helper methods
+
+	// Gets the current strenght of the effect, the ratio between time left and initial duration.
+	double GetEffectPercentage() {
+		return (this->RadDuration <= 0) ? 0.0 :
+			(double)this->RadTimeLeft / (double)this->RadDuration;
+	}
 
 protected:
 	RadSiteClass() : AbstractClass(false) JMP_THIS(0x65B1E0);
@@ -62,22 +95,20 @@ protected:
 
 public:
 
-	LightSourceClass*    LightSource;
-	TimerStruct RadLevelTimer;
-	TimerStruct RadLightTimer;
-	CellStruct BaseCell;
-	int       Spread;	//CellSpread in cells.
-	int       Spread_Leptons;	//CellSpread in leptons.
-	int       RadLevel;
-	DWORD     unknown_50;
-	DWORD     unknown_54;
-	DWORD     unknown_58;	//unused?
-	DWORD     unknown_5C;	//unused?
-	DWORD     unknown_60;	//unused?
-	DWORD     unknown_64;
-	DWORD     unknown_68;
-	DWORD     RadLevel_Start;
-	DWORD     RadLevel_Current;
+	LightSourceClass* LightSource; // the light source attached to this instance
+	TimerStruct       RadLevelTimer; // used to count down RadLevelDelay
+	TimerStruct       RadLightTimer; // used to count down RadLightDelay
+	CellStruct        BaseCell; // center cell
+	int               Spread; // range in cells
+	int               SpreadInLeptons; // range in leptons
+	int               RadLevel; // the radiation level, 
+	int               LevelSteps; // cell's rad level reduced by (RadLevel/LevelSteps) every time RadLevelTimer elapses
+	int               Intensity; // the intensity at the beginning
+	TintStruct        Tint; // RadColor at the current level
+	int               IntensitySteps; // the number of intensity decreases during the duration
+	int               IntensityDecrement; // Intensity decremented by this every time RadLightDelay elapses
+	int               RadDuration; // as currently set up, the rad site will stay for so many frames
+	int               RadTimeLeft; // the remaining frames. divided by RadDuration gives the factor
 };
 
 #endif
