@@ -48,18 +48,14 @@ protected:
 
 public:
 
-	DWORD unknown_AC;
-	BYTE unknown_B0;
-	TimerStruct unknown_timer_B4;
-	DWORD unknown_C0;
-	DWORD unknown_C4;
+	int AnimationFrame; // the current animation frame
+	bool AnimationAdvanced; // if the animation timer expired this frame and the animation advanced
+	RepeatableTimerStruct AnimationTimer;
+	int AnimationFrameDelta; // added to AnimationFrame every time the animation timer expires
 	TerrainTypeClass* Type;
-	BYTE unknown_CC;
-	BYTE unknown_CD;
-	DWORD unknown_D0;
-	DWORD unknown_D4;
-	DWORD unknown_D8;
-	DWORD unknown_DC;
+	bool IsBurning; // this terrain object has been ignited
+	bool TimeToDie; // finish the animation and uninit
+	RectangleStruct unknown_rect_D0;
 
 };
 
