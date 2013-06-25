@@ -54,6 +54,17 @@ public:
 		JMP_THIS(0x421EA0);
 	}
 
+	void Pause() {
+		this->Paused = true;
+		this->Unpaused = false;
+		this->PausedAnimFrame = this->Animation.Value;
+	}
+
+	void Unpause() {
+		this->Paused = false;
+		this->Unpaused = true;
+	}
+
 protected:
 	AnimClass() : ObjectClass(false) { }
 
