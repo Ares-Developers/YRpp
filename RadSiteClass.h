@@ -49,6 +49,18 @@ public:
 	void Deactivate()
 		{ JMP_THIS(0x65BB50); }
 
+	// Add the radiation of this RadSite to the cells.
+	void Radiate()
+		{ JMP_THIS(0x65B9C0); }
+
+	// Decrease the radiation of this RadSite by one step.
+	void DecreaseRadiation()
+		{ JMP_THIS(0x65BD00); }
+
+	// Decrease the cell tint and intensity of this RadSite.
+	void DecreaseLight()
+		{ JMP_THIS(0x65BE90); }
+
 	// Add this RadLevel to the current radiation.
 	void Add(int nRadLevel)
 		{ JMP_THIS(0x65B530); }
