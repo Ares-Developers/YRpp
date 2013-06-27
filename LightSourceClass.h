@@ -41,6 +41,9 @@ public:
 	void Deactivate(DWORD dwZero = 0)	//Stop lighting
 		{ JMP_THIS(0x554A80); }
 
+	void ChangeLevels(int nIntensity, TintStruct Tint, char mode)
+		{ JMP_THIS(0x554AA0); }
+
 protected:
 	LightSourceClass() : AbstractClass(false) { }
 
@@ -52,7 +55,7 @@ public:
 
 	int LightIntensity;
 	TintStruct LightTint;
-	int unknown_int_30;
+	int DetailLevel;
 	CoordStruct Location;
 	int LightVisibility;
 	bool Activated;
