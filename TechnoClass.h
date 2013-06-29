@@ -265,10 +265,10 @@ public:
 	virtual void vt_entry_444(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5,
 		DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8, DWORD dwUnk9, DWORD dwUnk10) RX;
 	virtual void vt_entry_448(DWORD dwUnk, DWORD dwUnk2) RX;
-	virtual void DrawHealthBar(CoordStruct *Coords, RectangleStruct *Bounds, DWORD dwUnk3) RX;
-	virtual void DrawPipScalePips(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
-	virtual void DrawVeterancyPips(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
-	virtual void DrawExtraInfo(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
+	virtual void DrawHealthBar(Point2D *Location, RectangleStruct *Bounds, bool bUnk3) const RX;
+	virtual void DrawPipScalePips(Point2D *Location, Point2D *OriginalLocation, RectangleStruct *Bounds) const RX;
+	virtual void DrawVeterancyPips(Point2D *Location, RectangleStruct *Bounds) const RX;
+	virtual void DrawExtraInfo(Point2D *Location, Point2D *OriginalLocation, RectangleStruct *Bounds) const RX;
 	virtual void Uncloak(bool bPlaySound) RX;
 	virtual void Cloak(bool bPlaySound) RX;
 	virtual DWORD vt_entry_464(DWORD dwUnk) const R0;
