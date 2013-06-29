@@ -25,7 +25,10 @@ public:
 	static void* __fastcall LoadFile(const char* pFileName, bool bLoadAsSHP)
 		{ JMP_STD(0x5B40B0); }
 
+	static SHPStruct *&PIPBRD_SHP;
 	static SHPStruct *&PIPS_SHP;
+	static SHPStruct *&PIPS2_SHP;
+	static SHPStruct *&TALKBUBL_SHP;
 
 	static ConvertClass *&CAMEO_PAL;
 	static ConvertClass *&UNITx_PAL;

@@ -116,7 +116,10 @@ DECL(EMPulseClass, 0x8A3870);
 DECL(FactoryClass, 0xA83E30);
 
 #include <FileSystem.h>
+ALIAS(SHPStruct *, FileSystem::PIPBRD_SHP, 0xAC1478);
 ALIAS(SHPStruct *, FileSystem::PIPS_SHP, 0xAC147C);
+ALIAS(SHPStruct *, FileSystem::PIPS2_SHP, 0xAC1480);
+ALIAS(SHPStruct *, FileSystem::TALKBUBL_SHP, 0xAC1484);
 ALIAS(ConvertClass *, FileSystem::CAMEO_PAL, 0x87F6B0);
 ALIAS(ConvertClass *, FileSystem::UNITx_PAL, 0x87F6B4);
 ALIAS(ConvertClass *, FileSystem::x_PAL, 0x87F6B8);
