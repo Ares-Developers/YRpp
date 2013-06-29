@@ -20,15 +20,14 @@ public:
 	static ColorStruct &TooltipColor;
 
 	//TextBox dimensions for tooltip-style boxes
-	static RectangleStruct GetTextBox(const wchar_t* pText, int nX, int nY, int nMargin)
+	static RectangleStruct GetTextBox(const wchar_t* pText, int nX, int nY, DWORD flags, int nMarginX, int nMarginY)
 		{
 			RectangleStruct box;
 			RectangleStruct* p_box=&box;
 
-			int ymarg=nMargin+2;
-			PUSH_IMM(nMargin);		//X Margin
-			PUSH_IMM(ymarg);		//Y Margin - should add 2, because X margin adds to 2 internally!
-			PUSH_IMM(0);			//X Offset
+			PUSH_VAR32(nMarginY);		//X Margin
+			PUSH_VAR32(nMarginX);		//Y Margin - should add 2, because X margin adds to 2 internally!
+			PUSH_VAR32(flags);
 			PUSH_VAR32(nY);
 			PUSH_VAR32(nX);
 			SET_REG32(edx,pText);
@@ -37,6 +36,9 @@ public:
 
 			return box;
 		}
+
+	static RectangleStruct GetTextBox(const wchar_t* pText, int nX, int nY, int nMargin)
+		{ return GetTextBox(pText, nX, nY, 0, nMargin + 2, nMargin); }
 
 	static RectangleStruct GetTextBox(const wchar_t* pText, int nX, int nY)
 		{ return GetTextBox(pText, nX, nY, 2); }
