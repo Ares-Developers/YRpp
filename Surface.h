@@ -210,20 +210,15 @@ public:
 
 			{ JMP_STD(0x4AED70); }
 
-
-	void DrawText(const wchar_t* pText,Point2D* pPoint,DWORD dwColor)
+	void DrawText(const wchar_t* pText, RectangleStruct *pBounds, Point2D *pLocation, DWORD dwColor, DWORD unknown5, DWORD flags)
 	{
 		Point2D tmp = {0, 0};
 
-		RectangleStruct rect = {0, 0, 0, 0};
-		PUSH_PTR(rect);
-		THISCALL(0x411510);
-
-		PUSH_IMM(0x16);		//???
-		PUSH_IMM(0);		//???
+		PUSH_VAR32(flags);
+		PUSH_VAR32(unknown5);		//???
 		PUSH_VAR32(dwColor);
-		PUSH_VAR32(pPoint);
-		PUSH_PTR(rect);
+		PUSH_VAR32(pLocation);
+		PUSH_VAR32(pBounds);
 		PUSH_VAR32(this);
 		PUSH_VAR32(pText);
 		PUSH_PTR(tmp);
@@ -231,6 +226,16 @@ public:
 
 		ADD_ESP(0x20);
 	}
+
+	void DrawText(const wchar_t* pText, Point2D* pLoction, DWORD dwColor)
+	{
+		RectangleStruct rect = {0, 0, 0, 0};
+		PUSH_PTR(rect);
+		THISCALL(0x411510);
+
+		DrawText(pText, &rect, pLoction, dwColor, 0, 0x16);
+	}
+
 	void DrawText(const wchar_t* pText,int X,int Y,DWORD dwColor)
 	{
 		Point2D P = {X ,Y};
