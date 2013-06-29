@@ -62,6 +62,22 @@ public:
 			return dim;
 		}
 
+	// Rectangles
+	static RectangleStruct Intersect(RectangleStruct* rect1, RectangleStruct* rect2, int* delta_left, int* delta_top)
+	{
+			RectangleStruct box;
+			RectangleStruct* p_box=&box;
+
+			PUSH_VAR32(delta_top);
+			PUSH_VAR32(delta_left);
+			PUSH_VAR32(rect2);
+			SET_REG32(edx,rect1);
+			SET_REG32(ecx,p_box);
+			CALL(0x421B60);
+
+			return box;
+	}
+
 	//Stuff
 
 	// RGB
