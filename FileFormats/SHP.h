@@ -16,7 +16,7 @@ struct SHPStruct
 	SHPStruct*	Next;
 	SHPStruct*	Prev;
 
-	RectangleStruct *GetFrameHeader(RectangleStruct *buf, unsigned int FrameIndex)
+	RectangleStruct *GetFrameBounds(RectangleStruct *buf, unsigned int FrameIndex)
 		{ JMP_THIS(0x69E7E0); }
 
 	bool HasCompression(int frameIdx)
