@@ -135,12 +135,12 @@ public:
 	virtual void UnInit() RX;
 	virtual void Uncloak2() RX;// just calls this->Uncloak(0) on TechnoClass and higher
 	virtual int KickOutUnit(TechnoClass* pTechno, CellStruct *pCell) R0;
-	virtual bool DrawIfVisible(RectangleStruct *VisibleArea, bool EvenIfCloaked, DWORD dwUnk3) R0;
+	virtual bool DrawIfVisible(RectangleStruct *pBounds, bool EvenIfCloaked, DWORD dwUnk3) const R0;
 	virtual CellStruct * GetFoundationData(bool IncludeBib) const R0;
-	virtual void vt_entry_10C(DWORD dwUnk, DWORD dwUnk2) RX;
-	virtual void DrawExtras(DWORD dwUnk, DWORD dwUnk2) RX; // draws ivan bomb, health bar, talk bubble, etc
-	virtual void Draw(Point2D* pCoords, DWORD dwUnk) RX;
-	virtual void DrawAgain(Point2D* pCoords, DWORD dwUnk) RX; // just forwards the call to Draw
+	virtual void DrawBehind(Point2D* pLocation, RectangleStruct* pBounds) const RX;
+	virtual void DrawExtras(Point2D* pLocation, RectangleStruct* pBounds) const RX; // draws ivan bomb, health bar, talk bubble, etc
+	virtual void Draw(Point2D* pLocation, RectangleStruct* pBounds) const RX;
+	virtual void DrawAgain(Point2D* pLocation, RectangleStruct* pBounds) const RX; // just forwards the call to Draw
 	virtual void Undiscover() RX;
 	virtual void See(DWORD dwUnk, DWORD dwUnk2) RX;
 	virtual bool UpdatePlacement(PlacementType::Value value) R0;
