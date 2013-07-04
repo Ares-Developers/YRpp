@@ -309,6 +309,15 @@ DECL(SpotlightClass, 0xAC1678);
 
 #include <StringTable.h>
 ALIAS(CSFString *, StringTable::LastLoadedString, 0xB1CF88);
+ALIAS(int, StringTable::MaxLabelLen, 0xB1CF58);
+ALIAS(int, StringTable::LabelCount, 0xB1CF6C);
+ALIAS(int, StringTable::ValueCount, 0xB1CF70);
+ALIAS(int, StringTable::Language, 0x845728);
+ALIAS(bool, StringTable::IsLoaded, 0xB1CF80);
+ALIAS(char*, StringTable::FileName, 0xB1CF68);
+ALIAS(CSFLabel*, StringTable::Labels, 0xB1CF74);
+ALIAS(wchar_t**, StringTable::Values, 0xB1CF78);
+ALIAS(char**, StringTable::ExtraValues, 0xB1CF7C);
 
 #include <SuperClass.h>
 ALIAS(CellStruct, SuperClass::DefaultCoords, 0xB0C000);

@@ -55,49 +55,15 @@ class StringTable
 {
 public:
 	static CSFString * &LastLoadedString;
-
-	static int get_MaxLabelLen()
-		{ return *((int*)0xB1CF58); }
-	static int set_MaxLabelLen(int new_MaxLabelLen)
-		{ *((int*)0xB1CF58) = new_MaxLabelLen; }
-
-	static char* get_FileName()
-		{ return *((char**)0xB1CF68); }
-
-	static int get_LabelCount()
-		{ return *((int*)0xB1CF6C); }
-	static void set_LabelCount(int new_LabelCount)
-		{ *((int*)0xB1CF6C) = new_LabelCount; }
-
-	static int get_ValueCount()
-		{ return *((int*)0xB1CF70); }
-	static void set_ValueCount(int new_ValueCount)
-		{ *((int*)0xB1CF70) = new_ValueCount; }
-
-	static int get_Language()
-		{ return *((int*)0x845728); }
-	static void set_Language(int new_Language)
-		{ *((int*)0x845728) = new_Language; }
-
-	static bool is_Loaded()
-		{ return *((bool*)0xB1CF80); }
-	static void set_Loaded(bool new_Loaded)
-		{ *((bool*)0xB1CF80) = new_Loaded; }
-
-	static CSFLabel* get_Labels()
-		{ return *((CSFLabel**)0xB1CF74); }
-	static void set_Labels(CSFLabel* new_Labels) //do NOT play with this!
-		{ *((CSFLabel**)0xB1CF74) = new_Labels; }
-
-	static wchar_t** get_Values()
-		{ return *((wchar_t***)0xB1CF78); }
-	static void set_Values(wchar_t** new_Values) //do NOT play with this!
-		{ *((wchar_t***)0xB1CF78) = new_Values; }
-
-	static char** get_ExtraValues()
-		{ return *((char***)0xB1CF7C); }
-	static void set_ExtraValues(char** new_ExtraValues) //do NOT play with this!
-		{ *((char***)0xB1CF7C) = new_ExtraValues; }
+	static int &MaxLabelLen;
+	static int &LabelCount;
+	static int &ValueCount;
+	static int &Language;
+	static bool &IsLoaded;
+	static char* &FileName;
+	static CSFLabel* &Labels;
+	static wchar_t** &Values;
+	static char** &ExtraValues;
 
 	static const wchar_t* __fastcall LoadString(
 		const char* pLabel,
