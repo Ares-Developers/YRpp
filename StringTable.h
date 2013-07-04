@@ -51,6 +51,14 @@ struct CSFString
 	}
 };
 
+struct CSFLanguage
+{
+	int Index; // one of the language constants
+	char* Name; // the display name
+	char* Short; // two letter language code
+	char* Letter; // one letter language code
+};
+
 class StringTable
 {
 public:
@@ -76,6 +84,14 @@ public:
 		{ JMP_STD(0x7346A0); }
 	static bool __fastcall ReadFile(const char* pFileName)
 		{ JMP_STD(0x734990); }
+
+	static CSFLanguage* __fastcall GetLanguage(int language)
+		{ JMP_STD(0x734640); }
+	static const char* __fastcall GetLanguageName(int language)
+		{ JMP_STD(0x734670); }
+
+	static void Unload()
+		{ JMP_STD(0x734D30); }
 };
 
 #endif
