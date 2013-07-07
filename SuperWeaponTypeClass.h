@@ -59,10 +59,10 @@ public:
 	WeaponTypeClass* WeaponType;
 
 	//I believe these four are the leftover TS sounds
-	int     unknown_A0;
-	int     unknown_A4;
-	int     unknown_A8;
-	int     unknown_AC;
+	int     RechargeVoice; // not read, unused
+	int     ChargingVoice; // not read, unused
+	int     ImpatientVoice; // not read, unused
+	int     SuspendVoice; // not read, unused
 	//---
 
 	int     RechargeTime; //in frames
