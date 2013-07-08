@@ -33,13 +33,13 @@ public:
 	void Disarm()
 		{ JMP_THIS(0x4389B0); }
 
-	void IsDeathBomb() const
+	BOOL IsDeathBomb() const
 		{ JMP_THIS(0x4389F0); }
 
-	void GetCurrentFlickerFrame() const // which frame of the ticking bomb to draw
+	int GetCurrentFlickerFrame() const // which frame of the ticking bomb to draw
 		{ JMP_THIS(0x438A00); }
 
-	void TimeToExplode()
+	bool TimeToExplode() const
 		{ JMP_THIS(0x438A70); }
 
 
@@ -57,13 +57,13 @@ public:
 	TechnoClass* OwnerObject;		//Most likely Ivan.
 	HouseClass* OwnerHouse;
 	TechnoClass* TargetUnit;
-	DWORD DeathBomb; // unused - if so, [General]CanDetonateDeathBomb applies instead of CanDetonateTimeBomb
+	BOOL DeathBomb; // unused - if so, [General]CanDetonateDeathBomb applies instead of CanDetonateTimeBomb
 	int PlantingFrame;
 	int DetonationFrame;
 	AudioController Audio;
 	int TickSound;
-	DWORD ShouldPlayTickingSound; // seems so
-	byte Harmless; // (mostly) set to 0 on plant, 1 on detonation/removal ?
+	BOOL ShouldPlayTickingSound; // seems so
+	bool Harmless; // (mostly) set to 0 on plant, 1 on detonation/removal ?
 };
 
 #endif
