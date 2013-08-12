@@ -6,6 +6,8 @@
 #include <YRMathVector.h>
 #include <GeneralDefinitions.h> // need eDirection for FacingStruct
 
+#include <string.h>
+
 //used for cell coordinates/vectors
 #ifndef VECTORSTRUCTS
 #define VECTORSTRUCTS
@@ -225,6 +227,24 @@ struct BasePlanningCellContainer {
 	// for qsort
 	static int __cdecl Comparator(const void *, const void *)
 		{ JMP_STD(0x5108F0); }
+};
+
+// combines number and a string
+struct NamedValue {
+	const char* Name;
+	int Value;
+
+	bool operator == (int value) const {
+		return this->Value == value;
+	}
+
+	bool operator == (const char* name) const {
+		return !_strcmpi(this->Name, name);
+	}
+
+	bool operator == (const NamedValue& other) const {
+		return this->Value == other.Value && *this == other.Name;
+	}
 };
 
 #endif

@@ -3,6 +3,7 @@
 
 #include <Interfaces.h>
 #include <GeneralDefinitions.h>
+#include <GeneralStructures.h>
 #include <ArrayClasses.h>
 
 //forward declarations
@@ -50,16 +51,10 @@ public:
 
 	static const char* GetClassName(eAbstractType abs)
 	{
-		struct AbsTypeNameAssignment
+		NamedValue* ass;
+		for(ass = (NamedValue*)0x816EE0; ass < (NamedValue*)0x817130; ass++)
 		{
-			char* Name;
-			eAbstractType AbsType;
-		};
-
-		AbsTypeNameAssignment* ass;
-		for(ass = (AbsTypeNameAssignment*)0x816EE0; ass < (AbsTypeNameAssignment*)0x817130; ass++)
-		{
-			if(ass->AbsType == abs) {
+			if(ass->Value == abs) {
 				return ass->Name;
 			}
 		}
