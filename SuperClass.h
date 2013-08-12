@@ -112,21 +112,23 @@ public:
 	SuperWeaponTypeClass* Type;
 	HouseClass* Owner;
 	TimerStruct RechargeTimer;
-	DWORD unknown_3C;		//unused?
+	PROTECTED_PROPERTY(DWORD, unused_3C);
 	bool BlinkState;
-	DWORD unknown_44;		//unused?
-	DWORD unknown_48;
-	DWORD unknown_4C;
+	PROTECTED_PROPERTY(BYTE, unused_41[7]);
+	LARGE_INTEGER BlinkTimer;
 	int SpecialSoundDuration; // see 0x6CD14F
 	CoordStruct SpecialSoundLocation;
 	bool unknown_bool_60;          // 0x60
+	PROTECTED_PROPERTY(BYTE, unused_61);
 	CellStruct ChronoMapCoords;  // 0x62
+	PROTECTED_PROPERTY(BYTE, unused_66[2]);
 	AnimClass * Animation;                // 0x68
 	bool AnimationGotInvalid;
 	bool Granted;
 	bool Quantity; // Stupidity - 0 means unlimited, 1 means one-shot
 	bool IsCharged;
 	bool IsOnHold;
+	PROTECTED_PROPERTY(BYTE, unused_71[3]);
 	int ReadinessFrame; // when did it become ready?
 	int CameoChargeState;
 	ChargeDrainState::Value ChargeDrainState;
