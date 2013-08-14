@@ -56,7 +56,7 @@ struct RocketStruct
 	bool LazyCurve;
 	AircraftTypeClass* Type;
 
-	void operator = (RocketStruct& Rocket)
+	void operator = (const RocketStruct& Rocket)
 	{
 		PauseFrames = Rocket.PauseFrames;
 		TiltFrames = Rocket.TiltFrames;
