@@ -82,7 +82,7 @@ public:
 	bool HouseCredits(HouseClass *CallingHouse, HouseClass *TargetHouse) const
 		{ JMP_THIS(0x41F230); }
 
-	void FormatForSaving(char * buffer) const {
+	void FormatForSaving(char * buffer, size_t size) const {
 		const char *Team1Name = "<none>";
 		const char *Team2Name = "<none>";
 		const char *HouseName = "<none>";
@@ -116,14 +116,14 @@ public:
 		char * condStr = ConditionString;
 		byte *buf = (byte *)&this->Conditions;
 		do {
-			sprintf(condStr, "%02x", *buf);
+			sprintf_s(condStr, 4, "%02x", *buf);
 			++buf;
 			++idx;
 			condStr += 2;
 		} while(idx < 0x20 );
 		*condStr = '\0';
 
-		sprintf(buffer, "%s = %s,%s,%s,%d,%d,%s,%s,%lf,%lf,%lf,%d,%d,%d,%d,%s,%d,%d,%d\n",
+		sprintf_s(buffer, size, "%s = %s,%s,%s,%d,%d,%s,%s,%lf,%lf,%lf,%d,%d,%d,%d,%s,%d,%d,%d\n",
 			this->ID,
 			this->Name,
 			Team1Name,
