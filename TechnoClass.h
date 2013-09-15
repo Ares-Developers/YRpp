@@ -53,7 +53,7 @@ struct VeterancyStruct
 	bool IsNegative() const
 		{ JMP_THIS(0x74FFF0); }
 
-	eRank GetRemainingLevel() const
+	Rank::Value GetRemainingLevel() const
 		{ JMP_THIS(0x750030); }
 
 	void Reset()
@@ -426,7 +426,7 @@ public:
 	AnimClass*       DeployAnim;
 	bool             InAir;
 	int              CurrentWeaponNumber; // for IFV/gattling
-	int              CurrentRanking; //see RANK definitons, only used for promotion detection
+	Rank::Value      CurrentRanking; //see RANK definitons, only used for promotion detection
 	int              CurrentGattlingStage;
 	int              GattlingValue; // sum of RateUps and RateDowns
 	DWORD            unknown_148;

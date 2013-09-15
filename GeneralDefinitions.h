@@ -1112,13 +1112,16 @@ public:
 	};
 };
 
-typedef int eRank;
-
-#define	rank_Invalid		-0x1
-#define	rank_Elite		0x0
-#define	rank_Veteran		0x1
-#define	rank_Rookie		0x2
-
+class Rank {
+public:
+	typedef int Value;
+	enum {
+		Invalid = -1,
+		Elite = 0,
+		Veteran = 1,
+		Rookie = 2
+	};
+};
 
 class Sequence {
 public:
