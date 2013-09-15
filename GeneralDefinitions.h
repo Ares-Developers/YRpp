@@ -1169,18 +1169,20 @@ public:
 	};
 };
 
-
-typedef int eSequenceFacing;
-
-#define	st_N		0x0
-#define	st_NE		0x1
-#define	st_E		0x2
-#define	st_SE		0x3
-#define	st_S		0x4
-#define	st_SW		0x5
-#define	st_W		0x6
-#define	st_NW		0x7
-
+class SequenceFacing {
+public:
+	typedef int Value;
+	enum {
+		N = 0,
+		NE = 1,
+		E = 2,
+		SE = 3,
+		S = 4,
+		SW = 5,
+		W = 6,
+		NW = 7
+	};
+};
 
 class SpeedType {
 public:
