@@ -1394,13 +1394,16 @@ public:
 	};
 };
 
-typedef int eWaveType;
-
-#define wave_Sonic 0x0
-#define wave_Laser 0x1
-#define wave_BigLaser 0x2
-#define wave_Magnetron 0x3
-
+class WaveType {
+public:
+	typedef int Value;
+	enum {
+		Sonic = 0,
+		Laser = 1,
+		BigLaser = 2,
+		Magnetron = 3
+	};
+};
 
 class TargetType {
 public:

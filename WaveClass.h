@@ -51,7 +51,7 @@ protected:
 public:
 
 	TechnoClass* Target;
-	eWaveType Type;
+	WaveType::Value Type;
 	Point2D someCoords;
 	DWORD field_BC;
 	DWORD field_C0;
