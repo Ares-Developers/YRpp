@@ -968,6 +968,16 @@ public:
 	};
 };
 
+class NukeFlashStatus {
+public:
+	typedef unsigned int Value;
+	enum {
+		Inactive = 0,
+		FadeIn = 1,
+		FadeOut = 2
+	};
+};
+
 class ChargeDrainState {
 public:
 	typedef int Value;
