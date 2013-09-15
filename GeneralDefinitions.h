@@ -1194,15 +1194,18 @@ typedef int eSpeedType;
 #define	st_FloatBeach		0x7
 
 
-typedef int eTheater;
-
-#define	th_Temperate		0x0
-#define	th_Snow		0x1
-#define	th_Urban		0x2
-#define	th_Desert		0x3
-#define	th_NewUrban		0x4
-#define	th_Lunar		0x5
-
+class TheaterType {
+public:
+	typedef int Value;
+	enum {
+		Temperate = 0,
+		Snow = 1,
+		Urban = 2,
+		Desert = 3,
+		NewUrban = 4,
+		Lunar = 5,
+	};
+};
 
 //typedef int eVisualType;
 class VisualType {
