@@ -93,7 +93,7 @@ public:
 
 	//AbstractClass
 	virtual void Init() RX;
-	virtual void PointerExpired(void* p,bool bUnknown) RX;
+	virtual void PointerExpired(void* p, bool removed) RX;
 	virtual eAbstractType WhatAmI() const = 0;
 	virtual int Size() const = 0;
 	virtual void CalculateChecksum(Checksummer* pChkSum) const RX;
@@ -113,7 +113,7 @@ public:
 		{ JMP_THIS(0x410170); }
 
 	//non-virtual
-	void AnnounceExpiredPointer(BOOL unk=1)
+	void AnnounceExpiredPointer(bool removed=true)
 		{ JMP_THIS(0x7258D0); }
 
 protected:
