@@ -140,49 +140,17 @@ public:
 	static CoordStruct &EmptyCoords;
 	static double &CloudHeightFactor;
 
+	static CellStruct &Coords;
+	static HouseClass* &Owner;
+	static int &Deferment;
+	static int &Duration;
+	static int &StartTime;
+	static bool &Active;
+	static bool &TimeToEnd;
+
 	static DynamicVectorClass<AnimClass*>* CloudsPresent;
 	static DynamicVectorClass<AnimClass*>* CloudsManifesting;
 	static DynamicVectorClass<AnimClass*>* BoltsPresent;
-
-	static CellStruct Coords()
-		{ CellStruct retval; MEM_READ32(retval, 0xA9F9CC); return retval; }
-	static void Coords(CellStruct value)
-		{ MEM_WRITE32(0xA9F9CC, value); }
-
-	static HouseClass *Owner()
-		{ HouseClass *retval; MEM_READ32(retval, 0xA9FACC); return retval; }
-	static void Owner(HouseClass *value)
-		{ MEM_WRITE32(0xA9FACC, value); }
-
-	static int Deferment()
-		{ int retval; MEM_READ32(retval, 0xA9FAB8); return retval; }
-	static void Deferment(int value)
-		{ MEM_WRITE32(0xA9FAB8, value); }
-
-	static int Duration()
-		{ int retval; MEM_READ32(retval, 0x827FC4); return retval; }
-	static void Duration(int value)
-		{ MEM_WRITE32(0x827FC4, value); }
-
-	static int Status()
-		{ int retval; MEM_READ32(retval, 0xA9FABC); return retval; }
-	static void Status(int value)
-		{ MEM_WRITE32(0xA9FABC, value); }
-
-	static int StartTime()
-		{ int retval; MEM_READ32(retval, 0x827FC0); return retval; }
-	static void StartTime(int value)
-		{ MEM_WRITE32(0x827FC0, value); }
-
-	static byte Active()
-		{ byte retval; MEM_READ8(retval, 0xA9FAB4); return retval; }
-	static void Active(byte value)
-		{ MEM_WRITE8(0xA9FAB4, value); }
-
-	static byte TimeToEnd()
-		{ byte retval; MEM_READ8(retval, 0xA9FAD0); return retval; }
-	static void TimeToEnd(byte value)
-		{ MEM_WRITE8(0xA9FAD0, value); }
 
 	static void Start(int Duration, int Deferment, CellStruct Coords, HouseClass *pOwner)
 		{ PUSH_VAR32(pOwner); PUSH_VAR32(Coords); SET_REG32(EDX, Deferment); SET_REG32(ECX, Duration);
@@ -192,7 +160,7 @@ public:
 		{ CALL(0x53A090); }
 
 	static bool HasDeferment()
-		{ return Active() && Deferment() > 0; }
+		{ CALL(0x53A0E0); }
 
 	static void Strike(CellStruct Coords)
 		{ PUSH_VAR32(Coords); CALL(0x53A140); }
