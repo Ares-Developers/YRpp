@@ -175,25 +175,10 @@ public:
 class PsyDom
 {
 public:
-	static CellStruct Coords()
-		{ CellStruct retval; MEM_READ32(retval, 0xA9FA48); return retval; }
-	static void Coords(CellStruct value)
-		{ MEM_WRITE32(0xA9FA48, value); }
-
-	static HouseClass *Owner()
-		{ HouseClass *retval; MEM_READ32(retval, 0xA9FAC8); return retval; }
-	static void Owner(HouseClass* value)
-		{ MEM_WRITE32(0xA9FAC8, value); }
-
-	static AnimClass *Anim()
-		{ AnimClass *retval; MEM_READ32(retval, 0xA9FAC4); return retval; }
-	static void Anim(AnimClass* value)
-		{ MEM_WRITE32(0xA9FAC4, value); }
-
-	static int Status()
-		{ int retval; MEM_READ32(retval, 0xA9FAC0); return retval; }
-	static void Status(int value)
-		{ MEM_WRITE32(0xA9FAC0, value); }
+	static PsychicDominatorStatus::Value &Status;
+	static CellStruct &Coords;
+	static HouseClass* &Owner;
+	static AnimClass* &Anim;
 
 	static void Start(HouseClass *pOwner, CellStruct Coords)
 		{ PUSH_VAR32(Coords); SET_REG32(ECX, pOwner);

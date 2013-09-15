@@ -333,6 +333,10 @@ ALIAS(bool, LightningStorm::TimeToEnd, 0xA9FAD0);
 ALIAS_O(DynamicVectorClass<AnimClass*>*, LightningStorm::CloudsPresent, 0xA9F9D0);
 ALIAS_O(DynamicVectorClass<AnimClass*>*, LightningStorm::CloudsManifesting, 0xA9FA60);
 ALIAS_O(DynamicVectorClass<AnimClass*>*, LightningStorm::BoltsPresent, 0xA9FA18);
+ALIAS(PsychicDominatorStatus::Value, PsyDom::Status, 0xA9FAC0);
+ALIAS(CellStruct, PsyDom::Coords, 0xA9FA48);
+ALIAS(HouseClass*, PsyDom::Owner, 0xA9FAC8);
+ALIAS(AnimClass*, PsyDom::Anim, 0xA9FAC4);
 
 #include <SuperWeaponTypeClass.h>
 DECL(SuperWeaponTypeClass, 0xA8E330);
