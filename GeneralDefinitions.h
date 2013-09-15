@@ -957,14 +957,14 @@ public:
 
 class PsychicDominatorStatus {
 public:
-	typedef unsigned char Value;
+	typedef unsigned int Value;
 	enum {
-		Inactive = 0x0,
-		FirstAnim = 0x1,
-		Fire = 0x2,
-		SecondAnim = 0x3,
-		Reset = 0x4,
-		Over = 0x5
+		Inactive = 0,
+		FirstAnim = 1,
+		Fire = 2,
+		SecondAnim = 3,
+		Reset = 4,
+		Over = 5
 	};
 };
 
