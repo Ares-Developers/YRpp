@@ -41,7 +41,7 @@ public:
 		{ JMP_THIS(0x71AE50); }
 
 	// hardcoded to accumulate only up to 50 helpers
-	int GetWarpPerStep( int nHelperCount ) const
+	int GetWarpPerStep( int nHelperCount = 0 ) const
 		{ JMP_THIS(0x71AB10); }
 
 	void LetGo()
