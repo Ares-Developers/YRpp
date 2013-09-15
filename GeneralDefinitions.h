@@ -1391,6 +1391,26 @@ typedef int eWaveType;
 #define wave_Magnetron 0x3
 
 
+class TargetType {
+public:
+	typedef unsigned int Value;
+	enum {
+		None = 0,
+		Anything = 1,
+		Buildings = 2,
+		Harvesters = 3,
+		Infantry = 4,
+		Vehicles = 5,
+		Factories = 6,
+		BaseDefenses = 7,
+		// unknown = 8,
+		Power = 9,
+		Occupiable = 10,
+		TechBuildings = 11
+	};
+};
+
+
 typedef int eTargetFlags;
 
 #define	ttf_0x1		0x1
