@@ -337,6 +337,8 @@ ALIAS(PsychicDominatorStatus::Value, PsyDom::Status, 0xA9FAC0);
 ALIAS(CellStruct, PsyDom::Coords, 0xA9FA48);
 ALIAS(HouseClass*, PsyDom::Owner, 0xA9FAC8);
 ALIAS(AnimClass*, PsyDom::Anim, 0xA9FAC4);
+ALIAS(int, ChronoScreenEffect::Status, 0xA9FAB0);
+ALIAS(int, ChronoScreenEffect::Duration, 0xA9FA98);
 
 #include <SuperWeaponTypeClass.h>
 DECL(SuperWeaponTypeClass, 0xA8E330);

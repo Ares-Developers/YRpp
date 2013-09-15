@@ -200,15 +200,8 @@ public:
 class ChronoScreenEffect
 {
 public:
-	static int Status()
-		{ int retval; MEM_READ32(retval, 0xA9FAB0); return retval; }
-	static void Status(int value)
-		{ MEM_WRITE32(0xA9FAB0, value); }
-
-	static int Duration()
-		{ int retval; MEM_READ32(retval, 0xA9FA98); return retval; }
-	static void Duration(int value)
-		{ MEM_WRITE32(0xA9FA98, value); }
+	static int &Status;
+	static int &Duration;
 
 	static void Start(int duration)
 		{ SET_REG32(ECX, duration);
