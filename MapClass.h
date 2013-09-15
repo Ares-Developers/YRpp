@@ -146,7 +146,7 @@ public:
 		{ JMP_THIS(0x578080); }
 
 	CellStruct * PickCellOnEdge(CellStruct* buffer, eEdge Edge, CellStruct *CurrentLocation, CellStruct *Fallback,
-		eSpeedType SpeedType, bool ValidateReachability, eMovementZone MovZone)
+		SpeedType::Value SpeedType, bool ValidateReachability, eMovementZone MovZone)
 			{ JMP_THIS(0x4AA440); }
 
 // Pathfinding voodoo

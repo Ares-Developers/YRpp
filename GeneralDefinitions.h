@@ -1182,17 +1182,20 @@ typedef int eSequenceFacing;
 #define	st_NW		0x7
 
 
-typedef int eSpeedType;
-
-#define	st_Foot		0x0
-#define	st_Track		0x1
-#define	st_Wheel		0x2
-#define	st_Hover		0x3
-#define	st_Winged		0x4
-#define	st_Float		0x5
-#define	st_Amphibious		0x6
-#define	st_FloatBeach		0x7
-
+class SpeedType {
+public:
+	typedef int Value;
+	enum {
+		Foot = 0,
+		Track = 1,
+		Wheel = 2,
+		Hover = 3,
+		Winged = 4,
+		Float = 5,
+		Amphibious = 6,
+		FloatBeach = 7
+	};
+};
 
 class TheaterType {
 public:

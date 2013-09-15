@@ -85,7 +85,7 @@ public:
 	void BlowUpBridge()
 		{ JMP_THIS(0x47DD70); }
 
-	bool CanThisExistHere(eSpeedType SpeedType, BuildingTypeClass *Object, HouseClass* Owner) const
+	bool CanThisExistHere(SpeedType::Value SpeedType, BuildingTypeClass *Object, HouseClass* Owner) const
 		{ JMP_THIS(0x47C620); }
 
 	// those unks are passed to TechnoClass::Scatter in that same order
