@@ -217,15 +217,21 @@ public:
 class NukeFlash
 {
 public:
-	static int StartTime()
-		{ int retval; MEM_READ32(retval, 0x827FC8); return retval; }
-	static void StartTime(int value)
-		{ MEM_WRITE32(0x827FC8, value); }
+	static NukeFlashStatus::Value &Status;
+	static int &StartTime;
+	static int &Duration;
 
-	static int Duration()
-		{ int retval; MEM_READ32(retval, 0x827FCC); return retval; }
-	static void Duration(int value)
-		{ MEM_WRITE32(0x827FCC, value); }
+	static void FadeIn()
+		{ CALL(0x53AB70); }
+
+	static void FadeOut()
+		{ CALL(0x53AC50); }
+
+	static bool IsFadingIn()
+		{ CALL(0x53A110); }
+
+	static bool IsFadingOut()
+		{ CALL(0x53A120); }
 };
 
 #endif

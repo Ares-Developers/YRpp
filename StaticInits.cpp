@@ -339,6 +339,9 @@ ALIAS(HouseClass*, PsyDom::Owner, 0xA9FAC8);
 ALIAS(AnimClass*, PsyDom::Anim, 0xA9FAC4);
 ALIAS(int, ChronoScreenEffect::Status, 0xA9FAB0);
 ALIAS(int, ChronoScreenEffect::Duration, 0xA9FA98);
+ALIAS(NukeFlashStatus::Value, NukeFlash::Status, 0xA9FABC);
+ALIAS(int, NukeFlash::StartTime, 0x827FC8);
+ALIAS(int, NukeFlash::Duration, 0x827FCC);
 
 #include <SuperWeaponTypeClass.h>
 DECL(SuperWeaponTypeClass, 0xA8E330);
