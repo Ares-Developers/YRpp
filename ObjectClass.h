@@ -59,7 +59,7 @@ public:
 	virtual eAction MouseOverCell(CellStruct uCell, bool bUnk1, bool bUnk2) const R0;
 	virtual eAction MouseOverObject(ObjectClass* pObj, bool bUnk1) const R0;
 	virtual Layer::Value InWhichLayer() const R0;
-	virtual bool vt_entry_7C() R0;
+	virtual bool IsSurfaced() R0; // opposed to being submerged
 
  /*
   	Building returns if it is 1x1 and has UndeploysInto
