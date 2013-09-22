@@ -6,19 +6,37 @@
 class HouseClass;
 class TechnoClass;
 
+class SpawnManagerStatus {
+public:
+	typedef unsigned int Value;
+	enum {
+		Idle = 0, // no target or out of range
+		Launching = 1, // one launch in progress
+		CoolDown = 2 // waiting for launch to complete
+	};
+};
+
+class SpawnNodeStatus {
+public:
+	typedef unsigned int Value;
+	enum {
+		Idle = 0, // docked, waiting for target
+		TakeOff = 1, // missile launch
+		Preparing = 2, // gathering, missile tilting
+		Attacking = 3, // attacking until no ammo
+		Returning = 4, // return to carrier
+		//Unused_5, // not used
+		Reloading = 6, // docked, reloading ammo and health
+		Dead = 7 // respawning
+	};
+};
+
 struct SpawnNode
 {
 	TechnoClass* Unit;
-	enum eSpawnState {
-				state_Idle = 0,
-				state_Launching = 1,
-				state_Approaching = 2,
-				state_Firing = 3,
-				state_Returning = 4,
-				state_Dead = 7
-		} Status;
+	SpawnNodeStatus:: Value Status;
 	TimerStruct SpawnTimer;
-	bool IsSpawnMissile;
+	BOOL IsSpawnMissile;
 };
 
 class SpawnManagerClass : public AbstractClass
@@ -54,17 +72,23 @@ public:
 	void SetTarget(AbstractClass *Target)
 		{ JMP_THIS(0x6B7B90); }
 
-	void SpawnMissingNodes()
+	bool UpdateTarget()
+		{ JMP_THIS(0x6B7C40); }
+
+	void ResetTarget()
 		{ JMP_THIS(0x6B7BB0); }
 
-	int CountReadySpawns1() const
+	int CountAliveSpawns() const
 		{ JMP_THIS(0x6B7D30); }
 
-	int CountReadySpawns2() const
+	int CountDockedSpawns() const
 		{ JMP_THIS(0x6B7D50); }
 
-	int CountReadySpawns3() const
+	int CountLaunchingSpawns() const
 		{ JMP_THIS(0x6B7D80); }
+
+	void UnlinkPointer()
+		{ JMP_THIS(0x6B7C60); }
 
 protected:
 	SpawnManagerClass() : AbstractClass(false) { }
@@ -81,11 +105,11 @@ public:
 	int RegenRate;
 	int ReloadRate;
 	DynamicVectorClass<SpawnNode*> SpawnedNodes;
-	TimerStruct UnknownTimer;
+	TimerStruct UpdateTimer;
 	TimerStruct SpawnTimer;
-	int Destination;
-	int Target;
-	int SomeTimestamp;
+	AbstractClass* Target;
+	AbstractClass* NewTarget;
+	SpawnManagerStatus::Value Status;
 };
 
 #endif
