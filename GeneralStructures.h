@@ -164,6 +164,9 @@ public:
 
 	void StartIfEmpty() // just sets start frame
 		{ JMP_THIS(0x6CE2C0); }
+
+	void Pause()
+		{ JMP_THIS(0x6CE280); }
 };
 
 class RepeatableTimerStruct : public TimerStruct
