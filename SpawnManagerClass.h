@@ -21,8 +21,8 @@ public:
 	typedef unsigned int Value;
 	enum {
 		Idle = 0, // docked, waiting for target
-		TakeOff = 1, // missile launch
-		Preparing = 2, // gathering, missile tilting
+		TakeOff = 1, // missile tilting and launch
+		Preparing = 2, // gathering, waiting
 		Attacking = 3, // attacking until no ammo
 		Returning = 4, // return to carrier
 		//Unused_5, // not used
