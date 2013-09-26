@@ -275,6 +275,8 @@ public:
 		{ JMP_THIS(0x4F9610); }
 	void UpdateAllSilos(int prevStorage, int prevTotalStorage)
 		{ JMP_THIS(0x4F9970); }
+	double GetStoragePercentage()
+		{ JMP_THIS(0x4F6E70); }
 
 	// no LostThreatNode() , this gets called also when node building dies! BUG
 	void AcquiredThreatNode()
