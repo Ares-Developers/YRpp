@@ -882,7 +882,7 @@ public:
 		Ammo = 1,
 		Tiberium = 2,
 		Passengers = 3,
-		Storage = 4,
+		Power = 4,
 		MindControl = 5
 	};
 };
