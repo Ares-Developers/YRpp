@@ -19,6 +19,7 @@ class TerrainClass;
 class LightConvertClass;
 class RadSiteClass;
 class FootClass;
+class TubeClass;
 
 class CellClass : public AbstractClass
 {
@@ -105,7 +106,7 @@ public:
 	void ProcessColourComponents(int *arg0, int *Intensity, int *Ambient, int *a5, int *a6, int *tintR, int *tintG, int *tintB)
 		{ JMP_THIS(0x484180); }
 
-	/*TubeClass*/void GetTunnel()
+	TubeClass* GetTunnel()
 		{ JMP_THIS(0x484F20); }
 
 	RectangleStruct *GetContainingRect(RectangleStruct *dest) const
@@ -204,6 +205,7 @@ public:
 	// helper
 	bool ContainsBridge() const
 		{ return (this->Flags & cf_Bridge) != 0; }
+
 	// helper mimicking game's behaviour
 	ObjectClass* GetContent() const
 		{ return this->ContainsBridge() ? this->AltObject : this->FirstObject; }
