@@ -268,6 +268,9 @@ public:
 		return this->FixHeight(crd);
 	}
 
+	void MarkForRedraw()
+		{ JMP_THIS(0x486E70); }
+
 	CoordStruct * FindInfantrySubposition(CoordStruct *dst, CoordStruct *src, char bUnk1, char bUnk2, char bUnk3)
 		{ JMP_THIS(0x481180); }
 
