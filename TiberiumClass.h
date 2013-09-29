@@ -36,6 +36,9 @@ public:
 
 	//TiberiumClass
 
+	void RegisterForGrowth(CellStruct* cell)
+		{ JMP_THIS(0x7235A0); }
+
 	//Static helpers
 
 	static int FindIndex(int idxOverlayType) {
