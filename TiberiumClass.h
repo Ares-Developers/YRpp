@@ -36,6 +36,23 @@ public:
 
 	//TiberiumClass
 
+	//Static helpers
+
+	static int FindIndex(int idxOverlayType) {
+		SET_REG32(ecx, idxOverlayType);
+		CALL(0x5FDD20);
+	}
+
+	static TiberiumClass* Find(int idxOverlayType) {
+		int idx = FindIndex(idxOverlayType);
+
+		if(Array->ValidIndex(idx)) {
+			return Array->GetItem(idx);
+		}
+
+		return nullptr;
+	}
+
 	//Constructor
 	TiberiumClass(const char* pID) : AbstractTypeClass(false)
 		{ JMP_THIS(0x7216C0); }
