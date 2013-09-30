@@ -63,7 +63,7 @@ struct WeaponStruct
 		this->TurretLocked = false;
 	}
 
-	bool operator == (WeaponStruct pWeap)
+	bool operator == (const WeaponStruct& pWeap) const
 		{ return true; }
 };
 
