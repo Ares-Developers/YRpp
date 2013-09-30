@@ -99,7 +99,7 @@ public:
 
 	virtual int GetItemIndex(T* pItem) const {
 		if(!this->IsInitialized) return 0;
-		return (pItem - this->Items) / sizeof(T);
+		return pItem - this->Items;
 	}
 
 	virtual T GetItem(int i) {
