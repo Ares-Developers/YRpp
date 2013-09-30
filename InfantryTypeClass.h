@@ -66,6 +66,7 @@ protected:
 
 public:
 
+	int ArrayIndex;
 	Pip::Value Pip;
 	Pip::Value OccupyPip;
 	WeaponStruct OccupyWeapon;

@@ -82,6 +82,7 @@ protected:
 
 public:
 
+	int ArrayIndex;
 	CellStruct* FoundationData;
 	SHPStruct* Buildup;
 	bool BuildupLoaded;
