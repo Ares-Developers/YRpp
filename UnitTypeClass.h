@@ -48,6 +48,7 @@ protected:
 
 public:
 
+	int ArrayIndex;
 	eLandType MovementRestrictedTo;
 	CoordStruct HalfDamageSmokeLocation;
 	bool Passive;

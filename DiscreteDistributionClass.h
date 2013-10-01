@@ -64,7 +64,7 @@ public:
 	bool Select(unsigned int value, T* pOut) const {
 		if(this->IsValid() && value && value <= this->TotalWeight) {
 			unsigned int acc = 0U;
-			for(auto i=this->Items.start(); i<this->Items.end(); ++i) {
+			for(auto i=this->Items.begin(); i<this->Items.end(); ++i) {
 				acc += i->Weight;
 
 				if(acc >= value) {

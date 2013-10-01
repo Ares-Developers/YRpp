@@ -63,13 +63,9 @@ struct WeaponStruct
 		this->TurretLocked = false;
 	}
 
-	bool operator == (WeaponStruct pWeap)
+	bool operator == (const WeaponStruct& pWeap) const
 		{ return true; }
 };
-
-#pragma pack(push, 8)
-
-#pragma pack(4)
 
 class TechnoTypeClass : public ObjectTypeClass
 {
@@ -519,10 +515,7 @@ public:
 	int             ZFudgeBridge;
 	char PaletteFile [0x20];
 	void*           Palette; //no... idea....
-	DWORD           unknown_DF4;
-	int             ArrayIndex; //in the respective class type's array!!
+	DWORD           align_DF4;
 };
-
-#pragma pack(pop)
 
 #endif

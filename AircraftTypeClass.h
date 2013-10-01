@@ -41,6 +41,7 @@ protected:
 
 public:
 
+	int ArrayIndex;
 	bool Carryall;
 	AnimTypeClass* Trailer;
 	int SpawnDelay;

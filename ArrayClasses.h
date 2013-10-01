@@ -17,7 +17,7 @@ public:
 		Clear();
 	}
 
-	virtual bool IsEqual(VectorClass* pVec) const {
+	virtual bool IsEqual(const VectorClass* pVec) const {
 		if(this->Capacity == pVec->Capacity) {
 			if(this->Capacity == 0) {
 				return true;
@@ -83,13 +83,13 @@ public:
 		this->Capacity = 0;
 	}
 
-	virtual int FindItemIndex(T *tItem) const {
+	virtual int FindItemIndex(const T& tItem) const {
 		if(!this->IsInitialized) {
 			return 0;
 		}
 
 		for(int i = 0; i < this->Capacity; ++i) {
-			if(this->Items[i] == *tItem) {
+			if(this->Items[i] == tItem) {
 				return i;
 			}
 		}
@@ -97,12 +97,12 @@ public:
 		return -1;
 	}
 
-	virtual int GetItemIndex(T* pItem) const {
+	virtual int GetItemIndex(const T* pItem) const {
 		if(!this->IsInitialized) return 0;
-		return (pItem - this->Items) / sizeof(T);
+		return pItem - this->Items;
 	}
 
-	virtual T GetItem(int i) {
+	virtual T GetItem(int i) const {
 		return this->Items[i];
 	}
 
@@ -185,7 +185,7 @@ public:
 		}
 	}
 
-	T* start() const {
+	T* begin() const {
 		if(!this->IsInitialized) {
 			return NULL;
 		}
@@ -219,14 +219,13 @@ public:
 		VectorClass<T>::Purge();
 	}
 
-	// aaaaaurgh , this takes T* , not plain T... what a silly mistake
-	virtual int FindItemIndex(T *tItem) const {
+	virtual int FindItemIndex(const T& tItem) const {
 		if(!this->IsInitialized) {
 			return -1;
 		}
 
 		for(int i = 0; i < Count; i++) {
-			if(this->Items[i] == *tItem) {
+			if(this->Items[i] == tItem) {
 				return i;
 			}
 		}
