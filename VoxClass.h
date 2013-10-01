@@ -71,7 +71,7 @@ public:
 	~VoxClass()
 	{
 		VoxClass* item = this;
-		int index = Array->FindItemIndex(&item);
+		int index = Array->FindItemIndex(item);
 
 		if(index > -1 && index < Array->Count) {
 			Array->RemoveItem(index);

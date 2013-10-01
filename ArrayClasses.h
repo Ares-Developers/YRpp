@@ -83,13 +83,13 @@ public:
 		this->Capacity = 0;
 	}
 
-	virtual int FindItemIndex(const T *tItem) const {
+	virtual int FindItemIndex(const T& tItem) const {
 		if(!this->IsInitialized) {
 			return 0;
 		}
 
 		for(int i = 0; i < this->Capacity; ++i) {
-			if(this->Items[i] == *tItem) {
+			if(this->Items[i] == tItem) {
 				return i;
 			}
 		}
@@ -219,14 +219,13 @@ public:
 		VectorClass<T>::Purge();
 	}
 
-	// aaaaaurgh , this takes T* , not plain T... what a silly mistake
-	virtual int FindItemIndex(const T *tItem) const {
+	virtual int FindItemIndex(const T& tItem) const {
 		if(!this->IsInitialized) {
 			return -1;
 		}
 
 		for(int i = 0; i < Count; i++) {
-			if(this->Items[i] == *tItem) {
+			if(this->Items[i] == tItem) {
 				return i;
 			}
 		}

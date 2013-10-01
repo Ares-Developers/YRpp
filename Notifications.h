@@ -24,7 +24,7 @@ public:
 
 	inline bool Add(AbstractClass* object) {
 		// add only if doesn't exist
-		int index = this->Array.FindItemIndex(&object);
+		int index = this->Array.FindItemIndex(object);
 		if(index < 0) {
 			return this->Array.AddItem(object);
 		}
@@ -32,7 +32,7 @@ public:
 	}
 
 	inline bool Remove(AbstractClass* object) {
-		int index = this->Array.FindItemIndex(&object);
+		int index = this->Array.FindItemIndex(object);
 		if(index > -1) {
 			return this->Array.RemoveItem(index);
 		}
