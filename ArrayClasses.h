@@ -185,7 +185,7 @@ public:
 		}
 	}
 
-	T* start() const {
+	T* begin() const {
 		if(!this->IsInitialized) {
 			return NULL;
 		}
