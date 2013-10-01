@@ -17,7 +17,7 @@ public:
 		Clear();
 	}
 
-	virtual bool IsEqual(VectorClass* pVec) const {
+	virtual bool IsEqual(const VectorClass* pVec) const {
 		if(this->Capacity == pVec->Capacity) {
 			if(this->Capacity == 0) {
 				return true;
@@ -83,7 +83,7 @@ public:
 		this->Capacity = 0;
 	}
 
-	virtual int FindItemIndex(T *tItem) const {
+	virtual int FindItemIndex(const T *tItem) const {
 		if(!this->IsInitialized) {
 			return 0;
 		}
@@ -97,12 +97,12 @@ public:
 		return -1;
 	}
 
-	virtual int GetItemIndex(T* pItem) const {
+	virtual int GetItemIndex(const T* pItem) const {
 		if(!this->IsInitialized) return 0;
 		return pItem - this->Items;
 	}
 
-	virtual T GetItem(int i) {
+	virtual T GetItem(int i) const {
 		return this->Items[i];
 	}
 
@@ -220,7 +220,7 @@ public:
 	}
 
 	// aaaaaurgh , this takes T* , not plain T... what a silly mistake
-	virtual int FindItemIndex(T *tItem) const {
+	virtual int FindItemIndex(const T *tItem) const {
 		if(!this->IsInitialized) {
 			return -1;
 		}
