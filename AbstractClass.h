@@ -116,6 +116,11 @@ public:
 	void AnnounceExpiredPointer(bool removed=true)
 		{ JMP_THIS(0x7258D0); }
 
+	//Operators
+	bool operator < (const AbstractClass &rhs) const {
+		return this->UniqueID < rhs.UniqueID;
+	}
+
 protected:
 	AbstractClass(bool) { }	//trick to disable further base class construction!
 
