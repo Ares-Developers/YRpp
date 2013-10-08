@@ -177,6 +177,17 @@ public:
 		return idx > -1 && idx < this->Count;
 	}
 
+	inline T GetItemOrDefault(int i) const {
+		return this->GetItemOrDefault(i, T());
+	}
+
+	inline T GetItemOrDefault(int i, T def) const {
+		if(this->ValidIndex(i)) {
+			return this->GetItem(i);
+		}
+		return def;
+	}
+
 	void Save(IStream *pStm) const {
 		int ii = this->Count;
 		pStm->Write(&ii, 4u, 0);
