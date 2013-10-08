@@ -13,12 +13,18 @@ class Game
 public:
 	// the game's own rounding function
 	// infamous for true'ing (F2I(-5.00) == -4.00)
-	static __int64 F2I(double val) {
+	static __int64 F2I64(double val) {
 #ifdef _MSVC
 		double something = val;
 		__asm { fld something };
 		CALL(0x7C5F00);
 #endif
+	}
+
+	// the game's own rounding function
+	// infamous for true'ing (F2I(-5.00) == -4.00)
+	static int F2I(double val) {
+		return static_cast<int>(F2I64(val));
 	}
 
 	static void __declspec(noreturn) RaiseError(HRESULT err)
