@@ -48,12 +48,7 @@ public:
 
 	static TiberiumClass* Find(int idxOverlayType) {
 		int idx = FindIndex(idxOverlayType);
-
-		if(Array->ValidIndex(idx)) {
-			return Array->GetItem(idx);
-		}
-
-		return nullptr;
+		return Array->GetItemOrDefault(idx);
 	}
 
 	//Constructor
