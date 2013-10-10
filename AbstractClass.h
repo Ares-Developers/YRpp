@@ -19,10 +19,10 @@ struct OwnedTiberiumStruct
 	float GetTotalAmount()
 		{ JMP_THIS(0x6C9650); }
 
-	void AddAmount(float amount, int index)
+	float AddAmount(float amount, int index)
 		{ JMP_THIS(0x6C9690); }
 
-	void RemoveAmount(float amount, int index)
+	float RemoveAmount(float amount, int index)
 		{ JMP_THIS(0x6C96B0); }
 
 	int GetTotalValue()
