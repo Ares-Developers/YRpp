@@ -11,6 +11,7 @@
 #include <UnitClass.h>
 #include <InfantryTypeClass.h>
 #include <SessionClass.h>
+#include <SideClass.h>
 
 //forward declarations
 class AnimClass;
@@ -291,6 +292,44 @@ public:
 		{ JMP_STD(0x510ED0); }                    // 0..15 map to ScenarioClass::HouseIndices, also supports PlayerAtA and up
 	static signed int __fastcall FindIndexByName(const char *name)
 		{ JMP_STD(0x50C170); }
+
+	// gets the first house of a type with this name
+	static HouseClass* FindByCountryName(const char* name) {
+		auto idx = HouseTypeClass::FindIndexOfName(name);
+		return FindByCountryIndex(idx);
+	}
+
+	// gets the first house of a type with name Neutral
+	static HouseClass* FindNeutral() {
+		return FindByCountryName("Neutral");
+	}
+
+	// gets the first house of a type with name Neutral
+	static HouseClass* FindSpecial() {
+		return FindByCountryName("Special");
+	}
+
+	// gets the first house of a side with this name
+	static HouseClass* FindBySideIndex(int index) {
+		for(int i=0; i<Array->Count; ++i) {
+			auto pHouse = Array->GetItem(i);
+			if(pHouse->SideIndex == index) {
+				return pHouse;
+			}
+		}
+		return nullptr;
+	}
+
+	// gets the first house of a type with this name
+	static HouseClass* FindBySideName(const char* name) {
+		auto idx = SideClass::FindIndex(name);
+		return FindBySideIndex(idx);
+	}
+
+	// gets the first house of a type from the Civilian side
+	static HouseClass* FindCivilianSide() {
+		return FindBySideName("Civilian");
+	}
 
 	static void __fastcall LoadFromINIList(CCINIClass *pINI)
 		{ JMP_STD(0x5009B0); }
