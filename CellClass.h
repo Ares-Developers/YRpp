@@ -240,7 +240,7 @@ public:
 	static int BridgeHeight()
 	{ return *(int *)0xB0C07C; }
 
-	static CoordStruct * Cell2Coord(CellStruct* cell, CoordStruct *crd)
+	static CoordStruct * Cell2Coord(const CellStruct* cell, CoordStruct *crd)
 	{
 		crd->X = cell->X * 256 + 128;
 		crd->Y = cell->Y * 256 + 128;
@@ -248,7 +248,7 @@ public:
 		return crd;
 	}
 
-	static CellStruct * Coord2Cell(CoordStruct *crd, CellStruct* cell)
+	static CellStruct * Coord2Cell(const CoordStruct *crd, CellStruct* cell)
 	{
 		cell->X = short(crd->X / 256);
 		cell->Y = short(crd->Y / 256);
