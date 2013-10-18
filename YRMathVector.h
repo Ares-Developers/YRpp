@@ -18,91 +18,98 @@ public:
 
 	//operator overloads
 	//assignment
-	void operator=(Vector2D a)
+	Vector2D& operator=(const Vector2D& a)
 	{
-		X=a.X;Y=a.Y;
+		X = a.X;
+		Y = a.Y;
+		return *this;
 	}
 	//addition
-	Vector2D operator+(Vector2D a)
+	const Vector2D operator+(const Vector2D& a) const
 	{
-		Vector2D v={X+a.X,Y+a.Y};
+		Vector2D v = {X + a.X, Y + a.Y};
 		return v;
 	}
 	//addition
-	void operator+=(Vector2D a)
+	Vector2D& operator+=(const Vector2D& a)
 	{
-		X+=a.X;Y+=a.Y;
+		X += a.X;
+		Y += a.Y;
+		return *this;
 	}
 	//substraction
-	Vector2D operator-(Vector2D a)
+	const Vector2D operator-(const Vector2D& a) const
 	{
-		Vector2D v={X-a.X,Y-a.Y};
+		Vector2D v = {X - a.X, Y - a.Y};
 		return v;
 	}
 	//substraction
-	void operator-=(Vector2D a)
+	Vector2D& operator-=(const Vector2D& a)
 	{
-		X-=a.X;Y-=a.Y;
+		X -= a.X;
+		Y -= a.Y;
+		return *this;
 	}
 	//negation
-	Vector2D operator-()
+	const Vector2D operator-() const
 	{
-		Vector2D v={-X,-Y};
+		Vector2D v = {-X, -Y};
 		return v;
 	}
 	//equality
-	bool operator==(Vector2D a)
+	bool operator==(const Vector2D& a) const
 	{
-		return (X==a.X && Y==a.Y);
+		return (X == a.X && Y == a.Y);
 	}
 	//unequality
-	bool operator!=(Vector2D a)
+	bool operator!=(const Vector2D& a) const
 	{
-		return (X!=a.X || Y!=a.Y);
+		return (X != a.X || Y != a.Y);
 	}
 	//scalar multiplication
-	Vector2D operator*(double r)
+	const Vector2D operator*(double r) const
 	{
-		Vector2D v={(T)(X*r),(T)(Y*r)};
+		Vector2D v = {static_cast<T>(X * r), static_cast<T>(Y * r)};
 		return v;
 	}
 	//scalar multiplication
-	void operator*=(double r)
+	Vector2D& operator*=(double r)
 	{
-		X*=r;Y*=r;
+		X *= r;
+		Y *= r;
+		return *this;
 	}
 	//vector multiplication
-	double operator*(Vector2D a)
+	double operator*(const Vector2D& a) const
 	{
-		return (double)(X*a.X+Y*a.Y);
+		return static_cast<double>(X) * a.X + static_cast<double>(Y) * a.Y;
 	}
 	//magnitude
-	double Magnitude()
+	double Magnitude() const
 	{
-		return sqrt((double)(X*X+Y*Y));
+		return sqrt(static_cast<double>(X) * X + static_cast<double>(Y) * Y);
 	}
 	//distance from another vector
-	double DistanceFrom(Vector2D a)
+	double DistanceFrom(const Vector2D& a) const
 	{
-		return (a-(*this)).Magnitude();
+		return (a - *this).Magnitude();
 	}
 	//collinearity
-	bool IsCollinearTo(Vector2D a)
+	bool IsCollinearTo(const Vector2D& a) const
 	{
-		double r=(double)a.X/(double)X;
-		return ((T)(r*Y)==a.Y);
+		double r = static_cast<double>(a.X) / static_cast<double>(X);
+		return (static_cast<T>(r * Y) == a.Y);
 	}
 	//find scalar
-	double FindScalar(Vector2D a)
+	double FindScalar(const Vector2D& a) const
 	{
-		double r=(double)a.X/(double)X;
-		if((T)(r*Y)==a.Y)
+		double r = static_cast<T>(a.X) / static_cast<T>(X);
+		if(static_cast<T>(r * Y) == a.Y) {
 			return r;
-		else
-		{
+		} else {
 			//the vectors are not collinear, return NaN!
-			unsigned long NaN[2]={0xFFFFFFFF,0x7FFFFFFF};
-			return *(double*)NaN;
+			unsigned long NaN[2] = {0xFFFFFFFF,0x7FFFFFFF};
+			return *reinterpret_cast<double*>(NaN);
 		}
 	}
 };
@@ -124,100 +131,115 @@ public:
 
 	//operator overloads
 	//assignment
-	void operator=(Vector3D a)
+	Vector3D& operator=(const Vector3D& a)
 	{
-		X = a.X; Y = a.Y; Z = a.Z;
+		X = a.X;
+		Y = a.Y;
+		Z = a.Z;
+		return *this;
 	}
 	//addition
-	Vector3D operator+(Vector3D a)
+	const Vector3D operator+(const Vector3D& a) const
 	{
-		Vector3D v={X+a.X,Y+a.Y,Z+a.Z};
+		Vector3D v= {X + a.X, Y + a.Y, Z + a.Z};
 		return v;
 	}
 	//addition
-	void operator+=(Vector3D a)
+	Vector3D& operator+=(const Vector3D& a)
 	{
-		X+=a.X;Y+=a.Y,Z+=a.Z;
+		X += a.X;
+		Y += a.Y;
+		Z += a.Z;
+		return *this;
 	}
 	//substraction
-	Vector3D operator-(Vector3D a)
+	const Vector3D operator-(const Vector3D& a) const
 	{
-		Vector3D v={X-a.X,Y-a.Y,Z-a.Z};
+		Vector3D v = {X - a.X, Y - a.Y, Z - a.Z};
 		return v;
 	}
 	//substraction
-	void operator-=(Vector3D a)
+	Vector3D& operator-=(const Vector3D& a)
 	{
-		X-=a.X;Y-=a.Y;Z-=a.Z;
+		X -= a.X;
+		Y -= a.Y;
+		Z -= a.Z;
+		return *this;
 	}
 	//negation
-	Vector3D operator-()
+	const Vector3D operator-() const
 	{
-		Vector3D v={-X,-Y,-Z};
+		Vector3D v = {-X, -Y, -Z};
 		return v;
 	}
 	//equality
-	bool operator==(Vector3D a)
+	bool operator==(const Vector3D& a) const
 	{
-		return (X==a.X && Y==a.Y && Z==a.Z);
+		return (X == a.X && Y == a.Y && Z == a.Z);
 	}
 	//unequality
-	bool operator!=(Vector3D a)
+	bool operator!=(const Vector3D& a) const
 	{
-		return (X!=a.X || Y!=a.Y || Z!=a.Z);
+		return (X != a.X || Y != a.Y || Z != a.Z);
 	}
 	//scalar multiplication
-	Vector3D operator*(double r)
+	const Vector3D operator*(double r) const
 	{
-		Vector3D v={(T)(X*r),(T)(Y*r),(T)(Z*r)};
+		Vector3D v= {static_cast<T>(X * r), static_cast<T>(Y * r), static_cast<T>(Z * r)};
 		return v;
 	}
 	//scalar multiplication
-	void operator*=(double r)
+	Vector3D& operator*=(double r)
 	{
-		X*=r;Y*=r;Z*=r;
+		X *= r;
+		Y *= r;
+		Z *= r;
+		return *this;
 	}
 	//vector multiplication
-	double operator*(Vector3D a)
+	double operator*(const Vector3D& a) const
 	{
-		return (double)(X*a.X+Y*a.Y+Z*a.Z);
+		return static_cast<double>(X) * a.X
+			+ static_cast<double>(Y) * a.Y
+			+ static_cast<double>(Z) * a.Z;
 	}
 	//magnitude
-	double Magnitude()
+	double Magnitude() const
 	{
-		return sqrt(((double)X)*X+((double)Y)*Y+((double)Z)*Z);
+		return sqrt(static_cast<double>(X) * X
+			+ static_cast<double>(Y) * Y
+			+ static_cast<double>(Z) * Z);
 	}
 	//distance from another vector
-	double DistanceFrom(Vector3D a)
+	double DistanceFrom(const Vector3D& a) const
 	{
-		return (a-(*this)).Magnitude();
+		return (a - *this).Magnitude();
 	}
 	//collinearity
-	bool IsCollinearTo(Vector3D a)
+	bool IsCollinearTo(const Vector3D& a) const
 	{
-		double r=(double)a.X/(double)X;
-		return ((T)(r*Y)==a.Y) && ((T)(r*Z)==a.Z);
+		double r = static_cast<double>(a.X) / static_cast<double>(X);
+		return (static_cast<T>(r * Y) == a.Y) && (static_cast<T>(r * Z) == a.Z);
 	}
 	//find scalar
-	double FindScalar(Vector3D a)
+	double FindScalar(const Vector3D& a) const
 	{
-		double r=(double)a.X/(double)X;
-		if(((T)(r*Y)==a.Y) && ((T)(r*Z)==a.Z))
+		double r = static_cast<double>(a.X) / static_cast<double>(X);
+		if((static_cast<T>(r * Y) == a.Y) && (static_cast<T>(r * Z) == a.Z)) {
 			return r;
-		else
-		{
+		} else {
 			//the vectors are not collinear, return NaN!
-			unsigned long NaN[2]={0xFFFFFFFF,0x7FFFFFFF};
-			return *(double*)NaN;
+			unsigned long NaN[2] = {0xFFFFFFFF,0x7FFFFFFF};
+			return *reinterpret_cast<double*>(NaN);
 		}
 	}
 	//cross product
-	Vector3D CrossProduct(Vector3D a)
+	const Vector3D CrossProduct(const Vector3D& a) const
 	{
-		Vector3D v={
-			Y*a.Z-Z*a.Y,
-			Z*a.X-X*a.Z,
-			X*a.Y-Y*a.X};
+		Vector3D v = {
+			Y * a.Z - Z * a.Y,
+			Z * a.X - X * a.Z,
+			X * a.Y - Y * a.X};
 		return v;
 	}
 };
