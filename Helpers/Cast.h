@@ -11,7 +11,15 @@ class FootClass;
 
 template <typename T>
 inline T specific_cast(AbstractClass* pAbstract) {
-	if(pAbstract && pAbstract->WhatAmI() == CompoundT<T>::BaseT::AbsID) {
+	typedef CompoundT<T>::BaseT Base;
+
+	static_assert(std::is_base_of<AbstractClass, Base>::value,
+		"specific_cast: T is required to be a type derived from AbstractClass.");
+
+	static_assert(!std::is_abstract<Base>::value,
+		"specific_cast: Abstract types (not fully implemented classes) are not suppored.");
+
+	if(pAbstract && pAbstract->WhatAmI() == Base::AbsID) {
 		return reinterpret_cast<T>(pAbstract);
 	}
 	return nullptr;
@@ -19,7 +27,13 @@ inline T specific_cast(AbstractClass* pAbstract) {
 
 template <typename T>
 inline T generic_cast(AbstractClass* pAbstract) {
-	if(pAbstract && (pAbstract->AbstractFlags & CompoundT<T>::BaseT::AbsDerivateID) != 0) {
+	typedef CompoundT<T>::BaseT Base;
+
+	static_assert(std::is_base_of<ObjectClass, Base>::value
+		|| !std::is_abstract<Base>::value,
+		"generic_cast: T is required to be an abstract type derived from ObjectClass.");
+
+	if(pAbstract && (pAbstract->AbstractFlags & Base::AbsDerivateID) != 0) {
 		return reinterpret_cast<T>(pAbstract);
 	}
 	return nullptr;
@@ -27,6 +41,15 @@ inline T generic_cast(AbstractClass* pAbstract) {
 
 template <typename T>
 inline T abstract_cast(AbstractClass* pAbstract) {
+	typedef typename std::remove_pointer<T>::type Base;
+
+	static_assert(std::is_base_of<AbstractClass, Base>::value,
+		"abstract_cast: T is required to be a type derived from AbstractClass.");
+
+	static_assert(!std::is_base_of<AbstractTypeClass, Base>::value
+		|| !std::is_abstract<Base>::value,
+		"abstract_cast: Abstract types (not fully implemented classes) derived from AbstractTypeClass are not suppored.");
+
 	return specific_cast<T>(pAbstract);
 };
 
