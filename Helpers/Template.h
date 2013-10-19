@@ -109,20 +109,6 @@ class IndexBitfield {
 	}
 };
 
-#include <AbstractClass.h>
-template <typename T>
-inline T specific_cast(AbstractClass * Object) {
-	if(Object && Object->WhatAmI() == CompoundT<T>::BaseT::AbsID) {
-		return reinterpret_cast<T>(Object);
-	}
-	return NULL;
-};
+#include <Helpers/Cast.h>
 
-template <typename T>
-inline T generic_cast(AbstractClass * Object) {
-	if(Object && (Object->AbstractFlags & CompoundT<T>::BaseT::AbsDerivateID) != 0) {
-		return reinterpret_cast<T>(Object);
-	}
-	return NULL;
-};
 #endif
