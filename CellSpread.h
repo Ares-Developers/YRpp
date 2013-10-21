@@ -20,6 +20,23 @@ public:
 		}
 		return reinterpret_cast<const CellStruct*>(0x89F688)[direction];
 	}
+
+	static size_t GetDistance(int dx, int dy) {
+		size_t x = std::abs(dx);
+		size_t y = std::abs(dy);
+
+		// distance is longer component plus
+		// half the shorter component
+		if(x > y) {
+			return x + y / 2;
+		} else {
+			return y + x / 2;
+		}
+	};
+
+	static size_t GetDistance(const CellStruct &offset) {
+		return GetDistance(offset.X, offset.Y);
+	};
 };
 
 #endif
