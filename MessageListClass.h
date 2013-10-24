@@ -25,7 +25,7 @@ public:
 		{ this->PrintMessage(pLabel, 0, pMessage, nColorSchemeIndex); }
 
 	void PrintMessage(const wchar_t* pMessage, int nColorSchemeIndex = ColorScheme::White)
-		{ this->PrintMessage(NULL, 0, pMessage, nColorSchemeIndex); }
+		{ this->PrintMessage(nullptr, 0, pMessage, nColorSchemeIndex); }
 
 };
 

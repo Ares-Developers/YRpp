@@ -220,12 +220,12 @@ public:
 			firstLoco->AddRef();
 		}
 
-		ILocomotion *ppLoco = NULL;
+		ILocomotion *ppLoco = nullptr;
 		HRESULT result = CreateInstance(&ppLoco, clsid, 0, 7);
 		CheckPtr(result, ppLoco);
 		ppLoco->Link_To_Object(Object);
 
-		IPiggyback *ppPiggy = NULL;
+		IPiggyback *ppPiggy = nullptr;
 		result = TryPiggyback(&ppPiggy, &ppLoco);
 		CheckPtr(result, ppPiggy);
 		ppPiggy->Begin_Piggyback(firstLoco);
@@ -247,7 +247,7 @@ public:
 	static void Release(ILocomotion* &pLoco) {
 		if(pLoco) {
 			pLoco->Release();
-			pLoco = NULL;
+			pLoco = nullptr;
 		}
 	}
 
@@ -275,7 +275,7 @@ public:
 	static bool CreateInstance(ILocomotion* &loco, CLSID* rclsid) {
 		Release(loco);
 
-		HRESULT res = LocomotionClass::CreateInstance(&loco, rclsid, NULL, 7);
+		HRESULT res = LocomotionClass::CreateInstance(&loco, rclsid, nullptr, 7);
 		if(res < 0) {
 			if(res != E_NOINTERFACE) {
 				RaiseError(res);
@@ -293,7 +293,7 @@ public:
 			RaiseError(E_POINTER);
 		}
 		
-		IPiggyback* pPiggy = NULL;
+		IPiggyback* pPiggy = nullptr;
 		HRESULT res = pLoco->QueryInterface(IIDs::IPiggyback, (void**)&pPiggy);
 		if(SUCCEEDED(res)) {
 			if(pPiggy->Is_Piggybacking()) {
@@ -309,7 +309,7 @@ public:
 			}
 
 			pPiggy->Release();
-			pPiggy = NULL;
+			pPiggy = nullptr;
 		}
 		return ret;
 	}

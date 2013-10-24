@@ -29,7 +29,7 @@ struct CameoDataStruct
 		this->ItemIndex = 0;
 		this->ItemType = 0;
 		this->IsAlt = false;
-		this->CurrentFactory = NULL;
+		this->CurrentFactory = nullptr;
 		this->unknown_10 = 0;
 		this->Progress.Value = 0;
 		this->Progress.Timer.StartTime = 0; // normally this initializes to Unsorted::CurrentFrame, let's see if this breaks anything

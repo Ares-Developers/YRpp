@@ -99,7 +99,7 @@ public:
 		bool Garrisoned = this->GetOccupantCount() > 0;
 
 		BuildingAnimStruct *AnimData = &this->Type->BuildingAnim[Slot];
-		char *AnimName = NULL;
+		char *AnimName = nullptr;
 		if(Damaged) {
 			AnimName = AnimData->Damaged;
 		} else if(Garrisoned) {

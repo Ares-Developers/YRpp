@@ -23,14 +23,14 @@ public:
 	//Load a PCX file
 	bool LoadFile(const char* pFileName, int flag1 = 2, int flag2 = 0)
 	{
-		if(Instance->GetSurface(pFileName, NULL)) {
+		if(Instance->GetSurface(pFileName, nullptr)) {
 			return true;
 		}
 		return Instance->ForceLoadFile(pFileName, flag1, flag2);
 	}
 
 	// Get a BSurface for a PCX file. File needs to be loaded some time first!
-	BSurface* GetSurface(const char* pFileName, BytePalette * pPalette = NULL)
+	BSurface* GetSurface(const char* pFileName, BytePalette * pPalette = nullptr)
 		{ JMP_THIS(0x6BA140); }
 
 	// Draws a PCX file

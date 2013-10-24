@@ -568,9 +568,9 @@ void SlaveManagerClass::ZeroOutSlaves() {
 	for(int i = this->SlaveNodes.Count - 1; i >= 0; --i) {
 		SlaveManagerClass::SlaveControl *SlaveNode = this->SlaveNodes[i];
 		if(InfantryClass *Slave = SlaveNode->Slave) {
-			Slave->SlaveOwner = NULL;
+			Slave->SlaveOwner = nullptr;
 		}
-		SlaveNode->Slave = NULL;
+		SlaveNode->Slave = nullptr;
 		SlaveNode->State = SlaveManagerClass::SlaveControl::state_Dead;
 		SlaveNode->RespawnTimer.Start(this->RegenRate);
 	}
@@ -595,10 +595,10 @@ void __declspec(noreturn) RaiseError(HRESULT hr) {
 int HouseClass::CountOwnedNowTotal(const TechnoTypeClass *Item) const {
 	int Index = Item->GetArrayIndex();
 	int Sum = 0;
-	const BuildingTypeClass *BT = NULL;
-	const UnitTypeClass *UT = NULL;
-	const UnitClass *U = NULL;
-	const InfantryTypeClass *IT = NULL;
+	const BuildingTypeClass *BT = nullptr;
+	const UnitTypeClass *UT = nullptr;
+	const UnitClass *U = nullptr;
+	const InfantryTypeClass *IT = nullptr;
 
 	switch(Item->WhatAmI()) {
 		case abs_BuildingType:
@@ -618,7 +618,7 @@ int HouseClass::CountOwnedNowTotal(const TechnoTypeClass *Item) const {
 				}
 			} else {
 				Sum = this->OwnedBuildingTypes.GetItemCount(Index);
-				if((UT = BT->UndeploysInto) != NULL) {
+				if((UT = BT->UndeploysInto) != nullptr) {
 					Sum += this->OwnedUnitTypes.GetItemCount(UT->GetArrayIndex());
 				}
 			}

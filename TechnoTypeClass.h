@@ -58,7 +58,7 @@ struct WeaponStruct
 
 	WeaponStruct()
 	{
-		this->WeaponType = NULL;
+		this->WeaponType = nullptr;
 		this->FLH.X = this->FLH.Y = this->FLH.Z = this->BarrelLength = this->BarrelThickness = 0;
 		this->TurretLocked = false;
 	}
@@ -80,7 +80,7 @@ public:
 				return ((TechnoTypeClass*)Array->Items[i]);
 			}
 		}
-		return NULL;
+		return nullptr;
 	}
 
 	static int FindIndex(const char* pID)

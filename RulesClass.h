@@ -87,7 +87,7 @@ struct RocketStruct
 		EliteDamage = 0;
 		BodyLength = 0;
 		LazyCurve = false;
-		Type = NULL;
+		Type = nullptr;
 	}
 };
 

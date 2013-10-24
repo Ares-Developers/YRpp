@@ -22,7 +22,7 @@ public:
 				return Array->Items[i];
 			}
 		}
-		return NULL;
+		return nullptr;
 	}
 
 	static int FindIndex(const char* pName)

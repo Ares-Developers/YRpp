@@ -90,7 +90,7 @@ public:
 	int IndexOf(FootClass* candidate) const
 		{ JMP_THIS(0x473500); }
 
-	PassengersClass() : NumPassengers(0), FirstPassenger(NULL) {};
+	PassengersClass() : NumPassengers(0), FirstPassenger(nullptr) {};
 
 	~PassengersClass() { };
 };
@@ -310,7 +310,7 @@ public:
 	// smooth operator
 	const char *get_ID() const {
 		ObjectTypeClass *TT = this->GetType();
-		return TT ? TT->get_ID() : NULL;
+		return TT ? TT->get_ID() : nullptr;
 	}
 
 	bool IsMindControlled() const

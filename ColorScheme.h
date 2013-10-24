@@ -42,7 +42,7 @@ public:
 					}
 				}
 			}
-			return NULL;
+			return nullptr;
 		}
 
 	static int FindIndex(const char* find_id)

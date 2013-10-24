@@ -38,7 +38,7 @@ public:
 				return Array->Items[i];
 			}
 		}
-		return NULL;
+		return nullptr;
 	}
 /* dunno what gives, but this doesn't work, the one below does
 	static int FindIndexOf(const char* pName)

@@ -8,7 +8,7 @@
 class Allocator
 {
 public:
-	Allocator() { Pointer = NULL; Size = 0; Allocated = false; };
+	Allocator() { Pointer = nullptr; Size = 0; Allocated = false; };
 	~Allocator() { Free(); };
 
 	Allocator* Allocate(void* p, int nSize)

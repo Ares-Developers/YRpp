@@ -17,7 +17,7 @@ class CCINIClass;
 		for(int i = 0; i < Array->Count; ++i)\
 			if(!_strcmpi(Array->GetItem(i)->ID, pID))\
 				return Array->GetItem(i);\
-		return NULL;\
+		return nullptr;\
 	}\
 	static class_name* FindOrAllocate(const char* pID)\
 	{\

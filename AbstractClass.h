@@ -59,7 +59,7 @@ public:
 			}
 		}
 
-		return NULL;
+		return nullptr;
 	}
 
 	//IUnknown

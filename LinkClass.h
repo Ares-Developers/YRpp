@@ -44,7 +44,7 @@ public:
 
 			pLast->Next = this;
 			Previous = pLast;
-			Next = NULL;
+			Next = nullptr;
 
 			return GetFirst();
 		}
@@ -58,7 +58,7 @@ public:
 
 			pFirst->Previous = this;
 			Next = pFirst;
-			Previous = NULL;
+			Previous = nullptr;
 
 			return this;
 		}
@@ -93,8 +93,8 @@ public:
 
 	virtual void Isolate()	//removes this from the list
 		{
-			Next = NULL;
-			Previous = NULL;
+			Next = nullptr;
+			Previous = nullptr;
 		}
 
 	virtual LinkClass* IsolateFromList()	//removes this from the list
@@ -111,15 +111,15 @@ public:
 				Previous->Next = Next;
 			}
 
-			Previous = NULL;
-			Next = NULL;
+			Previous = nullptr;
+			Next = nullptr;
 
 			if(pFirst != this) {
 				return pFirst;
 			} else if(pLast && pLast != this) {
 				return pLast->GetFirst();
 			} else {
-				return NULL;
+				return nullptr;
 			}
 		}
 

@@ -59,7 +59,7 @@ public:
 
 	// switches the slaves to the killer house with cheers and hoorahs
 	// note that this->Owner will be NULL once this function is done
-	void Killed(TechnoClass *Killer, HouseClass * ForcedOwnerHouse = NULL)
+	void Killed(TechnoClass *Killer, HouseClass * ForcedOwnerHouse = nullptr)
 		{ JMP_THIS(0x6B0AE0); }
 
 	bool ShouldWakeUpNow()

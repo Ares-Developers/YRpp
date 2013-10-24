@@ -99,7 +99,7 @@ public:
 
 	bool CellExists(CellStruct* pMapCoords) {
 		int n = (pMapCoords->Y << 9) + pMapCoords->X;
-		return (n >= 0 && n < MAX_CELLS) && Cells[n] != NULL; // WTF this was so wrong...
+		return (n >= 0 && n < MAX_CELLS) && Cells[n] != nullptr; // WTF this was so wrong...
 	}
 
 	void CellIteratorReset()

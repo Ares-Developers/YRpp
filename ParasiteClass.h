@@ -28,7 +28,7 @@ public:
 	virtual int Size() const R0;
 
 	//Constructor
-	ParasiteClass(FootClass* pOwner = NULL) : AbstractClass(false)
+	ParasiteClass(FootClass* pOwner = nullptr) : AbstractClass(false)
 		{ JMP_THIS(0x6292B0); }
 
 	//non-virtual

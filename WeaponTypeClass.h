@@ -41,7 +41,7 @@ public:
 		{ JMP_THIS(0x7729F0); }
 
 	//Constructor
-	WeaponTypeClass(const char* pID = NULL) : AbstractTypeClass(false)
+	WeaponTypeClass(const char* pID = nullptr) : AbstractTypeClass(false)
 		{ JMP_THIS(0x771C70); }
 
 	//===========================================================================

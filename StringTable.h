@@ -46,7 +46,7 @@ struct CSFString
 	CSFString *PreviousEntry;
 	wchar_t Text[102];
 
-	CSFString() : PreviousEntry(NULL) {
+	CSFString() : PreviousEntry(nullptr) {
 		*Text = 0;
 	}
 };
@@ -75,7 +75,7 @@ public:
 
 	static const wchar_t* __fastcall LoadString(
 		const char* pLabel,
-		char* pOutExtraData = NULL,
+		char* pOutExtraData = nullptr,
 		int nSourceCodeFileLine = 0,
 		const char* pSourceCodeFileName = "YR++")
 			{ JMP_STD(0x734E60); }

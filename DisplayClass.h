@@ -41,7 +41,7 @@ public:
 		if(lyr >= Layer::Underground && lyr <= Layer::Top)
 			return ((LayerClass**)0x8A0360)[lyr];
 		else
-			return NULL;
+			return nullptr;
 	}
 
 	// the foundation for placement with green/red

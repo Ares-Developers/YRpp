@@ -39,7 +39,7 @@ public:
 		if(nNewCapacity != 0) {
 			this->IsInitialized = false;
 
-			bool bMustAllocate = (pMem == NULL);
+			bool bMustAllocate = (pMem == nullptr);
 			if(!pMem) {
 				pMem = new T[nNewCapacity];
 // in theory, as long as new/delete pairs are matched to the same allocator, shit should work just fine
@@ -60,7 +60,7 @@ public:
 				if(IsAllocated) {
 					delete [] this->Items;
 //					GAME_DEALLOC_ARR(this->Items);
-					this->Items = NULL;
+					this->Items = nullptr;
 				}
 			}
 
@@ -77,7 +77,7 @@ public:
 		if(this->Items && this->IsAllocated) {
 			delete[] this->Items;
 //			GAME_DEALLOC_ARR(this->Items);
-			this->Items = NULL;
+			this->Items = nullptr;
 		}
 		this->IsAllocated = false;
 		this->Capacity = 0;
@@ -115,14 +115,14 @@ public:
 	}
 
 	VectorClass() {
-		this->Items = NULL;
+		this->Items = nullptr;
 		this->Capacity = 0;
 		this->IsInitialized = true;
 		this->IsAllocated = false;
 	}
 
 	VectorClass(int nCapacity, T* pMem) {
-		this->Items = NULL;
+		this->Items = nullptr;
 		this->Capacity = nCapacity;
 		this->IsInitialized = true;
 		this->IsAllocated = false;
@@ -149,7 +149,7 @@ public:
 	}
 
 	void Purge() {
-		this->Items = NULL;
+		this->Items = nullptr;
 		this->IsAllocated = false;
 		this->Capacity = 0;
 	}
@@ -198,14 +198,14 @@ public:
 
 	T* begin() const {
 		if(!this->IsInitialized) {
-			return NULL;
+			return nullptr;
 		}
 		return &this->Items[0];
 	}
 
 	T* end() const {
 		if(!this->IsInitialized) {
-			return NULL;
+			return nullptr;
 		}
 		return &this->Items[this->Count];
 	}
@@ -265,7 +265,7 @@ public:
 		if(this->Count >= this->Capacity) {
 			if(this->IsAllocated || this->Capacity == 0) {
 				if(this->CapacityIncrement > 0) {
-					if(!this->SetCapacity(this->Capacity + this->CapacityIncrement, NULL)) {
+					if(!this->SetCapacity(this->Capacity + this->CapacityIncrement, nullptr)) {
 						return false;
 					}
 				} else {
@@ -330,7 +330,7 @@ public:
 		if(this->Items && this->IsAllocated) {
 			delete [] this->Items;
 //			GAME_DEALLOC_ARR(this->Items);
-			this->Items = NULL;
+			this->Items = nullptr;
 		}
 
 		this->IsAllocated = false;
@@ -368,7 +368,7 @@ void VectorClass<T>::Load(IStream *pStm, bool bSwizzle = 1) {
 	int ii = 0;
 	this->Purge();
 	pStm->Read(&ii, 4u, 0);
-	this->SetCapacity(ii, NULL);
+	this->SetCapacity(ii, nullptr);
 	for ( ii = 0; ii < this->Capacity; ++ii ) {
 		pStm->Read(&(this->Items[ii]), 4, 0);
 	}
@@ -385,7 +385,7 @@ void DynamicVectorClass<T>::Load(IStream *pStm, bool bSwizzle) {
 	int ii = 0;
 	this->Purge();
 	pStm->Read(&ii, 4u, 0);
-	this->SetCapacity(ii, NULL);
+	this->SetCapacity(ii, nullptr);
 	for ( int jj = 0; jj < ii; ++jj ) {
 		pStm->Read(&(this->Items[jj]), 4, 0);
 	}
