@@ -81,7 +81,7 @@ public:
 
 	CellClass* GetCellAt(CellStruct* pMapCoords)
 		{
-			int n = (pMapCoords->Y << 9) + pMapCoords->X;
+			int n = GetCellIndex(*pMapCoords);
 
 			if((n >= 0 && n < MaxCells) && Cells[n]) {
 				// && && && && !!
@@ -98,8 +98,12 @@ public:
 		{ JMP_THIS(0x586360); }
 
 	bool CellExists(CellStruct* pMapCoords) {
-		int n = (pMapCoords->Y << 9) + pMapCoords->X;
+		int n = GetCellIndex(*pMapCoords);
 		return (n >= 0 && n < MaxCells) && Cells[n] != nullptr; // WTF this was so wrong...
+	}
+
+	static int GetCellIndex(const CellStruct &MapCoords) {
+		return (MapCoords.Y << 9) + MapCoords.X;
 	}
 
 	void CellIteratorReset()
