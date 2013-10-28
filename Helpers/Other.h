@@ -148,11 +148,11 @@ protected:
 	CellStruct *origin;
 	DWORD radius;
 	DWORD position;
-	CellSpreadApplicator callback;
+	CellSpreadApplicator *callback;
 
 	public:
 		CellSpreadIterator(CellSpreadApplicator &_callback, CellStruct *_origin, DWORD _radius)
-			: origin(_origin), radius(_radius), position(0), callback(_callback)
+			: origin(_origin), radius(_radius), position(0), callback(&_callback)
 			{ }
 
 		void Apply() {
@@ -164,7 +164,7 @@ protected:
 				if(MapClass::Global()->CellExists(&tmpCell)) {
 					CellClass *c = MapClass::Global()->GetCellAt(&tmpCell);
 					for(ObjectClass *curObj = c->GetContent(); curObj; curObj = curObj->NextObject) {
-						callback(curObj, origin);
+						(*callback)(curObj, origin);
 					}
 				}
 			}
