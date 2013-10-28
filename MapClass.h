@@ -87,26 +87,40 @@ public:
 		return TryGetCellAt(cell);
 	}
 
+	CellClass* GetCellAt(const CellStruct &MapCoords) {
+		auto pCell = TryGetCellAt(MapCoords);
+
+		if(!pCell) {
+			pCell = InvalidCell();
+			pCell->MapCoords = MapCoords;
+		}
+
+		return pCell;
+	}
+
+	CellClass* GetCellAt(const CoordStruct &Crd) {
+		CellStruct cell;
+		CellClass::Coord2Cell(&Crd, &cell);
+		return GetCellAt(cell);
+	}
+
+	bool CellExists(const CellStruct &MapCoords) {
+		return TryGetCellAt(MapCoords) != nullptr;
+	}
+
 	CellClass* GetCellAt(CoordStruct* pCrd)
 		{ JMP_THIS(0x565730); }
 
 	CellClass* GetCellAt(CellStruct* pMapCoords)
 		{
-			auto pCell = TryGetCellAt(*pMapCoords);
-
-			if(!pCell) {
-				pCell = InvalidCell();
-				pCell->MapCoords = *pMapCoords;
-			}
-
-			return pCell;
+			return GetCellAt(*pMapCoords);
 		}
 
 	bool IsLocationShrouded(CoordStruct* pCrd)
 		{ JMP_THIS(0x586360); }
 
 	bool CellExists(CellStruct* pMapCoords) {
-		return TryGetCellAt(*pMapCoords) != nullptr;
+		return CellExists(*pMapCoords);
 	}
 
 	static int GetCellIndex(const CellStruct &MapCoords) {
