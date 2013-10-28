@@ -76,21 +76,29 @@ public:
 	virtual void vt_entry_74(DWORD dwUnk) RX;
 
 	//Non-virtual
+	CellClass* TryGetCellAt(const CellStruct& MapCoords) {
+		int idx = GetCellIndex(MapCoords);
+		return (idx >= 0 && idx < MaxCells) ? Cells[idx] : nullptr;
+	}
+
+	CellClass* TryGetCellAt(const CoordStruct& Crd) {
+		CellStruct cell;
+		CellClass::Coord2Cell(&Crd, &cell);
+		return TryGetCellAt(cell);
+	}
+
 	CellClass* GetCellAt(CoordStruct* pCrd)
 		{ JMP_THIS(0x565730); }
 
 	CellClass* GetCellAt(CellStruct* pMapCoords)
 		{
-			int n = GetCellIndex(*pMapCoords);
+			auto pCell = TryGetCellAt(*pMapCoords);
 
-			if((n >= 0 && n < MaxCells) && Cells[n]) {
-				// && && && && !!
-				return Cells[n];
+			if(!pCell) {
+				pCell = InvalidCell();
+				pCell->MapCoords = *pMapCoords;
 			}
 
-			CellClass* pCell = InvalidCell();
-
-			pCell->MapCoords = *pMapCoords;
 			return pCell;
 		}
 
@@ -98,8 +106,7 @@ public:
 		{ JMP_THIS(0x586360); }
 
 	bool CellExists(CellStruct* pMapCoords) {
-		int n = GetCellIndex(*pMapCoords);
-		return (n >= 0 && n < MaxCells) && Cells[n] != nullptr; // WTF this was so wrong...
+		return TryGetCellAt(*pMapCoords) != nullptr;
 	}
 
 	static int GetCellIndex(const CellStruct &MapCoords) {
