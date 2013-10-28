@@ -45,8 +45,6 @@ public:
 		{ return (UNKNOWN== tSubzoneTracking.UNKNOWN); }
 };
 
-#define MAX_CELLS	0x40000
-
 class MapClass : public GScreenClass
 {
 public:
@@ -58,6 +56,8 @@ public:
 
 	static CellClass* InvalidCell()
 		{ return (CellClass*)0xABDC50; }
+
+	static const int MaxCells = 0x40000;
 
 	//IGameMap
 	virtual long __stdcall Is_Visible(CellStruct cell) R0;
@@ -83,7 +83,7 @@ public:
 		{
 			int n = (pMapCoords->Y << 9) + pMapCoords->X;
 
-			if((n >= 0 && n < MAX_CELLS) && Cells[n]) {
+			if((n >= 0 && n < MaxCells) && Cells[n]) {
 				// && && && && !!
 				return Cells[n];
 			}
@@ -99,7 +99,7 @@ public:
 
 	bool CellExists(CellStruct* pMapCoords) {
 		int n = (pMapCoords->Y << 9) + pMapCoords->X;
-		return (n >= 0 && n < MAX_CELLS) && Cells[n] != nullptr; // WTF this was so wrong...
+		return (n >= 0 && n < MaxCells) && Cells[n] != nullptr; // WTF this was so wrong...
 	}
 
 	void CellIteratorReset()
