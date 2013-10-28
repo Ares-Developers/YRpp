@@ -5,6 +5,7 @@
 #include <Audio.h>
 
 //forward declarations
+class ObjectClass;
 class TechnoClass;
 class HouseClass;
 
@@ -42,11 +43,14 @@ public:
 	bool TimeToExplode() const
 		{ JMP_THIS(0x438A70); }
 
-
-protected:
 	//Constructor
 	//Bombs have a special constructor that just should not be called like this...
-	BombClass() : AbstractClass(false) { }
+	//See BombListClass::Plant
+	BombClass() : AbstractClass(false)
+		{ JMP_THIS(0x4385D0); }
+
+protected:
+	BombClass(bool) : AbstractClass(false) { }
 
 	//===========================================================================
 	//===== Properties ==========================================================
@@ -54,9 +58,9 @@ protected:
 
 public:
 
-	TechnoClass* OwnerObject;		//Most likely Ivan.
+	TechnoClass* Owner;		//Most likely Ivan.
 	HouseClass* OwnerHouse;
-	TechnoClass* TargetUnit;
+	ObjectClass* Target; // attaching to objects is possible, but it will never detonate
 	BOOL DeathBomb; // unused - if so, [General]CanDetonateDeathBomb applies instead of CanDetonateTimeBomb
 	int PlantingFrame;
 	int DetonationFrame;
