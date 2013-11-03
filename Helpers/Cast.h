@@ -30,7 +30,7 @@ inline T generic_cast(AbstractClass* pAbstract) {
 	typedef CompoundT<T>::BaseT Base;
 
 	static_assert(std::is_base_of<ObjectClass, Base>::value
-		|| !std::is_abstract<Base>::value,
+		&& std::is_abstract<Base>::value,
 		"generic_cast: T is required to be an abstract type derived from ObjectClass.");
 
 	if(pAbstract && (pAbstract->AbstractFlags & Base::AbsDerivateID) != 0) {
