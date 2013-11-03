@@ -125,49 +125,13 @@ private:
 
 // trajectory functors
 #include <Helpers/Other.h>
+#include <Helpers/Iterators.h>
+
 class CellSequenceApplicator
 	: public std::unary_function<const CellClass *, void> {
 	public:
 		virtual void operator() (CellClass *cell) {
 
-		}
-};
-
-// cell spread functors
-
-class CellSpreadApplicator
-	: public std::binary_function<const ObjectClass *, const CellStruct *, void> {
-	public:
-		virtual void operator() (ObjectClass *obj, CellStruct *origin) {
-
-		}
-};
-
-class CellSpreadIterator {
-protected:
-	CellStruct *origin;
-	DWORD radius;
-	DWORD position;
-	CellSpreadApplicator *callback;
-
-	public:
-		CellSpreadIterator(CellSpreadApplicator &_callback, CellStruct *_origin, DWORD _radius)
-			: origin(_origin), radius(_radius), position(0), callback(&_callback)
-			{ }
-
-		void Apply() {
-			DWORD countCells = CellSpread::NumCells(radius);
-
-			for(; position < countCells; ++position) {
-				CellStruct tmpCell = CellSpread::GetCell(position);
-				tmpCell += *origin;
-				if(MapClass::Global()->CellExists(&tmpCell)) {
-					CellClass *c = MapClass::Global()->GetCellAt(&tmpCell);
-					for(ObjectClass *curObj = c->GetContent(); curObj; curObj = curObj->NextObject) {
-						(*callback)(curObj, origin);
-					}
-				}
-			}
 		}
 };
 

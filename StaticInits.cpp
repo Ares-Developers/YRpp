@@ -731,3 +731,5 @@ bool HouseClass::CanExpectToBuild(const TechnoTypeClass * Item) const {
 	}
 	return false;
 }
+
+#include <Helpers\IteratorsDef.h>
