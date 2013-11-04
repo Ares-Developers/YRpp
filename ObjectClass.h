@@ -88,7 +88,7 @@ public:
 	virtual TechnoTypeClass* GetTechnoType() const R0;
 	virtual ObjectTypeClass* GetType() const R0;
 	virtual IndexBitfield<HouseTypeClass *> GetTypeOwners() const R0;
-	virtual wchar_t* GetUIName() const R0;
+	virtual const wchar_t* GetUIName() const R0;
 	virtual bool CanBeRepaired() const R0;
 	virtual bool CanBeSold() const R0;
 	virtual bool IsActive() const R0;
