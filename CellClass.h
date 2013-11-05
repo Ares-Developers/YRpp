@@ -113,7 +113,7 @@ public:
 		{ JMP_THIS(0x47FB90); }
 
 	// don't laugh, it returns the uiname of contained tiberium... which nobody ever sets
-	wchar_t *GetUIName() const
+	const wchar_t* GetUIName() const
 		{ JMP_THIS(0x484FF0); }
 
 	// returns the tiberium's index in OverlayTypes
