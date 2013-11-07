@@ -127,6 +127,17 @@ public:
 		return (MapCoords.Y << 9) + MapCoords.X;
 	}
 
+	// gets a coordinate in a random direction a fixed distance in leptons away from coords
+	static CoordStruct* __fastcall GetRandomCoordsNear(CoordStruct &outBuffer, const CoordStruct &coords, int distance, bool center) {
+		JMP_STD(0x49F420);
+	}
+
+	// gets a coordinate in a random direction a fixed distance in leptons away from coords
+	static CoordStruct GetRandomCoordsNear(const CoordStruct &coords, int distance, bool center) {
+		CoordStruct outBuffer;
+		return *GetRandomCoordsNear(outBuffer, coords, distance, center);
+	}
+
 	void CellIteratorReset()
 		{ JMP_THIS(0x578350); }
 
