@@ -502,6 +502,21 @@ public:
 		return this->Type->MultiplayPassive;
 	}
 
+	// whether this house is equal to Player
+	bool IsPlayer() const {
+		return this == Player;
+	}
+
+	// whether this house is equal to Observer
+	bool IsObserver() const {
+		return this == Observer;
+	}
+
+	// whether Player is equal to Observer
+	static bool IsPlayerObserver() {
+		return Player && Player->IsObserver();
+	}
+
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
