@@ -240,7 +240,7 @@ public:
 	bool unknown_bool_6DD;
 	bool NeedsRepairs; // AI handholder for repair logic,
 	bool C4Applied;
-	bool unknown_bool_6E0;
+	bool NoCrew;
 	bool unknown_bool_6E1;
 	bool unknown_bool_6E2;
 	bool HasBeenCaptured; // has this building changed ownership at least once? affects crew and repair.
