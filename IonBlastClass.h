@@ -14,11 +14,18 @@ class IonBlastClass
 public:
 	static DynamicVectorClass<IonBlastClass *>* Array;
 
+	static void UpdateAll()
+		{ JMP_STD(0x53D310); }
+
+	void Update()
+		{ JMP_THIS(0x53CBE0); }
+
 	//Constructor, Destructor
 	IonBlastClass(CoordStruct Crd)
 		{ JMP_THIS(0x53CB10); }
 
-	~IonBlastClass()		{/*???*/}
+	~IonBlastClass()
+		{ JMP_THIS(0x53CB90); }
 
 	//===========================================================================
 	//===== Properties ==========================================================
@@ -28,7 +35,7 @@ public:
 
 	CoordStruct Location;
 	int Lifetime;
-	int DisableIonBeam;	//0 = no, 1 = yes
+	BOOL DisableIonBeam;	//0 = no, 1 = yes
 
 };
 
