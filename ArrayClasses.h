@@ -114,6 +114,18 @@ public:
 		return this->Items[i];
 	}
 
+	bool Reserve(int nCapacity) {
+		if(!this->IsInitialized) {
+			return false;
+		}
+
+		if(this->Capacity >= nCapacity) {
+			return true;
+		}
+
+		return SetCapacity(nCapacity, nullptr);
+	}
+
 	VectorClass() {
 		this->Items = nullptr;
 		this->Capacity = 0;
