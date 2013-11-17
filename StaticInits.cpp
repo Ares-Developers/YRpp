@@ -732,4 +732,18 @@ bool HouseClass::CanExpectToBuild(const TechnoTypeClass * Item) const {
 	return false;
 }
 
+int HouseClass::FindSuperWeaponIndex(int Type) const {
+	for(int i = 0; i < this->Supers.Count; ++i) {
+		if(this->Supers.GetItem(i)->Type->Type == Type) {
+			return i;
+		}
+	}
+	return -1;
+}
+
+SuperClass* HouseClass::FindSuperWeapon(int Type) const {
+	auto index = this->FindSuperWeaponIndex(Type);
+	return this->Supers.GetItemOrDefault(index);
+}
+
 #include <Helpers\IteratorsDef.h>

@@ -401,6 +401,10 @@ public:
 		return this->Type->get_ID();
 	}
 
+	int FindSuperWeaponIndex(int Type) const;
+
+	SuperClass* FindSuperWeapon(int Type) const;
+
 	// I don't want to talk about these
 	// read the code <_<
 
