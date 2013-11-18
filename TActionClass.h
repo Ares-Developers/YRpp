@@ -63,7 +63,7 @@ public:
 
 #ifndef ACTION_FUNC
 #define ACTION_FUNC(name, addr) \
-	bool name(HouseClass *TargetHouse, ObjectClass *SourceObject, TriggerTypeClass *TriggerType, CellStruct *pos) \
+	bool name(HouseClass *TargetHouse, ObjectClass *SourceObject, TriggerClass *Trigger, CellStruct *pos) \
 		{ JMP_THIS(addr); }
 
 #endif
