@@ -248,11 +248,28 @@ public:
 		return crd;
 	}
 
+	static CoordStruct Cell2Coord(const CellStruct &cell, int z = 0)
+	{
+		CoordStruct ret;
+		ret.X = cell.X * 256 + 128;
+		ret.Y = cell.Y * 256 + 128;
+		ret.Z = z;
+		return ret;
+	}
+
 	static CellStruct * Coord2Cell(const CoordStruct *crd, CellStruct* cell)
 	{
 		cell->X = short(crd->X / 256);
 		cell->Y = short(crd->Y / 256);
 		return cell;
+	}
+
+	static CellStruct Coord2Cell(const CoordStruct &crd)
+	{
+		CellStruct ret;
+		ret.X = static_cast<short>(crd.X / 256);
+		ret.Y = static_cast<short>(crd.Y / 256);
+		return ret;
 	}
 
 	CoordStruct * FixHeight(CoordStruct *crd) const
