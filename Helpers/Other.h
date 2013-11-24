@@ -153,7 +153,7 @@ public:
 		T.path(allCells);
 
 		for(Trajectory::vec::iterator i = allCells.begin(); i != allCells.end(); ++i) {
-			CellClass *Cell = MapClass::Instance->GetCellAt(&*i);
+			CellClass *Cell = MapClass::Instance->GetCellAt(*i);
 			Callback(Cell);
 		}
 	}

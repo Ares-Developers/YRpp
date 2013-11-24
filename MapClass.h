@@ -82,8 +82,7 @@ public:
 	}
 
 	CellClass* TryGetCellAt(const CoordStruct& Crd) {
-		CellStruct cell;
-		CellClass::Coord2Cell(&Crd, &cell);
+		CellStruct cell = CellClass::Coord2Cell(Crd);
 		return TryGetCellAt(cell);
 	}
 
@@ -99,8 +98,7 @@ public:
 	}
 
 	CellClass* GetCellAt(const CoordStruct &Crd) {
-		CellStruct cell;
-		CellClass::Coord2Cell(&Crd, &cell);
+		CellStruct cell = CellClass::Coord2Cell(Crd);
 		return GetCellAt(cell);
 	}
 

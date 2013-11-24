@@ -54,8 +54,7 @@ void CellRangeIterator::process(const std::function<bool(CellClass*)> &action) c
 
 void CellRangeIterator::process(const std::function<bool(ObjectClass*)> &action) const {
 	// get target cell coords
-	CoordStruct coords;
-	CellClass::Cell2Coord(&center, &coords);
+	CoordStruct coords = CellClass::Cell2Coord(center);
 
 	apply<CellClass>([this, &action, &coords](CellClass* pCell) {
 		for(auto pObject = pCell->GetContent(); pObject; pObject = pObject->NextObject) {
