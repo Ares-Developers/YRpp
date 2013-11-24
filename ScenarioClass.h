@@ -78,6 +78,11 @@ public:
 	CellStruct * GetWaypointCoords(CellStruct *dest, int idx)
 		{ JMP_THIS(0x68BCC0); }
 
+	CellStruct GetWaypointCoords(int idx) {
+		CellStruct dest;
+		return *GetWaypointCoords(&dest, idx);
+	}
+
 	//CTOR / DTOR
 protected:
 	ScenarioClass() { THISCALL(0x6832C0); }
