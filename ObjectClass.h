@@ -162,7 +162,7 @@ public:
 	virtual bool IsCloseEnough3D(DWORD dwUnk, DWORD dwUnk2) const R0;
 	virtual int GetWeaponRange(int idxWeapon) const R0;
 	virtual DamageState::Value ReceiveDamage(int* pDamage, int DistanceFromEpicenter, WarheadTypeClass* pWH,
-	  ObjectClass* Attacker, BOOL IgnoreDefenses, BOOL PreventPassengerEscape, HouseClass* pAttackingHouse) R0;
+	  ObjectClass* Attacker, bool IgnoreDefenses, bool PreventPassengerEscape, HouseClass* pAttackingHouse) R0;
 	virtual void Destroy() RX;
 	virtual void Scatter(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
 	virtual bool Ignite() R0;
