@@ -118,6 +118,21 @@ public:
 	void AnnounceExpiredPointer(bool removed=true)
 		{ JMP_THIS(0x7258D0); }
 
+	CoordStruct GetCoords() const {
+		CoordStruct ret;
+		return *this->GetCoords(&ret);
+	}
+
+	CoordStruct GetCoords_() const {
+		CoordStruct ret;
+		return *this->GetCoords_(&ret);
+	}
+
+	CoordStruct GetCoords__() const {
+		CoordStruct ret;
+		return *this->GetCoords__(&ret);
+	}
+
 	//Operators
 	bool operator < (const AbstractClass &rhs) const {
 		return this->UniqueID < rhs.UniqueID;

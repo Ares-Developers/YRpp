@@ -58,8 +58,7 @@ void CellRangeIterator::process(const std::function<bool(ObjectClass*)> &action)
 
 	apply<CellClass>([this, &action, &coords](CellClass* pCell) {
 		for(auto pObject = pCell->GetContent(); pObject; pObject = pObject->NextObject) {
-			CoordStruct tmpCoords;
-			pObject->GetCoords(&tmpCoords);
+			CoordStruct tmpCoords = pObject->GetCoords();
 
 			// if it is near enough, do action
 			if(coords.DistanceFrom(tmpCoords) <= radius * 256) {
