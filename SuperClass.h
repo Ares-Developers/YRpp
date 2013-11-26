@@ -118,14 +118,14 @@ public:
 	LARGE_INTEGER BlinkTimer;
 	int SpecialSoundDuration; // see 0x6CD14F
 	CoordStruct SpecialSoundLocation;
-	bool unknown_bool_60;          // 0x60
+	bool CanHold;          // 0x60
 	PROTECTED_PROPERTY(BYTE, unused_61);
 	CellStruct ChronoMapCoords;  // 0x62
 	PROTECTED_PROPERTY(BYTE, unused_66[2]);
 	AnimClass * Animation;                // 0x68
 	bool AnimationGotInvalid;
 	bool Granted;
-	bool Quantity; // Stupidity - 0 means unlimited, 1 means one-shot
+	bool OneTime; // remove this SW when it has been fired once
 	bool IsCharged;
 	bool IsOnHold;
 	PROTECTED_PROPERTY(BYTE, unused_71[3]);
