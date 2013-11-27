@@ -7,6 +7,7 @@
 #include <ArrayClasses.h>
 
 //forward declarations
+class TechnoClass;
 class HouseClass;
 class Checksummer;
 
@@ -104,7 +105,7 @@ public:
 	virtual int GetArrayIndex() const R0;
 	virtual bool IsDead() const R0;
 	virtual CoordStruct* GetCoords(CoordStruct* pCrd) const R0;
-	virtual CoordStruct* GetCoords_(CoordStruct* pCrd) const R0;
+	virtual CoordStruct* GetDestination(CoordStruct* pCrd, TechnoClass* pDocker = nullptr) const R0; // where this is moving, or a building's dock for a techno. iow, a rendez-vous point
 	virtual bool IsOnFloor() const R0;
 	virtual bool IsInAir() const R0;
 	virtual CoordStruct* GetCoords__(CoordStruct* pCrd) const R0;
@@ -123,9 +124,9 @@ public:
 		return *this->GetCoords(&ret);
 	}
 
-	CoordStruct GetCoords_() const {
+	CoordStruct GetDestination(TechnoClass* pDocker = nullptr) const {
 		CoordStruct ret;
-		return *this->GetCoords_(&ret);
+		return *this->GetDestination(&ret, pDocker);
 	}
 
 	CoordStruct GetCoords__() const {
