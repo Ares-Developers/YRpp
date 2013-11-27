@@ -90,7 +90,7 @@ public:
 		{ JMP_THIS(0x47C620); }
 
 	// those unks are passed to TechnoClass::Scatter in that same order
-	void ScatterContent(DWORD unk2, DWORD unk3, DWORD unk4, bool alt)
+	void ScatterContent(const CoordStruct &crd, bool ignoreMission, bool ignoreDestination, bool alt)
 		{ JMP_THIS(0x481670); }
 
 	CellClass *GetNeighbourCell(unsigned int direction) const

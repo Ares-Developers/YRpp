@@ -164,7 +164,7 @@ public:
 	virtual DamageState::Value ReceiveDamage(int* pDamage, int DistanceFromEpicenter, WarheadTypeClass* pWH,
 	  ObjectClass* Attacker, bool IgnoreDefenses, bool PreventPassengerEscape, HouseClass* pAttackingHouse) R0;
 	virtual void Destroy() RX;
-	virtual void Scatter(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
+	virtual void Scatter(const CoordStruct &crd, bool ignoreMission, bool ignoreDestination) RX;
 	virtual bool Ignite() R0;
 	virtual void Extinguish() RX;
 	virtual DWORD GetPointsValue() const R0;
