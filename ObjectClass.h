@@ -107,7 +107,7 @@ public:
 	virtual CoordStruct* GetFLH(CoordStruct *pDest, int idxWeapon, CoordStruct BaseCoords) const R0;
 	virtual CoordStruct* GetExitCoords(CoordStruct* pCrd, DWORD dwUnk) const R0;
 	virtual int vt_entry_B8() const R0;
-	virtual bool vt_entry_BC(DWORD dwUnk) const R0;
+	virtual bool IsOnBridge(TechnoClass* pDocker = nullptr) const R0; // pDocker is passed to GetDestination
 	virtual bool IsStandingStill() const R0;
 	virtual bool IsDisguised() const R0;
 	virtual bool IsDisguisedAs(HouseClass *target) const R0; // only works correctly on infantry!
@@ -120,8 +120,8 @@ public:
 	// place the object on the map
 	virtual bool Put(CoordStruct* pCrd, Direction::Value dFaceDir) R0;
 
-	// cleanup things (lose line trail, deselect, etc)
-	virtual void ReachedEndOfLife(bool Silently) RX;
+	// cleanup things (lose line trail, deselect, etc). Permanently: destroyed/removed/gone opposed to just going out of sight.
+	virtual void Disappear(bool permanently) RX;
 
 	virtual void RegisterDestruction(TechnoClass *Destroyer) RX;
 
@@ -133,7 +133,7 @@ public:
 	virtual void UnmarkAllOccupationBits(CoordStruct *coords) RX;
 	virtual void MarkAllOccupationBits(CoordStruct *coords) RX;
 	virtual void UnInit() RX;
-	virtual void Uncloak2() RX;// just calls this->Uncloak(0) on TechnoClass and higher
+	virtual void Reveal() RX; // uncloak when object is bumped, damaged, detected, ...
 	virtual int KickOutUnit(TechnoClass* pTechno, CellStruct *pCell) R0;
 	virtual bool DrawIfVisible(RectangleStruct *pBounds, bool EvenIfCloaked, DWORD dwUnk3) const R0;
 	virtual CellStruct * GetFoundationData(bool IncludeBib) const R0;
