@@ -474,7 +474,7 @@ public:
 	void AI_TryFireSW()
 		{ JMP_THIS(0x5098F0); }
 
-	bool Fire_SW(int idx, CellStruct *coords)
+	bool Fire_SW(int idx, const CellStruct &coords)
 		{ JMP_THIS(0x4FAE50); }
 
 	CellStruct* PickTargetByType(CellStruct *a2, TargetType::Value TargetType)
