@@ -114,7 +114,7 @@ public:
 			return GetCellAt(*pMapCoords);
 		}
 
-	bool IsLocationShrouded(CoordStruct* pCrd)
+	bool IsLocationShrouded(const CoordStruct &crd)
 		{ JMP_THIS(0x586360); }
 
 	bool CellExists(CellStruct* pMapCoords) {
