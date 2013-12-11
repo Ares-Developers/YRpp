@@ -106,20 +106,8 @@ public:
 		return TryGetCellAt(MapCoords) != nullptr;
 	}
 
-	CellClass* GetCellAt(CoordStruct* pCrd)
-		{ JMP_THIS(0x565730); }
-
-	CellClass* GetCellAt(CellStruct* pMapCoords)
-		{
-			return GetCellAt(*pMapCoords);
-		}
-
 	bool IsLocationShrouded(const CoordStruct &crd)
 		{ JMP_THIS(0x586360); }
-
-	bool CellExists(CellStruct* pMapCoords) {
-		return CellExists(*pMapCoords);
-	}
 
 	static int GetCellIndex(const CellStruct &MapCoords) {
 		return (MapCoords.Y << 9) + MapCoords.X;
