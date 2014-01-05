@@ -613,6 +613,16 @@ public:
 	};
 };
 
+class KickOutResult {
+public:
+	typedef int Value;
+	enum {
+		Failed = 0,
+		Busy = 1,
+		Succeeded = 2
+	};
+};
+
 class Direction {
 public:
 	typedef unsigned int Value;

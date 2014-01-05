@@ -134,7 +134,7 @@ public:
 	virtual void MarkAllOccupationBits(CoordStruct *coords) RX;
 	virtual void UnInit() RX;
 	virtual void Reveal() RX; // uncloak when object is bumped, damaged, detected, ...
-	virtual int KickOutUnit(TechnoClass* pTechno, CellStruct Cell) R0;
+	virtual KickOutResult::Value KickOutUnit(TechnoClass* pTechno, CellStruct Cell) R0;
 	virtual bool DrawIfVisible(RectangleStruct *pBounds, bool EvenIfCloaked, DWORD dwUnk3) const R0;
 	virtual CellStruct * GetFoundationData(bool IncludeBib) const R0;
 	virtual void DrawBehind(Point2D* pLocation, RectangleStruct* pBounds) const RX;
