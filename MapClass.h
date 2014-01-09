@@ -167,9 +167,16 @@ public:
 	int GetCellFloorHeight(CoordStruct* XYZ)
 		{ JMP_THIS(0x578080); }
 
-	CellStruct * PickCellOnEdge(CellStruct* buffer, eEdge Edge, CellStruct *CurrentLocation, CellStruct *Fallback,
-		SpeedType::Value SpeedType, bool ValidateReachability, eMovementZone MovZone)
+	CellStruct * PickCellOnEdge(CellStruct &buffer, eEdge Edge, const CellStruct &CurrentLocation, const CellStruct &Fallback,
+		SpeedType::Value SpeedType, bool ValidateReachability, eMovementZone MovZone) const
 			{ JMP_THIS(0x4AA440); }
+
+	CellStruct PickCellOnEdge(eEdge Edge, const CellStruct &CurrentLocation, const CellStruct &Fallback,
+		SpeedType::Value SpeedType, bool ValidateReachability, eMovementZone MovZone) const
+	{
+		CellStruct buffer;
+		return *this->PickCellOnEdge(buffer, Edge, CurrentLocation, Fallback, SpeedType, ValidateReachability, MovZone);
+	}
 
 // Pathfinding voodoo
 // do not touch them, mmkay, they trigger ZoneConnection recalc which is a MUST for firestorm to work
