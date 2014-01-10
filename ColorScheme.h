@@ -31,36 +31,28 @@ public:
 /*
  * trap! most schemes are duplicated - ShadeCount 1 and ShadeCount 53
 */
-	static ColorScheme* Find(const char* find_id, int ShadeCount = 1)
-		{
-//			ColorScheme* current=NULL;
-			for(int i = 0; i < Array->Count; ++i) {
-				ColorScheme *CS = Array->GetItem(i);
-				if(!_strcmpi(CS->ID, find_id)) {
-					if(CS->ShadeCount == ShadeCount) {
-						return Array->GetItem(i);
-					}
-				}
-			}
-			return nullptr;
-		}
+	static ColorScheme* Find(const char* pID, int ShadeCount = 1) {
+		int index = FindIndex(pID, ShadeCount);
+		return Array->GetItemOrDefault(index);
+	}
 
-	static int FindIndex(const char* find_id)
-		{
-//			ColorScheme* current=NULL;
-			for(int i = 0; i < Array->Count; ++i) {
-				if(!_strcmpi(Array->GetItem(i)->ID,find_id)) {
+	static int FindIndex(const char* pID, int ShadeCount = 1) {
+		for(int i = 0; i < Array->Count; ++i) {
+			ColorScheme* pItem = Array->GetItem(i);
+			if(!_strcmpi(pItem->ID, pID)) {
+				if(pItem->ShadeCount == ShadeCount) {
 					return i;
 				}
 			}
-			return -1;
 		}
+		return -1;
+	}
 
-	static ColorScheme * __fastcall FindByName(const char *Name, ColorStruct *BaseColor, BytePalette *Pal1, BytePalette *Pal2, int ShadeCount)
+	static ColorScheme * __fastcall FindByName(const char* pID, const ColorStruct &BaseColor, const BytePalette &Pal1, const BytePalette &Pal2, int ShadeCount)
 		{ JMP_THIS(0x68C9C0); }
 
 	//Constructor, Destructor
-	ColorScheme(const char* pID, ColorStruct* BaseColor, DWORD arg8, DWORD argC, DWORD arg10, DWORD arg14)
+	ColorScheme(const char* pID, const ColorStruct &BaseColor, const BytePalette &Pal1, const BytePalette &Pal2, int ShadeCount, bool AddToArray)
 		{ JMP_THIS(0x68C710); }
 
 	~ColorScheme()
