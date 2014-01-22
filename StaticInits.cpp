@@ -320,7 +320,6 @@ ALIAS(char**, StringTable::ExtraValues, 0xB1CF7C);
 
 #include <SuperClass.h>
 DECL(SuperClass, 0xA83CB8);
-ALIAS(CoordStruct, LightningStorm::EmptyCoords, 0xA9FA30);
 ALIAS(double, LightningStorm::CloudHeightFactor, 0xB0CDD8);
 ALIAS(CellStruct, LightningStorm::Coords, 0xA9F9CC);
 ALIAS(HouseClass*, LightningStorm::Owner, 0xA9FACC);

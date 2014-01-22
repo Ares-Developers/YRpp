@@ -136,7 +136,6 @@ public:
 class LightningStorm
 {
 public:
-	static CoordStruct &EmptyCoords;
 	static double &CloudHeightFactor;
 
 	static CellStruct &Coords;
