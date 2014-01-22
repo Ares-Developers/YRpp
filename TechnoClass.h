@@ -135,7 +135,6 @@ public:
 	enum {AbsDerivateID = ABSFLAGS_ISTECHNO};
 
 	static DynamicVectorClass<TechnoClass *>* Array; // HAX to instantiate
-	static CoordStruct &DefaultCoords;
 
 	//IPersistStream
 	virtual HRESULT __stdcall Load(IStream* pStm) R0;
