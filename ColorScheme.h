@@ -64,7 +64,7 @@ public:
 
 public:
 
-	int                ArrayIndex;
+	int                ArrayIndex; // this is off by one (always one higher than the actual index). that's because consistency and reason suck.
 
 	BytePalette Colors;
 
