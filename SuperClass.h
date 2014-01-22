@@ -18,7 +18,6 @@ public:
 
 	//Static
 	static DynamicVectorClass<SuperClass*>* Array;
-	static CellStruct &DefaultCoords; //0xB0C000
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
