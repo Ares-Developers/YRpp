@@ -131,7 +131,6 @@ public:
 
 	//Static
 	static DynamicVectorClass<HouseClass*>* Array;
-	static CellStruct &DefaultIonCannonCoords; //0xA8EF98
 
 	static HouseClass *&Player;
 	static HouseClass *&Observer;

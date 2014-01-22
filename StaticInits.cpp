@@ -146,7 +146,6 @@ ALIAS_O(GetCDClass*, GetCDClass::Instance, 0xA8E8E8);
 DECL(HouseClass, 0xA80228);
 ALIAS(HouseClass *, HouseClass::Player, 0xA83D4C);
 ALIAS(HouseClass *, HouseClass::Observer, 0xAC1198);
-ALIAS(CellStruct, HouseClass::DefaultIonCannonCoords, 0xA8EF98);
 
 #include <HouseTypeClass.h>
 DECL(HouseTypeClass, 0xA83C98);
