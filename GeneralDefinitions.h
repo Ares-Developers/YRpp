@@ -848,21 +848,25 @@ typedef int eMission;
 #define	mission_SpyplaneOverfly		0x20
 
 
-typedef int eMovementZone;
-
-#define	mz_Normal		0x0
-#define	mz_Crusher		0x1
-#define	mz_Destroyer		0x2
-#define	mz_AmphibiousDestroyer		0x3
-#define	mz_AmphibiousCrusher		0x4
-#define	mz_Amphibious		0x5
-#define	mz_Subterrannean		0x6
-#define	mz_Infantry		0x7
-#define	mz_InfantryDestroyer		0x8
-#define	mz_Fly		0x9
-#define	mz_WaterBeach		0xB
-#define	mz_CrusherAll		0xC
-
+class MovementZone {
+public:
+	typedef int Value;
+	enum {
+		Normal = 0,
+		Crusher = 1,
+		Destroyer = 2,
+		AmphibiousDestroyer = 3,
+		AmphibiousCrusher = 4,
+		Amphibious = 5,
+		Subterrannean = 6,
+		Infantry = 7,
+		InfantryDestroyer = 8,
+		Fly = 9,
+		Water = 10,
+		WaterBeach = 11,
+		CrusherAll = 12
+	};
+};
 
 class Pip {
 public:

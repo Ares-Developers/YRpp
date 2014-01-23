@@ -168,11 +168,11 @@ public:
 		{ JMP_THIS(0x578080); }
 
 	CellStruct * PickCellOnEdge(CellStruct &buffer, eEdge Edge, const CellStruct &CurrentLocation, const CellStruct &Fallback,
-		SpeedType::Value SpeedType, bool ValidateReachability, eMovementZone MovZone) const
+		SpeedType::Value SpeedType, bool ValidateReachability, MovementZone::Value MovZone) const
 			{ JMP_THIS(0x4AA440); }
 
 	CellStruct PickCellOnEdge(eEdge Edge, const CellStruct &CurrentLocation, const CellStruct &Fallback,
-		SpeedType::Value SpeedType, bool ValidateReachability, eMovementZone MovZone) const
+		SpeedType::Value SpeedType, bool ValidateReachability, MovementZone::Value MovZone) const
 	{
 		CellStruct buffer;
 		return *this->PickCellOnEdge(buffer, Edge, CurrentLocation, Fallback, SpeedType, ValidateReachability, MovZone);
@@ -188,7 +188,7 @@ public:
 		{ JMP_THIS(0x586990); }
 
 	// Find nearest spot. a2 and a14 are pointers to CellStruct buffers
-	CellStruct* Pathfinding_Find(int *a2, CellStruct *position, int SpeedType, int a5, int MovementZone, int InAir, int a8, int a9, int a10, char a11, char a12, char a13, int *a14, char a15, char a16)
+	CellStruct* Pathfinding_Find(int *a2, CellStruct *position, int SpeedType, int a5, MovementZone::Value MovementZone, int InAir, int a8, int a9, int a10, char a11, char a12, char a13, int *a14, char a15, char a16)
 		{ JMP_THIS(0x56DC20); }
 
 
