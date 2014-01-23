@@ -187,10 +187,14 @@ public:
 	void Update_Pathfinding_2(DynamicVectorClass<CellStruct> *where)
 		{ JMP_THIS(0x586990); }
 
-	// Find nearest spot. a2 and a14 are pointers to CellStruct buffers
-	CellStruct* Pathfinding_Find(int *a2, CellStruct *position, int SpeedType, int a5, MovementZone::Value MovementZone, int InAir, int a8, int a9, int a10, char a11, char a12, char a13, int *a14, char a15, char a16)
+	// Find nearest spot
+	CellStruct* Pathfinding_Find(CellStruct &outBuffer, const CellStruct &position, SpeedType::Value SpeedType, int a5, MovementZone::Value MovementZone, bool alt, int SpaceSizeX, int SpaceSizeY, bool disallowOverlay, bool a11, bool requireBurrowable, bool allowBridge, const CellStruct &closeTo, bool a15, bool buildable)
 		{ JMP_THIS(0x56DC20); }
 
+	CellStruct Pathfinding_Find(const CellStruct &position, SpeedType::Value SpeedType, int a5, MovementZone::Value MovementZone, bool alt, int SpaceSizeX, int SpaceSizeY, bool disallowOverlay, bool a11, bool requireBurrowable, bool allowBridge, const CellStruct &closeTo, bool a15, bool buildable) {
+		CellStruct outBuffer;
+		return *Pathfinding_Find(outBuffer, position, SpeedType, a5, MovementZone, alt, SpaceSizeX, SpaceSizeY, disallowOverlay, a11, requireBurrowable, allowBridge, closeTo, a15, buildable);
+	}
 
 	void  AddContentAt(CellStruct *coords, TechnoClass *Content)
 		{ JMP_THIS(0x5683C0); }
