@@ -262,7 +262,7 @@ public:
 	short unknown_short_700;
 	bool UpgradeLevel; // as defined by Type->UpgradesToLevel=
 	char GateStage;
-	ePrismChargeState PrismStage;
+	PrismChargeState::Value PrismStage;
 	CoordStruct PrismTargetCoords;
 	DWORD DelayBeforeFiring;
 

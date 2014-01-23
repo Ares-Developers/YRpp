@@ -938,12 +938,15 @@ typedef int ePrerequisite;
 #define	prereq_POWER		-0x1
 
 
-typedef int ePrismChargeState;
-
-#define		pcs_Idle		0
-#define		pcs_Master		1
-#define		pcs_Slave		2
-
+class PrismChargeState {
+public:
+	typedef int Value;
+	enum {
+		Idle = 0,
+		Master = 1,
+		Slave = 2
+	};
+};
 
 class RadarEventType {
 public:
