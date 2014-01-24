@@ -1,29 +1,32 @@
 #ifndef SHP_H_
 #define SHP_H_
 
-struct RectangleStruct;
+#include <BasicStructures.h>
 
 //SHP file stuff
 struct SHPStruct
 {
-	WORD		unknown_0;
-	short		Width;
-	short		Height;
-	short		Frames;
-	DWORD		unknown_8;
-	DWORD		unknown_C;
-	//linked list of all SHPStructs
-	SHPStruct*	Next;
-	SHPStruct*	Prev;
+	SHPStruct() : Type(0), Width(0), Height(0), Frames(0)
+		{}
 
-	RectangleStruct *GetFrameBounds(RectangleStruct *buf, unsigned int FrameIndex)
+	~SHPStruct()
+		{ JMP_THIS(0x69E500); }
+
+	RectangleStruct* GetFrameBounds(RectangleStruct &buffer, int idxFrame) const
 		{ JMP_THIS(0x69E7E0); }
 
-	bool HasCompression(int frameIdx)
+	RectangleStruct GetFrameBounds(int idxFrame) const {
+		RectangleStruct buffer;
+		return *GetFrameBounds(buffer, idxFrame);
+	}
+
+	bool HasCompression(int idxFrame) const
 		{ JMP_THIS(0x69E900); }
 
-	void Unload()
-		{ JMP_THIS(0x69E500); }
+	WORD	Type;
+	short	Width;
+	short	Height;
+	short	Frames;
 };
 
 //=== GLOBAL LINKED LIST OF ALL LOADED SHP FILES
