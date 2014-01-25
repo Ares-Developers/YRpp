@@ -1509,14 +1509,17 @@ typedef DWORD eControlKeyFlags;
 #define ckf_ALT 0x04
 
 
-typedef int eEdge;
-
-#define	edge_NORTH		0x00
-#define	edge_EAST		0x01
-#define	edge_SOUTH		0x02
-#define	edge_WEST		0x03
-#define	edge_AIR		0x04
-
+class Edge {
+public:
+	typedef int Value;
+	enum {
+		North = 0,
+		East = 1,
+		South = 2,
+		West = 3,
+		Air = 4
+	};
+};
 
 class Move {
 public:

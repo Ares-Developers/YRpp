@@ -560,7 +560,7 @@ public:
 	int                   TechLevel;
 	PROTECTED_PROPERTY(DWORD,       AltAllies); // ask question, receive brain damage
 	int                   StartingCredits;	//not sure how these are used // actual credits = this * 100
-	eEdge                  StartingEdge;		//??? use the EDGE macros
+	Edge::Value           StartingEdge;
 	DWORD                 unknown_1E4;
 	int                   SideIndex;
 	bool                  CurrentPlayer;		//is controlled by the player at this computer
@@ -814,7 +814,7 @@ public:
 	bool                  RadarBlackout;
 	bool                  SpySatActive;
 	bool                  IsBeingDrained;
-	eEdge                   Edge; //??? use the EDGE macros
+	Edge::Value           Edge;
 	CellStruct EMPTarget;
 	CellStruct NukeTarget;
 	DWORD                 Allies;	//flags, one bit per HouseClass instance
