@@ -929,16 +929,18 @@ public:
 	};
 };
 
-
-typedef int ePrerequisite;
-
-#define	prereq_PROC		-0x6
-#define	prereq_TECH		-0x5
-#define	prereq_RADAR		-0x4
-#define	prereq_BARRACKS		-0x3
-#define	prereq_FACTORY		-0x2
-#define	prereq_POWER		-0x1
-
+class Prerequisite {
+public:
+	typedef int Value;
+	enum {
+		Proc = -6,
+		Tech = -5,
+		Radar = -4,
+		Barracks = -3,
+		Factory = -2,
+		Power = -1
+	};
+};
 
 class PrismChargeState {
 public:
