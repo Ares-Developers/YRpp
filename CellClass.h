@@ -349,7 +349,7 @@ public:
 
 //	PROTECTED_PROPERTY(BYTE,	unknown_E8[4]);
 
-	eLandType          LandType;	//What type of floor is this Cell?
+	LandType::Value    LandType;	//What type of floor is this Cell?
 	double             RadLevel;	//The level of radiation on this Cell.
 	RadSiteClass*      RadSite;	//A pointer to the responsible RadSite.
 

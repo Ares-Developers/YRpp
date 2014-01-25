@@ -55,7 +55,7 @@ protected:
 public:
 
 	int                ArrayIndex;
-	eLandType          LandType;
+	LandType::Value    LandType;
 	AnimTypeClass*     CellAnim;
 	int                DamageLevels;
 	int                Strength;

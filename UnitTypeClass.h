@@ -49,7 +49,7 @@ protected:
 public:
 
 	int ArrayIndex;
-	eLandType MovementRestrictedTo;
+	LandType::Value MovementRestrictedTo;
 	CoordStruct HalfDamageSmokeLocation;
 	bool Passive;
 	bool CrateGoodie;

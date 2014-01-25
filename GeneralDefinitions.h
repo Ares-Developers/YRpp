@@ -734,22 +734,24 @@ public:
 	};
 };
 
-
-typedef int eLandType;
-
-#define	lt_Clear		0x0
-#define	lt_Road		0x1
-#define	lt_Water		0x2
-#define	lt_Rock		0x3
-#define	lt_Wall		0x4
-#define	lt_Tiberium		0x5
-#define	lt_Beach		0x6
-#define	lt_Rough		0x7
-#define	lt_Ice		0x8
-#define	lt_Railroad		0x9
-#define	lt_Tunnel		0xA
-#define	lt_Weeds		0xB
-
+class LandType {
+public:
+	typedef int Value;
+	enum {
+		Clear = 0,
+		Road = 1,
+		Water = 2,
+		Rock = 3,
+		Wall = 4,
+		Tiberium = 5,
+		Beach = 6,
+		Rough = 7,
+		Ice = 8,
+		Railroad = 9,
+		Tunnel = 10,
+		Weeds = 11
+	};
+};
 
 /*
  *

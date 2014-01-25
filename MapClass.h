@@ -157,7 +157,7 @@ public:
 	 * }
 	 */
 	static AnimTypeClass * __fastcall SelectDamageAnimation
-		(int Damage, WarheadTypeClass *WH, eLandType LandType, CoordStruct *coords)
+		(int Damage, WarheadTypeClass *WH, LandType::Value LandType, CoordStruct *coords)
 			{ JMP_STD(0x48A4F0); }
 
 	static void __fastcall FlashbangWarheadAt
