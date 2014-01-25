@@ -170,7 +170,7 @@ public:
 	double          PitchSpeed;
 	double          PitchAngle;
 	int             BuildLimit;
-	int             Category;
+	Category::Value Category;
 	DWORD           unknown_3C0;
 	DWORD align_3C4;
 	double          DeployTime;

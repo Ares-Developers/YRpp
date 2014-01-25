@@ -556,20 +556,23 @@ public:
 	};
 };
 
-
-typedef int eCategory;
-
-#define	cat_Soldier		0x0
-#define	cat_Civilian		0x1
-#define	cat_VIP		0x2
-#define	cat_Recon		0x3
-#define	cat_AFV		0x4
-#define	cat_IFV		0x5
-#define	cat_LRFS		0x6
-#define	cat_Support		0x7
-#define	cat_Transport		0x8
-#define	cat_AirPower		0x9
-#define	cat_AirLift		0xA
+class Category {
+public:
+	typedef int Value;
+	enum {
+		Soldier = 0,
+		Civilian = 1,
+		VIP = 2,
+		Recon = 3,
+		AFV = 4,
+		IFV = 5,
+		LRFS = 6,
+		Support = 7,
+		Transport = 8,
+		AirPower = 9,
+		AirLift = 10
+	};
+};
 
 
 typedef int eCellFlags;

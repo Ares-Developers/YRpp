@@ -50,8 +50,8 @@ interface IHouse : IUnknown
     virtual long __stdcall				Available_Storage()=0;
     virtual long __stdcall				Power_Output()=0;
     virtual long __stdcall				Power_Drain()=0;
-    virtual long __stdcall				Category_Quantity(eCategory category)=0;
-    virtual long __stdcall				Category_Power(eCategory category)=0;
+	virtual long __stdcall				Category_Quantity(Category::Value category) = 0;
+	virtual long __stdcall				Category_Power(Category::Value category) = 0;
     virtual CellStruct __stdcall			Base_Center()=0;
     virtual HRESULT __stdcall			Fire_Sale()=0;
     virtual HRESULT __stdcall			All_To_Hunt()=0;
@@ -61,8 +61,8 @@ interface IPublicHouse : IUnknown
 {
     virtual long __stdcall			ID_Number()=0;
     virtual BSTR __stdcall			Name()=0;
-    virtual long __stdcall			Apparent_Category_Quantity(eCategory category)=0;
-    virtual long __stdcall			Apparent_Category_Power(eCategory category)=0;
+	virtual long __stdcall			Apparent_Category_Quantity(Category::Value category) = 0;
+	virtual long __stdcall			Apparent_Category_Power(Category::Value category) = 0;
     virtual CellStruct __stdcall		Apparent_Base_Center()=0;
     virtual bool __stdcall	Is_Powered()=0;
 };
