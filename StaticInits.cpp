@@ -127,6 +127,9 @@ ALIAS(ConvertClass *, FileSystem::ANIM_PAL, 0x87F6C0);
 ALIAS(ConvertClass *, FileSystem::THEATER_PAL, 0x87F6C4);
 ALIAS(ConvertClass *, FileSystem::MOUSE_PAL, 0x87F6C8);
 
+#include <FootClass.h>
+DECL(FootClass, 0x8B3DC0);
+
 #include <FPSCounter.h>
 ALIAS(unsigned int, FPSCounter::CurrentFrameRate, 0xABCD44);
 ALIAS(unsigned int, FPSCounter::TotalFramesElapsed, 0xABCD48);

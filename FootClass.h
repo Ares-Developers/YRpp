@@ -17,6 +17,8 @@ class FootClass : public TechnoClass
 public:
 	enum {AbsDerivateID = ABSFLAGS_ISFOOT};
 
+	static DynamicVectorClass<FootClass *>* Array;
+
 	//IPersistStream
 	//Destructor
 	virtual ~FootClass() RX;
