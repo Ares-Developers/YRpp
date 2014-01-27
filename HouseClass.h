@@ -491,6 +491,14 @@ public:
 	FactoryClass * GetPrimaryFactory(eAbstractType ID, bool Naval, eBuildCat BuildCat)
 		{ JMP_THIS(0x500510); }
 
+	CellStruct GetBaseCenter() const {
+		if(this->BaseCenter != CellStruct::Empty) {
+			return this->BaseCenter;
+		} else {
+			return this->BaseSpawnCell;
+		}
+	}
+
 	/*!
 		At the moment, this function is really just a more intuitively named mask for
 		this->Type->MultiplayPassive, but it might be expanded into something more
@@ -696,7 +704,7 @@ public:
 	int KilledBuildingsOfHouses [0x14];	// 20 Houses only!
 	int                   TotalKilledBuildings;
 	DWORD                 unknown_548C;
-	CellStruct*           BaseSpawnCell;
+	CellStruct            BaseSpawnCell;
 	CellStruct            BaseCenter; // set by map action 137 and 138
 	DWORD unknown_5498;
 	DWORD unknown_549C;
