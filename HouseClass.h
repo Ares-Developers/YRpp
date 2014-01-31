@@ -818,7 +818,7 @@ public:
 	ColorStruct LaserColor; // my idb says so
 	byte          padding;
 	BaseClass Base;
-	bool                  PowerBlackout;
+	bool                  RecheckPower;
 	bool                  RadarBlackout;
 	bool                  SpySatActive;
 	bool                  IsBeingDrained;
