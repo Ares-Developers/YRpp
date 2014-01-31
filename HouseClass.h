@@ -586,7 +586,7 @@ public:
 	bool                  CiviliansEvacuated; // used by the CivEvac triggers
 	bool                  FirestormActive;
 	bool                  HasThreatNode;
-	bool                  ShouldRecheckTechTree;
+	bool                  RecheckTechTree;
 	PROTECTED_PROPERTY(BYTE,        unknown_1FD[0x0F]);
 	int                   SelectedPathIndex;
 	WaypointPathClass* PlanningPaths [0x0C]; // 12 paths for "planning mode"
