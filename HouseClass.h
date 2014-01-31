@@ -358,11 +358,22 @@ public:
 	bool AllPrerequisitesAvailable(TechnoTypeClass *Techno, DynamicVectorClass<BuildingTypeClass *> *vectorBuildings, int vectorLength)
 		{ JMP_THIS(0x505360); }
 
-	bool ControlledByHuman() const
-		{ JMP_THIS(0x50B730); }
+	// whether any human player controls this house
+	bool ControlledByHuman() const { // { JMP_THIS(0x50B730); }
+		bool result = this->CurrentPlayer;
+		if(SessionClass::Instance->GameMode == GameMode::Campaign) {
+			result = result || this->PlayerControl;
+		}
+		return result;
+	}
 
-	bool ControlledByPlayer() const
-		{ JMP_THIS(0x50B6F0); }
+	// whether the human player on this PC can control this house
+	bool ControlledByPlayer() const { // { JMP_THIS(0x50B6F0); }
+		if(SessionClass::Instance->GameMode != GameMode::Campaign) {
+			return this->IsPlayer();
+		}
+		return this->CurrentPlayer || this->PlayerControl;
+	}
 
 	// Target ought to be Object, I imagine, but cell doesn't work then
 	void __fastcall SendSpyPlanes(int AircraftTypeIdx, int AircraftAmount, eMission SetMission, AbstractClass *Target, ObjectClass *Destination)
@@ -454,14 +465,6 @@ public:
 		int Test = Item->ForbiddenHouses;
 		if(Test == -1) { return 0; }
 		return 0 != (Test & ( 1 << this->Type->ArrayIndex));
-	}
-
-	bool IsHumanoid() const {
-		bool result = this->CurrentPlayer;
-		if(SessionClass::Instance->GameMode == GameMode::Campaign) {
-			result = result || this->PlayerControl;
-		}
-		return result;
 	}
 
 	signed int CanBuild(TechnoTypeClass *item, bool bypassExtras, bool includeQueued) const
