@@ -819,7 +819,7 @@ public:
 	byte          padding;
 	BaseClass Base;
 	bool                  RecheckPower;
-	bool                  RadarBlackout;
+	bool                  RecheckRadar;
 	bool                  SpySatActive;
 	bool                  IsBeingDrained;
 	Edge::Value           Edge;
