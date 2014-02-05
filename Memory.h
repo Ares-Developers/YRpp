@@ -30,134 +30,168 @@
  * Newer plan - previous hook screwed performance, so going back
  */
 
-// allocate scalars
-template<typename T>
-static void * __cdecl Allocate(bool inDLL) {
-	size_t sz = sizeof(T);
+/*
+* Yet a newer plan - use variadic templates
+*/
 
-	if(inDLL) {
-		return operator new(sz);
+// provides access to the game's operator new and operator delete.
+namespace YRMemory {
+	// both functions are naked, which means neither prolog nor epilog are
+	// generated for them. thus, a simple jump suffices to redirect to the
+	// original methods, and no more book keeping or cleanup has to be
+	// performed the calling convention has to match for this trick to work.
+
+	// naked does not support inlining. the inline modifier here means that
+	// multiple definitions are allowed.
+
+	// the game's operator new
+	__declspec(naked) inline void* __cdecl Allocate(size_t sz) {
+		JMP(0x7C8E17);
 	}
 
-	PUSH_VAR32(sz);
-	CALL(0x7C8E17);
-	ADD_ESP(4);
-};
-
-#define DO_ALLOC(inDLL, TT, var, ...) \
-{ \
-	var = nullptr; \
-	if(void *p = Allocate<TT>(inDLL)) { \
-		var = new (p) TT(__VA_ARGS__); \
-	} \
-	if(!var) { \
-		ExitProcess(1); \
-	} \
-} \
-
-// allocate in the game's pool
-#define GAME_ALLOC(TT, var, ...) \
-{ \
-	DO_ALLOC(0, TT, var, __VA_ARGS__); \
+	// the game's operator delete
+	__declspec(naked) inline void __cdecl Deallocate(void* mem) {
+		JMP(0x7C8B3D);
+	}
 }
 
-//	var = new TT(__VA_ARGS__);
+// this is a stateless basic allocator definition that manages memory using the
+// game's operator new and operator delete methods. do not use it directly,
+// though. use std::allocator_traits, which will fill in the blanks.
+template <typename T>
+struct GameAllocator {
+	typedef T value_type;
 
-// allocate in the DLL's pool
-// not sure if this is ever going to be needed
-#define DLL_ALLOC(TT, var, ...) \
-{ \
-	DO_ALLOC(1, TT, var, __VA_ARGS__);\
-} \
+	GameAllocator() {}
 
-// allocate vectors
-template<typename T>
-static void * __cdecl Allocate_Array(bool inDLL, size_t Capacity) {
-	size_t sz = sizeof(T) * Capacity;
+	template <typename U>
+	GameAllocator(const GameAllocator<U>&) {}
 
-	if(inDLL) {
-		return operator new(sz);
+	bool operator == (const GameAllocator&) const { return true; }
+	bool operator != (const GameAllocator&) const { return false; }
+
+	T* allocate(const size_t count) const {
+		return static_cast<T*>(YRMemory::Allocate(count * sizeof(T)));
 	}
 
-	PUSH_VAR32(sz);
-	CALL(0x7C8E17);
-	ADD_ESP(4);
+	void deallocate(T* const ptr, size_t count) const {
+		YRMemory::Deallocate(ptr);
+	}
 };
 
-// allocate arrays
-#define DO_ALLOC_ARR(inDLL, TT, Capacity, var) \
-{ \
-	var = nullptr; \
-	if(void *p = Allocate_Array<TT>(inDLL, Capacity)) { \
-		var = new (p) TT[Capacity]; \
-	} \
-	if(!var) { \
-		ExitProcess(1); \
-	} \
-} \
-
-// allocate array in the game's pool
-#define GAME_ALLOC_ARR(TT, Capacity, var) \
-{ \
-	DO_ALLOC_ARR(0, TT, Capacity, var); \
-}
-
-// deallocate scalars
-template<typename T>
-static void __cdecl Deallocate(T* Tptr, bool inDLL) {
-	if(Tptr) {
-		Tptr->~T();
-	}
-	if(inDLL) {
-		operator delete(Tptr);
-		return;
-	}
-	PUSH_VAR32(Tptr);
-	CALL(0x7C8B3D);
-	ADD_ESP(4);
-};
-
-// deallocate from the game's pool
-#define GAME_DEALLOC(var) \
-{ \
-	Deallocate(var, 0); \
-} \
-
-//	delete var;
-
-// deallocate from the DLL's pool
-#define DLL_DEALLOC(var) \
-{ \
-	Deallocate(var, 1); \
-} \
-
-// deallocate vectors
-template<typename T>
-static void __cdecl Deallocate_Array(T* Tptr, bool inDLL) {
-	if(Tptr) {
-		T *iter = Tptr;
-		// ye olde black magick
-		size_t *p = reinterpret_cast<size_t *>(iter) - 1;
-		size_t amount = *p;
-		while(amount > 0 && iter) {
-			iter->~T();
-			++iter;
-			--amount;
+// construct or destroy objects using an allocator.
+class Memory {
+public:
+	// construct scalars
+	template <typename T, typename TAlloc, typename... TArgs>
+	static inline T* Create(TAlloc& alloc, TArgs&&... args) {
+		if(auto ptr = std::allocator_traits<TAlloc>::allocate(alloc, 1)) {
+			std::allocator_traits<TAlloc>::construct(alloc, ptr, std::forward<TArgs>(args)...);
+			return ptr;
 		}
+		ExitProcess(1);
+	};
+
+	// destruct scalars
+	template<typename T, typename TAlloc>
+	static inline void Delete(TAlloc& alloc, T* ptr) {
+		if(ptr) {
+			std::allocator_traits<TAlloc>::destroy(alloc, ptr);
+			std::allocator_traits<TAlloc>::deallocate(alloc, ptr, 1);
+		}
+	};
+
+	// construct vectors
+	template <typename T, typename TAlloc, typename... TArgs>
+	static inline T* CreateArray(TAlloc& alloc, size_t capacity, TArgs&&... args) {
+		if(auto ptr = std::allocator_traits<TAlloc>::allocate(alloc, capacity)) {
+			if(capacity && !sizeof...(args) && std::is_scalar<T>::value) {
+				// set to 0
+				std::memset(ptr, 0, capacity * sizeof(T));
+			} else {
+				for(size_t i = 0; i < capacity; ++i) {
+					// use args... here. can't move args, because we need to reuse them
+					std::allocator_traits<TAlloc>::construct(alloc, &ptr[i], args...);
+				}
+			}
+			return ptr;
+		}
+		ExitProcess(1);
 	}
-	if(inDLL) {
-		operator delete[](Tptr);
-		return;
-	}
-	PUSH_VAR32(Tptr);
-	CALL(0x7C8B3D);
-	ADD_ESP(4);
+
+	// destruct vectors
+	template<typename T, typename TAlloc>
+	static inline void DeleteArray(TAlloc& alloc, T* ptr, size_t capacity) {
+		if(ptr) {
+			// call the destructor if required
+			if(capacity && !std::is_trivially_destructible<T>::value) {
+				for(size_t i = 0; i < capacity; ++i) {
+					std::allocator_traits<TAlloc>::destroy(alloc, &ptr[i]);
+				}
+			}
+
+			std::allocator_traits<TAlloc>::deallocate(alloc, ptr, capacity);
+		}
+	};
 };
 
-// deallocate from the game's pool
-#define GAME_DEALLOC_ARR(var) \
-{ \
-	Deallocate_Array(var, 0); \
-} \
+// helper methods as free functions.
+
+template <typename T, typename... TArgs>
+static inline T* GameCreate(TArgs&&... args) {
+	GameAllocator<T> alloc;
+	return Memory::Create<T>(alloc, std::forward<TArgs>(args)...);
+}
+
+template<typename T>
+static inline void GameDelete(T* ptr) {
+	GameAllocator<T> alloc;
+	Memory::Delete(alloc, ptr);
+}
+
+template <typename T, typename... TArgs>
+static inline T* GameCreateArray(size_t capacity) {
+	GameAllocator<T> alloc;
+	return Memory::CreateArray<T>(alloc, capacity, std::forward<TArgs>(args)...);
+}
+
+template<typename T>
+static inline void GameDeleteArray(T* ptr, size_t capacity) {
+	GameAllocator<T> alloc;
+	Memory::DeleteArray(alloc, ptr, capacity);
+}
+
+template <typename T, typename... TArgs>
+static inline T* DLLCreate(TArgs&&... args) {
+	std::allocator<T> alloc;
+	return Memory::Create<T>(alloc, std::forward<TArgs>(args)...);
+}
+
+template<typename T>
+static inline void DLLDelete(T* ptr) {
+	std::allocator<T> alloc;
+	Memory::Delete(alloc, ptr);
+}
+
+template <typename T, typename... TArgs>
+static inline T* DLLCreateArray(size_t capacity, TArgs&&... args) {
+	std::allocator<T> alloc;
+	return Memory::CreateArray<T>(alloc, capacity, std::forward<TArgs>(args));
+}
+
+template<typename T>
+static inline void DLLDeleteArray(T* ptr, size_t capacity) {
+	std::allocator<T> alloc;
+	Memory::DeleteArray(alloc, ptr, capacity);
+}
+
+//#define GAME_ALLOC(TT, var, ...) \
+//	var = GameCreate<TT>(__VA_ARGS__);
+//
+//#define GAME_DEALLOC(var) \
+//	GameDelete(var);
+//
+//#define GAME_ALLOC_ARR(TT, Capacity, var) \
+//	var = GameCreateArray<TT>(Capacity);
 
 #endif
