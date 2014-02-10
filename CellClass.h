@@ -257,17 +257,19 @@ public:
 		return ret;
 	}
 
-	CoordStruct * FixHeight(CoordStruct *crd) const
+	CoordStruct FixHeight(CoordStruct crd) const
 	{
-		crd->Z += ((this->Flags & cf_Bridge) != 0) * BridgeHeight();
+		if(this->ContainsBridge()) {
+			crd.Z += BridgeHeight();
+		}
 		return crd;
 	}
 
 	// helper - gets coords and fixes height for bridge
-	CoordStruct * GetCoordsWithBridge(CoordStruct *crd) const
+	CoordStruct GetCoordsWithBridge() const
 	{
-		this->GetCoords(crd);
-		return this->FixHeight(crd);
+		CoordStruct buffer =  this->GetCoords();
+		return FixHeight(buffer);
 	}
 
 	void MarkForRedraw()
