@@ -118,7 +118,7 @@ public:
 	virtual bool Remove() R0;
 
 	// place the object on the map
-	virtual bool Put(CoordStruct* pCrd, Direction::Value dFaceDir) R0;
+	virtual bool Put(const CoordStruct& Crd, Direction::Value dFaceDir) R0;
 
 	// cleanup things (lose line trail, deselect, etc). Permanently: destroyed/removed/gone opposed to just going out of sight.
 	virtual void Disappear(bool permanently) RX;
