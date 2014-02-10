@@ -130,8 +130,8 @@ public:
 
 	virtual bool SpawnParachuted(const CoordStruct& coords) R0;
 	virtual void DropAsBomb() RX;
-	virtual void UnmarkAllOccupationBits(CoordStruct *coords) RX;
-	virtual void MarkAllOccupationBits(CoordStruct *coords) RX;
+	virtual void UnmarkAllOccupationBits(const CoordStruct& coords) RX;
+	virtual void MarkAllOccupationBits(const CoordStruct& coords) RX;
 	virtual void UnInit() RX;
 	virtual void Reveal() RX; // uncloak when object is bumped, damaged, detected, ...
 	virtual KickOutResult::Value KickOutUnit(TechnoClass* pTechno, CellStruct Cell) R0;
