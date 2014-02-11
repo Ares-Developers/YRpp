@@ -2,7 +2,7 @@
 #define HELPER_ITERATORS_DEF_H
 
 #include <Helpers/Iterators.h>
-#include <CellSpread.h>
+#include <Helpers/Enumerators.h>
 
 void CellRectIterator::process(const std::function<bool(CellClass*)> &action) const {
 	// the coords mark the center of the area
@@ -72,21 +72,13 @@ void CellRangeIterator::process(const std::function<bool(ObjectClass*)> &action)
 }
 
 void CellSpreadIterator::process(const std::function<bool(CellClass*)> &action) const {
-	// get all cells in a square around the target.
-	size_t range = spread * 2 + 1;
-	CellRectIterator inner(center, range, range);
-	inner.apply<CellClass>([this, &action](CellClass* pCell) -> bool {
-		CellStruct delta = pCell->MapCoords - center;
-		auto distance = CellSpread::GetDistance(delta);
-
-		// invoke action if in spread
-		if(distance <= spread) {
-			return action(pCell);
+	for(CellSpreadEnumerator i(spread); i; ++i) {
+		if(CellClass* pCell = MapClass::Instance->TryGetCellAt(center + *i)) {
+			if(!action(pCell)) {
+				break;
+			}
 		}
-
-		// continue
-		return true;
-	});
+	}
 }
 
 void CellSpreadIterator::process(const std::function<bool(ObjectClass*)> &action) const {
