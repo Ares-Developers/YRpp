@@ -28,7 +28,7 @@ void CellRectIterator::process(const std::function<bool(CellClass*)> &action) co
 }
 
 void CellRectIterator::process(const std::function<bool(ObjectClass*)> &action) const {
-	apply<CellClass>([&action](CellClass* pCell) {
+	apply<CellClass>([&action](CellClass* pCell) -> bool {
 		for(auto pObject = pCell->GetContent(); pObject; pObject = pObject->NextObject) {
 			if(!action(pObject)) {
 				return false;
@@ -42,7 +42,7 @@ void CellRangeIterator::process(const std::function<bool(CellClass*)> &action) c
 	// get all cells in a square around the target.
 	int range = static_cast<int>(std::floor(radius + 0.99f)) * 2 + 1;
 	CellRectIterator inner(center, range, range);
-	inner.apply<CellClass>([this, &action](CellClass* pCell) {
+	inner.apply<CellClass>([this, &action](CellClass* pCell) -> bool {
 		if(center.DistanceFrom(pCell->MapCoords) <= radius) {
 			return action(pCell);
 		}
@@ -56,7 +56,7 @@ void CellRangeIterator::process(const std::function<bool(ObjectClass*)> &action)
 	// get target cell coords
 	CoordStruct coords = CellClass::Cell2Coord(center);
 
-	apply<CellClass>([this, &action, &coords](CellClass* pCell) {
+	apply<CellClass>([this, &action, &coords](CellClass* pCell) -> bool {
 		for(auto pObject = pCell->GetContent(); pObject; pObject = pObject->NextObject) {
 			CoordStruct tmpCoords = pObject->GetCoords();
 
@@ -75,7 +75,7 @@ void CellSpreadIterator::process(const std::function<bool(CellClass*)> &action) 
 	// get all cells in a square around the target.
 	size_t range = spread * 2 + 1;
 	CellRectIterator inner(center, range, range);
-	inner.apply<CellClass>([this, &action](CellClass* pCell) {
+	inner.apply<CellClass>([this, &action](CellClass* pCell) -> bool {
 		CellStruct delta = pCell->MapCoords - center;
 		auto distance = CellSpread::GetDistance(delta);
 
@@ -90,7 +90,7 @@ void CellSpreadIterator::process(const std::function<bool(CellClass*)> &action) 
 }
 
 void CellSpreadIterator::process(const std::function<bool(ObjectClass*)> &action) const {
-	apply<CellClass>([&action](CellClass* pCell) {
+	apply<CellClass>([&action](CellClass* pCell) -> bool {
 		for(auto pObject = pCell->GetContent(); pObject; pObject = pObject->NextObject) {
 			if(!action(pObject)) {
 				return false;
