@@ -3,6 +3,9 @@
 
 #include <Helpers/Iterators.h>
 #include <Helpers/Enumerators.h>
+#include <CellSpread.h>
+
+#include <algorithm>
 
 void CellRectIterator::process(const std::function<bool(CellClass*)> &action) const {
 	// the coords mark the center of the area
@@ -72,7 +75,17 @@ void CellRangeIterator::process(const std::function<bool(ObjectClass*)> &action)
 }
 
 void CellSpreadIterator::process(const std::function<bool(CellClass*)> &action) const {
-	for(CellSpreadEnumerator i(spread); i; ++i) {
+	auto legacy = std::min(spread, 10u);
+	auto count = CellSpread::NumCells(legacy);
+	for(auto i = 0u; i < count; ++i) {
+		if(CellClass* pCell = MapClass::Instance->TryGetCellAt(center + CellSpread::GetCell(i))) {
+			if(!action(pCell)) {
+				return;
+			}
+		}
+	}
+	
+	for(CellSpreadEnumerator i(spread, 11); i; ++i) {
 		if(CellClass* pCell = MapClass::Instance->TryGetCellAt(center + *i)) {
 			if(!action(pCell)) {
 				break;
