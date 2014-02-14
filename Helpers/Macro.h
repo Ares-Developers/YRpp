@@ -25,11 +25,6 @@
 #define STACK_OFFS(cur_offset, wanted_offset) \
 		(cur_offset - wanted_offset)
 
-#define RET_UNLESS(expr) \
-	if(!(expr)) { return 0; }
-#define RETZ_UNLESS(expr) \
-	if(!(expr)) { return ; }
-
 
 // buffer length for tags containing a list such as AnimToInfantry=
 #define BUFLEN 2048
