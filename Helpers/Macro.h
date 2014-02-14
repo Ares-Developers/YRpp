@@ -38,15 +38,6 @@
 #define SWIZZLE(var) \
 	SwizzleManagerClass::Instance.Swizzle((void **)&var);
 
-// debug logging
-#ifdef DEBUGBUILD
-#define DEBUGLOG(...) \
-	Debug::Log(__VA_ARGS__)
-#else
-#define DEBUGLOG(...) \
-
-#endif
-
 
 #include <cmath>
 // float cmp
