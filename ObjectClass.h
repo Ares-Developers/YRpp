@@ -233,6 +233,16 @@ public:
 	int GetCellLevel() const
 		{ JMP_THIS(0x5F5F00); }
 
+	CellStruct GetMapCoords() const {
+		CellStruct ret;
+		return *this->GetMapCoords(&ret);
+	}
+
+	CellStruct GetMapCoordsAgain() const {
+		CellStruct ret;
+		return *this->GetMapCoordsAgain(&ret);
+	}
+
 	//Constructor
 	ObjectClass() : AbstractClass(false)
 		{ JMP_THIS(0x5F3900); }
