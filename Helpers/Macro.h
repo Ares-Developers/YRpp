@@ -16,6 +16,9 @@
 #define LEA_STACK(clsname, var, offset) \
 	clsname var = R->lea_Stack<clsname>(offset);
 
+#define REF_STACK(clsname, var, offset) \
+	clsname& var = R->ref_Stack<clsname>(offset);
+
 #define GET_STACK(clsname, var, offset) \
 	clsname var = R->Stack<clsname>(offset);
 

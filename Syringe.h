@@ -228,6 +228,10 @@ public:
 			{ return this->_ESP.lea(offset); }
 
 	template<typename T>
+		inline T& ref_Stack(signed int offset)
+			{ return *this->lea_Stack<T*>(offset); }
+
+	template<typename T>
 		inline T Stack(signed int offset)
 			{ return this->_ESP.At<T>(offset); }
 
