@@ -92,12 +92,12 @@ public:
 	void DestroyNthAnim(BuildingAnimSlot::Value Slot)
 		{ JMP_THIS(0x451E40); }
 
-	void PlayNthAnim(BuildingAnimSlot::Value Slot, int dwUnk = 0) {
+	void PlayNthAnim(BuildingAnimSlot::Value Slot, int effectDelay = 0) {
 		bool Damaged = !this->IsGreenHP();
 		bool Garrisoned = this->GetOccupantCount() > 0;
 
 		BuildingAnimStruct *AnimData = &this->Type->BuildingAnim[Slot];
-		char *AnimName = nullptr;
+		const char *AnimName = nullptr;
 		if(Damaged) {
 			AnimName = AnimData->Damaged;
 		} else if(Garrisoned) {
@@ -106,11 +106,11 @@ public:
 			AnimName = AnimData->Anim;
 		}
 		if(AnimName && *AnimName) {
-			this->PlayAnim(AnimName, Slot, Damaged, Garrisoned, dwUnk);
+			this->PlayAnim(AnimName, Slot, Damaged, Garrisoned, effectDelay);
 		}
 	}
 
-	int PlayAnim(char *animName, BuildingAnimSlot::Value Slot, bool Damaged, bool Garrisoned, int dwUnk = 0)
+	void PlayAnim(const char* animName, BuildingAnimSlot::Value Slot, bool Damaged, bool Garrisoned, int effectDelay = 0)
 		{ JMP_THIS(0x451890); }
 
 	// when the building is switched off
