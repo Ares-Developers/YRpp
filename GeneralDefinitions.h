@@ -616,6 +616,16 @@ public:
 	};
 };
 
+class DamageAreaResult {
+public:
+	typedef int Value;
+	enum {
+		Hit = 0,
+		Missed = 1,
+		Nullified = 2
+	};
+};
+
 class KickOutResult {
 public:
 	typedef int Value;
