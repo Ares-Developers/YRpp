@@ -28,7 +28,7 @@ public:
 
 	//InfantryClass
 	virtual bool IsDeployed() const R0;
-	virtual bool PlayAnim(Sequence::Value nAnimNumber, bool bUnk, DWORD dwUnk) R0;
+	virtual bool PlayAnim(Sequence::Value index, bool force = false, bool randomStartFrame = false) R0;
 
 	//Constructor
 	InfantryClass(InfantryTypeClass* pType, HouseClass* pOwner) : FootClass(false)
