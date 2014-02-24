@@ -61,6 +61,11 @@ public:
 	void GoOffline()
 		{ JMP_THIS(0x452360); }
 
+	int GetPowerOutput() const
+		{ JMP_THIS(0x44E7B0); }
+	int GetPowerDrain() const
+		{ JMP_THIS(0x44E880); }
+
 	// Firewall aka FirestormWall
 	// depending on what facings of this building
 	// are connected to another FWall,

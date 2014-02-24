@@ -252,8 +252,21 @@ public:
 	int GetUnitSelfHealStep() const
 		{ JMP_THIS(0x50D9F0); }
 
+	void UpdatePower()
+		{ JMP_THIS(0x508C30); }
 	void CreatePowerOutage(int duration)
 		{ JMP_THIS(0x50BC90); }
+	double GetPowerPercentage() const
+		{ JMP_THIS(0x4FCE30); }
+
+	bool HasFullPower() const {
+		return this->PowerOutput >= this->PowerDrain || !this->PowerDrain;
+	}
+
+	bool HasLowPower() const {
+		return this->PowerOutput < this->PowerDrain && this->PowerDrain;
+	}
+
 	void CreateRadarOutage(int duration)
 		{ JMP_THIS(0x50BCD0); }
 
