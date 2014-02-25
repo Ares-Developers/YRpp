@@ -151,6 +151,9 @@ public:
 	bool UpdateBunker()
 		{ JMP_THIS(0x458E50); }
 
+	void KillOccupants(TechnoClass* pAssaulter)
+		{ JMP_THIS(0x4585C0); }
+
 	//Constructor
 	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner) : TechnoClass(false)
 		{ JMP_THIS(0x43B740); }
