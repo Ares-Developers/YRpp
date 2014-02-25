@@ -429,7 +429,7 @@ public:
 	int              CurrentGattlingStage;
 	int              GattlingValue; // sum of RateUps and RateDowns
 	DWORD            unknown_148;
-	HouseClass*      OwningPlayer2; // only set in ctor
+	HouseClass*      InitialOwner; // only set in ctor
 	VeterancyStruct  Veterancy;
 	double           ArmorMultiplier;
 	double           FirepowerMultiplier;
