@@ -325,7 +325,7 @@ public:
 	static HouseClass* FindBySideIndex(int index) {
 		for(int i=0; i<Array->Count; ++i) {
 			auto pHouse = Array->GetItem(i);
-			if(pHouse->SideIndex == index) {
+			if(pHouse->Type->SideIndex == index) {
 				return pHouse;
 			}
 		}
