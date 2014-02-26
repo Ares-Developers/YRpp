@@ -44,6 +44,9 @@ public:
 	bool SetOnHold(bool status)
 		{ JMP_THIS(0x6CB4D0); }
 
+	bool Grant(bool oneTime, bool announce, bool onHold)
+		{ JMP_THIS(0x6CB560); }
+
 	// true if this was ->Granted
 	bool Lose()
 		{ JMP_THIS(0x6CB7B0); }
