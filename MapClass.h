@@ -23,26 +23,43 @@ struct ZoneConnectionClass
 	CellStruct	FromMapCoords;
 	CellStruct	ToMapCoords;
 	bool		unknown_bool_08;
-	CellClass*	pCell;
+	CellClass*	Cell;
 
 	//need to define a == operator so it can be used in array classes
-	bool operator==(ZoneConnectionClass tZoneConnection)
-		{
-			return (FromMapCoords == tZoneConnection.FromMapCoords &&
-					ToMapCoords == tZoneConnection.ToMapCoords &&
-					unknown_bool_08 == tZoneConnection.unknown_bool_08 &&
-					pCell == tZoneConnection.pCell);
-		}
+	bool operator==(const ZoneConnectionClass &other) const {
+		return (FromMapCoords == other.FromMapCoords
+			&& ToMapCoords == other.ToMapCoords
+			&& unknown_bool_08 == other.unknown_bool_08
+			&& Cell == other.Cell);
+	}
+};
+
+struct SubzoneConnectionStruct
+{
+	DWORD unknown_dword_0;
+	BYTE unknown_byte_4;
+
+	//need to define a == operator so it can be used in array classes
+	bool operator==(const SubzoneConnectionStruct &other) const {
+		return (unknown_dword_0 == other.unknown_dword_0
+			&& unknown_byte_4 == other.unknown_byte_4);
+	}
 };
 
 struct SubzoneTrackingStruct
 {
 public:
-	BYTE UNKNOWN;	//need information about at least the size of this struct ASAP!
+	DynamicVectorClass<SubzoneConnectionStruct> SubzoneConnections;
+	WORD unknown_word_18;
+	DWORD unknown_dword_1C;
+	DWORD unknown_dword_20;
 
 	//need to define a == operator so it can be used in array classes
-	bool operator==(SubzoneTrackingStruct tSubzoneTracking)
-		{ return (UNKNOWN== tSubzoneTracking.UNKNOWN); }
+	bool operator==(const SubzoneTrackingStruct &other) const {
+		return (unknown_word_18 != other.unknown_word_18
+			&& unknown_dword_1C == other.unknown_dword_1C
+			&& unknown_dword_20 == other.unknown_dword_20);
+	}
 };
 
 class MapClass : public GScreenClass
@@ -319,9 +336,7 @@ public:
 	DWORD unknown_74;
 	DWORD unknown_78;
 	DWORD unknown_7C;
-	DWORD unknown_80;
-	DWORD unknown_84;
-	DWORD unknown_88;
+	DWORD unknown_80[3]; // somehow connected to the 3 vectors below
 	DynamicVectorClass<SubzoneTrackingStruct> SubzoneTracking1;
 	DynamicVectorClass<SubzoneTrackingStruct> SubzoneTracking2;
 	DynamicVectorClass<SubzoneTrackingStruct> SubzoneTracking3;
