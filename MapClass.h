@@ -220,13 +220,13 @@ public:
 		{ JMP_THIS(0x5687F0); }
 
 
-	bool IsWithinUsableArea(CellStruct* cell, bool checkLevel)
+	bool IsWithinUsableArea(const CellStruct& cell, bool checkLevel) const
 		{ JMP_THIS(0x578460); }
 
-	bool IsWithinUsableArea(CellClass* pCell, bool checkLevel)
+	bool IsWithinUsableArea(CellClass* pCell, bool checkLevel) const
 		{ JMP_THIS(0x578540); }
 
-	bool IsWithinUsableArea(CoordStruct* coords)
+	bool IsWithinUsableArea(const CoordStruct& coords) const
 		{ JMP_THIS(0x5785F0); }
 
 	bool CoordinatesLegal(const CellStruct& cell) const
