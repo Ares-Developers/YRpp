@@ -229,7 +229,7 @@ public:
 	bool IsWithinUsableArea(CoordStruct* coords)
 		{ JMP_THIS(0x5785F0); }
 
-	bool CoordinatesLegal(CellStruct* cell)
+	bool CoordinatesLegal(const CellStruct& cell) const
 		{ JMP_THIS(0x568300); }
 
 // ====================================
