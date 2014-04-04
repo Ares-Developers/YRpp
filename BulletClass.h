@@ -47,7 +47,7 @@ public:
 	//BulletClass
 	virtual BYTE GetAnimRate() const R0;
 	virtual void SetTarget(AbstractClass *Target) RX;
-	virtual BYTE MoveTo(CoordStruct *where, BulletVelocity *Velocity) R0;
+	virtual bool MoveTo(const CoordStruct& Where, const BulletVelocity& Velocity) R0;
 
 	// non-virtual
 	// after CoCreateInstance creates a bullet, this configures it
