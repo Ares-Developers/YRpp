@@ -61,12 +61,13 @@ public:
 		bool Bright)
 		{ JMP_THIS(0x4664C0); }
 
-	// spawns the actual projectile onto the map
-	void Fire(CoordStruct *Target)
-		{ JMP_THIS(0x4690B0); }
+	// calls Detonate with the appropriate coords
+	void Fire(bool bUnknown)
+		{ JMP_THIS(0x468D80); }
 
-	void Detonate(bool bUnknown)
-		{ JMP_STD(0x468D80); }
+	// detonate the bullet at specific coords
+	void Detonate(const CoordStruct& coords)
+		{ JMP_THIS(0x4690B0); }
 
 	// spawns off the proper amount of shrapnel projectiles
 	void Shrapnel()
