@@ -18,7 +18,7 @@
 
 	\author AlexB
 */
-struct CellRectIterator {
+class CellRectIterator {
 	CellStruct center;
 	int width;
 	int height;
@@ -62,7 +62,7 @@ private:
 
 	\author AlexB
 */
-struct CellRangeIterator {
+class CellRangeIterator {
 	CellStruct center;
 	float radius;
 
