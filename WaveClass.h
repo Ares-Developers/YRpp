@@ -25,20 +25,20 @@ public:
 	virtual eAbstractType WhatAmI() const R0;
 	virtual int Size() const R0;
 
-	void Draw_Magnetic(CoordStruct* xyzFrom, CoordStruct* xyzTo)
+	void Draw_Magnetic(const CoordStruct& xyzFrom, const CoordStruct& xyzTo)
 		{ JMP_THIS(0x762070); }
 
-	void Draw_NonMagnetic(CoordStruct* xyzFrom, CoordStruct* xyzTo)
+	void Draw_NonMagnetic(const CoordStruct& xyzFrom, const CoordStruct& xyzTo)
 		{ JMP_THIS(0x761640); }
 
 	void Update_Wave()
 		{ JMP_THIS(0x762AF0); }
 
 	// ambient
-	void DamageArea(CoordStruct *location)
+	void DamageArea(const CoordStruct& location) const
 		{ JMP_THIS(0x75F330); }
 
-	WaveClass(CoordStruct *From, CoordStruct *To, TechnoClass *Owner, int mode, AbstractClass *Target) : ObjectClass(false)
+	WaveClass(const CoordStruct& From, const CoordStruct& To, TechnoClass *Owner, WaveType::Value mode, AbstractClass *Target) : ObjectClass(false)
 		{ JMP_THIS(0x75E950); }
 
 protected:
