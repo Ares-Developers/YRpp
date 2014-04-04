@@ -180,7 +180,7 @@ public:
 	virtual void vt_entry_1A8(DWORD dwUnk) RX;
 	virtual Move::Value IsCellOccupied(CellClass *pDestCell, int facing, int level, CellClass* pSourceCell, bool alt) const R0;
 	virtual DWORD vt_entry_1B0(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5) R0;
-	virtual void SetLocation(CoordStruct* pCrd) RX;
+	virtual void SetLocation(const CoordStruct& crd) RX;
 
 // these two work through the object's Location
 	virtual CellStruct* GetMapCoords(CellStruct* pUCell) const R0;
