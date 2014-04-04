@@ -168,13 +168,12 @@ public:
 	/*
 	 * Picks the appropriate anim from WH's AnimList= based on damage dealt and land type (Conventional= )
 	 * so after DamageArea:
-	 * if(AnimTypeClass *damageAnimType = SelectDamageAnimation()) {
-	 * 	AnimClass *anim;
-	 * 	GAME_ALLOC(AnimClass, anim, damageAnimType, location);
+	 * if(AnimTypeClass *damageAnimType = SelectDamageAnimation(...)) {
+	 * 	GameCreate<AnimClass>(damageAnimType, location);
 	 * }
 	 */
 	static AnimTypeClass * __fastcall SelectDamageAnimation
-		(int Damage, WarheadTypeClass *WH, LandType::Value LandType, CoordStruct *coords)
+		(int Damage, WarheadTypeClass *WH, LandType::Value LandType, const CoordStruct& coords)
 			{ JMP_STD(0x48A4F0); }
 
 	static void __fastcall FlashbangWarheadAt
