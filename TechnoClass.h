@@ -221,7 +221,7 @@ public:
 	virtual bool TriggersCellInset(AbstractClass *Target) R0;
 	virtual bool IsCloseEnough(AbstractClass *Target, int idxWeapon) const R0;
 	virtual bool IsCloseEnoughToAttack(AbstractClass *Target) const R0;
-	virtual bool IsCloseEnoughToAttackCoords(CoordStruct *Coords) const R0;
+	virtual bool IsCloseEnoughToAttackCoords(const CoordStruct& Coords) const R0;
 	virtual DWORD vt_entry_3B4(DWORD dwUnk) const R0;
 	virtual void Destroyed(ObjectClass *Killer) = 0;
 	virtual FireError::Value GetFireErrorWithoutRange(AbstractClass *Target, int nWeaponIndex) const R0;
