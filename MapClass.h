@@ -157,7 +157,7 @@ public:
 	\param SourceHouse The house to which SourceObject belongs, the owner/bringer of damage.
 */
 	static DamageAreaResult::Value __fastcall DamageArea(
-		CoordStruct* Coords,
+		const CoordStruct& Coords,
 		int Damage,
 		TechnoClass* SourceObject,
 		WarheadTypeClass *WH,
