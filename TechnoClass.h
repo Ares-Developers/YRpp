@@ -230,7 +230,7 @@ public:
 	virtual void SetTarget(AbstractClass *Target) RX;
 	virtual BulletClass* Fire(AbstractClass* pTarget, int nWeaponIndex) R0;
 	virtual void Guard() RX; // clears target and destination and puts in guard mission
-	virtual bool SetOwningHouse(HouseClass* pHouse, bool announce = true) RX;
+	virtual bool SetOwningHouse(HouseClass* pHouse, bool announce = true) R0;
 	virtual void vt_entry_3D8(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
 	virtual bool Crash(ObjectClass *Killer) R0;
 	virtual bool IsAreaFire() const R0;
