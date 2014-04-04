@@ -181,7 +181,7 @@ public:
 		(int Damage, WarheadTypeClass *WH, CoordStruct coords, bool Force = 0, int CLDisableFlags = 0)
 			{JMP_STD(0x48A620); }
 
-	int GetCellFloorHeight(CoordStruct* XYZ)
+	int GetCellFloorHeight(const CoordStruct& crd) const
 		{ JMP_THIS(0x578080); }
 
 	CellStruct * PickCellOnEdge(CellStruct &buffer, Edge::Value Edge, const CellStruct &CurrentLocation, const CellStruct &Fallback,
