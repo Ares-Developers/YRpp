@@ -7,6 +7,7 @@ class HouseClass;
 class FootClass;
 class CellClass;
 class ScriptClass;
+class TagClass;
 
 class TeamClass : public AbstractClass
 {
@@ -57,8 +58,8 @@ public:
 	HouseClass*    Target;
 	CellClass*     SpawnCell;
 	DWORD          unknown_38;
-	DWORD          unknown_3C;
-	DWORD          unknown_40;
+	AbstractClass* QueuedFocus;
+	AbstractClass* Focus;
 	int            unknown_44;
 	int            TotalObjects;
 	int            TotalThreatValue;
@@ -66,7 +67,7 @@ public:
 	FootClass *    FirstUnit;
 	TimerStruct GuardAreaTimer;
 	TimerStruct SuspendTimer;
-	DWORD          Tag; // TagClass *
+	TagClass*      Tag;
 	bool           unknown_74;
 	bool           unknown_75;
 	bool           unknown_76;
