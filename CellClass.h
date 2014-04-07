@@ -75,6 +75,9 @@ public:
 	void SetWallOwner()
 		{ JMP_THIS(0x47D210); }
 
+	bool IsShrouded() const
+		{ JMP_THIS(0x487950); }
+
 	// adjusts LAT
 	void SetupLAT()
 		{ JMP_THIS(0x47CA80); }
