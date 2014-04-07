@@ -34,7 +34,7 @@ public:
 		bool SkipBlitters)
 			{ JMP_THIS(0x48E740); }
 
-	static void __fastcall CreateFromFile(const char* Filename, BytePalette **pPalette, ConvertClass ** pDestination)
+	static void __fastcall CreateFromFile(const char* Filename, BytePalette* &pPalette, ConvertClass* &pDestination)
 		{ JMP_STD(0x72ADE0); }
 
 	// if you're drawing a SHP, call SHPStruct::HasCompression and choose one of these two based on that
