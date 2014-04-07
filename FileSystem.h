@@ -29,6 +29,8 @@ public:
 	static SHPStruct *&PIPS_SHP;
 	static SHPStruct *&PIPS2_SHP;
 	static SHPStruct *&TALKBUBL_SHP;
+	static SHPStruct *&WRENCH_SHP;
+	static SHPStruct *&POWEROFF_SHP;
 
 	static ConvertClass *&CAMEO_PAL;
 	static ConvertClass *&UNITx_PAL;

@@ -119,6 +119,8 @@ ALIAS(SHPStruct *, FileSystem::PIPBRD_SHP, 0xAC1478);
 ALIAS(SHPStruct *, FileSystem::PIPS_SHP, 0xAC147C);
 ALIAS(SHPStruct *, FileSystem::PIPS2_SHP, 0xAC1480);
 ALIAS(SHPStruct *, FileSystem::TALKBUBL_SHP, 0xAC1484);
+ALIAS(SHPStruct *, FileSystem::WRENCH_SHP, 0x89DDC8);
+ALIAS(SHPStruct *, FileSystem::POWEROFF_SHP, 0x89DDC4);
 ALIAS(ConvertClass *, FileSystem::CAMEO_PAL, 0x87F6B0);
 ALIAS(ConvertClass *, FileSystem::UNITx_PAL, 0x87F6B4);
 ALIAS(ConvertClass *, FileSystem::x_PAL, 0x87F6B8);
