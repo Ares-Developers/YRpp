@@ -5,41 +5,41 @@
 
 class StartingSlotClass;
 
-struct StartAISlots
+struct AISlotsStruct
 {
 	int AIDifficulties[8];
-	StartingSlotClass *StartingSpots[8];
+	StartingSlotClass* StartingSpots[8];
 	int Colours[8];
 	int Starts[8];
 	int Teams[8];
 };
 
-
 class GameModeOptionsClass
 {
 public:
-	static GameModeOptionsClass *Instance;
+	// this is the same as SessionClass::Instance->Config
+	static GameModeOptionsClass* Instance;
 
 	int MPModeIndex;
 	int ScenarioIndex;
-	char Bases;
+	bool Bases;
 	int Money;
-	char BridgeDestruction;
-	char Crates;
-	char ShortGame;
-	char SWAllowed;
-	char BuildOffAlly;
+	bool BridgeDestruction;
+	bool Crates;
+	bool ShortGame;
+	bool SWAllowed;
+	bool BuildOffAlly;
 	int GameSpeed;
-	char MultiEngineer;
+	bool MultiEngineer;
 	int UnitCount;
 	int AIPlayers;
 	int AIDifficulty;
-	StartAISlots AISlots;
-	char AlliesAllowed;
-	char HarvesterTruce;
-	char CTF;
-	char FogOfWar;
-	char MCVRedeploy;
+	AISlotsStruct AISlots;
+	bool AlliesAllowed;
+	bool HarvesterTruce;
+	bool CTF;
+	bool FogOfWar;
+	bool MCVRedeploy;
 	wchar_t MapDescription[45];
 };
 

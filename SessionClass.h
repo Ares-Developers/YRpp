@@ -3,6 +3,7 @@
 
 #include <GeneralDefinitions.h>
 #include <MPGameModeClass.h>
+#include <GameModeOptionsClass.h>
 
 struct GameTypePreferencesStruct {
 	DWORD idxMPMode;
@@ -18,53 +19,20 @@ struct GameTypePreferencesStruct {
 	DWORD unknown_fields [0x18];
 };
 
-struct AISlotsStruct {
-	int AIDifficulties [8];
-	void * StartingSpots [8];
-	int Colours [8];
-	int Starts [8];
-	int Teams [8];
-};
-
-struct SessionOptionsClass {
-	DWORD idxMPMode;
-	DWORD idxScenario;
-	bool Bases;
-	DWORD Money;
-	bool BridgeDestruction;
-	bool Crates;
-	bool ShortGame;
-	bool SuperWeaponsOn;
-	bool BuildOffAlly;
-	int GameSpeed;
-	bool MultiEngineer;
-	int UnitCount;
-	int AIPlayers;
-	int AIDifficulty;
-	AISlotsStruct AISlots;
-	bool AlliesAllowed;
-	bool HarvesterTruce;
-	bool CTF;
-	bool FogOfWar;
-	bool MCVRedeploy;
-	wchar_t unnamed [45];
-};
-
-class SessionClass {
-
-	public:
-
-	static SessionClass * Instance;
+class SessionClass
+{
+public:
+	static SessionClass* Instance;
 
 	GameMode::Value GameMode;
-	MPGameModeClass * MPGameMode;
+	MPGameModeClass* MPGameMode;
 	DWORD unknown_08;
 	DWORD unknown_0C;
 	DWORD unknown_10;
 	DWORD unknown_14;
-	SessionOptionsClass Config;
+	GameModeOptionsClass Config;
 	DWORD UniqueID;
-	char Handle [20];
+	char Handle[20];
 	int PlayerColor;
 	DWORD unknown_160;
 	DWORD unknown_164;
@@ -80,10 +48,11 @@ class SessionClass {
 	GameTypePreferencesStruct SkirmishPreferences;
 	GameTypePreferencesStruct LANPreferences;
 	GameTypePreferencesStruct WOLPreferences;
-	byte unknown_300 [8];
+	BOOL MuteSWLaunches;
+	byte unknown_304[4];
 	bool WOLLimitResolution;
 	int LastNickSlot;
-
+	byte unknown_310[0x2DC8];
 };
 
 #endif
