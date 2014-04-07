@@ -62,7 +62,6 @@ class SessionClass {
 	DWORD unknown_0C;
 	DWORD unknown_10;
 	DWORD unknown_14;
-	DWORD unknown_18;
 	SessionOptionsClass Config;
 	DWORD UniqueID;
 	char Handle [20];
