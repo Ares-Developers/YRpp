@@ -25,6 +25,9 @@ public:
 	static void* __fastcall LoadFile(const char* pFileName, bool bLoadAsSHP)
 		{ JMP_STD(0x5B40B0); }
 
+	static void* __fastcall LoadWholeFileEx(const char* pFilename, bool &outAllocated)
+		{ JMP_STD(0x4A38D0); }
+
 	static SHPStruct *&PIPBRD_SHP;
 	static SHPStruct *&PIPS_SHP;
 	static SHPStruct *&PIPS2_SHP;
@@ -65,6 +68,11 @@ public:
 			pSurface,
 			0x35,
 			0);
+	}
+
+	template <typename T>
+	static T* LoadWholeFileEx(const char* pFilename, bool &outAllocated) {
+		return static_cast<T*>(LoadWholeFileEx(pFilename, outAllocated));
 	}
 };
 
