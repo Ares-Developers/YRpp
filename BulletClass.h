@@ -145,7 +145,7 @@ public:
 	int DamageMultiplier;
 	AnimClass* NextAnim;
 	bool SpawnNextAnim;
-	DWORD unknown_15C;
+	int Range;
 };
 
 #endif
