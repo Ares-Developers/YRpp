@@ -9,6 +9,7 @@ class AircraftTypeClass;
 class AnimTypeClass;
 class BuildingTypeClass;
 class BulletTypeClass;
+class CCINIClass;
 class InfantryTypeClass;
 class OverlayTypeClass;
 class ParticleSystemTypeClass;
