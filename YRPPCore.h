@@ -1,9 +1,3 @@
-//strcpy is "unsafe"? wtf?
-// DC: yeah, no length limit so char foo[3]; strcpy(foo, "roflcakes") works and smashes stack
-#ifndef _CRT_SECURE_NO_WARNINGS
-#define _CRT_SECURE_NO_WARNINGS
-#endif
-
 #ifndef YRPPCore_H
 #define YRPPCore_H
 
