@@ -16,26 +16,11 @@ typedef unsigned long DWORD;
 #include <wchar.h>
 #include <cstdio>
 
-#define PROPERTY_PTR(type,name)\
-	public: \
-		type name;\
-	public:\
-		type get_ ## name() \
-			{ return name; }\
-		void set_ ## name(type value)\
-			{ name = value; } \
-		type* lea_ ## name() \
-			{ return &name; }
-
 //Not gettable/settable members
 #define PROTECTED_PROPERTY(type,name)\
 	protected:\
 		type name; \
 	public:
-
-// following westwood's style
-#define VALIDTAG(str) \
-	(_strcmpi("<none>", str) && _strcmpi("none", str))
 
 /*
 Operation: The Cleansing
