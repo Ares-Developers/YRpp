@@ -185,6 +185,15 @@ static inline void DLLDeleteArray(T* ptr, size_t capacity) {
 	Memory::DeleteArray(alloc, ptr, capacity);
 }
 
+struct GameDeleter {
+	template <typename T>
+	void operator ()(T* ptr) {
+		if(ptr) {
+			GameDelete(ptr);
+		}
+	}
+};
+
 //#define GAME_ALLOC(TT, var, ...) \
 //	var = GameCreate<TT>(__VA_ARGS__);
 //
