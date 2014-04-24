@@ -34,8 +34,10 @@ public:
 	static SHPStruct *&TALKBUBL_SHP;
 	static SHPStruct *&WRENCH_SHP;
 	static SHPStruct *&POWEROFF_SHP;
+	static SHPStruct *&GRFXTXT_SHP;
 
 	static BytePalette *&TEMPERAT_PAL;
+	static BytePalette *&GRFXTXT_PAL;
 
 	static ConvertClass *&CAMEO_PAL;
 	static ConvertClass *&UNITx_PAL;
@@ -44,6 +46,7 @@ public:
 	static ConvertClass *&ANIM_PAL;
 	static ConvertClass *&THEATER_PAL;
 	static ConvertClass *&MOUSE_PAL;
+	static ConvertClass *&GRFXTXT_Convert;
 
 	static void* LoadFile(const char* pFileName)
 		{ return LoadFile(pFileName, false); }
