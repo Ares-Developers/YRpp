@@ -7,10 +7,10 @@
 
 #include <ConvertClass.h>
 #include <GeneralStructures.h>
+#include <CCFileClass.h>
 
 #include <FileFormats/_Loader.h>
 
-class CCFileClass;
 class DSurface;
 
 struct VoxelStruct
@@ -75,6 +75,14 @@ public:
 	template <typename T>
 	static T* LoadWholeFileEx(const char* pFilename, bool &outAllocated) {
 		return static_cast<T*>(LoadWholeFileEx(pFilename, outAllocated));
+	}
+
+	// returns a pointer to a new block of bytes. caller takes ownership and has
+	// to free it from the game's pool.
+	template <typename T = void>
+	static T* AllocateFile(const char* pFilename) {
+		CCFileClass file(pFilename);
+		return static_cast<T*>(file.ReadWholeFile());
 	}
 };
 
