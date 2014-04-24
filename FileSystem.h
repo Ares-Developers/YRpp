@@ -84,6 +84,23 @@ public:
 		CCFileClass file(pFilename);
 		return static_cast<T*>(file.ReadWholeFile());
 	}
+
+	// allocates a new palette with the 6 bit colors converted to 8 bit
+	// (not the proper way. how the game does it.) caller takes ownership and
+	// has to free it from the game's pool.
+	static BytePalette* AllocatePalette(const char* pFilename) {
+		auto ret = AllocateFile<BytePalette>(pFilename);
+
+		if(ret) {
+			for(auto& color : ret->Entries) {
+				color.R <<= 2;
+				color.G <<= 2;
+				color.B <<= 2;
+			}
+		}
+
+		return ret;
+	}
 };
 
 #endif
