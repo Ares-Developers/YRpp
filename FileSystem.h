@@ -35,6 +35,8 @@ public:
 	static SHPStruct *&WRENCH_SHP;
 	static SHPStruct *&POWEROFF_SHP;
 
+	static BytePalette *&TEMPERAT_PAL;
+
 	static ConvertClass *&CAMEO_PAL;
 	static ConvertClass *&UNITx_PAL;
 	static ConvertClass *&x_PAL;
@@ -64,7 +66,7 @@ public:
 
 		return new ConvertClass(
 			&ColorData,
-			(BytePalette*)0x885780,
+			TEMPERAT_PAL,
 			pSurface,
 			0x35,
 			0);
