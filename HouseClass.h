@@ -36,7 +36,7 @@ struct ScoreStruct
 struct StartingTechnoStruct
 {
 	TechnoTypeClass *  Unit;
-	CoordStruct *      CellCoords;
+	CellStruct         Cell;
 };
 
 // that's how WW calls it, seems to track levels of how much it hates other houses... typical ww style, with bugs
