@@ -150,7 +150,7 @@ static inline void GameDelete(T* ptr) {
 }
 
 template <typename T, typename... TArgs>
-static inline T* GameCreateArray(size_t capacity) {
+static inline T* GameCreateArray(size_t capacity, TArgs&&... args) {
 	GameAllocator<T> alloc;
 	return Memory::CreateArray<T>(alloc, capacity, std::forward<TArgs>(args)...);
 }
