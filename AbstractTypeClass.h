@@ -5,6 +5,7 @@
 #define ABSTRACTTYPE_H
 
 #include <AbstractClass.h>
+#include <Memory.h>
 
 //forward declarations
 class CCINIClass;
@@ -25,7 +26,7 @@ class CCINIClass;
 		if(pRet)\
 			return pRet;\
 		else\
-			return new class_name(pID);\
+			return GameCreate<class_name>(pID);\
 	}\
 	static int FindIndex(const char* pID)\
 	{\
