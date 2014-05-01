@@ -41,9 +41,7 @@ public:
 
 			bool bMustAllocate = (pMem == nullptr);
 			if(!pMem) {
-				pMem = new T[nNewCapacity];
-// in theory, as long as new/delete pairs are matched to the same allocator, shit should work just fine
-//				GAME_ALLOC_ARR(T, nNewCapacity, pMem);
+				pMem = GameCreateArray<T>(nNewCapacity);
 			}
 
 			IsInitialized = true;
@@ -58,8 +56,7 @@ public:
 				}
 
 				if(IsAllocated) {
-					delete [] this->Items;
-//					GAME_DEALLOC_ARR(this->Items);
+					GameDeleteArray(this->Items, this->Capacity);
 					this->Items = nullptr;
 				}
 			}
@@ -75,8 +72,7 @@ public:
 
 	virtual void Clear() {
 		if(this->Items && this->IsAllocated) {
-			delete[] this->Items;
-//			GAME_DEALLOC_ARR(this->Items);
+			GameDeleteArray(this->Items, this->Capacity);
 			this->Items = nullptr;
 		}
 		this->IsAllocated = false;
@@ -143,8 +139,7 @@ public:
 			if(pMem) {
 				this->Items = pMem;
 			} else {
-				this->Items = new T[nCapacity];
-//				GAME_ALLOC_ARR(T, nCapacity, this->Items);
+				this->Items = GameCreateArray<T>(nCapacity);
 				this->IsAllocated = true;
 			}
 		}
@@ -340,8 +335,7 @@ class CounterClass : public VectorClass<int>
 public:
 	virtual ~CounterClass() {
 		if(this->Items && this->IsAllocated) {
-			delete [] this->Items;
-//			GAME_DEALLOC_ARR(this->Items);
+			GameDeleteArray(this->Items, this->Capacity);
 			this->Items = nullptr;
 		}
 
