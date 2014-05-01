@@ -8,6 +8,7 @@
 #include <ConvertClass.h>
 #include <GeneralStructures.h>
 #include <CCFileClass.h>
+#include <Memory.h>
 
 #include <FileFormats/_Loader.h>
 
@@ -67,12 +68,12 @@ public:
 			ColorData[i].B = pRawData[i].B << 2;
 		}
 
-		return new ConvertClass(
+		return GameCreate<ConvertClass>(
 			&ColorData,
 			TEMPERAT_PAL,
 			pSurface,
 			0x35,
-			0);
+			false);
 	}
 
 	template <typename T>
