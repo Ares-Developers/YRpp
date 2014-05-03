@@ -19,6 +19,35 @@ struct GameTypePreferencesStruct {
 	DWORD unknown_fields [0x18];
 };
 
+struct PlayerData {
+	byte Data[10];
+	PROTECTED_PROPERTY(BYTE, align_A[2])
+};
+
+#pragma pack(push, 1)
+struct NodeNameType {
+	wchar_t Name[20];
+	PlayerData Data;
+	char Serial[23];
+	int Country;
+	int InitialCountry;
+	int Color;
+	int InitialColor;
+	int StartPoint;
+	int InitialStartPoint;
+	int Team;
+	int InitialTeam;
+	DWORD unknown_int_6B;
+	int HouseIndex;
+	int Time;
+	DWORD unknown_int_77;
+	int Clan;
+	DWORD unknown_int_7F;
+	BYTE unknown_byte_83;
+	BYTE unknown_byte_84;
+};
+#pragma pack(pop)
+
 class SessionClass
 {
 public:
@@ -52,7 +81,14 @@ public:
 	byte unknown_304[4];
 	bool WOLLimitResolution;
 	int LastNickSlot;
-	byte unknown_310[0x2DC8];
+	PROTECTED_PROPERTY(DWORD, unknown_310[0xE6]);
+	char ScenarioFilename[0x202]; // 0x6A8
+	PROTECTED_PROPERTY(BYTE, unknown_8AA[0x1F62]);
+	DynamicVectorClass<NodeNameType*> unknown_vector_280C;
+	DynamicVectorClass<NodeNameType*> unknown_vector_2824;
+	DynamicVectorClass<NodeNameType*> StartSpots;
+	PROTECTED_PROPERTY(DWORD, unknown_2854[0x221]);
+	bool CurrentlyInGame; // at least used for deciding dialog backgrounds
 };
 
 #endif
