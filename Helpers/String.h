@@ -68,4 +68,7 @@ private:
 	data_type chars;
 };
 
+template <size_t Capacity>
+using FixedWString = FixedString<Capacity, wchar_t>;
+
 #endif
