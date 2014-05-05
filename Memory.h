@@ -139,6 +139,8 @@ public:
 
 template <typename T, typename... TArgs>
 static inline T* GameCreate(TArgs&&... args) {
+	static_assert(std::is_constructible<T, TArgs...>::value, "Cannot construct T from TArgs.");
+
 	GameAllocator<T> alloc;
 	return Memory::Create<T>(alloc, std::forward<TArgs>(args)...);
 }
@@ -151,6 +153,8 @@ static inline void GameDelete(T* ptr) {
 
 template <typename T, typename... TArgs>
 static inline T* GameCreateArray(size_t capacity, TArgs&&... args) {
+	static_assert(std::is_constructible<T, TArgs...>::value, "Cannot construct T from TArgs.");
+
 	GameAllocator<T> alloc;
 	return Memory::CreateArray<T>(alloc, capacity, std::forward<TArgs>(args)...);
 }
@@ -163,6 +167,8 @@ static inline void GameDeleteArray(T* ptr, size_t capacity) {
 
 template <typename T, typename... TArgs>
 static inline T* DLLCreate(TArgs&&... args) {
+	static_assert(std::is_constructible<T, TArgs...>::value, "Cannot construct T from TArgs.");
+
 	std::allocator<T> alloc;
 	return Memory::Create<T>(alloc, std::forward<TArgs>(args)...);
 }
@@ -175,6 +181,8 @@ static inline void DLLDelete(T* ptr) {
 
 template <typename T, typename... TArgs>
 static inline T* DLLCreateArray(size_t capacity, TArgs&&... args) {
+	static_assert(std::is_constructible<T, TArgs...>::value, "Cannot construct T from TArgs.");
+
 	std::allocator<T> alloc;
 	return Memory::CreateArray<T>(alloc, capacity, std::forward<TArgs>(args));
 }
