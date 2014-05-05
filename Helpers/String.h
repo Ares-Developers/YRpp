@@ -32,7 +32,11 @@ struct FixedString {
 		return *this;
 	}
 
-	operator bool() const {
+	explicit operator bool() {
+		return this->chars[0] != 0;
+	}
+
+	explicit operator bool() const {
 		return this->chars[0] != 0;
 	}
 
