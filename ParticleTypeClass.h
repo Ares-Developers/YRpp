@@ -78,7 +78,7 @@ public:
 	BYTE   Translucent50State;
 	bool   Normalized;
 	ParticleTypeClass* NextParticle;
-	eBehavesLike BehavesLike;
+	BehavesLike::Value BehavesLike;
 
 };
 

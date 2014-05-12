@@ -495,14 +495,18 @@ typedef int eSpotlightFlags;
 #define sf_NoGreen 0x4
 #define sf_NoBlue 0x8
 
-//ParticleTypeClass->BehavesLike
-typedef int eBehavesLike;
 
-#define	bl_Smoke		0x0
-#define	bl_Gas		0x1
-#define	bl_Fire		0x2
-#define	bl_Spark		0x3
-#define	bl_Railgun		0x4
+class BehavesLike {
+public:
+	typedef int Value;
+	enum {
+		Smoke = 0,
+		Gas = 1,
+		Fire = 2,
+		Spark = 3,
+		Railgun = 4
+	};
+};
 
 
 //ParticleSystemTypeClass->HoldsWhat, almost, but not entirely, unlike eBehavesLike above
