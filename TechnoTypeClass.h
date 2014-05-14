@@ -119,6 +119,15 @@ public:
 		return this->TurretCount > 0;
 	}
 
+	CoordStruct* GetParticleSysOffset(CoordStruct* pBuffer) const
+		{ JMP_THIS(0x7178C0); }
+
+	CoordStruct GetParticleSysOffset() const
+	{
+		CoordStruct buffer;
+		return *GetParticleSysOffset(&buffer);
+	}
+
 	//Constructor
 	TechnoTypeClass(const char* id, SpeedType::Value speedtype) : ObjectTypeClass(false)
 		{ JMP_THIS(0x710AF0); }
