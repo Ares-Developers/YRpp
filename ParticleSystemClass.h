@@ -34,11 +34,11 @@ public:
 	//Constructor
 	ParticleSystemClass(
 		ParticleSystemTypeClass* pParticleSystemType,
-		CoordStruct* Crd1,
+		const CoordStruct& coords,
 		AbstractClass* pTarget,
 		TechnoClass* pOwner,
-		CoordStruct* Crd2,
-		DWORD dwUnk) : ObjectClass(false)
+		const CoordStruct& targetCoords,
+		HouseClass* pOwnerHouse) : ObjectClass(false)
 			{ JMP_THIS(0x62DC50); }
 
 protected:
@@ -51,16 +51,16 @@ protected:
 public:
 
 	ParticleSystemTypeClass* Type;
-	CoordStruct  unknown_coords_B0;
+	CoordStruct  SpawnDistanceToOwner;
 	DynamicVectorClass<ParticleClass*> Particles;
-	CoordStruct unknown_coords_D4;
+	CoordStruct TargetCoords;
 	TechnoClass* Owner;
 	AbstractClass* Target; // CellClass or TechnoClass
 	int          SpawnFrames; //from ParSysTypeClass
 	int          Lifetime; //from ParSysTypeClass
 	int          SparkSpawnFrames; //from ParSysTypeClass
-	int          unknown_int_F4; //defaults to 29
-	bool         unknown_bool_F8;
+	int          SpotlightRadius; //defaults to 29
+	bool         TimeToDie;
 	bool         unknown_bool_F9;
 	HouseClass*  OwnerHouse;
 };
