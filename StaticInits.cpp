@@ -607,7 +607,7 @@ int HouseClass::CountOwnedNowTotal(const TechnoTypeClass *Item) const {
 
 	switch(Item->WhatAmI()) {
 		case abs_BuildingType:
-			BT = reinterpret_cast<const BuildingTypeClass *>(Item);
+			BT = static_cast<const BuildingTypeClass *>(Item);
 			if(BT->PowersUpBuilding[0]) {
 				if(auto plug = BuildingTypeClass::Find(BT->PowersUpBuilding)) {
 					for(int i = 0; i < this->Buildings.Count; ++i) {
@@ -631,7 +631,7 @@ int HouseClass::CountOwnedNowTotal(const TechnoTypeClass *Item) const {
 
 		case abs_UnitType:
 			Sum = this->OwnedUnitTypes.GetItemCount(Index);
-			UT = reinterpret_cast<const UnitTypeClass *>(Item);
+			UT = static_cast<const UnitTypeClass *>(Item);
 			BT = UT->DeploysInto;
 			if(BT) {
 				Sum += this->OwnedBuildingTypes.GetItemCount(BT->GetArrayIndex());
@@ -640,7 +640,7 @@ int HouseClass::CountOwnedNowTotal(const TechnoTypeClass *Item) const {
 
 		case abs_InfantryType:
 			Sum = this->OwnedInfantryTypes.GetItemCount(Index);
-			IT = reinterpret_cast<const InfantryTypeClass *>(Item);
+			IT = static_cast<const InfantryTypeClass *>(Item);
 			if(IT->VehicleThief) {
 				for(int i = 0; i < UnitClass::Array->Count; ++i) {
 					U = UnitClass::Array->GetItem(i);

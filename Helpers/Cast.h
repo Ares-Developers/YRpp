@@ -20,7 +20,7 @@ inline T specific_cast(AbstractClass* pAbstract) {
 		"specific_cast: Abstract types (not fully implemented classes) are not suppored.");
 
 	if(pAbstract && pAbstract->WhatAmI() == Base::AbsID) {
-		return reinterpret_cast<T>(pAbstract);
+		return static_cast<T>(pAbstract);
 	}
 	return nullptr;
 };
@@ -34,7 +34,7 @@ inline T generic_cast(AbstractClass* pAbstract) {
 		"generic_cast: T is required to be an abstract type derived from ObjectClass.");
 
 	if(pAbstract && (pAbstract->AbstractFlags & Base::AbsDerivateID) != 0) {
-		return reinterpret_cast<T>(pAbstract);
+		return static_cast<T>(pAbstract);
 	}
 	return nullptr;
 };
