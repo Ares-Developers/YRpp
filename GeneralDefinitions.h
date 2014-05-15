@@ -796,14 +796,14 @@ public:
  */
 class Layer {
 public:
-	typedef unsigned int Value;
+	typedef int Value;
 	enum {
-		None = -0x1,
-		Underground = 0x0,
-		Surface = 0x1,
-		Ground = 0x2,
-		Air = 0x3,
-		Top = 0x4,
+		None = -1,
+		Underground = 0,
+		Surface = 1,
+		Ground = 2,
+		Air = 3,
+		Top = 4,
 	};
 };
 
