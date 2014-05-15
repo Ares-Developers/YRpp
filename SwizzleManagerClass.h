@@ -35,14 +35,14 @@ public:
 
 	virtual HRESULT __stdcall Swizzle(void** pointer) R0;
 
-	virtual HRESULT __stdcall Fetch_Swizzle_ID(void* pointer, long* id) R0;
+	virtual HRESULT __stdcall Fetch_Swizzle_ID(void* pointer, long* id) const R0;
 
 	virtual HRESULT __stdcall Here_I_Am(long id, void* pointer) R0;
 
 	virtual HRESULT __stdcall Save_Interface(IStream* stream, IUnknown* pointer) R0;
 	virtual HRESULT __stdcall Load_Interface(IStream* stream, GUID* riid, void** pointer) R0;
 
-	virtual HRESULT __stdcall Get_Save_Size(int* psize) R0;
+	virtual HRESULT __stdcall Get_Save_Size(int* psize) const R0;
 
 	//CTOR / DTOR
 	SwizzleManagerClass() JMP_THIS(0x6CF180);
