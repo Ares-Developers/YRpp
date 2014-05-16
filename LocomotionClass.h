@@ -13,6 +13,7 @@ NOTE:
 
 #include <Interfaces.h>
 #include <FootClass.h>
+#include <Unsorted.h>
 
 class LocomotionClass : public IPersistStream, public ILocomotion
 {
@@ -278,7 +279,7 @@ public:
 		HRESULT res = LocomotionClass::CreateInstance(&loco, rclsid, nullptr, 7);
 		if(res < 0) {
 			if(res != E_NOINTERFACE) {
-				RaiseError(res);
+				Game::RaiseError(res);
 			}
 			return false;
 		}
@@ -290,7 +291,7 @@ public:
 	static bool End_Piggyback(ILocomotion* &pLoco) {
 		bool ret = false;
 		if(!pLoco) {
-			RaiseError(E_POINTER);
+			Game::RaiseError(E_POINTER);
 		}
 		
 		IPiggyback* pPiggy = nullptr;
@@ -303,7 +304,7 @@ public:
 				// this restores the old one
 				res = pPiggy->End_Piggyback(&pLoco);
 				if(FAILED(res)) {
-					RaiseError(res);
+					Game::RaiseError(res);
 				}
 				ret = (ret == S_OK);
 			}

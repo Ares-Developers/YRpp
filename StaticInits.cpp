@@ -581,22 +581,6 @@ void SlaveManagerClass::ZeroOutSlaves() {
 	}
 }
 
-void ReleaseIf(IUnknown *ptr) {
-	if(ptr) {
-		ptr->Release();
-	}
-}
-
-void ReleaseIf(ILocomotion *ptr) {
-	if(ptr) {
-		ptr->Release();
-	}
-}
-
-void __declspec(noreturn) RaiseError(HRESULT hr) {
-	Game::RaiseError(hr);
-}
-
 int HouseClass::CountOwnedNowTotal(const TechnoTypeClass *Item) const {
 	int Index = Item->GetArrayIndex();
 	int Sum = 0;

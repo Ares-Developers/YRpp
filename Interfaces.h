@@ -201,10 +201,12 @@ inline void CheckPtr(HRESULT hr, T ptr) {
 	}
 }
 
-void ReleaseIf(IUnknown *ptr);
-
-void ReleaseIf(ILocomotion *ptr);
-
-void __declspec(noreturn) RaiseError(HRESULT hr);
+template<class T>
+inline void ReleaseIf(T* &ptr) {
+	if(ptr) {
+		ptr->Release();
+		ptr = nullptr;
+	}
+}
 
 #endif
