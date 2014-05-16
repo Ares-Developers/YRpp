@@ -216,32 +216,32 @@ public:
 		{ SET_REG32(ECX, Loco); CALL(0x6CE270); }
 
 	static void ChangeLocomotorTo(FootClass *Object, CLSID *clsid) {
-		ILocomotion * firstLoco = Object->Locomotor;
-		if(firstLoco) {
-			firstLoco->AddRef();
+		ILocomotion * pFirstLoco = Object->Locomotor;
+		if(pFirstLoco) {
+			pFirstLoco->AddRef();
 		}
 
-		ILocomotion *ppLoco = nullptr;
-		HRESULT result = CreateInstance(&ppLoco, clsid, 0, 7);
-		CheckPtr(result, ppLoco);
-		ppLoco->Link_To_Object(Object);
+		ILocomotion *pLoco = nullptr;
+		HRESULT result = CreateInstance(&pLoco, clsid, nullptr, 7);
+		CheckPtr(result, pLoco);
+		pLoco->Link_To_Object(Object);
 
-		IPiggyback *ppPiggy = nullptr;
-		result = TryPiggyback(&ppPiggy, &ppLoco);
-		CheckPtr(result, ppPiggy);
-		ppPiggy->Begin_Piggyback(firstLoco);
+		IPiggyback *pPiggy = nullptr;
+		result = TryPiggyback(&pPiggy, &pLoco);
+		CheckPtr(result, pPiggy);
+		pPiggy->Begin_Piggyback(pFirstLoco);
 
-		ILocomotion * secondLoco = Object->Locomotor;
-		if(secondLoco != ppLoco) {
-			Object->Locomotor = ppLoco;
-			if(ppLoco) {
-				ppLoco->AddRef();
+		ILocomotion * pSecondLoco = Object->Locomotor;
+		if(pSecondLoco != pLoco) {
+			Object->Locomotor = pLoco;
+			if(pLoco) {
+				pLoco->AddRef();
 			}
-			ReleaseIf(secondLoco);
+			ReleaseIf(pSecondLoco);
 		}
-		ReleaseIf(ppPiggy);
-		ReleaseIf(ppLoco);
-		ReleaseIf(firstLoco);
+		ReleaseIf(pPiggy);
+		ReleaseIf(pLoco);
+		ReleaseIf(pFirstLoco);
 	}
 
 	// releases the object and clears the pointer
