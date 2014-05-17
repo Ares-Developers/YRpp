@@ -341,7 +341,7 @@ public:
 
 		this->IsAllocated = false;
 		this->Capacity = 0;
-		this->Count = 0;
+		this->Total = 0;
 	}
 
 	virtual void Clear() {
@@ -349,14 +349,14 @@ public:
 			this->Items[i] = 0;
 		}
 
-		this->Count = 0;
+		this->Total = 0;
 	}
 
 	int GetItemCount(int nIndex) const
 		{ JMP_THIS(0x49FAE0); }
 
 	CounterClass() : VectorClass<int>()
-		{ this->Count = 0; }
+		{ this->Total = 0; }
 
 	int Increment(int nIndex)
 		{ JMP_THIS(0x49FA00); }
@@ -364,7 +364,7 @@ public:
 	int Decrement(int nIndex)
 		{ JMP_THIS(0x49FA70); }
 
-	int Count;	//not sure what this is, but it's different from DVC's count
+	int Total;
 };
 
 #include <SwizzleManagerClass.h>
