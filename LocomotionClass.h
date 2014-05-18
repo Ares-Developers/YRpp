@@ -205,8 +205,8 @@ public:
 	static HRESULT TryPiggyback(IPiggyback **Piggy, ILocomotion **Loco)
 		{ PUSH_VAR32(Loco); SET_REG32(ECX, Piggy); CALL(0x45AF20); }
 
-	static HRESULT CreateInstance(ILocomotion **ppv, CLSID *rclsid, LPUNKNOWN pUnkOuter, int arg)
-		{ PUSH_VAR32(arg); PUSH_VAR32(pUnkOuter); PUSH_VAR32(rclsid); SET_REG32(ECX, ppv); CALL(0x41C250); }
+	static HRESULT CreateInstance(ILocomotion **ppv, CLSID *rclsid, LPUNKNOWN pUnkOuter, DWORD dwClsContext)
+		{ PUSH_VAR32(dwClsContext); PUSH_VAR32(pUnkOuter); PUSH_VAR32(rclsid); SET_REG32(ECX, ppv); CALL(0x41C250); }
 
 	// these two are identical, why do they both exist...
 	static void AddRef1(LocomotionClass **Loco)
@@ -222,7 +222,8 @@ public:
 		}
 
 		ILocomotion *pLoco = nullptr;
-		HRESULT result = CreateInstance(&pLoco, clsid, nullptr, 7);
+		HRESULT result = CreateInstance(&pLoco, clsid, nullptr,
+			CLSCTX_INPROC_SERVER | CLSCTX_INPROC_HANDLER | CLSCTX_LOCAL_SERVER);
 		CheckPtr(result, pLoco);
 		pLoco->Link_To_Object(Object);
 
@@ -276,7 +277,8 @@ public:
 	static bool CreateInstance(ILocomotion* &loco, CLSID* rclsid) {
 		Release(loco);
 
-		HRESULT res = LocomotionClass::CreateInstance(&loco, rclsid, nullptr, 7);
+		HRESULT res = LocomotionClass::CreateInstance(&loco, rclsid, nullptr,
+			CLSCTX_INPROC_SERVER | CLSCTX_INPROC_HANDLER | CLSCTX_LOCAL_SERVER);
 		if(res < 0) {
 			if(res != E_NOINTERFACE) {
 				Game::RaiseError(res);
