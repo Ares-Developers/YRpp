@@ -34,11 +34,6 @@ public:
 		static CLSID &Ship;
 	};
 
-	class IIDs {
-	public:
-		static IID &IPiggyback;
-	};
-
 	//IUnknown
 	virtual HRESULT __stdcall QueryInterface(REFIID iid, void** ppvObject)
 		{ JMP_STD(0x55A9B0); }

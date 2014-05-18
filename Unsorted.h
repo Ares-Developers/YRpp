@@ -96,10 +96,22 @@ public:
 // no comments because the IIDs suck
 class IIDs {
 public:
-	static IID &AbstractClass_0;
-	static IID &AbstractClass_1;
-	static IID &AbstractClass_2;
-	static IID &AbstractClass_3;
+	static const IID &IUnknown;
+	static const IID &IPersistStream;
+	static const IID &IPersist;
+	static const IID &IRTTITypeInfo;
+	static const IID &IHouse;
+	static const IID &IPublicHouse;
+	static const IID &IEnumConnections;
+	static const IID &IConnectionPoint;
+	static const IID &IConnectionPointContainer;
+	static const IID &IEnumConnectionPoints;
+	static const IID &IApplication;
+	static const IID &IGameMap;
+	static const IID &ILocomotion;
+	static const IID &IPiggyback;
+	static const IID &IFlyControl;
+	static const IID &ISwizzle;
 };
 
 // this class links to functions gamemd imports

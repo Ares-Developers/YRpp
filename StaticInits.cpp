@@ -186,8 +186,6 @@ ALIAS(CLSID, LocomotionClass::CLSIDs::Teleport, 0x7E9A90);
 ALIAS(CLSID, LocomotionClass::CLSIDs::Mech, 0x7E9AA0);
 ALIAS(CLSID, LocomotionClass::CLSIDs::Ship, 0x7E9AB0);
 
-ALIAS(IID, LocomotionClass::IIDs::IPiggyback, 0x7E9B10);
-
 #include <MessageListClass.h>
 ALIAS_O(MessageListClass *, MessageListClass::Instance, 0xA8BC60);
 
@@ -416,10 +414,22 @@ ALIAS(HINSTANCE, Game::hInstance, 0xB732F0);
 ALIAS(bool, Game::bVideoBackBuffer, 0x840A6C);
 ALIAS(bool, Game::bAllowVRAMSidebar, 0xA8EB96);
 
-ALIAS(IID, IIDs::AbstractClass_0, 0x7F7C90);
-ALIAS(IID, IIDs::AbstractClass_1, 0x7F7C80);
-ALIAS(IID, IIDs::AbstractClass_2, 0x7F7C70);
-ALIAS(IID, IIDs::AbstractClass_3, 0x7E9AE0);
+ALIAS(const IID, IIDs::IUnknown, 0x7F7C90);
+ALIAS(const IID, IIDs::IPersistStream, 0x7F7C80);
+ALIAS(const IID, IIDs::IPersist, 0x7F7C70);
+ALIAS(const IID, IIDs::IRTTITypeInfo, 0x7E9AE0);
+ALIAS(const IID, IIDs::IHouse, 0x7EA768);
+ALIAS(const IID, IIDs::IPublicHouse, 0x7E9B00);
+ALIAS(const IID, IIDs::IEnumConnections, 0x7F7CB0);
+ALIAS(const IID, IIDs::IConnectionPoint, 0x7F7CC0);
+ALIAS(const IID, IIDs::IConnectionPointContainer, 0x7F7CD0);
+ALIAS(const IID, IIDs::IEnumConnectionPoints, 0x7F7CE0);
+ALIAS(const IID, IIDs::IApplication, 0x7E36C0);
+ALIAS(const IID, IIDs::IGameMap, 0x7EA6E8);
+ALIAS(const IID, IIDs::ILocomotion, 0x7ED358);
+ALIAS(const IID, IIDs::IPiggyback, 0x7E9B10);
+ALIAS(const IID, IIDs::IFlyControl, 0x7E9B40);
+ALIAS(const IID, IIDs::ISwizzle, 0x7E9B20);
 
 ALIAS(Imports::FP_OleLoadFromStream, Imports::OleLoadFromStream, 0x7E15F8);
 ALIAS(Imports::FP_TimeGetTime, Imports::TimeGetTime, 0x7E1530);
