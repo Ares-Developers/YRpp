@@ -4,7 +4,7 @@
 #include <windows.h>
 #include <GeneralDefinitions.h>
 
-interface ISwizzle : IUnknown
+__interface ISwizzle : IUnknown
 {
 	virtual HRESULT __stdcall Reset() = 0;
 	virtual HRESULT __stdcall Swizzle(void** pointer) = 0;
@@ -15,7 +15,7 @@ interface ISwizzle : IUnknown
 	virtual HRESULT __stdcall Get_Save_Size(int* size) const = 0;
 };
 
-interface IApplication : IUnknown
+__interface IApplication : IUnknown
 {
 	virtual HRESULT __stdcall FullName(BSTR* retval) = 0;
 	virtual HRESULT __stdcall Name(BSTR* retval) = 0;
@@ -25,24 +25,24 @@ interface IApplication : IUnknown
 	virtual HRESULT __stdcall Swizzle_Interface(ISwizzle** pVal) = 0;
 };
 
-interface INoticeSource
+__interface INoticeSource
 {
 	virtual void __stdcall INoticeSource_Unknown() = 0;
 };
 
-interface INoticeSink
+__interface INoticeSink
 {
 	virtual bool __stdcall INoticeSink_Unknown(DWORD dwUnknown) = 0;
 };
 
-interface IRTTITypeInfo : IUnknown
+__interface IRTTITypeInfo : IUnknown
 {
 	virtual eAbstractType __stdcall What_Am_I() const = 0;
 	virtual int __stdcall Fetch_ID() const = 0;
 	virtual void __stdcall Create_ID() = 0;
 };
 
-interface IHouse : IUnknown
+__interface IHouse : IUnknown
 {
 	virtual long __stdcall				ID_Number() = 0;
 	virtual BSTR __stdcall				Name() = 0;
@@ -58,7 +58,7 @@ interface IHouse : IUnknown
 	virtual HRESULT __stdcall			All_To_Hunt() = 0;
 };
 
-interface IPublicHouse : IUnknown
+__interface IPublicHouse : IUnknown
 {
 	virtual long __stdcall			ID_Number() = 0;
 	virtual BSTR __stdcall			Name() = 0;
@@ -74,7 +74,7 @@ typedef struct tagCONNECTDATA
 	unsigned long dwCookie;
 }	CONNECTDATA;
 
-interface IEnumConnections : IUnknown
+__interface IEnumConnections : IUnknown
 {
 	virtual HRESULT __stdcall RemoteNext(unsigned long cConnections, CONNECTDATA* rgcd, unsigned long* pcFetched) = 0;
 	virtual HRESULT __stdcall Skip(unsigned long cConnections) = 0;
@@ -82,8 +82,8 @@ interface IEnumConnections : IUnknown
 	virtual HRESULT __stdcall Clone(IEnumConnections** ppEnum) = 0;
 };
 
-interface IConnectionPointContainer;
-interface IConnectionPoint : IUnknown
+__interface IConnectionPointContainer;
+__interface IConnectionPoint : IUnknown
 {
 	virtual HRESULT __stdcall GetConnectionInterface(GUID* pIID) = 0;
 	virtual HRESULT __stdcall GetConnectionPointContainer(IConnectionPointContainer** ppCPC) = 0;
@@ -92,14 +92,14 @@ interface IConnectionPoint : IUnknown
 	virtual HRESULT __stdcall EnumConnections(IEnumConnections** ppEnum) = 0;
 };
 
-interface IEnumConnectionPoints;
-interface IConnectionPointContainer : IUnknown
+__interface IEnumConnectionPoints;
+__interface IConnectionPointContainer : IUnknown
 {
 	virtual HRESULT __stdcall	EnumConnectionPoints(IEnumConnectionPoints** ppEnum) = 0;
 	virtual HRESULT __stdcall	FindConnectionPoint(GUID* riid, IConnectionPoint** ppCP) = 0;
 };
 
-interface IEnumConnectionPoints : IUnknown
+__interface IEnumConnectionPoints : IUnknown
 {
 	virtual HRESULT __stdcall RemoteNext(unsigned long cConnections, IConnectionPoint** ppCP, unsigned long* pcFetched) = 0;
 	virtual HRESULT __stdcall Skip(unsigned long cConnections) = 0;
@@ -107,18 +107,18 @@ interface IEnumConnectionPoints : IUnknown
 	virtual HRESULT __stdcall Clone(IEnumConnectionPoints** ppEnum) = 0;
 };
 
-interface IGameMap : IUnknown
+__interface IGameMap : IUnknown
 {
 	virtual long __stdcall Is_Visible(CellStruct cell) = 0;
 };
 
-interface ILinkStream : IUnknown
+__interface ILinkStream : IUnknown
 {
 	virtual HRESULT __stdcall Link_Stream(IUnknown* stream) = 0;
 	virtual HRESULT __stdcall Unlink_Stream(IUnknown** stream) = 0;
 };
 
-interface IFlyControl : IUnknown
+__interface IFlyControl : IUnknown
 {
 	virtual int __stdcall Landing_Altitude() = 0;
 	virtual int __stdcall Landing_Direction() = 0;
@@ -128,7 +128,7 @@ interface IFlyControl : IUnknown
 	virtual long __stdcall Is_Locked() = 0;
 };
 
-interface ILocomotion : IUnknown
+__interface ILocomotion : IUnknown
 {
 	virtual HRESULT __stdcall Link_To_Object(void* pointer) = 0; //Links object to locomotor.
 	virtual bool __stdcall Is_Moving() = 0;	//Sees if object is moving.
@@ -179,7 +179,7 @@ interface ILocomotion : IUnknown
 	virtual int __stdcall Get_Speed_Accum() = 0;	//Queries internal variables
 };
 
-interface IPiggyback : IUnknown //'Piggyback' one locomotor onto another.
+__interface IPiggyback : IUnknown //'Piggyback' one locomotor onto another.
 {
 	virtual HRESULT __stdcall Begin_Piggyback(ILocomotion* pointer) = 0;	//Piggybacks a locomotor onto this one.
 	virtual HRESULT __stdcall End_Piggyback(ILocomotion** pointer) = 0;	//End piggyback process and restore locomotor interface pointer.
