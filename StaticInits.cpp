@@ -362,6 +362,9 @@ DECL(ScriptTypeClass, 0x8B41C8);
 #include <SwizzleManagerClass.h>
 SwizzleManagerClass& SwizzleManagerClass::Instance = *(SwizzleManagerClass*)0xB0C110;
 
+#include <TActionClass.h>
+DECL(TActionClass, 0xB0E658);
+
 #include <TagClass.h>
 DECL(TagClass, 0xB0E720);
 
@@ -378,6 +381,9 @@ DECL(TemporalClass, 0xB0EC60);
 
 DynamicVectorClass<TechnoClass *>* TechnoClass::Array = (DynamicVectorClass<TechnoClass *>*)0xA8EC78;
 DynamicVectorClass<TechnoTypeClass *>* TechnoTypeClass::Array = (DynamicVectorClass<TechnoTypeClass *>*)0xA8EB00;
+
+#include <TEventClass.h>
+DECL(TEventClass, 0xB0F1A0);
 
 #include <Theater.h>
 Theater* Theater::Array        = (Theater *)0x7E1B78;
