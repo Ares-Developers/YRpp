@@ -87,6 +87,8 @@ public:
 	//global array
 	static DynamicVectorClass<LightConvertClass*>* Array;
 
+
+
 	//Constructor, Destructor
 
 	LightConvertClass(
@@ -103,14 +105,24 @@ public:
 
 	virtual ~LightConvertClass() RX;
 
+	void UpdateColors(int Red, int Green, int Blue, bool bUnknown)
+		{ JMP_THIS(0x556090); }
+
 protected:
 	LightConvertClass() : ConvertClass(false) {}
+public:
 
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================
-	//I have no idea...
-	PROTECTED_PROPERTY(BYTE, unknown_0[0x2C]);
+	BytePalette* UsedPalette1;
+	BytePalette* UsedPalette2;
+	void* unknown_190;
+	int UsageCount;
+	TintStruct Color1;
+	TintStruct Color2;
+	BYTE unknown_1B0;
+	PROTECTED_PROPERTY(BYTE, align_1B1[3]);
 };
 
 #endif
