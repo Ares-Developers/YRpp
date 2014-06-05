@@ -397,7 +397,7 @@ public:
 	bool            TypeImmune;
 	bool            MoveToShroud;
 	bool            Trainable;
-	bool            Cyborg_; //!Copied from the InfantryTypeClass!
+	bool            DamageSparks; //enabled for Cyborg InfantryTypes
 	bool            TargetLaser;
 	bool            ImmuneToVeins;
 	bool            TiberiumHeal;
