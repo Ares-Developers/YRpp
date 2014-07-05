@@ -5,6 +5,9 @@ typedef unsigned char BYTE;
 typedef unsigned short WORD;
 typedef unsigned long DWORD;
 
+// the most basic globals
+#include <Fundamentals.h>
+
 //Syringe interaction header - also includes <windows.h>
 #include <Syringe.h>
 

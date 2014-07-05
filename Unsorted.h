@@ -459,8 +459,6 @@ namespace Unsorted
 {
 	static DWORD &Savegame_Magic     = *(DWORD *)0x83D560;
 
-	static int &CurrentFrame     = *(int *)0xA8ED84;
-
 	// if != 0, EVA_SWxxxActivated is skipped
 	static int &MuteSWLaunches   = *(int *)0xA8B538;
 
