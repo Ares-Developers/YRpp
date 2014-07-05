@@ -93,12 +93,24 @@ public:
 	bool IsDone() const
 		{ return this->StartTime != -1 && this->GetTimeLeft() <= 0; }
 
-	bool Ignorable() const
-		{ return this->StartTime == -1 || this->GetTimeLeft() <= 0; }
+
+	// returns whether a delay is active or a timer is still counting down.
+	bool InProgress() const {
+		return this->IsTicking() && this->HasTimeLeft();
+	}
+
+	// returns whether a delay is inactive. same as !InProgress().
+	bool Expired() const {
+		return !this->IsTicking() || !this->HasTimeLeft();
+	}
 
 protected:
 	bool IsTicking() const {
 		return this->StartTime != -1;
+	}
+
+	bool HasTimeLeft() const {
+		return this->GetTimeLeft() > 0;
 	}
 };
 
