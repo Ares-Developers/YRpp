@@ -53,8 +53,42 @@ public:
 	int unknown;
 	int TimeLeft;
 
-	void Stop()
-		{ this->StartTime = -1; this->TimeLeft = 0; }
+	TimerStruct() : StartTime(-1), TimeLeft(0) { }
+	TimerStruct(int duration) { this->Start(duration); }
+
+	void Start(int duration) {
+		this->StartTime = Unsorted::CurrentFrame;
+		this->TimeLeft = duration;
+	}
+
+	void Stop() {
+		this->StartTime = -1;
+		this->TimeLeft = 0;
+	}
+
+	void Pause() {
+		if(this->IsTicking()) {
+			this->TimeLeft = this->GetTimeLeft();
+			this->StartTime = -1;
+		}
+	}
+
+	void Resume() {
+		if(!this->IsTicking()) {
+			this->StartTime = Unsorted::CurrentFrame;
+		}
+	}
+
+	int GetTimeLeft() const {
+		if(!this->IsTicking()) {
+			return this->TimeLeft;
+		}
+
+		auto passed = Unsorted::CurrentFrame - this->StartTime;
+		auto left = this->TimeLeft - passed;
+
+		return (left <= 0) ? 0 : left;
+	}
 
 	bool IsDone() const
 		{ return this->StartTime != -1 && this->GetTimeLeft() <= 0; }
@@ -62,17 +96,10 @@ public:
 	bool Ignorable() const
 		{ return this->StartTime == -1 || this->GetTimeLeft() <= 0; }
 
-	int GetTimeLeft() const
-		{ JMP_THIS(0x426630); }
-
-	void Start(int duration)
-		{ JMP_THIS(0x46B640); }
-
-	void StartIfEmpty() // just sets start frame
-		{ JMP_THIS(0x6CE2C0); }
-
-	void Pause()
-		{ JMP_THIS(0x6CE280); }
+protected:
+	bool IsTicking() const {
+		return this->StartTime != -1;
+	}
 };
 
 class RepeatableTimerStruct : public TimerStruct

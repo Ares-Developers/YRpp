@@ -78,7 +78,7 @@ public:
 
 	// resumes to harvest automatically.
 	void ResumeWork() {
-		this->RespawnTimer.StartIfEmpty();
+		this->RespawnTimer.Resume();
 	}
 
 	SlaveManagerClass() : AbstractClass(false) { }
