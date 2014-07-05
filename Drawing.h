@@ -80,18 +80,19 @@ public:
 
 	//Stuff
 
-	// RGB
-	static WORD Color16bit(ColorStruct* pColor)	//Converts an RGB color to a 16bit color value.
-		{ return (pColor->B >> 3) | ((pColor->G >> 2) << 5) | ((pColor->R >> 3) << 11); }
+	// Converts an RGB color to a 16bit color value.
+	static WORD Color16bit(const ColorStruct& color) {
+		return (color.B >> 3) | ((color.G >> 2) << 5) | ((color.R >> 3) << 11);
+	}
 
-	static ColorStruct WordColor(WORD bits)
-		{
-			ColorStruct color;
-			color.R = ((bits & 0xF800) >> 11) << 3;
-			color.G = (BYTE)((bits & 0x07E0) >> 5) << 2; // msvc stupid warning
-			color.B = (bits & 0x001F) << 3;
-			return color;
-		}
+	// Converts a 16bit color to an RGB color.
+	static ColorStruct WordColor(WORD bits) {
+		ColorStruct color;
+		color.R = static_cast<BYTE>(((bits & 0xF800) >> 11) << 3);
+		color.G = static_cast<BYTE>(((bits & 0x07E0) >> 5) << 2);
+		color.B = static_cast<BYTE>((bits & 0x001F) << 3);
+		return color;
+	}
 
 	/** Message is a vswprintf format specifier, ... is for any arguments needed */
 	static Point2D * __cdecl PrintUnicode(Point2D *Position1, wchar_t *Message, Surface *a3, RectangleStruct *Rect, Point2D *Position2,
