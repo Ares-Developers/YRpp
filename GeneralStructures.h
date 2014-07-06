@@ -90,11 +90,14 @@ public:
 		return (left <= 0) ? 0 : left;
 	}
 
-	bool IsDone() const
-		{ return this->StartTime != -1 && this->GetTimeLeft() <= 0; }
-
+	// returns whether a ticking timer has finished counting down.
+	bool Completed() const {
+		return this->IsTicking() && !this->HasTimeLeft();
+	}
 
 	// returns whether a delay is active or a timer is still counting down.
+	// this is the 'opposite' of Completed() (meaning: incomplete / still busy)
+	// and logically the same as !Expired() (meaning: blocked / delay in progress)
 	bool InProgress() const {
 		return this->IsTicking() && this->HasTimeLeft();
 	}
