@@ -18,39 +18,33 @@ struct CameoDataStruct
 	ProgressTimer     Progress; // 0 to 54, how much of this object is constructed (gclock anim level)
 	int               FlashEndFrame;
 
-	CameoDataStruct() {
-		ClearFully();
+	CameoDataStruct() : CameoDataStruct(0, 0)
+		{ }
+
+	CameoDataStruct(int itemIndex, eAbstractType itemType) :
+		ItemIndex(itemIndex),
+		ItemType(itemType),
+		IsAlt(0),
+		CurrentFactory(nullptr),
+		unknown_10(0),
+		Progress(),
+		FlashEndFrame(0)
+	{ /*JMP_THIS(0x6AC7C0);*/ }
+
+	bool operator == (const CameoDataStruct &rhs) const {
+		return ItemIndex == rhs.ItemIndex && ItemType == rhs.ItemType;
 	}
 
-	void Clear()
-		{ JMP_THIS(0x6AC7C0); }
-
-	void ClearFully() {
-		this->ItemIndex = 0;
-		this->ItemType = 0;
-		this->IsAlt = false;
-		this->CurrentFactory = nullptr;
-		this->unknown_10 = 0;
-		this->Progress.Value = 0;
-		this->Progress.Timer.StartTime = 0; // normally this initializes to Unsorted::CurrentFrame, let's see if this breaks anything
-		this->Progress.Timer.TimeLeft = 0;
-		this->Progress.Step = 0;
-		this->FlashEndFrame = 0;
+	bool operator != (const CameoDataStruct &rhs) const {
+		return ItemIndex != rhs.ItemIndex || ItemType != rhs.ItemType;
 	}
 
-	bool operator == (const CameoDataStruct &rhs) {
-		return ItemIndex == rhs.ItemIndex && ItemType == rhs.ItemType
-				&& IsAlt == rhs.IsAlt && CurrentFactory == rhs.CurrentFactory
-				&& unknown_10 == rhs.unknown_10 && Progress.Value == rhs.Progress.Value
-				&& Progress.Timer.StartTime == rhs.Progress.Timer.StartTime
-				&& Progress.Timer.TimeLeft == rhs.Progress.Timer.TimeLeft
-				&& FlashEndFrame == rhs.FlashEndFrame
-			;
+	bool operator < (const CameoDataStruct &rhs) const {
+		return SortsBefore(this->ItemType, this->ItemIndex, rhs.ItemType, rhs.ItemType);
 	}
 
 	static bool __stdcall SortsBefore(eAbstractType leftType, int leftIndex, eAbstractType rightType, int rightIndex)
 		{ JMP_STD(0x6A8420); }
-
 };
 
 // sizeof() == 0xF94
