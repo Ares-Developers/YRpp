@@ -2,7 +2,8 @@
 #define MEMORY_H
 
 #include <ASMMacros.h>
-//include <Unsorted.h>
+
+#include <type_traits>
 
 /*
  * The memory (de)allocators have to match!
@@ -54,6 +55,10 @@ namespace YRMemory {
 		JMP(0x7C8B3D);
 	}
 }
+
+template<typename T>
+struct needs_vector_delete : std::integral_constant<bool,
+	!std::is_scalar<T>::value && !std::is_trivially_destructible<T>::value> {};
 
 // this is a stateless basic allocator definition that manages memory using the
 // game's operator new and operator delete methods. do not use it directly,
