@@ -244,26 +244,92 @@ private:
 	unsigned_type unused_2;
 };
 
-//also see FACING definitions
+// managing a facing that can change over time
 struct FacingStruct
 {
-	DirStruct Value; //current facing
-	DirStruct Target; //target facing
-	TimerStruct Timer; //rotation?
-	DirStruct ROT; //Rate of Turn. INI Value * 256
+	FacingStruct() : Timer(0) { }
 
-	DirStruct* GetFacing(DirStruct *buffer) const
-		{ JMP_THIS(0x4C93D0); }
-
-	void SetFacing(DirStruct *dir)
-		{ JMP_THIS(0x4C9300); }
-
-	operator int() const {
-		// <DCoder> I don't know how or what it does, but that's what the game uses
-		DirStruct nessie;
-		this->GetFacing(&nessie); // mysterious facing value from the depths of the game
-		return nessie.value8();
+	FacingStruct(short rot) : FacingStruct() {
+		this->turn_rate(rot);
 	}
+
+	short turn_rate() const {
+		return this->ROT.value();
+	}
+
+	void turn_rate(short value) {
+		if(value > 127) {
+			value = 127;
+		}
+
+		this->ROT.value<8>(value);
+	}
+
+	bool in_motion() const {
+		return this->turn_rate() > 0 && this->Timer.GetTimeLeft();
+	}
+
+	DirStruct target() const {
+		return this->Value;
+	}
+
+	DirStruct current() const {
+		auto ret = this->Value;
+
+		if(this->in_motion()) {
+			auto diff = this->difference();
+			auto num_steps = static_cast<short>(this->num_steps());
+
+			if(num_steps > 0) {
+				auto steps_left = this->Timer.GetTimeLeft();
+				ret.value(static_cast<short>(ret.value() - steps_left * diff / num_steps));
+			}
+		}
+
+		return ret;
+	}
+
+	bool set(const DirStruct& value) {
+		bool ret = (this->current() != value);
+
+		if(ret) {
+			this->Value = value;
+			this->Initial = value;
+		}
+
+		this->Timer.Start(0);
+
+		return ret;
+	}
+
+	bool turn(const DirStruct& value) {
+		if(this->Value == value) {
+			return false;
+		}
+
+		this->Initial = this->current();
+		this->Value = value;
+
+		if(this->turn_rate() > 0) {
+			this->Timer.Start(this->num_steps());
+		}
+
+		return true;
+	}
+
+private:
+	short difference() const {
+		return static_cast<short>(this->Value.value() - this->Initial.value());
+	}
+
+	int num_steps() const {
+		return abs(this->difference()) / this->turn_rate();
+	}
+
+	DirStruct Value; // target facing
+	DirStruct Initial; // rotation started here
+	TimerStruct Timer; // counts rotation steps
+	DirStruct ROT; // Rate of Turn. INI Value * 256
 };
 
 struct SomeVoxelCache {
