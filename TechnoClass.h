@@ -400,6 +400,17 @@ public:
 		{ JMP_THIS(0x70D0D0); }
 
 
+	DirStruct GetFacing() const {
+		DirStruct ret;
+		return *this->GetFacing(&ret);
+	}
+
+	DirStruct GetRealFacing() const {
+		DirStruct ret;
+		return *this->GetRealFacing(&ret);
+	}
+
+
 	//Constructor
 	TechnoClass(HouseClass* pOwner) : RadioClass(false)
 		{ JMP_THIS(0x6F2B40); }
