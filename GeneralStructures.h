@@ -20,31 +20,6 @@ typedef Vector3D<int> CoordStruct;
 typedef Vector3D<BYTE> RGBClass; // <pd> wuhaha
 #endif
 
-
-//uses the clock values
-struct DirStruct
-{
-	typedef WORD Raw;
-	typedef int Rounded;
-
-	DirStruct() : Value(0) { }
-	DirStruct(Raw value) : Value(value) { }
-	DirStruct(Rounded facing) : Value((facing & 0xFF) << 8) { }
-
-	operator Rounded() const {
-		// value / 256 with rounding
-		return (((this->Value >> 7) + 1) >> 1) & 0xFF;
-	}
-
-	operator Raw() const {
-		return this->Value;
-	}
-
-	Raw Value;
-private:
-	WORD unused_2;
-};
-
 //used for timed events, time measured in frames!
 class TimerStruct
 {
@@ -129,6 +104,146 @@ public:
 		{ this->TimerStruct::Start(this->Duration); }
 };
 
+inline unsigned int TranslateFixedPoint(size_t bitsFrom, size_t bitsTo, unsigned int value, unsigned int offset = 0) {
+	const size_t MaskIn = ((1u << bitsFrom) - 1);
+	const size_t MaskOut = ((1u << bitsTo) - 1);
+
+	if(bitsFrom > bitsTo) {
+		// converting down
+		return (((((value & MaskIn) >> (bitsFrom - bitsTo - 1)) + 1) >> 1) + offset) & MaskOut;
+
+	} else if(bitsFrom < bitsTo) {
+		// converting up
+		return (((value - offset) & MaskIn) << (bitsTo - bitsFrom)) & MaskOut;
+
+	} else {
+		return value & MaskOut;
+	}
+}
+
+// like a compass with 2 ^ 16 units equalling 360°
+struct DirStruct
+{
+	typedef short value_type;
+	typedef unsigned short unsigned_type;
+
+	DirStruct() : DirStruct(0) { }
+	explicit DirStruct(value_type value) : Value(value) { }
+
+	DirStruct(size_t bits, value_type value)
+		: DirStruct(static_cast<value_type>(TranslateFixedPoint(bits, 16, static_cast<unsigned_type>(value), 0)))
+	{ }
+
+	bool operator == (const DirStruct& rhs) const {
+		return this->Value == rhs.Value;
+	}
+
+	bool operator != (const DirStruct& rhs) const {
+		return this->Value != rhs.Value;
+	}
+
+	DirStruct& operator += (const DirStruct& rhs) {
+		reinterpret_cast<unsigned_type&>(this->Value) += static_cast<unsigned_type>(rhs.value());
+		return *this;
+	}
+
+	DirStruct operator + (const DirStruct& rhs) const {
+		return DirStruct(*this) += rhs;
+	}
+
+	DirStruct& operator -= (const DirStruct& rhs) {
+		reinterpret_cast<unsigned_type&>(this->Value) -= static_cast<unsigned_type>(rhs.value());
+		return *this;
+	}
+
+	DirStruct operator - (const DirStruct& rhs) const {
+		return DirStruct(*this) -= rhs;
+	}
+
+	DirStruct operator - () const {
+		return DirStruct(-this->Value);
+	}
+
+	DirStruct operator + () const {
+		return *this;
+	}
+
+	template <size_t Bits>
+	value_type value() const {
+		static_assert(Bits > 0 && Bits <= 16, "Bits has to be greater than 0 and lower or equal to 16.");
+
+		return static_cast<value_type>(TranslateFixedPoint(16, Bits, static_cast<unsigned_type>(this->Value), 0));
+	}
+
+	template <>
+	value_type value<16>() const {
+		return this->Value;
+	}
+
+	template <size_t Bits>
+	void value(value_type value) {
+		static_assert(Bits > 0 && Bits <= 16, "Bits has to be greater than 0 and lower or equal to 16.");
+
+		this->Value = static_cast<value_type>(TranslateFixedPoint(Bits, 16, static_cast<unsigned_type>(value), 0));
+	}
+
+	value_type value8() const {
+		return this->value<3>();
+	}
+
+	void value8(value_type value) {
+		this->value<3>(value);
+	}
+
+	value_type value32() const {
+		return this->value<5>();
+	}
+
+	void value32(value_type value) {
+		this->value<5>(value);
+	}
+
+	value_type value256() const {
+		return this->value<8>();
+	}
+
+	void value256(value_type value) {
+		this->value<8>(value);
+	}
+
+	value_type value() const {
+		return this->value<16>();
+	}
+
+	void value(value_type value) {
+		this->value<16>(value);
+	}
+
+	template <size_t Bits = 16>
+	double radians() const {
+		static_assert(Bits > 0 && Bits <= 16, "Bits has to be greater than 0 and lower or equal to 16.");
+
+		static const int Max = ((1u << Bits) - 1);
+
+		double value = Max / 4 - this->value<Bits>();
+		return value * Math::TwoPi / Max;
+	}
+
+	template <size_t Bits = 16>
+	void radians(double rad) {
+		static_assert(Bits > 0 && Bits <= 16, "Bits has to be greater than 0 and lower or equal to 16.");
+
+		static const int Max = ((1u << Bits) - 1);
+
+		int value = static_cast<int>(rad * Max / Math::TwoPi);
+		this->value<Bits>(static_cast<value_type>(Max / 4 - value));
+	}
+
+private:
+	value_type Value;
+	unsigned_type unused_2;
+};
+
 //also see FACING definitions
 struct FacingStruct
 {
@@ -147,7 +262,7 @@ struct FacingStruct
 		// <DCoder> I don't know how or what it does, but that's what the game uses
 		DirStruct nessie;
 		this->GetFacing(&nessie); // mysterious facing value from the depths of the game
-		return nessie;
+		return nessie.value8();
 	}
 };
 
