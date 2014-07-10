@@ -7,40 +7,41 @@
 class MapSeedClass : public LoadOptionsClass
 {
 protected:
-	MapSeedClass() RX;
+	MapSeedClass()
+		{ JMP_THIS(0x595680); }
 
 public:
 	virtual ~MapSeedClass()
 		{ JMP_THIS(0x5AC270); }
 	
 	//Loads an SED file
-	virtual bool LoadMission(const char* lpMultiByteName)
+	virtual bool LoadMission(const char* pFilename) const
 		{ JMP_THIS(0x597A30); }
 	
 	//Saves an SED file
-	virtual bool SaveMission(const char* lpMultiByteName, const wchar_t* unknown)
+	virtual bool SaveMission(const char* pFilename, const wchar_t* pDescription) const
 		{ JMP_THIS(0x597760); }
 		
-	virtual bool DeleteMission(const char* fileName)
+	virtual bool DeleteMission(const char* pFilename) const
 		{ JMP_THIS(0x597D50); }
 		
-	virtual bool unknown_method10(const wchar_t* unknown1, void* unknown2)
+	virtual bool GetFileEntry(FileEntryClass& FileEntry, const WIN32_FIND_DATAA& pFindData) const
 		{ JMP_THIS(0x597D60); }
 	
-	virtual const wchar_t* GetUIString_Load()
+	virtual const wchar_t* GetUIString_Load() const
 		{ JMP_THIS(0x597F80); }
 		
-	virtual const wchar_t* GetUIString_Save()
+	virtual const wchar_t* GetUIString_Save() const
 		{ JMP_THIS(0x597FA0); }
 		
-	virtual const wchar_t* GetUIString_Delete()
+	virtual const wchar_t* GetUIString_Delete() const
 		{ JMP_THIS(0x597FC0); }
 		
-	virtual const wchar_t* GetUIString_GameSaved()
+	virtual const wchar_t* GetUIString_GameSaved() const
 		{ JMP_THIS(0x597FE0); }
 
 	static MapSeedClass* Global()
-		{ return (MapSeedClass*)0xABDFD8; }
+		{ return reinterpret_cast<MapSeedClass*>(0xABDFD8); }
 	
 	//Properties
 public:
@@ -60,7 +61,7 @@ public:
 	int Accessibility;
 	int RegionSize;
 	int Seed; //default -1
-	wchar_t Name[0x80];
+	FixedWString<0x80> DescriptionBuffer;
 	
 	/*
 		This is confusing the hell out of me...
