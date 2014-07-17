@@ -152,4 +152,22 @@ protected:
 	mutable BYTE Bytes[Size];
 };
 
+// when using the original game implementation, use this to allocate space on
+// the stack. this class has a byte of padding to prevent out of bounds writes.
+class SafeChecksummer : public Checksummer {
+public:
+	SafeChecksummer() : Checksummer() { }
+
+protected:
+	/*
+	* this is not entirely correct
+	* the original class doesn't have this member and as such its sizeof == 0xC,
+	* but the code writes to the 0xC'th byte anyway... when the class is
+	* allocated through the heap, it works because windows apparently aligns
+	* memory blocks to 8 byte boundaries but when it's allocated on the stack,
+	* all hell breaks loose
+	*/
+	BYTE  Padding;
+};
+
 #endif
