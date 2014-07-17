@@ -103,7 +103,7 @@ public:
 	//VTable
 	virtual HRESULT __stdcall Load(IStream* pStm) R0;
 	virtual HRESULT __stdcall Save(IStream* pStm) R0;
-	virtual void CalculateChecksum(void* pChkSum) RX;
+	virtual void CalculateChecksum(Checksummer& checksum) const RX;
 
 	int FailedToPlaceNode(BaseNodeClass *Node) // called after AI fails to place building, obviously
 		{ JMP_THIS(0x42F380); }

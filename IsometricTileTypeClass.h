@@ -20,7 +20,7 @@ class IsometricTileTypeClass : public ObjectTypeClass
 	virtual void PointerExpired(void* p,bool bUnknown) RX;
 	virtual eAbstractType WhatAmI() const R0;
 	virtual int Size() const R0;
-	virtual void CalculateChecksum(Checksummer *) const RX;
+	virtual void CalculateChecksum(Checksummer& checksum) const RX;
 
 	virtual int GetArrayIndex() const R0;
 

@@ -99,7 +99,7 @@ public:
 	virtual void PointerExpired(void* p, bool removed) RX;
 	virtual eAbstractType WhatAmI() const = 0;
 	virtual int Size() const = 0;
-	virtual void CalculateChecksum(Checksummer* pChkSum) const RX;
+	virtual void CalculateChecksum(Checksummer& checksum) const RX;
 	virtual int GetOwningHouseIndex() const R0;
 	virtual HouseClass* GetOwningHouse() const R0;
 	virtual int GetArrayIndex() const R0;
