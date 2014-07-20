@@ -141,6 +141,14 @@ public:
 		return *GetRandomCoordsNear(outBuffer, coords, distance, center);
 	}
 
+	static CoordStruct* __stdcall PickInfantrySublocation(CoordStruct &outBuffer, const CoordStruct &coords, bool ignoreContents = false)
+		{ JMP_STD(0x4ACA10); }
+
+	static CoordStruct PickInfantrySublocation(const CoordStruct &coords, bool ignoreContents = false) {
+		CoordStruct outBuffer;
+		return *PickInfantrySublocation(outBuffer, coords, ignoreContents);
+	}
+
 	void CellIteratorReset()
 		{ JMP_THIS(0x578350); }
 
