@@ -123,6 +123,14 @@ public:
 	void ClearSomeVector() // clears 5AC
 		{ JMP_THIS(0x4DA1C0); }
 
+	// searches cell, sets destination, and returns whether unit is on that cell
+	bool MoveToTiberium(int radius, bool scanClose = false)
+		{ JMP_THIS(0x4DCFE0); }
+
+	// searches cell, sets destination, and returns whether unit is on that cell
+	bool MoveToWeed(int radius)
+		{ JMP_THIS(0x4DDB90); }
+
 protected:
 	FootClass() : TechnoClass(false)
 		{ }
