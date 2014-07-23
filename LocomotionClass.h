@@ -14,6 +14,8 @@ NOTE:
 #include <Interfaces.h>
 #include <FootClass.h>
 #include <Unsorted.h>
+#include <YRCom.h>
+#include <Helpers/ComPtr.h>
 
 class LocomotionClass : public IPersistStream, public ILocomotion
 {
@@ -216,14 +218,12 @@ public:
 			pFirstLoco->AddRef();
 		}
 
-		ILocomotion *pLoco = nullptr;
-		HRESULT result = CreateInstance(&pLoco, &clsid, nullptr,
-			CLSCTX_INPROC_SERVER | CLSCTX_INPROC_HANDLER | CLSCTX_LOCAL_SERVER);
-		CheckPtr(result, pLoco);
+		// create a new locomotor and link it
+		ILocomotion *pLoco = CreateInstance(clsid).release();
 		pLoco->Link_To_Object(Object);
 
 		IPiggyback *pPiggy = nullptr;
-		result = TryPiggyback(&pPiggy, &pLoco);
+		HRESULT result = TryPiggyback(&pPiggy, &pLoco);
 		CheckPtr(result, pPiggy);
 		pPiggy->Begin_Piggyback(pFirstLoco);
 
@@ -268,19 +268,10 @@ public:
 		Release(source);
 	}
 
-	// creates a new instance by class ID. returns true if the creation succeeded.
-	static bool CreateInstance(ILocomotion* &loco, const CLSID &rclsid) {
-		Release(loco);
-
-		HRESULT res = LocomotionClass::CreateInstance(&loco, &rclsid, nullptr,
+	// creates a new instance by class ID. returns a pointer to ILocomotion
+	static YRComPtr<ILocomotion> CreateInstance(const CLSID &rclsid) {
+		return YRComPtr<ILocomotion>(rclsid, nullptr,
 			CLSCTX_INPROC_SERVER | CLSCTX_INPROC_HANDLER | CLSCTX_LOCAL_SERVER);
-		if(res < 0) {
-			if(res != E_NOINTERFACE) {
-				Game::RaiseError(res);
-			}
-			return false;
-		}
-		return true;
 	}
 
 	// finds out whether a locomotor is currently piggybacking and restores
