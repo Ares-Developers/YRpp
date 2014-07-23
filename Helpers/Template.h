@@ -21,7 +21,7 @@ protected:
 	DWORD retAddr;
 public:
 	retfunc(REGISTERS *r, DWORD addr) : R(r), retAddr(addr) {};
-	int operator()( T Result ) {
+	DWORD operator()(T Result) {
 		R->EAX(Result);
 		return retAddr;
 	}
@@ -34,7 +34,7 @@ protected:
 	T Result;
 public:
 	retfunc_fixed(REGISTERS *r, DWORD addr, T res) : retfunc<T>(r, addr), Result(res) {};
-	int operator()() {
+	DWORD operator()() {
 		this->R->EAX(Result);
 		return this->retAddr;
 	}
@@ -46,7 +46,7 @@ protected:
 	DWORD negAddr;
 public:
 	retfunc_bool(REGISTERS *r, DWORD yAddr, DWORD nAddr) : retfunc<int>(r, yAddr), negAddr(nAddr) {};
-	int operator()(bool choose) {
+	DWORD operator()(bool choose) {
 		return choose ? retAddr : negAddr;
 	}
 };

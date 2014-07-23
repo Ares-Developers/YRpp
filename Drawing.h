@@ -82,7 +82,7 @@ public:
 
 	// Converts an RGB color to a 16bit color value.
 	static WORD Color16bit(const ColorStruct& color) {
-		return (color.B >> 3) | ((color.G >> 2) << 5) | ((color.R >> 3) << 11);
+		return static_cast<WORD>((color.B >> 3) | ((color.G >> 2) << 5) | ((color.R >> 3) << 11));
 	}
 
 	// Converts a 16bit color to an RGB color.

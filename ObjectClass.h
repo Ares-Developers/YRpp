@@ -210,7 +210,7 @@ public:
 
 
 	double GetHealthPercentage() const
-		{ return double(this->Health) / this->GetType()->Strength; }
+		{ return static_cast<double>(this->Health) / this->GetType()->Strength; }
 
 	bool IsRedHP() const
 		{ JMP_THIS(0x5F5CD0); }

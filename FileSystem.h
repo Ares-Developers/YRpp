@@ -58,22 +58,17 @@ public:
 	//I'm just making this up for easy palette loading
 	static ConvertClass* LoadPALFile(const char* pFileName, DSurface* pSurface)
 	{
-		ColorStruct* pRawData = (ColorStruct*)LoadFile(pFileName, false);
-		BytePalette ColorData;
+		auto pRawData = reinterpret_cast<const ColorStruct*>(LoadFile(pFileName, false));
 
+		BytePalette ColorData;
 		for(int i = 0; i < 0x100; i++)
 		{
-			ColorData[i].R = pRawData[i].R << 2;
-			ColorData[i].G = pRawData[i].G << 2;
-			ColorData[i].B = pRawData[i].B << 2;
+			ColorData[i].R = static_cast<BYTE>(pRawData[i].R << 2);
+			ColorData[i].G = static_cast<BYTE>(pRawData[i].G << 2);
+			ColorData[i].B = static_cast<BYTE>(pRawData[i].B << 2);
 		}
 
-		return GameCreate<ConvertClass>(
-			&ColorData,
-			TEMPERAT_PAL,
-			pSurface,
-			0x35,
-			false);
+		return GameCreate<ConvertClass>(&ColorData, TEMPERAT_PAL, pSurface, 0x35, false);
 	}
 
 	template <typename T>

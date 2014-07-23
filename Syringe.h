@@ -20,21 +20,21 @@ protected:
 	DWORD data;
 
 	WORD * wordData() {
-		return reinterpret_cast<WORD *>(&(this->data));
+		return reinterpret_cast<WORD *>(&this->data);
 	}
 
 	BYTE * byteData() {
-		return reinterpret_cast<BYTE *>(&(this->data));
+		return reinterpret_cast<BYTE *>(&this->data);
 	}
 
 public:
 	WORD Get16() {
-		return *(this->wordData());
+		return *this->wordData();
 	}
 
 	template<typename T>
 		inline T Get() {
-			return *(reinterpret_cast<T*>(&(this->data)));
+			return *reinterpret_cast<T*>(&this->data);
 		}
 
 	template<typename T>
@@ -43,7 +43,7 @@ public:
 		}
 
 	void Set16(WORD value) {
-		*(this->wordData()) = value;
+		*this->wordData() = value;
 	}
 
 };
@@ -71,21 +71,21 @@ class StackRegister : public ExtendedRegister {
 public:
 	template<typename T>
 		inline T * lea(signed int byteOffset) {
-		return reinterpret_cast<T *>(this->data + byteOffset);
+		return reinterpret_cast<T *>(static_cast<int>(this->data) + byteOffset);
 	}
 
 	inline DWORD lea(signed int byteOffset) {
-		return (DWORD) (((signed int)this->data) + byteOffset);
+		return static_cast<DWORD>(static_cast<int>(this->data) + byteOffset);
 	}
 
 	template<typename T>
 		inline T At(signed int byteOffset) {
-		return *(reinterpret_cast<T *>(this->data + byteOffset));
+		return *reinterpret_cast<T *>(static_cast<int>(this->data) + byteOffset);
 	}
 
 	template<typename T>
 		inline void At(signed int byteOffset, T value) {
-		*(reinterpret_cast<T *>(this->data + byteOffset)) = value;
+		*reinterpret_cast<T *>(static_cast<int>(this->data) + byteOffset) = value;
 	}
 };
 
@@ -225,7 +225,7 @@ public:
 
 	template<>
 		inline int lea_Stack(signed int offset)
-			{ return this->_ESP.lea(offset); }
+			{ return static_cast<int>(this->_ESP.lea(offset)); }
 
 	template<typename T>
 		inline T& ref_Stack(signed int offset)
