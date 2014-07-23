@@ -21,17 +21,17 @@ public:
 
 	class CLSIDs {
 	public:
-		static CLSID &Drive;
-		static CLSID &Jumpjet;
-		static CLSID &Hover;
-		static CLSID &Rocket;
-		static CLSID &Tunnel;
-		static CLSID &Walk;
-		static CLSID &Droppod;
-		static CLSID &Fly;
-		static CLSID &Teleport;
-		static CLSID &Mech;
-		static CLSID &Ship;
+		static const CLSID &Drive;
+		static const CLSID &Jumpjet;
+		static const CLSID &Hover;
+		static const CLSID &Rocket;
+		static const CLSID &Tunnel;
+		static const CLSID &Walk;
+		static const CLSID &Droppod;
+		static const CLSID &Fly;
+		static const CLSID &Teleport;
+		static const CLSID &Mech;
+		static const CLSID &Ship;
 	};
 
 	//IUnknown
@@ -200,7 +200,7 @@ public:
 	static HRESULT TryPiggyback(IPiggyback **Piggy, ILocomotion **Loco)
 		{ PUSH_VAR32(Loco); SET_REG32(ECX, Piggy); CALL(0x45AF20); }
 
-	static HRESULT CreateInstance(ILocomotion **ppv, CLSID *rclsid, LPUNKNOWN pUnkOuter, DWORD dwClsContext)
+	static HRESULT CreateInstance(ILocomotion **ppv, const CLSID *rclsid, LPUNKNOWN pUnkOuter, DWORD dwClsContext)
 		{ PUSH_VAR32(dwClsContext); PUSH_VAR32(pUnkOuter); PUSH_VAR32(rclsid); SET_REG32(ECX, ppv); CALL(0x41C250); }
 
 	// these two are identical, why do they both exist...
@@ -210,14 +210,14 @@ public:
 	static void AddRef2(LocomotionClass **Loco)
 		{ SET_REG32(ECX, Loco); CALL(0x6CE270); }
 
-	static void ChangeLocomotorTo(FootClass *Object, CLSID *clsid) {
+	static void ChangeLocomotorTo(FootClass *Object, const CLSID &clsid) {
 		ILocomotion * pFirstLoco = Object->Locomotor;
 		if(pFirstLoco) {
 			pFirstLoco->AddRef();
 		}
 
 		ILocomotion *pLoco = nullptr;
-		HRESULT result = CreateInstance(&pLoco, clsid, nullptr,
+		HRESULT result = CreateInstance(&pLoco, &clsid, nullptr,
 			CLSCTX_INPROC_SERVER | CLSCTX_INPROC_HANDLER | CLSCTX_LOCAL_SERVER);
 		CheckPtr(result, pLoco);
 		pLoco->Link_To_Object(Object);
@@ -269,10 +269,10 @@ public:
 	}
 
 	// creates a new instance by class ID. returns true if the creation succeeded.
-	static bool CreateInstance(ILocomotion* &loco, CLSID* rclsid) {
+	static bool CreateInstance(ILocomotion* &loco, const CLSID &rclsid) {
 		Release(loco);
 
-		HRESULT res = LocomotionClass::CreateInstance(&loco, rclsid, nullptr,
+		HRESULT res = LocomotionClass::CreateInstance(&loco, &rclsid, nullptr,
 			CLSCTX_INPROC_SERVER | CLSCTX_INPROC_HANDLER | CLSCTX_LOCAL_SERVER);
 		if(res < 0) {
 			if(res != E_NOINTERFACE) {

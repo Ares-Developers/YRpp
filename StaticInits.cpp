@@ -174,17 +174,17 @@ ALIAS(InputManagerClass *, InputManagerClass::Instance, 0x87F770);
 DECL(IsometricTileTypeClass, 0xA8ED28);
 
 #include <LocomotionClass.h>
-ALIAS(CLSID, LocomotionClass::CLSIDs::Drive, 0x7E9A30);
-ALIAS(CLSID, LocomotionClass::CLSIDs::Jumpjet, 0x7E9AC0);
-ALIAS(CLSID, LocomotionClass::CLSIDs::Hover, 0x7E9A40);
-ALIAS(CLSID, LocomotionClass::CLSIDs::Rocket, 0x7E9AD0);
-ALIAS(CLSID, LocomotionClass::CLSIDs::Tunnel, 0x7E9A50);
-ALIAS(CLSID, LocomotionClass::CLSIDs::Walk, 0x7E9A60);
-ALIAS(CLSID, LocomotionClass::CLSIDs::Droppod, 0x7E9A70);
-ALIAS(CLSID, LocomotionClass::CLSIDs::Fly, 0x7E9A80);
-ALIAS(CLSID, LocomotionClass::CLSIDs::Teleport, 0x7E9A90);
-ALIAS(CLSID, LocomotionClass::CLSIDs::Mech, 0x7E9AA0);
-ALIAS(CLSID, LocomotionClass::CLSIDs::Ship, 0x7E9AB0);
+ALIAS(const CLSID, LocomotionClass::CLSIDs::Drive, 0x7E9A30);
+ALIAS(const CLSID, LocomotionClass::CLSIDs::Jumpjet, 0x7E9AC0);
+ALIAS(const CLSID, LocomotionClass::CLSIDs::Hover, 0x7E9A40);
+ALIAS(const CLSID, LocomotionClass::CLSIDs::Rocket, 0x7E9AD0);
+ALIAS(const CLSID, LocomotionClass::CLSIDs::Tunnel, 0x7E9A50);
+ALIAS(const CLSID, LocomotionClass::CLSIDs::Walk, 0x7E9A60);
+ALIAS(const CLSID, LocomotionClass::CLSIDs::Droppod, 0x7E9A70);
+ALIAS(const CLSID, LocomotionClass::CLSIDs::Fly, 0x7E9A80);
+ALIAS(const CLSID, LocomotionClass::CLSIDs::Teleport, 0x7E9A90);
+ALIAS(const CLSID, LocomotionClass::CLSIDs::Mech, 0x7E9AA0);
+ALIAS(const CLSID, LocomotionClass::CLSIDs::Ship, 0x7E9AB0);
 
 #include <MessageListClass.h>
 ALIAS_O(MessageListClass *, MessageListClass::Instance, 0xA8BC60);
