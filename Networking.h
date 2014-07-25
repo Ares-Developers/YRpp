@@ -18,12 +18,12 @@ public:
 
 	// custom helper for Ares logics
 	static bool AddEvent(NetworkEvent *event) {
-		event->Timestamp = Unsorted::CurrentFrame;
+		event->Timestamp = static_cast<DWORD>(Unsorted::CurrentFrame);
 		if(LastEventIndex >= 128) {
 			return false;
 		}
 		memcpy(&QueuedEvents[NextPacketIndex], event, sizeof(*event));
-		QueuedEventTimestamps[NextPacketIndex] = Imports::TimeGetTime();
+		QueuedEventTimestamps[NextPacketIndex] = static_cast<int>(Imports::TimeGetTime());
 		NextPacketIndex = (NextPacketIndex + 1) & 0x7F;
 		++LastEventIndex;
 		return true;

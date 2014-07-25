@@ -459,7 +459,7 @@ public:
 		for(int i = 0; i < this->Buildings.Count; ++i) {
 			BuildingTypeClass *pType = this->Buildings[i]->Type;
 			if(pType->Factory == Item->WhatAmI()
-				&& pType->Naval == Item->Naval ) {
+				&& pType->Naval == Item->Naval) {
 				return true;
 			}
 		}
@@ -469,15 +469,19 @@ public:
 	bool CanExpectToBuild(const TechnoTypeClass * Item) const;
 
 	bool InRequiredHouses(const TechnoTypeClass *Item) const {
-		int Test = Item->RequiredHouses;
-		if(Test == -1) { return 1; }
-		return 0 != (Test & ( 1 << this->Type->ArrayIndex));
+		auto Test = Item->RequiredHouses;
+		if(static_cast<int>(Test) == -1) {
+			return true;
+		}
+		return 0 != (Test & (1 << this->Type->ArrayIndex));
 	}
 
 	bool InForbiddenHouses(const TechnoTypeClass *Item) const {
-		int Test = Item->ForbiddenHouses;
-		if(Test == -1) { return 0; }
-		return 0 != (Test & ( 1 << this->Type->ArrayIndex));
+		auto Test = Item->ForbiddenHouses;
+		if(static_cast<int>(Test) == -1) {
+			return false;
+		}
+		return 0 != (Test & (1 << this->Type->ArrayIndex));
 	}
 
 	signed int CanBuild(TechnoTypeClass *item, bool bypassExtras, bool includeQueued) const
