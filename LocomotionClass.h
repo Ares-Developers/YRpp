@@ -236,30 +236,26 @@ public:
 
 	// finds out whether a locomotor is currently piggybacking and restores
 	// the original locomotor. this function ignores Is_Ok_To_End().
-	static bool End_Piggyback(ILocomotion* &pLoco) {
-		bool ret = false;
+	static bool End_Piggyback(YRComPtr<ILocomotion> &pLoco) {
 		if(!pLoco) {
 			Game::RaiseError(E_POINTER);
 		}
-		
-		IPiggyback* pPiggy = nullptr;
-		HRESULT res = pLoco->QueryInterface(IIDs::IPiggyback, (void**)&pPiggy);
-		if(SUCCEEDED(res)) {
+
+		if(YRComPtr<IPiggyback> pPiggy = pLoco) {
 			if(pPiggy->Is_Piggybacking()) {
 				// this frees the current locomotor
-				YRComHelpers::Release(pLoco);
+				pLoco.reset(nullptr);
 
 				// this restores the old one
-				res = pPiggy->End_Piggyback(&pLoco);
+				auto res = pPiggy->End_Piggyback(pLoco.pointer_to());
 				if(FAILED(res)) {
 					Game::RaiseError(res);
 				}
-				ret = (ret == S_OK);
+				return (res == S_OK);
 			}
-
-			YRComHelpers::Release(pPiggy);
 		}
-		return ret;
+
+		return false;
 	}
 
 /*
