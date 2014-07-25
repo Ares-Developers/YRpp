@@ -228,34 +228,6 @@ public:
 		YRComHelpers::Move(Object->Locomotor, *NewLoco.pointer_to());
 	}
 
-	// releases the object and clears the pointer
-	static void Release(ILocomotion* &pLoco) {
-		if(pLoco) {
-			pLoco->Release();
-			pLoco = nullptr;
-		}
-	}
-
-	// copies a locomotor from source to target, maintaining
-	// a proper reference count.
-	static void Copy(ILocomotion* &target, ILocomotion* &source) {
-		ILocomotion* OldLoco = target;
-
-		if(OldLoco != source) {
-			target = source;
-			if(source) {
-				source->AddRef();
-			}
-			Release(OldLoco);
-		}
-	}
-
-	// moves a locomotor from source to target and clears the source
-	static void Move(ILocomotion* &target, ILocomotion* &source) {
-		Copy(target, source);
-		Release(source);
-	}
-
 	// creates a new instance by class ID. returns a pointer to ILocomotion
 	static YRComPtr<ILocomotion> CreateInstance(const CLSID &rclsid) {
 		return YRComPtr<ILocomotion>(rclsid, nullptr,
