@@ -7,6 +7,7 @@
 
 #include <TechnoClass.h>
 #include <ParasiteClass.h>
+#include <Helpers/ComPtr.h>
 
 //forward declarations
 class LocomotionClass;
@@ -184,7 +185,7 @@ public:
 	TimerStruct     unknown_timer_650;
 	TimerStruct       SightTimer;
 	TimerStruct       BlockagePathTimer;
-	ILocomotion*      Locomotor;
+	YRComPtr<ILocomotion> Locomotor;
 	CoordStruct       unknown_point3d_678;
 	signed char       TubeIndex;	//I'm in this tunnel
 	bool              unknown_bool_685;

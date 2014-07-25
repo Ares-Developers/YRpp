@@ -225,7 +225,7 @@ public:
 		Piggy->Begin_Piggyback(Original.get());
 
 		// replace the current locomotor
-		YRComHelpers::Move(Object->Locomotor, *NewLoco.pointer_to());
+		Object->Locomotor = std::move(NewLoco);
 	}
 
 	// creates a new instance by class ID. returns a pointer to ILocomotion
