@@ -213,31 +213,19 @@ public:
 		{ SET_REG32(ECX, Loco); CALL(0x6CE270); }
 
 	static void ChangeLocomotorTo(FootClass *Object, const CLSID &clsid) {
-		ILocomotion * pFirstLoco = Object->Locomotor;
-		if(pFirstLoco) {
-			pFirstLoco->AddRef();
-		}
+		// remember the current one
+		YRComPtr<ILocomotion> Original(Object->Locomotor);
 
 		// create a new locomotor and link it
-		ILocomotion *pLoco = CreateInstance(clsid).release();
-		pLoco->Link_To_Object(Object);
+		auto NewLoco = CreateInstance(clsid);
+		NewLoco->Link_To_Object(Object);
 
-		IPiggyback *pPiggy = nullptr;
-		HRESULT result = TryPiggyback(&pPiggy, &pLoco);
-		CheckPtr(result, pPiggy);
-		pPiggy->Begin_Piggyback(pFirstLoco);
+		// get piggy interface and piggy original
+		YRComPtr<IPiggyback> Piggy(NewLoco);
+		Piggy->Begin_Piggyback(Original.get());
 
-		ILocomotion * pSecondLoco = Object->Locomotor;
-		if(pSecondLoco != pLoco) {
-			Object->Locomotor = pLoco;
-			if(pLoco) {
-				pLoco->AddRef();
-			}
-			YRComHelpers::Release(pSecondLoco);
-		}
-		YRComHelpers::Release(pPiggy);
-		YRComHelpers::Release(pLoco);
-		YRComHelpers::Release(pFirstLoco);
+		// replace the current locomotor
+		YRComHelpers::Move(Object->Locomotor, *NewLoco.pointer_to());
 	}
 
 	// releases the object and clears the pointer
