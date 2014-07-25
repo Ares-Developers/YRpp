@@ -233,11 +233,11 @@ public:
 			if(pLoco) {
 				pLoco->AddRef();
 			}
-			ReleaseIf(pSecondLoco);
+			YRComHelpers::Release(pSecondLoco);
 		}
-		ReleaseIf(pPiggy);
-		ReleaseIf(pLoco);
-		ReleaseIf(pFirstLoco);
+		YRComHelpers::Release(pPiggy);
+		YRComHelpers::Release(pLoco);
+		YRComHelpers::Release(pFirstLoco);
 	}
 
 	// releases the object and clears the pointer
@@ -287,7 +287,7 @@ public:
 		if(SUCCEEDED(res)) {
 			if(pPiggy->Is_Piggybacking()) {
 				// this frees the current locomotor
-				Release(pLoco);
+				YRComHelpers::Release(pLoco);
 
 				// this restores the old one
 				res = pPiggy->End_Piggyback(&pLoco);
@@ -297,8 +297,7 @@ public:
 				ret = (ret == S_OK);
 			}
 
-			pPiggy->Release();
-			pPiggy = nullptr;
+			YRComHelpers::Release(pPiggy);
 		}
 		return ret;
 	}
