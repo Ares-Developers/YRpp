@@ -316,7 +316,7 @@ public:
 		return FindByCountryName("Neutral");
 	}
 
-	// gets the first house of a type with name Neutral
+	// gets the first house of a type with name Special
 	static HouseClass* FindSpecial() {
 		return FindByCountryName("Special");
 	}
