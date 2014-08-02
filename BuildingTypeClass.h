@@ -73,6 +73,10 @@ public:
 		return (this->SuperWeapon == Type || this->SuperWeapon2 == Type);
 	}
 
+	bool CanTogglePower() const {
+		return this->TogglePower && (this->PowerDrain > 0 || this->Powered);
+	}
+
 protected:
 	BuildingTypeClass() : TechnoTypeClass(false) { }
 
