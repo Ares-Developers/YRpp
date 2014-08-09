@@ -818,16 +818,18 @@ public:
 	};
 };
 
-typedef int eMouseHotSpotX;
-typedef int eMouseHotSpotY;
+enum class MouseHotSpotX : int {
+	Left = 0,
+	Center = 12345,
+	Right = 54321
+};
 
-#define hotspx_left		0
-#define hotspx_center		0x3039
-#define hotspx_right	0xD431
+enum class MouseHotSpotY : int {
+	Top = 0,
+	Middle = 12345,
+	Bottom = 54321
+};
 
-#define hotspy_top		0
-#define hotspy_middle		0x3039
-#define hotspy_bottom	0xD431
 
 typedef int eMission;
 

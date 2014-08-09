@@ -12,8 +12,8 @@ public:
 	int Interval;
 	int MiniFrame;
 	int MiniCount;
-	eMouseHotSpotX HotX;
-	eMouseHotSpotY HotY;
+	MouseHotSpotX HotX;
+	MouseHotSpotY HotY;
 
 	MouseCursor() :
 		Frame(0),
@@ -21,11 +21,11 @@ public:
 		Interval(1),
 		MiniFrame(-1),
 		MiniCount(0),
-		HotX(hotspx_center),
-		HotY(hotspy_middle)
+		HotX(MouseHotSpotX::Center),
+		HotY(MouseHotSpotY::Middle)
 		{ };
 
-	MouseCursor (int _F, int _C, int _I, int _MF, int _MC, eMouseHotSpotX _X, eMouseHotSpotY _Y) :
+	MouseCursor (int _F, int _C, int _I, int _MF, int _MC, MouseHotSpotX _X, MouseHotSpotY _Y) :
 		Frame(_F),
 		Count(_C),
 		Interval(_I),
