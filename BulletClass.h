@@ -100,11 +100,10 @@ public:
 
 	// helpers
 	CoordStruct GetTargetCoords() const {
-		CoordStruct ret;
 		if(this->Target) {
-			return *this->Target->GetCoords(&ret);
+			return this->Target->GetCoords();
 		} else {
-			return *this->GetCoords(&ret);
+			return this->GetCoords();
 		}
 	}
 

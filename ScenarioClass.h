@@ -80,7 +80,8 @@ public:
 
 	CellStruct GetWaypointCoords(int idx) {
 		CellStruct dest;
-		return *GetWaypointCoords(&dest, idx);
+		GetWaypointCoords(&dest, idx);
+		return dest;
 	}
 
 	//CTOR / DTOR

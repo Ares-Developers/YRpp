@@ -138,7 +138,8 @@ public:
 	// gets a coordinate in a random direction a fixed distance in leptons away from coords
 	static CoordStruct GetRandomCoordsNear(const CoordStruct &coords, int distance, bool center) {
 		CoordStruct outBuffer;
-		return *GetRandomCoordsNear(outBuffer, coords, distance, center);
+		GetRandomCoordsNear(outBuffer, coords, distance, center);
+		return outBuffer;
 	}
 
 	static CoordStruct* __stdcall PickInfantrySublocation(CoordStruct &outBuffer, const CoordStruct &coords, bool ignoreContents = false)
@@ -146,7 +147,8 @@ public:
 
 	static CoordStruct PickInfantrySublocation(const CoordStruct &coords, bool ignoreContents = false) {
 		CoordStruct outBuffer;
-		return *PickInfantrySublocation(outBuffer, coords, ignoreContents);
+		PickInfantrySublocation(outBuffer, coords, ignoreContents);
+		return outBuffer;
 	}
 
 	void CellIteratorReset()
@@ -199,7 +201,8 @@ public:
 		SpeedType::Value SpeedType, bool ValidateReachability, MovementZone::Value MovZone) const
 	{
 		CellStruct buffer;
-		return *this->PickCellOnEdge(buffer, Edge, CurrentLocation, Fallback, SpeedType, ValidateReachability, MovZone);
+		this->PickCellOnEdge(buffer, Edge, CurrentLocation, Fallback, SpeedType, ValidateReachability, MovZone);
+		return buffer;
 	}
 
 // Pathfinding voodoo
@@ -217,7 +220,8 @@ public:
 
 	CellStruct Pathfinding_Find(const CellStruct &position, SpeedType::Value SpeedType, int a5, MovementZone::Value MovementZone, bool alt, int SpaceSizeX, int SpaceSizeY, bool disallowOverlay, bool a11, bool requireBurrowable, bool allowBridge, const CellStruct &closeTo, bool a15, bool buildable) {
 		CellStruct outBuffer;
-		return *Pathfinding_Find(outBuffer, position, SpeedType, a5, MovementZone, alt, SpaceSizeX, SpaceSizeY, disallowOverlay, a11, requireBurrowable, allowBridge, closeTo, a15, buildable);
+		Pathfinding_Find(outBuffer, position, SpeedType, a5, MovementZone, alt, SpaceSizeX, SpaceSizeY, disallowOverlay, a11, requireBurrowable, allowBridge, closeTo, a15, buildable);
+		return outBuffer;
 	}
 
 	void  AddContentAt(CellStruct *coords, TechnoClass *Content)

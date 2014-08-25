@@ -235,12 +235,14 @@ public:
 
 	CellStruct GetMapCoords() const {
 		CellStruct ret;
-		return *this->GetMapCoords(&ret);
+		this->GetMapCoords(&ret);
+		return ret;
 	}
 
 	CellStruct GetMapCoordsAgain() const {
 		CellStruct ret;
-		return *this->GetMapCoordsAgain(&ret);
+		this->GetMapCoordsAgain(&ret);
+		return ret;
 	}
 
 	//Constructor

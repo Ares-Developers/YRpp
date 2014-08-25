@@ -402,12 +402,14 @@ public:
 
 	DirStruct GetFacing() const {
 		DirStruct ret;
-		return *this->GetFacing(&ret);
+		this->GetFacing(&ret);
+		return ret;
 	}
 
 	DirStruct GetRealFacing() const {
 		DirStruct ret;
-		return *this->GetRealFacing(&ret);
+		this->GetRealFacing(&ret);
+		return ret;
 	}
 
 

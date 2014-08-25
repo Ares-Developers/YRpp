@@ -121,17 +121,20 @@ public:
 
 	CoordStruct GetCoords() const {
 		CoordStruct ret;
-		return *this->GetCoords(&ret);
+		this->GetCoords(&ret);
+		return ret;
 	}
 
 	CoordStruct GetDestination(TechnoClass* pDocker = nullptr) const {
 		CoordStruct ret;
-		return *this->GetDestination(&ret, pDocker);
+		this->GetDestination(&ret, pDocker);
+		return ret;
 	}
 
 	CoordStruct GetCoords__() const {
 		CoordStruct ret;
-		return *this->GetCoords__(&ret);
+		this->GetCoords__(&ret);
+		return ret;
 	}
 
 	//Operators

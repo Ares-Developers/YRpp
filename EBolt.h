@@ -32,7 +32,8 @@ public:
 
 	CoordStruct GetSourceCoords() const {
 		CoordStruct buffer;
-		return *GetSourceCoords(&buffer);
+		GetSourceCoords(&buffer);
+		return buffer;
 	}
 
 	void Fire(CoordStruct P1, CoordStruct P2, DWORD arg18)

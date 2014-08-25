@@ -125,7 +125,8 @@ public:
 	CoordStruct GetParticleSysOffset() const
 	{
 		CoordStruct buffer;
-		return *GetParticleSysOffset(&buffer);
+		GetParticleSysOffset(&buffer);
+		return buffer;
 	}
 
 	//Constructor
