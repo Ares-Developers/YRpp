@@ -3,6 +3,8 @@
 
 #include <AbstractClass.h>
 
+#include <type_traits>
+
 class ObjectClass;
 class MissionClass;
 class RadioClass;
@@ -11,7 +13,7 @@ class FootClass;
 
 template <typename T>
 inline T specific_cast(AbstractClass* pAbstract) {
-	typedef CompoundT<T>::BaseT Base;
+	using Base = std::remove_pointer_t<T>;
 
 	static_assert(std::is_base_of<AbstractClass, Base>::value,
 		"specific_cast: T is required to be a type derived from AbstractClass.");
@@ -27,7 +29,7 @@ inline T specific_cast(AbstractClass* pAbstract) {
 
 template <typename T>
 inline T generic_cast(AbstractClass* pAbstract) {
-	typedef CompoundT<T>::BaseT Base;
+	using Base = std::remove_pointer_t<T>;
 
 	static_assert(std::is_base_of<ObjectClass, Base>::value
 		&& std::is_abstract<Base>::value,
@@ -41,7 +43,7 @@ inline T generic_cast(AbstractClass* pAbstract) {
 
 template <typename T>
 inline T abstract_cast(AbstractClass* pAbstract) {
-	typedef typename std::remove_pointer<T>::type Base;
+	using Base = std::remove_pointer_t<T>;
 
 	static_assert(std::is_base_of<AbstractClass, Base>::value,
 		"abstract_cast: T is required to be a type derived from AbstractClass.");
