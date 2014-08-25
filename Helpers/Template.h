@@ -5,7 +5,6 @@
 
 #include <functional>
 #include <xcompile.h>
-#include <Helpers/Type.h>
 #include <ArrayClasses.h>
 
 // here be dragons(plenty)
