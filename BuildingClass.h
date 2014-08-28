@@ -163,11 +163,9 @@ public:
 		if(this->Type->HasSuperWeapon(Type)) {
 			return true;
 		}
-		for(int i = 0; i < 3; ++i) {
-			if(BuildingTypeClass * BType = this->Upgrades[i]) {
-				if(BType->HasSuperWeapon(Type)) {
-					return true;
-				}
+		for(auto pType : this->Upgrades) {
+			if(pType && pType->HasSuperWeapon(Type)) {
+				return true;
 			}
 		}
 		return false;
