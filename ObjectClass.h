@@ -245,6 +245,12 @@ public:
 		return ret;
 	}
 
+	CoordStruct GetFLH(int idxWeapon, const CoordStruct& base) const {
+		CoordStruct ret;
+		this->GetFLH(&ret, 0, base);
+		return ret;
+	}
+
 	//Constructor
 	ObjectClass() : AbstractClass(false)
 		{ JMP_THIS(0x5F3900); }
