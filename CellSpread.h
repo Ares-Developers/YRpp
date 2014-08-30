@@ -22,8 +22,8 @@ public:
 	}
 
 	static size_t GetDistance(int dx, int dy) {
-		size_t x = std::abs(dx);
-		size_t y = std::abs(dy);
+		auto x = static_cast<size_t>(std::abs(dx));
+		auto y = static_cast<size_t>(std::abs(dy));
 
 		// distance is longer component plus
 		// half the shorter component
