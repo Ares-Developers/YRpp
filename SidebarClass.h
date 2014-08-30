@@ -83,7 +83,7 @@ public:
 
 	static wchar_t *TooltipBuffer;
 
-	void SidebarNeedsRepaint(DWORD unk = 0)
+	void SidebarNeedsRepaint(int unk = 0)
 		{
 			// yeah, unknown voodoo magic shticks
 			this->unknown_bool_53A6 = this->unknown_bool_53A7 = true;
