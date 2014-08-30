@@ -29,9 +29,6 @@
 		(cur_offset - wanted_offset)
 
 
-// buffer length for tags containing a list such as AnimToInfantry=
-#define BUFLEN 2048
-
 // swizzle shorthand
 #define SWIZZLE(var) \
 	SwizzleManagerClass::Instance.Swizzle((void **)&var);
