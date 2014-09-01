@@ -38,35 +38,69 @@ struct NetworkEvent;
 
 struct VeterancyStruct
 {
+	VeterancyStruct() : Veterancy(0.0f) { }
+
+	void Add(int ownerCost, int victimCost)	{
+		this->Add(static_cast<double>(victimCost)
+			/ (ownerCost * RulesClass::Instance->VeteranRatio));
+	}
+
+	void Add(double value) {
+		auto val = this->Veterancy + value;
+
+		if(val > RulesClass::Instance->VeteranCap) {
+			val = RulesClass::Instance->VeteranCap;
+		}
+
+		this->Veterancy = static_cast<float>(val);
+	}
+
+	Rank::Value GetRemainingLevel() const {
+		if(this->Veterancy >= 2.0f) {
+			return Rank::Elite;
+		}
+
+		if(this->Veterancy >= 1.0f) {
+			return Rank::Veteran;
+		}
+
+		return Rank::Rookie;
+	}
+
+	bool IsNegative() const {
+		return this->Veterancy < 0.0f;
+	}
+
+	bool IsRookie() const {
+		return this->Veterancy >= 0.0f && this->Veterancy < 1.0f;
+	}
+
+	bool IsVeteran() const {
+		return this->Veterancy >= 1.0f && this->Veterancy < 2.0f;
+	}
+
+	bool IsElite() const {
+		return this->Veterancy >= 2.0f;
+	}
+
+	void Reset() {
+		this->Veterancy = 0.0f;
+	}
+
+	void SetRookie(bool notReally = true) {
+		this->Veterancy = notReally ? -0.25f : 0.0f;
+	}
+
+	void SetVeteran(bool yesReally = true) {
+		this->Veterancy = yesReally ? 1.0f : 0.0f;
+	}
+
+	void SetElite(bool yesReally = true) {
+		this->Veterancy = yesReally ? 2.0f : 0.0f;
+	}
+
 	float Veterancy;
 	DWORD unknown_4;
-
-	void Add(int OwnerCost, int VictimCost)
-		{ JMP_THIS(0x74FF50); }
-
-	bool IsElite() const
-		{ JMP_THIS(0x750010); }
-
-	bool IsVeteran() const
-		{ JMP_THIS(0x74FF90); }
-
-	bool IsNegative() const
-		{ JMP_THIS(0x74FFF0); }
-
-	Rank::Value GetRemainingLevel() const
-		{ JMP_THIS(0x750030); }
-
-	void Reset()
-		{ JMP_THIS(0x750080); }
-
-	void SetRookie(bool NotReally)
-		{ JMP_THIS(0x750060); }
-
-	void SetVeteran(bool YesReally)
-		{ JMP_THIS(0x750090); }
-
-	void SetElite(bool YesReally)
-		{ JMP_THIS(0x7500B0); }
 };
 
 class PassengersClass
