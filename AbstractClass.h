@@ -54,11 +54,12 @@ public:
 
 	static const char* GetClassName(eAbstractType abs)
 	{
-		NamedValue* ass;
-		for(ass = (NamedValue*)0x816EE0; ass < (NamedValue*)0x817130; ass++)
-		{
-			if(ass->Value == abs) {
-				return ass->Name;
+		const size_t TypeCount = 74;
+		const auto Types = reinterpret_cast<NamedValue(*)[TypeCount]>(0x816EE0);
+
+		for(const auto& Type : *Types) {
+			if(Type.Value == abs) {
+				return Type.Name;
 			}
 		}
 
