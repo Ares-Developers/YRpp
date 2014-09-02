@@ -88,6 +88,16 @@ public:
 		return this->Select(value, pOut);
 	}
 
+	T Select(int index, T default = T()) const {
+		this->Select(index, &default);
+		return default;
+	}
+
+	T Select(Randomizer &random, T default = T()) const {
+		this->Select(random, &default);
+		return default;
+	}
+
 private:
 	DynamicVectorClass<DistributionObject<T>> Items;
 	unsigned int TotalWeight;
