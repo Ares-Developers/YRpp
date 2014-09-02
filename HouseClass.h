@@ -46,7 +46,7 @@ struct AngerStruct
 	int          AngerLevel;
 
 	//need to define a == operator so it can be used in array classes
-	bool operator == (AngerStruct tAnger)
+	bool operator == (const AngerStruct& tAnger) const
 	{
 		return (House == tAnger.House &&
 				AngerLevel == tAnger.AngerLevel);
@@ -59,7 +59,7 @@ struct ScoutStruct
 	bool         IsPreferred;
 
 	//need to define a == operator so it can be used in array classes
-	bool operator == (ScoutStruct tScout)
+	bool operator == (const ScoutStruct& tScout) const
 	{
 		return (House == tScout.House &&
 				IsPreferred == tScout.IsPreferred);
@@ -74,7 +74,7 @@ public:
 	~BaseNodeClass(){};
 
 	//need to define a == operator so it can be used in array classes
-	bool operator ==(BaseNodeClass tBaseNode)
+	bool operator == (const BaseNodeClass& tBaseNode) const
 	{
 		return
 			(BuildingTypeIndex == tBaseNode.BuildingTypeIndex) &&

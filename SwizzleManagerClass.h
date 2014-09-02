@@ -11,7 +11,7 @@ class SwizzlePointerClass
 	void* pAnything; //the pointer, to literally any object type
 
 public:
-	bool operator==(SwizzlePointerClass tOther)
+	bool operator==(const SwizzlePointerClass& tOther) const
 		{
 		return
 			(unknown_0 == tOther.unknown_0) &&
