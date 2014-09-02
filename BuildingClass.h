@@ -257,7 +257,7 @@ public:
 	bool StuffEnabled; // status set by EnableStuff() and DisableStuff()
 	char HasCloakingData; // some fugly buffers
 	byte CloakRadius; // from Type->CloakRadiusInCells
-	bool unknown_bool_6ED;
+	char Translucency;
 	DWORD StorageFilledSlots; // the old "silo needed" logic
 
 		// randomly assigned secret lab bonus, one of those three gets returned instead if NULL
