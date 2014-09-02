@@ -241,7 +241,7 @@ public:
 
 	// HACK EVIL HACK
 	static int BridgeHeight()
-	{ return *(int *)0xB0C07C; }
+	{ return *reinterpret_cast<int*>(0xB0C07C); }
 
 	static CoordStruct Cell2Coord(const CellStruct &cell, int z = 0)
 	{

@@ -282,7 +282,7 @@ public:
 	{
 		THISCALL(0x535AA0);
 		Digested = false;
-		*(DWORD*)this = 0x7E1AF4;
+		*reinterpret_cast<DWORD*>(this) = 0x7E1AF4;
 	}
 
 	virtual ~CCINIClass() RX;

@@ -18,7 +18,7 @@ class MessageBox
 public:
 	static eMessageBoxResult Show(const wchar_t* pMessage, const wchar_t* pButton1Text, const wchar_t* pButton2Text)
 		{
-			wchar_t* pTitle=(wchar_t*)0x82083C;	//Title?
+			wchar_t* pTitle=reinterpret_cast<wchar_t*>(0x82083C);	//Title?
 			wchar_t** ppTitle=&pTitle;
 
 			PUSH_IMM(0);

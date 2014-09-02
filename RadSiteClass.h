@@ -94,7 +94,7 @@ public:
 	// Gets the current strenght of the effect, the ratio between time left and initial duration.
 	double GetEffectPercentage() {
 		return (this->RadDuration <= 0) ? 0.0 :
-			(double)this->RadTimeLeft / (double)this->RadDuration;
+			static_cast<double>(this->RadTimeLeft) / static_cast<double>(this->RadDuration);
 	}
 
 protected:

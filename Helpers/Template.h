@@ -72,14 +72,14 @@ void AnnounceInvalidPointerMap(hash_map<T1, T2> &map, void *ptr) {
 
 template<typename T1>
 void AnnounceInvalidPointer(T1 &elem, void *ptr) {
-	if(ptr == (void *)elem) {
+	if(ptr == static_cast<void*>(elem)) {
 		elem = nullptr;
 	}
 }
 
 template<typename T>
 void AnnounceInvalidPointer(DynamicVectorClass<T> &elem, void *ptr) {
-	auto idx = elem.FindItemIndex(reinterpret_cast<T *>(ptr));
+	auto idx = elem.FindItemIndex(reinterpret_cast<T*>(ptr));
 	if(idx != -1) {
 		elem.RemoveItem(idx);
 	}

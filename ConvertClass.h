@@ -46,8 +46,8 @@ public:
 
 	void* SelectProperBlitter(SHPStruct * SHP, int FrameIndex, eBlitterFlags flags) {
 		return (SHP->HasCompression(FrameIndex))
-			? (void*)this->SelectRLEBlitter(flags)
-			: (void*)this->SelectPlainBlitter(flags)
+			? static_cast<void*>(this->SelectRLEBlitter(flags))
+			: static_cast<void*>(this->SelectPlainBlitter(flags))
 		;
 	}
 

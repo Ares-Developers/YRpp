@@ -8,7 +8,7 @@ class PowerClass : public RadarClass
 public:
 	//Static
 	static PowerClass* Global()
-		{ return (PowerClass*)0x87F7E8; }
+		{ return reinterpret_cast<PowerClass*>(0x87F7E8); }
 
 	//Destructor
 	virtual ~PowerClass() RX;

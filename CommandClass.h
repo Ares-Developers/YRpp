@@ -35,7 +35,7 @@ public:
 		{ return false; }
 
 	virtual bool vt_entry_18(DWORD dwUnk)
-		{ return (bool)(((~dwUnk) >> 11) & 1); }
+		{ return (((~dwUnk) >> 11) & 1) != 0; }
 
 	virtual bool vt_entry_1C(DWORD dwUnk)
 		{ return false; }

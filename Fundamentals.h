@@ -7,7 +7,7 @@ included for them to be available.
 */
 namespace Unsorted
 {
-	static const int& CurrentFrame = *(int*)0xA8ED84;
+	static const int& CurrentFrame = *reinterpret_cast<int*>(0xA8ED84);
 }
 
 #endif

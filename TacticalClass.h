@@ -10,7 +10,7 @@ class TacticalClass : public AbstractClass
 {
 public:
 	static TacticalClass* Global()
-		{ return *((TacticalClass**)0x887324); }
+		{ return *reinterpret_cast<TacticalClass**>(0x887324); }
 
 	static TacticalClass * &Instance;
 

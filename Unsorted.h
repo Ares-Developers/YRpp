@@ -457,31 +457,31 @@ class MovieUnlockableInfo {
 
 namespace Unsorted
 {
-	static DWORD &Savegame_Magic     = *(DWORD *)0x83D560;
+	static DWORD &Savegame_Magic     = *reinterpret_cast<DWORD*>(0x83D560);
 
 	// if != 0, EVA_SWxxxActivated is skipped
-	static int &MuteSWLaunches   = *(int *)0xA8B538;
+	static int &MuteSWLaunches   = *reinterpret_cast<int*>(0xA8B538);
 
 	// skip unit selection and move command voices?
-	static bool &MoveFeedback    = *(bool*)0x822CF2;
+	static bool &MoveFeedback    = *reinterpret_cast<bool*>(0x822CF2);
 
-	static byte &ArmageddonMode  = *(byte *)0xA8ED6B;
-	static byte &WTFMode  = *(byte *)0xA8E9A0;
+	static byte &ArmageddonMode  = *reinterpret_cast<byte*>(0xA8ED6B);
+	static byte &WTFMode  = *reinterpret_cast<byte*>(0xA8E9A0);
 
-	static DynamicVectorClass<ObjectClass *>** vec_ObjectsInLayers = (DynamicVectorClass<ObjectClass *>**)0x8A0360;
+	static DynamicVectorClass<ObjectClass *>** vec_ObjectsInLayers = reinterpret_cast<DynamicVectorClass<ObjectClass *>**>(0x8A0360);
 
 // checkbox states, afaik
-	static byte &Bases = *(byte *)0xA8B258;
-	static byte &BridgeDestruction = *(byte *)0xA8B260;
-	static byte &Crates = *(byte *)0xA8B261;
-	static byte &ShortGame = *(byte *)0xA8B262;
-	static byte &SWAllowed = *(byte *)0xA8B263;
-	static byte &MultiEngineer = *(byte *)0xA8B26C;
-	static byte &AlliesAllowed = *(byte *)0xA8B31C;
-	static byte &HarvesterTruce = *(byte *)0xA8B31D;
-	static byte &CTF = *(byte *)0xA8B31E;
-	static byte &FOW = *(byte *)0xA8B31F;
-	static byte &MCVRedeploy = *(byte *)0xA8B320;
+	static byte &Bases = *reinterpret_cast<byte*>(0xA8B258);
+	static byte &BridgeDestruction = *reinterpret_cast<byte*>(0xA8B260);
+	static byte &Crates = *reinterpret_cast<byte*>(0xA8B261);
+	static byte &ShortGame = *reinterpret_cast<byte*>(0xA8B262);
+	static byte &SWAllowed = *reinterpret_cast<byte*>(0xA8B263);
+	static byte &MultiEngineer = *reinterpret_cast<byte*>(0xA8B26C);
+	static byte &AlliesAllowed = *reinterpret_cast<byte*>(0xA8B31C);
+	static byte &HarvesterTruce = *reinterpret_cast<byte*>(0xA8B31D);
+	static byte &CTF = *reinterpret_cast<byte*>(0xA8B31E);
+	static byte &FOW = *reinterpret_cast<byte*>(0xA8B31F);
+	static byte &MCVRedeploy = *reinterpret_cast<byte*>(0xA8B320);
 
 
 struct ColorPacker
@@ -494,14 +494,14 @@ struct ColorPacker
 	int _G_SHR;
 };
 
-	static ColorPacker *ColorPackData = (ColorPacker *)0x8A0DD0;
+	static ColorPacker* ColorPackData = reinterpret_cast<ColorPacker*>(0x8A0DD0);
 
-	static CellStruct *CellSpreadTable = (CellStruct *)0xABD490;
+	static CellStruct* CellSpreadTable = reinterpret_cast<CellStruct*>(0xABD490);
 
-	static int &CurrentSWType = *(int *)0x8809A0;
+	static int &CurrentSWType = *reinterpret_cast<int*>(0x8809A0);
 
 	static const int except_txt_length = 0xFFFF;
-	static char *except_txt_content = (char *)0x8A3A08;
+	static char* except_txt_content = reinterpret_cast<char*>(0x8A3A08);
 
 /*
  * This thing is ridiculous
@@ -560,7 +560,7 @@ struct ColorPacker
   and so on...
  */
 	// Note: SomeMutex has been renamed to this because it reflects the usage better
-	static int &IKnowWhatImDoing = *(int *)0xA8E7AC; // h2ik
+	static int &IKnowWhatImDoing = *reinterpret_cast<int*>(0xA8E7AC); // h2ik
 };
 
 struct CheatData {
@@ -571,6 +571,6 @@ struct CheatData {
 };
 
 // this holds four original cheats, keep that limit in mind
-static CheatData *OriginalCheats = (CheatData *)0x00825C28;
+static CheatData *OriginalCheats = reinterpret_cast<CheatData*>(0x00825C28);
 
 #endif

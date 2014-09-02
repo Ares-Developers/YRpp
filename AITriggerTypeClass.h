@@ -114,7 +114,7 @@ public:
 		char ConditionString[68];
 		int idx = 0;
 		char * condStr = ConditionString;
-		byte *buf = (byte *)&this->Conditions;
+		auto buf = reinterpret_cast<const byte*>(&this->Conditions);
 		do {
 			sprintf_s(condStr, 4, "%02x", *buf);
 			++buf;

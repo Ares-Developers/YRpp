@@ -77,7 +77,7 @@ class SidebarClass : public PowerClass
 public:
 	//Static
 	static SidebarClass* Global()
-		{ return (SidebarClass*)0x87F7E8; }
+		{ return reinterpret_cast<SidebarClass*>(0x87F7E8); }
 
 	enum {TooltipLength = 0x42};
 

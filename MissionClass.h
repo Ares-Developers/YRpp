@@ -13,10 +13,10 @@ class MissionControlClass
 {
 	public:
 		static MissionControlClass* Array()
-			{ return (MissionControlClass*)0xA8E3A8; }
+			{ return reinterpret_cast<MissionControlClass*>(0xA8E3A8); }
 
 		static const char** Names()
-			{ return (const char**)0x816CAC; }
+			{ return reinterpret_cast<const char**>(0x816CAC); }
 
 		static MissionControlClass* __fastcall Find(const char* pName)
 			{ JMP_STD(0x5B3910); }

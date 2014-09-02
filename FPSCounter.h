@@ -17,7 +17,8 @@ public:
 	static inline double GetAverageFrameRate()
 	{
 		if(TotalTimeElapsed) {
-			return double(TotalFramesElapsed) / double(TotalTimeElapsed);
+			return static_cast<double>(TotalFramesElapsed)
+				/ static_cast<double>(TotalTimeElapsed);
 		}
 
 		return 0.0;

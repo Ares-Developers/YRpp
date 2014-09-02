@@ -6,13 +6,13 @@
 
 #define DECL(cls, adr) \
 	DynamicVectorClass<cls*>* cls::Array = \
-		(DynamicVectorClass<cls*>*)adr;
+		reinterpret_cast<DynamicVectorClass<cls*>*>(adr);
 
 #define ALIAS(Type, Obj, Addr) \
-	Type &Obj = *(Type *)(Addr);
+	Type &Obj = *reinterpret_cast<Type*>(Addr);
 
 #define ALIAS_O(Type, Obj, Addr) \
-	Type Obj = (Type )(Addr);
+	Type Obj = reinterpret_cast<Type>(Addr);
 
 #include <AbstractClass.h>
 ALIAS_O(DynamicVectorClass<AbstractClass *>*, AbstractClass::Array0, 0xB0F720);
@@ -192,21 +192,21 @@ ALIAS_O(MessageListClass *, MessageListClass::Instance, 0xA8BC60);
 #include <MixFileClass.h>
 List<MixFileClass*>* MixFileClass::MIXes = (List<MixFileClass*>* )0xABEFD8;
 DECL(MixFileClass, 0x884D90);
-DynamicVectorClass<MixFileClass*>* MixFileClass::Array_Alt = (DynamicVectorClass<MixFileClass*>*)0x884DC0;
-DynamicVectorClass<MixFileClass*>* MixFileClass::Maps = (DynamicVectorClass<MixFileClass*>*)0x884DA8;
-DynamicVectorClass<MixFileClass*>* MixFileClass::Movies = (DynamicVectorClass<MixFileClass*>*)0x884DE0;
+DynamicVectorClass<MixFileClass*>* MixFileClass::Array_Alt = reinterpret_cast<DynamicVectorClass<MixFileClass*>*>(0x884DC0);
+DynamicVectorClass<MixFileClass*>* MixFileClass::Maps = reinterpret_cast<DynamicVectorClass<MixFileClass*>*>(0x884DA8);
+DynamicVectorClass<MixFileClass*>* MixFileClass::Movies = reinterpret_cast<DynamicVectorClass<MixFileClass*>*>(0x884DE0);
 
-MixFileClass* MixFileClass::MULTIMD = (MixFileClass*)0x884DD8;
-MixFileClass* MixFileClass::MULTI   = (MixFileClass*)0x884DDC;
+MixFileClass* MixFileClass::MULTIMD = reinterpret_cast<MixFileClass*>(0x884DD8);
+MixFileClass* MixFileClass::MULTI   = reinterpret_cast<MixFileClass*>(0x884DDC);
 
-MixFileClass::GenericMixFiles* MixFileClass::Generics = (MixFileClass::GenericMixFiles*)0x884DF8;
+MixFileClass::GenericMixFiles* MixFileClass::Generics = reinterpret_cast<MixFileClass::GenericMixFiles*>(0x884DF8);
 
 #include <MapClass.h>
 ALIAS_O(MapClass *, MapClass::Instance, 0x87F7E8);
 
 #include <MouseClass.h>
 ALIAS_O(MouseClass *, MouseClass::Instance, 0x87F7E8);
-MouseCursor* MouseCursor::First = (MouseCursor*)0x82D028;
+MouseCursor* MouseCursor::First = reinterpret_cast<MouseCursor*>(0x82D028);
 
 #include <Networking.h>
 ALIAS(DWORD, Networking::CurrentFrameCRC, 0xAC51FC);
@@ -231,13 +231,13 @@ ALIAS(PointerExpiredNotification, PointerExpiredNotification::NotifyInvalidObjec
 
 #include <ObjectClass.h>
 DynamicVectorClass<ObjectClass*>* ObjectClass::CurrentObjects =
-	(DynamicVectorClass<ObjectClass*>*)0xA8ECB8;
+	reinterpret_cast<DynamicVectorClass<ObjectClass*>*>(0xA8ECB8);
 
 DynamicVectorClass<ObjectClass*>* ObjectClass::Logics =
-	(DynamicVectorClass<ObjectClass*>*)0x87F778;
+	reinterpret_cast<DynamicVectorClass<ObjectClass*>*>(0x87F778);
 
 DynamicVectorClass<ObjectClass*>* ObjectClass::ObjectsInLayers =
-	(DynamicVectorClass<ObjectClass*>*)0x8A0360;
+	reinterpret_cast<DynamicVectorClass<ObjectClass*>*>(0x8A0360);
 
 
 #include <OverlayClass.h>
@@ -360,7 +360,7 @@ DECL(TaskForceClass, 0xA8E8D0);
 DECL(ScriptTypeClass, 0x8B41C8);
 
 #include <SwizzleManagerClass.h>
-SwizzleManagerClass& SwizzleManagerClass::Instance = *(SwizzleManagerClass*)0xB0C110;
+SwizzleManagerClass& SwizzleManagerClass::Instance = *reinterpret_cast<SwizzleManagerClass*>(0xB0C110);
 
 #include <TActionClass.h>
 DECL(TActionClass, 0xB0E658);
@@ -379,20 +379,20 @@ DECL(TemporalClass, 0xB0EC60);
 
 #include <TechnoClass.h>
 
-DynamicVectorClass<TechnoClass *>* TechnoClass::Array = (DynamicVectorClass<TechnoClass *>*)0xA8EC78;
-DynamicVectorClass<TechnoTypeClass *>* TechnoTypeClass::Array = (DynamicVectorClass<TechnoTypeClass *>*)0xA8EB00;
+DynamicVectorClass<TechnoClass *>* TechnoClass::Array = reinterpret_cast<DynamicVectorClass<TechnoClass*>*>(0xA8EC78);
+DynamicVectorClass<TechnoTypeClass *>* TechnoTypeClass::Array = reinterpret_cast<DynamicVectorClass<TechnoTypeClass *>*>(0xA8EB00);
 
 #include <TEventClass.h>
 DECL(TEventClass, 0xB0F1A0);
 
 #include <Theater.h>
-Theater* Theater::Array        = (Theater *)0x7E1B78;
-Theater* Theater::TH_Temperate = (Theater *)0x7E1B78;
-Theater* Theater::TH_Snow      = (Theater *)0x7E1BE8;
-Theater* Theater::TH_Urban     = (Theater *)0x7E1C58;
-Theater* Theater::TH_Desert    = (Theater *)0x7E1CC8;
-Theater* Theater::TH_NewUrban  = (Theater *)0x7E1D38;
-Theater* Theater::TH_Lunar     = (Theater *)0x7E1DA8;
+Theater* Theater::Array        = reinterpret_cast<Theater*>(0x7E1B78);
+Theater* Theater::TH_Temperate = reinterpret_cast<Theater*>(0x7E1B78);
+Theater* Theater::TH_Snow      = reinterpret_cast<Theater*>(0x7E1BE8);
+Theater* Theater::TH_Urban     = reinterpret_cast<Theater*>(0x7E1C58);
+Theater* Theater::TH_Desert    = reinterpret_cast<Theater*>(0x7E1CC8);
+Theater* Theater::TH_NewUrban  = reinterpret_cast<Theater*>(0x7E1D38);
+Theater* Theater::TH_Lunar     = reinterpret_cast<Theater*>(0x7E1DA8);
 
 //Tree classes don't have their VTables done yet
 /*#include <TerrainClass.h>
@@ -541,10 +541,10 @@ ALIAS(Imports::FP_CreateDialogParamA, Imports::CreateDialogParamA, 0x7E1508);
 ALIAS(Imports::FP_GetWindowTextA, Imports::GetWindowTextA, 0x7E150C);
 ALIAS(Imports::FP_RegisterHotKey, Imports::RegisterHotKey, 0x7E1510);
 
-DynamicVectorClass<MovieInfo> *MovieInfo::Array = (DynamicVectorClass<MovieInfo>*)0xABF390;
+DynamicVectorClass<MovieInfo> *MovieInfo::Array = reinterpret_cast<DynamicVectorClass<MovieInfo>*>(0xABF390);
 
-MovieUnlockableInfo* MovieUnlockableInfo::AlliedUnlockables = (MovieUnlockableInfo *)0x00832C30;
-MovieUnlockableInfo* MovieUnlockableInfo::SovietUnlockables = (MovieUnlockableInfo *)0x00832CA0;
+MovieUnlockableInfo* MovieUnlockableInfo::AlliedUnlockables = reinterpret_cast<MovieUnlockableInfo*>(0x00832C30);
+MovieUnlockableInfo* MovieUnlockableInfo::SovietUnlockables = reinterpret_cast<MovieUnlockableInfo*>(0x00832CA0);
 
 #include <VocClass.h>
 DECL(VocClass, 0xB1D378);

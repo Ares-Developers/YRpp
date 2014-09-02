@@ -53,7 +53,7 @@ public:
 		{ return LoadFile(pFileName, false); }
 
 	static SHPStruct* LoadSHPFile(const char* pFileName)
-		{ return (SHPStruct*)LoadFile(pFileName, true); }
+		{ return static_cast<SHPStruct*>(LoadFile(pFileName, true)); }
 
 	//I'm just making this up for easy palette loading
 	static ConvertClass* LoadPALFile(const char* pFileName, DSurface* pSurface)

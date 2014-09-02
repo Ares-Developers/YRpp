@@ -69,10 +69,10 @@ public:
 	static MapClass *Instance;
 
 	static MapClass* Global()
-		{ return (MapClass*)0x87F7E8; }
+		{ return reinterpret_cast<MapClass*>(0x87F7E8); }
 
 	static CellClass* InvalidCell()
-		{ return (CellClass*)0xABDC50; }
+		{ return reinterpret_cast<CellClass*>(0xABDC50); }
 
 	static const int MaxCells = 0x40000;
 

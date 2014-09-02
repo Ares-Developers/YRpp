@@ -9,7 +9,7 @@ class GScreenClass : public IGameMap
 public:
 	//Static
 	static GScreenClass* Global()
-		{ return (GScreenClass*)0x87F7E8; }
+		{ return reinterpret_cast<GScreenClass*>(0x87F7E8); }
 
 	//IUnknown
 	virtual HRESULT __stdcall QueryInterface(REFIID iid,void** ppvObject) R0;

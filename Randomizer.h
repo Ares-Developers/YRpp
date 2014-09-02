@@ -7,7 +7,7 @@ public:
 	// for any randomization happening inside a match (odds of a survivor, crate, etc), use the ScenarioClass::Random object instead!
 	// this object should only be used for RMG and other randomness outside a match
 	static Randomizer* Global()
-		{ return (Randomizer*)0x886B88; }
+		{ return reinterpret_cast<Randomizer*>(0x886B88); }
 
 public:
 	DWORD Random()

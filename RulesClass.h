@@ -99,7 +99,7 @@ public:
 	static RulesClass *&Instance;
 
 	static RulesClass* Global()
-		{ return *((RulesClass**)0x8871E0); }
+		{ return *reinterpret_cast<RulesClass**>(0x8871E0); }
 
 //	static bool Initialized;
 

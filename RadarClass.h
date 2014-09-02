@@ -10,7 +10,7 @@ public:
 
 	//Static
 	static RadarClass* Global()
-		{ return (RadarClass*)0x87F7E8; }
+		{ return reinterpret_cast<RadarClass*>(0x87F7E8); }
 
 	//Destructor
 	virtual ~RadarClass() RX;

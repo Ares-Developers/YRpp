@@ -34,12 +34,12 @@ public:
 
 	//Static
 	static DisplayClass* Global()
-		{ return (DisplayClass*)0x87F7E8; }
+		{ return reinterpret_cast<DisplayClass*>(0x87F7E8); }
 
 	static LayerClass* GetLayer(Layer::Value lyr)
 	{
 		if(lyr >= Layer::Underground && lyr <= Layer::Top)
-			return ((LayerClass**)0x8A0360)[lyr];
+			return reinterpret_cast<LayerClass**>(0x8A0360)[lyr];
 		else
 			return nullptr;
 	}
