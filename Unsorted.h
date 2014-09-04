@@ -468,7 +468,7 @@ namespace Unsorted
 	static byte &ArmageddonMode  = *reinterpret_cast<byte*>(0xA8ED6B);
 	static byte &WTFMode  = *reinterpret_cast<byte*>(0xA8E9A0);
 
-	static DynamicVectorClass<ObjectClass *>** vec_ObjectsInLayers = reinterpret_cast<DynamicVectorClass<ObjectClass *>**>(0x8A0360);
+	static DynamicVectorClass<ObjectClass*>* const vec_ObjectsInLayers = reinterpret_cast<DynamicVectorClass<ObjectClass *>*>(0x8A0360);
 
 // checkbox states, afaik
 	static byte &Bases = *reinterpret_cast<byte*>(0xA8B258);
