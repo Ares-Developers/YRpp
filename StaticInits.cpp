@@ -206,7 +206,7 @@ ALIAS_O(MapClass *, MapClass::Instance, 0x87F7E8);
 
 #include <MouseClass.h>
 ALIAS_O(MouseClass *, MouseClass::Instance, 0x87F7E8);
-MouseCursor* MouseCursor::First = reinterpret_cast<MouseCursor*>(0x82D028);
+MouseCursor* const MouseCursor::First = reinterpret_cast<MouseCursor*>(0x82D028);
 
 #include <Networking.h>
 ALIAS(DWORD, Networking::CurrentFrameCRC, 0xAC51FC);

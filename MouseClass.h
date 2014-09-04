@@ -5,7 +5,8 @@
 
 class MouseCursor {
 public:
-	static MouseCursor* First;
+	static const size_t CursorCount = 86;
+	static MouseCursor* const First;
 
 	int Frame;
 	int Count;
