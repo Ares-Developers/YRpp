@@ -43,5 +43,6 @@ virtual void alla(double malla) RX;
 
 #define R0 {return 0;}
 #define RX {}
+#define RT(type) {return type();}
 
 #endif
