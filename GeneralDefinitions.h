@@ -830,44 +830,42 @@ enum class MouseHotSpotY : int {
 	Bottom = 54321
 };
 
-
-typedef int eMission;
-
-#define	mission_None		-0x1
-#define	mission_Sleep		0x0
-#define	mission_Attack		0x1
-#define	mission_Move		0x2
-#define	mission_QMove		0x3
-#define	mission_Retreat		0x4
-#define	mission_Guard		0x5
-#define	mission_Sticky		0x6
-#define	mission_Enter		0x7
-#define	mission_Capture		0x8
-#define	mission_Eaten		0x9
-#define	mission_Harvest		0xA
-#define	mission_Area_Guard		0xB
-#define	mission_Return		0xC
-#define	mission_Stop		0xD
-#define	mission_Ambush		0xE
-#define	mission_Hunt		0xF
-#define	mission_Unload		0x10
-#define	mission_Sabotage		0x11
-#define	mission_Construction		0x12
-#define	mission_Selling		0x13
-#define	mission_Repair		0x14
-#define	mission_Rescue		0x15
-#define	mission_Missile		0x16
-#define	mission_Harmless		0x17
-#define	mission_Open		0x18
-#define	mission_Patrol		0x19
-#define	mission_ParadropApproach		0x1A
-#define	mission_ParadropOverfly		0x1B
-#define	mission_Wait		0x1C
-#define	mission_ChronoMove		0x1D
-#define	mission_AttackAgain		0x1E
-#define	mission_SpyplaneApproach		0x1F
-#define	mission_SpyplaneOverfly		0x20
-
+enum class Mission : int {
+	None = -1,
+	Sleep = 0,
+	Attack = 1,
+	Move = 2,
+	QMove = 3,
+	Retreat = 4,
+	Guard = 5,
+	Sticky = 6,
+	Enter = 7,
+	Capture = 8,
+	Eaten = 9,
+	Harvest = 10,
+	Area_Guard = 11,
+	Return = 12,
+	Stop = 13,
+	Ambush = 14,
+	Hunt = 15,
+	Unload = 16,
+	Sabotage = 17,
+	Construction = 18,
+	Selling = 19,
+	Repair = 20,
+	Rescue = 21,
+	Missile = 22,
+	Harmless = 23,
+	Open = 24,
+	Patrol = 25,
+	ParadropApproach = 26,
+	ParadropOverfly = 27,
+	Wait = 28,
+	ChronoMove = 29,
+	AttackAgain = 30,
+	SpyplaneApproach = 31,
+	SpyplaneOverfly = 32
+};
 
 class MovementZone {
 public:

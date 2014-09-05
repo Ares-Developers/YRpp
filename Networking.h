@@ -41,7 +41,7 @@ public:
 	 * PackedTarget and PackedTargetCell are pointers to the Pack()ed versions of the Target and TargetCell of ClickedMission
 	 */
 	static bool __fastcall CreateClickedMissionEvent
-			(eMission Mission, NetID *PackedTarget, int selfID, char selfWhatAmI, NetID *PackedTargetCell)
+			(Mission Mission, NetID *PackedTarget, int selfID, char selfWhatAmI, NetID *PackedTargetCell)
 		{ JMP_STD(0x646E90); }
 
 };

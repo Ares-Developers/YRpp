@@ -241,7 +241,7 @@ public:
 	virtual bool ClickedEvent(eNetworkEvents event) R0;
 
 	// depending on the mission you click, cells/Target are not always needed
-	virtual bool ClickedMission(eMission Mission, ObjectClass *Target, CellClass * TargetCell, CellClass *NearestTargetCellICanEnter) R0;
+	virtual bool ClickedMission(Mission Mission, ObjectClass *Target, CellClass * TargetCell, CellClass *NearestTargetCellICanEnter) R0;
 	virtual bool IsUnderEMP() const R0;
 	virtual bool IsParalyzed() const R0;
 	virtual bool CanCheer() const R0;

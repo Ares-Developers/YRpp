@@ -21,10 +21,10 @@ class MissionControlClass
 		static MissionControlClass* __fastcall Find(const char* pName)
 			{ JMP_STD(0x5B3910); }
 
-		static eMission __fastcall FindIndex(const char* pName)
+		static Mission __fastcall FindIndex(const char* pName)
 			{ JMP_STD(0x5B3910); }
 
-		static const char* __fastcall FindName(const eMission& index)
+		static const char* __fastcall FindName(const Mission& index)
 			{ JMP_STD(0x5B3740); }
 
 		MissionControlClass()
@@ -55,11 +55,11 @@ public:
 	virtual ~MissionClass() { /* ~ObjectClass() */ }
 
 	//MissionClass
-	virtual bool QueueMission(eMission mission, bool start_mission) R0;
+	virtual bool QueueMission(Mission mission, bool start_mission) R0;
 	virtual bool NextMission() R0;
-	virtual void ForceMission(eMission mission) RX;
+	virtual void ForceMission(Mission mission) RX;
 
-	virtual void vt_entry_1F4(eMission mission) RX;
+	virtual void vt_entry_1F4(Mission mission) RX;
 	virtual bool Mission_Revert() R0;
 	virtual bool vt_entry_1FC() const R0;
 	virtual bool vt_entry_200() const R0;
@@ -105,9 +105,9 @@ protected:
 
 public:
 
-	eMission CurrentMission;	//see MISSION definitions
-	eMission unknown_mission_B0;	//see MISSION definitions
-	eMission QueuedMission;	//see MISSION definitions
+	Mission  CurrentMission;
+	Mission  unknown_mission_B0;
+	Mission  QueuedMission;
 	bool     unknown_bool_B8;
 	int      MissionStatus;
 	int      CurrentMissionStartTime;	//in frames

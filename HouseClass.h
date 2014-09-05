@@ -389,7 +389,7 @@ public:
 	}
 
 	// Target ought to be Object, I imagine, but cell doesn't work then
-	void __fastcall SendSpyPlanes(int AircraftTypeIdx, int AircraftAmount, eMission SetMission, AbstractClass *Target, ObjectClass *Destination)
+	void __fastcall SendSpyPlanes(int AircraftTypeIdx, int AircraftAmount, Mission SetMission, AbstractClass *Target, ObjectClass *Destination)
 		{ JMP_STD(0x65EAB0); }
 
 	// registering in prereq counters (all technoes get logged, but only buildings get checked on validation... wtf)

@@ -168,8 +168,8 @@ public:
 	virtual bool Ignite() R0;
 	virtual void Extinguish() RX;
 	virtual DWORD GetPointsValue() const R0;
-	virtual eMission GetCurrentMission() const R0;
-	virtual void RestoreMission(eMission mission) RX;
+	virtual Mission GetCurrentMission() const RT(Mission);
+	virtual void RestoreMission(Mission mission) RX;
 	virtual void UpdatePosition(int dwUnk) RX;
 	virtual BuildingTypeClass* GetFactoryType(bool bOverridePrereqs, bool bOverridePower) const R0;
 	virtual void ReceiveCommand(TechnoClass *From, eRadioCommands rcDoThis, DWORD dwUnk3) RX;
