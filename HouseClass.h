@@ -346,8 +346,6 @@ public:
 	static void __fastcall LoadFromINIList(CCINIClass *pINI)
 		{ JMP_STD(0x5009B0); }
 
-	CellStruct * PickIonCannonTarget(CellStruct &dest)
-		{ JMP_THIS(0x50CBF0); }
 
 	WaypointClass * GetPlanningWaypointAt(CellStruct *coords)
 		{ JMP_THIS(0x5023B0); }
@@ -496,8 +494,23 @@ public:
 	bool Fire_SW(int idx, const CellStruct &coords)
 		{ JMP_THIS(0x4FAE50); }
 
-	CellStruct* PickTargetByType(CellStruct *a2, TargetType::Value TargetType)
+	CellStruct* PickTargetByType(CellStruct &outBuffer, TargetType::Value TargetType) const
 		{ JMP_THIS(0x50D170); }
+
+	CellStruct PickTargetByType(TargetType::Value TargetType) const {
+		CellStruct outBuffer;
+		this->PickTargetByType(outBuffer, TargetType);
+		return outBuffer;
+	}
+
+	CellStruct* PickIonCannonTarget(CellStruct &outBuffer) const
+		{ JMP_THIS(0x50CBF0); }
+
+	CellStruct PickIonCannonTarget() const {
+		CellStruct outBuffer;
+		this->PickIonCannonTarget(outBuffer);
+		return outBuffer;
+	}
 
 	void UpdateFlagCoords(UnitClass *NewCarrier, DWORD dwUnk)
 		{ JMP_THIS(0x4FBE40); }
