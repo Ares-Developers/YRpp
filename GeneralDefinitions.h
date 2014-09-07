@@ -1084,14 +1084,10 @@ public:
 	};
 };
 
-class RadBeamType {
-public:
-	typedef unsigned int Value;
-	enum {
-		Temporal = 0x0,
-		RadBeam = 0x1,
-		Eruption = 0x2, // this sets the beam color to MagnaBeamColor! There probably was no reason for that whatsoever.
-	};
+enum class RadBeamType : unsigned int {
+	Temporal = 0,
+	RadBeam = 1,
+	Eruption = 2 // this sets the beam color to MagnaBeamColor! There probably was no reason for that whatsoever.
 };
 
 enum class Rank : int {

@@ -15,7 +15,7 @@ public:
 	~RadBeam()
 		{ }
 
-	static RadBeam* __fastcall Allocate(RadBeamType::Value mode)
+	static RadBeam* __fastcall Allocate(RadBeamType mode)
 		{ JMP_STD(0x659110); }
 
 	void SetColor(ColorStruct *color)
@@ -45,7 +45,7 @@ public:
 	DWORD unknown_C;
 
 
-	RadBeamType::Value Type;
+	RadBeamType Type;
 	DWORD unknown_14;
 	double unknown_18;
 	ColorStruct Color;
