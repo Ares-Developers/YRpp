@@ -56,15 +56,15 @@ public:
 
 public:
 
-	FootClass*           Owner;
-	FootClass*           Victim;
-	TimerStruct          SuppressionTimer;
-	TimerStruct          DamageDeliveryTimer;
-	AnimClass*           GrappleAnim;
-	ParasiteState::Value GrappleState;
-	int                  GrappleAnimFrame;
-	int                  GrappleAnimDelay;
-	bool                 GrappleAnimGotInvalid;
+	FootClass*      Owner;
+	FootClass*      Victim;
+	TimerStruct     SuppressionTimer;
+	TimerStruct     DamageDeliveryTimer;
+	AnimClass*      GrappleAnim;
+	ParasiteState   GrappleState;
+	int             GrappleAnimFrame;
+	int             GrappleAnimDelay;
+	bool            GrappleAnimGotInvalid;
 };
 
 #endif

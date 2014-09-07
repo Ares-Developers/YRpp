@@ -1509,16 +1509,12 @@ public:
 	};
 };
 
-class ParasiteState {
-public:
-	typedef int Value;
-	enum {
-		Start = 0, // creates grab animation
-		Grab = 1, // wait for the grab anim
-		PushLeft = 2, // push the victim, variant A
-		PushRight = 3, // push the victim, variant B
-		Damage = 4 // wait until rocking stops; deliver damage
-	};
+enum class ParasiteState : int {
+	Start = 0, // creates grab animation
+	Grab = 1, // wait for the grab anim
+	PushLeft = 2, // push the victim, variant A
+	PushRight = 3, // push the victim, variant B
+	Damage = 4 // wait until rocking stops; deliver damage
 };
 
 //Westwood custom messages (e.g. for SendMessage)
