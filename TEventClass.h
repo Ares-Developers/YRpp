@@ -72,8 +72,8 @@ public:
 public:
 
 	int               indexInArray;
-	TEventClass*       NextEvent;
-	TriggerEvent::Value EventKind;
+	TEventClass*      NextEvent;
+	TriggerEvent      EventKind;
 	void*             TeamType; // AITeamTypeClass*, really
 	int               arg;
 	char TechnoName [0x1C]; // YR introduced this sort of referencing
