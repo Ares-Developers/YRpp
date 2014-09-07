@@ -913,28 +913,24 @@ public:
 	};
 };
 
-class RadarEventType {
-public:
-	typedef int Value;
-	enum {
-		Combat = 0,
-		Noncombat = 1,
-		DropZone = 2,
-		BaseAttacked = 3,
-		HarvesterAttacked = 4,
-		EnemySensed = 5,
-		UnitProduced = 6,
-		UnitLost = 7,
-		UnitRepaired = 8,
-		BuildingInfiltrated = 9,
-		BuildingCaptured = 10,
-		BeaconPlaced = 11,
-		SuperweaponDetected = 12,
-		SuperweaponActivated = 13,
-		BridgeRepaired = 14,
-		GarrisonAbandoned = 15,
-		AllyBaseAttacked = 16
-	};
+enum class RadarEventType : int {
+	Combat = 0,
+	Noncombat = 1,
+	DropZone = 2,
+	BaseAttacked = 3,
+	HarvesterAttacked = 4,
+	EnemySensed = 5,
+	UnitProduced = 6,
+	UnitLost = 7,
+	UnitRepaired = 8,
+	BuildingInfiltrated = 9,
+	BuildingCaptured = 10,
+	BeaconPlaced = 11,
+	SuperweaponDetected = 12,
+	SuperweaponActivated = 13,
+	BridgeRepaired = 14,
+	GarrisonAbandoned = 15,
+	AllyBaseAttacked = 16
 };
 
 enum class PsychicDominatorStatus : unsigned int {
