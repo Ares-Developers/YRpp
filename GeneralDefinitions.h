@@ -1365,15 +1365,11 @@ public:
 	};
 };
 
-class VoxPriority {
-public:
-	typedef int Value;
-	enum {
-		Low = 0,
-		Normal = 1,
-		Important = 2,
-		Critical = 3
-	};
+enum class VoxPriority : int {
+	Low = 0,
+	Normal = 1,
+	Important = 2,
+	Critical = 3
 };
 
 enum class WaveType : int {
