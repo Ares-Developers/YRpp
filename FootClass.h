@@ -48,7 +48,7 @@ public:
 	virtual bool ChronoWarpTo(CoordStruct pDest) R0; // fsds... only implemented for one new YR map trigger, other chrono events repeat the code...
 	virtual void Draw_A_SHP(
 		SHPStruct *SHP, int idxFacing, Point2D * Coords, RectangleStruct *Rectangle,
-		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7, int ZGradient,
+		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7, ZGradient ZGradient,
 		DWORD dwUnk9, int extraLight, DWORD dwUnk11, DWORD dwUnk12,
 		DWORD dwUnk13, DWORD dwUnk14, DWORD dwUnk15, DWORD dwUnk16) RX;
 

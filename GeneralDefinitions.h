@@ -1497,16 +1497,12 @@ public:
 	};
 };
 
-class ZGradient {
-public:
-	typedef int Value;
-	enum {
-		None = -1,
-		Ground = 0,
-		Deg45 = 1,
-		Deg90 = 2,
-		Deg135 = 3
-	};
+enum class ZGradient : int {
+	None = -1,
+	Ground = 0,
+	Deg45 = 1,
+	Deg90 = 2,
+	Deg135 = 3
 };
 
 enum class ParasiteState : int {

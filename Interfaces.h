@@ -154,7 +154,7 @@ ILocomotion : IUnknown
 	virtual Point2D* __stdcall Shadow_Point(Point2D* pPoint) = 0;	//Shadow draw point center location.
 	virtual VisualType::Value __stdcall Visual_Character(VARIANT_BOOL unused) = 0;	//Visual character for drawing.
 	virtual int __stdcall Z_Adjust() = 0;	//Z adjust control value.
-	virtual ZGradient::Value __stdcall Z_Gradient() = 0;	//Z gradient control value.
+	virtual ZGradient __stdcall Z_Gradient() = 0;	//Z gradient control value.
 	virtual bool __stdcall Process() = 0;	//Process movement of object.]
 	virtual void __stdcall Move_To(CoordStruct to) = 0;	//Instruct to move to location specified.
 	virtual void __stdcall Stop_Moving() = 0;	//Stop moving at first opportunity.

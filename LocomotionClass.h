@@ -96,7 +96,7 @@ public:
 	virtual int __stdcall Z_Adjust()
 		{ return 0; }
 
-	virtual ZGradient::Value __stdcall Z_Gradient()
+	virtual ZGradient __stdcall Z_Gradient()
 		{ return ZGradient::Deg90; }
 
 	virtual bool __stdcall Process()
