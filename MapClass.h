@@ -166,7 +166,7 @@ public:
 	\param AffectsTiberium If this is false, Tiberium=yes is ignored.
 	\param SourceHouse The house to which SourceObject belongs, the owner/bringer of damage.
 */
-	static DamageAreaResult::Value __fastcall DamageArea(
+	static DamageAreaResult __fastcall DamageArea(
 		const CoordStruct& Coords,
 		int Damage,
 		TechnoClass* SourceObject,
