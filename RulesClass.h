@@ -836,9 +836,9 @@ public:
 	int				 Harvester;
 	int				 SellBack;
 	int				 AIBaseSpacing;
-	Powerup::Value	 SilverCrate;
-	Powerup::Value	 WoodCrate;
-	Powerup::Value	 WaterCrate;
+	Powerup			 SilverCrate;
+	Powerup			 WoodCrate;
+	Powerup			 WaterCrate;
 	int				 CrateMinimum;
 	int				 CrateMaximum;
 	int				 unknown_int_1478;	//defaults to 0x2000
