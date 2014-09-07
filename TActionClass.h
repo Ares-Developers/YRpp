@@ -283,7 +283,7 @@ public:
 
 	int                IndexInArray;
 	TActionClass*      NextTAction;
-	TriggerAction::Value ActionKind;
+	TriggerAction      ActionKind;
 	TeamTypeClass*     TeamType; // AITeamTypeClass*, really
 	RectangleStruct    Bounds; // map bounds for use with action 40
 	int                Waypoint;
