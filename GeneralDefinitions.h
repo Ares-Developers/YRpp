@@ -499,15 +499,14 @@ typedef int eHoldsWhat;
 #define	hw_Railgun		0x4
 
 
-typedef int eBuildCat;
-
-#define	bcat_DontCare		0x0
-#define	bcat_Tech		0x1
-#define	bcat_Resource		0x2
-#define	bcat_Power		0x3
-#define	bcat_Infrastructure		0x4
-#define	bcat_Combat		0x5
-
+enum class BuildCat : unsigned int {
+	DontCare = 0,
+	Tech = 1,
+	Resoure = 2,
+	Power = 3,
+	Infrastructure = 4,
+	Combat = 5
+};
 
 enum class BuildingAnimSlot : int {
 	All = -2,

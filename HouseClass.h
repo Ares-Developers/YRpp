@@ -521,7 +521,7 @@ public:
 	char PickedUpFlag(UnitClass *Who, DWORD dwUnk)
 		{ JMP_THIS(0x4FC060); }
 
-	FactoryClass * GetPrimaryFactory(eAbstractType ID, bool Naval, eBuildCat BuildCat)
+	FactoryClass * GetPrimaryFactory(eAbstractType ID, bool Naval, BuildCat BuildCat)
 		{ JMP_THIS(0x500510); }
 
 	CellStruct GetBaseCenter() const {

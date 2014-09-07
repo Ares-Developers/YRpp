@@ -98,7 +98,7 @@ public:
 	CellStruct* FoundationData;
 	SHPStruct* Buildup;
 	bool BuildupLoaded;
-	eBuildCat BuildCat;
+	BuildCat BuildCat;
 	CoordStruct HalfDamageSmokeLocation1;
 	CoordStruct HalfDamageSmokeLocation2;
 	DWORD align_E24;
