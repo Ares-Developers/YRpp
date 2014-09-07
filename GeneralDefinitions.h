@@ -439,12 +439,11 @@ typedef int eAITrigCondition;
 #define		tc_Pool		0xFFFFFFFF
 
 
-typedef int eAITrigHouseType;
-
-#define		th_None		0x0
-#define		th_Single		0x1
-#define		th_Any		0x2
-
+enum class AITriggerHouseType : int {
+	None = 0,
+	Single = 1,
+	Any = 2
+};
 
 class Armor {
 public:

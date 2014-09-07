@@ -97,12 +97,12 @@ public:
 			Team2Name = T->get_ID();
 		}
 
-		if(this->OwnerHouseType == th_Single) {
+		if(this->OwnerHouseType == AITriggerHouseType::Single) {
 			int HouseIndex = this->HouseIndex;
 			if(HouseIndex != -1) {
 				HouseName = HouseTypeClass::Array->GetItem(HouseIndex)->get_ID();
 			}
-		} else if(this->OwnerHouseType == th_Any) {
+		} else if(this->OwnerHouseType == AITriggerHouseType::Any) {
 			HouseName = "<all>";
 		}
 
@@ -162,7 +162,7 @@ public:
 
 	eAITrigCondition ConditionType;
 	int              IsGlobal;
-	eAITrigHouseType OwnerHouseType;
+	AITriggerHouseType OwnerHouseType;
 	bool             IsEnabled;
 	int              HouseIndex;
 	int              SideIndex;
