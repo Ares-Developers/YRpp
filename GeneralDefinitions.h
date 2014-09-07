@@ -751,23 +751,19 @@ public:
 	};
 };
 
-class LandType {
-public:
-	typedef int Value;
-	enum {
-		Clear = 0,
-		Road = 1,
-		Water = 2,
-		Rock = 3,
-		Wall = 4,
-		Tiberium = 5,
-		Beach = 6,
-		Rough = 7,
-		Ice = 8,
-		Railroad = 9,
-		Tunnel = 10,
-		Weeds = 11
-	};
+enum class LandType : int {
+	Clear = 0,
+	Road = 1,
+	Water = 2,
+	Rock = 3,
+	Wall = 4,
+	Tiberium = 5,
+	Beach = 6,
+	Rough = 7,
+	Ice = 8,
+	Railroad = 9,
+	Tunnel = 10,
+	Weeds = 11
 };
 
 /*
