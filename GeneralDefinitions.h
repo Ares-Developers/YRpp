@@ -1198,17 +1198,13 @@ public:
 };
 
 //typedef int eVisualType;
-class VisualType {
-public:
-	typedef unsigned int Value;
-	enum {
-		Normal = 0x00,
-		Indistinct = 0x01,
-		Darken = 0x02,
-		Shadowy = 0x03,
-		Ripple = 0x04,
-		Hidden = 0x05,
-	};
+enum class VisualType : unsigned int {
+	Normal = 0,
+	Indistinct = 1,
+	Darken = 2,
+	Shadowy = 3,
+	Ripple = 4,
+	Hidden = 5
 };
 
 typedef int eRadioCommands;

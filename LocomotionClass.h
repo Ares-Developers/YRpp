@@ -90,7 +90,7 @@ public:
 	virtual Point2D* __stdcall Shadow_Point(Point2D* pPoint)
 		{ JMP_STD(0x55A8C0); }
 
-	virtual VisualType::Value __stdcall Visual_Character(VARIANT_BOOL bUnused)
+	virtual VisualType __stdcall Visual_Character(VARIANT_BOOL bUnused)
 		{ return VisualType::Normal; }
 
 	virtual int __stdcall Z_Adjust()

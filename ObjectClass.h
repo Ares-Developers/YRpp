@@ -54,7 +54,7 @@ public:
 	//ObjectClass
 	virtual void AnimPointerExpired(AnimClass* pAnim) RX;
 	virtual bool IsSelectable() const R0;
-	virtual VisualType::Value VisualCharacter(VARIANT_BOOL SpecificOwner, HouseClass * WhoIsAsking) const R0;
+	virtual VisualType VisualCharacter(VARIANT_BOOL SpecificOwner, HouseClass * WhoIsAsking) const RT(VisualType);
 	virtual SHPStruct* GetImage() const R0;
 	virtual eAction MouseOverCell(CellStruct uCell, bool bUnk1, bool bUnk2) const R0;
 	virtual eAction MouseOverObject(ObjectClass* pObj, bool bUnk1) const R0;
