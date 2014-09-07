@@ -685,14 +685,10 @@ public:
 };
 
 
-class HealthState {
-public:
-	typedef unsigned int Value;
-	enum {
-		Red = 0,
-		Yellow = 1,
-		Green = 2
-	};
+enum class HealthState : unsigned int {
+	Red = 0,
+	Yellow = 1,
+	Green = 2
 };
 
 

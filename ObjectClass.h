@@ -221,7 +221,7 @@ public:
 	bool IsGreenHP() const
 		{ JMP_THIS(0x5F5D90); }
 
-	HealthState::Value GetHealthStatus() const
+	HealthState GetHealthStatus() const
 		{ JMP_THIS(0x5F5DD0); }
 
 	void BecomeUntargetable()
