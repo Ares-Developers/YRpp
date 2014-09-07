@@ -79,7 +79,7 @@ public:
 	VolumeStruct Volume;
 	DWORD unknown_38;
 	DWORD unknown_3C;
-	SoundPriority::Value Priority;
+	SoundPriority Priority;
 	DWORD unknown_44;
 	int Limit;	//as in sound.ini
 	int Loop;	//as in sound.ini

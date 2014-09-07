@@ -1305,16 +1305,12 @@ typedef int eNetworkEvents;
 
 
 // Sound specific
-class SoundPriority {
-public:
-	typedef int Value;
-	enum {
-		Lowest = 0,
-		Low = 1,
-		Normal = 2,
-		High = 3,
-		Critical = 4
-	};
+enum class SoundPriority : int {
+	Lowest = 0,
+	Low = 1,
+	Normal = 2,
+	High = 3,
+	Critical = 4
 };
 
 class SoundType {
