@@ -596,15 +596,11 @@ typedef int eCellFlags_12C;
 #define	cf2_NoShadow			0x08 //else tooltip is TXT_SHADOW
 
 
-class CloakState {
-public:
-	typedef int Value;
-	enum {
-		Uncloaked = 0,
-		Cloaking = 1,
-		Cloaked = 2,
-		Uncloaking = 3
-	};
+enum class CloakState : int {
+	Uncloaked = 0,
+	Cloaking = 1,
+	Cloaked = 2,
+	Uncloaking = 3
 };
 
 enum class DamageState : int {

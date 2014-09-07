@@ -509,7 +509,7 @@ public:
 	int              Group; //0-9, assigned by CTRL+Number, these kinds // also set by aimd TeamType->Group !
 	TechnoClass*     FocusOnUnit; // when told to guard a unit or such
 	HouseClass*      Owner;
-	CloakState::Value CloakState;
+	CloakState       CloakState;
 	ProgressTimer    CloakProgress; // phase from [opaque] -> [fading] -> [transparent] , [General]CloakingStages= long
 	TimerStruct      CloakDelayTimer; // delay before cloaking again
 	float            WarpFactor; // don't ask! set to 0 in CTOR, never modified, only used as ((this->Fetch_ID) + this->WarpFactor) % 400 for something in cloak ripple
