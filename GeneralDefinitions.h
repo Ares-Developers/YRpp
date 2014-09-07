@@ -947,25 +947,21 @@ enum class ChargeDrainState : int {
 	Draining = 2
 };
 
-class SuperWeaponType {
-public:
-	typedef unsigned char Value;
-	enum {
-		Nuke = 0x0,
-		IronCurtain = 0x1,
-		LightningStorm = 0x2,
-		ChronoSphere = 0x3,
-		ChronoWarp = 0x4,
-		ParaDrop = 0x5,
-		AmerParaDrop = 0x6,
-		PsychicDominator = 0x7,
-		SpyPlane = 0x8,
-		GeneticMutator = 0x9,
-		ForceShield = 0xA,
-		PsychicReveal = 0xB
-	};
+enum class SuperWeaponType : int {
+	Invalid = -1,
+	Nuke = 0,
+	IronCurtain = 1,
+	LightningStorm = 2,
+	ChronoSphere = 3,
+	ChronoWarp = 4,
+	ParaDrop = 5,
+	AmerParaDrop = 6,
+	PsychicDominator = 7,
+	SpyPlane = 8,
+	GeneticMutator = 9,
+	ForceShield = 10,
+	PsychicReveal = 11
 };
-
 
 class MouseCursorType {
 public:

@@ -66,7 +66,7 @@ public:
 	//---
 
 	int     RechargeTime; //in frames
-	int     Type; //SWTYPE definitions
+	SuperWeaponType Type;
 	SHPStruct* SidebarImage;
 	eAction Action; //ACTION definitions
 	int     SpecialSound;

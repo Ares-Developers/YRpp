@@ -69,8 +69,8 @@ public:
 		{ JMP_THIS(0x464AC0); }
 
 	// helpers
-	bool HasSuperWeapon(int Type) const {
-		return (this->SuperWeapon == Type || this->SuperWeapon2 == Type);
+	bool HasSuperWeapon(int index) const {
+		return (this->SuperWeapon == index || this->SuperWeapon2 == index);
 	}
 
 	bool CanTogglePower() const {

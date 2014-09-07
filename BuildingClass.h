@@ -159,12 +159,12 @@ public:
 		{ JMP_THIS(0x43B740); }
 
 	// helpers
-	bool HasSuperWeapon(int Type) const {
-		if(this->Type->HasSuperWeapon(Type)) {
+	bool HasSuperWeapon(int index) const {
+		if(this->Type->HasSuperWeapon(index)) {
 			return true;
 		}
 		for(auto pType : this->Upgrades) {
-			if(pType && pType->HasSuperWeapon(Type)) {
+			if(pType && pType->HasSuperWeapon(index)) {
 				return true;
 			}
 		}
