@@ -426,15 +426,11 @@ public:
 	};
 };
 
-class AIMode {
-public:
-	typedef int Value;
-	enum {
-		General = 0,
-		LowOnCash = 1, // if HouseClass::AvailableMoney < 25 ! stupidly low value
-		BuildBase = 3,
-		SellAll = 4,
-	};
+enum class AIMode : int {
+	General = 0,
+	LowOnCash = 1, // if HouseClass::AvailableMoney < 25 ! stupidly low value
+	BuildBase = 3,
+	SellAll = 4,
 };
 
 
