@@ -1354,15 +1354,11 @@ public:
 	};
 };
 
-class VoxType {
-public:
-	typedef int Value;
-	enum {
-		Standard = 0,
-		Queue = 1,
-		Interrupt = 2,
-		QueuedInterrupt = 3
-	};
+enum class VoxType : int {
+	Standard = 0,
+	Queue = 1,
+	Interrupt = 2,
+	QueuedInterrupt = 3
 };
 
 enum class VoxPriority : int {

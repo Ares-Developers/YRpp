@@ -57,11 +57,11 @@ public:
 
 	char Name[0x28];
 	float Volume;			//as in eva.ini
-	char Yuri [0x9];			//as in eva.ini
+	char Yuri [0x9];		//as in eva.ini
 	char Russian [0x9];		//as in eva.ini
 	char Allied [0x9];		//as in eva.ini
 	VoxPriority Priority;	//as in eva.ini
-	VoxType::Value Type;	//as in eva.ini
+	VoxType Type;			//as in eva.ini
 	int unknown_int_50;
 
 	//constructor and destructor should never be needed
