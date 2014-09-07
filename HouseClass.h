@@ -494,10 +494,10 @@ public:
 	bool Fire_SW(int idx, const CellStruct &coords)
 		{ JMP_THIS(0x4FAE50); }
 
-	CellStruct* PickTargetByType(CellStruct &outBuffer, TargetType::Value TargetType) const
+	CellStruct* PickTargetByType(CellStruct &outBuffer, TargetType TargetType) const
 		{ JMP_THIS(0x50D170); }
 
-	CellStruct PickTargetByType(TargetType::Value TargetType) const {
+	CellStruct PickTargetByType(TargetType TargetType) const {
 		CellStruct outBuffer;
 		this->PickTargetByType(outBuffer, TargetType);
 		return outBuffer;
@@ -761,7 +761,7 @@ public:
 //	IndexBitfield<HouseTypeClass *> RadarVisibleTo; // these house types(!?!, fuck you WW) can see my radar
 	IndexBitfield<HouseClass *> RadarVisibleTo; // this crap is being rewritten to use house indices instead of house types
 	int                   SiloMoney;
-	TargetType::Value PreferredTargetType; // Set via map action 35. The preferred object type to attack.
+	TargetType PreferredTargetType; // Set via map action 35. The preferred object type to attack.
 	CellStruct PreferredTargetCell; // Set via map action 135 and 136. Used to override firing location of targettable SWs.
 	CellStruct PreferredDefensiveCell; // Set via map action 140 and 141, or when an AIDefendAgainst SW is launched.
 	CellStruct PreferredDefensiveCell2; // No known function sets this to a real value, but it would take precedence over the other.

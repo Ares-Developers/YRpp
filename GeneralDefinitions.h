@@ -1387,23 +1387,19 @@ public:
 	};
 };
 
-class TargetType {
-public:
-	typedef unsigned int Value;
-	enum {
-		None = 0,
-		Anything = 1,
-		Buildings = 2,
-		Harvesters = 3,
-		Infantry = 4,
-		Vehicles = 5,
-		Factories = 6,
-		BaseDefenses = 7,
-		// unknown = 8,
-		Power = 9,
-		Occupiable = 10,
-		TechBuildings = 11
-	};
+enum class TargetType : unsigned int {
+	None = 0,
+	Anything = 1,
+	Buildings = 2,
+	Harvesters = 3,
+	Infantry = 4,
+	Vehicles = 5,
+	Factories = 6,
+	BaseDefenses = 7,
+	// unknown = 8,
+	Power = 9,
+	Occupiable = 10,
+	TechBuildings = 11
 };
 
 
