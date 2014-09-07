@@ -496,16 +496,12 @@ typedef int eSpotlightFlags;
 #define sf_NoBlue 0x8
 
 
-class BehavesLike {
-public:
-	typedef int Value;
-	enum {
-		Smoke = 0,
-		Gas = 1,
-		Fire = 2,
-		Spark = 3,
-		Railgun = 4
-	};
+enum class BehavesLike : int {
+	Smoke = 0,
+	Gas = 1,
+	Fire = 2,
+	Spark = 3,
+	Railgun = 4
 };
 
 

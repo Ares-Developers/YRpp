@@ -56,7 +56,7 @@ public:
 	int      SpawnRadius;
 	float    SpawnCutoff;
 	float    SpawnTranslucencyCutoff;
-	BehavesLike::Value BehavesLike;
+	BehavesLike BehavesLike;
 	int      Lifetime;
 	Vector3D<float> SpawnDirection;
 	double   ParticlesPerCoord;
