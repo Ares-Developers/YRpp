@@ -1470,16 +1470,13 @@ typedef DWORD eControlKeyFlags;
 #define ckf_ALT 0x04
 
 
-class Edge {
-public:
-	typedef int Value;
-	enum {
-		North = 0,
-		East = 1,
-		South = 2,
-		West = 3,
-		Air = 4
-	};
+enum class Edge : int {
+	None = -1,
+	North = 0,
+	East = 1,
+	South = 2,
+	West = 3,
+	Air = 4
 };
 
 enum class Move : int {

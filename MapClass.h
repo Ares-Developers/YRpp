@@ -193,11 +193,11 @@ public:
 	int GetCellFloorHeight(const CoordStruct& crd) const
 		{ JMP_THIS(0x578080); }
 
-	CellStruct * PickCellOnEdge(CellStruct &buffer, Edge::Value Edge, const CellStruct &CurrentLocation, const CellStruct &Fallback,
+	CellStruct * PickCellOnEdge(CellStruct &buffer, Edge Edge, const CellStruct &CurrentLocation, const CellStruct &Fallback,
 		SpeedType::Value SpeedType, bool ValidateReachability, MovementZone MovZone) const
 			{ JMP_THIS(0x4AA440); }
 
-	CellStruct PickCellOnEdge(Edge::Value Edge, const CellStruct &CurrentLocation, const CellStruct &Fallback,
+	CellStruct PickCellOnEdge(Edge Edge, const CellStruct &CurrentLocation, const CellStruct &Fallback,
 		SpeedType::Value SpeedType, bool ValidateReachability, MovementZone MovZone) const
 	{
 		CellStruct buffer;
