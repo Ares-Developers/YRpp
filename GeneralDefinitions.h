@@ -648,26 +648,21 @@ public:
 };
 
 // this is how game's enums are to be defined from now on
-class FireError {
-public:
-	typedef unsigned int Value;
-	enum {
-		NotAValue = 0xFF,
-		OK = 0, // no problem, can fire
-		AMMO = 1, // no ammo
-		FACING = 2, // bad facing
-		REARM = 3, // still reloading
-		ROTATING = 4, // busy rotating
-		ILLEGAL = 5, // can't fire
-		CANT = 6, // I'm sorry Dave, I can't do that
-		MOVING = 7, // moving, can't fire
-		RANGE = 8, // out of range
-		CLOAKED = 9, // need to decloak
-		BUSY = 10, // busy, please hold
-		MUST_DEPLOY = 11 // deploy first!
-	};
+enum class FireError : int {
+	NONE = -1, // no valid value
+	OK = 0, // no problem, can fire
+	AMMO = 1, // no ammo
+	FACING = 2, // bad facing
+	REARM = 3, // still reloading
+	ROTATING = 4, // busy rotating
+	ILLEGAL = 5, // can't fire
+	CANT = 6, // I'm sorry Dave, I can't do that
+	MOVING = 7, // moving, can't fire
+	RANGE = 8, // out of range
+	CLOAKED = 9, // need to decloak
+	BUSY = 10, // busy, please hold
+	MUST_DEPLOY = 11 // deploy first!
 };
-
 
 enum class HealthState : unsigned int {
 	Red = 0,

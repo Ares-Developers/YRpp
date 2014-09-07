@@ -174,7 +174,7 @@ ILocomotion : IUnknown
 	virtual bool __stdcall Is_Moving_Now() = 0;	//Is it actually moving across the ground this very second?
 	virtual int __stdcall Apparent_Speed() = 0;	//Actual current speed of object expressed as leptons per game frame.
 	virtual int __stdcall Drawing_Code() = 0;	//Special drawing feedback code (locomotor specific meaning)
-	virtual FireError::Value __stdcall Can_Fire() = 0;	//Queries if any locomotor specific state prevents the object from firing.
+	virtual FireError __stdcall Can_Fire() = 0;	//Queries if any locomotor specific state prevents the object from firing.
 	virtual int __stdcall Get_Status() = 0;	//Queries the general state of the locomotor.
 	virtual void __stdcall Acquire_Hunter_Seeker_Target() = 0;	//Forces a hunter seeker droid to find a target.
 	virtual bool __stdcall Is_Surfacing() = 0;	//Is this object surfacing?
