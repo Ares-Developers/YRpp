@@ -903,14 +903,10 @@ public:
 	};
 };
 
-class PrismChargeState {
-public:
-	typedef int Value;
-	enum {
-		Idle = 0,
-		Master = 1,
-		Slave = 2
-	};
+enum class PrismChargeState : int {
+	Idle = 0,
+	Master = 1,
+	Slave = 2
 };
 
 enum class RadarEventType : int {
