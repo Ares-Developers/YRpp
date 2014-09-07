@@ -851,17 +851,13 @@ public:
 	};
 };
 
-class PipScale {
-public:
-	typedef int Value;
-	enum {
-		None = 0,
-		Ammo = 1,
-		Tiberium = 2,
-		Passengers = 3,
-		Power = 4,
-		MindControl = 5
-	};
+enum class PipScale : unsigned int {
+	None = 0,
+	Ammo = 1,
+	Tiberium = 2,
+	Passengers = 3,
+	Power = 4,
+	MindControl = 5
 };
 
 enum class Powerup : unsigned int {
