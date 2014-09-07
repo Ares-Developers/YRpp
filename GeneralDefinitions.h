@@ -1094,15 +1094,11 @@ public:
 	};
 };
 
-class Rank {
-public:
-	typedef int Value;
-	enum {
-		Invalid = -1,
-		Elite = 0,
-		Veteran = 1,
-		Rookie = 2
-	};
+enum class Rank : int {
+	Invalid = -1,
+	Elite = 0,
+	Veteran = 1,
+	Rookie = 2
 };
 
 enum class Sequence : int {

@@ -55,7 +55,7 @@ struct VeterancyStruct
 		this->Veterancy = static_cast<float>(val);
 	}
 
-	Rank::Value GetRemainingLevel() const {
+	Rank GetRemainingLevel() const {
 		if(this->Veterancy >= 2.0f) {
 			return Rank::Elite;
 		}
@@ -472,7 +472,7 @@ public:
 	AnimClass*       DeployAnim;
 	bool             InAir;
 	int              CurrentWeaponNumber; // for IFV/gattling
-	Rank::Value      CurrentRanking; //see RANK definitons, only used for promotion detection
+	Rank             CurrentRanking; // only used for promotion detection
 	int              CurrentGattlingStage;
 	int              GattlingValue; // sum of RateUps and RateDowns
 	DWORD            unknown_148;
