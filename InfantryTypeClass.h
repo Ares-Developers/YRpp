@@ -22,6 +22,14 @@ struct SubSequenceStruct
 
 struct SequenceStruct
 {
+	SubSequenceStruct& GetSequence(Sequence sequence) {
+		return this->Sequences[static_cast<int>(sequence)];
+	}
+
+	const SubSequenceStruct& GetSequence(Sequence sequence) const {
+		return this->Sequences[static_cast<int>(sequence)];
+	}
+
 	SubSequenceStruct Sequences[42];
 };
 

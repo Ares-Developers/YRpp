@@ -28,7 +28,7 @@ public:
 
 	//InfantryClass
 	virtual bool IsDeployed() const R0;
-	virtual bool PlayAnim(Sequence::Value index, bool force = false, bool randomStartFrame = false) R0;
+	virtual bool PlayAnim(Sequence index, bool force = false, bool randomStartFrame = false) R0;
 
 	//Constructor
 	InfantryClass(InfantryTypeClass* pType, HouseClass* pOwner) : FootClass(false)
@@ -45,7 +45,7 @@ protected:
 public:
 
 	InfantryTypeClass* Type;
-	Sequence::Value SequenceAnim; //which is currently playing
+	Sequence SequenceAnim; //which is currently playing
 	TimerStruct unknown_Timer_6C8;
 	DWORD          PanicDurationLeft; // set in ReceiveDamage on panicky units
 	bool           PermanentBerzerk; // set by script action, not cleared anywhere
