@@ -8,6 +8,10 @@ public:
 	static const size_t CursorCount = 86;
 	static MouseCursor* const First;
 
+	static MouseCursor& GetCursor(MouseCursorType cursor) {
+		return First[static_cast<int>(cursor)];
+	}
+
 	int Frame;
 	int Count;
 	int Interval;
