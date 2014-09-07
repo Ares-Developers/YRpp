@@ -30,7 +30,7 @@ public:
 		{ JMP_THIS(0x435820); }
 
 	// non-virtual
-	void SetBehaviour(SpotlightBehaviour::Value mode)
+	void SetBehaviour(SpotlightBehaviour mode)
 		{ JMP_THIS(0x436BE0); }
 
 protected:
@@ -47,7 +47,7 @@ public:
 	CoordStruct field_C4;
 	double Acceleration;
 	bool Direction;
-	SpotlightBehaviour::Value BehaviourMode;
+	SpotlightBehaviour BehaviourMode;
 	ObjectClass * FollowingObject;
 	TechnoClass * OwnerObject;
 };

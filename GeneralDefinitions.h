@@ -477,15 +477,11 @@ public:
 };
 
 //spotlight behaviour
-class SpotlightBehaviour {
-public:
-	typedef unsigned int Value;
-	enum {
-		None = 0x0,
-		Sweep = 0x1,
-		Circle = 0x2,
-		Follow = 0x3,
-	};
+enum class SpotlightBehaviour : unsigned int {
+	None = 0,
+	Sweep = 1,
+	Circle = 2,
+	Follow = 3
 };
 
 typedef int eSpotlightFlags;
