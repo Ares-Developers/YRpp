@@ -630,14 +630,10 @@ public:
 	};
 };
 
-class KickOutResult {
-public:
-	typedef int Value;
-	enum {
-		Failed = 0,
-		Busy = 1,
-		Succeeded = 2
-	};
+enum class KickOutResult : int {
+	Failed = 0,
+	Busy = 1,
+	Succeeded = 2
 };
 
 class Direction {
