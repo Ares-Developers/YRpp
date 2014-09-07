@@ -1482,19 +1482,15 @@ public:
 	};
 };
 
-class Move {
-public:
-	typedef int Value;
-	enum {
-		OK = 0,
-		Cloak = 1,
-		MovingBlock = 2,
-		ClosedGate = 3,
-		FriendlyDestroyable = 4,
-		Destroyable = 5,
-		Temp = 6,
-		No = 7
-	};
+enum class Move : int {
+	OK = 0,
+	Cloak = 1,
+	MovingBlock = 2,
+	ClosedGate = 3,
+	FriendlyDestroyable = 4,
+	Destroyable = 5,
+	Temp = 6,
+	No = 7
 };
 
 enum class ZGradient : int {

@@ -146,7 +146,7 @@ ILocomotion : IUnknown
 	virtual bool __stdcall Is_Moving() = 0;	//Sees if object is moving.
 	virtual CoordStruct* __stdcall Destination(CoordStruct* pcoord) = 0;	//Fetches destination coordinate.
 	virtual CoordStruct* __stdcall Head_To_Coord(CoordStruct* pcoord) = 0; // Fetches immediate (next cell) destination coordinate.
-	virtual Move::Value __stdcall Can_Enter_Cell(CellStruct cell) = 0; //Determine if specific cell can be entered.
+	virtual Move __stdcall Can_Enter_Cell(CellStruct cell) = 0; //Determine if specific cell can be entered.
 	virtual bool __stdcall Is_To_Have_Shadow() = 0;	//Should object cast a shadow?
 	virtual Matrix3DStruct* __stdcall Draw_Matrix(Matrix3DStruct* pMatrix, int* key) = 0; //Fetch voxel draw matrix.
 	virtual Matrix3DStruct* __stdcall Shadow_Matrix(Matrix3DStruct* pMatrix, int* key) = 0;	//Fetch shadow draw matrix.

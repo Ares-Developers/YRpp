@@ -68,7 +68,7 @@ public:
 			return pcoord;
 		}
 
-	virtual Move::Value __stdcall Can_Enter_Cell(CellStruct cell)
+	virtual Move __stdcall Can_Enter_Cell(CellStruct cell)
 		{ return Move::OK; }
 
 	virtual bool __stdcall Is_To_Have_Shadow()

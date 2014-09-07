@@ -178,7 +178,7 @@ public:
 	virtual void Sell(DWORD dwUnk) RX;
 	virtual void AssignPlanningPath(signed int idxPath, signed char idxWP) RX;
 	virtual void vt_entry_1A8(DWORD dwUnk) RX;
-	virtual Move::Value IsCellOccupied(CellClass *pDestCell, int facing, int level, CellClass* pSourceCell, bool alt) const R0;
+	virtual Move IsCellOccupied(CellClass *pDestCell, int facing, int level, CellClass* pSourceCell, bool alt) const RT(Move);
 	virtual DWORD vt_entry_1B0(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5) R0;
 	virtual void SetLocation(const CoordStruct& crd) RX;
 
