@@ -1169,19 +1169,16 @@ public:
 	};
 };
 
-class SpeedType {
-public:
-	typedef int Value;
-	enum {
-		Foot = 0,
-		Track = 1,
-		Wheel = 2,
-		Hover = 3,
-		Winged = 4,
-		Float = 5,
-		Amphibious = 6,
-		FloatBeach = 7
-	};
+enum class SpeedType : int {
+	None = -1,
+	Foot = 0,
+	Track = 1,
+	Wheel = 2,
+	Hover = 3,
+	Winged = 4,
+	Float = 5,
+	Amphibious = 6,
+	FloatBeach = 7
 };
 
 enum class TheaterType : int {

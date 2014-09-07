@@ -194,11 +194,11 @@ public:
 		{ JMP_THIS(0x578080); }
 
 	CellStruct * PickCellOnEdge(CellStruct &buffer, Edge Edge, const CellStruct &CurrentLocation, const CellStruct &Fallback,
-		SpeedType::Value SpeedType, bool ValidateReachability, MovementZone MovZone) const
+		SpeedType SpeedType, bool ValidateReachability, MovementZone MovZone) const
 			{ JMP_THIS(0x4AA440); }
 
 	CellStruct PickCellOnEdge(Edge Edge, const CellStruct &CurrentLocation, const CellStruct &Fallback,
-		SpeedType::Value SpeedType, bool ValidateReachability, MovementZone MovZone) const
+		SpeedType SpeedType, bool ValidateReachability, MovementZone MovZone) const
 	{
 		CellStruct buffer;
 		this->PickCellOnEdge(buffer, Edge, CurrentLocation, Fallback, SpeedType, ValidateReachability, MovZone);
@@ -215,10 +215,10 @@ public:
 		{ JMP_THIS(0x586990); }
 
 	// Find nearest spot
-	CellStruct* Pathfinding_Find(CellStruct &outBuffer, const CellStruct &position, SpeedType::Value SpeedType, int a5, MovementZone MovementZone, bool alt, int SpaceSizeX, int SpaceSizeY, bool disallowOverlay, bool a11, bool requireBurrowable, bool allowBridge, const CellStruct &closeTo, bool a15, bool buildable)
+	CellStruct* Pathfinding_Find(CellStruct &outBuffer, const CellStruct &position, SpeedType SpeedType, int a5, MovementZone MovementZone, bool alt, int SpaceSizeX, int SpaceSizeY, bool disallowOverlay, bool a11, bool requireBurrowable, bool allowBridge, const CellStruct &closeTo, bool a15, bool buildable)
 		{ JMP_THIS(0x56DC20); }
 
-	CellStruct Pathfinding_Find(const CellStruct &position, SpeedType::Value SpeedType, int a5, MovementZone MovementZone, bool alt, int SpaceSizeX, int SpaceSizeY, bool disallowOverlay, bool a11, bool requireBurrowable, bool allowBridge, const CellStruct &closeTo, bool a15, bool buildable) {
+	CellStruct Pathfinding_Find(const CellStruct &position, SpeedType SpeedType, int a5, MovementZone MovementZone, bool alt, int SpaceSizeX, int SpaceSizeY, bool disallowOverlay, bool a11, bool requireBurrowable, bool allowBridge, const CellStruct &closeTo, bool a15, bool buildable) {
 		CellStruct outBuffer;
 		Pathfinding_Find(outBuffer, position, SpeedType, a5, MovementZone, alt, SpaceSizeX, SpaceSizeY, disallowOverlay, a11, requireBurrowable, allowBridge, closeTo, a15, buildable);
 		return outBuffer;

@@ -130,7 +130,7 @@ public:
 	}
 
 	//Constructor
-	TechnoTypeClass(const char* id, SpeedType::Value speedtype) : ObjectTypeClass(false)
+	TechnoTypeClass(const char* id, SpeedType speedtype) : ObjectTypeClass(false)
 		{ JMP_THIS(0x710AF0); }
 
 protected:
@@ -274,7 +274,7 @@ public:
 	int             ThreatPosed;
 	int             Points;
 	int             Speed;
-	SpeedType::Value SpeedType;
+	SpeedType       SpeedType;
 	int             InitialAmmo;
 	int             Ammo;
 	int             IFVMode;
