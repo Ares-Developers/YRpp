@@ -133,7 +133,7 @@ public:
 	PROTECTED_PROPERTY(BYTE, unused_71[3]);
 	int ReadinessFrame; // when did it become ready?
 	int CameoChargeState;
-	ChargeDrainState::Value ChargeDrainState;
+	ChargeDrainState ChargeDrainState;
 };
 
 class LightningStorm
