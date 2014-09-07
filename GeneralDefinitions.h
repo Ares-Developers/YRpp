@@ -937,17 +937,13 @@ public:
 	};
 };
 
-class PsychicDominatorStatus {
-public:
-	typedef unsigned int Value;
-	enum {
-		Inactive = 0,
-		FirstAnim = 1,
-		Fire = 2,
-		SecondAnim = 3,
-		Reset = 4,
-		Over = 5
-	};
+enum class PsychicDominatorStatus : unsigned int {
+	Inactive = 0,
+	FirstAnim = 1,
+	Fire = 2,
+	SecondAnim = 3,
+	Reset = 4,
+	Over = 5
 };
 
 enum class NukeFlashStatus : unsigned int {

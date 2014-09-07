@@ -176,7 +176,7 @@ public:
 class PsyDom
 {
 public:
-	static PsychicDominatorStatus::Value &Status;
+	static PsychicDominatorStatus &Status;
 	static CellStruct &Coords;
 	static HouseClass* &Owner;
 	static AnimClass* &Anim;
