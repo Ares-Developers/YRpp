@@ -540,22 +540,19 @@ public:
 	};
 };
 
-class Category {
-public:
-	typedef int Value;
-	enum {
-		Soldier = 0,
-		Civilian = 1,
-		VIP = 2,
-		Recon = 3,
-		AFV = 4,
-		IFV = 5,
-		LRFS = 6,
-		Support = 7,
-		Transport = 8,
-		AirPower = 9,
-		AirLift = 10
-	};
+enum class Category : int {
+	Invalid = -1,
+	Soldier = 0,
+	Civilian = 1,
+	VIP = 2,
+	Recon = 3,
+	AFV = 4,
+	IFV = 5,
+	LRFS = 6,
+	Support = 7,
+	Transport = 8,
+	AirPower = 9,
+	AirLift = 10
 };
 
 

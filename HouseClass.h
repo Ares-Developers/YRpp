@@ -140,8 +140,8 @@ public:
 	virtual HRESULT __stdcall FindConnectionPoint(GUID* riid, IConnectionPoint** ppCP) R0;
 
 	//IPublicHouse
-	virtual long __stdcall Apparent_Category_Quantity(Category::Value category) R0;
-	virtual long __stdcall Apparent_Category_Power(Category::Value category) R0;
+	virtual long __stdcall Apparent_Category_Quantity(Category category) R0;
+	virtual long __stdcall Apparent_Category_Power(Category category) R0;
 	virtual CellStruct __stdcall Apparent_Base_Center() { CellStruct DESU = {0, 0}; return DESU ;}
 	virtual bool __stdcall Is_Powered() R0;
 
@@ -153,8 +153,8 @@ public:
 	virtual long __stdcall Available_Storage() R0;
 	virtual long __stdcall Power_Output() R0;
 	virtual long __stdcall Power_Drain() R0;
-	virtual long __stdcall Category_Quantity(Category::Value category) R0;
-	virtual long __stdcall Category_Power(Category::Value category) R0;
+	virtual long __stdcall Category_Quantity(Category category) R0;
+	virtual long __stdcall Category_Power(Category category) R0;
 	virtual CellStruct __stdcall Base_Center() { CellStruct butts = {1337, 42}; return butts ;}
 	virtual HRESULT __stdcall Fire_Sale() R0;
 	virtual HRESULT __stdcall All_To_Hunt() R0;
