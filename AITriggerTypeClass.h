@@ -160,7 +160,7 @@ protected:
 
 public:
 
-	eAITrigCondition ConditionType;
+	AITriggerCondition ConditionType;
 	int              IsGlobal;
 	AITriggerHouseType OwnerHouseType;
 	bool             IsEnabled;

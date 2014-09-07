@@ -425,19 +425,17 @@ enum class AIMode : int {
 	SellAll = 4,
 };
 
-
-typedef int eAITrigCondition;
-
-#define		tc_AIOwns		0x0
-#define		tc_EnemyOwns		0x1
-#define		tc_EnemyYellowPower		0x2
-#define		tc_EnemyRedPower		0x3
-#define		tc_EnemyCashExceeds		0x4
-#define		tc_IronCharged		0x5
-#define		tc_ChronoCharged		0x6
-#define		tc_NeutralOwns		0x7
-#define		tc_Pool		0xFFFFFFFF
-
+enum class AITriggerCondition : int {
+	Pool = -1,
+	AIOwns = 0,
+	EnemyOwns = 1,
+	EnemyYellowPowe = 2,
+	EnemyRedPower = 3,
+	EnemyCashExceeds = 4,
+	IronCharged = 5,
+	ChronoCharged = 6,
+	NeutralOwns = 7
+};
 
 enum class AITriggerHouseType : int {
 	None = 0,
