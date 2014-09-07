@@ -509,35 +509,30 @@ typedef int eBuildCat;
 #define	bcat_Combat		0x5
 
 
-//typedef int eBuildingAnims;
-
-class BuildingAnimSlot {
-public:
-	typedef int Value;
-	enum {
-		Upgrade1 = 0x0,
-		Upgrade2 = 0x1,
-		Upgrade3 = 0x2,
-		Active = 0x3,
-		ActiveTwo = 0x4,
-		ActiveThree = 0x5,
-		ActiveFour = 0x6,
-		Production = 0x7,
-		PreProduction = 0x8,
-		Turret = 0x9,
-		Special = 0xA,
-		SpecialTwo = 0xB,
-		SpecialThree = 0xC,
-		SpecialFour = 0xD,
-		Super = 0xE,
-		SuperTwo = 0xF,
-		SuperThree = 0x10,
-		SuperFour = 0x11,
-		Idle = 0x12,
-		LowPower = 0x13,
-		SuperLowPower = 0x14,
-		All = 0xFFFFFFFE, // -2
-	};
+enum class BuildingAnimSlot : int {
+	All = -2,
+	None = -1,
+	Upgrade1 = 0,
+	Upgrade2 = 1,
+	Upgrade3 = 2,
+	Active = 3,
+	ActiveTwo = 4,
+	ActiveThree = 5,
+	ActiveFour = 6,
+	Production = 7,
+	PreProduction = 8,
+	Turret = 9,
+	Special = 10,
+	SpecialTwo = 11,
+	SpecialThree = 12,
+	SpecialFour = 13,
+	Super = 14,
+	SuperTwo = 15,
+	SuperThree = 16,
+	SuperFour = 17,
+	Idle = 18,
+	LowPower = 19,
+	SuperLowPower = 20
 };
 
 enum class Category : int {

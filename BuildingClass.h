@@ -94,28 +94,28 @@ public:
 		{ JMP_THIS(0x441F60); }
 
 	// destroys the specific animation (active, turret, special, etc)
-	void DestroyNthAnim(BuildingAnimSlot::Value Slot)
+	void DestroyNthAnim(BuildingAnimSlot Slot)
 		{ JMP_THIS(0x451E40); }
 
-	void PlayNthAnim(BuildingAnimSlot::Value Slot, int effectDelay = 0) {
+	void PlayNthAnim(BuildingAnimSlot Slot, int effectDelay = 0) {
 		bool Damaged = !this->IsGreenHP();
 		bool Garrisoned = this->GetOccupantCount() > 0;
 
-		BuildingAnimStruct *AnimData = &this->Type->BuildingAnim[Slot];
+		auto& AnimData = this->Type->GetBuildingAnim(Slot);
 		const char *AnimName = nullptr;
 		if(Damaged) {
-			AnimName = AnimData->Damaged;
+			AnimName = AnimData.Damaged;
 		} else if(Garrisoned) {
-			AnimName = AnimData->Garrisoned;
+			AnimName = AnimData.Garrisoned;
 		} else {
-			AnimName = AnimData->Anim;
+			AnimName = AnimData.Anim;
 		}
 		if(AnimName && *AnimName) {
 			this->PlayAnim(AnimName, Slot, Damaged, Garrisoned, effectDelay);
 		}
 	}
 
-	void PlayAnim(const char* animName, BuildingAnimSlot::Value Slot, bool Damaged, bool Garrisoned, int effectDelay = 0)
+	void PlayAnim(const char* animName, BuildingAnimSlot Slot, bool Damaged, bool Garrisoned, int effectDelay = 0)
 		{ JMP_THIS(0x451890); }
 
 	// when the building is switched off

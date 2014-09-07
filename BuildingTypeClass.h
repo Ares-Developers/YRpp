@@ -77,6 +77,14 @@ public:
 		return this->TogglePower && (this->PowerDrain > 0 || this->Powered);
 	}
 
+	BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot) {
+		return this->BuildingAnim[static_cast<int>(slot)];
+	}
+
+	const BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot) const {
+		return this->BuildingAnim[static_cast<int>(slot)];
+	}
+
 protected:
 	BuildingTypeClass() : TechnoTypeClass(false) { }
 
