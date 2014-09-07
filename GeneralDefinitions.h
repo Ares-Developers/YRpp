@@ -859,24 +859,21 @@ enum class Mission : int {
 	SpyplaneOverfly = 32
 };
 
-class MovementZone {
-public:
-	typedef int Value;
-	enum {
-		Normal = 0,
-		Crusher = 1,
-		Destroyer = 2,
-		AmphibiousDestroyer = 3,
-		AmphibiousCrusher = 4,
-		Amphibious = 5,
-		Subterrannean = 6,
-		Infantry = 7,
-		InfantryDestroyer = 8,
-		Fly = 9,
-		Water = 10,
-		WaterBeach = 11,
-		CrusherAll = 12
-	};
+enum class MovementZone : int {
+	None = -1,
+	Normal = 0,
+	Crusher = 1,
+	Destroyer = 2,
+	AmphibiousDestroyer = 3,
+	AmphibiousCrusher = 4,
+	Amphibious = 5,
+	Subterrannean = 6,
+	Infantry = 7,
+	InfantryDestroyer = 8,
+	Fly = 9,
+	Water = 10,
+	WaterBeach = 11,
+	CrusherAll = 12
 };
 
 class Pip {

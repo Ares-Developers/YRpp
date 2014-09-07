@@ -239,7 +239,7 @@ public:
 	int             ActivateSound;
 	int             DeactivateSound;
 	int             MindClearedSound;
-	MovementZone::Value MovementZone;
+	MovementZone    MovementZone;
 	int             GuardRange;
 	int             MinDebris;
 	int             MaxDebris;
