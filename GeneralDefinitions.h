@@ -607,17 +607,13 @@ public:
 	};
 };
 
-class DamageState {
-public:
-	typedef int Value;
-	enum {
-		Unaffected = 0,
-		Unchanged = 1,
-		NowYellow = 2,
-		NowRed = 3,
-		NowDead = 4,
-		PostMortem = 5
-	};
+enum class DamageState : int {
+	Unaffected = 0,
+	Unchanged = 1,
+	NowYellow = 2,
+	NowRed = 3,
+	NowDead = 4,
+	PostMortem = 5
 };
 
 enum class DamageAreaResult : int {
