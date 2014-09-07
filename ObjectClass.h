@@ -143,7 +143,7 @@ public:
 	virtual void DrawAgain(Point2D* pLocation, RectangleStruct* pBounds) const RX; // just forwards the call to Draw
 	virtual void Undiscover() RX;
 	virtual void See(DWORD dwUnk, DWORD dwUnk2) RX;
-	virtual bool UpdatePlacement(PlacementType::Value value) R0;
+	virtual bool UpdatePlacement(PlacementType value) R0;
 	virtual RectangleStruct* vt_entry_128(RectangleStruct* pRect) const R0;
 	virtual RectangleStruct* vt_entry_12C(RectangleStruct* pRect) R0;
 	virtual void DrawRadialIndicator(DWORD dwUnk) RX;

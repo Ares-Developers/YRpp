@@ -803,15 +803,11 @@ public:
 	};
 };
 
-class PlacementType {
-public:
-	typedef int Value;
-	enum {
-		Remove = 0,
-		Put = 1,
-		Redraw = 2,
-		AddContent = 3
-	};
+enum class PlacementType : int {
+	Remove = 0,
+	Put = 1,
+	Redraw = 2,
+	AddContent = 3
 };
 
 enum class MouseHotSpotX : int {
