@@ -218,7 +218,7 @@ public:
 class NukeFlash
 {
 public:
-	static NukeFlashStatus::Value &Status;
+	static NukeFlashStatus &Status;
 	static int &StartTime;
 	static int &Duration;
 
