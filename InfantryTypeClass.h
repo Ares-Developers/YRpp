@@ -75,8 +75,8 @@ protected:
 public:
 
 	int ArrayIndex;
-	Pip::Value Pip;
-	Pip::Value OccupyPip;
+	PipIndex Pip;
+	PipIndex OccupyPip;
 	WeaponStruct OccupyWeapon;
 	WeaponStruct EliteOccupyWeapon;
 	SequenceStruct* Sequence;

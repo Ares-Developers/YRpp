@@ -831,24 +831,20 @@ enum class MovementZone : int {
 	CrusherAll = 12
 };
 
-class Pip {
-public:
-	typedef int Value;
-	enum {
-		Empty = 0,
-		Green = 1,
-		Yellow = 2,
-		White = 3,
-		Red = 4,
-		Blue = 5,
-		PersonEmpty = 6,
-		PersonGreen = 7,
-		PersonYellow = 8,
-		PersonWhite = 9,
-		PersonRed = 10,
-		PersonBlue = 11,
-		PersonPurple = 12
-	};
+enum class PipIndex : unsigned int {
+	Empty = 0,
+	Green = 1,
+	Yellow = 2,
+	White = 3,
+	Red = 4,
+	Blue = 5,
+	PersonEmpty = 6,
+	PersonGreen = 7,
+	PersonYellow = 8,
+	PersonWhite = 9,
+	PersonRed = 10,
+	PersonBlue = 11,
+	PersonPurple = 12
 };
 
 enum class PipScale : unsigned int {
