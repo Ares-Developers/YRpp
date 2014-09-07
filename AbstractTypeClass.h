@@ -49,7 +49,7 @@ public:
 	virtual ~AbstractTypeClass() RX;
 
 	//AbstractTypeClass
-	virtual void LoadTheaterSpecificArt(TheaterType::Value th_type) RX;
+	virtual void LoadTheaterSpecificArt(TheaterType th_type) RX;
 	virtual bool LoadFromINI(CCINIClass* pINI) R0;
 	virtual bool SaveToINI(CCINIClass* pINI) R0;
 

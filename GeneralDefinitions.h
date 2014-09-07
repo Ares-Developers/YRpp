@@ -1184,17 +1184,14 @@ public:
 	};
 };
 
-class TheaterType {
-public:
-	typedef int Value;
-	enum {
-		Temperate = 0,
-		Snow = 1,
-		Urban = 2,
-		Desert = 3,
-		NewUrban = 4,
-		Lunar = 5,
-	};
+enum class TheaterType : int {
+	None = -1,
+	Temperate = 0,
+	Snow = 1,
+	Urban = 2,
+	Desert = 3,
+	NewUrban = 4,
+	Lunar = 5,
 };
 
 //typedef int eVisualType;

@@ -126,7 +126,7 @@ public:
 	TimerStruct unknown_timer_123c;
 	TimerStruct AmbientTimer;
 	int TechLevel;
-	int Theater;
+	TheaterType Theater;
 	char FileName [0x104];
 	wchar_t Name [0x2D];
 	char UIName [0x20];
