@@ -38,7 +38,7 @@ public:
 	void DamageArea(const CoordStruct& location) const
 		{ JMP_THIS(0x75F330); }
 
-	WaveClass(const CoordStruct& From, const CoordStruct& To, TechnoClass *Owner, WaveType::Value mode, AbstractClass *Target) : ObjectClass(false)
+	WaveClass(const CoordStruct& From, const CoordStruct& To, TechnoClass *Owner, WaveType mode, AbstractClass *Target) : ObjectClass(false)
 		{ JMP_THIS(0x75E950); }
 
 protected:
@@ -51,7 +51,7 @@ protected:
 public:
 
 	TechnoClass* Target;
-	WaveType::Value Type;
+	WaveType Type;
 	Point2D someCoords;
 	DWORD field_BC;
 	DWORD field_C0;

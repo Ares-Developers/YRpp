@@ -1376,15 +1376,11 @@ public:
 	};
 };
 
-class WaveType {
-public:
-	typedef int Value;
-	enum {
-		Sonic = 0,
-		Laser = 1,
-		BigLaser = 2,
-		Magnetron = 3
-	};
+enum class WaveType : int {
+	Sonic = 0,
+	Laser = 1,
+	BigLaser = 2,
+	Magnetron = 3
 };
 
 enum class TargetType : unsigned int {
