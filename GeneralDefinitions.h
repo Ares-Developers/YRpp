@@ -91,82 +91,81 @@ typedef int eAbstractType;
 #define	abs_DiskLaser		0x49
 
 
-typedef int eAction;
-
-#define	act_None		0x0
-#define	act_Move		0x1
-#define	act_NoMove		0x2
-#define	act_Enter		0x3
-#define	act_Self_Deploy		0x4
-#define	act_Attack		0x5
-#define	act_Harvest		0x6
-#define	act_Select		0x7
-#define	act_ToggleSelect		0x8
-#define	act_Capture		0x9
-#define	act_Eaten		0xA
-#define	act_Repair		0xB
-#define	act_Sell		0xC
-#define	act_SellUnit		0xD
-#define	act_NoSell		0xE
-#define	act_NoRepair		0xF
-#define	act_Sabotage		0x10
-#define	act_Tote		0x11
-#define	act_DontUse2		0x12
-#define	act_DontUse3		0x13
-#define	act_Nuke		0x14
-#define	act_DontUse4		0x15
-#define	act_DontUse5		0x16
-#define	act_DontUse6		0x17
-#define	act_DontUse7		0x18
-#define	act_DontUse8		0x19
-#define	act_GuardArea		0x1A
-#define	act_Heal		0x1B
-#define	act_Damage		0x1C
-#define	act_GRepair		0x1D
-#define	act_NoDeploy		0x1E
-#define	act_NoEnter		0x1F
-#define	act_NoGRepair		0x20
-#define	act_TogglePower		0x21
-#define	act_NoTogglePower		0x22
-#define	act_EnterTunnel		0x23
-#define	act_NoEnterTunnel		0x24
-#define	act_IronCurtain		0x25
-#define	act_LightningStorm		0x26
-#define	act_ChronoSphere		0x27
-#define	act_ChronoWarp		0x28
-#define	act_ParaDrop		0x29
-#define	act_PlaceWaypoint		0x2A
-#define	act_TibSunBug		0x2B
-#define	act_EnterWaypointMode		0x2C
-#define	act_FollowWaypoint		0x2D
-#define	act_SelectWaypoint		0x2E
-#define	act_LoopWaypointPath		0x2F
-#define	act_DragWaypoint		0x30
-#define	act_AttackWaypoint		0x31
-#define	act_EnterWaypoint		0x32
-#define	act_PatrolWaypoint		0x33
-#define	act_AreaAttack		0x34
-#define	act_IvanBomb		0x35
-#define	act_NoIvanBomb		0x36
-#define	act_Detonate		0x37
-#define	act_DetonateAll		0x38
-#define	act_DisarmBomb		0x39
-#define	act_SelectNode		0x3A
-#define	act_AttackSupport		0x3B
-#define	act_PlaceBeacon		0x3C
-#define	act_SelectBeacon		0x3D
-#define	act_AttackMoveNav		0x3E
-#define	act_AttackMoveTar		0x3F
-#define	act_Demolish		0x40
-#define	act_AmerParaDrop		0x41
-#define	act_PsychicDominator		0x42
-#define	act_SpyPlane		0x43
-#define	act_GeneticConverter		0x44
-#define	act_ForceShield		0x45
-#define	act_NoForceShield		0x46
-#define	act_Airstrike		0x47
-#define	act_PsychicReveal		0x48
-
+enum class Action : unsigned int {
+	None = 0,
+	Move = 1,
+	NoMove = 2,
+	Enter = 3,
+	Self_Deploy = 4,
+	Attack = 5,
+	Harvest = 6,
+	Select = 7,
+	ToggleSelect = 8,
+	Capture = 9,
+	Eaten = 10,
+	Repair = 11,
+	Sell = 12,
+	SellUnit = 13,
+	NoSell = 14,
+	NoRepair = 15,
+	Sabotage = 16,
+	Tote = 17,
+	DontUse2 = 18,
+	DontUse3 = 19,
+	Nuke = 20,
+	DontUse4 = 21,
+	DontUse5 = 22,
+	DontUse6 = 23,
+	DontUse7 = 24,
+	DontUse8 = 25,
+	GuardArea = 26,
+	Heal = 27,
+	Damage = 28,
+	GRepair = 29,
+	NoDeploy = 30,
+	NoEnter = 31,
+	NoGRepair = 32,
+	TogglePower = 33,
+	NoTogglePower = 34,
+	EnterTunnel = 35,
+	NoEnterTunnel = 36,
+	IronCurtain = 37,
+	LightningStorm = 38,
+	ChronoSphere = 39,
+	ChronoWarp = 40,
+	ParaDrop = 41,
+	PlaceWaypoint = 42,
+	TibSunBug = 43,
+	EnterWaypointMode = 44,
+	FollowWaypoint = 45,
+	SelectWaypoint = 46,
+	LoopWaypointPath = 47,
+	DragWaypoint = 48,
+	AttackWaypoint = 49,
+	EnterWaypoint = 50,
+	PatrolWaypoint = 51,
+	AreaAttack = 52,
+	IvanBomb = 53,
+	NoIvanBomb = 54,
+	Detonate = 55,
+	DetonateAll = 56,
+	DisarmBomb = 57,
+	SelectNode = 58,
+	AttackSupport = 59,
+	PlaceBeacon = 60,
+	SelectBeacon = 61,
+	AttackMoveNav = 62,
+	AttackMoveTar = 63,
+	Demolish = 64,
+	AmerParaDrop = 65,
+	PsychicDominator = 66,
+	SpyPlane = 67,
+	GeneticConverter = 68,
+	ForceShield = 69,
+	NoForceShield = 70,
+	Airstrike = 71,
+	PsychicReveal = 72
+};
 
 class Abilities {
 public:

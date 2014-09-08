@@ -36,10 +36,10 @@ public:
 	virtual int Size() const R0;
 
 	//SuperWeaponTypeClass
-	virtual eAction MouseOverObject(DWORD dwUnk, ObjectClass* pObjBelowMouse) const R0;
+	virtual Action MouseOverObject(DWORD dwUnk, ObjectClass* pObjBelowMouse) const RT(::Action);
 
 	// non-virtual
-	static SuperWeaponTypeClass * __fastcall FindFirstOfAction(eAction Action)
+	static SuperWeaponTypeClass * __fastcall FindFirstOfAction(Action Action)
 		{ JMP_STD(0x6CEEB0); }
 
 	//Constructor
@@ -68,7 +68,7 @@ public:
 	int     RechargeTime; //in frames
 	SuperWeaponType Type;
 	SHPStruct* SidebarImage;
-	eAction Action; //ACTION definitions
+	Action Action;
 	int     SpecialSound;
 	int     StartSound;
 	BuildingTypeClass* AuxBuilding;

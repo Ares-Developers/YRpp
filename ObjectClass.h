@@ -56,8 +56,8 @@ public:
 	virtual bool IsSelectable() const R0;
 	virtual VisualType VisualCharacter(VARIANT_BOOL SpecificOwner, HouseClass * WhoIsAsking) const RT(VisualType);
 	virtual SHPStruct* GetImage() const R0;
-	virtual eAction MouseOverCell(CellStruct uCell, bool bUnk1, bool bUnk2) const R0;
-	virtual eAction MouseOverObject(ObjectClass* pObj, bool bUnk1) const R0;
+	virtual Action MouseOverCell(CellStruct uCell, bool bUnk1, bool bUnk2) const RT(Action);
+	virtual Action MouseOverObject(ObjectClass* pObj, bool bUnk1) const RT(Action);
 	virtual Layer::Value InWhichLayer() const R0;
 	virtual bool IsSurfaced() R0; // opposed to being submerged
 
@@ -151,7 +151,7 @@ public:
 	virtual bool CanBeSelected() const R0;
 	virtual bool CanBeSelectedNow() const R0;
 	virtual bool vt_entry_140(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) R0;
-	virtual bool ClickedAction(eAction Action, ObjectClass *Target, bool bUnk) R0;
+	virtual bool ClickedAction(Action Action, ObjectClass *Target, bool bUnk) R0;
 	virtual void Flash(int Duration) RX;
 	virtual bool Select() R0;
 	virtual void Deselect() RX;

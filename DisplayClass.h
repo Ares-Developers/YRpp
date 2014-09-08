@@ -72,31 +72,30 @@ public:
 	virtual void vt_entry_114(Point2D* pPoint) RX;
 
 	//Decides which mouse pointer to set and then does it.
-	//Mouse is over cell pMapCoords which is bShrouded and holds pObject,
-	//the Action given is eAction.
+	//Mouse is over cell pMapCoords which is bShrouded and holds pObject.
 	virtual void ConvertAction(
 		CellStruct* pMapCoords,
 		bool bShrouded,
 		ObjectClass* pObject,
-		eAction nAction,
+		Action action,
 		DWORD dwUnk) RX;
 	virtual void LeftMouseButtonDown(Point2D* pPoint) RX;
 	virtual void LeftMouseButtonUp(
 		DWORD dwUnk1,
 		CellStruct* pMapCoords,
 		ObjectClass* pObject,
-		eAction nAction,
+		Action action,
 		DWORD dwUnk2) RX;
 	virtual void RightMouseButtonUp(DWORD dwUnk) RX;
 
 	//Non-virtual
 
-	void LMBUp(CoordStruct *XYZ, CellStruct* pMapCoords, ObjectClass* pObject, eAction nAction, DWORD dwUnk2)
+	void LMBUp(CoordStruct *XYZ, CellStruct* pMapCoords, ObjectClass* pObject, Action action, DWORD dwUnk2)
 		{ JMP_THIS(0x4AB9B0); }
 	void RMBUp(DWORD dwUnk)
 		{ JMP_THIS(0x4AAD30); }
 
-	eAction DecideAction(CellStruct* pMapCoords, ObjectClass* pObject, DWORD dwUnk)
+	Action DecideAction(CellStruct* pMapCoords, ObjectClass* pObject, DWORD dwUnk)
 		{ JMP_THIS(0x692610); }
 
 
