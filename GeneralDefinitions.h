@@ -1171,57 +1171,55 @@ typedef int eRadioCommands;
 #define	rc_RadioWantRide		36
 
 
-// networking
-typedef int eNetworkEvents;
-
-#define	netev_EMPTY		0x0
-#define	netev_POWERON		0x1
-#define	netev_POWEROFF		0x2
-#define	netev_ALLY		0x3
-#define	netev_MEGAMISSION		0x4
-#define	netev_MEGAMISSION_F		0x5
-#define	netev_IDLE		0x6
-#define	netev_SCATTER		0x7
-#define	netev_DESTRUCT		0x8
-#define	netev_DEPLOY		0x9
-#define	netev_DETONATE		0xA
-#define	netev_PLACE		0xB
-#define	netev_OPTIONS		0xC
-#define	netev_GAMESPEED		0xD
-#define	netev_PRODUCE		0xE
-#define	netev_SUSPEND		0xF
-#define	netev_ABANDON		0x10
-#define	netev_PRIMARY		0x11
-#define	netev_SPECIAL_PLACE		0x12
-#define	netev_EXIT		0x13
-#define	netev_ANIMATION		0x14
-#define	netev_REPAIR		0x15
-#define	netev_SELL		0x16
-#define	netev_SELLCELL		0x17
-#define	netev_SPECIAL		0x18
-#define	netev_FRAMESYNC		0x19
-#define	netev_MESSAGE		0x1A
-#define	netev_RESPONSE_TIME		0x1B
-#define	netev_FRAMEINFO		0x1C
-#define	netev_SAVEGAME		0x1D
-#define	netev_ARCHIVE		0x1E
-#define	netev_ADDPLAYER		0x1F
-#define	netev_TIMING		0x20
-#define	netev_PROCESS_TIME		0x21
-#define	netev_PAGEUSER		0x22
-#define	netev_REMOVEPLAYER		0x23
-#define	netev_LATENCYFUDGE		0x24
-#define	netev_MEGAFRAMEINFO		0x25
-#define	netev_PACKETTIMING		0x26
-#define	netev_ABOUTTOEXIT		0x27
-#define	netev_FALLBACKHOST		0x28
-#define	netev_ADDRESSCHANGE		0x29
-#define	netev_PLANCONNECT		0x2A
-#define	netev_PLANCOMMIT		0x2B
-#define	netev_PLANNODEDELETE		0x2C
-#define	netev_ALLCHEER		0x2D
-#define	netev_ABANDON_ALL		0x2E
-
+enum class NetworkEvents : unsigned char {
+	Empty = 0x0,
+	PowerOn = 0x1,
+	PowerOff = 0x2,
+	Ally = 0x3,
+	MegaMission = 0x4,
+	MegaMissionF = 0x5,
+	Idle = 0x6,
+	Scatter = 0x7,
+	Destruct = 0x8,
+	Deploy = 0x9,
+	Detonate = 0xA,
+	Place = 0xB,
+	Options = 0xC,
+	GameSpeed = 0xD,
+	Produce = 0xE,
+	Suspend = 0xF,
+	Abandon = 0x10,
+	Primary = 0x11,
+	SpecialPlace = 0x12,
+	Exit = 0x13,
+	Animation = 0x14,
+	Repair = 0x15,
+	Sell = 0x16,
+	SellCell = 0x17,
+	Special = 0x18,
+	FrameSync = 0x19,
+	Message = 0x1A,
+	ResponseTime = 0x1B,
+	FrameInfo = 0x1C,
+	SaveGame = 0x1D,
+	Archive = 0x1E,
+	AddPlayer = 0x1F,
+	Timing = 0x20,
+	ProcessTime = 0x21,
+	PageUser = 0x22,
+	RemovePlayer = 0x23,
+	LatencyFudge = 0x24,
+	MegaFrameInfo = 0x25,
+	PacketTiming = 0x26,
+	AboutToExit = 0x27,
+	FallbackHost = 0x28,
+	AddressChange = 0x29,
+	PlanConnect = 0x2A,
+	PlanCommit = 0x2B,
+	PlanNodeDelete = 0x2C,
+	AllCheer = 0x2D,
+	AbandonAll = 0x2E
+};
 
 // Sound specific
 enum class SoundPriority : int {
