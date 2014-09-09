@@ -11,7 +11,7 @@ struct FixedString {
 
 	typedef T data_type[Capacity];
 
-	FixedString(const T* value = nullptr) {
+	explicit FixedString(const T* value = nullptr) {
 		*this = value;
 	}
 
