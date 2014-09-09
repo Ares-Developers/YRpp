@@ -16,7 +16,7 @@ class ParticleSystemClass;
 class VoxelAnimClass : public ObjectClass
 {
 public:
-	enum {AbsID = abs_VoxelAnim};
+	static const AbstractType AbsID = AbstractType::VoxelAnim;
 
 	//Static
 	static DynamicVectorClass<VoxelAnimClass*>* Array;
@@ -31,7 +31,7 @@ public:
 	virtual ~VoxelAnimClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int	Size() const R0;
 
 	//ObjectClass

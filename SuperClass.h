@@ -14,7 +14,7 @@ class HouseClass;
 class SuperClass : public AbstractClass
 {
 public:
-	enum {AbsID = abs_Super};
+	static const AbstractType AbsID = AbstractType::Super;
 
 	//Static
 	static DynamicVectorClass<SuperClass*>* Array;
@@ -27,7 +27,7 @@ public:
 	virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//Destructor

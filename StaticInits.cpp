@@ -606,7 +606,7 @@ int HouseClass::CountOwnedNowTotal(const TechnoTypeClass *Item) const {
 	const InfantryTypeClass *IT = nullptr;
 
 	switch(Item->WhatAmI()) {
-		case abs_BuildingType:
+		case AbstractType::BuildingType:
 			BT = static_cast<const BuildingTypeClass *>(Item);
 			if(BT->PowersUpBuilding[0]) {
 				if(auto plug = BuildingTypeClass::Find(BT->PowersUpBuilding)) {
@@ -629,7 +629,7 @@ int HouseClass::CountOwnedNowTotal(const TechnoTypeClass *Item) const {
 			}
 		break;
 
-		case abs_UnitType:
+	case AbstractType::UnitType:
 			Sum = this->OwnedUnitTypes.GetItemCount(Index);
 			UT = static_cast<const UnitTypeClass *>(Item);
 			BT = UT->DeploysInto;
@@ -638,7 +638,7 @@ int HouseClass::CountOwnedNowTotal(const TechnoTypeClass *Item) const {
 			}
 		break;
 
-		case abs_InfantryType:
+	case AbstractType::InfantryType:
 			Sum = this->OwnedInfantryTypes.GetItemCount(Index);
 			IT = static_cast<const InfantryTypeClass *>(Item);
 			if(IT->VehicleThief) {
@@ -651,7 +651,7 @@ int HouseClass::CountOwnedNowTotal(const TechnoTypeClass *Item) const {
 			}
 		break;
 
-		case abs_AircraftType:
+	case AbstractType::AircraftType:
 			Sum = this->OwnedAircraftTypes.GetItemCount(Index);
 		break;
 
@@ -664,16 +664,16 @@ int HouseClass::CountOwnedNowTotal(const TechnoTypeClass *Item) const {
 int HouseClass::CountOwnedNow(const TechnoTypeClass *Item) const {
 	int Index = Item->GetArrayIndex();
 	switch(Item->WhatAmI()) {
-		case abs_BuildingType:
+		case AbstractType::BuildingType:
 			return this->OwnedBuildingTypes.GetItemCount(Index);
 
-		case abs_UnitType:
+		case AbstractType::UnitType:
 			return this->OwnedUnitTypes.GetItemCount(Index);
 
-		case abs_InfantryType:
+		case AbstractType::InfantryType:
 			return this->OwnedInfantryTypes.GetItemCount(Index);
 
-		case abs_AircraftType:
+		case AbstractType::AircraftType:
 			return this->OwnedAircraftTypes.GetItemCount(Index);
 
 		default:
@@ -684,16 +684,16 @@ int HouseClass::CountOwnedNow(const TechnoTypeClass *Item) const {
 int HouseClass::CountOwnedAndPresent(const TechnoTypeClass *Item) const {
 	int Index = Item->GetArrayIndex();
 	switch(Item->WhatAmI()) {
-		case abs_BuildingType:
+		case AbstractType::BuildingType:
 			return this->OwnedBuildingTypes1.GetItemCount(Index);
 
-		case abs_UnitType:
+		case AbstractType::UnitType:
 			return this->OwnedUnitTypes1.GetItemCount(Index);
 
-		case abs_InfantryType:
+		case AbstractType::InfantryType:
 			return this->OwnedInfantryTypes1.GetItemCount(Index);
 
-		case abs_AircraftType:
+		case AbstractType::AircraftType:
 			return this->OwnedAircraftTypes1.GetItemCount(Index);
 
 		default:
@@ -704,16 +704,16 @@ int HouseClass::CountOwnedAndPresent(const TechnoTypeClass *Item) const {
 int HouseClass::CountOwnedEver(const TechnoTypeClass *Item) const {
 	int Index = Item->GetArrayIndex();
 	switch(Item->WhatAmI()) {
-		case abs_BuildingType:
+		case AbstractType::BuildingType:
 			return this->OwnedBuildingTypes2.GetItemCount(Index);
 
-		case abs_UnitType:
+		case AbstractType::UnitType:
 			return this->OwnedUnitTypes2.GetItemCount(Index);
 
-		case abs_InfantryType:
+		case AbstractType::InfantryType:
 			return this->OwnedInfantryTypes2.GetItemCount(Index);
 
-		case abs_AircraftType:
+		case AbstractType::AircraftType:
 			return this->OwnedAircraftTypes2.GetItemCount(Index);
 
 		default:

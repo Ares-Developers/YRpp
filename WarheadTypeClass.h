@@ -23,7 +23,7 @@ struct WarheadFlags {
 class WarheadTypeClass : public AbstractTypeClass
 {
 public:
-	enum {AbsID = abs_WarheadType};
+	static const AbstractType AbsID = AbstractType::WarheadType;
 
 	//Array
 	ABSTRACTTYPE_ARRAY(WarheadTypeClass);
@@ -39,7 +39,7 @@ public:
 	virtual ~WarheadTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//AbstractTypeClass

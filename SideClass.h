@@ -10,7 +10,7 @@
 class SideClass : public AbstractTypeClass
 {
 public:
-	enum {AbsID = abs_Side};
+	static const AbstractType AbsID = AbstractType::Side;
 
 	//Array
 	ABSTRACTTYPE_ARRAY(SideClass);
@@ -26,7 +26,7 @@ public:
 	virtual ~SideClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//Constructor

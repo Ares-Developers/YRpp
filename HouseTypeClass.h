@@ -14,7 +14,7 @@ class UnitTypeClass;
 class HouseTypeClass : public AbstractTypeClass
 {
 public:
-	enum {AbsID = abs_HouseType};
+	static const AbstractType AbsID = AbstractType::HouseType;
 
 	//Array
 	ABSTRACTTYPE_ARRAY(HouseTypeClass);
@@ -30,7 +30,7 @@ public:
 	virtual ~HouseTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int	Size() const R0;
 
 	//Constructor

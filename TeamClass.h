@@ -12,7 +12,7 @@ class TagClass;
 class TeamClass : public AbstractClass
 {
 public:
-	enum {AbsID = abs_Team};
+	static const AbstractType AbsID = AbstractType::Team;
 
 	//Static
 	static DynamicVectorClass<TeamClass*>* Array;
@@ -36,7 +36,7 @@ public:
 		{ JMP_THIS(0x6EA870); }
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//Constructor

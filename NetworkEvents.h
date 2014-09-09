@@ -42,7 +42,7 @@ struct NetworkEvent {
 		memset(this, 0, sizeof(*this));
 	}
 
-	NetworkEvent * FillEvent_ProduceAbandonSuspend(int PlayerNumber, eNetworkEvents eventKind, int abstractId, int idx, int isNaval)
+	NetworkEvent * FillEvent_ProduceAbandonSuspend(int PlayerNumber, eNetworkEvents eventKind, AbstractType abstractId, int idx, int isNaval)
 		{ JMP_THIS(0x4C6970); }
 
 	NetworkEvent * FillEvent_SellCell(int dwUnk, eNetworkEvents eventKind, CellStruct *Coords)

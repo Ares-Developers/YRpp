@@ -45,7 +45,7 @@ public:
 
 	static DynamicVectorClass<SpawnManagerClass *>* Array;
 
-	enum {AbsID = abs_SpawnManager};
+	static const AbstractType AbsID = AbstractType::SpawnManager;
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
@@ -58,7 +58,7 @@ public:
 	virtual ~SpawnManagerClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//Constructor

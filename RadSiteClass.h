@@ -13,6 +13,8 @@ class WeaponTypeClass;
 class RadSiteClass : public AbstractClass
 {
 public:
+	static const AbstractType AbsID = AbstractType::RadSite;
+
 	//Static
 	static DynamicVectorClass<RadSiteClass*>* Array;
 
@@ -27,7 +29,7 @@ public:
 	virtual ~RadSiteClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//CUSTOM Constructor (to make things easier)

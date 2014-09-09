@@ -8,7 +8,7 @@ class TechnoClass;
 class UnitTypeClass : public TechnoTypeClass
 {
 public:
-	enum {AbsID = abs_UnitType};
+	static const AbstractType AbsID = AbstractType::UnitType;
 
 	//Array
 	ABSTRACTTYPE_ARRAY(UnitTypeClass);
@@ -24,7 +24,7 @@ public:
 	virtual ~UnitTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//AbstractTypeClass

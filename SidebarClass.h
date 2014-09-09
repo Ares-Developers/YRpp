@@ -11,17 +11,17 @@ class FactoryClass;
 struct CameoDataStruct
 {
 	int               ItemIndex;
-	eAbstractType     ItemType;
+	AbstractType      ItemType;
 	bool              IsAlt; // set on buildings that go on tab 2
 	FactoryClass*     CurrentFactory;
 	DWORD             unknown_10;
 	ProgressTimer     Progress; // 0 to 54, how much of this object is constructed (gclock anim level)
 	int               FlashEndFrame;
 
-	CameoDataStruct() : CameoDataStruct(0, 0)
+	CameoDataStruct() : CameoDataStruct(0, AbstractType::None)
 		{ }
 
-	CameoDataStruct(int itemIndex, eAbstractType itemType) :
+	CameoDataStruct(int itemIndex, AbstractType itemType) :
 		ItemIndex(itemIndex),
 		ItemType(itemType),
 		IsAlt(0),
@@ -40,10 +40,10 @@ struct CameoDataStruct
 	}
 
 	bool operator < (const CameoDataStruct &rhs) const {
-		return SortsBefore(this->ItemType, this->ItemIndex, rhs.ItemType, rhs.ItemType);
+		return SortsBefore(this->ItemType, this->ItemIndex, rhs.ItemType, rhs.ItemIndex);
 	}
 
-	static bool __stdcall SortsBefore(eAbstractType leftType, int leftIndex, eAbstractType rightType, int rightIndex)
+	static bool __stdcall SortsBefore(AbstractType leftType, int leftIndex, AbstractType rightType, int rightIndex)
 		{ JMP_STD(0x6A8420); }
 };
 
@@ -110,7 +110,7 @@ public:
 	//Non-virtual
 
 	// which tab does the 'th object of that type belong in?
-	static int __fastcall GetObjectTabIdx(eAbstractType WhatIsIt, int IdxIt, int unused)
+	static int __fastcall GetObjectTabIdx(AbstractType WhatIsIt, int IdxIt, int unused)
 		{ JMP_STD(0x6ABC60); }
 
 protected:

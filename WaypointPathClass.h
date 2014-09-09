@@ -21,6 +21,8 @@ public:
 class WaypointPathClass : public AbstractClass
 {
 public:
+	static const AbstractType AbsID = AbstractType::Waypoint;
+
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
 
@@ -32,7 +34,7 @@ public:
 	virtual ~WaypointPathClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	WaypointClass * GetWaypoint(int idx) const

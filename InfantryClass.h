@@ -11,7 +11,7 @@
 class InfantryClass : public FootClass
 {
 public:
-	enum {AbsID = abs_Infantry};
+	static const AbstractType AbsID = AbstractType::Infantry;
 
 	//Static
 	static DynamicVectorClass<InfantryClass*>* Array;
@@ -23,7 +23,7 @@ public:
 	virtual ~InfantryClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int	Size() const R0;
 
 	//InfantryClass

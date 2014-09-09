@@ -12,7 +12,7 @@
 class ParticleSystemTypeClass : public ObjectTypeClass
 {
 public:
-	enum {AbsID = abs_ParticleSystemType};
+	static const AbstractType AbsID = AbstractType::ParticleSystemType;
 
 	//Array
 	ABSTRACTTYPE_ARRAY(ParticleSystemTypeClass);
@@ -28,7 +28,7 @@ public:
 	virtual ~ParticleSystemTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//ObjectTypeClass

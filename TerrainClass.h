@@ -18,7 +18,7 @@
 class TerrainClass : public ObjectClass
 {
 public:
-	enum {AbsID = abs_Terrain};
+	static const AbstractType AbsID = AbstractType::Terrain;
 
 	//global array
 	static DynamicVectorClass<TerrainClass*>* Array;
@@ -37,7 +37,7 @@ public:
 	virtual ~TerrainClass() RX;
 
 	//identification
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 protected:

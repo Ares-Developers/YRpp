@@ -7,6 +7,8 @@
 class CampaignClass : public AbstractTypeClass {
 
 public:
+	static const AbstractType AbsID = AbstractType::Campaign;
+
 	CampaignClass(const char *name)
 		{ JMP_THIS(0x46CB60); }
 

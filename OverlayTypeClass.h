@@ -13,7 +13,7 @@ class AnimTypeClass;
 class OverlayTypeClass : public ObjectTypeClass
 {
 public:
-	enum {AbsID = abs_OverlayType};
+	static const AbstractType AbsID = AbstractType::OverlayType;
 
 	//Array
 	ABSTRACTTYPE_ARRAY(OverlayTypeClass);
@@ -29,7 +29,7 @@ public:
 	virtual ~OverlayTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//ObjectTypeClass

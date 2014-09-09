@@ -42,7 +42,7 @@ struct OwnedTiberiumStruct
 class AbstractClass : public IPersistStream, public IRTTITypeInfo, public INoticeSink, public INoticeSource
 {
 public:
-	enum {AbsID = abs_Abstract};
+	static const AbstractType AbsID = AbstractType::Abstract;
 
 	static DynamicVectorClass<AbstractClass *>* Array0;
 
@@ -52,13 +52,13 @@ public:
 		return AbstractClass::GetClassName(this->WhatAmI());
 	}
 
-	static const char* GetClassName(eAbstractType abs)
+	static const char* GetClassName(AbstractType abs)
 	{
 		const size_t TypeCount = 74;
 		const auto Types = reinterpret_cast<NamedValue(*)[TypeCount]>(0x816EE0);
 
 		for(const auto& Type : *Types) {
-			if(Type.Value == abs) {
+			if(static_cast<AbstractType>(Type.Value) == abs) {
 				return Type.Name;
 			}
 		}
@@ -82,7 +82,7 @@ public:
 	virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) R0;
 
 	//IRTTITypeInfo
-	virtual eAbstractType __stdcall What_Am_I() const R0;
+	virtual AbstractType __stdcall What_Am_I() const RT(AbstractType);
 	virtual int __stdcall Fetch_ID() const R0;
 	virtual void __stdcall Create_ID() RX;
 
@@ -98,7 +98,7 @@ public:
 	//AbstractClass
 	virtual void Init() RX;
 	virtual void PointerExpired(void* p, bool removed) RX;
-	virtual eAbstractType WhatAmI() const = 0;
+	virtual AbstractType WhatAmI() const = 0;
 	virtual int Size() const = 0;
 	virtual void CalculateChecksum(Checksummer& checksum) const RX;
 	virtual int GetOwningHouseIndex() const R0;

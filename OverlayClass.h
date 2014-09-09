@@ -40,7 +40,7 @@
 class OverlayClass : public ObjectClass
 {
 public:
-	enum {AbsID = abs_Overlay};
+	static const AbstractType AbsID = AbstractType::Overlay;
 
 	//Static
 	static DynamicVectorClass<OverlayClass*>* Array;
@@ -56,7 +56,7 @@ public:
 	virtual ~OverlayClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//Constructor

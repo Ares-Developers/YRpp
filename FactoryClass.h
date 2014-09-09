@@ -15,7 +15,7 @@ class TechnoTypeClass;
 class FactoryClass : public AbstractClass
 {
 public:
-	enum {AbsID = abs_Factory};
+	static const AbstractType AbsID = AbstractType::Factory;
 
 	static DynamicVectorClass<FactoryClass *> *Array;
 
@@ -30,7 +30,7 @@ public:
 	virtual ~FactoryClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//Constructor

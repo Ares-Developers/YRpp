@@ -13,7 +13,7 @@ class WarheadTypeClass;
 class ParticleTypeClass : public ObjectTypeClass
 {
 public:
-	enum {AbsID = abs_ParticleType};
+	static const AbstractType AbsID = AbstractType::ParticleType;
 
 	//Array
 	ABSTRACTTYPE_ARRAY(ParticleTypeClass);
@@ -26,7 +26,7 @@ public:
 	virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//ObjectTypeClass

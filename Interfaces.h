@@ -40,7 +40,7 @@ __interface INoticeSink
 __interface __declspec(uuid("170DAC82-12E4-11D2-8175-006008055BB5"))
 IRTTITypeInfo : IUnknown
 {
-	virtual eAbstractType __stdcall What_Am_I() const = 0;
+	virtual AbstractType __stdcall What_Am_I() const = 0;
 	virtual int __stdcall Fetch_ID() const = 0;
 	virtual void __stdcall Create_ID() = 0;
 };

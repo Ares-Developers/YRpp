@@ -7,7 +7,7 @@
 class BuildingLightClass : public ObjectClass
 {
 public:
-	enum {AbsID = abs_BuildingLight};
+	static const AbstractType AbsID = AbstractType::BuildingLight;
 
 	//Static
 	static DynamicVectorClass<BuildingLightClass*>* Array;
@@ -19,7 +19,7 @@ public:
 	virtual HRESULT __stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int	Size() const R0;
 
 	//Destructor

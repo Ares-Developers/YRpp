@@ -16,7 +16,7 @@ class LightSourceClass;
 class BuildingClass : public TechnoClass
 {
 public:
-	enum {AbsID = abs_Building};
+	static const AbstractType AbsID = AbstractType::Building;
 
 	//Static
 	static DynamicVectorClass<BuildingClass*>* Array;
@@ -29,7 +29,7 @@ public:
 	virtual ~BuildingClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int	Size() const R0;
 
 	//ObjectClass

@@ -14,7 +14,7 @@ class ParticleSystemClass;
 class ParticleClass : public ObjectClass
 {
 public:
-	enum {AbsID = abs_Particle};
+	static const AbstractType AbsID = AbstractType::Particle;
 
 	//Static
 	static DynamicVectorClass<ParticleClass*>* Array;
@@ -30,7 +30,7 @@ public:
 	virtual ~ParticleClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//ParticleClass

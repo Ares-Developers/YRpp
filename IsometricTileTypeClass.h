@@ -5,7 +5,7 @@
 
 class IsometricTileTypeClass : public ObjectTypeClass
 {
-	enum {AbsID = abs_IsotileType};
+	static const AbstractType AbsID = AbstractType::IsotileType;
 
 	//Array
 	static DynamicVectorClass<IsometricTileTypeClass*>* Array;
@@ -18,7 +18,7 @@ class IsometricTileTypeClass : public ObjectTypeClass
 
 	//AbstractClass
 	virtual void PointerExpired(void* p,bool bUnknown) RX;
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 	virtual void CalculateChecksum(Checksummer& checksum) const RX;
 

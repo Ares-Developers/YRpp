@@ -28,7 +28,7 @@ struct BuildingAnimFrameStruct
 class BuildingTypeClass : public TechnoTypeClass
 {
 public:
-	enum {AbsID = abs_BuildingType};
+	static const AbstractType AbsID = AbstractType::BuildingType;
 
 	//Array
 	ABSTRACTTYPE_ARRAY(BuildingTypeClass);
@@ -43,7 +43,7 @@ public:
 	virtual ~BuildingTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//AbstractTypeClass
@@ -127,7 +127,7 @@ public:
 	BuildingTypeClass* SecretBuilding;
 	int field_EB0;
 	int Adjacent;
-	eAbstractType Factory;
+	AbstractType Factory;
 	CoordStruct TargetCoordOffset;
 	CoordStruct ExitCoord;
 	CellStruct* FoundationOutside;

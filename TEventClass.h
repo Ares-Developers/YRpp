@@ -11,7 +11,7 @@ class AITeamTypeClass; // TODO: define
 class TEventClass : public AbstractClass
 {
 public:
-	enum {AbsID = abs_Event};
+	static const AbstractType AbsID = AbstractType::Event;
 
 	//Static
 	static DynamicVectorClass<TEventClass*>* Array;
@@ -27,7 +27,7 @@ public:
 	virtual ~TEventClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 

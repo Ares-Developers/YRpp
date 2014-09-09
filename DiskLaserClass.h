@@ -14,7 +14,7 @@ class WeaponTypeClass;
 class DiskLaserClass : public AbstractClass
 {
 public:
-	enum {AbsID = abs_DiskLaser};
+	static const AbstractType AbsID = AbstractType::DiskLaser;
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
@@ -27,7 +27,7 @@ public:
 	virtual ~DiskLaserClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//Constructor

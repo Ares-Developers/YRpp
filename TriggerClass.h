@@ -12,7 +12,7 @@ class TriggerTypeClass; // TODO: define
 class TriggerClass : public AbstractClass
 {
 public:
-	enum {AbsID = abs_Trigger};
+	static const AbstractType AbsID = AbstractType::Trigger;
 
 	//Static
 	static DynamicVectorClass<TriggerClass*>* Array;
@@ -30,7 +30,7 @@ public:
 	virtual ~TriggerClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	// events include 25 (Cross_Horizontal_Line) ?

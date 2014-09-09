@@ -13,7 +13,7 @@
 class ScriptClass : public AbstractClass
 {
 public:
-	enum {AbsID = abs_Script};
+	static const AbstractType AbsID = AbstractType::Script;
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
@@ -26,7 +26,7 @@ public:
 	virtual ~ScriptClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	ScriptActionNode* GetCurrentAction(ScriptActionNode *buffer) const

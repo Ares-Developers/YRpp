@@ -16,7 +16,7 @@ class WeaponTypeClass;
 class SuperWeaponTypeClass : public AbstractTypeClass
 {
 public:
-	enum {AbsID = abs_SuperWeaponType};
+	static const AbstractType AbsID = AbstractType::SuperWeaponType;
 
 	//Array
 	ABSTRACTTYPE_ARRAY(SuperWeaponTypeClass);
@@ -32,7 +32,7 @@ public:
 	virtual ~SuperWeaponTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//SuperWeaponTypeClass

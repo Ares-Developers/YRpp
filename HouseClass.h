@@ -124,7 +124,7 @@ public:
 class HouseClass : public AbstractClass, public IHouse, public IPublicHouse, public IConnectionPointContainer
 {
 public:
-	enum {AbsID = abs_House};
+	static const AbstractType AbsID = AbstractType::House;
 
 	// <Player @ A> and friends map to these constants
 	enum {PlayerAtA = 4475, PlayerAtB, PlayerAtC, PlayerAtD, PlayerAtE, PlayerAtF, PlayerAtG, PlayerAtH};
@@ -175,7 +175,7 @@ public:
 	virtual ~HouseClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int	Size() const R0;
 
 	//Constructor
@@ -357,7 +357,7 @@ public:
 		{ JMP_THIS(0x504740); }
 
 	// call after the availability of a factory has changed.
-	void Update_FactoriesQueues(eAbstractType FactoryOf, int isNaval, int buildingCat)
+	void Update_FactoriesQueues(AbstractType FactoryOf, int isNaval, int buildingCat)
 		{ JMP_THIS(0x509140); }
 
 	// finds a buildingtype from the given array that this house can build
@@ -521,7 +521,7 @@ public:
 	char PickedUpFlag(UnitClass *Who, DWORD dwUnk)
 		{ JMP_THIS(0x4FC060); }
 
-	FactoryClass * GetPrimaryFactory(eAbstractType ID, bool Naval, BuildCat BuildCat)
+	FactoryClass * GetPrimaryFactory(AbstractType ID, bool Naval, BuildCat BuildCat)
 		{ JMP_THIS(0x500510); }
 
 	CellStruct GetBaseCenter() const {

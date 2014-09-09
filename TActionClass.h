@@ -13,7 +13,7 @@ class TriggerClass;
 class TActionClass : public AbstractClass
 {
 public:
-	enum {AbsID = abs_Action};
+	static const AbstractType AbsID = AbstractType::Action;
 
 	//Static
 	static DynamicVectorClass<TActionClass*>* Array;
@@ -29,7 +29,7 @@ public:
 	virtual ~TActionClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	// you are responsible for doing INI::ReadString and strtok'ing it before calling

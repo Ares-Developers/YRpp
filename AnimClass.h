@@ -19,7 +19,7 @@ class LightConvertClass;
 class AnimClass : public ObjectClass
 {
 public:
-	enum {AbsID = abs_Anim};
+	static const AbstractType AbsID = AbstractType::Anim;
 
 	//Static
 	static DynamicVectorClass<AnimClass*>* Array;
@@ -34,7 +34,7 @@ public:
 	virtual ~AnimClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int	Size() const R0;
 
 	//ObjectClass

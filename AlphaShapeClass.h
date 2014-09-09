@@ -13,7 +13,7 @@ class ObjectClass;
 class AlphaShapeClass : public AbstractClass
 {
 public:
-	enum {AbsID = abs_AlphaShape};
+	static const AbstractType AbsID = AbstractType::AlphaShape;
 
 	//Static
 	static DynamicVectorClass<AlphaShapeClass*>* Array;
@@ -29,7 +29,7 @@ public:
 	virtual ~AlphaShapeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int	Size() const R0;
 
 	//Constructor

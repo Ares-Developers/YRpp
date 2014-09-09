@@ -14,7 +14,7 @@ class EBolt;
 class UnitClass : public FootClass
 {
 public:
-	enum {AbsID = abs_Unit};
+	static const AbstractType AbsID = AbstractType::Unit;
 
 	//Static
 	static DynamicVectorClass<UnitClass*>* Array;
@@ -30,7 +30,7 @@ public:
 	virtual ~UnitClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//UnitClass

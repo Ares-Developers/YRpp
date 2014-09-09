@@ -36,7 +36,7 @@ struct SequenceStruct
 class InfantryTypeClass : public TechnoTypeClass
 {
 public:
-	enum {AbsID = abs_InfantryType};
+	static const AbstractType AbsID = AbstractType::InfantryType;
 
 	//Array
 	ABSTRACTTYPE_ARRAY(InfantryTypeClass);
@@ -52,7 +52,7 @@ public:
 	virtual ~InfantryTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int	Size() const R0;
 
 	//ObjectTypeClass

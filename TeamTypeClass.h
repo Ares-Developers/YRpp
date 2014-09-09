@@ -17,7 +17,7 @@ class FootClass;
 class TeamTypeClass : public AbstractTypeClass
 {
 public:
-	enum {AbsID = abs_TeamType};
+	static const AbstractType AbsID = AbstractType::TeamType;
 
 	//Array
 	ABSTRACTTYPE_ARRAY(TeamTypeClass);
@@ -33,7 +33,7 @@ public:
 	virtual ~TeamTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	static bool LoadFromINIList(CCINIClass *pINI, bool IsGlobal)

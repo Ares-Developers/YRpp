@@ -19,7 +19,7 @@ class TechnoTypeClass;
 class ScriptTypeClass : public AbstractTypeClass
 {
 public:
-	enum {AbsID = abs_ScriptType};
+	static const AbstractType AbsID = AbstractType::ScriptType;
 
 	//Array
 	ABSTRACTTYPE_ARRAY(ScriptTypeClass);
@@ -35,7 +35,7 @@ public:
 	virtual ~ScriptTypeClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//AbstractTypeClass

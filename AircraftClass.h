@@ -18,7 +18,7 @@ class FlasherClass : public StageClass{ };
 class AircraftClass : public FootClass, public FlasherClass
 {
 public:
-	enum {AbsID = abs_Aircraft};
+	static const AbstractType AbsID = AbstractType::Aircraft;
 
 	//Static
 	static DynamicVectorClass<AircraftClass*>* Array;
@@ -44,7 +44,7 @@ public:
 	virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int	Size() const R0;
 
 	//Destructor

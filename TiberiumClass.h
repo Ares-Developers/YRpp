@@ -14,7 +14,7 @@ class OverlayTypeClass;
 class TiberiumClass : public AbstractTypeClass
 {
 public:
-	enum {AbsID = abs_Tiberium};
+	static const AbstractType AbsID = AbstractType::Tiberium;
 
 	//Array
 	ABSTRACTTYPE_ARRAY(TiberiumClass);
@@ -31,7 +31,7 @@ public:
 	virtual ~TiberiumClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//TiberiumClass

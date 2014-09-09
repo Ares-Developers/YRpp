@@ -13,83 +13,82 @@ typedef int eAbstractFlags;
 #define ABSFLAGS_ISFOOT				0x04
 
 
-typedef int eAbstractType;
-
-#define	abs_None		0x0
-#define	abs_Unit		0x1
-#define	abs_Aircraft		0x2
-#define	abs_AircraftType		0x3
-#define	abs_Anim		0x4
-#define	abs_AnimType		0x5
-#define	abs_Building		0x6
-#define	abs_BuildingType		0x7
-#define	abs_Bullet		0x8
-#define	abs_BulletType		0x9
-#define	abs_Campaign		0xA
-#define	abs_Cell		0xB
-#define	abs_Factory		0xC
-#define	abs_House		0xD
-#define	abs_HouseType		0xE
-#define	abs_Infantry		0xF
-#define	abs_InfantryType		0x10
-#define	abs_Isotile		0x11
-#define	abs_IsotileType		0x12
-#define	abs_BuildingLight		0x13
-#define	abs_Overlay		0x14
-#define	abs_OverlayType		0x15
-#define	abs_Particle		0x16
-#define	abs_ParticleType		0x17
-#define	abs_ParticleSystem		0x18
-#define	abs_ParticleSystemType		0x19
-#define	abs_Script		0x1A
-#define	abs_ScriptType		0x1B
-#define	abs_Side		0x1C
-#define	abs_Smudge		0x1D
-#define	abs_SmudgeType		0x1E
-#define	abs_Special		0x1F
-#define	abs_SuperWeaponType		0x20
-#define	abs_TaskForce		0x21
-#define	abs_Team		0x22
-#define	abs_TeamType		0x23
-#define	abs_Terrain		0x24
-#define	abs_TerrainType		0x25
-#define	abs_Trigger		0x26
-#define	abs_TriggerType		0x27
-#define	abs_UnitType		0x28
-#define	abs_VoxelAnim		0x29
-#define	abs_VoxelAnimType		0x2A
-#define	abs_Wave		0x2B
-#define	abs_Tag		0x2C
-#define	abs_TagType		0x2D
-#define	abs_Tiberium		0x2E
-#define	abs_Action		0x2F
-#define	abs_Event		0x30
-#define	abs_WeaponType		0x31
-#define	abs_WarheadType		0x32
-#define	abs_Waypoint		0x33
-#define	abs_Abstract		0x34
-#define	abs_Tube		0x35
-#define	abs_LightSource		0x36
-#define	abs_EMPulse		0x37
-#define	abs_TacticalMap		0x38
-#define	abs_Super		0x39
-#define	abs_AITrigger		0x3A
-#define	abs_AITriggerType		0x3B
-#define	abs_Neuron		0x3C
-#define	abs_FoggedObject		0x3D
-#define	abs_AlphaShape		0x3E
-#define	abs_VeinholeMonster		0x3F
-#define	abs_NavyType		0x40
-#define	abs_SpawnManager		0x41
-#define	abs_CaptureManager		0x42
-#define	abs_Parasite		0x43
-#define	abs_Bomb		0x44
-#define	abs_RadSite		0x45
-#define	abs_Temporal		0x46
-#define	abs_Airstrike		0x47
-#define	abs_SlaveManager		0x48
-#define	abs_DiskLaser		0x49
-
+enum class AbstractType : unsigned int {
+	None = 0,
+	Unit = 1,
+	Aircraft = 2,
+	AircraftType = 3,
+	Anim = 4,
+	AnimType = 5,
+	Building = 6,
+	BuildingType = 7,
+	Bullet = 8,
+	BulletType = 9,
+	Campaign = 10,
+	Cell = 11,
+	Factory = 12,
+	House = 13,
+	HouseType = 14,
+	Infantry = 15,
+	InfantryType = 16,
+	Isotile = 17,
+	IsotileType = 18,
+	BuildingLight = 19,
+	Overlay = 20,
+	OverlayType = 21,
+	Particle = 22,
+	ParticleType = 23,
+	ParticleSystem = 24,
+	ParticleSystemType = 25,
+	Script = 26,
+	ScriptType = 27,
+	Side = 28,
+	Smudge = 29,
+	SmudgeType = 30,
+	Special = 31,
+	SuperWeaponType = 32,
+	TaskForce = 33,
+	Team = 34,
+	TeamType = 35,
+	Terrain = 36,
+	TerrainType = 37,
+	Trigger = 38,
+	TriggerType = 39,
+	UnitType = 40,
+	VoxelAnim = 41,
+	VoxelAnimType = 42,
+	Wave = 43,
+	Tag = 44,
+	TagType = 45,
+	Tiberium = 46,
+	Action = 47,
+	Event = 48,
+	WeaponType = 49,
+	WarheadType = 50,
+	Waypoint = 51,
+	Abstract = 52,
+	Tube = 53,
+	LightSource = 54,
+	EMPulse = 55,
+	TacticalMap = 56,
+	Super = 57,
+	AITrigger = 58,
+	AITriggerType = 59,
+	Neuron = 60,
+	FoggedObject = 61,
+	AlphaShape = 62,
+	VeinholeMonster = 63,
+	NavyType = 64,
+	SpawnManager = 65,
+	CaptureManager = 66,
+	Parasite = 67,
+	Bomb = 68,
+	RadSite = 69,
+	Temporal = 70,
+	Airstrike = 71,
+	SlaveManager = 72,
+	DiskLaser = 73
+};
 
 enum class Action : unsigned int {
 	None = 0,

@@ -19,7 +19,7 @@ struct TaskForceEntryStruct
 class TaskForceClass : public AbstractTypeClass
 {
 public:
-	enum {AbsID = abs_TaskForce};
+	static const AbstractType AbsID = AbstractType::TaskForce;
 
 	//Array
 	ABSTRACTTYPE_ARRAY(TaskForceClass);
@@ -35,7 +35,7 @@ public:
 	virtual ~TaskForceClass() RX;
 
 	//AbstractClass
-	virtual eAbstractType WhatAmI() const R0;
+	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
 	//Constructor
