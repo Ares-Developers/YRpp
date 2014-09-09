@@ -430,7 +430,7 @@ public:
 	void FireDeathWeapon(int additionalDamage)
 		{ JMP_THIS(0x70D690); }
 
-	bool HasAbility(Abilities::Value index) const
+	bool HasAbility(Ability ability) const
 		{ JMP_THIS(0x70D0D0); }
 
 

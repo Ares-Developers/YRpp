@@ -166,31 +166,26 @@ enum class Action : unsigned int {
 	PsychicReveal = 72
 };
 
-class Abilities {
-public:
-	typedef int Value;
-	enum {
-		FASTER = 0x0,
-		STRONGER = 0x1,
-		FIREPOWER = 0x2,
-		SCATTER = 0x3,
-		ROF = 0x4,
-		SIGHT = 0x5,
-		CLOAK = 0x6,
-		TIBERIUM_PROOF = 0x7,
-		VEIN_PROOF = 0x8,
-		SELF_HEAL = 0x9,
-		EXPLODES = 0xA,
-		RADAR_INVISIBLE = 0xB,
-		SENSORS = 0xC,
-		FEARLESS = 0xD,
-		C4 = 0xE,
-		TIBERIUM_HEAL = 0xF,
-		GUARD_AREA = 0x10,
-		CRUSHER = 0x11
-	};
+enum class Ability : int {
+	Faster = 0,
+	Stronger = 1,
+	Firepower = 2,
+	Scatter = 3,
+	ROF = 4,
+	Sight = 5,
+	Cloak = 6,
+	TiberiumProof = 7,
+	VeinProof = 8,
+	SelfHeal = 9,
+	Explodes = 10,
+	RadarInvisible = 11,
+	Sensors = 12,
+	Fearless = 13,
+	C4 = 14,
+	TiberiumHeal = 15,
+	GuardArea = 16,
+	Crusher = 17
 };
-
 
 class AIDifficulty {
 public:
