@@ -357,7 +357,7 @@ public:
 		{ JMP_THIS(0x504740); }
 
 	// call after the availability of a factory has changed.
-	void Update_FactoriesQueues(AbstractType FactoryOf, int isNaval, int buildingCat)
+	void Update_FactoriesQueues(AbstractType FactoryOf, bool isNaval, BuildCat buildingCat)
 		{ JMP_THIS(0x509140); }
 
 	// finds a buildingtype from the given array that this house can build
