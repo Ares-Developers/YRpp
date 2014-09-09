@@ -317,7 +317,7 @@ ALIAS(CSFString *, StringTable::LastLoadedString, 0xB1CF88);
 ALIAS(int, StringTable::MaxLabelLen, 0xB1CF58);
 ALIAS(int, StringTable::LabelCount, 0xB1CF6C);
 ALIAS(int, StringTable::ValueCount, 0xB1CF70);
-ALIAS(int, StringTable::Language, 0x845728);
+ALIAS(CSFLanguages, StringTable::Language, 0x845728);
 ALIAS(bool, StringTable::IsLoaded, 0xB1CF80);
 ALIAS(char*, StringTable::FileName, 0xB1CF68);
 ALIAS(CSFLabel*, StringTable::Labels, 0xB1CF74);

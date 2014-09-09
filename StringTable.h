@@ -12,17 +12,19 @@
 #define CSF_VALUE_SIGNATURE 0x53545220 //" RTS"
 #define CSF_EXVALUE_SIGNATURE 0x53545257 //"WRTS"
 
-#define CSF_LANG_US 0x0
-#define CSF_LANG_UK 0x1
-#define CSF_LANG_GERMAN 0x2
-#define CSF_LANG_FRENCH 0x3
-#define CSF_LANG_SPANISH 0x4
-#define CSF_LANG_ITALIAN 0x5
-#define CSF_LANG_JAPANESE 0x6
-#define CSF_LANG_JABBERWOCKIE 0x7
-#define CSF_LANG_KOREAN 0x8
-#define CSF_LANG_CHINESE 0x9
-#define CSF_LANG_UNKNOWN 0xA
+enum class CSFLanguages : unsigned int {
+	US = 0,
+	UK = 1,
+	German = 2,
+	French = 3,
+	Spanish = 4,
+	Italian = 5,
+	Japanese = 6,
+	Jabberwockie = 7,
+	Korean = 8,
+	Chinese = 9,
+	Unknown = 10
+};
 
 struct CSFHeader
 {
@@ -31,7 +33,7 @@ struct CSFHeader
 	int NumLabels;
 	int NumValues;
 	DWORD unused_0xC;
-	int Language; //CSF_LANG_*, forced to US if CSFVersion < 2
+	CSFLanguages Language; //CSF_LANG_*, forced to US if CSFVersion < 2
 };
 
 struct CSFLabel
@@ -53,7 +55,7 @@ struct CSFString
 
 struct CSFLanguage
 {
-	int Index; // one of the language constants
+	CSFLanguages Index; // one of the language constants
 	char* Name; // the display name
 	char* Short; // two letter language code
 	char* Letter; // one letter language code
@@ -66,7 +68,7 @@ public:
 	static int &MaxLabelLen;
 	static int &LabelCount;
 	static int &ValueCount;
-	static int &Language;
+	static CSFLanguages &Language;
 	static bool &IsLoaded;
 	static char* &FileName;
 	static CSFLabel* &Labels;
@@ -85,9 +87,9 @@ public:
 	static bool __fastcall ReadFile(const char* pFileName)
 		{ JMP_STD(0x734990); }
 
-	static CSFLanguage* __fastcall GetLanguage(int language)
+	static CSFLanguage* __fastcall GetLanguage(CSFLanguages language)
 		{ JMP_STD(0x734640); }
-	static const char* __fastcall GetLanguageName(int language)
+	static const char* __fastcall GetLanguageName(CSFLanguages language)
 		{ JMP_STD(0x734670); }
 
 	static void Unload()
