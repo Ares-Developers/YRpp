@@ -18,14 +18,14 @@ public:
 	static RadBeam* __fastcall Allocate(RadBeamType mode)
 		{ JMP_STD(0x659110); }
 
-	void SetColor(ColorStruct *color)
-		{ this->Color = *color; }
+	void SetColor(const ColorStruct &color)
+		{ this->Color = color; }
 
-	void SetCoordsSource(CoordStruct *loc)
-		{ this->SourceLocation = *loc; }
+	void SetCoordsSource(const CoordStruct &loc)
+		{ this->SourceLocation = loc; }
 
-	void SetCoordsTarget(CoordStruct *loc)
-		{ this->TargetLocation = *loc; }
+	void SetCoordsTarget(const CoordStruct &loc)
+		{ this->TargetLocation = loc; }
 
 	//===========================================================================
 	//===== Properties ==========================================================
