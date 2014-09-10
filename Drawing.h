@@ -111,7 +111,7 @@ public:
 #define		COLOR_PURPLE (COLOR_RED | COLOR_BLUE)
 
 class ABufferClass {
-
+public:
 	static ABufferClass* &ABuffer;
 
 	ABufferClass(RectangleStruct rect)
@@ -129,7 +129,7 @@ class ABufferClass {
 };
 
 class ZBufferClass {
-
+public:
 	static ZBufferClass* &ZBuffer;
 
 	ZBufferClass(RectangleStruct rect)
