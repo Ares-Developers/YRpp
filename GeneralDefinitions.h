@@ -187,14 +187,10 @@ enum class Ability : int {
 	Crusher = 17
 };
 
-class AIDifficulty {
-public:
-	typedef unsigned int Value;
-	enum {
-		Hard = 0,
-		Normal = 1,
-		Easy = 2
-	};
+enum class AIDifficulty : unsigned int {
+	Hard = 0,
+	Normal = 1,
+	Easy = 2
 };
 
 enum class TriggerEvent : unsigned int {

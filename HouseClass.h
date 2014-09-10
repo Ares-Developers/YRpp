@@ -532,6 +532,10 @@ public:
 		}
 	}
 
+	unsigned int GetAIDifficultyIndex() const {
+		return static_cast<unsigned int>(this->AIDifficulty);
+	}
+
 	/*!
 		At the moment, this function is really just a more intuitively named mask for
 		this->Type->MultiplayPassive, but it might be expanded into something more
@@ -587,7 +591,7 @@ public:
 	int                   InfantrySelfHeal;
 	int                   UnitsSelfHeal;
 	DynamicVectorClass<StartingTechnoStruct*> StartingUnits;
-	AIDifficulty::Value   AIDifficulty; // be advised that it's reverse, Hard == 0 and Easy == 2. I'm sure Westwood has a good reason for this. Yep.
+	AIDifficulty          AIDifficulty; // be advised that it's reverse, Hard == 0 and Easy == 2. I'm sure Westwood has a good reason for this. Yep.
 	double                FirepowerMultiplier; // used
 	double                GroundspeedMultiplier; // unused ...
 	double                AirspeedMultiplier;
