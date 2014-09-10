@@ -64,7 +64,7 @@ public:
 
 	ColorStruct RadialColor;
 	BYTE          unused_9B;
-	Armor::Value  Armor;
+	Armor         Armor;
 	int           Strength;
 	SHPStruct*    Image;
 	bool          ImageIsOutdated;

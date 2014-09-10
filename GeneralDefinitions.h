@@ -432,22 +432,18 @@ enum class AITriggerHouseType : int {
 	Any = 2
 };
 
-class Armor {
-public:
-	typedef int Value;
-	enum {
-		None = 0,
-		Flak = 1,
-		Plate = 2,
-		Light = 3,
-		Medium = 4,
-		Heavy = 5,
-		Wood = 6,
-		Steel = 7,
-		Concrete = 8,
-		Special_1 = 9,
-		Special_2 = 10
-	};
+enum class Armor : unsigned int {
+	None = 0,
+	Flak = 1,
+	Plate = 2,
+	Light = 3,
+	Medium = 4,
+	Heavy = 5,
+	Wood = 6,
+	Steel = 7,
+	Concrete = 8,
+	Special_1 = 9,
+	Special_2 = 10
 };
 
 //spotlight behaviour
