@@ -66,7 +66,7 @@ public:
 
 	TypeList<AnimTypeClass*> AnimList;
 
-	InfDeath::Value InfDeath;
+	InfDeath InfDeath;
 	float   CellSpread;
 	float   CellInset;
 	float   PercentAtMax;

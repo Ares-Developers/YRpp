@@ -661,22 +661,18 @@ public:
 	};
 };
 
-class InfDeath {
-public:
-	typedef int Value;
-	enum {
-		None = 0,
-		Die1 = 1,
-		Die2 = 2,
-		Explode = 3,
-		Flames = 4,
-		Electro = 5,
-		HeadPop = 6,
-		Nuked = 7,
-		Virus = 8,
-		Mutate = 9,
-		Brute = 10,
-	};
+enum class InfDeath : unsigned int {
+	None = 0,
+	Die1 = 1,
+	Die2 = 2,
+	Explode = 3,
+	Flames = 4,
+	Electro = 5,
+	HeadPop = 6,
+	Nuked = 7,
+	Virus = 8,
+	Mutate = 9,
+	Brute = 10
 };
 
 enum class LandType : int {
