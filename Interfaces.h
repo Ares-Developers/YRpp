@@ -168,7 +168,7 @@ ILocomotion : IUnknown
 	virtual bool __stdcall Push(DirStruct dir) = 0;	//Push object in direction specified.
 	virtual bool __stdcall Shove(DirStruct dir) = 0;	//Shove object (with spin) in direction specified.
 	virtual void __stdcall Force_Track(int track, CoordStruct coord) = 0;	//Force drive track -- special case only.
-	virtual Layer::Value __stdcall In_Which_Layer() = 0;	//What display layer is it located in.
+	virtual Layer __stdcall In_Which_Layer() = 0;	//What display layer is it located in.
 	virtual void __stdcall Force_Immediate_Destination(CoordStruct coord) = 0;	//Don't use this function.
 	virtual void __stdcall Force_New_Slope(int ramp) = 0;	//Force a voxel unit to a given slope. Used in cratering.
 	virtual bool __stdcall Is_Moving_Now() = 0;	//Is it actually moving across the ground this very second?

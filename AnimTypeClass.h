@@ -107,7 +107,7 @@ public:
 	bool IsAnimatedTiberium;
 	bool AltPalette;
 	bool Normalized;
-	int Layer;
+	Layer Layer;
 	bool DoubleThick;
 	bool Flat;
 	bool Translucent;

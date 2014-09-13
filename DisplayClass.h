@@ -36,10 +36,10 @@ public:
 	static DisplayClass* Global()
 		{ return reinterpret_cast<DisplayClass*>(0x87F7E8); }
 
-	static LayerClass* GetLayer(Layer::Value lyr)
+	static LayerClass* GetLayer(Layer lyr)
 	{
 		if(lyr >= Layer::Underground && lyr <= Layer::Top)
-			return reinterpret_cast<LayerClass**>(0x8A0360)[lyr];
+			return reinterpret_cast<LayerClass**>(0x8A0360)[static_cast<int>(lyr)];
 		else
 			return nullptr;
 	}

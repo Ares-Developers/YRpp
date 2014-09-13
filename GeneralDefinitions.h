@@ -710,17 +710,13 @@ enum class LandType : int {
  *  Walk          : Ground
  *
  */
-class Layer {
-public:
-	typedef int Value;
-	enum {
-		None = -1,
-		Underground = 0,
-		Surface = 1,
-		Ground = 2,
-		Air = 3,
-		Top = 4,
-	};
+enum class Layer : int {
+	None = -1,
+	Underground = 0,
+	Surface = 1,
+	Ground = 2,
+	Air = 3,
+	Top = 4
 };
 
 enum class PlacementType : int {
