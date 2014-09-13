@@ -15,7 +15,7 @@ public:
 		CampaignIndex(-1),
 		IsValid(true),
 		IsWrongVersion(false),
-		GameMode(0),
+		GameMode(GameMode::Campaign),
 		LastWriteTime({0, 0})
 	{ }
 
@@ -37,7 +37,7 @@ public:
 	bool IsValid;
 	bool IsWrongVersion;
 	PROTECTED_PROPERTY(BYTE, align_1B6[2]);
-	int GameMode;
+	GameMode GameMode;
 };
 
 enum class LoadOptionsMode : unsigned int {

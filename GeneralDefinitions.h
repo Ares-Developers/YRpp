@@ -650,15 +650,11 @@ typedef int eFoundation;
 #define	fnd_0x0		0x15
 
 
-class GameMode {
-public:
-	typedef unsigned int Value;
-	enum {
-		Campaign = 0x0,
-		LAN = 0x3,
-		Internet = 0x4,
-		Skirmish = 0x5,
-	};
+enum class GameMode : unsigned int {
+	Campaign = 0x0,
+	LAN = 0x3,
+	Internet = 0x4,
+	Skirmish = 0x5,
 };
 
 enum class InfDeath : unsigned int {
