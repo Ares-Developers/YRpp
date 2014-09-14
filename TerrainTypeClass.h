@@ -2,12 +2,6 @@
 	TerrainTypes are initialized by INI files.
 */
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// NOTE: VTABLE NEEDS TO BE DONE!!
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 #ifndef TERRAINTYPE_H
 #define TERRAINTYPE_H
 
