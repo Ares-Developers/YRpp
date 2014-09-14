@@ -51,6 +51,9 @@ public:
 	static const char* GetName(int index)
 		{ JMP_STD(0x753330); }
 
+	static void DeleteAll()
+		{ JMP_STD(0x7531A0); }
+
 	//Properties
 
 public:
@@ -69,16 +72,9 @@ public:
 		{ JMP_THIS(0x752CB0) }
 
 	~VoxClass()
-	{
-		VoxClass* item = this;
-		int index = Array->FindItemIndex(item);
+		{ JMP_THIS(0x752D60) }
 
-		if(index > -1 && index < Array->Count) {
-			Array->RemoveItem(index);
-		}
-	}
-
-	const char* GetFilename()
+	const char* GetFilename() const
 		{ JMP_THIS(0x753380) }
 
 	bool LoadFromINI(CCINIClass *pINI)
