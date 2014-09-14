@@ -84,11 +84,11 @@ public:
 			return false;
 		}
 
-		int value = random.RandomRanged(1, this->TotalWeight);
-		return this->Select(value, pOut);
+		int value = random.RandomRanged(1, static_cast<int>(this->TotalWeight));
+		return this->Select(static_cast<unsigned int>(value), pOut);
 	}
 
-	T Select(int index, T default = T()) const {
+	T Select(unsigned int index, T default = T()) const {
 		this->Select(index, &default);
 		return default;
 	}
