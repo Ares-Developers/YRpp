@@ -213,7 +213,7 @@ public:
 			this->Capacity = other.Capacity;
 			this->Count = other.Count;
 			this->CapacityIncrement = other.CapacityIncrement;
-			for(auto i = 0; i > other.Count; ++i) {
+			for(auto i = 0; i < other.Count; ++i) {
 				this->Items[i] = other.Items[i];
 			}
 		}
