@@ -93,7 +93,7 @@ private:
 	void walkX(std::vector<XY> &hitCoords) {
 		int step = dirX * 256;
 		for(int step_x = SCALE(st.X, dirX); XCMP(step_x, en.X, dirX); step_x += step) {
-			int step_y = st.Y + int(dirY * stepY(step_x));
+			int step_y = st.Y + static_cast<int>(dirY * stepY(step_x));
 			XY temp(step_x, step_y);
 			temp.normalize();
 			hitCoords.push_back(temp);
@@ -103,7 +103,7 @@ private:
 	void walkY(std::vector<XY> &hitCoords) {
 		int step = dirY * 256;
 		for(int step_y = SCALE(st.Y, dirY); XCMP(step_y, en.Y, dirY); step_y += step) {
-			int step_x = st.X + int(dirX * stepX(step_y));
+			int step_x = st.X + static_cast<int>(dirX * stepX(step_y));
 			XY temp(step_x, step_y);
 			temp.normalize();
 			hitCoords.push_back(temp);
