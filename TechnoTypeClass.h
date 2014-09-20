@@ -75,9 +75,9 @@ public:
 
 	static TechnoTypeClass* Find(const char* pID)
 	{
-		for(int i = 0; i < Array->Count; ++i) {
-			if(!_strcmpi(Array->Items[i]->get_ID(), pID)) {
-				return Array->Items[i];
+		for(auto pItem : *Array) {
+			if(!_strcmpi(pItem->get_ID(), pID)) {
+				return pItem;
 			}
 		}
 		return nullptr;
