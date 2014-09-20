@@ -31,7 +31,7 @@ class CCINIClass;
 	static int FindIndex(const char* pID)\
 	{\
 		for(int i = 0; i < Array->Count; ++i)\
-			if(!_strcmpi(Array->GetItem(i)->ID, pID))\
+			if(!_strcmpi(Array->Items[i]->ID, pID))\
 				return i;\
 		return -1;\
 	}
