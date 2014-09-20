@@ -22,11 +22,13 @@ class CCINIClass;
 	}\
 	static class_name* FindOrAllocate(const char* pID)\
 	{\
-		class_name* pRet = Find(pID);\
-		if(pRet)\
+		if(!_strcmpi(pID, "<none>") || !_strcmpi(pID, "none")) {\
+			return nullptr;\
+		}\
+		if(auto pRet = Find(pID)) {\
 			return pRet;\
-		else\
-			return GameCreate<class_name>(pID);\
+		}\
+		return GameCreate<class_name>(pID);\
 	}\
 	static int FindIndex(const char* pID)\
 	{\
