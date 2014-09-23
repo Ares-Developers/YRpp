@@ -40,6 +40,10 @@ struct VeterancyStruct
 {
 	VeterancyStruct() : Veterancy(0.0f) { }
 
+	explicit VeterancyStruct(double value) : Veterancy(0.0f) {
+		this->Add(value);
+	}
+
 	void Add(int ownerCost, int victimCost)	{
 		this->Add(static_cast<double>(victimCost)
 			/ (ownerCost * RulesClass::Instance->VeteranRatio));
