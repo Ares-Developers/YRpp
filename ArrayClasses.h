@@ -20,7 +20,7 @@ public:
 	VectorClass() : Items(nullptr), Capacity(0), IsInitialized(true), IsAllocated(false) {
 	}
 
-	VectorClass(int capacity, T* pMem = nullptr) : VectorClass() {
+	explicit VectorClass(int capacity, T* pMem = nullptr) : VectorClass() {
 		if(capacity != 0) {
 			this->Capacity = capacity;
 
@@ -202,7 +202,7 @@ public:
 	DynamicVectorClass() : VectorClass(), Count(0), CapacityIncrement(10) {
 	}
 
-	DynamicVectorClass(int capacity, T* pMem = nullptr)
+	explicit DynamicVectorClass(int capacity, T* pMem = nullptr)
 		: VectorClass(capacity, pMem), Count(0), CapacityIncrement(10) {
 	}
 
@@ -365,7 +365,7 @@ public:
 	TypeList() : DynamicVectorClass(), unknown_18(0) {
 	}
 
-	TypeList(int capacity, T* pMem = nullptr)
+	explicit TypeList(int capacity, T* pMem = nullptr)
 		: DynamicVectorClass(capacity, pMem), unknown_18(0) {
 	}
 
