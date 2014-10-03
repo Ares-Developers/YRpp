@@ -179,10 +179,11 @@ public:
 	}
 
 	void Swap(VectorClass& other) {
-		std::swap(this->Items, other.Items);
-		std::swap(this->Capacity, other.Capacity);
-		std::swap(this->IsInitialized, other.IsInitialized);
-		std::swap(this->IsAllocated, other.IsAllocated);
+		using std::swap;
+		swap(this->Items, other.Items);
+		swap(this->Capacity, other.Capacity);
+		swap(this->IsInitialized, other.IsInitialized);
+		swap(this->IsAllocated, other.IsAllocated);
 	}
 
 	T* Items;
@@ -346,8 +347,9 @@ public:
 
 	void Swap(DynamicVectorClass& other) {
 		VectorClass::Swap(other);
-		std::swap(this->Count, other.Count);
-		std::swap(this->CapacityIncrement, other.CapacityIncrement);
+		using std::swap;
+		swap(this->Count, other.Count);
+		swap(this->CapacityIncrement, other.CapacityIncrement);
 	}
 
 	int Count;
@@ -390,7 +392,8 @@ public:
 
 	void Swap(TypeList& other) {
 		DynamicVectorClass::Swap(other);
-		std::swap(this->unknown_18, other.unknown_18);
+		using std::swap;
+		swap(this->unknown_18, other.unknown_18);
 	}
 
 	int unknown_18;
@@ -487,7 +490,8 @@ public:
 
 	void Swap(CounterClass& other) {
 		VectorClass::Swap(other);
-		std::swap(this->Total, other.Total);
+		using std::swap;
+		swap(this->Total, other.Total);
 	}
 
 	int Total;
