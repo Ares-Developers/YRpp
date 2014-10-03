@@ -37,7 +37,7 @@ public:
 
 	//AbstractTypeClass
 
-	void CalculateSpeed() const
+	void CalculateSpeed()
 		{ JMP_THIS(0x7729F0); }
 
 	//Constructor
