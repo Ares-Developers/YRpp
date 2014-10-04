@@ -144,17 +144,14 @@ struct FlashData
 
 struct RecoilData
 {
-	enum RecoilState {
+	enum class RecoilState : unsigned int {
 		Inactive = 0,
 		Compressing = 1,
-		Recovering = 2,
-		Holding = 3,
+		Holding = 2,
+		Recovering = 3,
 	};
 
-	int Travel;
-	int CompressFrames;
-	int HoldFrames;
-	int RecoverFrames;
+	TurretControl Turret;
 	float TravelPerFrame;
 	float TravelSoFar;
 	RecoilState State;

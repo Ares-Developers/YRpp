@@ -44,8 +44,8 @@ struct TurretControl
 {
 	int Travel;
 	int CompressFrames;
-	int HoldFrames;
 	int RecoverFrames;
+	int HoldFrames;
 };
 
 struct WeaponStruct
