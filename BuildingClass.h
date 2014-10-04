@@ -171,6 +171,21 @@ public:
 		return false;
 	}
 
+	TechnoTypeClass* GetSecretProduction() const {
+		auto pType = this->Type;
+
+		if(pType->SecretInfantry) { 
+			return reinterpret_cast<TechnoTypeClass*>(pType->SecretInfantry);
+		}
+		if(pType->SecretUnit) {
+			return reinterpret_cast<TechnoTypeClass*>(pType->SecretUnit);
+		}
+		if(pType->SecretBuilding) {
+			return pType->SecretBuilding;
+		}
+		return this->SecretProduction;
+	}
+
 protected:
 	BuildingClass() : TechnoClass(false) { }
 
@@ -259,10 +274,7 @@ public:
 	byte CloakRadius; // from Type->CloakRadiusInCells
 	char Translucency;
 	DWORD StorageFilledSlots; // the old "silo needed" logic
-
-		// randomly assigned secret lab bonus, one of those three gets returned instead if NULL
-	TechnoTypeClass * SecretProduction; /*pointer, something to do with SecretInfantry, SecretUnit, SecretBuilding */
-
+	TechnoTypeClass * SecretProduction; // randomly assigned secret lab bonus, used if SecretInfantry, SecretUnit, and SecretBuilding are null
 	ColorStruct ColorAdd;
 	int unknown_int_6FC;
 	short unknown_short_700;

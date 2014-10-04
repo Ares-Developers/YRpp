@@ -438,8 +438,8 @@ public:
 	int CountOwnedEver(const TechnoTypeClass *Item) const;
 
 	bool HasFromSecretLab(const TechnoTypeClass *Item) const {
-		for(int i = 0; i < this->SecretLabs.Count; ++i) {
-			if(this->SecretLabs[i]->SecretProduction == Item) {
+		for(const auto& pLab : this->SecretLabs) {
+			if(pLab->GetSecretProduction() == Item) {
 				return true;
 			}
 		}
