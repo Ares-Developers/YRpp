@@ -56,15 +56,15 @@ struct WeaponStruct
 	int               BarrelThickness;
 	bool              TurretLocked;
 
-	WeaponStruct()
-	{
-		this->WeaponType = nullptr;
-		this->FLH.X = this->FLH.Y = this->FLH.Z = this->BarrelLength = this->BarrelThickness = 0;
-		this->TurretLocked = false;
-	}
+	WeaponStruct() : WeaponType(nullptr),
+		FLH(CoordStruct::Empty),
+		BarrelLength(0),
+		BarrelThickness(0),
+		TurretLocked(false)
+	{ }
 
 	bool operator == (const WeaponStruct& pWeap) const
-		{ return true; }
+		{ return false; }
 };
 
 class TechnoTypeClass : public ObjectTypeClass
