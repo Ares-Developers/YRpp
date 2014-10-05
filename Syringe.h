@@ -10,8 +10,6 @@
 
 #include <GeneralDefinitions.h>
 
-#include <Compiler Specifics/hashmap.h>
-
 #include <windows.h>
 
 class LimitedRegister {

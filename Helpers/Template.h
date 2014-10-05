@@ -51,24 +51,6 @@ public:
 
 // invalid pointers
 
-template<typename T1, typename T2>
-void AnnounceInvalidPointerMap(hash_map<T1, T2> &map, void *ptr) {
-	typename hash_map<T1, T2>::iterator ix;
-	ix = map.find(reinterpret_cast<T1>(ptr));
-	if(ix != map.end()) {
-		map.erase(ix);
-	}
-
-	for(ix = map.begin(); ix != map.end(); ) {
-		T1 k = ix->first;
-		T2 v = ix->second;
-		++ix;
-		if(ptr == ((void *)(v))) {
-			map.erase(k);
-		}
-	}
-}
-
 template<typename T1>
 void AnnounceInvalidPointer(T1 &elem, void *ptr) {
 	if(ptr == static_cast<void*>(elem)) {

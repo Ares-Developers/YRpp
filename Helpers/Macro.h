@@ -5,7 +5,6 @@
 
 // In this file: Alternatives to CTRL + H...
 
-#include <Compiler Specifics/hashmap.h>
 // macros DCoder uses and pd dislikes :)
 
 #define GET(clsname, var, reg) \
