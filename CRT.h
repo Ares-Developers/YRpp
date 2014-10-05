@@ -2,7 +2,6 @@
 #define CRT_H_
 
 #include <wchar.h>
-#include <xcompile.h>
 
 // contains functions that are part of the C runtime library and have been declared ingame
 // just declaring them so we don't need to include our own duplicates

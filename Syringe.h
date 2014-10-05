@@ -12,7 +12,6 @@
 
 #include <Compiler Specifics/hashmap.h>
 
-#include <xcompile.h>
 #include <windows.h>
 
 class LimitedRegister {
