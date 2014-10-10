@@ -350,6 +350,9 @@ public:
 	bool IsMindControlled() const
 		{ JMP_THIS(0x7105E0); }
 
+	bool CanBePermaMindControlled() const
+		{ JMP_THIS(0x53C450); }
+
 	LaserDrawClass* CreateLaser(ObjectClass *Target, int idxWeapon, WeaponTypeClass *weapon, const CoordStruct &Coords)
 		{ JMP_THIS(0x6FD210); }
 
