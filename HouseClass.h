@@ -512,6 +512,8 @@ public:
 		return outBuffer;
 	}
 
+	bool IsIonCannonEligibleTarget(const TechnoClass* pTechno) const;
+
 	void UpdateFlagCoords(UnitClass *NewCarrier, DWORD dwUnk)
 		{ JMP_THIS(0x4FBE40); }
 

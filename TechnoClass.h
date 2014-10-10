@@ -434,6 +434,16 @@ public:
 	bool HasAbility(Ability ability) const
 		{ JMP_THIS(0x70D0D0); }
 
+	int GetIonCannonValue(AIDifficulty difficulty) const;
+
+	int GetIonCannonValue(AIDifficulty difficulty, int maxHealth) const {
+		// what TS does
+		if(maxHealth > 0 && this->Health > maxHealth) {
+			return (this->WhatAmI() == AbstractType::Building) ? 3 : 1;
+		}
+
+		return this->GetIonCannonValue(difficulty);
+	}
 
 	DirStruct GetFacing() const {
 		DirStruct ret;
