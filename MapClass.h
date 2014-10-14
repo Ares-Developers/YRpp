@@ -93,17 +93,17 @@ public:
 	virtual void vt_entry_74(DWORD dwUnk) RX;
 
 	//Non-virtual
-	CellClass* TryGetCellAt(const CellStruct& MapCoords) {
+	CellClass* TryGetCellAt(const CellStruct& MapCoords) const {
 		int idx = GetCellIndex(MapCoords);
 		return (idx >= 0 && idx < MaxCells) ? Cells[idx] : nullptr;
 	}
 
-	CellClass* TryGetCellAt(const CoordStruct& Crd) {
+	CellClass* TryGetCellAt(const CoordStruct& Crd) const {
 		CellStruct cell = CellClass::Coord2Cell(Crd);
 		return TryGetCellAt(cell);
 	}
 
-	CellClass* GetCellAt(const CellStruct &MapCoords) {
+	CellClass* GetCellAt(const CellStruct &MapCoords) const {
 		auto pCell = TryGetCellAt(MapCoords);
 
 		if(!pCell) {
@@ -114,16 +114,16 @@ public:
 		return pCell;
 	}
 
-	CellClass* GetCellAt(const CoordStruct &Crd) {
+	CellClass* GetCellAt(const CoordStruct &Crd) const {
 		CellStruct cell = CellClass::Coord2Cell(Crd);
 		return GetCellAt(cell);
 	}
 
-	bool CellExists(const CellStruct &MapCoords) {
+	bool CellExists(const CellStruct &MapCoords) const {
 		return TryGetCellAt(MapCoords) != nullptr;
 	}
 
-	bool IsLocationShrouded(const CoordStruct &crd)
+	bool IsLocationShrouded(const CoordStruct &crd) const
 		{ JMP_THIS(0x586360); }
 
 	static int GetCellIndex(const CellStruct &MapCoords) {
