@@ -300,6 +300,12 @@ public:
 	void RevealArea3(CoordStruct *Coords, int Height, int Radius, bool SkipReveal)
 		{ JMP_THIS(0x567DA0); }
 
+	void Reveal(HouseClass* pHouse)
+		{ JMP_THIS(0x577D90); }
+
+	void Reshroud(HouseClass* pHouse)
+		{ JMP_THIS(0x577AB0); }
+
 // the unknown functions that are srs bsns
 	int sub_578080(CoordStruct *Coords)
 		{ JMP_THIS(0x578080); }
