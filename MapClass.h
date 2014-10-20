@@ -123,6 +123,9 @@ public:
 		return TryGetCellAt(MapCoords) != nullptr;
 	}
 
+	int GetThreatPosed(const CellStruct& cell, HouseClass* pHouse) const
+		{ JMP_THIS(0x56BCD0); }
+
 	bool IsLocationShrouded(const CoordStruct &crd) const
 		{ JMP_THIS(0x586360); }
 
