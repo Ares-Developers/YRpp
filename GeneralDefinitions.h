@@ -1325,21 +1325,18 @@ typedef int eBlitterFlags;
 #define	bf_4000		0x4000
 
 // UI
-class MouseEvent {
-public:
-	typedef unsigned char Value;
-	enum {
-		LeftDown = 0x1,
-		LeftHeld = 0x2,
-		LeftUp = 0x4,
-		Move = 0x8,
-		RightDown = 0x10,
-		RightHeld = 0x20,
-		RightUp = 0x40
-	};
+enum class MouseEvent : unsigned char {
+	None = 0x0,
+	LeftDown = 0x1,
+	LeftHeld = 0x2,
+	LeftUp = 0x4,
+	Move = 0x8,
+	RightDown = 0x10,
+	RightHeld = 0x20,
+	RightUp = 0x40
 };
 
-// typedef BYTE eMouseEventFlags;
+MAKE_ENUM_FLAGS(MouseEvent);
 
 //control key flags
 typedef DWORD eControlKeyFlags;
