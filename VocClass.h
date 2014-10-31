@@ -75,7 +75,7 @@ public:
 	VocClassHeader Header;
 	int SamplesOK;	//0 or 1, determines whether all samples are OK to use
 	SoundControl::Value Control;
-	SoundType::Value Type;
+	SoundType Type;
 	VolumeStruct Volume;
 	DWORD unknown_38;
 	DWORD unknown_3C;

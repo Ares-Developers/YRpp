@@ -1213,26 +1213,24 @@ enum class SoundPriority : int {
 	Critical = 4
 };
 
-class SoundType {
-public:
-	typedef unsigned int Value;
-	enum {
-		Normal = 0x0,
-		Violent = 0x1,
-		Movement = 0x2,
-		Quiet = 0x4,
-		Loud = 0x8,
-		Global = 0x10,
-		Screen = 0x20,
-		Local = 0x40,
-		Player = 0x80,
-		NoiseShy = 0x100,
-		GunShy = 0x200,
-		Unshroud = 0x400,
-		Shroud = 0x800,
-		Ambient = 0x1000
-	};
+enum class SoundType : unsigned int {
+	Normal = 0x0,
+	Violent = 0x1,
+	Movement = 0x2,
+	Quiet = 0x4,
+	Loud = 0x8,
+	Global = 0x10,
+	Screen = 0x20,
+	Local = 0x40,
+	Player = 0x80,
+	NoiseShy = 0x100,
+	GunShy = 0x200,
+	Unshroud = 0x400,
+	Shroud = 0x800,
+	Ambient = 0x1000
 };
+
+MAKE_ENUM_FLAGS(SoundType);
 
 class SoundControl {
 public:
