@@ -1282,26 +1282,29 @@ enum class TargetType : unsigned int {
 	TechBuildings = 11
 };
 
+enum class TargetFlags : unsigned int {
+	None = 0x0,
+	unknown_1 = 0x1,
+	unknown_2 = 0x2,
+	Air = 0x4,
+	Infantry = 0x8,
+	Vehicles = 0x10,
+	Buildings = 0x20,
+	Economy = 0x40,
+	Ships = 0x80, // from RA1
+	Neutral = 0x100, // from RA1
+	Capture = 0x200,
+	Fakes = 0x400, // from RA1
+	Power = 0x800,
+	Factories = 0x1000,
+	BaseDefense = 0x2000,
+	Friendlies = 0x4000,
+	Occupiable = 0x8000,
+	TechCapture = 0x10000
+};
 
-typedef int eTargetFlags;
+MAKE_ENUM_FLAGS(TargetFlags);
 
-#define	ttf_0x1		0x1
-#define	ttf_0x2		0x2
-#define	ttf_Air		0x4
-#define	ttf_Infantry		0x8
-#define	ttf_Vehicles		0x10
-#define	ttf_Buildings		0x20
-#define	ttf_Economy		0x40
-#define	ttf_Ships		0x80 // from RA1
-#define	ttf_Neutral		0x100 // from RA1
-#define	ttf_Capture		0x200
-#define	ttf_Fakes		0x400 // from RA1
-#define	ttf_Power		0x800
-#define	ttf_Factories		0x1000
-#define	ttf_BaseDefense		0x2000
-#define	ttf_Friendlies		0x4000
-#define	ttf_Occupiable		0x8000
-#define	ttf_TechCapture		0x10000
 
 typedef int eBlitterFlags;
 
