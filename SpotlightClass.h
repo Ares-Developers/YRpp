@@ -29,7 +29,7 @@ public:
 	TintStruct Color;
 	int MovementRadius;
 	int Size;
-	eSpotlightFlags DisableFlags;
+	SpotlightFlags DisableFlags;
 };
 
 #endif

@@ -2,6 +2,7 @@
 #define GENEREALDEFINITIONS_H
 
 #include <GeneralStructures.h>
+#include <Helpers\EnumFlags.h>
 
 //Scalar Deleting Destructor Flags
 #define SDDTOR_NODELETE				0x00
@@ -454,13 +455,15 @@ enum class SpotlightBehaviour : unsigned int {
 	Follow = 3
 };
 
-typedef int eSpotlightFlags;
+enum class SpotlightFlags : unsigned int {
+	None = 0x0,
+	NoColor = 0x1,
+	NoRed = 0x2,
+	NoGreen = 0x4,
+	NoBlue = 0x8
+};
 
-#define sf_NoColor 0x1
-#define sf_NoRed 0x2
-#define sf_NoGreen 0x4
-#define sf_NoBlue 0x8
-
+MAKE_ENUM_FLAGS(SpotlightFlags);
 
 enum class BehavesLike : int {
 	Smoke = 0,
