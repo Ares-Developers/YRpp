@@ -1232,21 +1232,19 @@ enum class SoundType : unsigned int {
 
 MAKE_ENUM_FLAGS(SoundType);
 
-class SoundControl {
-public:
-	typedef unsigned int Value;
-	enum {
-		None = 0x0,
-		Loop = 0x1,
-		Random = 0x2,
-		All = 0x4,
-		Predelay = 0x8,
-		Interrupt = 0x10,
-		Attack = 0x20,
-		Decay = 0x40,
-		Ambient = 0x80
-	};
+enum class SoundControl : unsigned int {
+	None = 0x0,
+	Loop = 0x1,
+	Random = 0x2,
+	All = 0x4,
+	Predelay = 0x8,
+	Interrupt = 0x10,
+	Attack = 0x20,
+	Decay = 0x40,
+	Ambient = 0x80
 };
+
+MAKE_ENUM_FLAGS(SoundControl);
 
 enum class VoxType : int {
 	Standard = 0,
