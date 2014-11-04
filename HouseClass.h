@@ -323,8 +323,7 @@ public:
 
 	// gets the first house of a side with this name
 	static HouseClass* FindBySideIndex(int index) {
-		for(int i=0; i<Array->Count; ++i) {
-			auto pHouse = Array->GetItem(i);
+		for(auto pHouse : *Array) {
 			if(pHouse->Type->SideIndex == index) {
 				return pHouse;
 			}
@@ -454,8 +453,8 @@ public:
 	}
 
 	bool HasFactoryForObject(const TechnoTypeClass *Item) const {
-		for(int i = 0; i < this->Buildings.Count; ++i) {
-			BuildingTypeClass *pType = this->Buildings[i]->Type;
+		for(auto pBld : this->Buildings) {
+			auto pType = pBld->Type;
 			if(pType->Factory == Item->WhatAmI()
 				&& pType->Naval == Item->Naval) {
 				return true;

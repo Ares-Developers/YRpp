@@ -586,14 +586,13 @@ const double Math::HalfPi = 1.5707963267948966192313216916398;
 const double Math::Sqrt2 = 1.4142135623730950488016887242097;
 
 void SlaveManagerClass::ZeroOutSlaves() {
-	for(int i = this->SlaveNodes.Count - 1; i >= 0; --i) {
-		SlaveManagerClass::SlaveControl *SlaveNode = this->SlaveNodes[i];
-		if(InfantryClass *Slave = SlaveNode->Slave) {
-			Slave->SlaveOwner = nullptr;
+	for(const auto& pNode : this->SlaveNodes) {
+		if(auto pSlave = pNode->Slave) {
+			pSlave->SlaveOwner = nullptr;
 		}
-		SlaveNode->Slave = nullptr;
-		SlaveNode->State = SlaveManagerClass::SlaveControl::state_Dead;
-		SlaveNode->RespawnTimer.Start(this->RegenRate);
+		pNode->Slave = nullptr;
+		pNode->State = SlaveManagerClass::SlaveControl::state_Dead;
+		pNode->RespawnTimer.Start(this->RegenRate);
 	}
 }
 
