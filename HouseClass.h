@@ -525,7 +525,7 @@ public:
 	FactoryClass * GetPrimaryFactory(AbstractType ID, bool Naval, BuildCat BuildCat)
 		{ JMP_THIS(0x500510); }
 
-	CellStruct GetBaseCenter() const {
+	const CellStruct& GetBaseCenter() const {
 		if(this->BaseCenter != CellStruct::Empty) {
 			return this->BaseCenter;
 		} else {
