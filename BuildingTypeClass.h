@@ -73,6 +73,10 @@ public:
 		return (this->SuperWeapon == index || this->SuperWeapon2 == index);
 	}
 
+	bool HasSuperWeapon() const {
+		return (this->SuperWeapon != -1 || this->SuperWeapon2 != -1);
+	}
+
 	bool CanTogglePower() const {
 		return this->TogglePower && (this->PowerDrain > 0 || this->Powered);
 	}
