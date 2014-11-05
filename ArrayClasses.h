@@ -278,7 +278,7 @@ public:
 
 	T GetItemOrDefault(int i, T def) const {
 		if(this->ValidIndex(i)) {
-			return this->GetItem(i);
+			return this->Items[i];
 		}
 		return def;
 	}
