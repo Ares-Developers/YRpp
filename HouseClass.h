@@ -284,6 +284,19 @@ public:
 		{ JMP_THIS(0x4F9790); }
 	void GiveMoney(int amount)
 		{ JMP_THIS(0x4F9950); }
+
+	inline bool CanTransactMoney(int amount) const {
+		return amount > 0 || this->Available_Money() >= -amount;
+	}
+
+	inline void TransactMoney(int amount) {
+		if(amount > 0) {
+			this->GiveMoney(amount);
+		} else {
+			this->TakeMoney(-amount);
+		}
+	}
+
 	void GiveTiberium(float amount, int type)
 		{ JMP_THIS(0x4F9610); }
 	void UpdateAllSilos(int prevStorage, int prevTotalStorage)
