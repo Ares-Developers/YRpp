@@ -48,29 +48,29 @@ IRTTITypeInfo : IUnknown
 __interface __declspec(uuid("941582E0-86DA-11D1-B706-00A024DDAFD1"))
 IHouse : IUnknown
 {
-	virtual long __stdcall				ID_Number() = 0;
-	virtual BSTR __stdcall				Name() = 0;
+	virtual long __stdcall				ID_Number() const = 0;
+	virtual BSTR __stdcall				Name() const = 0;
 	virtual IApplication* __stdcall		Get_Application() = 0;
-	virtual long __stdcall				Available_Money() = 0;
-	virtual long __stdcall				Available_Storage() = 0;
-	virtual long __stdcall				Power_Output() = 0;
-	virtual long __stdcall				Power_Drain() = 0;
-	virtual long __stdcall				Category_Quantity(Category category) = 0;
-	virtual long __stdcall				Category_Power(Category category) = 0;
-	virtual CellStruct __stdcall			Base_Center() = 0;
-	virtual HRESULT __stdcall			Fire_Sale() = 0;
+	virtual long __stdcall				Available_Money() const = 0;
+	virtual long __stdcall				Available_Storage() const = 0;
+	virtual long __stdcall				Power_Output() const = 0;
+	virtual long __stdcall				Power_Drain() const = 0;
+	virtual long __stdcall				Category_Quantity(Category category) const = 0;
+	virtual long __stdcall				Category_Power(Category category) const = 0;
+	virtual CellStruct __stdcall		Base_Center() const = 0;
+	virtual HRESULT __stdcall			Fire_Sale() const = 0;
 	virtual HRESULT __stdcall			All_To_Hunt() = 0;
 };
 
 __interface __declspec(uuid("CAACF210-86E3-11D1-B706-00A024DDAFD1"))
 IPublicHouse : IUnknown
 {
-	virtual long __stdcall			ID_Number() = 0;
-	virtual BSTR __stdcall			Name() = 0;
-	virtual long __stdcall			Apparent_Category_Quantity(Category category) = 0;
-	virtual long __stdcall			Apparent_Category_Power(Category category) = 0;
-	virtual CellStruct __stdcall		Apparent_Base_Center() = 0;
-	virtual bool __stdcall	Is_Powered() = 0;
+	virtual long __stdcall			ID_Number() const = 0;
+	virtual BSTR __stdcall			Name() const = 0;
+	virtual long __stdcall			Apparent_Category_Quantity(Category category) const = 0;
+	virtual long __stdcall			Apparent_Category_Power(Category category) const = 0;
+	virtual CellStruct __stdcall	Apparent_Base_Center() const = 0;
+	virtual bool __stdcall			Is_Powered() const = 0;
 };
 
 typedef struct tagCONNECTDATA

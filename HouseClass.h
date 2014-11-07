@@ -140,24 +140,24 @@ public:
 	virtual HRESULT __stdcall FindConnectionPoint(GUID* riid, IConnectionPoint** ppCP) R0;
 
 	//IPublicHouse
-	virtual long __stdcall Apparent_Category_Quantity(Category category) R0;
-	virtual long __stdcall Apparent_Category_Power(Category category) R0;
-	virtual CellStruct __stdcall Apparent_Base_Center() { CellStruct DESU = {0, 0}; return DESU ;}
-	virtual bool __stdcall Is_Powered() R0;
+	virtual long __stdcall Apparent_Category_Quantity(Category category) const override R0;
+	virtual long __stdcall Apparent_Category_Power(Category category) const override R0;
+	virtual CellStruct __stdcall Apparent_Base_Center() const RT(CellStruct);
+	virtual bool __stdcall Is_Powered() const R0;
 
 	//IHouse
-	virtual long __stdcall ID_Number() R0;
-	virtual BSTR __stdcall Name() R0;
-	virtual IApplication* __stdcall Get_Application() R0;
-	virtual long __stdcall Available_Money() R0;
-	virtual long __stdcall Available_Storage() R0;
-	virtual long __stdcall Power_Output() R0;
-	virtual long __stdcall Power_Drain() R0;
-	virtual long __stdcall Category_Quantity(Category category) R0;
-	virtual long __stdcall Category_Power(Category category) R0;
-	virtual CellStruct __stdcall Base_Center() { CellStruct butts = {1337, 42}; return butts ;}
-	virtual HRESULT __stdcall Fire_Sale() R0;
-	virtual HRESULT __stdcall All_To_Hunt() R0;
+	virtual long __stdcall ID_Number() const override R0;
+	virtual BSTR __stdcall Name() const override R0;
+	virtual IApplication* __stdcall Get_Application() override R0;
+	virtual long __stdcall Available_Money() const override R0;
+	virtual long __stdcall Available_Storage() const override R0;
+	virtual long __stdcall Power_Output() const override R0;
+	virtual long __stdcall Power_Drain() const override R0;
+	virtual long __stdcall Category_Quantity(Category category) const override R0;
+	virtual long __stdcall Category_Power(Category category) const override R0;
+	virtual CellStruct __stdcall Base_Center() const override RT(CellStruct);
+	virtual HRESULT __stdcall Fire_Sale() const override R0;
+	virtual HRESULT __stdcall All_To_Hunt() override R0;
 
 	//IUnknown
 	virtual HRESULT __stdcall QueryInterface(REFIID iid, void** ppvObject) R0;
