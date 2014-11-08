@@ -278,7 +278,7 @@ public:
 	ColorStruct ColorAdd;
 	int unknown_int_6FC;
 	short unknown_short_700;
-	bool UpgradeLevel; // as defined by Type->UpgradesToLevel=
+	BYTE UpgradeLevel; // as defined by Type->UpgradesToLevel=
 	char GateStage;
 	PrismChargeState PrismStage;
 	CoordStruct PrismTargetCoords;
