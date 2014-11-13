@@ -580,11 +580,6 @@ ALIAS(WWMouseClass *, WWMouseClass::Instance, 0x887640);
 #undef ALIAS
 #undef DECL
 
-const double Math::Pi = 3.1415926535897932384626433832795;
-const double Math::TwoPi = 6.283185307179586476925286766559;
-const double Math::HalfPi = 1.5707963267948966192313216916398;
-const double Math::Sqrt2 = 1.4142135623730950488016887242097;
-
 void SlaveManagerClass::ZeroOutSlaves() {
 	for(const auto& pNode : this->SlaveNodes) {
 		if(auto pSlave = pNode->Slave) {

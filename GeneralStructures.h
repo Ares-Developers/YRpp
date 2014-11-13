@@ -3,6 +3,7 @@
 
 #include <ASMMacros.h>
 #include <YRPPCore.h>
+#include <YRMath.h>
 #include <YRMathVector.h>
 #include <GeneralDefinitions.h> // need eDirection for FacingStruct
 #include <BasicStructures.h>

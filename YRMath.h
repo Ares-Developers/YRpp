@@ -4,22 +4,18 @@
 #include <YRPPCore.h>
 
 #define MATH_FUNC(name, address)\
-	static __declspec(noinline) double __cdecl name(double value)\
+	inline __declspec(naked) double __cdecl name(double value)\
 	{\
-		double* p = &value;\
-		PUSH_VAR64(p);\
-		CALL(address);\
-		ADD_ESP(8);\
+		JMP(address);\
 	}
 
-class Math
+namespace Math
 {
-public:
-	static const double Pi;
-	static const double TwoPi;
-	static const double HalfPi;
+	const double Pi = 3.1415926535897932384626433832795;
+	const double TwoPi = 6.283185307179586476925286766559;
+	const double HalfPi = 1.5707963267948966192313216916398;
 
-	static const double Sqrt2;
+	const double Sqrt2 = 1.4142135623730950488016887242097;
 
 	MATH_FUNC(sqrt,	 0x4CAC40);
 	MATH_FUNC(sin,	 0x4CACB0);
@@ -29,22 +25,17 @@ public:
 	MATH_FUNC(acos,	 0x4CADB0);
 	MATH_FUNC(atan,	 0x4CADE0);
 
-	static __declspec(noinline) double __cdecl arctanfoo(double a, double b)
+	inline __declspec(naked) double __cdecl arctanfoo(double a, double b)
 	{
-		double* p = &a;
-		double* r = &b;
-		PUSH_VAR64(p);
-		PUSH_VAR64(r);
-		CALL(0x4CAE30);
-		ADD_ESP(16);
+		JMP(0x4CAE30);
 	}
 
-	static inline double rad2deg(double rad)
+	inline double rad2deg(double rad)
 	{
 		return rad * 180.0 / Pi;
 	}
 
-	static inline double deg2rad(double deg)
+	inline double deg2rad(double deg)
 	{
 		return deg * Pi / 180.0;
 	}
