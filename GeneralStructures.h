@@ -129,7 +129,11 @@ struct DirStruct
 	typedef unsigned short unsigned_type;
 
 	DirStruct() : DirStruct(0) { }
-	explicit DirStruct(value_type value) : Value(value) { }
+	explicit DirStruct(int value) : Value(static_cast<value_type>(value)) { }
+
+	explicit DirStruct(double rad) : DirStruct() {
+		this->radians(rad);
+	}
 
 	DirStruct(size_t bits, value_type value)
 		: DirStruct(static_cast<value_type>(TranslateFixedPoint(bits, 16, static_cast<unsigned_type>(value), 0)))
