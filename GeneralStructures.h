@@ -125,8 +125,8 @@ inline unsigned int TranslateFixedPoint(size_t bitsFrom, size_t bitsTo, unsigned
 // like a compass with 2 ^ 16 units equalling 360°
 struct DirStruct
 {
-	typedef short value_type;
-	typedef unsigned short unsigned_type;
+	using value_type = short;
+	using unsigned_type = unsigned short;
 
 	DirStruct() : DirStruct(0) { }
 	explicit DirStruct(int value) : Value(static_cast<value_type>(value)) { }
