@@ -50,17 +50,20 @@ public:
 
 	// OMG OPTIMIZED:
 	// http://graphics.stanford.edu/~seander/bithacks.html#IntegerLog
-	static int Int2Highest(DWORD v) {
-		register unsigned int r; // result of log2(v) will go here
-		register unsigned int shift;
+	static unsigned int Int2Highest(DWORD v) {
+		unsigned int r; // result of log2(v) will go here
+		unsigned int shift;
 
-		r =     (v > 0xFFFF) << 4; v >>= r;
-		shift = (v > 0xFF  ) << 3; v >>= shift; r |= shift;
-		shift = (v > 0xF   ) << 2; v >>= shift; r |= shift;
-		shift = (v > 0x3   ) << 1; v >>= shift; r |= shift;
-		                                        r |= (v >> 1);
-
+		r =     static_cast<DWORD>(v > 0xFFFF) << 4; v >>= r;
+		shift = static_cast<DWORD>(v > 0xFF  ) << 3; v >>= shift; r |= shift;
+		shift = static_cast<DWORD>(v > 0xF   ) << 2; v >>= shift; r |= shift;
+		shift = static_cast<DWORD>(v > 0x3   ) << 1; v >>= shift; r |= shift;
+		                                                          r |= (v >> 1);
 		return r;
+	}
+
+	static unsigned int Int2Highest(int v) {
+		return Int2Highest(static_cast<DWORD>(v));
 	}
 
 };
