@@ -45,7 +45,7 @@ public:
 	virtual int Size() const R0;
 
 	//BulletClass
-	virtual BYTE GetAnimRate() const R0;
+	virtual BYTE GetAnimFrame() const R0;
 	virtual void SetTarget(AbstractClass *Target) RX;
 	virtual bool MoveTo(const CoordStruct& Where, const BulletVelocity& Velocity) R0;
 
@@ -135,8 +135,8 @@ public:
 	DWORD unknown_11C;
 	double unknown_120;
 	WarheadTypeClass* WH;
-	byte AnimRate;
-	byte unknown_12D; // AnimRate from Type
+	byte AnimFrame;
+	byte AnimRateCounter;
 	WeaponTypeClass* WeaponType;
 	CoordStruct posSrc;
 	CoordStruct posTgt;
