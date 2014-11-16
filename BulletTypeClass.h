@@ -99,9 +99,9 @@ public:
 	int unknown_int_2E8; //Related to SpawnDelay
 	bool Scalable;
 	int Arm;
-	char AnimLow;
-	char AnimHigh;
-	char AnimRate;
+	byte AnimLow;
+	byte AnimHigh;
+	byte AnimRate;
 	bool Flat;
 };
 
