@@ -43,6 +43,10 @@ public:
 	BulletTypeClass(const char* pID) : ObjectTypeClass(false)
 		{ JMP_THIS(0x46BBC0); }
 
+	bool Rotates() const {
+		return !this->NoRotate;
+	}
+
 	BulletClass* __fastcall CreateBullet(
 		AbstractClass* Target,
 		TechnoClass* Owner,
@@ -74,7 +78,7 @@ public:
 	bool Inviso;
 	bool Proximity;
 	bool Ranged;
-	bool Rotates;
+	bool NoRotate; // actually has opposite meaning of Rotates. false means Rotates=yes.
 	bool Inaccurate;
 	bool FlakScatter;
 	bool AA;
