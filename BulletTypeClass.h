@@ -47,6 +47,11 @@ public:
 		return !this->NoRotate;
 	}
 
+	void SetScaledSpawnDelay(int delay) {
+		// JMP_THIS(0x46C840);
+		this->ScaledSpawnDelay = delay;
+	}
+
 	BulletClass* __fastcall CreateBullet(
 		AbstractClass* Target,
 		TechnoClass* Owner,
@@ -100,7 +105,7 @@ public:
 	int ROT;
 	int CourseLockDuration;
 	int SpawnDelay;
-	int unknown_int_2E8; //Related to SpawnDelay
+	int ScaledSpawnDelay;
 	bool Scalable;
 	int Arm;
 	byte AnimLow;

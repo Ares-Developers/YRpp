@@ -48,6 +48,7 @@ ALIAS_O(BombListClass *, BombListClass::Instance, 0x87F5D8);
 
 #include <BulletClass.h>
 DECL(BulletClass, 0xA8ED40);
+ALIAS(DynamicVectorClass<BulletClass*>, BulletClass::ScalableBullets, 0x89DE18);
 
 #include <BulletTypeClass.h>
 DECL(BulletTypeClass, 0xA83C80);

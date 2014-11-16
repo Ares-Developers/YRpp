@@ -31,6 +31,8 @@ public:
 	//Array
 	static DynamicVectorClass<BulletClass*>* Array;
 
+	static DynamicVectorClass<BulletClass*>& ScalableBullets;
+
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
 
