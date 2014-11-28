@@ -193,6 +193,10 @@ public:
 		(int Damage, WarheadTypeClass *WH, CoordStruct coords, bool Force = 0, SpotlightFlags CLDisableFlags = SpotlightFlags::None)
 			{JMP_STD(0x48A620); }
 
+	// get the damage a warhead causes to specific armor
+	static int __fastcall GetTotalDamage(int damage, const WarheadTypeClass* pWarhead, Armor armor, int distance)
+		{ JMP_STD(0x489180); }
+
 	int GetCellFloorHeight(const CoordStruct& crd) const
 		{ JMP_THIS(0x578080); }
 
