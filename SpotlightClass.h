@@ -16,8 +16,11 @@ public:
 	void Draw()
 		{ JMP_THIS(0x5FF850); }
 
+	void Update()
+		{ JMP_THIS(0x5FF320); }
+
 	//Constructor
-	SpotlightClass(TintStruct ColorTint, int size)
+	SpotlightClass(CoordStruct coords, int size)
 		{ JMP_THIS(0x5FF250); }
 
 	//===========================================================================
@@ -26,7 +29,7 @@ public:
 
 public:
 
-	TintStruct Color;
+	CoordStruct Coords;
 	int MovementRadius;
 	int Size;
 	SpotlightFlags DisableFlags;
