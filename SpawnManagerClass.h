@@ -6,35 +6,27 @@
 class HouseClass;
 class TechnoClass;
 
-class SpawnManagerStatus {
-public:
-	typedef unsigned int Value;
-	enum {
-		Idle = 0, // no target or out of range
-		Launching = 1, // one launch in progress
-		CoolDown = 2 // waiting for launch to complete
-	};
+enum class SpawnManagerStatus : unsigned int {
+	Idle = 0, // no target or out of range
+	Launching = 1, // one launch in progress
+	CoolDown = 2 // waiting for launch to complete
 };
 
-class SpawnNodeStatus {
-public:
-	typedef unsigned int Value;
-	enum {
-		Idle = 0, // docked, waiting for target
-		TakeOff = 1, // missile tilting and launch
-		Preparing = 2, // gathering, waiting
-		Attacking = 3, // attacking until no ammo
-		Returning = 4, // return to carrier
-		//Unused_5, // not used
-		Reloading = 6, // docked, reloading ammo and health
-		Dead = 7 // respawning
-	};
+enum class SpawnNodeStatus : unsigned int {
+	Idle = 0, // docked, waiting for target
+	TakeOff = 1, // missile tilting and launch
+	Preparing = 2, // gathering, waiting
+	Attacking = 3, // attacking until no ammo
+	Returning = 4, // return to carrier
+	//Unused_5, // not used
+	Reloading = 6, // docked, reloading ammo and health
+	Dead = 7 // respawning
 };
 
 struct SpawnNode
 {
 	TechnoClass* Unit;
-	SpawnNodeStatus:: Value Status;
+	SpawnNodeStatus Status;
 	TimerStruct SpawnTimer;
 	BOOL IsSpawnMissile;
 };
@@ -109,7 +101,7 @@ public:
 	TimerStruct SpawnTimer;
 	AbstractClass* Target;
 	AbstractClass* NewTarget;
-	SpawnManagerStatus::Value Status;
+	SpawnManagerStatus Status;
 };
 
 #endif
