@@ -42,7 +42,6 @@ public:
 	void Set16(WORD value) {
 		*this->wordData() = value;
 	}
-
 };
 
 class ExtendedRegister : public LimitedRegister {
@@ -87,52 +86,6 @@ public:
 };
 
 //Macros to make the following a lot easier
-#define REG_FUNCS1(n32, n16, n8hi, n8lo, idx) \
-public: \
-	DWORD get_ ## n32 ()\
-		{ return regs[idx]; }\
-	WORD get_## n16 ()\
-		{ return (WORD)(regs[idx] & 0xFFFF); }\
-	BYTE get_## n8hi ()\
-		{ return (BYTE)((regs[idx] & 0xFFFF) >> 8); }\
-	BYTE get_## n8lo ()\
-		{ return (BYTE)(regs[idx] & 0xFF); }\
-private: \
-	void _set_## n32 (DWORD value)\
-		{ regs[idx] = value; }\
-	void _set_## n16 (WORD value)\
-		{ ((WORD*)&regs[idx])[0] = value; }\
-	void _set_## n8hi (BYTE value)\
-		{ ((BYTE*)&regs[idx])[1] = value; }\
-	void _set_## n8lo (BYTE value)\
-		{ ((BYTE*)&regs[idx])[0] = value; }\
-public: \
-	template <typename T> inline void Set_## n32(T value)\
-		{ regs[idx] = reinterpret_cast<DWORD>(value); } \
-	template <typename T> inline void Set_## n16(T value)\
-		{ ((WORD*)&regs[idx])[0] = reinterpret_cast<WORD>(value); } \
-	template <typename T> inline void Set_## n8hi(T value)\
-		{ ((BYTE*)&regs[idx])[1] = reinterpret_cast<BYTE>(value); } \
-	template <typename T> inline void Set_## n8lo(T value)\
-		{ ((BYTE*)&regs[idx])[0] = reinterpret_cast<BYTE>(value); } \
-
-#define REG_FUNCS2(n32, n16, idx) \
-public: \
-	DWORD Get_ ## n32 () \
-		{ return regs[idx]; } \
-	WORD Get_## n16 () \
-		{ return (WORD)(regs[idx] & 0xFFFF); } \
-private: \
-	void set_## n32 (DWORD value) \
-		{ regs[idx] = value; } \
-	void set_## n16 (WORD value) \
-		{ ((WORD*)&regs[idx])[0] = value; } \
-public: \
-	template <typename T> inline void Set_## n32(T value)\
-		{ regs[idx] = reinterpret_cast<DWORD>(value); } \
-	template <typename T> inline void Set_## n16(T value)\
-		{ ((WORD*)&regs[idx])[0] = reinterpret_cast<WORD>(value); } \
-
 #define REG_SHORTCUTS(reg) \
 	inline DWORD reg() \
 		{ return this->_ ## reg.Get<DWORD>(); } \
@@ -167,7 +120,6 @@ class REGISTERS
 private:
 	DWORD	origin;
 	DWORD	flags;
-//	DWORD	regs[8];
 
 	LimitedRegister _EDI;
 	LimitedRegister _ESI;
@@ -179,17 +131,6 @@ private:
 	ExtendedRegister _EAX;
 
 public:
-/*
-	REG_FUNCS1(EAX, AX, AH, AL, 7);
-	REG_FUNCS1(ECX, CX, CH, CL, 6);
-	REG_FUNCS1(EDX, DX, DH, DL, 5);
-	REG_FUNCS1(EBX, BX, BH, BL, 4);
-	REG_FUNCS2(ESP, SP, 3);
-	REG_FUNCS2(EBP, BP, 2);
-	REG_FUNCS2(ESI, SI, 1);
-	REG_FUNCS2(EDI, DI, 0);
-*/
-
 	DWORD get_Origin()
 		{ return this->origin; }
 
@@ -255,39 +196,6 @@ public:
 	template<typename T>
 		inline void Base(signed int offset, T value)
 			{ this->_EBP.At<T>(offset, value); }
-
-/*
-	DWORD lea_StackVar(int offset)
-		{ return this->ESP<DWORD>() + offset; }
-
-	DWORD get_StackVar32(int offset)
-		{ return *(this->ESP() + (offset >> 2)); }
-	WORD get_StackVar16(int offset)
-		{ return *((WORD*)regs[3] + (offset >> 1)); }
-	BYTE get_StackVar8(int offset)
-		{ return *((BYTE*)regs[3] + offset); }
-	void set_StackVar32(int offset, DWORD value)
-		{ *((DWORD*)regs[3] + (offset >> 2)) = value; }
-	void set_StackVar16(int offset, WORD value)
-		{ *((WORD*)regs[3] + (offset >> 1)) = value; }
-	void set_StackVar8(int offset, BYTE value)
-		{ *((BYTE*)regs[3] + offset) = value; }
-
-	DWORD lea_BaseVar(int offset)
-		{ return regs[2] + offset; }
-	DWORD get_BaseVar32(int offset)
-		{ return *((DWORD*)regs[2] + (offset >> 2)); }
-	WORD get_BaseVar16(int offset)
-		{ return *((WORD*)regs[2] + (offset >> 1)); }
-	BYTE get_BaseVar8(int offset)
-		{ return *((BYTE*)regs[2] + offset); }
-	void set_BaseVar32(int offset, DWORD value)
-		{ *((DWORD*)regs[2] + (offset >> 2)) = value; }
-	void set_BaseVar16(int offset, WORD value)
-		{ *((WORD*)regs[2] + (offset >> 1)) = value; }
-	void set_BaseVar8(int offset, BYTE value)
-		{ *((BYTE*)regs[2] + offset) = value; }
-*/
 };
 
 //Use this for DLL export functions
