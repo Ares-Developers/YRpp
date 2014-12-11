@@ -16,12 +16,12 @@ class LimitedRegister {
 protected:
 	DWORD data;
 
-	WORD * wordData() {
-		return reinterpret_cast<WORD *>(&this->data);
+	WORD* wordData() {
+		return reinterpret_cast<WORD*>(&this->data);
 	}
 
-	BYTE * byteData() {
-		return reinterpret_cast<BYTE *>(&this->data);
+	BYTE* byteData() {
+		return reinterpret_cast<BYTE*>(&this->data);
 	}
 
 public:
@@ -30,14 +30,14 @@ public:
 	}
 
 	template<typename T>
-		inline T Get() {
-			return *reinterpret_cast<T*>(&this->data);
-		}
+	inline T Get() {
+		return *reinterpret_cast<T*>(&this->data);
+	}
 
 	template<typename T>
-		inline void Set(T value) {
-			this->data = DWORD(value);
-		}
+	inline void Set(T value) {
+		this->data = DWORD(value);
+	}
 
 	void Set16(WORD value) {
 		*this->wordData() = value;
@@ -66,8 +66,8 @@ public:
 class StackRegister : public ExtendedRegister {
 public:
 	template<typename T>
-		inline T * lea(signed int byteOffset) {
-		return reinterpret_cast<T *>(static_cast<int>(this->data) + byteOffset);
+	inline T* lea(signed int byteOffset) {
+		return reinterpret_cast<T*>(static_cast<int>(this->data) + byteOffset);
 	}
 
 	inline DWORD lea(signed int byteOffset) {
@@ -75,13 +75,13 @@ public:
 	}
 
 	template<typename T>
-		inline T At(signed int byteOffset) {
-		return *reinterpret_cast<T *>(static_cast<int>(this->data) + byteOffset);
+	inline T At(signed int byteOffset) {
+		return *reinterpret_cast<T*>(static_cast<int>(this->data) + byteOffset);
 	}
 
 	template<typename T>
-		inline void At(signed int byteOffset, T value) {
-		*reinterpret_cast<T *>(static_cast<int>(this->data) + byteOffset) = value;
+	inline void At(signed int byteOffset, T value) {
+		*reinterpret_cast<T*>(static_cast<int>(this->data) + byteOffset) = value;
 	}
 };
 
@@ -131,13 +131,17 @@ private:
 	ExtendedRegister _EAX;
 
 public:
-	DWORD get_Origin()
-		{ return this->origin; }
+	DWORD get_Origin() {
+		return this->origin;
+	}
 
-	DWORD EFLAGS()
-		{ return this->flags; }
-	void EFLAGS(DWORD value)
-		{ this->flags = value; }
+	DWORD EFLAGS() {
+		return this->flags;
+	}
+
+	void EFLAGS(DWORD value) {
+		this->flags = value;
+	}
 
 	REG_SHORTCUTS(EAX);
 	REG_SHORTCUTS(EBX);
@@ -154,48 +158,64 @@ public:
 	REG_SHORTCUTS_XHL(D);
 
 	template<typename T>
-		inline T lea_Stack(signed int offset)
-			{ return reinterpret_cast<T>(this->_ESP.lea(offset)); }
+	inline T lea_Stack(signed int offset) {
+		return reinterpret_cast<T>(this->_ESP.lea(offset));
+	}
 
 	template<>
-		inline DWORD lea_Stack(signed int offset)
-			{ return this->_ESP.lea(offset); }
+	inline DWORD lea_Stack(signed int offset) {
+		return this->_ESP.lea(offset);
+	}
 
 	template<>
-		inline int lea_Stack(signed int offset)
-			{ return static_cast<int>(this->_ESP.lea(offset)); }
+	inline int lea_Stack(signed int offset) {
+		return static_cast<int>(this->_ESP.lea(offset));
+	}
 
 	template<typename T>
-		inline T& ref_Stack(signed int offset)
-			{ return *this->lea_Stack<T*>(offset); }
+	inline T& ref_Stack(signed int offset) {
+		return *this->lea_Stack<T*>(offset);
+	}
 
 	template<typename T>
-		inline T Stack(signed int offset)
-			{ return this->_ESP.At<T>(offset); }
+	inline T Stack(signed int offset) {
+		return this->_ESP.At<T>(offset);
+	}
 
-	DWORD Stack32(signed int offset)
-			{ return this->_ESP.At<DWORD>(offset); }
-	WORD Stack16(signed int offset)
-			{ return this->_ESP.At<WORD>(offset); }
-	BYTE Stack8(signed int offset)
-			{ return this->_ESP.At<BYTE>(offset); }
+	DWORD Stack32(signed int offset) {
+		return this->_ESP.At<DWORD>(offset);
+	}
 
-	template<typename T>
-		inline T Base(signed int offset)
-			{ return this->_EBP.At<T>(offset); }
+	WORD Stack16(signed int offset) {
+		return this->_ESP.At<WORD>(offset);
+	}
 
-	template<typename T>
-		inline void Stack(signed int offset, T value)
-			{ this->_ESP.At<T>(offset, value); }
-
-	void Stack16(signed int offset, WORD value)
-			{ this->_ESP.At<WORD>(offset, value); }
-	void Stack8(signed int offset, BYTE value)
-			{ this->_ESP.At<BYTE>(offset, value); }
+	BYTE Stack8(signed int offset) {
+		return this->_ESP.At<BYTE>(offset);
+	}
 
 	template<typename T>
-		inline void Base(signed int offset, T value)
-			{ this->_EBP.At<T>(offset, value); }
+	inline T Base(signed int offset) {
+		return this->_EBP.At<T>(offset);
+	}
+
+	template<typename T>
+	inline void Stack(signed int offset, T value) {
+		this->_ESP.At<T>(offset, value);
+	}
+
+	void Stack16(signed int offset, WORD value) {
+		this->_ESP.At<WORD>(offset, value);
+	}
+
+	void Stack8(signed int offset, BYTE value) {
+		this->_ESP.At<BYTE>(offset, value);
+	}
+
+	template<typename T>
+	inline void Base(signed int offset, T value) {
+		this->_EBP.At<T>(offset, value);
+	}
 };
 
 //Use this for DLL export functions
