@@ -131,7 +131,7 @@ private:
 	ExtendedRegister _EAX;
 
 public:
-	DWORD get_Origin() {
+	DWORD Origin() {
 		return this->origin;
 	}
 
