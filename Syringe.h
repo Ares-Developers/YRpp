@@ -8,8 +8,6 @@
 #ifndef SYRINGE_H
 #define SYRINGE_H
 
-#include <GeneralDefinitions.h>
-
 #include <windows.h>
 
 class LimitedRegister {
