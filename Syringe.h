@@ -47,41 +47,41 @@ public:
 class ExtendedRegister : public LimitedRegister {
 public:
 	BYTE Get8Hi() {
-		return (this->byteData())[1];
+		return this->byteData()[1];
 	}
 
 	BYTE Get8Lo() {
-		return (this->byteData())[0];
+		return this->byteData()[0];
 	}
 
 	void Set8Hi(BYTE value) {
-		(this->byteData())[1] = value;
+		this->byteData()[1] = value;
 	}
 
 	void Set8Lo(BYTE value) {
-		(this->byteData())[0] = value;
+		this->byteData()[0] = value;
 	}
 };
 
 class StackRegister : public ExtendedRegister {
 public:
 	template<typename T>
-	inline T* lea(signed int byteOffset) {
-		return reinterpret_cast<T*>(static_cast<int>(this->data) + byteOffset);
+	inline T* lea(int byteOffset) {
+		return reinterpret_cast<T*>(static_cast<DWORD>(this->data + static_cast<DWORD>(byteOffset)));
 	}
 
-	inline DWORD lea(signed int byteOffset) {
-		return static_cast<DWORD>(static_cast<int>(this->data) + byteOffset);
-	}
-
-	template<typename T>
-	inline T At(signed int byteOffset) {
-		return *reinterpret_cast<T*>(static_cast<int>(this->data) + byteOffset);
+	inline DWORD lea(int byteOffset) {
+		return static_cast<DWORD>(this->data + static_cast<DWORD>(byteOffset));
 	}
 
 	template<typename T>
-	inline void At(signed int byteOffset, T value) {
-		*reinterpret_cast<T*>(static_cast<int>(this->data) + byteOffset) = value;
+	inline T At(int byteOffset) {
+		return *reinterpret_cast<T*>(this->data + static_cast<DWORD>(byteOffset));
+	}
+
+	template<typename T>
+	inline void At(int byteOffset, T value) {
+		*reinterpret_cast<T*>(this->data + static_cast<DWORD>(byteOffset)) = value;
 	}
 };
 
@@ -92,7 +92,7 @@ public:
 	template<typename T> inline T reg() \
 		{ return this->_ ## reg.Get<T>(); } \
 	template<typename T> inline void reg(T value) \
-		{ this->_ ## reg.Set<T>(value); } \
+		{ this->_ ## reg.Set(value); } \
 
 #define REG_SHORTCUTS_X(r) \
 	DWORD r ## X() \
@@ -158,63 +158,63 @@ public:
 	REG_SHORTCUTS_XHL(D);
 
 	template<typename T>
-	inline T lea_Stack(signed int offset) {
+	inline T lea_Stack(int offset) {
 		return reinterpret_cast<T>(this->_ESP.lea(offset));
 	}
 
 	template<>
-	inline DWORD lea_Stack(signed int offset) {
+	inline DWORD lea_Stack(int offset) {
 		return this->_ESP.lea(offset);
 	}
 
 	template<>
-	inline int lea_Stack(signed int offset) {
+	inline int lea_Stack(int offset) {
 		return static_cast<int>(this->_ESP.lea(offset));
 	}
 
 	template<typename T>
-	inline T& ref_Stack(signed int offset) {
+	inline T& ref_Stack(int offset) {
 		return *this->lea_Stack<T*>(offset);
 	}
 
 	template<typename T>
-	inline T Stack(signed int offset) {
+	inline T Stack(int offset) {
 		return this->_ESP.At<T>(offset);
 	}
 
-	DWORD Stack32(signed int offset) {
+	DWORD Stack32(int offset) {
 		return this->_ESP.At<DWORD>(offset);
 	}
 
-	WORD Stack16(signed int offset) {
+	WORD Stack16(int offset) {
 		return this->_ESP.At<WORD>(offset);
 	}
 
-	BYTE Stack8(signed int offset) {
+	BYTE Stack8(int offset) {
 		return this->_ESP.At<BYTE>(offset);
 	}
 
 	template<typename T>
-	inline T Base(signed int offset) {
+	inline T Base(int offset) {
 		return this->_EBP.At<T>(offset);
 	}
 
 	template<typename T>
-	inline void Stack(signed int offset, T value) {
-		this->_ESP.At<T>(offset, value);
+	inline void Stack(int offset, T value) {
+		this->_ESP.At(offset, value);
 	}
 
-	void Stack16(signed int offset, WORD value) {
-		this->_ESP.At<WORD>(offset, value);
+	void Stack16(int offset, WORD value) {
+		this->_ESP.At(offset, value);
 	}
 
-	void Stack8(signed int offset, BYTE value) {
-		this->_ESP.At<BYTE>(offset, value);
+	void Stack8(int offset, BYTE value) {
+		this->_ESP.At(offset, value);
 	}
 
 	template<typename T>
-	inline void Base(signed int offset, T value) {
-		this->_EBP.At<T>(offset, value);
+	inline void Base(int offset, T value) {
+		this->_EBP.At(offset, value);
 	}
 };
 
