@@ -26,6 +26,9 @@ class CellClass : public AbstractClass
 public:
 	static const AbstractType AbsID = AbstractType::Cell;
 
+	// the height of a bridge in leptons
+	static const int BridgeHeight = 4 * Unsorted::LevelHeight;
+
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
 
@@ -239,10 +242,6 @@ public:
 	ISTILE(NotWater, 0x4867E0);
 	ISTILE(DestroyableCliff, 0x486900);
 
-	// HACK EVIL HACK
-	static int BridgeHeight()
-	{ return *reinterpret_cast<int*>(0xB0C07C); }
-
 	static CoordStruct Cell2Coord(const CellStruct &cell, int z = 0)
 	{
 		CoordStruct ret;
@@ -263,7 +262,7 @@ public:
 	CoordStruct FixHeight(CoordStruct crd) const
 	{
 		if(this->ContainsBridge()) {
-			crd.Z += BridgeHeight();
+			crd.Z += BridgeHeight;
 		}
 		return crd;
 	}
