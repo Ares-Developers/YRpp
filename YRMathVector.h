@@ -87,12 +87,22 @@ public:
 	//magnitude
 	double Magnitude() const
 	{
-		return sqrt(static_cast<double>(X) * X + static_cast<double>(Y) * Y);
+		return sqrt(*this * *this);
+	}
+	//magnitude squared
+	double MagnitudeSquared() const
+	{
+		return *this * *this;
 	}
 	//distance from another vector
 	double DistanceFrom(const Vector2D& a) const
 	{
 		return (a - *this).Magnitude();
+	}
+	//distance from another vector, squared
+	double DistanceFromSquared(const Vector2D& a) const
+	{
+		return (a - *this).MagnitudeSquared();
 	}
 	//collinearity
 	bool IsCollinearTo(const Vector2D& a) const
@@ -206,14 +216,22 @@ public:
 	//magnitude
 	double Magnitude() const
 	{
-		return sqrt(static_cast<double>(X) * X
-			+ static_cast<double>(Y) * Y
-			+ static_cast<double>(Z) * Z);
+		return sqrt(*this * *this);
+	}
+	//magnitude squared
+	double MagnitudeSquared() const
+	{
+		return *this * *this;
 	}
 	//distance from another vector
 	double DistanceFrom(const Vector3D& a) const
 	{
 		return (a - *this).Magnitude();
+	}
+	//distance from another vector, squared
+	double DistanceFromSquared(const Vector3D& a) const
+	{
+		return (a - *this).MagnitudeSquared();
 	}
 	//collinearity
 	bool IsCollinearTo(const Vector3D& a) const
