@@ -64,7 +64,7 @@ public:
 		{ JMP_THIS(0x4664C0); }
 
 	// calls Detonate with the appropriate coords
-	void Fire(bool bUnknown)
+	void Fire(bool destroy = false)
 		{ JMP_THIS(0x468D80); }
 
 	// detonate the bullet at specific coords
