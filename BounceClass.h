@@ -12,36 +12,44 @@
 class BounceClass
 {
 public:
-	class Status {
-		public:
-		typedef int Value;
-		enum {
-			None = 0,
-			Bounce = 1,
-			Impact = 2
-		};
+	enum class Status : int {
+		None = 0,
+		Bounce = 1,
+		Impact = 2
 	};
 
 	// constructors
 	BounceClass() : Elasticity(0.0), Gravity(0.0), MaxVelocity(0.0) {}
 
-	BounceClass(CoordStruct* pCoords, double elasticity, double gravity,
-		double maxVelocity, Vector3D<float>* velocity, double angularVelocity)
+	BounceClass(const CoordStruct& coords, double elasticity, double gravity,
+		double maxVelocity, const Vector3D<float>& velocity, double angularVelocity)
 	{
-		this->Initialize(pCoords, elasticity, gravity, maxVelocity, velocity, angularVelocity);
+		this->Initialize(coords, elasticity, gravity, maxVelocity, velocity, angularVelocity);
 	}
 
-	void Initialize(CoordStruct* pCoords, double elasticity, double gravity,
-			double maxVelocity, Vector3D<float>* velocity, double angularVelocity)
+	void Initialize(const CoordStruct& coords, double elasticity, double gravity,
+			double maxVelocity, const Vector3D<float>& velocity, double angularVelocity)
 		{ JMP_THIS(0x4397E0); }
 
 	CoordStruct* GetCoords(CoordStruct* pBuffer) const
 		{ JMP_THIS(0x4399A0); }
 
+	CoordStruct GetCoords() const {
+		CoordStruct buffer;
+		this->GetCoords(&buffer);
+		return buffer;
+	}
+
 	Matrix3DStruct* GetDrawingMatrix(Matrix3DStruct* pBuffer) const
 		{ JMP_THIS(0x4399E0); }
 
-	Status::Value Update()
+	Matrix3DStruct GetDrawingMatrix() const {
+		Matrix3DStruct buffer;
+		this->GetDrawingMatrix(&buffer);
+		return buffer;
+	}
+
+	Status Update()
 		{ JMP_THIS(0x439B00); }
 
 	double Elasticity; // speed multiplier when bouncing off the ground
