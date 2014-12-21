@@ -10,8 +10,7 @@ public:
 	TransitionTimer()
 		{ JMP_THIS(0x4A50F0); }
 
-	~TransitionTimer()
-		{ }
+	~TransitionTimer() = default;
 
 	bool AreStates11() // 0x4A5110
 		{ return this->State1 && this->State2; }

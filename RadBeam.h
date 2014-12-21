@@ -12,8 +12,7 @@ public:
 
 	// Constructor removed - do not use it, use Allocate instead
 
-	~RadBeam()
-		{ }
+	~RadBeam() = default;
 
 	static RadBeam* __fastcall Allocate(RadBeamType mode)
 		{ JMP_STD(0x659110); }

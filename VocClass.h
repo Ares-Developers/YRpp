@@ -110,9 +110,9 @@ public:
 	DWORD unknown_140;
 	DWORD unknown_144;
 
-private:	//constructor and destructor should never be needed
-	VocClass(){}
-	~VocClass(){}
+	//constructor and destructor should never be needed
+	VocClass() = delete;
+	~VocClass() = delete;
 };
 
 #endif
