@@ -70,9 +70,6 @@ struct ScoutStruct
 class BaseNodeClass
 {
 public:
-	 BaseNodeClass(){};
-	~BaseNodeClass(){};
-
 	//need to define a == operator so it can be used in array classes
 	bool operator == (const BaseNodeClass& tBaseNode) const
 	{

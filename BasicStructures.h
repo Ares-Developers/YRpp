@@ -18,9 +18,7 @@ struct ColorStruct
 		return R == rhs.R && G == rhs.G && B == rhs.B;
 	}
 
-	ColorStruct()
-	{
-	}
+	ColorStruct() = default;
 
 	ColorStruct(BYTE _R, BYTE _G, BYTE _B)
 	{
@@ -73,9 +71,7 @@ struct Color16Struct
 		return R == rhs.R && G == rhs.G && B == rhs.B;
 	}
 
-	Color16Struct()
-	{
-	}
+	Color16Struct() = default;
 };
 #pragma pack(pop)
 

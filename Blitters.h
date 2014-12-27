@@ -7,8 +7,8 @@
 
 class BlitterCore {
 	public:
-		BlitterCore() {};
-		virtual ~BlitterCore() {};
+		BlitterCore() = default;
+		virtual ~BlitterCore() = default;
 
 		// depending on the blitter, these have different intepretations and usage
 		// zBuf - pointer to Z-buffer data
@@ -38,8 +38,8 @@ class BlitterCore {
 template<typename T>
 class Blitter : public BlitterCore {
 	public:
-		Blitter() {};
-		virtual ~Blitter() {};
+		Blitter() = default;
+		virtual ~Blitter() = default;
 
 		// depending on the blitter, these have different intepretations and usage
 		// zBuf - pointer to Z-buffer data
@@ -69,8 +69,8 @@ class Blitter : public BlitterCore {
 
 class RLEBlitterCore {
 	public:
-		RLEBlitterCore() {};
-		virtual ~RLEBlitterCore() {};
+		RLEBlitterCore() = default;
+		virtual ~RLEBlitterCore() = default;
 
 		// depending on the blitter, these have different intepretations and usage
 		// zBuf - pointer to Z-buffer data
@@ -92,8 +92,8 @@ class RLEBlitterCore {
 template<typename T>
 class RLEBlitter : public RLEBlitterCore {
 	public:
-		RLEBlitter() {};
-		virtual ~RLEBlitter() {};
+		RLEBlitter() = default;
+		virtual ~RLEBlitter() = default;
 
 /*
 		// depending on the blitter, these have different intepretations and usage
