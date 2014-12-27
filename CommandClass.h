@@ -19,31 +19,26 @@ NOTE:
 class CommandClass
 {
 public:
-	//STATIC
+	// static
 	static DynamicVectorClass<CommandClass*>* Array;
 
-	//Destructor
-	virtual ~CommandClass(){}
-
 	//CommandClass
-	virtual const char* GetName() = 0;
-	virtual const wchar_t* GetUIName() = 0;
-	virtual const wchar_t* GetUICategory() = 0;
-	virtual const wchar_t* GetUIDescription() = 0;
+	virtual ~CommandClass() = default;
+	virtual const char* GetName() const = 0;
+	virtual const wchar_t* GetUIName() const = 0;
+	virtual const wchar_t* GetUICategory() const = 0;
+	virtual const wchar_t* GetUIDescription() const = 0;
 
-	virtual bool vt_entry_14(DWORD dwUnk)
+	virtual bool vt_entry_14(DWORD dwUnk) const
 		{ return false; }
 
-	virtual bool vt_entry_18(DWORD dwUnk)
+	virtual bool vt_entry_18(DWORD dwUnk) const
 		{ return (((~dwUnk) >> 11) & 1) != 0; }
 
-	virtual bool vt_entry_1C(DWORD dwUnk)
+	virtual bool vt_entry_1C(DWORD dwUnk) const
 		{ return false; }
 
-	virtual void Execute(DWORD dwUnk) = 0;
-
-	//Constructor
-	CommandClass() { }
+	virtual void Execute(DWORD dwUnk) const = 0;
 };
 
 #endif
