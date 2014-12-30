@@ -93,4 +93,31 @@ public:
 	DynamicVectorClass<FileEntryClass*> FileEntries;
 };
 
+class SavegameInformation
+{
+public:
+	SavegameInformation()
+		{ JMP_THIS(0x680FF0); }
+
+	bool Write(IStorage* pStorage) const
+		{ JMP_THIS(0x6812E0); }
+
+	bool Read(IStorage* pStorage)
+		{ JMP_THIS(0x681840); }
+
+	int InternalVersion; // PIDSI_CHARCOUNT (16)
+	int Version; // PIDSI_REVNUMBER (9)
+	FixedWString<0x80> ScenarioDescription; // PIDSI_TITLE (2)
+	FixedWString<0x40> PlayerHouse; // PIDSI_SUBJECT (3)
+	int Campaign; // 101
+	int ScenarioNumber; // 100
+	FixedString<MAX_PATH> unknown_190;
+	FixedString<0x40> PlayerName; // PIDSI_AUTHOR (4) and PIDSI_LASTAUTHOR (8)
+	FixedString<MAX_PATH> ExecutableName; // PIDSI_APPNAME (18)
+	FILETIME StartTime; // PIDSI_CREATE_DTM (12)
+	FILETIME PlayTime; // PIDSI_EDITTIME (10)
+	FILETIME LastSaveTime; // PIDSI_LASTSAVE_DTM (13)
+	GameMode GameType; // 102
+};
+
 #endif
