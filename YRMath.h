@@ -39,6 +39,12 @@ namespace Math
 	{
 		return deg * Pi / 180.0;
 	}
+
+	template <typename T>
+	inline int sgn(T val) {
+		// http://stackoverflow.com/a/4609795
+		return (T(0) < val) - (val < T(0));
+	}
 };
 
 #endif
