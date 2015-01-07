@@ -42,8 +42,8 @@ public:
 		{ JMP_THIS(0x6D1FE0); }
 
 	// convert xyz height to xy height?
-	static int AdjustForZ(int Height)
-		{ JMP_THIS(0x6D20E0); }
+	static int __fastcall AdjustForZ(int Height)
+		{ JMP_STD(0x6D20E0); }
 
 	void FocusOn(CoordStruct* pDest, int Velocity)
 		{ JMP_THIS(0x6D2420); }
