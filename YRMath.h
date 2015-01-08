@@ -45,6 +45,15 @@ namespace Math
 		// http://stackoverflow.com/a/4609795
 		return (T(0) < val) - (val < T(0));
 	}
+
+	template <typename T>
+	inline const T& clamp(const T& value, const T& min, const T& max)
+	{
+		if(value < min) {
+			return min;
+		}
+		return (max < value) ? max : value;
+	}
 };
 
 #endif
