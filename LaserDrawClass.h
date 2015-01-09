@@ -33,7 +33,7 @@ public:
 	ProgressTimer Progress;
 	int Thickness; // only respected if IsHouseColor
 	bool IsHouseColor;
-	char field_21;
+	bool IsSupported; // this changes the values for InnerColor (false: halve, true: double), HouseColor only
 	PROTECTED_PROPERTY(BYTE, align_22[2]);
 	CoordStruct Source;
 	CoordStruct Target;
