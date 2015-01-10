@@ -98,14 +98,14 @@ public:
 	bool AddCameo(int factoryID, int idxType)
 		{ JMP_THIS(0x6A6300); }
 
-	virtual void Draw(DWORD dwUnk)
+	virtual void Draw(DWORD dwUnk) override
 		{ JMP_THIS(0x6A6C30); }
 
 	//Destructor
 	virtual ~SidebarClass() RX;
 
 	//SidebarClass
-	virtual bool vt_entry_138(int nUnknown) R0;
+	virtual bool vt_entry_D8(int nUnknown) R0;
 
 	//Non-virtual
 
@@ -122,8 +122,7 @@ protected:
 	//===========================================================================
 
 public:
-
-	TabDataStruct Tabs [0x4];
+	TabDataStruct Tabs[0x4];
 	DWORD unknown_5394;
 	DWORD unknown_5398;
 	int ActiveTabIndex;
@@ -135,23 +134,23 @@ public:
 	bool unknown_bool_53A8;
 
 	//Information for the Diplomacy menu, I believe
-	HouseClass* DiplomacyHouses [0x8];		//8 players max!
-	int DiplomacyKills [0x8];		//total amount of kills per house
-	int DiplomacyOwned [0x8];		//total amount of currently owned unit/buildings per house
-	int DiplomacyPowerDrain [0x8];	//current power drain per house
-	ColorScheme* DiplomacyColors [0x8];		//color scheme per house
-	DWORD unknown_544C [0x8];			//??? per house - unused
-	DWORD unknown_546C [0x8];			//??? per house - unused
-	DWORD unknown_548C [0x8];			//??? per house - unused
-	DWORD unknown_54AC [0x8];			//??? per house - unused
-	DWORD unknown_54CC [0x8];			//??? per house - unused
-	DWORD unknown_54EC [0x8];			//??? per house - unused
+	HouseClass* DiplomacyHouses[0x8];		//8 players max!
+	int DiplomacyKills[0x8];		//total amount of kills per house
+	int DiplomacyOwned[0x8];		//total amount of currently owned unit/buildings per house
+	int DiplomacyPowerDrain[0x8];	//current power drain per house
+	ColorScheme* DiplomacyColors[0x8];		//color scheme per house
+	DWORD unknown_544C[0x8];			//??? per house - unused
+	DWORD unknown_546C[0x8];			//??? per house - unused
+	DWORD unknown_548C[0x8];			//??? per house - unused
+	DWORD unknown_54AC[0x8];			//??? per house - unused
+	DWORD unknown_54CC[0x8];			//??? per house - unused
+	DWORD unknown_54EC[0x8];			//??? per house - unused
 	BYTE unknown_550C;
 	int DiplomacyNumHouses;			//possibly?
 
 	bool unknown_bool_5514;
 	bool unknown_bool_5515;
-
+	PROTECTED_PROPERTY(BYTE, padding_5516[2]);
 };
 
 #endif

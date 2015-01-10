@@ -54,50 +54,34 @@ public:
 	//GScreenClass
 	//MapClass
 	//DisplayClass
-	virtual void Load(IStream* pStm) RX;
-	virtual void Save(IStream* pStm) RX;
+	virtual HRESULT Load(IStream* pStm) RX;
+	virtual HRESULT Save(IStream* pStm) RX;
 	virtual void LoadFromINI(CCINIClass* pINI) RX; //Loads the map from a map file.
 	virtual const wchar_t* GetToolTip(UINT nDlgID) R0;
 	virtual void CloseWindow() RX; //prolly wrong naming
 	virtual void vt_entry_8C() RX;
-	virtual bool vt_entry_90(CellStruct MapCoords, void* pUnk) R0;
-	virtual bool vt_entry_94(CellStruct MapCoords, void* pUnk, bool bUnk) R0;
-	virtual bool vt_entry_98(CellStruct MapCoords, void* pUnk) R0;
-	virtual bool vt_entry_9C(CellStruct MapCoords, void* pUnk) R0;
-	virtual void vt_entry_100() = 0;
-	virtual bool vt_entry_104(DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3) R0;
-	virtual void Set_View_Dimensions(RectangleStruct* pRect) RX;
-	virtual void vt_entry_10C(DWORD dwUnk) RX;
-	virtual void vt_entry_110(DWORD dwUnk) RX;
-	virtual void vt_entry_114(Point2D* pPoint) RX;
+	virtual bool vt_entry_90(const CellStruct& cell, HouseClass* pHouse) R0;
+	virtual bool vt_entry_94(const CellStruct& cell, HouseClass* pHouse, bool bUnk) R0;
+	virtual bool vt_entry_98(const CellStruct& cell, HouseClass* pHouse) R0;
+	virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* pHouse) R0;
+	virtual MouseCursorType GetLastMouseCursor() = 0;
+	virtual bool vt_entry_A4(DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3) R0;
+	virtual void Set_View_Dimensions(const RectangleStruct& rect) RX;
+	virtual void vt_entry_AC(DWORD dwUnk) RX;
+	virtual void vt_entry_B0(DWORD dwUnk) RX;
+	virtual void vt_entry_B4(Point2D* pPoint) RX;
 
 	//Decides which mouse pointer to set and then does it.
 	//Mouse is over cell pMapCoords which is bShrouded and holds pObject.
-	virtual void ConvertAction(
-		CellStruct* pMapCoords,
-		bool bShrouded,
-		ObjectClass* pObject,
-		Action action,
-		DWORD dwUnk) RX;
-	virtual void LeftMouseButtonDown(Point2D* pPoint) RX;
-	virtual void LeftMouseButtonUp(
-		DWORD dwUnk1,
-		CellStruct* pMapCoords,
-		ObjectClass* pObject,
-		Action action,
-		DWORD dwUnk2) RX;
+	virtual bool ConvertAction(const CellStruct& cell, bool bShrouded, ObjectClass* pObject, Action action, bool dwUnk) RX;
+	virtual void LeftMouseButtonDown(const Point2D& point) RX;
+	virtual void LeftMouseButtonUp(const CoordStruct& coords, const CellStruct& cell, ObjectClass* pObject, Action action, DWORD dwUnk2) RX;
 	virtual void RightMouseButtonUp(DWORD dwUnk) RX;
 
 	//Non-virtual
 
-	void LMBUp(CoordStruct *XYZ, CellStruct* pMapCoords, ObjectClass* pObject, Action action, DWORD dwUnk2)
-		{ JMP_THIS(0x4AB9B0); }
-	void RMBUp(DWORD dwUnk)
-		{ JMP_THIS(0x4AAD30); }
-
-	Action DecideAction(CellStruct* pMapCoords, ObjectClass* pObject, DWORD dwUnk)
+	Action DecideAction(const CellStruct& cell, ObjectClass* pObject, DWORD dwUnk)
 		{ JMP_THIS(0x692610); }
-
 
 	/* pass in CurrentFoundationData and receive the width/height of a bounding rectangle in cells */
 	CellStruct * FoundationBoundsSize(CellStruct *buffer, CellStruct *FoundationData)
@@ -116,7 +100,6 @@ protected:
 	//===========================================================================
 
 public:
-
 	CellStruct CurrentFoundation_CenterCell;	//Currently placing the building here
 	CellStruct CurrentFoundation_TopLeftOffset;		// offset from center cell of the current foundation (under the mouse) to the top left cell
 	CellStruct* CurrentFoundation_Data;	//Foundation data of the building we're currently placing (note: limited to 120 cells)
@@ -153,6 +136,7 @@ public:
 	DWORD unknown_11D8;
 	DWORD unknown_11DC;
 	DWORD unknown_11E0;
+	PROTECTED_PROPERTY(DWORD, padding_11E4);
 };
 
 #endif

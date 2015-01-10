@@ -16,18 +16,18 @@ public:
 	virtual ~RadarClass() RX;
 
 	//MapClass
-	virtual void CreateEmptyMap(RectangleStruct* pMapRect, bool bUnk1, char nLevel, bool bUnk2)
+	virtual void CreateEmptyMap(const RectangleStruct& pMapRect, bool reuse, char nLevel, bool bUnk2) override
 		{ JMP_THIS(0x653F50); }
 
-	virtual void vt_entry_74(DWORD dwUnk)
+	virtual void SetVisibleRect(const RectangleStruct& mapRect) override
 		{ JMP_THIS(0x654490); }
 
 	//DisplayClass
 
 	//RadarClass
 	virtual void DisposeOfArt() RX;
-	virtual void* vt_entry_12C(void* out_pUnk, Point2D* pPoint) R0;
-	virtual void vt_entry_130(DWORD dwUnk) RX;
+	virtual void* vt_entry_CC(void* out_pUnk, Point2D* pPoint) R0;
+	virtual void vt_entry_D0(DWORD dwUnk) RX;
 	virtual void Init_For_House() RX;
 
 	//Non-virtual
@@ -41,8 +41,6 @@ protected:
 	//===========================================================================
 
 public:
-
-	DWORD unknown_11E4;
 	DWORD unknown_11E8;
 	DWORD unknown_11EC;
 	DWORD unknown_11F0;

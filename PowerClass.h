@@ -24,8 +24,8 @@ protected:
 	//===========================================================================
 
 public:
-
 	bool unknown_bool_150C;
+	PROTECTED_PROPERTY(BYTE, align_150D[3])
 	TimerStruct unknown_timer_1510;
 	DWORD unknown_151C;
 	TimerStruct unknown_timer_1520;
@@ -33,8 +33,9 @@ public:
 	DWORD unknown_1530;
 	DWORD unknown_1534;
 	bool unknown_bool_1538;
-	int unknown_int_153C;
-	int unknown_int_1540;
+	PROTECTED_PROPERTY(BYTE, align_1539[3])
+	int PowerOutput;
+	int PowerDrain;
 };
 
 #endif

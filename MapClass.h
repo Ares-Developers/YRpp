@@ -77,7 +77,7 @@ public:
 	static const int MaxCells = 0x40000;
 
 	//IGameMap
-	virtual long __stdcall Is_Visible(CellStruct cell) R0;
+	virtual long __stdcall Is_Visible(CellStruct cell) override R0;
 
 	//Destructor
 	virtual ~MapClass() RX;
@@ -86,11 +86,11 @@ public:
 	virtual void AllocateCells() RX;
 	virtual void DestructCells() RX;
 	virtual void ConstructCells() RX;
-	virtual void vt_entry_64(DWORD dwUnk1, DWORD dwUnk2) RX;
-	virtual bool vt_entry_68() R0;
+	virtual void PointerGotInvalid(AbstractClass* ptr, bool bUnk) RX;
+	virtual bool DraggingInProgress() R0;
 	virtual void UpdateCrates() RX;
-	virtual void CreateEmptyMap(RectangleStruct* pMapRect, bool bUnk1, char nLevel, bool bUnk2) RX;
-	virtual void vt_entry_74(DWORD dwUnk) RX;
+	virtual void CreateEmptyMap(const RectangleStruct& mapRect, bool reuse, char nLevel, bool bUnk2) RX;
+	virtual void SetVisibleRect(const RectangleStruct& mapRect) RX;
 
 	//Non-virtual
 	CellClass* TryGetCellAt(const CellStruct& MapCoords) const {
@@ -348,7 +348,6 @@ protected:
 	//===========================================================================
 
 public:
-
 	DWORD unknown_10;
 	void* unknown_pointer_14;
 	void* unknown_pointer_array_18 [0xD];
@@ -386,7 +385,6 @@ public:
 	DWORD _padding_02;
 	Crate Crates [0x100];
 	DynamicVectorClass<CellStruct> TaggedCells;
-
 };
 
 #endif
