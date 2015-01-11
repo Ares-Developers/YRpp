@@ -20,6 +20,8 @@ class LightConvertClass;
 class RadSiteClass;
 class FootClass;
 class TubeClass;
+class FoggedObjectClass;
+class TagClass;
 
 class CellClass : public AbstractClass
 {
@@ -49,7 +51,7 @@ public:
 	ObjectClass *FindObjectNearestTo(CoordStruct *coords, bool alt, ObjectClass *ExcludeThis) const
 		{ JMP_THIS(0x47C3D0); }
 
-	ObjectClass *FindObjectOfType(int AbstractID, bool alt) const
+	ObjectClass *FindObjectOfType(AbstractType abs, bool alt) const
 		{ JMP_THIS(0x47C4D0); }
 
 	BuildingClass *GetBuilding() const
@@ -71,7 +73,7 @@ public:
 	 * failing that, calls FindObjectNearestTo,
 	 * if that fails too, reiterates Content looking for Terrain
 	 */
-	ObjectClass *GetSomeObject(CoordStruct *coords, bool alt) const
+	ObjectClass *GetSomeObject(const CoordStruct& coords, bool alt) const
 		{ JMP_THIS(0x47C5A0); }
 
 	// misc
@@ -80,6 +82,9 @@ public:
 
 	bool IsShrouded() const
 		{ JMP_THIS(0x487950); }
+
+	void Unshroud()
+		{ JMP_THIS(0x4876F0); }
 
 	// adjusts LAT
 	void SetupLAT()
@@ -137,7 +142,7 @@ public:
 	void ReduceTiberium(int amount)
 		{ JMP_THIS(0x480A80); }
 
-	int SetMapCoords(CoordStruct *coords)
+	void SetMapCoords(const CoordStruct& coords)
 		{ JMP_THIS(0x485240); }
 
 	// in leptons
@@ -289,11 +294,14 @@ public:
 	bool TryAssignJumpjet(FootClass *Object)
 		{ JMP_THIS(0x487D70); }
 
-	void  AddContent(ObjectClass *Content, byte OnBridge)
+	void  AddContent(ObjectClass *Content, bool onBridge)
 		{ JMP_THIS(0x47E8A0); }
 
-	void  RemoveContent(ObjectClass *Content, byte OnBridge)
+	void  RemoveContent(ObjectClass *Content, bool onBridge)
 		{ JMP_THIS(0x47EA90); }
+
+	void ReplaceTag(TagClass* pTag)
+		{ JMP_THIS(0x485250) }
 
 protected:
 	//Constructor
@@ -307,14 +315,13 @@ protected:
 public:
 
 	CellStruct MapCoords;	//Where on the map does this Cell lie?
-
-	PROTECTED_PROPERTY(BYTE,     unknown_28[0xC]);
-
+	DynamicVectorClass<FoggedObjectClass*>* FoggedObjects;
+	CellClass*         BridgeOwnerCell;
+	DWORD              unknown_30;
 	LightConvertClass* LightConvert;
 	int                IsoTileTypeIndex;	//What tile is this Cell?
-
-	PROTECTED_PROPERTY(BYTE,     unknown_3C[8]);
-
+	TagClass*          AttachedTag;			// The cell tag
+	BuildingTypeClass* Rubble;				// The building type that provides the rubble image
 	int                OverlayTypeIndex;	//What Overlay lies on this Cell?
 	int                SmudgeTypeIndex;	//What Smudge lies on this Cell?
 
@@ -345,13 +352,10 @@ protected:
 public:
 
 	DWORD              BaseSpacerOfHouses; // & (1 << HouseX->ArrayIndex) == base spacing dummy for HouseX
-	FootClass *        Jumpjet; // a jumpjet occupying this cell atm
+	FootClass*         Jumpjet; // a jumpjet occupying this cell atm
 
 	ObjectClass*       FirstObject;	//The first Object on this Cell. NextObject functions as a linked list.
-
 	ObjectClass*       AltObject;
-
-//	PROTECTED_PROPERTY(BYTE,	unknown_E8[4]);
 
 	LandType           LandType;	//What type of floor is this Cell?
 	double             RadLevel;	//The level of radiation on this Cell.
@@ -375,26 +379,27 @@ public:
 	char               Level;
 
 	BYTE               SlopeIndex;  // this + 2 == cell's slope shape as reflected by PLACE.SHP
-	PROTECTED_PROPERTY(BYTE,     unknown_11D);
+	BYTE               unknown_11D;
 
 	unsigned char      Powerup;	//The crate type on this cell. Also indicates some other weird properties
 
-	PROTECTED_PROPERTY(BYTE,     unknown_11F);
-	BYTE               Shroudedness; // trust me, you don't wanna know... if you do, see 0x7F4194 and cry
-	BYTE               unknown_121;
-	BYTE               TerrainCount;
-	BYTE               unknown_123;
+	BYTE               unknown_11F;
+	char               Shroudedness; // trust me, you don't wanna know... if you do, see 0x7F4194 and cry
+	char               Foggedness; // same value as above: -2: Occluded completely, -1: Visible, 0...48: frame in fog.shp or shroud.shp
+	BYTE               BlockedNeighbours; // number of somehow occupied cells next to this
+	PROTECTED_PROPERTY(BYTE, align_123);
 	DWORD              OccupationFlags; // 0x1F: infantry subpositions: center, TL, TR, BL, BR
-	DWORD              AltOccupationFlags; // 0x20: other Foots, 0x40: Terrain, 0x80: Building
+	DWORD              AltOccupationFlags; // 0x20: Units, 0x40: Objects, Aircraft, Overlay, 0x80: Building
 
 	eCellFlags_12C     CopyFlags;	// related to Flags below
-	DWORD              IsUnderShroud; // only 0 or 1, but modified as an integer
+	int                ShroudCounter;
 	DWORD              GapsCoveringThisCell; // actual count of gapgens in this cell, no idea why they need a second layer
-	PROTECTED_PROPERTY(BYTE,     unknown_138[0x4]);
+	bool               VisibilityChanged;
+	PROTECTED_PROPERTY(BYTE,     align_139[0x3]);
 	DWORD              unknown_13C;
 
 	eCellFlags         Flags;	//Various settings.
-	PROTECTED_PROPERTY(BYTE,     unknown_144[4]);
+	PROTECTED_PROPERTY(BYTE,     padding_144[4]);
 };
 
 #endif
