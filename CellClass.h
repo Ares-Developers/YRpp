@@ -288,8 +288,14 @@ public:
 		CALL(0x489270);
 	}
 
-	CoordStruct * FindInfantrySubposition(CoordStruct *dst, CoordStruct *src, char bUnk1, char bUnk2, char bUnk3)
+	CoordStruct* FindInfantrySubposition(CoordStruct* pOutBuffer, const CoordStruct& coords, bool ignoreContents, bool alt, bool useCellCoords)
 		{ JMP_THIS(0x481180); }
+
+	CoordStruct FindInfantrySubposition(const CoordStruct& coords, bool ignoreContents, bool alt, bool useCellCoords) {
+		CoordStruct outBuffer;
+		this->FindInfantrySubposition(&outBuffer, coords, ignoreContents, alt, useCellCoords);
+		return outBuffer;
+	}
 
 	bool TryAssignJumpjet(FootClass *Object)
 		{ JMP_THIS(0x487D70); }
