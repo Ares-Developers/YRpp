@@ -48,32 +48,32 @@ public:
 	// non-virtual
 
 	// get content objects
-	ObjectClass *FindObjectNearestTo(CoordStruct *coords, bool alt, ObjectClass *ExcludeThis) const
+	ObjectClass* FindObjectNearestTo(CoordStruct* pCoords, bool alt, ObjectClass* pExcludeThis) const
 		{ JMP_THIS(0x47C3D0); }
 
-	ObjectClass *FindObjectOfType(AbstractType abs, bool alt) const
+	ObjectClass* FindObjectOfType(AbstractType abs, bool alt) const
 		{ JMP_THIS(0x47C4D0); }
 
-	BuildingClass *GetBuilding() const
+	BuildingClass* GetBuilding() const
 		{ JMP_THIS(0x47C520); }
 
-	UnitClass *GetUnit(bool alt) const
+	UnitClass* GetUnit(bool alt) const
 		{ JMP_THIS(0x47EBA0); }
 
-	InfantryClass *GetInfantry(bool alt) const
+	InfantryClass* GetInfantry(bool alt) const
 		{ JMP_THIS(0x47EC40); }
 
-	AircraftClass *GetAircraft(bool alt) const
+	AircraftClass* GetAircraft(bool alt) const
 		{ JMP_THIS(0x47EBF0); }
 
-	TerrainClass *GetTerrain(bool alt) const
+	TerrainClass* GetTerrain(bool alt) const
 		{ JMP_THIS(0x47C550); }
 
 	/* craziest thing... first iterates Content looking to Aircraft,
 	 * failing that, calls FindObjectNearestTo,
 	 * if that fails too, reiterates Content looking for Terrain
 	 */
-	ObjectClass *GetSomeObject(const CoordStruct& coords, bool alt) const
+	ObjectClass* GetSomeObject(const CoordStruct& coords, bool alt) const
 		{ JMP_THIS(0x47C5A0); }
 
 	// misc
@@ -97,30 +97,30 @@ public:
 	void BlowUpBridge()
 		{ JMP_THIS(0x47DD70); }
 
-	bool CanThisExistHere(SpeedType SpeedType, BuildingTypeClass *Object, HouseClass* Owner) const
+	bool CanThisExistHere(SpeedType SpeedType, BuildingTypeClass* pObject, HouseClass* pOwner) const
 		{ JMP_THIS(0x47C620); }
 
 	// those unks are passed to TechnoClass::Scatter in that same order
 	void ScatterContent(const CoordStruct &crd, bool ignoreMission, bool ignoreDestination, bool alt)
 		{ JMP_THIS(0x481670); }
 
-	CellClass *GetNeighbourCell(unsigned int direction) const
+	CellClass* GetNeighbourCell(unsigned int direction) const
 		{ JMP_THIS(0x481810); }
 
 	// called whenever anything moves, first to remove threat from source cell, second time to add threat to dest cell
 	void UpdateThreat(unsigned int SourceHouse, int ThreatLevel)
 		{ JMP_THIS(0x481870); }
 
-	void CollectCrate(FootClass *Collector)
+	void CollectCrate(FootClass* pCollector)
 		{ JMP_THIS(0x481A00); }
 
-	void ProcessColourComponents(int *arg0, int *Intensity, int *Ambient, int *a5, int *a6, int *tintR, int *tintG, int *tintB)
+	void ProcessColourComponents(int* arg0, int* Intensity, int* Ambient, int* a5, int* a6, int* tintR, int* tintG, int* tintB)
 		{ JMP_THIS(0x484180); }
 
 	TubeClass* GetTunnel()
 		{ JMP_THIS(0x484F20); }
 
-	RectangleStruct *GetContainingRect(RectangleStruct *dest) const
+	RectangleStruct* GetContainingRect(RectangleStruct* dest) const
 		{ JMP_THIS(0x47FB90); }
 
 	// don't laugh, it returns the uiname of contained tiberium... which nobody ever sets
@@ -146,15 +146,15 @@ public:
 		{ JMP_THIS(0x485240); }
 
 	// in leptons
-	CoordStruct *Get3DCoords(CoordStruct *result)
+	CoordStruct* Get3DCoords(CoordStruct* result)
 		{ JMP_THIS(0x486840); }
 
 	// depends on one of the cell flags being set
-	CoordStruct *Get3DCoords2(CoordStruct *result)
+	CoordStruct* Get3DCoords2(CoordStruct* result)
 		{ JMP_THIS(0x486890); }
 
 	// used by ambient waves and stuff
-	CoordStruct *Get3DCoords3(CoordStruct *result)
+	CoordStruct* Get3DCoords3(CoordStruct* result)
 		{ JMP_THIS(0x480A30); }
 
 	void ActivateVeins()
@@ -195,8 +195,8 @@ public:
 		{ --this->DisguiseSensorsOfHouses[idx]; }
 
 	// Rad Sites
-	void SetRadSite(RadSiteClass *Rad)
-		{ this->RadSite = Rad; }
+	void SetRadSite(RadSiteClass* pRad)
+		{ this->RadSite = pRad; }
 
 	RadSiteClass* GetRadSite() const
 		{ return this->RadSite; }
@@ -297,13 +297,13 @@ public:
 		return outBuffer;
 	}
 
-	bool TryAssignJumpjet(FootClass *Object)
+	bool TryAssignJumpjet(FootClass* pObject)
 		{ JMP_THIS(0x487D70); }
 
-	void  AddContent(ObjectClass *Content, bool onBridge)
+	void  AddContent(ObjectClass* Content, bool onBridge)
 		{ JMP_THIS(0x47E8A0); }
 
-	void  RemoveContent(ObjectClass *Content, bool onBridge)
+	void  RemoveContent(ObjectClass* pContent, bool onBridge)
 		{ JMP_THIS(0x47EA90); }
 
 	void ReplaceTag(TagClass* pTag)
