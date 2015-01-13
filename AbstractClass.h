@@ -97,7 +97,7 @@ public:
 
 	//AbstractClass
 	virtual void Init() RX;
-	virtual void PointerExpired(void* p, bool removed) RX;
+	virtual void PointerExpired(AbstractClass* pAbstract, bool removed) RX;
 	virtual AbstractType WhatAmI() const = 0;
 	virtual int Size() const = 0;
 	virtual void CalculateChecksum(Checksummer& checksum) const RX;
@@ -117,8 +117,12 @@ public:
 		{ JMP_THIS(0x410170); }
 
 	//non-virtual
-	void AnnounceExpiredPointer(bool removed=true)
+	static void __fastcall AnnounceExpiredPointer(AbstractClass* pAbstract, bool removed = true)
 		{ JMP_THIS(0x7258D0); }
+
+	void AnnounceExpiredPointer(bool removed = true) {
+		AnnounceExpiredPointer(this, removed);
+	}
 
 	CoordStruct GetCoords() const {
 		CoordStruct ret;
