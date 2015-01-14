@@ -77,10 +77,5 @@ private:
 		using type = std::underlying_type_t<FLAG_ENUM_NAME>; \
 		return static_cast<FLAG_ENUM_NAME>(~static_cast<type>(rhs)); \
 	} \
-	\
-	inline bool operator! (FLAG_ENUM_NAME rhs) { \
-		using type = std::underlying_type_t<FLAG_ENUM_NAME>; \
-		return !static_cast<type>(rhs); \
-	} \
 
 #endif
