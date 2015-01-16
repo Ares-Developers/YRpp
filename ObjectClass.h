@@ -33,7 +33,7 @@ struct WeaponStruct;
 class ObjectClass : public AbstractClass
 {
 public:
-	enum {AbsDerivateID = ABSFLAGS_ISOBJECT};
+	static const auto AbsDerivateID = AbstractFlags::Object;
 
 	//global arrays
 	static DynamicVectorClass<ObjectClass*>* CurrentObjects;

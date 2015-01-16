@@ -55,7 +55,7 @@ inline T generic_cast(const AbstractClass* pAbstract) {
 		&& std::is_abstract<Base>::value,
 		"generic_cast: T is required to be an abstract type derived from ObjectClass.");
 
-	if(pAbstract && (pAbstract->AbstractFlags & Base::AbsDerivateID) != 0) {
+	if(pAbstract && (pAbstract->AbstractFlags & Base::AbsDerivateID) != AbstractFlags::None) {
 		return static_cast<T>(pAbstract);
 	}
 	return nullptr;

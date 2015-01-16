@@ -8,11 +8,14 @@
 #define SDDTOR_NODELETE				0x00
 #define SDDTOR_DELETE				0x01
 
-typedef int eAbstractFlags;
-#define ABSFLAGS_ISTECHNO			0x01
-#define ABSFLAGS_ISOBJECT			0x02
-#define ABSFLAGS_ISFOOT				0x04
+enum class AbstractFlags : unsigned int {
+	None = 0x0,
+	Techno = 0x1,
+	Object = 0x2,
+	Foot = 0x4
+};
 
+MAKE_ENUM_FLAGS(AbstractFlags);
 
 enum class AbstractType : unsigned int {
 	None = 0,

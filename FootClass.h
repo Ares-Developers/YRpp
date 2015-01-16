@@ -16,7 +16,7 @@ class TeamClass;
 class FootClass : public TechnoClass
 {
 public:
-	enum {AbsDerivateID = ABSFLAGS_ISFOOT};
+	static const auto AbsDerivateID = AbstractFlags::Foot;
 
 	static DynamicVectorClass<FootClass *>* Array;
 
