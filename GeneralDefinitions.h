@@ -1066,19 +1066,15 @@ enum class Sequence : int {
 	SecondaryProne = 41
 };
 
-class SequenceFacing {
-public:
-	typedef int Value;
-	enum {
-		N = 0,
-		NE = 1,
-		E = 2,
-		SE = 3,
-		S = 4,
-		SW = 5,
-		W = 6,
-		NW = 7
-	};
+enum class SequenceFacing : unsigned int {
+	N = 0,
+	NE = 1,
+	E = 2,
+	SE = 3,
+	S = 4,
+	SW = 5,
+	W = 6,
+	NW = 7
 };
 
 enum class SpeedType : int {

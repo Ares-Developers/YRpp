@@ -12,7 +12,7 @@ struct SubSequenceStruct
 	int StartFrame;
 	int CountFrames;
 	int FacingMultiplier;
-	SequenceFacing::Value Facing;
+	SequenceFacing Facing;
 	int SoundCount;
 	int Sound1StartFrame;
 	int Sound1Index; // VocClass
