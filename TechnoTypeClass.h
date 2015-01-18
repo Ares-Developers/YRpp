@@ -106,7 +106,7 @@ public:
 	//TechnoTypeClass
 	virtual bool vt_entry_A0() R0;
 	virtual bool CanAttackMove() const R0;
-	virtual bool CanCreateHere(CellStruct* pMapCoords, DWORD dwUnk) const R0;
+	virtual bool CanCreateHere(const CellStruct& mapCoords, HouseClass* pOwner) const R0;
 	virtual int GetCost() const R0;
 	virtual int GetRepairStepCost() const R0;
 	virtual int GetRepairStep() const R0;
