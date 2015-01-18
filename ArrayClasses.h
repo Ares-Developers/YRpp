@@ -336,13 +336,7 @@ public:
 
 	bool Remove(const T &item) {
 		int idx = this->FindItemIndex(item);
-
-		if(idx < 0) {
-			return false;
-
-		}
-
-		return this->RemoveItem(idx);
+		return idx >= 0 && this->RemoveItem(idx);
 	}
 
 	void Purge() {
