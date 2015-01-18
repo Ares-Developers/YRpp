@@ -316,6 +316,11 @@ public:
 		return true;
 	}
 
+	bool AddUnique(const T &item) {
+		int idx = this->FindItemIndex(item);
+		return idx < 0 && this->AddItem(item);
+	}
+
 	bool RemoveItem(int index) {
 		if(!this->ValidIndex(index)) {
 			return false;
