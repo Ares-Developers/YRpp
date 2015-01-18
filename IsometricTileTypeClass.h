@@ -17,7 +17,7 @@ class IsometricTileTypeClass : public ObjectTypeClass
 	virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
 	//AbstractClass
-	virtual void PointerExpired(void* p,bool bUnknown) RX;
+	virtual void PointerExpired(AbstractClass* pAbstract, bool removed) RX;
 	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 	virtual void CalculateChecksum(Checksummer& checksum) const RX;
