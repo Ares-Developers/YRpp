@@ -95,12 +95,12 @@ public:
 	BaseClass()
 		{ JMP_THIS(0x42E6F0); }
 
-	virtual ~BaseClass() { /*???*/ }; // gcc demands a virtual since virtual funcs exist
-
 	//VTable
 	virtual HRESULT __stdcall Load(IStream* pStm) R0;
 	virtual HRESULT __stdcall Save(IStream* pStm) R0;
 	virtual void CalculateChecksum(Checksummer& checksum) const RX;
+
+	//virtual ~BaseClass() { /*???*/ }; // gcc demands a virtual since virtual funcs exist
 
 	int FailedToPlaceNode(BaseNodeClass *Node) // called after AI fails to place building, obviously
 		{ JMP_THIS(0x42F380); }
