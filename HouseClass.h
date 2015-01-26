@@ -406,7 +406,7 @@ public:
 	void RegisterLoss(TechnoClass *pTechno, DWORD dwUnk)
 		{ JMP_THIS(0x5025F0); }
 
-	BuildingClass* FindBuildingOfType(int idx, int distance) const
+	BuildingClass* FindBuildingOfType(int idx, int sector = -1) const
 		{ JMP_THIS(0x4FD060); }
 
 	AnimClass * __fastcall PsiWarn(CellClass *pTarget, BulletClass *Bullet, char *AnimName)
