@@ -23,7 +23,7 @@ class TubeClass;
 class FoggedObjectClass;
 class TagClass;
 
-class CellClass : public AbstractClass
+class NOVTABLE CellClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Cell;

@@ -3,7 +3,7 @@
 
 #include <TechnoTypeClass.h>
 
-class AircraftTypeClass : public TechnoTypeClass
+class NOVTABLE AircraftTypeClass : public TechnoTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::AircraftType;

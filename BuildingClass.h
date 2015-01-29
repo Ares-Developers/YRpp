@@ -13,7 +13,7 @@ class FactoryClass;
 class InfantryClass;
 class LightSourceClass;
 
-class BuildingClass : public TechnoClass
+class NOVTABLE BuildingClass : public TechnoClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Building;

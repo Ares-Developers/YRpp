@@ -7,7 +7,7 @@
 
 #include <AbstractClass.h>
 
-class LightSourceClass : public AbstractClass
+class NOVTABLE LightSourceClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::LightSource;

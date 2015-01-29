@@ -20,7 +20,7 @@ struct AITriggerConditionComparator
 	int ComparatorOperand;
 };
 
-class AITriggerTypeClass : public AbstractTypeClass
+class NOVTABLE AITriggerTypeClass : public AbstractTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::AITriggerType;

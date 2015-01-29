@@ -7,7 +7,7 @@
 
 #include <AbstractClass.h>
 
-class EMPulseClass : public AbstractClass
+class NOVTABLE EMPulseClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::EMPulse;

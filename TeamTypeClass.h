@@ -14,7 +14,7 @@ class TechnoTypeClass;
 class TeamClass;
 class FootClass;
 
-class TeamTypeClass : public AbstractTypeClass
+class NOVTABLE TeamTypeClass : public AbstractTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::TeamType;

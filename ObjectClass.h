@@ -30,7 +30,7 @@ class HouseTypeClass;
 class LineTrail;
 struct WeaponStruct;
 
-class ObjectClass : public AbstractClass
+class NOVTABLE ObjectClass : public AbstractClass
 {
 public:
 	static const auto AbsDerivateID = AbstractFlags::Object;

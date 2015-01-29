@@ -3,7 +3,7 @@
 
 #include <DisplayClass.h>
 
-class RadarClass : public DisplayClass
+class NOVTABLE RadarClass : public DisplayClass
 {
 public:
 	//WIP: RadarClass::RTacticalClass goes HERE

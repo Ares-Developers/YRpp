@@ -6,7 +6,7 @@
 class HouseClass;
 class InfantryClass;
 
-class SlaveManagerClass : public AbstractClass
+class NOVTABLE SlaveManagerClass : public AbstractClass
 {
 public:
 

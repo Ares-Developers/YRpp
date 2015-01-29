@@ -67,7 +67,7 @@ struct WeaponStruct
 		{ return false; }
 };
 
-class TechnoTypeClass : public ObjectTypeClass
+class NOVTABLE TechnoTypeClass : public ObjectTypeClass
 {
 public:
 

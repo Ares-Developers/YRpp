@@ -14,7 +14,7 @@ class HouseTypeClass;
 class ObjectClass;
 class BuildingClass;
 
-class ObjectTypeClass : public AbstractTypeClass
+class NOVTABLE ObjectTypeClass : public AbstractTypeClass
 {
 public:
 	//IPersistStream

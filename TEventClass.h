@@ -8,7 +8,7 @@ class SuperClass;
 class TechnoClass;
 class AITeamTypeClass; // TODO: define
 
-class TEventClass : public AbstractClass
+class NOVTABLE TEventClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Event;

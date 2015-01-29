@@ -9,7 +9,7 @@
 #include <TerrainTypeClass.h>
 #include <ProgressTimer.h>
 
-class TerrainClass : public ObjectClass
+class NOVTABLE TerrainClass : public ObjectClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Terrain;

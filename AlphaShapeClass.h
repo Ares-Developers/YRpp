@@ -10,7 +10,7 @@
 
 class ObjectClass;
 
-class AlphaShapeClass : public AbstractClass
+class NOVTABLE AlphaShapeClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::AlphaShape;

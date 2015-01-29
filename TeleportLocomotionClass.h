@@ -5,7 +5,7 @@
 
 #include <LocomotionClass.h>
 
-class TeleportLocomotionClass : public LocomotionClass, public IPiggyback
+class NOVTABLE TeleportLocomotionClass : public LocomotionClass, public IPiggyback
 {
 public:
 	//IUnknown

@@ -79,7 +79,7 @@ public:
 	PROTECTED_PROPERTY(BYTE, padding_554B);
 };
 
-class MouseClass : public ScrollClass
+class NOVTABLE MouseClass : public ScrollClass
 {
 public:
 	//Static

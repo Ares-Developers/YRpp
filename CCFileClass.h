@@ -24,7 +24,7 @@ class eFileMode {
 //--------------------------------------------------------------------
 //Abstract File class
 //--------------------------------------------------------------------
-class FileClass
+class NOVTABLE FileClass
 {
 public:
 	//Destructor
@@ -66,7 +66,7 @@ public:
 //--------------------------------------------------------------------
 //Files in the game directory
 //--------------------------------------------------------------------
-class RawFileClass : public FileClass
+class NOVTABLE RawFileClass : public FileClass
 {
 public:
 	//Destructor
@@ -112,7 +112,7 @@ public:
 //--------------------------------------------------------------------
 //Files that get buffered in some way?
 //--------------------------------------------------------------------
-class BufferIOFileClass : public RawFileClass
+class NOVTABLE BufferIOFileClass : public RawFileClass
 {
 public:
 	//Destructor
@@ -151,7 +151,7 @@ public:
 //--------------------------------------------------------------------
 //Files on a CD?
 //--------------------------------------------------------------------
-class CDFileClass : public BufferIOFileClass
+class NOVTABLE CDFileClass : public BufferIOFileClass
 {
 public:
 	//Destructor
@@ -175,7 +175,7 @@ public:
 //--------------------------------------------------------------------
 //Files in MIXes
 //--------------------------------------------------------------------
-class CCFileClass : public CDFileClass
+class NOVTABLE CCFileClass : public CDFileClass
 {
 public:
 	//Destructor

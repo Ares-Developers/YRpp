@@ -17,7 +17,7 @@ NOTE:
 #include <YRCom.h>
 #include <Helpers/ComPtr.h>
 
-class LocomotionClass : public IPersistStream, public ILocomotion
+class NOVTABLE LocomotionClass : public IPersistStream, public ILocomotion
 {
 public:
 

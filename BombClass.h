@@ -9,7 +9,7 @@ class ObjectClass;
 class TechnoClass;
 class HouseClass;
 
-class BombClass : public AbstractClass
+class NOVTABLE BombClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Bomb;

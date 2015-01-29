@@ -8,7 +8,7 @@
 #include <FootClass.h>
 #include <InfantryTypeClass.h>
 
-class InfantryClass : public FootClass
+class NOVTABLE InfantryClass : public FootClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Infantry;

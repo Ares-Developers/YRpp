@@ -17,7 +17,7 @@ struct ControlNode
 	TimerStruct LinkDrawTimer;
 };
 
-class CaptureManagerClass : public AbstractClass
+class NOVTABLE CaptureManagerClass : public AbstractClass
 {
 public:
 

@@ -12,7 +12,7 @@ class HouseClass;
 class TechnoClass;
 class TechnoTypeClass;
 
-class FactoryClass : public AbstractClass
+class NOVTABLE FactoryClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Factory;

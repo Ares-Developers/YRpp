@@ -4,7 +4,7 @@
 #include <GeneralDefinitions.h>
 #include <CCINIClass.h>
 
-class CampaignClass : public AbstractTypeClass {
+class NOVTABLE CampaignClass : public AbstractTypeClass {
 
 public:
 	static const AbstractType AbsID = AbstractType::Campaign;

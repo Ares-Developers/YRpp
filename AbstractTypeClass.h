@@ -39,7 +39,7 @@ class CCINIClass;
 	}
 //---
 
-class AbstractTypeClass : public AbstractClass
+class NOVTABLE AbstractTypeClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Abstract;

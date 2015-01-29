@@ -16,7 +16,7 @@ NOTE:
 #include <GeneralDefinitions.h>
 #include <ArrayClasses.h>
 
-class CommandClass
+class NOVTABLE CommandClass
 {
 public:
 	// static

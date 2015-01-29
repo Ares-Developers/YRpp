@@ -6,7 +6,7 @@
 class AnimClass;
 class FootClass;
 
-class ParasiteClass : public AbstractClass
+class NOVTABLE ParasiteClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Parasite;

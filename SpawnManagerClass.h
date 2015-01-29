@@ -31,7 +31,7 @@ struct SpawnNode
 	BOOL IsSpawnMissile;
 };
 
-class SpawnManagerClass : public AbstractClass
+class NOVTABLE SpawnManagerClass : public AbstractClass
 {
 public:
 

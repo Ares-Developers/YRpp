@@ -10,7 +10,7 @@
 //forward declarations
 class AnimTypeClass;
 
-class OverlayTypeClass : public ObjectTypeClass
+class NOVTABLE OverlayTypeClass : public ObjectTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::OverlayType;

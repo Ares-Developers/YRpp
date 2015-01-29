@@ -9,7 +9,7 @@ class ObjectClass;
 class TechnoClass;
 
 //The AirstrikeClass handles the airstrikes Boris calls in.
-class AirstrikeClass : public AbstractClass
+class NOVTABLE AirstrikeClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Airstrike;

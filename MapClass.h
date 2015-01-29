@@ -62,7 +62,7 @@ public:
 	}
 };
 
-class MapClass : public GScreenClass
+class NOVTABLE MapClass : public GScreenClass
 {
 public:
 	//Static

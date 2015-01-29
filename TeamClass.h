@@ -9,7 +9,7 @@ class CellClass;
 class ScriptClass;
 class TagClass;
 
-class TeamClass : public AbstractClass
+class NOVTABLE TeamClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Team;

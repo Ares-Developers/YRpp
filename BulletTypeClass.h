@@ -16,7 +16,7 @@ class TechnoClass;
 class WeaponTypeClass;
 class WarheadTypeClass;
 
-class BulletTypeClass : public ObjectTypeClass
+class NOVTABLE BulletTypeClass : public ObjectTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::BulletType;

@@ -10,7 +10,7 @@ class TagTypeClass; // TODO: define
 class TriggerTypeClass; // TODO: define
 class TriggerClass;
 
-class TActionClass : public AbstractClass
+class NOVTABLE TActionClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Action;

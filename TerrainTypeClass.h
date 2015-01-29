@@ -7,7 +7,7 @@
 
 #include <ObjectTypeClass.h>
 
-class TerrainTypeClass : public ObjectTypeClass
+class NOVTABLE TerrainTypeClass : public ObjectTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::TerrainType;

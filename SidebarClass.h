@@ -72,7 +72,7 @@ struct TabDataStruct
 	CameoDataStruct   Cameos[75];
 };
 
-class SidebarClass : public PowerClass
+class NOVTABLE SidebarClass : public PowerClass
 {
 public:
 	//Static

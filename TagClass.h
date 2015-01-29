@@ -7,7 +7,7 @@
 //forward declarations
 class TagTypeClass; // TODO: define
 
-class TagClass : public AbstractClass
+class NOVTABLE TagClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Tag;

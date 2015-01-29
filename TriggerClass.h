@@ -9,7 +9,7 @@ class SuperClass;
 class TechnoClass;
 class TriggerTypeClass; // TODO: define
 
-class TriggerClass : public AbstractClass
+class NOVTABLE TriggerClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Trigger;

@@ -33,7 +33,7 @@ struct SequenceStruct
 	SubSequenceStruct Sequences[42];
 };
 
-class InfantryTypeClass : public TechnoTypeClass
+class NOVTABLE InfantryTypeClass : public TechnoTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::InfantryType;

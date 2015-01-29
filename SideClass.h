@@ -7,7 +7,7 @@
 
 #include <AbstractTypeClass.h>
 
-class SideClass : public AbstractTypeClass
+class NOVTABLE SideClass : public AbstractTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Side;

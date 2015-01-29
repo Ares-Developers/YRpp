@@ -11,7 +11,7 @@
 class AnimClass;
 class HouseClass;
 
-class SuperClass : public AbstractClass
+class NOVTABLE SuperClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Super;

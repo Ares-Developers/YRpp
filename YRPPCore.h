@@ -45,4 +45,6 @@ virtual void alla(double malla) RX;
 #define RX {}
 #define RT(type) {return type();}
 
+#define NOVTABLE __declspec(novtable)
+
 #endif

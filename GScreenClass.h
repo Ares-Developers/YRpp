@@ -4,7 +4,7 @@
 #include <YRPPCore.h>
 #include <Interfaces.h>
 
-class GScreenClass : public IGameMap
+class NOVTABLE GScreenClass : public IGameMap
 {
 public:
 	//Static

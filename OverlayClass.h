@@ -37,7 +37,7 @@
 #include <ObjectClass.h>
 #include <OverlayTypeClass.h>
 
-class OverlayClass : public ObjectClass
+class NOVTABLE OverlayClass : public ObjectClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Overlay;

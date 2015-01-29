@@ -6,7 +6,7 @@
 #include <AbstractClass.h>
 #include <ColorScheme.h>
 
-class TacticalClass : public AbstractClass
+class NOVTABLE TacticalClass : public AbstractClass
 {
 public:
 	static TacticalClass* Global()

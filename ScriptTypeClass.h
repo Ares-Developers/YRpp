@@ -16,7 +16,7 @@ struct ScriptActionNode
 //forward declarations
 class TechnoTypeClass;
 
-class ScriptTypeClass : public AbstractTypeClass
+class NOVTABLE ScriptTypeClass : public AbstractTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::ScriptType;

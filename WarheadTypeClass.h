@@ -20,7 +20,7 @@ struct WarheadFlags {
 	WarheadFlags(bool FF = true, bool Retal = true, bool Acquire = true) : ForceFire(FF), Retaliate(Retal), PassiveAcquire(Acquire) {};
 };
 
-class WarheadTypeClass : public AbstractTypeClass
+class NOVTABLE WarheadTypeClass : public AbstractTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::WarheadType;

@@ -13,7 +13,7 @@ class BuildingTypeClass;
 class ObjectClass;
 class WeaponTypeClass;
 
-class SuperWeaponTypeClass : public AbstractTypeClass
+class NOVTABLE SuperWeaponTypeClass : public AbstractTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::SuperWeaponType;

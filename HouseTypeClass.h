@@ -11,7 +11,7 @@ class AircraftTypeClass;
 class InfantryTypeClass;
 class UnitTypeClass;
 
-class HouseTypeClass : public AbstractTypeClass
+class NOVTABLE HouseTypeClass : public AbstractTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::HouseType;

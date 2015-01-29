@@ -24,7 +24,7 @@ class LayerClass : public DynamicVectorClass<ObjectClass*>
 
 #define		NUM_LAYERS		5
 
-class DisplayClass : public MapClass
+class NOVTABLE DisplayClass : public MapClass
 {
 public:
 	//WIP: DisplayClass::TacticalClass goes HERE

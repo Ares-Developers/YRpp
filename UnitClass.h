@@ -11,7 +11,7 @@
 //forward declarations
 class EBolt;
 
-class UnitClass : public FootClass
+class NOVTABLE UnitClass : public FootClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Unit;

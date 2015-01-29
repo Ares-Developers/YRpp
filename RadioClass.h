@@ -10,7 +10,7 @@
 //forward declarations
 class TechnoClass;
 
-class RadioClass : public MissionClass
+class NOVTABLE RadioClass : public MissionClass
 {
 public:
 	//IPersistStream

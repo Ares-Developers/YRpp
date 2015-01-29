@@ -5,7 +5,7 @@
 
 class TechnoClass;
 
-class WaveClass : public ObjectClass
+class NOVTABLE WaveClass : public ObjectClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Wave;

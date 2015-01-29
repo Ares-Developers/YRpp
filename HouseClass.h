@@ -118,7 +118,7 @@ public:
 };
 
 //--- Here we go, finally...
-class HouseClass : public AbstractClass, public IHouse, public IPublicHouse, public IConnectionPointContainer
+class NOVTABLE HouseClass : public AbstractClass, public IHouse, public IPublicHouse, public IConnectionPointContainer
 {
 public:
 	static const AbstractType AbsID = AbstractType::House;

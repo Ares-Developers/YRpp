@@ -3,7 +3,7 @@
 
 #include <ObjectTypeClass.h>
 
-class IsometricTileTypeClass : public ObjectTypeClass
+class NOVTABLE IsometricTileTypeClass : public ObjectTypeClass
 {
 	static const AbstractType AbsID = AbstractType::IsotileType;
 

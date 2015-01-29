@@ -10,7 +10,7 @@
 //forward declarations
 #include <ScriptTypeClass.h>
 
-class ScriptClass : public AbstractClass
+class NOVTABLE ScriptClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Script;

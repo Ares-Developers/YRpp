@@ -13,7 +13,7 @@ class BulletTypeClass;
 class ParticleSystemTypeClass;
 class WarheadTypeClass;
 
-class WeaponTypeClass : public AbstractTypeClass
+class NOVTABLE WeaponTypeClass : public AbstractTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::WeaponType;

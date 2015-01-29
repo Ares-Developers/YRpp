@@ -12,7 +12,7 @@ class AnimTypeClass;
 class ParticleSystemTypeClass;
 class WarheadTypeClass;
 
-class VoxelAnimTypeClass : public ObjectTypeClass
+class NOVTABLE VoxelAnimTypeClass : public ObjectTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::VoxelAnimType;

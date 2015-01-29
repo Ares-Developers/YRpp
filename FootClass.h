@@ -13,7 +13,7 @@
 class LocomotionClass;
 class TeamClass;
 
-class FootClass : public TechnoClass
+class NOVTABLE FootClass : public TechnoClass
 {
 public:
 	static const auto AbsDerivateID = AbstractFlags::Foot;

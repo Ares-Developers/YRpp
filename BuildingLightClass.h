@@ -4,7 +4,7 @@
 #include <GeneralStructures.h>
 #include <ObjectClass.h>
 
-class BuildingLightClass : public ObjectClass
+class NOVTABLE BuildingLightClass : public ObjectClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::BuildingLight;

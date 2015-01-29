@@ -15,7 +15,7 @@ class StageClass : public IFlyControl{ };
 class FlasherClass : public StageClass{ };
 
 //AircraftClass
-class AircraftClass : public FootClass, public FlasherClass
+class NOVTABLE AircraftClass : public FootClass, public FlasherClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Aircraft;

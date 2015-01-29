@@ -7,7 +7,7 @@
 
 #include <AbstractClass.h>
 
-class NeuronClass : public AbstractClass
+class NOVTABLE NeuronClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Neuron;

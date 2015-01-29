@@ -19,7 +19,7 @@ public:
 	}
 };
 
-class SwizzleManagerClass : public ISwizzle
+class NOVTABLE SwizzleManagerClass : public ISwizzle
 {
 public:
 	static SwizzleManagerClass& Instance;

@@ -5,7 +5,7 @@
 
 class TechnoClass;
 
-class UnitTypeClass : public TechnoTypeClass
+class NOVTABLE UnitTypeClass : public TechnoTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::UnitType;

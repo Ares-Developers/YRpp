@@ -25,7 +25,7 @@ struct BuildingAnimFrameStruct
 	int FrameDuration;
 };
 
-class BuildingTypeClass : public TechnoTypeClass
+class NOVTABLE BuildingTypeClass : public TechnoTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::BuildingType;

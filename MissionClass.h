@@ -48,7 +48,7 @@ class MissionControlClass
 		double AARate; //default 0.016
 };
 
-class MissionClass : public ObjectClass
+class NOVTABLE MissionClass : public ObjectClass
 {
 public:
 	//Destructor

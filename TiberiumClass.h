@@ -11,7 +11,7 @@
 class AnimTypeClass;
 class OverlayTypeClass;
 
-class TiberiumClass : public AbstractTypeClass
+class NOVTABLE TiberiumClass : public AbstractTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Tiberium;

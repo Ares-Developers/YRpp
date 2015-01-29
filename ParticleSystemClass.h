@@ -9,7 +9,7 @@
 #include <ParticleSystemTypeClass.h>
 #include <ParticleClass.h>
 
-class ParticleSystemClass : public ObjectClass
+class NOVTABLE ParticleSystemClass : public ObjectClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::ParticleSystem;

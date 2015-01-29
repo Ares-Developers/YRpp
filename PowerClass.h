@@ -3,7 +3,7 @@
 
 #include <RadarClass.h>
 
-class PowerClass : public RadarClass
+class NOVTABLE PowerClass : public RadarClass
 {
 public:
 	//Static

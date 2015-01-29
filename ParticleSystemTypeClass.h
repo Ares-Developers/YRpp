@@ -9,7 +9,7 @@
 
 //forward declarations
 
-class ParticleSystemTypeClass : public ObjectTypeClass
+class NOVTABLE ParticleSystemTypeClass : public ObjectTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::ParticleSystemType;

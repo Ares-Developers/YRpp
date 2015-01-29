@@ -39,7 +39,7 @@ struct OwnedTiberiumStruct
 //---
 
 //The AbstractClass is the base class of all game objects.
-class AbstractClass : public IPersistStream, public IRTTITypeInfo, public INoticeSink, public INoticeSource
+class NOVTABLE AbstractClass : public IPersistStream, public IRTTITypeInfo, public INoticeSink, public INoticeSource
 {
 public:
 	static const AbstractType AbsID = AbstractType::Abstract;

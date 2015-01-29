@@ -13,7 +13,7 @@
 class HouseClass;
 class ParticleSystemClass;
 
-class VoxelAnimClass : public ObjectClass
+class NOVTABLE VoxelAnimClass : public ObjectClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::VoxelAnim;

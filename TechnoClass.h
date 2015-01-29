@@ -164,7 +164,7 @@ struct RecoilData
 		{ JMP_THIS(0x70ECE0); }
 };
 
-class TechnoClass : public RadioClass
+class NOVTABLE TechnoClass : public RadioClass
 {
 public:
 	static const auto AbsDerivateID = AbstractFlags::Techno;

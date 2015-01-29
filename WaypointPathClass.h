@@ -18,7 +18,7 @@ public:
 	DWORD       unknown;
 };
 
-class WaypointPathClass : public AbstractClass
+class NOVTABLE WaypointPathClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Waypoint;

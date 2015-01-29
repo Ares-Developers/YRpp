@@ -23,7 +23,7 @@ struct BulletData
 // the velocities along the axes, or something like that
 typedef Vector3D<double> BulletVelocity; // :3 -pd
 
-class BulletClass : public ObjectClass
+class NOVTABLE BulletClass : public ObjectClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Bullet;

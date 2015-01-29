@@ -16,7 +16,7 @@ class BulletClass;
 class HouseClass;
 class LightConvertClass;
 
-class AnimClass : public ObjectClass
+class NOVTABLE AnimClass : public ObjectClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Anim;

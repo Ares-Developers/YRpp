@@ -16,7 +16,7 @@ struct TaskForceEntryStruct
 	TechnoTypeClass* Type;
 };
 
-class TaskForceClass : public AbstractTypeClass
+class NOVTABLE TaskForceClass : public AbstractTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::TaskForce;

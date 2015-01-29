@@ -5,7 +5,7 @@
 
 #include <LocomotionClass.h>
 
-class RocketLocomotionClass : public LocomotionClass
+class NOVTABLE RocketLocomotionClass : public LocomotionClass
 {
 public:
 	//IUnknown

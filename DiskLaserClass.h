@@ -11,7 +11,7 @@ class LaserDrawClass;
 class TechnoClass;
 class WeaponTypeClass;
 
-class DiskLaserClass : public AbstractClass
+class NOVTABLE DiskLaserClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::DiskLaser;

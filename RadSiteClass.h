@@ -10,7 +10,7 @@
 class LightSourceClass;
 class WeaponTypeClass;
 
-class RadSiteClass : public AbstractClass
+class NOVTABLE RadSiteClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::RadSite;

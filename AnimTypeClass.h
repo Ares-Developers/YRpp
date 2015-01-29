@@ -12,7 +12,7 @@ class OverlayTypeClass;
 class ParticleTypeClass;
 class WarheadTypeClass;
 
-class AnimTypeClass : public ObjectTypeClass
+class NOVTABLE AnimTypeClass : public ObjectTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::AnimType;

@@ -8,7 +8,7 @@ class SuperClass;
 class TechnoClass;
 
 //The AirstrikeClass handles the airstrikes Boris calls in.
-class TemporalClass : public AbstractClass
+class NOVTABLE TemporalClass : public AbstractClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Temporal;

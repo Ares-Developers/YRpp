@@ -8,7 +8,7 @@
 #include <ObjectClass.h>
 #include <SmudgeTypeClass.h>
 
-class SmudgeClass : public ObjectClass
+class NOVTABLE SmudgeClass : public ObjectClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::Smudge;

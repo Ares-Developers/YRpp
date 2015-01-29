@@ -10,7 +10,7 @@
 //forward declarations
 class WarheadTypeClass;
 
-class ParticleTypeClass : public ObjectTypeClass
+class NOVTABLE ParticleTypeClass : public ObjectTypeClass
 {
 public:
 	static const AbstractType AbsID = AbstractType::ParticleType;
