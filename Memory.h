@@ -51,7 +51,7 @@ namespace YRMemory {
 	}
 
 	// the game's operator delete
-	__declspec(naked) inline void __cdecl Deallocate(void* mem) {
+	__declspec(naked) inline void __cdecl Deallocate(const void* mem) {
 		JMP(0x7C8B3D);
 	}
 }
