@@ -49,6 +49,16 @@ public:
 	void* ReadWholeFile()
 		{ JMP_THIS(0x4A3890); }
 
+	template <typename T>
+	bool Read(T& obj, int size = sizeof(T)) {
+		return this->ReadBytes(&obj, size) == size;
+	}
+
+	template <typename T>
+	bool Write(T& obj, int size = sizeof(T)) {
+		return this->WriteBytes(&obj, size) == size;
+	}
+
 protected:
 	FileClass(bool) { }
 
