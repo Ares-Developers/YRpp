@@ -2,8 +2,10 @@
 #define AUDIO_H_
 
 #include <GeneralDefinitions.h>
+
 class RawFileClass;
 class CCFileClass;
+class VocClass;
 
 class AudioIDXHeader {
 	unsigned int Magic;
@@ -136,24 +138,24 @@ struct TauntDataStruct {
 
 struct AudioController
 {
-	static DWORD * &Audio_IDX_Container;
-
-	DWORD f_0;
+	void* f_0;
 	DWORD f_4;
-	DWORD f_8;
-	DWORD *f_C;
+	VocClass* Voice;
+	AudioIDXData** AudioIndex;
 	DWORD f_10;
 
-	AudioController()
-	{
-		this->f_0 = this->f_4 = this->f_8 = 0;
-		this->f_C = Audio_IDX_Container;
-	}
+	AudioController() :
+		f_0(nullptr),
+		f_4(0),
+		Voice(nullptr),
+		AudioIndex(&AudioIDXData::IDX),
+		f_10(0)
+	{ }
 
-	// no idea how these differ really
-	void DTOR_0()
+	~AudioController() 
 		{ JMP_THIS(0x405C00); }
 
+	// no idea how these differ really
 	void DTOR_1()
 		{ JMP_THIS(0x405D40); }
 
