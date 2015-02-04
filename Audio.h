@@ -24,7 +24,7 @@ class AudioIDXEntry { // assert (IDXHeader.version != 1);
 
 class AudioIDXData {
 public:
-	static AudioIDXData * &IDX;
+	static AudioIDXData* &Instance;
 
 	static AudioIDXData* __fastcall Create(const char *Filename, const char *extra)
 		{ JMP_STD(0x4011C0); };
@@ -148,7 +148,7 @@ struct AudioController
 		f_0(nullptr),
 		f_4(0),
 		Voice(nullptr),
-		AudioIndex(&AudioIDXData::IDX),
+		AudioIndex(&AudioIDXData::Instance),
 		f_10(0)
 	{ }
 

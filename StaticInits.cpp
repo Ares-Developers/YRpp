@@ -39,7 +39,7 @@ DECL(AnimClass, 0xA8E9A8);
 DECL(AnimTypeClass, 0x8B4150);
 
 #include <Audio.h>
-ALIAS(AudioIDXData *, AudioIDXData::IDX, 0x87E294);
+ALIAS(AudioIDXData*, AudioIDXData::Instance, 0x87E294);
 ALIAS(AudioStream *, AudioStream::Instance, 0xB1D4D8);
 
 #include <BombListClass.h>
