@@ -188,7 +188,7 @@ public:
 
 public:
 
-	Allocator FileAllocator;
+	MemoryBuffer Buffer;
 	DWORD unknown_64;
 	DWORD unknown_68;
 };
