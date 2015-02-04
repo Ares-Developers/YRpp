@@ -26,6 +26,28 @@ struct AudioIDXEntry { // assert (IDXHeader.version != 1);
 	}
 };
 
+struct AudioSampleData {
+	AudioSampleData() :
+		Data(0),
+		Format(0),
+		SampleRate(0),
+		NumChannels(0),
+		BytesPerSample(0),
+		ByteRate(0),
+		BlockAlign(0),
+		Flags(0)
+	{ }
+
+	unsigned int Data;
+	unsigned int Format;
+	unsigned int SampleRate;
+	unsigned int NumChannels;
+	unsigned int BytesPerSample;
+	unsigned int ByteRate;
+	unsigned int BlockAlign;
+	unsigned int Flags;
+};
+
 class AudioIDXData {
 public:
 	static AudioIDXData* &Instance;
@@ -48,6 +70,9 @@ public:
 	int __fastcall GetSampleSize(int index) const
 		{ JMP_STD(0x401620); }
 
+	AudioSampleData* __fastcall GetSampleInformation(int index, AudioSampleData* pBuffer) const
+		{ JMP_STD(0x401640); }
+
 	AudioIDXEntry* Samples;
 	int SampleCount;
 	char Path[MAX_PATH];
@@ -62,7 +87,7 @@ public:
 class Audio {
 public:
 
-	static bool __fastcall ReadWAVFile(RawFileClass* pFile, void* pAudioSample, int* pDataSize)
+	static bool __fastcall ReadWAVFile(RawFileClass* pFile, AudioSampleData* pAudioSample, int* pDataSize)
 		{ JMP_STD(0x408610); }
 };
 
