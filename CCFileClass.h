@@ -27,26 +27,26 @@ public:
 	//Destructor
 	virtual	~FileClass() RX;
 	//FileClass
-	virtual const char* GetFileName() = 0;
+	virtual const char* GetFileName() const = 0;
 	virtual const char* SetFileName(const char* pFileName) = 0;
-	virtual int CreateFile() = 0;
-	virtual int DeleteFile() = 0;
-	virtual bool Exists(const char* pFileName) = 0; //If pFileName is NULL, use own.
+	virtual BOOL CreateFile() = 0;
+	virtual BOOL DeleteFile() = 0;
+	virtual bool Exists(bool writeShared = false) = 0;
 	virtual bool HasHandle() = 0;
 	virtual bool Open(FileAccessMode access) = 0;
 	virtual bool OpenEx(const char* pFileName, FileAccessMode access) = 0;
 	virtual int ReadBytes(void* pBuffer, int nNumBytes) = 0; //Returns number of bytes read.
-	virtual int MoveFilePointer(int nDistance, FileSeekMode seek) = 0;
+	virtual int Seek(int offset, FileSeekMode seek) = 0;
 	virtual int GetFileSize() = 0;
 	virtual int WriteBytes(void* pBuffer, int nNumBytes) = 0; //Returns number of bytes written.
 	virtual void Close() = 0;
 	virtual DWORD GetFileTime() R0; //LoWORD = FatTime, HiWORD = FatDate
 	virtual bool SetFileTime(DWORD FileTime) R0;
-	virtual void CDCheck(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) = 0;
+	virtual void CDCheck(DWORD errorCode, bool bUnk, const char* pFilename) = 0;
 
-	FileClass() { };
+	FileClass() = default;
 
-	void * ReadWholeFile()
+	void* ReadWholeFile()
 		{ JMP_THIS(0x4A3890); }
 
 protected:
@@ -55,9 +55,9 @@ protected:
 	//Properties
 
 public:
-
 	bool SkipCDCheck;
-	int FileAccess;
+private:
+	BYTE padding_5[3];
 };
 
 //--------------------------------------------------------------------
@@ -68,22 +68,22 @@ class NOVTABLE RawFileClass : public FileClass
 public:
 	//Destructor
 	virtual ~RawFileClass() RX;
+
 	//FileClass
-	//FileClass
-	virtual const char* GetFileName() override R0;
+	virtual const char* GetFileName() const override R0;
 	virtual const char* SetFileName(const char* pFileName) override R0;
-	virtual int CreateFile() override R0;
-	virtual int DeleteFile() override R0;
-	virtual bool Exists(const char* pFileName) override R0;
+	virtual BOOL CreateFile() override R0;
+	virtual BOOL DeleteFile() override R0;
+	virtual bool Exists(bool writeShared = false) override R0;
 	virtual bool HasHandle() override R0;
 	virtual bool Open(FileAccessMode access) override R0;
 	virtual bool OpenEx(const char* pFileName, FileAccessMode access) override R0;
 	virtual int ReadBytes(void* pBuffer, int nNumBytes) override R0;
-	virtual int MoveFilePointer(int nDistance, FileSeekMode seek) override R0;
+	virtual int Seek(int offset, FileSeekMode seek) override R0;
 	virtual int GetFileSize() override R0;
 	virtual int WriteBytes(void* pBuffer, int nNumBytes) override R0;
 	virtual void Close() override RX;
-	virtual void CDCheck(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) override RX;
+	virtual void CDCheck(DWORD errorCode, bool lUnk, const char* pFilename) override RX;
 
 	//Constructor
 	RawFileClass(const char* pFileName) : FileClass(false)
@@ -91,12 +91,12 @@ public:
 
 protected:
 	RawFileClass(bool X) : FileClass(X) { }
-	RawFileClass() : FileClass(false) { }
+	RawFileClass() : FileClass(false) { };
 
 	//Properties
 
 public:
-
+	FileAccessMode FileAccess;
 	int FilePointer;
 	int FileSize;
 	HANDLE Handle;
@@ -104,6 +104,8 @@ public:
 	short unknown_short_1C;	//FatTime?
 	short unknown_short_1E;	//FatDate?
 	bool FileNameAllocated;
+private:
+	BYTE padding_21[3];
 };
 
 //--------------------------------------------------------------------
@@ -126,7 +128,6 @@ protected:
 	//Properties
 
 public:
-
 	bool unknown_bool_24;
 	bool unknown_bool_25;
 	bool unknown_bool_26;
@@ -165,7 +166,6 @@ protected:
 	//Property
 
 public:
-
 	DWORD unknown_54;
 };
 
@@ -177,17 +177,19 @@ class NOVTABLE CCFileClass : public CDFileClass
 public:
 	//Destructor
 	virtual ~CCFileClass() RX;
+
 	//FileClass
 
 	//Constructor
-	CCFileClass() : CDFileClass(false) { }
 	CCFileClass(const char* pFileName) : CDFileClass(false)
 		{ JMP_THIS(0x4739F0); }
+
+protected:
+	CCFileClass() : CDFileClass(false) { }
 
 	//Properties
 
 public:
-
 	MemoryBuffer Buffer;
 	DWORD unknown_64;
 	DWORD unknown_68;
