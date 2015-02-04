@@ -70,20 +70,20 @@ public:
 	virtual ~RawFileClass() RX;
 	//FileClass
 	//FileClass
-	virtual const char* GetFileName() R0;
-	virtual const char* SetFileName(const char* pFileName) R0;
-	virtual int CreateFile() R0;
-	virtual int DeleteFile() R0;
-	virtual bool Exists(const char* pFileName) R0;
-	virtual bool HasHandle() R0;
-	virtual bool Open(FileAccessMode access) R0;
-	virtual bool OpenEx(const char* pFileName, FileAccessMode access) R0;
-	virtual int ReadBytes(void* pBuffer, int nNumBytes) R0;
-	virtual int MoveFilePointer(int nDistance, FileSeekMode seek) R0;
-	virtual int GetFileSize() R0;
-	virtual int WriteBytes(void* pBuffer, int nNumBytes) R0;
-	virtual void Close() RX;
-	virtual void CDCheck(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) RX;
+	virtual const char* GetFileName() override R0;
+	virtual const char* SetFileName(const char* pFileName) override R0;
+	virtual int CreateFile() override R0;
+	virtual int DeleteFile() override R0;
+	virtual bool Exists(const char* pFileName) override R0;
+	virtual bool HasHandle() override R0;
+	virtual bool Open(FileAccessMode access) override R0;
+	virtual bool OpenEx(const char* pFileName, FileAccessMode access) override R0;
+	virtual int ReadBytes(void* pBuffer, int nNumBytes) override R0;
+	virtual int MoveFilePointer(int nDistance, FileSeekMode seek) override R0;
+	virtual int GetFileSize() override R0;
+	virtual int WriteBytes(void* pBuffer, int nNumBytes) override R0;
+	virtual void Close() override RX;
+	virtual void CDCheck(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3) override RX;
 
 	//Constructor
 	RawFileClass(const char* pFileName) : FileClass(false)
