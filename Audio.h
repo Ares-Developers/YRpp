@@ -7,119 +7,62 @@ class RawFileClass;
 class CCFileClass;
 class VocClass;
 
-class AudioIDXHeader {
+struct AudioIDXHeader {
 	unsigned int Magic;
 	unsigned int Version;
 	unsigned int numSamples;
 };
 
-class AudioIDXEntry { // assert (IDXHeader.version != 1);
+struct AudioIDXEntry { // assert (IDXHeader.version != 1);
 	char Name[16];
-	unsigned int Offset;
-	unsigned int Size;
+	int Offset;
+	int Size;
 	unsigned int SampleRate;
 	unsigned int Flags;
 	unsigned int ChunkSize;
+
+	bool operator < (const AudioIDXEntry& rhs) const {
+		return _strcmpi(this->Name, rhs.Name) < 0;
+	}
 };
 
 class AudioIDXData {
 public:
 	static AudioIDXData* &Instance;
 
-	static AudioIDXData* __fastcall Create(const char *Filename, const char *extra)
+	static AudioIDXData* __fastcall Create(const char* pFilename, const char* pPath)
 		{ JMP_STD(0x4011C0); };
 
 	~AudioIDXData()
 		{ JMP_THIS(0x401580); }
 
-	unsigned int __fastcall FindSampleIndex(const char *SoundName)
+	void ClearCurrentSample()
+		{ JMP_THIS(0x401910); }
+
+	int __fastcall FindSampleIndex(const char* pName) const
 		{ JMP_STD(0x4015C0); }
 
-	const char * __fastcall GetSampleName(unsigned int SoundIndex)
+	const char* __fastcall GetSampleName(int index) const
 		{ JMP_STD(0x401600); }
 
-	unsigned int __fastcall GetSampleSize(unsigned int SoundIndex)
+	int __fastcall GetSampleSize(int index) const
 		{ JMP_STD(0x401620); }
 
-	AudioIDXEntry *Samples;
-	unsigned int cntSamples;
-	DWORD field_08;
-	DWORD field_0C;
-	DWORD field_10;
-	DWORD field_14;
-	DWORD field_18;
-	DWORD field_1C;
-	DWORD field_20;
-	DWORD field_24;
-	DWORD field_28;
-	DWORD field_2C;
-	DWORD field_30;
-	DWORD field_34;
-	DWORD field_38;
-	DWORD field_3C;
-	DWORD field_40;
-	DWORD field_44;
-	DWORD field_48;
-	DWORD field_4C;
-	DWORD field_50;
-	DWORD field_54;
-	DWORD field_58;
-	DWORD field_5C;
-	DWORD field_60;
-	DWORD field_64;
-	DWORD field_68;
-	DWORD field_6C;
-	DWORD field_70;
-	DWORD field_74;
-	DWORD field_78;
-	DWORD field_7C;
-	DWORD field_80;
-	DWORD field_84;
-	DWORD field_88;
-	DWORD field_8C;
-	DWORD field_90;
-	DWORD field_94;
-	DWORD field_98;
-	DWORD field_9C;
-	DWORD field_A0;
-	DWORD field_A4;
-	DWORD field_A8;
-	DWORD field_AC;
-	DWORD field_B0;
-	DWORD field_B4;
-	DWORD field_B8;
-	DWORD field_BC;
-	DWORD field_C0;
-	DWORD field_C4;
-	DWORD field_C8;
-	DWORD field_CC;
-	DWORD field_D0;
-	DWORD field_D4;
-	DWORD field_D8;
-	DWORD field_DC;
-	DWORD field_E0;
-	DWORD field_E4;
-	DWORD field_E8;
-	DWORD field_EC;
-	DWORD field_F0;
-	DWORD field_F4;
-	DWORD field_F8;
-	DWORD field_FC;
-	DWORD field_100;
-	DWORD field_104;
-	DWORD field_108;
-	CCFileClass *File;
-	DWORD field_110; // something with a vtable
-	DWORD field_114;
-	DWORD field_118;
-	DWORD field_11C;
-	DWORD field_120;
+	AudioIDXEntry* Samples;
+	int SampleCount;
+	char Path[MAX_PATH];
+	CCFileClass* BagFile;
+	RawFileClass* ExternalFile;
+	BOOL PathFound;
+	RawFileClass* CurrentSampleFile;
+	int CurrentSampleSize;
+	DWORD unknown_120;
 };
 
 class Audio {
 public:
 
-	static bool __fastcall ReadWAVFile(RawFileClass *file, void *AudioSample, int *result)
+	static bool __fastcall ReadWAVFile(RawFileClass* pFile, void* pAudioSample, int* pDataSize)
 		{ JMP_STD(0x408610); }
 };
 
@@ -127,13 +70,13 @@ class AudioStream {
 public:
 	static AudioStream* &Instance;
 
-	bool __fastcall PlayWAV(const char * filename, bool bUnk)
+	bool __fastcall PlayWAV(const char* pFilename, bool bUnk)
 		{ JMP_STD(0x407B60); }
 };
 
 struct TauntDataStruct {
-	DWORD tauntIdx: 4;
-	DWORD countryIdx :4;
+	DWORD tauntIdx : 4;
+	DWORD countryIdx : 4;
 };
 
 struct AudioController
