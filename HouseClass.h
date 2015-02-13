@@ -115,6 +115,8 @@ public:
 	PROTECTED_PROPERTY(BYTE,                    unknown_54[0x20]);
 
 	HouseClass*                       Owner;
+
+#pragma warning(suppress : 4265)
 };
 
 //--- Here we go, finally...
