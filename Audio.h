@@ -55,6 +55,10 @@ public:
 	static AudioIDXData* __fastcall Create(const char* pFilename, const char* pPath)
 		{ JMP_STD(0x4011C0); };
 
+	AudioIDXData() {
+		memset(this, 0, sizeof(*this));
+	}
+
 	~AudioIDXData()
 		{ JMP_THIS(0x401580); }
 
