@@ -14,8 +14,7 @@
 	out parameter is written to if and only if an item could be selected.
 */
 
-#ifndef DISCRETESELECTION_H
-#define DISCRETESELECTION_H
+#pragma once
 
 #include <ArrayClasses.h>
 
@@ -88,5 +87,3 @@ private:
 	DynamicVectorClass<T> Items;
 	int Rating;
 };
-
-#endif

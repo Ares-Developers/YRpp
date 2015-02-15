@@ -1,5 +1,4 @@
-#ifndef LOADPROGRESSMGR_H
-#define LOADPROGRESSMGR_H
+#pragma once
 
 #include <YRPP.h>
 
@@ -55,5 +54,3 @@ public:
 	DWORD field_5C;
 	Surface * ProgressSurface;
 };
-
-#endif

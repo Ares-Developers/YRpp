@@ -4,8 +4,7 @@
 	Used by the Psychic Dominator
 */
 
-#ifndef IONBLAST_H
-#define IONBLAST_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 
@@ -38,5 +37,3 @@ public:
 	BOOL DisableIonBeam;	//0 = no, 1 = yes
 
 };
-
-#endif

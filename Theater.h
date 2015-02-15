@@ -1,5 +1,4 @@
-#ifndef THEATER_H
-#define THEATER_H
+#pragma once
 
 #include <YRPPCore.h>
 
@@ -38,5 +37,3 @@ public:
 	int		unknown_int_68;
 	int		unknown_int_6C;
 };
-
-#endif

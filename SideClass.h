@@ -2,8 +2,7 @@
 	Sides
 */
 
-#ifndef SIDE_H
-#define SIDE_H
+#pragma once
 
 #include <AbstractTypeClass.h>
 
@@ -45,5 +44,3 @@ public:
 	TypeList<int> HouseTypes;	//indices!
 
 };
-
-#endif

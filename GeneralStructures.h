@@ -1,5 +1,4 @@
-#ifndef GENERALSTRUCTURES_H
-#define GENERALSTRUCTURES_H
+#pragma once
 
 #include <ASMMacros.h>
 #include <YRPPCore.h>
@@ -383,5 +382,3 @@ struct NamedValue {
 		return this->Value == other.Value && *this == other.Name;
 	}
 };
-
-#endif

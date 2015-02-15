@@ -1,5 +1,4 @@
-#ifndef CONVERSIONS_H
-#define CONVERSIONS_H
+#pragma once
 
 #include <Helpers/Macro.h>
 #include <YRPP.h>
@@ -67,5 +66,3 @@ public:
 	}
 
 };
-
-#endif

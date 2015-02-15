@@ -1,5 +1,4 @@
-#ifndef GAMEMODEOPTIONSCLASS_H_
-#define GAMEMODEOPTIONSCLASS_H_
+#pragma once
 
 #include <wchar.h>
 
@@ -42,5 +41,3 @@ public:
 	bool MCVRedeploy;
 	wchar_t MapDescription[45];
 };
-
-#endif

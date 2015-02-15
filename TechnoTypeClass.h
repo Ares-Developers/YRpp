@@ -2,8 +2,7 @@
 	TechnoTypes are initialized by INI files.
 */
 
-#ifndef TECHNOTYPE_H
-#define TECHNOTYPE_H
+#pragma once
 
 #include <ObjectTypeClass.h>
 #include <RulesClass.h>
@@ -527,5 +526,3 @@ public:
 	void*           Palette; //no... idea....
 	DWORD           align_DF4;
 };
-
-#endif

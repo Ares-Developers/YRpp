@@ -1,7 +1,6 @@
 //General linked list class
 
-#ifndef GENLIST_H
-#define GENLIST_H
+#pragma once
 
 #include <YRPPCore.h>
 
@@ -74,5 +73,3 @@ public:
 protected:
 	List(bool) : GenericList(false) { }
 };
-
-#endif

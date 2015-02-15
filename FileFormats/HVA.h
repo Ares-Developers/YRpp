@@ -1,5 +1,4 @@
-#ifndef HVA_H_
-#define HVA_H_
+#pragma once
 
 class CCFileClass;
 
@@ -20,5 +19,3 @@ public:
 	signed int ReadFile(CCFileClass *ccFile)
 		{ JMP_THIS(0x5BD5C0); }
 };
-
-#endif

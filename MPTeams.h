@@ -1,5 +1,4 @@
-#ifndef MPTEAMS_H
-#define MPTEAMS_H
+#pragma once
 
 // these classes handle alliances between players, eg Team:A B C D in the frontend
 
@@ -79,5 +78,3 @@ public:
 	MPObserverTeam()
 		{ JMP_THIS(0x5C9470); }
 };
-
-#endif

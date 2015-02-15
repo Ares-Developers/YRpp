@@ -1,5 +1,4 @@
-#ifndef TACTION_H
-#define TACTION_H
+#pragma once
 
 #include <AbstractClass.h>
 
@@ -295,5 +294,3 @@ public:
 	bool               padding_8D[0x3];
 	int                Value; // multipurpose
 };
-
-#endif

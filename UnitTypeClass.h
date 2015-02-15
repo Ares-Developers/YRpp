@@ -1,5 +1,4 @@
-#ifndef UNITTYPE_H
-#define UNITTYPE_H
+#pragma once
 
 #include <TechnoTypeClass.h>
 
@@ -87,5 +86,3 @@ public:
 	char FiringFrames;
 	char AltImageFile [0x19];
 };
-
-#endif

@@ -2,8 +2,7 @@
 	Projectiles
 */
 
-#ifndef BULLETTYPE_H
-#define BULLETTYPE_H
+#pragma once
 
 #include <ObjectTypeClass.h>
 
@@ -113,5 +112,3 @@ public:
 	byte AnimRate;
 	bool Flat;
 };
-
-#endif

@@ -10,8 +10,7 @@ NOTE:
 	-pd
 */
 
-#ifndef GAMEMODE_H
-#define GAMEMODE_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 #include <MPTeams.h>
@@ -411,5 +410,3 @@ class MPSiegeClass : public MPGameModeClass
 		{ JMP_THIS(0x5CA630); }
 	//FACTORY(0x7EEEA4);
 };
-
-#endif

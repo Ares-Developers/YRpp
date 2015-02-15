@@ -2,8 +2,7 @@
 	RadSites
 */
 
-#ifndef ALPHASHAPE_H
-#define ALPHASHAPE_H
+#pragma once
 
 #include <FileSystem.h>
 #include <AbstractClass.h>
@@ -50,5 +49,3 @@ public:
 	SHPStruct* AlphaImage;
 	bool IsObjectGone;	//Set if AttachedTo is NULL.
 };
-
-#endif

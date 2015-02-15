@@ -5,8 +5,7 @@
 
 *******************************************************************/
 
-#ifndef YRPLUSPLUS_H
-#define YRPLUSPLUS_H
+#pragma once
 
 #include <YRPPCore.h>
 #include <FileSystem.h>
@@ -17,5 +16,3 @@
 #include <CommandClass.h>
 #include <GameClasses.h>
 #include <SwizzleManagerClass.h>
-
-#endif

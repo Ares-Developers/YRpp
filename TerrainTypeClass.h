@@ -2,8 +2,7 @@
 	TerrainTypes are initialized by INI files.
 */
 
-#ifndef TERRAINTYPE_H
-#define TERRAINTYPE_H
+#pragma once
 
 #include <ObjectTypeClass.h>
 
@@ -60,5 +59,3 @@ public:
 	bool IsVeinhole;
 	CellStruct* FoundationData;
 };
-
-#endif

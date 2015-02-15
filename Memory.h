@@ -1,5 +1,4 @@
-#ifndef MEMORY_H
-#define MEMORY_H
+#pragma once
 
 #include <ASMMacros.h>
 
@@ -215,5 +214,3 @@ struct GameDeleter {
 //
 //#define GAME_ALLOC_ARR(TT, Capacity, var) \
 //	var = GameCreateArray<TT>(Capacity);
-
-#endif

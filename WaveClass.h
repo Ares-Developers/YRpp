@@ -1,5 +1,4 @@
-#ifndef WAVE_H
-#define WAVE_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 
@@ -131,5 +130,3 @@ public:
 	DynamicVectorClass<CellClass *> Cells;
 	BYTE unknown_208 [14*4];
 };
-
-#endif

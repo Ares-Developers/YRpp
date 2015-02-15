@@ -1,5 +1,4 @@
-#ifndef YRPP_NETWORKEVENTS_H_
-#define YRPP_NETWORKEVENTS_H_
+#pragma once
 
 #include <GeneralDefinitions.h>
 #include <Unsorted.h>
@@ -111,5 +110,3 @@ struct NetID {
 		{ JMP_THIS(0x6E6B70); }
 };
 #pragma pack(pop)
-
-#endif

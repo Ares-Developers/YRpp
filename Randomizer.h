@@ -1,5 +1,4 @@
-#ifndef RANDOM_H
-#define RANDOM_H
+#pragma once
 
 class Randomizer
 {
@@ -34,5 +33,3 @@ public:
 	int Next2; //from Table
 	DWORD Table [0xFA];
 };
-
-#endif

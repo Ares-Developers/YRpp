@@ -1,5 +1,4 @@
-#ifndef GSCREEN_H
-#define GSCREEN_H
+#pragma once
 
 #include <YRPPCore.h>
 #include <Interfaces.h>
@@ -53,5 +52,3 @@ public:
 	int ScreenShakeY;
 	int unknown_int_0C;	//default is 2
 };
-
-#endif

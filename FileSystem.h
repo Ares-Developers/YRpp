@@ -2,8 +2,7 @@
 	File related stuff
 */
 
-#ifndef FILESYSTEM_H
-#define FILESYSTEM_H
+#pragma once
 
 #include <ConvertClass.h>
 #include <GeneralStructures.h>
@@ -101,5 +100,3 @@ public:
 		return ret;
 	}
 };
-
-#endif

@@ -2,8 +2,7 @@
 	ParticleSystemTypes are initialized by INI files.
 */
 
-#ifndef PARTICLESYSTEMTYPE_H
-#define PARTICLESYSTEMTYPE_H
+#pragma once
 
 #include <ObjectTypeClass.h>
 
@@ -72,5 +71,3 @@ public:
 	bool     Laser;
 	bool     OneFrameLight;
 };
-
-#endif

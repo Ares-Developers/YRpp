@@ -2,8 +2,7 @@
 	Base class for WHAT?? I DUNNO =(
 */
 
-#ifndef RADIO_H
-#define RADIO_H
+#pragma once
 
 #include <MissionClass.h>
 
@@ -46,5 +45,3 @@ public:
 	eRadioCommands LastCommands [3]; // new command updates these
 	VectorClass<TechnoClass*> RadioLinks;	//Docked units etc
 };
-
-#endif

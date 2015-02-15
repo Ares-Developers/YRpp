@@ -1,5 +1,4 @@
-#ifndef HELPER_CAST_H
-#define HELPER_CAST_H
+#pragma once
 
 #include <AbstractClass.h>
 
@@ -148,5 +147,3 @@ template <>
 inline const FootClass* abstract_cast<const FootClass*>(const AbstractClass* pAbstract) {
 	return generic_cast<const FootClass*>(pAbstract);
 };
-
-#endif

@@ -2,8 +2,7 @@
 	AnimTypes are initialized by INI files.
 */
 
-#ifndef INFANTRYTYPE_H
-#define INFANTRYTYPE_H
+#pragma once
 
 #include <TechnoTypeClass.h>
 
@@ -114,5 +113,3 @@ public:
 	bool JumpJetTurn;
 private: DWORD align_ECC;
 };
-
-#endif

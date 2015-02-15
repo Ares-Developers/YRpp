@@ -1,6 +1,5 @@
 //pd's Vector classes (math sense)
-#ifndef VECTOR_H
-#define VECTOR_H
+#pragma once
 
 #include <math.h>
 
@@ -264,5 +263,3 @@ public:
 
 template <typename T>
 const Vector3D<T> Vector3D<T>::Empty = {T(), T(), T()};
-
-#endif

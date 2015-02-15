@@ -1,5 +1,4 @@
-#ifndef BOMBLIST_H
-#define BOMBLIST_H
+#pragma once
 
 #include <AbstractClass.h>
 #include <ArrayClasses.h>
@@ -42,5 +41,3 @@ public:
 	DynamicVectorClass<TechnoClass *> Detectors;		//all the BombSight'ed objects currently on the map
 	int UpdateDelay; // defaults to 100, some iterators set it to 1
 };
-
-#endif

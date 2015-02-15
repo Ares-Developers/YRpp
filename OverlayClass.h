@@ -2,8 +2,7 @@
 	Overlays (mainly Ore and Gems)
 */
 
-#ifndef OVERLAY_H
-#define OVERLAY_H
+#pragma once
 
 /*
 
@@ -74,6 +73,3 @@ public:
 
 	OverlayTypeClass* Type;
 };
-
-#endif
-

@@ -1,5 +1,4 @@
-#ifndef BLITTRANSXLATWRITEALPHA_H
-#define BLITTRANSXLATWRITEALPHA_H
+#pragma once
 
 #include <Blitters.h>
 
@@ -43,5 +42,3 @@ class BlitTransXlatWriteAlpha : public Blitter<T> {
 	public:
 		T *Data;
 };
-
-#endif

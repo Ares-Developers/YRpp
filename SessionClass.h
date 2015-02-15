@@ -1,5 +1,4 @@
-#ifndef SESSIONCLASS_H_
-#define SESSIONCLASS_H_
+#pragma once
 
 #include <GeneralDefinitions.h>
 #include <MPGameModeClass.h>
@@ -90,5 +89,3 @@ public:
 	PROTECTED_PROPERTY(DWORD, unknown_2854[0x221]);
 	bool CurrentlyInGame; // at least used for deciding dialog backgrounds
 };
-
-#endif

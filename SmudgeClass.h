@@ -2,8 +2,7 @@
 	Smudges
 */
 
-#ifndef SMUDGE_H
-#define SMUDGE_H
+#pragma once
 
 #include <ObjectClass.h>
 #include <SmudgeTypeClass.h>
@@ -46,5 +45,3 @@ public:
 	SmudgeTypeClass* Type;
 
 };
-
-#endif

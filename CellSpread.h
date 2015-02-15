@@ -1,5 +1,4 @@
-#ifndef CELLSPREAD_H
-#define CELLSPREAD_H
+#pragma once
 
 #include <GeneralStructures.h>
 
@@ -38,5 +37,3 @@ public:
 		return GetDistance(offset.X, offset.Y);
 	};
 };
-
-#endif

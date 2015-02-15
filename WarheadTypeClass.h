@@ -2,8 +2,7 @@
 	Warheads
 */
 
-#ifndef WARHEADTYPE_H
-#define WARHEADTYPE_H
+#pragma once
 
 #include <AbstractTypeClass.h>
 
@@ -124,5 +123,3 @@ public:
 	int     MinDebris;
 	PROTECTED_PROPERTY(DWORD, unused_1CC); //???
 };
-
-#endif

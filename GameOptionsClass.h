@@ -1,5 +1,4 @@
-#ifndef GAMEOPTIONSCLASS_H_
-#define GAMEOPTIONSCLASS_H_
+#pragma once
 
 class GameOptionsClass
 {
@@ -62,5 +61,3 @@ public:
 	int unknown_int_B0;
 	int unknown_int_B4;
 };
-
-#endif

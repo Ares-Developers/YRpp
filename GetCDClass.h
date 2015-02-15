@@ -1,5 +1,4 @@
-#ifndef GETCDCLASS_H_
-#define GETCDCLASS_H_
+#pragma once
 
 class GetCDClass
 {
@@ -10,5 +9,3 @@ public:
 	int Count;
 	int unknown_6C;
 };
-
-#endif

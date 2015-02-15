@@ -1,5 +1,4 @@
-#ifndef DIRECTDRAWDEF_H
-#define DIRECTDRAWDEF_H
+#pragma once
 
 #include <YRPPCore.h>
 
@@ -225,4 +224,3 @@ public:
 
 };
 
-#endif

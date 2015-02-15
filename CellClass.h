@@ -2,8 +2,7 @@
 	Cells
 */
 
-#ifndef CELL_H
-#define CELL_H
+#pragma once
 
 #include <AbstractClass.h>
 
@@ -407,5 +406,3 @@ public:
 	eCellFlags         Flags;	//Various settings.
 	PROTECTED_PROPERTY(BYTE,     padding_144[4]);
 };
-
-#endif

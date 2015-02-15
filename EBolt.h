@@ -2,8 +2,7 @@
 	Electric Bolts
 */
 
-#ifndef EBOLT_H
-#define EBOLT_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 
@@ -58,5 +57,3 @@ public:
 	bool AlternateColor;
 
 };
-
-#endif

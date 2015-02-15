@@ -1,5 +1,4 @@
-#ifndef WWMOUSE_H
-#define WWMOUSE_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 #include <GeneralStructures.h>
@@ -93,4 +92,3 @@ public:
 	DWORD       field_94;
 
 };
-#endif

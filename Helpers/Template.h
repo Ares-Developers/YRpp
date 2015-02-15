@@ -1,5 +1,4 @@
-#ifndef HELPER_TEMPLATE_H
-#define HELPER_TEMPLATE_H
+#pragma once
 
 #include <Syringe.h>
 
@@ -90,5 +89,3 @@ class IndexBitfield {
 };
 
 #include <Helpers/Cast.h>
-
-#endif

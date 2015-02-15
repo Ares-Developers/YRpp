@@ -1,5 +1,4 @@
-#ifndef TAG_H
-#define TAG_H
+#pragma once
 
 #include <AbstractClass.h>
 #include <TriggerClass.h>
@@ -57,5 +56,3 @@ public:
 	char unknown_36;
 	char unknown_37;
 };
-
-#endif

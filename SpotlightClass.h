@@ -1,5 +1,4 @@
-#ifndef SPOTLIGHT_H
-#define SPOTLIGHT_H
+#pragma once
 
 #include <GeneralStructures.h>
 
@@ -34,5 +33,3 @@ public:
 	int Size;
 	SpotlightFlags DisableFlags;
 };
-
-#endif

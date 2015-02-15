@@ -2,8 +2,7 @@
 	Base class for buildable objects
 */
 
-#ifndef TECHNO_H
-#define TECHNO_H
+#pragma once
 
 #include <RadioClass.h>
 #include <RadBeam.h>
@@ -690,5 +689,3 @@ public:
 	ObjectTypeClass* Disguise;
 	HouseClass*      DisguisedAsHouse;
 };
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef ABSTRACT_H
-#define ABSTRACT_H
+#pragma once
 
 #include <Interfaces.h>
 #include <GeneralDefinitions.h>
@@ -162,5 +161,3 @@ public:
 	LONG RefCount;
 	bool bIsDirty;		//For IUnknown.
 };
-
-#endif

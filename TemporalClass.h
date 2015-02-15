@@ -1,5 +1,4 @@
-#ifndef TEMPORAL_H
-#define TEMPORAL_H
+#pragma once
 
 #include <AbstractClass.h>
 
@@ -72,5 +71,3 @@ public:
 	int                WarpRemaining;
 	int                WarpPerStep;
 };
-
-#endif

@@ -2,8 +2,7 @@
 	Actual AI Team Scripts
 */
 
-#ifndef SCRIPT_H
-#define SCRIPT_H
+#pragma once
 
 #include <AbstractClass.h>
 
@@ -65,5 +64,3 @@ public:
 	int idxCurrentLine;
 
 };
-
-#endif

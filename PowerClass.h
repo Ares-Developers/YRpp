@@ -1,5 +1,4 @@
-#ifndef POWER_H
-#define POWER_H
+#pragma once
 
 #include <RadarClass.h>
 
@@ -37,5 +36,3 @@ public:
 	int PowerOutput;
 	int PowerDrain;
 };
-
-#endif

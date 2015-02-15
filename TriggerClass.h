@@ -1,5 +1,4 @@
-#ifndef TRIGGER_H
-#define TRIGGER_H
+#pragma once
 
 #include <AbstractClass.h>
 #include <TeamTypeClass.h>
@@ -108,5 +107,3 @@ public:
 	bool                Enabled;
 
 };
-
-#endif

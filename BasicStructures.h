@@ -1,5 +1,4 @@
-#ifndef BASICSTRUCTURES_H
-#define BASICSTRUCTURES_H
+#pragma once
 
 //used for most colors
 struct ColorStruct
@@ -93,5 +92,3 @@ struct RectangleStruct
 {
 	int X, Y, Width, Height;
 };
-
-#endif

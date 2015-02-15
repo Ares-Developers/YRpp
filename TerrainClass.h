@@ -2,8 +2,7 @@
 	Trees
 */
 
-#ifndef TERRAIN_H
-#define TERRAIN_H
+#pragma once
 
 #include <ObjectClass.h>
 #include <TerrainTypeClass.h>
@@ -50,5 +49,3 @@ public:
 	RectangleStruct unknown_rect_D0;
 
 };
-
-#endif

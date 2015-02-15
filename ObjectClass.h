@@ -2,8 +2,7 @@
 	Base class for all game objects.
 */
 
-#ifndef OBJECT_H
-#define OBJECT_H
+#pragma once
 
 #include <AbstractClass.h>
 #include <Audio.h>
@@ -296,5 +295,3 @@ public:
 	CoordStruct Location;		//Absolute current 3D location (in leptons?)
 	LineTrail*         LineTrailer;
  };
-
-#endif

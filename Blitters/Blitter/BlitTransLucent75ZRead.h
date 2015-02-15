@@ -1,5 +1,4 @@
-#ifndef BLITTRANSLUCENT75ZREAD_H
-#define BLITTRANSLUCENT75ZREAD_H
+#pragma once
 
 #include <Blitters.h>
 
@@ -47,5 +46,3 @@ class BlitTransLucent75ZRead : public Blitter<T> {
 	public:
 		T *Data;
 };
-
-#endif

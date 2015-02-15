@@ -1,5 +1,4 @@
-#ifndef FUNDAMENTALS_H
-#define FUNDAMENTALS_H
+#pragma once
 
 /*
 These globals are so important and fundamental that no other files should be
@@ -15,5 +14,3 @@ namespace Unsorted
 	// cot(deg2rad(30)) * diagonal_leptons_per_cell * 0.5
 	// sqrt(3)/3 * 362.038 * 0.5
 }
-
-#endif

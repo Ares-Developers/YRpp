@@ -1,5 +1,4 @@
-#ifndef BLITTRANSREMAPDEST_H
-#define BLITTRANSREMAPDEST_H
+#pragma once
 
 #include <Blitters.h>
 
@@ -38,5 +37,3 @@ class BlitTransRemapDest : public Blitter<T> {
 	public:
 		T *Data;
 };
-
-#endif

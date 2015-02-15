@@ -1,5 +1,4 @@
-#ifndef INTERFACES_H
-#define INTERFACES_H
+#pragma once
 
 #include <windows.h>
 #include <GeneralDefinitions.h>
@@ -200,5 +199,3 @@ IPiggyback : IUnknown //'Piggyback' one locomotor onto another.
 	virtual HRESULT __stdcall Piggyback_CLSID(GUID* classid) = 0;	//Fetches piggybacked locomotor class ID.
 	virtual bool __stdcall Is_Piggybacking() = 0;	//Is it currently piggy backing another locomotor?
 };
-
-#endif

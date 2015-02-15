@@ -1,5 +1,4 @@
-#ifndef YRMATH_H
-#define YRMATH_H
+#pragma once
 
 #include <YRPPCore.h>
 
@@ -56,4 +55,3 @@ namespace Math
 	}
 };
 
-#endif

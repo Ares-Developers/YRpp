@@ -5,8 +5,7 @@
 	value by a specified amount.
 */
 
-#ifndef PROGRESSTIMER_H
-#define PROGRESSTIMER_H
+#pragma once
 
 #include <GeneralStructures.h>
 
@@ -47,5 +46,3 @@ public:
 	RepeatableTimerStruct Timer;
 	int Step; // added to value every time the timer expires
 };
-
-#endif

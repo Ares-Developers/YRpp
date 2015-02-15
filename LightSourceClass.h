@@ -2,8 +2,7 @@
 	LightSource - used for light posts and radiation
 */
 
-#ifndef LIGHTSOURCE_H
-#define LIGHTSOURCE_H
+#pragma once
 
 #include <AbstractClass.h>
 
@@ -60,5 +59,3 @@ public:
 	int LightVisibility;
 	bool Activated;
 };
-
-#endif

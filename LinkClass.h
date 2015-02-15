@@ -1,5 +1,4 @@
-#ifndef LINK_H
-#define LINK_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 
@@ -130,5 +129,3 @@ public:
 	LinkClass* Next;
 	LinkClass* Previous;
 };
-
-#endif

@@ -2,8 +2,7 @@
 	RadSites
 */
 
-#ifndef RADSITE_H
-#define RADSITE_H
+#pragma once
 
 #include <AbstractClass.h>
 
@@ -124,5 +123,3 @@ public:
 	int               RadDuration; // as currently set up, the rad site will stay for so many frames
 	int               RadTimeLeft; // the remaining frames. divided by RadDuration gives the factor
 };
-
-#endif

@@ -1,7 +1,6 @@
 // Memory allocation handler
 
-#ifndef ALLOC_H
-#define ALLOC_H
+#pragma once
 
 #include <YRPPCore.h>
 #include <Memory.h>
@@ -83,4 +82,3 @@ public:
 	bool Allocated;
 };
 
-#endif

@@ -1,7 +1,6 @@
 //Locomotor = {4A582746-9839-11d1-B709-00A024DDAFD1}
 
-#ifndef FLY_LOCO_H
-#define FLY_LOCO_H
+#pragma once
 
 #include <LocomotionClass.h>
 
@@ -70,5 +69,3 @@ public:
 	bool unknown_bool_5E;
 	bool unknown_bool_5F;
 };
-
-#endif

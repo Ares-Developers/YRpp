@@ -1,5 +1,4 @@
-#ifndef ARRAYCLASSES_H
-#define ARRAYCLASSES_H
+#pragma once
 
 #include <Memory.h>
 
@@ -495,5 +494,3 @@ public:
 
 	int Total;
 };
-
-#endif

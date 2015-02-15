@@ -1,5 +1,4 @@
-#ifndef MIXFILE_H
-#define MIXFILE_H
+#pragma once
 
 #include <GenericList.h>
 
@@ -86,5 +85,3 @@ public:
 	MixHeaderData* Headers;
 	int field_24;
 };
-
-#endif

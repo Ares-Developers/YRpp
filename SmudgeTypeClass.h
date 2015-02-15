@@ -2,8 +2,7 @@
 	SmudgeTypes are initialized by INI files.
 */
 
-#ifndef SMUDGETYPE_H
-#define SMUDGETYPE_H
+#pragma once
 
 #include <ObjectTypeClass.h>
 
@@ -55,5 +54,3 @@ public:
 	bool Crater;
 	bool Burn;
 };
-
-#endif

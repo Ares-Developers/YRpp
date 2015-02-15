@@ -1,5 +1,4 @@
-#ifndef YRPPCore_H
-#define YRPPCore_H
+#pragma once
 
 typedef unsigned char BYTE;
 typedef unsigned short WORD;
@@ -46,5 +45,3 @@ virtual void alla(double malla) RX;
 #define RT(type) {return type();}
 
 #define NOVTABLE __declspec(novtable)
-
-#endif

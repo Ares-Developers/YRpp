@@ -2,8 +2,7 @@
 	I have not the slightest idea what this is good for...
 */
 
-#ifndef NEURON_H
-#define NEURON_H
+#pragma once
 
 #include <AbstractClass.h>
 
@@ -58,5 +57,3 @@ public:
 	//Properties
 	VectorClass<NeuronClass*> Neurons;	//???
 };
-
-#endif

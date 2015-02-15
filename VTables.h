@@ -1,5 +1,4 @@
-#ifndef VTABLES_H
-#define VTABLES_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 
@@ -31,5 +30,3 @@ template<> class VT< cls > { \
 VT_C(SideClass, 0x7F2EC0);
 VT_C(VectorClass<SideClass*>, 0x7EA044);
 VT_C(DynamicVectorClass<SideClass*>, 0x7EA024);
-
-#endif

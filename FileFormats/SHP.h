@@ -1,5 +1,4 @@
-#ifndef SHP_H_
-#define SHP_H_
+#pragma once
 
 #include <BasicStructures.h>
 
@@ -130,5 +129,3 @@ inline const SHPFile* SHPStruct::AsFile() const {
 // defined but not used
 // static SHPStruct* SHPStruct_first=(SHPStruct*)0xB077B0;
 //==============================================
-
-#endif

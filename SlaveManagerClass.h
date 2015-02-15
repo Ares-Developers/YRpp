@@ -1,5 +1,4 @@
-#ifndef SLAVEMANAGER_H
-#define SLAVEMANAGER_H
+#pragma once
 
 #include <AbstractClass.h>
 
@@ -105,5 +104,3 @@ public:
 	} State;
 	int LastScanFrame;
 };
-
-#endif

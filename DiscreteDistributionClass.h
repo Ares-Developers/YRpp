@@ -12,8 +12,7 @@
 	out parameter is written to if and only if an item could be selected.
 */
 
-#ifndef DISCRETEDISTRIBUTION_H
-#define DISCRETEDISTRIBUTION_H
+#pragma once
 
 #include <ArrayClasses.h>
 
@@ -102,5 +101,3 @@ private:
 	DynamicVectorClass<DistributionObject<T>> Items;
 	unsigned int TotalWeight;
 };
-
-#endif

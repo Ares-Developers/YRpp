@@ -2,8 +2,7 @@
 	Radar notifications
 */
 
-#ifndef RADAREVENT_H
-#define RADAREVENT_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 
@@ -41,5 +40,3 @@ public:
 	bool Rotating;
 	bool Visible;
 };
-
-#endif

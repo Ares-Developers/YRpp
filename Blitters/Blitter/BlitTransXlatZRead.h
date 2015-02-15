@@ -1,5 +1,4 @@
-#ifndef BLITTRANSXLATZREAD_H
-#define BLITTRANSXLATZREAD_H
+#pragma once
 
 #include <Blitters.h>
 
@@ -44,5 +43,3 @@ class BlitTransXlatZRead : public Blitter<T> {
 	public:
 		T *Data;
 };
-
-#endif

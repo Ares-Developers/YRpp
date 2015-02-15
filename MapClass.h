@@ -1,5 +1,4 @@
-#ifndef MAP_H
-#define MAP_H
+#pragma once
 
 #include <GScreenClass.h>
 #include <ArrayClasses.h>
@@ -386,5 +385,3 @@ public:
 	Crate Crates [0x100];
 	DynamicVectorClass<CellStruct> TaggedCells;
 };
-
-#endif

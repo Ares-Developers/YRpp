@@ -1,5 +1,4 @@
-#ifndef SPECIAL_STRUCTURES_H
-#define SPECIAL_STRUCTURES_H
+#pragma once
 
 // this file contains a few structures representing function arguments on the stack (normally all except `this`)
 
@@ -38,5 +37,3 @@ class FPUControl {
 			return (this->statusWord & 0x100) != 0;
 		}
 };
-
-#endif

@@ -2,8 +2,7 @@
 	[ScriptTypes]
 */
 
-#ifndef SCRIPTTYPE_H
-#define SCRIPTTYPE_H
+#pragma once
 
 #include <AbstractTypeClass.h>
 
@@ -60,5 +59,3 @@ public:
 	int      ActionsCount;
 	ScriptActionNode ScriptActions [50];
 };
-
-#endif

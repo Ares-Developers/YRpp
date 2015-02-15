@@ -1,5 +1,4 @@
-#ifndef POWERUPS_H
-#define POWERUPS_H
+#pragma once
 
 class Powerups {
 	public:
@@ -23,5 +22,3 @@ class Powerups {
 	// index into AnimTypeClass::Array
 	static int * &Anims;
 };
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef AIRSTRIKE_H
-#define AIRSTRIKE_H
+#pragma once
 
 #include <AbstractClass.h>
 
@@ -62,5 +61,3 @@ public:
 	AircraftTypeClass* EliteAirstrikeTeamType;	//As in the INI files.
 	FootClass* FirstObject;
 };
-
-#endif

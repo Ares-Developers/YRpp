@@ -2,8 +2,7 @@
 	[AITriggerTypes]
 */
 
-#ifndef AITRIGTYPE_H
-#define AITRIGTYPE_H
+#pragma once
 
 #include <YRPP.h>
 #include <HouseTypeClass.h>
@@ -185,5 +184,3 @@ public:
 	int              unknown_10C;
 
 };
-
-#endif

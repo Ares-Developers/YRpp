@@ -1,5 +1,4 @@
-#ifndef TEAM_H
-#define TEAM_H
+#pragma once
 
 #include <TeamTypeClass.h>
 
@@ -95,5 +94,3 @@ public:
 
 	int CountObjects [6]; // counts of each object specified in the Type
 };
-
-#endif

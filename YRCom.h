@@ -1,5 +1,4 @@
-#ifndef YRCOM_H
-#define YRCOM_H
+#pragma once
 
 #include <Objbase.h>
 
@@ -60,5 +59,3 @@ public:
 		}
 	}
 };
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef BLITTRANSDARKEN_H
-#define BLITTRANSDARKEN_H
+#pragma once
 
 #include <Blitters.h>
 
@@ -37,5 +36,3 @@ class BlitTransDarken : public Blitter<T> {
 	public:
 		T *Data;
 };
-
-#endif

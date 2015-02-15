@@ -1,5 +1,4 @@
-#ifndef MAPSEEDCLASS_H
-#define MAPSEEDCLASS_H
+#pragma once
 
 #include <LoadOptionsClass.h>
 
@@ -107,5 +106,3 @@ public:
 private:
 	DWORD align_314;
 };
-
-#endif

@@ -2,8 +2,7 @@
 	Tiberiums are initialized by INI files.
 */
 
-#ifndef TIBERIUM_H
-#define TIBERIUM_H
+#pragma once
 
 #include <AbstractTypeClass.h>
 
@@ -89,5 +88,3 @@ public:
 	int field_118;
 	TimerStruct GrowthTimer;
 };
-
-#endif

@@ -2,8 +2,7 @@
 	Voxel Animations
 */
 
-#ifndef VOXELANIM_H
-#define VOXELANIM_H
+#pragma once
 
 #include <ObjectClass.h>
 #include <VoxelAnimTypeClass.h>
@@ -68,5 +67,3 @@ public:
 	int Duration; // counting down to zero
 	PROTECTED_PROPERTY(DWORD, unused_144);
 };
-
-#endif

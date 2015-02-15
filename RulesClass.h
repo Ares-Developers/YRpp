@@ -1,5 +1,4 @@
-#ifndef RULES_H
-#define RULES_H
+#pragma once
 
 #include <ArrayClasses.h>
 #include <GeneralDefinitions.h>
@@ -1032,5 +1031,3 @@ public:
 	float				 DirectRockingCoefficient;
 	float				 FallBackCoefficient;
 };
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef HELPER_ENUMFLAG_H
-#define HELPER_ENUMFLAG_H
+#pragma once
 
 #include <type_traits>
 
@@ -78,4 +77,3 @@ private:
 		return static_cast<FLAG_ENUM_NAME>(~static_cast<type>(rhs)); \
 	} \
 
-#endif

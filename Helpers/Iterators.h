@@ -1,5 +1,4 @@
-#ifndef HELPER_ITERATORS_H
-#define HELPER_ITERATORS_H
+#pragma once
 
 #include <GeneralStructures.h>
 #include <ObjectClass.h>
@@ -138,5 +137,3 @@ private:
 
 	void process(const std::function<bool(ObjectClass*)> &action) const;
 };
-
-#endif

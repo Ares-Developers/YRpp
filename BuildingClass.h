@@ -2,8 +2,7 @@
 	Buildings
 */
 
-#ifndef BUILDING_H
-#define BUILDING_H
+#pragma once
 
 #include <TechnoClass.h>
 #include <BuildingTypeClass.h>
@@ -286,5 +285,3 @@ public:
 
 	int BunkerState; // used in UpdateBunker and friends
 };
-
-#endif

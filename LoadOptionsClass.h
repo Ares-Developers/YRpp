@@ -1,5 +1,4 @@
-#ifndef LOADOPTIONSCLASS_H
-#define LOADOPTIONSCLASS_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 #include <ArrayClasses.h>
@@ -119,5 +118,3 @@ public:
 	FILETIME LastSaveTime; // PIDSI_LASTSAVE_DTM (13)
 	GameMode GameType; // 102
 };
-
-#endif

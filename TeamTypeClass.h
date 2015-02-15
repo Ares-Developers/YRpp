@@ -2,8 +2,7 @@
 	[TeamTypes]
 */
 
-#ifndef TEAMTYPE_H
-#define TEAMTYPE_H
+#pragma once
 
 #include <AbstractTypeClass.h>
 #include <ScriptTypeClass.h>
@@ -129,5 +128,3 @@ public:
 	bool     OnlyTargetHouseEnemy;
 
 };
-
-#endif

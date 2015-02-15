@@ -1,5 +1,4 @@
-#ifndef GAMECLASSES_H
-#define GAMECLASSES_H
+#pragma once
 
 //Core
 #include <YRMath.h>
@@ -109,5 +108,3 @@
 #include <ScenarioClass.h>
 
 #include <UI.h>
-
-#endif

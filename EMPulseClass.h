@@ -2,8 +2,7 @@
 	EMP - no, you're NOT seeing things :P
 */
 
-#ifndef EMPULSE_H
-#define EMPULSE_H
+#pragma once
 
 #include <AbstractClass.h>
 
@@ -47,5 +46,3 @@ public:
 	int CreationTime;	//frame in which this EMP got created
 	int Duration;
 };
-
-#endif

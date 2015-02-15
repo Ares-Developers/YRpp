@@ -1,5 +1,4 @@
-#ifndef YRPP_CHECKSUM_H
-#define YRPP_CHECKSUM_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 
@@ -169,5 +168,3 @@ protected:
 	*/
 	BYTE  Padding;
 };
-
-#endif

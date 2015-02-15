@@ -1,5 +1,4 @@
-#ifndef BLITPLAINXLAT_H
-#define BLITPLAINXLAT_H
+#pragma once
 
 #include <Blitters.h>
 
@@ -37,5 +36,3 @@ class BlitPlainXlat : public Blitter<T> {
 	public:
 		T *Data;
 };
-
-#endif

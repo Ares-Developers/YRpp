@@ -1,5 +1,4 @@
-#ifndef BOMB_H
-#define BOMB_H
+#pragma once
 
 #include <AbstractClass.h>
 #include <Audio.h>
@@ -69,5 +68,3 @@ public:
 	BOOL ShouldPlayTickingSound; // seems so
 	bool Harmless; // (mostly) set to 0 on plant, 1 on detonation/removal ?
 };
-
-#endif

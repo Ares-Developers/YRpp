@@ -1,5 +1,4 @@
-#ifndef LINETRAIL_H
-#define LINETRAIL_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 
@@ -40,5 +39,3 @@ public:
 	DWORD ActiveSlot;
 	LineTrailNode Trails [32];
 };
-
-#endif

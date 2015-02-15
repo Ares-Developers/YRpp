@@ -1,5 +1,4 @@
-#ifndef YRPP_NOTIFICATIONS_H
-#define YRPP_NOTIFICATIONS_H
+#pragma once
 
 #include <ArrayClasses.h>
 
@@ -41,5 +40,3 @@ public:
 
 	DynamicVectorClass<AbstractClass*> Array;
 };
-
-#endif

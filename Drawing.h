@@ -4,8 +4,7 @@
 	and text aligning helpers.
 */
 
-#ifndef DRAWING_H
-#define DRAWING_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 #include "ColorScheme.h"
@@ -145,5 +144,3 @@ public:
 	int W;
 	int H;
 };
-
-#endif

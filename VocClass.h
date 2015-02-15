@@ -2,8 +2,7 @@
 	Sound effects!
 */
 
-#ifndef VOC_H
-#define VOC_H
+#pragma once
 
 #include <ArrayClasses.h>
 #include <GeneralDefinitions.h>
@@ -114,6 +113,3 @@ public:
 	VocClass() = delete;
 	~VocClass() = delete;
 };
-
-#endif
-

@@ -1,5 +1,4 @@
-#ifndef HELPER_STRING_H
-#define HELPER_STRING_H
+#pragma once
 
 // because every project needs an own string implementation...
 
@@ -74,5 +73,3 @@ private:
 
 template <size_t Capacity>
 using FixedWString = FixedString<Capacity, wchar_t>;
-
-#endif

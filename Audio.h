@@ -1,5 +1,4 @@
-#ifndef AUDIO_H_
-#define AUDIO_H_
+#pragma once
 
 #include <GeneralDefinitions.h>
 
@@ -155,5 +154,3 @@ struct AudioController
 	void sub_406310()
 		{ JMP_THIS(0x406310); }
 };
-
-#endif

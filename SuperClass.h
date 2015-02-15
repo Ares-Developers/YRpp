@@ -2,8 +2,7 @@
 	Supers
 */
 
-#ifndef SUPER_H
-#define SUPER_H
+#pragma once
 
 #include <SuperWeaponTypeClass.h>
 
@@ -234,5 +233,3 @@ public:
 	static bool IsFadingOut()
 		{ CALL(0x53A120); }
 };
-
-#endif

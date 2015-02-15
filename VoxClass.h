@@ -2,8 +2,7 @@
 	EVA Messages!
 */
 
-#ifndef VOX_H
-#define VOX_H
+#pragma once
 
 #include <ArrayClasses.h>
 #include <GeneralDefinitions.h>
@@ -80,5 +79,3 @@ public:
 	bool LoadFromINI(CCINIClass *pINI)
 		{ JMP_THIS(0x752DB0) }
 };
-
-#endif

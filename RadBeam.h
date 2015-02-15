@@ -1,5 +1,4 @@
-#ifndef RADBEAM_H
-#define RADBEAM_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 
@@ -77,5 +76,3 @@ public:
 	byte unknown_C0;
 	DWORD unknown_C4;
 };
-
-#endif

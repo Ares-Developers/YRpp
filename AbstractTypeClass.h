@@ -1,8 +1,7 @@
 /*
 	AbstractTypes are abstract template objects initialized by INI files
 */
-#ifndef ABSTRACTTYPE_H
-#define ABSTRACTTYPE_H
+#pragma once
 
 #include <AbstractClass.h>
 #include <Memory.h>
@@ -78,5 +77,3 @@ public:
 	wchar_t* UIName;
 	char Name [0x31];
 };
-
-#endif

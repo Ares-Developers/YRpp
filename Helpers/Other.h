@@ -1,5 +1,4 @@
-#ifndef HELPER_OTHER_H
-#define HELPER_OTHER_H
+#pragma once
 
 #include <cmath>
 #include <vector>
@@ -158,5 +157,3 @@ public:
 		}
 	}
 };
-
-#endif

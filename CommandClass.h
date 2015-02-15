@@ -10,8 +10,7 @@ NOTE:
 	-pd
 */
 
-#ifndef COMMAND_H
-#define COMMAND_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 #include <ArrayClasses.h>
@@ -40,5 +39,3 @@ public:
 
 	virtual void Execute(DWORD dwUnk) const = 0;
 };
-
-#endif

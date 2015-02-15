@@ -2,8 +2,7 @@
 	VoxelAnimTypes are initialized by INI files.
 */
 
-#ifndef VOXELANIMTYPE_H
-#define VOXELANIMTYPE_H
+#pragma once
 
 #include <ObjectTypeClass.h>
 
@@ -77,5 +76,3 @@ public:
 	bool IsTiberium;
 	PROTECTED_PROPERTY(BYTE, unused_301[3]);
 };
-
-#endif

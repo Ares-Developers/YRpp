@@ -1,5 +1,4 @@
-#ifndef AIRCRAFTTYPE_H
-#define AIRCRAFTTYPE_H
+#pragma once
 
 #include <TechnoTypeClass.h>
 
@@ -53,5 +52,3 @@ public:
 	bool AirportBound;
 	bool Fighter;
 };
-
-#endif

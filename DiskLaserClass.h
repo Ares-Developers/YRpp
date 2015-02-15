@@ -2,8 +2,7 @@
 	DiskLasers are the floating disks' purple lasers.
 */
 
-#ifndef DISKLASER_H
-#define DISKLASER_H
+#pragma once
 
 #include <AbstractClass.h>
 
@@ -52,5 +51,3 @@ public:
 	DWORD unknown_38;
 	int Damage;
 };
-
-#endif

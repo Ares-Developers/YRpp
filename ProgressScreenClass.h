@@ -1,5 +1,4 @@
-#ifndef PROGRESSSCREENCLASS_H_
-#define PROGRESSSCREENCLASS_H_
+#pragma once
 
 #include <GeneralDefinitions.h>
 #include <LoadProgressManager.h>
@@ -48,5 +47,3 @@ public:
 protected:
 	ProgressScreenClass(){};
 };
-
-#endif

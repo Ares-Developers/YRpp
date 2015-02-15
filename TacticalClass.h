@@ -1,5 +1,4 @@
-#ifndef TACTICAL_H
-#define TACTICAL_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 #include <GeneralStructures.h>
@@ -142,5 +141,3 @@ public:
 	DWORD field_E14;
 
 };
-
-#endif

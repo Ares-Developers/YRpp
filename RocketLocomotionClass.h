@@ -1,7 +1,6 @@
 //Locomotor = {B7B49766-E576-11d3-9BD9-00104B972FE8}
 
-#ifndef ROCKET_LOCO_H
-#define ROCKET_LOCO_H
+#pragma once
 
 #include <LocomotionClass.h>
 
@@ -64,5 +63,3 @@ public:
 	DWORD unknown_58;
 	DWORD unknown_5C;
 };
-
-#endif

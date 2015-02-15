@@ -1,5 +1,4 @@
-#ifndef SIDEBAR_H
-#define SIDEBAR_H
+#pragma once
 
 #include <PowerClass.h>
 #include <ProgressTimer.h>
@@ -152,5 +151,3 @@ public:
 	bool unknown_bool_5515;
 	PROTECTED_PROPERTY(BYTE, padding_5516[2]);
 };
-
-#endif

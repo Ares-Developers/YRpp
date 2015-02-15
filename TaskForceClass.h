@@ -2,8 +2,7 @@
 	TaskForces as in the AI inis
 */
 
-#ifndef TASKFORCE_H
-#define TASKFORCE_H
+#pragma once
 
 #include <AbstractTypeClass.h>
 
@@ -56,5 +55,3 @@ public:
 	bool    isGlobal;
 	TaskForceEntryStruct Entries [0x6];
 };
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef VXL_H_
-#define VXL_H_
+#pragma once
 
 class CCFileClass;
 #include <GeneralStructures.h>
@@ -121,5 +120,3 @@ struct VoxelSectionTailer {
 	char size_Z;
 	char NormalsMode;
 };
-
-#endif

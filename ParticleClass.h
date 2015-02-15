@@ -2,8 +2,7 @@
 	Particles
 */
 
-#ifndef PARTICLE_H
-#define PARTICLE_H
+#pragma once
 
 #include <ObjectClass.h>
 #include <ParticleTypeClass.h>
@@ -85,5 +84,3 @@ public:
 	BYTE   unknown_131;
 	PROTECTED_PROPERTY(DWORD,        unused_134); //??
 };
-
-#endif

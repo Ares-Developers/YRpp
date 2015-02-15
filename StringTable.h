@@ -2,8 +2,7 @@
 	StringTable related stuff
 */
 
-#ifndef STRINGTABLE_H
-#define STRINGTABLE_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 
@@ -95,5 +94,3 @@ public:
 	static void Unload()
 		{ JMP_STD(0x734D30); }
 };
-
-#endif

@@ -2,8 +2,7 @@
 	Converts are palettes... AFAIK
 */
 
-#ifndef CONVERT_H
-#define CONVERT_H
+#pragma once
 
 #include <AbstractClass.h>
 #include <ArrayClasses.h>
@@ -124,5 +123,3 @@ public:
 	BYTE unknown_1B0;
 	PROTECTED_PROPERTY(BYTE, align_1B1[3]);
 };
-
-#endif

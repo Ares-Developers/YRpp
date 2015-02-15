@@ -2,8 +2,7 @@
 	Base class for all game objects with missions (yeah... not many).
 */
 
-#ifndef MISSION_H
-#define MISSION_H
+#pragma once
 
 #include <ObjectClass.h>
 
@@ -114,5 +113,3 @@ public:
 	DWORD    unknown_C4;
 	TimerStruct UpdateTimer;
 };
-
-#endif

@@ -2,8 +2,7 @@
 	[Colors]
 */
 
-#ifndef COLORSCHEME_H
-#define COLORSCHEME_H
+#pragma once
 
 #include <ArrayClasses.h>
 #include <GeneralStructures.h>
@@ -76,5 +75,3 @@ public:
 	int   MainShadeIndex;
 	PROTECTED_PROPERTY(BYTE,     unknown_334[0x8]);
 };
-
-#endif

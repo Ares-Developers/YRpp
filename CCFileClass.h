@@ -1,5 +1,4 @@
-#ifndef CCFILE_H
-#define CCFILE_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 #include <YRAllocator.h>
@@ -207,5 +206,3 @@ public:
 
 //TO BE CREATED WHEN NEEDED
 //class RAMFileClass : public FileClass{/*...*/};
-
-#endif

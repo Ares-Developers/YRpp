@@ -1,5 +1,4 @@
-#ifndef INPUTMGR_H
-#define INPUTMGR_H
+#pragma once
 
 #include <GameOptionsClass.h>
 
@@ -39,5 +38,3 @@ protected:
   int field_314;
   int field_318;
 };
-
-#endif

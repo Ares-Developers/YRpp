@@ -1,5 +1,4 @@
-#ifndef HELPER_COMPTR_H
-#define HELPER_COMPTR_H
+#pragma once
 
 #include <YRCom.h>
 
@@ -118,5 +117,3 @@ private:
 
 	T* value;
 };
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef SWIZZLEMGR_H
-#define SWIZZLEMGR_H
+#pragma once
 
 #include <YRPPCore.h>
 #include <ArrayClasses.h>
@@ -56,5 +55,3 @@ public:
 	DynamicVectorClass<SwizzlePointerClass> Swizzles_New;
 
 };
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef BUILDLIGHT_H
-#define BUILDLIGHT_H
+#pragma once
 
 #include <GeneralStructures.h>
 #include <ObjectClass.h>
@@ -51,5 +50,3 @@ public:
 	ObjectClass * FollowingObject;
 	TechnoClass * OwnerObject;
 };
-
-#endif

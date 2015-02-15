@@ -1,5 +1,4 @@
-#ifndef RADAR_H
-#define RADAR_H
+#pragma once
 
 #include <DisplayClass.h>
 
@@ -94,5 +93,3 @@ public:
 	DWORD unknown_14FC;
 	TimerStruct unknown_timer_1500;
 };
-
-#endif

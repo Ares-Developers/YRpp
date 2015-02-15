@@ -1,5 +1,4 @@
-#ifndef CCINI_H
-#define CCINI_H
+#pragma once
 
 #include <YRPPCore.h>
 #include <GenericList.h>
@@ -303,5 +302,3 @@ public:
 		{ JMP_THIS(0x476D80); }
 
 };
-
-#endif

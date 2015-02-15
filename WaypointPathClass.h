@@ -1,5 +1,4 @@
-#ifndef WAYPOINTPATH_H
-#define WAYPOINTPATH_H
+#pragma once
 
 #include <AbstractClass.h>
 
@@ -64,5 +63,3 @@ public:
 	int  CurrentWaypointIndex; //seems that way
 	DynamicVectorClass<WaypointClass> Waypoints; // actual path waypoints, no *
 };
-
-#endif

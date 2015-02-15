@@ -1,5 +1,4 @@
-#ifndef MOUSE_H
-#define MOUSE_H
+#pragma once
 
 #include <SidebarClass.h>
 
@@ -103,5 +102,3 @@ public:
 	MouseCursorType MouseCursorLastIndex;
 	int MouseCursorCurrentFrame;
 };
-
-#endif

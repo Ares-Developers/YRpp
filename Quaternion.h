@@ -1,5 +1,4 @@
-#ifndef QUATERNION_H
-#define QUATERNION_H
+#pragma once
 
 // an imaginary³ world where only one quarter is real.
 // obviously, this class needs some serious expansion
@@ -13,5 +12,3 @@ public:
 
 	float X, Y, Z, W; // W is the real part
 };
-
-#endif

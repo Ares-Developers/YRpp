@@ -1,5 +1,4 @@
-#ifndef BLITTER_INCLUDER_H
-#define BLITTER_INCLUDER_H
+#pragma once
 
 #include <Blitters/Blitter/BlitPlainXlat.h>
 #include <Blitters/Blitter/BlitPlainXlatAlpha.h>
@@ -51,5 +50,3 @@
 #include <Blitters/Blitter/BlitTransZRemapXlatAlphaZReadWrite.h>
 #include <Blitters/Blitter/BlitTransZRemapXlatZRead.h>
 #include <Blitters/Blitter/BlitTransZremapXlatZReadWrite.h>
-
-#endif

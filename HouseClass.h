@@ -2,8 +2,7 @@
 	Players
 */
 
-#ifndef HOUSE_H
-#define HOUSE_H
+#pragma once
 
 #include <HouseTypeClass.h>
 #include <BuildingClass.h>
@@ -910,5 +909,3 @@ public:
 	int TotalOwnedAircraftCost;
 	DWORD unknown_160B4;
 };
-
-#endif

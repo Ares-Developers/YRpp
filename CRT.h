@@ -1,5 +1,4 @@
-#ifndef CRT_H_
-#define CRT_H_
+#pragma once
 
 #include <wchar.h>
 
@@ -116,5 +115,3 @@ public:
 
 
 };
-
-#endif

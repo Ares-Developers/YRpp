@@ -1,5 +1,4 @@
-#ifndef SCENARIO_H
-#define SCENARIO_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 #include <Randomizer.h>
@@ -246,5 +245,3 @@ public:
 	char LS800BkgdName [0x40];
 	char LS800BkgdPal [0x40];
 };
-
-#endif

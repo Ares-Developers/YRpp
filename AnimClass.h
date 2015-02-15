@@ -2,8 +2,7 @@
 	Animations
 */
 
-#ifndef ANIM_H
-#define ANIM_H
+#pragma once
 
 #include <ObjectClass.h>
 #include <AnimTypeClass.h>
@@ -116,5 +115,3 @@ public:
 	AudioController Audio3;
 	AudioController Audio4;
 };
-
-#endif

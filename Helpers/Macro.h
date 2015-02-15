@@ -1,5 +1,4 @@
-#ifndef DCODER_H
-#define DCODER_H
+#pragma once
 
 #include <Syringe.h>
 
@@ -40,5 +39,3 @@
 
 #define LESS_EQUAL(x, y) \
 	((x - y) <= 0.001)
-
-#endif

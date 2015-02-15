@@ -1,5 +1,4 @@
-#ifndef CD_H
-#define CD_H
+#pragma once
 
 #include <YRPPCore.h>
 

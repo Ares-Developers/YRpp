@@ -1,5 +1,4 @@
-#ifndef FPSCOUNTER_H
-#define FPSCOUNTER_H
+#pragma once
 
 class FPSCounter
 {
@@ -24,5 +23,3 @@ public:
 		return 0.0;
 	}
 };
-
-#endif

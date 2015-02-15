@@ -1,5 +1,4 @@
-#ifndef TRANSITIONTIMER_H
-#define TRANSITIONTIMER_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 
@@ -54,5 +53,3 @@ public:
 	bool        State1;
 	bool        State2;
 };
-
-#endif

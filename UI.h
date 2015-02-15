@@ -1,5 +1,4 @@
-#ifndef WW_UI_CPP
-#define WW_UI_CPP
+#pragma once
 
 #include <windows.h>
 #include <GeneralDefinitions.h>
@@ -30,6 +29,3 @@ public:
 	static void __fastcall RegisterWindow(HWND hWnd, LPARAM msg)
 		{ JMP_STD(0x622820); }
 };
-
-
-#endif

@@ -5,8 +5,7 @@
 																						-pd
 */
 
-#ifndef SYRINGE_H
-#define SYRINGE_H
+#pragma once
 
 #include <windows.h>
 
@@ -293,5 +292,3 @@ EXPORT_FUNC(funcname)
 // no function opening, use for injgen-decl when repeating the same hook at multiple addrs
 #define DEFINE_HOOK_AGAIN(hook, funcname, size) \
 declhook(hook, funcname, size)
-
-#endif

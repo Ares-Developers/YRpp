@@ -2,8 +2,7 @@
 	Weapons
 */
 
-#ifndef WEAPONTYPE_H
-#define WEAPONTYPE_H
+#pragma once
 
 #include <AbstractTypeClass.h>
 
@@ -114,5 +113,3 @@ public:
 	int RadLevel;
 	bool IsMagBeam;
 };
-
-#endif

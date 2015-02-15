@@ -1,7 +1,6 @@
 //This can be used to load PCX files into BSurfaces!
 
-#ifndef PCX_H
-#define PCX_H
+#pragma once
 
 #include <Drawing.h>
 #include <Surface.h>
@@ -39,5 +38,3 @@ public:
 
 	void *Buffer;
 };
-
-#endif

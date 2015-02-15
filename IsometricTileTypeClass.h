@@ -1,5 +1,4 @@
-#ifndef ISOMETRICTILETYPECLASS_H_
-#define ISOMETRICTILETYPECLASS_H_
+#pragma once
 
 #include <ObjectTypeClass.h>
 
@@ -84,5 +83,3 @@ public:
 	bool AllowTiberium;
 	DWORD unk_308;
 };
-
-#endif

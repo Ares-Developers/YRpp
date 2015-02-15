@@ -1,5 +1,4 @@
-#ifndef YRPP_NETWORKING_H
-#define YRPP_NETWORKING_H
+#pragma once
 
 #include <NetworkEvents.h>
 
@@ -45,5 +44,3 @@ public:
 		{ JMP_STD(0x646E90); }
 
 };
-
-#endif

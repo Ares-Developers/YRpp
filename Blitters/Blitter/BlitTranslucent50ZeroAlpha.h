@@ -1,5 +1,4 @@
-#ifndef BLITTRANSLUCENT50ZEROALPHA_H
-#define BLITTRANSLUCENT50ZEROALPHA_H
+#pragma once
 
 #include <Blitters.h>
 
@@ -46,5 +45,3 @@ class BlitTranslucent50ZeroAlpha : public Blitter<T> {
 	public:
 		T *Data;
 };
-
-#endif

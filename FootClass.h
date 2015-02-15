@@ -2,8 +2,7 @@
 	Base class for units that can move (that have "feet")
 */
 
-#ifndef FOOT_H
-#define FOOT_H
+#pragma once
 
 #include <TechnoClass.h>
 #include <ParasiteClass.h>
@@ -220,5 +219,3 @@ public:
 	bool              unknown_bool_6B8;
 	PROTECTED_PROPERTY(DWORD,   unused_6BC);	//???
 };
-
-#endif

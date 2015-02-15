@@ -2,8 +2,7 @@
 	SuperWeaponTypes!! =D
 */
 
-#ifndef SUPERWEAPONTYPE_H
-#define SUPERWEAPONTYPE_H
+#pragma once
 
 #include <FileSystem.h>
 #include <AbstractTypeClass.h>
@@ -88,5 +87,3 @@ public:
 	int     LineMultiplier;
 
 };
-
-#endif

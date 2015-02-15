@@ -8,8 +8,7 @@ NOTE:
 	-pd
 */
 
-#ifndef LOCO_H
-#define LOCO_H
+#pragma once
 
 #include <Interfaces.h>
 #include <FootClass.h>
@@ -296,5 +295,3 @@ public:
 	bool Dirty;		//bIsDirty - Has something changed?
 	LONG RefCount; // COM reference count. Don't touch.
 };
-
-#endif

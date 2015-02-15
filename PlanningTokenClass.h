@@ -1,5 +1,4 @@
-#ifndef PLANNING_TOKEN_H
-#define PLANNING_TOKEN_H
+#pragma once
 
 #include <AbstractClass.h>
 
@@ -20,5 +19,3 @@ public:
 	TechnoClass * OwnerUnit;
 	// more fields should be here
 };
-
-#endif

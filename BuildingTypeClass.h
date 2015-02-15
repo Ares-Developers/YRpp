@@ -1,5 +1,4 @@
-#ifndef BUILDINGTYPE_H
-#define BUILDINGTYPE_H
+#pragma once
 
 #include <TechnoTypeClass.h>
 class OverlayTypeClass;
@@ -307,5 +306,3 @@ public:
 	VectorClass<CoordStruct> DockingOffsets;
 private: DWORD align_1794;
 };
-
-#endif

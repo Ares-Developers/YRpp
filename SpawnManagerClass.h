@@ -1,5 +1,4 @@
-#ifndef SPAWNMANAGER_H
-#define SPAWNMANAGER_H
+#pragma once
 
 #include <AbstractClass.h>
 
@@ -103,5 +102,3 @@ public:
 	AbstractClass* NewTarget;
 	SpawnManagerStatus Status;
 };
-
-#endif

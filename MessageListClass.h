@@ -2,8 +2,7 @@
 	Use this to print a message on the screen!
 */
 
-#ifndef MSGLIST_H
-#define MSGLIST_H
+#pragma once
 
 #include <wchar.h>
 #include <ASMMacros.h>
@@ -27,5 +26,3 @@ public:
 	void PrintMessage(const wchar_t* pMessage, double durationMinutes, int nColorSchemeIndex = ColorScheme::White, bool bSilent = false)
 		{ this->PrintMessage(nullptr, 0, pMessage, nColorSchemeIndex, 0x4046, static_cast<int>(durationMinutes * 900), bSilent); }
 };
-
-#endif

@@ -2,8 +2,7 @@
 	Lasers
 */
 
-#ifndef LASERDRAW_H
-#define LASERDRAW_H
+#pragma once
 
 #include <GeneralDefinitions.h>
 #include <ProgressTimer.h>
@@ -51,5 +50,3 @@ public:
 	float StartIntensity;
 	float EndIntensity;
 };
-
-#endif

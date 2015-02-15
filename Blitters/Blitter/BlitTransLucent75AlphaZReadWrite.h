@@ -1,5 +1,4 @@
-#ifndef BLITTRANSLUCENT75ALPHAZREADWRITE_H
-#define BLITTRANSLUCENT75ALPHAZREADWRITE_H
+#pragma once
 
 #include <Blitters.h>
 
@@ -56,4 +55,3 @@ class BlitTransLucent75AlphaZReadWrite : public Blitter<T> {
 		T *Data;
 };
 
-#endif

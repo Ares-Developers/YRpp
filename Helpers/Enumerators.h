@@ -1,5 +1,4 @@
-#ifndef HELPER_ENUMERATORS_H
-#define HELPER_ENUMERATORS_H
+#pragma once
 
 #include <FootClass.h>
 #include <Helpers/Cast.h>
@@ -138,5 +137,3 @@ protected:
 		return true;
 	}
 };
-
-#endif

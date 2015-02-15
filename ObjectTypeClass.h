@@ -2,8 +2,7 @@
 	ObjectTypes are initialized by INI files.
 */
 
-#ifndef OBJTYPE_H
-#define OBJTYPE_H
+#pragma once
 
 #include <AbstractTypeClass.h>
 #include <FileSystem.h>
@@ -116,5 +115,3 @@ public:
 
 	SomeVoxelCache VoxelCaches [4]; //These don't even seem to be of any use...
 };
-
-#endif

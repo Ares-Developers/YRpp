@@ -1,5 +1,4 @@
-#ifndef GENEREALDEFINITIONS_H
-#define GENEREALDEFINITIONS_H
+#pragma once
 
 #include <GeneralStructures.h>
 #include <Helpers\EnumFlags.h>
@@ -1399,5 +1398,3 @@ enum class ParasiteState : int {
 #define	WW_CB_ADDITEM				0x4C2 //wParam = int index; lParam = 0
 
 #define	WW_LB_ADDITEM				0x4CD
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef TEVENT_H
-#define TEVENT_H
+#pragma once
 
 #include <AbstractClass.h>
 
@@ -81,5 +80,3 @@ public:
 	HouseClass*       House;
 
 };
-
-#endif

@@ -5,8 +5,7 @@
 	Completely Static.
 */
 
-#ifndef ION_H
-#define ION_H
+#pragma once
 
 // === COMPLETELY STATIC CLASS === dunno yet how to define...
 
@@ -21,5 +20,3 @@ public:
 
 	//ChronoScreenEffect
 };
-
-#endif

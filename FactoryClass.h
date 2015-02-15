@@ -2,8 +2,7 @@
 	Factories are responsible for producing units and buildings.
 */
 
-#ifndef FACTORY_H
-#define FACTORY_H
+#pragma once
 
 #include <AbstractClass.h>
 #include <ProgressTimer.h>
@@ -83,5 +82,3 @@ public:
 	HouseClass*        Owner;
 	bool               IsCompleteAndSuspended;	//completed production, before next (or waiting to place)
 };
-
-#endif

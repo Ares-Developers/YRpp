@@ -1,5 +1,4 @@
-#ifndef CAMPAIGNCLASS_H_
-#define CAMPAIGNCLASS_H_
+#pragma once
 
 #include <GeneralDefinitions.h>
 #include <CCINIClass.h>
@@ -24,5 +23,3 @@ public:
 	int FinalMovie;
 	wchar_t Description[128];
 };
-
-#endif

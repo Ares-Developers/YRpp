@@ -2,8 +2,7 @@
 	Ballistic trajectory data used by Animations and Voxel Animations.
 */
 
-#ifndef BOUNCE_H
-#define BOUNCE_H
+#pragma once
 
 #include <GeneralStructures.h>
 #include <YRMathVector.h>
@@ -61,4 +60,3 @@ public:
 	Quaternion AngularVelocity; // second quaternion as per-frame delta
 };
 
-#endif

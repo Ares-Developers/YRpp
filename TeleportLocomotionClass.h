@@ -1,7 +1,6 @@
 //Locomotor = {4A582747-9839-11d1-B709-00A024DDAFD1}
 
-#ifndef TELE_LOCO_H
-#define TELE_LOCO_H
+#pragma once
 
 #include <LocomotionClass.h>
 
@@ -70,5 +69,3 @@ public:
 	TimerStruct Timer;
 	ILocomotion* Piggybackee;
 };
-
-#endif

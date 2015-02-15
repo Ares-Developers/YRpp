@@ -2,8 +2,7 @@
 	AnimTypes are initialized by INI files.
 */
 
-#ifndef ANIMTYPE_H
-#define ANIMTYPE_H
+#pragma once
 
 #include <ObjectTypeClass.h>
 
@@ -122,5 +121,3 @@ public:
 	bool PsiWarning;
 	bool ShouldFogRemove;
 };
-
-#endif

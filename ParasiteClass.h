@@ -1,5 +1,4 @@
-#ifndef PARASITE_H
-#define PARASITE_H
+#pragma once
 
 #include <AbstractClass.h>
 
@@ -66,5 +65,3 @@ public:
 	int             GrappleAnimDelay;
 	bool            GrappleAnimGotInvalid;
 };
-
-#endif

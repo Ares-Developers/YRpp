@@ -2,8 +2,7 @@
 	OverlayTypes are initialized by INI files.
 */
 
-#ifndef OVERLAYTYPE_H
-#define OVERLAYTYPE_H
+#pragma once
 
 #include <ObjectTypeClass.h>
 
@@ -76,5 +75,3 @@ public:
 	ColorStruct RadarColor;
 
 };
-
-#endif

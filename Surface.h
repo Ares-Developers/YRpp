@@ -7,8 +7,7 @@
 	Note: dwColor is always given as a 16bit color value (high word should be zero)
 */
 
-#ifndef SURFACE_H
-#define SURFACE_H
+#pragma once
 
 #include <GeneralStructures.h>
 #include <YRDDraw.h>
@@ -374,5 +373,3 @@ public:
 
 class XSurface : public Surface {};		//WW's custom surfaces? (abstract)
 class BSurface : public XSurface {};	//WW's custom surfaces? (abstract)
-
-#endif

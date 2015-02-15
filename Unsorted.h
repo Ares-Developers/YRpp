@@ -1,5 +1,4 @@
-#ifndef UNSORTED_H
-#define UNSORTED_H
+#pragma once
 
 #include <ArrayClasses.h>
 #include <GeneralDefinitions.h>
@@ -572,5 +571,3 @@ struct CheatData {
 
 // this holds four original cheats, keep that limit in mind
 static CheatData *OriginalCheats = reinterpret_cast<CheatData*>(0x00825C28);
-
-#endif

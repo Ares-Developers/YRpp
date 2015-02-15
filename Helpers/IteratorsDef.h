@@ -1,5 +1,4 @@
-#ifndef HELPER_ITERATORS_DEF_H
-#define HELPER_ITERATORS_DEF_H
+#pragma once
 
 #include <Helpers/Iterators.h>
 #include <Helpers/Enumerators.h>
@@ -104,5 +103,3 @@ void CellSpreadIterator::process(const std::function<bool(ObjectClass*)> &action
 		return true;
 	});
 }
-
-#endif

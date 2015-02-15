@@ -2,8 +2,7 @@
 	ParticleTypes are initialized by INI files.
 */
 
-#ifndef PARTICLETYPE_H
-#define PARTICLETYPE_H
+#pragma once
 
 #include <ObjectTypeClass.h>
 
@@ -81,5 +80,3 @@ public:
 	BehavesLike BehavesLike;
 
 };
-
-#endif

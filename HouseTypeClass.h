@@ -2,8 +2,7 @@
 	ObjectTypes are initialized by INI files.
 */
 
-#ifndef HOUSETYPE_H
-#define HOUSETYPE_H
+#pragma once
 
 #include <AbstractTypeClass.h>
 
@@ -105,5 +104,3 @@ public:
 	bool           SmartAI; //"smart"?
 private: DWORD align_1A4;
 };
-
-#endif

@@ -2,8 +2,7 @@
 	Projectiles
 */
 
-#ifndef BULLET_H
-#define BULLET_H
+#pragma once
 
 #include <ObjectClass.h>
 #include <BulletTypeClass.h>
@@ -148,5 +147,3 @@ public:
 	bool SpawnNextAnim;
 	int Range;
 };
-
-#endif

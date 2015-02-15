@@ -1,7 +1,6 @@
 //Class to show a YR-style Message Box ingame
 
-#ifndef MSGBOX_H
-#define MSGBOX_H
+#pragma once
 
 #include <YRPPCore.h>
 #include <StringTable.h>
@@ -33,5 +32,3 @@ public:
 	static eMessageBoxResult Show(const wchar_t* pMessage)
 		{ return Show(pMessage, StringTable::LoadString("TXT_OK"), StringTable::LoadString("TXT_CANCEL")); }
 };
-
-#endif

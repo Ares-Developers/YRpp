@@ -2,8 +2,7 @@
 	ParticleSystems
 */
 
-#ifndef PARTICLESYS_H
-#define PARTICLESYS_H
+#pragma once
 
 #include <ObjectClass.h>
 #include <ParticleSystemTypeClass.h>
@@ -64,5 +63,3 @@ public:
 	bool         unknown_bool_F9;
 	HouseClass*  OwnerHouse;
 };
-
-#endif

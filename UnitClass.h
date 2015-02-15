@@ -2,8 +2,7 @@
 	Ground & Naval Vehicles
 */
 
-#ifndef UNIT_H
-#define UNIT_H
+#pragma once
 
 #include <FootClass.h>
 #include <UnitTypeClass.h>
@@ -78,5 +77,3 @@ public:
 
 	wchar_t ToolTipText[0x100];
 };
-
-#endif

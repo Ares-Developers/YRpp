@@ -2,8 +2,7 @@
 	Infantry
 */
 
-#ifndef INFANTRY_H
-#define INFANTRY_H
+#pragma once
 
 #include <FootClass.h>
 #include <InfantryTypeClass.h>
@@ -59,5 +58,3 @@ public:
 	int            unknown_int_6E8;
 	PROTECTED_PROPERTY(DWORD, unused_6EC); //??
 };
-
-#endif

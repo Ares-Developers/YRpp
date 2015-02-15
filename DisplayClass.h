@@ -1,5 +1,4 @@
-#ifndef DISPLAY_H
-#define DISPLAY_H
+#pragma once
 
 #include <MapClass.h>
 
@@ -138,5 +137,3 @@ public:
 	DWORD unknown_11E0;
 	PROTECTED_PROPERTY(DWORD, padding_11E4);
 };
-
-#endif

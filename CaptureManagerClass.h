@@ -2,8 +2,7 @@
 	CaptureManager - used for mind control.
 */
 
-#ifndef CAPMANAGER_H
-#define CAPMANAGER_H
+#pragma once
 
 #include <AbstractClass.h>
 
@@ -90,5 +89,3 @@ public:
 	TechnoClass* Owner;
 	int OverloadDamageDelay; // Decremented every frame. If it reaches zero, OverloadDamage is applied.
 };
-
-#endif

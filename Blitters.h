@@ -1,5 +1,4 @@
-#ifndef SHITBLIT_H
-#define SHITBLIT_H
+#pragma once
 
 // This file contains strong language, excessive amounts of copy pasting and is known to make grown men cry.
 // Proceed at your own risk.
@@ -113,6 +112,3 @@ class RLEBlitter : public RLEBlitterCore {
 	byte *Data; // LightConvertClass's byte buffer
 */
 };
-
-
-#endif

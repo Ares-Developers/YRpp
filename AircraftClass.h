@@ -2,8 +2,7 @@
 	Aircraft
 */
 
-#ifndef AIRCRAFT_H
-#define AIRCRAFT_H
+#pragma once
 
 #include <FootClass.h>
 #include <AircraftTypeClass.h>
@@ -75,5 +74,3 @@ public:
 	bool unknown_bool_6D4;
 	bool unknown_bool_6D5;
 };
-
-#endif

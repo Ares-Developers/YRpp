@@ -1,5 +1,4 @@
-#ifndef WOLAPI_INTERFACES_H
-#define WOLAPI_INTERFACES_H
+#pragma once
 
 #include <windows.h>
 #include <GeneralDefinitions.h>
@@ -544,5 +543,3 @@ namespace WOLAPI {
 	};
 
 }
-
-#endif

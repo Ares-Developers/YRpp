@@ -1,5 +1,4 @@
-#ifndef ASMMACROS_H
-#define ASMMACROS_H
+#pragma once
 
 #ifdef _MSC_VER
 #define _MSVC
@@ -137,7 +136,5 @@ MSVC++
 
 #define VAR32_REG(type,name,reg) type name;_asm{mov name, reg}
 #define VAR8_REG(type,name,reg) type name;_asm{mov name, reg}
-
-#endif
 
 #endif
