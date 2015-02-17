@@ -911,8 +911,8 @@ public:
 	double			 unknown_double_1690;	//2.6875
 	double			 unknown_double_1698;	//2.3125
 	double			 unknown_double_16A0;	//2.5625
-	double			 DamageDelay;
 	double			 SpeakDelay;
+	double			 DamageDelay;
 	int				 Gravity;
 	int				 LeptonsPerSightIncrease;
 	int				 Incoming;
