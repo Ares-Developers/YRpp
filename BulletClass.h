@@ -139,9 +139,9 @@ public:
 	byte AnimFrame;
 	byte AnimRateCounter;
 	WeaponTypeClass* WeaponType;
-	CoordStruct posSrc;
-	CoordStruct posTgt;
-	CellStruct unknown_14C;
+	CoordStruct SourceCoords;
+	CoordStruct TargetCoords;
+	CellStruct LastMapCoords;
 	int DamageMultiplier;
 	AnimClass* NextAnim;
 	bool SpawnNextAnim;
