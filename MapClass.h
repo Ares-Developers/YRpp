@@ -217,7 +217,7 @@ public:
 	void Update_Pathfinding_1()
 		{ JMP_THIS(0x56C510); }
 
-	void Update_Pathfinding_2(DynamicVectorClass<CellStruct> *where)
+	void Update_Pathfinding_2(const DynamicVectorClass<CellStruct> &where)
 		{ JMP_THIS(0x586990); }
 
 	// Find nearest spot
