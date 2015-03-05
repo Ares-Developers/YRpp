@@ -250,6 +250,24 @@ public:
 		{ JMP_THIS(0x568300); }
 
 // ====================================
+//         FIRESTORM RELATED
+// ====================================
+
+	CoordStruct* FindFirstFirestorm(
+		CoordStruct* pOutBuffer, const CoordStruct& start,
+		const CoordStruct& end, HouseClass const* pHouse = nullptr) const
+	{ JMP_THIS(0x5880A0); }
+
+	CoordStruct FindFirstFirestorm(
+		const CoordStruct& start, const CoordStruct& end,
+		HouseClass const* pHouse = nullptr) const
+	{
+		CoordStruct outBuffer;
+		FindFirstFirestorm(&outBuffer, start, end, pHouse);
+		return outBuffer;
+	}
+
+// ====================================
 //        MAP REVEAL BRAINDAMAGE
 // ====================================
 
