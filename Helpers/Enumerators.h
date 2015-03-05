@@ -137,3 +137,91 @@ protected:
 		return true;
 	}
 };
+
+// Enumerates the cells from start to end.
+/*
+	If start equals end, at last this cell is returned.
+
+	\author AlexB
+*/
+class CellSequenceEnumerator
+{
+	CellStruct current;
+	CellStruct end;
+	CellStruct offset;
+	CellStruct distance;
+	int value;
+	bool valid;
+
+public:
+	CellSequenceEnumerator(const CellStruct& start, const CellStruct& end) :
+		current(start),
+		end(end),
+		valid(true)
+	{
+		auto const difference = end - start;
+
+		offset = {
+			static_cast<short>(Math::sgn(difference.X)),
+			static_cast<short>(Math::sgn(difference.Y))
+		};
+
+		distance = { difference.X * offset.X * 2, difference.Y * offset.Y * 2 };
+
+		if(distance.X > distance.Y) {
+			value = distance.Y - distance.X / 2;
+		} else {
+			value = distance.X - distance.Y / 2;
+		}
+	}
+
+	explicit operator bool () const {
+		return valid;
+	}
+
+	const CellStruct& operator * () const {
+		return current;
+	}
+
+	CellSequenceEnumerator& operator ++ () {
+		next();
+		return *this;
+	}
+
+	void operator ++ (int) {
+		next();
+	}
+
+protected:
+	void next()  {
+		if(current == end) {
+			valid = false;
+
+		// slower path, only taken if necessary
+		} else if(offset.X == 0 || offset.Y == 0) {
+			// only one component changes
+			current += offset;
+
+		} else {
+			// Bresenham algo, with changes to not move
+			// diagonally (iow: two cells in one step)
+			if(distance.X > distance.Y) {
+				if(value < 0) {
+					value += distance.Y;
+					current.X += offset.X;
+				} else {
+					value -= distance.X;
+					current.Y += offset.Y;
+				}
+			} else {
+				if(value < 0) {
+					value += distance.X;
+					current.Y += offset.Y;
+				} else {
+					value -= distance.Y;
+					current.X += offset.X;
+				}
+			}
+		}
+	}
+};
