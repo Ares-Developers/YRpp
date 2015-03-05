@@ -28,7 +28,8 @@ public:
 	static const AbstractType AbsID = AbstractType::Cell;
 
 	// the height of a bridge in leptons
-	static const int BridgeHeight = 4 * Unsorted::LevelHeight;
+	static const int BridgeLevels = 4;
+	static const int BridgeHeight = BridgeLevels * Unsorted::LevelHeight;
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
@@ -219,6 +220,9 @@ public:
 	// helper mimicking game's behaviour
 	ObjectClass* GetContent() const
 		{ return this->ContainsBridge() ? this->AltObject : this->FirstObject; }
+
+	int GetLevel() const
+		{ return this->Level + (this->ContainsBridge() ? BridgeLevels : 0); }
 
 	// tilesets
 #define ISTILE(tileset, addr) \
