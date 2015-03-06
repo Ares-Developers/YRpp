@@ -5,7 +5,9 @@
 #include <CellClass.h>
 #include <AnimTypeClass.h>
 
+class BulletTypeClass;
 class WarheadTypeClass;
+class WeaponTypeClass;
 
 //Powerup crates
 class Crate
@@ -59,6 +61,43 @@ public:
 			&& unknown_dword_1C == other.unknown_dword_1C
 			&& unknown_dword_20 == other.unknown_dword_20);
 	}
+};
+
+// helper class with static methods to detect projectile collisions
+class TrajectoryHelper
+{
+public:
+	// whether the bullet hit a cliff when moving from pBefore to pAfter
+	static bool __fastcall IsCliffHit(
+		CellClass const* pSource, CellClass const* pBefore,
+		CellClass const* pAfter)
+	{ JMP_STD(0x4CC680); }
+
+	// whether the bullet hit a wall when traversing through pCheck
+	static bool __fastcall IsWallHit(
+		CellClass const* pSource, CellClass const* pCheck,
+		CellClass const* pTarget, HouseClass const* pOwner)
+	{ JMP_STD(0x4CC6D0); }
+
+	// returns the cell at crdCur if it contains an obstacle, nullptr otherwise
+	static CellClass* __fastcall GetObstacle(
+		CellClass const* pCellSource, CellClass const* pCellTarget,
+		CellClass const* pCellBullet, CoordStruct crdCur,
+		BulletTypeClass const* pType, HouseClass const* pOwner)
+	{ JMP_STD(0x4CC360); }
+
+	// assumes linear movement, returns the first cell that has a cliff or wall
+	// in it, a nullptr otherwise.
+	static CellClass* __fastcall FindFirstObstacle(
+		CoordStruct const& crdSrc, CoordStruct const& crdTarget,
+		BulletTypeClass const* pType, HouseClass const* pOwner)
+	{ JMP_STD(0x4CC100); }
+
+	// if the warhead can destroy walls, walls don't count as obstacle
+	static CellClass* __fastcall FindFirstImpenetrableObstacle(
+		CoordStruct const& crdSrc, CoordStruct const& crdTarget,
+		WeaponTypeClass const* pWeapon, HouseClass const* pOwner)
+	{ JMP_STD(0x4CC310); }
 };
 
 class NOVTABLE MapClass : public GScreenClass
