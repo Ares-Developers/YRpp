@@ -184,12 +184,31 @@ protected:
 	HouseClass() : AbstractClass(false) { }
 
 public:
-	bool IsAlliedWith(int iHouse) const
-		{ JMP_THIS(0x4F9A10); }
-	bool IsAlliedWith(HouseClass* pOther) const
-		{ JMP_THIS(0x4F9A50); }
-	bool IsAlliedWith(TechnoClass* pOther) const
-		{ JMP_THIS(0x4F9A90); }
+	bool IsAlliedWith(int idxHouse) const {
+		//JMP_THIS(0x4F9A10);
+		if(idxHouse == this->ArrayIndex) {
+			return true;
+		}
+		if(idxHouse != -1) {
+			return ((1u << idxHouse) & this->Allies) != 0u;
+		}
+		return false;
+	}
+
+	bool IsAlliedWith(HouseClass const* pHouse) const {
+		//JMP_THIS(0x4F9A50);
+		return pHouse && (pHouse == this || this->IsAlliedWith(pHouse->ArrayIndex));
+	}
+
+	bool IsAlliedWith(ObjectClass const* pObject) const {
+		//JMP_THIS(0x4F9A90);
+		return pObject && this->IsAlliedWith(pObject->GetOwningHouse());
+	}
+
+	bool IsAlliedWith(AbstractClass const* pAbstract) const {
+		//JMP_THIS(0x4F9AF0);
+		return this->IsAlliedWith(abstract_cast<const ObjectClass*>(pAbstract));
+	}
 
 	void MakeAlly(int iHouse, bool bAnnounce)
 		{ JMP_THIS(0x4F9B50); }
