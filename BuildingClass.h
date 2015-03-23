@@ -185,6 +185,22 @@ public:
 		return this->SecretProduction;
 	}
 
+	AnimClass*& GetAnim(BuildingAnimSlot slot) {
+		return this->Anims[static_cast<int>(slot)];
+	}
+
+	AnimClass* const& GetAnim(BuildingAnimSlot slot) const {
+		return this->Anims[static_cast<int>(slot)];
+	}
+
+	bool& GetAnimState(BuildingAnimSlot slot) {
+		return this->AnimStates[static_cast<int>(slot)];
+	}
+
+	bool const& GetAnimState(BuildingAnimSlot slot) const {
+		return this->AnimStates[static_cast<int>(slot)];
+	}
+
 protected:
 	BuildingClass() : TechnoClass(false) { }
 
