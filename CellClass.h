@@ -127,6 +127,10 @@ public:
 	const wchar_t* GetUIName() const
 		{ JMP_THIS(0x484FF0); }
 
+	// returns whether a cell behaves as if it contained overlay (for gates and wall towers)
+	bool ConnectsToOverlay(int idxOverlay = -1, int direction = -1) const
+		{ JMP_THIS(0x480510); }
+
 	// returns the tiberium's index in OverlayTypes
 	int GetContainedTiberiumIndex() const
 		{ JMP_THIS(0x485010); }
