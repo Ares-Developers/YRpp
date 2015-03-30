@@ -153,6 +153,14 @@ public:
 	void KillOccupants(TechnoClass* pAssaulter)
 		{ JMP_THIS(0x4585C0); }
 
+	// returns false if this is a gate that needs time to open, true otherwise
+	bool MakeTraversable()
+		{ JMP_THIS(0x452540); }
+
+	// returns false if this is a gate that is closed, true otherwise
+	bool IsTraversable() const
+		{ JMP_THIS(0x4525F0); }
+
 	//Constructor
 	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner) : TechnoClass(false)
 		{ JMP_THIS(0x43B740); }

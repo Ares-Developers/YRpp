@@ -395,6 +395,10 @@ public:
 	void DestroyCliff(CellClass *Cell)
 		{ JMP_THIS(0x581140); }
 
+	// returns false if visitor should wait for a gate to open, true otherwise
+	bool MakeTraversable(ObjectClass const* pVisitor, CellStruct const& cell) const
+		{ JMP_THIS(0x578AD0); }
+
 protected:
 	//Constructor
 	MapClass() {}	//don't need this
