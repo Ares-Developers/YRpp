@@ -774,10 +774,9 @@ enum class Mission : int {
 	ParadropApproach = 26,
 	ParadropOverfly = 27,
 	Wait = 28,
-	ChronoMove = 29,
-	AttackAgain = 30,
-	SpyplaneApproach = 31,
-	SpyplaneOverfly = 32
+	AttackMove = 29,
+	SpyplaneApproach = 30,
+	SpyplaneOverfly = 31
 };
 
 enum class MovementZone : int {
