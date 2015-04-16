@@ -263,21 +263,21 @@ protected:
 
 public:
 
-	PROTECTED_PROPERTY(BYTE,     unknown_24[0x8]);
+	DWORD              unknown_24;
+	DWORD              unknown_28;
 	int                FallRate; //how fast is it falling down? only works if FallingDown is set below, and actually positive numbers will move the thing UPWARDS
 	ObjectClass*       NextObject;	//Next Object in the same cell or transport. This is a linked list of Objects.
 	TagClass*          AttachedTag; //Should be TagClass , TODO: change when implemented
 	BombClass*         AttachedBomb; //Ivan's little friends.
-
-	AudioController Audio1; // the "mofo" struct, evil evil stuff
-	AudioController Audio2; // the "mofo" struct, evil evil stuff
-
-	int                unknown_64;		//idx of OverlayType this is posing as (Mirage Tank)
+	AudioController    AmbientSoundController; // the "mofo" struct, evil evil stuff
+	AudioController    CustomSoundController; // the "mofo" struct, evil evil stuff
+	int                CustomSound;
 	bool               BombVisible; // In range of player's bomb seeing units, so should draw it
+	PROTECTED_PROPERTY(BYTE, align_69[0x3]);
 	int                Health;		//The current Health.
-	DWORD              unknown_70;
+	int                EstimatedHealth; // used for auto-targeting threat estimation
 	bool               IsOnMap; // has this object been placed on the map?
-	PROTECTED_PROPERTY(BYTE,     unknown_75[0x3]);
+	PROTECTED_PROPERTY(BYTE, align_75[0x3]);
 	DWORD              unknown_78;
 	DWORD              unknown_7C;
 	bool               NeedsRedraw;
@@ -285,13 +285,18 @@ public:
 	bool               InOpenToppedTransport;
 	bool               IsSelected;	//Has the player selected this Object?
 	bool               HasParachute;	//Is this Object parachuting?
+	PROTECTED_PROPERTY(BYTE, align_85[0x3]);
 	AnimClass*         Parachute;		//Current parachute Anim.
 	bool               OnBridge;
 	bool               IsFallingDown;
 	bool               WasFallingDown; // last falling state when FootClass::Update executed. used to find out whether it changed.
 	bool               IsABomb; // if set, will explode after FallingDown brings it to contact with the ground
 	bool               IsAlive;		//Self-explanatory.
-	PROTECTED_PROPERTY(BYTE,     unknown_91[0xB]);
-	CoordStruct Location;		//Absolute current 3D location (in leptons?)
+	PROTECTED_PROPERTY(BYTE, align_91[0x3]);
+	Layer              LastLayer;
+	bool               IsInLogic; // has this object been added to the logic collection?
+	bool               IsVisible; // was this object in viewport when drawn?
+	PROTECTED_PROPERTY(BYTE, align_99[0x2]);
+	CoordStruct        Location; //Absolute current 3D location (in leptons)
 	LineTrail*         LineTrailer;
  };
