@@ -24,8 +24,6 @@ class LayerClass : public DynamicVectorClass<ObjectClass*>
 		{ JMP_THIS(0x551B20); }
 };
 
-#define		NUM_LAYERS		5
-
 class NOVTABLE DisplayClass : public MapClass
 {
 public:
