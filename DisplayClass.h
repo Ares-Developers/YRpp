@@ -8,11 +8,14 @@ class ObjectTypeClass;
 
 class LayerClass : public DynamicVectorClass<ObjectClass*>
 {
-	virtual bool AddObject(ObjectClass* pObject, bool bUnknown)
+	virtual bool AddObject(ObjectClass* pObject, bool sorted)
 		{ JMP_THIS(0x5519B0); }
 
-	virtual void Clear_()
-		{ Clear(); }
+	virtual void RemoveAll()
+		{ this->Clear(); }
+
+	virtual void vt_entry_24()
+		{ }
 
 	void Load(IStream* pStm)
 		{ JMP_THIS(0x551B90); }
