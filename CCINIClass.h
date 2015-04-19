@@ -229,6 +229,20 @@ public:
 	TechnoTypeClass* GetTechnoType(const char* pSection, const char* pKey)
 		{ JMP_THIS(0x476EB0); }
 
+	// safer and more convenient overload for string reading
+	template <size_t Size>
+	int ReadString(const char* pSection, const char* pKey, const char* pDefault, char(&pBuffer)[Size])
+	{
+		return this->ReadString(pSection, pKey, pDefault, pBuffer, Size);
+	}
+
+	// safer and more convenient overload for escaped unicode string reading
+	template <size_t Size>
+	int ReadUnicodeString(const char* pSection, const char* pKey, const wchar_t* pDefault, wchar_t(&pBuffer)[Size])
+	{
+		this->ReadUnicodeString(pSection, pKey, pDefault, Size);
+	}
+
 
 	// fsldargh who the fuck decided to pass structures by value here
 	static TypeList<int>* __fastcall GetPrerequisites(TypeList<int>* pBuffer, INIClass* pINI,
@@ -297,6 +311,11 @@ public:
 	int ReadStringtableEntry(const char* pSection, const char* pKey, wchar_t* pBuffer, size_t szBufferSize)
 		{ JMP_THIS(0x0529160); }
 
+	template <size_t Size>
+	int ReadStringtableEntry(const char* pSection, const char* pKey, wchar_t(&pBuffer)[Size])
+	{
+		return this->ReadStringtableEntry(pSection, pKey, pBuffer, Size);
+	}
 
 	DWORD GetCRC()
 		{ JMP_THIS(0x476D80); }
