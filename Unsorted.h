@@ -440,17 +440,25 @@ class MovieInfo
 		{ delete this->Name; }
 };
 
-class MovieUnlockableInfo {
-	const char * Filename;
-	const wchar_t * CSFName;
-	int CDRequired;
+struct MovieUnlockableInfo {
+	const char* Filename;
+	const char* Description;
+	int DiskRequired;
 
-	// both are 8 movies long, allocated statically, but limit is not enforced. Careful.
-	static MovieUnlockableInfo* SovietUnlockables;
-	static MovieUnlockableInfo* AlliedUnlockables;
+	// allocated statically, but limit is not enforced. Careful.
+	static const MovieUnlockableInfo* CommonUnlockables;
+	static const MovieUnlockableInfo* AlliedUnlockables;
+	static const MovieUnlockableInfo* SovietUnlockables;
 
-	MovieUnlockableInfo(const char *_F, const wchar_t *_CSF, const int CD) :
-		Filename(_F), CSFName(_CSF), CDRequired(CD)
+	static size_t const CommonCount = 1;
+	static size_t const AlliedCount = 8;
+	static size_t const SovietCount = 8;
+
+	MovieUnlockableInfo() : MovieUnlockableInfo(nullptr)
+	{ }
+
+	explicit MovieUnlockableInfo(const char* pFilename, const char* pDescription = nullptr, int disk = 2)
+		: Filename(pFilename), Description(pDescription), DiskRequired(disk)
 	{ }
 };
 

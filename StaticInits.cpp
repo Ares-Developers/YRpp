@@ -543,8 +543,9 @@ ALIAS(Imports::FP_RegisterHotKey, Imports::RegisterHotKey, 0x7E1510);
 
 DynamicVectorClass<MovieInfo> *MovieInfo::Array = reinterpret_cast<DynamicVectorClass<MovieInfo>*>(0xABF390);
 
-MovieUnlockableInfo* MovieUnlockableInfo::AlliedUnlockables = reinterpret_cast<MovieUnlockableInfo*>(0x00832C30);
-MovieUnlockableInfo* MovieUnlockableInfo::SovietUnlockables = reinterpret_cast<MovieUnlockableInfo*>(0x00832CA0);
+MovieUnlockableInfo const* MovieUnlockableInfo::CommonUnlockables = reinterpret_cast<MovieUnlockableInfo const*>(0x00832C20);
+MovieUnlockableInfo const* MovieUnlockableInfo::AlliedUnlockables = reinterpret_cast<MovieUnlockableInfo const*>(0x00832C30);
+MovieUnlockableInfo const* MovieUnlockableInfo::SovietUnlockables = reinterpret_cast<MovieUnlockableInfo const*>(0x00832CA0);
 
 #include <VocClass.h>
 DECL(VocClass, 0xB1D378);
