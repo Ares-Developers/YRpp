@@ -423,21 +423,31 @@ public:
 
 class MovieInfo
 {
-	public:
-		char *Name; // yes, only that
-		static DynamicVectorClass<MovieInfo> *Array;
+public:
+	// technically, this is a DVC<const char*>
+	// and string management is done manually
+	static DynamicVectorClass<MovieInfo>* Array;
 
-	bool operator== (MovieInfo &rhs)
-		{ return !strcmp(rhs.Name, this->Name); }
+	bool operator== (MovieInfo const& rhs) const
+	{
+		return !_strcmpi(this->Name, rhs.Name);
+	}
 
-	MovieInfo(const char *fname)
-		{ this->Name = _strdup(fname); }
+	explicit MovieInfo(const char* fname)
+		: Name(fname ? _strdup(fname) : nullptr)
+	{ }
 
-	MovieInfo()
-		{}
+	MovieInfo() : Name(nullptr)
+	{ }
 
 	~MovieInfo()
-		{ delete this->Name; }
+	{
+		if(this->Name) {
+			free(const_cast<char*>(this->Name));
+		}
+	}
+
+	const char* Name; // yes, only that
 };
 
 struct MovieUnlockableInfo {
