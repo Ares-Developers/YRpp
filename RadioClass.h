@@ -27,7 +27,9 @@ public:
 	virtual int LinkWith(eRadioCommands rcDoThis, TechnoClass *Target, TechnoClass *Link) R0;
 	virtual void SendToEachLink(eRadioCommands rcDoThis) RX;
 
-	TechnoClass* GetNthLink(int idx) const R0;
+	TechnoClass* GetNthLink(int idx) const {
+		return this->RadioLinks[idx];
+	}
 
 	//Constructor
 	RadioClass() : MissionClass(false)
