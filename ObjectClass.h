@@ -55,8 +55,8 @@ public:
 	virtual bool IsSelectable() const R0;
 	virtual VisualType VisualCharacter(VARIANT_BOOL SpecificOwner, HouseClass * WhoIsAsking) const RT(VisualType);
 	virtual SHPStruct* GetImage() const R0;
-	virtual Action MouseOverCell(CellStruct uCell, bool bUnk1, bool bUnk2) const RT(Action);
-	virtual Action MouseOverObject(ObjectClass* pObj, bool bUnk1) const RT(Action);
+	virtual Action MouseOverCell(CellStruct const& cell, bool checkFog = false, bool ignoreForce = false) const RT(Action);
+	virtual Action MouseOverObject(ObjectClass const* pObject, bool ignoreForce = false) const RT(Action);
 	virtual Layer InWhichLayer() const RT(Layer);
 	virtual bool IsSurfaced() R0; // opposed to being submerged
 
