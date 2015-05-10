@@ -22,10 +22,10 @@ public:
 	//RadioClass
 
 	// these are oogly, westwood themselves admitted it, so it's probably even more of a wtf than the rest
-	virtual eRadioCommands SendToFirstLink(eRadioCommands rcDoThis) R0;
-	virtual eRadioCommands SendCommand(eRadioCommands rcDoThis, TechnoClass *Link) R0;
-	virtual int LinkWith(eRadioCommands rcDoThis, TechnoClass *Target, TechnoClass *Link) R0;
-	virtual void SendToEachLink(eRadioCommands rcDoThis) RX;
+	virtual RadioCommand SendToFirstLink(RadioCommand command) RT(RadioCommand);
+	virtual RadioCommand SendCommand(RadioCommand command, TechnoClass* pRecipient) RT(RadioCommand);
+	virtual RadioCommand SendCommandWithData(RadioCommand command, AbstractClass* &pInOut, TechnoClass* pRecipient) RT(RadioCommand);
+	virtual void SendToEachLink(RadioCommand command) RX;
 
 	TechnoClass* GetNthLink(int idx) const {
 		return this->RadioLinks[idx];
@@ -44,6 +44,6 @@ protected:
 
 public:
 
-	eRadioCommands LastCommands [3]; // new command updates these
+	RadioCommand LastCommands[3]; // new command updates these
 	VectorClass<TechnoClass*> RadioLinks;	//Docked units etc
 };

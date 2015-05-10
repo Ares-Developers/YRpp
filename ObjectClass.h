@@ -171,7 +171,7 @@ public:
 	virtual void RestoreMission(Mission mission) RX;
 	virtual void UpdatePosition(int dwUnk) RX;
 	virtual BuildingTypeClass* GetFactoryType(bool bOverridePrereqs, bool bOverridePower) const R0;
-	virtual void ReceiveCommand(TechnoClass *From, eRadioCommands rcDoThis, DWORD dwUnk3) RX;
+	virtual RadioCommand ReceiveCommand(TechnoClass* pSender, RadioCommand command, AbstractClass* &pInOut) RT(RadioCommand);
 	virtual bool DiscoveredBy(HouseClass *pHouse) R0;
 	virtual void SetRepairState(int state) RX; // 0 - off, 1 - on, -1 - toggle
 	virtual void Sell(DWORD dwUnk) RX;

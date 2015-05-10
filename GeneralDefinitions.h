@@ -1110,46 +1110,48 @@ enum class VisualType : unsigned int {
 	Hidden = 5
 };
 
-typedef int eRadioCommands;
-
-#define	rc_00		0
-#define	rc_01		1
-#define	rc_Hello		2
-#define	rc_Exit		3
-#define	rc_04		4
-#define	rc_05		5
-#define	rc_06		6
-#define	rc_07		7
-#define	rc_08		8
-#define	rc_09		9
-#define	rc_CannotEnter		10
-#define	rc_0B		11
-#define	rc_0C		12
-#define	rc_0D		13
-#define	rc_0E		14
-#define	rc_CanEnter		15
-#define	rc_10		16
-#define	rc_11		17
-#define	rc_12		18
-#define	rc_NeedToMove		19
-#define	rc_14		20
-#define	rc_15		21
-#define	rc_16		22
-#define	rc_17		23
-#define	rc_TryAcceptDocker		24
-#define	rc_19		25
-#define	rc_1A		26
-#define	rc_1B		27
-#define	rc_1C		28
-#define	rc_1D		29
-#define	rc_1E		30
-#define	rc_1F		31
-#define	rc_20		32
-#define	rc_21		33
-#define	rc_22		34
-#define	rc_23		35
-#define	rc_RadioWantRide		36
-
+enum class RadioCommand : int {
+	AnswerInvalid = 0, // static (no message)
+	AnswerPositive = 1, // Roger.
+	RequestLink = 2, // Come in.
+	NotifyUnlink = 3, // Over and out.
+	unknown_4 = 4, // Requesting transport.
+	unknown_5 = 5, // Attach to transport.
+	unknown_6 = 6, // I've got a delivery for you.
+	NotifyBeginLoad = 7, // I'm performing load/unload maneuver. Be careful.
+	NotifyUnloaded = 8, // I'm clear.
+	RequestUnload = 9, // You are clear to unload. Driving away now.
+	AnswerNegative = 10, // Am unable to comply.
+	RequestBeginProduction = 11, // I'm starting construction now... act busy.
+	RequestEndProduction = 12, // I've finished construction. You are free.
+	RequestRedraw = 13, // We bumped, redraw yourself please.
+	RequestLoading = 14, // I'm trying to load up now.
+	AnswerLoading = 14, // Loading up now.
+	QueryCanEnter = 15, // May I become a passenger?
+	QueryCanUnload = 16, // Are you ready to receive shipment?
+	QueryWantEnter = 17, // Are you trying to become a passenger?
+	RequestMoveTo = 18, // Move to location X.
+	QueryMoving = 19, // Do you need to move?
+	AnswerAwaiting = 20, // All right already. Now what?
+	RequestCompleteEnter = 21, // I'm a passenger now.
+	RequestDockRefinery = 22, // Backup into refinery now.
+	AnswerLeave = 23, // Run away!
+	NotifyLeave = 23, // Running away.
+	RequestTether = 24, // Tether established.
+	RequestUntether = 25, // Tether broken.
+	RequestAlternativeTether = 26, // Alternative tether established.
+	RequestAlternativeUntether = 27, // Alternative tether broken.
+	RequestRepair = 28, // Repair one step.
+	QueryReadiness = 29, // Are you prepared to fight?
+	RequestAttack = 30, // Attack this target please.
+	RequestReload = 31, // Reload one step.
+	AnswerBlocked = 32, // Circumstances prevent success.
+	QueryDone = 33, // All done with the request?
+	AnswerDone = 33, // All done with the request.
+	QueryNeedRepair = 34, // Do you need service depot work?
+	QueryOnBuilding = 35, // Are you located on top of me?
+	QueryCanTote = 36, // Want ride
+};
 
 enum class NetworkEvents : unsigned char {
 	Empty = 0x0,
