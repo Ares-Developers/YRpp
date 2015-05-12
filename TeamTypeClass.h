@@ -101,7 +101,7 @@ public:
 	bool     Suicide;
 	bool     Droppod;
 	bool     UseTransportOrigin;
-	bool     field_B2;
+	bool     DropshipLoadout;
 	bool     OnTransOnly;
 	int      Priority;
 	int      Max;

@@ -182,10 +182,10 @@ public:
 	bool PickedUpAnyCrate;
 	TimerStruct unknown_timer_34C0;
 	int CampaignIndex;
-	int StartingDropshipsCount;
-	TypeList<TechnoTypeClass*> StartingDropships;
-	TypeList<int> AllowableUnits;
+	int StartingDropships;
+	TypeList<TechnoTypeClass*> AllowableUnits;
 	TypeList<int> AllowableUnitMaximums;
+	TypeList<int> DropshipUnitCounts;
 
 	//General Lighting
 	int AmbientOriginal; // set at map creation

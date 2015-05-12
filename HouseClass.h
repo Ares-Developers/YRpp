@@ -118,6 +118,17 @@ public:
 #pragma warning(suppress : 4265)
 };
 
+// used for each of the 3 drop ships. has more functions that are not reproduced here yet
+struct DropshipStruct
+{
+	TimerStruct      Timer;
+	BYTE             unknown_C;
+	PROTECTED_PROPERTY(BYTE, align_D[3]);
+	int              Count;
+	TechnoTypeClass* Types[5];
+	int              TotalCost;
+};
+
 //--- Here we go, finally...
 class NOVTABLE HouseClass : public AbstractClass, public IHouse, public IPublicHouse, public IConnectionPointContainer
 {
@@ -847,40 +858,8 @@ public:
 	int                   RatioTeamInfantry;
 	int                   RatioTeamBuildings;
 	int                   BaseDefenseTeamCount;
-	DWORD unknown_5670;
-	DWORD unknown_5674;
-	DWORD unknown_5678;
-	DWORD unknown_567C;
-	DWORD unknown_5680;
-	DWORD unknown_5684;
-	DWORD unknown_5688;
-	DWORD unknown_568C;
-	DWORD unknown_5690;
-	DWORD unknown_5694;
-	DWORD unknown_5698;
-	DWORD unknown_569C;
-	DWORD unknown_56A0;
-	DWORD unknown_56A4;
-	DWORD unknown_56A8;
-	DWORD unknown_56AC;
-	DWORD unknown_56B0;
-	DWORD unknown_56B4;
-	DWORD unknown_56B8;
-	DWORD unknown_56BC;
-	DWORD unknown_56C0;
-	DWORD unknown_56C4;
-	DWORD unknown_56C8;
-	DWORD unknown_56CC;
-	DWORD unknown_56D0;
-	DWORD unknown_56D4;
-	DWORD unknown_56D8;
-	DWORD unknown_56DC;
-	DWORD unknown_56E0;
-	DWORD unknown_56E4;
-	DWORD unknown_56E8;
-	DWORD unknown_56EC;
-	DWORD unknown_56F0;
-	DWORD unknown_56F4;
+	DropshipStruct        DropshipData[3];
+	int                   CurrentDropshipIndex;
 	byte          HasCloakingRanges; // don't ask
 	ColorStruct Color;
 	ColorStruct LaserColor; // my idb says so
