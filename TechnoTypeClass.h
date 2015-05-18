@@ -306,15 +306,14 @@ public:
 	int             AIBasePlanningSide;
 	bool            StupidHunt;
 	bool            AllowedToStartInMultiplayer;
-	char CameoFile [0x19];
-	PROTECTED_PROPERTY(BYTE,  unused_6EF);
+	char            CameoFile[0x19];
+	PROTECTED_PROPERTY(BYTE,  align_6EF);
 	SHPStruct*      Cameo;
-	PROTECTED_PROPERTY(BYTE,  unused_6F4);
-	char AltCameoFile [0x19];
-	PROTECTED_PROPERTY(BYTE,  unused_70E);
-	PROTECTED_PROPERTY(BYTE,  unused_70F);
+	bool            CameoAllocated;
+	char            AltCameoFile[0x19];
+	PROTECTED_PROPERTY(BYTE,  align_70E[2]);
 	SHPStruct*      AltCameo;
-	PROTECTED_PROPERTY(BYTE,  unused_714);
+	bool            AltCameoAllocated;
 	int             RotCount;
 	int             ROT;
 	int             TurretOffset;
@@ -522,7 +521,7 @@ public:
 	int             ZFudgeColumn;
 	int             ZFudgeTunnel;
 	int             ZFudgeBridge;
-	char PaletteFile [0x20];
+	char            PaletteFile[0x20];
 	void*           Palette; //no... idea....
 	DWORD           align_DF4;
 };
