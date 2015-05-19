@@ -8,9 +8,13 @@ struct FixedString {
 
 	static_assert(Capacity > 0, "Capacity cannot be 0.");
 
-	typedef T data_type[Capacity];
+	using data_type = T[Capacity];
 
-	explicit FixedString(const T* value = nullptr) {
+	FixedString() {
+		this->chars[0] = 0;
+	}
+
+	explicit FixedString(const T* value) {
 		*this = value;
 	}
 
@@ -20,7 +24,7 @@ struct FixedString {
 	*  case a pointer is passed.
 	*/
 
-	const FixedString& operator= (const T* value) {
+	FixedString& operator= (const T* value) {
 		if(value != this->chars) {
 			if(value) {
 				this->assign(value);
