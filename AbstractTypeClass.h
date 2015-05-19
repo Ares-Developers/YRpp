@@ -75,6 +75,6 @@ public:
 	char ID [0x18];
 	PROTECTED_PROPERTY(BYTE, zero_3C);
 	char UINameLabel [0x20];
-	wchar_t* UIName;
+	const wchar_t* UIName;
 	char Name [0x31];
 };
