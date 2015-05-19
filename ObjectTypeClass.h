@@ -66,10 +66,8 @@ public:
 	Armor         Armor;
 	int           Strength;
 	SHPStruct*    Image;
-	bool          ImageIsOutdated;
-	bool          unused_A9;
-	bool          unused_AA;
-	bool          unused_AB;
+	bool          ImageAllocated;
+	PROTECTED_PROPERTY(BYTE, align_A9[3]);
 	SHPStruct*    AlphaImage;
 	VoxelStruct MainVoxel;
 	VoxelStruct TurretVoxel; //also used for WO voxels
@@ -79,9 +77,7 @@ public:
 	VoxelStruct ChargerBarrels [0x12];
 
 	bool          NoSpawnAlt;
-	BYTE          unused_1E9;
-	BYTE          unused_1EA;
-	BYTE          unused_1EB;
+	PROTECTED_PROPERTY(BYTE, align_1E9[3]);
 	int           MaxDimension;
 	int           CrushSound; //index
 	int           AmbientSound; //index
@@ -102,15 +98,14 @@ public:
 	bool           Insignificant;
 	bool           Immune;
 	bool           IsLogic; // add objects to the logic vector
-	BYTE           unused_235;
+	bool           AllowCellContent;
 	bool           Voxel;
 	bool           NewTheater;
 	bool           HasRadialIndicator;
 	bool           IgnoresFirestorm;
 	bool           UseLineTrail;
-	ColorStruct LineTrailColor;
-	BYTE           unused_23E;
-	BYTE           unused_23F;
+	ColorStruct    LineTrailColor;
+	PROTECTED_PROPERTY(BYTE, align_23E[2]);
 	int            LineTrailColorDecrement;
 
 	SomeVoxelCache VoxelCaches [4]; //These don't even seem to be of any use...
