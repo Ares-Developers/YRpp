@@ -58,8 +58,9 @@ public:
 	AbstractTypeClass(const char* pID) : AbstractClass(false)
 		{ JMP_THIS(0x410800); }
 
-	char *get_ID()
-		{ return this->ID; }
+	const char* get_ID() const {
+		return this->ID;
+	}
 
 protected:
 	AbstractTypeClass() : AbstractClass(false) { }

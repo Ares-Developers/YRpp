@@ -341,9 +341,9 @@ public:
 		{ JMP_THIS(0x6F79A0); }
 
 	// smooth operator
-	const char *get_ID() const {
-		ObjectTypeClass *TT = this->GetType();
-		return TT ? TT->get_ID() : nullptr;
+	const char* get_ID() const {
+		auto const pType = this->GetType();
+		return pType ? pType->get_ID() : nullptr;
 	}
 
 	bool IsMindControlled() const
