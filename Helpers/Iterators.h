@@ -63,10 +63,10 @@ private:
 */
 class CellRangeIterator {
 	CellStruct center;
-	float radius;
+	double radius;
 
 public:
-	CellRangeIterator(const CellStruct &center, float radius) : center(center), radius(radius) {}
+	CellRangeIterator(const CellStruct &center, double radius) : center(center), radius(radius) {}
 
 	template <typename T>
 	void apply(const std::function<bool(T*)> &action) const {
