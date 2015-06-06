@@ -178,20 +178,7 @@ public:
 		return false;
 	}
 
-	TechnoTypeClass* GetSecretProduction() const {
-		auto pType = this->Type;
-
-		if(pType->SecretInfantry) { 
-			return reinterpret_cast<TechnoTypeClass*>(pType->SecretInfantry);
-		}
-		if(pType->SecretUnit) {
-			return reinterpret_cast<TechnoTypeClass*>(pType->SecretUnit);
-		}
-		if(pType->SecretBuilding) {
-			return pType->SecretBuilding;
-		}
-		return this->SecretProduction;
-	}
+	TechnoTypeClass* GetSecretProduction() const;
 
 	AnimClass*& GetAnim(BuildingAnimSlot slot) {
 		return this->Anims[static_cast<int>(slot)];

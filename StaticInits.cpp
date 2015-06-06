@@ -840,4 +840,19 @@ int TechnoClass::GetIonCannonValue(AIDifficulty difficulty) const {
 	return value;
 }
 
+TechnoTypeClass* BuildingClass::GetSecretProduction() const {
+	auto pType = this->Type;
+
+	if(pType->SecretInfantry) {
+		return pType->SecretInfantry;
+	}
+	if(pType->SecretUnit) {
+		return pType->SecretUnit;
+	}
+	if(pType->SecretBuilding) {
+		return pType->SecretBuilding;
+	}
+	return this->SecretProduction;
+}
+
 #include <Helpers\IteratorsDef.h>
