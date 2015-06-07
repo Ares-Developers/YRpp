@@ -606,10 +606,10 @@ int HouseClass::CountOwnedNowTotal(const TechnoTypeClass *Item) const {
 			if(BT->PowersUpBuilding[0]) {
 				if(auto plug = BuildingTypeClass::Find(BT->PowersUpBuilding)) {
 					for(int i = 0; i < this->Buildings.Count; ++i) {
-						auto Base = this->Buildings[i];
-						if(Base->Type == plug) {
+						auto pBase = this->Buildings[i];
+						if(pBase->Type == plug) {
 							for(int j = 0; j < 3; ++j) {
-								if(Base->Upgrades[j] == plug) {
+								if(pBase->Upgrades[j] == plug) {
 									++Sum;
 								}
 							}
