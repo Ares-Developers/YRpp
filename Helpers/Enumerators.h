@@ -66,10 +66,10 @@ public:
 	}
 
 protected:
-	void reset(size_t spread) {
-		curspread = spread;
-		current.X = spread ? -1 : 0;
-		current.Y = -static_cast<short>(spread);
+	void reset(size_t radius) {
+		curspread = radius;
+		current.X = radius ? -1 : 0;
+		current.Y = -static_cast<short>(radius);
 		hasTwo = true;
 		hadTwo = true;
 	}
