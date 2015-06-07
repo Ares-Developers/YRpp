@@ -656,73 +656,73 @@ int HouseClass::CountOwnedNowTotal(const TechnoTypeClass *Item) const {
 	return Sum;
 }
 
-int HouseClass::CountOwnedNow(const TechnoTypeClass *Item) const {
-	int Index = Item->GetArrayIndex();
-	switch(Item->WhatAmI()) {
+int HouseClass::CountOwnedNow(const TechnoTypeClass* const pItem) const {
+	auto const index = pItem->GetArrayIndex();
+	switch(pItem->WhatAmI()) {
 		case AbstractType::BuildingType:
-			return this->OwnedBuildingTypes.GetItemCount(Index);
+			return this->OwnedBuildingTypes.GetItemCount(index);
 
 		case AbstractType::UnitType:
-			return this->OwnedUnitTypes.GetItemCount(Index);
+			return this->OwnedUnitTypes.GetItemCount(index);
 
 		case AbstractType::InfantryType:
-			return this->OwnedInfantryTypes.GetItemCount(Index);
+			return this->OwnedInfantryTypes.GetItemCount(index);
 
 		case AbstractType::AircraftType:
-			return this->OwnedAircraftTypes.GetItemCount(Index);
+			return this->OwnedAircraftTypes.GetItemCount(index);
 
 		default:
 			return 0;
 	}
 }
 
-int HouseClass::CountOwnedAndPresent(const TechnoTypeClass *Item) const {
-	int Index = Item->GetArrayIndex();
-	switch(Item->WhatAmI()) {
+int HouseClass::CountOwnedAndPresent(const TechnoTypeClass* const pItem) const {
+	auto const index = pItem->GetArrayIndex();
+	switch(pItem->WhatAmI()) {
 		case AbstractType::BuildingType:
-			return this->OwnedBuildingTypes1.GetItemCount(Index);
+			return this->OwnedBuildingTypes1.GetItemCount(index);
 
 		case AbstractType::UnitType:
-			return this->OwnedUnitTypes1.GetItemCount(Index);
+			return this->OwnedUnitTypes1.GetItemCount(index);
 
 		case AbstractType::InfantryType:
-			return this->OwnedInfantryTypes1.GetItemCount(Index);
+			return this->OwnedInfantryTypes1.GetItemCount(index);
 
 		case AbstractType::AircraftType:
-			return this->OwnedAircraftTypes1.GetItemCount(Index);
+			return this->OwnedAircraftTypes1.GetItemCount(index);
 
 		default:
 			return 0;
 	}
 }
 
-int HouseClass::CountOwnedEver(const TechnoTypeClass *Item) const {
-	int Index = Item->GetArrayIndex();
-	switch(Item->WhatAmI()) {
+int HouseClass::CountOwnedEver(const TechnoTypeClass* const pItem) const {
+	auto const index = pItem->GetArrayIndex();
+	switch(pItem->WhatAmI()) {
 		case AbstractType::BuildingType:
-			return this->OwnedBuildingTypes2.GetItemCount(Index);
+			return this->OwnedBuildingTypes2.GetItemCount(index);
 
 		case AbstractType::UnitType:
-			return this->OwnedUnitTypes2.GetItemCount(Index);
+			return this->OwnedUnitTypes2.GetItemCount(index);
 
 		case AbstractType::InfantryType:
-			return this->OwnedInfantryTypes2.GetItemCount(Index);
+			return this->OwnedInfantryTypes2.GetItemCount(index);
 
 		case AbstractType::AircraftType:
-			return this->OwnedAircraftTypes2.GetItemCount(Index);
+			return this->OwnedAircraftTypes2.GetItemCount(index);
 
 		default:
 			return 0;
 	}
 }
 
-bool HouseClass::CanExpectToBuild(const TechnoTypeClass * Item) const {
-	HouseTypeClass *pType = this->Type;
-	DWORD parentOwnerMask = 1 << pType->FindIndexOfName(pType->ParentCountry);
-	if(Item->OwnerFlags & parentOwnerMask) {
-		if(this->InRequiredHouses(Item)) {
-			if(!this->InForbiddenHouses(Item)) {
-				auto BaseSide = Item->AIBasePlanningSide;
+bool HouseClass::CanExpectToBuild(const TechnoTypeClass* const pItem) const {
+	auto const pType = this->Type;
+	auto const parentOwnerMask = 1u << pType->FindIndexOfName(pType->ParentCountry);
+	if(pItem->OwnerFlags & parentOwnerMask) {
+		if(this->InRequiredHouses(pItem)) {
+			if(!this->InForbiddenHouses(pItem)) {
+				auto const BaseSide = pItem->AIBasePlanningSide;
 				if(BaseSide == -1 || BaseSide == pType->SideIndex) {
 					return true;
 				}
@@ -732,21 +732,21 @@ bool HouseClass::CanExpectToBuild(const TechnoTypeClass * Item) const {
 	return false;
 }
 
-int HouseClass::FindSuperWeaponIndex(SuperWeaponType Type) const {
+int HouseClass::FindSuperWeaponIndex(SuperWeaponType const type) const {
 	for(int i = 0; i < this->Supers.Count; ++i) {
-		if(this->Supers.GetItem(i)->Type->Type == Type) {
+		if(this->Supers.Items[i]->Type->Type == type) {
 			return i;
 		}
 	}
 	return -1;
 }
 
-SuperClass* HouseClass::FindSuperWeapon(SuperWeaponType Type) const {
-	auto index = this->FindSuperWeaponIndex(Type);
+SuperClass* HouseClass::FindSuperWeapon(SuperWeaponType const type) const {
+	auto index = this->FindSuperWeaponIndex(type);
 	return this->Supers.GetItemOrDefault(index);
 }
 
-bool HouseClass::IsIonCannonEligibleTarget(const TechnoClass* pTechno) const {
+bool HouseClass::IsIonCannonEligibleTarget(const TechnoClass* const pTechno) const {
 	if(pTechno->InWhichLayer() == Layer::Ground && pTechno->IsAlive && !pTechno->InLimbo) {
 		return true;
 	}
@@ -766,7 +766,7 @@ bool HouseClass::IsIonCannonEligibleTarget(const TechnoClass* pTechno) const {
 	return false;
 }
 
-int TechnoClass::GetIonCannonValue(AIDifficulty difficulty) const {
+int TechnoClass::GetIonCannonValue(AIDifficulty const difficulty) const {
 	const auto& rules = *RulesClass::Instance;
 
 	const TypeList<int>* pValues = nullptr;
@@ -841,7 +841,7 @@ int TechnoClass::GetIonCannonValue(AIDifficulty difficulty) const {
 }
 
 TechnoTypeClass* BuildingClass::GetSecretProduction() const {
-	auto pType = this->Type;
+	auto const pType = this->Type;
 
 	if(pType->SecretInfantry) {
 		return pType->SecretInfantry;

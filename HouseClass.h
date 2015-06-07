@@ -431,10 +431,10 @@ public:
 		{ JMP_STD(0x65EAB0); }
 
 	// registering in prereq counters (all technoes get logged, but only buildings get checked on validation... wtf)
-	void RegisterGain(TechnoClass *pTechno, DWORD dwUnk)
+	void RegisterGain(TechnoClass* pTechno, bool ownerChange)
 		{ JMP_THIS(0x502A80); }
 
-	void RegisterLoss(TechnoClass *pTechno, DWORD dwUnk)
+	void RegisterLoss(TechnoClass* pTechno, bool keepTiberium)
 		{ JMP_THIS(0x5025F0); }
 
 	BuildingClass* FindBuildingOfType(int idx, int sector = -1) const
@@ -462,70 +462,70 @@ public:
 		return this->Type->get_ID();
 	}
 
-	int FindSuperWeaponIndex(SuperWeaponType Type) const;
+	int FindSuperWeaponIndex(SuperWeaponType type) const;
 
-	SuperClass* FindSuperWeapon(SuperWeaponType Type) const;
+	SuperClass* FindSuperWeapon(SuperWeaponType type) const;
 
 	// I don't want to talk about these
 	// read the code <_<
 
-	int CountOwnedNow(const TechnoTypeClass *Item) const;
+	int CountOwnedNow(const TechnoTypeClass* pItem) const;
 
-	int CountOwnedNowTotal(const TechnoTypeClass *Item) const;
+	int CountOwnedNowTotal(const TechnoTypeClass* pItem) const;
 
-	int CountOwnedAndPresent(const TechnoTypeClass *Item) const;
+	int CountOwnedAndPresent(const TechnoTypeClass* pItem) const;
 
-	int CountOwnedEver(const TechnoTypeClass *Item) const;
+	int CountOwnedEver(const TechnoTypeClass* pItem) const;
 
-	bool HasFromSecretLab(const TechnoTypeClass *Item) const {
+	bool HasFromSecretLab(const TechnoTypeClass* const pItem) const {
 		for(const auto& pLab : this->SecretLabs) {
-			if(pLab->GetSecretProduction() == Item) {
+			if(pLab->GetSecretProduction() == pItem) {
 				return true;
 			}
 		}
 		return false;
 	}
 
-	bool HasAllStolenTech(const TechnoTypeClass *Item) const {
-		if(Item->RequiresStolenAlliedTech && !this->Side0TechInfiltrated) { return false; }
-		if(Item->RequiresStolenSovietTech && !this->Side1TechInfiltrated) { return false; }
-		if(Item->RequiresStolenThirdTech && !this->Side2TechInfiltrated) { return false; }
+	bool HasAllStolenTech(const TechnoTypeClass* const pItem) const {
+		if(pItem->RequiresStolenAlliedTech && !this->Side0TechInfiltrated) { return false; }
+		if(pItem->RequiresStolenSovietTech && !this->Side1TechInfiltrated) { return false; }
+		if(pItem->RequiresStolenThirdTech && !this->Side2TechInfiltrated) { return false; }
 		return true;
 	}
 
-	bool HasFactoryForObject(const TechnoTypeClass *Item) const {
-		for(auto pBld : this->Buildings) {
+	bool HasFactoryForObject(const TechnoTypeClass* const pItem) const {
+		for(auto const& pBld : this->Buildings) {
 			auto pType = pBld->Type;
-			if(pType->Factory == Item->WhatAmI()
-				&& pType->Naval == Item->Naval) {
+			if(pType->Factory == pItem->WhatAmI()
+				&& pType->Naval == pItem->Naval) {
 				return true;
 			}
 		}
 		return false;
 	}
 
-	bool CanExpectToBuild(const TechnoTypeClass * Item) const;
+	bool CanExpectToBuild(const TechnoTypeClass* const pItem) const;
 
-	bool InRequiredHouses(const TechnoTypeClass *Item) const {
-		auto Test = Item->RequiredHouses;
-		if(static_cast<int>(Test) == -1) {
+	bool InRequiredHouses(const TechnoTypeClass* const pItem) const {
+		auto const test = pItem->RequiredHouses;
+		if(static_cast<int>(test) == -1) {
 			return true;
 		}
-		return 0 != (Test & (1 << this->Type->ArrayIndex));
+		return 0u != (test & (1u << this->Type->ArrayIndex));
 	}
 
-	bool InForbiddenHouses(const TechnoTypeClass *Item) const {
-		auto Test = Item->ForbiddenHouses;
-		if(static_cast<int>(Test) == -1) {
+	bool InForbiddenHouses(const TechnoTypeClass* const pItem) const {
+		auto const test = pItem->ForbiddenHouses;
+		if(static_cast<int>(test) == -1) {
 			return false;
 		}
-		return 0 != (Test & (1 << this->Type->ArrayIndex));
+		return 0u != (test & (1u << this->Type->ArrayIndex));
 	}
 
-	signed int CanBuild(TechnoTypeClass *item, bool bypassExtras, bool includeQueued) const
+	int CanBuild(TechnoTypeClass* pItem, bool bypassExtras, bool includeQueued) const
 		{ JMP_THIS(0x4F7870); }
 
-	signed int AI_BaseConstructionUpdate()
+	int AI_BaseConstructionUpdate()
 		{ JMP_THIS(0x4FE3E0); }
 
 	void AI_TryFireSW()
@@ -534,12 +534,12 @@ public:
 	bool Fire_SW(int idx, const CellStruct &coords)
 		{ JMP_THIS(0x4FAE50); }
 
-	CellStruct* PickTargetByType(CellStruct &outBuffer, TargetType TargetType) const
+	CellStruct* PickTargetByType(CellStruct &outBuffer, TargetType targetType) const
 		{ JMP_THIS(0x50D170); }
 
-	CellStruct PickTargetByType(TargetType TargetType) const {
+	CellStruct PickTargetByType(TargetType targetType) const {
 		CellStruct outBuffer;
-		this->PickTargetByType(outBuffer, TargetType);
+		this->PickTargetByType(outBuffer, targetType);
 		return outBuffer;
 	}
 
