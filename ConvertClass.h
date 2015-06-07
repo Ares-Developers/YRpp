@@ -37,13 +37,13 @@ public:
 		{ JMP_STD(0x72ADE0); }
 
 	// if you're drawing a SHP, call SHPStruct::HasCompression and choose one of these two based on that
-	BlitterCore * SelectPlainBlitter(eBlitterFlags flags)
+	BlitterCore * SelectPlainBlitter(BlitterFlags flags)
 		{ JMP_THIS(0x490B90); }
 
-	RLEBlitterCore * SelectRLEBlitter(eBlitterFlags flags)
+	RLEBlitterCore * SelectRLEBlitter(BlitterFlags flags)
 		{ JMP_THIS(0x490E50); }
 
-	void* SelectProperBlitter(SHPStruct * SHP, int FrameIndex, eBlitterFlags flags) {
+	void* SelectProperBlitter(SHPStruct * SHP, int FrameIndex, BlitterFlags flags) {
 		return (SHP->HasCompression(FrameIndex))
 			? static_cast<void*>(this->SelectRLEBlitter(flags))
 			: static_cast<void*>(this->SelectPlainBlitter(flags))

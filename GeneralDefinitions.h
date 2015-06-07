@@ -1304,24 +1304,31 @@ enum class TargetFlags : unsigned int {
 
 MAKE_ENUM_FLAGS(TargetFlags);
 
+enum class BlitterFlags : unsigned int {
+	None = 0x0,
+	Darken = 0x1,
+	TransLucent25 = 0x2,
+	TransLucent50 = 0x4,
+	TransLucent75 = 0x6,
+	Warp = 0x8,
+	ZRemap = 0x10,
+	Plain = 0x20,
+	bf_040 = 0x40,
+	bf_080 = 0x80,
+	MultiPass = 0x100,
+	Centered = 0x200,
+	bf_400 = 0x400,
+	Alpha = 0x800,
+	bf_1000 = 0x1000,
+	Flat = 0x2000,
+	ZRead = 0x3000,
+	ZReadWrite = 0x4000,
+	bf_8000 = 0x8000,
+	Zero = 0x10000,
+	Nonzero = 0x20000
+};
 
-typedef int eBlitterFlags;
-
-#define	bf_001		0x1
-#define	bf_Alpha25		0x2
-#define	bf_Alpha50		0x4
-#define	bf_Warp		0x8
-#define	bf_010		0x10
-#define	bf_020		0x20
-#define	bf_040		0x40
-#define	bf_080		0x80
-#define	bf_MultiPass		0x100
-#define	bf_200		0x200
-#define	bf_400		0x400
-#define	bf_Alpha		0x800
-#define	bf_1000		0x1000
-#define	bf_2000		0x2000
-#define	bf_4000		0x4000
+MAKE_ENUM_FLAGS(BlitterFlags);
 
 // UI
 enum class MouseEvent : unsigned char {

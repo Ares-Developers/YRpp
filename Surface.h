@@ -203,7 +203,7 @@ public:
 	}
 
 	void __fastcall DrawSHP(ConvertClass *Palette, SHPStruct *SHP, int frameIdx,
-		Point2D *pos, RectangleStruct *boundingRect, eBlitterFlags Flags, DWORD arg7,
+		Point2D *pos, RectangleStruct *boundingRect, BlitterFlags flags, DWORD arg7,
 		signed int arg8, DWORD arg9, DWORD argA, int TintColor,
 		SHPStruct *BUILDINGZ_SHA, DWORD argD, int ZS_X, int ZS_Y)
 

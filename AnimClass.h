@@ -99,7 +99,7 @@ public:
 	HouseClass* Owner; //Used for remap (AltPalette).
 	int LoopDelay; // randomized value, depending on RandomLoopDelay
 	double Damage; // defaults to 1.0 , added to Type->Damage in some cases
-	eBlitterFlags AnimFlags; // argument that's 0x600 most of the time
+	BlitterFlags AnimFlags; // argument that's 0x600 most of the time
 	bool HasExtras; // enables IsMeteor and Bouncer special behavior (AnimExtras)
 	byte RemainingIterations; // defaulted to deleteAfterIterations, when reaches zero, UnInit() is called
 	byte unknown_196;
