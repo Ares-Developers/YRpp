@@ -97,9 +97,9 @@ public:
 		}
 
 		if(this->OwnerHouseType == AITriggerHouseType::Single) {
-			int HouseIndex = this->HouseIndex;
-			if(HouseIndex != -1) {
-				HouseName = HouseTypeClass::Array->GetItem(HouseIndex)->get_ID();
+			auto const idxHouse = this->HouseIndex;
+			if(idxHouse != -1) {
+				HouseName = HouseTypeClass::Array->GetItem(idxHouse)->get_ID();
 			}
 		} else if(this->OwnerHouseType == AITriggerHouseType::Any) {
 			HouseName = "<all>";
