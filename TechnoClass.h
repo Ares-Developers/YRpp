@@ -202,8 +202,8 @@ public:
 	virtual int GetAntiArmorValue() const R0;
 	virtual int GetAntiInfantryValue() const R0;
 	virtual void GotHijacked() RX;
-	virtual int SelectWeapon(AbstractClass *Target) const R0;
-	virtual int SelectNavalTargeting(AbstractClass *Target) const R0;
+	virtual int SelectWeapon(AbstractClass *pTarget) const R0;
+	virtual int SelectNavalTargeting(AbstractClass *pTarget) const R0;
 	virtual int GetZAdjustment() const R0;
 	virtual ZGradient GetZGradient() const RT(ZGradient);
 	virtual CellStruct* GetSomeCellStruct() const R0;
@@ -237,11 +237,11 @@ public:
 	virtual int VoiceCapture() R0;
 	virtual int VoiceMove() R0;
 	virtual int VoiceDeploy() R0;
-	virtual int VoiceAttack(ObjectClass *Target) R0;
+	virtual int VoiceAttack(ObjectClass *pTarget) R0;
 	virtual bool ClickedEvent(NetworkEvents event) R0;
 
 	// depending on the mission you click, cells/Target are not always needed
-	virtual bool ClickedMission(Mission Mission, ObjectClass *Target, CellClass * TargetCell, CellClass *NearestTargetCellICanEnter) R0;
+	virtual bool ClickedMission(Mission Mission, ObjectClass *pTarget, CellClass * TargetCell, CellClass *NearestTargetCellICanEnter) R0;
 	virtual bool IsUnderEMP() const R0;
 	virtual bool IsParalyzed() const R0;
 	virtual bool CanCheer() const R0;
@@ -249,19 +249,19 @@ public:
 	virtual int GetDefaultSpeed() const R0;
 	virtual void DecreaseAmmo() RX;
 	virtual void AddPassenger(FootClass* pPassenger) RX;
-	virtual bool CanDisguiseAs(AbstractClass* Target) const R0;
+	virtual bool CanDisguiseAs(AbstractClass*pTarget) const R0;
 	virtual bool TargetAndEstimateDamage(DWORD dwUnk, DWORD dwUnk2) R0;
 	virtual DWORD vt_entry_3A0() R0;
-	virtual bool TriggersCellInset(AbstractClass *Target) R0;
-	virtual bool IsCloseEnough(AbstractClass *Target, int idxWeapon) const R0;
-	virtual bool IsCloseEnoughToAttack(AbstractClass *Target) const R0;
+	virtual bool TriggersCellInset(AbstractClass *pTarget) R0;
+	virtual bool IsCloseEnough(AbstractClass *pTarget, int idxWeapon) const R0;
+	virtual bool IsCloseEnoughToAttack(AbstractClass *pTarget) const R0;
 	virtual bool IsCloseEnoughToAttackCoords(const CoordStruct& Coords) const R0;
 	virtual DWORD vt_entry_3B4(DWORD dwUnk) const R0;
 	virtual void Destroyed(ObjectClass *Killer) = 0;
-	virtual FireError GetFireErrorWithoutRange(AbstractClass *Target, int nWeaponIndex) const RT(FireError);
-	virtual FireError GetFireError(AbstractClass *Target, int nWeaponIndex, bool ignoreRange) const RT(FireError);
+	virtual FireError GetFireErrorWithoutRange(AbstractClass *pTarget, int nWeaponIndex) const RT(FireError);
+	virtual FireError GetFireError(AbstractClass *pTarget, int nWeaponIndex, bool ignoreRange) const RT(FireError);
 	virtual CellClass* SelectAutoTarget(TargetFlags TargetFlags, int CurrentThreat, bool OnlyTargetHouseEnemy) R0;
-	virtual void SetTarget(AbstractClass *Target) RX;
+	virtual void SetTarget(AbstractClass *pTarget) RX;
 	virtual BulletClass* Fire(AbstractClass* pTarget, int nWeaponIndex) R0;
 	virtual void Guard() RX; // clears target and destination and puts in guard mission
 	virtual bool SetOwningHouse(HouseClass* pHouse, bool announce = true) R0;
@@ -298,15 +298,15 @@ public:
 	virtual void vt_entry_444(DWORD dwUnk, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4, DWORD dwUnk5,
 		DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8, DWORD dwUnk9, DWORD dwUnk10) RX;
 	virtual void vt_entry_448(DWORD dwUnk, DWORD dwUnk2) RX;
-	virtual void DrawHealthBar(Point2D *Location, RectangleStruct *Bounds, bool bUnk3) const RX;
-	virtual void DrawPipScalePips(Point2D *Location, Point2D *OriginalLocation, RectangleStruct *Bounds) const RX;
-	virtual void DrawVeterancyPips(Point2D *Location, RectangleStruct *Bounds) const RX;
-	virtual void DrawExtraInfo(Point2D *Location, Point2D *OriginalLocation, RectangleStruct *Bounds) const RX;
+	virtual void DrawHealthBar(Point2D *pLocation, RectangleStruct *pBounds, bool bUnk3) const RX;
+	virtual void DrawPipScalePips(Point2D *pLocation, Point2D *pOriginalLocation, RectangleStruct *pBounds) const RX;
+	virtual void DrawVeterancyPips(Point2D *pLocation, RectangleStruct *pBounds) const RX;
+	virtual void DrawExtraInfo(Point2D *pLocation, Point2D *pOriginalLocation, RectangleStruct *pBounds) const RX;
 	virtual void Uncloak(bool bPlaySound) RX;
 	virtual void Cloak(bool bPlaySound) RX;
 	virtual DWORD vt_entry_464(DWORD dwUnk) const R0;
 	virtual void UpdateRefinerySmokeSystems() RX;
-	virtual DWORD DisguiseAs(AbstractClass *Target) R0;
+	virtual DWORD DisguiseAs(AbstractClass* pTarget) R0;
 	virtual void ClearDisguise() RX;
 	virtual bool IsItTimeForIdleActionYet() const R0;
 	virtual bool UpdateIdleAction() R0;
@@ -352,7 +352,7 @@ public:
 	bool CanBePermaMindControlled() const
 		{ JMP_THIS(0x53C450); }
 
-	LaserDrawClass* CreateLaser(ObjectClass *Target, int idxWeapon, WeaponTypeClass *weapon, const CoordStruct &Coords)
+	LaserDrawClass* CreateLaser(ObjectClass *pTarget, int idxWeapon, WeaponTypeClass *pWeapon, const CoordStruct &Coords)
 		{ JMP_THIS(0x6FD210); }
 
 	/*
