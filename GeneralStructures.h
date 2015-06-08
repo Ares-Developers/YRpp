@@ -227,19 +227,19 @@ struct DirStruct
 	double radians() const {
 		static_assert(Bits > 0 && Bits <= 16, "Bits has to be greater than 0 and lower or equal to 16.");
 
-		static const int Max = ((1u << Bits) - 1);
+		static const int Max = ((1 << Bits) - 1);
 
-		double value = Max / 4 - this->value<Bits>();
-		return value * Math::TwoPi / Max;
+		int value = Max / 4 - this->value<Bits>();
+		return -value * -(Math::TwoPi / Max);
 	}
 
 	template <size_t Bits = 16>
 	void radians(double rad) {
 		static_assert(Bits > 0 && Bits <= 16, "Bits has to be greater than 0 and lower or equal to 16.");
 
-		static const int Max = ((1u << Bits) - 1);
+		static const int Max = ((1 << Bits) - 1);
 
-		int value = static_cast<int>(rad * Max / Math::TwoPi);
+		int value = static_cast<int>(rad * (Max / Math::TwoPi));
 		this->value<Bits>(static_cast<value_type>(Max / 4 - value));
 	}
 
