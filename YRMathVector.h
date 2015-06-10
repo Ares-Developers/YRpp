@@ -24,7 +24,7 @@ public:
 		return *this;
 	}
 	//addition
-	const Vector2D operator+(const Vector2D& a) const
+	Vector2D operator+(const Vector2D& a) const
 	{
 		Vector2D v = {X + a.X, Y + a.Y};
 		return v;
@@ -37,7 +37,7 @@ public:
 		return *this;
 	}
 	//substraction
-	const Vector2D operator-(const Vector2D& a) const
+	Vector2D operator-(const Vector2D& a) const
 	{
 		Vector2D v = {X - a.X, Y - a.Y};
 		return v;
@@ -50,7 +50,7 @@ public:
 		return *this;
 	}
 	//negation
-	const Vector2D operator-() const
+	Vector2D operator-() const
 	{
 		Vector2D v = {-X, -Y};
 		return v;
@@ -66,7 +66,7 @@ public:
 		return (X != a.X || Y != a.Y);
 	}
 	//scalar multiplication
-	const Vector2D operator*(double r) const
+	Vector2D operator*(double r) const
 	{
 		Vector2D v = {static_cast<T>(X * r), static_cast<T>(Y * r)};
 		return v;
@@ -148,7 +148,7 @@ public:
 		return *this;
 	}
 	//addition
-	const Vector3D operator+(const Vector3D& a) const
+	Vector3D operator+(const Vector3D& a) const
 	{
 		Vector3D v= {X + a.X, Y + a.Y, Z + a.Z};
 		return v;
@@ -162,7 +162,7 @@ public:
 		return *this;
 	}
 	//substraction
-	const Vector3D operator-(const Vector3D& a) const
+	Vector3D operator-(const Vector3D& a) const
 	{
 		Vector3D v = {X - a.X, Y - a.Y, Z - a.Z};
 		return v;
@@ -176,7 +176,7 @@ public:
 		return *this;
 	}
 	//negation
-	const Vector3D operator-() const
+	Vector3D operator-() const
 	{
 		Vector3D v = {-X, -Y, -Z};
 		return v;
@@ -192,7 +192,7 @@ public:
 		return (X != a.X || Y != a.Y || Z != a.Z);
 	}
 	//scalar multiplication
-	const Vector3D operator*(double r) const
+	Vector3D operator*(double r) const
 	{
 		Vector3D v= {static_cast<T>(X * r), static_cast<T>(Y * r), static_cast<T>(Z * r)};
 		return v;
@@ -251,7 +251,7 @@ public:
 		}
 	}
 	//cross product
-	const Vector3D CrossProduct(const Vector3D& a) const
+	Vector3D CrossProduct(const Vector3D& a) const
 	{
 		Vector3D v = {
 			Y * a.Z - Z * a.Y,
