@@ -15,19 +15,19 @@ struct OwnedTiberiumStruct
 {
 	static const size_t Size = 4;
 
-	float GetAmount(int index)
+	double GetAmount(int index) const
 		{ JMP_THIS(0x6C9680); }
 
-	float GetTotalAmount()
+	double GetTotalAmount() const
 		{ JMP_THIS(0x6C9650); }
 
-	float AddAmount(float amount, int index)
+	double AddAmount(float amount, int index)
 		{ JMP_THIS(0x6C9690); }
 
-	float RemoveAmount(float amount, int index)
+	double RemoveAmount(float amount, int index)
 		{ JMP_THIS(0x6C96B0); }
 
-	int GetTotalValue()
+	int GetTotalValue() const
 		{ JMP_THIS(0x6C9600); }
 
 	float Tiberium1;
