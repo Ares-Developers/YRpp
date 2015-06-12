@@ -17,12 +17,7 @@ public:
 
 	//operator overloads
 	//assignment
-	Vector2D& operator=(const Vector2D& a)
-	{
-		X = a.X;
-		Y = a.Y;
-		return *this;
-	}
+	Vector2D& operator=(const Vector2D& a) = default;
 	//addition
 	Vector2D operator+(const Vector2D& a) const
 	{
@@ -140,13 +135,7 @@ public:
 
 	//operator overloads
 	//assignment
-	Vector3D& operator=(const Vector3D& a)
-	{
-		X = a.X;
-		Y = a.Y;
-		Z = a.Z;
-		return *this;
-	}
+	Vector3D& operator=(const Vector3D& a) = default;
 	//addition
 	Vector3D operator+(const Vector3D& a) const
 	{
