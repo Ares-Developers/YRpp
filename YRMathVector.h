@@ -107,7 +107,7 @@ public:
 	//find scalar
 	double FindScalar(const Vector2D& a) const
 	{
-		double r = static_cast<T>(a.X) / static_cast<T>(X);
+		double r = static_cast<double>(a.X) / static_cast<double>(X);
 		if(static_cast<T>(r * Y) == a.Y) {
 			return r;
 		} else {
