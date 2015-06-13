@@ -81,7 +81,7 @@ public:
 	//magnitude
 	double Magnitude() const
 	{
-		return sqrt(*this * *this);
+		return sqrt(MagnitudeSquared());
 	}
 	//magnitude squared
 	double MagnitudeSquared() const
@@ -204,7 +204,7 @@ public:
 	//magnitude
 	double Magnitude() const
 	{
-		return sqrt(*this * *this);
+		return sqrt(MagnitudeSquared());
 	}
 	//magnitude squared
 	double MagnitudeSquared() const
