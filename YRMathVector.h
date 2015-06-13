@@ -101,8 +101,8 @@ public:
 	//collinearity
 	bool IsCollinearTo(const Vector2D& a) const
 	{
-		double r = static_cast<double>(a.X) / static_cast<double>(X);
-		return (static_cast<T>(r * Y) == a.Y);
+		auto const c = static_cast<large_type>(X) * a.Y;
+		return c == static_cast<large_type>(Y) * a.X;
 	}
 	//find scalar
 	double FindScalar(const Vector2D& a) const
@@ -224,8 +224,7 @@ public:
 	//collinearity
 	bool IsCollinearTo(const Vector3D& a) const
 	{
-		double r = static_cast<double>(a.X) / static_cast<double>(X);
-		return (static_cast<T>(r * Y) == a.Y) && (static_cast<T>(r * Z) == a.Z);
+		return CrossProduct(a).MagnitudeSquared() == 0;
 	}
 	//find scalar
 	double FindScalar(const Vector3D& a) const
