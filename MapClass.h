@@ -104,7 +104,7 @@ class NOVTABLE MapClass : public GScreenClass
 {
 public:
 	//Static
-	static MapClass *Instance;
+	static MapClass * const Instance;
 
 	static MapClass* Global()
 		{ return reinterpret_cast<MapClass*>(0x87F7E8); }

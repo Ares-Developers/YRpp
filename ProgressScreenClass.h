@@ -7,7 +7,7 @@
 class ProgressScreenClass {
 public:
 
-	static ProgressScreenClass *Instance;
+	static ProgressScreenClass * const Instance;
 
 	void SetSide(int idx)
 		{ JMP_THIS(0x642B10); }

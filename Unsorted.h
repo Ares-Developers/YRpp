@@ -426,7 +426,7 @@ class MovieInfo
 public:
 	// technically, this is a DVC<const char*>
 	// and string management is done manually
-	static DynamicVectorClass<MovieInfo>* Array;
+	static DynamicVectorClass<MovieInfo>* const Array;
 
 	bool operator== (MovieInfo const& rhs) const
 	{
@@ -456,9 +456,9 @@ struct MovieUnlockableInfo {
 	int DiskRequired;
 
 	// allocated statically, but limit is not enforced. Careful.
-	static const MovieUnlockableInfo* CommonUnlockables;
-	static const MovieUnlockableInfo* AlliedUnlockables;
-	static const MovieUnlockableInfo* SovietUnlockables;
+	static const MovieUnlockableInfo* const CommonUnlockables;
+	static const MovieUnlockableInfo* const AlliedUnlockables;
+	static const MovieUnlockableInfo* const SovietUnlockables;
 
 	static size_t const CommonCount = 1;
 	static size_t const AlliedCount = 8;

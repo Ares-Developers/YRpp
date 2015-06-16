@@ -12,7 +12,7 @@ class TechnoClass;
 class BombListClass
 {
 public:
-	static BombListClass* Instance;
+	static BombListClass* const Instance;
 
 	// draws all the visible bombs, expires the outdated ones
  	void Update()

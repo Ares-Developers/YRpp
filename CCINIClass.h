@@ -286,9 +286,9 @@ public:
 	static CCINIClass *&INI_Rules; //0x887048
 
 	// these are static class variables, why the fuck did you differentiate them, WW?
-	static CCINIClass *INI_AI; //0x887128
-	static CCINIClass *INI_Art; //0x887180
-	static CCINIClass *INI_RA2MD; //0x8870C0
+	static CCINIClass * const INI_AI; //0x887128
+	static CCINIClass * const INI_Art; //0x887180
+	static CCINIClass * const INI_RA2MD; //0x8870C0
 
 	//non-static
 	CCINIClass() : INIClass(false)

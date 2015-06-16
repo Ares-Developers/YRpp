@@ -50,7 +50,7 @@ struct NodeNameType {
 class SessionClass
 {
 public:
-	static SessionClass* Instance;
+	static SessionClass* const Instance;
 
 	GameMode GameMode;
 	MPGameModeClass* MPGameMode;

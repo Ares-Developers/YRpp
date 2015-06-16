@@ -82,7 +82,7 @@ class NOVTABLE MouseClass : public ScrollClass
 {
 public:
 	//Static
-	static MouseClass *Instance;
+	static MouseClass * const Instance;
 
 	//Destructor
 	virtual ~MouseClass() RX;

@@ -3,7 +3,7 @@
 class GetCDClass
 {
 public:
-	static GetCDClass *Instance;
+	static GetCDClass * const Instance;
 
 	int Drives[26];
 	int Count;

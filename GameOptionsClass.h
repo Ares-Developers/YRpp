@@ -3,7 +3,7 @@
 class GameOptionsClass
 {
 public:
-	static GameOptionsClass *Instance;
+	static GameOptionsClass * const Instance;
 
 	int GetAnimSpeed(int rate)
 		{ JMP_THIS(0x5FB2E0); }

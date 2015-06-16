@@ -48,15 +48,15 @@ class MixFileClass : public Node<MixFileClass*>
 	};
 
 public:
-	static List<MixFileClass*>* MIXes;
+	static List<MixFileClass*>* const MIXes;
 	static DynamicVectorClass<MixFileClass*>* const Array;
-	static DynamicVectorClass<MixFileClass*>* Array_Alt;
-	static DynamicVectorClass<MixFileClass*>* Maps;
-	static DynamicVectorClass<MixFileClass*>* Movies;
-	static MixFileClass* MULTIMD;
-	static MixFileClass* MULTI;
+	static DynamicVectorClass<MixFileClass*>* const Array_Alt;
+	static DynamicVectorClass<MixFileClass*>* const Maps;
+	static DynamicVectorClass<MixFileClass*>* const Movies;
+	static MixFileClass* const MULTIMD;
+	static MixFileClass* const MULTI;
 
-	static GenericMixFiles* Generics;
+	static GenericMixFiles* const Generics;
 
 	static void Bootstrap()
 		{ JMP_THIS(0x5301A0); }

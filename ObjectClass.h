@@ -35,12 +35,12 @@ public:
 	static const auto AbsDerivateID = AbstractFlags::Object;
 
 	//global arrays
-	static DynamicVectorClass<ObjectClass*>* CurrentObjects;
+	static DynamicVectorClass<ObjectClass*>* const CurrentObjects;
 
-	static DynamicVectorClass<ObjectClass*>* Logics;
+	static DynamicVectorClass<ObjectClass*>* const Logics;
 
 	// this actually points to 5 vectors, one for each layer
-	static DynamicVectorClass<ObjectClass*>* ObjectsInLayers;
+	static DynamicVectorClass<ObjectClass*>* const ObjectsInLayers;
 
 	//IPersistStream
 	virtual HRESULT __stdcall Load(IStream* pStm) R0;

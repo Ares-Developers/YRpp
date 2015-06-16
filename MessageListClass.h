@@ -11,7 +11,7 @@
 class MessageListClass
 {
 public:
-	static MessageListClass* Instance;
+	static MessageListClass* const Instance;
 
 	// if pLabel is given, the message will be {$pLabel}:{$pMessage}
 	// else it will be just {$pMessage}

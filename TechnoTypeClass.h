@@ -70,7 +70,7 @@ class NOVTABLE TechnoTypeClass : public ObjectTypeClass
 {
 public:
 
-	static DynamicVectorClass<TechnoTypeClass *>* Array; // HAX to instantiate
+	static DynamicVectorClass<TechnoTypeClass *>* const Array; // HAX to instantiate
 
 	static TechnoTypeClass* Find(const char* pID)
 	{

@@ -80,7 +80,7 @@ public:
 
 	enum {TooltipLength = 0x42};
 
-	static wchar_t *TooltipBuffer;
+	static wchar_t * const TooltipBuffer;
 
 	void SidebarNeedsRepaint(int unk = 0)
 		{

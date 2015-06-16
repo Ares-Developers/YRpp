@@ -15,7 +15,7 @@
 	Type Obj = reinterpret_cast<Type>(Addr);
 
 #include <AbstractClass.h>
-ALIAS_O(DynamicVectorClass<AbstractClass *>*, AbstractClass::Array0, 0xB0F720);
+ALIAS_O(DynamicVectorClass<AbstractClass *>* const, AbstractClass::Array0, 0xB0F720);
 
 #include <AbstractTypeClass.h>
 DECL(AbstractTypeClass, 0xA8E968);
@@ -43,7 +43,7 @@ ALIAS(AudioIDXData*, AudioIDXData::Instance, 0x87E294);
 ALIAS(AudioStream *, AudioStream::Instance, 0xB1D4D8);
 
 #include <BombListClass.h>
-ALIAS_O(BombListClass *, BombListClass::Instance, 0x87F5D8);
+ALIAS_O(BombListClass* const, BombListClass::Instance, 0x87F5D8);
 
 #include <BulletClass.h>
 DECL(BulletClass, 0xA8ED40);
@@ -72,9 +72,9 @@ ALIAS(DWORD, CCINIClass::AIHash, 0xB77E08);
 
 ALIAS(CCINIClass*, CCINIClass::INI_Rules, 0x887048);
 
-ALIAS_O(CCINIClass*, CCINIClass::INI_AI, 0x887128);
-ALIAS_O(CCINIClass*, CCINIClass::INI_Art, 0x887180);
-ALIAS_O(CCINIClass*, CCINIClass::INI_RA2MD, 0x8870C0);
+ALIAS_O(CCINIClass* const, CCINIClass::INI_AI, 0x887128);
+ALIAS_O(CCINIClass* const, CCINIClass::INI_Art, 0x887180);
+ALIAS_O(CCINIClass* const, CCINIClass::INI_RA2MD, 0x8870C0);
 
 #include <ColorScheme.h>
 DECL(ColorScheme, 0xB054D0);
@@ -142,13 +142,13 @@ ALIAS(unsigned int, FPSCounter::TotalFramesElapsed, 0xABCD48);
 ALIAS(unsigned int, FPSCounter::TotalTimeElapsed, 0xABCD4C);
 
 #include <GameModeOptionsClass.h>
-ALIAS_O(GameModeOptionsClass *, GameModeOptionsClass::Instance, 0xA8B250);
+ALIAS_O(GameModeOptionsClass * const, GameModeOptionsClass::Instance, 0xA8B250);
 
 #include <GameOptionsClass.h>
-ALIAS_O(GameOptionsClass *, GameOptionsClass::Instance, 0xA8EB60);
+ALIAS_O(GameOptionsClass * const, GameOptionsClass::Instance, 0xA8EB60);
 
 #include <GetCDClass.h>
-ALIAS_O(GetCDClass*, GetCDClass::Instance, 0xA8E8E8);
+ALIAS_O(GetCDClass* const, GetCDClass::Instance, 0xA8E8E8);
 
 #include <HouseClass.h>
 DECL(HouseClass, 0xA80228);
@@ -187,34 +187,34 @@ ALIAS(const CLSID, LocomotionClass::CLSIDs::Mech, 0x7E9AA0);
 ALIAS(const CLSID, LocomotionClass::CLSIDs::Ship, 0x7E9AB0);
 
 #include <MessageListClass.h>
-ALIAS_O(MessageListClass *, MessageListClass::Instance, 0xA8BC60);
+ALIAS_O(MessageListClass * const, MessageListClass::Instance, 0xA8BC60);
 
 #include <MixFileClass.h>
-List<MixFileClass*>* MixFileClass::MIXes = (List<MixFileClass*>* )0xABEFD8;
+List<MixFileClass*>* const MixFileClass::MIXes = (List<MixFileClass*>* )0xABEFD8;
 DECL(MixFileClass, 0x884D90);
-DynamicVectorClass<MixFileClass*>* MixFileClass::Array_Alt = reinterpret_cast<DynamicVectorClass<MixFileClass*>*>(0x884DC0);
-DynamicVectorClass<MixFileClass*>* MixFileClass::Maps = reinterpret_cast<DynamicVectorClass<MixFileClass*>*>(0x884DA8);
-DynamicVectorClass<MixFileClass*>* MixFileClass::Movies = reinterpret_cast<DynamicVectorClass<MixFileClass*>*>(0x884DE0);
+DynamicVectorClass<MixFileClass*>* const MixFileClass::Array_Alt = reinterpret_cast<DynamicVectorClass<MixFileClass*>*>(0x884DC0);
+DynamicVectorClass<MixFileClass*>* const MixFileClass::Maps = reinterpret_cast<DynamicVectorClass<MixFileClass*>*>(0x884DA8);
+DynamicVectorClass<MixFileClass*>* const MixFileClass::Movies = reinterpret_cast<DynamicVectorClass<MixFileClass*>*>(0x884DE0);
 
-MixFileClass* MixFileClass::MULTIMD = reinterpret_cast<MixFileClass*>(0x884DD8);
-MixFileClass* MixFileClass::MULTI   = reinterpret_cast<MixFileClass*>(0x884DDC);
+MixFileClass* const MixFileClass::MULTIMD = reinterpret_cast<MixFileClass*>(0x884DD8);
+MixFileClass* const MixFileClass::MULTI   = reinterpret_cast<MixFileClass*>(0x884DDC);
 
-MixFileClass::GenericMixFiles* MixFileClass::Generics = reinterpret_cast<MixFileClass::GenericMixFiles*>(0x884DF8);
+MixFileClass::GenericMixFiles* const MixFileClass::Generics = reinterpret_cast<MixFileClass::GenericMixFiles*>(0x884DF8);
 
 #include <MapClass.h>
-ALIAS_O(MapClass *, MapClass::Instance, 0x87F7E8);
+ALIAS_O(MapClass * const, MapClass::Instance, 0x87F7E8);
 
 #include <MouseClass.h>
-ALIAS_O(MouseClass *, MouseClass::Instance, 0x87F7E8);
+ALIAS_O(MouseClass * const, MouseClass::Instance, 0x87F7E8);
 MouseCursor* const MouseCursor::First = reinterpret_cast<MouseCursor*>(0x82D028);
 
 #include <Networking.h>
 ALIAS(DWORD, Networking::CurrentFrameCRC, 0xAC51FC);
-ALIAS_O(DWORD *, Networking::LatestFramesCRC, 0xB04474);
+ALIAS_O(DWORD * const, Networking::LatestFramesCRC, 0xB04474);
 ALIAS(int, Networking::LastEventIndex, 0xA802C8);
 ALIAS(int, Networking::NextPacketIndex, 0xA802D0);
-ALIAS_O(NetworkEvent *, Networking::QueuedEvents, 0xA802D4);
-ALIAS_O(int *, Networking::QueuedEventTimestamps, 0xA83A54);
+ALIAS_O(NetworkEvent * const, Networking::QueuedEvents, 0xA802D4);
+ALIAS_O(int * const, Networking::QueuedEventTimestamps, 0xA83A54);
 
 #include <Notifications.h>
 ALIAS(PointerExpiredNotification, PointerExpiredNotification::NotifyInvalidAnim, 0xB0F5B8);
@@ -230,13 +230,13 @@ ALIAS(PointerExpiredNotification, PointerExpiredNotification::NotifyInvalidTrigg
 ALIAS(PointerExpiredNotification, PointerExpiredNotification::NotifyInvalidObject, 0xB0F720);
 
 #include <ObjectClass.h>
-DynamicVectorClass<ObjectClass*>* ObjectClass::CurrentObjects =
+DynamicVectorClass<ObjectClass*>* const ObjectClass::CurrentObjects =
 	reinterpret_cast<DynamicVectorClass<ObjectClass*>*>(0xA8ECB8);
 
-DynamicVectorClass<ObjectClass*>* ObjectClass::Logics =
+DynamicVectorClass<ObjectClass*>* const ObjectClass::Logics =
 	reinterpret_cast<DynamicVectorClass<ObjectClass*>*>(0x87F778);
 
-DynamicVectorClass<ObjectClass*>* ObjectClass::ObjectsInLayers =
+DynamicVectorClass<ObjectClass*>* const ObjectClass::ObjectsInLayers =
 	reinterpret_cast<DynamicVectorClass<ObjectClass*>*>(0x8A0360);
 
 
@@ -262,7 +262,7 @@ DECL(ParticleSystemTypeClass, 0xA83D68);
 DECL(ParticleTypeClass, 0xA83D98);
 
 #include <PCX.h>
-ALIAS_O(PCX *, PCX::Instance, 0xAC4848);
+ALIAS_O(PCX * const, PCX::Instance, 0xAC4848);
 WORD PCX::DefaultTransparentColor = COLOR_PURPLE;
 
 #include <Powerups.h>
@@ -273,7 +273,7 @@ ALIAS(int *, Powerups::Anims, 0x81DAD8);
 ALIAS(char **, Powerups::Effects, 0x7E523C);
 
 #include <ProgressScreenClass.h>
-ALIAS_O(ProgressScreenClass *, ProgressScreenClass::Instance, 0xAC4F58);
+ALIAS_O(ProgressScreenClass * const, ProgressScreenClass::Instance, 0xAC4F58);
 
 #include <RadBeam.h>
 DECL(RadBeam, 0xB04A60);
@@ -289,13 +289,13 @@ ALIAS(RulesClass*, RulesClass::Instance, 0x8871E0);
 ALIAS(ScenarioClass*, ScenarioClass::Instance, 0xA8B230);
 
 #include <SessionClass.h>
-ALIAS_O(SessionClass*, SessionClass::Instance, 0xA8B238);
+ALIAS_O(SessionClass* const, SessionClass::Instance, 0xA8B238);
 
 #include <SideClass.h>
 DECL(SideClass, 0x8B4120);
 
 #include <SidebarClass.h>
-ALIAS_O(wchar_t *, SidebarClass::TooltipBuffer, 0xB07BC4);
+ALIAS_O(wchar_t * const, SidebarClass::TooltipBuffer, 0xB07BC4);
 
 #include <SmudgeClass.h>
 DECL(SmudgeClass, 0xA8B1E0);
@@ -334,9 +334,9 @@ ALIAS(int, LightningStorm::Duration, 0x827FC4);
 ALIAS(int, LightningStorm::StartTime, 0x827FC0);
 ALIAS(bool, LightningStorm::Active, 0xA9FAB4);
 ALIAS(bool, LightningStorm::TimeToEnd, 0xA9FAD0);
-ALIAS_O(DynamicVectorClass<AnimClass*>*, LightningStorm::CloudsPresent, 0xA9F9D0);
-ALIAS_O(DynamicVectorClass<AnimClass*>*, LightningStorm::CloudsManifesting, 0xA9FA60);
-ALIAS_O(DynamicVectorClass<AnimClass*>*, LightningStorm::BoltsPresent, 0xA9FA18);
+ALIAS_O(DynamicVectorClass<AnimClass*>* const, LightningStorm::CloudsPresent, 0xA9F9D0);
+ALIAS_O(DynamicVectorClass<AnimClass*>* const, LightningStorm::CloudsManifesting, 0xA9FA60);
+ALIAS_O(DynamicVectorClass<AnimClass*>* const, LightningStorm::BoltsPresent, 0xA9FA18);
 ALIAS(PsychicDominatorStatus, PsyDom::Status, 0xA9FAC0);
 ALIAS(CellStruct, PsyDom::Coords, 0xA9FA48);
 ALIAS(HouseClass*, PsyDom::Owner, 0xA9FAC8);
@@ -379,20 +379,20 @@ DECL(TemporalClass, 0xB0EC60);
 
 #include <TechnoClass.h>
 
-DynamicVectorClass<TechnoClass *>* TechnoClass::Array = reinterpret_cast<DynamicVectorClass<TechnoClass*>*>(0xA8EC78);
-DynamicVectorClass<TechnoTypeClass *>* TechnoTypeClass::Array = reinterpret_cast<DynamicVectorClass<TechnoTypeClass *>*>(0xA8EB00);
+DynamicVectorClass<TechnoClass *>* const TechnoClass::Array = reinterpret_cast<DynamicVectorClass<TechnoClass*>*>(0xA8EC78);
+DynamicVectorClass<TechnoTypeClass *>* const TechnoTypeClass::Array = reinterpret_cast<DynamicVectorClass<TechnoTypeClass *>*>(0xA8EB00);
 
 #include <TEventClass.h>
 DECL(TEventClass, 0xB0F1A0);
 
 #include <Theater.h>
-Theater* Theater::Array        = reinterpret_cast<Theater*>(0x7E1B78);
-Theater* Theater::TH_Temperate = reinterpret_cast<Theater*>(0x7E1B78);
-Theater* Theater::TH_Snow      = reinterpret_cast<Theater*>(0x7E1BE8);
-Theater* Theater::TH_Urban     = reinterpret_cast<Theater*>(0x7E1C58);
-Theater* Theater::TH_Desert    = reinterpret_cast<Theater*>(0x7E1CC8);
-Theater* Theater::TH_NewUrban  = reinterpret_cast<Theater*>(0x7E1D38);
-Theater* Theater::TH_Lunar     = reinterpret_cast<Theater*>(0x7E1DA8);
+Theater* const Theater::Array        = reinterpret_cast<Theater*>(0x7E1B78);
+Theater* const Theater::TH_Temperate = reinterpret_cast<Theater*>(0x7E1B78);
+Theater* const Theater::TH_Snow      = reinterpret_cast<Theater*>(0x7E1BE8);
+Theater* const Theater::TH_Urban     = reinterpret_cast<Theater*>(0x7E1C58);
+Theater* const Theater::TH_Desert    = reinterpret_cast<Theater*>(0x7E1CC8);
+Theater* const Theater::TH_NewUrban  = reinterpret_cast<Theater*>(0x7E1D38);
+Theater* const Theater::TH_Lunar     = reinterpret_cast<Theater*>(0x7E1DA8);
 
 //Tree classes don't have their VTables done yet
 /*#include <TerrainClass.h>
@@ -541,11 +541,11 @@ ALIAS(Imports::FP_CreateDialogParamA, Imports::CreateDialogParamA, 0x7E1508);
 ALIAS(Imports::FP_GetWindowTextA, Imports::GetWindowTextA, 0x7E150C);
 ALIAS(Imports::FP_RegisterHotKey, Imports::RegisterHotKey, 0x7E1510);
 
-DynamicVectorClass<MovieInfo> *MovieInfo::Array = reinterpret_cast<DynamicVectorClass<MovieInfo>*>(0xABF390);
+DynamicVectorClass<MovieInfo> * const MovieInfo::Array = reinterpret_cast<DynamicVectorClass<MovieInfo>*>(0xABF390);
 
-MovieUnlockableInfo const* MovieUnlockableInfo::CommonUnlockables = reinterpret_cast<MovieUnlockableInfo const*>(0x00832C20);
-MovieUnlockableInfo const* MovieUnlockableInfo::AlliedUnlockables = reinterpret_cast<MovieUnlockableInfo const*>(0x00832C30);
-MovieUnlockableInfo const* MovieUnlockableInfo::SovietUnlockables = reinterpret_cast<MovieUnlockableInfo const*>(0x00832CA0);
+MovieUnlockableInfo const* const MovieUnlockableInfo::CommonUnlockables = reinterpret_cast<MovieUnlockableInfo const*>(0x00832C20);
+MovieUnlockableInfo const* const MovieUnlockableInfo::AlliedUnlockables = reinterpret_cast<MovieUnlockableInfo const*>(0x00832C30);
+MovieUnlockableInfo const* const MovieUnlockableInfo::SovietUnlockables = reinterpret_cast<MovieUnlockableInfo const*>(0x00832CA0);
 
 #include <VocClass.h>
 DECL(VocClass, 0xB1D378);

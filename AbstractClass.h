@@ -43,7 +43,7 @@ class NOVTABLE AbstractClass : public IPersistStream, public IRTTITypeInfo, publ
 public:
 	static const AbstractType AbsID = AbstractType::Abstract;
 
-	static DynamicVectorClass<AbstractClass *>* Array0;
+	static DynamicVectorClass<AbstractClass *>* const Array0;
 
 	//static
 	const char* GetClassName() const

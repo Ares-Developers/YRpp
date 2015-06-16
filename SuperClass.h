@@ -148,9 +148,9 @@ public:
 	static bool &Active;
 	static bool &TimeToEnd;
 
-	static DynamicVectorClass<AnimClass*>* CloudsPresent;
-	static DynamicVectorClass<AnimClass*>* CloudsManifesting;
-	static DynamicVectorClass<AnimClass*>* BoltsPresent;
+	static DynamicVectorClass<AnimClass*>* const CloudsPresent;
+	static DynamicVectorClass<AnimClass*>* const CloudsManifesting;
+	static DynamicVectorClass<AnimClass*>* const BoltsPresent;
 
 	static void Start(int duration, int deferment, CellStruct cell, HouseClass* pOwner)
 		{ PUSH_VAR32(pOwner); PUSH_VAR32(cell); SET_REG32(EDX, deferment); SET_REG32(ECX, duration);

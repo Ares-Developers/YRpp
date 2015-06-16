@@ -17,7 +17,7 @@ class GameModeOptionsClass
 {
 public:
 	// this is the same as SessionClass::Instance->Config
-	static GameModeOptionsClass* Instance;
+	static GameModeOptionsClass* const Instance;
 
 	int MPModeIndex;
 	int ScenarioIndex;

@@ -15,7 +15,7 @@ protected:
 
 public:
 
-	static PCX *Instance;
+	static PCX * const Instance;
 
 	static WORD DefaultTransparentColor;
 
