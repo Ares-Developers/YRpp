@@ -5,7 +5,7 @@
 //include <VTables.h>
 
 #define DECL(cls, adr) \
-	DynamicVectorClass<cls*>* cls::Array = \
+	DynamicVectorClass<cls*>* const cls::Array = \
 		reinterpret_cast<DynamicVectorClass<cls*>*>(adr);
 
 #define ALIAS(Type, Obj, Addr) \

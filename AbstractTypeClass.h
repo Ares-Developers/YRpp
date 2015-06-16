@@ -11,7 +11,7 @@ class CCINIClass;
 
 //Macro for the static Array of every AbstractTypeClass!
 #define ABSTRACTTYPE_ARRAY(class_name)	public:\
-	static DynamicVectorClass<class_name*>* Array;\
+	static DynamicVectorClass<class_name*>* const Array;\
 	static class_name* Find(const char* pID)\
 	{\
 		for(auto pItem : *Array)\
@@ -44,7 +44,7 @@ public:
 	static const AbstractType AbsID = AbstractType::Abstract;
 
 	//Static
-	static DynamicVectorClass<AbstractTypeClass*>* Array;
+	static DynamicVectorClass<AbstractTypeClass*>* const Array;
 
 	//Destructor
 	virtual ~AbstractTypeClass() RX;

@@ -9,7 +9,7 @@ class NOVTABLE WaveClass : public ObjectClass
 public:
 	static const AbstractType AbsID = AbstractType::Wave;
 
-	static DynamicVectorClass<WaveClass*>* Array;
+	static DynamicVectorClass<WaveClass*>* const Array;
 
 	//IPersistStream
 	virtual HRESULT __stdcall Load(IStream* pStm) R0;

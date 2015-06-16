@@ -6,7 +6,7 @@ class SpotlightClass
 {
 public:
 	//Static
-	static DynamicVectorClass<SpotlightClass*>* Array;
+	static DynamicVectorClass<SpotlightClass*>* const Array;
 
 	//Destructor
 	~SpotlightClass()

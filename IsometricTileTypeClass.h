@@ -7,7 +7,7 @@ class NOVTABLE IsometricTileTypeClass : public ObjectTypeClass
 	static const AbstractType AbsID = AbstractType::IsotileType;
 
 	//Array
-	static DynamicVectorClass<IsometricTileTypeClass*>* Array;
+	static DynamicVectorClass<IsometricTileTypeClass*>* const Array;
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

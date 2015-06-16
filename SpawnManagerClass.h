@@ -34,7 +34,7 @@ class NOVTABLE SpawnManagerClass : public AbstractClass
 {
 public:
 
-	static DynamicVectorClass<SpawnManagerClass *>* Array;
+	static DynamicVectorClass<SpawnManagerClass *>* const Array;
 
 	static const AbstractType AbsID = AbstractType::SpawnManager;
 

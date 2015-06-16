@@ -29,7 +29,7 @@ struct VolumeStruct	//pretty uncreative name, but it's all I can come up with at
 class VocClass
 {
 public:
-	static DynamicVectorClass<VocClass*>* Array;
+	static DynamicVectorClass<VocClass*>* const Array;
 	static VocClass* Find(const char* pName)
 	{
 		for(int i = 0; i < Array->Count; ++i) {

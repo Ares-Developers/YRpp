@@ -19,7 +19,7 @@ class NOVTABLE CommandClass
 {
 public:
 	// static
-	static DynamicVectorClass<CommandClass*>* Array;
+	static DynamicVectorClass<CommandClass*>* const Array;
 
 	//CommandClass
 	virtual ~CommandClass() = default;

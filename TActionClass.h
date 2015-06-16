@@ -15,7 +15,7 @@ public:
 	static const AbstractType AbsID = AbstractType::Action;
 
 	//Static
-	static DynamicVectorClass<TActionClass*>* Array;
+	static DynamicVectorClass<TActionClass*>* const Array;
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

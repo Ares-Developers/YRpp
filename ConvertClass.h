@@ -21,7 +21,7 @@ class ConvertClass
 {
 public:
 	//global array
-	static DynamicVectorClass<ConvertClass*>* Array;
+	static DynamicVectorClass<ConvertClass*>* const Array;
 
 	static ConvertClass* FindOrAllocate(const char * FileName);
 
@@ -84,7 +84,7 @@ class LightConvertClass : public ConvertClass
 {
 public:
 	//global array
-	static DynamicVectorClass<LightConvertClass*>* Array;
+	static DynamicVectorClass<LightConvertClass*>* const Array;
 
 
 

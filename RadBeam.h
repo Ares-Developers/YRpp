@@ -7,7 +7,7 @@ class TechnoClass;
 class RadBeam
 {
 public:
-	static DynamicVectorClass<RadBeam*>* Array;
+	static DynamicVectorClass<RadBeam*>* const Array;
 
 	// Constructor removed - do not use it, use Allocate instead
 

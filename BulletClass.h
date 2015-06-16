@@ -28,7 +28,7 @@ public:
 	static const AbstractType AbsID = AbstractType::Bullet;
 
 	//Array
-	static DynamicVectorClass<BulletClass*>* Array;
+	static DynamicVectorClass<BulletClass*>* const Array;
 
 	static DynamicVectorClass<BulletClass*>& ScalableBullets;
 

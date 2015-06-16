@@ -12,7 +12,7 @@ public:
 	static const AbstractType AbsID = AbstractType::Tag;
 
 	//Static
-	static DynamicVectorClass<TagClass*>* Array;
+	static DynamicVectorClass<TagClass*>* const Array;
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

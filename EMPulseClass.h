@@ -12,7 +12,7 @@ public:
 	static const AbstractType AbsID = AbstractType::EMPulse;
 
 	//Static
-	static DynamicVectorClass<EMPulseClass*>* Array;
+	static DynamicVectorClass<EMPulseClass*>* const Array;
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

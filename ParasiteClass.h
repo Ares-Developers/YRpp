@@ -10,7 +10,7 @@ class NOVTABLE ParasiteClass : public AbstractClass
 public:
 	static const AbstractType AbsID = AbstractType::Parasite;
 
-	static DynamicVectorClass<ParasiteClass*>* Array;
+	static DynamicVectorClass<ParasiteClass*>* const Array;
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

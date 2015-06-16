@@ -24,7 +24,7 @@ public:
 		TimerStruct RespawnTimer;
 	};
 
-	static DynamicVectorClass<SlaveManagerClass *>* Array;
+	static DynamicVectorClass<SlaveManagerClass *>* const Array;
 
 	static const AbstractType AbsID = AbstractType::SlaveManager;
 

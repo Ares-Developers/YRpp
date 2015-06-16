@@ -49,7 +49,7 @@ class MixFileClass : public Node<MixFileClass*>
 
 public:
 	static List<MixFileClass*>* MIXes;
-	static DynamicVectorClass<MixFileClass*>* Array;
+	static DynamicVectorClass<MixFileClass*>* const Array;
 	static DynamicVectorClass<MixFileClass*>* Array_Alt;
 	static DynamicVectorClass<MixFileClass*>* Maps;
 	static DynamicVectorClass<MixFileClass*>* Movies;

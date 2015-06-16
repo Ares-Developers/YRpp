@@ -11,7 +11,7 @@
 class IonBlastClass
 {
 public:
-	static DynamicVectorClass<IonBlastClass *>* Array;
+	static DynamicVectorClass<IonBlastClass *>* const Array;
 
 	static void UpdateAll()
 		{ JMP_STD(0x53D310); }

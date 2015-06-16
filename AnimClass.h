@@ -21,7 +21,7 @@ public:
 	static const AbstractType AbsID = AbstractType::Anim;
 
 	//Static
-	static DynamicVectorClass<AnimClass*>* Array;
+	static DynamicVectorClass<AnimClass*>* const Array;
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

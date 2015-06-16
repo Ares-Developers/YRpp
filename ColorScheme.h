@@ -26,7 +26,7 @@ public:
 	};
 
 	//global array
-	static DynamicVectorClass<ColorScheme*>* Array;
+	static DynamicVectorClass<ColorScheme*>* const Array;
 /*
  * trap! most schemes are duplicated - ShadeCount 1 and ShadeCount 53
 */

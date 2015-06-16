@@ -11,7 +11,7 @@
 class VoxClass
 {
 public:
-	static DynamicVectorClass<VoxClass*>* Array;
+	static DynamicVectorClass<VoxClass*>* const Array;
 	static int &EVAIndex;
 
 	static VoxClass* Find(const char* pName)

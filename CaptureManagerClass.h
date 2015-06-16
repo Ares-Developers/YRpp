@@ -20,7 +20,7 @@ class NOVTABLE CaptureManagerClass : public AbstractClass
 {
 public:
 
-	static DynamicVectorClass<CaptureManagerClass *>* Array;
+	static DynamicVectorClass<CaptureManagerClass *>* const Array;
 
 	static const AbstractType AbsID = AbstractType::CaptureManager;
 

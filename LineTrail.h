@@ -11,7 +11,7 @@ struct LineTrailNode
 class LineTrail
 {
 public:
-	static DynamicVectorClass<LineTrail*>* Array;
+	static DynamicVectorClass<LineTrail*>* const Array;
 
 	//Constructor, Destructor
 	LineTrail()
