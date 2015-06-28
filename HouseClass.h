@@ -511,7 +511,7 @@ public:
 		if(static_cast<int>(test) == -1) {
 			return true;
 		}
-		return 0u != (test & (1u << this->Type->ArrayIndex));
+		return 0u != (test & (1u << this->Type->ArrayIndex2));
 	}
 
 	bool InForbiddenHouses(const TechnoTypeClass* const pItem) const {
@@ -519,7 +519,7 @@ public:
 		if(static_cast<int>(test) == -1) {
 			return false;
 		}
-		return 0u != (test & (1u << this->Type->ArrayIndex));
+		return 0u != (test & (1u << this->Type->ArrayIndex2));
 	}
 
 	int CanBuild(TechnoTypeClass* pItem, bool bypassExtras, bool includeQueued) const
