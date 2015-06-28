@@ -128,6 +128,10 @@ public:
 		return buffer;
 	}
 
+	bool InOwners(DWORD const bitHouseType) const {
+		return 0u != (this->OwnerFlags & bitHouseType);
+	}
+
 	bool InRequiredHouses(DWORD const bitHouseType) const {
 		auto const test = this->RequiredHouses;
 		if(static_cast<int>(test) == -1) {
