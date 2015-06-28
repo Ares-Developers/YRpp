@@ -128,6 +128,22 @@ public:
 		return buffer;
 	}
 
+	bool InRequiredHouses(DWORD const bitHouseType) const {
+		auto const test = this->RequiredHouses;
+		if(static_cast<int>(test) == -1) {
+			return true;
+		}
+		return 0u != (test & bitHouseType);
+	}
+
+	bool InForbiddenHouses(DWORD const bitHouseType) const {
+		auto const test = this->ForbiddenHouses;
+		if(static_cast<int>(test) == -1) {
+			return false;
+		}
+		return 0u != (test & bitHouseType);
+	}
+
 	//Constructor
 	TechnoTypeClass(const char* id, SpeedType speedtype) : ObjectTypeClass(false)
 		{ JMP_THIS(0x710AF0); }

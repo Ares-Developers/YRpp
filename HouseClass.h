@@ -507,19 +507,11 @@ public:
 	bool CanExpectToBuild(const TechnoTypeClass* const pItem) const;
 
 	bool InRequiredHouses(const TechnoTypeClass* const pItem) const {
-		auto const test = pItem->RequiredHouses;
-		if(static_cast<int>(test) == -1) {
-			return true;
-		}
-		return 0u != (test & (1u << this->Type->ArrayIndex2));
+		return pItem->InRequiredHouses(1u << this->Type->ArrayIndex2);
 	}
 
 	bool InForbiddenHouses(const TechnoTypeClass* const pItem) const {
-		auto const test = pItem->ForbiddenHouses;
-		if(static_cast<int>(test) == -1) {
-			return false;
-		}
-		return 0u != (test & (1u << this->Type->ArrayIndex2));
+		return pItem->InForbiddenHouses(1u << this->Type->ArrayIndex2);
 	}
 
 	int CanBuild(TechnoTypeClass* pItem, bool bypassExtras, bool includeQueued) const
