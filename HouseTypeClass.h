@@ -5,6 +5,7 @@
 #pragma once
 
 #include <AbstractTypeClass.h>
+#include <Helpers\String.h>
 
 class AircraftTypeClass;
 class InfantryTypeClass;
@@ -48,14 +49,13 @@ protected:
 
 public:
 
-	char ParentCountry [0x18];
-	PROTECTED_PROPERTY(BYTE, zero_B0);
-
+	FixedString<25> ParentCountry;
+	PROTECTED_PROPERTY(BYTE, align_B1[3]);
 	int            ArrayIndex;
 	int            ArrayIndex2; //dunno why
 	int            SideIndex;
 	int            ColorSchemeIndex;
-	DWORD align_C4;
+	PROTECTED_PROPERTY(DWORD, align_C4);
 
 	//are these unused TS leftovers?
 	double         FirepowerMult;
@@ -102,5 +102,5 @@ public:
 	bool           MultiplayPassive;
 	bool           WallOwner;
 	bool           SmartAI; //"smart"?
-private: DWORD align_1A4;
+	PROTECTED_PROPERTY(BYTE, padding_1A9[7]);
 };
