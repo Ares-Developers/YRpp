@@ -507,8 +507,7 @@ public:
 	bool CanExpectToBuild(const TechnoTypeClass* const pItem) const;
 
 	bool InOwners(const TechnoTypeClass* const pItem) const {
-		auto const pParent = this->Type->ParentCountry;
-		auto const idxParentCountry = HouseTypeClass::FindIndexOfName(pParent);
+		auto const idxParentCountry = this->Type->FindParentCountryIndex();
 		return pItem->InOwners(1u << idxParentCountry);
 	}
 

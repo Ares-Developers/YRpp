@@ -718,7 +718,7 @@ int HouseClass::CountOwnedEver(const TechnoTypeClass* const pItem) const {
 
 bool HouseClass::CanExpectToBuild(const TechnoTypeClass* const pItem) const {
 	auto const pType = this->Type;
-	auto const parentOwnerMask = 1u << pType->FindIndexOfName(pType->ParentCountry);
+	auto const parentOwnerMask = 1u << pType->FindParentCountryIndex();
 	if(pItem->OwnerFlags & parentOwnerMask) {
 		if(this->InRequiredHouses(pItem)) {
 			if(!this->InForbiddenHouses(pItem)) {

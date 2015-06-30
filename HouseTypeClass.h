@@ -33,6 +33,15 @@ public:
 	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int	Size() const R0;
 
+	//helpers
+	HouseTypeClass* FindParentCountry() const {
+		return HouseTypeClass::Find(this->ParentCountry);
+	}
+
+	int FindParentCountryIndex() const {
+		return HouseTypeClass::FindIndexOfName(this->ParentCountry);
+	}
+
 	//Constructor
 	HouseTypeClass(const char* pID) : AbstractTypeClass(false)
 		{ JMP_THIS(0x5113F0); }
