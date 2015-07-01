@@ -717,13 +717,17 @@ int HouseClass::CountOwnedEver(const TechnoTypeClass* const pItem) const {
 }
 
 bool HouseClass::CanExpectToBuild(const TechnoTypeClass* const pItem) const {
-	auto const pType = this->Type;
-	auto const parentOwnerMask = 1u << pType->FindParentCountryIndex();
-	if(pItem->OwnerFlags & parentOwnerMask) {
+	auto const parentOwnerMask = this->Type->FindParentCountryIndex();
+	return this->CanExpectToBuild(pItem, parentOwnerMask);
+}
+
+bool HouseClass::CanExpectToBuild(const TechnoTypeClass* const pItem, int const idxParent) const {
+	auto const parentOwnerMask = 1u << idxParent;
+	if(pItem->InOwners(parentOwnerMask)) {
 		if(this->InRequiredHouses(pItem)) {
 			if(!this->InForbiddenHouses(pItem)) {
 				auto const BaseSide = pItem->AIBasePlanningSide;
-				if(BaseSide == -1 || BaseSide == pType->SideIndex) {
+				if(BaseSide == -1 || BaseSide == this->Type->SideIndex) {
 					return true;
 				}
 			}

@@ -504,7 +504,9 @@ public:
 		return false;
 	}
 
-	bool CanExpectToBuild(const TechnoTypeClass* const pItem) const;
+	bool CanExpectToBuild(const TechnoTypeClass* pItem) const;
+
+	bool CanExpectToBuild(const TechnoTypeClass* pItem, int idxParent) const;
 
 	bool InOwners(const TechnoTypeClass* const pItem) const {
 		auto const idxParentCountry = this->Type->FindParentCountryIndex();
