@@ -50,17 +50,17 @@ public:
 	signed int GetBuildTimeFrames() const
 		{ JMP_THIS(0x4C9FB0); }
 
-	static bool FindThisOwnerAndProduct(HouseClass *pHouse, TechnoTypeClass *pItem)
+	static FactoryClass* FindThisOwnerAndProduct(
+		HouseClass* const pHouse, TechnoTypeClass* const pItem)
 	{
-		for(int i = 0; i < Array->Count; ++i) {
-			FactoryClass *Fact = Array->GetItem(i);
-			if(Fact->Owner == pHouse) {
-				if(Fact->CountQueued(pItem) > 0) {
-					return true;
+		for(auto const& pFact : *FactoryClass::Array) {
+			if(pFact->Owner == pHouse) {
+				if(pFact->CountQueued(pItem) > 0) {
+					return pFact;
 				}
 			}
 		}
-		return false;
+		return nullptr;
 	}
 
 protected:
