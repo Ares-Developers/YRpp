@@ -45,13 +45,15 @@ namespace Math
 		return (T(0) < val) - (val < T(0));
 	}
 
-	template <typename T>
-	inline const T& clamp(const T& value, const T& min, const T& max)
+	template <typename T, typename TMin, typename TMax>
+	inline T clamp(T value, TMin min, TMax max)
 	{
 		if(value < min) {
-			return min;
+			return static_cast<T>(min);
 		}
-		return (max < value) ? max : value;
+		if(max < value) {
+			return static_cast<T>(max);
+		}
+		return value;
 	}
 };
-
