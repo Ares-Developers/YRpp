@@ -334,7 +334,9 @@ public:
 	virtual bool vt_entry_4D0() R0;
 
 	//non-virtual
-	void ReloadNow()
+
+	// (re-)starts the reload timer
+	void StartReloading()
 		{ JMP_THIS(0x6FB080); }
 
 	bool ShouldSuppress(CellStruct *coords) const
