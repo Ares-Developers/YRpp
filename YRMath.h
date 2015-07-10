@@ -45,6 +45,24 @@ namespace Math
 		return (T(0) < val) - (val < T(0));
 	}
 
+	template <typename T, typename T2>
+	inline T min(T value, T2 value2)
+	{
+		if(value2 < value) {
+			return static_cast<T>(value2);
+		}
+		return value;
+	}
+
+	template <typename T, typename T2>
+	inline T max(T value, T2 value2)
+	{
+		if(value < value2) {
+			return static_cast<T>(value2);
+		}
+		return value;
+	}
+
 	template <typename T, typename TMin, typename TMax>
 	inline T clamp(T value, TMin min, TMax max)
 	{
