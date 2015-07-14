@@ -23,15 +23,16 @@ public:
 	virtual HRESULT __stdcall Load(IStream* pStm) R0;
 	virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
-	//Constructor, Destructor
-	TerrainClass(TerrainTypeClass* tt, CellStruct coords) : ObjectClass(false)
-		{ JMP_THIS(0x71BB90); }
-
+	//Destructor
 	virtual ~TerrainClass() RX;
 
 	//identification
 	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
+
+	//Constructor, Destructor
+	TerrainClass(TerrainTypeClass* tt, CellStruct coords) : ObjectClass(false)
+		{ JMP_THIS(0x71BB90); }
 
 protected:
 	TerrainClass() : ObjectClass(false) { }

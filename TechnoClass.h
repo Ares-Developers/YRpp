@@ -461,7 +461,6 @@ public:
 		return ret;
 	}
 
-
 	//Constructor
 	TechnoClass(HouseClass* pOwner) : RadioClass(false)
 		{ JMP_THIS(0x6F2B40); }

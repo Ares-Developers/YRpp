@@ -27,13 +27,13 @@ public:
 	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int	Size() const R0;
 
-	//Constructor
-	AirstrikeClass(TechnoClass* pOwner) : AbstractClass(false)
-		{ JMP_THIS(0x41D380); }
-
 	//non-virtual
 	void StartMission(ObjectClass* pTarget)
 		{ JMP_THIS(0x41D830); }
+
+	//Constructor
+	AirstrikeClass(TechnoClass* pOwner) : AbstractClass(false)
+		{ JMP_THIS(0x41D380); }
 
 protected:
 	AirstrikeClass() : AbstractClass(false) { }

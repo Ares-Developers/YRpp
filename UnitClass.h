@@ -40,14 +40,14 @@ public:
 	virtual void DrawAsSHP(Point2D Coords, RectangleStruct BoundingRect, DWORD dwUnk7, DWORD dwUnk8)
 		{ JMP_THIS(0x73C5F0); }
 
-	//Constructor
-	UnitClass(UnitTypeClass* pType, HouseClass* pOwner) : FootClass(false)
-		{ JMP_THIS(0x7353C0); }
-
 	// non-virtual
 
 	bool IsDeactivated() const
 		{ JMP_THIS(0x70FBD0); }
+
+	//Constructor
+	UnitClass(UnitTypeClass* pType, HouseClass* pOwner) : FootClass(false)
+		{ JMP_THIS(0x7353C0); }
 
 protected:
 	UnitClass() : FootClass(false)

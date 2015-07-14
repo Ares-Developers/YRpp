@@ -43,8 +43,6 @@ public:
 	virtual bool SetFileTime(DWORD FileTime) R0;
 	virtual void CDCheck(DWORD errorCode, bool bUnk, const char* pFilename) = 0;
 
-	FileClass() = default;
-
 	void* ReadWholeFile()
 		{ JMP_THIS(0x4A3890); }
 
@@ -57,6 +55,8 @@ public:
 	bool Write(T& obj, int size = sizeof(T)) {
 		return this->WriteBytes(&obj, size) == size;
 	}
+
+	FileClass() = default;
 
 protected:
 	FileClass(bool) { }

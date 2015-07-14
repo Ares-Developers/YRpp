@@ -26,10 +26,6 @@ public:
 	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
-	//Constructor
-	ParasiteClass(FootClass* pOwner = nullptr) : AbstractClass(false)
-		{ JMP_THIS(0x6292B0); }
-
 	//non-virtual
 	void UpdateSquid()
 		{ JMP_THIS(0x6297F0); }
@@ -48,6 +44,10 @@ public:
 
 	bool CanExistOnVictimCell() const
 		{ JMP_THIS(0x62AB40); }
+
+	//Constructor
+	ParasiteClass(FootClass* pOwner = nullptr) : AbstractClass(false)
+		{ JMP_THIS(0x6292B0); }
 
 	//===========================================================================
 	//===== Properties ==========================================================

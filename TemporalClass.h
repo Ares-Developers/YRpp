@@ -29,10 +29,6 @@ public:
 	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
-	//Constructor
-	TemporalClass(TechnoClass* pOwnerUnit) : AbstractClass(false)
-		{ JMP_THIS(0x71A4E0); }
-
 	//non-virtual
 	void Fire(TechnoClass* pTarget)
 		{ JMP_THIS(0x71AF20); }
@@ -49,6 +45,10 @@ public:
 		{ JMP_THIS(0x71AD40); }
 	void Detach()
 		{ JMP_THIS(0x71ADE0); }
+
+	//Constructor
+	TemporalClass(TechnoClass* pOwnerUnit) : AbstractClass(false)
+		{ JMP_THIS(0x71A4E0); }
 
 protected:
 	TemporalClass() : AbstractClass(false) { }

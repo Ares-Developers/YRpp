@@ -75,10 +75,6 @@ public:
 	bool CanBeRecruited(HouseClass *ByWhom) const
 		{ JMP_THIS(0x4DA230); }
 
-	//Constructor
-	FootClass(HouseClass* owner) : TechnoClass(false)
-		{ JMP_THIS(0x4D31E0); }
-
 	// non-virtual
 
 	// only used by squid damage routines, normal wakes are created differently it seems
@@ -130,6 +126,10 @@ public:
 	// searches cell, sets destination, and returns whether unit is on that cell
 	bool MoveToWeed(int radius)
 		{ JMP_THIS(0x4DDB90); }
+
+	//Constructor
+	FootClass(HouseClass* owner) : TechnoClass(false)
+		{ JMP_THIS(0x4D31E0); }
 
 protected:
 	FootClass() : TechnoClass(false)

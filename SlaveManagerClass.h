@@ -42,10 +42,6 @@ public:
 	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
-	//Constructor
-	SlaveManagerClass(TechnoClass *Owner, InfantryTypeClass *Slave, int num, int RegenRate, int ReloadRate) : AbstractClass(false)
-		{ JMP_THIS(0x6AF1A0); }
-
 	// non-virtual
 	void SetOwner(TechnoClass *NewOwner)
 		{ JMP_THIS(0x6AF580); }
@@ -79,6 +75,10 @@ public:
 	void ResumeWork() {
 		this->RespawnTimer.Resume();
 	}
+
+	//Constructor
+	SlaveManagerClass(TechnoClass *Owner, InfantryTypeClass *Slave, int num, int RegenRate, int ReloadRate) : AbstractClass(false)
+		{ JMP_THIS(0x6AF1A0); }
 
 	SlaveManagerClass() : AbstractClass(false) { }
 

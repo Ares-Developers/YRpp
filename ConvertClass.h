@@ -25,14 +25,6 @@ public:
 
 	static ConvertClass* FindOrAllocate(const char * FileName);
 
-	ConvertClass(
-		BytePalette* pColorData,
-		BytePalette* pUnknownColorData, //???
-		DSurface* pSurface,
-		size_t Count,
-		bool SkipBlitters)
-			{ JMP_THIS(0x48E740); }
-
 	static void __fastcall CreateFromFile(const char* Filename, BytePalette* &pPalette, ConvertClass* &pDestination)
 		{ JMP_STD(0x72ADE0); }
 
@@ -51,6 +43,14 @@ public:
 	}
 
 	virtual ~ConvertClass() RX;
+
+	ConvertClass(
+		BytePalette* pColorData,
+		BytePalette* pUnknownColorData, //???
+		DSurface* pSurface,
+		size_t Count,
+		bool SkipBlitters)
+			{ JMP_THIS(0x48E740); }
 
 protected:
 	ConvertClass() { }

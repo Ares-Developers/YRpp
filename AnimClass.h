@@ -44,15 +44,6 @@ public:
 	void SetOwnerObject(ObjectClass *pOwner)
 		{ JMP_THIS(0x424B50); }
 
-	//Constructor
-	// TODO fix
-	AnimClass(AnimTypeClass* pAnimType, const CoordStruct& Location, int LoopDelay = 0,
-		int LoopCount = 1, DWORD flags = 0x600, int ForceZAdjust = 0, bool reverse = false)
-			: ObjectClass(false)
-	{
-		JMP_THIS(0x421EA0);
-	}
-
 	void Pause() {
 		this->Paused = true;
 		this->Unpaused = false;
@@ -62,6 +53,15 @@ public:
 	void Unpause() {
 		this->Paused = false;
 		this->Unpaused = true;
+	}
+
+	//Constructor
+	// TODO fix
+	AnimClass(AnimTypeClass* pAnimType, const CoordStruct& Location, int LoopDelay = 0,
+		int LoopCount = 1, DWORD flags = 0x600, int ForceZAdjust = 0, bool reverse = false)
+			: ObjectClass(false)
+	{
+		JMP_THIS(0x421EA0);
 	}
 
 protected:

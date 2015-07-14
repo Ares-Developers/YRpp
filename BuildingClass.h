@@ -161,10 +161,6 @@ public:
 	bool IsTraversable() const
 		{ JMP_THIS(0x4525F0); }
 
-	//Constructor
-	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner) : TechnoClass(false)
-		{ JMP_THIS(0x43B740); }
-
 	// helpers
 	bool HasSuperWeapon(int index) const {
 		if(this->Type->HasSuperWeapon(index)) {
@@ -195,6 +191,10 @@ public:
 	bool const& GetAnimState(BuildingAnimSlot slot) const {
 		return this->AnimStates[static_cast<int>(slot)];
 	}
+
+	//Constructor
+	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner) : TechnoClass(false)
+		{ JMP_THIS(0x43B740); }
 
 protected:
 	BuildingClass() : TechnoClass(false) { }

@@ -54,10 +54,6 @@ public:
 	//BuildingTypeClass
 	virtual SHPStruct* LoadBuildup() R0;
 
-	//Constructor
-	BuildingTypeClass(const char* pID) : TechnoTypeClass(false)
-		{ JMP_THIS(0x45DD90); }
-
 	//non-virtual
 	short GetFoundationWidth() const
 		{ JMP_THIS(0x45EC90); }
@@ -87,6 +83,10 @@ public:
 	const BuildingAnimStruct& GetBuildingAnim(BuildingAnimSlot slot) const {
 		return this->BuildingAnim[static_cast<int>(slot)];
 	}
+
+	//Constructor
+	BuildingTypeClass(const char* pID) : TechnoTypeClass(false)
+		{ JMP_THIS(0x45DD90); }
 
 protected:
 	BuildingTypeClass() : TechnoTypeClass(false) { }

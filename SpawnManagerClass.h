@@ -52,10 +52,6 @@ public:
 	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
-	//Constructor
-	SpawnManagerClass(TechnoClass* pOwner, AircraftTypeClass *SpawnType, int nMaxNodes, int RegenRate, int ReloadRate) : AbstractClass(false)
-		{ JMP_THIS(0x6B6C90); }
-
 	// non-virtual
 	void KillNodes()
 		{ JMP_THIS(0x6B7100); }
@@ -80,6 +76,10 @@ public:
 
 	void UnlinkPointer()
 		{ JMP_THIS(0x6B7C60); }
+
+	//Constructor
+	SpawnManagerClass(TechnoClass* pOwner, AircraftTypeClass *SpawnType, int nMaxNodes, int RegenRate, int ReloadRate) : AbstractClass(false)
+		{ JMP_THIS(0x6B6C90); }
 
 protected:
 	SpawnManagerClass() : AbstractClass(false) { }

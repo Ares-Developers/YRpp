@@ -38,10 +38,6 @@ public:
 	virtual bool SpawnAtMapCoords(CellStruct* pMapCoords,HouseClass* pOwner) R0;
 	virtual ObjectClass* CreateObject(HouseClass* owner) R0;
 
-	//Constructor
-	BulletTypeClass(const char* pID) : ObjectTypeClass(false)
-		{ JMP_THIS(0x46BBC0); }
-
 	bool Rotates() const {
 		return !this->NoRotate;
 	}
@@ -59,6 +55,10 @@ public:
 		int Speed,
 		bool Bright)
 		{ JMP_STD(0x46B050); }
+
+	//Constructor
+	BulletTypeClass(const char* pID) : ObjectTypeClass(false)
+		{ JMP_THIS(0x46BBC0); }
 
 protected:
 	BulletTypeClass() : ObjectTypeClass(false) {};

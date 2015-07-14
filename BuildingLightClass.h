@@ -24,13 +24,13 @@ public:
 	//Destructor
 	virtual ~BuildingLightClass() RX;
 
-	//Constructor
-	BuildingLightClass(ObjectClass *Owner) : ObjectClass(false)
-		{ JMP_THIS(0x435820); }
-
 	// non-virtual
 	void SetBehaviour(SpotlightBehaviour mode)
 		{ JMP_THIS(0x436BE0); }
+
+	//Constructor
+	BuildingLightClass(ObjectClass *Owner) : ObjectClass(false)
+		{ JMP_THIS(0x435820); }
 
 protected:
 	BuildingLightClass() : ObjectClass(false) { }

@@ -32,10 +32,6 @@ public:
 	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
-	//Constructor
-	FactoryClass() : AbstractClass(false)
-		JMP_THIS(0x4C98B0);
-
 	//non-virtual
 	bool DemandProduction(TechnoTypeClass* pType, HouseClass* pOwner, bool bShouldQueue)
 		{ JMP_THIS(0x4C9C70); }
@@ -62,6 +58,10 @@ public:
 		}
 		return nullptr;
 	}
+
+	//Constructor
+	FactoryClass() : AbstractClass(false)
+		JMP_THIS(0x4C98B0);
 
 protected:
 	//===========================================================================

@@ -54,13 +54,13 @@ public:
 	virtual bool LoadFromINI(CCINIClass* pINI) R0;
 	virtual bool SaveToINI(CCINIClass* pINI) R0;
 
-	//Constructor
-	AbstractTypeClass(const char* pID) : AbstractClass(false)
-		{ JMP_THIS(0x410800); }
-
 	const char* get_ID() const {
 		return this->ID;
 	}
+
+	//Constructor
+	AbstractTypeClass(const char* pID) : AbstractClass(false)
+		{ JMP_THIS(0x410800); }
 
 protected:
 	AbstractTypeClass() : AbstractClass(false) { }

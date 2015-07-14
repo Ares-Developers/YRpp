@@ -29,13 +29,13 @@ public:
 	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
-	//Constructor
-	DiskLaserClass() : AbstractClass(false)
-		JMP_THIS(0x4A7A30);
-
 	//non-virtual
 	void Fire(TechnoClass* pOwner, TechnoClass* pTarget, WeaponTypeClass* pWeapon, int nDamage)
 		{ JMP_THIS(0x4A71A0); }
+
+	//Constructor
+	DiskLaserClass() : AbstractClass(false)
+		JMP_THIS(0x4A7A30);
 
 	//===========================================================================
 	//===== Properties ==========================================================

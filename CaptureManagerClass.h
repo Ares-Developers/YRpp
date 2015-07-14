@@ -38,10 +38,6 @@ public:
 	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
-	//Constructor
-	CaptureManagerClass(TechnoClass* pOwner, int nMaxControlNodes, bool bInfiniteControl) : AbstractClass(false)
-		{ JMP_THIS(0x4717D0); }
-
 	//non-virtual
 	bool CaptureUnit(TechnoClass* pUnit)
 		{ JMP_THIS(0x471D40); }
@@ -71,6 +67,10 @@ public:
 		{ JMP_THIS(0x4723B0); }
 	HouseClass* GetOriginalOwner(TechnoClass *Unit) const
 		{ JMP_THIS(0x4722F0); }
+
+	//Constructor
+	CaptureManagerClass(TechnoClass* pOwner, int nMaxControlNodes, bool bInfiniteControl) : AbstractClass(false)
+		{ JMP_THIS(0x4717D0); }
 
 protected:
 	CaptureManagerClass() : AbstractClass(false) { }

@@ -31,15 +31,6 @@ public:
 	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
-	//CUSTOM Constructor (to make things easier)
-	RadSiteClass(CellStruct nBaseCoords, int nSpread, int nRadLevel):AbstractClass(false)
-	{
-		THISCALL(0x65B1E0);
-		SetBaseCell(&nBaseCoords);
-		SetSpread(nSpread);
-		SetRadLevel(nRadLevel);
-	}
-
 	//non-virtual
 public:
 	// Start irradiating an area. Be sure to set the BaseCell, Spread and RadLevel first!
@@ -96,6 +87,15 @@ public:
 	double GetEffectPercentage() {
 		return (this->RadDuration <= 0) ? 0.0 :
 			static_cast<double>(this->RadTimeLeft) / static_cast<double>(this->RadDuration);
+	}
+
+	//CUSTOM Constructor (to make things easier)
+	RadSiteClass(CellStruct nBaseCoords, int nSpread, int nRadLevel):AbstractClass(false)
+	{
+		THISCALL(0x65B1E0);
+		SetBaseCell(&nBaseCoords);
+		SetSpread(nSpread);
+		SetRadLevel(nRadLevel);
 	}
 
 protected:

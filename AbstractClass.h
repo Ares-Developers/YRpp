@@ -111,10 +111,6 @@ public:
 	virtual CoordStruct* GetCoords__(CoordStruct* pCrd) const R0;
 	virtual void Update() RX;
 
-	//Constructor
-	AbstractClass()
-		{ JMP_THIS(0x410170); }
-
 	//non-virtual
 	static void __fastcall AnnounceExpiredPointer(AbstractClass* pAbstract, bool removed = true)
 		{ JMP_THIS(0x7258D0); }
@@ -145,6 +141,10 @@ public:
 	bool operator < (const AbstractClass &rhs) const {
 		return this->UniqueID < rhs.UniqueID;
 	}
+
+	//Constructor
+	AbstractClass()
+		{ JMP_THIS(0x410170); }
 
 protected:
 	AbstractClass(bool) { }	//trick to disable further base class construction!

@@ -28,15 +28,15 @@ public:
 	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int Size() const R0;
 
-	//Constructor
-	TagClass(TagTypeClass *pType) : AbstractClass(false)
-		{ JMP_THIS(0x6E4DE0); }
-
 	bool RaiseEvent(TriggerEvent eventKind, ObjectClass* tagObject, CellStruct loc, bool isRepeating, TechnoClass* source)
 		{ JMP_THIS(0x6E53A0); }
 
 	bool IsTriggerRepeating() const
 		{ JMP_THIS(0x6E57C0); }
+
+	//Constructor
+	TagClass(TagTypeClass *pType) : AbstractClass(false)
+		{ JMP_THIS(0x6E4DE0); }
 
 protected:
 	TagClass() : AbstractClass(false) { }
