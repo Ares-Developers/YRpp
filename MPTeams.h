@@ -18,7 +18,8 @@ protected:
 	MPTeam(wchar_t **title, int idx)
 		{ JMP_THIS(0x5D8C50); }
 
-	MPTeam() {}
+	MPTeam(noinit_t)
+	{ }
 
 
 	//===========================================================================
@@ -39,7 +40,9 @@ public:
 
 protected:
 	//Constructor
-	MPCombatTeam() { }
+	MPCombatTeam()
+		: MPTeam(noinit_t())
+	{ }
 };
 
 
@@ -52,7 +55,8 @@ public:
 protected:
 	//Constructor
 	MPSiegeDefenderTeam()
-		{ JMP_THIS(0x5CAE10); }
+		: MPTeam(noinit_t())
+	{ JMP_THIS(0x5CAE10); }
 };
 
 
@@ -64,7 +68,8 @@ public:
 
 	//Constructor
 	MPSiegeAttackerTeam()
-		{ JMP_THIS(0x5CAEB0); }
+		: MPTeam(noinit_t())
+	{ JMP_THIS(0x5CAEB0); }
 };
 
 
@@ -76,5 +81,6 @@ public:
 
 	//Constructor
 	MPObserverTeam()
-		{ JMP_THIS(0x5C9470); }
+		: MPTeam(noinit_t())
+	{ JMP_THIS(0x5C9470); }
 };

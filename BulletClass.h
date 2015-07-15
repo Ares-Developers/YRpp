@@ -110,8 +110,14 @@ public:
 
 	//Constructor
 protected:
-	BulletClass() : ObjectClass(false)
-		{ JMP_THIS(0x466380); }
+	BulletClass()
+		: BulletClass(noinit_t())
+	{ JMP_THIS(0x466380); }
+
+protected:
+	explicit __forceinline BulletClass(noinit_t)
+		: ObjectClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

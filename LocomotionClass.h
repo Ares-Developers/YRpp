@@ -278,10 +278,12 @@ public:
 
 	//Constructor
 	LocomotionClass()
-		{ JMP_THIS(0x55A6C0); }
+		: LocomotionClass(noinit_t())
+	{ JMP_THIS(0x55A6C0); }
 
 protected:
-	LocomotionClass(bool) { }	//Hack to make child functions not call the base class constructor
+	explicit __forceinline LocomotionClass(noinit_t)
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

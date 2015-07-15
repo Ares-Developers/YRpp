@@ -29,11 +29,14 @@ public:
 		{ JMP_THIS(0x436BE0); }
 
 	//Constructor
-	BuildingLightClass(ObjectClass *Owner) : ObjectClass(false)
-		{ JMP_THIS(0x435820); }
+	BuildingLightClass(ObjectClass* pOwner)
+		: BuildingLightClass(noinit_t())
+	{ JMP_THIS(0x435820); }
 
 protected:
-	BuildingLightClass() : ObjectClass(false) { }
+	explicit __forceinline BuildingLightClass(noinit_t)
+		: ObjectClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

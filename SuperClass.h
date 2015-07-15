@@ -95,13 +95,15 @@ public:
 	bool ShouldFlashTab() const // sidebar
 		{ JMP_THIS(0x6CE1A0); }
 
-
 	//Constructor
-	SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner) : AbstractClass(false)
-		{ JMP_THIS(0x6CAF90); }
+	SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner)
+		: SuperClass(noinit_t())
+	{ JMP_THIS(0x6CAF90); }
 
 protected:
-	SuperClass() : AbstractClass(false) { }
+	explicit __forceinline SuperClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

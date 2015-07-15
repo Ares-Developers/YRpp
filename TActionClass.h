@@ -271,8 +271,14 @@ public:
 		{ return this->IndexInArray; }
 
 	//Constructor
-	TActionClass() : AbstractClass(false)
-		{ JMP_THIS(0x71E6A0); }
+	TActionClass()
+		: TActionClass(noinit_t())
+	{ JMP_THIS(0x71E6A0); }
+
+protected:
+	explicit __forceinline TActionClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

@@ -30,11 +30,14 @@ public:
 	virtual int Size() const R0;
 
 	//Constructor
-	SmudgeClass(SmudgeTypeClass* pType) : ObjectClass(false)
-		{ JMP_THIS(0x6B4A50); }
+	SmudgeClass(SmudgeTypeClass* pType)
+		: SmudgeClass(noinit_t())
+	{ JMP_THIS(0x6B4A50); }
 
 protected:
-	SmudgeClass() : ObjectClass(false) { }
+	explicit __forceinline SmudgeClass(noinit_t)
+		: ObjectClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

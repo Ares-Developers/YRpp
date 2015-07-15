@@ -61,8 +61,14 @@ public:
 			{ JMP_THIS(0x71E940); }
 
 	//Constructor
-	TEventClass() : AbstractClass(false)
-		{ JMP_THIS(0x71E6A0); }
+	TEventClass()
+		: TEventClass(noinit_t())
+	{ JMP_THIS(0x71E6A0); }
+
+protected:
+	explicit __forceinline TEventClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

@@ -36,11 +36,14 @@ public:
 	virtual ~VoxelAnimTypeClass() RX;
 
 	//Constructor
-	VoxelAnimTypeClass(const char* pID) : ObjectTypeClass(false)
-		{ JMP_THIS(0x74AD80); }
+	VoxelAnimTypeClass(const char* pID)
+		: VoxelAnimTypeClass(noinit_t())
+	{ JMP_THIS(0x74AD80); }
 
 protected:
-	VoxelAnimTypeClass() : ObjectTypeClass(false) { };
+	explicit __forceinline VoxelAnimTypeClass(noinit_t)
+		: ObjectTypeClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

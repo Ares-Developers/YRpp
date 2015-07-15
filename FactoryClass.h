@@ -60,10 +60,15 @@ public:
 	}
 
 	//Constructor
-	FactoryClass() : AbstractClass(false)
-		JMP_THIS(0x4C98B0);
+	FactoryClass()
+		: FactoryClass(noinit_t())
+	{ JMP_THIS(0x4C98B0); }
 
 protected:
+	explicit __forceinline FactoryClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
+
 	//===========================================================================
 	//===== Properties ==========================================================
 	//===========================================================================

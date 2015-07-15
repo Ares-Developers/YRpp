@@ -144,10 +144,12 @@ public:
 
 	//Constructor
 	AbstractClass()
-		{ JMP_THIS(0x410170); }
+		: AbstractClass(noinit_t())
+	{ JMP_THIS(0x410170); }
 
 protected:
-	AbstractClass(bool) { }	//trick to disable further base class construction!
+	explicit __forceinline AbstractClass(noinit_t)
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

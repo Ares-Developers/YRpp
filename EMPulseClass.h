@@ -29,11 +29,14 @@ public:
 	virtual int Size() const R0;
 
 	//Constructor
-	EMPulseClass(CellStruct dwCrd, int nSpread, int nDuration, TechnoClass *Generator) : AbstractClass(false)
-		{ JMP_THIS(0x4C52B0); }
+	EMPulseClass(CellStruct dwCrd, int nSpread, int nDuration,
+		TechnoClass* pGenerator) : EMPulseClass(noinit_t())
+	{ JMP_THIS(0x4C52B0); }
 
 protected:
-	EMPulseClass() : AbstractClass(false){}
+	explicit __forceinline EMPulseClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

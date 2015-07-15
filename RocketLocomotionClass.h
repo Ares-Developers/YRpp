@@ -39,11 +39,14 @@ public:
 	//RocketLocomotionClass
 
 	//Constructor
-	RocketLocomotionClass() : LocomotionClass(false)
-		{ JMP_THIS(0x661EC0); }
+	RocketLocomotionClass()
+		: RocketLocomotionClass(noinit_t())
+	{ JMP_THIS(0x661EC0); }
 
 protected:
-	RocketLocomotionClass(bool) : LocomotionClass(false) { }
+	explicit __forceinline RocketLocomotionClass(noinit_t)
+		: LocomotionClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

@@ -39,11 +39,14 @@ public:
 	virtual int Size() const R0;
 
 	//Constructor
-	TeamClass(TeamTypeClass* pType) : AbstractClass(false)
-		{ JMP_THIS(0x6E8A90); }
+	TeamClass(TeamTypeClass* pType)
+		: TeamClass(noinit_t())
+	{ JMP_THIS(0x6E8A90); }
 
 protected:
-	TeamClass() : AbstractClass(false) { }
+	explicit __forceinline TeamClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

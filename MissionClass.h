@@ -93,10 +93,14 @@ public:
 	virtual int Mission_SpyPlaneOverfly() R0;
 
 	//Constructor
-	MissionClass():ObjectClass(false) { THISCALL(0x5B2DA0); }
+	MissionClass()
+		: MissionClass(noinit_t())
+	{ THISCALL(0x5B2DA0); }
 
 protected:
-	MissionClass(bool):ObjectClass(false) { }
+	explicit __forceinline MissionClass(noinit_t)
+		: ObjectClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

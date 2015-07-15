@@ -36,11 +36,14 @@ public:
 	virtual ~ParticleTypeClass() RX;
 
 	//Constructor
-	ParticleTypeClass(const char* pID) : ObjectTypeClass(false)
-		{ JMP_THIS(0x644BE0); }
+	ParticleTypeClass(const char* pID)
+		: ParticleTypeClass(noinit_t())
+	{ JMP_THIS(0x644BE0); }
 
 protected:
-	ParticleTypeClass() : ObjectTypeClass(false) { }
+	explicit __forceinline ParticleTypeClass(noinit_t)
+		: ObjectTypeClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

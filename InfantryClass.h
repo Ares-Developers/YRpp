@@ -30,12 +30,14 @@ public:
 	virtual bool PlayAnim(Sequence index, bool force = false, bool randomStartFrame = false) R0;
 
 	//Constructor
-	InfantryClass(InfantryTypeClass* pType, HouseClass* pOwner) : FootClass(false)
-		{ JMP_THIS(0x517A50); }
+	InfantryClass(InfantryTypeClass* pType, HouseClass* pOwner)
+		: InfantryClass(noinit_t())
+	{ JMP_THIS(0x517A50); }
 
 protected:
-	InfantryClass() : FootClass(false)
-		{ }
+	explicit __forceinline InfantryClass(noinit_t)
+		: FootClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

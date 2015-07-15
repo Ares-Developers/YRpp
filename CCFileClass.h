@@ -56,10 +56,9 @@ public:
 		return this->WriteBytes(&obj, size) == size;
 	}
 
-	FileClass() = default;
-
 protected:
-	FileClass(bool) { }
+	explicit __forceinline FileClass(noinit_t)
+	{ }
 
 	//Properties
 
@@ -95,12 +94,14 @@ public:
 	virtual void CDCheck(DWORD errorCode, bool lUnk, const char* pFilename) override RX;
 
 	//Constructor
-	RawFileClass(const char* pFileName) : FileClass(false)
-		{ JMP_THIS(0x65CA80); }
+	RawFileClass(const char* pFileName)
+		: RawFileClass(noinit_t())
+	{ JMP_THIS(0x65CA80); }
 
 protected:
-	RawFileClass(bool X) : FileClass(X) { }
-	RawFileClass() : FileClass(false) { };
+	explicit __forceinline RawFileClass(noinit_t)
+		: FileClass(noinit_t())
+	{ }
 
 	//Properties
 
@@ -128,11 +129,14 @@ public:
 	//FileClass
 
 	//Constructor
-	BufferIOFileClass() : RawFileClass(false)
-		{ JMP_THIS(0x431B20); }
+	BufferIOFileClass()
+		: BufferIOFileClass(noinit_t())
+	{ JMP_THIS(0x431B20); }
 
 protected:
-	BufferIOFileClass(bool X) : RawFileClass(X) { }
+	explicit __forceinline BufferIOFileClass(noinit_t)
+		: RawFileClass(noinit_t())
+	{ }
 
 	//Properties
 
@@ -166,11 +170,14 @@ public:
 	//FileClass
 
 	//Constructor
-	CDFileClass() : BufferIOFileClass(false)
-		{ JMP_THIS(0x47AA30); }
+	CDFileClass()
+		: CDFileClass(noinit_t())
+	{ JMP_THIS(0x47AA30); }
 
 protected:
-	CDFileClass(bool X) : BufferIOFileClass(X) { }
+	explicit __forceinline CDFileClass(noinit_t)
+		: BufferIOFileClass(noinit_t())
+	{ }
 
 	//Property
 
@@ -190,11 +197,14 @@ public:
 	//FileClass
 
 	//Constructor
-	CCFileClass(const char* pFileName) : CDFileClass(false)
-		{ JMP_THIS(0x4739F0); }
+	CCFileClass(const char* pFileName)
+		: CCFileClass(noinit_t())
+	{ JMP_THIS(0x4739F0); }
 
 protected:
-	CCFileClass() : CDFileClass(false) { }
+	explicit __forceinline CCFileClass(noinit_t)
+		: CDFileClass(noinit_t())
+	{ }
 
 	//Properties
 

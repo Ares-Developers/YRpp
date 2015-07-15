@@ -43,11 +43,17 @@ public:
 
 	virtual HRESULT __stdcall Get_Save_Size(int* psize) const R0;
 
-	//CTOR / DTOR
-	SwizzleManagerClass() JMP_THIS(0x6CF180);
+	//DTOR
 	virtual ~SwizzleManagerClass() RX;
 
-	//Properties
+	//CTOR
+	SwizzleManagerClass()
+		: SwizzleManagerClass(noinit_t())
+	{ JMP_THIS(0x6CF180); }
+
+protected:
+	explicit __forceinline SwizzleManagerClass(noinit_t)
+	{ }
 
 public:
 

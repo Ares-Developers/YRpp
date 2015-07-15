@@ -318,8 +318,13 @@ public:
 
 protected:
 	//Constructor
-	CellClass() : AbstractClass(false)
-		{ JMP_THIS(0x47BBF0); }
+	CellClass()
+		: CellClass(noinit_t())
+	{ JMP_THIS(0x47BBF0); }
+
+	explicit __forceinline CellClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

@@ -27,11 +27,14 @@ public:
 	virtual int Size() const R0;
 
 	//Constructor
-	NeuronClass() : AbstractClass(false)
-		{ JMP_THIS(0x43A350); }
+	NeuronClass()
+		: NeuronClass(noinit_t())
+	{ JMP_THIS(0x43A350); }
 
 protected:
-	NeuronClass(bool X) : AbstractClass(X) { }
+	explicit __forceinline NeuronClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

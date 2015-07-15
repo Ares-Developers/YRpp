@@ -147,11 +147,14 @@ public:
 	}
 
 	//Constructor
-	AITriggerTypeClass(const char* pID) : AbstractTypeClass(false)
-		{ JMP_THIS(0x41E350); }
+	AITriggerTypeClass(const char* pID)
+		: AITriggerTypeClass(noinit_t())
+	{ JMP_THIS(0x41E350); }
 
 protected:
-	AITriggerTypeClass() : AbstractTypeClass(false) { }
+	explicit __forceinline AITriggerTypeClass(noinit_t)
+		: AbstractTypeClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

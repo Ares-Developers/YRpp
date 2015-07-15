@@ -59,13 +59,13 @@ public:
 	// TODO fix
 	AnimClass(AnimTypeClass* pAnimType, const CoordStruct& Location, int LoopDelay = 0,
 		int LoopCount = 1, DWORD flags = 0x600, int ForceZAdjust = 0, bool reverse = false)
-			: ObjectClass(false)
-	{
-		JMP_THIS(0x421EA0);
-	}
+		: AnimClass(noinit_t())
+	{ JMP_THIS(0x421EA0); }
 
 protected:
-	AnimClass() : ObjectClass(false) { }
+	explicit __forceinline AnimClass(noinit_t)
+		: ObjectClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

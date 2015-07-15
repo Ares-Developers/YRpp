@@ -39,11 +39,14 @@ public:
 	//FlyLocomotionClass
 
 	//Constructor
-	FlyLocomotionClass() : LocomotionClass(false)
-		{ JMP_THIS(0x4CC9A0); }
+	FlyLocomotionClass()
+		: LocomotionClass(noinit_t())
+	{ JMP_THIS(0x4CC9A0); }
 
 protected:
-	FlyLocomotionClass(bool) : LocomotionClass(false) { }
+	explicit __forceinline FlyLocomotionClass(noinit_t)
+		: LocomotionClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

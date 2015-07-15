@@ -462,12 +462,14 @@ public:
 	}
 
 	//Constructor
-	TechnoClass(HouseClass* pOwner) : RadioClass(false)
-		{ JMP_THIS(0x6F2B40); }
+	TechnoClass(HouseClass* pOwner)
+		: TechnoClass(noinit_t())
+	{ JMP_THIS(0x6F2B40); }
 
 protected:
-	TechnoClass(bool) : RadioClass(false) { }
-	TechnoClass() : RadioClass(false) { }
+	explicit __forceinline TechnoClass(noinit_t)
+		: RadioClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

@@ -38,11 +38,15 @@ public:
 		{ JMP_THIS(0x75F330); }
 
 	//Constructor
-	WaveClass(const CoordStruct& From, const CoordStruct& To, TechnoClass *Owner, WaveType mode, AbstractClass *Target) : ObjectClass(false)
-		{ JMP_THIS(0x75E950); }
+	WaveClass(
+		const CoordStruct& From, const CoordStruct& To, TechnoClass *Owner,
+		WaveType mode, AbstractClass *Target) : WaveClass(noinit_t())
+	{ JMP_THIS(0x75E950); }
 
 protected:
-	WaveClass() : ObjectClass(false) {}
+	explicit __forceinline WaveClass(noinit_t)
+		: ObjectClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

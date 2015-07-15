@@ -59,11 +59,14 @@ public:
 	virtual int Size() const R0;
 
 	//Constructor
-	OverlayClass(OverlayTypeClass* pType) : ObjectClass(false)
-		{ JMP_THIS(0x5FC380); }
+	OverlayClass(OverlayTypeClass* pType)
+		: OverlayClass(noinit_t())
+	{ JMP_THIS(0x5FC380); }
 
 protected:
-	OverlayClass() : ObjectClass(false) { }
+	explicit __forceinline OverlayClass(noinit_t)
+		: ObjectClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

@@ -37,18 +37,14 @@ class NOVTABLE IsometricTileTypeClass : public ObjectTypeClass
 	virtual ~IsometricTileTypeClass() RX;
 
 	//Constructor
-	IsometricTileTypeClass(
-			int ArrayIndex,
-			int Minus65,
-			int Zero1,
-			const char* pName,
-			int Zero2) : ObjectTypeClass(false)
-		{ JMP_THIS(0x5447C0); }
-
-	//0x294: Array index
+	IsometricTileTypeClass(int ArrayIndex, int Minus65, int Zero1,
+		const char* pName, int Zero2) : IsometricTileTypeClass(noinit_t())
+	{ JMP_THIS(0x5447C0); }
 
 protected:
-	IsometricTileTypeClass() : ObjectTypeClass(false) { };
+	explicit __forceinline IsometricTileTypeClass(noinit_t)
+		: ObjectTypeClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

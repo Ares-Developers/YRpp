@@ -32,11 +32,14 @@ public:
 		{ JMP_THIS(0x41D830); }
 
 	//Constructor
-	AirstrikeClass(TechnoClass* pOwner) : AbstractClass(false)
-		{ JMP_THIS(0x41D380); }
+	AirstrikeClass(TechnoClass* pOwner)
+		: AirstrikeClass(noinit_t())
+	{ JMP_THIS(0x41D380); }
 
 protected:
-	AirstrikeClass() : AbstractClass(false) { }
+	explicit __forceinline AirstrikeClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

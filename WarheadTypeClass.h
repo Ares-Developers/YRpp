@@ -44,11 +44,14 @@ public:
 	//AbstractTypeClass
 
 	//Constructor
-	WarheadTypeClass(const char* pID) : AbstractTypeClass(false)
-		{ JMP_THIS(0x75CEC0); }
+	WarheadTypeClass(const char* pID)
+		: WarheadTypeClass(noinit_t())
+	{ JMP_THIS(0x75CEC0); }
 
 protected:
-	WarheadTypeClass() : AbstractTypeClass(false) { }
+	explicit __forceinline WarheadTypeClass(noinit_t)
+		: AbstractTypeClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

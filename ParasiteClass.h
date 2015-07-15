@@ -46,8 +46,14 @@ public:
 		{ JMP_THIS(0x62AB40); }
 
 	//Constructor
-	ParasiteClass(FootClass* pOwner = nullptr) : AbstractClass(false)
-		{ JMP_THIS(0x6292B0); }
+	ParasiteClass(FootClass* pOwner = nullptr)
+		: ParasiteClass(noinit_t())
+	{ JMP_THIS(0x6292B0); }
+
+protected:
+	explicit __forceinline ParasiteClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

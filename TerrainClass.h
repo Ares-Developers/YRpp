@@ -31,11 +31,14 @@ public:
 	virtual int Size() const R0;
 
 	//Constructor, Destructor
-	TerrainClass(TerrainTypeClass* tt, CellStruct coords) : ObjectClass(false)
-		{ JMP_THIS(0x71BB90); }
+	TerrainClass(TerrainTypeClass* tt, CellStruct coords)
+		: TerrainClass(noinit_t())
+	{ JMP_THIS(0x71BB90); }
 
 protected:
-	TerrainClass() : ObjectClass(false) { }
+	explicit __forceinline TerrainClass(noinit_t)
+		: ObjectClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

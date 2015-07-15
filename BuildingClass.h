@@ -193,11 +193,14 @@ public:
 	}
 
 	//Constructor
-	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner) : TechnoClass(false)
-		{ JMP_THIS(0x43B740); }
+	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner)
+		: BuildingClass(noinit_t())
+	{ JMP_THIS(0x43B740); }
 
 protected:
-	BuildingClass() : TechnoClass(false) { }
+	explicit __forceinline BuildingClass(noinit_t)
+		: TechnoClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

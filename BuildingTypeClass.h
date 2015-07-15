@@ -85,11 +85,14 @@ public:
 	}
 
 	//Constructor
-	BuildingTypeClass(const char* pID) : TechnoTypeClass(false)
-		{ JMP_THIS(0x45DD90); }
+	BuildingTypeClass(const char* pID)
+		: BuildingTypeClass(noinit_t())
+	{ JMP_THIS(0x45DD90); }
 
 protected:
-	BuildingTypeClass() : TechnoTypeClass(false) { }
+	explicit __forceinline BuildingTypeClass(noinit_t)
+		: TechnoTypeClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

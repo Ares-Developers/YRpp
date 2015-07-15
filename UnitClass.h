@@ -46,12 +46,14 @@ public:
 		{ JMP_THIS(0x70FBD0); }
 
 	//Constructor
-	UnitClass(UnitTypeClass* pType, HouseClass* pOwner) : FootClass(false)
-		{ JMP_THIS(0x7353C0); }
+	UnitClass(UnitTypeClass* pType, HouseClass* pOwner)
+		: UnitClass(noinit_t())
+	{ JMP_THIS(0x7353C0); }
 
 protected:
-	UnitClass() : FootClass(false)
-		{ }
+	explicit __forceinline UnitClass(noinit_t)
+		: FootClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

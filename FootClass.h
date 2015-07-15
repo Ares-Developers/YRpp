@@ -128,14 +128,14 @@ public:
 		{ JMP_THIS(0x4DDB90); }
 
 	//Constructor
-	FootClass(HouseClass* owner) : TechnoClass(false)
-		{ JMP_THIS(0x4D31E0); }
+	FootClass(HouseClass* owner)
+		: FootClass(noinit_t())
+	{ JMP_THIS(0x4D31E0); }
 
 protected:
-	FootClass() : TechnoClass(false)
-		{ }
-	FootClass(bool) : TechnoClass(false)
-		{ }
+	explicit __forceinline FootClass(noinit_t)
+		: TechnoClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

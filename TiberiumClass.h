@@ -51,12 +51,14 @@ public:
 	}
 
 	//Constructor
-	TiberiumClass(const char* pID) : AbstractTypeClass(false)
-		{ JMP_THIS(0x7216C0); }
+	TiberiumClass(const char* pID)
+		: TiberiumClass(noinit_t())
+	{ JMP_THIS(0x7216C0); }
 
 protected:
-	TiberiumClass() : AbstractTypeClass(false) { }
-	TiberiumClass(bool) : AbstractTypeClass(false) { };
+	explicit __forceinline TiberiumClass(noinit_t)
+		: AbstractTypeClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

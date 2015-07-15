@@ -37,11 +37,13 @@ public:
 		AbstractClass* pTarget,
 		TechnoClass* pOwner,
 		const CoordStruct& targetCoords,
-		HouseClass* pOwnerHouse) : ObjectClass(false)
+		HouseClass* pOwnerHouse) : ParticleSystemClass(noinit_t())
 			{ JMP_THIS(0x62DC50); }
 
 protected:
-	ParticleSystemClass() : ObjectClass(false) { }
+	explicit __forceinline ParticleSystemClass(noinit_t)
+		: ObjectClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

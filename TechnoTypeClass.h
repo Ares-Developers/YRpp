@@ -149,15 +149,14 @@ public:
 	}
 
 	//Constructor
-	TechnoTypeClass(const char* id, SpeedType speedtype) : ObjectTypeClass(false)
-		{ JMP_THIS(0x710AF0); }
+	TechnoTypeClass(const char* id, SpeedType speedtype)
+		: TechnoTypeClass(noinit_t())
+	{ JMP_THIS(0x710AF0); }
 
 protected:
-	//default contructor, only used by polymorphism
-	TechnoTypeClass() : ObjectTypeClass(false)
-		{ }
-	TechnoTypeClass(bool) : ObjectTypeClass(false)
-		{ }
+	explicit __forceinline TechnoTypeClass(noinit_t)
+		: ObjectTypeClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

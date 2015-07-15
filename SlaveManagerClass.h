@@ -77,10 +77,17 @@ public:
 	}
 
 	//Constructor
-	SlaveManagerClass(TechnoClass *Owner, InfantryTypeClass *Slave, int num, int RegenRate, int ReloadRate) : AbstractClass(false)
-		{ JMP_THIS(0x6AF1A0); }
+	SlaveManagerClass(
+		TechnoClass* pOwner, InfantryTypeClass* pSlave, int num, int RegenRate,
+		int ReloadRate) : SlaveManagerClass(noinit_t())
+	{ JMP_THIS(0x6AF1A0); }
 
-	SlaveManagerClass() : AbstractClass(false) { }
+protected:
+	explicit __forceinline SlaveManagerClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
+
+public:
 
 	//===========================================================================
 	//===== Properties ==========================================================

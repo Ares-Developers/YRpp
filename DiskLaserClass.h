@@ -34,8 +34,14 @@ public:
 		{ JMP_THIS(0x4A71A0); }
 
 	//Constructor
-	DiskLaserClass() : AbstractClass(false)
-		JMP_THIS(0x4A7A30);
+	DiskLaserClass()
+		: DiskLaserClass(noinit_t())
+	{ JMP_THIS(0x4A7A30); }
+
+protected:
+	explicit __forceinline DiskLaserClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

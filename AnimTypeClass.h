@@ -38,11 +38,14 @@ public:
 	virtual ~AnimTypeClass() RX;
 
 	//Constructor
-	AnimTypeClass(const char* pID) : ObjectTypeClass(false)
-		{ JMP_THIS(0x427530); }
+	AnimTypeClass(const char* pID)
+		: AnimTypeClass(noinit_t())
+	{ JMP_THIS(0x427530); }
 
 protected:
-	AnimTypeClass() : ObjectTypeClass(false) { };
+	explicit __forceinline AnimTypeClass(noinit_t)
+		: ObjectTypeClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

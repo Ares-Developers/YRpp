@@ -37,14 +37,15 @@ public:
 
 	//Constructor
 	ParticleClass(
-		ParticleTypeClass* pParticleType,
-		CoordStruct* pCrd1,
-		CoordStruct* pCrd2,
-		ParticleSystemClass* pParticleSystem) : ObjectClass(false)
-			{ JMP_THIS(0x62B5E0); }
+		ParticleTypeClass* pParticleType, CoordStruct* pCrd1,
+		CoordStruct* pCrd2, ParticleSystemClass* pParticleSystem)
+		: ParticleClass(noinit_t())
+	{ JMP_THIS(0x62B5E0); }
 
 protected:
-	ParticleClass() : ObjectClass(false) { }
+	explicit __forceinline ParticleClass(noinit_t)
+		: ObjectClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

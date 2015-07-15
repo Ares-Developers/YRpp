@@ -89,18 +89,23 @@ public:
 			static_cast<double>(this->RadTimeLeft) / static_cast<double>(this->RadDuration);
 	}
 
-	//CUSTOM Constructor (to make things easier)
-	RadSiteClass(CellStruct nBaseCoords, int nSpread, int nRadLevel):AbstractClass(false)
+	//Constructor
+	RadSiteClass()
+		: RadSiteClass(noinit_t())
+	{ JMP_THIS(0x65B1E0); }
+
+	RadSiteClass(CellStruct nBaseCoords, int nSpread, int nRadLevel)
+		: RadSiteClass()
 	{
-		THISCALL(0x65B1E0);
 		SetBaseCell(&nBaseCoords);
 		SetSpread(nSpread);
 		SetRadLevel(nRadLevel);
 	}
 
 protected:
-	RadSiteClass() : AbstractClass(false) JMP_THIS(0x65B1E0);
-	RadSiteClass(bool) : AbstractClass(false) { }
+	explicit __forceinline RadSiteClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

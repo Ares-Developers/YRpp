@@ -37,14 +37,15 @@ public:
 	//VoxelAnimClass
 
 	//Constructor
-	VoxelAnimClass(VoxelAnimTypeClass* pVoxelAnimType, CoordStruct* pLocation, HouseClass* pOwnerHouse)
-		: ObjectClass(false)
-	{
-		JMP_THIS(0x7493B0);
-	}
+	VoxelAnimClass(
+		VoxelAnimTypeClass* pVoxelAnimType, CoordStruct* pLocation,
+		HouseClass* pOwnerHouse) : VoxelAnimClass(noinit_t())
+	{ JMP_THIS(0x7493B0); }
 
 protected:
-	VoxelAnimClass() : ObjectClass(false) { }
+	explicit __forceinline VoxelAnimClass(noinit_t)
+		: ObjectClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

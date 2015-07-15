@@ -42,11 +42,14 @@ public:
 		{ JMP_STD(0x6CEEB0); }
 
 	//Constructor
-	SuperWeaponTypeClass(const char* pID) : AbstractTypeClass(false)
-		{ JMP_THIS(0x6CE5B0); }
+	SuperWeaponTypeClass(const char* pID)
+		: SuperWeaponTypeClass(noinit_t())
+	{ JMP_THIS(0x6CE5B0); }
 
 protected:
-	SuperWeaponTypeClass() : AbstractTypeClass(false) { }
+	explicit __forceinline SuperWeaponTypeClass(noinit_t)
+		: AbstractTypeClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

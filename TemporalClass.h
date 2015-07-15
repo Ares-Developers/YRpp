@@ -47,11 +47,14 @@ public:
 		{ JMP_THIS(0x71ADE0); }
 
 	//Constructor
-	TemporalClass(TechnoClass* pOwnerUnit) : AbstractClass(false)
-		{ JMP_THIS(0x71A4E0); }
+	TemporalClass(TechnoClass* pOwnerUnit)
+		: TemporalClass(noinit_t())
+	{ JMP_THIS(0x71A4E0); }
 
 protected:
-	TemporalClass() : AbstractClass(false) { }
+	explicit __forceinline TemporalClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

@@ -187,14 +187,6 @@ public:
 	virtual AbstractType WhatAmI() const RT(AbstractType);
 	virtual int	Size() const R0;
 
-	//Constructor
-	HouseClass(HouseTypeClass* pCountry) : AbstractClass(false)
-  		{ JMP_THIS(0x4F54A0); }
-
-protected:
-	HouseClass() : AbstractClass(false) { }
-
-public:
 	bool IsAlliedWith(int idxHouse) const {
 		//JMP_THIS(0x4F9A10);
 		if(idxHouse == this->ArrayIndex) {
@@ -605,6 +597,16 @@ public:
 	static bool IsPlayerObserver() {
 		return Player && Player->IsObserver();
 	}
+
+	//Constructor
+	HouseClass(HouseTypeClass* pCountry)
+		: HouseClass(noinit_t())
+	{ JMP_THIS(0x4F54A0); }
+
+protected:
+	explicit __forceinline HouseClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

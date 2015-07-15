@@ -48,11 +48,14 @@ public:
 	virtual bool IsStill() R0;
 
 	//Constructor
-	TeleportLocomotionClass() : LocomotionClass(false)
-		{ JMP_THIS(0x718000); }
+	TeleportLocomotionClass()
+		: TeleportLocomotionClass(noinit_t())
+	{ JMP_THIS(0x718000); }
 
 protected:
-	TeleportLocomotionClass(bool) : LocomotionClass(false) { }
+	explicit __forceinline TeleportLocomotionClass(noinit_t)
+		: LocomotionClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

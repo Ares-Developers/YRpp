@@ -78,11 +78,15 @@ public:
 		{ JMP_THIS(0x6B7C60); }
 
 	//Constructor
-	SpawnManagerClass(TechnoClass* pOwner, AircraftTypeClass *SpawnType, int nMaxNodes, int RegenRate, int ReloadRate) : AbstractClass(false)
-		{ JMP_THIS(0x6B6C90); }
+	SpawnManagerClass(
+		TechnoClass* pOwner, AircraftTypeClass* pSpawnType, int nMaxNodes,
+		int RegenRate, int ReloadRate) : SpawnManagerClass(noinit_t())
+	{ JMP_THIS(0x6B6C90); }
 
 protected:
-	SpawnManagerClass() : AbstractClass(false) { }
+	explicit __forceinline SpawnManagerClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

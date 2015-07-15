@@ -45,3 +45,5 @@ virtual void alla(double malla) RX;
 #define RT(type) {return type();}
 
 #define NOVTABLE __declspec(novtable)
+
+struct noinit_t final {};

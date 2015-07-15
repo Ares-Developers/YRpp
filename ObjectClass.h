@@ -251,11 +251,14 @@ public:
 	}
 
 	//Constructor
-	ObjectClass() : AbstractClass(false)
-		{ JMP_THIS(0x5F3900); }
+	ObjectClass()
+		: ObjectClass(noinit_t())
+	{ JMP_THIS(0x5F3900); }
 
 protected:
-	ObjectClass(bool) : AbstractClass(false) { }
+	explicit __forceinline ObjectClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

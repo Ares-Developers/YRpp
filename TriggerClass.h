@@ -83,11 +83,14 @@ public:
 		{ JMP_THIS(0x7265C0); }
 
 	//Constructor
-	TriggerClass(TriggerTypeClass *pType) : AbstractClass(false)
-		{ JMP_THIS(0x725FA0); }
+	TriggerClass(TriggerTypeClass* pType)
+		: TriggerClass(noinit_t())
+	{ JMP_THIS(0x725FA0); }
 
 protected:
-	TriggerClass() : AbstractClass(false) { }
+	explicit __forceinline TriggerClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

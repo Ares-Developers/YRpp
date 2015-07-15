@@ -45,11 +45,14 @@ public:
 	//Constructor
 	//Bombs have a special constructor that just should not be called like this...
 	//See BombListClass::Plant
-	BombClass() : AbstractClass(false)
-		{ JMP_THIS(0x4385D0); }
+	BombClass()
+		: AbstractClass(noinit_t())
+	{ JMP_THIS(0x4385D0); }
 
 protected:
-	BombClass(bool) : AbstractClass(false) { }
+	explicit __forceinline BombClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

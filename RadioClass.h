@@ -57,11 +57,14 @@ public:
 		{ JMP_THIS(0x65AE60); }
 
 	//Constructor
-	RadioClass() : MissionClass(false)
-		{ JMP_THIS(0x65A750); }
+	RadioClass()
+		: RadioClass(noinit_t())
+	{ JMP_THIS(0x65A750); }
 
 protected:
-	RadioClass(bool) : MissionClass(false) { }
+	explicit __forceinline RadioClass(noinit_t)
+		: MissionClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

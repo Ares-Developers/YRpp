@@ -12,7 +12,12 @@ public:
 
 	//Constructor
 	GenericNode()
-		{ JMP_THIS(0x40E320); }
+		: GenericNode(noinit_t())
+	{ JMP_THIS(0x40E320); }
+
+protected:
+	explicit __forceinline GenericNode(noinit_t)
+	{ }
 
 	//Properties
 
@@ -20,9 +25,6 @@ public:
 
 	GenericNode* Next;
 	GenericNode* Previous;
-
-protected:
-	GenericNode(bool) { }
 };
 
 template <typename T> class Node : public GenericNode
@@ -32,11 +34,14 @@ public:
 	virtual ~Node() RX;
 
 	//Constructor
-	Node() : GenericNode(false)
-		{ JMP_THIS(0x40E320); }
+	Node()
+		: Node(noinit_t())
+	{ JMP_THIS(0x40E320); }
 
 protected:
-	Node(bool) : GenericNode(false) { }
+	explicit __forceinline Node(noinit_t)
+		: GenericNode(noinit_t())
+	{ }
 };
 
 class GenericList
@@ -47,7 +52,12 @@ public:
 
 	//Constructor
 	GenericList()
-		{ JMP_THIS(0x52ACE0); }
+		: GenericList(noinit_t())
+	{ JMP_THIS(0x52ACE0); }
+
+protected:
+	explicit __forceinline GenericList(noinit_t)
+	{ }
 
 	//Properties
 
@@ -55,9 +65,6 @@ public:
 
 	GenericNode First;
 	GenericNode Last;
-
-protected:
-	GenericList(bool) { }
 };
 
 template <typename T> class List : public GenericList
@@ -67,9 +74,12 @@ public:
 	virtual ~List() RX;
 
 	//Constructor
-	List() : GenericList(false)
-		{ JMP_THIS(0x52ACE0); }
+	List()
+		: List(noinit_t())
+	{ JMP_THIS(0x52ACE0); }
 
 protected:
-	List(bool) : GenericList(false) { }
+	explicit __forceinline List(noinit_t)
+		: GenericList(noinit_t())
+	{ }
 };

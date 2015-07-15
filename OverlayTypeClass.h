@@ -41,11 +41,14 @@ public:
 	virtual void Draw(Point2D* pClientCoords, RectangleStruct* pClipRect, int nFrame) RX;
 
 	//Constructor
-	OverlayTypeClass(const char* pID) : ObjectTypeClass(false)
-		{ JMP_THIS(0x5FE250); }
+	OverlayTypeClass(const char* pID)
+		: OverlayTypeClass(noinit_t())
+	{ JMP_THIS(0x5FE250); }
 
 protected:
-	OverlayTypeClass() : ObjectTypeClass(false) { }
+	explicit __forceinline OverlayTypeClass(noinit_t)
+		: ObjectTypeClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

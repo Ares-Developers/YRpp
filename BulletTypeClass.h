@@ -57,11 +57,14 @@ public:
 		{ JMP_STD(0x46B050); }
 
 	//Constructor
-	BulletTypeClass(const char* pID) : ObjectTypeClass(false)
-		{ JMP_THIS(0x46BBC0); }
+	BulletTypeClass(const char* pID)
+		: BulletTypeClass(noinit_t())
+	{ JMP_THIS(0x46BBC0); }
 
 protected:
-	BulletTypeClass() : ObjectTypeClass(false) {};
+	explicit __forceinline BulletTypeClass(noinit_t)
+		: ObjectTypeClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

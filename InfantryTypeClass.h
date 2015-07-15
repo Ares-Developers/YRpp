@@ -59,13 +59,14 @@ public:
 	virtual ObjectClass* CreateObject(HouseClass* pOwner) R0;
 
 	//Constructor
-	InfantryTypeClass(const char* pID) : TechnoTypeClass(false)
-		{ JMP_THIS(0x5236A0); }
+	InfantryTypeClass(const char* pID)
+		: InfantryTypeClass(noinit_t())
+	{ JMP_THIS(0x5236A0); }
 
 protected:
-	//default contructor, only used by polymorphism
-	InfantryTypeClass() : TechnoTypeClass(false)
-		{ }
+	explicit __forceinline InfantryTypeClass(noinit_t)
+		: TechnoTypeClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

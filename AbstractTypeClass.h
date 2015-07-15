@@ -59,12 +59,14 @@ public:
 	}
 
 	//Constructor
-	AbstractTypeClass(const char* pID) : AbstractClass(false)
-		{ JMP_THIS(0x410800); }
+	AbstractTypeClass(const char* pID)
+		: AbstractTypeClass(noinit_t())
+	{ JMP_THIS(0x410800); }
 
 protected:
-	AbstractTypeClass() : AbstractClass(false) { }
-	AbstractTypeClass(bool X) : AbstractClass(X) { }
+	explicit __forceinline AbstractTypeClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

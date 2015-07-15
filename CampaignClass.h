@@ -9,8 +9,15 @@ public:
 	static const AbstractType AbsID = AbstractType::Campaign;
 
 	CampaignClass(const char *name)
-		{ JMP_THIS(0x46CB60); }
+		: CampaignClass(noinit_t())
+	{ JMP_THIS(0x46CB60); }
 
+protected:
+	explicit __forceinline CampaignClass(noinit_t)
+		: AbstractTypeClass(noinit_t())
+	{ }
+
+public:
 	static void __fastcall CreateFromINIList(CCINIClass *pINI)
 		{ JMP_STD(0x46CE10); }
 

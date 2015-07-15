@@ -69,11 +69,14 @@ public:
 		{ JMP_THIS(0x4722F0); }
 
 	//Constructor
-	CaptureManagerClass(TechnoClass* pOwner, int nMaxControlNodes, bool bInfiniteControl) : AbstractClass(false)
-		{ JMP_THIS(0x4717D0); }
+	CaptureManagerClass(TechnoClass* pOwner, int nMaxControlNodes, bool bInfiniteControl)
+		: CaptureManagerClass(noinit_t())
+	{ JMP_THIS(0x4717D0); }
 
 protected:
-	CaptureManagerClass() : AbstractClass(false) { }
+	explicit __forceinline CaptureManagerClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

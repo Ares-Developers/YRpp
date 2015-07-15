@@ -35,11 +35,14 @@ public:
 		{ JMP_THIS(0x6E57C0); }
 
 	//Constructor
-	TagClass(TagTypeClass *pType) : AbstractClass(false)
-		{ JMP_THIS(0x6E4DE0); }
+	TagClass(TagTypeClass* pType)
+		: TagClass(noinit_t())
+	{ JMP_THIS(0x6E4DE0); }
 
 protected:
-	TagClass() : AbstractClass(false) { }
+	explicit __forceinline TagClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

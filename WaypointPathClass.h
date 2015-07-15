@@ -45,14 +45,13 @@ public:
 
 	// Constructor
 	WaypointPathClass(int idx)
-		{ JMP_THIS(0x763810); }
+		: WaypointPathClass(noinit_t())
+	{ JMP_THIS(0x763810); }
 
 protected:
-	//Constructor
-	WaypointPathClass():AbstractClass(false)
-		{ }
-	WaypointPathClass(bool X):AbstractClass(X)
-		{ }
+	explicit __forceinline WaypointPathClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

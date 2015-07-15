@@ -42,11 +42,14 @@ public:
 		{ JMP_STD(0x691970); }
 
 	//Constructor
-	ScriptTypeClass(const char* pID) : AbstractTypeClass(false)
-		{ JMP_THIS(0x6916B0); }
+	ScriptTypeClass(const char* pID)
+		: ScriptTypeClass(noinit_t())
+	{ JMP_THIS(0x6916B0); }
 
 protected:
-	ScriptTypeClass() : AbstractTypeClass(false) { }
+	explicit __forceinline ScriptTypeClass(noinit_t)
+		: AbstractTypeClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

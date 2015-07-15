@@ -37,14 +37,14 @@ public:
 
 	//Constructor
 	LightSourceClass(
-		CoordStruct Crd,
-		int nVisibility,
-		int nIntensity,
-		TintStruct Tint) : AbstractClass(false)
-			{ JMP_THIS(0x554760); }
+		CoordStruct Crd, int nVisibility, int nIntensity, TintStruct Tint) 
+		: LightSourceClass(noinit_t())
+	{ JMP_THIS(0x554760); }
 
 protected:
-	LightSourceClass() : AbstractClass(false) { }
+	explicit __forceinline LightSourceClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

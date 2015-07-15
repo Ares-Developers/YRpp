@@ -49,12 +49,12 @@ public:
 		BytePalette* pUnknownColorData, //???
 		DSurface* pSurface,
 		size_t Count,
-		bool SkipBlitters)
-			{ JMP_THIS(0x48E740); }
+		bool SkipBlitters) : ConvertClass(noinit_t())
+	{ JMP_THIS(0x48E740); }
 
 protected:
-	ConvertClass() { }
-	ConvertClass(bool) { }
+	explicit __forceinline ConvertClass(noinit_t)
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================
@@ -86,10 +86,13 @@ public:
 	//global array
 	static DynamicVectorClass<LightConvertClass*>* const Array;
 
+	//Destructor
+	virtual ~LightConvertClass() RX;
 
+	void UpdateColors(int Red, int Green, int Blue, bool bUnknown)
+		{ JMP_THIS(0x556090); }
 
-	//Constructor, Destructor
-
+	//Constructor
 	LightConvertClass(
 		BytePalette *Pal1,
 		BytePalette *Pal2,
@@ -99,16 +102,14 @@ public:
 		int Color_B,
 		bool SkipBlitters,
 		size_t Count,
-		DWORD arg20) : ConvertClass(false)
-			{ JMP_THIS(0x555DA0); }
-
-	virtual ~LightConvertClass() RX;
-
-	void UpdateColors(int Red, int Green, int Blue, bool bUnknown)
-		{ JMP_THIS(0x556090); }
+		DWORD arg20) : LightConvertClass(noinit_t())
+	{ JMP_THIS(0x555DA0); }
 
 protected:
-	LightConvertClass() : ConvertClass(false) {}
+	explicit __forceinline LightConvertClass(noinit_t)
+		: ConvertClass(noinit_t())
+	{ }
+
 public:
 
 	//===========================================================================

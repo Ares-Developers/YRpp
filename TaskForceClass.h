@@ -38,11 +38,14 @@ public:
 	virtual int Size() const R0;
 
 	//Constructor
-	TaskForceClass(const char* pID) : AbstractTypeClass(false)
-		{ JMP_THIS(0x6E7E80); }
+	TaskForceClass(const char* pID)
+		: TaskForceClass(noinit_t())
+	{ JMP_THIS(0x6E7E80); }
 
 protected:
-	TaskForceClass() : AbstractTypeClass(false) { }
+	explicit __forceinline TaskForceClass(noinit_t)
+		: AbstractTypeClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

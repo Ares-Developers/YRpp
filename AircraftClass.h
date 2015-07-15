@@ -50,11 +50,14 @@ public:
 	virtual ~AircraftClass() RX;
 
 	//Constructor
-	AircraftClass(AircraftTypeClass* pType, HouseClass* pOwner) : FootClass(false)
-		{ JMP_THIS(0x413D20); }
+	AircraftClass(AircraftTypeClass* pType, HouseClass* pOwner)
+		: AircraftClass(noinit_t())
+	{ JMP_THIS(0x413D20); }
 
 protected:
-	AircraftClass() : FootClass(false) { }
+	explicit __forceinline AircraftClass(noinit_t)
+		: FootClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================

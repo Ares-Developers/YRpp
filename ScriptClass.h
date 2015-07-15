@@ -47,11 +47,14 @@ public:
 		{ return this->idxCurrentLine < this->Type->ActionsCount; }
 
 	//Constructor
-	ScriptClass(ScriptTypeClass *pType) : AbstractClass(false)
-		{ JMP_THIS(0x6913C0); }
+	ScriptClass(ScriptTypeClass* pType)
+		: AbstractClass(noinit_t())
+	{ JMP_THIS(0x6913C0); }
 
 protected:
-	ScriptClass() : AbstractClass(false) { }
+	explicit __forceinline ScriptClass(noinit_t)
+		: AbstractClass(noinit_t())
+	{ }
 
 	//===========================================================================
 	//===== Properties ==========================================================
