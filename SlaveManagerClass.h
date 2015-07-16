@@ -5,22 +5,33 @@
 class HouseClass;
 class InfantryClass;
 
+enum class SlaveManagerStatus : unsigned int {
+	Ready = 0,
+	Scanning = 1,
+	Travelling = 2,
+	Deploying = 3,
+	Working = 4,
+	ScanningAgain = 5,
+	PackingUp = 6
+};
+
+enum class SlaveControlStatus : unsigned int {
+	Unknown = 0,
+	ScanningForTiberium = 1,
+	MovingToTiberium = 2,
+	Harvesting = 3,
+	BringingItBack = 4,
+	Respawning = 5,
+	Dead = 6
+};
+
 class NOVTABLE SlaveManagerClass : public AbstractClass
 {
 public:
 
 	struct SlaveControl {
-		public:
-		InfantryClass * Slave;
-		enum eSlaveState {
-				state_Unknown = 0,
-				state_ScanningForTiberium = 1,
-				state_MovingToTiberium = 2,
-				state_Harvesting = 3,
-				state_BringingItBack = 4,
-				state_Respawning = 5,
-				state_Dead = 6,
-		}State;
+		InfantryClass* Slave;
+		SlaveControlStatus State;
 		TimerStruct RespawnTimer;
 	};
 
@@ -100,14 +111,6 @@ public:
 	int ReloadRate;
 	DynamicVectorClass<SlaveControl*> SlaveNodes;
 	TimerStruct RespawnTimer;
-	enum eSlaveManagerState {
-			state_Ready = 0,
-			state_Scanning = 1,
-			state_Travelling = 2,
-			state_Deploying = 3,
-			state_Working = 4,
-			state_ScanningAgain = 5,
-			state_PackingUp = 6,
-	} State;
+	SlaveManagerStatus State;
 	int LastScanFrame;
 };

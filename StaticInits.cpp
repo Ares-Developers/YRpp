@@ -587,7 +587,7 @@ void SlaveManagerClass::ZeroOutSlaves() {
 			pSlave->SlaveOwner = nullptr;
 		}
 		pNode->Slave = nullptr;
-		pNode->State = SlaveManagerClass::SlaveControl::state_Dead;
+		pNode->State = SlaveControlStatus::Dead;
 		pNode->RespawnTimer.Start(this->RegenRate);
 	}
 }
