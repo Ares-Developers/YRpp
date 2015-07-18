@@ -92,3 +92,11 @@ struct RectangleStruct
 {
 	int X, Y, Width, Height;
 };
+
+struct LTRBStruct
+{
+	int Left;
+	int Top;
+	int Right;
+	int Bottom;
+};

@@ -432,10 +432,7 @@ public:
 	CellClass* CellIterator_NextCell;
 	DWORD unknown_11C;
 	DWORD unknown_120;
-	DWORD unknown_124;
-	DWORD unknown_128;
-	DWORD unknown_12C;
-	DWORD unknown_130;
+	LTRBStruct MapCoordBounds; // the minimum and maximum cell struct values
 	DWORD unknown_134;
 	VectorClass<CellClass*> Cells;
 	int MaxWidth;
