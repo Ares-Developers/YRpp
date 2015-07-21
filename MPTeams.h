@@ -28,8 +28,8 @@ protected:
 
 public:
 
-	wchar_t * Title;
-	int idx;
+	wchar_t* Title;
+	int Index;
 };
 
 class MPCombatTeam : public MPTeam

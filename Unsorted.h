@@ -51,10 +51,10 @@ public:
 	static void __fastcall CenterWindowIn(HWND Child, HWND Parent)
 		{ JMP_STD(0x777080); }
 
-	static void __fastcall sub_53E420(HWND hWnd)
+	static void __fastcall sub_53E420(HWND hWindow)
 		{ JMP_STD(0x53E420); }
 
-	static void __fastcall sub_53E3C0(HWND hWnd)
+	static void __fastcall sub_53E3C0(HWND hWindow)
 		{ JMP_STD(0x53E3C0); }
 
 	static void __fastcall sub_776D80(tagRECT *Rect)

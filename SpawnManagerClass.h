@@ -56,7 +56,7 @@ public:
 	void KillNodes()
 		{ JMP_THIS(0x6B7100); }
 
-	void SetTarget(AbstractClass *Target)
+	void SetTarget(AbstractClass* pTarget)
 		{ JMP_THIS(0x6B7B90); }
 
 	bool UpdateTarget()

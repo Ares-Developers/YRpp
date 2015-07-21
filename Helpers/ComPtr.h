@@ -91,11 +91,11 @@ struct YRComPtr {
 	}
 
 private:
-	T* _addref(T* value) {
-		if(value) {
-			value->AddRef();
+	T* _addref(T* ptr) {
+		if(ptr) {
+			ptr->AddRef();
 		}
-		return value;
+		return ptr;
 	}
 
 	void _release() {

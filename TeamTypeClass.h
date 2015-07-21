@@ -53,7 +53,7 @@ public:
 	CellStruct* GetTransportWaypoint(CellStruct *buffer) const
 		{ JMP_THIS(0x6F18E0); }
 
-	bool CanRecruitUnit(FootClass *Unit, HouseClass *Owner) const
+	bool CanRecruitUnit(FootClass* pUnit, HouseClass* pOwner) const
 		{ JMP_THIS(0x6F1320); }
 
 	void FlashAllInstances(int Duration)

@@ -14,7 +14,7 @@ public:
 	virtual ~WWMouseClass()
 		{ JMP_THIS(0x0); }
 
-	virtual void Draw(CellStruct *Coords, SHPStruct *Image, int Unk)
+	virtual void Draw(CellStruct const& coords, SHPStruct const* pImage, int idxFrame)
 		{ JMP_THIS(0x7B8A00); }
 
 	virtual bool IsRefCountNegative()
@@ -56,10 +56,10 @@ public:
 	virtual void SetCoords(Point2D buffer)
 		{ JMP_THIS(0x7BA380); }
 
-	virtual void func_3C(DSurface *Surface, bool bUnk)
+	virtual void func_3C(DSurface* pSurface, bool bUnk)
 		{ JMP_THIS(0x7B90C0); }
 
-	virtual void func_40(DSurface *Surface, bool bUnk)
+	virtual void func_40(DSurface* pSurface, bool bUnk)
 		{ JMP_THIS(0x7B92D0); }
 
 	virtual void func_44(int *arg1, int *arg2)

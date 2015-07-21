@@ -371,23 +371,23 @@ public:
 
 // slave of the next one
 	bool CanAutoTargetObject(
-		TargetFlags TargetFlags,
-		int CanTargetWhatAmI,
-		int WantedDistance,
-		TechnoClass *Target,
-		int *ThreatPosed,
+		TargetFlags targetFlags,
+		int canTargetWhatAmI,
+		int wantedDistance,
+		TechnoClass* pTarget,
+		int* pThreatPosed,
 		DWORD dwUnk,
-		CoordStruct *SourceCoords) const
+		CoordStruct* pSourceCoords) const
 			{ JMP_THIS(0x6F7CA0); }
 
 // called by AITeam Attack Target Type and autoscan
 	bool TryAutoTargetObject(
-		TargetFlags TargetFlags,
-		int CanTargetWhatAmI,
-		CellStruct *Coords,
+		TargetFlags targetFlags,
+		int canTargetWhatAmI,
+		CellStruct* pCoords,
 		DWORD dwUnk1,
-		DWORD *dwUnk2,
-		int *ThreatPosed,
+		DWORD* dwUnk2,
+		int* pThreatPosed,
 		DWORD dwUnk3)
 			{ JMP_THIS(0x6F8960); }
 
@@ -400,12 +400,12 @@ public:
 
 	// this should be the transport, but it's unused
 	// marks passenger as "InOpenTopped" for targeting, range scanning and other purposes
-	void EnteredOpenTopped(TechnoClass *Who)
+	void EnteredOpenTopped(TechnoClass* pWho)
 		{ JMP_THIS(0x710470); }
 
 	// this should be the transport, but it's unused
 	// reverses the above
-	void ExitedOpenTopped(TechnoClass *Who)
+	void ExitedOpenTopped(TechnoClass* pWho)
 		{ JMP_THIS(0x7104A0); }
 
 	// called when the source unit dies - passengers are about to get kicked out, this basically calls ->ExitedOpenTransport on each passenger
@@ -416,16 +416,16 @@ public:
 	void SetCurrentWeaponStage(int idx)
 		{ JMP_THIS(0x70DDD0); }
 
-	void SetFocus(TechnoClass *what)
+	void SetFocus(TechnoClass* pWhat)
 		{ JMP_THIS(0x70C610); }
 
 	int sub_70DE00(int State)
 		{ JMP_THIS(0x70DE00); }
 
-	int __fastcall ClearPlanningTokens(NetworkEvent *Event)
+	int __fastcall ClearPlanningTokens(NetworkEvent* pEvent)
 		{ JMP_STD(0x6386E0); }
 
-	void SetTargetForPassengers(AbstractClass *Target)
+	void SetTargetForPassengers(AbstractClass* pTarget)
 		{ JMP_THIS(0x710550); }
 
 	// returns the house that created this object (factoring in Mind Control)

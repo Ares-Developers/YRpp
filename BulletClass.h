@@ -36,7 +36,7 @@ public:
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
 
 	//IPersistStream
-	virtual HRESULT __stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
+	virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
 
 	//Destructor
 	virtual ~BulletClass() RX;
@@ -47,19 +47,19 @@ public:
 
 	//BulletClass
 	virtual BYTE GetAnimFrame() const R0;
-	virtual void SetTarget(AbstractClass *Target) RX;
-	virtual bool MoveTo(const CoordStruct& Where, const BulletVelocity& Velocity) R0;
+	virtual void SetTarget(AbstractClass* pTarget) RX;
+	virtual bool MoveTo(const CoordStruct& where, const BulletVelocity& velocity) R0;
 
 	// non-virtual
 	// after CoCreateInstance creates a bullet, this configures it
 	void Construct(
-		BulletTypeClass *pType,
-		AbstractClass *Target,
-		TechnoClass *Owner,
-		int Damage,
-		WarheadTypeClass *WH,
-		int Speed,
-		bool Bright)
+		BulletTypeClass* pType,
+		AbstractClass* pTarget,
+		TechnoClass* pOwner,
+		int damage,
+		WarheadTypeClass* pWarhead,
+		int speed,
+		bool bright)
 		{ JMP_THIS(0x4664C0); }
 
 	// calls Detonate with the appropriate coords

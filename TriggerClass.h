@@ -70,16 +70,16 @@ public:
 	bool HasBeenDestroyed() const
 		{ return this->Destroyed; }
 
-	void SetHouse(HouseClass *House)
-		{ this->House = House; }
-	HouseClass * GetHouse() const
+	void SetHouse(HouseClass* pHouse)
+		{ this->House = pHouse; }
+	HouseClass* GetHouse() const
 		{ return this->House; }
 
 	// called whenever an event bubbles up , returns true if all of this trigger's events are up
-	bool UpdateEvents(int eventKind, ObjectClass *Object, char a4, bool isRepeating, int a6)
+	bool UpdateEvents(int eventKind, ObjectClass* pObject, char a4, bool isRepeating, int a6)
 		{ JMP_THIS(0x7246C0); }
 
-	bool FireActions(ObjectClass *Obj, CellStruct Pos)
+	bool FireActions(ObjectClass* pObj, CellStruct Pos)
 		{ JMP_THIS(0x7265C0); }
 
 	//Constructor
