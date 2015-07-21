@@ -26,7 +26,7 @@ public:
 		return static_cast<int>(F2I64(val));
 	}
 
-	static void __declspec(noreturn) RaiseError(HRESULT err)
+	[[noreturn]] static void RaiseError(HRESULT err)
 		{ JMP_STD(0x7DC720); }
 
 	// the magic checksum for version validation - linked in StaticInits
