@@ -18,6 +18,8 @@ public:
 	//Static
 	static DynamicVectorClass<SuperClass*>* const Array;
 
+	static DynamicVectorClass<SuperClass*>* const ShowTimers;
+
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
 

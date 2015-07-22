@@ -326,6 +326,7 @@ ALIAS(char**, StringTable::ExtraValues, 0xB1CF7C);
 
 #include <SuperClass.h>
 DECL(SuperClass, 0xA83CB8);
+ALIAS_O(DynamicVectorClass<SuperClass*>* const, SuperClass::ShowTimers, 0xA83D50);
 ALIAS(double, LightningStorm::CloudHeightFactor, 0xB0CDD8);
 ALIAS(CellStruct, LightningStorm::Coords, 0xA9F9CC);
 ALIAS(HouseClass*, LightningStorm::Owner, 0xA9FACC);
