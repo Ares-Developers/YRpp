@@ -31,8 +31,8 @@ void CellRectIterator::process(const std::function<bool(CellClass*)> &action) co
 
 void CellRectIterator::process(const std::function<bool(ObjectClass*)> &action) const {
 	apply<CellClass>([&action](CellClass* pCell) -> bool {
-		for(auto pObject = pCell->GetContent(); pObject; pObject = pObject->NextObject) {
-			if(!action(pObject)) {
+		for(NextObject object(pCell->GetContent()); object; ++object) {
+			if(!action(*object)) {
 				return false;
 			}
 		}
@@ -59,12 +59,12 @@ void CellRangeIterator::process(const std::function<bool(ObjectClass*)> &action)
 	CoordStruct coords = CellClass::Cell2Coord(center);
 
 	apply<CellClass>([this, &action, &coords](CellClass* pCell) -> bool {
-		for(auto pObject = pCell->GetContent(); pObject; pObject = pObject->NextObject) {
-			CoordStruct tmpCoords = pObject->GetCoords();
+		for(NextObject object(pCell->GetContent()); object; ++object) {
+			CoordStruct tmpCoords = object->GetCoords();
 
 			// if it is near enough, do action
 			if(coords.DistanceFrom(tmpCoords) <= radius * 256) {
-				if(!action(pObject)) {
+				if(!action(*object)) {
 					return false;
 				}
 			}
@@ -95,8 +95,8 @@ void CellSpreadIterator::process(const std::function<bool(CellClass*)> &action) 
 
 void CellSpreadIterator::process(const std::function<bool(ObjectClass*)> &action) const {
 	apply<CellClass>([&action](CellClass* pCell) -> bool {
-		for(auto pObject = pCell->GetContent(); pObject; pObject = pObject->NextObject) {
-			if(!action(pObject)) {
+		for(NextObject object(pCell->GetContent()); object; ++object) {
+			if(!action(*object)) {
 				return false;
 			}
 		}

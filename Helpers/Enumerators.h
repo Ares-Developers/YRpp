@@ -3,6 +3,59 @@
 #include <FootClass.h>
 #include <Helpers/Cast.h>
 
+// Enumerates the objects in a linked list.
+/*
+	The next element is retrieved eagerly, thus this enumerator supports
+	removing the current element from the list.
+
+	\author AlexB
+*/
+template <typename T, T* T::* Next>
+class ListEnumerator
+{
+public:
+	ListEnumerator()
+		: current(nullptr), next(nullptr)
+	{ }
+
+	ListEnumerator(T* first)
+		: current(first), next(first ? first->*Next : nullptr)
+	{ }
+
+	explicit operator bool() const {
+		return current != nullptr;
+	}
+
+	T* operator * () const {
+		return current;
+	}
+
+	T* operator -> () const {
+		return current;
+	}
+
+	ListEnumerator& operator ++ () {
+		current = next;
+		if(next) {
+			next = next->*Next;
+		}
+		return *this;
+	}
+
+	ListEnumerator operator ++ (int) {
+		auto const old = *this;
+		++*this;
+		return old;
+	}
+
+private:
+	T* current;
+	T* next;
+};
+
+using NextObject = ListEnumerator<ObjectClass, &ObjectClass::NextObject>;
+using NextTeamMember = ListEnumerator<FootClass, &FootClass::NextTeamMember>;
+
 // Enumerates the cell offsets using the cell spread logic.
 /*
 	Enumeration starts at the center. Returned values are to be considered
