@@ -2,7 +2,6 @@
 
 #include <Syringe.h>
 
-#include <functional>
 #include <ArrayClasses.h>
 
 // here be dragons(plenty)

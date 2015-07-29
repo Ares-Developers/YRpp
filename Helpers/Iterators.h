@@ -3,9 +3,10 @@
 #include <GeneralStructures.h>
 #include <ObjectClass.h>
 #include <CellClass.h>
+#include <CellSpread.h>
 #include <MapClass.h>
 
-#include <functional>
+#include <Helpers/Enumerators.h>
 
 // Invokes an action on objects of a certain type in a rectangle.
 /*
@@ -17,38 +18,52 @@
 
 	\author AlexB
 */
-class CellRectIterator {
-	CellStruct center;
-	int width;
-	int height;
-
-public:
-	CellRectIterator(const CellStruct &center, int width, int height) : center(center), width(width), height(height) {}
-
-	template <typename T>
-	void apply(const std::function<bool(T*)> &action) const {
-		apply<ObjectClass>([&action](ObjectClass* pObject) {
-			if(T* ptr = abstract_cast<T*>(pObject)) {
-				return action(ptr);
+template <typename T>
+struct CellRectIterator
+{
+	template <typename Func>
+	void operator () (LTRBStruct bounds, Func&& action) const {
+		CellRectIterator<ObjectClass>{}(bounds, [&action](ObjectClass* const pObject)
+		{
+			if(auto const pItem = abstract_cast<T*>(pObject)) {
+				if(!action(pItem)) {
+					return false;
+				}
 			}
 			return true;
 		});
 	}
+};
 
-	template <>
-	void apply<CellClass>(const std::function<bool(CellClass*)> &action) const {
-		process(action);
+template <>
+struct CellRectIterator<ObjectClass>
+{
+	template <typename Func>
+	void operator () (LTRBStruct bounds, Func&& action) const {
+		CellRectIterator<CellClass>{}(bounds, [&action](CellClass* const pCell)
+		{
+			for(NextObject object(pCell->GetContent()); object; ++object) {
+				if(!action(*object)) {
+					return false;
+				}
+			}
+			return true;
+		});
 	}
+};
 
-	template <>
-	void apply<ObjectClass>(const std::function<bool(ObjectClass*)> &action) const {
-		process(action);
+template <>
+struct CellRectIterator<CellClass> {
+	template <typename Func>
+	void operator () (LTRBStruct bounds, Func&& action) const {
+		for(CellRectEnumerator cell(bounds); cell; ++cell) {
+			if(auto const pCell = MapClass::Instance->TryGetCellAt(*cell)) {
+				if(!action(pCell)) {
+					return;
+				}
+			}
+		}
 	}
-
-private:
-	void process(const std::function<bool(CellClass*)> &action) const;
-
-	void process(const std::function<bool(ObjectClass*)> &action) const;
 };
 
 // Invokes an action on objects of a certain type in a range.
@@ -61,37 +76,52 @@ private:
 
 	\author AlexB
 */
-class CellRangeIterator {
-	CellStruct center;
-	double radius;
-
-public:
-	CellRangeIterator(const CellStruct &center, double radius) : center(center), radius(radius) {}
-
-	template <typename T>
-	void apply(const std::function<bool(T*)> &action) const {
-		apply<ObjectClass>([&action](ObjectClass* pObject) {
-			if(T* ptr = abstract_cast<T*>(pObject)) {
-				return action(ptr);
+template <typename T>
+struct CellRangeIterator
+{
+	template <typename Func>
+	void operator () (CellStruct const center, double radius, Func&& action) const {
+		CellRangeIterator<ObjectClass>{}(center, radius, [&action](ObjectClass* const pObject)
+		{
+			if(auto const pItem = abstract_cast<T*>(pObject)) {
+				if(!action(pItem)) {
+					return false;
+				}
 			}
 			return true;
 		});
 	}
+};
 
-	template <>
-	void apply<CellClass>(const std::function<bool(CellClass*)> &action) const {
-		process(action);
+template <>
+struct CellRangeIterator<ObjectClass>
+{
+	template <typename Func>
+	void operator () (CellStruct const center, double radius, Func&& action) const {
+		CellRangeIterator<CellClass>{}(center, radius, [&action](CellClass* const pCell)
+		{
+			for(NextObject object(pCell->GetContent()); object; ++object) {
+				if(!action(*object)) {
+					return false;
+				}
+			}
+			return true;
+		});
 	}
+};
 
-	template <>
-	void apply<ObjectClass>(const std::function<bool(ObjectClass*)> &action) const {
-		process(action);
+template <>
+struct CellRangeIterator<CellClass> {
+	template <typename Func>
+	void operator () (CellStruct const center, double radius, Func&& action) const {
+		for(CellRangeEnumerator cell(center, radius); cell; ++cell) {
+			if(auto const pCell = MapClass::Instance->TryGetCellAt(*cell)) {
+				if(!action(pCell)) {
+					return;
+				}
+			}
+		}
 	}
-
-private:
-	void process(const std::function<bool(CellClass*)> &action) const;
-
-	void process(const std::function<bool(ObjectClass*)> &action) const;
 };
 
 // Invokes an action on objects of a certain type in CellSpread range.
@@ -105,35 +135,60 @@ private:
 
 	\author AlexB
 */
-class CellSpreadIterator {
-	CellStruct center;
-	size_t spread;
-
-public:
-	CellSpreadIterator(const CellStruct &center, size_t spread) : center(center), spread(spread) {}
-
-	template <typename T>
-	void apply(const std::function<bool(T*)> &action) const {
-		apply<ObjectClass>([&action](ObjectClass* pObject) {
-			if(T* ptr = abstract_cast<T*>(pObject)) {
-				return action(ptr);
+template <typename T>
+struct CellSpreadIterator
+{
+	template <typename Func>
+	void operator () (CellStruct const center, size_t const spread, Func&& action) const {
+		CellSpreadIterator<ObjectClass>{}(center, spread, [&action](ObjectClass* const pObject)
+		{
+			if(auto const pItem = abstract_cast<T*>(pObject)) {
+				if(!action(pItem)) {
+					return false;
+				}
 			}
 			return true;
 		});
 	}
+};
 
-	template <>
-	void apply<CellClass>(const std::function<bool(CellClass*)> &action) const {
-		process(action);
+template <>
+struct CellSpreadIterator<ObjectClass>
+{
+	template <typename Func>
+	void operator () (CellStruct const center, size_t const spread, Func&& action) const {
+		CellSpreadIterator<CellClass>{}(center, spread, [&action](CellClass* const pCell)
+		{
+			for(NextObject object(pCell->GetContent()); object; ++object) {
+				if(!action(*object)) {
+					return false;
+				}
+			}
+			return true;
+		});
 	}
+};
 
-	template <>
-	void apply<ObjectClass>(const std::function<bool(ObjectClass*)> &action) const {
-		process(action);
+template <>
+struct CellSpreadIterator<CellClass> {
+	template <typename Func>
+	void operator () (CellStruct const center, size_t const spread, Func&& action) const {
+		auto const legacy = std::min(spread, 10u);
+		auto const count = CellSpread::NumCells(legacy);
+		for(auto i = 0u; i < count; ++i) {
+			if(auto const pCell = MapClass::Instance->TryGetCellAt(center + CellSpread::GetCell(i))) {
+				if(!action(pCell)) {
+					return;
+				}
+			}
+		}
+
+		for(CellSpreadEnumerator i(spread, 11u); i; ++i) {
+			if(auto const pCell = MapClass::Instance->TryGetCellAt(center + *i)) {
+				if(!action(pCell)) {
+					return;
+				}
+			}
+		}
 	}
-
-private:
-	void process(const std::function<bool(CellClass*)> &action) const;
-
-	void process(const std::function<bool(ObjectClass*)> &action) const;
 };

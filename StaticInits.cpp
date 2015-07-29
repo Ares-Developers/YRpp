@@ -859,5 +859,3 @@ TechnoTypeClass* BuildingClass::GetSecretProduction() const {
 	}
 	return this->SecretProduction;
 }
-
-#include <Helpers\IteratorsDef.h>
