@@ -56,6 +56,57 @@ private:
 using NextObject = ListEnumerator<ObjectClass, &ObjectClass::NextObject>;
 using NextTeamMember = ListEnumerator<FootClass, &FootClass::NextTeamMember>;
 
+// Enumerates the cells in a rectangle.
+/*
+	Enumeration starts at the top left and iterates left to right first, then
+	top down. Returned values are the final cell coords, not offsets.
+
+	\author AlexB
+*/
+class CellRectEnumerator
+{
+	LTRBStruct bounds;
+	CellStruct current;
+
+public:
+	CellRectEnumerator(LTRBStruct const bounds)
+		: bounds(bounds), current()
+	{
+		current = CellStruct{
+			static_cast<short>(bounds.Left),
+			static_cast<short>(bounds.Top) };
+	}
+
+	operator bool() const {
+		return current.Y > bounds.Bottom;
+	}
+
+	const CellStruct& operator * () const {
+		return current;
+	}
+
+	CellRectEnumerator& operator ++ () {
+		this->next();
+		return *this;
+	}
+
+	void operator ++ (int) {
+		this->next();
+	}
+
+protected:
+	void next() {
+		// increase the x coordinate and, if it is outside the bounds,
+		// go to the beginning of the next "line"
+		++current.X;
+
+		if(current.X > bounds.Right) {
+			current.X = static_cast<short>(bounds.Left);
+			++current.Y;
+		}
+	}
+};
+
 // Enumerates the cell offsets using the cell spread logic.
 /*
 	Enumeration starts at the center. Returned values are to be considered

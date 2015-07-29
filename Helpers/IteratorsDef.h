@@ -8,22 +8,19 @@
 
 void CellRectIterator::process(const std::function<bool(CellClass*)> &action) const {
 	// the coords mark the center of the area
-	CellStruct offset = center;
-	offset.X -= static_cast<short>(width / 2);
-	offset.Y -= static_cast<short>(height / 2);
+	auto topleft = center;
+	topleft.X -= static_cast<short>(width / 2);
+	topleft.Y -= static_cast<short>(height / 2);
+
+	auto const rect = LTRBStruct{
+		topleft.X, topleft.Y, topleft.X + width, topleft.Y + height };
 
 	// take a look at each cell in the rectangle
-	for(short i = 0; i<height; ++i) {
-		for(short j = 0; j<width; ++j) {
-			// get the specific cell coordinates
-			CellStruct cell = {j, i};
-			cell += offset;
-
-			// get this cell and call the action function
-			if(CellClass* pCell = MapClass::Instance->TryGetCellAt(cell)) {
-				if(!action(pCell)) {
-					return;
-				}
+	for(CellRectEnumerator cell(rect); cell; ++cell) {
+		// get this cell and call the action function
+		if(auto const pCell = MapClass::Instance->TryGetCellAt(*cell)) {
+			if(!action(pCell)) {
+				return;
 			}
 		}
 	}
