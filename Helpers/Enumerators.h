@@ -107,6 +107,66 @@ protected:
 	}
 };
 
+// Enumerates the cells in a circular area.
+/*
+	Enumeration order cannot be depended upon. Returned values are the final
+	cell coords, not offsets.
+
+	\author AlexB
+*/
+class CellRangeEnumerator
+{
+	CellRectEnumerator inner;
+	CellStruct center;
+	double radius_sqr;
+
+public:
+	CellRangeEnumerator(CellStruct const center, double const radius)
+		: center(center), radius_sqr(radius * radius),
+		inner(convert(center, radius))
+	{
+		next();
+	}
+
+	operator bool() const {
+		return inner != false;
+	}
+
+	const CellStruct& operator * () const {
+		return *inner;
+	}
+
+	CellRangeEnumerator& operator ++ () {
+		++inner;
+		this->next();
+		return *this;
+	}
+
+	void operator ++ (int) {
+		++inner;
+		this->next();
+	}
+
+protected:
+	static LTRBStruct convert(CellStruct const center, double const radius) {
+		auto const range = static_cast<int>(std::floor(radius + 0.99)) * 2 + 1;
+
+		auto const topleft = Point2D{
+			center.X - range / 2, center.Y - range / 2 };
+
+		return LTRBStruct{
+			topleft.X, topleft.Y, topleft.X + range, topleft.Y + range };
+	}
+
+	void next() {
+		// advance until done or cell is in range. slow, but makes no
+		// assumptions about order
+		while(inner && center.DistanceFromSquared(*inner) > radius_sqr) {
+			++inner;
+		}
+	}
+};
+
 // Enumerates the cell offsets using the cell spread logic.
 /*
 	Enumeration starts at the center. Returned values are to be considered
