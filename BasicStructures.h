@@ -1,37 +1,39 @@
 #pragma once
 
+struct Color16Struct;
+
 //used for most colors
 struct ColorStruct
 {
-	BYTE R, G, B;
+	ColorStruct() = default;
 
-	void operator = (ColorStruct Color)
-	{
-		R = Color.R;
-		G = Color.G;
-		B = Color.B;
-	}
+	ColorStruct(BYTE const r, BYTE const g, BYTE const b)
+		: R(r), G(g), B(b)
+	{ }
 
-	bool operator == (ColorStruct rhs)
-	{
+	inline explicit ColorStruct(Color16Struct const color);
+
+	bool operator == (ColorStruct const rhs) const {
 		return R == rhs.R && G == rhs.G && B == rhs.B;
 	}
 
-	ColorStruct() = default;
-
-	ColorStruct(BYTE _R, BYTE _G, BYTE _B)
-	{
-		R = _R;
-		G = _G;
-		B = _B;
+	bool operator != (ColorStruct const rhs) const {
+		return !(*this == rhs);
 	}
+
+	BYTE R, G, B;
 };
 
 #ifndef PALETTE_STRUCT
 #define PALETTE_STRUCT
 struct BytePalette {
 	ColorStruct Entries[256];
-	ColorStruct & operator [](const int idx) {
+
+	ColorStruct& operator [](int const idx) {
+		return this->Entries[idx];
+	}
+
+	ColorStruct const& operator [](int const idx) const {
 		return this->Entries[idx];
 	}
 };
@@ -47,33 +49,33 @@ struct TintStruct
 #pragma pack(push, 1)
 struct Color16Struct
 {
-	int R : 5;
-	int G : 6;
-	int B : 5;
+	Color16Struct() = default;
 
-	void operator = (Color16Struct Color)
-	{
-		R = Color.R;
-		G = Color.G;
-		B = Color.B;
-	}
+	explicit Color16Struct(ColorStruct const color) :
+		R(static_cast<unsigned short>(color.R >> 3u)),
+		G(static_cast<unsigned short>(color.G >> 2u)),
+		B(static_cast<unsigned short>(color.B >> 3u))
+	{ }
 
-	void operator = (ColorStruct Color)
-	{
-		R = Color.R >> 3;
-		G = Color.G >> 2;
-		B = Color.B >> 3;
-	}
-
-	bool operator == (Color16Struct rhs)
-	{
+	bool operator == (Color16Struct const rhs) const {
 		return R == rhs.R && G == rhs.G && B == rhs.B;
 	}
 
-	Color16Struct() = default;
+	bool operator != (Color16Struct const rhs) const {
+		return !(*this == rhs);
+	}
+
+	unsigned short R : 5;
+	unsigned short G : 6;
+	unsigned short B : 5;
 };
 #pragma pack(pop)
 
+inline ColorStruct::ColorStruct(Color16Struct const color) :
+	R(static_cast<BYTE>(color.R << 3)),
+	G(static_cast<BYTE>(color.G << 2)),
+	B(static_cast<BYTE>(color.B << 3))
+{ }
 
 //Random number range
 struct RandomStruct
