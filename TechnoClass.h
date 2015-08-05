@@ -416,7 +416,7 @@ public:
 	void SetCurrentWeaponStage(int idx)
 		{ JMP_THIS(0x70DDD0); }
 
-	void SetFocus(TechnoClass* pWhat)
+	void SetFocus(AbstractClass* pFocus)
 		{ JMP_THIS(0x70C610); }
 
 	int sub_70DE00(int State)
@@ -523,7 +523,7 @@ public:
 	IndexBitfield<HouseClass *> DisplayProductionTo; // each bit corresponds to one player on the map, telling us whether that player has (1) or hasn't (0) spied this building, and the game should display what's being produced inside it to that player. The bits are arranged by player ID, i.e. bit 0 refers to house #0 in HouseClass::Array, 1 to 1, etc.; query like ((1 << somePlayer->ArrayIndex) & someFactory->DisplayProductionToHouses) != 0
 
 	int              Group; //0-9, assigned by CTRL+Number, these kinds // also set by aimd TeamType->Group !
-	TechnoClass*     FocusOnUnit; // when told to guard a unit or such
+	AbstractClass*   Focus; // when told to guard a unit or such; distinguish undeploy and selling
 	HouseClass*      Owner;
 	CloakState       CloakState;
 	ProgressTimer    CloakProgress; // phase from [opaque] -> [fading] -> [transparent] , [General]CloakingStages= long
