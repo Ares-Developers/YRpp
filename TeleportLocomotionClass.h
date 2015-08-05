@@ -64,7 +64,7 @@ protected:
 public:
 
 	CoordStruct MovingDestination;	//Current destination
-	CoordStruct unknown_coords_28;
+	CoordStruct LastCoords; //Marked occupation bits there
 	bool Moving;	//Is currently moving
 	bool unknown_bool_35;
 	bool unknown_bool_36;
