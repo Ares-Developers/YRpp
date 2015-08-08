@@ -78,7 +78,7 @@ public:
 	}
 
 	operator bool() const {
-		return current.Y > bounds.Bottom;
+		return current.Y <= bounds.Bottom;
 	}
 
 	const CellStruct& operator * () const {
