@@ -48,7 +48,7 @@ public:
 	// non-virtual
 
 	// get content objects
-	ObjectClass* FindObjectNearestTo(CoordStruct* pCoords, bool alt, ObjectClass* pExcludeThis) const
+	TechnoClass* FindTechnoNearestTo(Point2D const& offsetPixel, bool alt, TechnoClass const* pExcludeThis = nullptr) const
 		{ JMP_THIS(0x47C3D0); }
 
 	ObjectClass* FindObjectOfType(AbstractType abs, bool alt) const
@@ -70,7 +70,7 @@ public:
 		{ JMP_THIS(0x47C550); }
 
 	/* craziest thing... first iterates Content looking to Aircraft,
-	 * failing that, calls FindObjectNearestTo,
+	 * failing that, calls FindTechnoNearestTo,
 	 * if that fails too, reiterates Content looking for Terrain
 	 */
 	ObjectClass* GetSomeObject(const CoordStruct& coords, bool alt) const
