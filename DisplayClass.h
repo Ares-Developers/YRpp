@@ -84,8 +84,14 @@ public:
 		{ JMP_THIS(0x692610); }
 
 	/* pass in CurrentFoundationData and receive the width/height of a bounding rectangle in cells */
-	CellStruct * FoundationBoundsSize(CellStruct *buffer, CellStruct *FoundationData)
+	CellStruct* FoundationBoundsSize(CellStruct& outBuffer, CellStruct const* const pFoundationData) const
 		{ JMP_THIS(0x4A94F0); }
+
+	CellStruct FoundationBoundsSize(CellStruct const* const pFoundationData) const {
+		CellStruct outBuffer;
+		FoundationBoundsSize(outBuffer, pFoundationData);
+		return outBuffer;
+	}
 
 	/* marks or unmarks the cells pointed to by CurrentFoundationData as containing a building */
 	void MarkFoundation(CellStruct * BaseCell, bool Mark)
