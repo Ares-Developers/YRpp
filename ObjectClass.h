@@ -135,7 +135,7 @@ public:
 	virtual void Reveal() RX; // uncloak when object is bumped, damaged, detected, ...
 	virtual KickOutResult KickOutUnit(TechnoClass* pTechno, CellStruct Cell) RT(KickOutResult);
 	virtual bool DrawIfVisible(RectangleStruct *pBounds, bool EvenIfCloaked, DWORD dwUnk3) const R0;
-	virtual CellStruct * GetFoundationData(bool IncludeBib) const R0;
+	virtual CellStruct const* GetFoundationData(bool includeBib = false) const R0;
 	virtual void DrawBehind(Point2D* pLocation, RectangleStruct* pBounds) const RX;
 	virtual void DrawExtras(Point2D* pLocation, RectangleStruct* pBounds) const RX; // draws ivan bomb, health bar, talk bubble, etc
 	virtual void Draw(Point2D* pLocation, RectangleStruct* pBounds) const RX;
