@@ -466,7 +466,24 @@ public:
 
 	int CountOwnedNowTotal(const TechnoTypeClass* pItem) const;
 
-	int CountOwnedAndPresent(const TechnoTypeClass* pItem) const;
+	// Count owned and present
+	int CountOwnedAndPresent(TechnoTypeClass const* pItem) const;
+
+	int CountOwnedAndPresent(BuildingTypeClass const* const pItem) const {
+		return this->OwnedBuildingTypes1.GetItemCount(pItem->ArrayIndex);
+	}
+
+	int CountOwnedAndPresent(AircraftTypeClass const* const pItem) const {
+		return this->OwnedAircraftTypes1.GetItemCount(pItem->ArrayIndex);
+	}
+
+	int CountOwnedAndPresent(InfantryTypeClass const* const pItem) const {
+		return this->OwnedInfantryTypes1.GetItemCount(pItem->ArrayIndex);
+	}
+
+	int CountOwnedAndPresent(UnitTypeClass const* const pItem) const {
+		return this->OwnedUnitTypes1.GetItemCount(pItem->ArrayIndex);
+	}
 
 	// Count owned ever
 	int CountOwnedEver(TechnoTypeClass const* pItem) const;
