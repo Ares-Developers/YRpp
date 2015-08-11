@@ -4,13 +4,14 @@
 
 #pragma once
 
-#include <HouseTypeClass.h>
+#include <AircraftTypeClass.h>
 #include <BuildingClass.h>
-#include <UnitTypeClass.h>
-#include <UnitClass.h>
 #include <InfantryTypeClass.h>
+#include <HouseTypeClass.h>
 #include <SessionClass.h>
 #include <SideClass.h>
+#include <UnitClass.h>
+#include <UnitTypeClass.h>
 
 //forward declarations
 class AnimClass;
@@ -467,7 +468,25 @@ public:
 
 	int CountOwnedAndPresent(const TechnoTypeClass* pItem) const;
 
-	int CountOwnedEver(const TechnoTypeClass* pItem) const;
+	// Count owned ever
+	int CountOwnedEver(TechnoTypeClass const* pItem) const;
+
+	int CountOwnedEver(BuildingTypeClass const* const pItem) const {
+		return this->OwnedBuildingTypes2.GetItemCount(pItem->ArrayIndex);
+	}
+
+	int CountOwnedEver(AircraftTypeClass const* const pItem) const {
+		return this->OwnedAircraftTypes2.GetItemCount(pItem->ArrayIndex);
+	}
+
+	int CountOwnedEver(InfantryTypeClass const* const pItem) const {
+		return this->OwnedInfantryTypes2.GetItemCount(pItem->ArrayIndex);
+	}
+
+	int CountOwnedEver(UnitTypeClass const* const pItem) const {
+		return this->OwnedUnitTypes2.GetItemCount(pItem->ArrayIndex);
+	}
+
 
 	bool HasFromSecretLab(const TechnoTypeClass* const pItem) const {
 		for(const auto& pLab : this->SecretLabs) {

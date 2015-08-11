@@ -697,23 +697,26 @@ int HouseClass::CountOwnedAndPresent(const TechnoTypeClass* const pItem) const {
 	}
 }
 
-int HouseClass::CountOwnedEver(const TechnoTypeClass* const pItem) const {
-	auto const index = pItem->GetArrayIndex();
+int HouseClass::CountOwnedEver(TechnoTypeClass const* const pItem) const {
 	switch(pItem->WhatAmI()) {
-		case AbstractType::BuildingType:
-			return this->OwnedBuildingTypes2.GetItemCount(index);
+	case AbstractType::BuildingType:
+		return this->CountOwnedEver(
+			static_cast<BuildingTypeClass const*>(pItem));
 
-		case AbstractType::UnitType:
-			return this->OwnedUnitTypes2.GetItemCount(index);
+	case AbstractType::UnitType:
+		return this->CountOwnedEver(
+			static_cast<UnitTypeClass const*>(pItem));
 
-		case AbstractType::InfantryType:
-			return this->OwnedInfantryTypes2.GetItemCount(index);
+	case AbstractType::InfantryType:
+		return this->CountOwnedEver(
+			static_cast<InfantryTypeClass const*>(pItem));
 
-		case AbstractType::AircraftType:
-			return this->OwnedAircraftTypes2.GetItemCount(index);
+	case AbstractType::AircraftType:
+		return this->CountOwnedEver(
+			static_cast<AircraftTypeClass const*>(pItem));
 
-		default:
-			return 0;
+	default:
+		__assume(0);
 	}
 }
 
