@@ -6,9 +6,10 @@
 #include <GenericList.h>
 
 enum class FileAccessMode : unsigned int {
-	Any = 0,
+	None = 0,
 	Read = 1,
-	Write = 2
+	Write = 2,
+	ReadWrite = 3
 };
 
 enum class FileSeekMode : unsigned int {
