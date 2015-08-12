@@ -658,22 +658,25 @@ int HouseClass::CountOwnedNowTotal(const TechnoTypeClass *Item) const {
 }
 
 int HouseClass::CountOwnedNow(const TechnoTypeClass* const pItem) const {
-	auto const index = pItem->GetArrayIndex();
 	switch(pItem->WhatAmI()) {
-		case AbstractType::BuildingType:
-			return this->OwnedBuildingTypes.GetItemCount(index);
+	case AbstractType::BuildingType:
+		return this->CountOwnedNow(
+			static_cast<BuildingTypeClass const*>(pItem));
 
-		case AbstractType::UnitType:
-			return this->OwnedUnitTypes.GetItemCount(index);
+	case AbstractType::UnitType:
+		return this->CountOwnedNow(
+			static_cast<UnitTypeClass const*>(pItem));
 
-		case AbstractType::InfantryType:
-			return this->OwnedInfantryTypes.GetItemCount(index);
+	case AbstractType::InfantryType:
+		return this->CountOwnedNow(
+			static_cast<InfantryTypeClass const*>(pItem));
 
-		case AbstractType::AircraftType:
-			return this->OwnedAircraftTypes.GetItemCount(index);
+	case AbstractType::AircraftType:
+		return this->CountOwnedNow(
+			static_cast<AircraftTypeClass const*>(pItem));
 
-		default:
-			return 0;
+	default:
+		__assume(0);
 	}
 }
 

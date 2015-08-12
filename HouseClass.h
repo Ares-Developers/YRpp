@@ -462,9 +462,26 @@ public:
 	// I don't want to talk about these
 	// read the code <_<
 
-	int CountOwnedNow(const TechnoTypeClass* pItem) const;
-
 	int CountOwnedNowTotal(const TechnoTypeClass* pItem) const;
+
+	//  Count owned now
+	int CountOwnedNow(TechnoTypeClass const* pItem) const;
+
+	int CountOwnedNow(BuildingTypeClass const* const pItem) const {
+		return this->OwnedBuildingTypes.GetItemCount(pItem->ArrayIndex);
+	}
+
+	int CountOwnedNow(AircraftTypeClass const* const pItem) const {
+		return this->OwnedAircraftTypes.GetItemCount(pItem->ArrayIndex);
+	}
+
+	int CountOwnedNow(InfantryTypeClass const* const pItem) const {
+		return this->OwnedInfantryTypes.GetItemCount(pItem->ArrayIndex);
+	}
+
+	int CountOwnedNow(UnitTypeClass const* const pItem) const {
+		return this->OwnedUnitTypes.GetItemCount(pItem->ArrayIndex);
+	}
 
 	// Count owned and present
 	int CountOwnedAndPresent(TechnoTypeClass const* pItem) const;
