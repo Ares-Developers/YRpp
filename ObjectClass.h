@@ -105,7 +105,7 @@ public:
 	virtual CoordStruct* GetPosition_2(CoordStruct* pCrd) const R0;
 	virtual CoordStruct* GetFLH(CoordStruct *pDest, int idxWeapon, CoordStruct BaseCoords) const R0;
 	virtual CoordStruct* GetExitCoords(CoordStruct* pCrd, DWORD dwUnk) const R0;
-	virtual int vt_entry_B8() const R0;
+	virtual int GetYSort() const R0;
 	virtual bool IsOnBridge(TechnoClass* pDocker = nullptr) const R0; // pDocker is passed to GetDestination
 	virtual bool IsStandingStill() const R0;
 	virtual bool IsDisguised() const R0;
