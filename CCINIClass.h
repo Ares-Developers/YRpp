@@ -218,8 +218,14 @@ public:
 	INI_READ(VHPScan, 0x477590);
 
 	// Color=%d,%d,%d to idx , used to parse [Colors]
-	ColorStruct* ReadColor(ColorStruct* pBuffer, const char* pSection, const char* pKey, ColorStruct* pDefault)
+	ColorStruct* ReadColor(ColorStruct* pBuffer, const char* pSection, const char* pKey, ColorStruct const& default)
 		{ JMP_THIS(0x474C70); }
+
+	ColorStruct ReadColor(const char* const pSection, const char* const pKey, ColorStruct const& default) {
+		ColorStruct outBuffer;
+		this->ReadColor(&outBuffer, pSection, pKey, default);
+		return outBuffer;
+	}
 
 	// 18 bytes
 	byte* ReadAbilities(byte* pBuffer, const char* pSection, const char* pKey, byte* pDefault)
