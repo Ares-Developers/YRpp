@@ -24,8 +24,6 @@ struct ColorStruct
 	BYTE R, G, B;
 };
 
-#ifndef PALETTE_STRUCT
-#define PALETTE_STRUCT
 struct BytePalette {
 	ColorStruct Entries[256];
 
@@ -37,7 +35,6 @@ struct BytePalette {
 		return this->Entries[idx];
 	}
 };
-#endif
 
 //used for light colors
 struct TintStruct

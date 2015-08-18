@@ -20,7 +20,7 @@ struct BulletData
 };
 
 // the velocities along the axes, or something like that
-typedef Vector3D<double> BulletVelocity; // :3 -pd
+using BulletVelocity = Vector3D<double>; // :3 -pd
 
 class NOVTABLE BulletClass : public ObjectClass
 {

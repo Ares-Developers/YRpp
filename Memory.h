@@ -64,7 +64,7 @@ struct needs_vector_delete : std::integral_constant<bool,
 // though. use std::allocator_traits, which will fill in the blanks.
 template <typename T>
 struct GameAllocator {
-	typedef T value_type;
+	using value_type = T;
 
 	GameAllocator() {}
 

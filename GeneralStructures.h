@@ -10,15 +10,12 @@
 #include <string.h>
 
 //used for cell coordinates/vectors
-#ifndef VECTORSTRUCTS
-#define VECTORSTRUCTS
-typedef Vector2D<short> CellStruct;
-typedef Vector2D<int> Point2D;
-typedef Vector3D<int> CoordStruct;
+using CellStruct = Vector2D<short>;
+using Point2D = Vector2D<int>;
+using CoordStruct = Vector3D<int>;
 
 // used for particle ColorList
-typedef Vector3D<BYTE> RGBClass; // <pd> wuhaha
-#endif
+using RGBClass = Vector3D<BYTE>; // <pd> wuhaha
 
 //used for timed events, time measured in frames!
 class TimerStruct
