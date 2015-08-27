@@ -462,8 +462,6 @@ public:
 	// I don't want to talk about these
 	// read the code <_<
 
-	int CountOwnedNowTotal(const TechnoTypeClass* pItem) const;
-
 	//  Count owned now
 	int CountOwnedNow(TechnoTypeClass const* pItem) const;
 
