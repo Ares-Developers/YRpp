@@ -182,7 +182,7 @@ public:
 	virtual bool IsCloakable() const R0;
 	virtual bool CanScatter() const R0;
 	virtual bool BelongsToATeam() const R0;
-	virtual bool SelfHealNow() R0;
+	virtual bool ShouldSelfHealOneStep() const R0;
 	virtual bool IsVoxel() const R0;
 	virtual bool vt_entry_29C() R0;
 	virtual bool ShouldBeCloaked() const R0;
