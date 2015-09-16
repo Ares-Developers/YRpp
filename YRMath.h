@@ -2,6 +2,8 @@
 
 #include <YRPPCore.h>
 
+#include <type_traits>
+
 #define MATH_FUNC(name, address)\
 	inline __declspec(naked) double __cdecl name(double value)\
 	{\
@@ -45,32 +47,35 @@ namespace Math
 		return (T(0) < val) - (val < T(0));
 	}
 
+	template <typename T>
+	using value_return_t = std::remove_cv_t<std::remove_reference_t<T>>;
+
 	template <typename T, typename T2>
-	inline T min(T&& value, T2&& value2)
+	inline auto min(T&& value, T2&& value2)
 	{
 		if(value2 < value) {
-			return static_cast<T>(value2);
+			return static_cast<value_return_t<T>>(value2);
 		}
 		return value;
 	}
 
 	template <typename T, typename T2>
-	inline T max(T&& value, T2&& value2)
+	inline auto max(T&& value, T2&& value2)
 	{
 		if(value < value2) {
-			return static_cast<T>(value2);
+			return static_cast<value_return_t<T>>(value2);
 		}
 		return value;
 	}
 
 	template <typename T, typename TMin, typename TMax>
-	inline T clamp(T&& value, TMin&& min, TMax&& max)
+	inline auto clamp(T&& value, TMin&& min, TMax&& max)
 	{
 		if(value < min) {
-			return static_cast<T>(min);
+			return static_cast<value_return_t<T>>(min);
 		}
 		if(max < value) {
-			return static_cast<T>(max);
+			return static_cast<value_return_t<T>>(max);
 		}
 		return value;
 	}
