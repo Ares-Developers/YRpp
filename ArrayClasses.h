@@ -16,7 +16,7 @@ public:
 	// the hidden element count messes with alignment. only applies to align 8, 16, ... 
 	static_assert(!needs_vector_delete<T>::value || (__alignof(T) <= 4), "Alignment of T needs to be less than or equal to 4.");
 
-	VectorClass() = default;
+	VectorClass() noexcept = default;
 
 	explicit VectorClass(int capacity, T* pMem = nullptr) {
 		if(capacity != 0) {
@@ -42,11 +42,11 @@ public:
 		}
 	}
 
-	VectorClass(VectorClass &&other) {
+	VectorClass(VectorClass &&other) noexcept {
 		other.Swap(*this);
 	}
 
-	virtual ~VectorClass() {
+	virtual ~VectorClass() noexcept {
 		Clear();
 	}
 
@@ -55,7 +55,7 @@ public:
 		return *this;
 	}
 
-	VectorClass& operator = (VectorClass &&other) {
+	VectorClass& operator = (VectorClass &&other) noexcept {
 		VectorClass(std::move(other)).Swap(*this);
 		return *this;
 	}
@@ -176,7 +176,7 @@ public:
 		this->Capacity = 0;
 	}
 
-	void Swap(VectorClass& other) {
+	void Swap(VectorClass& other) noexcept {
 		using std::swap;
 		swap(this->Items, other.Items);
 		swap(this->Capacity, other.Capacity);
@@ -198,7 +198,7 @@ template <typename T>
 class DynamicVectorClass : public VectorClass<T>
 {
 public:
-	DynamicVectorClass() = default;
+	DynamicVectorClass() noexcept = default;
 
 	explicit DynamicVectorClass(int capacity, T* pMem = nullptr)
 		: VectorClass(capacity, pMem)
@@ -217,12 +217,12 @@ public:
 		}
 	}
 
-	DynamicVectorClass(DynamicVectorClass &&other) {
+	DynamicVectorClass(DynamicVectorClass &&other) noexcept {
 		other.Swap(*this);
 	}
 
 	// not needed. base class destructor will call base class Clear()
-	//virtual ~DynamicVectorClass() override {
+	//virtual ~DynamicVectorClass() noexcept override {
 	//	Clear();
 	//}
 
@@ -231,7 +231,7 @@ public:
 		return *this;
 	}
 
-	DynamicVectorClass& operator = (DynamicVectorClass &&other) {
+	DynamicVectorClass& operator = (DynamicVectorClass &&other) noexcept {
 		DynamicVectorClass(std::move(other)).Swap(*this);
 		return *this;
 	}
@@ -341,7 +341,7 @@ public:
 		VectorClass::Purge();
 	}
 
-	void Swap(DynamicVectorClass& other) {
+	void Swap(DynamicVectorClass& other) noexcept {
 		VectorClass::Swap(other);
 		using std::swap;
 		swap(this->Count, other.Count);
@@ -360,7 +360,7 @@ template <typename T>
 class TypeList : public DynamicVectorClass<T>
 {
 public:
-	TypeList() = default;
+	TypeList() noexcept = default;
 
 	explicit TypeList(int capacity, T* pMem = nullptr)
 		: DynamicVectorClass(capacity, pMem)
@@ -371,7 +371,7 @@ public:
 		DynamicVectorClass::operator=(other);
 	}
 
-	TypeList(TypeList &&other) {
+	TypeList(TypeList &&other) noexcept {
 		other.Swap(*this);
 	}
 
@@ -380,12 +380,12 @@ public:
 		return *this;
 	}
 
-	TypeList& operator = (TypeList &&other) {
+	TypeList& operator = (TypeList &&other) noexcept {
 		TypeList(std::move(other)).Swap(*this);
 		return *this;
 	}
 
-	void Swap(TypeList& other) {
+	void Swap(TypeList& other) noexcept {
 		DynamicVectorClass::Swap(other);
 		using std::swap;
 		swap(this->unknown_18, other.unknown_18);
@@ -401,18 +401,18 @@ public:
 class CounterClass : public VectorClass<int>
 {
 public:
-	CounterClass() = default;
+	CounterClass() noexcept = default;
 
 	CounterClass(const CounterClass& other)
 		: VectorClass(other), Total(other.Total)
 	{ }
 
-	CounterClass(CounterClass &&other) {
+	CounterClass(CounterClass &&other) noexcept {
 		other.Swap(*this);
 	}
 
 	// not needed. base class destructor will call base class Clear()
-	//virtual ~CounterClass() override {
+	//virtual ~CounterClass() noexcept override {
 	//	VectorClass::Clear();
 	//	this->Total = 0;
 	//}
@@ -422,7 +422,7 @@ public:
 		return *this;
 	}
 
-	CounterClass& operator = (CounterClass &&other) {
+	CounterClass& operator = (CounterClass &&other) noexcept {
 		CounterClass(std::move(other)).Swap(*this);
 		return *this;
 	}
@@ -483,7 +483,7 @@ public:
 		return 0;
 	}
 
-	void Swap(CounterClass& other) {
+	void Swap(CounterClass& other) noexcept {
 		VectorClass::Swap(other);
 		using std::swap;
 		swap(this->Total, other.Total);
