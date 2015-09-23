@@ -16,10 +16,9 @@ public:
 	// the hidden element count messes with alignment. only applies to align 8, 16, ... 
 	static_assert(!needs_vector_delete<T>::value || (__alignof(T) <= 4), "Alignment of T needs to be less than or equal to 4.");
 
-	VectorClass() : Items(nullptr), Capacity(0), IsInitialized(true), IsAllocated(false) {
-	}
+	VectorClass() = default;
 
-	explicit VectorClass(int capacity, T* pMem = nullptr) : VectorClass() {
+	explicit VectorClass(int capacity, T* pMem = nullptr) {
 		if(capacity != 0) {
 			this->Capacity = capacity;
 
@@ -32,7 +31,7 @@ public:
 		}
 	}
 
-	VectorClass(const VectorClass &other) : VectorClass() {
+	VectorClass(const VectorClass &other) {
 		if(other.Capacity > 0) {
 			this->Items = GameCreateArray<T>(static_cast<size_t>(other.Capacity));
 			this->IsAllocated = true;
@@ -43,7 +42,7 @@ public:
 		}
 	}
 
-	VectorClass(VectorClass &&other) : VectorClass() {
+	VectorClass(VectorClass &&other) {
 		other.Swap(*this);
 	}
 
@@ -185,10 +184,10 @@ public:
 		swap(this->IsAllocated, other.IsAllocated);
 	}
 
-	T* Items;
-	int Capacity;
-	bool IsInitialized;
-	bool IsAllocated;
+	T* Items{ nullptr };
+	int Capacity{ 0 };
+	bool IsInitialized{ true };
+	bool IsAllocated{ false };
 };
 
 //========================================================================
@@ -199,14 +198,13 @@ template <typename T>
 class DynamicVectorClass : public VectorClass<T>
 {
 public:
-	DynamicVectorClass() : VectorClass(), Count(0), CapacityIncrement(10) {
-	}
+	DynamicVectorClass() = default;
 
 	explicit DynamicVectorClass(int capacity, T* pMem = nullptr)
-		: VectorClass(capacity, pMem), Count(0), CapacityIncrement(10) {
-	}
+		: VectorClass(capacity, pMem)
+	{ }
 
-	DynamicVectorClass(const DynamicVectorClass &other) : DynamicVectorClass() {
+	DynamicVectorClass(const DynamicVectorClass &other) {
 		if(other.Capacity > 0) {
 			this->Items = GameCreateArray<T>(static_cast<size_t>(other.Capacity));
 			this->IsAllocated = true;
@@ -219,7 +217,7 @@ public:
 		}
 	}
 
-	DynamicVectorClass(DynamicVectorClass &&other) : DynamicVectorClass() {
+	DynamicVectorClass(DynamicVectorClass &&other) {
 		other.Swap(*this);
 	}
 
@@ -350,8 +348,8 @@ public:
 		swap(this->CapacityIncrement, other.CapacityIncrement);
 	}
 
-	int Count;
-	int CapacityIncrement;
+	int Count{ 0 };
+	int CapacityIncrement{ 10 };
 };
 
 //========================================================================
@@ -362,19 +360,18 @@ template <typename T>
 class TypeList : public DynamicVectorClass<T>
 {
 public:
-	TypeList() : DynamicVectorClass(), unknown_18(0) {
-	}
+	TypeList() = default;
 
 	explicit TypeList(int capacity, T* pMem = nullptr)
-		: DynamicVectorClass(capacity, pMem), unknown_18(0) {
-	}
+		: DynamicVectorClass(capacity, pMem)
+	{ }
 
-	TypeList(const TypeList &other) : TypeList() {
+	TypeList(const TypeList &other) {
 		this->unknown_18 = other.unknown_18;
 		DynamicVectorClass::operator=(other);
 	}
 
-	TypeList(TypeList &&other) : TypeList() {
+	TypeList(TypeList &&other) {
 		other.Swap(*this);
 	}
 
@@ -394,7 +391,7 @@ public:
 		swap(this->unknown_18, other.unknown_18);
 	}
 
-	int unknown_18;
+	int unknown_18{ 0 };
 };
 
 //========================================================================
@@ -404,13 +401,13 @@ public:
 class CounterClass : public VectorClass<int>
 {
 public:
-	CounterClass() : VectorClass<int>(), Total(0) {
-	}
+	CounterClass() = default;
 
-	CounterClass(const CounterClass& other) : VectorClass(other), Total(other.Total) {
-	}
+	CounterClass(const CounterClass& other)
+		: VectorClass(other), Total(other.Total)
+	{ }
 
-	CounterClass(CounterClass &&other) : CounterClass() {
+	CounterClass(CounterClass &&other) {
 		other.Swap(*this);
 	}
 
@@ -431,7 +428,7 @@ public:
 	}
 
 	virtual void Clear() override {
-		for(int i = 0; i < this->Capacity; ++i){
+		for(int i = 0; i < this->Capacity; ++i) {
 			this->Items[i] = 0;
 		}
 
@@ -492,5 +489,5 @@ public:
 		swap(this->Total, other.Total);
 	}
 
-	int Total;
+	int Total{ 0 };
 };
