@@ -47,7 +47,8 @@ public:
 	}
 
 	virtual ~VectorClass() noexcept {
-		Clear();
+		// not a virtual call
+		VectorClass::Clear();
 	}
 
 	VectorClass& operator = (const VectorClass &other) {
