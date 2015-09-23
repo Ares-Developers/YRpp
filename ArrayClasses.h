@@ -16,7 +16,7 @@ public:
 	// the hidden element count messes with alignment. only applies to align 8, 16, ... 
 	static_assert(!needs_vector_delete<T>::value || (__alignof(T) <= 4), "Alignment of T needs to be less than or equal to 4.");
 
-	VectorClass() noexcept = default;
+	constexpr VectorClass() noexcept = default;
 
 	explicit VectorClass(int capacity, T* pMem = nullptr) {
 		if(capacity != 0) {
@@ -198,7 +198,7 @@ template <typename T>
 class DynamicVectorClass : public VectorClass<T>
 {
 public:
-	DynamicVectorClass() noexcept = default;
+	constexpr DynamicVectorClass() noexcept = default;
 
 	explicit DynamicVectorClass(int capacity, T* pMem = nullptr)
 		: VectorClass(capacity, pMem)
@@ -360,7 +360,7 @@ template <typename T>
 class TypeList : public DynamicVectorClass<T>
 {
 public:
-	TypeList() noexcept = default;
+	constexpr TypeList() noexcept = default;
 
 	explicit TypeList(int capacity, T* pMem = nullptr)
 		: DynamicVectorClass(capacity, pMem)
@@ -401,7 +401,7 @@ public:
 class CounterClass : public VectorClass<int>
 {
 public:
-	CounterClass() noexcept = default;
+	constexpr CounterClass() noexcept = default;
 
 	CounterClass(const CounterClass& other)
 		: VectorClass(other), Total(other.Total)
