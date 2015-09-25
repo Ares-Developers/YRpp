@@ -2,6 +2,7 @@
 
 #include <ASMMacros.h>
 
+#include <exception>
 #include <type_traits>
 
 /*
@@ -53,6 +54,13 @@ namespace YRMemory {
 	__declspec(naked) inline void __cdecl Deallocate(const void* mem) {
 		JMP(0x7C8B3D);
 	}
+
+	__declspec(noinline) inline void* AllocateChecked(size_t sz) {
+		if(auto const ptr = YRMemory::Allocate(sz)) {
+			return ptr;
+		}
+		std::terminate();
+	}
 }
 
 template<typename T>
@@ -75,7 +83,7 @@ struct GameAllocator {
 	bool operator != (const GameAllocator&) const { return false; }
 
 	T* allocate(const size_t count) const {
-		return static_cast<T*>(YRMemory::Allocate(count * sizeof(T)));
+		return static_cast<T*>(YRMemory::AllocateChecked(count * sizeof(T)));
 	}
 
 	void deallocate(T* const ptr, size_t count) const {
@@ -89,11 +97,9 @@ public:
 	// construct scalars
 	template <typename T, typename TAlloc, typename... TArgs>
 	static inline T* Create(TAlloc& alloc, TArgs&&... args) {
-		if(auto ptr = std::allocator_traits<TAlloc>::allocate(alloc, 1)) {
-			std::allocator_traits<TAlloc>::construct(alloc, ptr, std::forward<TArgs>(args)...);
-			return ptr;
-		}
-		ExitProcess(1);
+		auto const ptr = std::allocator_traits<TAlloc>::allocate(alloc, 1);
+		std::allocator_traits<TAlloc>::construct(alloc, ptr, std::forward<TArgs>(args)...);
+		return ptr;
 	};
 
 	// destruct scalars
@@ -108,19 +114,17 @@ public:
 	// construct vectors
 	template <typename T, typename TAlloc, typename... TArgs>
 	static inline T* CreateArray(TAlloc& alloc, size_t capacity, TArgs&&... args) {
-		if(auto ptr = std::allocator_traits<TAlloc>::allocate(alloc, capacity)) {
-			if(capacity && !sizeof...(args) && std::is_scalar<T>::value) {
-				// set to 0
-				std::memset(ptr, 0, capacity * sizeof(T));
-			} else {
-				for(size_t i = 0; i < capacity; ++i) {
-					// use args... here. can't move args, because we need to reuse them
-					std::allocator_traits<TAlloc>::construct(alloc, &ptr[i], args...);
-				}
+		auto const ptr = std::allocator_traits<TAlloc>::allocate(alloc, capacity);
+		if(capacity && !sizeof...(args) && std::is_scalar<T>::value) {
+			// set to 0
+			std::memset(ptr, 0, capacity * sizeof(T));
+		} else {
+			for(size_t i = 0; i < capacity; ++i) {
+				// use args... here. can't move args, because we need to reuse them
+				std::allocator_traits<TAlloc>::construct(alloc, &ptr[i], args...);
 			}
-			return ptr;
 		}
-		ExitProcess(1);
+		return ptr;
 	}
 
 	// destruct vectors
