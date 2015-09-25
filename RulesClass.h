@@ -56,39 +56,24 @@ struct RocketStruct
 	bool LazyCurve;
 	AircraftTypeClass* Type;
 
-	void operator = (const RocketStruct& Rocket)
-	{
-		PauseFrames = Rocket.PauseFrames;
-		TiltFrames = Rocket.TiltFrames;
-		PitchInitial = Rocket.PitchInitial;
-		PitchFinal = Rocket.PitchFinal;
-		TurnRate = Rocket.TurnRate;
-		RaiseRate = Rocket.RaiseRate;
-		Acceleration = Rocket.Acceleration;
-		Altitude = Rocket.Altitude;
-		Damage = Rocket.Damage;
-		EliteDamage = Rocket.EliteDamage;
-		BodyLength = Rocket.BodyLength;
-		LazyCurve = Rocket.LazyCurve;
-		Type = Rocket.Type;
-	}
+	RocketStruct() noexcept :
+		PauseFrames(0),
+		TiltFrames(0),
+		PitchInitial(0.0f),
+		PitchFinal(0.0f),
+		TurnRate(0.0f),
+		RaiseRate(0),
+		Acceleration(0.0f),
+		Altitude(0),
+		Damage(0),
+		EliteDamage(0),
+		BodyLength(0),
+		LazyCurve(false),
+		Type(nullptr)
+	{ }
 
-	RocketStruct()
-	{
-		PauseFrames = 0;
-		TiltFrames = 0;
-		PitchInitial = 0.0f;
-		PitchFinal = 0.0f;
-		TurnRate = 0.0f;
-		RaiseRate = 0;
-		Acceleration = 0.0f;
-		Altitude = 0;
-		Damage = 0;
-		EliteDamage = 0;
-		BodyLength = 0;
-		LazyCurve = false;
-		Type = nullptr;
-	}
+	explicit RocketStruct(noinit_t) noexcept
+	{ }
 };
 
 class RulesClass
