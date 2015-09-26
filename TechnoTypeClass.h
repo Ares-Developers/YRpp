@@ -151,59 +151,12 @@ public:
 	}
 
 	// weapon related
-
-	WeaponTypeClass* get_Primary()
-	{
-		return Weapon[0].WeaponType;
-	}
-	WeaponTypeClass* get_Secondary()
-	{
-		return Weapon[1].WeaponType;
+	WeaponStruct& GetWeapon(size_t const index, bool const elite) {
+		return elite ? this->EliteWeapon[index] : this->Weapon[index];
 	}
 
-	WeaponTypeClass* get_Weapon(int i)
-	{
-		return Weapon[i].WeaponType;
-	}
-	void set_Weapon(int i, WeaponTypeClass* value)
-	{
-		Weapon[i].WeaponType = value;
-	}
-
-	CoordStruct get_WeaponFLH(int i)
-	{
-		return Weapon[i].FLH;
-	}
-	void set_WeaponFLH(int i, CoordStruct value)
-	{
-		Weapon[i].FLH = value;
-	}
-
-	WeaponTypeClass* get_ElitePrimary()
-	{
-		return EliteWeapon[0].WeaponType;
-	}
-	WeaponTypeClass* get_EliteSecondary()
-	{
-		return EliteWeapon[1].WeaponType;
-	}
-
-	WeaponTypeClass* get_EliteWeapon(int i)
-	{
-		return EliteWeapon[i].WeaponType;
-	}
-	void set_EliteWeapon(int i, WeaponTypeClass* value)
-	{
-		EliteWeapon[i].WeaponType = value;
-	}
-
-	CoordStruct get_EliteWeaponFLH(int i)
-	{
-		return EliteWeapon[i].FLH;
-	}
-	void set_EliteWeaponFLH(int i, CoordStruct value)
-	{
-		EliteWeapon[i].FLH = value;
+	WeaponStruct const& GetWeapon(size_t const index, bool const elite) const {
+		return elite ? this->EliteWeapon[index] : this->Weapon[index];
 	}
 
 	//Constructor
