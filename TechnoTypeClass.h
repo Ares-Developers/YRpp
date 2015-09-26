@@ -92,6 +92,8 @@ public:
 		return -1;
 	}
 
+	static auto const MaxWeapons = 18;
+
 	//IPersistStream
 	virtual HRESULT __stdcall Load(IStream* pStm) R0;
 	virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) R0;
@@ -374,7 +376,7 @@ public:
 
 	//Weapon
 	protected:
-		WeaponStruct            Weapon[0x12];
+		WeaponStruct            Weapon[MaxWeapons];
 	public:
 		WeaponTypeClass* get_Primary()
 			{ return Weapon[0].WeaponType; }
@@ -395,7 +397,7 @@ public:
 
 	//EliteWeapon
 	protected:
-		WeaponStruct            EliteWeapon[0x12];
+		WeaponStruct            EliteWeapon[MaxWeapons];
 	public:
 		WeaponTypeClass* get_ElitePrimary()
 			{ return EliteWeapon[0].WeaponType; }
