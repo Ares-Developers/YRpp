@@ -150,6 +150,62 @@ public:
 		return 0u != (test & bitHouseType);
 	}
 
+	// weapon related
+
+	WeaponTypeClass* get_Primary()
+	{
+		return Weapon[0].WeaponType;
+	}
+	WeaponTypeClass* get_Secondary()
+	{
+		return Weapon[1].WeaponType;
+	}
+
+	WeaponTypeClass* get_Weapon(int i)
+	{
+		return Weapon[i].WeaponType;
+	}
+	void set_Weapon(int i, WeaponTypeClass* value)
+	{
+		Weapon[i].WeaponType = value;
+	}
+
+	CoordStruct get_WeaponFLH(int i)
+	{
+		return Weapon[i].FLH;
+	}
+	void set_WeaponFLH(int i, CoordStruct value)
+	{
+		Weapon[i].FLH = value;
+	}
+
+	WeaponTypeClass* get_ElitePrimary()
+	{
+		return EliteWeapon[0].WeaponType;
+	}
+	WeaponTypeClass* get_EliteSecondary()
+	{
+		return EliteWeapon[1].WeaponType;
+	}
+
+	WeaponTypeClass* get_EliteWeapon(int i)
+	{
+		return EliteWeapon[i].WeaponType;
+	}
+	void set_EliteWeapon(int i, WeaponTypeClass* value)
+	{
+		EliteWeapon[i].WeaponType = value;
+	}
+
+	CoordStruct get_EliteWeaponFLH(int i)
+	{
+		return EliteWeapon[i].FLH;
+	}
+	void set_EliteWeaponFLH(int i, CoordStruct value)
+	{
+		EliteWeapon[i].FLH = value;
+	}
+
 	//Constructor
 	TechnoTypeClass(const char* id, SpeedType speedtype)
 		: TechnoTypeClass(noinit_t())
@@ -362,58 +418,10 @@ public:
 	int             TurretCount;
 	int             WeaponCount;
 	bool            IsChargeTurret;
-
-	int TurretWeapon [0x21];
-
-/*
-	//Turret - Weapon assignments
-	protected: int TurretWeapon[0x21];
-	public: int get_TurretWeapon(int turret)
-		{ return TurretWeapon[turret]; }
-				void set_TurretWeapon(int turret, int value)
-		{ TurretWeapon[turret]=value; }
-*/
-
-	//Weapon
-	protected:
-		WeaponStruct            Weapon[MaxWeapons];
-	public:
-		WeaponTypeClass* get_Primary()
-			{ return Weapon[0].WeaponType; }
-		WeaponTypeClass* get_Secondary()
-			{ return Weapon[1].WeaponType; }
-
-		WeaponTypeClass* get_Weapon(int i)
-			{ return Weapon[i].WeaponType; }
-		void set_Weapon(int i, WeaponTypeClass* value)
-			{ Weapon[i].WeaponType = value; }
-
-		CoordStruct get_WeaponFLH(int i)
-			{ return Weapon[i].FLH;}
-		void set_WeaponFLH(int i, CoordStruct value)
-			{ Weapon[i].FLH = value;}
-
+	int             TurretWeapon[0x21];
+	WeaponStruct	Weapon[MaxWeapons];
 	bool            ClearAllWeapons;
-
-	//EliteWeapon
-	protected:
-		WeaponStruct            EliteWeapon[MaxWeapons];
-	public:
-		WeaponTypeClass* get_ElitePrimary()
-			{ return EliteWeapon[0].WeaponType; }
-		WeaponTypeClass* get_EliteSecondary()
-			{ return EliteWeapon[1].WeaponType; }
-
-		WeaponTypeClass* get_EliteWeapon(int i)
-			{ return EliteWeapon[i].WeaponType; }
-		void set_EliteWeapon(int i, WeaponTypeClass* value)
-			{ EliteWeapon[i].WeaponType = value; }
-
-		CoordStruct get_EliteWeaponFLH(int i)
-			{ return EliteWeapon[i].FLH;}
-		void set_EliteWeaponFLH(int i, CoordStruct value)
-			{ EliteWeapon[i].FLH = value;}
-
+	WeaponStruct	EliteWeapon[MaxWeapons];
 	bool            TypeImmune;
 	bool            MoveToShroud;
 	bool            Trainable;
