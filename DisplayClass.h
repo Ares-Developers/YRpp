@@ -8,6 +8,7 @@ class ObjectTypeClass;
 
 class LayerClass : public DynamicVectorClass<ObjectClass*>
 {
+public:
 	virtual bool AddObject(ObjectClass* pObject, bool sorted)
 		{ JMP_THIS(0x5519B0); }
 
@@ -22,6 +23,24 @@ class LayerClass : public DynamicVectorClass<ObjectClass*>
 
 	void Save(IStream* pStm)
 		{ JMP_THIS(0x551B20); }
+};
+
+class LogicClass : public LayerClass
+{
+public:
+	static LogicClass* const Instance;
+
+	virtual bool AddObject(ObjectClass* pObject, bool sorted) override
+		{ JMP_THIS(0x55BAA0); }
+
+	virtual void PointerGotInvalid(AbstractClass* pInvalid, bool removed)
+		{ JMP_THIS(0x55B880); }
+
+	void RemoveObject(ObjectClass* pObject)
+		{ JMP_THIS(0x55BAE0); }
+
+	void Update()
+		{ JMP_THIS(0x55BAE0); }
 };
 
 class NOVTABLE DisplayClass : public MapClass
