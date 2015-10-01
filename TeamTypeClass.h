@@ -9,9 +9,10 @@
 #include <TaskForceClass.h>
 
 //forward declarations
-class TechnoTypeClass;
-class TeamClass;
 class FootClass;
+class TagClass;
+class TeamClass;
+class TechnoTypeClass;
 
 class NOVTABLE TeamTypeClass : public AbstractTypeClass
 {
@@ -113,7 +114,7 @@ public:
 	HouseClass *     Owner;
 	int      idxHouse; // idx for MP
 	int      TechLevel;
-	DWORD    Tag; // TagClass *
+	TagClass* Tag;
 	int      Waypoint;
 	int      TransportWaypoint;
 	int      cntInstances;
