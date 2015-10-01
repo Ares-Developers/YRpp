@@ -170,6 +170,9 @@ DECL(InfantryTypeClass, 0xA8E348);
 #include <InputManagerClass.h>
 ALIAS(InputManagerClass *, InputManagerClass::Instance, 0x87F770);
 
+#include <IsometricTileClass.h>
+DECL(IsometricTileClass, 0x87F750);
+
 #include <IsometricTileTypeClass.h>
 DECL(IsometricTileTypeClass, 0xA8ED28);
 
