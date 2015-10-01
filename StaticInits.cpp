@@ -415,6 +415,9 @@ DECL(TiberiumClass, 0xB0F4E8);
 #include <TriggerClass.h>
 DECL(TriggerClass, 0xA8EAE8);
 
+#include <TriggerTypeClass.h>
+DECL(TriggerTypeClass, 0x8B4178);
+
 #include <UnitClass.h>
 DECL(UnitClass, 0x8B4108);
 
