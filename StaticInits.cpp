@@ -375,6 +375,9 @@ DECL(TActionClass, 0xB0E658);
 #include <TagClass.h>
 DECL(TagClass, 0xB0E720);
 
+#include <TagTypeClass.h>
+DECL(TagTypeClass, 0xB0E780);
+
 #include <TeamClass.h>
 DECL(TeamClass, 0x8B40E8);
 

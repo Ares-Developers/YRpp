@@ -196,6 +196,12 @@ enum class AIDifficulty : unsigned int {
 	Easy = 2
 };
 
+enum class TriggerPersistence : unsigned int {
+	Volatile = 0, // trigger for the first object whose events fired, then disable
+	SemiPersistant = 1, // trigger after all object's events fired, then disable
+	Persistent = 2 // trigger every time events fire for any object, never disable
+};
+
 enum class TriggerEvent : unsigned int {
 	None = 0x0,
 	EnteredBy = 0x1,
