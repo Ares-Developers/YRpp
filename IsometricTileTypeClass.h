@@ -4,6 +4,7 @@
 
 class NOVTABLE IsometricTileTypeClass : public ObjectTypeClass
 {
+public:
 	static const AbstractType AbsID = AbstractType::IsotileType;
 
 	//Array
