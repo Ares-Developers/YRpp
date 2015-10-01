@@ -4,6 +4,7 @@
 #include <GeneralDefinitions.h>
 
 //forward declarations
+class AbstractClass;
 class AircraftTypeClass;
 class AnimTypeClass;
 class BuildingTypeClass;
@@ -208,6 +209,8 @@ public:
 	void Read_AdvancedCommandBar(CCINIClass *pINI)
 		{ JMP_THIS(0x674650); }
 
+	void PointerGotInvalid(AbstractClass* pInvalid, bool removed)
+		{ JMP_THIS(0x678850); }
 
 
 	//CTOR / DTOR
