@@ -409,6 +409,9 @@ DECL(TerrainTypeClass, 0xA8E318);
 #include <TiberiumClass.h>
 DECL(TiberiumClass, 0xB0F4E8);
 
+#include <TriggerClass.h>
+DECL(TriggerClass, 0xA8EAE8);
+
 #include <UnitClass.h>
 DECL(UnitClass, 0x8B4108);
 

@@ -1,12 +1,11 @@
 #pragma once
 
 #include <AbstractClass.h>
-#include <TeamTypeClass.h>
 
 //forward declarations
-class SuperClass;
+class ObjectClass;
 class TechnoClass;
-class TriggerTypeClass; // TODO: define
+class TriggerTypeClass;
 
 class NOVTABLE TriggerClass : public AbstractClass
 {
@@ -14,59 +13,69 @@ public:
 	static const AbstractType AbsID = AbstractType::Trigger;
 
 	//Static
-	static DynamicVectorClass<TriggerClass*>* Array;
-	static TriggerTypeClass * __fastcall Find(TriggerTypeClass *pType)
+	static DynamicVectorClass<TriggerClass*>* const Array;
+
+	// finds an instance using the type, or creates one
+	static TriggerClass* __fastcall GetInstance(TriggerTypeClass* pType)
 		{ JMP_STD(0x726630); }
 
 	//IPersist
-	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
+	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override R0;
 
 	//IPersistStream
-	virtual HRESULT __stdcall Load(IStream* pStm) R0;
-	virtual HRESULT __stdcall Save(IStream* pStm,BOOL fClearDirty) R0;
+	virtual HRESULT __stdcall Load(IStream* pStm) override R0;
+	virtual HRESULT __stdcall Save(IStream* pStm,BOOL fClearDirty) override R0;
 
 	//Destructor
 	virtual ~TriggerClass() RX;
 
 	//AbstractClass
-	virtual AbstractType WhatAmI() const RT(AbstractType);
-	virtual int Size() const R0;
+	virtual void PointerExpired(AbstractClass* pAbstract, bool removed) override RX;
+	virtual AbstractType WhatAmI() const override RT(AbstractType);
+	virtual int Size() const override R0;
+	virtual void CalculateChecksum(Checksummer& checksum) const override RX;
 
-	// events include 25 (Cross_Horizontal_Line) ?
-	bool InvolvesCrossingHorizontal() const
+	// contains at least one Crosses Horizontal Line event
+	bool HasCrossesHorizontalLineEvent() const
 		{ JMP_THIS(0x726250); }
 
-	// events include 26 (Cross_Vertical_Line) ?
-	bool InvolvesCrossingVertical() const
+	// contains at least one Crosses Vertical Line event
+	bool HasCrossesVerticalLineEvent() const
 		{ JMP_THIS(0x726290); }
 
-	// events include 24 (Entered_Zone) ? // fuck knows what "Zone" is
-	bool InvolvesZoneEntry() const
+	// contains at least one Zone Entry By event
+	bool HasZoneEntryByEvent() const
 		{ JMP_THIS(0x7262D0); }
 
-	// events include 14 (Allow_Win) ? // god awful logic, creator should curl up and die
-	bool InvolvesAllowWin() const
+	// contains at least one Allow Win action
+	bool HasAllowWinAction() const
 		{ JMP_THIS(0x726310); }
 
-	// events include 27/28 (Global_Set/Cleared) ?
-	bool InvolvesGlobalChecking(int idx) const
+	// contains at least one Global Set or Global Cleared event
+	bool HasGlobalSetOrClearedEvent(int idxGlobal) const
 		{ JMP_THIS(0x726350); }
 
-	void GlobalUpdated(int idx) const
+	// called when a global is updated. resets timers
+	void NotifyGlobalChanged(int idxGlobal)
 		{ JMP_THIS(0x7263A0); }
-	void LocalUpdated(int idx) const
+
+	// called when a local is updated. resets timers
+	void NotifyLocalChanged(int idxLocal)
 		{ JMP_THIS(0x7263D0); }
 
+	// resets the timers for all Elapsed Time and Random Delay events
 	void ResetTimers()
 		{ JMP_THIS(0x726400); }
 
 	void MarkEventAsOccured(int idx)
-		{ this->EventsAlreadyFired |= (1 << idx); }
+		{ this->OccuredEvents |= (1u << idx); }
 	void MarkEventAsNotOccured(int idx)
-		{ this->EventsAlreadyFired &= ~(1 << idx); }
+		{ this->OccuredEvents &= ~(1u << idx); }
 	bool HasEventOccured(int idx) const
-		{ return (this->EventsAlreadyFired & (1 << idx)) != 0; }
+		{ return (this->OccuredEvents & (1u << idx)) != 0u; }
 
+	void Destroy()
+		{ JMP_THIS(0x726720); }
 	bool HasBeenDestroyed() const
 		{ return this->Destroyed; }
 
@@ -75,11 +84,21 @@ public:
 	HouseClass* GetHouse() const
 		{ return this->House; }
 
-	// called whenever an event bubbles up , returns true if all of this trigger's events are up
-	bool UpdateEvents(int eventKind, ObjectClass* pObject, char a4, bool isRepeating, int a6)
-		{ JMP_THIS(0x7246C0); }
+	// enables the trigger and resets the timers
+	void Enable()
+		{ this->Enabled = true; this->ResetTimers(); }
+	void Disable()
+		{ this->Enabled = false; }
 
-	bool FireActions(ObjectClass* pObj, CellStruct Pos)
+	// called whenever an event bubbles up, returns true if all of this
+	// trigger's events occured. persistent events are remembered
+	bool RegisterEvent(
+		TriggerEvent event, ObjectClass* pObject, bool forceFire,
+		bool persistent, TechnoClass* pSource)
+	{ JMP_THIS(0x7264C0); }
+
+	// returns whether any action was executed
+	bool FireActions(ObjectClass* pObj, CellStruct location)
 		{ JMP_THIS(0x7265C0); }
 
 	//Constructor
@@ -97,16 +116,13 @@ protected:
 	//===========================================================================
 
 public:
-
-	TriggerTypeClass * Type;
-	TriggerClass* AttachedTrigger;
-	HouseClass * House;
-	bool Destroyed; // ActionClass::DestroyTrigger called on
-	bool padding_31;
-	bool padding_32;
-	bool padding_33;
-	TimerStruct ExistenceTimer;
-	int EventsAlreadyFired; // bitfield like TechnoClass::Owner
-	bool                Enabled;
-
+	TriggerTypeClass*	Type;
+	TriggerClass*		NextTrigger;
+	HouseClass*			House;
+	bool				Destroyed; // ActionClass::DestroyTrigger called on
+	PROTECTED_PROPERTY(BYTE, align_31[3]);
+	TimerStruct			Timer;
+	DWORD				OccuredEvents; // bitfield for 32 events max
+	bool				Enabled;
+	PROTECTED_PROPERTY(BYTE, padding_45[3]);
 };
