@@ -560,11 +560,11 @@ ALIAS(Imports::FP_CreateDialogParamA, Imports::CreateDialogParamA, 0x7E1508);
 ALIAS(Imports::FP_GetWindowTextA, Imports::GetWindowTextA, 0x7E150C);
 ALIAS(Imports::FP_RegisterHotKey, Imports::RegisterHotKey, 0x7E1510);
 
-DynamicVectorClass<MovieInfo> * const MovieInfo::Array = reinterpret_cast<DynamicVectorClass<MovieInfo>*>(0xABF390);
+ALIAS_O(DynamicVectorClass<MovieInfo>* const, MovieInfo::Array, 0xABF390);
 
-MovieUnlockableInfo const* const MovieUnlockableInfo::CommonUnlockables = reinterpret_cast<MovieUnlockableInfo const*>(0x00832C20);
-MovieUnlockableInfo const* const MovieUnlockableInfo::AlliedUnlockables = reinterpret_cast<MovieUnlockableInfo const*>(0x00832C30);
-MovieUnlockableInfo const* const MovieUnlockableInfo::SovietUnlockables = reinterpret_cast<MovieUnlockableInfo const*>(0x00832CA0);
+ALIAS_O(MovieUnlockableInfo const* const, MovieUnlockableInfo::CommonUnlockables, 0x00832C20);
+ALIAS_O(MovieUnlockableInfo const* const, MovieUnlockableInfo::AlliedUnlockables, 0x00832C30);
+ALIAS_O(MovieUnlockableInfo const* const, MovieUnlockableInfo::SovietUnlockables, 0x00832CA0);
 
 #include <VocClass.h>
 DECL(VocClass, 0xB1D378);
