@@ -5,8 +5,8 @@
 //forward declarations
 class SuperClass;
 class TechnoClass;
-class TagTypeClass; // TODO: define
-class TriggerTypeClass; // TODO: define
+class TagTypeClass;
+class TriggerTypeClass;
 class TriggerClass;
 
 class NOVTABLE TActionClass : public AbstractClass
@@ -28,8 +28,11 @@ public:
 	virtual ~TActionClass() RX;
 
 	//AbstractClass
-	virtual AbstractType WhatAmI() const RT(AbstractType);
-	virtual int Size() const R0;
+	virtual void PointerExpired(AbstractClass* pAbstract, bool removed) override RX;
+	virtual AbstractType WhatAmI() const override RT(AbstractType);
+	virtual int Size() const override R0;
+	virtual void CalculateChecksum(Checksummer& checksum) const override RX;
+	virtual int GetArrayIndex() const override R0;
 
 	// you are responsible for doing INI::ReadString and strtok'ing it before calling
 	// this func only calls strtok again, doesn't know anything about buffers
@@ -51,7 +54,7 @@ public:
 
 	// main brain, returns whether succeeded (mostly, no consistency in results what so ever)
 	// trigger fires all actions regardless of result of this
-	bool Execute(HouseClass *House, ObjectClass *Object, TriggerClass *trigger, CellStruct *pos)
+	bool Execute(HouseClass* pHouse, ObjectClass* pObject, TriggerClass* pTrigger, CellStruct const& location)
 		{ JMP_THIS(0x6DD8B0); }
 
 	// BIG LIST OF EXECUTE'S SLAVE FUNCTIONS - feel free to use
@@ -59,13 +62,11 @@ public:
 	// NOTE: most of these are defined as separate functions AS WELL AS inlined in Execute() above.
 	// Ergo, hooking into them by their address will not always override builtin handling.
 	// If you need to know which are inlined, poke me.
+#pragma push_macro("ACTION_FUNC")
 
-#ifndef ACTION_FUNC
 #define ACTION_FUNC(name, addr) \
-	bool name(HouseClass *TargetHouse, ObjectClass *SourceObject, TriggerClass *Trigger, CellStruct *pos) \
+	bool name(HouseClass* pTargetHouse, ObjectClass* pSourceObject, TriggerClass* pTrigger, CellStruct const& location) \
 		{ JMP_THIS(addr); }
-
-#endif
 
 	ACTION_FUNC(LightningStrikeAt, 0x6E0050);
 	ACTION_FUNC(RemoveParticleSystemsAt, 0x6E0080);
@@ -121,10 +122,8 @@ public:
 	ACTION_FUNC(MissionTimerSetText, 0x6E15F0);
 
 	ACTION_FUNC(PlayMovie, 0x6E16D0);
-
-	// these two differ by argument, no idea what it does
-	ACTION_FUNC(PlayMovieInSidebar1, 0x6E1720);
-	ACTION_FUNC(PlayMovieInSidebar2, 0x6E1740);
+	ACTION_FUNC(PlayMovieInSidebar, 0x6E1720);
+	ACTION_FUNC(PlayMovieInSidebarPauseGame, 0x6E1740);
 
 	ACTION_FUNC(PlayAudio, 0x6E1760);
 	ACTION_FUNC(PlayAudioAtRandomWP, 0x6E1780);
@@ -261,14 +260,12 @@ public:
 
 	ACTION_FUNC(FlashBuildingsOfType, 0x6E4560);
 
+#undef ACTION_FUNC
+#pragma pop_macro("ACTION_FUNC")
 	// WHEEEEEW. End of slave functions.
 
-	HouseClass * FindHouseByIndex(TriggerClass *Trigger, int idx) const
+	HouseClass* FindHouseByIndex(TriggerClass* pTrigger, int idxHouse) const
 		{ JMP_THIS(0x6E45E0); }
-
-	// no duplication, please.. it's a waste of good coding
-	int GetIndexInArray() const
-		{ return this->IndexInArray; }
 
 	//Constructor
 	TActionClass()
@@ -285,11 +282,10 @@ protected:
 	//===========================================================================
 
 public:
-
-	int                IndexInArray;
-	TActionClass*      NextTAction;
+	int                ArrayIndex;
+	TActionClass*      NextAction;
 	TriggerAction      ActionKind;
-	TeamTypeClass*     TeamType; // AITeamTypeClass*, really
+	TeamTypeClass*     TeamType;
 	RectangleStruct    Bounds; // map bounds for use with action 40
 	int                Waypoint;
 	int                Value2; // multipurpose
@@ -297,6 +293,6 @@ public:
 	TriggerTypeClass*  TriggerType;
 	char               TechnoID[0x19];
 	char               Text[0x20];
-	bool               padding_8D[0x3];
+	PROTECTED_PROPERTY(BYTE, align_8D[3]);
 	int                Value; // multipurpose
 };
