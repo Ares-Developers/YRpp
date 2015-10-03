@@ -15,6 +15,9 @@ class NOVTABLE DiskLaserClass : public AbstractClass
 public:
 	static const AbstractType AbsID = AbstractType::DiskLaser;
 
+	// static
+	static DynamicVectorClass<DiskLaserClass*>* const Array;
+
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
 
@@ -32,6 +35,9 @@ public:
 	//non-virtual
 	void Fire(TechnoClass* pOwner, TechnoClass* pTarget, WeaponTypeClass* pWeapon, int nDamage)
 		{ JMP_THIS(0x4A71A0); }
+
+	void PointerGotInvalid(AbstractClass* pInvalid)
+		{ JMP_THIS(0x4A7900); }
 
 	//Constructor
 	DiskLaserClass()

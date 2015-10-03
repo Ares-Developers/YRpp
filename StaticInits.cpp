@@ -86,6 +86,9 @@ DECL(CommandClass, 0x87F658);
 DECL(ConvertClass, 0x89ECF8);
 DECL(LightConvertClass, 0x87F698);
 
+#include <DiskLaserClass.h>
+DECL(DiskLaserClass, 0x8A0208);
+
 #include <Drawing.h>
 ALIAS(ABufferClass *, ABufferClass::ABuffer, 0x87E8A4);
 ALIAS(ZBufferClass *, ZBufferClass::ZBuffer, 0x887644);
