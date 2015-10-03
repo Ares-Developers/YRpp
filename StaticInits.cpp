@@ -176,6 +176,9 @@ DECL(IsometricTileClass, 0x87F750);
 #include <IsometricTileTypeClass.h>
 DECL(IsometricTileTypeClass, 0xA8ED28);
 
+#include <Kamikaze.h>
+ALIAS_O(Kamikaze* const, Kamikaze::Instance, 0xABC5F8);
+
 #include <LocomotionClass.h>
 ALIAS(const CLSID, LocomotionClass::CLSIDs::Drive, 0x7E9A30);
 ALIAS(const CLSID, LocomotionClass::CLSIDs::Jumpjet, 0x7E9AC0);
