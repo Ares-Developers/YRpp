@@ -58,12 +58,12 @@ public:
 	//Constructor
 	// TODO fix
 	AnimClass(AnimTypeClass* pAnimType, const CoordStruct& Location, int LoopDelay = 0,
-		int LoopCount = 1, DWORD flags = 0x600, int ForceZAdjust = 0, bool reverse = false)
+		int LoopCount = 1, DWORD flags = 0x600, int ForceZAdjust = 0, bool reverse = false) noexcept
 		: AnimClass(noinit_t())
 	{ JMP_THIS(0x421EA0); }
 
 protected:
-	explicit __forceinline AnimClass(noinit_t)
+	explicit __forceinline AnimClass(noinit_t) noexcept
 		: ObjectClass(noinit_t())
 	{ }
 

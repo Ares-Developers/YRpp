@@ -31,12 +31,12 @@ public:
 	virtual int Size() const R0;
 
 	//Constructor, Destructor
-	TerrainClass(TerrainTypeClass* tt, CellStruct coords)
+	TerrainClass(TerrainTypeClass* tt, CellStruct coords) noexcept
 		: TerrainClass(noinit_t())
 	{ JMP_THIS(0x71BB90); }
 
 protected:
-	explicit __forceinline TerrainClass(noinit_t)
+	explicit __forceinline TerrainClass(noinit_t) noexcept
 		: ObjectClass(noinit_t())
 	{ }
 

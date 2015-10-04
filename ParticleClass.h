@@ -38,12 +38,12 @@ public:
 	//Constructor
 	ParticleClass(
 		ParticleTypeClass* pParticleType, CoordStruct* pCrd1,
-		CoordStruct* pCrd2, ParticleSystemClass* pParticleSystem)
+		CoordStruct* pCrd2, ParticleSystemClass* pParticleSystem) noexcept
 		: ParticleClass(noinit_t())
 	{ JMP_THIS(0x62B5E0); }
 
 protected:
-	explicit __forceinline ParticleClass(noinit_t)
+	explicit __forceinline ParticleClass(noinit_t) noexcept
 		: ObjectClass(noinit_t())
 	{ }
 

@@ -36,12 +36,12 @@ public:
 	virtual void vt_entry_A0(DWORD dwUnk,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4,DWORD dwUnk5) RX;
 
 	//Constructor
-	SmudgeTypeClass(const char* pID)
+	SmudgeTypeClass(const char* pID) noexcept
 		: SmudgeTypeClass(noinit_t())
 	{ JMP_THIS(0x6B5260); }
 
 protected:
-	explicit __forceinline SmudgeTypeClass(noinit_t)
+	explicit __forceinline SmudgeTypeClass(noinit_t) noexcept
 		: ObjectTypeClass(noinit_t())
 	{ }
 

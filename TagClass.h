@@ -103,12 +103,12 @@ public:
 		{ JMP_THIS(0x6E5380); }
 
 	//Constructor
-	TagClass(TagTypeClass* pType)
+	TagClass(TagTypeClass* pType) noexcept
 		: TagClass(noinit_t())
 	{ JMP_THIS(0x6E4DE0); }
 
 protected:
-	explicit __forceinline TagClass(noinit_t)
+	explicit __forceinline TagClass(noinit_t) noexcept
 		: AbstractClass(noinit_t())
 	{ }
 

@@ -38,12 +38,12 @@ public:
 	virtual int Size() const R0;
 
 	//Constructor
-	TaskForceClass(const char* pID)
+	TaskForceClass(const char* pID) noexcept
 		: TaskForceClass(noinit_t())
 	{ JMP_THIS(0x6E7E80); }
 
 protected:
-	explicit __forceinline TaskForceClass(noinit_t)
+	explicit __forceinline TaskForceClass(noinit_t) noexcept
 		: AbstractTypeClass(noinit_t())
 	{ }
 

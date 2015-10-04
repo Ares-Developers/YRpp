@@ -33,12 +33,12 @@ public:
 	virtual ~IsometricTileClass() RX;
 
 	//Constructor
-	IsometricTileClass(int idxType, CellStruct const& location)
+	IsometricTileClass(int idxType, CellStruct const& location) noexcept
 		: IsometricTileClass(noinit_t())
 	{ JMP_THIS(0x543780); }
 
 protected:
-	explicit __forceinline IsometricTileClass(noinit_t)
+	explicit __forceinline IsometricTileClass(noinit_t) noexcept
 		: ObjectClass(noinit_t())
 	{ }
 

@@ -30,11 +30,11 @@ public:
 
 	//Constructor
 	EMPulseClass(CellStruct dwCrd, int nSpread, int nDuration,
-		TechnoClass* pGenerator) : EMPulseClass(noinit_t())
+		TechnoClass* pGenerator) noexcept : EMPulseClass(noinit_t())
 	{ JMP_THIS(0x4C52B0); }
 
 protected:
-	explicit __forceinline EMPulseClass(noinit_t)
+	explicit __forceinline EMPulseClass(noinit_t) noexcept
 		: AbstractClass(noinit_t())
 	{ }
 

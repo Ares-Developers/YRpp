@@ -32,12 +32,12 @@ public:
 	virtual int	Size() const R0;
 
 	//Constructor
-	AlphaShapeClass(ObjectClass* pObj, int nX, int nY)
+	AlphaShapeClass(ObjectClass* pObj, int nX, int nY) noexcept
 		: AlphaShapeClass(noinit_t())
 	{ JMP_THIS(0x420960); }
 
 protected:
-	explicit __forceinline AlphaShapeClass(noinit_t)
+	explicit __forceinline AlphaShapeClass(noinit_t) noexcept
 		: AbstractClass(noinit_t())
 	{ }
 

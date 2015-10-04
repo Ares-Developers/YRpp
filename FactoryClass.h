@@ -60,12 +60,12 @@ public:
 	}
 
 	//Constructor
-	FactoryClass()
+	FactoryClass() noexcept
 		: FactoryClass(noinit_t())
 	{ JMP_THIS(0x4C98B0); }
 
 protected:
-	explicit __forceinline FactoryClass(noinit_t)
+	explicit __forceinline FactoryClass(noinit_t) noexcept
 		: AbstractClass(noinit_t())
 	{ }
 

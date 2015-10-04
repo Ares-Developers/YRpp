@@ -650,12 +650,12 @@ public:
 	}
 
 	//Constructor
-	HouseClass(HouseTypeClass* pCountry)
+	HouseClass(HouseTypeClass* pCountry) noexcept
 		: HouseClass(noinit_t())
 	{ JMP_THIS(0x4F54A0); }
 
 protected:
-	explicit __forceinline HouseClass(noinit_t)
+	explicit __forceinline HouseClass(noinit_t) noexcept
 		: AbstractClass(noinit_t())
 	{ }
 

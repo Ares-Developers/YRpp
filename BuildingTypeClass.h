@@ -85,12 +85,12 @@ public:
 	}
 
 	//Constructor
-	BuildingTypeClass(const char* pID)
+	BuildingTypeClass(const char* pID) noexcept
 		: BuildingTypeClass(noinit_t())
 	{ JMP_THIS(0x45DD90); }
 
 protected:
-	explicit __forceinline BuildingTypeClass(noinit_t)
+	explicit __forceinline BuildingTypeClass(noinit_t) noexcept
 		: TechnoTypeClass(noinit_t())
 	{ }
 

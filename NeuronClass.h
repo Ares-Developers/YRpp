@@ -27,12 +27,12 @@ public:
 	virtual int Size() const R0;
 
 	//Constructor
-	NeuronClass()
+	NeuronClass() noexcept
 		: NeuronClass(noinit_t())
 	{ JMP_THIS(0x43A350); }
 
 protected:
-	explicit __forceinline NeuronClass(noinit_t)
+	explicit __forceinline NeuronClass(noinit_t) noexcept
 		: AbstractClass(noinit_t())
 	{ }
 

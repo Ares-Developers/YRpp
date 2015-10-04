@@ -73,12 +73,12 @@ public:
 		{ JMP_THIS(0x6F2070); }
 
 	//Constructor
-	TeamTypeClass(const char* pID)
+	TeamTypeClass(const char* pID) noexcept
 		: TeamTypeClass(noinit_t())
 	{ JMP_THIS(0x6F06E0); }
 
 protected:
-	explicit __forceinline TeamTypeClass(noinit_t)
+	explicit __forceinline TeamTypeClass(noinit_t) noexcept
 		: AbstractTypeClass(noinit_t())
 	{ }
 

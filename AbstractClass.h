@@ -143,12 +143,12 @@ public:
 	}
 
 	//Constructor
-	AbstractClass()
+	AbstractClass() noexcept
 		: AbstractClass(noinit_t())
 	{ JMP_THIS(0x410170); }
 
 protected:
-	explicit __forceinline AbstractClass(noinit_t)
+	explicit __forceinline AbstractClass(noinit_t) noexcept
 	{ }
 
 	//===========================================================================

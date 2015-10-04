@@ -59,12 +59,12 @@ public:
 	virtual ObjectClass* CreateObject(HouseClass* pOwner) R0;
 
 	//Constructor
-	InfantryTypeClass(const char* pID)
+	InfantryTypeClass(const char* pID) noexcept
 		: InfantryTypeClass(noinit_t())
 	{ JMP_THIS(0x5236A0); }
 
 protected:
-	explicit __forceinline InfantryTypeClass(noinit_t)
+	explicit __forceinline InfantryTypeClass(noinit_t) noexcept
 		: TechnoTypeClass(noinit_t())
 	{ }
 

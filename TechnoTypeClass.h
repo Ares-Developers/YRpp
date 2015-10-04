@@ -160,12 +160,12 @@ public:
 	}
 
 	//Constructor
-	TechnoTypeClass(const char* id, SpeedType speedtype)
+	TechnoTypeClass(const char* id, SpeedType speedtype) noexcept
 		: TechnoTypeClass(noinit_t())
 	{ JMP_THIS(0x710AF0); }
 
 protected:
-	explicit __forceinline TechnoTypeClass(noinit_t)
+	explicit __forceinline TechnoTypeClass(noinit_t) noexcept
 		: ObjectTypeClass(noinit_t())
 	{ }
 

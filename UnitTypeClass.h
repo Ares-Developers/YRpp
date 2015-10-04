@@ -35,12 +35,12 @@ public:
 	//TechnoTypeClass
 
 	//Constructor
-	UnitTypeClass(const char* pID)
+	UnitTypeClass(const char* pID) noexcept
 		: UnitTypeClass(noinit_t())
 	{ JMP_THIS(0x7470D0); }
 
 protected:
-	explicit __forceinline UnitTypeClass(noinit_t)
+	explicit __forceinline UnitTypeClass(noinit_t) noexcept
 		: TechnoTypeClass(noinit_t())
 	{ }
 

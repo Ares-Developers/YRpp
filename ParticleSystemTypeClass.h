@@ -35,12 +35,12 @@ public:
 	virtual ObjectClass* CreateObject(HouseClass* owner) R0;
 
 	//Constructor
-	ParticleSystemTypeClass(const char* pID)
+	ParticleSystemTypeClass(const char* pID) noexcept
 		: ParticleSystemTypeClass(noinit_t())
 	{ JMP_THIS(0x6440A0); }
 
 protected:
-	explicit __forceinline ParticleSystemTypeClass(noinit_t)
+	explicit __forceinline ParticleSystemTypeClass(noinit_t) noexcept
 		: ObjectTypeClass(noinit_t())
 	{ }
 

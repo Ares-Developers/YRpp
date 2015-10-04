@@ -147,12 +147,12 @@ public:
 	}
 
 	//Constructor
-	AITriggerTypeClass(const char* pID)
+	AITriggerTypeClass(const char* pID) noexcept
 		: AITriggerTypeClass(noinit_t())
 	{ JMP_THIS(0x41E350); }
 
 protected:
-	explicit __forceinline AITriggerTypeClass(noinit_t)
+	explicit __forceinline AITriggerTypeClass(noinit_t) noexcept
 		: AbstractTypeClass(noinit_t())
 	{ }
 

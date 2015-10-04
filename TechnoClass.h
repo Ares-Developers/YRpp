@@ -462,12 +462,12 @@ public:
 	}
 
 	//Constructor
-	TechnoClass(HouseClass* pOwner)
+	TechnoClass(HouseClass* pOwner) noexcept
 		: TechnoClass(noinit_t())
 	{ JMP_THIS(0x6F2B40); }
 
 protected:
-	explicit __forceinline TechnoClass(noinit_t)
+	explicit __forceinline TechnoClass(noinit_t) noexcept
 		: RadioClass(noinit_t())
 	{ }
 

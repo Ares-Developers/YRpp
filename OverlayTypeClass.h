@@ -41,12 +41,12 @@ public:
 	virtual void Draw(Point2D* pClientCoords, RectangleStruct* pClipRect, int nFrame) RX;
 
 	//Constructor
-	OverlayTypeClass(const char* pID)
+	OverlayTypeClass(const char* pID) noexcept
 		: OverlayTypeClass(noinit_t())
 	{ JMP_THIS(0x5FE250); }
 
 protected:
-	explicit __forceinline OverlayTypeClass(noinit_t)
+	explicit __forceinline OverlayTypeClass(noinit_t) noexcept
 		: ObjectTypeClass(noinit_t())
 	{ }
 

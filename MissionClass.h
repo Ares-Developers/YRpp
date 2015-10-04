@@ -93,12 +93,12 @@ public:
 	virtual int Mission_SpyPlaneOverfly() R0;
 
 	//Constructor
-	MissionClass()
+	MissionClass() noexcept
 		: MissionClass(noinit_t())
 	{ THISCALL(0x5B2DA0); }
 
 protected:
-	explicit __forceinline MissionClass(noinit_t)
+	explicit __forceinline MissionClass(noinit_t) noexcept
 		: ObjectClass(noinit_t())
 	{ }
 

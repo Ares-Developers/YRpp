@@ -318,11 +318,11 @@ public:
 
 protected:
 	//Constructor
-	CellClass()
+	CellClass() noexcept
 		: CellClass(noinit_t())
 	{ JMP_THIS(0x47BBF0); }
 
-	explicit __forceinline CellClass(noinit_t)
+	explicit __forceinline CellClass(noinit_t) noexcept
 		: AbstractClass(noinit_t())
 	{ }
 

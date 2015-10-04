@@ -39,12 +39,12 @@ public:
 	virtual int Size() const R0;
 
 	//Constructor
-	TeamClass(TeamTypeClass* pType)
+	TeamClass(TeamTypeClass* pType) noexcept
 		: TeamClass(noinit_t())
 	{ JMP_THIS(0x6E8A90); }
 
 protected:
-	explicit __forceinline TeamClass(noinit_t)
+	explicit __forceinline TeamClass(noinit_t) noexcept
 		: AbstractClass(noinit_t())
 	{ }
 

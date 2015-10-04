@@ -46,12 +46,12 @@ public:
 		{ JMP_STD(0x5117D0); }
 
 	//Constructor
-	HouseTypeClass(const char* pID)
+	HouseTypeClass(const char* pID) noexcept
 		: HouseTypeClass(noinit_t())
 	{ JMP_THIS(0x5113F0); }
 
 protected:
-	explicit __forceinline HouseTypeClass(noinit_t)
+	explicit __forceinline HouseTypeClass(noinit_t) noexcept
 		: AbstractTypeClass(noinit_t())
 	{ }
 

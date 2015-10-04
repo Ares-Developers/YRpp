@@ -33,12 +33,12 @@ public:
 	virtual ObjectClass* CreateObject(HouseClass* owner) R0;
 
 	//Constructor
-	TerrainTypeClass(const char* pID)
+	TerrainTypeClass(const char* pID) noexcept
 		: TerrainTypeClass(noinit_t())
 	{ JMP_THIS(0x71DA80); }
 
 protected:
-	explicit __forceinline TerrainTypeClass(noinit_t)
+	explicit __forceinline TerrainTypeClass(noinit_t) noexcept
 		: ObjectTypeClass(noinit_t())
 	{ }
 

@@ -40,12 +40,12 @@ public:
 		{ JMP_THIS(0x4A7900); }
 
 	//Constructor
-	DiskLaserClass()
+	DiskLaserClass() noexcept
 		: DiskLaserClass(noinit_t())
 	{ JMP_THIS(0x4A7A30); }
 
 protected:
-	explicit __forceinline DiskLaserClass(noinit_t)
+	explicit __forceinline DiskLaserClass(noinit_t) noexcept
 		: AbstractClass(noinit_t())
 	{ }
 

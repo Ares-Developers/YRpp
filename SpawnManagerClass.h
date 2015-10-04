@@ -80,11 +80,11 @@ public:
 	//Constructor
 	SpawnManagerClass(
 		TechnoClass* pOwner, AircraftTypeClass* pSpawnType, int nMaxNodes,
-		int RegenRate, int ReloadRate) : SpawnManagerClass(noinit_t())
+		int RegenRate, int ReloadRate) noexcept : SpawnManagerClass(noinit_t())
 	{ JMP_THIS(0x6B6C90); }
 
 protected:
-	explicit __forceinline SpawnManagerClass(noinit_t)
+	explicit __forceinline SpawnManagerClass(noinit_t) noexcept
 		: AbstractClass(noinit_t())
 	{ }
 

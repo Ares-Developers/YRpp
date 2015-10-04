@@ -38,12 +38,12 @@ public:
 	virtual ~AnimTypeClass() RX;
 
 	//Constructor
-	AnimTypeClass(const char* pID)
+	AnimTypeClass(const char* pID) noexcept
 		: AnimTypeClass(noinit_t())
 	{ JMP_THIS(0x427530); }
 
 protected:
-	explicit __forceinline AnimTypeClass(noinit_t)
+	explicit __forceinline AnimTypeClass(noinit_t) noexcept
 		: ObjectTypeClass(noinit_t())
 	{ }
 

@@ -8,12 +8,12 @@ class NOVTABLE CampaignClass : public AbstractTypeClass {
 public:
 	static const AbstractType AbsID = AbstractType::Campaign;
 
-	CampaignClass(const char *name)
+	CampaignClass(const char *name) noexcept
 		: CampaignClass(noinit_t())
 	{ JMP_THIS(0x46CB60); }
 
 protected:
-	explicit __forceinline CampaignClass(noinit_t)
+	explicit __forceinline CampaignClass(noinit_t) noexcept
 		: AbstractTypeClass(noinit_t())
 	{ }
 

@@ -48,12 +48,12 @@ public:
 
 
 	//Constructor
-	ObjectTypeClass(const char* pID)
+	ObjectTypeClass(const char* pID) noexcept
 		: ObjectTypeClass(noinit_t())
 	{ JMP_THIS(0x5F7090); }
 
 protected:
-	explicit __forceinline ObjectTypeClass(noinit_t)
+	explicit __forceinline ObjectTypeClass(noinit_t) noexcept
 		: AbstractTypeClass(noinit_t())
 	{ }
 

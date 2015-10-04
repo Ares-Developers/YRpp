@@ -47,12 +47,12 @@ public:
 		{ JMP_THIS(0x71ADE0); }
 
 	//Constructor
-	TemporalClass(TechnoClass* pOwnerUnit)
+	TemporalClass(TechnoClass* pOwnerUnit) noexcept
 		: TemporalClass(noinit_t())
 	{ JMP_THIS(0x71A4E0); }
 
 protected:
-	explicit __forceinline TemporalClass(noinit_t)
+	explicit __forceinline TemporalClass(noinit_t) noexcept
 		: AbstractClass(noinit_t())
 	{ }
 

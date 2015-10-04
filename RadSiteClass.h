@@ -94,7 +94,7 @@ public:
 		: RadSiteClass(noinit_t())
 	{ JMP_THIS(0x65B1E0); }
 
-	RadSiteClass(CellStruct nBaseCoords, int nSpread, int nRadLevel)
+	RadSiteClass(CellStruct nBaseCoords, int nSpread, int nRadLevel) noexcept
 		: RadSiteClass()
 	{
 		SetBaseCell(&nBaseCoords);
@@ -103,7 +103,7 @@ public:
 	}
 
 protected:
-	explicit __forceinline RadSiteClass(noinit_t)
+	explicit __forceinline RadSiteClass(noinit_t) noexcept
 		: AbstractClass(noinit_t())
 	{ }
 

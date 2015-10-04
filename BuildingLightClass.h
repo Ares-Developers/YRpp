@@ -29,12 +29,12 @@ public:
 		{ JMP_THIS(0x436BE0); }
 
 	//Constructor
-	BuildingLightClass(ObjectClass* pOwner)
+	BuildingLightClass(ObjectClass* pOwner) noexcept
 		: BuildingLightClass(noinit_t())
 	{ JMP_THIS(0x435820); }
 
 protected:
-	explicit __forceinline BuildingLightClass(noinit_t)
+	explicit __forceinline BuildingLightClass(noinit_t) noexcept
 		: ObjectClass(noinit_t())
 	{ }
 

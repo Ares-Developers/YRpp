@@ -30,12 +30,12 @@ public:
 	virtual int Size() const R0;
 
 	//Constructor
-	SmudgeClass(SmudgeTypeClass* pType)
+	SmudgeClass(SmudgeTypeClass* pType) noexcept
 		: SmudgeClass(noinit_t())
 	{ JMP_THIS(0x6B4A50); }
 
 protected:
-	explicit __forceinline SmudgeClass(noinit_t)
+	explicit __forceinline SmudgeClass(noinit_t) noexcept
 		: ObjectClass(noinit_t())
 	{ }
 

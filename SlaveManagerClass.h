@@ -90,11 +90,11 @@ public:
 	//Constructor
 	SlaveManagerClass(
 		TechnoClass* pOwner, InfantryTypeClass* pSlave, int num, int RegenRate,
-		int ReloadRate) : SlaveManagerClass(noinit_t())
+		int ReloadRate) noexcept : SlaveManagerClass(noinit_t())
 	{ JMP_THIS(0x6AF1A0); }
 
 protected:
-	explicit __forceinline SlaveManagerClass(noinit_t)
+	explicit __forceinline SlaveManagerClass(noinit_t) noexcept
 		: AbstractClass(noinit_t())
 	{ }
 

@@ -36,12 +36,12 @@ public:
 	virtual ~ParticleTypeClass() RX;
 
 	//Constructor
-	ParticleTypeClass(const char* pID)
+	ParticleTypeClass(const char* pID) noexcept
 		: ParticleTypeClass(noinit_t())
 	{ JMP_THIS(0x644BE0); }
 
 protected:
-	explicit __forceinline ParticleTypeClass(noinit_t)
+	explicit __forceinline ParticleTypeClass(noinit_t) noexcept
 		: ObjectTypeClass(noinit_t())
 	{ }
 

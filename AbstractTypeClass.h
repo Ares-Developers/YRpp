@@ -59,12 +59,12 @@ public:
 	}
 
 	//Constructor
-	AbstractTypeClass(const char* pID)
+	AbstractTypeClass(const char* pID) noexcept
 		: AbstractTypeClass(noinit_t())
 	{ JMP_THIS(0x410800); }
 
 protected:
-	explicit __forceinline AbstractTypeClass(noinit_t)
+	explicit __forceinline AbstractTypeClass(noinit_t) noexcept
 		: AbstractClass(noinit_t())
 	{ }
 

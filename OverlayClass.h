@@ -59,12 +59,12 @@ public:
 	virtual int Size() const R0;
 
 	//Constructor
-	OverlayClass(OverlayTypeClass* pType)
+	OverlayClass(OverlayTypeClass* pType) noexcept
 		: OverlayClass(noinit_t())
 	{ JMP_THIS(0x5FC380); }
 
 protected:
-	explicit __forceinline OverlayClass(noinit_t)
+	explicit __forceinline OverlayClass(noinit_t) noexcept
 		: ObjectClass(noinit_t())
 	{ }
 

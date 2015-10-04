@@ -39,11 +39,12 @@ public:
 
 	//Constructor
 	IsometricTileTypeClass(int ArrayIndex, int Minus65, int Zero1,
-		const char* pName, int Zero2) : IsometricTileTypeClass(noinit_t())
+		const char* pName, int Zero2) noexcept
+		: IsometricTileTypeClass(noinit_t())
 	{ JMP_THIS(0x5447C0); }
 
 protected:
-	explicit __forceinline IsometricTileTypeClass(noinit_t)
+	explicit __forceinline IsometricTileTypeClass(noinit_t) noexcept
 		: ObjectTypeClass(noinit_t())
 	{ }
 

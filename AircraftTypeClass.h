@@ -27,12 +27,12 @@ public:
 	//TechnoTypeClass
 
 	//Constructor
-	AircraftTypeClass(const char* pID)
+	AircraftTypeClass(const char* pID) noexcept
 		: AircraftTypeClass(noinit_t())
 	{ JMP_THIS(0x41C8B0); }
 
 protected:
-	explicit __forceinline AircraftTypeClass(noinit_t)
+	explicit __forceinline AircraftTypeClass(noinit_t) noexcept
 		: TechnoTypeClass(noinit_t())
 	{ }
 

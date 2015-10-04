@@ -268,12 +268,12 @@ public:
 		{ JMP_THIS(0x6E45E0); }
 
 	//Constructor
-	TActionClass()
+	TActionClass() noexcept
 		: TActionClass(noinit_t())
 	{ JMP_THIS(0x71E6A0); }
 
 protected:
-	explicit __forceinline TActionClass(noinit_t)
+	explicit __forceinline TActionClass(noinit_t) noexcept
 		: AbstractClass(noinit_t())
 	{ }
 

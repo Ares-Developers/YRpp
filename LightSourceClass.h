@@ -37,12 +37,12 @@ public:
 
 	//Constructor
 	LightSourceClass(
-		CoordStruct Crd, int nVisibility, int nIntensity, TintStruct Tint) 
+		CoordStruct Crd, int nVisibility, int nIntensity, TintStruct Tint) noexcept
 		: LightSourceClass(noinit_t())
 	{ JMP_THIS(0x554760); }
 
 protected:
-	explicit __forceinline LightSourceClass(noinit_t)
+	explicit __forceinline LightSourceClass(noinit_t) noexcept
 		: AbstractClass(noinit_t())
 	{ }
 

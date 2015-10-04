@@ -193,12 +193,12 @@ public:
 	}
 
 	//Constructor
-	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner)
+	BuildingClass(BuildingTypeClass* pType, HouseClass* pOwner) noexcept
 		: BuildingClass(noinit_t())
 	{ JMP_THIS(0x43B740); }
 
 protected:
-	explicit __forceinline BuildingClass(noinit_t)
+	explicit __forceinline BuildingClass(noinit_t) noexcept
 		: TechnoClass(noinit_t())
 	{ }
 

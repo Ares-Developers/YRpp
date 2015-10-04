@@ -98,12 +98,12 @@ public:
 		{ JMP_THIS(0x6CE1A0); }
 
 	//Constructor
-	SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner)
+	SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner) noexcept
 		: SuperClass(noinit_t())
 	{ JMP_THIS(0x6CAF90); }
 
 protected:
-	explicit __forceinline SuperClass(noinit_t)
+	explicit __forceinline SuperClass(noinit_t) noexcept
 		: AbstractClass(noinit_t())
 	{ }
 

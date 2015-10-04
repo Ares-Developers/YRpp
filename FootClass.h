@@ -128,12 +128,12 @@ public:
 		{ JMP_THIS(0x4DDB90); }
 
 	//Constructor
-	FootClass(HouseClass* owner)
+	FootClass(HouseClass* owner) noexcept
 		: FootClass(noinit_t())
 	{ JMP_THIS(0x4D31E0); }
 
 protected:
-	explicit __forceinline FootClass(noinit_t)
+	explicit __forceinline FootClass(noinit_t) noexcept
 		: TechnoClass(noinit_t())
 	{ }
 

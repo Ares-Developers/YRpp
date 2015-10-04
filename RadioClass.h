@@ -57,12 +57,12 @@ public:
 		{ JMP_THIS(0x65AE60); }
 
 	//Constructor
-	RadioClass()
+	RadioClass() noexcept
 		: RadioClass(noinit_t())
 	{ JMP_THIS(0x65A750); }
 
 protected:
-	explicit __forceinline RadioClass(noinit_t)
+	explicit __forceinline RadioClass(noinit_t) noexcept
 		: MissionClass(noinit_t())
 	{ }
 
