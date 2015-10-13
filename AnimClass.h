@@ -85,7 +85,7 @@ public:
 	int YSortAdjust; // same as YSortAdjust from Type
 	CoordStruct FlamingGuyCoords; // the destination the anim tries to reach
 	int FlamingGuyRetries; // number of failed attemts to reach water. the random destination generator stops if >= 7
-	BYTE unknown_118;
+	bool IsBuildingAnim; // whether this anim will invalidate on buildings, and whether it's tintable
 	bool UnderTemporal; // temporal'd building's active anims
 	bool Paused; // if paused, does not advance anim, does not deliver damage
 	bool Unpaused; // set when unpaused
