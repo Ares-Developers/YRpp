@@ -122,7 +122,7 @@ public:
 		} while(idx < 0x20 );
 		*condStr = '\0';
 
-		sprintf_s(buffer, size, "%s = %s,%s,%s,%d,%d,%s,%s,%lf,%lf,%lf,%d,%d,%d,%d,%s,%d,%d,%d\n",
+		sprintf_s(buffer, size, "%s = %s,%s,%s,%d,%d,%s,%s,%lf,%lf,%lf,%u,%d,%d,%u,%s,%u,%u,%u\n",
 			this->ID,
 			this->Name,
 			Team1Name,
@@ -134,14 +134,14 @@ public:
 			this->Weight_Current,
 			this->Weight_Minimum,
 			this->Weight_Maximum,
-			this->IsForSkirmish != 0,
+			this->IsForSkirmish,
 			0,
 			this->SideIndex,
-			this->IsForBaseDefense != 0,
+			this->IsForBaseDefense,
 			Team2Name,
-			this->Enabled_Easy != 0,
-			this->Enabled_Normal != 0,
-			this->Enabled_Hard != 0
+			this->Enabled_Easy,
+			this->Enabled_Normal,
+			this->Enabled_Hard
 		);
 
 	}
