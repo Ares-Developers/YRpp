@@ -1,6 +1,21 @@
 #pragma once
 
+#include <string>
+
 // because every project needs an own string implementation...
+
+namespace detail
+{
+	template <typename T, typename Traits = std::char_traits<T>>
+	inline __declspec(noinline) void __fastcall string_copy_n(
+		T* const pDest, T const* const pSrc, size_t const cchMax) noexcept
+	{
+		auto const len = Traits::length(pSrc);
+		auto const count = len < cchMax ? len : cchMax;
+		Traits::copy(pDest, pSrc, count);
+		pDest[count] = T();
+	}
+}
 
 template <size_t Capacity, typename T = char>
 struct FixedString {
@@ -27,7 +42,8 @@ struct FixedString {
 	FixedString& operator= (const T* value) {
 		if(value != this->chars) {
 			if(value) {
-				this->assign(value);
+				// free function to not templatize on size
+				detail::string_copy_n(this->chars, value, Size - 1);
 			} else {
 				this->chars[0] = 0;
 			}
@@ -64,14 +80,6 @@ struct FixedString {
 	}
 
 private:
-	void assign(const char* value) {
-		strncpy_s(this->chars, value, Size - 1);
-	}
-
-	void assign(const wchar_t* value) {
-		wcsncpy_s(this->chars, value, Size - 1);
-	}
-
 	data_type chars;
 };
 
