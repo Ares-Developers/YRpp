@@ -25,11 +25,12 @@ struct FixedString {
 
 	using data_type = T[Capacity];
 
-	FixedString() {
+	FixedString() noexcept {
 		this->chars[0] = 0;
 	}
 
-	explicit FixedString(const T* value) {
+	explicit FixedString(const T* value) noexcept {
+		__assume(value != this->chars);
 		*this = value;
 	}
 
@@ -38,15 +39,16 @@ struct FixedString {
 	*  implementation does the same, but gets rid of the temporary object in
 	*  case a pointer is passed.
 	*/
+	FixedString& operator= (FixedString const& value) noexcept = default;
 
-	FixedString& operator= (const T* value) {
-		if(value != this->chars) {
-			if(value) {
+	FixedString& operator= (const T* const value) noexcept {
+		if(value) {
+			if(value != this->chars) {
 				// free function to not templatize on size
 				detail::string_copy_n(this->chars, value, Size - 1);
-			} else {
-				this->chars[0] = 0;
 			}
+		} else {
+			this->chars[0] = 0;
 		}
 		return *this;
 	}
