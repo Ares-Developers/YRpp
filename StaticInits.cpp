@@ -143,6 +143,9 @@ DECL(FootClass, 0x8B3DC0);
 ALIAS(unsigned int, FPSCounter::CurrentFrameRate, 0xABCD44);
 ALIAS(unsigned int, FPSCounter::TotalFramesElapsed, 0xABCD48);
 ALIAS(unsigned int, FPSCounter::TotalTimeElapsed, 0xABCD4C);
+ALIAS(bool, FPSCounter::ReducedEffects, 0xABCD50);
+ALIAS(unsigned int, Detail::MinFrameRate, 0x829FF4);
+ALIAS(unsigned int, Detail::BufferZoneWidth, 0x829FF8);
 
 #include <GameModeOptionsClass.h>
 ALIAS_O(GameModeOptionsClass * const, GameModeOptionsClass::Instance, 0xA8B250);
