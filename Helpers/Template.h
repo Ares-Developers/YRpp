@@ -69,22 +69,27 @@ void AnnounceInvalidPointer(DynamicVectorClass<T> &elem, void *ptr) {
 // Westwood uses if(((1 << HouseClass::ArrayIndex) & TechnoClass::DisplayProductionToHouses) != 0) and other bitfields like this (esp. in CellClass, omg optimized). helper wrapper just because
 template <typename T>
 class IndexBitfield {
-	public:
-	DWORD data;
-	IndexBitfield(const DWORD defVal = 0) : data(defVal) {};
+public:
+	IndexBitfield() = default;
+	explicit IndexBitfield(DWORD const defVal) noexcept : data(defVal) {};
 
 	bool Contains(const T obj) const {
-		return (this->data & (1 << obj->ArrayIndex)) != 0;
+		return (this->data & (1u << obj->ArrayIndex)) != 0u;
 	}
+
 	void Add(const T obj) {
-		this->data |= (1 << obj->ArrayIndex);
+		this->data |= (1u << obj->ArrayIndex);
 	}
+
 	void Remove(const T obj) {
-		this->data &= ~(1 << obj->ArrayIndex);
+		this->data &= ~(1u << obj->ArrayIndex);
 	}
+
 	void Clear() {
-		this->data = 0;
+		this->data = 0u;
 	}
+
+	DWORD data{ 0 };
 };
 
 #include <Helpers/Cast.h>
