@@ -30,6 +30,9 @@ public:
 	void RemoveDetector(TechnoClass *Detector)
 		{ JMP_THIS(0x4390D0); }
 
+	void PointerGotInvalid(AbstractClass* pInvalid)
+		{ JMP_THIS(0x439150); }
+
 protected:
 	//===========================================================================
 	//===== Properties ==========================================================
