@@ -17,6 +17,7 @@
 #pragma once
 
 #include <ArrayClasses.h>
+#include <Randomizer.h>
 
 template <typename T>
 class DiscreteSelectionClass

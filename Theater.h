@@ -1,5 +1,6 @@
 #pragma once
 
+#include <GeneralDefinitions.h>
 #include <YRPPCore.h>
 
 struct Theater	//US English spelling to keep it consistent with the game
