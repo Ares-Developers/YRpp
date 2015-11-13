@@ -19,11 +19,14 @@
 #include <ArrayClasses.h>
 #include <Randomizer.h>
 
+#include <utility>
+
 template <typename T>
 class DiscreteSelectionClass
 {
 public:
-	explicit DiscreteSelectionClass(int initial = 0) : Items(), Rating(initial) {}
+	DiscreteSelectionClass() = default;
+	explicit DiscreteSelectionClass(int initial) : Rating(initial) {}
 
 	void Add(T value, int rating) {
 		if(this->Rating > rating) {
@@ -35,7 +38,7 @@ public:
 			this->Rating = rating;
 		}
 
-		this->Items.AddItem(value);
+		this->Items.AddItem(std::move(value));
 	}
 
 	void Clear() {
@@ -85,6 +88,6 @@ public:
 	}
 
 private:
-	DynamicVectorClass<T> Items;
-	int Rating;
+	DynamicVectorClass<T> Items{};
+	int Rating{ 0 };
 };

@@ -17,35 +17,39 @@
 #include <ArrayClasses.h>
 #include <Randomizer.h>
 
+#include <utility>
+
 template <typename T>
 class DiscreteDistributionClass
 {
 public:
 	template <typename T>
 	struct DistributionObject {
-		DistributionObject() : Value(T()), Weight(0U) {}
-		DistributionObject(T value, unsigned int weight=1U) : Value(value), Weight(weight) {}
+		DistributionObject() = default;
+		explicit DistributionObject(T value, unsigned int weight = 1u) : Value(std::move(value)), Weight(weight) {}
 
-		bool operator ==(const DistributionObject<T> &rhs) { return false; }
+		bool operator ==(const DistributionObject<T> &rhs) const { return false; }
+		bool operator !=(const DistributionObject<T> &rhs) const { return true; }
 
-		T Value;
-		unsigned int Weight;
+		T Value{};
+		unsigned int Weight{ 0u };
 	};
 
-	DiscreteDistributionClass() : Items(), TotalWeight(0U) {}
+	DiscreteDistributionClass() = default;
+	explicit DiscreteDistributionClass(int capacity, DistributionObject<T>* pMem = nullptr) : Items(capacity, pMem) {}
 
-	void Add(DistributionObject<T> &item) {
-		this->Items.AddItem(item);
+	void Add(DistributionObject<T> item) {
 		this->TotalWeight += item.Weight;
+		this->Items.AddItem(std::move(item));
 	}
 
-	void Add(T value, unsigned int weight=1U) {
-		DistributionObject<T> item(value, weight);
-		this->Add(item);
+	void Add(T value, unsigned int weight = 1u) {
+		DistributionObject<T> item(std::move(value), weight);
+		this->Add(std::move(item));
 	}
 
 	void Clear() {
-		this->TotalWeight = 0U;
+		this->TotalWeight = 0u;
 		this->Items.Clear();
 	}
 
@@ -63,8 +67,8 @@ public:
 
 	bool Select(unsigned int value, T* pOut) const {
 		if(this->IsValid() && value && value <= this->TotalWeight) {
-			unsigned int acc = 0U;
-			for(auto i=this->Items.begin(); i<this->Items.end(); ++i) {
+			unsigned int acc = 0u;
+			for(auto i = this->Items.begin(); i < this->Items.end(); ++i) {
 				acc += i->Weight;
 
 				if(acc >= value) {
@@ -99,6 +103,6 @@ public:
 	}
 
 private:
-	DynamicVectorClass<DistributionObject<T>> Items;
-	unsigned int TotalWeight;
+	DynamicVectorClass<DistributionObject<T>> Items{};
+	unsigned int TotalWeight{ 0u };
 };
