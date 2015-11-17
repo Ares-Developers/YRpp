@@ -74,7 +74,7 @@ public:
 	void Shrapnel()
 		{ JMP_THIS(0x46A310); }
 
-	static void ApplyRadiationToCell(CellStruct coords, double *radius, int amount)
+	static void ApplyRadiationToCell(CellStruct cell, int radius, int amount)
 		{ JMP_STD(0x46ADE0); }
 
 	// this bullet will miss and hit the ground instead.
