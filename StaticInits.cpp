@@ -574,6 +574,7 @@ ALIAS_O(MovieUnlockableInfo const* const, MovieUnlockableInfo::SovietUnlockables
 
 #include <VocClass.h>
 DECL(VocClass, 0xB1D378);
+ALIAS(bool, VocClass::VoicesEnabled, 0x8464AC);
 
 #include <EBolt.h>
 DECL(EBolt, 0x8A0E88);

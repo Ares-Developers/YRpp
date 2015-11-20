@@ -30,6 +30,9 @@ class VocClass
 {
 public:
 	static DynamicVectorClass<VocClass*>* const Array;
+
+	static bool& VoicesEnabled;
+
 	static VocClass* Find(const char* pName)
 	{
 		for(int i = 0; i < Array->Count; ++i) {
