@@ -37,18 +37,18 @@ struct NetworkEvent;
 
 struct VeterancyStruct
 {
-	VeterancyStruct() : Veterancy(0.0f) { }
+	VeterancyStruct() = default;
 
-	explicit VeterancyStruct(double value) : Veterancy(0.0f) {
+	explicit VeterancyStruct(double value) noexcept {
 		this->Add(value);
 	}
 
-	void Add(int ownerCost, int victimCost)	{
+	void Add(int ownerCost, int victimCost) noexcept {
 		this->Add(static_cast<double>(victimCost)
 			/ (ownerCost * RulesClass::Instance->VeteranRatio));
 	}
 
-	void Add(double value) {
+	void Add(double value) noexcept {
 		auto val = this->Veterancy + value;
 
 		if(val > RulesClass::Instance->VeteranCap) {
@@ -58,7 +58,7 @@ struct VeterancyStruct
 		this->Veterancy = static_cast<float>(val);
 	}
 
-	Rank GetRemainingLevel() const {
+	Rank GetRemainingLevel() const noexcept {
 		if(this->Veterancy >= 2.0f) {
 			return Rank::Elite;
 		}
@@ -70,40 +70,39 @@ struct VeterancyStruct
 		return Rank::Rookie;
 	}
 
-	bool IsNegative() const {
+	bool IsNegative() const noexcept {
 		return this->Veterancy < 0.0f;
 	}
 
-	bool IsRookie() const {
+	bool IsRookie() const noexcept {
 		return this->Veterancy >= 0.0f && this->Veterancy < 1.0f;
 	}
 
-	bool IsVeteran() const {
+	bool IsVeteran() const noexcept {
 		return this->Veterancy >= 1.0f && this->Veterancy < 2.0f;
 	}
 
-	bool IsElite() const {
+	bool IsElite() const noexcept {
 		return this->Veterancy >= 2.0f;
 	}
 
-	void Reset() {
+	void Reset() noexcept {
 		this->Veterancy = 0.0f;
 	}
 
-	void SetRookie(bool notReally = true) {
+	void SetRookie(bool notReally = true) noexcept {
 		this->Veterancy = notReally ? -0.25f : 0.0f;
 	}
 
-	void SetVeteran(bool yesReally = true) {
+	void SetVeteran(bool yesReally = true) noexcept {
 		this->Veterancy = yesReally ? 1.0f : 0.0f;
 	}
 
-	void SetElite(bool yesReally = true) {
+	void SetElite(bool yesReally = true) noexcept {
 		this->Veterancy = yesReally ? 2.0f : 0.0f;
 	}
 
-	float Veterancy;
-	DWORD unknown_4;
+	float Veterancy{ 0.0f };
 };
 
 class PassengersClass
@@ -494,6 +493,7 @@ public:
 	DWORD            unknown_148;
 	HouseClass*      InitialOwner; // only set in ctor
 	VeterancyStruct  Veterancy;
+	PROTECTED_PROPERTY(DWORD, align_154);
 	double           ArmorMultiplier;
 	double           FirepowerMultiplier;
 	TimerStruct      IdleActionTimer; // MOO
