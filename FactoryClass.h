@@ -37,7 +37,8 @@ public:
 		{ JMP_THIS(0x4C9C70); }
 	bool AbandonProduction()
 		{ JMP_THIS(0x4C9FF0); }
-	unsigned int CountQueued(TechnoTypeClass * pType)
+
+	int CountQueued(TechnoTypeClass const* pType) const
 		{ JMP_THIS(0x4CA670); }
 
 	int GetProgress() const
@@ -47,7 +48,7 @@ public:
 		{ JMP_THIS(0x4C9FB0); }
 
 	static FactoryClass* FindThisOwnerAndProduct(
-		HouseClass* const pHouse, TechnoTypeClass* const pItem)
+		HouseClass const* const pHouse, TechnoTypeClass const* const pItem)
 	{
 		for(auto const& pFact : *FactoryClass::Array) {
 			if(pFact->Owner == pHouse) {
