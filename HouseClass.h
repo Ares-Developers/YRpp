@@ -605,8 +605,11 @@ public:
 	char PickedUpFlag(UnitClass *Who, DWORD dwUnk)
 		{ JMP_THIS(0x4FC060); }
 
-	FactoryClass * GetPrimaryFactory(AbstractType ID, bool Naval, BuildCat BuildCat)
+	FactoryClass* GetPrimaryFactory(AbstractType absID, bool naval, BuildCat buildCat) const
 		{ JMP_THIS(0x500510); }
+
+	void SetPrimaryFactory(FactoryClass* pFactory, AbstractType absID, bool naval, BuildCat buildCat)
+		{ JMP_THIS(0x500850); }
 
 	const CellStruct& GetBaseCenter() const {
 		if(this->BaseCenter != CellStruct::Empty) {
