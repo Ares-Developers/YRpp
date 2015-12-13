@@ -393,13 +393,17 @@ public:
 	void Update_FactoriesQueues(AbstractType FactoryOf, bool isNaval, BuildCat buildingCat)
 		{ JMP_THIS(0x509140); }
 
+	// returns the factory owned by this house, having pItem in production right now, not queued
+	FactoryClass* GetFactoryProducing(TechnoTypeClass const* pItem) const
+		{ JMP_THIS(0x4F83C0); }
+
 	// finds a buildingtype from the given array that this house can build
 	// this checks whether the Owner=, Required/ForbiddenHouses= , AIBasePlanningSide= match and if SuperWeapon= (not SW2=) is not forbidden
 	BuildingTypeClass* FirstBuildableFromArray(DynamicVectorClass<BuildingTypeClass*> const& items)
 		{ JMP_THIS(0x5051E0); }
 
 	// are all prereqs for Techno listed in vectorBuildings[0..vectorLength]. Yes, the length is needed (the vector is used for breadth-first search)
-	bool AllPrerequisitesAvailable(TechnoTypeClass *Techno, DynamicVectorClass<BuildingTypeClass *> *vectorBuildings, int vectorLength)
+	bool AllPrerequisitesAvailable(TechnoTypeClass const* pItem, DynamicVectorClass<BuildingTypeClass*> const& vectorBuildings, int vectorLength)
 		{ JMP_THIS(0x505360); }
 
 	// whether any human player controls this house
@@ -537,10 +541,11 @@ public:
 	}
 
 	bool HasFactoryForObject(const TechnoTypeClass* const pItem) const {
+		auto const abs = pItem->WhatAmI();
+		auto const naval = pItem->Naval;
 		for(auto const& pBld : this->Buildings) {
 			auto pType = pBld->Type;
-			if(pType->Factory == pItem->WhatAmI()
-				&& pType->Naval == pItem->Naval) {
+			if(pType->Factory == abs && pType->Naval == naval) {
 				return true;
 			}
 		}
@@ -564,7 +569,7 @@ public:
 		return pItem->InForbiddenHouses(1u << this->Type->ArrayIndex2);
 	}
 
-	int CanBuild(TechnoTypeClass* pItem, bool bypassExtras, bool includeQueued) const
+	int CanBuild(TechnoTypeClass const* pItem, bool buildLimitOnly, bool includeInProduction) const
 		{ JMP_THIS(0x4F7870); }
 
 	int AI_BaseConstructionUpdate()
