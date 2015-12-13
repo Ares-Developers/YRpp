@@ -35,8 +35,7 @@ public:
 	virtual int GetBuildSpeed() const R0;
 	virtual ObjectClass* CreateObject(HouseClass* pOwner) = 0;
 	virtual CellStruct * GetFoundationData(bool IncludeBib) const R0;
-	virtual BuildingClass* FindFactory(bool CheckPrereqs, bool CheckPower, bool CheckBuildLimit,
-		HouseClass *House) const R0;
+	virtual BuildingClass* FindFactory(bool allowOccupied, bool requirePower, bool requireCanBuild, HouseClass const* pHouse) const R0;
 	virtual SHPStruct* GetCameo() const R0;
 	virtual SHPStruct* GetImage() const R0;
 
