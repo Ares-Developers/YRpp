@@ -131,7 +131,7 @@ public:
 	}
 
 	bool InOwners(DWORD const bitHouseType) const {
-		return 0u != (this->OwnerFlags & bitHouseType);
+		return 0u != (this->GetOwners() & bitHouseType);
 	}
 
 	bool InRequiredHouses(DWORD const bitHouseType) const {
