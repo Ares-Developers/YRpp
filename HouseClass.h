@@ -390,7 +390,7 @@ public:
 		{ JMP_THIS(0x504740); }
 
 	// call after the availability of a factory has changed.
-	void Update_FactoriesQueues(AbstractType FactoryOf, bool isNaval, BuildCat buildingCat)
+	void Update_FactoriesQueues(AbstractType factoryOf, bool isNaval, BuildCat buildCat) const
 		{ JMP_THIS(0x509140); }
 
 	// returns the factory owned by this house, having pItem in production right now, not queued
