@@ -45,10 +45,10 @@ public:
 	void SetObject(TechnoClass* pObject)
 		{ JMP_THIS(0x4C9E10); }
 
-	bool Suspend(bool powered)
+	bool Suspend(bool manual)
 		{ JMP_THIS(0x4C9E60); }
 
-	bool Unsuspend(bool powered)
+	bool Unsuspend(bool manual)
 		{ JMP_THIS(0x4C9EA0); }
 
 	int GetBuildTimeFrames() const
@@ -125,6 +125,6 @@ public:
 	int                SpecialItem; // -1 = none, else Iron Curtain? (was EMPulse in TS)
 	HouseClass*        Owner;
 	bool               IsSuspended; //completed production, before next (or waiting to place)
-	bool               Powered;
+	bool               IsManual; // whether the current suspension state was caused by the player
 	PROTECTED_PROPERTY(BYTE, padding_72[2]);
 };
