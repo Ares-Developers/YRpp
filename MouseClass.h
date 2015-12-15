@@ -11,34 +11,22 @@ public:
 		return First[static_cast<int>(cursor)];
 	}
 
-	int Frame;
-	int Count;
-	int Interval;
-	int MiniFrame;
-	int MiniCount;
-	MouseHotSpotX HotX;
-	MouseHotSpotY HotY;
+	MouseCursor() = default;
 
-	MouseCursor() :
-		Frame(0),
-		Count(1),
-		Interval(1),
-		MiniFrame(-1),
-		MiniCount(0),
-		HotX(MouseHotSpotX::Center),
-		HotY(MouseHotSpotY::Middle)
-		{ };
+	MouseCursor(
+		int frame, int count, int interval, int miniFrame, int miniCount,
+		MouseHotSpotX hotX, MouseHotSpotY hotY)
+		: Frame(frame), Count(count), Interval(interval), MiniFrame(miniFrame),
+		MiniCount(miniCount), HotX(hotX), HotY(hotY)
+	{ }
 
-	MouseCursor (int _F, int _C, int _I, int _MF, int _MC, MouseHotSpotX _X, MouseHotSpotY _Y) :
-		Frame(_F),
-		Count(_C),
-		Interval(_I),
-		MiniFrame(_MF),
-		MiniCount(_MC),
-		HotX(_X),
-		HotY(_Y)
-		{ };
-
+	int Frame{ 0 };
+	int Count{ 1 };
+	int Interval{ 1 };
+	int MiniFrame{ -1 };
+	int MiniCount{ 0 };
+	MouseHotSpotX HotX{ MouseHotSpotX::Center };
+	MouseHotSpotY HotY{ MouseHotSpotY::Middle };
 };
 
 struct TabDataClass
