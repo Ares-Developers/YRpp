@@ -9,25 +9,19 @@ class FactoryClass;
 // sizeof() == 0x34
 struct CameoDataStruct
 {
-	int               ItemIndex;
-	AbstractType      ItemType;
-	bool              IsAlt; // set on buildings that go on tab 2
-	FactoryClass*     CurrentFactory;
-	DWORD             unknown_10;
-	ProgressTimer     Progress; // 0 to 54, how much of this object is constructed (gclock anim level)
-	int               FlashEndFrame;
+	int               ItemIndex{ -1 };
+	AbstractType      ItemType{ AbstractType::None };
+	bool              IsAlt{ false }; // set on buildings that go on tab 2
+	FactoryClass*     CurrentFactory{ nullptr };
+	DWORD             unknown_10{ 0 };
+	ProgressTimer     Progress{}; // 0 to 54, how much of this object is constructed (gclock anim level)
+	int               FlashEndFrame{ 0 };
 
-	CameoDataStruct() : CameoDataStruct(0, AbstractType::None)
-		{ }
+	CameoDataStruct() = default;
 
 	CameoDataStruct(int itemIndex, AbstractType itemType) :
 		ItemIndex(itemIndex),
-		ItemType(itemType),
-		IsAlt(0),
-		CurrentFactory(nullptr),
-		unknown_10(0),
-		Progress(),
-		FlashEndFrame(0)
+		ItemType(itemType)
 	{ /*JMP_THIS(0x6AC7C0);*/ }
 
 	bool operator == (const CameoDataStruct &rhs) const {
