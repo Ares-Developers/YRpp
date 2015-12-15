@@ -103,8 +103,12 @@ public:
 	//Non-virtual
 
 	// which tab does the 'th object of that type belong in?
-	static int __fastcall GetObjectTabIdx(AbstractType WhatIsIt, int IdxIt, int unused)
+	static int __fastcall GetObjectTabIdx(AbstractType abs, int idxType, int unused)
 		{ JMP_STD(0x6ABC60); }
+
+	// which tab does the 'th object of that type belong in?
+	static int __fastcall GetObjectTabIdx(AbstractType abs, BuildCat buildCat, bool isNaval)
+		{ JMP_STD(0x6ABCD0); }
 
 protected:
 	//Constructor

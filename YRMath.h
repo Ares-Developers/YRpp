@@ -12,11 +12,11 @@
 
 namespace Math
 {
-	const double Pi = 3.1415926535897932384626433832795;
-	const double TwoPi = 6.283185307179586476925286766559;
-	const double HalfPi = 1.5707963267948966192313216916398;
+	constexpr auto const Pi = 3.1415926535897932384626433832795;
+	constexpr auto const TwoPi = 6.283185307179586476925286766559;
+	constexpr auto const HalfPi = 1.5707963267948966192313216916398;
 
-	const double Sqrt2 = 1.4142135623730950488016887242097;
+	constexpr auto const Sqrt2 = 1.4142135623730950488016887242097;
 
 	MATH_FUNC(sqrt,	 0x4CAC40);
 	MATH_FUNC(sin,	 0x4CACB0);
@@ -31,18 +31,18 @@ namespace Math
 		JMP(0x4CAE30);
 	}
 
-	inline double rad2deg(double rad)
+	inline constexpr double rad2deg(double rad)
 	{
 		return rad * 180.0 / Pi;
 	}
 
-	inline double deg2rad(double deg)
+	inline constexpr double deg2rad(double deg)
 	{
 		return deg * Pi / 180.0;
 	}
 
 	template <typename T>
-	inline int sgn(T val) {
+	inline constexpr int sgn(T val) {
 		// http://stackoverflow.com/a/4609795
 		return (T(0) < val) - (val < T(0));
 	}
