@@ -18,7 +18,7 @@ public:
 	};
 
 	// constructors
-	BounceClass() : Elasticity(0.0), Gravity(0.0), MaxVelocity(0.0) {}
+	BounceClass() = default;
 
 	BounceClass(const CoordStruct& coords, double elasticity, double gravity,
 		double maxVelocity, const Vector3D<float>& velocity, double angularVelocity)
@@ -51,9 +51,9 @@ public:
 	Status Update()
 		{ JMP_THIS(0x439B00); }
 
-	double Elasticity; // speed multiplier when bouncing off the ground
-	double Gravity; // subtracted from the Z coords every frame
-	double MaxVelocity; // 0.0 disables check
+	double Elasticity{ 0.0 }; // speed multiplier when bouncing off the ground
+	double Gravity{ 0.0 }; // subtracted from the Z coords every frame
+	double MaxVelocity{ 0.0 }; // 0.0 disables check
 	Vector3D<float> Coords; // position with precision
 	Vector3D<float> Velocity; // speed components
 	Quaternion CurrentAngle; // quaternion for drawing

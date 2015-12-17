@@ -7,8 +7,11 @@
 class Quaternion
 {
 public:
-	Quaternion() : X(0.0f), Y(0.0f), Z(0.0f), W(1.0f) {}
+	Quaternion() = default;
 	Quaternion(float x, float y, float z, float w) : X(x), Y(y), Z(z), W(w) {}
 
-	float X, Y, Z, W; // W is the real part
+	float X{ 0.0f };
+	float Y{ 0.0f };
+	float Z{ 0.0f };
+	float W{ 0.0f }; // the real part
 };
