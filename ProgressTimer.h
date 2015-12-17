@@ -12,10 +12,8 @@
 class ProgressTimer
 {
 public:
-	// constructor
-	ProgressTimer() : Value(0), HasChanged(false), Timer(), Step(1) {
-		this->Timer.Start(0);
-	}
+	constexpr ProgressTimer() = default;
+	ProgressTimer(int duration) { this->Start(duration); }
 
 	void Start(int duration) {
 		this->Timer.Start(duration);
@@ -41,8 +39,8 @@ public:
 		return this->HasChanged;
 	}
 
-	int Value; // the current value
-	bool HasChanged; // if the timer expired this frame and the value changed
-	RepeatableTimerStruct Timer;
-	int Step; // added to value every time the timer expires
+	int Value{ 0 }; // the current value
+	bool HasChanged{ false }; // if the timer expired this frame and the value changed
+	RepeatableTimerStruct Timer{};
+	int Step{ 1 }; // added to value every time the timer expires
 };

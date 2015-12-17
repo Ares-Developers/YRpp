@@ -21,11 +21,11 @@ using RGBClass = Vector3D<BYTE>; // <pd> wuhaha
 class TimerStruct
 {
 public:
-	int StartTime;
-	int unknown;
-	int TimeLeft;
+	int StartTime{ -1 };
+	int : 32;
+	int TimeLeft{ 0 };
 
-	TimerStruct() : StartTime(-1), TimeLeft(0) { }
+	constexpr TimerStruct() = default;
 	TimerStruct(int duration) { this->Start(duration); }
 
 	void Start(int duration) {
@@ -92,13 +92,19 @@ protected:
 class RepeatableTimerStruct : public TimerStruct
 {
 public:
-	int Duration;
+	int Duration{ 0 };
 
-	void Start(int duration)
-		{ this->Duration = duration; this->Restart(); }
+	constexpr RepeatableTimerStruct() = default;
+	RepeatableTimerStruct(int duration) { this->Start(duration); }
 
-	void Restart()
-		{ this->TimerStruct::Start(this->Duration); }
+	void Start(int duration) {
+		this->Duration = duration;
+		this->Restart();
+	}
+
+	void Restart() {
+		this->TimerStruct::Start(this->Duration);
+	}
 };
 
 inline unsigned int TranslateFixedPoint(size_t bitsFrom, size_t bitsTo, unsigned int value, unsigned int offset = 0) {
