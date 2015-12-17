@@ -44,15 +44,12 @@ struct CameoDataStruct
 struct TabDataStruct
 {
 	ProgressTimer     Progress;
-	DWORD             unknown_1C;
-	DWORD             unknown_20;
-	DWORD             unknown_24;
-	DWORD             unknown_28;
-	DWORD             unknown_2C;
-	DWORD             unknown_30;
-	DWORD             unknown_34;
-	DWORD             unknown_38;
-	BYTE              unknown_3C;
+	bool              AllowedToDraw; // prevents redrawing when layouting the list
+	PROTECTED_PROPERTY(BYTE, align_1D[3]);
+	Point2D           Location;
+	RectangleStruct   Bounds;
+	int               Index; // the index of this tab
+	bool              NeedsRedraw;
 	BYTE              unknown_3D;
 	BYTE              unknown_3E;
 	BYTE              unknown_3F;
@@ -76,14 +73,14 @@ public:
 
 	static wchar_t * const TooltipBuffer;
 
-	void SidebarNeedsRepaint(int unk = 0)
-		{
-			// yeah, unknown voodoo magic shticks
-			this->unknown_bool_53A6 = this->unknown_bool_53A7 = true;
-			this->Tabs[this->ActiveTabIndex].unknown_1C = this->Tabs[this->ActiveTabIndex].unknown_3C = 1;
-			this->RedrawSidebar(unk);
-			SidebarClass::Draw(1);
-		}
+	void SidebarNeedsRepaint(int mode = 0) {
+		this->SidebarNeedsRedraw = true;
+		this->SidebarBackgroundNeedsRedraw = true;
+		this->Tabs[this->ActiveTabIndex].AllowedToDraw = true;
+		this->Tabs[this->ActiveTabIndex].NeedsRedraw = true;
+		this->RedrawSidebar(mode);
+		SidebarClass::Draw(1);
+	}
 
 	void RepaintSidebar(int tab = 0)
 		{ JMP_THIS(0x6A60A0); }
@@ -126,8 +123,8 @@ public:
 	DWORD unknown_53A0;
 	bool HideObjectNameInTooltip; // see 0x6A9343
 	bool unknown_bool_53A5;
-	bool unknown_bool_53A6;
-	bool unknown_bool_53A7;
+	bool SidebarNeedsRedraw;
+	bool SidebarBackgroundNeedsRedraw;
 	bool unknown_bool_53A8;
 
 	//Information for the Diplomacy menu, I believe
