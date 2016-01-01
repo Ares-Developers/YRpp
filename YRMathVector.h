@@ -16,13 +16,10 @@ public:
 	T X,Y;
 
 	//operator overloads
-	//assignment
-	Vector2D& operator=(const Vector2D& a) = default;
 	//addition
 	Vector2D operator+(const Vector2D& a) const
 	{
-		Vector2D v = {X + a.X, Y + a.Y};
-		return v;
+		return Vector2D{ X + a.X, Y + a.Y };
 	}
 	//addition
 	Vector2D& operator+=(const Vector2D& a)
@@ -34,8 +31,7 @@ public:
 	//substraction
 	Vector2D operator-(const Vector2D& a) const
 	{
-		Vector2D v = {X - a.X, Y - a.Y};
-		return v;
+		return Vector2D{ X - a.X, Y - a.Y };
 	}
 	//substraction
 	Vector2D& operator-=(const Vector2D& a)
@@ -47,8 +43,7 @@ public:
 	//negation
 	Vector2D operator-() const
 	{
-		Vector2D v = {-X, -Y};
-		return v;
+		return Vector2D{ -X, -Y };
 	}
 	//equality
 	bool operator==(const Vector2D& a) const
@@ -63,8 +58,7 @@ public:
 	//scalar multiplication
 	Vector2D operator*(double r) const
 	{
-		Vector2D v = {static_cast<T>(X * r), static_cast<T>(Y * r)};
-		return v;
+		return Vector2D{ static_cast<T>(X * r), static_cast<T>(Y * r) };
 	}
 	//scalar multiplication
 	Vector2D& operator*=(double r)
@@ -101,8 +95,8 @@ public:
 	//collinearity
 	bool IsCollinearTo(const Vector2D& a) const
 	{
-		auto const c = static_cast<large_type>(X) * a.Y;
-		return c == static_cast<large_type>(Y) * a.X;
+		auto const c = static_cast<double>(X) * a.Y;
+		return c == static_cast<double>(Y) * a.X;
 	}
 	//find scalar
 	double FindScalar(const Vector2D& a) const
@@ -134,13 +128,10 @@ public:
 	T X,Y,Z;
 
 	//operator overloads
-	//assignment
-	Vector3D& operator=(const Vector3D& a) = default;
 	//addition
 	Vector3D operator+(const Vector3D& a) const
 	{
-		Vector3D v= {X + a.X, Y + a.Y, Z + a.Z};
-		return v;
+		return Vector3D{ X + a.X, Y + a.Y, Z + a.Z };
 	}
 	//addition
 	Vector3D& operator+=(const Vector3D& a)
@@ -153,8 +144,7 @@ public:
 	//substraction
 	Vector3D operator-(const Vector3D& a) const
 	{
-		Vector3D v = {X - a.X, Y - a.Y, Z - a.Z};
-		return v;
+		return Vector3D{ X - a.X, Y - a.Y, Z - a.Z };
 	}
 	//substraction
 	Vector3D& operator-=(const Vector3D& a)
@@ -167,8 +157,7 @@ public:
 	//negation
 	Vector3D operator-() const
 	{
-		Vector3D v = {-X, -Y, -Z};
-		return v;
+		return Vector3D{ -X, -Y, -Z };
 	}
 	//equality
 	bool operator==(const Vector3D& a) const
@@ -183,8 +172,10 @@ public:
 	//scalar multiplication
 	Vector3D operator*(double r) const
 	{
-		Vector3D v= {static_cast<T>(X * r), static_cast<T>(Y * r), static_cast<T>(Z * r)};
-		return v;
+		return Vector3D{
+			static_cast<T>(X * r),
+			static_cast<T>(Y * r),
+			static_cast<T>(Z * r) };
 	}
 	//scalar multiplication
 	Vector3D& operator*=(double r)
@@ -241,11 +232,10 @@ public:
 	//cross product
 	Vector3D CrossProduct(const Vector3D& a) const
 	{
-		Vector3D v = {
+		return Vector3D{
 			Y * a.Z - Z * a.Y,
 			Z * a.X - X * a.Z,
-			X * a.Y - Y * a.X};
-		return v;
+			X * a.Y - Y * a.X };
 	}
 };
 
