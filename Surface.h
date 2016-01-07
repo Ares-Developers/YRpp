@@ -16,6 +16,10 @@
 class ConvertClass;
 struct SHPStruct;
 
+// once the meaning is known, replace
+#define SURFACE_SETTING_ONE bOption1
+#define SURFACE_SETTING_TWO bOption2
+
 class Surface	//abstract
 {
 public:
@@ -27,118 +31,121 @@ public:
 		{ PUSH_IMM(SDDTOR_NODELETE); THISCALL(0x4115D0); }
 
 	//Surface
-	virtual bool BlitWhole(Surface* pSrc,bool bUnk1,bool bUnk2) = 0;
+	virtual bool BlitWhole(
+		Surface* pSrc,
+		bool SURFACE_SETTING_ONE,
+		bool SURFACE_SETTING_TWO) = 0;
 
 	virtual bool BlitPart(
-		RectangleStruct* pClipRect, //ignored and retrieved again...
+		RectangleStruct const& rectDest,
 		Surface* pSrc,
-		RectangleStruct* pSrcRect,	//desired source rect of pSrc ?
-		bool bUnk1,
-		bool bUnk2) = 0;
+		RectangleStruct const& rectSrc,
+		bool SURFACE_SETTING_ONE,
+		bool SURFACE_SETTING_TWO) = 0;
 
 	virtual bool Blit(
-		RectangleStruct* pClipRect,
-		RectangleStruct* pClipRect2,	//again? hmm
+		RectangleStruct const& rectClip,
+		RectangleStruct const& rectClip2,	//again? hmm
 		Surface* pSrc,
-		RectangleStruct* pDestRect,	//desired dest rect of pSrc ? (stretched? clipped?)
-		RectangleStruct* pSrcRect,	//desired source rect of pSrc ?
-		bool bUnk1,
-		bool bUnk2) = 0;
+		RectangleStruct const& rectDest,	//desired dest rect of pSrc ? (stretched? clipped?)
+		RectangleStruct const& rectSrc,	//desired source rect of pSrc ?
+		bool SURFACE_SETTING_ONE,
+		bool SURFACE_SETTING_TWO) = 0;
 
 	virtual bool FillRectEx(
-		RectangleStruct* pClipRect,
-		RectangleStruct* pFillRect,
+		RectangleStruct const& rectClip,
+		RectangleStruct const& rectFill,
 		DWORD dwColor) = 0;
 
 	virtual bool FillRect(
-		RectangleStruct* pFillRect,
+		RectangleStruct const& rectFill,
 		DWORD dwColor) = 0;
 
 	virtual bool Fill(
 		DWORD dwColor) = 0;
 
 	virtual bool vt_entry_1C(
-		RectangleStruct* pClipRect,
+		RectangleStruct const& rectClip,
 		ColorStruct Color,
 		int nUnknown) = 0;
 
 	virtual bool vt_entry_20(	//No visible results :(
-		RectangleStruct ClipRect,
-		RectangleStruct Rect,	//no idea what this represents
-		DWORD dwColor) = 0;
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8,
+		DWORD dwUnk9) = 0;
 
 	virtual bool SetPixel(
-		Point2D* pPoint,
+		Point2D const& point,
 		DWORD dwColor) = 0;
 
 	virtual DWORD GetPixel(
-		Point2D* pPoint) = 0;
+		Point2D const& point) = 0;
 
 	virtual bool DrawLineEx(
-		RectangleStruct* pClipRect,
-		Point2D* pPoint1,
-		Point2D* pPoint2,
+		RectangleStruct const& rectClip,
+		Point2D const& point1,
+		Point2D const& point2,
 		DWORD dwColor) = 0;
 
 	virtual bool DrawLine(
-		Point2D* pPoint1,
-		Point2D* pPoint2,
+		Point2D const& point1,
+		Point2D const& point2,
 		DWORD dwColor) = 0;
 
 	virtual bool vt_entry_34(
-		DWORD dwUnk1,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4,
-		DWORD dwUnk5,DWORD dwUnk6,DWORD dwUnk7) = 0;
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7) = 0;
 
 	virtual bool vt_entry_38(	//similar to 34
-		DWORD dwUnk1,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4,
-		DWORD dwUnk5,DWORD dwUnk6,DWORD dwUnk7) = 0;
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7) = 0;
 
 	virtual bool vt_entry_3C(
-		DWORD dwUnk1,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4,
-		DWORD dwUnk5,DWORD dwUnk6,DWORD dwUnk7,DWORD dwUnk8,
-		DWORD dwUnk9,DWORD dwUnk10,DWORD dwUnk11) = 0;
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8,
+		DWORD dwUnk9, DWORD dwUnk10, DWORD dwUnk11) = 0;
 
 	virtual bool vt_entry_40(
-		DWORD dwUnk1,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4,
-		DWORD dwUnk5,DWORD dwUnk6,DWORD dwUnk7) = 0;
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7) = 0;
 
 	virtual bool vt_entry_44(
-		DWORD dwUnk1,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4) = 0;
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) = 0;
 
 	virtual bool vt_entry_48(
-		DWORD dwUnk1,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4) = 0;
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) = 0;
 
 	virtual bool vt_entry_4C(
-		DWORD dwUnk1,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4,
-		DWORD dwUnk5,DWORD dwUnk6) = 0;
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6) = 0;
 
 	virtual bool vt_entry_50(
-		DWORD dwUnk1,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4) = 0;
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) = 0;
 
 	virtual bool DrawRectEx(
-		RectangleStruct* pClipRect,
-		RectangleStruct* pDrawRect,
+		RectangleStruct const& rectClip,
+		RectangleStruct const& rectDraw,
 		DWORD dwColor) = 0;
 
 	virtual bool DrawRect(
-		RectangleStruct* pDrawRect,
+		RectangleStruct const& rectDraw,
 		DWORD dwColor) = 0;
 
-	virtual void* Lock(int X,int Y) = 0;
+	virtual void* Lock(int X, int Y) = 0;
 
 	virtual bool Unlock() = 0;
 
-	virtual bool vt_entry_64(DWORD dwUnk1,DWORD dwUnk2) = 0;
+	virtual bool vt_entry_64(DWORD dwUnk1, DWORD dwUnk2) = 0;
 
-	virtual bool vt_entry_68(DWORD dwUnk1,DWORD dwUnk2) = 0;
+	virtual bool vt_entry_68(DWORD dwUnk1, DWORD dwUnk2) = 0;
 
 	virtual bool vt_entry_6C() = 0;
 
-	virtual int GetBytesPerPixel() = 0;
+	virtual int GetBytesPerPixel() const = 0;
 
-	virtual int GetPitch() = 0;	//Bytes per scanline
+	virtual int GetPitch() const = 0;	//Bytes per scanline
 
-	virtual RectangleStruct* GetRect(RectangleStruct* pRect)
+	virtual RectangleStruct* GetRect(RectangleStruct* pRect) const final
 	{
 		pRect->X = 0;
 		pRect->Y = 0;
@@ -147,10 +154,10 @@ public:
 		return pRect;
 	}
 
-	virtual int GetWidth()
+	virtual int GetWidth() const final
 		{ return Width; }
 
-	virtual int GetHeight()
+	virtual int GetHeight() const final
 		{ return Height; }
 
 	virtual bool vt_entry_84()
@@ -173,12 +180,18 @@ public:
 
 	//Helper functions
 public:
-	void DrawSHP(SHPStruct* pSHP,int nFrame,ConvertClass* pPalette,int X,int Y)
+	RectangleStruct GetRect() const {
+		RectangleStruct buffer;
+		this->GetRect(&buffer);
+		return buffer;
+	}
+
+	void DrawSHP(SHPStruct* pSHP, int nFrame, ConvertClass* pPalette, int X, int Y)
 	{
 		Point2D P = {X, Y};
 		DrawSHP(pSHP, nFrame, pPalette, &P);
 	}
-	void DrawSHP(SHPStruct* pSHP,int nFrame,ConvertClass* pPalette,Point2D* pPoint)
+	void DrawSHP(SHPStruct* pSHP, int nFrame, ConvertClass* pPalette, Point2D* pPoint)
 	{
 		RectangleStruct rect={0,0,0,0};
 		PUSH_PTR(rect);
@@ -258,117 +271,119 @@ public:
 	DSurface(int Width, int Height, bool BackBuffer, bool Force3D)
 		{ JMP_THIS(0x4BA5A0); }
 
-	virtual bool BlitWhole(Surface* pSrc,bool bUnk1,bool bUnk2) R0;
+	virtual bool BlitWhole(
+		Surface* pSrc,
+		bool SURFACE_SETTING_ONE,
+		bool SURFACE_SETTING_TWO) override R0;
 
 	virtual bool BlitPart(
-		RectangleStruct* pClipRect, //ignored and retrieved again...
+		RectangleStruct const& rectDest,
 		Surface* pSrc,
-		RectangleStruct* pSrcRect,	//desired source rect of pSrc ?
-		bool bUnk1,
-		bool bUnk2) R0;
+		RectangleStruct const& rectSrc,
+		bool SURFACE_SETTING_ONE,
+		bool SURFACE_SETTING_TWO) override R0;
 
 	virtual bool Blit(
-		RectangleStruct* pClipRect,
-		RectangleStruct* pClipRect2,	//again? hmm
+		RectangleStruct const& rectClip,
+		RectangleStruct const& rectClip2,	//again? hmm
 		Surface* pSrc,
-		RectangleStruct* pDestRect,	//desired dest rect of pSrc ? (stretched? clipped?)
-		RectangleStruct* pSrcRect,	//desired source rect of pSrc ?
-		bool bUnk1,
-		bool bUnk2) R0;
+		RectangleStruct const& rectDest,	//desired dest rect of pSrc ? (stretched? clipped?)
+		RectangleStruct const& rectSrc,	//desired source rect of pSrc ?
+		bool SURFACE_SETTING_ONE,
+		bool SURFACE_SETTING_TWO) override R0;
 
 	virtual bool FillRectEx(
-		RectangleStruct* pClipRect,
-		RectangleStruct* pFillRect,
-		DWORD dwColor) R0;
+		RectangleStruct const& rectClip,
+		RectangleStruct const& rectFill,
+		DWORD dwColor) override R0;
 
 	virtual bool FillRect(
-		RectangleStruct* pFillRect,
-		DWORD dwColor) R0;
+		RectangleStruct const& rectFill,
+		DWORD dwColor) override R0;
 
 	virtual bool Fill(
-		DWORD dwColor) R0;
+		DWORD dwColor) override R0;
 
 	virtual bool vt_entry_1C(
-		RectangleStruct* pClipRect,
+		RectangleStruct const& rectClip,
 		ColorStruct Color,
-		int nUnknown) R0;
+		int nUnknown) override R0;
 
 	virtual bool vt_entry_20(	//No visible results :(
-		RectangleStruct ClipRect,
-		RectangleStruct Rect,	//no idea what this represents
-		DWORD dwColor) R0;
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8,
+		DWORD dwUnk9) override R0;
 
 	virtual bool SetPixel(
-		Point2D* pPoint,
-		DWORD dwColor) R0;
+		Point2D const& point,
+		DWORD dwColor) override R0;
 
 	virtual DWORD GetPixel(
-		Point2D* pPoint) R0;
+		Point2D const& point) override R0;
 
 	virtual bool DrawLineEx(
-		RectangleStruct* pClipRect,
-		Point2D* pPoint1,
-		Point2D* pPoint2,
-		DWORD dwColor) R0;
+		RectangleStruct const& rectClip,
+		Point2D const& point1,
+		Point2D const& point2,
+		DWORD dwColor) override R0;
 
 	virtual bool DrawLine(
-		Point2D* pPoint1,
-		Point2D* pPoint2,
-		DWORD dwColor) R0;
+		Point2D const& point1,
+		Point2D const& point2,
+		DWORD dwColor) override R0;
 
 	virtual bool vt_entry_34(
-		DWORD dwUnk1,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4,
-		DWORD dwUnk5,DWORD dwUnk6,DWORD dwUnk7) R0;
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7) override R0;
 
 	virtual bool vt_entry_38(	//similar to 34
-		DWORD dwUnk1,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4,
-		DWORD dwUnk5,DWORD dwUnk6,DWORD dwUnk7) R0;
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7) override R0;
 
 	virtual bool vt_entry_3C(
-		DWORD dwUnk1,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4,
-		DWORD dwUnk5,DWORD dwUnk6,DWORD dwUnk7,DWORD dwUnk8,
-		DWORD dwUnk9,DWORD dwUnk10,DWORD dwUnk11) R0;
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8,
+		DWORD dwUnk9, DWORD dwUnk10, DWORD dwUnk11) override R0;
 
 	virtual bool vt_entry_40(
-		DWORD dwUnk1,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4,
-		DWORD dwUnk5,DWORD dwUnk6,DWORD dwUnk7) R0;
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7) override R0;
 
 	virtual bool vt_entry_44(
-		DWORD dwUnk1,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4) R0;
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) override R0;
 
 	virtual bool vt_entry_48(
-		DWORD dwUnk1,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4) R0;
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) override R0;
 
 	virtual bool vt_entry_4C(
-		DWORD dwUnk1,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4,
-		DWORD dwUnk5,DWORD dwUnk6) R0;
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6) override R0;
 
 	virtual bool vt_entry_50(
-		DWORD dwUnk1,DWORD dwUnk2,DWORD dwUnk3,DWORD dwUnk4) R0;
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) override R0;
 
 	virtual bool DrawRectEx(
-		RectangleStruct* pClipRect,
-		RectangleStruct* pDrawRect,
-		DWORD dwColor) R0;
+		RectangleStruct const& rectClip,
+		RectangleStruct const& rectDraw,
+		DWORD dwColor) override R0;
 
 	virtual bool DrawRect(
-		RectangleStruct* pDrawRect,
-		DWORD dwColor) R0;
+		RectangleStruct const& rectDraw,
+		DWORD dwColor) override R0;
 
-	virtual void* Lock(int X,int Y) R0;
+	virtual void* Lock(int X, int Y) override R0;
 
-	virtual bool Unlock() R0;
+	virtual bool Unlock() override R0;
 
-	virtual bool vt_entry_64(DWORD dwUnk1,DWORD dwUnk2) R0;
+	virtual bool vt_entry_64(DWORD dwUnk1, DWORD dwUnk2) override R0;
 
-	virtual bool vt_entry_68(DWORD dwUnk1,DWORD dwUnk2) R0;
+	virtual bool vt_entry_68(DWORD dwUnk1, DWORD dwUnk2) override R0;
 
-	virtual bool vt_entry_6C() R0;
+	virtual bool vt_entry_6C() override R0;
 
-	virtual int GetBytesPerPixel() R0;
+	virtual int GetBytesPerPixel() const override R0;
 
-	virtual int GetPitch() R0;
-
+	virtual int GetPitch() const override R0;
 };
 
 class XSurface : public Surface {};		//WW's custom surfaces? (abstract)
