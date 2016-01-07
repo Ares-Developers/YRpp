@@ -19,47 +19,19 @@ public:
 	static ColorStruct &TooltipColor;
 
 	//TextBox dimensions for tooltip-style boxes
-	static RectangleStruct GetTextBox(const wchar_t* pText, int nX, int nY, DWORD flags, int nMarginX, int nMarginY)
-		{
-			RectangleStruct box;
-			RectangleStruct* p_box=&box;
+	static RectangleStruct* __fastcall GetTextDimensions(
+		RectangleStruct* pOutBuffer, wchar_t const* pText, Point2D location,
+		WORD flags, int marginX = 0, int marginY = 0)
+			{ JMP_STD(0x4A59E0); }
 
-			PUSH_VAR32(nMarginY);		//X Margin
-			PUSH_VAR32(nMarginX);		//Y Margin - should add 2, because X margin adds to 2 internally!
-			PUSH_VAR32(flags);
-			PUSH_VAR32(nY);
-			PUSH_VAR32(nX);
-			SET_REG32(edx,pText);
-			SET_REG32(ecx,p_box);
-			CALL(0x4A59E0);
-
-			return box;
-		}
-
-	static RectangleStruct GetTextBox(const wchar_t* pText, int nX, int nY, int nMargin)
-		{ return GetTextBox(pText, nX, nY, 0, nMargin + 2, nMargin); }
-
-	static RectangleStruct GetTextBox(const wchar_t* pText, int nX, int nY)
-		{ return GetTextBox(pText, nX, nY, 2); }
-
-	static RectangleStruct GetTextBox(const wchar_t* pText, Point2D* pPoint)
-		{ return GetTextBox(pText, pPoint->X, pPoint->Y, 2); }
-
-	static RectangleStruct GetTextBox(const wchar_t* pText, Point2D* pPoint, int nMargin)
-		{ return GetTextBox(pText, pPoint->X, pPoint->Y, nMargin); }
-
-	//TextDimensions for text aligning
-	static RectangleStruct GetTextDimensions(const wchar_t* pText)
-		{
-			RectangleStruct dim=GetTextBox(pText,0,0,0);
-
-			dim.X=0;
-			dim.Y=0;
-			dim.Width-=4;
-			dim.Height-=2;
-
-			return dim;
-		}
+	static RectangleStruct __fastcall GetTextDimensions(
+		wchar_t const* pText, Point2D location, WORD flags, int marginX = 0,
+		int marginY = 0)
+	{
+		RectangleStruct buffer;
+		GetTextDimensions(&buffer, pText, location, flags, marginX, marginY);
+		return buffer;
+	}
 
 	// Rectangles
 	static RectangleStruct* __fastcall Intersect(
