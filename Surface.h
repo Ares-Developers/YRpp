@@ -264,26 +264,16 @@ public:
 		return buffer;
 	}
 
-	void DrawText(const wchar_t* pText, RectangleStruct const& bounds, Point2D const& location, WORD color, DWORD unknown5, DWORD flags)
+	Point2D DrawText(
+		const wchar_t* pText, RectangleStruct const& bounds,
+		Point2D const& location, WORD color, DWORD unknown5, DWORD flags)
 	{
-		Point2D tmp = {0, 0};
-
-		PUSH_VAR32(flags);
-		PUSH_VAR32(unknown5);		//???
-		PUSH_VAR16(color);
-		PUSH_VAR32(location);
-		PUSH_VAR32(bounds);
-		PUSH_VAR32(this);
-		PUSH_VAR32(pText);
-		PUSH_PTR(tmp);
-		CALL(0x4A60E0);
-
-		ADD_ESP(0x20);
+		return DrawText(
+			pText, this, bounds, location, color, unknown5, flags, 1);
 	}
 
-	void DrawText(const wchar_t* pText, Point2D location, WORD dwColor)
-	{
-		DrawText(pText, this->GetRect(), location, dwColor, 0, 0x16);
+	Point2D DrawText(const wchar_t* pText, Point2D location, WORD dwColor) {
+		return DrawText(pText, this->GetRect(), location, dwColor, 0, 0x16);
 	}
 };
 
