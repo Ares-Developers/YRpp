@@ -188,40 +188,19 @@ public:
 		return buffer;
 	}
 
-	void DrawSHP(SHPStruct* pSHP, int nFrame, ConvertClass* pPalette, int X, int Y)
+	void DrawSHP(
+		ConvertClass* pPalette, SHPStruct* pSHP, int idxFrame, Point2D location)
 	{
-		Point2D P = {X, Y};
-		DrawSHP(pSHP, nFrame, pPalette, &P);
-	}
-	void DrawSHP(SHPStruct* pSHP, int nFrame, ConvertClass* pPalette, Point2D* pPoint)
-	{
-		RectangleStruct rect={0,0,0,0};
-		PUSH_PTR(rect);
-		THISCALL(0x411510);
-
-	/*
-	 (void *DSurface<ecx>, ConvertClass *Palette, SHPStruct *SHP, int frameIdx,
-			Point2D *pos, _DWORD arg5, _DWORD arg6, _DWORD arg7,
-			_DWORD arg8, _DWORD arg9, _DWORD argA, int TintColor,
-			SHPStruct *BUILDINGZ_SHA, _DWORD argD, int ZS_X, int ZS_Y)
-	*/
-
-		PUSH_IMM(0);PUSH_IMM(0);PUSH_IMM(0);PUSH_IMM(0);
-		PUSH_IMM(0);PUSH_IMM(0x3E8);PUSH_IMM(0);PUSH_IMM(0);
-		PUSH_IMM(0);PUSH_IMM(0);
-		PUSH_PTR(rect);
-		PUSH_PTR(pPoint);
-		PUSH_VAR32(nFrame);
-		PUSH_VAR32(pSHP);
-		SET_REG32(edx, pPalette);
-		THISCALL(0x4AED70);
+		DrawSHP(
+			pPalette, pSHP, idxFrame, location, this->GetRect(),
+			BlitterFlags::None, 0, 0, 0, 1000, 0, nullptr, 0, 0, 0);
 	}
 
-	void __fastcall DrawSHP(ConvertClass *Palette, SHPStruct *SHP, int frameIdx,
-		Point2D *pos, RectangleStruct *boundingRect, BlitterFlags flags, DWORD arg7,
-		signed int arg8, DWORD arg9, DWORD argA, int TintColor,
-		SHPStruct *BUILDINGZ_SHA, DWORD argD, int ZS_X, int ZS_Y)
-
+	void __fastcall DrawSHP(
+		ConvertClass* pPalette, SHPStruct* pSHP, int idxFrame,
+		Point2D const& pos, RectangleStruct const& bounds, BlitterFlags flags,
+		DWORD arg7, int arg8, DWORD arg9, DWORD argA, int TintColor,
+		SHPStruct* BUILDINGZ_SHA, DWORD argD, int ZS_X, int ZS_Y)
 			{ JMP_STD(0x4AED70); }
 
 	/**
