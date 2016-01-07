@@ -62,19 +62,19 @@ public:
 		}
 
 	// Rectangles
-	static RectangleStruct Intersect(RectangleStruct* rect1, RectangleStruct* rect2, int* delta_left, int* delta_top)
+	static RectangleStruct* __fastcall Intersect(
+		RectangleStruct* pOutBuffer, RectangleStruct const& rect1,
+		RectangleStruct const& rect2, int* delta_left = nullptr,
+		int* delta_top = nullptr)
+			{ JMP_STD(0x421B60); }
+
+	static RectangleStruct __fastcall Intersect(
+		RectangleStruct const& rect1, RectangleStruct const& rect2,
+		int* delta_left = nullptr, int* delta_top = nullptr)
 	{
-			RectangleStruct box;
-			RectangleStruct* p_box=&box;
-
-			PUSH_VAR32(delta_top);
-			PUSH_VAR32(delta_left);
-			PUSH_VAR32(rect2);
-			SET_REG32(edx,rect1);
-			SET_REG32(ecx,p_box);
-			CALL(0x421B60);
-
-			return box;
+		RectangleStruct buffer;
+		Intersect(&buffer, rect1, rect2, delta_left, delta_top);
+		return buffer;
 	}
 
 	//Stuff
