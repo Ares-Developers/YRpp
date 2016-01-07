@@ -239,19 +239,13 @@ public:
 		ADD_ESP(0x20);
 	}
 
-	void DrawText(const wchar_t* pText, Point2D* pLoction, DWORD dwColor)
+	void DrawText(const wchar_t* pText, Point2D location, DWORD dwColor)
 	{
 		RectangleStruct rect = {0, 0, 0, 0};
 		PUSH_PTR(rect);
 		THISCALL(0x411510);
 
-		DrawText(pText, &rect, pLoction, dwColor, 0, 0x16);
-	}
-
-	void DrawText(const wchar_t* pText,int X,int Y,DWORD dwColor)
-	{
-		Point2D P = {X ,Y};
-		DrawText(pText, &P, dwColor);
+		DrawText(pText, &rect, &location, dwColor, 0, 0x16);
 	}
 };
 

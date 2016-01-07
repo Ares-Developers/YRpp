@@ -13,7 +13,7 @@ public:
 	static void DrawText(const wchar_t* pText,int X,int Y,DWORD dwColor) {
 		if(LoadProgressManager::LPMgr) {
 			if(Surface * S = LoadProgressManager::LPMgr->ProgressSurface) {
-				S->DrawText(pText, X, Y, dwColor);
+				S->DrawText(pText, { X, Y }, dwColor);
 			}
 		}
 	}
