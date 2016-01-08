@@ -55,9 +55,9 @@ struct CSFString
 struct CSFLanguage
 {
 	CSFLanguages Index; // one of the language constants
-	char* Name; // the display name
-	char* Short; // two letter language code
-	char* Letter; // one letter language code
+	char const* Name; // the display name
+	char const* Short; // two letter language code
+	char const* Letter; // one letter language code
 };
 
 class StringTable
@@ -86,7 +86,7 @@ public:
 	static bool __fastcall ReadFile(const char* pFileName)
 		{ JMP_STD(0x734990); }
 
-	static CSFLanguage* __fastcall GetLanguage(CSFLanguages language)
+	static CSFLanguage const* __fastcall GetLanguage(CSFLanguages language)
 		{ JMP_STD(0x734640); }
 	static const char* __fastcall GetLanguageName(CSFLanguages language)
 		{ JMP_STD(0x734670); }
