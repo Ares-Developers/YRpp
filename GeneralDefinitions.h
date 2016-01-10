@@ -589,8 +589,8 @@ enum class KickOutResult : int {
 };
 
 enum class CanBuildResult : int {
-	Unbuildable = -1, // permanently; remove cameo
-	TemporarilyUnbuildable = 0, // black out cameo
+	TemporarilyUnbuildable = -1, // black out cameo
+	Unbuildable = 0, // permanently; remove cameo
 	Buildable = 1, // can build
 };
 
