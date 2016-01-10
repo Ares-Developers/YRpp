@@ -588,6 +588,12 @@ enum class KickOutResult : int {
 	Succeeded = 2
 };
 
+enum class CanBuildResult : int {
+	Unbuildable = -1, // permanently; remove cameo
+	TemporarilyUnbuildable = 0, // black out cameo
+	Buildable = 1, // can build
+};
+
 class Direction {
 public:
 	typedef unsigned int Value;
