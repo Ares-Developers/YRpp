@@ -55,6 +55,9 @@ public:
 	virtual SHPStruct* LoadBuildup() R0;
 
 	//non-virtual
+	bool IsVehicle() const
+		{ JMP_THIS(0x465D40); }
+
 	short GetFoundationWidth() const
 		{ JMP_THIS(0x45EC90); }
 	short GetFoundationHeight(bool bIncludeBib) const
