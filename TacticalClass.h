@@ -13,29 +13,18 @@ public:
 
 	static TacticalClass * &Instance;
 
-	Point2D* CoordsToClient(CoordStruct* pCoords, Point2D* pDest)
+	// returns whether coords are visible at the moment
+	bool CoordsToClient(CoordStruct const& coords, Point2D* pOutClient) const
 		{ JMP_THIS(0x6D2140); }
-	/*
-	static Point2D* CoordsToClient(CoordStruct* pCrd, Point2D* pPoint)
-	{
-		void* pTactical;
-		MEM_READ32(pTactical, TACTICAL_MAP_PTR);
-		PUSH_VAR32(pPoint);
-		PUSH_VAR32(pCrd);
-		THISCALL_EX(pTactical, 0x6D2140);
-	}*/
 
-	CoordStruct* ClientToCoords(Point2D* pClient, CoordStruct* pDest)
-			{ JMP_THIS(0x6D2280); }
-	/*
-	static CoordStruct* ClientToCoords(Point2D* pPoint, CoordStruct* pCrd)
-	{
-		void* pTactical;
-		MEM_READ32(pTactical, TACTICAL_MAP_PTR);
-		PUSH_VAR32(pPoint);
-		PUSH_VAR32(pCrd);
-		THISCALL_EX(pTactical, 0x6D2280);
-	}*/
+	CoordStruct* ClientToCoords(CoordStruct* pOutBuffer, Point2D const& client) const
+		{ JMP_THIS(0x6D2280); }
+
+	CoordStruct ClientToCoords(Point2D const& client) const {
+		CoordStruct buffer;
+		this->ClientToCoords(&buffer, client);
+		return buffer;
+	}
 
 	int GetOcclusion(const CellStruct& cell, bool fog) const
 		{ JMP_THIS(0x6D8700); }
