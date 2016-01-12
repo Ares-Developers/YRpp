@@ -21,6 +21,7 @@ struct SHPStruct;
 // once the meaning is known, replace
 #define SURFACE_SETTING_ONE bOption1
 #define SURFACE_SETTING_TWO bOption2
+#define SURFACE_SETTING_THREE dwUnknown
 
 class Surface	//abstract
 {
@@ -209,50 +210,57 @@ public:
 	static Point2D* __fastcall DrawText(
 		Point2D* pOutBuffer, wchar_t const* pText, Surface* pSurface,
 		RectangleStruct const& bounds, Point2D const& location, WORD color,
-		DWORD unknown7, DWORD flags, DWORD unknown9)
+		DWORD SURFACE_SETTING_THREE, DWORD flags, DWORD unknown9)
 			{ JMP_STD(0x4A5EB0); }
 
 	static Point2D DrawText(
 		wchar_t const* pText, Surface* pSurface, RectangleStruct const& bounds,
-		Point2D const& location, WORD color, DWORD unknown7, DWORD flags,
-		DWORD unknown9)
+		Point2D const& location, WORD color, DWORD SURFACE_SETTING_THREE,
+		DWORD flags, DWORD unknown9)
 	{
 		Point2D buffer;
 		Surface::DrawText(
-			&buffer, pText, pSurface, bounds, location, color, unknown7, flags,
-			unknown9);
+			&buffer, pText, pSurface, bounds, location, color,
+			SURFACE_SETTING_THREE, flags, unknown9);
 		return buffer;
 	}
 
 	static Point2D* __stdcall DrawFormattedText(
 		Point2D* pOutBuffer, wchar_t const* pText, Surface* pSurface,
 		RectangleStruct const& bounds, Point2D const& location, WORD color,
-		DWORD unknown7, DWORD flags, ...)
+		DWORD SURFACE_SETTING_THREE, DWORD flags, ...)
 			{ JMP_STD(0x4A60E0); }
 
 	template <typename... Args>
 	static Point2D DrawFormattedText(
 		const wchar_t* pText, Surface* pSurface, RectangleStruct const& bounds,
-		Point2D const& location, WORD color, DWORD unknown7, DWORD flags,
-		Args&&... args)
+		Point2D const& location, WORD color, DWORD SURFACE_SETTING_THREE,
+		DWORD flags, Args&&... args)
 	{
 		Point2D buffer;
 		Surface::DrawFormattedText(
-			&buffer, pText, pSurface, bounds, location, color, unknown7, flags,
-			std::forward<Args>(args)...);
+			&buffer, pText, pSurface, bounds, location, color,
+			SURFACE_SETTING_THREE, flags, std::forward<Args>(args)...);
 		return buffer;
 	}
 
 	Point2D DrawText(
 		const wchar_t* pText, RectangleStruct const& bounds,
-		Point2D const& location, WORD color, DWORD unknown5, DWORD flags)
+		Point2D const& location, WORD color, DWORD SURFACE_SETTING_THREE = 0,
+		DWORD flags = 0x16)
 	{
 		return DrawText(
-			pText, this, bounds, location, color, unknown5, flags, 1);
+			pText, this, bounds, location, color, SURFACE_SETTING_THREE,
+			flags, 1);
 	}
 
-	Point2D DrawText(const wchar_t* pText, Point2D location, WORD dwColor) {
-		return DrawText(pText, this->GetRect(), location, dwColor, 0, 0x16);
+	Point2D DrawText(
+		const wchar_t* pText, Point2D location, WORD dwColor,
+		DWORD SURFACE_SETTING_THREE = 0, DWORD flags = 0x16)
+	{
+		return DrawText(
+			pText, this->GetRect(), location, dwColor,
+			SURFACE_SETTING_THREE, flags);
 	}
 };
 
