@@ -107,6 +107,9 @@ ALIAS(DSurface *, DSurface::Hidden, 0x88730C);
 ALIAS(DSurface *, DSurface::Alternate, 0x887310);
 ALIAS(DSurface *, DSurface::Hidden_2, 0x887314);
 ALIAS(DSurface *, DSurface::Composite, 0x88731C);
+ALIAS(RectangleStruct const, DSurface::SidebarBounds, 0x886F90);
+ALIAS(RectangleStruct const, DSurface::ViewBounds, 0x886FA0);
+ALIAS(RectangleStruct const, DSurface::WindowBounds, 0x886FB0);
 
 #include <LoadProgressManager.h>
 ALIAS(LoadProgressManager *, LoadProgressManager::LPMgr, 0xABC9BC);

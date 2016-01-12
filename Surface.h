@@ -276,6 +276,9 @@ public:
 	static DSurface *&Hidden_2;
 	static DSurface *&Composite;
 
+	static RectangleStruct const& SidebarBounds;
+	static RectangleStruct const& ViewBounds;
+	static RectangleStruct const& WindowBounds;
 
 	DSurface(int Width, int Height, bool BackBuffer, bool Force3D)
 		{ JMP_THIS(0x4BA5A0); }
