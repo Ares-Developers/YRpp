@@ -569,7 +569,7 @@ public:
 		return pItem->InForbiddenHouses(1u << this->Type->ArrayIndex2);
 	}
 
-	CanBuildResult CanBuild(TechnoTypeClass const* pItem, bool buildLimitOnly, bool includeInProduction) const
+	CanBuildResult CanBuild(TechnoTypeClass const* pItem, bool buildLimitOnly, bool allowIfInProduction) const
 		{ JMP_THIS(0x4F7870); }
 
 	int AI_BaseConstructionUpdate()
