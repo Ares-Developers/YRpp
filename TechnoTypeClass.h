@@ -115,6 +115,9 @@ public:
 	virtual int GetFlightLevel() const R0;
 
 	// non-virtual
+	static TechnoTypeClass* __fastcall GetByTypeAndIndex(AbstractType abs, int index)
+		{ JMP_THIS(0x48DCD0); }
+
 	bool HasMultipleTurrets() const
 	{
 		return this->TurretCount > 0;
