@@ -13,6 +13,12 @@ struct ColorStruct
 
 	inline explicit ColorStruct(Color16Struct const color);
 
+	explicit ColorStruct(DWORD const color) {
+		memcpy(this, &color, sizeof(ColorStruct));
+	}
+
+	inline explicit ColorStruct(WORD const color);
+
 	bool operator == (ColorStruct const rhs) const {
 		return R == rhs.R && G == rhs.G && B == rhs.B;
 	}
@@ -20,6 +26,14 @@ struct ColorStruct
 	bool operator != (ColorStruct const rhs) const {
 		return !(*this == rhs);
 	}
+
+	explicit operator DWORD() const {
+		DWORD ret = 0;
+		memcpy(&ret, this, sizeof(ColorStruct));
+		return ret;
+	}
+
+	inline explicit operator WORD() const;
 
 	BYTE R, G, B;
 };
@@ -54,12 +68,30 @@ struct Color16Struct
 		B(static_cast<unsigned short>(color.B >> 3u))
 	{ }
 
+	explicit Color16Struct(WORD const color) {
+		memcpy(this, &color, sizeof(Color16Struct));
+	}
+
+	explicit Color16Struct(DWORD const color)
+		: Color16Struct(ColorStruct(color))
+	{ }
+
 	bool operator == (Color16Struct const rhs) const {
 		return R == rhs.R && G == rhs.G && B == rhs.B;
 	}
 
 	bool operator != (Color16Struct const rhs) const {
 		return !(*this == rhs);
+	}
+
+	explicit operator WORD() const {
+		WORD ret;
+		memcpy(&ret, this, sizeof(Color16Struct));
+		return ret;
+	}
+
+	explicit operator DWORD() const {
+		return static_cast<DWORD>(ColorStruct(*this));
 	}
 
 	unsigned short R : 5;
@@ -73,6 +105,14 @@ inline ColorStruct::ColorStruct(Color16Struct const color) :
 	G(static_cast<BYTE>(color.G << 2)),
 	B(static_cast<BYTE>(color.B << 3))
 { }
+
+inline ColorStruct::ColorStruct(WORD const color) :
+	ColorStruct(Color16Struct(color))
+{ }
+
+ColorStruct::operator WORD() const {
+	return static_cast<WORD>(Color16Struct(*this));
+}
 
 //Random number range
 struct RandomStruct
