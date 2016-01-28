@@ -101,9 +101,9 @@ struct Color16Struct
 #pragma pack(pop)
 
 inline ColorStruct::ColorStruct(Color16Struct const color) :
-	R(static_cast<BYTE>(color.R << 3)),
-	G(static_cast<BYTE>(color.G << 2)),
-	B(static_cast<BYTE>(color.B << 3))
+	R(static_cast<BYTE>(color.R << 3u | color.R >> 2u)),
+	G(static_cast<BYTE>(color.G << 2u | color.G >> 4u)),
+	B(static_cast<BYTE>(color.B << 3u | color.B >> 2u))
 { }
 
 inline ColorStruct::ColorStruct(WORD const color) :
