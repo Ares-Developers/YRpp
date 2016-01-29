@@ -51,11 +51,6 @@ public:
 
 	//Stuff
 
-	// Converts an RGB color to a 16bit color value.
-	static WORD Color16bit(const ColorStruct& color) {
-		return static_cast<WORD>((color.B >> 3) | ((color.G >> 2) << 5) | ((color.R >> 3) << 11));
-	}
-
 	/** Message is a vswprintf format specifier, ... is for any arguments needed */
 	static Point2D * __cdecl PrintUnicode(Point2D *Position1, wchar_t *Message, Surface *a3, RectangleStruct *Rect, Point2D *Position2,
 			ColorScheme *a6, int a7, int a8, ...)
