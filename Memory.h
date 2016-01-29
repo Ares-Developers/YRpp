@@ -2,8 +2,11 @@
 
 #include <ASMMacros.h>
 
-#include <exception>
+#include <stdlib.h>
+
+#include <memory>
 #include <type_traits>
+#include <utility>
 
 /*
  * The memory (de)allocators have to match!
@@ -59,7 +62,7 @@ namespace YRMemory {
 		if(auto const ptr = YRMemory::Allocate(sz)) {
 			return ptr;
 		}
-		std::terminate();
+		exit(static_cast<int>(0x30000000u | sz));
 	}
 }
 
