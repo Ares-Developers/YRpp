@@ -172,12 +172,6 @@ public:
 		return SetCapacity(capacity, nullptr);
 	}
 
-	void Purge() {
-		this->Items = nullptr;
-		this->IsAllocated = false;
-		this->Capacity = 0;
-	}
-
 	void Swap(VectorClass& other) noexcept {
 		using std::swap;
 		swap(this->Items, other.Items);
@@ -332,11 +326,6 @@ public:
 	bool Remove(const T &item) {
 		int idx = this->FindItemIndex(item);
 		return idx >= 0 && this->RemoveItem(idx);
-	}
-
-	void Purge() {
-		this->Count = 0;
-		VectorClass::Purge();
 	}
 
 	void Swap(DynamicVectorClass& other) noexcept {
