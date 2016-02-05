@@ -42,12 +42,15 @@ public:
 		}
 	}
 
-	VectorClass(VectorClass &&other) noexcept {
-		other.Swap(*this);
-	}
+	VectorClass(VectorClass &&other) noexcept :
+		Items(other.Items),
+		Capacity(other.Capacity),
+		IsInitialized(other.IsInitialized),
+		IsAllocated(std::exchange(other.IsAllocated, false))
+	{ }
 
 	virtual ~VectorClass() noexcept {
-		if(this->Items && this->IsAllocated) {
+		if(this->IsAllocated) {
 			GameDeleteArray(this->Items, static_cast<size_t>(this->Capacity));
 		}
 	}
@@ -119,6 +122,8 @@ public:
 
 	virtual void Clear() {
 		VectorClass(std::move(*this));
+		this->Items = nullptr;
+		this->Capacity = 0;
 	}
 
 	virtual int FindItemIndex(const T& item) const {
@@ -214,9 +219,10 @@ public:
 		}
 	}
 
-	DynamicVectorClass(DynamicVectorClass &&other) noexcept {
-		other.Swap(*this);
-	}
+	DynamicVectorClass(DynamicVectorClass &&other) noexcept
+		: VectorClass(std::move(other)), Count(other.Count),
+		CapacityIncrement(other.CapacityIncrement)
+	{ }
 
 	DynamicVectorClass& operator = (const DynamicVectorClass &other) {
 		DynamicVectorClass(other).Swap(*this);
@@ -239,8 +245,8 @@ public:
 	}
 
 	virtual void Clear() override {
-		this->Count = 0;
 		VectorClass::Clear();
+		this->Count = 0;
 	}
 
 	virtual int FindItemIndex(const T& item) const override {
@@ -358,14 +364,13 @@ public:
 		: DynamicVectorClass(capacity, pMem)
 	{ }
 
-	TypeList(const TypeList &other) {
-		this->unknown_18 = other.unknown_18;
-		DynamicVectorClass::operator=(other);
-	}
+	TypeList(const TypeList &other)
+		: DynamicVectorClass(other), unknown_18(other.unknown_18) 
+	{ }
 
-	TypeList(TypeList &&other) noexcept {
-		other.Swap(*this);
-	}
+	TypeList(TypeList &&other) noexcept
+		: DynamicVectorClass(std::move(other)), unknown_18(other.unknown_18)
+	{ }
 
 	TypeList& operator = (const TypeList &other) {
 		TypeList(other).Swap(*this);
@@ -399,9 +404,9 @@ public:
 		: VectorClass(other), Total(other.Total)
 	{ }
 
-	CounterClass(CounterClass &&other) noexcept {
-		other.Swap(*this);
-	}
+	CounterClass(CounterClass &&other) noexcept
+		: VectorClass(std::move(other)), Total(other.Total)
+	{ }
 
 	CounterClass& operator = (const CounterClass &other) {
 		CounterClass(other).Swap(*this);
