@@ -47,8 +47,9 @@ public:
 	}
 
 	virtual ~VectorClass() noexcept {
-		// not a virtual call
-		VectorClass::Clear();
+		if(this->Items && this->IsAllocated) {
+			GameDeleteArray(this->Items, static_cast<size_t>(this->Capacity));
+		}
 	}
 
 	VectorClass& operator = (const VectorClass &other) {
@@ -117,12 +118,7 @@ public:
 	}
 
 	virtual void Clear() {
-		if(this->Items && this->IsAllocated) {
-			GameDeleteArray(this->Items, static_cast<size_t>(this->Capacity));
-			this->Items = nullptr;
-		}
-		this->IsAllocated = false;
-		this->Capacity = 0;
+		VectorClass(std::move(*this));
 	}
 
 	virtual int FindItemIndex(const T& item) const {
@@ -221,11 +217,6 @@ public:
 	DynamicVectorClass(DynamicVectorClass &&other) noexcept {
 		other.Swap(*this);
 	}
-
-	// not needed. base class destructor will call base class Clear()
-	//virtual ~DynamicVectorClass() noexcept override {
-	//	Clear();
-	//}
 
 	DynamicVectorClass& operator = (const DynamicVectorClass &other) {
 		DynamicVectorClass(other).Swap(*this);
@@ -411,12 +402,6 @@ public:
 	CounterClass(CounterClass &&other) noexcept {
 		other.Swap(*this);
 	}
-
-	// not needed. base class destructor will call base class Clear()
-	//virtual ~CounterClass() noexcept override {
-	//	VectorClass::Clear();
-	//	this->Total = 0;
-	//}
 
 	CounterClass& operator = (const CounterClass &other) {
 		CounterClass(other).Swap(*this);
