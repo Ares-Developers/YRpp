@@ -140,7 +140,7 @@ public:
 		return -1;
 	}
 
-	virtual int GetItemIndex(const T* pItem) const {
+	virtual int GetItemIndex(const T* pItem) const final {
 		if(!this->IsInitialized) {
 			return 0;
 		}
@@ -148,7 +148,7 @@ public:
 		return pItem - this->Items;
 	}
 
-	virtual T GetItem(int i) const {
+	virtual T GetItem(int i) const final {
 		return this->Items[i];
 	}
 
@@ -243,7 +243,7 @@ public:
 		this->Count = 0;
 	}
 
-	virtual int FindItemIndex(const T& item) const override {
+	virtual int FindItemIndex(const T& item) const override final {
 		if(!this->IsInitialized) {
 			return 0;
 		}
