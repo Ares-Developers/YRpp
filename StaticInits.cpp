@@ -416,10 +416,8 @@ Theater* const Theater::TH_Desert    = reinterpret_cast<Theater*>(0x7E1CC8);
 Theater* const Theater::TH_NewUrban  = reinterpret_cast<Theater*>(0x7E1D38);
 Theater* const Theater::TH_Lunar     = reinterpret_cast<Theater*>(0x7E1DA8);
 
-//Tree classes don't have their VTables done yet
-/*#include <TerrainClass.h>
+#include <TerrainClass.h>
 DECL(TerrainClass, 0xA8E988);
-*/
 
 #include <TerrainTypeClass.h>
 DECL(TerrainTypeClass, 0xA8E318);
