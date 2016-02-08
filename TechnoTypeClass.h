@@ -72,17 +72,17 @@ public:
 
 	static DynamicVectorClass<TechnoTypeClass *>* const Array; // HAX to instantiate
 
-	static TechnoTypeClass* Find(const char* pID)
+	static __declspec(noinline) TechnoTypeClass* __fastcall Find(const char* pID)
 	{
 		for(auto pItem : *Array) {
-			if(!_strcmpi(pItem->get_ID(), pID)) {
+			if(!_strcmpi(pItem->ID, pID)) {
 				return pItem;
 			}
 		}
 		return nullptr;
 	}
 
-	static int FindIndex(const char* pID)
+	static __declspec(noinline) int __fastcall FindIndex(const char* pID)
 	{
 		for(int i = 0; i < Array->Count; ++i) {
 			if(!_strcmpi(Array->Items[i]->get_ID(), pID)) {
