@@ -16,7 +16,7 @@ class NOVTABLE FactoryClass : public AbstractClass
 public:
 	static const AbstractType AbsID = AbstractType::Factory;
 
-	static DynamicVectorClass<FactoryClass *> * const Array;
+	static constexpr constant_ptr<DynamicVectorClass<FactoryClass*>, 0xA83E30u> const Array{};
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

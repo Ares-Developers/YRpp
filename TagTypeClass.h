@@ -12,7 +12,7 @@ public:
 	static const AbstractType AbsID = AbstractType::TagType;
 
 	//Array
-	ABSTRACTTYPE_ARRAY(TagTypeClass);
+	ABSTRACTTYPE_ARRAY(TagTypeClass, 0xB0E780u);
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override R0;

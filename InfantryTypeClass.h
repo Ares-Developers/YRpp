@@ -38,7 +38,7 @@ public:
 	static const AbstractType AbsID = AbstractType::InfantryType;
 
 	//Array
-	ABSTRACTTYPE_ARRAY(InfantryTypeClass);
+	ABSTRACTTYPE_ARRAY(InfantryTypeClass, 0xA8E348u);
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

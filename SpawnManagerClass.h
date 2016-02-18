@@ -33,10 +33,10 @@ struct SpawnNode
 class NOVTABLE SpawnManagerClass : public AbstractClass
 {
 public:
-
-	static DynamicVectorClass<SpawnManagerClass *>* const Array;
-
 	static const AbstractType AbsID = AbstractType::SpawnManager;
+
+	//Static
+	static constexpr constant_ptr<DynamicVectorClass<SpawnManagerClass*>, 0xB0B880u> const Array{};
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

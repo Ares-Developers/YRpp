@@ -8,6 +8,8 @@
 #include <GeneralDefinitions.h>
 #include <Audio.h>
 
+#include <Helpers/CompileTime.h>
+
 struct VocClassHeader {
 	VocClassHeader* Next;
 	VocClassHeader* Prev;
@@ -29,7 +31,7 @@ struct VolumeStruct	//pretty uncreative name, but it's all I can come up with at
 class VocClass
 {
 public:
-	static DynamicVectorClass<VocClass*>* const Array;
+	static constexpr constant_ptr<DynamicVectorClass<VocClass*>, 0xB1D378u> const Array{};
 
 	static bool& VoicesEnabled;
 

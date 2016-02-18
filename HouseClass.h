@@ -140,7 +140,7 @@ public:
 	enum {PlayerAtA = 4475, PlayerAtB, PlayerAtC, PlayerAtD, PlayerAtE, PlayerAtF, PlayerAtG, PlayerAtH};
 
 	//Static
-	static DynamicVectorClass<HouseClass*>* const Array;
+	static constexpr constant_ptr<DynamicVectorClass<HouseClass*>, 0xA80228u> const Array{};
 
 	static HouseClass *&Player;
 	static HouseClass *&Observer;

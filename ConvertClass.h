@@ -11,6 +11,7 @@
 #include <Blitters.h>
 
 #include <FileFormats/SHP.h>
+#include <Helpers/CompileTime.h>
 
 struct ColorStruct;
 class DSurface;
@@ -21,7 +22,7 @@ class ConvertClass
 {
 public:
 	//global array
-	static DynamicVectorClass<ConvertClass*>* const Array;
+	static constexpr constant_ptr<DynamicVectorClass<ConvertClass*>, 0x89ECF8u> const Array{};
 
 	static ConvertClass* FindOrAllocate(const char * FileName);
 
@@ -84,7 +85,7 @@ class LightConvertClass : public ConvertClass
 {
 public:
 	//global array
-	static DynamicVectorClass<LightConvertClass*>* const Array;
+	static constexpr constant_ptr<DynamicVectorClass<LightConvertClass*>, 0x87F698u> const Array{};
 
 	//Destructor
 	virtual ~LightConvertClass() RX;

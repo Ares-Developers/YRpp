@@ -16,7 +16,7 @@ public:
 	static const AbstractType AbsID = AbstractType::DiskLaser;
 
 	// static
-	static DynamicVectorClass<DiskLaserClass*>* const Array;
+	static constexpr constant_ptr<DynamicVectorClass<DiskLaserClass*>, 0x8A0208u> const Array{};
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

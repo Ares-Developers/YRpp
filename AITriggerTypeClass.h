@@ -25,7 +25,7 @@ public:
 	static const AbstractType AbsID = AbstractType::AITriggerType;
 
 	//Array
-	ABSTRACTTYPE_ARRAY(AITriggerTypeClass);
+	ABSTRACTTYPE_ARRAY(AITriggerTypeClass, 0xA8B200u);
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

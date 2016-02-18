@@ -16,7 +16,7 @@ public:
 	static const AbstractType AbsID = AbstractType::Super;
 
 	//Static
-	static DynamicVectorClass<SuperClass*>* const Array;
+	static constexpr constant_ptr<DynamicVectorClass<SuperClass*>, 0xA83CB8u> const Array{};
 
 	static DynamicVectorClass<SuperClass*>* const ShowTimers;
 

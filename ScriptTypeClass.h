@@ -21,7 +21,7 @@ public:
 	static const AbstractType AbsID = AbstractType::ScriptType;
 
 	//Array
-	ABSTRACTTYPE_ARRAY(ScriptTypeClass);
+	ABSTRACTTYPE_ARRAY(ScriptTypeClass, 0x8B41C8u);
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

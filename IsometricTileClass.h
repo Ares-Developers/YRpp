@@ -11,7 +11,7 @@ public:
 	static const AbstractType AbsID = AbstractType::Isotile;
 
 	//Array
-	static DynamicVectorClass<IsometricTileClass*>* const Array;
+	static constexpr constant_ptr<DynamicVectorClass<IsometricTileClass*>, 0x87F750u> Array{};
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override R0;

@@ -19,10 +19,10 @@ struct ControlNode
 class NOVTABLE CaptureManagerClass : public AbstractClass
 {
 public:
-
-	static DynamicVectorClass<CaptureManagerClass *>* const Array;
-
 	static const AbstractType AbsID = AbstractType::CaptureManager;
+
+	//Static
+	static constexpr constant_ptr<DynamicVectorClass<CaptureManagerClass*>, 0x89E0F0u> const Array{};
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

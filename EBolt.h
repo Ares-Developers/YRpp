@@ -11,7 +11,7 @@ class UnitClass;
 class EBolt
 {
 public:
-	static DynamicVectorClass<EBolt*>* const Array;
+	static constexpr constant_ptr<DynamicVectorClass<EBolt*>, 0x8A0E88u> const Array{};
 
 	//Constructor, Destructor
 	EBolt()

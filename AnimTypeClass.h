@@ -17,7 +17,7 @@ public:
 	static const AbstractType AbsID = AbstractType::AnimType;
 
 	//Array
-	ABSTRACTTYPE_ARRAY(AnimTypeClass);
+	ABSTRACTTYPE_ARRAY(AnimTypeClass, 0x8B4150u);
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

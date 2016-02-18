@@ -14,30 +14,6 @@
 #define ALIAS_O(Type, Obj, Addr) \
 	Type Obj = reinterpret_cast<Type>(Addr);
 
-#include <AbstractClass.h>
-ALIAS_O(DynamicVectorClass<AbstractClass *>* const, AbstractClass::Array, 0xB0F720);
-
-#include <AbstractTypeClass.h>
-DECL(AbstractTypeClass, 0xA8E968);
-
-#include <AITriggerTypeClass.h>
-DECL(AITriggerTypeClass, 0xA8B200);
-
-#include <AircraftClass.h>
-DECL(AircraftClass, 0xA8E390);
-
-#include <AircraftTypeClass.h>
-DECL(AircraftTypeClass, 0xA8B218);
-
-#include <AlphaShapeClass.h>
-DECL(AlphaShapeClass, 0x88A0F0);
-
-#include <AnimClass.h>
-DECL(AnimClass, 0xA8E9A8);
-
-#include <AnimTypeClass.h>
-DECL(AnimTypeClass, 0x8B4150);
-
 #include <Audio.h>
 ALIAS(AudioIDXData*, AudioIDXData::Instance, 0x87E294);
 ALIAS(AudioStream *, AudioStream::Instance, 0xB1D4D8);
@@ -46,24 +22,10 @@ ALIAS(AudioStream *, AudioStream::Instance, 0xB1D4D8);
 ALIAS_O(BombListClass* const, BombListClass::Instance, 0x87F5D8);
 
 #include <BulletClass.h>
-DECL(BulletClass, 0xA8ED40);
 ALIAS(DynamicVectorClass<BulletClass*>, BulletClass::ScalableBullets, 0x89DE18);
 
-#include <BulletTypeClass.h>
-DECL(BulletTypeClass, 0xA83C80);
-
-#include <BuildingClass.h>
-DECL(BuildingClass, 0xA8EB40);
-
 #include <BuildingTypeClass.h>
-DECL(BuildingTypeClass, 0xA83C68);
 ALIAS(int, BuildingTypeClass::HeightInLeptons, 0x89DDB8);
-
-#include <BuildingLightClass.h>
-DECL(BuildingLightClass, 0x8B4190);
-
-#include <CaptureManagerClass.h>
-DECL(CaptureManagerClass, 0x89E0F0);
 
 #include <CCINIClass.h>
 ALIAS(DWORD, CCINIClass::RulesHash, 0xB77E00);
@@ -75,19 +37,6 @@ ALIAS(CCINIClass*, CCINIClass::INI_Rules, 0x887048);
 ALIAS_O(CCINIClass* const, CCINIClass::INI_AI, 0x887128);
 ALIAS_O(CCINIClass* const, CCINIClass::INI_Art, 0x887180);
 ALIAS_O(CCINIClass* const, CCINIClass::INI_RA2MD, 0x8870C0);
-
-#include <ColorScheme.h>
-DECL(ColorScheme, 0xB054D0);
-
-#include <CommandClass.h>
-DECL(CommandClass, 0x87F658);
-
-#include <ConvertClass.h>
-DECL(ConvertClass, 0x89ECF8);
-DECL(LightConvertClass, 0x87F698);
-
-#include <DiskLaserClass.h>
-DECL(DiskLaserClass, 0x8A0208);
 
 #include <Drawing.h>
 ALIAS(ABufferClass *, ABufferClass::ABuffer, 0x87E8A4);
@@ -114,12 +63,6 @@ ALIAS(RectangleStruct const, DSurface::WindowBounds, 0x886FB0);
 #include <LoadProgressManager.h>
 ALIAS(LoadProgressManager *, LoadProgressManager::LPMgr, 0xABC9BC);
 
-#include <EMPulseClass.h>
-DECL(EMPulseClass, 0x8A3870);
-
-#include <FactoryClass.h>
-DECL(FactoryClass, 0xA83E30);
-
 #include <FileSystem.h>
 ALIAS(SHPStruct *, FileSystem::PIPBRD_SHP, 0xAC1478);
 ALIAS(SHPStruct *, FileSystem::PIPS_SHP, 0xAC147C);
@@ -139,9 +82,6 @@ ALIAS(ConvertClass *, FileSystem::THEATER_PAL, 0x87F6C4);
 ALIAS(ConvertClass *, FileSystem::MOUSE_PAL, 0x87F6C8);
 ALIAS(ConvertClass *, FileSystem::GRFXTXT_Convert, 0xA8F798);
 
-#include <FootClass.h>
-DECL(FootClass, 0x8B3DC0);
-
 #include <FPSCounter.h>
 ALIAS(unsigned int, FPSCounter::CurrentFrameRate, 0xABCD44);
 ALIAS(unsigned int, FPSCounter::TotalFramesElapsed, 0xABCD48);
@@ -160,30 +100,11 @@ ALIAS_O(GameOptionsClass * const, GameOptionsClass::Instance, 0xA8EB60);
 ALIAS_O(GetCDClass* const, GetCDClass::Instance, 0xA8E8E8);
 
 #include <HouseClass.h>
-DECL(HouseClass, 0xA80228);
 ALIAS(HouseClass *, HouseClass::Player, 0xA83D4C);
 ALIAS(HouseClass *, HouseClass::Observer, 0xAC1198);
 
-#include <HouseTypeClass.h>
-DECL(HouseTypeClass, 0xA83C98);
-
-#include <InfantryClass.h>
-DECL(InfantryClass, 0xA83DE8);
-
-#include <IonBlastClass.h>
-DECL(IonBlastClass, 0xAA0118);
-
-#include <InfantryTypeClass.h>
-DECL(InfantryTypeClass, 0xA8E348);
-
 #include <InputManagerClass.h>
 ALIAS(InputManagerClass *, InputManagerClass::Instance, 0x87F770);
-
-#include <IsometricTileClass.h>
-DECL(IsometricTileClass, 0x87F750);
-
-#include <IsometricTileTypeClass.h>
-DECL(IsometricTileTypeClass, 0xA8ED28);
 
 #include <Kamikaze.h>
 ALIAS_O(Kamikaze* const, Kamikaze::Instance, 0xABC5F8);
@@ -258,27 +179,6 @@ DynamicVectorClass<ObjectClass*>* const ObjectClass::ObjectsInLayers =
 	reinterpret_cast<DynamicVectorClass<ObjectClass*>*>(0x8A0360);
 
 
-#include <OverlayClass.h>
-DECL(OverlayClass, 0xA8EC50);
-
-#include <OverlayTypeClass.h>
-DECL(OverlayTypeClass, 0xA83D80);
-
-#include <ParasiteClass.h>
-DECL(ParasiteClass, 0xAC4910);
-
-#include <ParticleClass.h>
-DECL(ParticleClass, 0xA83DC8);
-
-#include <ParticleSystemClass.h>
-DECL(ParticleSystemClass, 0xA80208);
-
-#include <ParticleSystemTypeClass.h>
-DECL(ParticleSystemTypeClass, 0xA83D68);
-
-#include <ParticleTypeClass.h>
-DECL(ParticleTypeClass, 0xA83D98);
-
 #include <PCX.h>
 ALIAS_O(PCX * const, PCX::Instance, 0xAC4848);
 WORD PCX::DefaultTransparentColor = COLOR_PURPLE;
@@ -293,12 +193,6 @@ ALIAS(char **, Powerups::Effects, 0x7E523C);
 #include <ProgressScreenClass.h>
 ALIAS_O(ProgressScreenClass * const, ProgressScreenClass::Instance, 0xAC4F58);
 
-#include <RadBeam.h>
-DECL(RadBeam, 0xB04A60);
-
-#include <RadSiteClass.h>
-DECL(RadSiteClass, 0xB04BD0);
-
 #include <RulesClass.h>
 ALIAS(RulesClass*, RulesClass::Instance, 0x8871E0);
 //bool RulesClass::Initialized = false;
@@ -309,26 +203,8 @@ ALIAS(ScenarioClass*, ScenarioClass::Instance, 0xA8B230);
 #include <SessionClass.h>
 ALIAS_O(SessionClass* const, SessionClass::Instance, 0xA8B238);
 
-#include <SideClass.h>
-DECL(SideClass, 0x8B4120);
-
 #include <SidebarClass.h>
 ALIAS_O(wchar_t * const, SidebarClass::TooltipBuffer, 0xB07BC4);
-
-#include <SmudgeClass.h>
-DECL(SmudgeClass, 0xA8B1E0);
-
-#include <SmudgeTypeClass.h>
-DECL(SmudgeTypeClass, 0xA8EC18);
-
-#include <SpawnManagerClass.h>
-DECL(SpawnManagerClass, 0xB0B880);
-
-#include <SlaveManagerClass.h>
-DECL(SlaveManagerClass, 0xB0B5F0);
-
-#include <SpotlightClass.h>
-DECL(SpotlightClass, 0xAC1678);
 
 #include <StringTable.h>
 ALIAS(CSFString *, StringTable::LastLoadedString, 0xB1CF88);
@@ -343,7 +219,6 @@ ALIAS(wchar_t**, StringTable::Values, 0xB1CF78);
 ALIAS(char**, StringTable::ExtraValues, 0xB1CF7C);
 
 #include <SuperClass.h>
-DECL(SuperClass, 0xA83CB8);
 ALIAS_O(DynamicVectorClass<SuperClass*>* const, SuperClass::ShowTimers, 0xA83D50);
 ALIAS(double, LightningStorm::CloudHeightFactor, 0xB0CDD8);
 ALIAS(CellStruct, LightningStorm::Coords, 0xA9F9CC);
@@ -366,46 +241,11 @@ ALIAS(NukeFlashStatus, NukeFlash::Status, 0xA9FABC);
 ALIAS(int, NukeFlash::StartTime, 0x827FC8);
 ALIAS(int, NukeFlash::Duration, 0x827FCC);
 
-#include <SuperWeaponTypeClass.h>
-DECL(SuperWeaponTypeClass, 0xA8E330);
-
 #include <TacticalClass.h>
 ALIAS(TacticalClass *, TacticalClass::Instance, 0x887324);
 
-#include <TaskForceClass.h>
-DECL(TaskForceClass, 0xA8E8D0);
-
-#include <ScriptTypeClass.h>
-DECL(ScriptTypeClass, 0x8B41C8);
-
 #include <SwizzleManagerClass.h>
 SwizzleManagerClass& SwizzleManagerClass::Instance = *reinterpret_cast<SwizzleManagerClass*>(0xB0C110);
-
-#include <TActionClass.h>
-DECL(TActionClass, 0xB0E658);
-
-#include <TagClass.h>
-DECL(TagClass, 0xB0E720);
-
-#include <TagTypeClass.h>
-DECL(TagTypeClass, 0xB0E780);
-
-#include <TeamClass.h>
-DECL(TeamClass, 0x8B40E8);
-
-#include <TeamTypeClass.h>
-DECL(TeamTypeClass, 0xA8ECA0);
-
-#include <TemporalClass.h>
-DECL(TemporalClass, 0xB0EC60);
-
-#include <TechnoClass.h>
-
-DynamicVectorClass<TechnoClass *>* const TechnoClass::Array = reinterpret_cast<DynamicVectorClass<TechnoClass*>*>(0xA8EC78);
-DynamicVectorClass<TechnoTypeClass *>* const TechnoTypeClass::Array = reinterpret_cast<DynamicVectorClass<TechnoTypeClass *>*>(0xA8EB00);
-
-#include <TEventClass.h>
-DECL(TEventClass, 0xB0F1A0);
 
 #include <Theater.h>
 Theater* const Theater::Array        = reinterpret_cast<Theater*>(0x7E1B78);
@@ -415,27 +255,6 @@ Theater* const Theater::TH_Urban     = reinterpret_cast<Theater*>(0x7E1C58);
 Theater* const Theater::TH_Desert    = reinterpret_cast<Theater*>(0x7E1CC8);
 Theater* const Theater::TH_NewUrban  = reinterpret_cast<Theater*>(0x7E1D38);
 Theater* const Theater::TH_Lunar     = reinterpret_cast<Theater*>(0x7E1DA8);
-
-#include <TerrainClass.h>
-DECL(TerrainClass, 0xA8E988);
-
-#include <TerrainTypeClass.h>
-DECL(TerrainTypeClass, 0xA8E318);
-
-#include <TiberiumClass.h>
-DECL(TiberiumClass, 0xB0F4E8);
-
-#include <TriggerClass.h>
-DECL(TriggerClass, 0xA8EAE8);
-
-#include <TriggerTypeClass.h>
-DECL(TriggerTypeClass, 0x8B4178);
-
-#include <UnitClass.h>
-DECL(UnitClass, 0x8B4108);
-
-#include <UnitTypeClass.h>
-DECL(UnitTypeClass, 0xA83CE0);
 
 #include <Unsorted.h>
 ALIAS(DWORD, Game::Savegame_Magic, 0x83D560);
@@ -574,33 +393,10 @@ ALIAS_O(MovieUnlockableInfo const* const, MovieUnlockableInfo::AlliedUnlockables
 ALIAS_O(MovieUnlockableInfo const* const, MovieUnlockableInfo::SovietUnlockables, 0x00832CA0);
 
 #include <VocClass.h>
-DECL(VocClass, 0xB1D378);
 ALIAS(bool, VocClass::VoicesEnabled, 0x8464AC);
 
-#include <EBolt.h>
-DECL(EBolt, 0x8A0E88);
-
-#include <LineTrail.h>
-DECL(LineTrail, 0xABCB78);
-
 #include <VoxClass.h>
-DECL(VoxClass, 0xB1D4A0);
 ALIAS(int, VoxClass::EVAIndex, 0xB1D4C8);
-
-#include <VoxelAnimClass.h>
-DECL(VoxelAnimClass, 0x887388);
-
-#include <VoxelAnimTypeClass.h>
-DECL(VoxelAnimTypeClass, 0xA8EB28);
-
-#include <WarheadTypeClass.h>
-DECL(WarheadTypeClass, 0x8874C0);
-
-#include <WaveClass.h>
-DECL(WaveClass, 0xA8EC38);
-
-#include <WeaponTypeClass.h>
-DECL(WeaponTypeClass, 0x887568);
 
 #include <WWMouseClass.h>
 ALIAS(WWMouseClass *, WWMouseClass::Instance, 0x887640);

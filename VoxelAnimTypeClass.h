@@ -17,7 +17,7 @@ public:
 	static const AbstractType AbsID = AbstractType::VoxelAnimType;
 
 	//Array
-	ABSTRACTTYPE_ARRAY(VoxelAnimTypeClass);
+	ABSTRACTTYPE_ARRAY(VoxelAnimTypeClass, 0xA8EB28u);
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

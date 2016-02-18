@@ -13,7 +13,7 @@ public:
 	static const AbstractType AbsID = AbstractType::Infantry;
 
 	//Static
-	static DynamicVectorClass<InfantryClass*>* const Array;
+	static constexpr constant_ptr<DynamicVectorClass<InfantryClass*>, 0xA83DE8u> const Array{};
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

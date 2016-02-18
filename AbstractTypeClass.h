@@ -10,8 +10,8 @@
 class CCINIClass;
 
 //Macro for the static Array of every AbstractTypeClass!
-#define ABSTRACTTYPE_ARRAY(class_name)	public:\
-	static DynamicVectorClass<class_name*>* const Array;\
+#define ABSTRACTTYPE_ARRAY(class_name, address)	public:\
+	static constexpr constant_ptr<DynamicVectorClass<class_name*>, address> const Array{};\
 	static __declspec(noinline) class_name* __fastcall Find(const char* pID)\
 	{\
 		for(auto pItem : *Array)\
@@ -44,7 +44,7 @@ public:
 	static const AbstractType AbsID = AbstractType::Abstract;
 
 	//Static
-	static DynamicVectorClass<AbstractTypeClass*>* const Array;
+	static constexpr constant_ptr<DynamicVectorClass<AbstractTypeClass*>, 0xA8E968u> const Array{};
 
 	//Destructor
 	virtual ~AbstractTypeClass() RX;

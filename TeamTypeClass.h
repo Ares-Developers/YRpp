@@ -20,7 +20,7 @@ public:
 	static const AbstractType AbsID = AbstractType::TeamType;
 
 	//Array
-	ABSTRACTTYPE_ARRAY(TeamTypeClass);
+	ABSTRACTTYPE_ARRAY(TeamTypeClass, 0xA8ECA0u);
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

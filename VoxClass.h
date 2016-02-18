@@ -8,10 +8,13 @@
 #include <GeneralDefinitions.h>
 #include <CCINIClass.h>
 
+#include <Helpers/CompileTime.h>
+
 class VoxClass
 {
 public:
-	static DynamicVectorClass<VoxClass*>* const Array;
+	static constexpr constant_ptr<DynamicVectorClass<VoxClass*>, 0xB1D4A0u> const Array{};
+
 	static int &EVAIndex;
 
 	static VoxClass* Find(const char* pName)

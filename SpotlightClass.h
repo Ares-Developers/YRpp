@@ -2,11 +2,13 @@
 
 #include <GeneralStructures.h>
 
+#include <Helpers/CompileTime.h>
+
 class SpotlightClass
 {
 public:
 	//Static
-	static DynamicVectorClass<SpotlightClass*>* const Array;
+	static constexpr constant_ptr<DynamicVectorClass<SpotlightClass*>, 0xAC1678u> const Array{};
 
 	//Destructor
 	~SpotlightClass()

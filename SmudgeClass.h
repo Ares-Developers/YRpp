@@ -13,7 +13,7 @@ public:
 	static const AbstractType AbsID = AbstractType::Smudge;
 
 	//Static
-	static DynamicVectorClass<SmudgeClass*>* const Array;
+	static constexpr constant_ptr<DynamicVectorClass<SmudgeClass*>, 0xA8B1E0u> const Array{};
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

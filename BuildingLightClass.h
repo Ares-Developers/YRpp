@@ -9,7 +9,7 @@ public:
 	static const AbstractType AbsID = AbstractType::BuildingLight;
 
 	//Static
-	static DynamicVectorClass<BuildingLightClass*>* const Array;
+	static constexpr constant_ptr<DynamicVectorClass<BuildingLightClass*>, 0x8B4190u> const Array{};
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

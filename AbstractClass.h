@@ -5,6 +5,8 @@
 #include <GeneralStructures.h>
 #include <ArrayClasses.h>
 
+#include <Helpers\CompileTime.h>
+
 //forward declarations
 class TechnoClass;
 class HouseClass;
@@ -43,7 +45,7 @@ class NOVTABLE AbstractClass : public IPersistStream, public IRTTITypeInfo, publ
 public:
 	static const AbstractType AbsID = AbstractType::Abstract;
 
-	static DynamicVectorClass<AbstractClass *>* const Array;
+	static constexpr constant_ptr<DynamicVectorClass<AbstractClass*>, 0xB0F720u> const Array{};
 
 	//static
 	const char* GetClassName() const

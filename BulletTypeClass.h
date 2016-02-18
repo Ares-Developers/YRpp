@@ -21,7 +21,7 @@ public:
 	static const AbstractType AbsID = AbstractType::BulletType;
 
 	//Array
-	ABSTRACTTYPE_ARRAY(BulletTypeClass);
+	ABSTRACTTYPE_ARRAY(BulletTypeClass, 0xA83C80u);
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

@@ -15,7 +15,7 @@ public:
 	static const AbstractType AbsID = AbstractType::OverlayType;
 
 	//Array
-	ABSTRACTTYPE_ARRAY(OverlayTypeClass);
+	ABSTRACTTYPE_ARRAY(OverlayTypeClass, 0xA83D80u);
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

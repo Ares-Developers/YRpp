@@ -30,7 +30,7 @@ public:
 	static const AbstractType AbsID = AbstractType::BuildingType;
 
 	//Array
-	ABSTRACTTYPE_ARRAY(BuildingTypeClass);
+	ABSTRACTTYPE_ARRAY(BuildingTypeClass, 0xA83C68u);
 
 	static int &HeightInLeptons;
 

@@ -13,7 +13,7 @@ public:
 	static const AbstractType AbsID = AbstractType::Trigger;
 
 	//Static
-	static DynamicVectorClass<TriggerClass*>* const Array;
+	static constexpr constant_ptr<DynamicVectorClass<TriggerClass*>, 0xA8EAE8u> const Array{};
 
 	// finds an instance using the type, or creates one
 	static TriggerClass* __fastcall GetInstance(TriggerTypeClass* pType)

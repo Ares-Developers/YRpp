@@ -2,12 +2,14 @@
 
 #include <GeneralDefinitions.h>
 
+#include <Helpers/CompileTime.h>
+
 class TechnoClass;
 
 class RadBeam
 {
 public:
-	static DynamicVectorClass<RadBeam*>* const Array;
+	static constexpr constant_ptr<DynamicVectorClass<RadBeam*>, 0xB04A60u> const Array{};
 
 	// Constructor removed - do not use it, use Allocate instead
 

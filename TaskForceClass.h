@@ -21,7 +21,7 @@ public:
 	static const AbstractType AbsID = AbstractType::TaskForce;
 
 	//Array
-	ABSTRACTTYPE_ARRAY(TaskForceClass);
+	ABSTRACTTYPE_ARRAY(TaskForceClass, 0xA8E8D0u);
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

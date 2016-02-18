@@ -16,7 +16,7 @@ public:
 	static const AbstractType AbsID = AbstractType::Tiberium;
 
 	//Array
-	ABSTRACTTYPE_ARRAY(TiberiumClass);
+	ABSTRACTTYPE_ARRAY(TiberiumClass, 0xB0F4E8u);
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
