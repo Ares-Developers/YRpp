@@ -15,7 +15,7 @@
 	Type Obj = reinterpret_cast<Type>(Addr);
 
 #include <AbstractClass.h>
-ALIAS_O(DynamicVectorClass<AbstractClass *>* const, AbstractClass::Array0, 0xB0F720);
+ALIAS_O(DynamicVectorClass<AbstractClass *>* const, AbstractClass::Array, 0xB0F720);
 
 #include <AbstractTypeClass.h>
 DECL(AbstractTypeClass, 0xA8E968);
