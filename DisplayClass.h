@@ -52,8 +52,7 @@ public:
 		{ JMP_THIS(0x692300); }
 
 	//Static
-	static DisplayClass* Global()
-		{ return reinterpret_cast<DisplayClass*>(0x87F7E8); }
+	static constexpr constant_ptr<DisplayClass, 0x87F7E8u> const Instance{};
 
 	static LayerClass* GetLayer(Layer lyr)
 	{

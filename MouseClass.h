@@ -43,6 +43,9 @@ struct TabDataClass
 class TabClass : public SidebarClass, public INoticeSink
 {
 public:
+	//Static
+	static constexpr constant_ptr<TabClass, 0x87F7E8u> const Instance{};
+
 	TabDataClass TabData;
 	TimerStruct unknown_timer_552C;
 	TimerStruct InsufficientFundsBlinkTimer;
@@ -55,6 +58,9 @@ public:
 class ScrollClass : public TabClass
 {
 public:
+	//Static
+	static constexpr constant_ptr<ScrollClass, 0x87F7E8u> const Instance{};
+
 	DWORD unknown_int_5548;
 	BYTE unknown_byte_554C;
 	PROTECTED_PROPERTY(BYTE, align_554D[3]);
@@ -70,7 +76,7 @@ class NOVTABLE MouseClass : public ScrollClass
 {
 public:
 	//Static
-	static MouseClass * const Instance;
+	static constexpr constant_ptr<MouseClass, 0x87F7E8u> const Instance{};
 
 	//Destructor
 	virtual ~MouseClass() RX;

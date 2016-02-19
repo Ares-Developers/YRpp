@@ -137,14 +137,10 @@ MixFileClass* const MixFileClass::MULTI   = reinterpret_cast<MixFileClass*>(0x88
 
 MixFileClass::GenericMixFiles* const MixFileClass::Generics = reinterpret_cast<MixFileClass::GenericMixFiles*>(0x884DF8);
 
-#include <MapClass.h>
-ALIAS_O(MapClass * const, MapClass::Instance, 0x87F7E8);
-
 #include <DisplayClass.h>
 ALIAS_O(LogicClass* const, LogicClass::Instance, 0x87F778);
 
 #include <MouseClass.h>
-ALIAS_O(MouseClass * const, MouseClass::Instance, 0x87F7E8);
 MouseCursor* const MouseCursor::First = reinterpret_cast<MouseCursor*>(0x82D028);
 
 #include <Networking.h>
