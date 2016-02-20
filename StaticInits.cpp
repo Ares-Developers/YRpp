@@ -24,9 +24,6 @@ ALIAS_O(BombListClass* const, BombListClass::Instance, 0x87F5D8);
 #include <BulletClass.h>
 ALIAS(DynamicVectorClass<BulletClass*>, BulletClass::ScalableBullets, 0x89DE18);
 
-#include <BuildingTypeClass.h>
-ALIAS(int, BuildingTypeClass::HeightInLeptons, 0x89DDB8);
-
 #include <CCINIClass.h>
 ALIAS(DWORD, CCINIClass::RulesHash, 0xB77E00);
 ALIAS(DWORD, CCINIClass::ArtHash, 0xB77E04);
