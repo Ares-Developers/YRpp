@@ -381,10 +381,6 @@ ALIAS(Imports::FP_RegisterHotKey, Imports::RegisterHotKey, 0x7E1510);
 
 ALIAS_O(DynamicVectorClass<MovieInfo>* const, MovieInfo::Array, 0xABF390);
 
-ALIAS_O(MovieUnlockableInfo const* const, MovieUnlockableInfo::CommonUnlockables, 0x00832C20);
-ALIAS_O(MovieUnlockableInfo const* const, MovieUnlockableInfo::AlliedUnlockables, 0x00832C30);
-ALIAS_O(MovieUnlockableInfo const* const, MovieUnlockableInfo::SovietUnlockables, 0x00832CA0);
-
 #include <VocClass.h>
 ALIAS(bool, VocClass::VoicesEnabled, 0x8464AC);
 

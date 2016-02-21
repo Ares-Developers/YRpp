@@ -2,6 +2,7 @@
 
 #include <ArrayClasses.h>
 #include <GeneralDefinitions.h>
+#include <Helpers/CompileTime.h>
 
 class SideClass;
 class ObjectClass;
@@ -450,26 +451,21 @@ public:
 	const char* Name; // yes, only that
 };
 
-struct MovieUnlockableInfo {
-	const char* Filename;
-	const char* Description;
-	int DiskRequired;
+struct MovieUnlockableInfo
+{
+	static constexpr reference<MovieUnlockableInfo, 0x832C20u, 1u> const Common{};
+	static constexpr reference<MovieUnlockableInfo, 0x832C30u, 8u> const Allied{};
+	static constexpr reference<MovieUnlockableInfo, 0x832CA0u, 8u> const Soviet{};
 
-	// allocated statically, but limit is not enforced. Careful.
-	static const MovieUnlockableInfo* const CommonUnlockables;
-	static const MovieUnlockableInfo* const AlliedUnlockables;
-	static const MovieUnlockableInfo* const SovietUnlockables;
-
-	static size_t const CommonCount = 1;
-	static size_t const AlliedCount = 8;
-	static size_t const SovietCount = 8;
-
-	MovieUnlockableInfo() : MovieUnlockableInfo(nullptr)
-	{ }
+	MovieUnlockableInfo() = default;
 
 	explicit MovieUnlockableInfo(const char* pFilename, const char* pDescription = nullptr, int disk = 2)
 		: Filename(pFilename), Description(pDescription), DiskRequired(disk)
 	{ }
+
+	const char* Filename{ nullptr };
+	const char* Description{ nullptr };
+	int DiskRequired{ 2 };
 };
 
 namespace Unsorted
