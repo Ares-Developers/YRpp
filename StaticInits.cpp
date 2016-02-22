@@ -131,7 +131,6 @@ ALIAS(int, NukeFlash::Duration, 0x827FCC);
 
 #include <Unsorted.h>
 ALIAS(DWORD, Game::Savegame_Magic, 0x83D560);
-ALIAS(int, Game::CurrentFrameRate, 0xABCD44);
 ALIAS(HWND, Game::hWnd, 0xB73550);
 ALIAS(HINSTANCE, Game::hInstance, 0xB732F0);
 

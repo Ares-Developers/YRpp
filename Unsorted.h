@@ -36,10 +36,6 @@ public:
 	static HWND &hWnd;
 	static HINSTANCE &hInstance;
 
-	static int &CurrentFrameRate;
-	static int GetMinFrameRate()
-		{ JMP_STD(0x55AF60); }
-
 	static void SetProgress(int progress)
 		{ SET_REG32(ECX, 0xA8B238); JMP_STD(0x69AE90); }
 
@@ -72,24 +68,6 @@ public:
 
 	static bool &bVideoBackBuffer;
 	static bool &bAllowVRAMSidebar;
-};
-
-// this class calculates CRC32 checksums using the game's functions
-class CRC32 {
-public:
-	unsigned int Value;
-
-	CRC32()
-	{
-		Value = 0;
-	}
-
-	void Reset() {
-		Value = 0;
-	}
-
-	unsigned int Add(const void* src, size_t len)
-		{ JMP_THIS(0x4A1DE0); }
 };
 
 // this fake class contains the IIDs used by the game
