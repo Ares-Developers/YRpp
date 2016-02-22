@@ -91,19 +91,6 @@ ALIAS(int, Networking::NextPacketIndex, 0xA802D0);
 ALIAS_O(NetworkEvent * const, Networking::QueuedEvents, 0xA802D4);
 ALIAS_O(int * const, Networking::QueuedEventTimestamps, 0xA83A54);
 
-#include <Notifications.h>
-ALIAS(PointerExpiredNotification, PointerExpiredNotification::NotifyInvalidAnim, 0xB0F5B8);
-ALIAS(PointerExpiredNotification, PointerExpiredNotification::NotifyInvalidTeam, 0xB0F5D8);
-ALIAS(PointerExpiredNotification, PointerExpiredNotification::NotifyInvalidWaypoint, 0xB0F5F0);
-ALIAS(PointerExpiredNotification, PointerExpiredNotification::NotifyInvalidTag, 0xB0F618);
-ALIAS(PointerExpiredNotification, PointerExpiredNotification::NotifyInvalidFactory, 0xB0F640);
-ALIAS(PointerExpiredNotification, PointerExpiredNotification::NotifyInvalidActionOrEvent, 0xB0F658);
-ALIAS(PointerExpiredNotification, PointerExpiredNotification::NotifyInvalidType, 0xB0F670);
-ALIAS(PointerExpiredNotification, PointerExpiredNotification::NotifyInvalidHouse, 0xB0F6C8);
-ALIAS(PointerExpiredNotification, PointerExpiredNotification::NotifyInvalidNeuron, 0xB0F6F0);
-ALIAS(PointerExpiredNotification, PointerExpiredNotification::NotifyInvalidTrigger, 0xB0F708);
-ALIAS(PointerExpiredNotification, PointerExpiredNotification::NotifyInvalidObject, 0xB0F720);
-
 #include <Powerups.h>
 ALIAS(int *, Powerups::Weights, 0x81DA8C);
 ALIAS(double *, Powerups::Arguments, 0x89EC28);
