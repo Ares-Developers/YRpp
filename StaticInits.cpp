@@ -31,18 +31,6 @@ ALIAS(ColorStruct, Drawing::TooltipColor, 0xB0FA1C);
 ALIAS(DirectDrawWrap *, DirectDrawWrap::lpDD, 0x8A0094);
 ALIAS(byte, DirectDrawWrap::DoSmth, 0x8A0DEF);
 
-#include <Surface.h>
-ALIAS(DSurface *, DSurface::Tile, 0x8872FC);
-ALIAS(DSurface *, DSurface::Sidebar, 0x887300);
-ALIAS(DSurface *, DSurface::Primary, 0x887308);
-ALIAS(DSurface *, DSurface::Hidden, 0x88730C);
-ALIAS(DSurface *, DSurface::Alternate, 0x887310);
-ALIAS(DSurface *, DSurface::Hidden_2, 0x887314);
-ALIAS(DSurface *, DSurface::Composite, 0x88731C);
-ALIAS(RectangleStruct const, DSurface::SidebarBounds, 0x886F90);
-ALIAS(RectangleStruct const, DSurface::ViewBounds, 0x886FA0);
-ALIAS(RectangleStruct const, DSurface::WindowBounds, 0x886FB0);
-
 #include <FileSystem.h>
 ALIAS(SHPStruct *, FileSystem::PIPBRD_SHP, 0xAC1478);
 ALIAS(SHPStruct *, FileSystem::PIPS_SHP, 0xAC147C);

@@ -11,6 +11,7 @@
 
 #include <GeneralStructures.h>
 #include <YRDDraw.h>
+#include <Helpers/CompileTime.h>
 
 #include <utility>
 
@@ -267,17 +268,17 @@ public:
 //actual DirectDraw surfaces
 class DSurface : public Surface {
 public:
-	static DSurface *&Tile;
-	static DSurface *&Sidebar;
-	static DSurface *&Primary;
-	static DSurface *&Hidden;
-	static DSurface *&Alternate;
-	static DSurface *&Hidden_2;
-	static DSurface *&Composite;
+	static constexpr reference<DSurface*, 0x8872FCu> const Tile{};
+	static constexpr reference<DSurface*, 0x887300u> const Sidebar{};
+	static constexpr reference<DSurface*, 0x887308u> const Primary{};
+	static constexpr reference<DSurface*, 0x88730Cu> const Hidden{};
+	static constexpr reference<DSurface*, 0x887310u> const Alternate{};
+	static constexpr reference<DSurface*, 0x887314u> const Hidden_2{};
+	static constexpr reference<DSurface*, 0x88731Cu> const Composite{};
 
-	static RectangleStruct const& SidebarBounds;
-	static RectangleStruct const& ViewBounds;
-	static RectangleStruct const& WindowBounds;
+	static constexpr reference<RectangleStruct, 0x886F90u> const SidebarBounds{};
+	static constexpr reference<RectangleStruct, 0x886FA0u> const ViewBounds{};
+	static constexpr reference<RectangleStruct, 0x886FB0u> const WindowBounds{};
 
 	DSurface(int Width, int Height, bool BackBuffer, bool Force3D)
 		{ JMP_THIS(0x4BA5A0); }
