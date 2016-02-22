@@ -6,6 +6,7 @@ struct constant_ptr {
 	using value_type = T*;
 
 	constexpr constant_ptr() noexcept = default;
+	constant_ptr(constant_ptr&) = delete;
 private:
 	// mere presence "fixes" C2100: illegal indirection
 	constexpr constant_ptr(noinit_t) noexcept {}
@@ -40,6 +41,7 @@ struct reference {
 	static const auto Size = Count;
 
 	constexpr reference() noexcept = default;
+	reference(reference&) = delete;
 private:
 	// mere presence "fixes" C2100: illegal indirection
 	constexpr reference(noinit_t) noexcept {}
@@ -94,6 +96,7 @@ struct reference<T, Address, 0> {
 	using value_type = T;
 
 	constexpr reference() noexcept = default;
+	reference(reference&) = delete;
 private:
 	// mere presence "fixes" C2100: illegal indirection
 	constexpr reference(noinit_t) noexcept {}
