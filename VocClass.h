@@ -33,7 +33,7 @@ class VocClass
 public:
 	static constexpr constant_ptr<DynamicVectorClass<VocClass*>, 0xB1D378u> const Array{};
 
-	static bool& VoicesEnabled;
+	static constexpr reference<bool, 0x8464ACu> const VoicesEnabled{};
 
 	static VocClass* Find(const char* pName)
 	{

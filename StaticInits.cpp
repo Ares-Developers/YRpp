@@ -239,12 +239,6 @@ ALIAS(Imports::FP_CreateDialogParamA, Imports::CreateDialogParamA, 0x7E1508);
 ALIAS(Imports::FP_GetWindowTextA, Imports::GetWindowTextA, 0x7E150C);
 ALIAS(Imports::FP_RegisterHotKey, Imports::RegisterHotKey, 0x7E1510);
 
-#include <VocClass.h>
-ALIAS(bool, VocClass::VoicesEnabled, 0x8464AC);
-
-#include <VoxClass.h>
-ALIAS(int, VoxClass::EVAIndex, 0xB1D4C8);
-
 #undef ALIAS
 #undef ALIAS_O
 

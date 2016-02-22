@@ -15,7 +15,7 @@ class VoxClass
 public:
 	static constexpr constant_ptr<DynamicVectorClass<VoxClass*>, 0xB1D4A0u> const Array{};
 
-	static int &EVAIndex;
+	static constexpr reference<int, 0xB1D4C8u> const EVAIndex{};
 
 	static VoxClass* Find(const char* pName)
 	{
