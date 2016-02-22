@@ -4,6 +4,8 @@
 #include <ArrayClasses.h>
 #include <Interfaces.h>
 
+#include <Helpers/CompileTime.h>
+
 class SwizzlePointerClass
 {
 	DWORD unknown_0; //no idea, only found it being zero
@@ -21,7 +23,7 @@ public:
 class NOVTABLE SwizzleManagerClass : public ISwizzle
 {
 public:
-	static SwizzleManagerClass& Instance;
+	static constexpr reference<SwizzleManagerClass, 0xB0C110u> const Instance{};
 
 	//IUnknown
 	virtual HRESULT __stdcall QueryInterface(REFIID iid, void** ppvObject) R0;

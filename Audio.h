@@ -1,6 +1,7 @@
 #pragma once
 
 #include <GeneralDefinitions.h>
+#include <Helpers/CompileTime.h>
 
 class RawFileClass;
 class CCFileClass;
@@ -49,7 +50,7 @@ struct AudioSampleData {
 
 class AudioIDXData {
 public:
-	static AudioIDXData* &Instance;
+	static constexpr reference<AudioIDXData*, 0x87E294u> const Instance{};
 
 	static AudioIDXData* __fastcall Create(const char* pFilename, const char* pPath)
 		{ JMP_STD(0x4011C0); };
@@ -96,7 +97,7 @@ public:
 
 class AudioStream {
 public:
-	static AudioStream* &Instance;
+	static constexpr reference<AudioStream*, 0xB1D4D8u> const Instance{};
 
 	bool __fastcall PlayWAV(const char* pFilename, bool bUnk)
 		{ JMP_STD(0x407B60); }

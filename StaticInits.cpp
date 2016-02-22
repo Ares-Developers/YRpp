@@ -4,25 +4,11 @@
 
 //include <VTables.h>
 
-#define DECL(cls, adr) \
-	DynamicVectorClass<cls*>* const cls::Array = \
-		reinterpret_cast<DynamicVectorClass<cls*>*>(adr);
-
 #define ALIAS(Type, Obj, Addr) \
 	Type &Obj = *reinterpret_cast<Type*>(Addr);
 
 #define ALIAS_O(Type, Obj, Addr) \
 	Type Obj = reinterpret_cast<Type>(Addr);
-
-#include <Audio.h>
-ALIAS(AudioIDXData*, AudioIDXData::Instance, 0x87E294);
-ALIAS(AudioStream *, AudioStream::Instance, 0xB1D4D8);
-
-#include <BombListClass.h>
-ALIAS_O(BombListClass* const, BombListClass::Instance, 0x87F5D8);
-
-#include <BulletClass.h>
-ALIAS(DynamicVectorClass<BulletClass*>, BulletClass::ScalableBullets, 0x89DE18);
 
 #include <CCINIClass.h>
 ALIAS(DWORD, CCINIClass::RulesHash, 0xB77E00);
@@ -57,9 +43,6 @@ ALIAS(RectangleStruct const, DSurface::SidebarBounds, 0x886F90);
 ALIAS(RectangleStruct const, DSurface::ViewBounds, 0x886FA0);
 ALIAS(RectangleStruct const, DSurface::WindowBounds, 0x886FB0);
 
-#include <LoadProgressManager.h>
-ALIAS(LoadProgressManager *, LoadProgressManager::LPMgr, 0xABC9BC);
-
 #include <FileSystem.h>
 ALIAS(SHPStruct *, FileSystem::PIPBRD_SHP, 0xAC1478);
 ALIAS(SHPStruct *, FileSystem::PIPS_SHP, 0xAC147C);
@@ -87,25 +70,6 @@ ALIAS(bool, FPSCounter::ReducedEffects, 0xABCD50);
 ALIAS(unsigned int, Detail::MinFrameRate, 0x829FF4);
 ALIAS(unsigned int, Detail::BufferZoneWidth, 0x829FF8);
 
-#include <GameModeOptionsClass.h>
-ALIAS_O(GameModeOptionsClass * const, GameModeOptionsClass::Instance, 0xA8B250);
-
-#include <GameOptionsClass.h>
-ALIAS_O(GameOptionsClass * const, GameOptionsClass::Instance, 0xA8EB60);
-
-#include <GetCDClass.h>
-ALIAS_O(GetCDClass* const, GetCDClass::Instance, 0xA8E8E8);
-
-#include <HouseClass.h>
-ALIAS(HouseClass *, HouseClass::Player, 0xA83D4C);
-ALIAS(HouseClass *, HouseClass::Observer, 0xAC1198);
-
-#include <InputManagerClass.h>
-ALIAS(InputManagerClass *, InputManagerClass::Instance, 0x87F770);
-
-#include <Kamikaze.h>
-ALIAS_O(Kamikaze* const, Kamikaze::Instance, 0xABC5F8);
-
 #include <LocomotionClass.h>
 ALIAS(const CLSID, LocomotionClass::CLSIDs::Drive, 0x7E9A30);
 ALIAS(const CLSID, LocomotionClass::CLSIDs::Jumpjet, 0x7E9AC0);
@@ -118,27 +82,6 @@ ALIAS(const CLSID, LocomotionClass::CLSIDs::Fly, 0x7E9A80);
 ALIAS(const CLSID, LocomotionClass::CLSIDs::Teleport, 0x7E9A90);
 ALIAS(const CLSID, LocomotionClass::CLSIDs::Mech, 0x7E9AA0);
 ALIAS(const CLSID, LocomotionClass::CLSIDs::Ship, 0x7E9AB0);
-
-#include <MessageListClass.h>
-ALIAS_O(MessageListClass * const, MessageListClass::Instance, 0xA8BC60);
-
-#include <MixFileClass.h>
-List<MixFileClass*>* const MixFileClass::MIXes = (List<MixFileClass*>* )0xABEFD8;
-DECL(MixFileClass, 0x884D90);
-DynamicVectorClass<MixFileClass*>* const MixFileClass::Array_Alt = reinterpret_cast<DynamicVectorClass<MixFileClass*>*>(0x884DC0);
-DynamicVectorClass<MixFileClass*>* const MixFileClass::Maps = reinterpret_cast<DynamicVectorClass<MixFileClass*>*>(0x884DA8);
-DynamicVectorClass<MixFileClass*>* const MixFileClass::Movies = reinterpret_cast<DynamicVectorClass<MixFileClass*>*>(0x884DE0);
-
-MixFileClass* const MixFileClass::MULTIMD = reinterpret_cast<MixFileClass*>(0x884DD8);
-MixFileClass* const MixFileClass::MULTI   = reinterpret_cast<MixFileClass*>(0x884DDC);
-
-MixFileClass::GenericMixFiles* const MixFileClass::Generics = reinterpret_cast<MixFileClass::GenericMixFiles*>(0x884DF8);
-
-#include <DisplayClass.h>
-ALIAS_O(LogicClass* const, LogicClass::Instance, 0x87F778);
-
-#include <MouseClass.h>
-MouseCursor* const MouseCursor::First = reinterpret_cast<MouseCursor*>(0x82D028);
 
 #include <Networking.h>
 ALIAS(DWORD, Networking::CurrentFrameCRC, 0xAC51FC);
@@ -161,43 +104,12 @@ ALIAS(PointerExpiredNotification, PointerExpiredNotification::NotifyInvalidNeuro
 ALIAS(PointerExpiredNotification, PointerExpiredNotification::NotifyInvalidTrigger, 0xB0F708);
 ALIAS(PointerExpiredNotification, PointerExpiredNotification::NotifyInvalidObject, 0xB0F720);
 
-#include <ObjectClass.h>
-DynamicVectorClass<ObjectClass*>* const ObjectClass::CurrentObjects =
-	reinterpret_cast<DynamicVectorClass<ObjectClass*>*>(0xA8ECB8);
-
-DynamicVectorClass<ObjectClass*>* const ObjectClass::Logics =
-	reinterpret_cast<DynamicVectorClass<ObjectClass*>*>(0x87F778);
-
-DynamicVectorClass<ObjectClass*>* const ObjectClass::ObjectsInLayers =
-	reinterpret_cast<DynamicVectorClass<ObjectClass*>*>(0x8A0360);
-
-
-#include <PCX.h>
-ALIAS_O(PCX * const, PCX::Instance, 0xAC4848);
-WORD PCX::DefaultTransparentColor = COLOR_PURPLE;
-
 #include <Powerups.h>
 ALIAS(int *, Powerups::Weights, 0x81DA8C);
 ALIAS(double *, Powerups::Arguments, 0x89EC28);
 ALIAS(bool *, Powerups::Naval, 0x89ECC0);
 ALIAS(int *, Powerups::Anims, 0x81DAD8);
 ALIAS(char **, Powerups::Effects, 0x7E523C);
-
-#include <ProgressScreenClass.h>
-ALIAS_O(ProgressScreenClass * const, ProgressScreenClass::Instance, 0xAC4F58);
-
-#include <RulesClass.h>
-ALIAS(RulesClass*, RulesClass::Instance, 0x8871E0);
-//bool RulesClass::Initialized = false;
-
-#include <ScenarioClass.h>
-ALIAS(ScenarioClass*, ScenarioClass::Instance, 0xA8B230);
-
-#include <SessionClass.h>
-ALIAS_O(SessionClass* const, SessionClass::Instance, 0xA8B238);
-
-#include <SidebarClass.h>
-ALIAS_O(wchar_t * const, SidebarClass::TooltipBuffer, 0xB07BC4);
 
 #include <StringTable.h>
 ALIAS(CSFString *, StringTable::LastLoadedString, 0xB1CF88);
@@ -212,7 +124,6 @@ ALIAS(wchar_t**, StringTable::Values, 0xB1CF78);
 ALIAS(char**, StringTable::ExtraValues, 0xB1CF7C);
 
 #include <SuperClass.h>
-ALIAS_O(DynamicVectorClass<SuperClass*>* const, SuperClass::ShowTimers, 0xA83D50);
 ALIAS(double, LightningStorm::CloudHeightFactor, 0xB0CDD8);
 ALIAS(CellStruct, LightningStorm::Coords, 0xA9F9CC);
 ALIAS(HouseClass*, LightningStorm::Owner, 0xA9FACC);
@@ -221,9 +132,6 @@ ALIAS(int, LightningStorm::Duration, 0x827FC4);
 ALIAS(int, LightningStorm::StartTime, 0x827FC0);
 ALIAS(bool, LightningStorm::Active, 0xA9FAB4);
 ALIAS(bool, LightningStorm::TimeToEnd, 0xA9FAD0);
-ALIAS_O(DynamicVectorClass<AnimClass*>* const, LightningStorm::CloudsPresent, 0xA9F9D0);
-ALIAS_O(DynamicVectorClass<AnimClass*>* const, LightningStorm::CloudsManifesting, 0xA9FA60);
-ALIAS_O(DynamicVectorClass<AnimClass*>* const, LightningStorm::BoltsPresent, 0xA9FA18);
 ALIAS(PsychicDominatorStatus, PsyDom::Status, 0xA9FAC0);
 ALIAS(CellStruct, PsyDom::Coords, 0xA9FA48);
 ALIAS(HouseClass*, PsyDom::Owner, 0xA9FAC8);
@@ -233,21 +141,6 @@ ALIAS(int, ChronoScreenEffect::Duration, 0xA9FA98);
 ALIAS(NukeFlashStatus, NukeFlash::Status, 0xA9FABC);
 ALIAS(int, NukeFlash::StartTime, 0x827FC8);
 ALIAS(int, NukeFlash::Duration, 0x827FCC);
-
-#include <TacticalClass.h>
-ALIAS(TacticalClass *, TacticalClass::Instance, 0x887324);
-
-#include <SwizzleManagerClass.h>
-SwizzleManagerClass& SwizzleManagerClass::Instance = *reinterpret_cast<SwizzleManagerClass*>(0xB0C110);
-
-#include <Theater.h>
-Theater* const Theater::Array        = reinterpret_cast<Theater*>(0x7E1B78);
-Theater* const Theater::TH_Temperate = reinterpret_cast<Theater*>(0x7E1B78);
-Theater* const Theater::TH_Snow      = reinterpret_cast<Theater*>(0x7E1BE8);
-Theater* const Theater::TH_Urban     = reinterpret_cast<Theater*>(0x7E1C58);
-Theater* const Theater::TH_Desert    = reinterpret_cast<Theater*>(0x7E1CC8);
-Theater* const Theater::TH_NewUrban  = reinterpret_cast<Theater*>(0x7E1D38);
-Theater* const Theater::TH_Lunar     = reinterpret_cast<Theater*>(0x7E1DA8);
 
 #include <Unsorted.h>
 ALIAS(DWORD, Game::Savegame_Magic, 0x83D560);
@@ -379,19 +272,14 @@ ALIAS(Imports::FP_CreateDialogParamA, Imports::CreateDialogParamA, 0x7E1508);
 ALIAS(Imports::FP_GetWindowTextA, Imports::GetWindowTextA, 0x7E150C);
 ALIAS(Imports::FP_RegisterHotKey, Imports::RegisterHotKey, 0x7E1510);
 
-ALIAS_O(DynamicVectorClass<MovieInfo>* const, MovieInfo::Array, 0xABF390);
-
 #include <VocClass.h>
 ALIAS(bool, VocClass::VoicesEnabled, 0x8464AC);
 
 #include <VoxClass.h>
 ALIAS(int, VoxClass::EVAIndex, 0xB1D4C8);
 
-#include <WWMouseClass.h>
-ALIAS(WWMouseClass *, WWMouseClass::Instance, 0x887640);
-
 #undef ALIAS
-#undef DECL
+#undef ALIAS_O
 
 void SlaveManagerClass::ZeroOutSlaves() {
 	for(const auto& pNode : this->SlaveNodes) {

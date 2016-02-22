@@ -4,11 +4,10 @@
 
 class MouseCursor {
 public:
-	static const size_t CursorCount = 86;
-	static MouseCursor* const First;
+	static constexpr reference<MouseCursor, 0x82D028u, 86u> const Cursors{};
 
 	static MouseCursor& GetCursor(MouseCursorType cursor) {
-		return First[static_cast<int>(cursor)];
+		return Cursors[static_cast<int>(cursor)];
 	}
 
 	MouseCursor() = default;

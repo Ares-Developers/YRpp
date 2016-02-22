@@ -4,14 +4,12 @@
 #include <GeneralStructures.h>
 #include <AbstractClass.h>
 #include <ColorScheme.h>
+#include <Helpers/CompileTime.h>
 
 class NOVTABLE TacticalClass : public AbstractClass
 {
 public:
-	static TacticalClass* Global()
-		{ return *reinterpret_cast<TacticalClass**>(0x887324); }
-
-	static TacticalClass * &Instance;
+	static constexpr reference<TacticalClass*, 0x887324u> const Instance{};
 
 	// returns whether coords are visible at the moment
 	bool CoordsToClient(CoordStruct const& coords, Point2D* pOutClient) const

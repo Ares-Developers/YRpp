@@ -1,14 +1,14 @@
 #pragma once
 
+#include <Helpers/CompileTime.h>
+
 class Randomizer
 {
 public:
 	// for any randomization happening inside a match (odds of a survivor, crate, etc), use the ScenarioClass::Random object instead!
 	// this object should only be used for RMG and other randomness outside a match
-	static Randomizer* Global()
-		{ return reinterpret_cast<Randomizer*>(0x886B88); }
+	static constexpr reference<Randomizer, 0x886B88u> const Global{};
 
-public:
 	DWORD Random()
 		{ JMP_THIS(0x65C780); }
 

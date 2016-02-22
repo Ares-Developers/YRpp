@@ -68,9 +68,7 @@ public:
 	//Static
 	static constexpr constant_ptr<SidebarClass, 0x87F7E8u> const Instance{};
 
-	enum {TooltipLength = 0x42};
-
-	static wchar_t * const TooltipBuffer;
+	static constexpr reference<wchar_t, 0xB07BC4u, 0x42u> const TooltipBuffer{};
 
 	void SidebarNeedsRepaint(int mode = 0) {
 		this->SidebarNeedsRedraw = true;

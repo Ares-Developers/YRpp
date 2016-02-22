@@ -8,10 +8,12 @@
 #include <ASMMacros.h>
 #include <ColorScheme.h>
 
+#include <Helpers/CompileTime.h>
+
 class MessageListClass
 {
 public:
-	static MessageListClass* const Instance;
+	static constexpr reference<MessageListClass, 0xA8BC60u> const Instance{};
 
 	// if pLabel is given, the message will be {$pLabel}:{$pMessage}
 	// else it will be just {$pMessage}

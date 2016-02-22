@@ -30,7 +30,7 @@ public:
 	//Array
 	static constexpr constant_ptr<DynamicVectorClass<BulletClass*>, 0xA8ED40u> const Array{};
 
-	static DynamicVectorClass<BulletClass*>& ScalableBullets;
+	static constexpr reference<DynamicVectorClass<BulletClass*>, 0x89DE18u> const ScalableBullets{};
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;

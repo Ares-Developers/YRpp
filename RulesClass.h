@@ -2,6 +2,7 @@
 
 #include <ArrayClasses.h>
 #include <GeneralDefinitions.h>
+#include <Helpers\CompileTime.h>
 
 //forward declarations
 class AbstractClass;
@@ -81,12 +82,10 @@ class RulesClass
 {
 public:
 	//Static
-	static RulesClass *&Instance;
+	constexpr static reference<RulesClass*, 0x8871E0u> Instance{};
 
 	static RulesClass* Global()
 		{ return *reinterpret_cast<RulesClass**>(0x8871E0); }
-
-//	static bool Initialized;
 
 	// call this for the first INI file only
 	void Init(CCINIClass *pINI)

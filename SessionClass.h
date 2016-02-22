@@ -3,6 +3,7 @@
 #include <GeneralDefinitions.h>
 #include <MPGameModeClass.h>
 #include <GameModeOptionsClass.h>
+#include <Helpers/CompileTime.h>
 
 struct GameTypePreferencesStruct {
 	DWORD idxMPMode;
@@ -50,7 +51,7 @@ struct NodeNameType {
 class SessionClass
 {
 public:
-	static SessionClass* const Instance;
+	static constexpr reference<SessionClass, 0xA8B238u> const Instance{};
 
 	GameMode GameMode;
 	MPGameModeClass* MPGameMode;

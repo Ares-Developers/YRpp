@@ -142,8 +142,8 @@ public:
 	//Static
 	static constexpr constant_ptr<DynamicVectorClass<HouseClass*>, 0xA80228u> const Array{};
 
-	static HouseClass *&Player;
-	static HouseClass *&Observer;
+	static constexpr reference<HouseClass*, 0xA83D4Cu> const Player{};
+	static constexpr reference<HouseClass*, 0xAC1198u> const Observer{};;
 
 	//IConnectionPointContainer
 	virtual HRESULT __stdcall EnumConnectionPoints(IEnumConnectionPoints** ppEnum) R0;

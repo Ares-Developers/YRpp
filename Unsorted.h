@@ -427,7 +427,7 @@ class MovieInfo
 public:
 	// technically, this is a DVC<const char*>
 	// and string management is done manually
-	static DynamicVectorClass<MovieInfo>* const Array;
+	static constexpr reference<DynamicVectorClass<MovieInfo>, 0xABF390u> const Array{};
 
 	bool operator== (MovieInfo const& rhs) const
 	{

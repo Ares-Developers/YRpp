@@ -2,6 +2,8 @@
 
 #include <GenericList.h>
 
+#include <Helpers/CompileTime.h>
+
 struct MixHeaderData
 {
 	DWORD ID;
@@ -48,15 +50,17 @@ class MixFileClass : public Node<MixFileClass*>
 	};
 
 public:
-	static List<MixFileClass*>* const MIXes;
-	static DynamicVectorClass<MixFileClass*>* const Array;
-	static DynamicVectorClass<MixFileClass*>* const Array_Alt;
-	static DynamicVectorClass<MixFileClass*>* const Maps;
-	static DynamicVectorClass<MixFileClass*>* const Movies;
-	static MixFileClass* const MULTIMD;
-	static MixFileClass* const MULTI;
+	static constexpr reference<List<MixFileClass*>, 0xABEFD8u> const MIXes{};
 
-	static GenericMixFiles* const Generics;
+	static constexpr reference<DynamicVectorClass<MixFileClass*>, 0x884D90u> const Array{};
+	static constexpr reference<DynamicVectorClass<MixFileClass*>, 0x884DC0u> const Array_Alt{};
+	static constexpr reference<DynamicVectorClass<MixFileClass*>, 0x884DA8u> const Maps{};
+	static constexpr reference<DynamicVectorClass<MixFileClass*>, 0x884DE0u> const Movies{};
+
+	static constexpr reference<MixFileClass, 0x884DD8u> const MULTIMD{};
+	static constexpr reference<MixFileClass, 0x884DDCu> const MULTI{};
+
+	static constexpr reference<GenericMixFiles, 0x884DF8u> const Generics{};
 
 	static void Bootstrap()
 		{ JMP_THIS(0x5301A0); }

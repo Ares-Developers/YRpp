@@ -28,7 +28,7 @@ public:
 class LogicClass : public LayerClass
 {
 public:
-	static LogicClass* const Instance;
+	static constexpr reference<LogicClass, 0x87F778u> const Instance{};
 
 	virtual bool AddObject(ObjectClass* pObject, bool sorted) override
 		{ JMP_THIS(0x55BAA0); }

@@ -20,6 +20,7 @@ class BombClass;
 class BuildingTypeClass;
 class CellClass;
 class InfantryTypeClass;
+class LogicClass;
 class TechnoClass;
 class TechnoTypeClass;
 class WarheadTypeClass;
@@ -35,12 +36,12 @@ public:
 	static const auto AbsDerivateID = AbstractFlags::Object;
 
 	//global arrays
-	static DynamicVectorClass<ObjectClass*>* const CurrentObjects;
+	static constexpr reference<DynamicVectorClass<ObjectClass*>, 0xA8ECB8u> const CurrentObjects{};
 
-	static DynamicVectorClass<ObjectClass*>* const Logics;
+	static constexpr reference<LogicClass, 0x87F778u> const Logics{};
 
 	// this actually points to 5 vectors, one for each layer
-	static DynamicVectorClass<ObjectClass*>* const ObjectsInLayers;
+	static constexpr reference<DynamicVectorClass<ObjectClass*>, 0x8A0360u, 5u> const ObjectsInLayers{};
 
 	//IPersistStream
 	virtual HRESULT __stdcall Load(IStream* pStm) R0;

@@ -4,6 +4,7 @@
 #include <Randomizer.h>
 #include <ArrayClasses.h>
 #include <TechnoTypeClass.h>
+#include <Helpers/CompileTime.h>
 
 struct Variable
 {
@@ -54,7 +55,7 @@ class ScenarioClass
 {
 public:
 	//Static
-	static ScenarioClass *&Instance;
+	static constexpr reference<ScenarioClass*, 0xA8B230u> const Instance{};
 
 	static ScenarioClass* Global()
 		{ return *((ScenarioClass**)0xA8B230); }

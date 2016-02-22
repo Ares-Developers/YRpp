@@ -3,6 +3,8 @@
 #include <ArrayClasses.h>
 #include <GeneralDefinitions.h>
 
+#include <Helpers/CompileTime.h>
+
 //forward declarations
 class AircraftClass;
 class CellClass;
@@ -14,7 +16,7 @@ public:
 		CellClass* Cell;
 	};
 
-	static Kamikaze* const Instance;
+	static constexpr reference<Kamikaze, 0xABC5F8u> const Instance{};
 
 	Kamikaze() noexcept : UpdateTimer(100), Nodes()
 	{ }

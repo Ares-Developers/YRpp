@@ -3,16 +3,12 @@
 #include <GeneralDefinitions.h>
 #include <YRPPCore.h>
 
+#include <Helpers/CompileTime.h>
+
 struct Theater	//US English spelling to keep it consistent with the game
 {
 public:
-	static Theater* const Array;
-	static Theater* const TH_Temperate;
-	static Theater* const TH_Snow;
-	static Theater* const TH_Urban;
-	static Theater* const TH_Desert;
-	static Theater* const TH_NewUrban;
-	static Theater* const TH_Lunar;
+	static constexpr reference<Theater, 0x887640u, 6u> const Array{};
 
 	static Theater& GetTheater(TheaterType theater) {
 		return Array[static_cast<int>(theater)];

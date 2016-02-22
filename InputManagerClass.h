@@ -2,9 +2,11 @@
 
 #include <GameOptionsClass.h>
 
+#include <Helpers/CompileTime.h>
+
 class InputManagerClass {
 public:
-	static InputManagerClass * &Instance;
+	static constexpr reference<InputManagerClass*, 0x87F770u> const Instance{};
 
 	byte DoSomething()
 		{ JMP_THIS(0x54F720); }

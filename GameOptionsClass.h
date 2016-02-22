@@ -1,9 +1,11 @@
 #pragma once
 
+#include <Helpers/CompileTime.h>
+
 class GameOptionsClass
 {
 public:
-	static GameOptionsClass * const Instance;
+	static constexpr reference<GameOptionsClass, 0xA8EB60u> const Instance{};
 
 	int GetAnimSpeed(int rate)
 		{ JMP_THIS(0x5FB2E0); }

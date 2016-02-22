@@ -3,11 +3,12 @@
 #include <GeneralDefinitions.h>
 #include <LoadProgressManager.h>
 #include <FileFormats/SHP.h>
+#include <Helpers/CompileTime.h>
 
 class ProgressScreenClass {
 public:
 
-	static ProgressScreenClass * const Instance;
+	static constexpr reference<ProgressScreenClass, 0xAC4F58u> const Instance{};
 
 	void SetSide(int idx)
 		{ JMP_THIS(0x642B10); }

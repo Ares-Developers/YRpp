@@ -106,8 +106,7 @@ public:
 	//Static
 	static constexpr constant_ptr<MapClass, 0x87F7E8u> const Instance{};
 
-	static CellClass* InvalidCell()
-		{ return reinterpret_cast<CellClass*>(0xABDC50); }
+	static constexpr reference<CellClass, 0xABDC50u> const InvalidCell{};
 
 	static const int MaxCells = 0x40000;
 
@@ -142,7 +141,7 @@ public:
 		auto pCell = TryGetCellAt(MapCoords);
 
 		if(!pCell) {
-			pCell = InvalidCell();
+			pCell = &InvalidCell;
 			pCell->MapCoords = MapCoords;
 		}
 

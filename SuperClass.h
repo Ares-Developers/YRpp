@@ -18,7 +18,7 @@ public:
 	//Static
 	static constexpr constant_ptr<DynamicVectorClass<SuperClass*>, 0xA83CB8u> const Array{};
 
-	static DynamicVectorClass<SuperClass*>* const ShowTimers;
+	static constexpr reference<DynamicVectorClass<SuperClass*>, 0xA83D50u> const ShowTimers{};
 
 	//IPersist
 	virtual HRESULT __stdcall GetClassID(CLSID* pClassID) R0;
@@ -152,9 +152,9 @@ public:
 	static bool &Active;
 	static bool &TimeToEnd;
 
-	static DynamicVectorClass<AnimClass*>* const CloudsPresent;
-	static DynamicVectorClass<AnimClass*>* const CloudsManifesting;
-	static DynamicVectorClass<AnimClass*>* const BoltsPresent;
+	static constexpr reference<DynamicVectorClass<AnimClass*>, 0xA9F9D0u> const CloudsPresent{};
+	static constexpr reference<DynamicVectorClass<AnimClass*>, 0xA9FA60u> const CloudsManifesting{};
+	static constexpr reference<DynamicVectorClass<AnimClass*>, 0xA9FA18u> const BoltsPresent{};
 
 	static void Start(int duration, int deferment, CellStruct cell, HouseClass* pOwner)
 		{ PUSH_VAR32(pOwner); PUSH_VAR32(cell); SET_REG32(EDX, deferment); SET_REG32(ECX, duration);
