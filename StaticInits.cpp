@@ -110,25 +110,6 @@ ALIAS(CSFLabel*, StringTable::Labels, 0xB1CF74);
 ALIAS(wchar_t**, StringTable::Values, 0xB1CF78);
 ALIAS(char**, StringTable::ExtraValues, 0xB1CF7C);
 
-#include <SuperClass.h>
-ALIAS(double, LightningStorm::CloudHeightFactor, 0xB0CDD8);
-ALIAS(CellStruct, LightningStorm::Coords, 0xA9F9CC);
-ALIAS(HouseClass*, LightningStorm::Owner, 0xA9FACC);
-ALIAS(int, LightningStorm::Deferment, 0xA9FAB8);
-ALIAS(int, LightningStorm::Duration, 0x827FC4);
-ALIAS(int, LightningStorm::StartTime, 0x827FC0);
-ALIAS(bool, LightningStorm::Active, 0xA9FAB4);
-ALIAS(bool, LightningStorm::TimeToEnd, 0xA9FAD0);
-ALIAS(PsychicDominatorStatus, PsyDom::Status, 0xA9FAC0);
-ALIAS(CellStruct, PsyDom::Coords, 0xA9FA48);
-ALIAS(HouseClass*, PsyDom::Owner, 0xA9FAC8);
-ALIAS(AnimClass*, PsyDom::Anim, 0xA9FAC4);
-ALIAS(int, ChronoScreenEffect::Status, 0xA9FAB0);
-ALIAS(int, ChronoScreenEffect::Duration, 0xA9FA98);
-ALIAS(NukeFlashStatus, NukeFlash::Status, 0xA9FABC);
-ALIAS(int, NukeFlash::StartTime, 0x827FC8);
-ALIAS(int, NukeFlash::Duration, 0x827FCC);
-
 #include <Unsorted.h>
 ALIAS(DWORD, Game::Savegame_Magic, 0x83D560);
 ALIAS(HWND, Game::hWnd, 0xB73550);

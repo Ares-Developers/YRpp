@@ -142,15 +142,14 @@ public:
 class LightningStorm
 {
 public:
-	static double &CloudHeightFactor;
-
-	static CellStruct &Coords;
-	static HouseClass* &Owner;
-	static int &Deferment;
-	static int &Duration;
-	static int &StartTime;
-	static bool &Active;
-	static bool &TimeToEnd;
+	static constexpr reference<double, 0xB0CDD8u> const CloudHeightFactor{};
+	static constexpr reference<CellStruct, 0xA9F9CCu> const Coords{};
+	static constexpr reference<HouseClass*, 0xA9FACCu> const Owner{};
+	static constexpr reference<int, 0xA9FAB8u> const Deferment{};
+	static constexpr reference<int, 0x827FC4u> const Duration{};
+	static constexpr reference<int, 0x827FC0u> const StartTime{};
+	static constexpr reference<bool, 0xA9FAB4u> const Active{};
+	static constexpr reference<bool, 0xA9FAD0u> const TimeToEnd{};
 
 	static constexpr reference<DynamicVectorClass<AnimClass*>, 0xA9F9D0u> const CloudsPresent{};
 	static constexpr reference<DynamicVectorClass<AnimClass*>, 0xA9FA60u> const CloudsManifesting{};
@@ -179,10 +178,10 @@ public:
 class PsyDom
 {
 public:
-	static PsychicDominatorStatus &Status;
-	static CellStruct &Coords;
-	static HouseClass* &Owner;
-	static AnimClass* &Anim;
+	static constexpr reference<PsychicDominatorStatus, 0xA9FAC0u> const Status{};
+	static constexpr reference<CellStruct, 0xA9FA48u> const Coords{};
+	static constexpr reference<HouseClass*, 0xA9FAC8u> const Owner{};
+	static constexpr reference<AnimClass*, 0xA9FAC4u> const Anim{};
 
 	static void Start(HouseClass* pOwner, CellStruct coords)
 		{ PUSH_VAR32(coords); SET_REG32(ECX, pOwner);
@@ -204,8 +203,8 @@ public:
 class ChronoScreenEffect
 {
 public:
-	static int &Status;
-	static int &Duration;
+	static constexpr reference<int, 0xA9FAB0u> const Status{};
+	static constexpr reference<int, 0xA9FA98u> const Duration{};
 
 	static void Start(int duration)
 		{ SET_REG32(ECX, duration);
@@ -221,9 +220,9 @@ public:
 class NukeFlash
 {
 public:
-	static NukeFlashStatus &Status;
-	static int &StartTime;
-	static int &Duration;
+	static constexpr reference<NukeFlashStatus, 0xA9FABCu> const Status{};
+	static constexpr reference<int, 0x827FC8u> const StartTime{};
+	static constexpr reference<int, 0x827FCCu> const Duration{};
 
 	static void FadeIn()
 		{ CALL(0x53AB70); }
