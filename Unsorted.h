@@ -74,22 +74,22 @@ public:
 // no comments because the IIDs suck
 class IIDs {
 public:
-	static const IID &IUnknown;
-	static const IID &IPersistStream;
-	static const IID &IPersist;
-	static const IID &IRTTITypeInfo;
-	static const IID &IHouse;
-	static const IID &IPublicHouse;
-	static const IID &IEnumConnections;
-	static const IID &IConnectionPoint;
-	static const IID &IConnectionPointContainer;
-	static const IID &IEnumConnectionPoints;
-	static const IID &IApplication;
-	static const IID &IGameMap;
-	static const IID &ILocomotion;
-	static const IID &IPiggyback;
-	static const IID &IFlyControl;
-	static const IID &ISwizzle;
+	static constexpr reference<IID const, 0x7F7C90u> const IUnknown{};
+	static constexpr reference<IID const, 0x7F7C80u> const IPersistStream{};
+	static constexpr reference<IID const, 0x7F7C70u> const IPersist{};
+	static constexpr reference<IID const, 0x7E9AE0u> const IRTTITypeInfo{};
+	static constexpr reference<IID const, 0x7EA768u> const IHouse{};
+	static constexpr reference<IID const, 0x7E9B00u> const IPublicHouse{};
+	static constexpr reference<IID const, 0x7F7CB0u> const IEnumConnections{};
+	static constexpr reference<IID const, 0x7F7CC0u> const IConnectionPoint{};
+	static constexpr reference<IID const, 0x7F7CD0u> const IConnectionPointContainer{};
+	static constexpr reference<IID const, 0x7F7CE0u> const IEnumConnectionPoints{};
+	static constexpr reference<IID const, 0x7E36C0u> const IApplication{};
+	static constexpr reference<IID const, 0x7EA6E8u> const IGameMap{};
+	static constexpr reference<IID const, 0x7ED358u> const ILocomotion{};
+	static constexpr reference<IID const, 0x7E9B10u> const IPiggyback{};
+	static constexpr reference<IID const, 0x7E9B40u> const IFlyControl{};
+	static constexpr reference<IID const, 0x7E9B20u> const ISwizzle{};
 };
 
 // this class links to functions gamemd imports

@@ -15,6 +15,7 @@ NOTE:
 #include <Unsorted.h>
 #include <YRCom.h>
 #include <Helpers/ComPtr.h>
+#include <Helpers/CompileTime.h>
 
 class NOVTABLE LocomotionClass : public IPersistStream, public ILocomotion
 {
@@ -22,17 +23,17 @@ public:
 
 	class CLSIDs {
 	public:
-		static const CLSID &Drive;
-		static const CLSID &Jumpjet;
-		static const CLSID &Hover;
-		static const CLSID &Rocket;
-		static const CLSID &Tunnel;
-		static const CLSID &Walk;
-		static const CLSID &Droppod;
-		static const CLSID &Fly;
-		static const CLSID &Teleport;
-		static const CLSID &Mech;
-		static const CLSID &Ship;
+		static constexpr reference<CLSID const, 0x7E9A30u> const Drive{};
+		static constexpr reference<CLSID const, 0x7E9AC0u> const Jumpjet{};
+		static constexpr reference<CLSID const, 0x7E9A40u> const Hover{};
+		static constexpr reference<CLSID const, 0x7E9AD0u> const Rocket{};
+		static constexpr reference<CLSID const, 0x7E9A50u> const Tunnel{};
+		static constexpr reference<CLSID const, 0x7E9A60u> const Walk{};
+		static constexpr reference<CLSID const, 0x7E9A70u> const Droppod{};
+		static constexpr reference<CLSID const, 0x7E9A80u> const Fly{};
+		static constexpr reference<CLSID const, 0x7E9A90u> const Teleport{};
+		static constexpr reference<CLSID const, 0x7E9AA0u> const Mech{};
+		static constexpr reference<CLSID const, 0x7E9AB0u> const Ship{};
 	};
 
 	//IUnknown

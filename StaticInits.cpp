@@ -31,19 +31,6 @@ ALIAS(ColorStruct, Drawing::TooltipColor, 0xB0FA1C);
 ALIAS(DirectDrawWrap *, DirectDrawWrap::lpDD, 0x8A0094);
 ALIAS(byte, DirectDrawWrap::DoSmth, 0x8A0DEF);
 
-#include <LocomotionClass.h>
-ALIAS(const CLSID, LocomotionClass::CLSIDs::Drive, 0x7E9A30);
-ALIAS(const CLSID, LocomotionClass::CLSIDs::Jumpjet, 0x7E9AC0);
-ALIAS(const CLSID, LocomotionClass::CLSIDs::Hover, 0x7E9A40);
-ALIAS(const CLSID, LocomotionClass::CLSIDs::Rocket, 0x7E9AD0);
-ALIAS(const CLSID, LocomotionClass::CLSIDs::Tunnel, 0x7E9A50);
-ALIAS(const CLSID, LocomotionClass::CLSIDs::Walk, 0x7E9A60);
-ALIAS(const CLSID, LocomotionClass::CLSIDs::Droppod, 0x7E9A70);
-ALIAS(const CLSID, LocomotionClass::CLSIDs::Fly, 0x7E9A80);
-ALIAS(const CLSID, LocomotionClass::CLSIDs::Teleport, 0x7E9A90);
-ALIAS(const CLSID, LocomotionClass::CLSIDs::Mech, 0x7E9AA0);
-ALIAS(const CLSID, LocomotionClass::CLSIDs::Ship, 0x7E9AB0);
-
 #include <Networking.h>
 ALIAS(DWORD, Networking::CurrentFrameCRC, 0xAC51FC);
 ALIAS_O(DWORD * const, Networking::LatestFramesCRC, 0xB04474);
@@ -59,23 +46,6 @@ ALIAS(HINSTANCE, Game::hInstance, 0xB732F0);
 
 ALIAS(bool, Game::bVideoBackBuffer, 0x840A6C);
 ALIAS(bool, Game::bAllowVRAMSidebar, 0xA8EB96);
-
-ALIAS(const IID, IIDs::IUnknown, 0x7F7C90);
-ALIAS(const IID, IIDs::IPersistStream, 0x7F7C80);
-ALIAS(const IID, IIDs::IPersist, 0x7F7C70);
-ALIAS(const IID, IIDs::IRTTITypeInfo, 0x7E9AE0);
-ALIAS(const IID, IIDs::IHouse, 0x7EA768);
-ALIAS(const IID, IIDs::IPublicHouse, 0x7E9B00);
-ALIAS(const IID, IIDs::IEnumConnections, 0x7F7CB0);
-ALIAS(const IID, IIDs::IConnectionPoint, 0x7F7CC0);
-ALIAS(const IID, IIDs::IConnectionPointContainer, 0x7F7CD0);
-ALIAS(const IID, IIDs::IEnumConnectionPoints, 0x7F7CE0);
-ALIAS(const IID, IIDs::IApplication, 0x7E36C0);
-ALIAS(const IID, IIDs::IGameMap, 0x7EA6E8);
-ALIAS(const IID, IIDs::ILocomotion, 0x7ED358);
-ALIAS(const IID, IIDs::IPiggyback, 0x7E9B10);
-ALIAS(const IID, IIDs::IFlyControl, 0x7E9B40);
-ALIAS(const IID, IIDs::ISwizzle, 0x7E9B20);
 
 ALIAS(Imports::FP_OleLoadFromStream, Imports::OleLoadFromStream, 0x7E15F8);
 ALIAS(Imports::FP_TimeGetTime, Imports::TimeGetTime, 0x7E1530);
