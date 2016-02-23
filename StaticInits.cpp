@@ -21,12 +21,6 @@ ALIAS_O(CCINIClass* const, CCINIClass::INI_AI, 0x887128);
 ALIAS_O(CCINIClass* const, CCINIClass::INI_Art, 0x887180);
 ALIAS_O(CCINIClass* const, CCINIClass::INI_RA2MD, 0x8870C0);
 
-#include <Drawing.h>
-ALIAS(ABufferClass *, ABufferClass::ABuffer, 0x87E8A4);
-ALIAS(ZBufferClass *, ZBufferClass::ZBuffer, 0x887644);
-ALIAS(RectangleStruct, Drawing::SurfaceDimensions_Hidden, 0x886FA0);
-ALIAS(ColorStruct, Drawing::TooltipColor, 0xB0FA1C);
-
 #include <YRDDraw.h>
 ALIAS(DirectDrawWrap *, DirectDrawWrap::lpDD, 0x8A0094);
 ALIAS(byte, DirectDrawWrap::DoSmth, 0x8A0DEF);

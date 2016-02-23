@@ -6,17 +6,15 @@
 
 #pragma once
 
+#include <ColorScheme.h>
 #include <GeneralDefinitions.h>
-#include "ColorScheme.h"
+#include <Helpers/CompileTime.h>
 #include <Surface.h>
 
 class Drawing
 {
 public:
-
-	static RectangleStruct &SurfaceDimensions_Hidden;
-
-	static ColorStruct &TooltipColor;
+	static constexpr reference<ColorStruct, 0xB0FA1Cu> const TooltipColor{};
 
 	//TextBox dimensions for tooltip-style boxes
 	static RectangleStruct* __fastcall GetTextDimensions(
@@ -69,7 +67,7 @@ public:
 
 class ABufferClass {
 public:
-	static ABufferClass* &ABuffer;
+	static constexpr reference<ABufferClass*, 0x87E8A4u> const ABuffer{};
 
 	ABufferClass(RectangleStruct rect)
 		{ JMP_THIS(0x410CE0); }
@@ -87,7 +85,7 @@ public:
 
 class ZBufferClass {
 public:
-	static ZBufferClass* &ZBuffer;
+	static constexpr reference<ZBufferClass*, 0x887644u> const ZBuffer{};
 
 	ZBufferClass(RectangleStruct rect)
 		{ JMP_THIS(0x7BC970); }
