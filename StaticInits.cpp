@@ -50,14 +50,6 @@ ALIAS(ConvertClass *, FileSystem::THEATER_PAL, 0x87F6C4);
 ALIAS(ConvertClass *, FileSystem::MOUSE_PAL, 0x87F6C8);
 ALIAS(ConvertClass *, FileSystem::GRFXTXT_Convert, 0xA8F798);
 
-#include <FPSCounter.h>
-ALIAS(unsigned int, FPSCounter::CurrentFrameRate, 0xABCD44);
-ALIAS(unsigned int, FPSCounter::TotalFramesElapsed, 0xABCD48);
-ALIAS(unsigned int, FPSCounter::TotalTimeElapsed, 0xABCD4C);
-ALIAS(bool, FPSCounter::ReducedEffects, 0xABCD50);
-ALIAS(unsigned int, Detail::MinFrameRate, 0x829FF4);
-ALIAS(unsigned int, Detail::BufferZoneWidth, 0x829FF8);
-
 #include <LocomotionClass.h>
 ALIAS(const CLSID, LocomotionClass::CLSIDs::Drive, 0x7E9A30);
 ALIAS(const CLSID, LocomotionClass::CLSIDs::Jumpjet, 0x7E9AC0);
