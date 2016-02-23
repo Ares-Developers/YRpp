@@ -72,15 +72,15 @@ public:
 	ABufferClass(RectangleStruct rect)
 		{ JMP_THIS(0x410CE0); }
 
-	RectangleStruct rect;
+	RectangleStruct Bounds;
 	int field_10;
-	BSurface *Surface;
-	byte* BufferStart;
-	byte* BufferEndpoint;
-	int BufferSize;
+	BSurface* Surface;
+	WORD* BufferStart;
+	WORD* BufferEnd;
+	int BufferSizeInBytes;
 	int field_24;
-	int W;
-	int H;
+	int Width;
+	int Height;
 };
 
 class ZBufferClass {
@@ -90,13 +90,13 @@ public:
 	ZBufferClass(RectangleStruct rect)
 		{ JMP_THIS(0x7BC970); }
 
-	RectangleStruct rect;
+	RectangleStruct Bounds;
 	int field_10;
-	BSurface *Surface;
-	byte* BufferStart;
-	byte* BufferEndpoint;
-	int BufferSize;
+	BSurface* Surface;
+	WORD* BufferStart;
+	WORD* BufferEnd;
+	int BufferSizeInBytes;
 	int field_24;
-	int W;
-	int H;
+	int Width;
+	int Height;
 };
