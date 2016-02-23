@@ -1,5 +1,7 @@
 #pragma once
 
+#include <Helpers/CompileTime.h>
+
 class Powerups {
 	public:
 	// all these actually point to arrays with 0x13 items, see ePowerup for their numbering
