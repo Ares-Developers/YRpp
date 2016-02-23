@@ -31,14 +31,6 @@ ALIAS(ColorStruct, Drawing::TooltipColor, 0xB0FA1C);
 ALIAS(DirectDrawWrap *, DirectDrawWrap::lpDD, 0x8A0094);
 ALIAS(byte, DirectDrawWrap::DoSmth, 0x8A0DEF);
 
-#include <Networking.h>
-ALIAS(DWORD, Networking::CurrentFrameCRC, 0xAC51FC);
-ALIAS_O(DWORD * const, Networking::LatestFramesCRC, 0xB04474);
-ALIAS(int, Networking::LastEventIndex, 0xA802C8);
-ALIAS(int, Networking::NextPacketIndex, 0xA802D0);
-ALIAS_O(NetworkEvent * const, Networking::QueuedEvents, 0xA802D4);
-ALIAS_O(int * const, Networking::QueuedEventTimestamps, 0xA83A54);
-
 #include <Unsorted.h>
 ALIAS(DWORD, Game::Savegame_Magic, 0x83D560);
 ALIAS(HWND, Game::hWnd, 0xB73550);
