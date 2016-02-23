@@ -7,24 +7,6 @@
 #define ALIAS(Type, Obj, Addr) \
 	Type &Obj = *reinterpret_cast<Type*>(Addr);
 
-#define ALIAS_O(Type, Obj, Addr) \
-	Type Obj = reinterpret_cast<Type>(Addr);
-
-#include <CCINIClass.h>
-ALIAS(DWORD, CCINIClass::RulesHash, 0xB77E00);
-ALIAS(DWORD, CCINIClass::ArtHash, 0xB77E04);
-ALIAS(DWORD, CCINIClass::AIHash, 0xB77E08);
-
-ALIAS(CCINIClass*, CCINIClass::INI_Rules, 0x887048);
-
-ALIAS_O(CCINIClass* const, CCINIClass::INI_AI, 0x887128);
-ALIAS_O(CCINIClass* const, CCINIClass::INI_Art, 0x887180);
-ALIAS_O(CCINIClass* const, CCINIClass::INI_RA2MD, 0x8870C0);
-
-#include <YRDDraw.h>
-ALIAS(DirectDrawWrap *, DirectDrawWrap::lpDD, 0x8A0094);
-ALIAS(byte, DirectDrawWrap::DoSmth, 0x8A0DEF);
-
 #include <Unsorted.h>
 ALIAS(DWORD, Game::Savegame_Magic, 0x83D560);
 ALIAS(HWND, Game::hWnd, 0xB73550);
@@ -138,7 +120,6 @@ ALIAS(Imports::FP_GetWindowTextA, Imports::GetWindowTextA, 0x7E150C);
 ALIAS(Imports::FP_RegisterHotKey, Imports::RegisterHotKey, 0x7E1510);
 
 #undef ALIAS
-#undef ALIAS_O
 
 void SlaveManagerClass::ZeroOutSlaves() {
 	for(const auto& pNode : this->SlaveNodes) {

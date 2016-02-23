@@ -1,6 +1,7 @@
 #pragma once
 
 #include <YRPPCore.h>
+#include <Helpers/CompileTime.h>
 
 //We don't want YR++ to depend on the DirectX7 SDK (yet), so
 //here are a few definitions taken from the MSDN:
@@ -185,6 +186,9 @@ public:
 
 class DirectDrawWrap {
 public:
+	static constexpr reference<DirectDrawWrap*, 0x8A0094u> const lpDD{};
+	static constexpr reference<bool, 0x8A0DEFu> const DoSmth{};
+
 	static HRESULT WINAPI DDCreate(GUID *lpGUID, DirectDrawWrap **lplpDD, IUnknown *pUnkOuter)
 		{ JMP_STD(0x7C89D4); }
 
@@ -193,10 +197,6 @@ public:
 
 	static void DisposeOfStuff()
 		{ JMP_STD(0x6BB8E0); }
-
-	static DirectDrawWrap* &lpDD;
-
-	static byte &DoSmth;
 
 	virtual HRESULT __stdcall QueryInterface(DWORD riid, LPVOID *ppvObj);
 	virtual ULONG __stdcall AddRef();

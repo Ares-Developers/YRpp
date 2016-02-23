@@ -4,6 +4,7 @@
 #include <GenericList.h>
 #include <ArrayClasses.h>
 #include <CCFileClass.h>
+#include <Helpers/CompileTime.h>
 
 struct ColorStruct;
 class TechnoTypeClass;
@@ -282,19 +283,20 @@ class CCINIClass : public INIClass
 {
 public:
 	//STATIC
-	static DWORD &RulesHash;
-	static DWORD &ArtHash;
-	static DWORD &AIHash;
+	static constexpr reference<DWORD, 0xB77E00u> const RulesHash{};
+	static constexpr reference<DWORD, 0xB77E04u> const ArtHash{};
+	static constexpr reference<DWORD, 0xB77E08u> const AIHash{};
 
 	// westwood genius shines again
 
 	// this is a pointer in the class
-	static CCINIClass *&INI_Rules; //0x887048
+	static constexpr reference<CCINIClass*, 0x887048u> const INI_Rules{};
 
 	// these are static class variables, why the fuck did you differentiate them, WW?
-	static CCINIClass * const INI_AI; //0x887128
-	static CCINIClass * const INI_Art; //0x887180
-	static CCINIClass * const INI_RA2MD; //0x8870C0
+	static constexpr reference<CCINIClass, 0x887128u> const INI_AI{};
+	static constexpr reference<CCINIClass, 0x887180u> const INI_Art{};
+	static constexpr reference<CCINIClass, 0x887208u> const INI_UIMD{};
+	static constexpr reference<CCINIClass, 0x8870C0u> const INI_RA2MD{};
 
 	//non-static
 	CCINIClass() : INIClass(false)
