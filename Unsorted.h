@@ -11,6 +11,15 @@ class ObjectClass;
 class Game
 {
 public:
+	// the magic checksum for version validation - linked in StaticInits
+	static constexpr reference<DWORD, 0x83D560u> const Savegame_Magic{};
+
+	static constexpr reference<HWND, 0xB73550u> const hWnd{};
+	static constexpr reference<HINSTANCE, 0xB732F0u> const hInstance{};
+
+	static constexpr reference<bool, 0x840A6Cu> const bVideoBackBuffer{};
+	static constexpr reference<bool, 0xA8EB96u> const bAllowVRAMSidebar{};
+
 	// the game's own rounding function
 	// infamous for true'ing (F2I(-5.00) == -4.00)
 	static __int64 F2I64(double val) {
@@ -29,12 +38,6 @@ public:
 
 	[[noreturn]] static void RaiseError(HRESULT err)
 		{ JMP_STD(0x7DC720); }
-
-	// the magic checksum for version validation - linked in StaticInits
-	static DWORD &Savegame_Magic;
-
-	static HWND &hWnd;
-	static HINSTANCE &hInstance;
 
 	static void SetProgress(int progress)
 		{ SET_REG32(ECX, 0xA8B238); JMP_STD(0x69AE90); }
@@ -65,9 +68,6 @@ public:
 
 	static void sub_53E6B0()
 		{ JMP_STD(0x53E6B0); }
-
-	static bool &bVideoBackBuffer;
-	static bool &bAllowVRAMSidebar;
 };
 
 // this fake class contains the IIDs used by the game
@@ -448,8 +448,6 @@ struct MovieUnlockableInfo
 
 namespace Unsorted
 {
-	static DWORD &Savegame_Magic     = *reinterpret_cast<DWORD*>(0x83D560);
-
 	// if != 0, EVA_SWxxxActivated is skipped
 	static int &MuteSWLaunches   = *reinterpret_cast<int*>(0xA8B538);
 
@@ -458,8 +456,6 @@ namespace Unsorted
 
 	static byte &ArmageddonMode  = *reinterpret_cast<byte*>(0xA8ED6B);
 	static byte &WTFMode  = *reinterpret_cast<byte*>(0xA8E9A0);
-
-	static DynamicVectorClass<ObjectClass*>* const vec_ObjectsInLayers = reinterpret_cast<DynamicVectorClass<ObjectClass *>*>(0x8A0360);
 
 // checkbox states, afaik
 	static byte &Bases = *reinterpret_cast<byte*>(0xA8B258);
@@ -486,8 +482,6 @@ struct ColorPacker
 };
 
 	static ColorPacker* ColorPackData = reinterpret_cast<ColorPacker*>(0x8A0DD0);
-
-	static CellStruct* CellSpreadTable = reinterpret_cast<CellStruct*>(0xABD490);
 
 	static int &CurrentSWType = *reinterpret_cast<int*>(0x8809A0);
 

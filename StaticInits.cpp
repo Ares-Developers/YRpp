@@ -7,14 +7,6 @@
 #define ALIAS(Type, Obj, Addr) \
 	Type &Obj = *reinterpret_cast<Type*>(Addr);
 
-#include <Unsorted.h>
-ALIAS(DWORD, Game::Savegame_Magic, 0x83D560);
-ALIAS(HWND, Game::hWnd, 0xB73550);
-ALIAS(HINSTANCE, Game::hInstance, 0xB732F0);
-
-ALIAS(bool, Game::bVideoBackBuffer, 0x840A6C);
-ALIAS(bool, Game::bAllowVRAMSidebar, 0xA8EB96);
-
 ALIAS(Imports::FP_OleLoadFromStream, Imports::OleLoadFromStream, 0x7E15F8);
 ALIAS(Imports::FP_TimeGetTime, Imports::TimeGetTime, 0x7E1530);
 
