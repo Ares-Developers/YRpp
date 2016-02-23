@@ -10,6 +10,7 @@
 #include <Memory.h>
 
 #include <FileFormats/_Loader.h>
+#include <Helpers/CompileTime.h>
 
 class DSurface;
 
@@ -22,31 +23,31 @@ struct VoxelStruct
 class FileSystem
 {
 public:
+	static constexpr reference<SHPStruct*, 0xAC1478u> PIPBRD_SHP{};
+	static constexpr reference<SHPStruct*, 0xAC147Cu> PIPS_SHP{};
+	static constexpr reference<SHPStruct*, 0xAC1480u> PIPS2_SHP{};
+	static constexpr reference<SHPStruct*, 0xAC1484u> TALKBUBL_SHP{};
+	static constexpr reference<SHPStruct*, 0x89DDC8u> WRENCH_SHP{};
+	static constexpr reference<SHPStruct*, 0x89DDC4u> POWEROFF_SHP{};
+	static constexpr reference<SHPStruct*, 0xA8F794u> GRFXTXT_SHP{};
+
+	static constexpr reference<BytePalette*, 0x885780u> TEMPERAT_PAL{};
+	static constexpr reference<BytePalette*, 0xA8F790u> GRFXTXT_PAL{};
+
+	static constexpr reference<ConvertClass*, 0x87F6B0u> CAMEO_PAL{};
+	static constexpr reference<ConvertClass*, 0x87F6B4u> UNITx_PAL{};
+	static constexpr reference<ConvertClass*, 0x87F6B8u> x_PAL{};
+	static constexpr reference<ConvertClass*, 0x87F6BCu> GRFTXT_TIBERIUM_PAL{};
+	static constexpr reference<ConvertClass*, 0x87F6C0u> ANIM_PAL{};
+	static constexpr reference<ConvertClass*, 0x87F6C4u> THEATER_PAL{};
+	static constexpr reference<ConvertClass*, 0x87F6C8u> MOUSE_PAL{};
+	static constexpr reference<ConvertClass*, 0xA8F798u> GRFXTXT_Convert{};
+
 	static void* __fastcall LoadFile(const char* pFileName, bool bLoadAsSHP)
 		{ JMP_STD(0x5B40B0); }
 
 	static void* __fastcall LoadWholeFileEx(const char* pFilename, bool &outAllocated)
 		{ JMP_STD(0x4A38D0); }
-
-	static SHPStruct *&PIPBRD_SHP;
-	static SHPStruct *&PIPS_SHP;
-	static SHPStruct *&PIPS2_SHP;
-	static SHPStruct *&TALKBUBL_SHP;
-	static SHPStruct *&WRENCH_SHP;
-	static SHPStruct *&POWEROFF_SHP;
-	static SHPStruct *&GRFXTXT_SHP;
-
-	static BytePalette *&TEMPERAT_PAL;
-	static BytePalette *&GRFXTXT_PAL;
-
-	static ConvertClass *&CAMEO_PAL;
-	static ConvertClass *&UNITx_PAL;
-	static ConvertClass *&x_PAL;
-	static ConvertClass *&GRFTXT_TIBERIUM_PAL;
-	static ConvertClass *&ANIM_PAL;
-	static ConvertClass *&THEATER_PAL;
-	static ConvertClass *&MOUSE_PAL;
-	static ConvertClass *&GRFXTXT_Convert;
 
 	static void* LoadFile(const char* pFileName)
 		{ return LoadFile(pFileName, false); }

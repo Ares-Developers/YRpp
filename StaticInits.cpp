@@ -31,25 +31,6 @@ ALIAS(ColorStruct, Drawing::TooltipColor, 0xB0FA1C);
 ALIAS(DirectDrawWrap *, DirectDrawWrap::lpDD, 0x8A0094);
 ALIAS(byte, DirectDrawWrap::DoSmth, 0x8A0DEF);
 
-#include <FileSystem.h>
-ALIAS(SHPStruct *, FileSystem::PIPBRD_SHP, 0xAC1478);
-ALIAS(SHPStruct *, FileSystem::PIPS_SHP, 0xAC147C);
-ALIAS(SHPStruct *, FileSystem::PIPS2_SHP, 0xAC1480);
-ALIAS(SHPStruct *, FileSystem::TALKBUBL_SHP, 0xAC1484);
-ALIAS(SHPStruct *, FileSystem::WRENCH_SHP, 0x89DDC8);
-ALIAS(SHPStruct *, FileSystem::POWEROFF_SHP, 0x89DDC4);
-ALIAS(SHPStruct *, FileSystem::GRFXTXT_SHP, 0xA8F794);
-ALIAS(BytePalette *, FileSystem::TEMPERAT_PAL, 0x885780);
-ALIAS(BytePalette *, FileSystem::GRFXTXT_PAL, 0xA8F790);
-ALIAS(ConvertClass *, FileSystem::CAMEO_PAL, 0x87F6B0);
-ALIAS(ConvertClass *, FileSystem::UNITx_PAL, 0x87F6B4);
-ALIAS(ConvertClass *, FileSystem::x_PAL, 0x87F6B8);
-ALIAS(ConvertClass *, FileSystem::GRFTXT_TIBERIUM_PAL, 0x87F6BC);
-ALIAS(ConvertClass *, FileSystem::ANIM_PAL, 0x87F6C0);
-ALIAS(ConvertClass *, FileSystem::THEATER_PAL, 0x87F6C4);
-ALIAS(ConvertClass *, FileSystem::MOUSE_PAL, 0x87F6C8);
-ALIAS(ConvertClass *, FileSystem::GRFXTXT_Convert, 0xA8F798);
-
 #include <LocomotionClass.h>
 ALIAS(const CLSID, LocomotionClass::CLSIDs::Drive, 0x7E9A30);
 ALIAS(const CLSID, LocomotionClass::CLSIDs::Jumpjet, 0x7E9AC0);
