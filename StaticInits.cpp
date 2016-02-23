@@ -79,13 +79,6 @@ ALIAS(int, Networking::NextPacketIndex, 0xA802D0);
 ALIAS_O(NetworkEvent * const, Networking::QueuedEvents, 0xA802D4);
 ALIAS_O(int * const, Networking::QueuedEventTimestamps, 0xA83A54);
 
-#include <Powerups.h>
-ALIAS(int *, Powerups::Weights, 0x81DA8C);
-ALIAS(double *, Powerups::Arguments, 0x89EC28);
-ALIAS(bool *, Powerups::Naval, 0x89ECC0);
-ALIAS(int *, Powerups::Anims, 0x81DAD8);
-ALIAS(char **, Powerups::Effects, 0x7E523C);
-
 #include <StringTable.h>
 ALIAS(CSFString *, StringTable::LastLoadedString, 0xB1CF88);
 ALIAS(int, StringTable::MaxLabelLen, 0xB1CF58);
