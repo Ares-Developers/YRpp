@@ -5,6 +5,7 @@
 #pragma once
 
 #include <GeneralDefinitions.h>
+#include <Helpers/CompileTime.h>
 
 #define CSF_SIGNATURE 0x43534620 //" FSC"
 #define CSF_LABEL_SIGNATURE 0x4C424C20 //" LBL"
@@ -63,16 +64,16 @@ struct CSFLanguage
 class StringTable
 {
 public:
-	static CSFString * &LastLoadedString;
-	static int &MaxLabelLen;
-	static int &LabelCount;
-	static int &ValueCount;
-	static CSFLanguages &Language;
-	static bool &IsLoaded;
-	static char* &FileName;
-	static CSFLabel* &Labels;
-	static wchar_t** &Values;
-	static char** &ExtraValues;
+	static constexpr reference<CSFString*, 0xB1CF88u> const LastLoadedString{};
+	static constexpr reference<int, 0xB1CF58u> const MaxLabelLen{};
+	static constexpr reference<int, 0xB1CF6Cu> const LabelCount{};
+	static constexpr reference<int, 0xB1CF70u> const ValueCount{};
+	static constexpr reference<CSFLanguages, 0x845728u> const Language{};
+	static constexpr reference<bool, 0xB1CF80u> const IsLoaded{};
+	static constexpr reference<char*, 0xB1CF68u> const FileName{};
+	static constexpr reference<CSFLabel*, 0xB1CF74u> const Labels{};
+	static constexpr reference<wchar_t**, 0xB1CF78u> const Values{};
+	static constexpr reference<char**, 0xB1CF7Cu> const ExtraValues{};
 
 	static const wchar_t* __fastcall LoadString(
 		const char* pLabel,

@@ -71,18 +71,6 @@ ALIAS(int, Networking::NextPacketIndex, 0xA802D0);
 ALIAS_O(NetworkEvent * const, Networking::QueuedEvents, 0xA802D4);
 ALIAS_O(int * const, Networking::QueuedEventTimestamps, 0xA83A54);
 
-#include <StringTable.h>
-ALIAS(CSFString *, StringTable::LastLoadedString, 0xB1CF88);
-ALIAS(int, StringTable::MaxLabelLen, 0xB1CF58);
-ALIAS(int, StringTable::LabelCount, 0xB1CF6C);
-ALIAS(int, StringTable::ValueCount, 0xB1CF70);
-ALIAS(CSFLanguages, StringTable::Language, 0x845728);
-ALIAS(bool, StringTable::IsLoaded, 0xB1CF80);
-ALIAS(char*, StringTable::FileName, 0xB1CF68);
-ALIAS(CSFLabel*, StringTable::Labels, 0xB1CF74);
-ALIAS(wchar_t**, StringTable::Values, 0xB1CF78);
-ALIAS(char**, StringTable::ExtraValues, 0xB1CF7C);
-
 #include <Unsorted.h>
 ALIAS(DWORD, Game::Savegame_Magic, 0x83D560);
 ALIAS(HWND, Game::hWnd, 0xB73550);
