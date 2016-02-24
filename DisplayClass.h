@@ -3,64 +3,18 @@
 #include <MapClass.h>
 
 class CCINIClass;
-class ObjectClass;
 class ObjectTypeClass;
-
-class LayerClass : public DynamicVectorClass<ObjectClass*>
-{
-public:
-	virtual bool AddObject(ObjectClass* pObject, bool sorted)
-		{ JMP_THIS(0x5519B0); }
-
-	virtual void RemoveAll()
-		{ this->Clear(); }
-
-	virtual void vt_entry_24()
-		{ }
-
-	void Load(IStream* pStm)
-		{ JMP_THIS(0x551B90); }
-
-	void Save(IStream* pStm)
-		{ JMP_THIS(0x551B20); }
-};
-
-class LogicClass : public LayerClass
-{
-public:
-	static constexpr reference<LogicClass, 0x87F778u> const Instance{};
-
-	virtual bool AddObject(ObjectClass* pObject, bool sorted) override
-		{ JMP_THIS(0x55BAA0); }
-
-	virtual void PointerGotInvalid(AbstractClass* pInvalid, bool removed)
-		{ JMP_THIS(0x55B880); }
-
-	void RemoveObject(ObjectClass* pObject)
-		{ JMP_THIS(0x55BAE0); }
-
-	void Update()
-		{ JMP_THIS(0x55BAE0); }
-};
 
 class NOVTABLE DisplayClass : public MapClass
 {
 public:
+	//Static
+	static constexpr constant_ptr<DisplayClass, 0x87F7E8u> const Instance{};
+
 	//WIP: DisplayClass::TacticalClass goes HERE
 
 	bool ProcessClickCoords(Point2D *src, CellStruct *XYdst, CoordStruct *XYZdst, ObjectClass **Target, BYTE *a5, BYTE *a6)
 		{ JMP_THIS(0x692300); }
-
-	//Static
-	static constexpr constant_ptr<DisplayClass, 0x87F7E8u> const Instance{};
-
-	static LayerClass* GetLayer(Layer lyr)
-	{
-		if(lyr >= Layer::Underground && lyr <= Layer::Top)
-			return reinterpret_cast<LayerClass**>(0x8A0360)[static_cast<int>(lyr)];
-		else
-			return nullptr;
-	}
 
 	// the foundation for placement with green/red
 	void  SetActiveFoundation(CellStruct *Coords)

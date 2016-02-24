@@ -6,6 +6,7 @@
 #include <AnimTypeClass.h>
 
 class BulletTypeClass;
+class ObjectClass;
 class WarheadTypeClass;
 class WeaponTypeClass;
 
@@ -100,6 +101,41 @@ public:
 	{ JMP_STD(0x4CC310); }
 };
 
+class LayerClass : public DynamicVectorClass<ObjectClass*>
+{
+public:
+	virtual bool AddObject(ObjectClass* pObject, bool sorted)
+		{ JMP_THIS(0x5519B0); }
+
+	virtual void RemoveAll()
+		{ this->Clear(); }
+
+	virtual void vt_entry_24()
+		{ }
+
+	void Load(IStream* pStm)
+		{ JMP_THIS(0x551B90); }
+
+	void Save(IStream* pStm)
+		{ JMP_THIS(0x551B20); }
+};
+
+class LogicClass : public LayerClass
+{
+public:
+	virtual bool AddObject(ObjectClass* pObject, bool sorted) override
+		{ JMP_THIS(0x55BAA0); }
+
+	virtual void PointerGotInvalid(AbstractClass* pInvalid, bool removed)
+		{ JMP_THIS(0x55B880); }
+
+	void RemoveObject(ObjectClass* pObject)
+		{ JMP_THIS(0x55BAE0); }
+
+	void Update()
+		{ JMP_THIS(0x55BAE0); }
+};
+
 class NOVTABLE MapClass : public GScreenClass
 {
 public:
@@ -109,6 +145,18 @@ public:
 	static constexpr reference<CellClass, 0xABDC50u> const InvalidCell{};
 
 	static const int MaxCells = 0x40000;
+
+	static constexpr reference<LogicClass, 0x87F778u> const Logics{};
+
+	// this actually points to 5 vectors, one for each layer
+	static constexpr reference<LayerClass, 0x8A0360u, 5u> const ObjectsInLayers{};
+
+	static LayerClass* GetLayer(Layer lyr)
+	{
+		return (lyr >= Layer::Underground && lyr <= Layer::Top)
+			? &ObjectsInLayers[static_cast<int>(lyr)]
+			: nullptr;
+	}
 
 	//IGameMap
 	virtual long __stdcall Is_Visible(CellStruct cell) override R0;

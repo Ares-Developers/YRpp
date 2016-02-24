@@ -20,7 +20,6 @@ class BombClass;
 class BuildingTypeClass;
 class CellClass;
 class InfantryTypeClass;
-class LogicClass;
 class TechnoClass;
 class TechnoTypeClass;
 class WarheadTypeClass;
@@ -37,11 +36,6 @@ public:
 
 	//global arrays
 	static constexpr reference<DynamicVectorClass<ObjectClass*>, 0xA8ECB8u> const CurrentObjects{};
-
-	static constexpr reference<LogicClass, 0x87F778u> const Logics{};
-
-	// this actually points to 5 vectors, one for each layer
-	static constexpr reference<DynamicVectorClass<ObjectClass*>, 0x8A0360u, 5u> const ObjectsInLayers{};
 
 	//IPersistStream
 	virtual HRESULT __stdcall Load(IStream* pStm) R0;
