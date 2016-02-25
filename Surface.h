@@ -10,6 +10,7 @@
 #pragma once
 
 #include <GeneralStructures.h>
+#include <YRAllocator.h>
 #include <YRDDraw.h>
 #include <Helpers/CompileTime.h>
 
@@ -27,14 +28,23 @@ struct SHPStruct;
 class Surface
 {
 public:
-	//Destructor
-	//Constructor
-//	Surface(int Width, int Height, bool BackBuffer, bool Force3D) {/* ??? */}
+	// Constructor
+	//Surface(int width, int height) noexcept
+	// { JMP_THIS(0x4AEC60); }
 
-	virtual ~Surface()
-		{ PUSH_IMM(SDDTOR_NODELETE); THISCALL(0x4115D0); }
+	Surface(int width, int height) noexcept
+		: Width(width), Height(height)
+	{ }
 
-	//Surface
+protected:
+	explicit __forceinline Surface(noinit_t) noexcept
+	{ }
+
+public:
+	// Destructor
+	virtual ~Surface() RX;
+
+	// Surface
 	virtual bool BlitWhole(
 		Surface* pSrc,
 		bool SURFACE_SETTING_ONE,
@@ -139,11 +149,14 @@ public:
 
 	virtual bool Unlock() = 0;
 
-	virtual bool vt_entry_64(DWORD dwUnk1, DWORD dwUnk2) = 0;
+	virtual bool CanLock(DWORD dwUnk1, DWORD dwUnk2) R0;
 
-	virtual bool vt_entry_68(DWORD dwUnk1, DWORD dwUnk2) = 0;
+	virtual bool vt_entry_68(DWORD dwUnk1, DWORD dwUnk2) const final
+	{
+		return true;
+	}
 
-	virtual bool IsLocked() = 0;
+	virtual bool IsLocked() const = 0;
 
 	virtual int GetBytesPerPixel() const = 0;
 
@@ -159,32 +172,23 @@ public:
 	}
 
 	virtual int GetWidth() const final
-		{ return Width; }
+	{
+		return Width;
+	}
 
 	virtual int GetHeight() const final
-		{ return Height; }
+	{
+		return Height;
+	}
 
-	virtual bool vt_entry_84()
-		{ return false; }
-
-public:
-	//Properties
-	int Width;
-	int Height;
-	int LockLevel;
-	int BytesPerPixel;
-//	Allocator PixelData;
-	void * Buffer;
-	bool Allocated;
-	bool VRAMmed;
-	BYTE unknown_1A;
-	BYTE unknown_1B;
-	IDirectDrawSurface* Surf;
-	DDSURFACEDESC2* SurfDesc;
+	virtual bool IsDSurface() const
+	{
+		return false;
+	}
 
 	//Helper functions
-public:
-	RectangleStruct GetRect() const {
+	RectangleStruct GetRect() const
+	{
 		RectangleStruct buffer;
 		this->GetRect(&buffer);
 		return buffer;
@@ -263,37 +267,32 @@ public:
 			pText, this->GetRect(), location, dwColor,
 			SURFACE_SETTING_THREE, flags);
 	}
+
+	//Properties
+	int Width;
+	int Height;
 };
 
 // another abstract surface
 class XSurface : public Surface
 {
-};
-
-// buffered surface
-class BSurface : public XSurface
-{
-};
-
-//WIP - Will the define these properly some other time
-//actual DirectDraw surfaces
-class DSurface : public XSurface
-{
 public:
-	static constexpr reference<DSurface*, 0x8872FCu> const Tile{};
-	static constexpr reference<DSurface*, 0x887300u> const Sidebar{};
-	static constexpr reference<DSurface*, 0x887308u> const Primary{};
-	static constexpr reference<DSurface*, 0x88730Cu> const Hidden{};
-	static constexpr reference<DSurface*, 0x887310u> const Alternate{};
-	static constexpr reference<DSurface*, 0x887314u> const Hidden_2{};
-	static constexpr reference<DSurface*, 0x88731Cu> const Composite{};
+	// Constructor
+	//XSurface(int width, int height) noexcept : XSurface(noinit_t())
+	//	{ JMP_THIS(0x5FE020); }
 
-	static constexpr reference<RectangleStruct, 0x886F90u> const SidebarBounds{};
-	static constexpr reference<RectangleStruct, 0x886FA0u> const ViewBounds{};
-	static constexpr reference<RectangleStruct, 0x886FB0u> const WindowBounds{};
+	XSurface(int width, int height) noexcept
+		: Surface(width, height), LockCount(0)
+	{ }
 
-	DSurface(int Width, int Height, bool BackBuffer, bool Force3D)
-		{ JMP_THIS(0x4BA5A0); }
+protected:
+	explicit __forceinline XSurface(noinit_t) noexcept
+		: Surface(noinit_t())
+	{ }
+
+public:
+	// Destructor
+	virtual ~XSurface() override RX;
 
 	virtual bool BlitWhole(
 		Surface* pSrc,
@@ -399,14 +398,159 @@ public:
 
 	virtual bool Unlock() override R0;
 
-	virtual bool vt_entry_64(DWORD dwUnk1, DWORD dwUnk2) override R0;
+	virtual bool IsLocked() const override final R0;
 
-	virtual bool vt_entry_68(DWORD dwUnk1, DWORD dwUnk2) override R0;
+	virtual bool IsDSurface() const override
+	{
+		return false;
+	}
 
-	virtual bool IsLocked() override R0;
+	// Properties
+	int LockCount;
+};
+
+// buffered surface
+class BSurface : public XSurface
+{
+public:
+	//Constructor
+	BSurface(int width, int height, int bytesPerPixel) noexcept :
+		XSurface(width, height),
+		BytesPerPixel(bytesPerPixel),
+		Buffer(bytesPerPixel * width * height)
+	{ }
+
+protected:
+	explicit __forceinline BSurface(noinit_t) noexcept
+		: XSurface(noinit_t())
+	{ }
+
+public:
+	// Destructor
+	virtual ~BSurface() RX;
+
+	virtual void* Lock(int x, int y) override R0;
 
 	virtual int GetBytesPerPixel() const override R0;
 
 	virtual int GetPitch() const override R0;
+
+	virtual bool IsDSurface() const override final
+	{
+		return XSurface::IsDSurface();
+	}
+
+	// Properties
+	int BytesPerPixel;
+	MemoryBuffer Buffer;
 };
 
+//WIP - Will the define these properly some other time
+//actual DirectDraw surfaces
+class DSurface : public XSurface
+{
+public:
+	static constexpr reference<DSurface*, 0x8872FCu> const Tile{};
+	static constexpr reference<DSurface*, 0x887300u> const Sidebar{};
+	static constexpr reference<DSurface*, 0x887308u> const Primary{};
+	static constexpr reference<DSurface*, 0x88730Cu> const Hidden{};
+	static constexpr reference<DSurface*, 0x887310u> const Alternate{};
+	static constexpr reference<DSurface*, 0x887314u> const Hidden_2{};
+	static constexpr reference<DSurface*, 0x88731Cu> const Composite{};
+
+	static constexpr reference<RectangleStruct, 0x886F90u> const SidebarBounds{};
+	static constexpr reference<RectangleStruct, 0x886FA0u> const ViewBounds{};
+	static constexpr reference<RectangleStruct, 0x886FB0u> const WindowBounds{};
+
+	DSurface(int width, int height, bool backBuffer, bool force3D) noexcept
+		: DSurface(noinit_t())
+	{ JMP_THIS(0x4BA5A0); }
+
+protected:
+	explicit __forceinline DSurface(noinit_t) noexcept : XSurface(noinit_t())
+	{ }
+
+public:
+	virtual bool BlitWhole(
+		Surface* pSrc,
+		bool SURFACE_SETTING_ONE,
+		bool SURFACE_SETTING_TWO) override R0;
+
+	virtual bool BlitPart(
+		RectangleStruct const& rectDest,
+		Surface* pSrc,
+		RectangleStruct const& rectSrc,
+		bool SURFACE_SETTING_ONE,
+		bool SURFACE_SETTING_TWO) override R0;
+
+	virtual bool Blit(
+		RectangleStruct const& rectClip,
+		RectangleStruct const& rectClip2,	//again? hmm
+		Surface* pSrc,
+		RectangleStruct const& rectDest,	//desired dest rect of pSrc ? (stretched? clipped?)
+		RectangleStruct const& rectSrc,	//desired source rect of pSrc ?
+		bool SURFACE_SETTING_ONE,
+		bool SURFACE_SETTING_TWO) override R0;
+
+	virtual bool FillRectEx(
+		RectangleStruct const& rectClip,
+		RectangleStruct const& rectFill,
+		DWORD dwColor) override R0;
+
+	virtual bool FillRect(
+		RectangleStruct const& rectFill,
+		DWORD dwColor) override R0;
+
+	virtual bool vt_entry_1C(
+		RectangleStruct const& rectClip,
+		ColorStruct Color,
+		int nUnknown) override R0;
+
+	virtual bool vt_entry_34(
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7) override R0;
+
+	virtual bool vt_entry_38(	//similar to 34
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7) override R0;
+
+	virtual bool vt_entry_3C(
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7, DWORD dwUnk8,
+		DWORD dwUnk9, DWORD dwUnk10, DWORD dwUnk11) override R0;
+
+	virtual bool vt_entry_40(
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6, DWORD dwUnk7) override R0;
+
+	virtual bool vt_entry_4C(
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4,
+		DWORD dwUnk5, DWORD dwUnk6) override R0;
+
+	virtual bool vt_entry_50(
+		DWORD dwUnk1, DWORD dwUnk2, DWORD dwUnk3, DWORD dwUnk4) override R0;
+
+	virtual void* Lock(int X, int Y) override R0;
+
+	virtual bool Unlock() override R0;
+
+	virtual bool CanLock(DWORD dwUnk1, DWORD dwUnk2) override R0;
+
+	virtual int GetBytesPerPixel() const override R0;
+
+	virtual int GetPitch() const override R0;
+
+	virtual bool IsDSurface() const override final
+	{
+		return true;
+	}
+
+	// Properties
+	int BytesPerPixel;
+	LPVOID LockedSurface; // pointing to SurfaceDesc->lpSurface if locked
+	bool Allocated;
+	bool VRAMmed;
+	PROTECTED_PROPERTY(BYTE, align_1A[2]);
+	IDirectDrawSurface* Surface;
+	DDSURFACEDESC2* SurfaceDesc;
+};
