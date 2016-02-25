@@ -142,7 +142,7 @@ public:
 
 	virtual bool vt_entry_68(DWORD dwUnk1, DWORD dwUnk2) = 0;
 
-	virtual bool vt_entry_6C() = 0;
+	virtual bool IsLocked() = 0;
 
 	virtual int GetBytesPerPixel() const = 0;
 
@@ -391,7 +391,7 @@ public:
 
 	virtual bool vt_entry_68(DWORD dwUnk1, DWORD dwUnk2) override R0;
 
-	virtual bool vt_entry_6C() override R0;
+	virtual bool IsLocked() override R0;
 
 	virtual int GetBytesPerPixel() const override R0;
 
