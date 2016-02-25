@@ -74,11 +74,9 @@ public:
 	byte * BufferA; // new(Count * 8 * LeanAndMean) - gets filled with pColorData values on CTOR
 	byte * Midpoint; // points to the middle of BufferA above, ??
 	byte * BufferB; // if(LeanAndMean == 1) { BufferB = new byte[0x100]; }
-	DWORD f_17C;
-	DWORD f_180;
-	DWORD f_184;
-
-//	PROTECTED_PROPERTY(BYTE, unknown_0[0x188]);
+	DWORD CurrentZRemap; // set right before drawing
+	DWORD HalfColorMask; // for masking colors right-shifted by 1
+	DWORD QuarterColorMask; // for masking colors right-shifted by 2
 };
 
 class LightConvertClass : public ConvertClass
