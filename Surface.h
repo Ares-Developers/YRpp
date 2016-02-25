@@ -23,7 +23,8 @@ struct SHPStruct;
 #define SURFACE_SETTING_TWO bOption2
 #define SURFACE_SETTING_THREE dwUnknown
 
-class Surface	//abstract
+// abstract surface
+class Surface
 {
 public:
 	//Destructor
@@ -264,9 +265,20 @@ public:
 	}
 };
 
+// another abstract surface
+class XSurface : public Surface
+{
+};
+
+// buffered surface
+class BSurface : public XSurface
+{
+};
+
 //WIP - Will the define these properly some other time
 //actual DirectDraw surfaces
-class DSurface : public Surface {
+class DSurface : public XSurface
+{
 public:
 	static constexpr reference<DSurface*, 0x8872FCu> const Tile{};
 	static constexpr reference<DSurface*, 0x887300u> const Sidebar{};
@@ -398,5 +410,3 @@ public:
 	virtual int GetPitch() const override R0;
 };
 
-class XSurface : public Surface {};		//WW's custom surfaces? (abstract)
-class BSurface : public XSurface {};	//WW's custom surfaces? (abstract)
