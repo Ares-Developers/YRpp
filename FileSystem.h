@@ -68,7 +68,7 @@ public:
 			ColorData[i].B = static_cast<BYTE>(pRawData[i].B << 2);
 		}
 
-		return GameCreate<ConvertClass>(&ColorData, &TEMPERAT_PAL, pSurface, 0x35, false);
+		return GameCreate<ConvertClass>(ColorData, TEMPERAT_PAL, pSurface, 0x35, false);
 	}
 
 	template <typename T>
