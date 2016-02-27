@@ -36,13 +36,6 @@ public:
 	RLEBlitterCore* SelectRLEBlitter(BlitterFlags flags) const
 		{ JMP_THIS(0x490E50); }
 
-	void* SelectProperBlitter(SHPStruct const* pShp, int idxFrame, BlitterFlags flags) {
-		return (pShp->HasCompression(idxFrame))
-			? static_cast<void*>(this->SelectRLEBlitter(flags))
-			: static_cast<void*>(this->SelectPlainBlitter(flags))
-		;
-	}
-
 	virtual ~ConvertClass() RX;
 
 	ConvertClass(
