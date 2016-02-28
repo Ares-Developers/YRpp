@@ -57,9 +57,6 @@ public:
 	//Static
 	static constexpr reference<ScenarioClass*, 0xA8B230u> const Instance{};
 
-	static ScenarioClass* Global()
-		{ return *((ScenarioClass**)0xA8B230); }
-
 	static void __fastcall UpdateCellLighting()
 		{ JMP_STD(0x4AE4C0); }
 

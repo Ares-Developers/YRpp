@@ -82,10 +82,7 @@ class RulesClass
 {
 public:
 	//Static
-	constexpr static reference<RulesClass*, 0x8871E0u> Instance{};
-
-	static RulesClass* Global()
-		{ return *reinterpret_cast<RulesClass**>(0x8871E0); }
+	static constexpr reference<RulesClass*, 0x8871E0u> Instance{};
 
 	// call this for the first INI file only
 	void Init(CCINIClass *pINI)
