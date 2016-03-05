@@ -110,7 +110,7 @@ public:
 	virtual CoordStruct* GetDestination(CoordStruct* pCrd, TechnoClass* pDocker = nullptr) const R0; // where this is moving, or a building's dock for a techno. iow, a rendez-vous point
 	virtual bool IsOnFloor() const R0;
 	virtual bool IsInAir() const R0;
-	virtual CoordStruct* GetCoords__(CoordStruct* pCrd) const R0;
+	virtual CoordStruct* GetAltCoords(CoordStruct* pCrd) const R0;
 	virtual void Update() RX;
 
 	//non-virtual
@@ -133,9 +133,9 @@ public:
 		return ret;
 	}
 
-	CoordStruct GetCoords__() const {
+	CoordStruct GetAltCoords() const {
 		CoordStruct ret;
-		this->GetCoords__(&ret);
+		this->GetAltCoords(&ret);
 		return ret;
 	}
 
