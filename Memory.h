@@ -77,19 +77,19 @@ template <typename T>
 struct GameAllocator {
 	using value_type = T;
 
-	GameAllocator() {}
+	constexpr GameAllocator() noexcept = default;
 
 	template <typename U>
-	GameAllocator(const GameAllocator<U>&) {}
+	constexpr GameAllocator(const GameAllocator<U>&) noexcept {}
 
-	bool operator == (const GameAllocator&) const { return true; }
-	bool operator != (const GameAllocator&) const { return false; }
+	constexpr bool operator == (const GameAllocator&) const noexcept { return true; }
+	constexpr bool operator != (const GameAllocator&) const noexcept { return false; }
 
-	T* allocate(const size_t count) const {
+	T* allocate(const size_t count) const noexcept {
 		return static_cast<T*>(YRMemory::AllocateChecked(count * sizeof(T)));
 	}
 
-	void deallocate(T* const ptr, size_t count) const {
+	void deallocate(T* const ptr, size_t count) const noexcept {
 		YRMemory::Deallocate(ptr);
 	}
 };
@@ -206,7 +206,7 @@ static inline void DLLDeleteArray(T* ptr, size_t capacity) {
 
 struct GameDeleter {
 	template <typename T>
-	void operator ()(T* ptr) {
+	void operator ()(T* ptr) noexcept {
 		if(ptr) {
 			GameDelete(ptr);
 		}
