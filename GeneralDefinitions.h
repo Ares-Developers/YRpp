@@ -1273,8 +1273,8 @@ enum class VoxPriority : int {
 
 enum class WaveType : int {
 	Sonic = 0,
-	Laser = 1,
-	BigLaser = 2,
+	BigLaser = 1,
+	Laser = 2,
 	Magnetron = 3
 };
 
